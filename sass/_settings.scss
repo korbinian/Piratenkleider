@@ -1,0 +1,82 @@
+//settings
+
+$max-width: 958px;
+$columns: 12;
+$gutters: .75%;
+$radius: 2px;
+
+$sans: Helvetica, Arial, sans-serif;
+$serif: 'Bookman Old Style',Bookman,'URW Bookman L','Palatino Linotype', serif;
+$mono: consolas, 'courier new', courier, monospace;
+$special: 'BebasNeueRegular', Helvetica, Arial, sans-serif;
+
+$font-size: 12px;
+$baseline: 18px;
+$padding: 5px;
+$p: 20px;
+
+$mark: #004f6e;
+
+$white: #fff;
+$gray: #eee;
+$black: #000;
+$blue: #2d7dc5;
+$orange: #ff8800;
+
+//mixins
+
+@mixin rounded($radius: $radius) {
+	border-radius: $radius;
+	-moz-border-radius: $radius;
+	-webkit-border-radius: $radius; }
+
+@mixin roundedSides($topLeft, $topRight, $bottomRight, $bottomLeft) {
+	-moz-border-radius-topleft: $topLeft;
+	-moz-border-radius-topright: $topRight;
+	-moz-border-radius-bottomright: $bottomRight;
+	-moz-border-radius-bottomleft: $bottomLeft;
+	border-top-left-radius: $topLeft;
+	border-top-right-radius: $topRight;
+	border-bottom-right-radius: $bottomRight;
+	border-bottom-left-radius: $bottomLeft; }
+
+@mixin textShadow($x-axis:1px, $y-axis:1px, $casting:1px, $color:$white) {
+	text-shadow: $x-axis $y-axis $casting $color; }
+
+@mixin shadow( $off-y:1px, $off-x:1px, $blur:2px, $color:#444) {
+	-moz-box-shadow: $off-y $off-x $blur $color;
+	-webkit-box-shadow: $off-y $off-x $blur $color;
+	box-shadow: $off-y $off-x $blur $color; }
+
+@mixin gradient($baseColor:#333, $toColor:#111) {
+	background-color: $baseColor;
+	background-image: -moz-linear-gradient(top, $baseColor, $toColor);
+	background-image: -webkit-gradient(linear,left top,left bottom, color-stop(0, $baseColor),color-stop(1, $toColor));
+	background-image: linear-gradient(top,$baseColor, $toColor); }
+
+@mixin transition($property:all, $duration:0.2s, $function: ease-in-out) {
+	-moz-transition: $property $duration $function;
+	-o-transition: $property $duration $function;
+	-webkit-transition: $property $duration $function;
+	transition: $property $duration $function; }
+
+@mixin button($backgroundColor:$blue, $textColor:$white, $borderRadius:$radius ) {
+	padding: $padding $padding*2;
+  overflow: visible;
+  position: relative;
+  background: $blue;
+  color: $white !important;
+  margin: 0 2px 2px 0;
+  border: 1px solid $blue;
+  text-shadow: 0 -1px 1px rgba(0, 0, 0, 0.1);
+  border-top: 1px solid lighten($blue, 10%);
+  border-bottom: 1px solid darken($blue, 20%);
+  display: inline-block;
+  @include rounded(2px);
+  @include textShadow(0,-1px,0,darken($blue, 30%));
+  @include gradient($blue, darken($blue, 10%));
+  &:hover {
+    @include gradient($blue, darken($blue, 20%));
+    @include transition(); }
+  &:active {
+    top: 1px; } }
