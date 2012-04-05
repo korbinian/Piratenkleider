@@ -40,11 +40,10 @@
         </div>
         <div class="post-entry">
         <?php // Weiche für den ersten Artikel
-          if ($i==1) {
-          the_content_rss('', FALSE, '', 80); ?>
+            the_content_rss('', FALSE, '', 80); 
+          ?>
           <a href="<?php the_permalink() ?>"><strong><?php the_title(); ?></strong> weiterlesen</a>
-          <?php } else {
-          the_content('weiterlesen'); } ?>
+
         </div>
       </div>
 
