@@ -5,6 +5,14 @@ Hinweise/Notizen zur Nutzung
 Grundlegens:
 1. Alle Seiten und Artikel sollten Artikel/Seitenbilder haben, da diese
    als teaser angezeigt werden.
+2. Alle Pressemeldungen müssen der Kategorie "pm" zugeordnet werden.
+   in home.php ist in Zeile 84 diese Kategory für ALLE Artikel definiert.
+    ggf. dies ändern. Oder hier die Default-Category von WP nutzen.
+3. Der Footer wird aus den beiden Widgets 
+    First Footer Widget Area 
+    und
+    Second Footer Widget Area 
+   gebildet. Hier eignen sich ebenfalls Linklisten oder Menüs.
 
 Startseite:
 
