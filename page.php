@@ -23,10 +23,10 @@
 
         <?php
         $custom_fields = get_post_custom();
-        if ($custom_fields['right_column'][0]<>'') { ?>
-        <? echo $custom_fields['right_column'][0]; 
-
-         } ?>
+        if ($custom_fields['right_column'][0]<>'') {
+            echo $custom_fields['right_column'][0]; 
+        }  
+         ?>
 
       </div>
     </div>

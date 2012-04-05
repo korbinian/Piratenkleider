@@ -39,17 +39,17 @@
           </div>
         </div>
         <div class="post-entry">
-        <? // Weiche für den ersten Artikel
+        <?php // Weiche für den ersten Artikel
           if ($i==1) {
           the_content_rss('', FALSE, '', 80); ?>
-          <a href="<? the_permalink() ?>"><strong><?php the_title(); ?></strong> weiterlesen</a>
-          <? } else {
+          <a href="<?php the_permalink() ?>"><strong><?php the_title(); ?></strong> weiterlesen</a>
+          <?php } else {
           the_content('weiterlesen'); } ?>
         </div>
       </div>
 
       <hr />
-      <?php
+      <?php 
       $output = ob_get_contents();
       ob_end_clean();
       $cols[$col++] .= $output;

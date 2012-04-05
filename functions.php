@@ -733,7 +733,7 @@ function dimox_breadcrumbs() {
 
 if( !is_admin()){
         wp_deregister_script('jquery');
-        wp_register_script('jquery', ("/wp-content/themes/piratenkleider/js/jquery.min.js"), false, '1.3.2');
+        wp_register_script('jquery', ("/wp-content/themes/Piratenkleider/js/jquery.min.js"), false, '1.3.2');
         wp_enqueue_script('jquery');
 
 }
