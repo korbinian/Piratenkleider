@@ -44,7 +44,10 @@ Bugs
    die Settings für Kopfteil und Background. Diese finden aber im Theme keine
    Anwendung. 
 7. Das Menü für Seiten funktioniert noch garnicht
-
+8. Gravatar.com wird bei den Kommentaren verwenden. Da ist noch
+   nichts gefährliches bei, aber wir sollten da nicht naiv sein. Gerade sowas
+   kann zum Tracking verwendet werden. Daher sollte dies rausgenommen werden
+    und/oder durch eine statische Lösung ersetzt werden.
 
 
 Startseite:
