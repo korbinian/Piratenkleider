@@ -14,6 +14,21 @@ Grundlegens:
     Second Footer Widget Area 
    gebildet. Hier eignen sich ebenfalls Linklisten oder Menüs.
 
+
+
+Bugs
+1. Wenn man eine "frische" Bloginstallation betreibt, werden durch Aktivierung 
+   des Themes die Widgets, die vorher in der einfachen "Sidebar" waren, der 
+   neuer Sidebar "Sticker Widget Area" zugeordnet.
+   Dies hat zur Folge, dass anstelle von Links oder Widgetelementen
+   eine Reihe von Iconbilder "Werde Pirat" erscheien.
+2. Die Sucheingabe funktioniert nicht
+3. Standard Pages werden oben links angefangen angezeigt, mit vertikaler
+   Reihenfolge von jnten nach oben und Blocksatzbreite 
+   Sie erscheinen nicht im Standardmenu
+4. Es fehlen Fallback-Artikelbilder, Fallback-Seitenbilder und 
+   Fallback-Sliderbilder
+
 Startseite:
 
  Die Startseite zeigt die letzten 3 Artikel, sowie den Teaser und weitere 
@@ -25,12 +40,17 @@ Startseite:
 
     Die sidebar-Teaser bindet eine Bildliste  sich aus den 3 (letzten?) 
     Artikeln (! nicht Pages), die in der Kategorie "Slider" ein.
-
+   
     Bei diesen Artikeln werden die jeweiligen Thumbnails der Artikelbilder 
     eingeblendet.
+    Hinweis: Dabei wird die Standardgröße für die Artikelbilder welche im Blog
+    festgelegt ist, verwendet. Bei neu eingerichteten Blogs wird die mittlere
+    Bildgröße verwendet, die in x und y maximal 300 Pixel definieren und
+    dann entsprechend umrechnen. 
 
     Danach kann die 
-    Second Teaser Widget Area angezeigt werden.
+        Second Teaser Widget Area 
+    angezeigt werden.
     Dies sollte in der Regel eine kurze Linkliste sein.
     Diese wird optisch rechts von der Bildliste angezeigt.
 
@@ -43,13 +63,13 @@ Startseite:
 Danaben  gibt es einen Bereich, der von der
 Widget "Second Startpage Widget Area" 
 definiert  ist.
-Hierin eigenet sich eine Shclagwort-Wolke.
+Hierin eigenet sich eine Schlagwort-Wolke.
 
 
    
 
 Seiten:
-  Als Teaser für die Seiten wird das THembnail eines Seitenbildes a gezeigt.
+  Als Teaser für die Seiten wird das Thumbnail eines Seitenbildes a gezeigt.
 
 
 
