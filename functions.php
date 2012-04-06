@@ -44,6 +44,10 @@
  * Used to set the width of images and content. Should be equal to the width the theme
  * is designed for, generally via the style.css stylesheet.
  */
+
+require_once ( get_stylesheet_directory() . '/theme-options.php' );
+
+
 if ( ! isset( $content_width ) )
         $content_width = 640;
 
@@ -730,10 +734,10 @@ function dimox_breadcrumbs() {
  
   }
 }
-
+ 
 if( !is_admin()){
         wp_deregister_script('jquery');
-        wp_register_script('jquery', ("/wp-content/themes/Piratenkleider/js/jquery.min.js"), false, '1.3.2');
+        wp_register_script('jquery', (get_stylesheet_directory() . "/js/jquery.min.js"), false, '1.3.2');
         wp_enqueue_script('jquery');
 
 }
