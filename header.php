@@ -25,7 +25,10 @@
 		wp_enqueue_script( 'comment-reply' );
 	wp_head(); ?>
 </head>
-
+<?php 
+                    
+  $options = get_option( 'piratenkleider_theme_options' );
+?>                        
 <body <?php body_class(); ?>>
 
 	<ul role="navigation" class="nav skiplinks">
@@ -53,6 +56,9 @@
 				<?php get_search_form(); ?>
 				<h2 class="visuallyhidden">Topnavigation</h2>
 				<?php wp_nav_menu( array( 'container_class' => 'menu-header', 'theme_location' => 'top' ) ); ?>
+                                <?php 
+                                        if ( $options['alle-socialmediabuttons'] == "1" ){
+                                 ?> 
 				<ul class="socialmedia">
 					<li class="facebook"><a href="http://www.facebook.com/PiratenparteiDeutschland">Facebook</a></li>
 					<li class="twitter"><a href="https://twitter.com/#!/piratenpartei">Twitter</a></li>
@@ -61,16 +67,22 @@
 					<li class="diaspora"><a href="https://joindiaspora.com/u/piratenpartei">Diaspora</a></li>
 					<li class="identica"><a href="http://identi.ca/piratenpartei">identi.ca</a></li>
 				</ul>
+                                 <?php }?>
 			</div>
+                    <?php 
+                       if ( $options['newsletter'] == "1" ){
+                     ?>               
+
 			<div class="newsletter">
 				<div class="skin">
-					<form Method=POST ACTION="https://service.piratenpartei.de/subscribe/newsletter">
+					<form Method="POST" ACTION="https://service.piratenpartei.de/subscribe/newsletter">
 						<legend>Piratenpartei-Newsletter</legend>
 						<input type="text" name="email" placeholder="E-mail">
-                        <input type="submit" name="email-button" value="abonnieren" id="newslettersubmit">
+                                                <input type="submit" name="email-button" value="abonnieren" id="newslettersubmit">
 					</form>
 				</div>
 			</div>
+                    <?php }?>
 			<div class="nav-main" role="navigation" id="nav">
 				<h2 class="visuallyhidden">Hauptnavigation</h2>
 				<?php wp_nav_menu( array( 'container_class' => 'menu-header', 'theme_location' => 'primary', 'walker'  => new My_Walker_Nav_Menu()) ); ?>
