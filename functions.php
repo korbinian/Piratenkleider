@@ -737,7 +737,7 @@ function dimox_breadcrumbs() {
  
 if( !is_admin()){
         wp_deregister_script('jquery');
-        wp_register_script('jquery', (get_stylesheet_directory() . "/js/jquery.min.js"), false, '1.3.2');
+        wp_register_script('jquery', get_bloginfo('template_url'). "/js/jquery.min.js", false, '1.3.2');
         wp_enqueue_script('jquery');
 
 }
