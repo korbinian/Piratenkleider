@@ -97,7 +97,7 @@
             <?php } else { ?>    
                 <div  class="widget">
                     <h3>Schlagworte</h3>    
-                    <?php wp_tag_cloud( ); ?>
+                    <?php wp_tag_cloud(); ?>
                 </div>
             <?php } ?>
         </div>
