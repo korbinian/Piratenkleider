@@ -98,9 +98,9 @@ function twentyten_setup() {
 
         // This theme uses wp_nav_menu() in one location.
         register_nav_menus( array(
-                'primary' => __( 'Primary Navigation', 'twentyten' ),
-                'top' => __( 'Topnavigation', 'twentyten' ),
-                'sub' => __( 'Subnavigation', 'twentyten' ),
+                'primary' => __( 'Hauptnavigation <br />&nbsp; (Statische Seiten)', 'twentyten' ),
+                'top' => __( 'Linkmenu <br />&nbsp; (Links zu Webportalen wie Wiki, Forum, etc)', 'twentyten' ),
+                'sub' => __( 'Technische Navigation <br />&nbsp; (Kontakt, Impressunm, etc)', 'twentyten' ),
         ) );
 
     
