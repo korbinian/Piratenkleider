@@ -38,7 +38,7 @@ INHALTE
 2. Alle Artikel, die Pressemeldungen sein sollen, müssen der Kategorie "pm" 
    zugeordnet werden. Wenn diese Kategorie noch nicht vorhanden ist, muss
    sie erstellt werden.
-3. Besondere Artikel (maximal 3) können auf der Startseite im Slider erscheinen.
+3. Besondere Artikel können auf der Startseite im Slider erscheinen.
    Dies ist ein von selbst wechselndes Artikelbild mit der Verlinkung
    zu einem Artikel. 
    Um dies für einen Artikel zu machen, muss der Artikel zwei Dinge erfüllen:
@@ -79,6 +79,7 @@ BEREICHE/WIDGETS
     Wenn das technische Menu noch nicht definiert wurde, werden dort
     zunächst die Seiten unstrukturiert aufgeführt.
 
+
 THEME-OPTIONS "Piratenkleider pimpen"
  
   Das Ursprungstheme von Korbinian hatte noch keine eigene Theme-Option Seite.
@@ -87,7 +88,7 @@ THEME-OPTIONS "Piratenkleider pimpen"
     - Newsletter-Box einschalten/abschalten
     - Social Media Buttons ein/ausschalten         
     - Slider steuern
-        (max. Zahl der Slider festlegen, Dauer für Bildwechsel und Dauer der
+        (max. Zahl der Slider-Artikel festlegen, Dauer für Bildwechsel und Dauer der
          Bildanzeige)
  
   Geplante weitere Optionen:
