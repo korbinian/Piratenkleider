@@ -580,9 +580,5 @@
 
 })(jQuery);
 
-  $(window).load(function() {
-    $('.flexslider').flexslider({
-      slideshowSpeed: 8000
-});
-  });
+ 
 
