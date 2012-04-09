@@ -101,7 +101,6 @@ function twentyten_setup() {
                 'primary' => __( 'Primary Navigation', 'twentyten' ),
                 'top' => __( 'Topnavigation', 'twentyten' ),
                 'sub' => __( 'Subnavigation', 'twentyten' ),
-                'main-menu' => __( 'Main Menu', 'twentyten' ),
         ) );
 
     
@@ -571,13 +570,6 @@ function twentyten_posted_in() {
 endif;
 
 add_theme_support( 'post-thumbnails' );
-
-// function wpse38241_setup_menu()
-// {
-//    register_nav_menu( 'main-menu', 'Main Menu' );
-// }
-// add_action( 'after_setup_theme', 'wpse38241_setup_menu' );
-// Wird oben gemacht!
 
 
 /**
