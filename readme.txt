@@ -44,12 +44,6 @@ INHALTE
    Um dies für einen Artikel zu machen, muss der Artikel zwei Dinge erfüllen:
     a) Er muss die  Kategorie "Slider" haben.
     b) Der Artikel sollte ein Artikelbild haben. 
-  
-4. Das Ursprungstheme von korbinian hat noch keine eigene Theme-Option Seite.
-   Die neue Version enthält dagegen Theme Options, die nun ausgebaut werden.
-    - Newsletter-Box einschalten/abschalten
-    - Social Media Buttons ein/ausschalten 
-        (hier kommt noch eine Verfeinerung zur Auswahl ein Eingabe eigener URLs)
 
 
 BEREICHE/WIDGETS
@@ -85,7 +79,23 @@ BEREICHE/WIDGETS
     Wenn das technische Menu noch nicht definiert wurde, werden dort
     zunächst die Seiten unstrukturiert aufgeführt.
 
-
+THEME-OPTIONS "Piratenkleider pimpen"
+ 
+  Das Ursprungstheme von Korbinian hatte noch keine eigene Theme-Option Seite.
+  Die neue Version enthält dagegen Theme Options, die nach und nach ausgebaut 
+  werden um "lokale" Einstellungen zu ändern.
+    - Newsletter-Box einschalten/abschalten
+    - Social Media Buttons ein/ausschalten         
+    - Slider steuern
+        (max. Zahl der Slider festlegen, Dauer für Bildwechsel und Dauer der
+         Bildanzeige)
+ 
+  Geplante weitere Optionen:
+    - Logo ändern (für eigenes Logo aus Bezirks/Land/etc )
+    - Social Media Buttons einzelnt steuern und URLs ändern
+    - Twitteradresse ändern
+    - Default-Bilder für Artikel, Posts und Slider festlegen
+   
 
 
 Notizen
