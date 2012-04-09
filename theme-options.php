@@ -37,8 +37,12 @@ function theme_options_do_page() {
 
 		<form method="post" action="options.php">
 			<?php settings_fields( 'piratenkleider_options' ); ?>
-			<?php $options = get_option( 'piratenkleider_theme_options' ); ?>
-
+			<?php $options = get_option( 'piratenkleider_theme_options' ); 
+                            if ( ! isset( $options['slider-slideshowSpeed'] ) )
+                            $options['slider-slideshowSpeed'] = 8000;
+                            if ( ! isset( $options['slider-animationDuration'] ) )
+                            $options['slider-animationDuration'] = 600;
+                        ?>
 			<table class="form-table">
 
 
@@ -54,9 +58,35 @@ function theme_options_do_page() {
 						<label class="description" for="piratenkleider_theme_options[alle-socialmediabuttons]"><?php _e( 'Alle Buttons anzeigen', 'piratenkleider' ); ?></label>
 					</td>
 				</tr>
-
-
-
+                                <tr valign="top"><th scope="row"><?php _e( 'Maximale Anzahl der Artikel im Slider', 'piratenkleider' ); ?></th>
+					<td>
+						<select name="piratenkleider_theme_options[slider-numberarticle]">
+                                                    <?php
+								$selected = $options['slider-numberarticle'];
+                                                    ?>            
+                                                    <option style="padding-right: 10px;" value="2" <?php if ($selected ==2) { echo 'selected="selected"'; }?>>2</option>
+                                                    <option style="padding-right: 10px;" value="3" <?php if ($selected ==3) { echo 'selected="selected"'; }?>>3</option>
+                                                    <option style="padding-right: 10px;" value="4" <?php if ($selected ==4) { echo 'selected="selected"'; }?>>4</option>
+                                                    <option style="padding-right: 10px;" value="5" <?php if ($selected ==5) { echo 'selected="selected"'; }?>>5</option>
+                                                    <option style="padding-right: 10px;" value="6" <?php if ($selected ==6) { echo 'selected="selected"'; }?>>6</option>							
+						</select>
+						<label class="description" for="piratenkleider_theme_options[slider-numberarticle]"><?php _e( 'Wieviele Slides sollen maximal gezeigt werden', 'piratenkleider' ); ?></label>
+					</td>
+				</tr>
+                                <tr valign="top"><th scope="row"><?php _e( 'Slider Bildwechsel', 'piratenkleider' ); ?></th>
+                                      <td>
+						<input id="piratenkleider_theme_options[slider-slideshowSpeed]" class="regular-text" type="text" length="5" name="piratenkleider_theme_options[slider-slideshowSpeed]" value="<?php esc_attr_e( $options['slider-slideshowSpeed'] ); ?>" />
+						<label class="description" for="piratenkleider_theme_options[slider-slideshowSpeed]"><?php _e( 'Geschwindigkeit des Bildwechsels in Milisekunden', 'piratenkleider' ); ?></label>
+					</td>
+					
+				</tr>
+                                <tr valign="top"><th scope="row"><?php _e( 'Slider Animationsdauer', 'piratenkleider' ); ?></th>
+                                      <td>
+						<input id="piratenkleider_theme_options[slider-animationDuration]" class="regular-text" type="text" length="5" name="piratenkleider_theme_options[slider-animationDuration]" value="<?php esc_attr_e( $options['slider-animationDuration'] ); ?>" />
+						<label class="description" for="piratenkleider_theme_options[slider-animationDuration]"><?php _e( 'Geschwindigkeit der Animation/Fading beim Bildübergang in Milisekunden', 'piratenkleider' ); ?></label>
+					</td>
+					
+				</tr>
 
 				
 			</table>
@@ -82,6 +112,15 @@ function theme_options_validate( $input ) {
 	if ( ! isset( $input['alle-socialmediabuttons'] ) )
 		$input['alle-socialmediabuttons'] = null;
 	$input['alle-socialmediabuttons'] = ( $input['alle-socialmediabuttons'] == 1 ? 1 : 0 );
+        if ( ! isset( $input['slider-numberarticle'] ) )
+		$input['slider-numberarticle'] = 3;
+	
+        $input['slider-slideshowSpeed'] = wp_filter_nohtml_kses( $input['slider-slideshowSpeed'] );
+        if ( ! isset( $input['slider-slideshowSpeed'] ) )
+		$input['slider-slideshowSpeed'] = 8000;
+         $input['slider-animationDuration'] = wp_filter_nohtml_kses( $input['slider-animationDuration'] );
+        if ( ! isset( $input['slider-animationDuration'] ) )
+		$input['slider-animationDuration'] = 600;       
         
 	// Say our text option must be safe text with no HTML tags
 	// $input['sometext'] = wp_filter_nohtml_kses( $input['sometext'] );
