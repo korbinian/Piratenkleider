@@ -24,7 +24,6 @@
          animationDuration: <?php echo $animationDuration ?>
        });
     });    
-
     </script>
     <?php } ?>
     <script src="<?php echo get_bloginfo('template_url'); ?>/js/twitter.js"></script>
