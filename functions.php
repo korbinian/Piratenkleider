@@ -298,9 +298,12 @@ function twentyten_widgets_init() {
 
         // Area 3, located in the Teaser.
         register_sidebar( array(
-                'name' => __( 'First Teaser Widget Area', 'twentyten' ),
+                'name' => __( 'Startseite: Sliderbereich', 'twentyten' ),
                 'id' => 'first-teaser-widget-area',
-                'description' => __( 'The first teaser widget area', 'twentyten' ),
+                'description' => __( 'Bereich oberhalb der 3 Artikelbilder.
+                    Wenn leer, erscheinen hier wechselnden Bilder 
+                    und Verlinkung mit Artikeln der Kategorie "Slider". 
+                    Angezeigt werden die Artikelbilder.', 'twentyten' ),
                 'before_widget' => '<div class="widget">',
                 'after_widget' => '</div>',
                 'before_title' => '<h3 class="widget-title">',
@@ -309,9 +312,12 @@ function twentyten_widgets_init() {
 
         // Area 4, located in the Teaser.
         register_sidebar( array(
-                'name' => __( 'Second Teaser Widget Area', 'twentyten' ),
+                'name' => __( 'Startseite: Rechter Aktionlinkbereich', 'twentyten' ),
                 'id' => 'second-teaser-widget-area',
-                'description' => __( 'The second teaser widget area', 'twentyten' ),
+                'description' => __( 'Dieser Bereich ist rechts neben den Slider
+                    und dem Hauptcontent positioniert. Wenn leer, werden hier
+                    die 3 Links zur Piratenwebsite gezeigt zum Mitmachen
+                    oder Spenden', 'twentyten' ),
                 'before_widget' => '<div class="widget">',
                 'after_widget' => '</div>',
                 'before_title' => '<h3 class="widget-title">',
@@ -329,21 +335,27 @@ function twentyten_widgets_init() {
                 'after_title' => '</h3>',
         ) );
 
-                // Area 5, located in the Startpage.
+        // Startseite: Links unterhalb der 3 Artikel, per default Anzeige
+        // der weiteren Artikel 
         register_sidebar( array(
-                'name' => __( 'First Startpage Widget Area', 'twentyten' ),
+                'name' => __( 'Startseite: Links unten', 'twentyten' ),
                 'id' => 'first-startpage-widget-area',
-                'description' => __( 'The first startpage widget area', 'twentyten' ),
+                'description' => __( 'Bereich links unterhalb der 3 Presseartikel. 
+                        Wenn leer, werden hier weitere Artikel aus
+                        der Kategorie "pm" gezeigt. ', 'twentyten' ),
                 'before_widget' => '<div class="widget">',
                 'after_widget' => '</div>',
                 'before_title' => '<h3 class="widget-title">',
                 'after_title' => '</h3>',
         ) );
-
-                register_sidebar( array(
-                'name' => __( 'Second Startpage Widget Area', 'twentyten' ),
+        // Startseite: Rechts  unterhalb der 3 Artikel, per default Anzeige
+        //  der Schlagwortliste
+        register_sidebar( array(
+                'name' => __( 'Startseite: Rechts unten', 'twentyten' ),
                 'id' => 'second-startpage-widget-area',
-                'description' => __( 'The second startpage widget area', 'twentyten' ),
+                'description' => __( 'Bereich rechts unterhalb der drei Presseartikel.
+                         Wenn leer, wird hier eine Schlagwortliste 
+                         gezeigt.', 'twentyten' ),
                 'before_widget' => '<div class="widget">',
                 'after_widget' => '</div>',
                 'before_title' => '<h3 class="widget-title">',
