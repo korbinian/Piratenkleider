@@ -69,28 +69,37 @@
       <div class="startpage-widget-area">
         <div class="first-startpage-widget-area">
           <div class="skin">
-            <div xmlns="http://www.w3.org/1999/xhtml" class="widget">
+            <?php if ( is_active_sidebar( 'first-startpage-widget-area' ) ) { ?>
+                <?php dynamic_sidebar( 'first-startpage-widget-area' ); ?>
+            <?php } else { ?>
+              
+                <div xmlns="http://www.w3.org/1999/xhtml" class="widget">
 
-            <h3>Weitere Artikel</h3>
+                <h3>Weitere Artikel</h3>
 
-            <ul>
-              <?php $postslist = get_posts('numberposts=5&order=DESC&offset=3'); foreach ($postslist as $post) : setup_postdata($post); ?>
-              <li><a title="Post: <?php the_title(); ?>" href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
-              <span class="date"><?php the_time('d.m.Y') ?></span></li>
-              <?php endforeach; ?>
-            </ul>
+                <ul>
+                <?php $postslist = get_posts('numberposts=5&order=DESC&offset=3'); foreach ($postslist as $post) : setup_postdata($post); ?>
+                <li><a title="Post: <?php the_title(); ?>" href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+                <span class="date"><?php the_time('d.m.Y') ?></span></li>
+                <?php endforeach; ?>
+                </ul>
 
-
-            <a href="<?php echo home_url( '/' ); ?>category/pm/" class="all-articles">alle Artikel</a>
-            </div>
+                <a href="<?php echo home_url( '/' ); ?>category/pm/" class="all-articles">alle Artikel</a>
+                </div>
+             <?php } ?>
           </div>
         </div>
 
         <div class="second-startpage-widget-area">
         <div class="skin">
-        <?php if ( is_active_sidebar( 'second-startpage-widget-area' ) ) : ?>
-        <?php dynamic_sidebar( 'second-startpage-widget-area' ); ?>
-        <?php endif; ?>
+            <?php if ( is_active_sidebar( 'second-startpage-widget-area' ) ) { ?>
+                <?php dynamic_sidebar( 'second-startpage-widget-area' ); ?>
+            <?php } else { ?>    
+                <div  class="widget">
+                    <h3>Schlagworte</h3>    
+                    <?php wp_tag_cloud( ); ?>
+                </div>
+            <?php } ?>
         </div>
       </div>
       </div>
