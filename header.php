@@ -41,11 +41,13 @@
 	<div class="section header">
 		<div class="row">
 			<div class="branding">
-			<a href="<?php echo home_url( '/' ); ?>" title="Link zur Startseite" rel="home" class="logo">
-				<img src="<?php echo get_bloginfo('template_url'); ?>/assets/logo.png" alt="Logo <?php bloginfo( 'name' ); ?>">
-			</a>
-			<h1 class="visuallyhidden"><?php bloginfo( 'name' ); ?></h1>
-			<p class="visuallyhidden"><?php bloginfo( 'description' ); ?></p>
+                            <?php if ( is_home() ) { ?>
+                            <a href="<?php echo home_url( '/' ); ?>" title="Link zur Startseite" rel="home" class="logo">
+                            <?php } ?>    
+                                    <img src="<?php echo get_bloginfo('template_url'); ?>/assets/logo.png" alt="Logo <?php bloginfo( 'name' ); ?>">
+                            <?php if ( is_home() ) { ?> </a>  <?php } ?> 
+                            <h1 class="visuallyhidden"><?php bloginfo( 'name' ); ?></h1>
+                            <p class="visuallyhidden"><?php bloginfo( 'description' ); ?></p>
 			</div>
 			<div class="sticker">
 				<div class="skin">
@@ -55,9 +57,11 @@
 			<div class="nav-top" role="navigation">
 				<?php get_search_form(); ?>
 				<h2 class="visuallyhidden">Topnavigation</h2>
-				<?php wp_nav_menu( array( 'container_class' => 'menu-header', 'theme_location' => 'top' ) ); ?>
-                                <?php 
-                                        if ( $options['alle-socialmediabuttons'] == "1" ){
+				<?php
+                                    if ( has_nav_menu( 'top' ) ) {
+                                        wp_nav_menu( array( 'container_class' => 'menu-header', 'theme_location' => 'top' ) );
+                                    } 
+                                    if ( $options['alle-socialmediabuttons'] == "1" ){
                                  ?> 
 				<ul class="socialmedia">
 					<li class="facebook"><a href="http://www.facebook.com/PiratenparteiDeutschland">Facebook</a></li>
@@ -85,7 +89,18 @@
                     <?php }?>
 			<div class="nav-main" role="navigation" id="nav">
 				<h2 class="visuallyhidden">Hauptnavigation</h2>
-				<?php wp_nav_menu( array( 'container_class' => 'menu-header', 'theme_location' => 'primary', 'walker'  => new My_Walker_Nav_Menu()) ); ?>
+				<?php 
+                                if ( has_nav_menu( 'primary' ) ) {
+                                    wp_nav_menu( array( 'container_class' => 'menu-header', 'theme_location' => 'primary', 'walker'  => new My_Walker_Nav_Menu()) );      
+                                } else { ?>
+                                    <div class="menu-header">
+                                        <ul id="menu-mainmenu" class="menu">
+                                            <li class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home"><a href="<?php echo home_url( '/' ); ?>">Startseite</a></li>
+                                            <!-- Es wurde noch keine Hauptnavigation als Menu definiert -->        
+                                        </ul>
+                                    </div>
+                                <?php  } ?>
+                                                                     
 			</div>
 		</div>
 	</div>
