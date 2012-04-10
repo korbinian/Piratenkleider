@@ -34,23 +34,35 @@ function twentyten_setup() {
         
         /* 
          * Header-Kontrolle, bis WP 3.3
-         * IN ARBEIT: LOGO AUSTAUSCHEN
-        add_custom_image_header();
-        define('HEADER_TEXTCOLOR', '');
-        define('HEADER_IMAGE', '%s/images/logo.png'); // %s is the template dir uri
+         */ 
+           
 
-define( 'HEADER_IMAGE_WIDTH', apply_filters( 'twentyten_header_image_width', 279 ) ); // choose any number you like here
-define( 'HEADER_IMAGE_HEIGHT', apply_filters( 'twentyten_header_image_height', 88 ) ); // choose any number you like here         
+       
+        define('HEADER_TEXTCOLOR', '');
+        define('HEADER_IMAGE', get_template_directory_uri() .'/images/logo.png'); // %s is the template dir uri
+        define('HEADER_IMAGE_WIDTH',  300 ); // choose any number you like here
+        define('HEADER_IMAGE_HEIGHT', 130 ); // choose any number you like here         
         define('NO_HEADER_TEXT', true );
-               * Folgendes erst ab WP 3.4:
+    
+         add_custom_image_header('piratenkleider_header_style', 'piratenkleider_admin_header_style');
+        
+        /* Folgendes erst ab WP 3.4:
             $args = array(
             'width'         => 279,
-            'height'        => 88,
+              'height'        => 88,
             'default-image' => get_template_directory_uri() . '/images/logo.png',
             'uploads'       => true,
+               'random-default' => true,
+                'flex-height' => true,
+                'suggested-height' => 90,
+                'flex-width' => true,
+                'max-width' => 350,
+                'suggested-width' => 300,
+                
             );
             add_theme_support( 'custom-header', $args );
-        */
+             */
+        
         
         // Make theme available for translation
         // Translations can be filed in the /languages/ directory
@@ -73,7 +85,7 @@ define( 'HEADER_IMAGE_HEIGHT', apply_filters( 'twentyten_header_image_height', 8
 }
 endif;
 
-if ( ! function_exists( 'twentyten_admin_header_style' ) ) :
+if ( ! function_exists( 'piratenkleider_admin_header_style' ) ) :
 /**
  * Styles the header image displayed on the Appearance > Header admin panel.
  *
@@ -81,18 +93,15 @@ if ( ! function_exists( 'twentyten_admin_header_style' ) ) :
  *
  * @since Twenty Ten 1.0
  */
-function twentyten_admin_header_style() {
+function piratenkleider_admin_header_style() {
 ?>
 <style type="text/css">
 /* Shows the same border as on front end */
 #headimg {
         border-bottom: 1px solid #000;
         border-top: 4px solid #000;
+        background-repeat: no-repeat;
 }
-/* If NO_HEADER_TEXT is false, you would style the text with these selectors:
-        #headimg #name { }
-        #headimg #desc { }
-*/
 </style>
 <?php
 }
