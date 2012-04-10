@@ -28,13 +28,37 @@ function theme_options_do_page() {
 		$_REQUEST['settings-updated'] = false;
 
 	?>
-	<div class="wrap">
-            <style>
+        <style>
                 label.description {
                     display: block;
                 }
-                
+                div.wrap {
+                    max-width: 1200px;
+                    margin: 20px 0 0 0;
+                    background-image: url(<?php echo get_bloginfo('template_url')?>/images/logo.png);
+                    background-position: top right;
+                    background-repeat: no-repeat;
+                    padding: 0;
+                }
+                div.piratenkleider-optionen {
+                    max-width: 1200px;
+                    margin: 0;
+                    padding-bottom: 0px;
+                    background-image: url(<?php echo get_bloginfo('template_url')?>/images/schiff-welle.gif);
+                    background-position: bottom left;
+                    background-repeat: no-repeat;
+                }
+                p.submit {
+                    margin-top: 100px;
+                    padding-left: 20px;
+                }
+                .wrap div.updated {
+                    margin-right: 300px;                    
+                }
             </style>
+	<div class="wrap">
+            
+            <div class="piratenkleider-optionen">  <!-- begin: .piratenkleider-optionen -->    
 		<?php screen_icon(); echo "<h2>" . get_current_theme() . __( ' pimpen ', 'piratenkleider' ) . "</h2>"; ?>
 
 		<?php if ( false !== $_REQUEST['settings-updated'] ) : ?>
@@ -164,8 +188,10 @@ function theme_options_do_page() {
 			<p class="submit">
 				<input type="submit" class="button-primary" value="<?php _e( 'Optionen speichern', 'piratenkleider' ); ?>" />
 			</p>
-		</form>
+		</form>               
 	</div>
+            
+        </div> <!-- end: .piratenkleider-optionen -->      
 	<?php
 }
 
