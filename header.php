@@ -47,10 +47,12 @@ if (isset( $options['meta-keywords'] ) ) { ?>
 	<div class="section header">
 		<div class="row">
 			<div class="branding">
-                            <?php if ( is_home() ) { ?>
+                            <?php if ( ! is_home() ) { ?>
                             <a href="<?php echo home_url( '/' ); ?>" title="Link zur Startseite" rel="home" class="logo">
-                            <?php } ?>    
-                                    <img src="<?php echo get_bloginfo('template_url'); ?>/assets/logo.png" alt="Logo <?php bloginfo( 'name' ); ?>">
+                            <?php }                                 
+                               function piratenkleider_header_style() {} 
+                            ?>                                                             
+                                <img src="<?php header_image(); ?>" alt="Logo <?php bloginfo( 'name' ); ?>">
                             <?php if ( is_home() ) { ?> </a>  <?php } ?> 
                             <h1 class="visuallyhidden"><?php bloginfo( 'name' ); ?></h1>
                             <p class="visuallyhidden"><?php bloginfo( 'description' ); ?></p>
