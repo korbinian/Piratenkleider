@@ -6,11 +6,20 @@
 <!--[if (gt IE 9)|!(IE)]><!--> <html <?php language_attributes(); ?>> <!--<![endif]-->
 
 <head>
+<?php                    
+  $options = get_option( 'piratenkleider_theme_options' );
+?>  
 <meta charset="<?php bloginfo( 'charset' ); ?>">
 <title><?php wp_title( '|', true, 'right' ); ?></title>
-<meta name="description" content="Stärkung der Bürgerrechte, mehr Demokratie und Mitbestimmung, Reform des Urheber- und Patentrechts, Grundeinkommen, freier Wissensaustausch, informationelle Selbstbestimmung, mehr Transparenz und Informationsfreiheit, freie Bildung">
-<meta name="author" content="Korbinian Polk">
-
+<?php if (isset( $options['meta-description'] ) ) { ?>
+    <meta name="description" content="<?php echo $options['meta-description'] ?>">
+<?php }
+if (isset( $options['meta-author'] ) ) { ?>
+    <meta name="author" content="<?php echo $options['meta-author'] ?>">
+<?php }
+if (isset( $options['meta-keywords'] ) ) { ?>
+    <meta name="keywords" content="<?php echo $options['meta-keywords'] ?>">
+<?php } ?>
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 <meta name="viewport" content="width=device-width">
 <meta http-equiv="cleartype" content="on">
@@ -25,10 +34,7 @@
 		wp_enqueue_script( 'comment-reply' );
 	wp_head(); ?>
 </head>
-<?php 
-                    
-  $options = get_option( 'piratenkleider_theme_options' );
-?>                        
+                      
 <body <?php body_class(); ?>>
 
 	<ul role="navigation" class="nav skiplinks">
