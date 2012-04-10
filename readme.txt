@@ -92,9 +92,12 @@ THEME-OPTIONS "Piratenkleider pimpen"
          Bildanzeige)
     - Metatag-Angaben ändern
     - Default Werbe-Sticker optional schaltbar
+    - Logo ändern
+       (allerdings derzeit festgelegt auf Logos der Größe 300x130 Pixel mit
+        Hintergrund in RGB #eeeeee . Ab Wordpress 3.4 kann eine neue Theme-
+        Version dies flexibler machen)
 
   Geplante weitere Optionen:
-    - Logo ändern (für eigenes Logo aus Bezirks/Land/etc )
     - Welle+Schiff aendern (vgl. piraten-bonn.de) 
     - Social Media Buttons einzelnt steuern und URLs ändern
     - Twitteradresse ändern
