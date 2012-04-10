@@ -51,7 +51,12 @@ function theme_options_do_page() {
                         ?>
 			<table class="form-table">
 
-
+                                <tr valign="top"><th scope="row"><?php _e( 'Werbesticker', 'piratenkleider' ); ?></th>
+					<td>
+						<input id="piratenkleider_theme_options[defaultwerbesticker]" name="piratenkleider_theme_options[defaultwerbesticker]" type="checkbox" value="1" <?php checked( '1', $options['defaultwerbesticker'] ); ?> />
+						<label  for="piratenkleider_theme_options[defaultwerbesticker]"><?php _e( 'Sticker "Werde Pirat" und "Hilf uns mit einer Spende" anzeigen. (Wahl wird überschrieben durch optionale Widget Sticker)', 'piratenkleider' ); ?></label>
+					</td>
+				</tr>
 				<tr valign="top"><th scope="row"><?php _e( 'Eingabemaske für den Piraten-Newsletter', 'piratenkleider' ); ?></th>
 					<td>
 						<input id="piratenkleider_theme_options[newsletter]" name="piratenkleider_theme_options[newsletter]" type="checkbox" value="1" <?php checked( '1', $options['newsletter'] ); ?> />
@@ -68,7 +73,7 @@ function theme_options_do_page() {
                                     <th scope="row"><?php _e( 'Slider', 'piratenkleider' ); ?></th>
                                     <td>
                                         <table>
-                                            <tr valign="top"><th scope="row"><?php _e( 'Maximale Anzahl der Artikel im Slider', 'piratenkleider' ); ?></th>
+                                            <tr valign="top"><th scope="row"><?php _e( 'Maximale Anzahl der Artikel', 'piratenkleider' ); ?></th>
                                             <td>
                                                     <select name="piratenkleider_theme_options[slider-numberarticle]">
                                                         <?php
@@ -83,20 +88,47 @@ function theme_options_do_page() {
                                                     <label class="description" for="piratenkleider_theme_options[slider-numberarticle]"><?php _e( 'Wieviele Slides sollen maximal gezeigt werden', 'piratenkleider' ); ?></label>
                                             </td>
                                             </tr>
-                                            <tr valign="top"><th scope="row"><?php _e( 'Slider Bildwechsel', 'piratenkleider' ); ?></th>
+                                            <tr valign="top"><th scope="row"><?php _e( 'Animationstyp', 'piratenkleider' ); ?></th>
+                                            <td>
+                                                    <select name="piratenkleider_theme_options[slider-animationType]">
+                                                        <?php
+                                                                    $selected = $options['slider-animationType'];
+                                                        ?>            
+                                                        <option style="padding-right: 10px;" value="fade" <?php if ($selected == 'fade') { echo 'selected="selected"'; }?>>fade</option>
+                                                        <option style="padding-right: 10px;" value="slide" <?php if ($selected == 'slide') { echo 'selected="selected"'; }?>>slide</option>
+                                                       						
+                                                    </select>
+                                                    <label class="description" for="piratenkleider_theme_options[slider-animationType]"><?php _e( 'Wie soll der Slidewechsel optisch aussehen', 'piratenkleider' ); ?></label>
+                                            </td>
+                                            </tr>
+                                            <tr valign="top"><th scope="row"><?php _e( 'Richtung', 'piratenkleider' ); ?></th>
+                                            <td>
+                                                    <select name="piratenkleider_theme_options[slider-Direction]">
+                                                        <?php
+                                                                    $selected = $options['slider-Direction'];
+                                                        ?>            
+                                                        <option style="padding-right: 10px;" value="horizontal" <?php if ($selected == 'horizontal') { echo 'selected="selected"'; }?>>horizontal</option>
+                                                        <option style="padding-right: 10px;" value="vertical" <?php if ($selected == 'vertical') { echo 'selected="selected"'; }?>>vertical</option>
+                                                       						
+                                                    </select>
+                                                    <label class="description" for="piratenkleider_theme_options[slider-Direction]"><?php _e( 'Von wo sollen Bilder erscheinen', 'piratenkleider' ); ?></label>
+                                            </td>
+                                            </tr>                                            
+                                            <tr valign="top"><th scope="row"><?php _e( 'Dauer Bildwechsel', 'piratenkleider' ); ?></th>
                                                   <td>
                                                             <input style="width: 5em;"  id="piratenkleider_theme_options[slider-slideshowSpeed]" class="regular-text" type="text" length="5" name="piratenkleider_theme_options[slider-slideshowSpeed]" value="<?php esc_attr_e( $options['slider-slideshowSpeed'] ); ?>" />
                                                             <label class="description" for="piratenkleider_theme_options[slider-slideshowSpeed]"><?php _e( 'Geschwindigkeit des Bildwechsels in Milisekunden', 'piratenkleider' ); ?></label>
                                                     </td>
 
                                             </tr>
-                                            <tr valign="top"><th scope="row"><?php _e( 'Slider Animationsdauer', 'piratenkleider' ); ?></th>
+                                            <tr valign="top"><th scope="row"><?php _e( 'Animationsdauer', 'piratenkleider' ); ?></th>
                                                   <td>
                                                             <input style="width: 5em;" id="piratenkleider_theme_options[slider-animationDuration]" class="regular-text" type="text" length="5" name="piratenkleider_theme_options[slider-animationDuration]" value="<?php esc_attr_e( $options['slider-animationDuration'] ); ?>" />
                                                             <label class="description" for="piratenkleider_theme_options[slider-animationDuration]"><?php _e( 'Geschwindigkeit der Animation/Fading beim Bildübergang in Milisekunden', 'piratenkleider' ); ?></label>
                                                     </td>					
                                             </tr>
-                                                                                        
+                                            
+                                                         
                                         </table>                                                                                
                                     </td>                                    
                                 </tr>    
@@ -144,9 +176,12 @@ function theme_options_validate( $input ) {
 	global $select_options, $radio_options;
 
 	// Our checkbox value is either 0 or 1
+	if ( ! isset( $input['defaultwerbesticker'] ) )
+		$input['defaultwerbesticker'] = null;
+	$input['defaultwerbesticker'] = ( $input['defaultwerbesticker'] == 1 ? 1 : 0 );        
 	if ( ! isset( $input['newsletter'] ) )
 		$input['newsletter'] = null;
-	$input['newsletter'] = ( $input['alle-socialmediabuttons'] == 1 ? 1 : 0 );
+	$input['newsletter'] = ( $input['newsletter'] == 1 ? 1 : 0 );
 	if ( ! isset( $input['alle-socialmediabuttons'] ) )
 		$input['alle-socialmediabuttons'] = null;
 	$input['alle-socialmediabuttons'] = ( $input['alle-socialmediabuttons'] == 1 ? 1 : 0 );
@@ -159,6 +194,9 @@ function theme_options_validate( $input ) {
          $input['slider-animationDuration'] = wp_filter_nohtml_kses( $input['slider-animationDuration'] );
         if ( ! isset( $input['slider-animationDuration'] ) )
 		$input['slider-animationDuration'] = 600;       
+        $input['slider-Direction'] = wp_filter_nohtml_kses( $input['slider-Direction'] );
+        $input['slider-animationType'] = wp_filter_nohtml_kses( $input['slider-animationType'] );   
+        
         $input['meta-keywords'] = wp_filter_nohtml_kses( $input['meta-keywords'] );
         $input['meta-author'] = wp_filter_nohtml_kses( $input['meta-author'] );
         $input['meta-description'] = wp_filter_nohtml_kses( $input['meta-description'] );
