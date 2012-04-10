@@ -31,6 +31,27 @@ function twentyten_setup() {
         // Add default posts and comments RSS feed links to head
         add_theme_support( 'automatic-feed-links' );
 
+        
+        /* 
+         * Header-Kontrolle, bis WP 3.3
+         * IN ARBEIT: LOGO AUSTAUSCHEN
+        add_custom_image_header();
+        define('HEADER_TEXTCOLOR', '');
+        define('HEADER_IMAGE', '%s/images/logo.png'); // %s is the template dir uri
+
+define( 'HEADER_IMAGE_WIDTH', apply_filters( 'twentyten_header_image_width', 279 ) ); // choose any number you like here
+define( 'HEADER_IMAGE_HEIGHT', apply_filters( 'twentyten_header_image_height', 88 ) ); // choose any number you like here         
+        define('NO_HEADER_TEXT', true );
+               * Folgendes erst ab WP 3.4:
+            $args = array(
+            'width'         => 279,
+            'height'        => 88,
+            'default-image' => get_template_directory_uri() . '/images/logo.png',
+            'uploads'       => true,
+            );
+            add_theme_support( 'custom-header', $args );
+        */
+        
         // Make theme available for translation
         // Translations can be filed in the /languages/ directory
         load_theme_textdomain( 'twentyten', TEMPLATEPATH . '/languages' );

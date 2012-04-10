@@ -90,9 +90,12 @@ THEME-OPTIONS "Piratenkleider pimpen"
     - Slider steuern
         (max. Zahl der Slider-Artikel festlegen, Dauer für Bildwechsel und Dauer der
          Bildanzeige)
- 
+    - Metatag-Angaben ändern
+    - Default Werbe-Sticker optional schaltbar
+
   Geplante weitere Optionen:
     - Logo ändern (für eigenes Logo aus Bezirks/Land/etc )
+    - Welle+Schiff aendern (vgl. piraten-bonn.de) 
     - Social Media Buttons einzelnt steuern und URLs ändern
     - Twitteradresse ändern
     - Default-Bilder für Artikel, Posts und Slider festlegen
