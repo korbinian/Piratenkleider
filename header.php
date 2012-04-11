@@ -53,7 +53,7 @@ if (isset( $options['meta-keywords'] ) ) { ?>
                                function piratenkleider_header_style() {} 
                             ?>                                                             
                                 <img src="<?php header_image(); ?>" alt="Logo <?php bloginfo( 'name' ); ?>">
-                            <?php if ( is_home() ) { ?> </a>  <?php } ?> 
+                            <?php if ( ! is_home() ) { ?> </a>  <?php } ?> 
                             <h1 class="visuallyhidden"><?php bloginfo( 'name' ); ?></h1>
                             <p class="visuallyhidden"><?php bloginfo( 'description' ); ?></p>
 			</div>
@@ -72,12 +72,15 @@ if (isset( $options['meta-keywords'] ) ) { ?>
                                     if ( $options['alle-socialmediabuttons'] == "1" ){
                                  ?> 
 				<ul class="socialmedia">
-					<li class="facebook"><a href="http://www.facebook.com/PiratenparteiDeutschland">Facebook</a></li>
-					<li class="twitter"><a href="https://twitter.com/#!/piratenpartei">Twitter</a></li>
-					<li class="youtube"><a href="http://www.youtube.com/user/piratenpartei">Youtube</a></li>
-					<li class="gplus"><a href="http://www.youtube.com/user/piratenpartei">G+</a></li>
-					<li class="diaspora"><a href="https://joindiaspora.com/u/piratenpartei">Diaspora</a></li>
-					<li class="identica"><a href="http://identi.ca/piratenpartei">identi.ca</a></li>
+					<?php if ( $options['social_facebook'] != "" ){ ?><li class="facebook"><a href="<?php echo$options['social_facebook']; ?>" target="_blank">Facebook</a></li><?php } ?>
+					<?php if ( $options['social_twitter'] != "" ){ ?><li class="twitter"><a href="<?php echo$options['social_twitter']; ?>" target="_blank">Twitter</a></li><?php } ?>
+					<?php if ( $options['social_youtube'] != "" ){ ?><li class="youtube"><a href="<?php echo$options['social_youtube']; ?>" target="_blank">Youtube</a></li><?php } ?>
+					<?php if ( $options['social_gplus'] != "" ){ ?><li class="gplus"><a href="<?php echo$options['social_gplus']; ?>" target="_blank">G+</a></li><?php } ?>
+					<?php if ( $options['social_diaspora'] != "" ){ ?><li class="diaspora"><a href="<?php echo$options['social_diaspora']; ?>" target="_blank">Diaspora</a></li><?php } ?>
+					<?php if ( $options['social_identica'] != "" ){ ?><li class="identica"><a href="<?php echo$options['social_identica']; ?>" target="_blank">identi.ca</a></li><?php } ?>
+					
+					
+					
 				</ul>
                                  <?php }?>
 			</div>

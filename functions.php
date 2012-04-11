@@ -5,7 +5,7 @@
  * @origin author: IT-Website-Crew, http://wiki.piratenpartei.de/Website-Team
  * @source http://github.com/xwolfde/Piratenkleider
  * @modified-by xwolf
- * @version 1.1
+ * @version 2.1
  */
 
 
@@ -356,9 +356,12 @@ function twentyten_widgets_init() {
 
         // Area 5, located in the sidebar.
         register_sidebar( array(
-                'name' => __( 'Sidebar Widget Area', 'twentyten' ),
+                'name' => __( 'Sidebar (Rechte Spalte)', 'twentyten' ),
                 'id' => 'sidebar-widget-area',
-                'description' => __( 'The sidebar widget area', 'twentyten' ),
+                'description' => __( 'Dieser Bereich befindet sich rechts vom Inhaltsbereich. 
+                    Er ist geeignet für Werbeplakate, Hinweise und ähnliches.
+                    Wenn leer, werden als Alternative einige der allgemeinen Standardplakate 
+                    gezeigt.', 'twentyten' ),
                 'before_widget' => '<div class="widget">',
                 'after_widget' => '</div>',
                 'before_title' => '<h3 class="widget-title">',

@@ -1,11 +1,13 @@
-<?php get_header(); ?>
-
+<?php get_header();    
+  $options = get_option( 'piratenkleider_theme_options' );  
+  if ( $options['slider-aktiv'] == "1" ){
+?>  
 <div class="section teaser">
   <div class="row">
   <?php get_sidebar( 'teaser' ); ?>
   </div>
 </div>
-
+<?php } ?>
 <div class="section content" id="main-content">
   <div class="row">
     <div class="content-primary">

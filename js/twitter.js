@@ -4,8 +4,8 @@
 
 
 
-var twitter_name = "piratenpartei";
-var twitter_count = 3;
+
+
 var callback_name = "tweet_callback";
 var twitter_search = "http://twitter.com/statuses/user_timeline";
 var return_type = "json";

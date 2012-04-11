@@ -8,6 +8,7 @@ add_action( 'admin_menu', 'theme_options_add_page' );
  */
 function theme_options_init(){
 	register_setting( 'piratenkleider_options', 'piratenkleider_theme_options', 'theme_options_validate' );
+        register_setting( 'piratenkleider_defaultbilder', 'piratenkleider_theme_defaultbilder', 'theme_defaultbilder_validate' );
 }
 
 /**
@@ -15,13 +16,50 @@ function theme_options_init(){
  */
 function theme_options_add_page() {
 	add_theme_page( __( 'Piratenkleider pimpen', 'piratenkleider' ), __( 'Piratenkleider pimpen', 'piratenkleider' ), 'edit_theme_options', 'theme_options', 'theme_options_do_page' );
+        add_theme_page( __( 'Defaultbilder', 'piratenkleider' ), __( 'Defaultbilder', 'piratenkleider' ), 'edit_theme_defaultbilder', 'theme_defaultbilder', 'theme_defaultbilder_do_page' );
 }
+
+
+/**
+ * Create arrays for our select and radio options
+ */
+$defaultbilder_liste = array(
+	'0' => array(
+		'src' =>	get_bloginfo('template_url').'/images/defaultbild-grundgesetz.jpg',
+		'label' => __( 'Plakat Grundgesetz', 'piratenkleider' )
+	),
+	'1' => array(
+		'src' =>	get_bloginfo('template_url').'/images/defaultbild-medien.jpg',
+		'label' => __( 'Medien', 'piratenkleider' )
+	),
+	'2' => array(
+		'src' =>	get_bloginfo('template_url').'/images/defaultbild-mitmachen.jpg',
+		'label' => __( 'Mitmachen', 'piratenkleider' )
+	),
+        '3' => array(
+		'src' =>	get_bloginfo('template_url').'/images/defaultbild-piraten.jpg',
+		'label' => __( 'Piraten', 'piratenkleider' )
+	),
+        '4' => array(
+		'src' =>	get_bloginfo('template_url').'/images/defaultbild-plakate.jpg',
+		'label' => __( 'Plakate', 'piratenkleider' )
+	),
+        '5' => array(
+		'src' =>	get_bloginfo('template_url').'/images/defaultbild-presse.jpg',
+		'label' => __( 'Presse', 'piratenkleider' )
+	),
+        '6' => array(
+		'src' =>	get_bloginfo('template_url').'/images/defaultbild-protest.jpg',
+		'label' => __( 'Protest', 'piratenkleider' )
+	),
+);
+
 
 /**
  * Create the options page
  */
 function theme_options_do_page() {
-	global $select_options, $radio_options;
+	
 
 	if ( ! isset( $_REQUEST['settings-updated'] ) )
 		$_REQUEST['settings-updated'] = false;
@@ -86,16 +124,158 @@ function theme_options_do_page() {
 						<label  for="piratenkleider_theme_options[newsletter]"><?php _e( 'Eingabemaske anzeigen', 'piratenkleider' ); ?></label>
 					</td>
 				</tr>
-                                <tr valign="top"><th scope="row"><?php _e( 'Social Media Buttons', 'piratenkleider' ); ?></th>
-					<td>
+                              
+				
+				
+				 <tr valign="top">
+                                    <th scope="row"><?php _e( 'Social Media', 'piratenkleider' ); ?></th>
+                                    <td>
+                                        <table>
+                                            <tr valign="top"><th scope="row"><?php _e( 'Social Media Buttons', 'piratenkleider' ); ?></th>
+                                        	<td>
 						<input id="piratenkleider_theme_options[alle-socialmediabuttons]" name="piratenkleider_theme_options[alle-socialmediabuttons]" type="checkbox" value="1" <?php checked( '1', $options['alle-socialmediabuttons'] ); ?> />
-						<label for="piratenkleider_theme_options[alle-socialmediabuttons]"><?php _e( 'Alle Buttons anzeigen', 'piratenkleider' ); ?></label>
-					</td>
-				</tr>
+						<label for="piratenkleider_theme_options[alle-socialmediabuttons]">
+                                                    Buttons anzeigen. <br>Hinweis: Es werden nur die Buttons gezeigt, bei denen in den folgenden Eingabefeldern Adressen
+                                                    definiert sind.
+                                                </label>
+                                                </td>
+                                            </tr>  
+                                            
+                                            
+                                          <tr valign="top"><th scope="row">Facebook</th>
+                                          <td>
+						<input id="piratenkleider_theme_options[social_facebook]" class="regular-text" type="text" length="5" name="piratenkleider_theme_options[social_facebook]" value="<?php esc_attr_e( $options['social_facebook'] ); ?>" />
+						<label class="description" for="piratenkleider_theme_options[social_facebook]">
+                                                <?php _e( 'URL inkl. http:// zur Facebook Seite', 'piratenkleider' ); ?>
+                                                    <br>Zum Beispiel: <code>http://www.facebook.com/PiratenparteiDeutschland</code>
+                                                </label>
+                                                
+					</td>					
+                                        </tr>
+                                        
+                                        
+                                        <tr valign="top"><th scope="row">Twitter</th>
+                                          <td>
+						<input id="piratenkleider_theme_options[social_twitter]" class="regular-text" type="text" length="5" name="piratenkleider_theme_options[social_twitter]" value="<?php esc_attr_e( $options['social_twitter'] ); ?>" />
+						<label class="description" for="piratenkleider_theme_options[social_twitter]">
+                                                <?php _e( 'URL inkl. http:// zur Twitter Seite', 'piratenkleider' ); ?>
+                                                    <br>Zum Beispiel: <code>https://twitter.com/#!/piratenpartei</code>
+                                                </label>
+					</td>					
+                                        </tr>
+                                        
+                                        <tr valign="top"><th scope="row">YouTube</th>
+                                          <td>
+						<input id="piratenkleider_theme_options[social_youtube]" class="regular-text" type="text" length="5" name="piratenkleider_theme_options[social_youtube]" value="<?php esc_attr_e( $options['social_youtube'] ); ?>" />
+						<label class="description" for="piratenkleider_theme_options[social_youtube]">
+                                                <?php _e( 'URL inkl. http:// zur YouTube Seite', 'piratenkleider' ); ?>
+                                                    <br>Zum Beispiel: <code>http://www.youtube.com/user/piratenpartei</code>
+                                                </label>
+					</td>					
+                                        </tr>
+                                      
+                                        <tr valign="top"><th scope="row">G+</th>
+                                          <td>
+						<input id="piratenkleider_theme_options[social_gplus]" class="regular-text" type="text" length="5" name="piratenkleider_theme_options[social_gplus]" value="<?php esc_attr_e( $options['social_gplus'] ); ?>" />
+						<label class="description" for="piratenkleider_theme_options[social_gplus]">
+                                                <?php _e( 'URL inkl. http:// zur G+ Seite', 'piratenkleider' ); ?>
+                                                <br>Zum Beispiel: <code>https://plus.google.com/u/0/107862983960150496076/posts</code>
+                                                </label>
+					</td>					
+                                        </tr>
+                                        
+                                         <tr valign="top"><th scope="row">Diaspora</th>
+                                          <td>
+						<input id="piratenkleider_theme_options[social_diaspora]" class="regular-text" type="text" length="5" name="piratenkleider_theme_options[social_diaspora]" value="<?php esc_attr_e( $options['social_diaspora'] ); ?>" />
+						<label class="description" for="piratenkleider_theme_options[social_diaspora]">
+                                                <?php _e( 'URL inkl. http:// zur Diaspora Seite', 'piratenkleider' ); ?>
+                                                    <br>Zum Beispiel: <code>https://joindiaspora.com/u/piratenpartei</code>
+                                                </label>
+                                            </td>					
+                                            </tr>
+
+                                            <tr valign="top"><th scope="row">Identica</th>
+                                            <td>
+                                            <input id="piratenkleider_theme_options[social_identica]" class="regular-text" type="text" length="5" name="piratenkleider_theme_options[social_identica]" value="<?php esc_attr_e( $options['social_identica'] ); ?>" />
+                                            <label class="description" for="piratenkleider_theme_options[social_identica]">
+                                            <?php _e( 'URL inkl. http:// zur Identica Seite' ); ?>
+                                                <br>Zum Beispiel:  <code>http://identi.ca/piratenpartei</code>   
+                                            </label>
+                                            </td>					
+                                             </tr>
+                                        </table>                                                                                
+                                    </td>                                    
+                                </tr>                                   
+                                <tr valign="top">
+                                    <th scope="row"><?php _e( 'Twitter Feed', 'piratenkleider' ); ?></th>
+                                    <td>
+                                        <table>
+			
+                                        
+                                         <tr valign="top"><th scope="row">Twitter Benutzername</th>
+                                          <td>
+						<input id="piratenkleider_theme_options[feed_twitter]" class="regular-text" type="text" length="5" name="piratenkleider_theme_options[feed_twitter]" value="<?php esc_attr_e( $options['feed_twitter'] ); ?>" />
+						<label class="description" for="piratenkleider_theme_options[feed_twitter]"><?php _e( 'Der reine Twitter Benutzername', 'piratenkleider' ); ?></label>
+					</td>					
+                                        </tr>
+                                         <tr valign="top"><th scope="row"><?php _e( 'Maximale Anzahl der Twittermeldungen', 'piratenkleider' ); ?></th>
+                                            <td>
+                                                    <select name="piratenkleider_theme_options[feed_twitter_numberarticle]">
+                                                        <?php
+                                                                    $selected = $options['feed_twitter_numberarticle'];
+                                                        ?>            
+                                                        <option style="padding-right: 10px;" value="2" <?php if ($selected ==2) { echo 'selected="selected"'; }?>>2</option>
+                                                        <option style="padding-right: 10px;" value="3" <?php if ($selected ==3) { echo 'selected="selected"'; }?>>3</option>
+                                                        <option style="padding-right: 10px;" value="4" <?php if ($selected ==4) { echo 'selected="selected"'; }?>>4</option>
+                                                        <option style="padding-right: 10px;" value="5" <?php if ($selected ==5) { echo 'selected="selected"'; }?>>5</option>
+                                                        <option style="padding-right: 10px;" value="6" <?php if ($selected ==6) { echo 'selected="selected"'; }?>>6</option>							
+                                                    </select>
+                                                    <label class="description" for="piratenkleider_theme_options[feed_twitter_numberarticle]"><?php _e( 'Wieviele Twittermeldungen sollen maximal gezeigt werden', 'piratenkleider' ); ?></label>
+                                            </td>
+                                            </tr>             
+
+                                         </table>                                                                                
+                                    </td>                                    
+                                </tr>                            
+				
                                 <tr valign="top">
                                     <th scope="row"><?php _e( 'Slider', 'piratenkleider' ); ?></th>
                                     <td>
                                         <table>
+                                             <tr valign="top"><th scope="row"><?php _e( 'Slider aktivieren', 'piratenkleider' ); ?></th>
+                                        	<td>
+                                            	<input id="piratenkleider_theme_options[slider-aktiv]" name="piratenkleider_theme_options[slider-aktiv]" type="checkbox" value="1" <?php checked( '1', $options['slider-aktiv'] ); ?> />
+						<label for="piratenkleider_theme_options[slider-aktiv]">Slider insgesamt aktivieren. <br>Achtung: Bei Deaktivierung entfällt auch der Widget-Bereich Startseite: "Rechter Aktionlinkbereich"</label>
+                                                </td>
+                                            </tr>
+                                             <tr valign="top"><th scope="row"><?php _e( 'Kategorie', 'piratenkleider' ); ?></th>
+                                            <td>
+                                                    <select name="piratenkleider_theme_options[slider-catname]">
+                                                        <?php
+                                                         $selected = $options['slider-catname'];      
+                                                         if (!isset($selected) ) $selected ="Slider";  
+                                                        $args=array(
+                                                        'orderby' => 'name',
+                                                        'order' => 'ASC'
+                                                        );
+                                                        
+                                                        $categories=get_categories($args);
+                                                        foreach($categories as $category) {
+                                                            echo '<option value="'.$category->name.'"';
+                                                            if ($category->name == $selected) {
+                                                                 echo ' selected="selected"'; 
+                                                            }
+                                                            echo '>'.$category->name.' ('.$category->count.' Einträge)</option>';
+                                                        } 
+                                                        ?>
+                                                    </select>
+                                                    <label class="description" for="piratenkleider_theme_options[slider-catname]"><?php _e( 'Aus welcher Artikelkategorie sollen die Slider genommen werden', 'piratenkleider' ); ?></label>
+                                            </td>
+                                            </tr>
+                                            
+                                            
+                                            
+                                
                                             <tr valign="top"><th scope="row"><?php _e( 'Maximale Anzahl der Artikel', 'piratenkleider' ); ?></th>
                                             <td>
                                                     <select name="piratenkleider_theme_options[slider-numberarticle]">
@@ -158,8 +338,8 @@ function theme_options_do_page() {
                                 <tr valign="top">
                                     <th scope="row"><?php _e( 'Meta-Angaben', 'piratenkleider' ); ?></th>
                                     <td>
-                                        <table>
-                                
+
+                                        <table>                                
                                          <tr valign="top"><th scope="row"><?php _e( 'Author', 'piratenkleider' ); ?></th>
                                               <td>
                                                         <input id="piratenkleider_theme_options[meta-author]" class="regular-text" type="text" length="5" name="piratenkleider_theme_options[meta-author]" value="<?php esc_attr_e( $options['meta-author'] ); ?>" />
@@ -178,7 +358,13 @@ function theme_options_do_page() {
 						<label class="description" for="piratenkleider_theme_options[meta-keywords]"><?php _e( 'Optionale Schlüsselworte in dem Meta-Tag jeder Seite (für alle gleich). Durch Komma getrennt. Schlüsselworte sollten tatsächlich vorkommen.', 'piratenkleider' ); ?></label>
 					</td>					
                                         </tr>
-                                       </table>                                                                                
+                                       </table>  
+                                        <p>
+                                            Hinweis: Diese Angaben wirken auf alle Seiten und Artikel der Site. Dies
+                                            ist jedoch nicht immer sinnvoll (insbes. bei Keywords und Description). 
+                                            Sollten zudem SEO-Plugins, wie bspw. wpSEO o.a. im Einsatz sein,
+                                            sollten diese Angaben ebenfalls unausgefüllt bleiben.                                                                                                                                    
+                                        </p>
                                     </td>                                    
                                 </tr>    
                                 
@@ -198,7 +384,7 @@ function theme_options_do_page() {
  * Sanitize and validate input. Accepts an array, return a sanitized array.
  */
 function theme_options_validate( $input ) {
-	global $select_options, $radio_options;
+	
 
 	// Our checkbox value is either 0 or 1
 	if ( ! isset( $input['defaultwerbesticker'] ) )
@@ -210,25 +396,212 @@ function theme_options_validate( $input ) {
 	if ( ! isset( $input['alle-socialmediabuttons'] ) )
 		$input['alle-socialmediabuttons'] = null;
 	$input['alle-socialmediabuttons'] = ( $input['alle-socialmediabuttons'] == 1 ? 1 : 0 );
+        
+        if ( ! isset( $input['slider-aktiv'] ) )
+		$input['slider-aktiv'] = null;
+	$input['slider-aktiv'] = ( $input['slider-aktiv'] == 1 ? 1 : 0 );        
+        
+        
         if ( ! isset( $input['slider-numberarticle'] ) )
 		$input['slider-numberarticle'] = 3;
-	
+		
+	if ( ! isset( $input['feed_twitter_numberarticle'] ) )
+		$input['feed_twitter_numberarticle'] = 3;
+		
         $input['slider-slideshowSpeed'] = wp_filter_nohtml_kses( $input['slider-slideshowSpeed'] );
         if ( ! isset( $input['slider-slideshowSpeed'] ) )
 		$input['slider-slideshowSpeed'] = 8000;
          $input['slider-animationDuration'] = wp_filter_nohtml_kses( $input['slider-animationDuration'] );
         if ( ! isset( $input['slider-animationDuration'] ) )
 		$input['slider-animationDuration'] = 600;       
+        $input['slider-catname'] = wp_filter_nohtml_kses( $input['slider-catname'] );
         $input['slider-Direction'] = wp_filter_nohtml_kses( $input['slider-Direction'] );
         $input['slider-animationType'] = wp_filter_nohtml_kses( $input['slider-animationType'] );   
         
         $input['meta-keywords'] = wp_filter_nohtml_kses( $input['meta-keywords'] );
         $input['meta-author'] = wp_filter_nohtml_kses( $input['meta-author'] );
         $input['meta-description'] = wp_filter_nohtml_kses( $input['meta-description'] );
-        
+        $input['social_facebook'] = wp_filter_nohtml_kses( $input['social_facebook'] );
+        $input['social_twitter'] = wp_filter_nohtml_kses( $input['social_twitter'] );
+        $input['social_youtube'] = wp_filter_nohtml_kses( $input['social_youtube'] );
+        $input['social_gplus'] = wp_filter_nohtml_kses( $input['social_gplus'] );
+        $input['social_diaspora'] = wp_filter_nohtml_kses( $input['social_diaspora'] );
+        $input['social_identica'] = wp_filter_nohtml_kses( $input['social_identica'] );            
+        $input['feed_twitter'] = wp_filter_nohtml_kses( $input['feed_twitter'] );
 	
 
 	return $input;
 }
 
+
+/**
+ * Create the options page
+ */
+function theme_defaultbilder_do_page() {
+	global $defaultbilder_liste;
+
+	if ( ! isset( $_REQUEST['settings-updated'] ) )
+		$_REQUEST['settings-updated'] = false;
+
+	?>
+        <style>
+                label.description {
+                    display: block;
+                }
+                div.wrap {
+                    max-width: 1200px;
+                    margin: 20px 0 0 0;
+                    background-image: url(<?php echo get_bloginfo('template_url')?>/images/logo.png);
+                    background-position: top right;
+                    background-repeat: no-repeat;
+                    padding: 0;
+                }
+                div.piratenkleider-optionen {
+                    max-width: 1200px;
+                    margin: 0;
+                    padding-bottom: 0px;
+                    background-image: url(<?php echo get_bloginfo('template_url')?>/images/schiff-welle.gif);
+                    background-position: bottom left;
+                    background-repeat: no-repeat;
+                }
+                p.submit {
+                    margin-top: 100px;
+                    padding-left: 20px;
+                }
+                .wrap div.updated {
+                    margin-right: 300px;                    
+                }
+                label.tile {
+                    width: 320px;
+                    height: 150px;
+                    float: left;
+                    border: 1px solid #ccc;                    
+                    padding: 1px;
+                    margin: 5px;
+                }
+                label.tile:hover {
+                    background-color: #eee;
+                }
+            </style>
+	<div class="wrap">
+            
+            <div class="piratenkleider-optionen">  <!-- begin: .piratenkleider-optionen -->    
+		<?php screen_icon(); echo "<h2>" . get_current_theme() . __( ' Defaultbilder festlegen ', 'piratenkleider' ) . "</h2>"; ?>
+
+		<?php if ( false !== $_REQUEST['settings-updated'] ) : ?>
+		<div class="updated fade"><p><strong><?php _e( 'Defaultbilder wurden gespeichert.', 'piratenkleider' ); ?></strong></p></div>
+		<?php endif; ?>
+
+		<form method="post" action="options.php">
+                    <?php settings_fields( 'piratenkleider_defaultbilder' ); ?>
+                    <?php $options = get_option( 'piratenkleider_theme_defaultbilder' ); 
+                        $defaultbildsrc = $options['slider-defaultbildsrc']; 
+                        $defaultseitenbildsrc = $options['seiten-defaultbildsrc']; 
+                    ?>
+                    <table class="form-table">
+                     <tr valign="top">
+                        <th scope="row"><?php _e( 'Defaultbilder für Slider', 'piratenkleider' ); ?></th>
+                        <td>
+
+                            <?php 
+                                if ( ! isset( $checked ) ) $checked = '';
+                                foreach ( $defaultbilder_liste as $option ) {
+
+
+                                        if ( '' != $defaultbildsrc ) {
+                                                if ( $defaultbildsrc == $option['src'] ) {
+                                                        $checked = "checked=\"checked\"";
+                                                } else {
+                                                        $checked = '';
+                                                }
+                                        }
+                                        ?>
+                                        <label class="tile">
+                                            <input type="radio" name="piratenkleider_theme_defaultbilder[slider-defaultbildsrc]" value="<?php esc_attr_e( $option['src'] ); ?>" <?php echo $checked; ?> />                                                     
+                                            <?php echo $option['label']?>
+                                            <br> 
+                                            <img src="<?php echo $option['src'] ?>" style="width: 320px; height: auto;">
+
+                                        </label>
+                                <?php } ?>        
+                                <br style="clear: left;">     
+                                    Alternatives Sliderbild als URL: 
+                                 <input id="piratenkleider_theme_defaultbilder[slider-alternativesrc]" class="regular-text" type="text" name="piratenkleider_theme_defaultbilder[slider-alternativesrc]" value="<?php esc_attr_e( $options['slider-alternativesrc'] ); ?>" />
+                            <label class="description" for="piratenkleider_theme_defaultbilder[slider-alternativesrc]">
+                                URL inkl. http:// zum Bild. Dieses kann auch vorher über den Mediendialog hochgeladen worden sein.                        
+                                <br>
+                                Das Bild sollte nicht breiter als 640 Pixel sein und seine wesentlichen Merkmale auf einer
+                                Höhe von 240 Pixel zeigen. In der Darstellung der Seite wird ab 240 Pixel nach unten abgeschnitten.
+                            </label>
+                                 <br />
+                            </td>
+                        </tr>  
+                    
+                     <tr valign="top">
+                        <th scope="row"><?php _e( 'Defaultbilder für Seiten', 'piratenkleider' ); ?></th>
+                        <td>
+
+                            <?php 
+                                if ( ! isset( $checked ) ) $checked = '';
+                                foreach ( $defaultbilder_liste as $option ) {
+                                        if ( '' != $defaultseitenbildsrc ) {
+                                                if ( $defaultseitenbildsrc == $option['src'] ) {
+                                                        $checked = "checked=\"checked\"";
+                                                } else {
+                                                        $checked = '';
+                                                }
+                                        }
+                                        ?>
+                                        <label class="tile">
+                                            <input type="radio" name="piratenkleider_theme_defaultbilder[seiten-defaultbildsrc]" value="<?php esc_attr_e( $option['src'] ); ?>" <?php echo $checked; ?> />                                                     
+                                            <?php echo $option['label']?>
+                                            <br> 
+                                            <img src="<?php echo $option['src'] ?>" style="width: 320px; height: auto;">
+
+                                        </label>
+                                <?php } ?>        
+                                <br style="clear: left;">   
+                                Alternatives Seitenbild als URL:
+                                <input id="piratenkleider_theme_defaultbilder[seiten-alternativesrc]" class="regular-text" type="text" name="piratenkleider_theme_defaultbilder[seiten-alternativesrc]" value="<?php esc_attr_e( $options['seiten-alternativesrc'] ); ?>" />
+                               <label class="description" for="piratenkleider_theme_defaultbilder[seiten-alternativesrc]">
+                                URL inkl. http:// zum Bild. Dieses kann auch vorher über den Mediendialog hochgeladen worden sein.                               
+                                <br>
+                                Das Bild sollte nicht breiter als 640 Pixel sein und seine wesentlichen Merkmale auf einer
+                                Höhe von 150 Pixel zeigen. In der Darstellung der Seite wird ab 150 Pixel nach unten abgeschnitten.
+                                   
+                              </label>
+                                 <br />
+                            </td>
+                        </tr>                                     
+             </table>
+
+            <p class="submit">
+                    <input type="submit" class="button-primary" value="<?php _e( 'Optionen speichern', 'piratenkleider' ); ?>" />
+            </p>
+        </form>               
+	</div>
+            
+        </div> <!-- end: .piratenkleider-optionen -->      
+	<?php
+}
+
+/**
+ * Sanitize and validate input. Accepts an array, return a sanitized array.
+ */
+function theme_defaultbilder_validate( $input ) {
+	global $defaultbilder_liste;
+
+	
+        $input['slider-alternativesrc'] = wp_filter_nohtml_kses( $input['slider-alternativesrc'] );            
+        $input['slider-defaultbildsrc'] = wp_filter_nohtml_kses( $input['slider-defaultbildsrc'] );       
+        if ($input['slider-alternativesrc'] != '') {            
+            $input['slider-defaultbildsrc'] = $input['slider-alternativesrc'];
+        }
+        $input['seiten-alternativesrc'] = wp_filter_nohtml_kses( $input['seiten-alternativesrc'] );            
+        $input['seiten-defaultbildsrc'] = wp_filter_nohtml_kses( $input['seiten-defaultbildsrc'] );       
+        if ($input['seiten-alternativesrc'] != '') {            
+            $input['seiten-defaultbildsrc'] = $input['seiten-alternativesrc'];
+        }
+	return $input;
+}
 // adapted from http://planetozh.com/blog/2009/05/handling-plugins-options-in-wordpress-28-with-register_setting/

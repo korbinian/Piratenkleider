@@ -27,7 +27,7 @@
         <?php echo $custom_fields['right_column'][0]; 
 
          } ?>
-
+         <?php get_sidebar(); ?>
       </div>
     </div>
   </div>
