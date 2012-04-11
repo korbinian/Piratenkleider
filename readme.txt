@@ -119,7 +119,7 @@ THEME-OPTIONS "Piratenkleider pimpen"
 
   Geplante weitere Optionen:
     - Welle+Schiff aendern (vgl. piraten-bonn.de) 
-    - Default-Bilder für Artikel, Posts  festlegen
+
  
   
 
