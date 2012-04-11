@@ -6,6 +6,9 @@
         // query_posts('category_name=Slider&post_per_page=3');
          $options = get_option( 'piratenkleider_theme_options' );
          $catname = $options['slider-catname'];
+         $bilderoptions = get_option( 'piratenkleider_theme_defaultbilder' ); 
+         $defaultbildsrc = $bilderoptions['slider-defaultbildsrc'];                        
+          
          if (!isset($catname) ) $catname ="Slider";         
          $numberarticle = $options['slider-numberarticle'];
          if (!isset($numberarticle) )  $numberarticle =3;   
@@ -19,8 +22,7 @@
             if (has_post_thumbnail()) {
                 the_post_thumbnail('full');
             } else {
-                
-                
+                echo '<img src="'.$defaultbildsrc.'" width="640" height="240" alt="">';                
             }
             echo "<div class='caption'>";
             echo "<h3>Topthema</h3>";

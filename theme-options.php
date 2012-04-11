@@ -8,6 +8,7 @@ add_action( 'admin_menu', 'theme_options_add_page' );
  */
 function theme_options_init(){
 	register_setting( 'piratenkleider_options', 'piratenkleider_theme_options', 'theme_options_validate' );
+        register_setting( 'piratenkleider_defaultbilder', 'piratenkleider_theme_defaultbilder', 'theme_defaultbilder_validate' );
 }
 
 /**
@@ -15,13 +16,50 @@ function theme_options_init(){
  */
 function theme_options_add_page() {
 	add_theme_page( __( 'Piratenkleider pimpen', 'piratenkleider' ), __( 'Piratenkleider pimpen', 'piratenkleider' ), 'edit_theme_options', 'theme_options', 'theme_options_do_page' );
+        add_theme_page( __( 'Defaultbilder', 'piratenkleider' ), __( 'Defaultbilder', 'piratenkleider' ), 'edit_theme_defaultbilder', 'theme_defaultbilder', 'theme_defaultbilder_do_page' );
 }
+
+
+/**
+ * Create arrays for our select and radio options
+ */
+$defaultbilder_liste = array(
+	'0' => array(
+		'src' =>	get_bloginfo('template_url').'/images/defaultbild-grundgesetz.jpg',
+		'label' => __( 'Plakat Grundgesetz', 'piratenkleider' )
+	),
+	'1' => array(
+		'src' =>	get_bloginfo('template_url').'/images/defaultbild-medien.jpg',
+		'label' => __( 'Medien', 'piratenkleider' )
+	),
+	'2' => array(
+		'src' =>	get_bloginfo('template_url').'/images/defaultbild-mitmachen.jpg',
+		'label' => __( 'Mitmachen', 'piratenkleider' )
+	),
+        '3' => array(
+		'src' =>	get_bloginfo('template_url').'/images/defaultbild-piraten.jpg',
+		'label' => __( 'Piraten', 'piratenkleider' )
+	),
+        '4' => array(
+		'src' =>	get_bloginfo('template_url').'/images/defaultbild-plakate.jpg',
+		'label' => __( 'Plakate', 'piratenkleider' )
+	),
+        '5' => array(
+		'src' =>	get_bloginfo('template_url').'/images/defaultbild-presse.jpg',
+		'label' => __( 'Presse', 'piratenkleider' )
+	),
+        '6' => array(
+		'src' =>	get_bloginfo('template_url').'/images/defaultbild-protest.jpg',
+		'label' => __( 'Protest', 'piratenkleider' )
+	),
+);
+
 
 /**
  * Create the options page
  */
 function theme_options_do_page() {
-	global $select_options, $radio_options;
+	
 
 	if ( ! isset( $_REQUEST['settings-updated'] ) )
 		$_REQUEST['settings-updated'] = false;
@@ -214,7 +252,8 @@ function theme_options_do_page() {
                                             <td>
                                                     <select name="piratenkleider_theme_options[slider-catname]">
                                                         <?php
-                                                         $selected = $options['slider-catname'];                                                                                                                
+                                                         $selected = $options['slider-catname'];      
+                                                         if (!isset($selected) ) $selected ="Slider";  
                                                         $args=array(
                                                         'orderby' => 'name',
                                                         'order' => 'ASC'
@@ -345,7 +384,7 @@ function theme_options_do_page() {
  * Sanitize and validate input. Accepts an array, return a sanitized array.
  */
 function theme_options_validate( $input ) {
-	global $select_options, $radio_options;
+	
 
 	// Our checkbox value is either 0 or 1
 	if ( ! isset( $input['defaultwerbesticker'] ) )
@@ -375,6 +414,7 @@ function theme_options_validate( $input ) {
          $input['slider-animationDuration'] = wp_filter_nohtml_kses( $input['slider-animationDuration'] );
         if ( ! isset( $input['slider-animationDuration'] ) )
 		$input['slider-animationDuration'] = 600;       
+        $input['slider-catname'] = wp_filter_nohtml_kses( $input['slider-catname'] );
         $input['slider-Direction'] = wp_filter_nohtml_kses( $input['slider-Direction'] );
         $input['slider-animationType'] = wp_filter_nohtml_kses( $input['slider-animationType'] );   
         
@@ -387,10 +427,133 @@ function theme_options_validate( $input ) {
         $input['social_gplus'] = wp_filter_nohtml_kses( $input['social_gplus'] );
         $input['social_diaspora'] = wp_filter_nohtml_kses( $input['social_diaspora'] );
         $input['social_identica'] = wp_filter_nohtml_kses( $input['social_identica'] );            
-         $input['feed_twitter'] = wp_filter_nohtml_kses( $input['feed_twitter'] );
+        $input['feed_twitter'] = wp_filter_nohtml_kses( $input['feed_twitter'] );
 	
 
 	return $input;
 }
 
+
+/**
+ * Create the options page
+ */
+function theme_defaultbilder_do_page() {
+	global $defaultbilder_liste;
+
+	if ( ! isset( $_REQUEST['settings-updated'] ) )
+		$_REQUEST['settings-updated'] = false;
+
+	?>
+        <style>
+                label.description {
+                    display: block;
+                }
+                div.wrap {
+                    max-width: 1200px;
+                    margin: 20px 0 0 0;
+                    background-image: url(<?php echo get_bloginfo('template_url')?>/images/logo.png);
+                    background-position: top right;
+                    background-repeat: no-repeat;
+                    padding: 0;
+                }
+                div.piratenkleider-optionen {
+                    max-width: 1200px;
+                    margin: 0;
+                    padding-bottom: 0px;
+                    background-image: url(<?php echo get_bloginfo('template_url')?>/images/schiff-welle.gif);
+                    background-position: bottom left;
+                    background-repeat: no-repeat;
+                }
+                p.submit {
+                    margin-top: 100px;
+                    padding-left: 20px;
+                }
+                .wrap div.updated {
+                    margin-right: 300px;                    
+                }
+            </style>
+	<div class="wrap">
+            
+            <div class="piratenkleider-optionen">  <!-- begin: .piratenkleider-optionen -->    
+		<?php screen_icon(); echo "<h2>" . get_current_theme() . __( ' Defaultbilder festlegen ', 'piratenkleider' ) . "</h2>"; ?>
+
+		<?php if ( false !== $_REQUEST['settings-updated'] ) : ?>
+		<div class="updated fade"><p><strong><?php _e( 'Defaultbilder wurden gespeichert.', 'piratenkleider' ); ?></strong></p></div>
+		<?php endif; ?>
+
+		<form method="post" action="options.php">
+                    <?php settings_fields( 'piratenkleider_defaultbilder' ); ?>
+                    <?php $options = get_option( 'piratenkleider_theme_defaultbilder' ); 
+                        $defaultbildsrc = $options['slider-defaultbildsrc'];                        
+                    ?>
+                    <table class="form-table">
+
+                     <tr valign="top">
+                        <th scope="row"><?php _e( 'Defaultbilder für Slider', 'piratenkleider' ); ?></th>
+                        <td>
+
+                                    <?php 
+                                        if ( ! isset( $checked ) ) $checked = '';
+                                        foreach ( $defaultbilder_liste as $option ) {
+                                                
+
+                                                if ( '' != $defaultbildsrc ) {
+                                                        if ( $defaultbildsrc == $option['src'] ) {
+                                                                $checked = "checked=\"checked\"";
+                                                        } else {
+                                                                $checked = '';
+                                                        }
+                                                }
+                                                ?>
+                                                <label class="description">
+                                                    <input type="radio" name="piratenkleider_theme_defaultbilder[slider-defaultbildsrc]" value="<?php esc_attr_e( $option['src'] ); ?>" <?php echo $checked; ?> />                                                     
+                                                    <?php echo $option['label']?>
+                                                    <br> 
+                                                    <img src="<?php echo $option['src'] ?>" style="width: 320px; height: auto;">
+                                                    
+                                                    
+                                                </label>
+                                        <?php } ?>                                                        
+                                    </td>
+                                </tr>  
+
+
+                              <tr valign="top"><th scope="row">Alternatives Sliderbild als URL</th>
+                              <td>
+                                    <input id="piratenkleider_theme_defaultbilder[slider-alternativesrc]" class="regular-text" type="text" name="piratenkleider_theme_defaultbilder[slider-alternativesrc]" value="<?php esc_attr_e( $options['slider-alternativesrc'] ); ?>" />
+                                    <label class="description" for="piratenkleider_theme_defaultbilder[slider-alternativesrc]">
+                                    <?php _e( 'URL inkl. http:// zum Bild. Dieses kann auch vorher über den Mediendialog hochgeladen worden sein', 'piratenkleider' ); ?>                                       
+                                    </label>
+
+                            </td>					
+                            </tr>
+                              
+
+                    </table>
+
+                    <p class="submit">
+                            <input type="submit" class="button-primary" value="<?php _e( 'Optionen speichern', 'piratenkleider' ); ?>" />
+                    </p>
+		</form>               
+	</div>
+            
+        </div> <!-- end: .piratenkleider-optionen -->      
+	<?php
+}
+
+/**
+ * Sanitize and validate input. Accepts an array, return a sanitized array.
+ */
+function theme_defaultbilder_validate( $input ) {
+	global $defaultbilder_liste;
+
+	
+        $input['slider-alternativesrc'] = wp_filter_nohtml_kses( $input['slider-alternativesrc'] );            
+        $input['slider-defaultbildsrc'] = wp_filter_nohtml_kses( $input['slider-defaultbildsrc'] );       
+        if ($input['slider-alternativesrc'] != '') {            
+            $input['slider-defaultbildsrc'] = $input['slider-alternativesrc'];
+        }
+
+	return $input;
+}
 // adapted from http://planetozh.com/blog/2009/05/handling-plugins-options-in-wordpress-28-with-register_setting/
