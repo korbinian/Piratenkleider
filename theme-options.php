@@ -471,6 +471,17 @@ function theme_defaultbilder_do_page() {
                 .wrap div.updated {
                     margin-right: 300px;                    
                 }
+                label.tile {
+                    width: 320px;
+                    height: 150px;
+                    float: left;
+                    border: 1px solid #ccc;                    
+                    padding: 1px;
+                    margin: 5px;
+                }
+                label.tile:hover {
+                    background-color: #eee;
+                }
             </style>
 	<div class="wrap">
             
@@ -484,57 +495,90 @@ function theme_defaultbilder_do_page() {
 		<form method="post" action="options.php">
                     <?php settings_fields( 'piratenkleider_defaultbilder' ); ?>
                     <?php $options = get_option( 'piratenkleider_theme_defaultbilder' ); 
-                        $defaultbildsrc = $options['slider-defaultbildsrc'];                        
+                        $defaultbildsrc = $options['slider-defaultbildsrc']; 
+                        $defaultseitenbildsrc = $options['seiten-defaultbildsrc']; 
                     ?>
                     <table class="form-table">
-
                      <tr valign="top">
                         <th scope="row"><?php _e( 'Defaultbilder für Slider', 'piratenkleider' ); ?></th>
                         <td>
 
-                                    <?php 
-                                        if ( ! isset( $checked ) ) $checked = '';
-                                        foreach ( $defaultbilder_liste as $option ) {
-                                                
+                            <?php 
+                                if ( ! isset( $checked ) ) $checked = '';
+                                foreach ( $defaultbilder_liste as $option ) {
 
-                                                if ( '' != $defaultbildsrc ) {
-                                                        if ( $defaultbildsrc == $option['src'] ) {
-                                                                $checked = "checked=\"checked\"";
-                                                        } else {
-                                                                $checked = '';
-                                                        }
+
+                                        if ( '' != $defaultbildsrc ) {
+                                                if ( $defaultbildsrc == $option['src'] ) {
+                                                        $checked = "checked=\"checked\"";
+                                                } else {
+                                                        $checked = '';
                                                 }
-                                                ?>
-                                                <label class="description">
-                                                    <input type="radio" name="piratenkleider_theme_defaultbilder[slider-defaultbildsrc]" value="<?php esc_attr_e( $option['src'] ); ?>" <?php echo $checked; ?> />                                                     
-                                                    <?php echo $option['label']?>
-                                                    <br> 
-                                                    <img src="<?php echo $option['src'] ?>" style="width: 320px; height: auto;">
-                                                    
-                                                    
-                                                </label>
-                                        <?php } ?>                                                        
-                                    </td>
-                                </tr>  
+                                        }
+                                        ?>
+                                        <label class="tile">
+                                            <input type="radio" name="piratenkleider_theme_defaultbilder[slider-defaultbildsrc]" value="<?php esc_attr_e( $option['src'] ); ?>" <?php echo $checked; ?> />                                                     
+                                            <?php echo $option['label']?>
+                                            <br> 
+                                            <img src="<?php echo $option['src'] ?>" style="width: 320px; height: auto;">
 
+                                        </label>
+                                <?php } ?>        
+                                <br style="clear: left;">     
+                                    Alternatives Sliderbild als URL: 
+                                 <input id="piratenkleider_theme_defaultbilder[slider-alternativesrc]" class="regular-text" type="text" name="piratenkleider_theme_defaultbilder[slider-alternativesrc]" value="<?php esc_attr_e( $options['slider-alternativesrc'] ); ?>" />
+                            <label class="description" for="piratenkleider_theme_defaultbilder[slider-alternativesrc]">
+                                URL inkl. http:// zum Bild. Dieses kann auch vorher über den Mediendialog hochgeladen worden sein.                        
+                                <br>
+                                Das Bild sollte nicht breiter als 640 Pixel sein und seine wesentlichen Merkmale auf einer
+                                Höhe von 240 Pixel zeigen. In der Darstellung der Seite wird ab 240 Pixel nach unten abgeschnitten.
+                            </label>
+                                 <br />
+                            </td>
+                        </tr>  
+                    
+                     <tr valign="top">
+                        <th scope="row"><?php _e( 'Defaultbilder für Seiten', 'piratenkleider' ); ?></th>
+                        <td>
 
-                              <tr valign="top"><th scope="row">Alternatives Sliderbild als URL</th>
-                              <td>
-                                    <input id="piratenkleider_theme_defaultbilder[slider-alternativesrc]" class="regular-text" type="text" name="piratenkleider_theme_defaultbilder[slider-alternativesrc]" value="<?php esc_attr_e( $options['slider-alternativesrc'] ); ?>" />
-                                    <label class="description" for="piratenkleider_theme_defaultbilder[slider-alternativesrc]">
-                                    <?php _e( 'URL inkl. http:// zum Bild. Dieses kann auch vorher über den Mediendialog hochgeladen worden sein', 'piratenkleider' ); ?>                                       
-                                    </label>
+                            <?php 
+                                if ( ! isset( $checked ) ) $checked = '';
+                                foreach ( $defaultbilder_liste as $option ) {
+                                        if ( '' != $defaultseitenbildsrc ) {
+                                                if ( $defaultseitenbildsrc == $option['src'] ) {
+                                                        $checked = "checked=\"checked\"";
+                                                } else {
+                                                        $checked = '';
+                                                }
+                                        }
+                                        ?>
+                                        <label class="tile">
+                                            <input type="radio" name="piratenkleider_theme_defaultbilder[seiten-defaultbildsrc]" value="<?php esc_attr_e( $option['src'] ); ?>" <?php echo $checked; ?> />                                                     
+                                            <?php echo $option['label']?>
+                                            <br> 
+                                            <img src="<?php echo $option['src'] ?>" style="width: 320px; height: auto;">
 
-                            </td>					
-                            </tr>
-                              
+                                        </label>
+                                <?php } ?>        
+                                <br style="clear: left;">   
+                                Alternatives Seitenbild als URL:
+                                <input id="piratenkleider_theme_defaultbilder[seiten-alternativesrc]" class="regular-text" type="text" name="piratenkleider_theme_defaultbilder[seiten-alternativesrc]" value="<?php esc_attr_e( $options['seiten-alternativesrc'] ); ?>" />
+                               <label class="description" for="piratenkleider_theme_defaultbilder[seiten-alternativesrc]">
+                                URL inkl. http:// zum Bild. Dieses kann auch vorher über den Mediendialog hochgeladen worden sein.                               
+                                <br>
+                                Das Bild sollte nicht breiter als 640 Pixel sein und seine wesentlichen Merkmale auf einer
+                                Höhe von 150 Pixel zeigen. In der Darstellung der Seite wird ab 150 Pixel nach unten abgeschnitten.
+                                   
+                              </label>
+                                 <br />
+                            </td>
+                        </tr>                                     
+             </table>
 
-                    </table>
-
-                    <p class="submit">
-                            <input type="submit" class="button-primary" value="<?php _e( 'Optionen speichern', 'piratenkleider' ); ?>" />
-                    </p>
-		</form>               
+            <p class="submit">
+                    <input type="submit" class="button-primary" value="<?php _e( 'Optionen speichern', 'piratenkleider' ); ?>" />
+            </p>
+        </form>               
 	</div>
             
         </div> <!-- end: .piratenkleider-optionen -->      
@@ -553,7 +597,11 @@ function theme_defaultbilder_validate( $input ) {
         if ($input['slider-alternativesrc'] != '') {            
             $input['slider-defaultbildsrc'] = $input['slider-alternativesrc'];
         }
-
+        $input['seiten-alternativesrc'] = wp_filter_nohtml_kses( $input['seiten-alternativesrc'] );            
+        $input['seiten-defaultbildsrc'] = wp_filter_nohtml_kses( $input['seiten-defaultbildsrc'] );       
+        if ($input['seiten-alternativesrc'] != '') {            
+            $input['seiten-defaultbildsrc'] = $input['seiten-alternativesrc'];
+        }
 	return $input;
 }
 // adapted from http://planetozh.com/blog/2009/05/handling-plugins-options-in-wordpress-28-with-register_setting/

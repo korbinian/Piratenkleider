@@ -9,7 +9,7 @@
 
 <?php 
     wp_footer();     
-    if ( is_home() ) { 
+   
       $options = get_option( 'piratenkleider_theme_options' );
       $slideshowSpeed = $options['slider-slideshowSpeed'];    
       $animationDuration = $options['slider-animationDuration'];    
@@ -31,8 +31,7 @@
          animation: "<?php echo $animationType ?>"
        });
     });    
-    </script>
-    <?php } ?>
+    </script> 
     <script src="<?php echo get_bloginfo('template_url'); ?>/js/twitter.js"></script>
 </body>
 </html>

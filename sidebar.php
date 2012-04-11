@@ -18,18 +18,20 @@
 
 
 <?php
-	if ( is_active_sidebar( 'sidebar-widget-area' ) ) : ?>
-	<?php dynamic_sidebar( 'sidebar-widget-area' ); ?>
-<?php endif; ?>
-
-<?php if ( $options['feed_twitter'] != "" ){ ?>
+	if ( is_active_sidebar( 'sidebar-widget-area' ) )  {
+            dynamic_sidebar( 'sidebar-widget-area' );
+ } else {
+     
+     
+     
+ }
+if ( $options['feed_twitter'] != "" ){ ?>
 <script>
 var twitter_name = "<?php echo $options['feed_twitter']; ?>";
 var twitter_count = <?php echo $options['feed_twitter_numberarticle']; ?>;
 </script>
 <div class="twitterwidget">
 	<h3><a href="https://twitter.com/#!/<?php echo $options['feed_twitter']; ?>">twitter.com/<?php echo $options['feed_twitter']; ?></a></h3>
-
-<?php }?>
 	<ul id="tweet_container"></ul>
 </div>
+<?php }?>

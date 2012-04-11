@@ -873,7 +873,9 @@ html[xmlns] .slides {
 
 .page .content-header {
   position: relative;
-  height: 150px; }
+  height: 150px; 
+  overflow: hidden;
+}
   .page .content-header #page-title {
     position: absolute;
     left: 15px;
@@ -1189,14 +1191,27 @@ html[xmlns] .slides {
       margin: 0; }
 
 .content-aside ul.menu li {
-  display: none; }
-.content-aside ul.menu li.current-menu-item, .content-aside ul.menu li.current-menu-ancestor {
+/*  display: none;   */
+}
+.content-aside ul.menu li.current_page_item, 
+.content-aside ul.menu li.current_page_ancestor,
+.content-aside ul.menu li.current-menu-item, 
+.content-aside ul.menu li.current-menu-ancestor {
   display: block; }
-  .content-aside ul.menu li.current-menu-item li, .content-aside ul.menu li.current-menu-ancestor li {
+.content-aside ul.menu li.current_page_item li, 
+.content-aside ul.menu li.current_page_ancestor li, 
+.content-aside ul.menu li.current-menu-item li, 
+.content-aside ul.menu li.current-menu-ancestor li {
     display: block; }
-  .content-aside ul.menu li.current-menu-item .sub-menu .sub-menu, .content-aside ul.menu li.current-menu-ancestor .sub-menu .sub-menu {
+.content-aside ul.menu li.current_page_item .children .children 
+.content-aside ul.menu li.current_page_ancestor .children .children,
+.content-aside ul.menu li.current-menu-item .sub-menu .sub-menu, 
+.content-aside ul.menu li.current-menu-ancestor .sub-menu .sub-menu {
     display: none; }
-.content-aside ul.menu li.current-menu-item > .sub-menu, .content-aside ul.menu li.current-menu-ancestor > .sub-menu {
+.content-aside ul.menu li.current_page_item > .children, 
+.content-aside ul.menu li.current_page_ancestor > .children,
+.content-aside ul.menu li.current-menu-item > .sub-menu, 
+.content-aside ul.menu li.current-menu-ancestor > .sub-menu {
   display: block !important; }
 
 .content-aside ul.menu {
@@ -1207,12 +1222,12 @@ html[xmlns] .slides {
   border-radius: 2px;
   -moz-border-radius: 2px;
   -webkit-border-radius: 2px; }
-  .content-aside ul.menu hr {
+.content-aside ul.menu hr {
     height: 0;
     margin: 0; }
-  .content-aside ul.menu li {
+.content-aside ul.menu li {
     margin-bottom: 0; }
-    .content-aside ul.menu li a {
+.content-aside ul.menu li a {
       display: inline-block;
       background: white;
       padding: 0 5px;
@@ -1221,14 +1236,17 @@ html[xmlns] .slides {
       border-radius: 2px;
       -moz-border-radius: 2px;
       -webkit-border-radius: 2px; }
-      .content-aside ul.menu li a:hover {
+.content-aside ul.menu li a:hover {
         color: white !important;
         background: #2d7dc5; }
-  .content-aside ul.menu li.current-menu-item > a {
+      
+.content-aside ul.menu li.current_page_item > a,
+.content-aside ul.menu li.current-menu-item > a {
     background: #2d7dc5 url("assets/plus-left.gif") center left no-repeat;
     color: white;
     padding-left: 14px; }
-  .content-aside ul.menu ul.sub-menu {
+.content-aside ul.menu ul.children,
+.content-aside ul.menu ul.sub-menu {
     margin: 0 0 0 5px; }
 
 .subcontent {
@@ -1430,7 +1448,8 @@ div.ics-calendar-holder .ics-calendar-event {
 
 @media only screen and (min-width: 479px) {
   .header {
-    height: 225px; }
+    height: 225px; 
+  }
 
   .nav-top ul {
     display: block; }
@@ -1509,7 +1528,8 @@ div.ics-calendar-holder .ics-calendar-event {
 
   .nav-main {
     position: absolute;
-    bottom: 0; }
+    bottom: 0; 
+  }
     .nav-main ul.menu {
       float: left;
       -moz-border-radius-topleft: 3px;
@@ -1623,7 +1643,9 @@ div.ics-calendar-holder .ics-calendar-event {
 
   .content-primary {
     float: left;
-    width: 66.6666%; }
+    width: 66.6666%;
+    min-height: 500px;
+  }
     .content-primary .first-startpage-widget-area {
       width: 50%;
       float: left;
@@ -1697,7 +1719,8 @@ div.ics-calendar-holder .ics-calendar-event {
       font-family: Helvetica, Arial, sans-serif;
       letter-spacing: 0px; }
 
-  .nav-top ul.menu li a, .nav-main ul.menu li a {
+  .nav-top ul.menu li a, 
+  .nav-main ul.menu li a {
     padding: 5px 18px;
     margin-bottom: 2px;
     overflow: visible;
