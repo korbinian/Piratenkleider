@@ -1,8 +1,26 @@
-Dokumentation des Themes Piratenkleider
+Piratenkleider
+- Wordpress-Theme für Websites der Piratenpartei 
+=================================================
 
-(Auf Basis der Version von xwolf,  basierend auf dem Ursprungstheme von 
- Korbinian Polk)
+Version 2.0 von Wolfgang Wiese (xwolf), 
+basierend auf Vorlage von Korbinian Polk fuer die Bundeswebsite
+(http://www.piratenpartei.de)
 
+
+DOWNLOADS
+    Version von xolf: https://github.com/xwolfde/Piratenkleider
+    Altes Original von korbinian: https://github.com/korbinian/Piratenkleider
+    
+CREDITS & COPYRIGHT
+
+ CC-BY-SA 3.0, http://creativecommons.org/licenses/by-sa/3.0/de/deed.de
+
+
+AUTOREN / ENTWICKLER
+
+   - Wolfgang Wiese, http://www.xwolf.de 
+   - Heiko Philippski, http://www.phindie.de/
+   - Korbinian Polk, http://www.korbinian-polk.de                     
 
 
 
@@ -65,7 +83,11 @@ BEREICHE/WIDGETS
 4. "Startseite: Rechts unten" 
     Bereich rechts unterhalb der drei Presseartikel.
     Wenn leer, wird hier eine Schlagwortliste gezeigt.
-5. Footer:
+5. Sidebar (Rechte Spalte):
+    Dieser Bereich befindet sich rechts vom Inhaltsbereich. Er ist geeignet für
+    Werbeplakate, Hinweise und ähnliches. Wenn leer, werden als Alternative 
+    einige der allgemeinen Standardplakate gezeigt.
+6. Footer:
    Der Footer wird aus den beiden Widgets 
     First Footer Widget Area 
     und
@@ -97,8 +119,9 @@ THEME-OPTIONS "Piratenkleider pimpen"
 
   Geplante weitere Optionen:
     - Welle+Schiff aendern (vgl. piraten-bonn.de) 
-    - Default-Bilder für Artikel, Posts und Slider festlegen
-   
+    - Default-Bilder für Artikel, Posts  festlegen
+ 
+  
 
 
 Notizen
@@ -110,16 +133,11 @@ Bugs
    Dies hat zur Folge, dass anstelle von Links oder Widgetelementen
    eine Reihe von Iconbilder "Werde Pirat" erscheien.
 
-2. Es fehlen Fallback-Artikelbilder, Fallback-Seitenbilder und 
-   Fallback-Sliderbilder.
-    a) Wenn ein Artikel in der Kategorie Slider ist, aber kein Artikelbild
-       hat, wird zwar der SLiderwechsel gezeigt, aber kein Bild.
-       Auch dann, wenn im Artikel selbst ein Bild vorhanden ist.
-3. Blöd auch: Wenn ein Artikel ein Artikelbild hat, dann wird dieses
+2. Blöd auch: Wenn ein Artikel ein Artikelbild hat, dann wird dieses
    sonst nirgends gezeigt. Dabei wäre es -wie bei den Pages-
    doch auch sinnvoll, dieses bei der EInzelanzeige des Artikels anzugeben.
 
-4. Gravatar.com wird bei den Kommentaren verwenden. Da ist noch
+3. Gravatar.com wird bei den Kommentaren verwenden. Da ist noch
    nichts gefährliches bei, aber wir sollten da nicht naiv sein. Gerade sowas
    kann zum Tracking verwendet werden. Daher sollte dies rausgenommen werden
     und/oder durch eine statische Lösung ersetzt werden.
@@ -146,6 +164,8 @@ Hinweise zur Startseite:
     Daher sollte man darauf achten, daß nur solche Bilder gewählt werden die 
     auch tatsächlich entsprechend Breit sind.
     Am Besten bearbeitet man die Sliderbilder vor.
+    Bei der optischen Darstellung des Sliders werden Bilder, die höher sind als
+    240 Pixel nach unten abgeschnitten. 
 
 
  Nach den 3 Artikeln kommen weitere Artikel. Dies sind die letzten Artikel 4-9
