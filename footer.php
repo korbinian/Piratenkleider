@@ -15,13 +15,16 @@
       $animationDuration = $options['slider-animationDuration'];    
       $slideDirection = $options['slider-Direction']; 
       $animationType = $options['slider-animationType']; 
-      
-      if ($slideshowSpeed <1000) {$slideshowSpeed=8000;}
-      if ($animationDuration <100) {$animationDuration=600;}
-      if (! isset($slideDirection)) $slideDirection = 'horizontal';
-      if (! isset($animationType)) $animationType = 'slide';
+      $slideraktiv = $options['slider-aktiv'];
+      if ($slideraktiv==1) {
+        if ($slideshowSpeed <1000) {$slideshowSpeed=8000;}
+        if ($animationDuration <100) {$animationDuration=600;}
+        if (! isset($slideDirection)) $slideDirection = 'horizontal';
+        if (! isset($animationType)) $animationType = 'slide';
+        
      ?>
     <script src="<?php echo get_bloginfo('template_url'); ?>/js/flexslider.js"></script>  
+    <?php } ?>
     <script type="text/javascript" charset="utf-8">
     $(window).load(function() {
        $('.flexslider').flexslider({
