@@ -606,8 +606,17 @@ ul.socialmedia {
   width: 100%;
   margin: 0;
   padding: 0;
-  position: relative; }
-
+  position: relative; 
+  max-height: 240px;  
+    /* Bilder die trotz cropping hoeher als 240 Pixel sind,
+      werden abgeschnitten */
+}
+.flexslider img {
+    /* Kommentare entfernen, wenn man möchte dass die Bilder an die 
+       proportionale Breite angepasst werden und nicht abgeschnitten werden: */
+   /*  max-height: 240px;  
+     width: auto; */
+}
 .flexslider .slides > li {
   display: none; }
 
@@ -1472,7 +1481,9 @@ div.ics-calendar-holder .ics-calendar-event {
 
   .header .branding {
     padding-top: 20px;
-    padding-bottom: 0px; }
+    padding-bottom: 0px;
+     min-height: 130px;
+  }
   .header .newsletter {
     float: right;
     width: 33.3333%;

@@ -86,71 +86,95 @@ function theme_options_do_page() {
 						<label  for="piratenkleider_theme_options[newsletter]"><?php _e( 'Eingabemaske anzeigen', 'piratenkleider' ); ?></label>
 					</td>
 				</tr>
-                                <tr valign="top"><th scope="row"><?php _e( 'Social Media Buttons', 'piratenkleider' ); ?></th>
-					<td>
-						<input id="piratenkleider_theme_options[alle-socialmediabuttons]" name="piratenkleider_theme_options[alle-socialmediabuttons]" type="checkbox" value="1" <?php checked( '1', $options['alle-socialmediabuttons'] ); ?> />
-						<label for="piratenkleider_theme_options[alle-socialmediabuttons]"><?php _e( 'Alle Buttons anzeigen', 'piratenkleider' ); ?></label>
-					</td>
-				</tr>
+                              
 				
 				
 				 <tr valign="top">
-                                    <th scope="row"><?php _e( 'Social Media Adressen', 'piratenkleider' ); ?></th>
+                                    <th scope="row"><?php _e( 'Social Media', 'piratenkleider' ); ?></th>
                                     <td>
                                         <table>
-				 <tr valign="top"><th scope="row">Facebook</th>
+                                            <tr valign="top"><th scope="row"><?php _e( 'Social Media Buttons', 'piratenkleider' ); ?></th>
+                                        	<td>
+						<input id="piratenkleider_theme_options[alle-socialmediabuttons]" name="piratenkleider_theme_options[alle-socialmediabuttons]" type="checkbox" value="1" <?php checked( '1', $options['alle-socialmediabuttons'] ); ?> />
+						<label for="piratenkleider_theme_options[alle-socialmediabuttons]">
+                                                    Buttons anzeigen. <br>Hinweis: Es werden nur die Buttons gezeigt, bei denen in den folgenden Eingabefeldern Adressen
+                                                    definiert sind.
+                                                </label>
+                                                </td>
+                                            </tr>  
+                                            
+                                            
+                                          <tr valign="top"><th scope="row">Facebook</th>
                                           <td>
 						<input id="piratenkleider_theme_options[social_facebook]" class="regular-text" type="text" length="5" name="piratenkleider_theme_options[social_facebook]" value="<?php esc_attr_e( $options['social_facebook'] ); ?>" />
-						<label class="description" for="piratenkleider_theme_options[social_facebook]"><?php _e( 'URL inkl. http:// zur Facebook Seite', 'piratenkleider' ); ?></label>
+						<label class="description" for="piratenkleider_theme_options[social_facebook]">
+                                                <?php _e( 'URL inkl. http:// zur Facebook Seite', 'piratenkleider' ); ?>
+                                                    <br>Zum Beispiel: <code>http://www.facebook.com/PiratenparteiDeutschland</code>
+                                                </label>
+                                                
 					</td>					
                                         </tr>
                                         
                                         
-	 <tr valign="top"><th scope="row">Twitter</th>
+                                        <tr valign="top"><th scope="row">Twitter</th>
                                           <td>
 						<input id="piratenkleider_theme_options[social_twitter]" class="regular-text" type="text" length="5" name="piratenkleider_theme_options[social_twitter]" value="<?php esc_attr_e( $options['social_twitter'] ); ?>" />
-						<label class="description" for="piratenkleider_theme_options[social_twitter]"><?php _e( 'URL inkl. http:// zur Twitter Seite', 'piratenkleider' ); ?></label>
+						<label class="description" for="piratenkleider_theme_options[social_twitter]">
+                                                <?php _e( 'URL inkl. http:// zur Twitter Seite', 'piratenkleider' ); ?>
+                                                    <br>Zum Beispiel: <code>https://twitter.com/#!/piratenpartei</code>
+                                                </label>
 					</td>					
                                         </tr>
                                         
-<tr valign="top"><th scope="row">YouTube</th>
+                                        <tr valign="top"><th scope="row">YouTube</th>
                                           <td>
 						<input id="piratenkleider_theme_options[social_youtube]" class="regular-text" type="text" length="5" name="piratenkleider_theme_options[social_youtube]" value="<?php esc_attr_e( $options['social_youtube'] ); ?>" />
-						<label class="description" for="piratenkleider_theme_options[social_youtube]"><?php _e( 'URL inkl. http:// zur YouTube Seite', 'piratenkleider' ); ?></label>
+						<label class="description" for="piratenkleider_theme_options[social_youtube]">
+                                                <?php _e( 'URL inkl. http:// zur YouTube Seite', 'piratenkleider' ); ?>
+                                                    <br>Zum Beispiel: <code>http://www.youtube.com/user/piratenpartei</code>
+                                                </label>
 					</td>					
-</tr>
-                                        
-	 <tr valign="top"><th scope="row">G+</th>
+                                        </tr>
+                                      
+                                        <tr valign="top"><th scope="row">G+</th>
                                           <td>
 						<input id="piratenkleider_theme_options[social_gplus]" class="regular-text" type="text" length="5" name="piratenkleider_theme_options[social_gplus]" value="<?php esc_attr_e( $options['social_gplus'] ); ?>" />
-						<label class="description" for="piratenkleider_theme_options[social_gplus]"><?php _e( 'URL inkl. http:// zur G+ Seite', 'piratenkleider' ); ?></label>
+						<label class="description" for="piratenkleider_theme_options[social_gplus]">
+                                                <?php _e( 'URL inkl. http:// zur G+ Seite', 'piratenkleider' ); ?>
+                                                <br>Zum Beispiel: <code>https://plus.google.com/u/0/107862983960150496076/posts</code>
+                                                </label>
 					</td>					
                                         </tr>
                                         
-	 <tr valign="top"><th scope="row">Diaspora</th>
+                                         <tr valign="top"><th scope="row">Diaspora</th>
                                           <td>
 						<input id="piratenkleider_theme_options[social_diaspora]" class="regular-text" type="text" length="5" name="piratenkleider_theme_options[social_diaspora]" value="<?php esc_attr_e( $options['social_diaspora'] ); ?>" />
-						<label class="description" for="piratenkleider_theme_options[social_diaspora]"><?php _e( 'URL inkl. http:// zur Diaspora Seite', 'piratenkleider' ); ?></label>
-</td>					
-</tr>
-                                        
-<tr valign="top"><th scope="row">Identica</th>
-<td>
-<input id="piratenkleider_theme_options[social_identica]" class="regular-text" type="text" length="5" name="piratenkleider_theme_options[social_identica]" value="<?php esc_attr_e( $options['social_identica'] ); ?>" />
-<label class="description" for="piratenkleider_theme_options[social_identica]"><?php _e( 'URL inkl. http:// zur Identica Seite' ); ?></label>
-</td>					
- </tr>
-            </table>                                                                                
+						<label class="description" for="piratenkleider_theme_options[social_diaspora]">
+                                                <?php _e( 'URL inkl. http:// zur Diaspora Seite', 'piratenkleider' ); ?>
+                                                    <br>Zum Beispiel: <code>https://joindiaspora.com/u/piratenpartei</code>
+                                                </label>
+                                            </td>					
+                                            </tr>
+
+                                            <tr valign="top"><th scope="row">Identica</th>
+                                            <td>
+                                            <input id="piratenkleider_theme_options[social_identica]" class="regular-text" type="text" length="5" name="piratenkleider_theme_options[social_identica]" value="<?php esc_attr_e( $options['social_identica'] ); ?>" />
+                                            <label class="description" for="piratenkleider_theme_options[social_identica]">
+                                            <?php _e( 'URL inkl. http:// zur Identica Seite' ); ?>
+                                                <br>Zum Beispiel:  <code>http://identi.ca/piratenpartei</code>   
+                                            </label>
+                                            </td>					
+                                             </tr>
+                                        </table>                                                                                
                                     </td>                                    
-                                </tr>   
-                                
- <tr valign="top">
+                                </tr>                                   
+                                <tr valign="top">
                                     <th scope="row"><?php _e( 'Twitter Feed', 'piratenkleider' ); ?></th>
                                     <td>
                                         <table>
 			
                                         
-	 <tr valign="top"><th scope="row">Twitter Benutzername</th>
+                                         <tr valign="top"><th scope="row">Twitter Benutzername</th>
                                           <td>
 						<input id="piratenkleider_theme_options[feed_twitter]" class="regular-text" type="text" length="5" name="piratenkleider_theme_options[feed_twitter]" value="<?php esc_attr_e( $options['feed_twitter'] ); ?>" />
 						<label class="description" for="piratenkleider_theme_options[feed_twitter]"><?php _e( 'Der reine Twitter Benutzername', 'piratenkleider' ); ?></label>
@@ -172,7 +196,7 @@ function theme_options_do_page() {
                                             </td>
                                             </tr>             
 
-            </table>                                                                                
+                                         </table>                                                                                
                                     </td>                                    
                                 </tr>                            
 				
@@ -180,6 +204,13 @@ function theme_options_do_page() {
                                     <th scope="row"><?php _e( 'Slider', 'piratenkleider' ); ?></th>
                                     <td>
                                         <table>
+                                             <tr valign="top"><th scope="row"><?php _e( 'Slider aktivieren', 'piratenkleider' ); ?></th>
+                                        	<td>
+                                            	<input id="piratenkleider_theme_options[slider-aktiv]" name="piratenkleider_theme_options[slider-aktiv]" type="checkbox" value="1" <?php checked( '1', $options['slider-aktiv'] ); ?> />
+						<label for="piratenkleider_theme_options[slider-aktiv]">Slider insgesamt aktivieren. <br>Achtung: Bei Deaktivierung entfällt auch der Widget-Bereich Startseite: "Rechter Aktionlinkbereich"</label>
+                                                </td>
+                                            </tr>
+                                
                                             <tr valign="top"><th scope="row"><?php _e( 'Maximale Anzahl der Artikel', 'piratenkleider' ); ?></th>
                                             <td>
                                                     <select name="piratenkleider_theme_options[slider-numberarticle]">
@@ -242,8 +273,8 @@ function theme_options_do_page() {
                                 <tr valign="top">
                                     <th scope="row"><?php _e( 'Meta-Angaben', 'piratenkleider' ); ?></th>
                                     <td>
-                                        <table>
-                                
+
+                                        <table>                                
                                          <tr valign="top"><th scope="row"><?php _e( 'Author', 'piratenkleider' ); ?></th>
                                               <td>
                                                         <input id="piratenkleider_theme_options[meta-author]" class="regular-text" type="text" length="5" name="piratenkleider_theme_options[meta-author]" value="<?php esc_attr_e( $options['meta-author'] ); ?>" />
@@ -262,7 +293,13 @@ function theme_options_do_page() {
 						<label class="description" for="piratenkleider_theme_options[meta-keywords]"><?php _e( 'Optionale Schlüsselworte in dem Meta-Tag jeder Seite (für alle gleich). Durch Komma getrennt. Schlüsselworte sollten tatsächlich vorkommen.', 'piratenkleider' ); ?></label>
 					</td>					
                                         </tr>
-                                       </table>                                                                                
+                                       </table>  
+                                        <p>
+                                            Hinweis: Diese Angaben wirken auf alle Seiten und Artikel der Site. Dies
+                                            ist jedoch nicht immer sinnvoll (insbes. bei Keywords und Description). 
+                                            Sollten zudem SEO-Plugins, wie bspw. wpSEO o.a. im Einsatz sein,
+                                            sollten diese Angaben ebenfalls unausgefüllt bleiben.                                                                                                                                    
+                                        </p>
                                     </td>                                    
                                 </tr>    
                                 
@@ -294,6 +331,12 @@ function theme_options_validate( $input ) {
 	if ( ! isset( $input['alle-socialmediabuttons'] ) )
 		$input['alle-socialmediabuttons'] = null;
 	$input['alle-socialmediabuttons'] = ( $input['alle-socialmediabuttons'] == 1 ? 1 : 0 );
+        
+        if ( ! isset( $input['slider-aktiv'] ) )
+		$input['slider-aktiv'] = null;
+	$input['slider-aktiv'] = ( $input['slider-aktiv'] == 1 ? 1 : 0 );        
+        
+        
         if ( ! isset( $input['slider-numberarticle'] ) )
 		$input['slider-numberarticle'] = 3;
 		
