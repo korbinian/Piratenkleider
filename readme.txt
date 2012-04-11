@@ -87,9 +87,7 @@ THEME-OPTIONS "Piratenkleider pimpen"
   werden um "lokale" Einstellungen zu ändern.
     - Newsletter-Box einschalten/abschalten
     - Social Media Buttons ein/ausschalten         
-    - Slider steuern
-        (max. Zahl der Slider-Artikel festlegen, Dauer für Bildwechsel und Dauer der
-         Bildanzeige)
+    - Slider steuern        
     - Metatag-Angaben ändern
     - Default Werbe-Sticker optional schaltbar
     - Logo ändern
@@ -99,8 +97,6 @@ THEME-OPTIONS "Piratenkleider pimpen"
 
   Geplante weitere Optionen:
     - Welle+Schiff aendern (vgl. piraten-bonn.de) 
-    - Social Media Buttons einzelnt steuern und URLs ändern
-    - Twitteradresse ändern
     - Default-Bilder für Artikel, Posts und Slider festlegen
    
 
