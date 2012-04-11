@@ -53,7 +53,7 @@ if (isset( $options['meta-keywords'] ) ) { ?>
                                function piratenkleider_header_style() {} 
                             ?>                                                             
                                 <img src="<?php header_image(); ?>" alt="Logo <?php bloginfo( 'name' ); ?>">
-                            <?php if ( is_home() ) { ?> </a>  <?php } ?> 
+                            <?php if ( ! is_home() ) { ?> </a>  <?php } ?> 
                             <h1 class="visuallyhidden"><?php bloginfo( 'name' ); ?></h1>
                             <p class="visuallyhidden"><?php bloginfo( 'description' ); ?></p>
 			</div>
