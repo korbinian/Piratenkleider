@@ -607,15 +607,18 @@ ul.socialmedia {
   margin: 0;
   padding: 0;
   position: relative; 
-  max-height: 240px;  
+  height: 240px;  
+  overflow: hidden;
     /* Bilder die trotz cropping hoeher als 240 Pixel sind,
       werden abgeschnitten */
 }
 .flexslider img {
     /* Kommentare entfernen, wenn man möchte dass die Bilder an die 
        proportionale Breite angepasst werden und nicht abgeschnitten werden: */
+    
    /*  max-height: 240px;  
-     width: auto; */
+      width: auto; 
+   */
 }
 .flexslider .slides > li {
   display: none; }

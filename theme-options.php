@@ -210,6 +210,32 @@ function theme_options_do_page() {
 						<label for="piratenkleider_theme_options[slider-aktiv]">Slider insgesamt aktivieren. <br>Achtung: Bei Deaktivierung entfällt auch der Widget-Bereich Startseite: "Rechter Aktionlinkbereich"</label>
                                                 </td>
                                             </tr>
+                                             <tr valign="top"><th scope="row"><?php _e( 'Kategorie', 'piratenkleider' ); ?></th>
+                                            <td>
+                                                    <select name="piratenkleider_theme_options[slider-catname]">
+                                                        <?php
+                                                         $selected = $options['slider-catname'];                                                                                                                
+                                                        $args=array(
+                                                        'orderby' => 'name',
+                                                        'order' => 'ASC'
+                                                        );
+                                                        
+                                                        $categories=get_categories($args);
+                                                        foreach($categories as $category) {
+                                                            echo '<option value="'.$category->name.'"';
+                                                            if ($category->name == $selected) {
+                                                                 echo ' selected="selected"'; 
+                                                            }
+                                                            echo '>'.$category->name.' ('.$category->count.' Einträge)</option>';
+                                                        } 
+                                                        ?>
+                                                    </select>
+                                                    <label class="description" for="piratenkleider_theme_options[slider-catname]"><?php _e( 'Aus welcher Artikelkategorie sollen die Slider genommen werden', 'piratenkleider' ); ?></label>
+                                            </td>
+                                            </tr>
+                                            
+                                            
+                                            
                                 
                                             <tr valign="top"><th scope="row"><?php _e( 'Maximale Anzahl der Artikel', 'piratenkleider' ); ?></th>
                                             <td>
@@ -340,7 +366,7 @@ function theme_options_validate( $input ) {
         if ( ! isset( $input['slider-numberarticle'] ) )
 		$input['slider-numberarticle'] = 3;
 		
-		if ( ! isset( $input['feed_twitter_numberarticle'] ) )
+	if ( ! isset( $input['feed_twitter_numberarticle'] ) )
 		$input['feed_twitter_numberarticle'] = 3;
 		
         $input['slider-slideshowSpeed'] = wp_filter_nohtml_kses( $input['slider-slideshowSpeed'] );
