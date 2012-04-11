@@ -126,6 +126,10 @@ THEME-OPTIONS "Piratenkleider pimpen"
 
 Notizen
 /Dieser Bereich ist in Arbeit/
+
+Todo:
+* 404 und suche/tag/archiv/category-Bild ebenfalls austauschbar machen
+
 Bugs
 1. Wenn man eine "frische" Bloginstallation betreibt, werden durch Aktivierung 
    des Themes die Widgets, die vorher in der einfachen "Sidebar" waren, der 
