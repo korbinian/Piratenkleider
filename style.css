@@ -601,7 +601,8 @@ ul.socialmedia {
   .teaser .second-teaser-widget-area {
     float: right;
     width: 100%; }
-
+  
+.symbolbild, 
 .flexslider {
   width: 100%;
   margin: 0;
@@ -664,14 +665,15 @@ html[xmlns] .slides {
 
 .slide h2 {
   margin-left: -5px; }
-  .slide h2 a {
+.slide h2 a {
     background: #2d7dc5 !important;
     padding: 2px 5px 0px 5px !important; }
-    .slide h2 a:hover {
+.slide h2 a:hover {
       background: #ff8800 !important; }
 .slide h3 {
   display: inline-block;
   font-size: 18px !important; }
+.symbolbild .caption, 
 .slide .caption {
   background: transparent;
   background: rgba(0, 0, 0, 0.5);
@@ -680,13 +682,22 @@ html[xmlns] .slides {
   bottom: 0;
   right: 0;
   padding: 10px 20px;
-  text-align: right; }
-  .slide .caption h2, .slide .caption h3, .slide .caption h4, .slide .caption h5, .slide .caption p {
-    margin-bottom: 0; }
-  .slide .caption h3 {
+  text-align: right; 
+}
+.slide .caption h2, 
+.slide .caption h3, 
+.slide .caption h4, 
+.slide .caption h5, 
+.slide .caption p,
+.symbolbild h2 {
+    margin-bottom: 0; 
+}
+.symbolbild h3,
+.slide .caption h3 {
     font-size: 12px;
-    margin-bottom: 5px; }
-  .slide .caption a {
+    margin-bottom: 5px; 
+}
+.slide .caption a {
     background: #2d7dc5;
     color: white;
     display: inline-block;
