@@ -3,13 +3,19 @@
 <div class="section content">
   <div class="row">
     <div class="content-primary">
-      <div class="content-header">
-        <h1 id="page-title"><span><?php the_title(); ?></span></h1>
-         <img src="<?php echo get_bloginfo('template_url'); ?>/images/404.png" alt="" width="640" height="240" >
+      <div class="content-header">       
+         <div class="symbolbild"> 
+              <img src="<?php echo get_bloginfo('template_url'); ?>/images/404.png" alt="" width="640" height="240" >
+               <div class="caption">  
+                   <h3>Datei nicht gefunden</h3>
+                   <h2>404</h2>
+               </div>   
+           </div> 
+         
       </div>
       <div class="skin">
           <p> 
-              Fehler 404 - Die von Ihnen gesuchte Seite konnte nicht gefunden werden.
+              Die von Ihnen gesuchte Seite konnte nicht gefunden werden.
           </p>
          <p>
              Möchten Sie stattdessen im Webauftritt suchen?
