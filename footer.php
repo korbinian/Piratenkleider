@@ -28,7 +28,7 @@
          slideshowSpeed: <?php echo $slideshowSpeed ?>,
          animationDuration: <?php echo $animationDuration ?>,
          slideDirection: "<?php echo $slideDirection ?>",
-         animation: "<?php echo $animationType ?>",
+         animation: "<?php echo $animationType ?>"
        });
     });    
     </script>
