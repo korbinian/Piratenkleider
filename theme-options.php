@@ -92,6 +92,58 @@ function theme_options_do_page() {
 						<label for="piratenkleider_theme_options[alle-socialmediabuttons]"><?php _e( 'Alle Buttons anzeigen', 'piratenkleider' ); ?></label>
 					</td>
 				</tr>
+				
+				
+				 <tr valign="top">
+                                    <th scope="row"><?php _e( 'Social Media Adressen', 'piratenkleider' ); ?></th>
+                                    <td>
+                                        <table>
+				 <tr valign="top"><th scope="row">Facebook</th>
+                                          <td>
+						<input id="piratenkleider_theme_options[social_facebook]" class="regular-text" type="text" length="5" name="piratenkleider_theme_options[social_facebook]" value="<?php esc_attr_e( $options['social_facebook'] ); ?>" />
+						<label class="description" for="piratenkleider_theme_options[social_facebook]"><?php _e( 'URL inkl. http:// zur Facebook Seite', 'piratenkleider' ); ?></label>
+					</td>					
+                                        </tr>
+                                        
+                                        
+	 <tr valign="top"><th scope="row">Facebook</th>
+                                          <td>
+						<input id="piratenkleider_theme_options[social_twitter]" class="regular-text" type="text" length="5" name="piratenkleider_theme_options[social_twitter]" value="<?php esc_attr_e( $options['social_twitter'] ); ?>" />
+						<label class="description" for="piratenkleider_theme_optionssocial_twitter]"><?php _e( 'URL inkl. http:// zur Twitter Seite', 'piratenkleider' ); ?></label>
+					</td>					
+                                        </tr>
+                                        
+	 <tr valign="top"><th scope="row">Twitter</th>
+                                          <td>
+						<input id="piratenkleider_theme_options[social_youtube]" class="regular-text" type="text" length="5" name="piratenkleider_theme_options[social_youtube]" value="<?php esc_attr_e( $options['social_youtube'] ); ?>" />
+						<label class="description" for="piratenkleider_theme_options[social_youtube]"><?php _e( 'URL inkl. http:// zur YouTube Seite', 'piratenkleider' ); ?></label>
+					</td>					
+                                        </tr>
+                                        
+	 <tr valign="top"><th scope="row">G+</th>
+                                          <td>
+						<input id="piratenkleider_theme_options[social_gplus]" class="regular-text" type="text" length="5" name="piratenkleider_theme_options[social_gplus]" value="<?php esc_attr_e( $options['social_gplus'] ); ?>" />
+						<label class="description" for="piratenkleider_theme_options[social_gplus]"><?php _e( 'URL inkl. http:// zur G+ Seite', 'piratenkleider' ); ?></label>
+					</td>					
+                                        </tr>
+                                        
+	 <tr valign="top"><th scope="row">Diaspora</th>
+                                          <td>
+						<input id="piratenkleider_theme_options[social_diaspora]" class="regular-text" type="text" length="5" name="piratenkleider_theme_options[social_diaspora]" value="<?php esc_attr_e( $options['social_diaspora'] ); ?>" />
+						<label class="description" for="piratenkleider_theme_options[social_diaspora]"><?php _e( 'URL inkl. http:// zur Diaspora Seite', 'piratenkleider' ); ?></label>
+</td>					
+</tr>
+                                        
+<tr valign="top"><th scope="row">Identica</th>
+<td>
+<input id="piratenkleider_theme_options[social_identica]" class="regular-text" type="text" length="5" name="piratenkleider_theme_options[social_identica]" value="<?php esc_attr_e( $options['social_identica'] ); ?>" />
+<label class="description" for="piratenkleider_theme_options[social_identica]"><?php _e( 'URL inkl. http:// zur Identica Seite' ); ?></label>
+</td>					
+ </tr>
+            </table>                                                                                
+                                    </td>                                    
+                                </tr>                               
+				
                                 <tr valign="top">
                                     <th scope="row"><?php _e( 'Slider', 'piratenkleider' ); ?></th>
                                     <td>
@@ -225,6 +277,12 @@ function theme_options_validate( $input ) {
         $input['meta-keywords'] = wp_filter_nohtml_kses( $input['meta-keywords'] );
         $input['meta-author'] = wp_filter_nohtml_kses( $input['meta-author'] );
         $input['meta-description'] = wp_filter_nohtml_kses( $input['meta-description'] );
+        $input['social_facebook'] = wp_filter_nohtml_kses( $input['social_facebook'] );
+        $input['social_twitter'] = wp_filter_nohtml_kses( $input['social_twitter'] );
+        $input['social_youtube'] = wp_filter_nohtml_kses( $input['social_youtube'] );
+        $input['social_gplus'] = wp_filter_nohtml_kses( $input['social_gplus'] );
+        $input['social_diaspora'] = wp_filter_nohtml_kses( $input['social_diaspora'] );
+        $input['social_identica'] = wp_filter_nohtml_kses( $input['social_identica'] );            
         
 	
 
