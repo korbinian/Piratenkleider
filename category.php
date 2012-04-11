@@ -1,5 +1,4 @@
 <?php get_header(); ?>
- <!-- <h1><?php printf( __( 'Archiv: %s', 'twentyten' ), '' . single_cat_title( '', false ) . '' ); ?></h1> -->
 <div class="section content">
   <div class="row">
     <div class="content-primary">
