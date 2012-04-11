@@ -106,19 +106,19 @@ function theme_options_do_page() {
                                         </tr>
                                         
                                         
-	 <tr valign="top"><th scope="row">Facebook</th>
+	 <tr valign="top"><th scope="row">Twitter</th>
                                           <td>
 						<input id="piratenkleider_theme_options[social_twitter]" class="regular-text" type="text" length="5" name="piratenkleider_theme_options[social_twitter]" value="<?php esc_attr_e( $options['social_twitter'] ); ?>" />
-						<label class="description" for="piratenkleider_theme_optionssocial_twitter]"><?php _e( 'URL inkl. http:// zur Twitter Seite', 'piratenkleider' ); ?></label>
+						<label class="description" for="piratenkleider_theme_options[social_twitter]"><?php _e( 'URL inkl. http:// zur Twitter Seite', 'piratenkleider' ); ?></label>
 					</td>					
                                         </tr>
                                         
-	 <tr valign="top"><th scope="row">Twitter</th>
+<tr valign="top"><th scope="row">YouTube</th>
                                           <td>
 						<input id="piratenkleider_theme_options[social_youtube]" class="regular-text" type="text" length="5" name="piratenkleider_theme_options[social_youtube]" value="<?php esc_attr_e( $options['social_youtube'] ); ?>" />
 						<label class="description" for="piratenkleider_theme_options[social_youtube]"><?php _e( 'URL inkl. http:// zur YouTube Seite', 'piratenkleider' ); ?></label>
 					</td>					
-                                        </tr>
+</tr>
                                         
 	 <tr valign="top"><th scope="row">G+</th>
                                           <td>
@@ -142,7 +142,39 @@ function theme_options_do_page() {
  </tr>
             </table>                                                                                
                                     </td>                                    
-                                </tr>                               
+                                </tr>   
+                                
+ <tr valign="top">
+                                    <th scope="row"><?php _e( 'Twitter Feed', 'piratenkleider' ); ?></th>
+                                    <td>
+                                        <table>
+			
+                                        
+	 <tr valign="top"><th scope="row">Twitter Benutzername</th>
+                                          <td>
+						<input id="piratenkleider_theme_options[feed_twitter]" class="regular-text" type="text" length="5" name="piratenkleider_theme_options[feed_twitter]" value="<?php esc_attr_e( $options['feed_twitter'] ); ?>" />
+						<label class="description" for="piratenkleider_theme_options[feed_twitter]"><?php _e( 'Der reine Twitter Benutzername', 'piratenkleider' ); ?></label>
+					</td>					
+                                        </tr>
+                                         <tr valign="top"><th scope="row"><?php _e( 'Maximale Anzahl der Twittermeldungen', 'piratenkleider' ); ?></th>
+                                            <td>
+                                                    <select name="piratenkleider_theme_options[feed_twitter_numberarticle]">
+                                                        <?php
+                                                                    $selected = $options['feed_twitter_numberarticle'];
+                                                        ?>            
+                                                        <option style="padding-right: 10px;" value="2" <?php if ($selected ==2) { echo 'selected="selected"'; }?>>2</option>
+                                                        <option style="padding-right: 10px;" value="3" <?php if ($selected ==3) { echo 'selected="selected"'; }?>>3</option>
+                                                        <option style="padding-right: 10px;" value="4" <?php if ($selected ==4) { echo 'selected="selected"'; }?>>4</option>
+                                                        <option style="padding-right: 10px;" value="5" <?php if ($selected ==5) { echo 'selected="selected"'; }?>>5</option>
+                                                        <option style="padding-right: 10px;" value="6" <?php if ($selected ==6) { echo 'selected="selected"'; }?>>6</option>							
+                                                    </select>
+                                                    <label class="description" for="piratenkleider_theme_options[feed_twitter_numberarticle]"><?php _e( 'Wieviele Twittermeldungen sollen maximal gezeigt werden', 'piratenkleider' ); ?></label>
+                                            </td>
+                                            </tr>             
+
+            </table>                                                                                
+                                    </td>                                    
+                                </tr>                            
 				
                                 <tr valign="top">
                                     <th scope="row"><?php _e( 'Slider', 'piratenkleider' ); ?></th>
@@ -264,7 +296,10 @@ function theme_options_validate( $input ) {
 	$input['alle-socialmediabuttons'] = ( $input['alle-socialmediabuttons'] == 1 ? 1 : 0 );
         if ( ! isset( $input['slider-numberarticle'] ) )
 		$input['slider-numberarticle'] = 3;
-	
+		
+		if ( ! isset( $input['feed_twitter_numberarticle'] ) )
+		$input['feed_twitter_numberarticle'] = 3;
+		
         $input['slider-slideshowSpeed'] = wp_filter_nohtml_kses( $input['slider-slideshowSpeed'] );
         if ( ! isset( $input['slider-slideshowSpeed'] ) )
 		$input['slider-slideshowSpeed'] = 8000;
@@ -283,7 +318,7 @@ function theme_options_validate( $input ) {
         $input['social_gplus'] = wp_filter_nohtml_kses( $input['social_gplus'] );
         $input['social_diaspora'] = wp_filter_nohtml_kses( $input['social_diaspora'] );
         $input['social_identica'] = wp_filter_nohtml_kses( $input['social_identica'] );            
-        
+         $input['feed_twitter'] = wp_filter_nohtml_kses( $input['feed_twitter'] );
 	
 
 	return $input;
