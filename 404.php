@@ -5,18 +5,16 @@
     <div class="content-primary">
       <div class="content-header">
         <h1 id="page-title"><span><?php the_title(); ?></span></h1>
-            <img src="<?php echo get_bloginfo('template_url'); ?>/images/404.png" alt="" width="640" height="240" >
+         <img src="<?php echo get_bloginfo('template_url'); ?>/images/404.png" alt="" width="640" height="240" >
       </div>
       <div class="skin">
           <p> 
-              Die von Ihnen gesuchte Seite konnte nicht gefunden werden.
+              Fehler 404 - Die von Ihnen gesuchte Seite konnte nicht gefunden werden.
           </p>
          <p>
              Möchten Sie stattdessen im Webauftritt suchen?
          </p>    
-             
-          
-          
+              
          <?php get_search_form(); ?>
       </div>
     </div>
