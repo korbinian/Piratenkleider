@@ -41,7 +41,7 @@ MENÜS
    jeweiligen Seiten den Menus zugeordnet werden.
    Diese selbst angelegten Menüs werden dann unter dem Punkt
     "Anordnung im Theme" den 3 genannten Bereichen zugeordnet.
-   Bei dem menü, welches der Hauptnavigation zugeordnet ist, sollte die
+   Bei dem Menü, welches der Hauptnavigation zugeordnet ist, sollte die
    Startseite der Website enthalten sein. Diese wird mittels CSS dann
    in ein Häuschensymbol umgewandelt.
 
@@ -115,18 +115,53 @@ THEME-OPTIONS "Piratenkleider pimpen"
         Hintergrund in RGB #eeeeee . Ab Wordpress 3.4 kann eine neue Theme-
         Version dies flexibler machen)
 
-  Geplante weitere Optionen:
-    - Welle+Schiff aendern (vgl. piraten-bonn.de) 
 
- 
+BUGS, PROBLEME, TODOS, WEITERE INFOS
+
+Denkbare weitere Features (ToDos)
+  1. Welle+Schiff aendern im Kopfteil anpassbar machen um eigene
+     "Stadt-Skyline" o.ä. zu ergänzen. (vgl. piraten-bonn.de) 
+  2. Bei den Defaultbildern nicht ein bestimmtes auswählen, sondern 
+     Zufallssteuerung erlauben
+  3. Bild für Seiten
+        404, Tags, Kategorien, Suche
+     austauschbar oder abschaltbar machen
+
+
+Administrative Hinweise für Wordpress Theme-Editoren:
+
+1. Default-Bilder
+   Die Auswahl der default-Bilder ist in Arrays in der Datei
+   theme-options.php abgelegt. Die Bilder liegen im Verzeichnis /images/  
+
+2. Startseite:
+   Die Startseite zeigt die letzten 3 Artikel, sowie den Teaser und weitere 
+   dynamische Teile.
+    Unterhalb des Menus kommt der Teaser.
+   Der Teaser bindet eine Bildliste  sich aus den 3 letzten  
+   Artikeln (! nicht Pages), die in der Kategorie "Slider" ein.
   
+   Bei diesen Artikeln werden die jeweiligen Thumbnails der Artikelbilder 
+   eingeblendet.
+   Hinweis: Dabei wird die Standardgröße für die Artikelbilder welche im Blog
+   festgelegt ist, verwendet. Bei neu eingerichteten Blogs wird die mittlere
+   Bildgröße verwendet, die in x und y maximal 300 Pixel definieren und
+   dann entsprechend umrechnen. 
+   Unter Einstellungen-Mediathek sollte daher  die mittlere Größe der Bilder 
+   auf 640 Pixel Breite und 240 Pixel Höhe festgesetzt werden.
+   Bei Artikelbilder, die aber auf der Breite eine Höherskalierung bedürften
+   klappt dies nicht so toll. Die Y-Achse wird dann doch gross gemacht.
+   Daher sollte man darauf achten, daß nur solche Bilder gewählt werden die 
+   auch tatsächlich entsprechend Breit sind.
+   Am Besten bearbeitet man die Sliderbilder vor.
+   Bei der optischen Darstellung des Sliders werden Bilder, die höher sind als
+   240 Pixel nach unten abgeschnitten. 
+
+   Nach den 3 Artikeln kommen weitere Artikel. Dies sind die letzten Artikel 4-9
+   nach der Artikelliste. (Oben sind ja 1-3).
 
 
-Notizen
-/Dieser Bereich ist in Arbeit/
 
-Todo:
-* 404 und suche/tag/archiv/category-Bild ebenfalls austauschbar machen
 
 Bugs
 2. Wenn ein Artikel ein Artikelbild hat, dann wird dieses
@@ -139,33 +174,7 @@ Bugs
     und/oder durch eine statische Lösung ersetzt werden.
 
 
-Hinweise zur Startseite:
- Die Startseite zeigt die letzten 3 Artikel, sowie den Teaser und weitere 
- dynamische Teile.
 
-    Unterhalb des Menus kommt der Teaser.
-    Der Teaser bindet eine Bildliste  sich aus den 3 letzten  
-    Artikeln (! nicht Pages), die in der Kategorie "Slider" ein.
-   
-    Bei diesen Artikeln werden die jeweiligen Thumbnails der Artikelbilder 
-    eingeblendet.
-    Hinweis: Dabei wird die Standardgröße für die Artikelbilder welche im Blog
-    festgelegt ist, verwendet. Bei neu eingerichteten Blogs wird die mittlere
-    Bildgröße verwendet, die in x und y maximal 300 Pixel definieren und
-    dann entsprechend umrechnen. 
-    Unter Einstellungen-Mediathek sollte daher  die mittlere Größe der Bilder 
-    auf 640 Pixel Breite und 240 Pixel Höhe festgesetzt werden.
-    Bei Artikelbilder, die aber auf der Breite eine Höherskalierung bedürften
-    klappt dies nicht so toll. Die Y-Achse wird dann doch gross gemacht.
-    Daher sollte man darauf achten, daß nur solche Bilder gewählt werden die 
-    auch tatsächlich entsprechend Breit sind.
-    Am Besten bearbeitet man die Sliderbilder vor.
-    Bei der optischen Darstellung des Sliders werden Bilder, die höher sind als
-    240 Pixel nach unten abgeschnitten. 
-
-
- Nach den 3 Artikeln kommen weitere Artikel. Dies sind die letzten Artikel 4-9
- nach der Artikelliste. (Oben sind ja 1-3).
 
 
 
