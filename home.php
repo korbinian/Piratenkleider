@@ -75,18 +75,24 @@
                 <?php dynamic_sidebar( 'first-startpage-widget-area' ); ?>
             <?php } else { ?>
               
-                <div xmlns="http://www.w3.org/1999/xhtml" class="widget">
-
+                <div class="widget">
                 <h3>Weitere Artikel</h3>
 
                 <ul>
-                <?php $postslist = get_posts('numberposts=5&order=DESC&offset=3'); foreach ($postslist as $post) : setup_postdata($post); ?>
+                <?php 
+                $postslist = get_posts('numberposts=5&order=DESC&offset=3'); 
+                foreach ($postslist as $post) : setup_postdata($post); 
+                ?>
                 <li><a title="Post: <?php the_title(); ?>" href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
                 <span class="date"><?php the_time('d.m.Y') ?></span></li>
                 <?php endforeach; ?>
                 </ul>
-
-                <a href="<?php echo home_url( '/' ); ?>category/pm/" class="all-articles">alle Artikel</a>
+                </div>
+                <div class="widget">
+                <h3>Kategorien</h3>
+                <?php wp_list_categories('title_li='); ?>
+                
+               
                 </div>
              <?php } ?>
           </div>

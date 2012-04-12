@@ -7,7 +7,7 @@
          <div class="symbolbild"> 
               <img src="<?php echo get_bloginfo('template_url'); ?>/images/404.png" alt="" width="640" height="240" >
                <div class="caption">  
-                   <h3>Datei nicht gefunden</h3>
+                   <h3>Seite nicht gefunden</h3>
                    <h2>404</h2>
                </div>   
            </div> 

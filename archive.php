@@ -4,7 +4,7 @@
     <div class="content-primary">
       <div class="content-header">
           <div class="symbolbild"> 
-              <img src="<?php echo get_bloginfo('template_url'); ?>/images/tags-cats-suche.jpg" alt="" width="640" height="240" >
+              <img src="<?php echo get_bloginfo('template_url'); ?>/images/default-wissen.png" alt="" width="640" height="240" >
                <div class="caption">  
                   <?php if ( have_posts() ) the_post(); ?>
                     <h2>
