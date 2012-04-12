@@ -57,11 +57,17 @@ if (isset( $options['meta-keywords'] ) ) { ?>
                             <h1 class="visuallyhidden"><?php bloginfo( 'name' ); ?></h1>
                             <p class="visuallyhidden"><?php bloginfo( 'description' ); ?></p>
 			</div>
+                      <?php if ( $options['defaultwerbesticker'] == "1" ){ ?>
 			<div class="sticker">
-				<div class="skin">
-					<?php get_sidebar( 'sticker' ); ?>
-				</div>
+                            <div class="skin">   
+                               <h3 class="visuallyhidden">Sticker</h3>
+                               <ul>
+                                   <li><a class="member" href="https://www.piratenpartei.de/mitmachen/mitglied-werden/">werde Pirat!</a></li>
+                                   <li><a class="spenden" href="https://www.piratenpartei.de/mitmachen/spenden/">Unterstütze uns mit deiner Spende!</a></li>                                  
+                               </ul>                      
+                            </div>                                     
 			</div>
+                        <?php   } ?>
 			<div class="nav-top" role="navigation">
 				<?php get_search_form(); ?>
 				<h2 class="visuallyhidden">Topnavigation</h2>

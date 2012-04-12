@@ -69,7 +69,7 @@ BEREICHE/WIDGETS
 1. "Startseite: Sliderbereich"
     Hier werden per default die Artikelbilder der 3 Artikel gezeigt, die
     der Kategorie "Slider" zugeordnet sind.
-    Wenn das Widget mit einemr anderer Finktion gefüllt wird, dann
+    Wenn das Widget mit einer anderer Funktion gefüllt wird, dann
     entfällt der Slider.
 2. "Startseite: Rechter Aktionlinkbereich"
     Dieser Bereich ist rechts neben dem Slider. Auf der Piraten-Hauptsite
@@ -131,15 +131,9 @@ Todo:
 * 404 und suche/tag/archiv/category-Bild ebenfalls austauschbar machen
 
 Bugs
-1. Wenn man eine "frische" Bloginstallation betreibt, werden durch Aktivierung 
-   des Themes die Widgets, die vorher in der einfachen "Sidebar" waren, der 
-   neuer Sidebar "Sticker Widget Area" zugeordnet.
-   Dies hat zur Folge, dass anstelle von Links oder Widgetelementen
-   eine Reihe von Iconbilder "Werde Pirat" erscheien.
-
-2. Blöd auch: Wenn ein Artikel ein Artikelbild hat, dann wird dieses
+2. Wenn ein Artikel ein Artikelbild hat, dann wird dieses
    sonst nirgends gezeigt. Dabei wäre es -wie bei den Pages-
-   doch auch sinnvoll, dieses bei der EInzelanzeige des Artikels anzugeben.
+   doch auch sinnvoll, dieses bei der Einzelanzeige des Artikels anzugeben.
 
 3. Gravatar.com wird bei den Kommentaren verwenden. Da ist noch
    nichts gefährliches bei, aber wir sollten da nicht naiv sein. Gerade sowas

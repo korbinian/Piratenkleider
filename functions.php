@@ -314,19 +314,21 @@ endif;
  */
 function twentyten_widgets_init() {
 
-        // Area 1, located in the Header.
+       // Sidebar
         register_sidebar( array(
-                'name' => __( 'Sticker Widget Area', 'twentyten' ),
-                'id' => 'sticker-widget-area',
-                'description' => __( 'sticker widget area', 'twentyten' ),
+                'name' => __( 'Sidebar (Rechte Spalte)', 'twentyten' ),
+                'id' => 'sidebar-widget-area',
+                'description' => __( 'Dieser Bereich befindet sich rechts vom Inhaltsbereich. 
+                    Er ist geeignet für Werbeplakate, Hinweise und ähnliches.
+                    Wenn leer, werden als Alternative einige der allgemeinen Standardplakate 
+                    gezeigt.', 'twentyten' ),
                 'before_widget' => '<div class="widget">',
                 'after_widget' => '</div>',
                 'before_title' => '<h3 class="widget-title">',
                 'after_title' => '</h3>',
         ) );
 
-
-        // Area 3, located in the Teaser.
+        // Sliderbereich
         register_sidebar( array(
                 'name' => __( 'Startseite: Sliderbereich', 'twentyten' ),
                 'id' => 'first-teaser-widget-area',
@@ -340,7 +342,7 @@ function twentyten_widgets_init() {
                 'after_title' => '</h3>',
         ) );
 
-        // Area 4, located in the Teaser.
+        // Rechter Aktionlinkbereich, neben Slider
         register_sidebar( array(
                 'name' => __( 'Startseite: Rechter Aktionlinkbereich', 'twentyten' ),
                 'id' => 'second-teaser-widget-area',
@@ -354,19 +356,7 @@ function twentyten_widgets_init() {
                 'after_title' => '</h3>',
         ) );
 
-        // Area 5, located in the sidebar.
-        register_sidebar( array(
-                'name' => __( 'Sidebar (Rechte Spalte)', 'twentyten' ),
-                'id' => 'sidebar-widget-area',
-                'description' => __( 'Dieser Bereich befindet sich rechts vom Inhaltsbereich. 
-                    Er ist geeignet für Werbeplakate, Hinweise und ähnliches.
-                    Wenn leer, werden als Alternative einige der allgemeinen Standardplakate 
-                    gezeigt.', 'twentyten' ),
-                'before_widget' => '<div class="widget">',
-                'after_widget' => '</div>',
-                'before_title' => '<h3 class="widget-title">',
-                'after_title' => '</h3>',
-        ) );
+        
 
         // Startseite: Links unterhalb der 3 Artikel, per default Anzeige
         // der weiteren Artikel 
