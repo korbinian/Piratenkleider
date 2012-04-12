@@ -115,7 +115,7 @@ function theme_options_do_page() {
                                 <tr valign="top"><th scope="row"><?php _e( 'Werbesticker', 'piratenkleider' ); ?></th>
 					<td>
 						<input id="piratenkleider_theme_options[defaultwerbesticker]" name="piratenkleider_theme_options[defaultwerbesticker]" type="checkbox" value="1" <?php checked( '1', $options['defaultwerbesticker'] ); ?> />
-						<label  for="piratenkleider_theme_options[defaultwerbesticker]"><?php _e( 'Sticker "Werde Pirat" und "Hilf uns mit einer Spende" anzeigen. (Wahl wird überschrieben durch optionale Widget Sticker)', 'piratenkleider' ); ?></label>
+						<label  for="piratenkleider_theme_options[defaultwerbesticker]"><?php _e( 'Sticker "Werde Pirat" und "Hilf uns mit einer Spende" anzeigen.', 'piratenkleider' ); ?></label>
 					</td>
 				</tr>
 				<tr valign="top"><th scope="row"><?php _e( 'Eingabemaske für den Piraten-Newsletter', 'piratenkleider' ); ?></th>
@@ -245,7 +245,15 @@ function theme_options_do_page() {
                                              <tr valign="top"><th scope="row"><?php _e( 'Slider aktivieren', 'piratenkleider' ); ?></th>
                                         	<td>
                                             	<input id="piratenkleider_theme_options[slider-aktiv]" name="piratenkleider_theme_options[slider-aktiv]" type="checkbox" value="1" <?php checked( '1', $options['slider-aktiv'] ); ?> />
-						<label for="piratenkleider_theme_options[slider-aktiv]">Slider insgesamt aktivieren. <br>Achtung: Bei Deaktivierung entfällt auch der Widget-Bereich Startseite: "Rechter Aktionlinkbereich"</label>
+						<label for="piratenkleider_theme_options[slider-aktiv]">Slider auf der Startseite aktivieren.
+                                                <br>Die Auswahl der Plakatbilder kann unter den Defaultbildern angepasst werden.</label>
+                                                </td>
+                                            </tr>
+                                             <tr valign="top"><th scope="row"><?php _e( 'Plakatslider aktivieren', 'piratenkleider' ); ?></th>
+                                        	<td>
+                                            	<input id="piratenkleider_theme_options[slider-defaultwerbeplakate]" name="piratenkleider_theme_options[slider-defaultwerbeplakate]" type="checkbox" value="1" <?php checked( '1', $options['slider-defaultwerbeplakate'] ); ?> />
+						<label for="piratenkleider_theme_options[slider-defaultwerbeplakate]">Slider der Werbeplakate (rechte Sidebar-Spalte) werden angezeigt. 
+                                                    <br>Die Auswahl der Plakatbilder kann unter den Defaultbildern angepasst werden.</label>
                                                 </td>
                                             </tr>
                                              <tr valign="top"><th scope="row"><?php _e( 'Kategorie', 'piratenkleider' ); ?></th>
@@ -400,7 +408,9 @@ function theme_options_validate( $input ) {
         if ( ! isset( $input['slider-aktiv'] ) )
 		$input['slider-aktiv'] = null;
 	$input['slider-aktiv'] = ( $input['slider-aktiv'] == 1 ? 1 : 0 );        
-        
+         if ( ! isset( $input['slider-defaultwerbeplakate'] ) )
+		$input['slider-defaultwerbeplakate'] = null;
+	$input['slider-defaultwerbeplakate'] = ( $input['slider-defaultwerbeplakate'] == 1 ? 1 : 0 );        
         
         if ( ! isset( $input['slider-numberarticle'] ) )
 		$input['slider-numberarticle'] = 3;

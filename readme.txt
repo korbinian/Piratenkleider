@@ -8,7 +8,7 @@ basierend auf Vorlage von Korbinian Polk fuer die Bundeswebsite
 
 
 DOWNLOADS
-    Version von xolf: https://github.com/xwolfde/Piratenkleider
+    Version von xwolf: https://github.com/xwolfde/Piratenkleider
     Altes Original von korbinian: https://github.com/korbinian/Piratenkleider
     
 CREDITS & COPYRIGHT
@@ -17,10 +17,8 @@ CREDITS & COPYRIGHT
 
 
 AUTOREN / ENTWICKLER
-
    - Wolfgang Wiese, http://www.xwolf.de 
    - Heiko Philippski, http://www.phindie.de/
-   - Korbinian Polk, http://www.korbinian-polk.de                     
 
 
 
@@ -155,8 +153,8 @@ Hinweise zur Startseite:
     festgelegt ist, verwendet. Bei neu eingerichteten Blogs wird die mittlere
     Bildgröße verwendet, die in x und y maximal 300 Pixel definieren und
     dann entsprechend umrechnen. 
-    Unter Einstellungen-Mediathek sollte daher  die mittlere Größe der Bilder auf
-    640 Pixel Breite und 240 Pixel Höhe festgesetzt werden.
+    Unter Einstellungen-Mediathek sollte daher  die mittlere Größe der Bilder 
+    auf 640 Pixel Breite und 240 Pixel Höhe festgesetzt werden.
     Bei Artikelbilder, die aber auf der Breite eine Höherskalierung bedürften
     klappt dies nicht so toll. Die Y-Achse wird dann doch gross gemacht.
     Daher sollte man darauf achten, daß nur solche Bilder gewählt werden die 
@@ -170,10 +168,6 @@ Hinweise zur Startseite:
  nach der Artikelliste. (Oben sind ja 1-3).
 
 
-   
-
-Seiten:
-  Als Teaser für die Seiten wird das Thumbnail eines Seitenbildes angezeigt.
 
 
 

@@ -13,8 +13,8 @@
       $animationDuration = $options['slider-animationDuration'];    
       $slideDirection = $options['slider-Direction']; 
       $animationType = $options['slider-animationType']; 
-      $slideraktiv = $options['slider-aktiv'];
-      if ($slideraktiv==1) {
+
+      if (($options['slider-aktiv']==1) || ($options['slider-defaultwerbeplakate']==1)) {
         if ($slideshowSpeed <1000) {$slideshowSpeed=8000;}
         if ($animationDuration <100) {$animationDuration=600;}
         if (! isset($slideDirection)) $slideDirection = 'horizontal';
@@ -33,6 +33,8 @@
        });
     });    
     </script> 
+    <?php if ( $options['feed_twitter'] != "" ){ ?> 
     <script src="<?php echo get_bloginfo('template_url'); ?>/js/twitter.js"></script>
+    <?php } ?>
 </body>
 </html>
