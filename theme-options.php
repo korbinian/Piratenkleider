@@ -21,7 +21,7 @@ function theme_options_add_page() {
 
 
 /**
- * Create arrays for our select and radio options
+ * Liste der Defaultbilder fuer Seiten und Slider
  */
 $defaultbilder_liste = array(
 	'0' => array(
@@ -54,6 +54,60 @@ $defaultbilder_liste = array(
 	),
 );
 
+
+/**
+ * Liste der Default-Plakate fer die Sidebar
+ */
+
+$defaultplakate_liste = array(
+	'0' => array(
+		'src' =>	get_bloginfo('template_url').'/images/defaultplakat-agrarwirtschaft.jpg',
+		'label' => __( 'Plakat Agrarwirtschaft', 'piratenkleider' )
+	),
+	'1' => array(
+		'src' =>	get_bloginfo('template_url').'/images/defaultplakat-freiheit.jpg',
+		'label' => __( 'Plakat Freiheit und Selbstbestimmung', 'piratenkleider' )
+	),
+	'2' => array(
+		'src' =>	get_bloginfo('template_url').'/images/defaultplakat-lebensmittel.jpg',
+		'label' => __( 'Plakat für gentechnikfreie Lebensmittel', 'piratenkleider' )
+	),
+        '3' => array(
+		'src' =>	get_bloginfo('template_url').'/images/defaultplakat-mitbestimmung.jpg',
+		'label' => __( 'Plakat zur Mitbestimmung', 'piratenkleider' )
+	),
+        '4' => array(
+		'src' =>	get_bloginfo('template_url').'/images/defaultplakat-wohnraum.jpg',
+		'label' => __( 'Plakat für bezahlbaren Wohnraum', 'piratenkleider' )
+	),
+        '5' => array(
+		'src' =>	get_bloginfo('template_url').'/images/defaultplakat-oepnv.jpg',
+		'label' => __( 'Plakat ÖPNV', 'piratenkleider' )
+	),
+	'6' => array(
+		'src' =>	get_bloginfo('template_url').'/images/defaultplakat-warum-haengen.jpg',
+		'label' => __( 'Plakat Warum hänge ich hier', 'piratenkleider' )
+	),
+	'7' => array(
+		'src' =>	get_bloginfo('template_url').'/images/defaultplakat-vertraue-keinem-plakat.jpg',
+		'label' => __( 'Plakat Vertraue keinem Plakat', 'piratenkleider' )
+	),
+        '8' => array(
+		'src' =>	get_bloginfo('template_url').'/images/defaultplakat-klarmachen-zum-aendern.jpg',
+		'label' => __( 'Plakat Klarmachen zum ändern', 'piratenkleider' )
+	),
+        '9' => array(
+		'src' =>	get_bloginfo('template_url').'/images/defaultplakat-transparenz.jpg',
+		'label' => __( 'Plakat Transparenz', 'piratenkleider' )
+	),
+       '10' => array(
+		'src' =>	get_bloginfo('template_url').'/images/defaultplakat-streife-statt-kameras.jpg',
+		'label' => __( 'Plakat Streife statt Kameras', 'piratenkleider' )
+	),
+        
+);
+// Aus gestalerischen Gründen müssen Plakate auf der Website exakt 277 Pixel breit sein. Die Höhe ist
+// flexibel, sollte jedoch auch gleich sein. In diesem Fall  391 Pixel.
 
 /**
  * Create the options page
@@ -449,7 +503,7 @@ function theme_options_validate( $input ) {
  */
 function theme_defaultbilder_do_page() {
 	global $defaultbilder_liste;
-
+           global $defaultplakate_liste;
 	if ( ! isset( $_REQUEST['settings-updated'] ) )
 		$_REQUEST['settings-updated'] = false;
 
@@ -492,6 +546,17 @@ function theme_defaultbilder_do_page() {
                 label.tile:hover {
                     background-color: #eee;
                 }
+                label.plakattile {
+                    width: 160px;
+                    height: 250px;
+                    float: left;
+                    border: 1px solid #ccc;                    
+                    padding: 1px;
+                    margin: 5px;
+                }
+                label.plakattile:hover {
+                    background-color: #eee;
+                }                
             </style>
 	<div class="wrap">
             
@@ -507,6 +572,7 @@ function theme_defaultbilder_do_page() {
                     <?php $options = get_option( 'piratenkleider_theme_defaultbilder' ); 
                         $defaultbildsrc = $options['slider-defaultbildsrc']; 
                         $defaultseitenbildsrc = $options['seiten-defaultbildsrc']; 
+                        
                     ?>
                     <table class="form-table">
                      <tr valign="top">
@@ -526,16 +592,15 @@ function theme_defaultbilder_do_page() {
                                                 }
                                         }
                                         ?>
-                                        <label class="tile">
-                                            <input type="radio" name="piratenkleider_theme_defaultbilder[slider-defaultbildsrc]" value="<?php esc_attr_e( $option['src'] ); ?>" <?php echo $checked; ?> />                                                     
+                                        <label class="tile">                                                                                          
+                                               <input type="radio" name="piratenkleider_theme_defaultbilder[slider-defaultbildsrc]" value="<?php esc_attr_e( $option['src'] ); ?>" <?php echo $checked; ?> />                                                                                                 
                                             <?php echo $option['label']?>
-                                            <br> 
-                                            <img src="<?php echo $option['src'] ?>" style="width: 320px; height: auto;">
-
+                                               <br> 
+                                            <img src="<?php echo $option['src'] ?>" style="margin: 5px auto; width: 320px; height: auto;">
                                         </label>
                                 <?php } ?>        
                                 <br style="clear: left;">     
-                                    Alternatives Sliderbild als URL: 
+                                <h3>Alternatives Sliderbild als URL</h3>
                                  <input id="piratenkleider_theme_defaultbilder[slider-alternativesrc]" class="regular-text" type="text" name="piratenkleider_theme_defaultbilder[slider-alternativesrc]" value="<?php esc_attr_e( $options['slider-alternativesrc'] ); ?>" />
                             <label class="description" for="piratenkleider_theme_defaultbilder[slider-alternativesrc]">
                                 URL inkl. http:// zum Bild. Dieses kann auch vorher über den Mediendialog hochgeladen worden sein.                        
@@ -571,7 +636,7 @@ function theme_defaultbilder_do_page() {
                                         </label>
                                 <?php } ?>        
                                 <br style="clear: left;">   
-                                Alternatives Seitenbild als URL:
+                                <h3>Alternatives Seitenbild als URL</h3>
                                 <input id="piratenkleider_theme_defaultbilder[seiten-alternativesrc]" class="regular-text" type="text" name="piratenkleider_theme_defaultbilder[seiten-alternativesrc]" value="<?php esc_attr_e( $options['seiten-alternativesrc'] ); ?>" />
                                <label class="description" for="piratenkleider_theme_defaultbilder[seiten-alternativesrc]">
                                 URL inkl. http:// zum Bild. Dieses kann auch vorher über den Mediendialog hochgeladen worden sein.                               
@@ -582,7 +647,57 @@ function theme_defaultbilder_do_page() {
                               </label>
                                  <br />
                             </td>
-                        </tr>                                     
+                        </tr>
+                        <tr valign="top">
+                        <th scope="row"><?php _e( 'Defaultplakate für Sidebar', 'piratenkleider' ); ?></th>
+                        <td>                                                      
+                            <?php                                                                                     
+                                if ( ! isset( $checked ) ) $checked = '';
+                                foreach ( $defaultplakate_liste as $option ) {    
+                                    $checked = '';
+                                    if (is_array($options['plakate-src'])) {
+                                        foreach ($options['plakate-src'] as $current) {                                                                                      
+                                            if ($current == $option['src']) {
+                                                 $checked = "checked=\"checked\"";                                                                                            
+                                                 break;
+                                            }                                           ;
+                                        }
+                                    }                                    
+                                     ?>       
+                                    <label class="plakattile">
+                                        <div style="height: 40px; width: 100%; margin:0 auto; background-color: #F28900; color: white; display: block;">  
+                                        <input type="checkbox" name="piratenkleider_theme_defaultbilder[plakate-src][]" value="<?php esc_attr_e( $option['src'] ); ?>" <?php echo $checked; ?> />                                                     
+                                        <?php echo $option['label']?>
+                                        </div>
+                                        <div style="height: 200px; overflow: hidden; margin: 5px auto; width: 150px; padding: 0;">
+                                        <img src="<?php echo $option['src'] ?>" style="width: 150px; height: auto;  ">
+                                        </div>
+                                    </label>
+                               <?php } ?>        
+                                <br style="clear: left;"> 
+                                <p>
+                                    Diese Bilder werden in der Sidebar rechts gezeigt, sofern dieses über die Optionen (vgl. Slider) auch eingeschaltet ist.                                    
+                                </p>
+                                    
+                                    
+                                
+                                <h3>Eigene Plaktbilder:</h3>
+                                
+                                <textarea id="piratenkleider_theme_defaultbilder[plakate-altadressen]" class="large-text" cols="30" rows="5" name="piratenkleider_theme_defaultbilder[plakate-altadressen]"><?php echo esc_textarea( $options['plakate-altadressen'] ); ?></textarea>
+				<label class="description" for="piratenkleider_theme_defaultbilder[plakate-altadressen]"><?php _e( 'Adressen alternativer Plakatbilder', 'piratenkleider' ); ?></label>
+
+                                <p>    
+                                Angabe der URLs inkl. http:// zum Bild. Wenn es mehrere sind, werden
+                                die einzelnen Adressen durch ein Komma getrennt. Wenn oben Defaultplakate angeklickt sind,
+                                erscheinen diese Bilder zusätzlich.
+                                Diese Bilder können auch vorher über den Mediendialog hochgeladen worden sein.                               
+                                <br>
+                                Die Bilder sollten jeweils exakt 277x391 Pixel groß sein.
+                                 </p>      
+                              </label>
+                                 <br />
+                            </td>
+                        </tr>
              </table>
 
             <p class="submit">
@@ -612,6 +727,7 @@ function theme_defaultbilder_validate( $input ) {
         if ($input['seiten-alternativesrc'] != '') {            
             $input['seiten-defaultbildsrc'] = $input['seiten-alternativesrc'];
         }
+        $input['plakate-altadressen'] = wp_filter_post_kses( $input['plakate-altadressen'] );
 	return $input;
 }
 // adapted from http://planetozh.com/blog/2009/05/handling-plugins-options-in-wordpress-28-with-register_setting/

@@ -613,6 +613,9 @@ ul.socialmedia {
     /* Bilder die trotz cropping hoeher als 240 Pixel sind,
       werden abgeschnitten */
 }
+.content-aside .flexslider {
+    height: 391px;    
+}
 .flexslider img {
     /* Kommentare entfernen, wenn man möchte dass die Bilder an die 
        proportionale Breite angepasst werden und nicht abgeschnitten werden: */

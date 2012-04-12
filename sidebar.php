@@ -5,17 +5,32 @@
    }    
    if ( $options['slider-defaultwerbeplakate'] == "1" ) {
     ?>
-    <div class='flexslider fs2'>
+    <div class="flexslider fs2">
             <ul class='slides'>
-                    <li class='slide'>
-                            <img src="https://www.piratenpartei-nrw.de/wp-content/uploads/2012/04/plakat_bildung.png">
-                    </li>
-                    <li class='slide'>
-                            <img src="https://www.piratenpartei-nrw.de/wp-content/uploads/2012/04/plakat_update.png">
-                    </li>
-                    <li class='slide'>
-                            <img src="https://www.piratenpartei-nrw.de/wp-content/uploads/2012/04/plakat_systemrelevant.png">
-                    </li>
+                <?php 
+                $plakate = get_option( 'piratenkleider_theme_defaultbilder'); 
+                   if (is_array($plakate['plakate-src'])) {
+                     foreach ($plakate['plakate-src'] as $current) {
+                         ?>
+                         <li class="slide"><img src="<?php echo $current ?>" width="277" height="391" alt=""></li>
+                        <?php 
+                     }
+                  }
+                  if (isset($plakate['plakate-altadressen'])) {
+                      $alturls = preg_split("/[\s,]+/", $plakate['plakate-altadressen']);
+                      if (is_array( $alturls )) {
+                        foreach ( $alturls  as $current) {
+                            $thisurl = esc_url( $current );
+                            if ($thisurl <> '') {
+                               ?>
+                              <li class="slide"><img src="<?php echo  $thisurl ?>" width="277" height="391" alt=""></li>
+                             <?php  
+                            }
+                        
+                         }
+                     }
+                  }
+                ?>                   
             </ul>
     </div>
 <?php 
