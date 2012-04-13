@@ -54,7 +54,7 @@ $defaultbilder_liste = array(
 	),
 );
 
-
+ 
 /**
  * Liste der Default-Plakate fer die Sidebar
  */
