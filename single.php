@@ -7,7 +7,7 @@
       <div class="skin">
         <?php if ( have_posts() ) while ( have_posts() ) : the_post(); ?>
 
-        <div class="post" id="post-'<?php the_ID(); ?>'">
+        <div class="post" id="post-<?php the_ID(); ?>">
           <div class="post-title">
             <h1><?php the_title(); ?></h1>
           </div>
@@ -49,7 +49,7 @@
           </ul>
             
            <?php if (has_filter( 'related_posts_by_category')) { ?>   
-          <h3><?php _e('Das könnte dich auch interessieren:') ?></h3>
+          <h3>Das könnte dich auch interessieren:</h3>
           <ul class="related">
             <?php do_action(
             'related_posts_by_category',
