@@ -116,6 +116,12 @@ THEME-OPTIONS "Piratenkleider pimpen"
         Version dies flexibler machen)
 
 
+VERWENDETE PLUGINS
+  - Wenn das Plugin "Related Posts by Category" vorhanden und aktiviert ist,
+    werden bei der Anzige eines Artikels weitere Artikel verlinkt, die
+    ggf. relevant sein könnten.
+
+
 BUGS, PROBLEME, TODOS, WEITERE INFOS
 
 Denkbare weitere Features (ToDos)
