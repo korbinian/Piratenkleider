@@ -54,9 +54,8 @@ INHALTE
 
 1. Alle Seiten und Artikel sollten Artikel/Seitenbilder haben, da diese
    als Teaser angezeigt werden können.
-2. Alle Artikel, die Pressemeldungen sein sollen, müssen der Kategorie "pm" 
-   zugeordnet werden. Wenn diese Kategorie noch nicht vorhanden ist, muss
-   sie erstellt werden.
+2. Welche Artikel im Slider vorgestellt werden, wird in der Slider-
+   Kategorie-Einstellung definiert.
 3. Besondere Artikel können auf der Startseite im Slider erscheinen.
    Dies ist ein von selbst wechselndes Artikelbild mit der Verlinkung
    zu einem Artikel. 
@@ -71,30 +70,34 @@ BEREICHE/WIDGETS
     Dieser Bereich befindet sich rechts vom Inhaltsbereich. Er ist geeignet für
     Werbeplakate, Hinweise und ähnliches. Wenn leer, werden als Alternative 
     einige der allgemeinen Standardplakate gezeigt.
-2. "Startseite: Sliderbereich"
+2. Sidebar 2 (Rechts unter Plakaten) 
+    Dieser Bereich befindet sich rechts vom Inhaltsbereich. Er ist nach den 
+    Werbeplakaten positioniert, die über die Optionen ein- oder abgeschaltet 
+    werden können.
+3. "Startseite: Sliderbereich"
     Hier werden per default die Artikelbilder der 3 Artikel gezeigt, die
     der Kategorie "Slider" zugeordnet sind.
     Wenn das Widget mit einer anderer Funktion gefüllt wird, dann
     entfällt der Slider.
-3. "Startseite: Rechter Aktionlinkbereich"
+4. "Startseite: Rechter Aktionlinkbereich"
     Dieser Bereich ist rechts neben dem Slider. Auf der Piraten-Hauptsite
     befinden sich dort 3 Links zu Spendern/Mitmachen und mitglied werden.
     Diese drei sind auch hier als Default eingegeben. Durch Setzen einer
     anderer Widgetfunktion kann hier was anderes erscheinen.
-4. "Startseite: Links unten" 
+5. "Startseite: Links unten" 
     Dies ist auf der Startseite der Bereich rechts neben der Liste der weiteren
     Artikel.
     Es empfiehlt das Widget mit der Schlagwortliste zu füllen.
-5. "Startseite: Rechts unten" 
+6. "Startseite: Rechts unten" 
     Bereich rechts unterhalb der drei Presseartikel.
     Wenn leer, wird hier eine Schlagwortliste gezeigt.
-6. "Fußbereich: Linke Seite"
+7. "Fußbereich: Linke Seite"
    Bereich im Fußteil unter dem Haupttextbereich. Dieser Bereich eignet sich 
    insbesondere für externe Links zu anderen Piratenwebsites auf regionaler oder 
    überegionaler Ebene. Diese werden dann als Menu mit externen Links definiert 
    und dann als Widget dieser Sidebar zugeordnet. Wenn leer, wird hier nichts 
     angezeigt.
-7. "Fußbereich: Rechte Spalte"
+8. "Fußbereich: Rechte Spalte"
    Rechte Spalte im Fußbereich. Wenn leer, erscheint hier das technische Menu 
    (siehe Menüs). Wenn auch dieses nicht definiert ist, wird die Blogadresse und 
    dessen RSS-Feedadresse gezeigt
@@ -125,14 +128,12 @@ VERWENDETE PLUGINS
 BUGS, PROBLEME, TODOS, WEITERE INFOS
 
 Denkbare weitere Features (ToDos)
-1. Page-Menu aufbauen fuer den Fall, dass die vorhandenen Seiten noch
-   nicht den gewaehlten Menus zugeordnet sind oder auch garnicht
-   als Menu-Gruppen definiert sind.
-2. Welle+Schiff aendern im Kopfteil anpassbar machen um eigene
+
+1. Welle+Schiff aendern im Kopfteil anpassbar machen um eigene
    "Stadt-Skyline" o.ä. zu ergänzen. (vgl. piraten-bonn.de) 
-3. Bei den Defaultbildern nicht ein bestimmtes auswählen, sondern 
+2. Bei den Defaultbildern nicht ein bestimmtes auswählen, sondern 
    Zufallssteuerung erlauben
-4. Wenn ein Artikel ein Artikelbild hat, dann wird dieses
+3. Wenn ein Artikel ein Artikelbild hat, dann wird dieses
    sonst nirgends gezeigt. Dabei wäre es -wie bei den Pages-
    doch auch sinnvoll, dieses bei der Einzelanzeige des Artikels anzugeben.
  
