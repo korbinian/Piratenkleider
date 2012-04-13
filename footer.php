@@ -22,7 +22,7 @@
         
      ?>
     <script src="<?php echo get_bloginfo('template_url'); ?>/js/flexslider.js"></script>  
-    <?php } ?>
+    
     <script type="text/javascript" charset="utf-8">
     $(window).load(function() {
        $('.flexslider').flexslider({
@@ -33,6 +33,7 @@
        });
     });    
     </script> 
+    <?php } ?>
     <?php if ( $options['feed_twitter'] != "" ){ ?> 
     <script src="<?php echo get_bloginfo('template_url'); ?>/js/twitter.js"></script>
     <?php } ?>
