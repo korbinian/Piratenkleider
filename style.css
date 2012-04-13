@@ -624,6 +624,7 @@ ul.socialmedia li {
 }
 .content-aside .flexslider {
     height: 391px;    
+    margin-bottom: 10px;
 }
 .flexslider img {
     /* Kommentare entfernen, wenn man möchte dass die Bilder an die 
