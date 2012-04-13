@@ -102,7 +102,7 @@ if (isset( $options['meta-keywords'] ) ) { ?>
 
 			<div class="newsletter">
 				<div class="skin">
-					<form Method="POST" ACTION="https://service.piratenpartei.de/subscribe/newsletter">
+					<form method="post" action="https://service.piratenpartei.de/subscribe/newsletter">
 						<legend>Piratenpartei-Newsletter</legend>
 						<input type="text" name="email" placeholder="E-mail">
                                                 <input type="submit" name="email-button" value="abonnieren" id="newslettersubmit">
@@ -118,7 +118,9 @@ if (isset( $options['meta-keywords'] ) ) { ?>
                                 } else { ?>
                                     <div class="menu-header">
                                         <ul id="menu-mainmenu" class="menu">
-                                            <li class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home"><a href="<?php echo home_url( '/' ); ?>">Startseite</a></li>
+                                            <li class="menu-item menu-item-home <?php if (is_home()) echo 'current-menu-item'; ?>">
+                                               <a href="<?php echo home_url( '/' ); ?>">Startseite</a>                                                
+                                            </li>
                                             <!-- Es wurde noch keine Hauptnavigation als Menu definiert -->        
                                         </ul>
                                     </div>
