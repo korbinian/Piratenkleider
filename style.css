@@ -1358,14 +1358,26 @@ html[xmlns] .slides {
      
  }  
  .content-aside .widget li a.rsswidget {
-    color:#333333;
+  /*  color:#333333; */
     background: #c96a00;
     background: rgba(0, 0, 0, 0.2);
     list-style: none outside none !important;
     margin-bottom: 1px;
     padding: 1px 5px;
     display: block;
-
+ }
+ .content-aside .widget li .rssSummary {
+    color:#333333;
+    list-style: none outside none !important;
+    margin-bottom: 1px;
+    padding: 1px 5px;
+    display: block;
+    font-style: italic;    
+ }
+ .content-aside .widget li .rss-date {
+     text-align: right;
+     display: block;
+    font-style: italic;
  }
 #ics-calendar-widget {
   overflow: hidden;
