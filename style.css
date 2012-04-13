@@ -501,9 +501,11 @@ body {
 
 ul.socialmedia {
   overflow: hidden;
-  margin-right: 30px; }
-  ul.socialmedia li {
-    float: left; }
+  margin-right: 0;
+}
+ul.socialmedia li {
+    float: left; 
+}
     ul.socialmedia li a {
       display: block;
       width: 30px;

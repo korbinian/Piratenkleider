@@ -386,58 +386,29 @@ function twentyten_widgets_init() {
                 'after_title' => '</h3>',
         ) );
 
-
-
-
-        // Area 6, located in the Subcontent. Empty by default.
+        // Linke Seite der Fußzeile
         register_sidebar( array(
-                'name' => __( 'First Subcontent Widget Area', 'twentyten' ),
-                'id' => 'first-subcontent-widget-area',
-                'description' => __( 'The first subcontent widget area', 'twentyten' ),
-                'before_widget' => '<div class="widget">',
-                'after_widget' => '</div>',
-                'before_title' => '<h3 class="widget-title">',
-                'after_title' => '</h3>',
-        ) );
-
-        // Area 7, located in the Subcontent. Empty by default.
-        register_sidebar( array(
-                'name' => __( 'Second Subcontent Widget Area', 'twentyten' ),
-                'id' => 'second-subcontent-widget-area',
-                'description' => __( 'The second subcontent widget area', 'twentyten' ),
-                'before_widget' => '<div class="widget">',
-                'after_widget' => '</div>',
-                'before_title' => '<h3 class="widget-title">',
-                'after_title' => '</h3>',
-        ) );
-
-        // Area 8, located in the Subcontent. Empty by default.
-        register_sidebar( array(
-                'name' => __( 'Third Subcontent Widget Area', 'twentyten' ),
-                'id' => 'third-subcontent-widget-area',
-                'description' => __( 'The third subcontent widget area', 'twentyten' ),
-                'before_widget' => '<div class="widget">',
-                'after_widget' => '</div>',
-                'before_title' => '<h3 class="widget-title">',
-                'after_title' => '</h3>',
-        ) );
-
-        // Area 9, located in the footer. Empty by default.
-        register_sidebar( array(
-                'name' => __( 'First Footer Widget Area', 'twentyten' ),
+                'name' => __( 'Fußbereich: Linke Seite', 'twentyten' ),
                 'id' => 'first-footer-widget-area',
-                'description' => __( 'The first footer widget area', 'twentyten' ),
+                'description' => __( 'Bereich im Fußteil unter dem Haupttextbereich.
+                   Dieser Bereich eignet sich insbesondere für externe Links zu
+                   anderen Piratenwebsites auf regionaler oder überegionaler Ebene.
+                   Diese werden dann als Menu mit externen Links definiert und
+                   dann als Widget dieser Sidebar zugeordnet.
+                   Wenn leer, wird hier nichts angezeigt.', 'twentyten' ),
                 'before_widget' => '<div class="widget">',
                 'after_widget' => '</div>',
                 'before_title' => '<h3 class="widget-title">',
                 'after_title' => '</h3>',
         ) );
 
-        // Area 9, located in the footer. Empty by default.
+        // Rechte Seite der Fußzeile
         register_sidebar( array(
-                'name' => __( 'Second Footer Widget Area', 'twentyten' ),
+                'name' => __( 'Fußbereich: Rechte Spalte', 'twentyten' ),
                 'id' => 'second-footer-widget-area',
-                'description' => __( 'The second footer widget area', 'twentyten' ),
+                'description' => __( 'Rechte Spalte im Fußbereich. Wenn leer, erscheint hier das
+                    technische Menu (siehe Menüs). Wenn auch dieses nicht definiert ist, wird 
+                    die Blogadresse und dessen RSS-Feedadresse gezeigt', 'twentyten' ),
                 'before_widget' => '<div class="widget">',
                 'after_widget' => '</div>',
                 'before_title' => '<h3 class="widget-title">',

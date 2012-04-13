@@ -74,19 +74,25 @@ if (isset( $options['meta-keywords'] ) ) { ?>
 				<?php
                                     if ( has_nav_menu( 'top' ) ) {
                                         wp_nav_menu( array( 'container_class' => 'menu-header', 'theme_location' => 'top' ) );
-                                    } 
+                                    } else { ?>
+                                    <div class="menu-header">
+                                        <ul id="menu-topmenu" class="menu">
+                                            <li><a href="http://wiki.piratenpartei.de">Wiki</a></li>
+                                            <li><a href="http://lqfb.piratenpartei.de">Liquid Feedback</a></li>                                           
+                                            <li><a href="http://news.piratenpartei.de">Forum</a></li>
+                                            <li><a href="http://flaschenpost.piratenpartei.de/">Flaschenpost</a></li>
+                                        </ul>
+                                    </div>                                                                                
+                                    <?php }
                                     if ( $options['alle-socialmediabuttons'] == "1" ){
                                  ?> 
-				<ul class="socialmedia">
-					<?php if ( $options['social_facebook'] != "" ){ ?><li class="facebook"><a href="<?php echo$options['social_facebook']; ?>" target="_blank">Facebook</a></li><?php } ?>
-					<?php if ( $options['social_twitter'] != "" ){ ?><li class="twitter"><a href="<?php echo$options['social_twitter']; ?>" target="_blank">Twitter</a></li><?php } ?>
-					<?php if ( $options['social_youtube'] != "" ){ ?><li class="youtube"><a href="<?php echo$options['social_youtube']; ?>" target="_blank">Youtube</a></li><?php } ?>
-					<?php if ( $options['social_gplus'] != "" ){ ?><li class="gplus"><a href="<?php echo$options['social_gplus']; ?>" target="_blank">G+</a></li><?php } ?>
-					<?php if ( $options['social_diaspora'] != "" ){ ?><li class="diaspora"><a href="<?php echo$options['social_diaspora']; ?>" target="_blank">Diaspora</a></li><?php } ?>
-					<?php if ( $options['social_identica'] != "" ){ ?><li class="identica"><a href="<?php echo$options['social_identica']; ?>" target="_blank">identi.ca</a></li><?php } ?>
-					
-					
-					
+                                 <ul class="socialmedia">
+					<?php if ( $options['social_facebook'] != "" ){ ?><li class="facebook"><a href="<?php echo$options['social_facebook']; ?>">Facebook</a></li><?php } ?>
+					<?php if ( $options['social_twitter'] != "" ){ ?><li class="twitter"><a href="<?php echo$options['social_twitter']; ?>">Twitter</a></li><?php } ?>
+					<?php if ( $options['social_youtube'] != "" ){ ?><li class="youtube"><a href="<?php echo$options['social_youtube']; ?>">Youtube</a></li><?php } ?>
+					<?php if ( $options['social_gplus'] != "" ){ ?><li class="gplus"><a href="<?php echo$options['social_gplus']; ?>">G+</a></li><?php } ?>
+					<?php if ( $options['social_diaspora'] != "" ){ ?><li class="diaspora"><a href="<?php echo$options['social_diaspora']; ?>">Diaspora</a></li><?php } ?>
+					<?php if ( $options['social_identica'] != "" ){ ?><li class="identica"><a href="<?php echo$options['social_identica']; ?>">identi.ca</a></li><?php } ?>															
 				</ul>
                                  <?php }?>
 			</div>

@@ -24,8 +24,7 @@ AUTOREN / ENTWICKLER
 
 MENÜS
    Die Seite besteht aus drei verschiedenen Menüs.
-   (Im Orginaltheme waren dies das Primary Menu, Top und Secondary Menu.)
-   Im aktuellen Theme wurden diese umbenannt, damit deren Zweck klarer ist:
+
     - Hauptnavigation
         Hierin werden alle statischen Seiten des Webauftritts aufgeführt, die
         in der Hauptnavigation im oberen Teil der Seite, aber unter dem Logo
@@ -33,14 +32,18 @@ MENÜS
     - Linkmenu
         Hier befinden sich Links zu Werkzeugen oder Arbeitsportalen, wie
         bspw. das Wiki oder das Forum.
+        Wenn diese Menü nicht definiert ist, wird es mit den Standardlinks
+        besetzt.
     - Technische Navigation
         In das technsiche Menu kommen (statische) Seiten, die etwas über
         den Webauftritt sagen, wie bspw. das Impressum, Kontakt, Credits.
+        Das technische Menü kann in der Sidebar "Fußbereich: Rechte Spalte"
+        durch anderen Inhalt überschrieben werden.
 
    Die Menüs müssen unter Design->Menüs selbst angelegt werden und die
    jeweiligen Seiten den Menus zugeordnet werden.
    Diese selbst angelegten Menüs werden dann unter dem Punkt
-    "Anordnung im Theme" den 3 genannten Bereichen zugeordnet.
+    "Anordnung im Theme" den drei genannten Bereichen zugeordnet.
    Bei dem Menü, welches der Hauptnavigation zugeordnet ist, sollte die
    Startseite der Website enthalten sein. Diese wird mittels CSS dann
    in ein Häuschensymbol umgewandelt.
@@ -64,40 +67,37 @@ INHALTE
 
 BEREICHE/WIDGETS
 
-1. "Startseite: Sliderbereich"
+1. "Sidebar (Rechte Spalte)"
+    Dieser Bereich befindet sich rechts vom Inhaltsbereich. Er ist geeignet für
+    Werbeplakate, Hinweise und ähnliches. Wenn leer, werden als Alternative 
+    einige der allgemeinen Standardplakate gezeigt.
+2. "Startseite: Sliderbereich"
     Hier werden per default die Artikelbilder der 3 Artikel gezeigt, die
     der Kategorie "Slider" zugeordnet sind.
     Wenn das Widget mit einer anderer Funktion gefüllt wird, dann
     entfällt der Slider.
-2. "Startseite: Rechter Aktionlinkbereich"
+3. "Startseite: Rechter Aktionlinkbereich"
     Dieser Bereich ist rechts neben dem Slider. Auf der Piraten-Hauptsite
     befinden sich dort 3 Links zu Spendern/Mitmachen und mitglied werden.
     Diese drei sind auch hier als Default eingegeben. Durch Setzen einer
     anderer Widgetfunktion kann hier was anderes erscheinen.
-3. "Startseite: Links unten" 
+4. "Startseite: Links unten" 
     Dies ist auf der Startseite der Bereich rechts neben der Liste der weiteren
     Artikel.
     Es empfiehlt das Widget mit der Schlagwortliste zu füllen.
-4. "Startseite: Rechts unten" 
+5. "Startseite: Rechts unten" 
     Bereich rechts unterhalb der drei Presseartikel.
     Wenn leer, wird hier eine Schlagwortliste gezeigt.
-5. Sidebar (Rechte Spalte):
-    Dieser Bereich befindet sich rechts vom Inhaltsbereich. Er ist geeignet für
-    Werbeplakate, Hinweise und ähnliches. Wenn leer, werden als Alternative 
-    einige der allgemeinen Standardplakate gezeigt.
-6. Footer:
-   Der Footer wird aus den beiden Widgets 
-    First Footer Widget Area 
-    und
-    Second Footer Widget Area 
-   gebildet. 
-    Im First Footer Widget Area sollte man Links zu anderen Websites
-    machen. Auf der Hauptwebsite der Piratenpartei findet sich hier
-    eine Linkliste zu den internationelann Piratenwebsites.
-    Im Second Footer Widget Area wird per Default das
-    Technische Menu sichtbar gemacht.
-    Wenn das technische Menu noch nicht definiert wurde, werden dort
-    zunächst die Seiten unstrukturiert aufgeführt.
+6. "Fußbereich: Linke Seite"
+   Bereich im Fußteil unter dem Haupttextbereich. Dieser Bereich eignet sich 
+   insbesondere für externe Links zu anderen Piratenwebsites auf regionaler oder 
+   überegionaler Ebene. Diese werden dann als Menu mit externen Links definiert 
+   und dann als Widget dieser Sidebar zugeordnet. Wenn leer, wird hier nichts 
+    angezeigt.
+7. "Fußbereich: Rechte Spalte"
+   Rechte Spalte im Fußbereich. Wenn leer, erscheint hier das technische Menu 
+   (siehe Menüs). Wenn auch dieses nicht definiert ist, wird die Blogadresse und 
+   dessen RSS-Feedadresse gezeigt
 
 
 THEME-OPTIONS "Piratenkleider pimpen"

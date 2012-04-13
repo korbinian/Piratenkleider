@@ -123,10 +123,5 @@
   </div>
 </div>
 
-<div class="section subcontent">
-  <div class="row">
-    <?php get_sidebar( 'subcontent' ); ?>
-  </div>
-</div>
 
 <?php get_footer(); ?>
