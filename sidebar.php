@@ -34,6 +34,12 @@
             </ul>
     </div>
 <?php 
+   if ( is_active_sidebar( 'sidebar-widget-area-afterplakate' ) )  {
+       ?>
+       <hr>
+       <?php 
+            dynamic_sidebar( 'sidebar-widget-area-afterplakate' );     
+   }   
  }
  if ( $options['feed_twitter'] != "" ){ ?>
 <script>
