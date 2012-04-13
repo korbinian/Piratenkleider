@@ -53,21 +53,21 @@
           color: black; }
           .ie7 .nav-top div.menu-header ul.menu li a:hover, .ie8 .nav-top div.menu-header ul.menu li a:hover {
             color: #2d7dc5; }
-  .ie7 .nav-top form#searchform, .ie8 .nav-top form#searchform {
+  .ie7 .nav-top form.searchform, .ie8 .nav-top form.searchform {
     float: right !important;
     width: 200px;
     height: 30px;
     padding: 3px 5px 0 5px; }
-    .ie7 .nav-top form#searchform #s, .ie8 .nav-top form#searchform #s {
+    .ie7 .nav-top form.searchform #s, .ie8 .nav-top form.searchform #s {
       line-height: 18px;
       width: 100%; }
-    .ie7 .nav-top form#searchform #searchsubmit, .ie8 .nav-top form#searchform #searchsubmit {
+    .ie7 .nav-top form.searchform #searchsubmit, .ie8 .nav-top form.searchform #searchsubmit {
       top: 3px;
       right: 3px;
       padding: 0;
       width: 24px;
       height: 24px; }
-    .ie7 .nav-top form#searchform input, .ie8 .nav-top form#searchform input {
+    .ie7 .nav-top form.searchform input, .ie8 .nav-top form.searchform input {
       padding: 2px; }
 .ie7 .sticker, .ie8 .sticker {
   position: absolute;
@@ -218,5 +218,6 @@
 
 .ie9 .newsletter input[type="submit"] {
   padding: 3px 5px; }
-.ie9 #searchform #searchsubmit {
-  height: 20px !important; }
+.ie9 .searchform .searchsubmit {
+  height: 20px !important; 
+}
