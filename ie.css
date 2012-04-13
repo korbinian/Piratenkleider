@@ -214,11 +214,13 @@
     .ie7 .content-primary .first-startpage-widget-area .skin,
     .ie8 .content-primary .first-startpage-widget-area .skin {
       padding-right: 10px; }
-  .ie7 .content-primary .second-startpage-widget-area, .ie8 .content-primary .second-startpage-widget-area {
+  .ie7 .content-primary .second-startpage-widget-area, 
+  .ie8 .content-primary .second-startpage-widget-area {
     width: 50%;
     float: right;
     padding-top: 10px; }
-    .ie7 .content-primary .second-startpage-widget-area .skin, .ie8 .content-primary .second-startpage-widget-area .skin {
+    .ie7 .content-primary .second-startpage-widget-area .skin,
+    .ie8 .content-primary .second-startpage-widget-area .skin {
       padding-left: 10px; }
 .ie7 .content-aside, .ie8 .content-aside {
   float: right;
@@ -231,27 +233,35 @@
   width: 50%; }
   .ie7 .columns .column2 .post, .ie8 .columns .column2 .post {
     padding-left: 20px; }
-    .ie7 .columns .column2 .post .cal-icon, .ie8 .columns .column2 .post .cal-icon {
+    .ie7 .columns .column2 .post .cal-icon,
+    .ie8 .columns .column2 .post .cal-icon {
       margin-left: 0; }
-.ie7 .first-subcontent-widget-area, .ie8 .first-subcontent-widget-area {
+.ie7 .first-subcontent-widget-area, 
+.ie8 .first-subcontent-widget-area {
   float: left;
   width: 33.3333%; }
-.ie7 .second-subcontent-widget-area, .ie8 .second-subcontent-widget-area {
+.ie7 .second-subcontent-widget-area, 
+.ie8 .second-subcontent-widget-area {
   float: left;
   width: 33.3333%; }
-.ie7 .third-subcontent-widget-area, .ie8 .third-subcontent-widget-area {
+.ie7 .third-subcontent-widget-area, 
+.ie8 .third-subcontent-widget-area {
   float: right;
   width: 33.3333%; }
-.ie7 .first-footer-widget-area, .ie8 .first-footer-widget-area {
+.ie7 .first-footer-widget-area,
+.ie8 .first-footer-widget-area {
   float: left;
   width: 66.6666%; }
-.ie7 .second-footer-widget-area, .ie8 .second-footer-widget-area {
+.ie7 .second-footer-widget-area,
+.ie8 .second-footer-widget-area {
   float: right;
   width: 33.3333%; }
-.ie7 .newsletter #newslettersubmit, .ie8 .newsletter #newslettersubmit {
+.ie7 .newsletter #newslettersubmit, 
+.ie8 .newsletter #newslettersubmit {
   top: 18px;
   padding: 3px 5px; }
-.ie7 .nav-top #searchsubmit, .ie8 .nav-top #searchsubmit {
+.ie7 .nav-top #searchsubmit, 
+.ie8 .nav-top #searchsubmit {
   height: 21px; }
 
 .ie9 .newsletter input[type="submit"] {
