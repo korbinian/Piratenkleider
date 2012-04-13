@@ -2,8 +2,7 @@
 <div class="first-teaser-widget-area">
 <?php if ( is_active_sidebar( 'first-teaser-widget-area' ) ) { ?>
         <?php dynamic_sidebar( 'first-teaser-widget-area' ); ?>
-    <?php } else { 
-        // query_posts('category_name=Slider&post_per_page=3');
+    <?php } else {        
          $options = get_option( 'piratenkleider_theme_options' );
          $catname = $options['slider-catname'];
          $bilderoptions = get_option( 'piratenkleider_theme_defaultbilder' ); 
@@ -41,12 +40,11 @@
         wp_reset_query(); 
     } ?>
 </div>
-
 <div class="second-teaser-widget-area">
 <div class="skin">
     <?php if ( is_active_sidebar( 'second-teaser-widget-area' ) ) { ?>
         <?php dynamic_sidebar( 'second-teaser-widget-area' ); ?>
-    <?php } else { ?>    
+    <?php } else { ?>
         <div class="textwidget">
             <ul>
             <li class="first"><a href="http://www.piratenpartei.de/politik/themen/"><div>Informiere dich</div> Unsere Themen & Ziele!</a></li>
@@ -54,6 +52,6 @@
             <li class="third"><a href="http://www.piratenpartei.de/mitmachen/mitglied-werden/"><div>Werde Pirat!</div> Jetzt Mitglied werden!</a></li>
             </ul>
         </div>
-    <?php } ?>
+    <?php }  ?>
 </div>
 </div>
