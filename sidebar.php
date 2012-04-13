@@ -5,6 +5,7 @@
    }    
    if ( $options['slider-defaultwerbeplakate'] == "1" ) {
     ?>
+    <hr>
     <div class="flexslider fs2">
             <ul class='slides'>
                 <?php 
