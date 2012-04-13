@@ -118,7 +118,7 @@ THEME-OPTIONS "Piratenkleider pimpen"
 
 VERWENDETE PLUGINS
   - Wenn das Plugin "Related Posts by Category" vorhanden und aktiviert ist,
-    werden bei der Anzige eines Artikels weitere Artikel verlinkt, die
+    werden bei der Anzeige eines Artikels weitere Artikel verlinkt, die
     ggf. relevant sein könnten.
 
 
@@ -129,10 +129,10 @@ Denkbare weitere Features (ToDos)
      "Stadt-Skyline" o.ä. zu ergänzen. (vgl. piraten-bonn.de) 
   2. Bei den Defaultbildern nicht ein bestimmtes auswählen, sondern 
      Zufallssteuerung erlauben
-  3. Bild für Seiten
-        404, Tags, Kategorien, Suche
-     austauschbar oder abschaltbar machen
-
+ 3.  Wenn ein Artikel ein Artikelbild hat, dann wird dieses
+    sonst nirgends gezeigt. Dabei wäre es -wie bei den Pages-
+    doch auch sinnvoll, dieses bei der Einzelanzeige des Artikels anzugeben.
+ 
 
 Administrative Hinweise für Wordpress Theme-Editoren:
 
@@ -169,21 +169,8 @@ Administrative Hinweise für Wordpress Theme-Editoren:
 
 
 
-Bugs
-2. Wenn ein Artikel ein Artikelbild hat, dann wird dieses
-   sonst nirgends gezeigt. Dabei wäre es -wie bei den Pages-
-   doch auch sinnvoll, dieses bei der Einzelanzeige des Artikels anzugeben.
-
-3. Gravatar.com wird bei den Kommentaren verwenden. Da ist noch
-   nichts gefährliches bei, aber wir sollten da nicht naiv sein. Gerade sowas
-   kann zum Tracking verwendet werden. Daher sollte dies rausgenommen werden
-    und/oder durch eine statische Lösung ersetzt werden.
 
 
-
-
-
-
-
+ 
 
 
