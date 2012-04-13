@@ -1342,26 +1342,49 @@ html[xmlns] .slides {
 .widget {
   margin-bottom: 20px;
   overflow: hidden; }
-  .widget .widget-title {
-    line-height: 25px; }
+.widget .widget-title {
+    line-height: 25px; 
+ }
+ .content-aside .twitterwidget {
+     margin-top: 20px;
+     
+ }
+ .content-aside .widget ul {
+     margin-bottom: 5px;
+    overflow: hidden;
+ }  
+ .content-aside .widget .widget-title a.rsswidget img {
+     float: right;
+     
+ }  
+ .content-aside .widget li a.rsswidget {
+    color:#333333;
+    background: #c96a00;
+    background: rgba(0, 0, 0, 0.2);
+    list-style: none outside none !important;
+    margin-bottom: 1px;
+    padding: 1px 5px;
+    display: block;
 
+ }
 #ics-calendar-widget {
   overflow: hidden;
   margin-bottom: 5px; }
-  #ics-calendar-widget li {
+#ics-calendar-widget li {
     color: black !important;
     background: #c96a00;
     background: rgba(0, 0, 0, 0.2);
     margin-bottom: 1px;
     padding: 1px 5px;
     list-style: none !important; }
-    #ics-calendar-widget li strong {
+#ics-calendar-widget li strong {
       margin-right: 4px;
       display: block;
       height: 100%;
-      float: left; }
-
-#ics-calendar-widget-next, #ics-calendar-widget-prev {
+      float: left; 
+}
+#ics-calendar-widget-next, 
+#ics-calendar-widget-prev {
   padding: 5px 10px;
   overflow: visible;
   position: relative;
@@ -1381,7 +1404,8 @@ html[xmlns] .slides {
   background-image: -moz-linear-gradient(top, #2d7dc5, #24639b);
   background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #2d7dc5), color-stop(1, #24639b));
   background-image: linear-gradient(top, #2d7dc5, #24639b); }
-  #ics-calendar-widget-next:hover, #ics-calendar-widget-prev:hover {
+#ics-calendar-widget-next:hover, 
+#ics-calendar-widget-prev:hover {
     background-color: #2d7dc5;
     background-image: -moz-linear-gradient(top, #2d7dc5, #1a4872);
     background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #2d7dc5), color-stop(1, #1a4872));
@@ -1390,7 +1414,9 @@ html[xmlns] .slides {
     -o-transition: all 0.2s ease-in-out;
     -webkit-transition: all 0.2s ease-in-out;
     transition: all 0.2s ease-in-out; }
-  #ics-calendar-widget-next:active, #ics-calendar-widget-prev:active {
+
+#ics-calendar-widget-next:active, 
+#ics-calendar-widget-prev:active {
     top: 1px; }
 
 #ics-calendar-widget-next {
@@ -1402,7 +1428,7 @@ html[xmlns] .slides {
 .ics-calendar-header {
   padding: 0 0 20px 0 !important;
   text-align: left !important; }
-  .ics-calendar-header a {
+ .ics-calendar-header a {
     padding: 5px 10px;
     overflow: visible;
     position: relative;
