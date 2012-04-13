@@ -93,11 +93,14 @@
 .ie7 .nav-main, .ie8 .nav-main {
   position: absolute;
   bottom: 0; }
-  .ie7 .nav-main ul.menu, .ie8 .nav-main ul.menu {
+  .ie7 .nav-main ul.menu,
+  .ie8 .nav-main ul.menu {
     float: left; }
-    .ie7 .nav-main ul.menu li, .ie8 .nav-main ul.menu li {
+    .ie7 .nav-main ul.menu li, 
+    .ie8 .nav-main ul.menu li {
       float: left; }
-      .ie7 .nav-main ul.menu li a, .ie8 .nav-main ul.menu li a {
+      .ie7 .nav-main ul.menu li a, 
+      .ie8 .nav-main ul.menu li a {
         color: black;
         font-family: "BebasNeueRegular", Helvetica, Arial, sans-serif;
         font-weight: lighter;
@@ -105,76 +108,111 @@
         letter-spacing: 1px;
         padding: 12px 10px 10px 10px;
         border-bottom: 0; }
-        .ie7 .nav-main ul.menu li a:hover, .ie8 .nav-main ul.menu li a:hover {
+        .ie7 .nav-main ul.menu li a:hover, 
+        .ie8 .nav-main ul.menu li a:hover {
           color: #2d7dc5; }
-    .ie7 .nav-main ul.menu li.menu-item-home a, .ie8 .nav-main ul.menu li.menu-item-home a {
+    .ie7 .nav-main ul.menu li.menu-item-home a, 
+    .ie8 .nav-main ul.menu li.menu-item-home a {
       padding-left: 25px;
       padding-right: 25px;
       text-indent: -999em;
       background: url("assets/home.gif") no-repeat center 10px !important; }
-      .ie7 .nav-main ul.menu li.menu-item-home a:hover, .ie8 .nav-main ul.menu li.menu-item-home a:hover {
+    
+    .ie7 .nav-main ul.menu li.menu-item-home a:hover, 
+    .ie8 .nav-main ul.menu li.menu-item-home a:hover {
         background: white url("assets/home.gif") no-repeat center 10px !important; }
-    .ie7 .nav-main ul.menu li.current-menu-item.menu-item-home a, .ie8 .nav-main ul.menu li.current-menu-item.menu-item-home a {
+    .ie7 .nav-main ul.menu li.current-menu-item.menu-item-home a, 
+    .ie8 .nav-main ul.menu li.current-menu-item.menu-item-home a {
       background: #111111 url("assets/home.gif") no-repeat center -107px !important; }
-      .ie7 .nav-main ul.menu li.current-menu-item.menu-item-home a:hover, .ie8 .nav-main ul.menu li.current-menu-item.menu-item-home a:hover {
+    .ie7 .nav-main ul.menu li.current-menu-item.menu-item-home a:hover, 
+    .ie8 .nav-main ul.menu li.current-menu-item.menu-item-home a:hover {
         background: #111111 url("assets/home.gif") no-repeat center 10px !important; }
-    .ie7 .nav-main ul.menu li.has_children:hover, .ie8 .nav-main ul.menu li.has_children:hover {
+    .ie7 .nav-main ul.menu li.has_children:hover,
+    .ie8 .nav-main ul.menu li.has_children:hover {
       background: white; }
-      .ie7 .nav-main ul.menu li.has_children:hover ul.sub-menu, .ie8 .nav-main ul.menu li.has_children:hover ul.sub-menu {
+      .ie7 .nav-main ul.menu li.has_children:hover ul.sub-menu, 
+      .ie8 .nav-main ul.menu li.has_children:hover ul.sub-menu {
         top: 40px;
         background: white;
         width: 200px;
         padding: 5px 0;
         border-bottom: 1px solid; }
-        .ie7 .nav-main ul.menu li.has_children:hover ul.sub-menu li.current-menu-item a, .ie8 .nav-main ul.menu li.has_children:hover ul.sub-menu li.current-menu-item a {
+      
+        .ie7 .nav-main ul.menu li.has_children:hover ul.sub-menu li.current-menu-item a,
+        .ie8 .nav-main ul.menu li.has_children:hover ul.sub-menu li.current-menu-item a {
           background: white;
           color: black; }
-        .ie7 .nav-main ul.menu li.has_children:hover ul.sub-menu hr, .ie8 .nav-main ul.menu li.has_children:hover ul.sub-menu hr {
+        
+        .ie7 .nav-main ul.menu li.has_children:hover ul.sub-menu hr, 
+        .ie8 .nav-main ul.menu li.has_children:hover ul.sub-menu hr {
           margin: 0 !important; }
-        .ie7 .nav-main ul.menu li.has_children:hover ul.sub-menu li, .ie8 .nav-main ul.menu li.has_children:hover ul.sub-menu li {
+        
+        .ie7 .nav-main ul.menu li.has_children:hover ul.sub-menu li, 
+        .ie8 .nav-main ul.menu li.has_children:hover ul.sub-menu li {
           float: none;
           position: relative; }
-          .ie7 .nav-main ul.menu li.has_children:hover ul.sub-menu li a, .ie8 .nav-main ul.menu li.has_children:hover ul.sub-menu li a {
+        
+          .ie7 .nav-main ul.menu li.has_children:hover ul.sub-menu li a, 
+          .ie8 .nav-main ul.menu li.has_children:hover ul.sub-menu li a {
             font-family: Helvetica, Arial, sans-serif;
             letter-spacing: 0;
             font-size: 12px;
             padding: 2px 18px; }
-            .ie7 .nav-main ul.menu li.has_children:hover ul.sub-menu li a:hover, .ie8 .nav-main ul.menu li.has_children:hover ul.sub-menu li a:hover {
+          
+            .ie7 .nav-main ul.menu li.has_children:hover ul.sub-menu li a:hover, 
+            .ie8 .nav-main ul.menu li.has_children:hover ul.sub-menu li a:hover {
               background: #2d7dc5;
               color: white; }
-          .ie7 .nav-main ul.menu li.has_children:hover ul.sub-menu li ul.sub-menu, .ie8 .nav-main ul.menu li.has_children:hover ul.sub-menu li ul.sub-menu {
+          .ie7 .nav-main ul.menu li.has_children:hover ul.sub-menu li ul.sub-menu, 
+          .ie8 .nav-main ul.menu li.has_children:hover ul.sub-menu li ul.sub-menu {
             top: -999em; }
-        .ie7 .nav-main ul.menu li.has_children:hover ul.sub-menu li.has_children a, .ie8 .nav-main ul.menu li.has_children:hover ul.sub-menu li.has_children a {
+        .ie7 .nav-main ul.menu li.has_children:hover ul.sub-menu li.has_children a,
+        .ie8 .nav-main ul.menu li.has_children:hover ul.sub-menu li.has_children a {
           background: url("assets/plus_black.gif") center right no-repeat; }
-          .ie7 .nav-main ul.menu li.has_children:hover ul.sub-menu li.has_children a:hover, .ie8 .nav-main ul.menu li.has_children:hover ul.sub-menu li.has_children a:hover {
+        
+          .ie7 .nav-main ul.menu li.has_children:hover ul.sub-menu li.has_children a:hover, 
+          .ie8 .nav-main ul.menu li.has_children:hover ul.sub-menu li.has_children a:hover {
             background: #2d7dc5 url("assets/plus.gif") center right no-repeat; }
-        .ie7 .nav-main ul.menu li.has_children:hover ul.sub-menu li.has_children ul.sub-menu li a, .ie8 .nav-main ul.menu li.has_children:hover ul.sub-menu li.has_children ul.sub-menu li a {
+          
+        .ie7 .nav-main ul.menu li.has_children:hover ul.sub-menu li.has_children ul.sub-menu li a, 
+        .ie8 .nav-main ul.menu li.has_children:hover ul.sub-menu li.has_children ul.sub-menu li a {
           background: white !important; }
-          .ie7 .nav-main ul.menu li.has_children:hover ul.sub-menu li.has_children ul.sub-menu li a:hover, .ie8 .nav-main ul.menu li.has_children:hover ul.sub-menu li.has_children ul.sub-menu li a:hover {
+        
+          .ie7 .nav-main ul.menu li.has_children:hover ul.sub-menu li.has_children ul.sub-menu li a:hover, 
+          .ie8 .nav-main ul.menu li.has_children:hover ul.sub-menu li.has_children ul.sub-menu li a:hover {
             background: #2d7dc5 !important; }
-        .ie7 .nav-main ul.menu li.has_children:hover ul.sub-menu li:hover ul.sub-menu, .ie8 .nav-main ul.menu li.has_children:hover ul.sub-menu li:hover ul.sub-menu {
+          
+        .ie7 .nav-main ul.menu li.has_children:hover ul.sub-menu li:hover ul.sub-menu, 
+        .ie8 .nav-main ul.menu li.has_children:hover ul.sub-menu li:hover ul.sub-menu {
           top: -5px;
           left: 190px; }
-    .ie7 .nav-main ul.menu li.current-menu-item > a, .ie8 .nav-main ul.menu li.current-menu-item > a {
+        
+    .ie7 .nav-main ul.menu li.current-menu-item > a, 
+    .ie8 .nav-main ul.menu li.current-menu-item > a {
       background: black;
       color: white; }
-    .ie7 .nav-main ul.menu li.current-menu-item:hover > a, .ie8 .nav-main ul.menu li.current-menu-item:hover > a {
+    .ie7 .nav-main ul.menu li.current-menu-item:hover > a, 
+    .ie8 .nav-main ul.menu li.current-menu-item:hover > a {
       background: white;
       color: black; }
 .ie7 .second-teaser-widget-area .skin ul li a, .ie8 .second-teaser-widget-area .skin ul li a {
   padding: .8em 10px .3em 50px; }
-.ie7 .teaser .first-teaser-widget-area, .ie8 .teaser .first-teaser-widget-area {
+.ie7 .teaser .first-teaser-widget-area, 
+.ie8 .teaser .first-teaser-widget-area {
   width: 66.6666%; }
-.ie7 .teaser .second-teaser-widget-area, .ie8 .teaser .second-teaser-widget-area {
+.ie7 .teaser .second-teaser-widget-area, 
+.ie8 .teaser .second-teaser-widget-area {
   width: 33.3333%; }
 .ie7 .content-primary, .ie8 .content-primary {
   float: left;
   width: 66.6666%; }
-  .ie7 .content-primary .first-startpage-widget-area, .ie8 .content-primary .first-startpage-widget-area {
+  .ie7 .content-primary .first-startpage-widget-area, 
+  .ie8 .content-primary .first-startpage-widget-area {
     width: 50%;
     float: left;
     padding-top: 10px; }
-    .ie7 .content-primary .first-startpage-widget-area .skin, .ie8 .content-primary .first-startpage-widget-area .skin {
+    .ie7 .content-primary .first-startpage-widget-area .skin,
+    .ie8 .content-primary .first-startpage-widget-area .skin {
       padding-right: 10px; }
   .ie7 .content-primary .second-startpage-widget-area, .ie8 .content-primary .second-startpage-widget-area {
     width: 50%;
