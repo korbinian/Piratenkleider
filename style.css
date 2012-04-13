@@ -1646,11 +1646,11 @@ div.ics-calendar-holder .ics-calendar-event {
      .nav-main ul.menu li.menu-item-home a:hover {
           background: white url("assets/home.gif") no-repeat center 10px !important; }
      
-     .nav-main ul.menu li.current-menu-item a[title="Home"],
+     .nav-main ul.menu li.current_page_item a[title="Home"],
      .nav-main ul.menu li.current-menu-item.menu-item-home a {
         background: #111111 url("assets/home.gif") no-repeat center -107px !important; }
      
-     .nav-main ul.menu li.current-menu-item a[title="Home"]:hover ,
+     .nav-main ul.menu li.current_page_item a[title="Home"]:hover ,
      .nav-main ul.menu li.current-menu-item.menu-item-home a:hover {
           background: #111111 url("assets/home.gif") no-repeat center 10px !important; }
      
