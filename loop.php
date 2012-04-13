@@ -20,7 +20,7 @@
                                         <?php the_title(); ?>
                                 </a>
                         </h2>
-                        <?php twentyten_posted_on(); ?>
+                        <?php piratenkleider_post_pubdateinfo(); ?>
 
                 <?php if ( post_password_required() ) : ?>
                         <?php the_content(); ?>
@@ -58,7 +58,7 @@
                                 <?php the_content( __( 'Weiterlesen', 'twentyten' ) ); ?>
                         <?php endif; ?>
 
-                                        <?php twentyten_posted_on(); ?>
+                                        <?php piratenkleider_post_pubdateinfo(); ?>
                                         |
                                         <?php comments_popup_link( __( 'Hinterlasse einen Kommentar', 'twentyten' ), __( '1 Comment', 'Kommentar' ), __( '% Kommentare', 'twentyten' ) ); ?>
                                         <?php edit_post_link( __( 'Bearbeiten', 'twentyten' ), '| ', '' ); ?>
@@ -67,7 +67,7 @@
 
                 <?php else : ?>
                                 <h2><a href="<?php the_permalink(); ?>" title="<?php printf( esc_attr__( 'Permalink to %s', 'twentyten' ), the_title_attribute( 'echo=0' ) ); ?>" rel="bookmark"><?php the_title(); ?></a></h2>
-                                <?php twentyten_posted_on(); ?>
+                                <?php piratenkleider_post_pubdateinfo(); ?>
 
                 <?php if ( is_archive() || is_search() ) : // Only display excerpts for archives and search. ?>
                                 <?php the_excerpt(); ?>

@@ -451,7 +451,7 @@ body {
   background-repeat: repeat-x, no-repeat; }
   .header .branding {
     padding: 10px 0 0px 0; }
-  .header input[type="text"] {
+ .header input[type="text"] {
     border-color: silver;
     width: 100% !important; }
 
@@ -474,12 +474,13 @@ body {
     position: absolute;
     top: -999em; }
 
-#searchform {
+.searchform {
   padding: 10px 10px 5px 10px;
   background: #f7f7f7;
   background: rgba(255, 255, 255, 0.5);
-  position: relative; }
-  #searchform #searchsubmit {
+  position: relative;
+}
+.searchform .searchsubmit {
     position: absolute;
     top: 10px;
     right: 8px;
@@ -487,10 +488,16 @@ body {
     width: 30px;
     height: 30px;
     overflow: hidden;
-    text-indent: -999em; }
+    text-indent: -999em; 
+}
+  
+.content .searchform .searchsubmit {
+  right: auto;    
+}   
 
-.fullwidth #searchform input[type="text"] {
-  width: 100%; }
+.fullwidth .searchform input[type="text"] {
+  width: 100%; 
+}
 
 ul.socialmedia {
   overflow: hidden;
@@ -1491,22 +1498,27 @@ div.ics-calendar-holder .ics-calendar-event {
             color: black; }
             .nav-top div.menu-header ul.menu li a:hover {
               color: #2d7dc5; }
-    .nav-top form#searchform {
+            
+    .nav-top form.searchform {
       float: right !important;
       width: 200px;
-      height: 30px;
-      padding: 3px 5px 0 5px; }
-      .nav-top form#searchform #s {
+      height: 30px;     
+      padding: 3px 5px 0 5px; 
+    }
+   .nav-top form.searchform #s {
         line-height: 18px;
-        width: 100%; }
-      .nav-top form#searchform #searchsubmit {
+        width: 100%;         
+   }
+   .nav-top form.searchform .searchsubmit {
         top: 3px;
         right: 3px;
         padding: 0;
         width: 24px;
-        height: 24px; }
-      .nav-top form#searchform input {
-        padding: 2px; }
+        height: 24px; 
+   }
+   .nav-top form.searchform input {
+        padding: 2px;        
+    }
 
   .sticker {
     position: absolute;

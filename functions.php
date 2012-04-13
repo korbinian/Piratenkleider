@@ -462,46 +462,47 @@ function twentyten_remove_recent_comments_style() {
 }
 add_action( 'widgets_init', 'twentyten_remove_recent_comments_style' );
 
-if ( ! function_exists( 'twentyten_posted_on' ) ) :
+
+if ( ! function_exists( 'piratenkleider_post_pubdateinfo' ) ) :
 /**
- * Prints HTML with meta information for the current post—date/time and author.
- *
- * @since Twenty Ten 1.0
+ * Fusszeile unter Artikeln: Veröffentlichungsdatum
  */
-function twentyten_posted_on() {
-        printf( __( '<span class="%1$s">Veröffentlicht am</span> %2$s <span class="meta-sep"></span>', 'twentyten' ),
-                'meta-prep meta-prep-author',
-                sprintf( '<a href="%1$s" title="%2$s" rel="bookmark"><span class="entry-date">%3$s</span></a>',
-                        get_permalink(),
-                        esc_attr( get_the_time() ),
+function piratenkleider_post_pubdateinfo() {
+        printf( __( '<span class="meta-prep">Veröffentlicht am</span> %1$s ', 'piratenkleider' ),
+                sprintf( '<span class="entry-date">%1$s</span>',
                         get_the_date()
-                ),
+                )
+        );
+}
+endif;
+if ( ! function_exists( 'piratenkleider_post_autorinfo' ) ) :
+/**
+ * Fusszeile unter Artikeln: Autorinfo
+ */
+function piratenkleider_post_autorinfo() {
+        printf( __( '<span class="meta-prep-author">von</span> %1$s ', 'piratenkleider' ),               
                 sprintf( '<span class="author vcard"><a class="url fn n" href="%1$s" title="%2$s">%3$s</a></span> ',
                         get_author_posts_url( get_the_author_meta( 'ID' ) ),
-                        sprintf( esc_attr__( 'View all posts by %s', 'twentyten' ), get_the_author() ),
+                        sprintf( esc_attr__( 'Artikel von %s', 'piratenkleider' ), get_the_author() ),
                         get_the_author()
                 )
         );
 }
 endif;
 
-if ( ! function_exists( 'twentyten_posted_in' ) ) :
+if ( ! function_exists( 'piratenkleider_post_taxonominfo' ) ) :
 /**
- * Prints HTML with meta information for the current post (category, tags and permalink).
- *
- * @since Twenty Ten 1.0
+ * Fusszeile unter Artikeln: Taxonomie
  */
-function twentyten_posted_in() {
-        // Retrieves tag list of current post, separated by commas.
-        $tag_list = get_the_tag_list( '', ', ' );
+function piratenkleider_post_taxonominfo() {
+         $tag_list = get_the_tag_list( '', ', ' );
         if ( $tag_list ) {
-                $posted_in = __( 'unter %1$s und eingeordnet unter %2$s. Hier der permanente <a href="%3$s" title="Permalink to %4$s" rel="bookmark">Link</a> zu diesem Artikel.', 'twentyten' );
+                $posted_in = __( 'unter %1$s und tagged %2$s. <br>Hier der permanente <a href="%3$s" title="Permalink to %4$s" rel="bookmark">Link</a> zu diesem Artikel.', 'piratenkleider' );
         } elseif ( is_object_in_taxonomy( get_post_type(), 'category' ) ) {
-                $posted_in = __( 'unter %1$s. Hier der permanente <a href="%3$s" title="Permalink to %4$s" rel="bookmark">Link</a> zu diesem Artikel.', 'twentyten' );
+                $posted_in = __( 'unter %1$s. <br><a href="%3$s" title="Permalink to %4$s" rel="bookmark">Permanenter Link</a> zu diesem Artikel.', 'piratenkleider' );
         } else {
-                $posted_in = __( 'Hier der permanente <a href="%3$s" title="Permalink to %4$s" rel="bookmark">Link</a> zu diesem Artikel.', 'twentyten' );
+                $posted_in = __( '<a href="%3$s" title="Permalink to %4$s" rel="bookmark">Permanenter Link</a> zu diesem Artikel.', 'piratenkleider' );
         }
-
         // Prints the string, replacing the placeholders.
         printf(
                 $posted_in,
@@ -512,6 +513,7 @@ function twentyten_posted_in() {
         );
 }
 endif;
+
 
 add_theme_support( 'post-thumbnails' );
 
@@ -676,7 +678,7 @@ function dimox_breadcrumbs() {
  
 if( !is_admin()){
         wp_deregister_script('jquery');
-        wp_register_script('jquery', get_bloginfo('template_url'). "/js/jquery.min.js", false, '1.3.2');
+        wp_register_script('jquery', get_bloginfo('template_url'). "/js/jquery.min.js", false);
         wp_enqueue_script('jquery');
 
 }

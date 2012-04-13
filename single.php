@@ -1,5 +1,6 @@
-<?php get_header(); ?>
-
+<?php get_header();    
+  $options = get_option( 'piratenkleider_theme_options' );  
+?> 
 <div class="section content">
   <div class="row">
     <div class="content-primary">
@@ -24,7 +25,13 @@
             <?php the_content(); ?>
           </div>
           <div class="post-meta">
-            <div><?php twentyten_posted_on(); ?><?php twentyten_posted_in(); ?></div>
+            <div>
+               <?php 
+                piratenkleider_post_pubdateinfo();    
+                if ($options['aktiv-autoren']) piratenkleider_post_autorinfo();             
+                 piratenkleider_post_taxonominfo();  
+                ?>        
+            </div>
             <div><?php edit_post_link( __( 'Bearbeiten', 'twentyten' ), '', '' ); ?></div>
           </div>
         </div>

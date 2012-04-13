@@ -48,7 +48,7 @@ if (isset( $options['meta-keywords'] ) ) { ?>
 		<div class="row">
 			<div class="branding">
                             <?php if ( ! is_home() ) { ?>
-                            <a href="<?php echo home_url( '/' ); ?>" title="Link zur Startseite" rel="home" class="logo">
+                            <a href="<?php echo home_url( '/' ); ?>" rel="home" class="logo">
                             <?php }                                 
                                function piratenkleider_header_style() {} 
                             ?>                                                             

@@ -166,20 +166,30 @@ function theme_options_do_page() {
                         ?>
 			<table class="form-table">
 
-                                <tr valign="top"><th scope="row"><?php _e( 'Werbesticker', 'piratenkleider' ); ?></th>
+                                <tr valign="top"><th scope="row">Werbesticker</th>
 					<td>
 						<input id="piratenkleider_theme_options[defaultwerbesticker]" name="piratenkleider_theme_options[defaultwerbesticker]" type="checkbox" value="1" <?php checked( '1', $options['defaultwerbesticker'] ); ?> />
-						<label  for="piratenkleider_theme_options[defaultwerbesticker]"><?php _e( 'Sticker "Werde Pirat" und "Hilf uns mit einer Spende" anzeigen.', 'piratenkleider' ); ?></label>
+						<label  for="piratenkleider_theme_options[defaultwerbesticker]">Sticker "Werde Pirat" und "Hilf uns mit einer Spende" anzeigen.</label>
 					</td>
 				</tr>
-				<tr valign="top"><th scope="row"><?php _e( 'Eingabemaske für den Piraten-Newsletter', 'piratenkleider' ); ?></th>
+				<tr valign="top"><th scope="row">Piraten-Newsletter</th>
 					<td>
 						<input id="piratenkleider_theme_options[newsletter]" name="piratenkleider_theme_options[newsletter]" type="checkbox" value="1" <?php checked( '1', $options['newsletter'] ); ?> />
-						<label  for="piratenkleider_theme_options[newsletter]"><?php _e( 'Eingabemaske anzeigen', 'piratenkleider' ); ?></label>
+						<label  for="piratenkleider_theme_options[newsletter]">Eingabemaske anzeigen</label>
 					</td>
 				</tr>
-                              
-				
+                                <tr valign="top"><th scope="row">Platzhalterbilder für Indexseiten</th>
+					<td>
+						<input id="piratenkleider_theme_options[aktiv-platzhalterbilder-indexseiten]" name="piratenkleider_theme_options[aktiv-platzhalterbilder-indexseiten]" type="checkbox" value="1" <?php checked( '1', $options['aktiv-platzhalterbilder-indexseiten'] ); ?> />
+						<label  for="piratenkleider_theme_options[aktiv-platzhalterbilder-indexseiten]">Platzhalterbilder bei Indexseiten zu Kategorien, Tags, Suche und Archiv anzeigen</label>
+					</td>
+				</tr>
+				 <tr valign="top"><th scope="row">Autoren anzeigen</th>
+					<td>
+						<input id="piratenkleider_theme_options[aktiv-autoren]" name="piratenkleider_theme_options[aktiv-autoren]" type="checkbox" value="1" <?php checked( '1', $options['aktiv-autoren'] ); ?> />
+						<label  for="piratenkleider_theme_options[aktiv-autoren]">Bei der Anzeige von Artikeln den Autoren anzeigen und verlinken.</label>
+					</td>
+				</tr>
 				
 				 <tr valign="top">
                                     <th scope="row"><?php _e( 'Social Media', 'piratenkleider' ); ?></th>
@@ -451,13 +461,22 @@ function theme_options_validate( $input ) {
 	// Our checkbox value is either 0 or 1
 	if ( ! isset( $input['defaultwerbesticker'] ) )
 		$input['defaultwerbesticker'] = null;
-	$input['defaultwerbesticker'] = ( $input['defaultwerbesticker'] == 1 ? 1 : 0 );        
+	$input['defaultwerbesticker'] = ( $input['defaultwerbesticker'] == 1 ? 1 : 0 );    
+        
+        if ( ! isset( $input['aktiv-autoren'] ) )
+		$input['aktiv-autoren'] = null;
+	$input['aktiv-autoren'] = ( $input['aktiv-autoren'] == 1 ? 1 : 0 );    
+        
 	if ( ! isset( $input['newsletter'] ) )
 		$input['newsletter'] = null;
 	$input['newsletter'] = ( $input['newsletter'] == 1 ? 1 : 0 );
 	if ( ! isset( $input['alle-socialmediabuttons'] ) )
 		$input['alle-socialmediabuttons'] = null;
 	$input['alle-socialmediabuttons'] = ( $input['alle-socialmediabuttons'] == 1 ? 1 : 0 );
+        
+        if ( ! isset( $input['aktiv-platzhalterbilder-indexseiten'] ) )
+		$input['aktiv-platzhalterbilder-indexseiten'] = null;
+	$input['aktiv-platzhalterbilder-indexseiten'] = ( $input['aktiv-platzhalterbilder-indexseiten'] == 1 ? 1 : 0 );       
         
         if ( ! isset( $input['slider-aktiv'] ) )
 		$input['slider-aktiv'] = null;
@@ -688,8 +707,8 @@ function theme_defaultbilder_do_page() {
 
                                 <p>    
                                 Angabe der URLs inkl. http:// zum Bild. Wenn es mehrere sind, werden
-                                die einzelnen Adressen durch ein Komma getrennt. Wenn oben Defaultplakate angeklickt sind,
-                                erscheinen diese Bilder zusätzlich.
+                                die einzelnen Adressen durch ein Komma oder Umbruch getrennt. 
+                                Wenn oben Defaultplakate angeklickt sind, erscheinen diese Bilder zusätzlich.
                                 Diese Bilder können auch vorher über den Mediendialog hochgeladen worden sein.                               
                                 <br>
                                 Die Bilder sollten jeweils exakt 277x391 Pixel groß sein.
