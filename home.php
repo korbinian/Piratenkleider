@@ -56,19 +56,24 @@
       endwhile;
       ?>
       <div class="columns">
-      <?php
-      foreach($cols as $key => $col)
-      echo '<div class="column column' . $key . '">' . $col . '</div>';
-      ?>
+        <?php
+        foreach($cols as $key => $col)
+        echo '<div class="column column' . $key . '">' . $col . '</div>';
+        ?>     
       </div>
 
       <?php if ( ! have_posts() ) : ?>
-      <h2><?php _e( 'Nicht gefunden', 'twentyten' ); ?></h2>
-      <p><?php _e( 'Entschuldigung, aber es wurde nichts gefunden. :(', 'twentyten' ); ?></p>
-      <?php get_search_form(); ?>
+        <h2>Nichts gefunden</h2>
+        <p>Entschuldigung, aber es wurde nichts gefunden. :(</p>
+        <?php get_search_form(); ?>
       <?php endif; ?>
 
+        &nbsp;<hr>
+            
+        
+      
       <div class="startpage-widget-area">
+       
         <div class="first-startpage-widget-area">
           <div class="skin">
             <?php if ( is_active_sidebar( 'first-startpage-widget-area' ) ) { ?>
