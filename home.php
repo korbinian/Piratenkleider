@@ -91,8 +91,7 @@
                 <div class="widget">
                 <h3>Kategorien</h3>
                 <?php wp_list_categories('title_li='); ?>
-                
-               
+
                 </div>
              <?php } ?>
           </div>
@@ -105,7 +104,9 @@
             <?php } else { ?>    
                 <div  class="widget">
                     <h3>Schlagworte</h3>    
+                      <div class="tagcloud">            
                     <?php wp_tag_cloud(); ?>
+                      </div>
                 </div>
             <?php } ?>
         </div>
