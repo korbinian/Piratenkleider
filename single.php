@@ -40,6 +40,8 @@
           <?php previous_post_link('<li class="back">%link</li>', '%title', $in_same_cat = false, $excluded_categories = ''); ?>
           <?php next_post_link('<li class="forward">%link</li>', '%title', $in_same_cat = false, $excluded_categories = ''); ?>
           </ul>
+            
+           <?php if (has_filter( 'related_posts_by_category')) { ?>   
           <h3><?php _e('Das könnte dich auch interessieren:') ?></h3>
           <ul class="related">
             <?php do_action(
@@ -60,6 +62,7 @@
             )
             ) ?>
           </ul>
+          <?php } ?>
         </div>
 
         <?php endwhile; // end of the loop. ?>

@@ -27,16 +27,7 @@
     </div>
 
     <div class="content-aside">
-      <div class="skin">          
-        <?php 
-       if ( has_nav_menu( 'primary' ) ) {
-            wp_nav_menu( array( 'container_class' => 'menu-header', 'theme_location' => 'primary', 'walker'  => new My_Walker_Nav_Menu()) );      
-        } else { 
-        ?>
-          <ul class="menu">
-              <?php  wp_page_menu( ); ?>
-          </ul>
-         <?php } ?>
+      <div class="skin">                  
          <?php get_sidebar(); ?>
       </div>
     </div>

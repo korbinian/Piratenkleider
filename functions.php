@@ -35,9 +35,7 @@ function twentyten_setup() {
         /* 
          * Header-Kontrolle, bis WP 3.3
          */ 
-           
-
-       
+     
         define('HEADER_TEXTCOLOR', '');
         define('HEADER_IMAGE', get_template_directory_uri() .'/images/logo.png'); // %s is the template dir uri
         define('HEADER_IMAGE_WIDTH',  300 ); // choose any number you like here
@@ -81,7 +79,10 @@ function twentyten_setup() {
         ) );
 
         set_post_thumbnail_size( 640, 240, true );
-
+        /** Abschalten von Fehlermeldungen auf der Loginseite */
+        add_filter('login_errors', create_function('$a', "return null;"));
+        /** Entfernen der Wordpressversionsnr im Header */
+        remove_action('wp_head', 'wp_generator');
 }
 endif;
 
