@@ -33,7 +33,7 @@ MENÜS
         Hier befinden sich Links zu Werkzeugen oder Arbeitsportalen, wie
         bspw. das Wiki oder das Forum.
         Wenn diese Menü nicht definiert ist, wird es mit den Standardlinks
-        besetzt.
+        besetzt: Wiki, Liquid Feedback, Forum, Flaschenpost
     - Technische Navigation
         In das technsiche Menu kommen (statische) Seiten, die etwas über
         den Webauftritt sagen, wie bspw. das Impressum, Kontakt, Credits.
@@ -125,13 +125,16 @@ VERWENDETE PLUGINS
 BUGS, PROBLEME, TODOS, WEITERE INFOS
 
 Denkbare weitere Features (ToDos)
-  1. Welle+Schiff aendern im Kopfteil anpassbar machen um eigene
-     "Stadt-Skyline" o.ä. zu ergänzen. (vgl. piraten-bonn.de) 
-  2. Bei den Defaultbildern nicht ein bestimmtes auswählen, sondern 
-     Zufallssteuerung erlauben
- 3.  Wenn ein Artikel ein Artikelbild hat, dann wird dieses
-    sonst nirgends gezeigt. Dabei wäre es -wie bei den Pages-
-    doch auch sinnvoll, dieses bei der Einzelanzeige des Artikels anzugeben.
+1. Page-Menu aufbauen fuer den Fall, dass die vorhandenen Seiten noch
+   nicht den gewaehlten Menus zugeordnet sind oder auch garnicht
+   als Menu-Gruppen definiert sind.
+2. Welle+Schiff aendern im Kopfteil anpassbar machen um eigene
+   "Stadt-Skyline" o.ä. zu ergänzen. (vgl. piraten-bonn.de) 
+3. Bei den Defaultbildern nicht ein bestimmtes auswählen, sondern 
+   Zufallssteuerung erlauben
+4. Wenn ein Artikel ein Artikelbild hat, dann wird dieses
+   sonst nirgends gezeigt. Dabei wäre es -wie bei den Pages-
+   doch auch sinnvoll, dieses bei der Einzelanzeige des Artikels anzugeben.
  
 
 Administrative Hinweise für Wordpress Theme-Editoren:
