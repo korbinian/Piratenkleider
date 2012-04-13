@@ -462,14 +462,20 @@ body {
 .nav-top ul {
   display: none; }
 
-.nav-top ul.menu, .nav-main ul.menu {
+.nav-top ul.menu, 
+.nav-main ul.menu {
   background: #f7f7f7;
   background: rgba(255, 255, 255, 0.5); }
-  .nav-top ul.menu a, .nav-main ul.menu a {
+.nav-top ul.menu a, 
+.nav-main ul.menu a {
     display: block; }
-    .nav-top ul.menu a:hover, .nav-main ul.menu a:hover {
-      background: white; }
-  .nav-top ul.menu li.has_children ul.sub-menu, .nav-main ul.menu li.has_children ul.sub-menu {
+.nav-top ul.menu a:hover, 
+.nav-main ul.menu a:hover {
+
+    background: white; }
+.nav-main ul.menu li ul.children,
+.nav-top ul.menu li.has_children ul.sub-menu, 
+.nav-main ul.menu li.has_children ul.sub-menu {
     z-index: 999;
     position: absolute;
     top: -999em; }
@@ -506,15 +512,15 @@ ul.socialmedia {
 ul.socialmedia li {
     float: left; 
 }
-    ul.socialmedia li a {
+ul.socialmedia li a {
       display: block;
       width: 30px;
       height: 30px;
       overflow: hidden;
       text-indent: -999em; }
-  ul.socialmedia li.twitter a {
+ul.socialmedia li.twitter a {
     background: url("assets/sm-icons.png") no-repeat scroll 0 0 transparent; }
-    ul.socialmedia li.twitter a:hover {
+ul.socialmedia li.twitter a:hover {
       background: url("assets/sm-icons.png") no-repeat scroll 0 -30px transparent; }
   ul.socialmedia li.facebook a {
     background: url("assets/sm-icons.png") no-repeat scroll -30px 0 transparent; }
@@ -1522,25 +1528,25 @@ div.ics-calendar-holder .ics-calendar-event {
     right: 0;
     width: 100%;
     height: 30px; }
-    .nav-top a {
+  .nav-top a {
       height: 30px;
       display: block; }
-    .nav-top ul.socialmedia {
+  .nav-top ul.socialmedia {
       float: right; }
-    .nav-top div.menu-header {
+  .nav-top div.menu-header {
       float: right; }
-      .nav-top div.menu-header ul.menu {
+  .nav-top div.menu-header ul.menu {
         overflow: hidden; }
-        .nav-top div.menu-header ul.menu li {
+  .nav-top div.menu-header ul.menu li {
           float: left; }
-          .nav-top div.menu-header ul.menu li a {
+  .nav-top div.menu-header ul.menu li a {
             line-height: 30px;
             padding: 0 10px;
             color: black; }
-            .nav-top div.menu-header ul.menu li a:hover {
+  .nav-top div.menu-header ul.menu li a:hover {
               color: #2d7dc5; }
             
-    .nav-top form.searchform {
+  .nav-top form.searchform {
       float: right !important;
       width: 200px;
       height: 30px;     
@@ -1577,7 +1583,7 @@ div.ics-calendar-holder .ics-calendar-event {
     float: right;
     width: 33.3333%;
     margin: 0; }
-    .header .newsletter .skin {
+ .header .newsletter .skin {
       -moz-border-radius-topleft: 3px;
       -moz-border-radius-topright: 3px;
       -moz-border-radius-bottomright: 3px;
@@ -1586,9 +1592,9 @@ div.ics-calendar-holder .ics-calendar-event {
       border-top-right-radius: 3px;
       border-bottom-right-radius: 3px;
       border-bottom-left-radius: 3px; }
-      .header .newsletter .skin form {
+ .header .newsletter .skin form {
         padding-bottom: 5px; }
-        .header .newsletter .skin form input[type="text"] {
+ .header .newsletter .skin form input[type="text"] {
           float: left;
           width: 90%;
           margin-bottom: 0px; }
@@ -1607,9 +1613,9 @@ div.ics-calendar-holder .ics-calendar-event {
       border-top-right-radius: 3px;
       border-bottom-right-radius: 0;
       border-bottom-left-radius: 0; }
-      .nav-main ul.menu li {
+    .nav-main ul.menu li {
         float: left; }
-        .nav-main ul.menu li a {
+    .nav-main ul.menu li a {
           -moz-border-radius-topleft: 3px;
           -moz-border-radius-topright: 3px;
           -moz-border-radius-bottomright: 0;
@@ -1625,22 +1631,36 @@ div.ics-calendar-holder .ics-calendar-event {
           letter-spacing: 1px;
           padding: 12px 10px 10px 10px;
           border-bottom: 0; }
-          .nav-main ul.menu li a:hover {
+    
+      .nav-main ul.menu li a:hover {
             color: #2d7dc5; }
+    
+      .nav-main ul.menu li a[title="Home"],
       .nav-main ul.menu li.menu-item-home a {
         padding-left: 25px;
         padding-right: 25px;
         text-indent: -999em;
         background: url("assets/home.gif") no-repeat center 10px !important; }
-        .nav-main ul.menu li.menu-item-home a:hover {
+      
+     .nav-main ul.menu li a[title="Home"]:hover, 
+     .nav-main ul.menu li.menu-item-home a:hover {
           background: white url("assets/home.gif") no-repeat center 10px !important; }
-      .nav-main ul.menu li.current-menu-item.menu-item-home a {
+     
+     .nav-main ul.menu li.current-menu-item a[title="Home"],
+     .nav-main ul.menu li.current-menu-item.menu-item-home a {
         background: #111111 url("assets/home.gif") no-repeat center -107px !important; }
-        .nav-main ul.menu li.current-menu-item.menu-item-home a:hover {
+     
+     .nav-main ul.menu li.current-menu-item a[title="Home"]:hover ,
+     .nav-main ul.menu li.current-menu-item.menu-item-home a:hover {
           background: #111111 url("assets/home.gif") no-repeat center 10px !important; }
-      .nav-main ul.menu li.has_children:hover {
-        background: white; }
-        .nav-main ul.menu li.has_children:hover ul.sub-menu {
+     
+     .nav-main ul.menu li.page_item ul.children li:hover,
+     .nav-main ul.menu li.has_children:hover {
+        background: white; 
+      }
+     
+     .nav-main ul.menu li.page_item:hover ul,
+     .nav-main ul.menu li.has_children:hover ul.sub-menu {
           top: 40px;
           background: white;
           width: 200px;
@@ -1655,16 +1675,23 @@ div.ics-calendar-holder .ics-calendar-event {
           border-top-left-radius: 0;
           border-top-right-radius: 3px;
           border-bottom-right-radius: 3px;
-          border-bottom-left-radius: 3px; }
-          .nav-main ul.menu li.has_children:hover ul.sub-menu li.current-menu-item a {
+          border-bottom-left-radius: 3px; 
+       }
+     
+      .nav-main ul.menu li.page_item:hover ul li.current-page-item a,
+      .nav-main ul.menu li.has_children:hover ul.sub-menu li.current-menu-item a {
             background: white;
             color: black; }
-          .nav-main ul.menu li.has_children:hover ul.sub-menu hr {
+      
+      .nav-main ul.menu li.has_children:hover ul.sub-menu hr {
             margin: 0 !important; }
-          .nav-main ul.menu li.has_children:hover ul.sub-menu li {
+      
+      .nav-main ul.menu li.page_item:hover ul li, 
+      .nav-main ul.menu li.has_children:hover ul.sub-menu li {
             float: none;
             position: relative; }
-            .nav-main ul.menu li.has_children:hover ul.sub-menu li a {
+       .nav-main ul.menu li.page_item:hover ul li a,
+       .nav-main ul.menu li.has_children:hover ul.sub-menu li a {
               font-family: Helvetica, Arial, sans-serif;
               letter-spacing: 0;
               font-size: 12px;
@@ -1677,29 +1704,47 @@ div.ics-calendar-holder .ics-calendar-event {
               border-top-right-radius: 0;
               border-bottom-right-radius: 0;
               border-bottom-left-radius: 0; }
-              .nav-main ul.menu li.has_children:hover ul.sub-menu li a:hover {
+       
+       .nav-main ul.menu li.page_item:hover ul.children li a:hover,
+       .nav-main ul.menu li.has_children:hover ul.sub-menu li a:hover {
                 background: #2d7dc5;
                 color: white; }
-            .nav-main ul.menu li.has_children:hover ul.sub-menu li ul.sub-menu {
+       .nav-main ul.menu li.page_item:hover ul.children li ul.children,
+       .nav-main ul.menu li.has_children:hover ul.sub-menu li ul.sub-menu {
               top: -999em; }
-          .nav-main ul.menu li.has_children:hover ul.sub-menu li.has_children a {
+       .nav-main ul.menu li.page_item:hover ul.children li a,
+       .nav-main ul.menu li.has_children:hover ul.sub-menu li.has_children a {
             background: url("assets/plus_black.gif") center right no-repeat; }
-            .nav-main ul.menu li.has_children:hover ul.sub-menu li.has_children a:hover {
+       
+       .nav-main ul.menu li.page_item:hover ul.children li a:hover,
+       .nav-main ul.menu li.has_children:hover ul.sub-menu li.has_children a:hover {
               background: #2d7dc5 url("assets/plus.gif") center right no-repeat; }
-          .nav-main ul.menu li.has_children:hover ul.sub-menu li.has_children ul.sub-menu li a {
+       
+       .nav-main ul.menu li.page_item:hover ul.children li ul.children li a,
+       .nav-main ul.menu li.has_children:hover ul.sub-menu li.has_children ul.sub-menu li a {
             background: white !important; }
-            .nav-main ul.menu li.has_children:hover ul.sub-menu li.has_children ul.sub-menu li a:hover {
+       
+       .nav-main ul.menu li.page_item:hover ul.children li.page_item ul.children li a:hover,
+       .nav-main ul.menu li.has_children:hover ul.sub-menu li.has_children ul.sub-menu li a:hover {
               background: #2d7dc5 !important; }
-          .nav-main ul.menu li.has_children:hover ul.sub-menu li:hover ul.sub-menu {
+       
+       .nav-main ul.menu li.page_item:hover ul.children li:hover ul.children,
+       .nav-main ul.menu li.has_children:hover ul.sub-menu li:hover ul.sub-menu {
             top: -5px;
             left: 190px; }
+       
+      .nav-main ul.menu li.current-page-item > a,
       .nav-main ul.menu li.current-menu-item > a {
         background: black;
         color: white; }
+      
+      nav-main ul.menu li.current-page-item:hover > a,
       .nav-main ul.menu li.current-menu-item:hover > a {
         background: white;
         color: black; }
 
+      
+      
   .second-teaser-widget-area .skin ul li a {
     padding: .8em 10px .3em 50px; }
 
