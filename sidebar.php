@@ -40,6 +40,7 @@
 var twitter_name = "<?php echo $options['feed_twitter']; ?>";
 var twitter_count = <?php echo $options['feed_twitter_numberarticle']; ?>;
 </script>
+<hr>
 <div class="twitterwidget">
 	<h3><a href="https://twitter.com/#!/<?php echo $options['feed_twitter']; ?>">twitter.com/<?php echo $options['feed_twitter']; ?></a></h3>
 	<ul id="tweet_container"></ul>
