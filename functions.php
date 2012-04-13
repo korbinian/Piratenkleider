@@ -328,6 +328,18 @@ function twentyten_widgets_init() {
                 'before_title' => '<h3 class="widget-title">',
                 'after_title' => '</h3>',
         ) );
+       // Sidebar2
+        register_sidebar( array(
+                'name' => __( 'Sidebar 2 (Rechts unter Plakaten)', 'twentyten' ),
+                'id' => 'sidebar-widget-area-afterplakate',
+                'description' => __( 'Dieser Bereich befindet sich rechts vom Inhaltsbereich.
+                    Er ist nach den Werbeplakaten positioniert, die über die 
+                    Optionen ein- oder abgeschaltet werden können.', 'twentyten' ),
+                'before_widget' => '<div class="widget">',
+                'after_widget' => '</div>',
+                'before_title' => '<h3 class="widget-title">',
+                'after_title' => '</h3>',
+        ) );
 
         // Sliderbereich
         register_sidebar( array(
