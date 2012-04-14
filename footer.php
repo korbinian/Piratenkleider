@@ -24,6 +24,7 @@
     <script src="<?php echo get_bloginfo('template_url'); ?>/js/flexslider.js"></script>  
     
     <script type="text/javascript" charset="utf-8">
+        /* <![CDATA[ */
     $(window).load(function() {
        $('.flexslider').flexslider({
          slideshowSpeed: <?php echo $slideshowSpeed ?>,
@@ -32,6 +33,7 @@
          animation: "<?php echo $animationType ?>"
        });
     });    
+    /* ]]> */
     </script> 
     <?php } ?>
     <?php if ( $options['feed_twitter'] != "" ){ ?> 
