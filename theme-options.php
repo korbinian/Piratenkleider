@@ -74,28 +74,33 @@ function theme_options_do_page() {
                                 $options['slider-slideshowSpeed'] = $defaultoptions['slider-slideshowSpeed']; 
                             if ( ! isset( $options['slider-animationDuration'] ) )
                                 $options['slider-animationDuration'] = $defaultoptions['slider-animationDuration'];
-                            if ( ! isset( $input['defaultwerbesticker'] ) )
-                                $input['defaultwerbesticker'] = $defaultoptions['defaultwerbesticker'];;
-                            if ( ! isset( $input['aktiv-autoren'] ) ) 
-                                $input['aktiv-autoren'] = $defaultoptions['aktiv-autoren']; 
-                            if ( ! isset( $input['newsletter'] ) ) 
-                                $input['newsletter'] = $defaultoptions['newsletter'];
-                            if ( ! isset( $input['alle-socialmediabuttons'] ) ) 
-                                $input['alle-socialmediabuttons'] = $defaultoptions['alle-socialmediabuttons'];
-                            if ( ! isset( $input['aktiv-platzhalterbilder-indexseiten'] ) ) 
-                                $input['aktiv-platzhalterbilder-indexseiten'] = $defaultoptions['aktiv-platzhalterbilder-indexseiten'];  
-                            if ( ! isset( $input['slider-aktiv'] ) ) 
-                                $input['slider-aktiv'] = $defaultoptions['slider-aktiv'];
-                            if ( ! isset( $input['slider-defaultwerbeplakate'] ) ) 
-                                $input['slider-defaultwerbeplakate'] = $defaultoptions['slider-defaultwerbeplakate'];
-                            if ( ! isset( $input['slider-numberarticle'] ) ) 
-                                $input['slider-numberarticle'] = $defaultoptions['slider-numberarticle']; 
-                            if ( ! isset( $input['feed_twitter_numberarticle'] ) )
-                                $input['feed_twitter_numberarticle'] = $defaultoptions['feed_twitter_numberarticle']; 
+                            if ( ! isset( $options['defaultwerbesticker'] ) )
+                                $options['defaultwerbesticker'] = $defaultoptions['defaultwerbesticker'];;
+                            if ( ! isset( $options['aktiv-autoren'] ) ) 
+                                $options['aktiv-autoren'] = $defaultoptions['aktiv-autoren']; 
+                            if ( ! isset( $options['newsletter'] ) ) 
+                                $options['newsletter'] = $defaultoptions['newsletter'];
+                            if ( ! isset( $options['alle-socialmediabuttons'] ) ) 
+                                $options['alle-socialmediabuttons'] = $defaultoptions['alle-socialmediabuttons'];
+                            if ( ! isset( $options['aktiv-platzhalterbilder-indexseiten'] ) ) 
+                                $options['aktiv-platzhalterbilder-indexseiten'] = $defaultoptions['aktiv-platzhalterbilder-indexseiten'];  
+                            if ( ! isset( $options['slider-aktiv'] ) ) 
+                                $options['slider-aktiv'] = $defaultoptions['slider-aktiv'];
+                            if ( ! isset( $options['slider-defaultwerbeplakate'] ) ) 
+                                $options['slider-defaultwerbeplakate'] = $defaultoptions['slider-defaultwerbeplakate'];
+                            if ( ! isset( $options['slider-numberarticle'] ) ) 
+                                $options['slider-numberarticle'] = $defaultoptions['slider-numberarticle']; 
+                            if ( ! isset( $options['feed_twitter_numberarticle'] ) )
+                                $options['feed_twitter_numberarticle'] = $defaultoptions['feed_twitter_numberarticle']; 
+                             if (!isset($options['num-article-startpage-fullwidth'])) 
+                                $options['num-article-startpage-fullwidth'] = $defaultoptions['num-article-startpage-fullwidth'];
+                            if (!isset($options['num-article-startpage-halfwidth'])) 
+                                $options['num-article-startpage-halfwidth'] = $defaultoptions['num-article-startpage-halfwidth'];    
 	                                                        
                         ?>
 			<table class="form-table">
-
+                                    
+                            
                                 <tr valign="top"><th scope="row">Werbesticker</th>
 					<td>
 						<input id="piratenkleider_theme_options[defaultwerbesticker]" name="piratenkleider_theme_options[defaultwerbesticker]" type="checkbox" value="1" <?php checked( '1', $options['defaultwerbesticker'] ); ?> />
@@ -120,7 +125,49 @@ function theme_options_do_page() {
 						<label  for="piratenkleider_theme_options[aktiv-autoren]">Bei der Anzeige von Artikeln den Autoren anzeigen und verlinken.</label>
 					</td>
 				</tr>
-				
+				<tr valign="top">
+                                    <th scope="row">Beiträge auf Startseite</th>
+                                    <td>
+                                        <table>
+                                            <tr valign="top"><th scope="row">Beiträge über ganze Breite</th>
+                                            <td>
+                                                    <select name="piratenkleider_theme_options[num-article-startpage-fullwidth]">
+                                                        <?php
+                                                                    $selected = $options['num-article-startpage-fullwidth'];
+                                                        ?>            
+                                                        <option style="padding-right: 10px;" value="0" <?php if ($selected == '0') { echo 'selected="selected"'; }?>>0</option>
+                                                        <option style="padding-right: 10px;" value="1" <?php if ($selected == '1') { echo 'selected="selected"'; }?>>1</option>
+                                                        <option style="padding-right: 10px;" value="2" <?php if ($selected == '2') { echo 'selected="selected"'; }?>>2</option>
+                                                        <option style="padding-right: 10px;" value="3" <?php if ($selected == '3') { echo 'selected="selected"'; }?>>3</option>
+                                                        <option style="padding-right: 10px;" value="4" <?php if ($selected == '4') { echo 'selected="selected"'; }?>>4</option>
+                                                        <option style="padding-right: 10px;" value="5" <?php if ($selected == '5') { echo 'selected="selected"'; }?>>5</option>
+                                                       						
+                                                    </select>
+                                                    <label class="description" for="piratenkleider_theme_options[num-article-startpage-fullwidth]">
+                                                        Zahl der Beiträge, die über die gesamte Inhaltsbreite gehen.
+                                                    </label>
+                                            </td>
+                                            </tr>
+                                            <tr valign="top"><th scope="row">Beiträge über halbe Breite</th>
+                                            <td>
+                                                    <select name="piratenkleider_theme_options[num-article-startpage-halfwidth]">
+                                                        <?php
+                                                                    $selected = $options['num-article-startpage-halfwidth'];
+                                                        ?>            
+                                                        <option style="padding-right: 10px;" value="0" <?php if ($selected == '0') { echo 'selected="selected"'; }?>>0</option>
+                                                        <option style="padding-right: 10px;" value="2" <?php if ($selected == '2') { echo 'selected="selected"'; }?>>2</option>                                                        
+                                                        <option style="padding-right: 10px;" value="4" <?php if ($selected == '4') { echo 'selected="selected"'; }?>>4</option>
+                                                        <option style="padding-right: 10px;" value="6" <?php if ($selected == '6') { echo 'selected="selected"'; }?>>6</option>
+                                                        <option style="padding-right: 10px;" value="8" <?php if ($selected == '8') { echo 'selected="selected"'; }?>>8</option>                                                       					
+                                                    </select>
+                                                    <label class="description" for="piratenkleider_theme_options[num-article-startpage-halfwidth]">
+                                                        Zahl der Beiträge, die in Spalten mit je zwei Beiträgen nebeneinander, angezeigt werden.
+                                                    </label>
+                                            </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                    </tr>
 				 <tr valign="top">
                                     <th scope="row"><?php _e( 'Social Media', 'piratenkleider' ); ?></th>
                                     <td>
