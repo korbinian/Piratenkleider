@@ -28,8 +28,9 @@ $defaultoptions = array(
     'newsletter'    => 1,
     'alle-socialmediabuttons'   => 1,
     'aktiv-platzhalterbilder-indexseiten'   => 0,
-    'feed_twitter_numberarticle'    => 3
-
+    'feed_twitter_numberarticle'    => 3,
+    'num-article-startpage-fullwidth'    => 1,
+    'num-article-startpage-halfwidth'    => 4
 );
 
 /**
