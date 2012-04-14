@@ -4,16 +4,124 @@
  *
  * @origin author: IT-Website-Crew, http://wiki.piratenpartei.de/Website-Team
  * @source http://github.com/xwolfde/Piratenkleider
- * @modified-by xwolf
+ * @creator xwolf
  * @version 2.1
  */
+define('WP_DEBUG', true);
 
 
+$defaultoptions = array(
+    'content-width' => 640,
+    'logo'          => get_template_directory_uri() .'/images/logo.png',
+    'logo-width'    => 300,
+    'logo-height'   => 130,
+    'thumb-width'   => 640,
+    'thumb-height'  => 240,
+    'src-jquery'    => get_bloginfo('template_url'). "/js/jquery.min.js",
+    'slider-aktiv'  => 1,
+    'slider-defaultwerbeplakate'    => 1,
+    'slider-numberarticle'  => 3,
+    'slider-slideshowSpeed' => 8000,
+    'slider-animationDuration' => 600,
+    'defaultwerbesticker'   => 1,
+    'aktiv-autoren' => 1,
+    'newsletter'    => 1,
+    'alle-socialmediabuttons'   => 1,
+    'aktiv-platzhalterbilder-indexseiten'   => 0,
+    'feed_twitter_numberarticle'    => 3
+
+);
+
+/**
+ * Liste der Defaultbilder fuer Seiten und Slider
+ */
+$defaultbilder_liste = array(
+	'0' => array(
+		'src' =>	get_bloginfo('template_url').'/images/defaultbild-grundgesetz.jpg',
+		'label' => __( 'Plakat Grundgesetz', 'piratenkleider' )
+	),
+	'1' => array(
+		'src' =>	get_bloginfo('template_url').'/images/defaultbild-medien.jpg',
+		'label' => __( 'Medien', 'piratenkleider' )
+	),
+	'2' => array(
+		'src' =>	get_bloginfo('template_url').'/images/defaultbild-mitmachen.jpg',
+		'label' => __( 'Mitmachen', 'piratenkleider' )
+	),
+        '3' => array(
+		'src' =>	get_bloginfo('template_url').'/images/defaultbild-piraten.jpg',
+		'label' => __( 'Piraten', 'piratenkleider' )
+	),
+        '4' => array(
+		'src' =>	get_bloginfo('template_url').'/images/defaultbild-plakate.jpg',
+		'label' => __( 'Plakate', 'piratenkleider' )
+	),
+        '5' => array(
+		'src' =>	get_bloginfo('template_url').'/images/defaultbild-presse.jpg',
+		'label' => __( 'Presse', 'piratenkleider' )
+	),
+        '6' => array(
+		'src' =>	get_bloginfo('template_url').'/images/defaultbild-protest.jpg',
+		'label' => __( 'Protest', 'piratenkleider' )
+	),
+);
+
+/**
+ * Liste der Default-Plakate fer die Sidebar
+ */
+$defaultplakate_liste = array(
+	'0' => array(
+		'src' =>	get_bloginfo('template_url').'/images/defaultplakat-agrarwirtschaft.jpg',
+		'label' => __( 'Plakat Agrarwirtschaft', 'piratenkleider' )
+	),
+	'1' => array(
+		'src' =>	get_bloginfo('template_url').'/images/defaultplakat-freiheit.jpg',
+		'label' => __( 'Plakat Freiheit und Selbstbestimmung', 'piratenkleider' )
+	),
+	'2' => array(
+		'src' =>	get_bloginfo('template_url').'/images/defaultplakat-lebensmittel.jpg',
+		'label' => __( 'Plakat für gentechnikfreie Lebensmittel', 'piratenkleider' )
+	),
+        '3' => array(
+		'src' =>	get_bloginfo('template_url').'/images/defaultplakat-mitbestimmung.jpg',
+		'label' => __( 'Plakat zur Mitbestimmung', 'piratenkleider' )
+	),
+        '4' => array(
+		'src' =>	get_bloginfo('template_url').'/images/defaultplakat-wohnraum.jpg',
+		'label' => __( 'Plakat für bezahlbaren Wohnraum', 'piratenkleider' )
+	),
+        '5' => array(
+		'src' =>	get_bloginfo('template_url').'/images/defaultplakat-oepnv.jpg',
+		'label' => __( 'Plakat ÖPNV', 'piratenkleider' )
+	),
+	'6' => array(
+		'src' =>	get_bloginfo('template_url').'/images/defaultplakat-warum-haengen.jpg',
+		'label' => __( 'Plakat Warum hänge ich hier', 'piratenkleider' )
+	),
+	'7' => array(
+		'src' =>	get_bloginfo('template_url').'/images/defaultplakat-vertraue-keinem-plakat.jpg',
+		'label' => __( 'Plakat Vertraue keinem Plakat', 'piratenkleider' )
+	),
+        '8' => array(
+		'src' =>	get_bloginfo('template_url').'/images/defaultplakat-klarmachen-zum-aendern.jpg',
+		'label' => __( 'Plakat Klarmachen zum ändern', 'piratenkleider' )
+	),
+        '9' => array(
+		'src' =>	get_bloginfo('template_url').'/images/defaultplakat-transparenz.jpg',
+		'label' => __( 'Plakat Transparenz', 'piratenkleider' )
+	),
+       '10' => array(
+		'src' =>	get_bloginfo('template_url').'/images/defaultplakat-streife-statt-kameras.jpg',
+		'label' => __( 'Plakat Streife statt Kameras', 'piratenkleider' )
+	),
+        
+);
+// Aus gestalerischen Gründen müssen Plakate auf der Website exakt 277 Pixel breit sein. Die Höhe ist
+// flexibel, sollte jedoch auch gleich sein. In diesem Fall  391 Pixel.
+
+
+if ( ! isset( $content_width ) )   $content_width = $defaultoptions['content-width'];
 require_once ( get_stylesheet_directory() . '/theme-options.php' );
-
-
-if ( ! isset( $content_width ) )
-        $content_width = 640;
 
 /** Tell WordPress to run twentyten_setup() when the 'after_setup_theme' hook is run. */
 add_action( 'after_setup_theme', 'twentyten_setup' );
@@ -21,7 +129,7 @@ add_action( 'after_setup_theme', 'twentyten_setup' );
 if ( ! function_exists( 'twentyten_setup' ) ):
 
 function twentyten_setup() {
-
+     global $defaultoptions;
         // This theme styles the visual editor with editor-style.css to match the theme style.
         add_editor_style();
 
@@ -37,9 +145,9 @@ function twentyten_setup() {
          */ 
      
         define('HEADER_TEXTCOLOR', '');
-        define('HEADER_IMAGE', get_template_directory_uri() .'/images/logo.png'); // %s is the template dir uri
-        define('HEADER_IMAGE_WIDTH',  300 ); // choose any number you like here
-        define('HEADER_IMAGE_HEIGHT', 130 ); // choose any number you like here         
+        define('HEADER_IMAGE', $defaultoptions['logo']); 
+        define('HEADER_IMAGE_WIDTH',  $defaultoptions['logo-width'] ); // choose any number you like here
+        define('HEADER_IMAGE_HEIGHT', $defaultoptions['logo-height'] ); // choose any number you like here         
         define('NO_HEADER_TEXT', true );
     
          add_custom_image_header('piratenkleider_header_style', 'piratenkleider_admin_header_style');
@@ -78,7 +186,7 @@ function twentyten_setup() {
                 'sub' => __( 'Technische Navigation <br />&nbsp; (Kontakt, Impressunm, etc)', 'twentyten' ),
         ) );
 
-        set_post_thumbnail_size( 640, 240, true );
+        set_post_thumbnail_size( $defaultoptions['thumb-width'], $defaultoptions['thumb-height'], true );
         /** Abschalten von Fehlermeldungen auf der Loginseite */
         add_filter('login_errors', create_function('$a', "return null;"));
         /** Entfernen der Wordpressversionsnr im Header */
@@ -108,26 +216,8 @@ function piratenkleider_admin_header_style() {
 }
 endif;
 
-/**
- * Makes some changes to the <title> tag, by filtering the output of wp_title().
- *
- * If we have a site description and we're viewing the home page or a blog posts
- * page (when using a static front page), then we will add the site description.
- *
- * If we're viewing a search result, then we're going to recreate the title entirely.
- * We're going to add page numbers to all titles as well, to the middle of a search
- * result title and the end of all other titles.
- *
- * The site title also gets added to all titles.
- *
- * @since Twenty Ten 1.0
- *
- * @param string $title Title generated by wp_title()
- * @param string $separator The separator passed to wp_title(). Twenty Ten uses a
- *         vertical bar, "|", as a separator in header.php.
- * @return string The new title, ready for the <title> tag.
- */
-function twentyten_filter_wp_title( $title, $separator ) {
+
+function piratenkleider_filter_wp_title( $title, $separator ) {
         // Don't affect wp_title() calls in feeds.
         if ( is_feed() )
                 return $title;
@@ -139,10 +229,10 @@ function twentyten_filter_wp_title( $title, $separator ) {
 
         if ( is_search() ) {
                 // If we're a search, let's start over:
-                $title = sprintf( __( 'Suchergebnisse für %s', 'twentyten' ), '"' . get_search_query() . '"' );
+                $title = sprintf( __( 'Suchergebnisse für %s', 'piratenkleider' ), '"' . get_search_query() . '"' );
                 // Add a page number if we're on page 2 or more:
                 if ( $paged >= 2 )
-                        $title .= " $separator " . sprintf( __( 'Page %s', 'twentyten' ), $paged );
+                        $title .= " $separator " . sprintf( __( 'Page %s', 'piratenkleider' ), $paged );
                 // Add the site name to the end:
                 $title .= " $separator " . get_bloginfo( 'name', 'display' );
                 // We're done. Let's send the new title back to wp_title():
@@ -159,96 +249,44 @@ function twentyten_filter_wp_title( $title, $separator ) {
 
         // Add a page number if necessary:
         if ( $paged >= 2 || $page >= 2 )
-                $title .= " $separator " . sprintf( __( 'Page %s', 'twentyten' ), max( $paged, $page ) );
+                $title .= " $separator " . sprintf( __( 'Page %s', 'piratenkleider' ), max( $paged, $page ) );
 
         // Return the new title to wp_title():
         return $title;
 }
-add_filter( 'wp_title', 'twentyten_filter_wp_title', 10, 2 );
+add_filter( 'wp_title', 'piratenkleider_filter_wp_title', 10, 2 );
 
-/**
- * Get our wp_nav_menu() fallback, wp_page_menu(), to show a home link.
- *
- * To override this in a child theme, remove the filter and optionally add
- * your own function tied to the wp_page_menu_args filter hook.
- *
- * @since Twenty Ten 1.0
- */
-function twentyten_page_menu_args( $args ) {
-        $args['show_home'] = true;
-        return $args;
+
+function piratenkleider_excerpt_length( $length ) {
+        return 80;
 }
-add_filter( 'wp_page_menu_args', 'twentyten_page_menu_args' );
+add_filter( 'excerpt_length', 'piratenkleider_excerpt_length' );
 
-/**
- * Sets the post excerpt length to 40 characters.
- *
- * To override this length in a child theme, remove the filter and add your own
- * function tied to the excerpt_length filter hook.
- *
- * @since Twenty Ten 1.0
- * @return int
- */
-function twentyten_excerpt_length( $length ) {
-        return 40;
-}
-add_filter( 'excerpt_length', 'twentyten_excerpt_length' );
-
-/**
- * Returns a "Continue Reading" link for excerpts
- *
- * @since Twenty Ten 1.0
- * @return string "Continue Reading" link
- */
-function twentyten_continue_reading_link() {
-        return ' <a href="'. get_permalink() . '">' . __( 'Weiterlesen <span class="meta-nav">&rarr;</span>', 'twentyten' ) . '</a>';
+function piratenkleider_continue_reading_link() {
+        return ' <a href="'. get_permalink() . '">' . __( 'Weiterlesen <span class="meta-nav">&rarr;</span>', 'piratenkleider' ) . '</a>';
 }
 
-/**
- * Replaces "[...]" (appended to automatically generated excerpts) with an ellipsis and twentyten_continue_reading_link().
- *
- * To override this in a child theme, remove the filter and add your own
- * function tied to the excerpt_more filter hook.
- *
- * @since Twenty Ten 1.0
- * @return string An ellipsis
- */
-function twentyten_auto_excerpt_more( $more ) {
-        return ' &hellip;' . twentyten_continue_reading_link();
+function piratenkleider_auto_excerpt_more( $more ) {
+        return ' &hellip;' . piratenkleider_continue_reading_link();
 }
-add_filter( 'excerpt_more', 'twentyten_auto_excerpt_more' );
+add_filter( 'excerpt_more', 'piratenkleider_auto_excerpt_more' );
 
-/**
- * Adds a pretty "Continue Reading" link to custom post excerpts.
- *
- * To override this link in a child theme, remove the filter and add your own
- * function tied to the get_the_excerpt filter hook.
- *
- * @since Twenty Ten 1.0
- * @return string Excerpt with a pretty "Continue Reading" link
- */
-function twentyten_custom_excerpt_more( $output ) {
+
+function piratenkleider_custom_excerpt_more( $output ) {
         if ( has_excerpt() && ! is_attachment() ) {
-                $output .= twentyten_continue_reading_link();
+                $output .= piratenkleider_continue_reading_link();
         }
         return $output;
 }
-add_filter( 'get_the_excerpt', 'twentyten_custom_excerpt_more' );
+add_filter( 'get_the_excerpt', 'piratenkleider_custom_excerpt_more' );
 
-/**
- * Remove inline styles printed when the gallery shortcode is used.
- *
- * Galleries are styled by the theme in Twenty Ten's style.css.
- *
- * @since Twenty Ten 1.0
- * @return string The gallery style filter, with the styles themselves removed.
- */
-function twentyten_remove_gallery_css( $css ) {
+
+function piratenkleider_remove_gallery_css( $css ) {
         return preg_replace( "#<style type='text/css'>(.*?)</style>#s", '', $css );
 }
-add_filter( 'gallery_style', 'twentyten_remove_gallery_css' );
+add_filter( 'gallery_style', 'piratenkleider_remove_gallery_css' );
 
-if ( ! function_exists( 'twentyten_comment' ) ) :
+if ( ! function_exists( 'piratenkleider_comment' ) ) :
 /**
  * Template for comments and pingbacks.
  *
@@ -259,7 +297,7 @@ if ( ! function_exists( 'twentyten_comment' ) ) :
  *
  * @since Twenty Ten 1.0
  */
-function twentyten_comment( $comment, $args, $depth ) {
+function piratenkleider_comment( $comment, $args, $depth ) {
         $GLOBALS['comment'] = $comment;
         switch ( $comment->comment_type ) :
                 case '' :
@@ -269,17 +307,17 @@ function twentyten_comment( $comment, $args, $depth ) {
                 <div class="comment-details">
                 <div class="comment-author vcard">
 
-                        <?php printf( __( '%s <span class="says">meinte am</span>', 'twentyten' ), sprintf( '<cite class="fn">%s</cite>', get_comment_author_link() ) ); ?>
+                        <?php printf( __( '%s <span class="says">meinte am</span>', 'piratenkleider' ), sprintf( '<cite class="fn">%s</cite>', get_comment_author_link() ) ); ?>
                 </div><!-- .comment-author .vcard -->
                 <?php if ( $comment->comment_approved == '0' ) : ?>
-                        <em><?php _e( 'Dein Kommentar wartet auf die Freischaltung.', 'twentyten' ); ?></em>
+                        <em><?php _e( 'Der Kommentar wartet auf die Freischaltung.', 'piratenkleider' ); ?></em>
                         <br />
                 <?php endif; ?>
 
                 <div class="comment-meta commentmetadata"><a href="<?php echo esc_url( get_comment_link( $comment->comment_ID ) ); ?>">
                         <?php
                                 /* translators: 1: date, 2: time */
-                                printf( __( '%1$s um %2$s', 'twentyten' ), get_comment_date(),  get_comment_time() ); ?></a> Folgendes:<?php edit_comment_link( __( '(Edit)', 'twentyten' ), ' ' );
+                                printf( __( '%1$s um %2$s', 'piratenkleider' ), get_comment_date(),  get_comment_time() ); ?></a> Folgendes:<?php edit_comment_link( __( '(Edit)', 'piratenkleider' ), ' ' );
                         ?>
                 </div><!-- .comment-meta .commentmetadata -->
                 </div>
@@ -297,27 +335,19 @@ function twentyten_comment( $comment, $args, $depth ) {
                 case 'trackback' :
         ?>
         <li class="post pingback">
-                <p><?php _e( 'Pingback:', 'twentyten' ); ?> <?php comment_author_link(); ?><?php edit_comment_link( __('(Edit)', 'twentyten'), ' ' ); ?></p>
+                <p><?php _e( 'Pingback:', 'piratenkleider' ); ?> <?php comment_author_link(); ?><?php edit_comment_link( __('(Edit)', 'piratenkleider'), ' ' ); ?></p>
         <?php
                         break;
         endswitch;
 }
 endif;
 
-/**
- * Register widgetized areas, including two sidebars and four widget-ready columns in the footer.
- *
- * To override twentyten_widgets_init() in a child theme, remove the action hook and add your own
- * function tied to the init hook.
- *
- * @since Twenty Ten 1.0
- * @uses register_sidebar
- */
-function twentyten_widgets_init() {
+
+function piratenkleider_widgets_init() {
 
        // Sidebar
         register_sidebar( array(
-                'name' => __( 'Sidebar (Rechte Spalte)', 'twentyten' ),
+                'name' => __( 'Sidebar (Rechte Spalte)', 'piratenkleider' ),
                 'id' => 'sidebar-widget-area',
                 'description' => __( 'Dieser Bereich befindet sich rechts vom Inhaltsbereich. 
                     Er ist geeignet für Werbeplakate, Hinweise und ähnliches.
@@ -330,7 +360,7 @@ function twentyten_widgets_init() {
         ) );
        // Sidebar2
         register_sidebar( array(
-                'name' => __( 'Sidebar 2 (Rechts unter Plakaten)', 'twentyten' ),
+                'name' => __( 'Sidebar 2 (Rechts unter Plakaten)', 'piratenkleider' ),
                 'id' => 'sidebar-widget-area-afterplakate',
                 'description' => __( 'Dieser Bereich befindet sich rechts vom Inhaltsbereich.
                     Er ist nach den Werbeplakaten positioniert, die über die 
@@ -343,7 +373,7 @@ function twentyten_widgets_init() {
 
         // Sliderbereich
         register_sidebar( array(
-                'name' => __( 'Startseite: Sliderbereich', 'twentyten' ),
+                'name' => __( 'Startseite: Sliderbereich', 'piratenkleider' ),
                 'id' => 'first-teaser-widget-area',
                 'description' => __( 'Bereich oberhalb der 3 Artikelbilder.
                     Wenn leer, erscheinen hier wechselnden Bilder 
@@ -357,7 +387,7 @@ function twentyten_widgets_init() {
 
         // Rechter Aktionlinkbereich, neben Slider
         register_sidebar( array(
-                'name' => __( 'Startseite: Rechter Aktionlinkbereich', 'twentyten' ),
+                'name' => __( 'Startseite: Rechter Aktionlinkbereich', 'piratenkleider' ),
                 'id' => 'second-teaser-widget-area',
                 'description' => __( 'Dieser Bereich ist rechts neben den Slider
                     und dem Hauptcontent positioniert. Wenn leer, werden hier
@@ -374,7 +404,7 @@ function twentyten_widgets_init() {
         // Startseite: Links unterhalb der 3 Artikel, per default Anzeige
         // der weiteren Artikel 
         register_sidebar( array(
-                'name' => __( 'Startseite: Links unten', 'twentyten' ),
+                'name' => __( 'Startseite: Links unten', 'piratenkleider' ),
                 'id' => 'first-startpage-widget-area',
                 'description' => __( 'Bereich links unterhalb der 3 Presseartikel. 
                         Wenn leer, werden hier weitere Artikel aus
@@ -387,7 +417,7 @@ function twentyten_widgets_init() {
         // Startseite: Rechts  unterhalb der 3 Artikel, per default Anzeige
         //  der Schlagwortliste
         register_sidebar( array(
-                'name' => __( 'Startseite: Rechts unten', 'twentyten' ),
+                'name' => __( 'Startseite: Rechts unten', 'piratenkleider' ),
                 'id' => 'second-startpage-widget-area',
                 'description' => __( 'Bereich rechts unterhalb der drei Presseartikel.
                          Wenn leer, wird hier eine Schlagwortliste 
@@ -400,7 +430,7 @@ function twentyten_widgets_init() {
 
         // Linke Seite der Fußzeile
         register_sidebar( array(
-                'name' => __( 'Fußbereich: Linke Seite', 'twentyten' ),
+                'name' => __( 'Fußbereich: Linke Seite', 'piratenkleider' ),
                 'id' => 'first-footer-widget-area',
                 'description' => __( 'Bereich im Fußteil unter dem Haupttextbereich.
                    Dieser Bereich eignet sich insbesondere für externe Links zu
@@ -416,7 +446,7 @@ function twentyten_widgets_init() {
 
         // Rechte Seite der Fußzeile
         register_sidebar( array(
-                'name' => __( 'Fußbereich: Rechte Spalte', 'twentyten' ),
+                'name' => __( 'Fußbereich: Rechte Spalte', 'piratenkleider' ),
                 'id' => 'second-footer-widget-area',
                 'description' => __( 'Rechte Spalte im Fußbereich. Wenn leer, erscheint hier das
                     technische Menu (siehe Menüs). Wenn auch dieses nicht definiert ist, wird 
@@ -428,22 +458,14 @@ function twentyten_widgets_init() {
         ) );
 
 }
-/** Register sidebars by running twentyten_widgets_init() on the widgets_init hook. */
-add_action( 'widgets_init', 'twentyten_widgets_init' );
+add_action( 'widgets_init', 'piratenkleider_widgets_init' );
 
-/**
- * Removes the default styles that are packaged with the Recent Comments widget.
- *
- * To override this in a child theme, remove the filter and optionally add your own
- * function tied to the widgets_init action hook.
- *
- * @since Twenty Ten 1.0
- */
-function twentyten_remove_recent_comments_style() {
+
+function piratenkleider_remove_recent_comments_style() {
         global $wp_widget_factory;
         remove_action( 'wp_head', array( $wp_widget_factory->widgets['WP_Widget_Recent_Comments'], 'recent_comments_style' ) );
 }
-add_action( 'widgets_init', 'twentyten_remove_recent_comments_style' );
+add_action( 'widgets_init', 'piratenkleider_remove_recent_comments_style' );
 
 
 if ( ! function_exists( 'piratenkleider_post_pubdateinfo' ) ) :
@@ -560,7 +582,7 @@ function short_title($after = '', $length) {
 }
 
 function dimox_breadcrumbs() {
- 
+  global $defaultoptions;
   $delimiter = '/';
   $home = 'Startseite'; // text for the 'Home' link
   $before = '<span class="current">'; // tag before the current crumb
@@ -660,8 +682,8 @@ function dimox_breadcrumbs() {
 }
  
 if( !is_admin()){
-        wp_deregister_script('jquery');
-        wp_register_script('jquery', get_bloginfo('template_url'). "/js/jquery.min.js", false);
-        wp_enqueue_script('jquery');
 
+        wp_deregister_script('jquery');
+        wp_register_script('jquery', $defaultoptions['src-jquery'] , false);
+        wp_enqueue_script('jquery');
 }
