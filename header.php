@@ -8,6 +8,13 @@
 <head>
 <?php                    
   $options = get_option( 'piratenkleider_theme_options' );
+   if (!isset($options['defaultwerbesticker'])) 
+            $options['defaultwerbesticker'] = $defaultoptions['defaultwerbesticker'];
+   if (!isset($options['alle-socialmediabuttons'])) 
+            $options['alle-socialmediabuttons'] = $defaultoptions['alle-socialmediabuttons'];   
+   if (!isset($options['newsletter'])) 
+            $options['newsletter'] = $defaultoptions['newsletter'];
+
 ?>  
 <meta charset="<?php bloginfo( 'charset' ); ?>">
 <title><?php wp_title( '|', true, 'right' ); ?></title>
