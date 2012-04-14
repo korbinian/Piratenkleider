@@ -1,5 +1,8 @@
 <?php                    
   $options = get_option( 'piratenkleider_theme_options' );
+  if (!isset($options['slider-defaultwerbeplakate'])) 
+       $options['slider-defaultwerbeplakate'] = $defaultoptions['slider-defaultwerbeplakate'];
+  
   if ( is_active_sidebar( 'sidebar-widget-area' ) )  {
             dynamic_sidebar( 'sidebar-widget-area' );     
    }    
