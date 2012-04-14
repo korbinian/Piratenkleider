@@ -21,99 +21,10 @@ function theme_options_add_page() {
 
 
 /**
- * Liste der Defaultbilder fuer Seiten und Slider
- */
-$defaultbilder_liste = array(
-	'0' => array(
-		'src' =>	get_bloginfo('template_url').'/images/defaultbild-grundgesetz.jpg',
-		'label' => __( 'Plakat Grundgesetz', 'piratenkleider' )
-	),
-	'1' => array(
-		'src' =>	get_bloginfo('template_url').'/images/defaultbild-medien.jpg',
-		'label' => __( 'Medien', 'piratenkleider' )
-	),
-	'2' => array(
-		'src' =>	get_bloginfo('template_url').'/images/defaultbild-mitmachen.jpg',
-		'label' => __( 'Mitmachen', 'piratenkleider' )
-	),
-        '3' => array(
-		'src' =>	get_bloginfo('template_url').'/images/defaultbild-piraten.jpg',
-		'label' => __( 'Piraten', 'piratenkleider' )
-	),
-        '4' => array(
-		'src' =>	get_bloginfo('template_url').'/images/defaultbild-plakate.jpg',
-		'label' => __( 'Plakate', 'piratenkleider' )
-	),
-        '5' => array(
-		'src' =>	get_bloginfo('template_url').'/images/defaultbild-presse.jpg',
-		'label' => __( 'Presse', 'piratenkleider' )
-	),
-        '6' => array(
-		'src' =>	get_bloginfo('template_url').'/images/defaultbild-protest.jpg',
-		'label' => __( 'Protest', 'piratenkleider' )
-	),
-);
-
- 
-/**
- * Liste der Default-Plakate fer die Sidebar
- */
-
-$defaultplakate_liste = array(
-	'0' => array(
-		'src' =>	get_bloginfo('template_url').'/images/defaultplakat-agrarwirtschaft.jpg',
-		'label' => __( 'Plakat Agrarwirtschaft', 'piratenkleider' )
-	),
-	'1' => array(
-		'src' =>	get_bloginfo('template_url').'/images/defaultplakat-freiheit.jpg',
-		'label' => __( 'Plakat Freiheit und Selbstbestimmung', 'piratenkleider' )
-	),
-	'2' => array(
-		'src' =>	get_bloginfo('template_url').'/images/defaultplakat-lebensmittel.jpg',
-		'label' => __( 'Plakat für gentechnikfreie Lebensmittel', 'piratenkleider' )
-	),
-        '3' => array(
-		'src' =>	get_bloginfo('template_url').'/images/defaultplakat-mitbestimmung.jpg',
-		'label' => __( 'Plakat zur Mitbestimmung', 'piratenkleider' )
-	),
-        '4' => array(
-		'src' =>	get_bloginfo('template_url').'/images/defaultplakat-wohnraum.jpg',
-		'label' => __( 'Plakat für bezahlbaren Wohnraum', 'piratenkleider' )
-	),
-        '5' => array(
-		'src' =>	get_bloginfo('template_url').'/images/defaultplakat-oepnv.jpg',
-		'label' => __( 'Plakat ÖPNV', 'piratenkleider' )
-	),
-	'6' => array(
-		'src' =>	get_bloginfo('template_url').'/images/defaultplakat-warum-haengen.jpg',
-		'label' => __( 'Plakat Warum hänge ich hier', 'piratenkleider' )
-	),
-	'7' => array(
-		'src' =>	get_bloginfo('template_url').'/images/defaultplakat-vertraue-keinem-plakat.jpg',
-		'label' => __( 'Plakat Vertraue keinem Plakat', 'piratenkleider' )
-	),
-        '8' => array(
-		'src' =>	get_bloginfo('template_url').'/images/defaultplakat-klarmachen-zum-aendern.jpg',
-		'label' => __( 'Plakat Klarmachen zum ändern', 'piratenkleider' )
-	),
-        '9' => array(
-		'src' =>	get_bloginfo('template_url').'/images/defaultplakat-transparenz.jpg',
-		'label' => __( 'Plakat Transparenz', 'piratenkleider' )
-	),
-       '10' => array(
-		'src' =>	get_bloginfo('template_url').'/images/defaultplakat-streife-statt-kameras.jpg',
-		'label' => __( 'Plakat Streife statt Kameras', 'piratenkleider' )
-	),
-        
-);
-// Aus gestalerischen Gründen müssen Plakate auf der Website exakt 277 Pixel breit sein. Die Höhe ist
-// flexibel, sollte jedoch auch gleich sein. In diesem Fall  391 Pixel.
-
-/**
  * Create the options page
  */
 function theme_options_do_page() {
-	
+	global $defaultoptions;
 
 	if ( ! isset( $_REQUEST['settings-updated'] ) )
 		$_REQUEST['settings-updated'] = false;
@@ -126,7 +37,7 @@ function theme_options_do_page() {
                 div.wrap {
                     max-width: 1200px;
                     margin: 20px 0 0 0;
-                    background-image: url(<?php echo get_bloginfo('template_url')?>/images/logo.png);
+                    background-image: url(<?php echo $defaultoptions['logo']; ?>);
                     background-position: top right;
                     background-repeat: no-repeat;
                     padding: 0;
@@ -160,9 +71,28 @@ function theme_options_do_page() {
 			<?php settings_fields( 'piratenkleider_options' ); ?>
 			<?php $options = get_option( 'piratenkleider_theme_options' ); 
                             if ( ! isset( $options['slider-slideshowSpeed'] ) )
-                            $options['slider-slideshowSpeed'] = 8000;
+                                $options['slider-slideshowSpeed'] = $defaultoptions['slider-slideshowSpeed']; 
                             if ( ! isset( $options['slider-animationDuration'] ) )
-                            $options['slider-animationDuration'] = 600;
+                                $options['slider-animationDuration'] = $defaultoptions['slider-animationDuration'];
+                            if ( ! isset( $input['defaultwerbesticker'] ) )
+                                $input['defaultwerbesticker'] = $defaultoptions['defaultwerbesticker'];;
+                            if ( ! isset( $input['aktiv-autoren'] ) ) 
+                                $input['aktiv-autoren'] = $defaultoptions['aktiv-autoren']; 
+                            if ( ! isset( $input['newsletter'] ) ) 
+                                $input['newsletter'] = $defaultoptions['newsletter'];
+                            if ( ! isset( $input['alle-socialmediabuttons'] ) ) 
+                                $input['alle-socialmediabuttons'] = $defaultoptions['alle-socialmediabuttons'];
+                            if ( ! isset( $input['aktiv-platzhalterbilder-indexseiten'] ) ) 
+                                $input['aktiv-platzhalterbilder-indexseiten'] = $defaultoptions['aktiv-platzhalterbilder-indexseiten'];  
+                            if ( ! isset( $input['slider-aktiv'] ) ) 
+                                $input['slider-aktiv'] = $defaultoptions['slider-aktiv'];
+                            if ( ! isset( $input['slider-defaultwerbeplakate'] ) ) 
+                                $input['slider-defaultwerbeplakate'] = $defaultoptions['slider-defaultwerbeplakate'];
+                            if ( ! isset( $input['slider-numberarticle'] ) ) 
+                                $input['slider-numberarticle'] = $defaultoptions['slider-numberarticle']; 
+                            if ( ! isset( $input['feed_twitter_numberarticle'] ) )
+                                $input['feed_twitter_numberarticle'] = $defaultoptions['feed_twitter_numberarticle']; 
+	                                                        
                         ?>
 			<table class="form-table">
 
@@ -456,33 +386,33 @@ function theme_options_do_page() {
  * Sanitize and validate input. Accepts an array, return a sanitized array.
  */
 function theme_options_validate( $input ) {
-	
+    global $defaultoptions;
 
 	// Our checkbox value is either 0 or 1
 	if ( ! isset( $input['defaultwerbesticker'] ) )
-		$input['defaultwerbesticker'] = null;
+		$input['defaultwerbesticker'] = 0;
 	$input['defaultwerbesticker'] = ( $input['defaultwerbesticker'] == 1 ? 1 : 0 );    
         
         if ( ! isset( $input['aktiv-autoren'] ) )
-		$input['aktiv-autoren'] = null;
+		$input['aktiv-autoren'] = 0;
 	$input['aktiv-autoren'] = ( $input['aktiv-autoren'] == 1 ? 1 : 0 );    
         
 	if ( ! isset( $input['newsletter'] ) )
-		$input['newsletter'] = null;
+		$input['newsletter'] = 0;
 	$input['newsletter'] = ( $input['newsletter'] == 1 ? 1 : 0 );
 	if ( ! isset( $input['alle-socialmediabuttons'] ) )
-		$input['alle-socialmediabuttons'] = null;
+		$input['alle-socialmediabuttons'] = 0;
 	$input['alle-socialmediabuttons'] = ( $input['alle-socialmediabuttons'] == 1 ? 1 : 0 );
         
         if ( ! isset( $input['aktiv-platzhalterbilder-indexseiten'] ) )
-		$input['aktiv-platzhalterbilder-indexseiten'] = null;
+		$input['aktiv-platzhalterbilder-indexseiten'] = 0;
 	$input['aktiv-platzhalterbilder-indexseiten'] = ( $input['aktiv-platzhalterbilder-indexseiten'] == 1 ? 1 : 0 );       
         
         if ( ! isset( $input['slider-aktiv'] ) )
-		$input['slider-aktiv'] = null;
+		$input['slider-aktiv'] = 0;
 	$input['slider-aktiv'] = ( $input['slider-aktiv'] == 1 ? 1 : 0 );        
          if ( ! isset( $input['slider-defaultwerbeplakate'] ) )
-		$input['slider-defaultwerbeplakate'] = null;
+		$input['slider-defaultwerbeplakate'] = 0;
 	$input['slider-defaultwerbeplakate'] = ( $input['slider-defaultwerbeplakate'] == 1 ? 1 : 0 );        
         
         if ( ! isset( $input['slider-numberarticle'] ) )
@@ -521,8 +451,8 @@ function theme_options_validate( $input ) {
  * Create the options page
  */
 function theme_defaultbilder_do_page() {
-	global $defaultbilder_liste;
-           global $defaultplakate_liste;
+   global $defaultbilder_liste;
+   global $defaultplakate_liste;
 	if ( ! isset( $_REQUEST['settings-updated'] ) )
 		$_REQUEST['settings-updated'] = false;
 
