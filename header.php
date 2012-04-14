@@ -104,7 +104,7 @@ if (isset( $options['meta-keywords'] ) ) { ?>
 				<div class="skin">
 					<form method="post" action="https://service.piratenpartei.de/subscribe/newsletter">
 						<legend>Piratenpartei-Newsletter</legend>
-						<input type="text" name="email" placeholder="E-mail">
+						<input type="text" name="email" placeholder="E-Mail">
                                                 <input type="submit" name="email-button" value="abonnieren" id="newslettersubmit">
 					</form>
 				</div>
