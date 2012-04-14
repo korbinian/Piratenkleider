@@ -118,12 +118,10 @@ if (isset( $options['meta-keywords'] ) ) { ?>
                                 } else { ?>
                                     <div class="menu-header">
                                         <ul id="menu-mainmenu" class="menu">      
-                                          
                                             <?php  wp_page_menu( array(
                                         'sort_column' => 'menu_order, post_title',
                                         'echo'        => 1,
-                                        'show_home'   => 0 ) ); ?>
-          
+                                        'show_home'   => 1 ) ); ?>          
                                         </ul>
                                     </div>
                                 <?php  } ?>
