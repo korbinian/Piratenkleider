@@ -110,6 +110,8 @@ THEME-OPTIONS "Piratenkleider pimpen"
   werden um "lokale" Einstellungen zu ändern.
     - Newsletter-Box einschalten/abschalten
     - Social Media Buttons ein/ausschalten         
+    - Anzahl der Nachrichten auf der Startseite und dessen Anordnung
+      einstellen
     - Slider steuern        
     - Metatag-Angaben ändern
     - Default Werbe-Sticker optional schaltbar
@@ -117,7 +119,7 @@ THEME-OPTIONS "Piratenkleider pimpen"
        (allerdings derzeit festgelegt auf Logos der Größe 300x130 Pixel mit
         Hintergrund in RGB #eeeeee . Ab Wordpress 3.4 kann eine neue Theme-
         Version dies flexibler machen)
-
+    
 
 VERWENDETE PLUGINS
   - Wenn das Plugin "Related Posts by Category" vorhanden und aktiviert ist,
@@ -166,9 +168,6 @@ Administrative Hinweise für Wordpress Theme-Editoren:
    Am Besten bearbeitet man die Sliderbilder vor.
    Bei der optischen Darstellung des Sliders werden Bilder, die höher sind als
    240 Pixel nach unten abgeschnitten. 
-
-   Nach den 3 Artikeln kommen weitere Artikel. Dies sind die letzten Artikel 4-9
-   nach der Artikelliste. (Oben sind ja 1-3).
 
 
 
