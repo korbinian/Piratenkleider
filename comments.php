@@ -5,21 +5,21 @@ endif; ?>
 
 <?php if ( have_comments() ) : ?>
     <h3 id="comments-title">
-    <?php printf( _n( 'Ein Kommentar zu %2$s', '%1$s Kommentare zu %2$s', get_comments_number(), 'twentyten' ), number_format_i18n( get_comments_number() ), '' . get_the_title() . '' ); ?>
+    <?php printf( _n( 'Ein Kommentar zu %2$s', '%1$s Kommentare zu %2$s', get_comments_number(), 'piratenkleider' ), number_format_i18n( get_comments_number() ), '' . get_the_title() . '' ); ?>
     </h3>
 
     <?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) :  ?>
-            <?php previous_comments_link( __( '&larr; Ältere Kommentare', 'twentyten' ) ); ?>
-            <?php next_comments_link( __( 'Neuere Kommentare &rarr;', 'twentyten' ) ); ?>
+            <?php previous_comments_link( __( '&larr; Ältere Kommentare', 'piratenkleider' ) ); ?>
+            <?php next_comments_link( __( 'Neuere Kommentare &rarr;', 'piratenkleider' ) ); ?>
     <?php endif; ?>
     <ol>
-            <?php wp_list_comments( array( 'callback' => 'twentyten_comment' ) );
+            <?php wp_list_comments( array( 'callback' => 'piratenkleider_comment' ) );
             ?>
     </ol>
 
     <?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) :  ?>
-            <?php previous_comments_link( __( '&larr; Ältere Kommentare', 'twentyten' ) ); ?>
-            <?php next_comments_link( __( 'Neuere Kommentare &rarr;', 'twentyten' ) ); ?>
+            <?php previous_comments_link( __( '&larr; Ältere Kommentare', 'piratenkleider' ) ); ?>
+            <?php next_comments_link( __( 'Neuere Kommentare &rarr;', 'piratenkleider' ) ); ?>
     <?php endif; ?>
 
 <?php else : if ( ! comments_open() ) : ?>
