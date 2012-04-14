@@ -6,8 +6,8 @@
  * @source http://github.com/xwolfde/Piratenkleider
  * @creator xwolf
  * @version 2.1
+ * @licence CC-BY-SA 3.0 
  */
-define('WP_DEBUG', true);
 
 
 $defaultoptions = array(
