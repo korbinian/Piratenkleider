@@ -37,14 +37,13 @@
                 ?>                   
             </ul>
     </div>
-<?php 
+<?php }
    if ( is_active_sidebar( 'sidebar-widget-area-afterplakate' ) )  {
        ?>
-       <hr>
-       <?php 
+    <hr>
+   <?php 
             dynamic_sidebar( 'sidebar-widget-area-afterplakate' );     
-   }   
- }
+   }    
  if ( $options['feed_twitter'] != "" ){ ?>
 <script>
 var twitter_name = "<?php echo $options['feed_twitter']; ?>";
