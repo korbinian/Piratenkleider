@@ -9,6 +9,20 @@
     wp_footer();     
    
       $options = get_option( 'piratenkleider_theme_options' );
+      
+        if (!isset($options['slider-slideshowSpeed'])) 
+            $options['slider-slideshowSpeed'] = $defaultoptions['slider-slideshowSpeed'];
+        if (!isset($options['slider-animationDuration'])) 
+            $options['slider-animationDuration'] = $defaultoptions['slider-animationDuration'];
+        if (!isset($options['slider-Direction'])) 
+            $options['slider-Direction'] = $defaultoptions['slider-Direction'];
+        if (!isset($options['slider-animationType'])) 
+            $options['slider-animationType'] = $defaultoptions['slider-animationType'];
+        if (!isset($options['slider-aktiv'])) 
+            $options['slider-aktiv'] = $defaultoptions['slider-aktiv'];
+        if (!isset($options['slider-defaultwerbeplakate'])) 
+            $options['slider-defaultwerbeplakate'] = $defaultoptions['slider-defaultwerbeplakate'];
+      
       $slideshowSpeed = $options['slider-slideshowSpeed'];    
       $animationDuration = $options['slider-animationDuration'];    
       $slideDirection = $options['slider-Direction']; 
