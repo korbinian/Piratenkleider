@@ -3,7 +3,7 @@
  */
 
 $(document).ready(function() {
-        // Barrierefreie Navigation mit Tastatur
+        // Barrierefreie Hauptnavigation mit Tastatur
 	$(".nav-main ul li a").focus(function() {
 		$(this).parent().children("a").addClass("active");
 		$(this).parent().addClass("active");
@@ -13,7 +13,9 @@ $(document).ready(function() {
 		$(this).parent().removeClass("active");
 		$(this).removeClass("active");
 	});
-	
+        
+ 
+
 	$(".nav-main ul li ul li a").focus(function() {
 		$(this).parent().parent().parent().children("a").addClass("active");
 		$(this).parent().parent().parent().addClass("active");
