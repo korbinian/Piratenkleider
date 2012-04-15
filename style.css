@@ -531,35 +531,41 @@ ul.socialmedia li a {
       text-indent: -999em; }
 ul.socialmedia li.twitter a {
     background: url("assets/sm-icons.png") no-repeat scroll 0 0 transparent; }
+ul.socialmedia li.twitter a:focus,
 ul.socialmedia li.twitter a:hover {
       background: url("assets/sm-icons.png") no-repeat scroll 0 -30px transparent; }
-  ul.socialmedia li.facebook a {
+ul.socialmedia li.facebook a {
     background: url("assets/sm-icons.png") no-repeat scroll -30px 0 transparent; }
-    ul.socialmedia li.facebook a:hover {
+ul.socialmedia li.facebook a:focus,
+ul.socialmedia li.facebook a:hover {
       background: url("assets/sm-icons.png") no-repeat scroll -30px -30px transparent; }
-  ul.socialmedia li.youtube a {
+ul.socialmedia li.youtube a {
     background: url("assets/sm-icons.png") no-repeat scroll -60px 0 transparent; }
-    ul.socialmedia li.youtube a:hover {
+ul.socialmedia li.youtube a:focus,
+ul.socialmedia li.youtube a:hover {
       background: url("assets/sm-icons.png") no-repeat scroll -60px -30px transparent; }
-  ul.socialmedia li.gplus a {
+ul.socialmedia li.gplus a {
     background: url("assets/sm-icons.png") no-repeat scroll -90px 0 transparent; }
-    ul.socialmedia li.gplus a:hover {
+ul.socialmedia li.gplus a:focus,
+ul.socialmedia li.gplus a:hover {
       background: url("assets/sm-icons.png") no-repeat scroll -90px -30px transparent; }
-  ul.socialmedia li.diaspora a {
+ul.socialmedia li.diaspora a {
     background: url("assets/sm-icons.png") no-repeat scroll -120px 0 transparent; }
-    ul.socialmedia li.diaspora a:hover {
+ul.socialmedia li.diaspora a:focus,
+ul.socialmedia li.diaspora a:hover {
       background: url("assets/sm-icons.png") no-repeat scroll -120px -30px transparent; }
-  ul.socialmedia li.identica a {
+ul.socialmedia li.identica a {
     background: url("assets/sm-icons.png") no-repeat scroll -150px 0 transparent; }
-    ul.socialmedia li.identica a:hover {
+ul.socialmedia li.identica a:focus,
+ul.socialmedia li.identica a:hover {
       background: url("assets/sm-icons.png") no-repeat scroll -150px -30px transparent; }
 
 .sticker {
   width: 299px;
   margin: 0 auto; }
-  .sticker .skin {
+.sticker .skin {
     padding: 0; }
-    .sticker .skin a {
+.sticker .skin a {
       background: url("assets/pirat-icons.png") no-repeat scroll 0 0 transparent;
       width: 129px;
       height: 77px;
@@ -567,11 +573,13 @@ ul.socialmedia li.twitter a:hover {
       overflow: hidden;
       text-indent: -999em;
       display: block; }
-      .sticker .skin a.member:hover {
+.sticker .skin a.member:focus,
+.sticker .skin a.member:hover {
         background: url("assets/pirat-icons.png") no-repeat scroll 0 -77px transparent; }
-      .sticker .skin a.spenden {
+.sticker .skin a.spenden {
         background: url("assets/pirat-icons.png") no-repeat scroll -129px 0 transparent; }
-        .sticker .skin a.spenden:hover {
+.sticker .skin a.spenden:focus,
+.sticker .skin a.spenden:hover {
           background: url("assets/pirat-icons.png") no-repeat scroll -129px -77px transparent; }
 
 .newsletter .skin {
@@ -586,33 +594,33 @@ ul.socialmedia li.twitter a:hover {
   border-top-right-radius: 3px;
   border-bottom-right-radius: 3px;
   border-bottom-left-radius: 3px; }
-  .newsletter .skin form {
+.newsletter .skin form {
     overflow: hidden;
     position: relative; }
-    .newsletter .skin form legend {
+.newsletter .skin form legend {
       color: gray;
       font-weight: lighter; }
-    .newsletter .skin form input[type="text"] {
+ .newsletter .skin form input[type="text"] {
       width: 100% !important; }
-    .newsletter .skin form input[type="submit"] {
+ .newsletter .skin form input[type="submit"] {
       position: absolute;
       right: -2px;
       top: 15px; }
-      .newsletter .skin form input[type="submit"]:active {
+ .newsletter .skin form input[type="submit"]:active {
         top: 0; }
 
 .breadcrumbs {
   background: black;
   color: #eeeeee; }
-  .breadcrumbs .skin {
+.breadcrumbs .skin {
     padding: 5px 20px 5px 15px;
     color: silver; }
-    .breadcrumbs .skin a {
+.breadcrumbs .skin a {
       color: white;
       display: inline-block;
       padding: 0 5px;
       background: rgba(255, 255, 255, 0.2); }
-      .breadcrumbs .skin a:hover {
+ .breadcrumbs .skin a:hover {
         color: #ff8800; }
 
 .teaser {
@@ -756,29 +764,43 @@ html[xmlns] .slides {
       letter-spacing: 1px;
       text-shadow: 0 -1px 1px #c36800;
       font-size: 19px; }
-    .second-teaser-widget-area li a:hover {
-      -moz-transition: all 0.2s ease-in-out;
-      -o-transition: all 0.2s ease-in-out;
-      -webkit-transition: all 0.2s ease-in-out;
-      transition: all 0.2s ease-in-out;
-      padding-left: 55px !important; }
+   
+    
+  .second-teaser-widget-area li:focus,
   .second-teaser-widget-area li:hover {
     background: #ff8800;
     -moz-transition: all 0.2s ease-in-out;
     -o-transition: all 0.2s ease-in-out;
     -webkit-transition: all 0.2s ease-in-out;
     transition: all 0.2s ease-in-out; }
+   
+  .second-teaser-widget-area li a:focus,  
+  .second-teaser-widget-area li a:hover {
+      -moz-transition: all 0.2s ease-in-out;
+      -o-transition: all 0.2s ease-in-out;
+      -webkit-transition: all 0.2s ease-in-out;
+      transition: all 0.2s ease-in-out;
+      padding-left: 55px !important; }
+  
+  
+  
 .second-teaser-widget-area li.first a {
   background: url("assets/cta-icons.png") no-repeat scroll 10px 10px transparent; }
-  .second-teaser-widget-area li.first a:hover {
+
+.second-teaser-widget-area li.first a:focus,
+.second-teaser-widget-area li.first a:hover {
     background: url("assets/cta-icons.png") no-repeat scroll 10px 10px transparent; }
 .second-teaser-widget-area li.second a {
   background: url("assets/cta-icons.png") no-repeat scroll 10px -90px transparent; }
-  .second-teaser-widget-area li.second a:hover {
+
+.second-teaser-widget-area li.second a:focus,
+.second-teaser-widget-area li.second a:hover {
     background: url("assets/cta-icons.png") no-repeat scroll 10px -90px transparent; }
 .second-teaser-widget-area li.third a {
   background: url("assets/cta-icons.png") no-repeat scroll 10px -190px transparent; }
-  .second-teaser-widget-area li.third a:hover {
+
+.second-teaser-widget-area li.third a:focus,
+.second-teaser-widget-area li.third a:hover {
     background: url("assets/cta-icons.png") no-repeat scroll 10px -190px transparent; }
 
 .content {
@@ -800,10 +822,12 @@ html[xmlns] .slides {
     margin: 0 0 18px 20px; }
     .content ol li {
       margin-bottom: 5px; }
-  .content .startpage-widget-area ul li, .content .startpage-widget-area ol li {
+  .content .startpage-widget-area ul li, 
+  .content .startpage-widget-area ol li {
     list-style: none !important;
     margin-bottom: 0; }
-  .content .startpage-widget-area .first-startpage-widget-area ul li {
+  .content .startpage-widget-area 
+  .first-startpage-widget-area ul li {
     margin-bottom: 5px; }
   .content .startpage-widget-area ul.children {
     margin: 0 0 0 5px !important; }
