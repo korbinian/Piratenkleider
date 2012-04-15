@@ -1933,6 +1933,31 @@ div.ics-calendar-holder .ics-calendar-event {
     padding: 1.5em 10px 1em 50px; } 
 }
 @media only screen and (max-width: 767px) {
+  .logo {
+    width: 100%;
+    top: 40px;
+  }
+   .logo img {
+      margin: 0 auto;
+      display: block;
+    }
+   .sticker {
+        display: none;
+    }  
+    .nav-top {
+        width: 200px;
+        right: 0px;        
+    }
+ .symbolbild, 
+  .flexslider, 
+  .flexslider img {
+        height: 240px;  
+        overflow: hidden;
+   }   
+   .content-aside .flexslider {
+        height: auto;    
+        margin-bottom: 10px;
+    }
   .second-teaser-widget-area ul li a {
     background: none !important;
     padding: 5px 10px !important; }
