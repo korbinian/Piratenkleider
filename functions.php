@@ -18,6 +18,7 @@ $defaultoptions = array(
     'thumb-width'   => 640,
     'thumb-height'  => 240,
     'src-jquery'    => get_bloginfo('template_url'). "/js/jquery.min.js",
+    'src-layoutjs'    => get_bloginfo('template_url'). "/js/layout.js",
     'slider-aktiv'  => 1,
     'slider-defaultwerbeplakate'    => 1,
     'slider-numberarticle'  => 3,
@@ -32,7 +33,6 @@ $defaultoptions = array(
     'num-article-startpage-fullwidth'    => 1,
     'num-article-startpage-halfwidth'    => 4
 );
-
 /**
  * Liste der Defaultbilder fuer Seiten und Slider
  */
@@ -687,4 +687,9 @@ if( !is_admin()){
         wp_deregister_script('jquery');
         wp_register_script('jquery', $defaultoptions['src-jquery'] , false);
         wp_enqueue_script('jquery');
+
+        wp_register_script('layoutjs', $defaultoptions['src-layoutjs'] , false);
+        wp_enqueue_script('layoutjs');
+       
+        
 }
