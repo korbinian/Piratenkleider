@@ -370,11 +370,14 @@ button, input, select, textarea {
   vertical-align: baseline;
   *vertical-align: middle; }
 
-input:focus, input:active, select:focus, select:active, textarea:focus, textarea:active {
+input:focus, input:active, 
+select:focus, select:active, 
+textarea:focus, textarea:active {
   border: 1px solid black;
   background: white; }
 
-button, input[type="submit"], .post-edit-link {
+button, input[type="submit"], 
+.post-edit-link {
   padding: 5px 10px;
   overflow: visible;
   position: relative;
@@ -394,7 +397,10 @@ button, input[type="submit"], .post-edit-link {
   background-image: -moz-linear-gradient(top, #2d7dc5, #24639b);
   background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #2d7dc5), color-stop(1, #24639b));
   background-image: linear-gradient(top, #2d7dc5, #24639b); }
-  button:hover, input[type="submit"]:hover, .post-edit-link:hover {
+
+  button:hover, 
+  input[type="submit"]:hover, 
+  .post-edit-link:hover {
     background-color: #2d7dc5;
     background-image: -moz-linear-gradient(top, #2d7dc5, #1a4872);
     background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #2d7dc5), color-stop(1, #1a4872));
@@ -403,7 +409,9 @@ button, input[type="submit"], .post-edit-link {
     -o-transition: all 0.2s ease-in-out;
     -webkit-transition: all 0.2s ease-in-out;
     transition: all 0.2s ease-in-out; }
-  button:active, input[type="submit"]:active, .post-edit-link:active {
+  button:active, 
+  input[type="submit"]:active, 
+  .post-edit-link:active {
     top: 1px; }
 
 body {
@@ -422,14 +430,15 @@ body {
 
 .skiplinks {
   margin: 0; }
-  .skiplinks li {
+ .skiplinks li {
     list-style: none;
     width: 100%; }
-    .skiplinks li a {
+ .skiplinks li a {
       position: absolute;
       display: block;
       top: -100px; }
-      .skiplinks li a:focus, .skiplinks li a:active {
+ .skiplinks li a:focus, 
+ .skiplinks li a:active {
         position: static;
         width: 100%;
         display: block;
@@ -439,7 +448,7 @@ body {
         outline: 0px;
         text-align: center;
         padding: 5px; }
-      .skiplinks li a:hover {
+ .skiplinks li a:hover {
         background: #ff8800;
         color: black; }
 
@@ -449,9 +458,9 @@ body {
   background-image: url("assets/darkwave.png"), url("assets/boat.png");
   background-position: -20% bottom, 56% bottom;
   background-repeat: repeat-x, no-repeat; }
-  .header .branding {
+.header .branding {
     padding: 10px 0 0px 0; }
- .header input[type="text"] {
+.header input[type="text"] {
     border-color: silver;
     width: 100% !important; }
 
@@ -470,15 +479,17 @@ body {
 .nav-main ul.menu a {
     display: block; }
 .nav-top ul.menu a:hover, 
+.nav-top ul.menu a:focus, 
 .nav-main ul.menu a:hover {
-
-    background: white; }
+    background: white; 
+    z-index: 999;
+}
 .nav-main ul.menu li ul.children,
 .nav-top ul.menu li.has_children ul.sub-menu, 
 .nav-main ul.menu li.has_children ul.sub-menu {
-    z-index: 999;
     position: absolute;
-    top: -999em; }
+    top: -999em; 
+}
 
 .searchform {
   padding: 10px 10px 5px 10px;
@@ -1082,7 +1093,7 @@ html[xmlns] .slides {
       background-image: -moz-linear-gradient(top, #2d7dc5, #24639b);
       background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #2d7dc5), color-stop(1, #24639b));
       background-image: linear-gradient(top, #2d7dc5, #24639b); }
-      .post-comments ol li .reply a:hover {
+.post-comments ol li .reply a:hover {
         background-color: #2d7dc5;
         background-image: -moz-linear-gradient(top, #2d7dc5, #1a4872);
         background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #2d7dc5), color-stop(1, #1a4872));
@@ -1266,9 +1277,12 @@ html[xmlns] .slides {
       border-radius: 2px;
       -moz-border-radius: 2px;
       -webkit-border-radius: 2px; }
-.content-aside ul.menu li a:hover {
+.content-aside ul.menu li.active a,
+.content-aside ul.menu li a:hover,
+.content-aside ul.menu li a:focus {
         color: white !important;
-        background: #2d7dc5; }
+        background: #2d7dc5; 
+}
       
 .content-aside ul.menu li.current_page_item > a,
 .content-aside ul.menu li.current-menu-item > a {
@@ -1543,8 +1557,11 @@ div.ics-calendar-holder .ics-calendar-event {
             line-height: 30px;
             padding: 0 10px;
             color: black; }
-  .nav-top div.menu-header ul.menu li a:hover {
-              color: #2d7dc5; }
+
+  .nav-top div.menu-header ul.menu li a:hover,
+  .nav-top div.menu-header ul.menu li a:focus {
+              color: #2d7dc5; 
+  }
             
   .nav-top form.searchform {
       float: right !important;
@@ -1614,7 +1631,9 @@ div.ics-calendar-holder .ics-calendar-event {
       border-bottom-right-radius: 0;
       border-bottom-left-radius: 0; }
     .nav-main ul.menu li {
-        float: left; }
+        float: left; 
+    }
+    
     .nav-main ul.menu li a {
           -moz-border-radius-topleft: 3px;
           -moz-border-radius-topright: 3px;
@@ -1631,9 +1650,12 @@ div.ics-calendar-holder .ics-calendar-event {
           letter-spacing: 1px;
           padding: 12px 10px 10px 10px;
           border-bottom: 0; }
-    
+
+      .nav-main ul.menu li.active a,
+      .nav-main ul.menu li a:focus,
       .nav-main ul.menu li a:hover {
-            color: #2d7dc5; }
+            color: #2d7dc5; 
+      }
     
       .nav-main ul.menu li a[title="Home"],
       .nav-main ul.menu li.menu-item-home a {
@@ -1642,7 +1664,11 @@ div.ics-calendar-holder .ics-calendar-event {
         text-indent: -999em;
         background: url("assets/home.gif") no-repeat center 10px !important; }
       
+     .nav-main ul.menu li.active a[title="Home"],  
      .nav-main ul.menu li a[title="Home"]:hover, 
+     .nav-main ul.menu li a[title="Home"]:focus,
+     .nav-main ul.menu li.active a[title="Home"],
+     .nav-main ul.menu li.menu-item-home a:focus,
      .nav-main ul.menu li.menu-item-home a:hover {
           background: white url("assets/home.gif") no-repeat center 10px !important; }
      
@@ -1650,16 +1676,28 @@ div.ics-calendar-holder .ics-calendar-event {
      .nav-main ul.menu li.current-menu-item.menu-item-home a {
         background: #111111 url("assets/home.gif") no-repeat center -107px !important; }
      
-     .nav-main ul.menu li.current_page_item a[title="Home"]:hover ,
-     .nav-main ul.menu li.current-menu-item.menu-item-home a:hover {
+     .nav-main ul.menu li.active a[title="Home"],
+     .nav-main ul.menu li.current_page_item a[title="Home"]:hover,
+     .nav-main ul.menu li.current_page_item a[title="Home"]:focus,
+     .nav-main ul.menu li.current-menu-item.menu-item-home a:hover,
+     .nav-main ul.menu li.current-menu-item.menu-item-home a:focus {
           background: #111111 url("assets/home.gif") no-repeat center 10px !important; }
      
+     .nav-main ul.menu li.active ul li,
      .nav-main ul.menu li.page_item ul.children li:hover,
+     .nav-main ul.menu li.page_item ul.children li:focus,
+     .nav-main ul.menu li.active, 
+     .nav-main ul.menu li.has_children:focus, 
      .nav-main ul.menu li.has_children:hover {
         background: white; 
       }
      
+     .nav-main ul.menu li.active ul,
      .nav-main ul.menu li.page_item:hover ul,
+     .nav-main ul.menu li.page_item:focus ul,
+     .nav-main ul.menu li ul.children:focus,
+     .nav-main ul.menu li.active ul.sub-menu, 
+     .nav-main ul.menu li.has_children:focus ul.sub-menu, 
      .nav-main ul.menu li.has_children:hover ul.sub-menu {
           top: 40px;
           background: white;
@@ -1676,22 +1714,42 @@ div.ics-calendar-holder .ics-calendar-event {
           border-top-right-radius: 3px;
           border-bottom-right-radius: 3px;
           border-bottom-left-radius: 3px; 
+          z-index: 999; 
        }
      
+      .nav-main ul.menu li.active ul li a,
       .nav-main ul.menu li.page_item:hover ul li.current-page-item a,
+      .nav-main ul.menu li.page_item:focus ul li.current-page-item a,
+      .nav-main ul.menu li.active ul.sub-menu li.current-menu-item a,
+      .nav-main ul.menu li.has_children:focus ul.sub-menu li.current-menu-item a,
       .nav-main ul.menu li.has_children:hover ul.sub-menu li.current-menu-item a {
             background: white;
-            color: black; }
+            color: black; 
+      }      
+      .nav-main ul.menu li.active ul.children hr,
+      .nav-main ul.menu li:hover ul.children hr,
+      .nav-main ul.menu li:focus ul.children hr,
+      .nav-main ul.menu li.active ul.sub-menu hr,
+      .nav-main ul.menu li.has_children:hover ul.sub-menu hr,
+      .nav-main ul.menu li.has_children:focus ul.sub-menu hr {
+            margin: 0 !important; 
+      }
       
-      .nav-main ul.menu li.has_children:hover ul.sub-menu hr {
-            margin: 0 !important; }
-      
+      .nav-main ul.menu li.active ul li.active, 
       .nav-main ul.menu li.page_item:hover ul li, 
-      .nav-main ul.menu li.has_children:hover ul.sub-menu li {
+      .nav-main ul.menu li.page_item:focus ul li, 
+      .nav-main ul.menu li.active ul.sub-menu li,
+      .nav-main ul.menu li.has_children:hover ul.sub-menu li,
+      .nav-main ul.menu li.has_children:focus ul.sub-menu li {
             float: none;
-            position: relative; }
+            position: relative; 
+      }
+      .nav-main ul.menu li.active ul li a,
        .nav-main ul.menu li.page_item:hover ul li a,
-       .nav-main ul.menu li.has_children:hover ul.sub-menu li a {
+       .nav-main ul.menu li.page_item:focus ul li a,
+       .nav-main ul.menu li.active ul.sub-menu li a,
+       .nav-main ul.menu li.has_children:hover ul.sub-menu li a,
+       .nav-main ul.menu li.has_children:focus ul.sub-menu li a {
               font-family: Helvetica, Arial, sans-serif;
               letter-spacing: 0;
               font-size: 12px;
@@ -1703,33 +1761,62 @@ div.ics-calendar-holder .ics-calendar-event {
               border-top-left-radius: 0;
               border-top-right-radius: 0;
               border-bottom-right-radius: 0;
-              border-bottom-left-radius: 0; }
-       
+              border-bottom-left-radius: 0; 
+              z-index: 999;
+       }
+       .nav-main ul.menu li.active ul.children li.active a,
        .nav-main ul.menu li.page_item:hover ul.children li a:hover,
-       .nav-main ul.menu li.has_children:hover ul.sub-menu li a:hover {
+       .nav-main ul.menu li.page_item:focus ul.children li a:focus,
+       .nav-main ul.menu li.active ul.sub-menu li.active a,
+       .nav-main ul.menu li.has_children:hover ul.sub-menu li a:hover,
+       .nav-main ul.menu li.has_children:focus ul.sub-menu li a:focus {
                 background: #2d7dc5;
                 color: white; }
-       .nav-main ul.menu li.page_item:hover ul.children li ul.children,
-       .nav-main ul.menu li.has_children:hover ul.sub-menu li ul.sub-menu {
-              top: -999em; }
+/*       .nav-main ul.menu li.page_item:hover ul.children li ul.children,
+       .nav-main ul.menu li.page_item:focus ul.children li ul.children,
+       .nav-main ul.menu li.has_children:hover ul.sub-menu li ul.sub-menu,
+       .nav-main ul.menu li.has_children:focus ul.sub-menu li ul.sub-menu {
+              top: -999em; 
+       }
+       */
+    /*   .nav-main ul.menu li.active ul.children li a,  */ 
        .nav-main ul.menu li.page_item:hover ul.children li a,
-       .nav-main ul.menu li.has_children:hover ul.sub-menu li.has_children a {
+       .nav-main ul.menu li.page_item:focus ul.children li a,
+       .nav-main ul.menu li.active ul.sub-menu li.has_children a,
+       .nav-main ul.menu li.has_children:hover ul.sub-menu li.has_children a,
+       .nav-main ul.menu li.has_children:focus ul.sub-menu li.has_children a {
             background: url("assets/plus_black.gif") center right no-repeat; }
        
+        .nav-main ul.menu li.active ul.children li.active a,
        .nav-main ul.menu li.page_item:hover ul.children li a:hover,
-       .nav-main ul.menu li.has_children:hover ul.sub-menu li.has_children a:hover {
+       .nav-main ul.menu li.page_item:focus ul.children li a:focus,
+       .nav-main ul.menu li.active ul.sub-menu li.active a,
+       .nav-main ul.menu li.has_children:hover ul.sub-menu li.has_children a:hover,
+       .nav-main ul.menu li.has_children:focus ul.sub-menu li.has_children a:focus {
               background: #2d7dc5 url("assets/plus.gif") center right no-repeat; }
        
+       .nav-main ul.menu li.active ul.children li ul.children li a,
        .nav-main ul.menu li.page_item:hover ul.children li ul.children li a,
-       .nav-main ul.menu li.has_children:hover ul.sub-menu li.has_children ul.sub-menu li a {
+       .nav-main ul.menu li.page_item:focus ul.children li ul.children li a,
+       .nav-main ul.menu li.active ul.sub-menu li.has_children ul.sub-menu li a,
+       .nav-main ul.menu li.has_children:hover ul.sub-menu li.has_children ul.sub-menu li a,
+       .nav-main ul.menu li.has_children:focus ul.sub-menu li.has_children ul.sub-menu li a {
             background: white !important; }
        
+       .nav-main ul.menu li.active ul.children li.active ul.children li a,
        .nav-main ul.menu li.page_item:hover ul.children li.page_item ul.children li a:hover,
-       .nav-main ul.menu li.has_children:hover ul.sub-menu li.has_children ul.sub-menu li a:hover {
+       .nav-main ul.menu li.page_item:focus ul.children li.page_item ul.children li a:focus,
+       .nav-main ul.menu li.active ul.sub-menu li.active ul.sub-menu li a,
+       .nav-main ul.menu li.has_children:hover ul.sub-menu li.has_children ul.sub-menu li a:hover,
+       .nav-main ul.menu li.has_children:focus ul.sub-menu li.has_children ul.sub-menu li a:focus {
               background: #2d7dc5 !important; }
        
+       .nav-main ul.menu li.active ul.children li.active ul.children,
        .nav-main ul.menu li.page_item:hover ul.children li:hover ul.children,
-       .nav-main ul.menu li.has_children:hover ul.sub-menu li:hover ul.sub-menu {
+       .nav-main ul.menu li.page_item:focus ul.children li:focus ul.children,
+       .nav-main ul.menu li.active ul.sub-menu li.active ul.sub-menu,
+       .nav-main ul.menu li.has_children:hover ul.sub-menu li:hover ul.sub-menu,
+       .nav-main ul.menu li.has_children:focus ul.sub-menu li:focus ul.sub-menu {
             top: -5px;
             left: 190px; }
        
@@ -1738,10 +1825,14 @@ div.ics-calendar-holder .ics-calendar-event {
         background: black;
         color: white; }
       
-      nav-main ul.menu li.current-page-item:hover > a,
-      .nav-main ul.menu li.current-menu-item:hover > a {
+
+      .nav-main ul.menu li.current-page-item:hover > a,
+      .nav-main ul.menu li.current-page-item:focus > a,
+      .nav-main ul.menu li.current-menu-item:hover > a,
+      .nav-main ul.menu li.current-menu-item:focus > a {
         background: white;
-        color: black; }
+        color: black; 
+      }
 
       
       
