@@ -21,7 +21,7 @@ AUTOREN / ENTWICKLER
 
    Mit Hilfe von 
      Heiko Philippski, http://www.phindie.de/
-     Kerstin Probiesch
+     Kerstin Probiesch, http://www.barrierefreie-informationskultur.de
 
 
 
