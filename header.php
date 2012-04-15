@@ -59,10 +59,8 @@ if (isset( $options['meta-keywords'] ) ) { ?>
                             <?php }                                 
                                function piratenkleider_header_style() {} 
                             ?>                                                             
-                                <img src="<?php header_image(); ?>" alt="Logo <?php bloginfo( 'name' ); ?>">
+                                <h1><img src="<?php header_image(); ?>" alt="<?php bloginfo( 'name' ); ?>"></h1>
                             <?php if ( ! is_home() ) { ?> </a>  <?php } ?> 
-                            <h1 class="visuallyhidden"><?php bloginfo( 'name' ); ?></h1>
-                            <p class="visuallyhidden"><?php bloginfo( 'description' ); ?></p>
 			</div>
                       <?php if ( $options['defaultwerbesticker'] == "1" ){ ?>
 			<div class="sticker">
