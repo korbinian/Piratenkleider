@@ -659,8 +659,10 @@ ul.socialmedia li.identica a:hover {
       width: auto; 
    */
 }
+
 .flexslider .slides > li {
-  display: none; }
+  display: none; 
+}
 
 .slides:after {
   content: ".";
@@ -677,7 +679,8 @@ html[xmlns] .slides {
   height: 1%; }
 
 .no-js .slides > li:first-child {
-  display: block; }
+  display: block;
+}
 
 .flex-direction-nav {
   display: none; }
@@ -1390,6 +1393,9 @@ html[xmlns] .slides {
 .widget .widget-title {
     line-height: 25px; 
  }
+ .no-js .twitterwidget {
+     display: none; 
+ }    
  .content-aside .twitterwidget {
      margin-top: 20px;
      

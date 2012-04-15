@@ -40,7 +40,6 @@ if (isset( $options['meta-keywords'] ) ) { ?>
 <?php if ( is_singular() && get_option( 'thread_comments' ) )
 		wp_enqueue_script( 'comment-reply' );
 	wp_head(); ?>
- <script src="<?php echo get_bloginfo('template_url'); ?>/js/layout.js"></script> 
 </head>
                       
 <body <?php body_class(); ?>>

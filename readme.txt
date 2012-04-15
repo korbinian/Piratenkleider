@@ -17,8 +17,11 @@ CREDITS & COPYRIGHT
 
 
 AUTOREN / ENTWICKLER
-   - Wolfgang Wiese, http://www.xwolf.de 
-   - Heiko Philippski, http://www.phindie.de/
+   Wolfgang Wiese, http://www.xwolf.de 
+
+   Mit Hilfe von 
+     Heiko Philippski, http://www.phindie.de/
+     Kerstin Probiesch
 
 
 
