@@ -528,7 +528,8 @@ ul.socialmedia li a {
       width: 30px;
       height: 30px;
       overflow: hidden;
-      text-indent: -999em; }
+      text-indent: -999em;
+}
 ul.socialmedia li.twitter a {
     background: url("assets/sm-icons.png") no-repeat scroll 0 0 transparent; }
 ul.socialmedia li.twitter a:focus,
