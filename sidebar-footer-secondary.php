@@ -3,7 +3,7 @@
         <?php if ( is_active_sidebar( 'second-footer-widget-area' ) ) { 
             dynamic_sidebar( 'second-footer-widget-area' );
         } else {                    
-            if ( has_nav_menu( 'top' ) ) { ?>
+            if ( has_nav_menu( 'sub' ) ) { ?>
                     <div class="widget"><h3 class="widget-title"><?php bloginfo( 'name' ); ?></h3> 
                     <?php wp_nav_menu( array( 'container_class' => 'menu-header', 'theme_location' => 'sub' ) ); ?>
                     </div>
