@@ -6,7 +6,8 @@
 <!--[if (gt IE 9)|!(IE)]><!--> <html <?php language_attributes(); ?>> <!--<![endif]-->
 
 <head>
-<?php                    
+<?php          
+  global $defaultoptions;
   $options = get_option( 'piratenkleider_theme_options' );
    if (!isset($options['defaultwerbesticker'])) 
             $options['defaultwerbesticker'] = $defaultoptions['defaultwerbesticker'];
@@ -72,8 +73,8 @@ if (isset( $options['meta-keywords'] ) ) { ?>
                             <div class="skin">   
                                <h3 class="visuallyhidden">Sticker</h3>
                                <ul>
-                                   <li><a class="member" href="<?php echo $options['url-mitgliedwerden']; ?>">werde Pirat!</a></li>
-                                   <li><a class="spenden" href="<?php echo $options['url-spenden']; ?>">Unterstütze uns mit deiner Spende!</a></li>                                  
+                                   <li><a class="member" href="<?php echo $options['url-mitgliedwerden']; ?>"><img src="<?php echo get_bloginfo('template_url'); ?>/images/werde-pirat.png" width="88" height="56" alt="Werde Pirat!"></a></li>
+                                   <li><a class="spenden" href="<?php echo $options['url-spenden']; ?>"><img src="<?php echo get_bloginfo('template_url'); ?>/images/spenden.png" width="104" height="68" alt="Unterstütze uns mit deiner Spende!"></a></li>                                  
                                </ul>                      
                             </div>                                     
 			</div>
