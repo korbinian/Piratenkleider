@@ -1,10 +1,12 @@
 Piratenkleider
-- Wordpress-Theme für Websites der Piratenpartei 
+- Wordpress-Theme für Webauftritte der Piratenpartei 
 =================================================
 
-Version 2.0 von Wolfgang Wiese (xwolf), 
-basierend auf Vorlage von Korbinian Polk fuer die Bundeswebsite
-(http://www.piratenpartei.de)
+Version 2.0 von Wolfgang Wiese (xwolf), April 2012
+
+Dieses Theme basiert auf die Wordpress-Basisvorlage von Korbinian Polk,
+die bei der Bundeswebsite (http://www.piratenpartei.de) Anwendung
+fand.  
 
 
 DOWNLOADS
@@ -17,7 +19,7 @@ CREDITS & COPYRIGHT
 
 
 AUTOREN / ENTWICKLER
-   Wolfgang Wiese, http://www.xwolf.de 
+   Wolfgang Wiese (xwolf), http://www.xwolf.de 
 
    Mit Hilfe von 
      Heiko Philippski, http://www.phindie.de/
