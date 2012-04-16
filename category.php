@@ -22,7 +22,10 @@
        
           <div class="widget">
                 <h2>Übersicht aller Kategorien</h2>
-                <?php wp_list_categories('title_li='); ?>                               
+                <ul>
+                     <?php wp_list_categories('title_li='); ?> 
+                </ul>
+                                             
             </div>
         </div>
     </div>
