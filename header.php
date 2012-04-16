@@ -14,7 +14,12 @@
             $options['alle-socialmediabuttons'] = $defaultoptions['alle-socialmediabuttons'];   
    if (!isset($options['newsletter'])) 
             $options['newsletter'] = $defaultoptions['newsletter'];
-
+    if (!isset($options['url-newsletteranmeldung'])) 
+            $options['url-newsletteranmeldung'] = $defaultoptions['url-newsletteranmeldung'];
+   if (!isset($options['url-mitgliedwerden'])) 
+        $options['url-mitgliedwerden'] = $defaultoptions['url-mitgliedwerden'];
+    if (!isset($options['url-spenden'])) 
+        $options['url-spenden'] = $defaultoptions['url-spenden'];
 ?>  
 <meta charset="<?php bloginfo( 'charset' ); ?>">
 <title><?php wp_title( '|', true, 'right' ); ?></title>
@@ -67,8 +72,8 @@ if (isset( $options['meta-keywords'] ) ) { ?>
                             <div class="skin">   
                                <h3 class="visuallyhidden">Sticker</h3>
                                <ul>
-                                   <li><a class="member" href="https://www.piratenpartei.de/mitmachen/mitglied-werden/">werde Pirat!</a></li>
-                                   <li><a class="spenden" href="https://www.piratenpartei.de/mitmachen/spenden/">Unterstütze uns mit deiner Spende!</a></li>                                  
+                                   <li><a class="member" href="<?php echo $options['url-mitgliedwerden']; ?>">werde Pirat!</a></li>
+                                   <li><a class="spenden" href="<?php echo $options['url-spenden']; ?>">Unterstütze uns mit deiner Spende!</a></li>                                  
                                </ul>                      
                             </div>                                     
 			</div>
@@ -107,7 +112,7 @@ if (isset( $options['meta-keywords'] ) ) { ?>
 
 			<div class="newsletter">
 				<div class="skin">
-					<form method="post" action="https://service.piratenpartei.de/subscribe/newsletter">
+					<form method="post" action="<?php echo $options['url-newsletteranmeldung']; ?>">
 						<legend>Piratenpartei-Newsletter</legend>
 						<input type="text" name="email" placeholder="E-Mail">
                                                 <input type="submit" name="email-button" value="abonnieren" id="newslettersubmit">

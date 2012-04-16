@@ -521,6 +521,7 @@ body {
 ul.socialmedia {
   overflow: hidden;
   margin-right: 0;
+  margin-top: 2px;
 }
 ul.socialmedia li {
     float: left; 

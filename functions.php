@@ -21,17 +21,20 @@ $defaultoptions = array(
     'src-layoutjs'    => get_bloginfo('template_url'). "/js/layout.js",
     'slider-aktiv'  => 1,
     'slider-defaultwerbeplakate'    => 1,
-    'slider-numberarticle'  => 3,
-    'slider-slideshowSpeed' => 8000,
-    'slider-animationDuration' => 600,
-    'defaultwerbesticker'   => 1,
-    'aktiv-autoren' => 1,
-    'newsletter'    => 1,
+    'slider-numberarticle'      => 3,
+    'slider-slideshowSpeed'     => 8000,
+    'slider-animationDuration'  => 600,
+    'defaultwerbesticker'       => 1,
+    'aktiv-autoren'             => 1,
+    'newsletter'                => 1,
     'alle-socialmediabuttons'   => 1,
     'aktiv-platzhalterbilder-indexseiten'   => 0,
-    'feed_twitter_numberarticle'    => 3,
-    'num-article-startpage-fullwidth'    => 1,
-    'num-article-startpage-halfwidth'    => 4
+    'feed_twitter_numberarticle'            => 3,
+    'num-article-startpage-fullwidth'       => 1,
+    'num-article-startpage-halfwidth'       => 4,
+    'url-newsletteranmeldung'   => 'https://service.piratenpartei.de/subscribe/newsletter',
+    'url-mitgliedwerden'        => 'https://www.piratenpartei.de/mitmachen/mitglied-werden/',
+    'url-spenden'               => 'https://www.piratenpartei.de/mitmachen/spenden/',
 );
 /**
  * Liste der Defaultbilder fuer Seiten und Slider
@@ -64,6 +67,10 @@ $defaultbilder_liste = array(
         '6' => array(
 		'src' =>	get_bloginfo('template_url').'/images/defaultbild-protest.jpg',
 		'label' => __( 'Protest', 'piratenkleider' )
+	),
+         '7' => array(
+		'src' =>	get_bloginfo('template_url').'/images/defaultbild-datenschutz.jpg',
+		'label' => __( 'Datenschutz', 'piratenkleider' )
 	),
 );
 

@@ -11,7 +11,8 @@
          if (!isset($catname) ) $catname ="Slider";         
          $numberarticle = $options['slider-numberarticle'];
          if (!isset($numberarticle) )  $numberarticle =3;   
-         
+         if (!isset($options['url-mitgliedwerden'])) 
+            $options['url-mitgliedwerden'] = $defaultoptions['url-mitgliedwerden'];
         query_posts( array( 'category_name' => "$catname", 'posts_per_page' => $numberarticle) );
         
         echo "<div class='flexslider no-js'>";
@@ -49,7 +50,7 @@
             <ul>
             <li class="first"><a href="http://www.piratenpartei.de/politik/themen/"><div>Informiere dich</div> Unsere Themen & Ziele!</a></li>
             <li class="second"><a href="http://www.piratenpartei.de/unterstutze-uns/"><div>Unterstütze uns</div> Mit deinem Engagement!</a></li>
-            <li class="third"><a href="http://www.piratenpartei.de/mitmachen/mitglied-werden/"><div>Werde Pirat!</div> Jetzt Mitglied werden!</a></li>
+            <li class="third"><a href="<?php echo $options['url-mitgliedwerden']; ?>"><div>Werde Pirat!</div> Jetzt Mitglied werden!</a></li>
             </ul>
         </div>
     <?php }  ?>
