@@ -557,25 +557,41 @@ ul.socialmedia li a:focus img  {
 
 .sticker {
   width: 299px;
-  margin: 0 auto; }
-.sticker .skin {
-    padding: 0; }
+  margin: 0 auto; 
+  float: left;
+}
 .sticker .skin a {
-      background: url("assets/pirat-icons.png") no-repeat scroll 0 0 transparent;
       width: 129px;
       height: 77px;
       float: left;
-      overflow: hidden;
-      text-indent: -999em;
-      display: block; }
-.sticker .skin a.member:focus,
-.sticker .skin a.member:hover {
-        background: url("assets/pirat-icons.png") no-repeat scroll 0 -77px transparent; }
-.sticker .skin a.spenden {
-        background: url("assets/pirat-icons.png") no-repeat scroll -129px 0 transparent; }
-.sticker .skin a.spenden:focus,
-.sticker .skin a.spenden:hover {
-          background: url("assets/pirat-icons.png") no-repeat scroll -129px -77px transparent; }
+      display: block;
+}
+.sticker .skin a img {
+    -webkit-transition: all 0.15s ease-in-out; 
+    -moz-transition: all 0.15s ease-in-out; 
+    -o-transition: all 0.15s ease-in-out; 
+    -ms-transition: all 0.15s ease-in-out;
+    
+    border: 2px solid transparent;
+}
+
+.sticker .skin a:hover img  {
+   border: 2px solid #ff8800;
+    -webkit-transform:  rotate(5deg) scale(1.3);
+    -moz-transform: rotate(5deg) scale(1.3);
+    -ms-transform: rotate(5deg)  scale(1.3);
+    -o-transform: rotate(5deg) scale(1.3);
+
+}
+.sticker .skin a:focus img  {
+    border: 2px solid #ff8800;
+       -webkit-transform:  rotate(5deg) scale(1.3);
+    -moz-transform: rotate(5deg) scale(1.3);
+    -ms-transform: scale(1.3);
+    -o-transform: scale(1.3);
+}  
+
+
 
 .newsletter .skin {
   padding: 10px 10px 5px 10px;
@@ -1612,10 +1628,12 @@ div.ics-calendar-holder .ics-calendar-event {
 
   .sticker {
     position: absolute;
-    top: 50px;
-    right: 8%; }
-    .sticker .skin {
-      padding: 10px; }
+    top: 70px;
+    right: 8%; 
+  }
+  .sticker .skin {
+      padding: 10px; 
+  }
 
   .header .branding {
     padding-top: 20px;
