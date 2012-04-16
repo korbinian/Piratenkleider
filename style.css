@@ -474,10 +474,12 @@ body {
 .nav-top ul.menu, 
 .nav-main ul.menu {
   background: #f7f7f7;
-  background: rgba(255, 255, 255, 0.5); }
+  background: rgba(255, 255, 255, 0.5); 
+}
 .nav-top ul.menu a, 
 .nav-main ul.menu a {
-    display: block; }
+    display: block; 
+}
 .nav-top ul.menu a:hover, 
 .nav-top ul.menu a:focus, 
 .nav-main ul.menu a:hover {
@@ -525,40 +527,31 @@ ul.socialmedia li {
 }
 ul.socialmedia li a {
       display: block;
-      width: 30px;
-      height: 30px;
-      overflow: hidden;
-      text-indent: -999em; }
-ul.socialmedia li.twitter a {
-    background: url("assets/sm-icons.png") no-repeat scroll 0 0 transparent; }
-ul.socialmedia li.twitter a:focus,
-ul.socialmedia li.twitter a:hover {
-      background: url("assets/sm-icons.png") no-repeat scroll 0 -30px transparent; }
-ul.socialmedia li.facebook a {
-    background: url("assets/sm-icons.png") no-repeat scroll -30px 0 transparent; }
-ul.socialmedia li.facebook a:focus,
-ul.socialmedia li.facebook a:hover {
-      background: url("assets/sm-icons.png") no-repeat scroll -30px -30px transparent; }
-ul.socialmedia li.youtube a {
-    background: url("assets/sm-icons.png") no-repeat scroll -60px 0 transparent; }
-ul.socialmedia li.youtube a:focus,
-ul.socialmedia li.youtube a:hover {
-      background: url("assets/sm-icons.png") no-repeat scroll -60px -30px transparent; }
-ul.socialmedia li.gplus a {
-    background: url("assets/sm-icons.png") no-repeat scroll -90px 0 transparent; }
-ul.socialmedia li.gplus a:focus,
-ul.socialmedia li.gplus a:hover {
-      background: url("assets/sm-icons.png") no-repeat scroll -90px -30px transparent; }
-ul.socialmedia li.diaspora a {
-    background: url("assets/sm-icons.png") no-repeat scroll -120px 0 transparent; }
-ul.socialmedia li.diaspora a:focus,
-ul.socialmedia li.diaspora a:hover {
-      background: url("assets/sm-icons.png") no-repeat scroll -120px -30px transparent; }
-ul.socialmedia li.identica a {
-    background: url("assets/sm-icons.png") no-repeat scroll -150px 0 transparent; }
-ul.socialmedia li.identica a:focus,
-ul.socialmedia li.identica a:hover {
-      background: url("assets/sm-icons.png") no-repeat scroll -150px -30px transparent; }
+      padding: 0;
+}
+ul.socialmedia li a img {
+    margin: 2px;    
+    border: 2px solid #eee;
+    box-shadow:
+        0px 1px 1px rgba(255,255,255,0.8) inset,
+        1px 1px 3px rgba(0,0,0,0.2);
+    -webkit-transition: all 0.15s ease-in-out; 
+    -moz-transition: all 0.15s ease-in-out; 
+    -o-transition: all 0.15s ease-in-out; 
+    -ms-transition: all 0.15s ease-in-out;
+}
+ul.socialmedia li a:hover img  {
+   border: 2px solid #ff8800;
+    -webkit-transform: scale(1.3);
+    -moz-transform: scale(1.3);
+    -ms-transform: scale(1.3);
+    -o-transform: scale(1.3);
+}
+ul.socialmedia li a:focus img  {
+    border: 2px solid #ff8800;
+    background:  #ff8800;
+}    
+
 
 .sticker {
   width: 299px;
@@ -1576,7 +1569,8 @@ div.ics-calendar-holder .ics-calendar-event {
       height: 30px;
       display: block; }
   .nav-top ul.socialmedia {
-      float: right; }
+      float: right; 
+  }
   .nav-top div.menu-header {
       float: right; }
   .nav-top div.menu-header ul.menu {
@@ -1588,11 +1582,14 @@ div.ics-calendar-holder .ics-calendar-event {
             padding: 0 10px;
             color: black; }
 
-  .nav-top div.menu-header ul.menu li a:hover,
-  .nav-top div.menu-header ul.menu li a:focus {
+  .nav-top div.menu-header ul.menu li a:hover {
               color: #2d7dc5; 
   }
-            
+  .nav-top div.menu-header ul.menu li a:focus {
+       background: white; /* #ff8800; */
+        color: #2d7dc5; 
+  }        
+        
   .nav-top form.searchform {
       float: right !important;
       width: 200px;
@@ -1696,9 +1693,7 @@ div.ics-calendar-holder .ics-calendar-event {
       
      .nav-main ul.menu li.active a[title="Home"],  
      .nav-main ul.menu li a[title="Home"]:hover, 
-     .nav-main ul.menu li a[title="Home"]:focus,
      .nav-main ul.menu li.active a[title="Home"],
-     .nav-main ul.menu li.menu-item-home a:focus,
      .nav-main ul.menu li.menu-item-home a:hover {
           background: white url("assets/home.gif") no-repeat center 10px !important; }
      
@@ -1709,25 +1704,19 @@ div.ics-calendar-holder .ics-calendar-event {
      .nav-main ul.menu li.active a[title="Home"],
      .nav-main ul.menu li.current_page_item a[title="Home"]:hover,
      .nav-main ul.menu li.current_page_item a[title="Home"]:focus,
-     .nav-main ul.menu li.current-menu-item.menu-item-home a:hover,
-     .nav-main ul.menu li.current-menu-item.menu-item-home a:focus {
+     .nav-main ul.menu li.current-menu-item.menu-item-home a:hover {
           background: #111111 url("assets/home.gif") no-repeat center 10px !important; }
      
      .nav-main ul.menu li.active ul li,
      .nav-main ul.menu li.page_item ul.children li:hover,
-     .nav-main ul.menu li.page_item ul.children li:focus,
      .nav-main ul.menu li.active, 
-     .nav-main ul.menu li.has_children:focus, 
      .nav-main ul.menu li.has_children:hover {
         background: white; 
       }
      
-     .nav-main ul.menu li.active ul,
+     .nav-main ul.menu li.active ul.children,
      .nav-main ul.menu li.page_item:hover ul,
-     .nav-main ul.menu li.page_item:focus ul,
-     .nav-main ul.menu li ul.children:focus,
      .nav-main ul.menu li.active ul.sub-menu, 
-     .nav-main ul.menu li.has_children:focus ul.sub-menu, 
      .nav-main ul.menu li.has_children:hover ul.sub-menu {
           top: 40px;
           background: white;
@@ -1749,37 +1738,30 @@ div.ics-calendar-holder .ics-calendar-event {
      
       .nav-main ul.menu li.active ul li a,
       .nav-main ul.menu li.page_item:hover ul li.current-page-item a,
-      .nav-main ul.menu li.page_item:focus ul li.current-page-item a,
       .nav-main ul.menu li.active ul.sub-menu li.current-menu-item a,
-      .nav-main ul.menu li.has_children:focus ul.sub-menu li.current-menu-item a,
       .nav-main ul.menu li.has_children:hover ul.sub-menu li.current-menu-item a {
             background: white;
             color: black; 
       }      
       .nav-main ul.menu li.active ul.children hr,
       .nav-main ul.menu li:hover ul.children hr,
-      .nav-main ul.menu li:focus ul.children hr,
       .nav-main ul.menu li.active ul.sub-menu hr,
-      .nav-main ul.menu li.has_children:hover ul.sub-menu hr,
-      .nav-main ul.menu li.has_children:focus ul.sub-menu hr {
+      .nav-main ul.menu li.has_children:hover ul.sub-menu hr {
             margin: 0 !important; 
       }
       
-      .nav-main ul.menu li.active ul li.active, 
+ 
       .nav-main ul.menu li.page_item:hover ul li, 
-      .nav-main ul.menu li.page_item:focus ul li, 
       .nav-main ul.menu li.active ul.sub-menu li,
-      .nav-main ul.menu li.has_children:hover ul.sub-menu li,
-      .nav-main ul.menu li.has_children:focus ul.sub-menu li {
+      .nav-main ul.menu li.active ul.children li,
+      .nav-main ul.menu li.has_children:hover ul.sub-menu li {
             float: none;
             position: relative; 
       }
       .nav-main ul.menu li.active ul li a,
-       .nav-main ul.menu li.page_item:hover ul li a,
-       .nav-main ul.menu li.page_item:focus ul li a,
-       .nav-main ul.menu li.active ul.sub-menu li a,
-       .nav-main ul.menu li.has_children:hover ul.sub-menu li a,
-       .nav-main ul.menu li.has_children:focus ul.sub-menu li a {
+      .nav-main ul.menu li.page_item:hover ul li a,
+      .nav-main ul.menu li.active ul.sub-menu li a,
+      .nav-main ul.menu li.has_children:hover ul.sub-menu li a {
               font-family: Helvetica, Arial, sans-serif;
               letter-spacing: 0;
               font-size: 12px;
@@ -1796,70 +1778,62 @@ div.ics-calendar-holder .ics-calendar-event {
        }
        .nav-main ul.menu li.active ul.children li.active a,
        .nav-main ul.menu li.page_item:hover ul.children li a:hover,
-       .nav-main ul.menu li.page_item:focus ul.children li a:focus,
        .nav-main ul.menu li.active ul.sub-menu li.active a,
-       .nav-main ul.menu li.has_children:hover ul.sub-menu li a:hover,
-       .nav-main ul.menu li.has_children:focus ul.sub-menu li a:focus {
+       .nav-main ul.menu li.has_children:hover ul.sub-menu li a:hover {
                 background: #2d7dc5;
-                color: white; }
-/*       .nav-main ul.menu li.page_item:hover ul.children li ul.children,
-       .nav-main ul.menu li.page_item:focus ul.children li ul.children,
-       .nav-main ul.menu li.has_children:hover ul.sub-menu li ul.sub-menu,
-       .nav-main ul.menu li.has_children:focus ul.sub-menu li ul.sub-menu {
+                color: white; 
+       }
+       .nav-main ul.menu li.active ul.children li ul.children,
+       .nav-main ul.menu li.active  ul.sub-menu li ul.sub-menu,
+       .nav-main ul.menu li.page_item:hover ul.children li ul.children,
+       .nav-main ul.menu li.has_children:hover ul.sub-menu li ul.sub-menu {
               top: -999em; 
        }
-       */
+       
+      
     /*   .nav-main ul.menu li.active ul.children li a,  */ 
        .nav-main ul.menu li.page_item:hover ul.children li a,
-       .nav-main ul.menu li.page_item:focus ul.children li a,
        .nav-main ul.menu li.active ul.sub-menu li.has_children a,
-       .nav-main ul.menu li.has_children:hover ul.sub-menu li.has_children a,
-       .nav-main ul.menu li.has_children:focus ul.sub-menu li.has_children a {
-            background: url("assets/plus_black.gif") center right no-repeat; }
+       .nav-main ul.menu li.has_children:hover ul.sub-menu li.has_children a {
+            background: url("assets/plus_black.gif") center right no-repeat; 
+       }
        
         .nav-main ul.menu li.active ul.children li.active a,
        .nav-main ul.menu li.page_item:hover ul.children li a:hover,
-       .nav-main ul.menu li.page_item:focus ul.children li a:focus,
        .nav-main ul.menu li.active ul.sub-menu li.active a,
-       .nav-main ul.menu li.has_children:hover ul.sub-menu li.has_children a:hover,
-       .nav-main ul.menu li.has_children:focus ul.sub-menu li.has_children a:focus {
-              background: #2d7dc5 url("assets/plus.gif") center right no-repeat; }
+       .nav-main ul.menu li.has_children:hover ul.sub-menu li.has_children a:hover {
+              background: #2d7dc5 url("assets/plus.gif") center right no-repeat; 
+       }
        
        .nav-main ul.menu li.active ul.children li ul.children li a,
        .nav-main ul.menu li.page_item:hover ul.children li ul.children li a,
-       .nav-main ul.menu li.page_item:focus ul.children li ul.children li a,
        .nav-main ul.menu li.active ul.sub-menu li.has_children ul.sub-menu li a,
-       .nav-main ul.menu li.has_children:hover ul.sub-menu li.has_children ul.sub-menu li a,
-       .nav-main ul.menu li.has_children:focus ul.sub-menu li.has_children ul.sub-menu li a {
+       .nav-main ul.menu li.has_children:hover ul.sub-menu li.has_children ul.sub-menu li a {
             background: white !important; }
        
        .nav-main ul.menu li.active ul.children li.active ul.children li a,
        .nav-main ul.menu li.page_item:hover ul.children li.page_item ul.children li a:hover,
-       .nav-main ul.menu li.page_item:focus ul.children li.page_item ul.children li a:focus,
        .nav-main ul.menu li.active ul.sub-menu li.active ul.sub-menu li a,
-       .nav-main ul.menu li.has_children:hover ul.sub-menu li.has_children ul.sub-menu li a:hover,
-       .nav-main ul.menu li.has_children:focus ul.sub-menu li.has_children ul.sub-menu li a:focus {
+       .nav-main ul.menu li.has_children:hover ul.sub-menu li.has_children ul.sub-menu li a:hover {
               background: #2d7dc5 !important; }
        
-       .nav-main ul.menu li.active ul.children li.active ul.children,
+       .nav-main ul.menu li.active ul.children li.active ul,
        .nav-main ul.menu li.page_item:hover ul.children li:hover ul.children,
-       .nav-main ul.menu li.page_item:focus ul.children li:focus ul.children,
-       .nav-main ul.menu li.active ul.sub-menu li.active ul.sub-menu,
-       .nav-main ul.menu li.has_children:hover ul.sub-menu li:hover ul.sub-menu,
-       .nav-main ul.menu li.has_children:focus ul.sub-menu li:focus ul.sub-menu {
+       .nav-main ul.menu li ul.sub-menu li.active ul.sub-menu,
+       .nav-main ul.menu li.has_children:hover ul.sub-menu li:hover ul.sub-menu {
             top: -5px;
-            left: 190px; }
+            left: 190px;
+       }
        
       .nav-main ul.menu li.current-page-item > a,
       .nav-main ul.menu li.current-menu-item > a {
         background: black;
-        color: white; }
+        color: white; 
+      }
       
 
       .nav-main ul.menu li.current-page-item:hover > a,
-      .nav-main ul.menu li.current-page-item:focus > a,
-      .nav-main ul.menu li.current-menu-item:hover > a,
-      .nav-main ul.menu li.current-menu-item:focus > a {
+      .nav-main ul.menu li.current-menu-item:hover > a {
         background: white;
         color: black; 
       }

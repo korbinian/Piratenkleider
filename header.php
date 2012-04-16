@@ -92,12 +92,12 @@ if (isset( $options['meta-keywords'] ) ) { ?>
                                     if ( $options['alle-socialmediabuttons'] == "1" ){
                                  ?> 
                                  <ul class="socialmedia">
-					<?php if ( $options['social_facebook'] != "" ){ ?><li class="facebook"><a href="<?php echo$options['social_facebook']; ?>">Facebook</a></li><?php } ?>
-					<?php if ( $options['social_twitter'] != "" ){ ?><li class="twitter"><a href="<?php echo$options['social_twitter']; ?>">Twitter</a></li><?php } ?>
-					<?php if ( $options['social_youtube'] != "" ){ ?><li class="youtube"><a href="<?php echo$options['social_youtube']; ?>">Youtube</a></li><?php } ?>
-					<?php if ( $options['social_gplus'] != "" ){ ?><li class="gplus"><a href="<?php echo$options['social_gplus']; ?>">G+</a></li><?php } ?>
-					<?php if ( $options['social_diaspora'] != "" ){ ?><li class="diaspora"><a href="<?php echo$options['social_diaspora']; ?>">Diaspora</a></li><?php } ?>
-					<?php if ( $options['social_identica'] != "" ){ ?><li class="identica"><a href="<?php echo$options['social_identica']; ?>">identi.ca</a></li><?php } ?>															
+					<?php if ( $options['social_facebook'] != "" ){ ?><li class="facebook"><a href="<?php echo$options['social_facebook']; ?>"><img src="<?php echo get_bloginfo('template_url'); ?>/images/facebook.png" width="24" height="24" alt="Facebook"></a></li><?php } ?>
+					<?php if ( $options['social_twitter'] != "" ){ ?><li class="twitter"><a href="<?php echo$options['social_twitter']; ?>"><img src="<?php echo get_bloginfo('template_url'); ?>/images/twitter.png" width="24" height="24" alt="Twitter"></a></li><?php } ?>
+					<?php if ( $options['social_youtube'] != "" ){ ?><li class="youtube"><a href="<?php echo$options['social_youtube']; ?>"><img src="<?php echo get_bloginfo('template_url'); ?>/images/youtube.png" width="24" height="24" alt="YouTube"></a></li><?php } ?>
+					<?php if ( $options['social_gplus'] != "" ){ ?><li class="gplus"><a href="<?php echo$options['social_gplus']; ?>"><img src="<?php echo get_bloginfo('template_url'); ?>/images/gplus.png" width="24" height="24" alt="Google Plus"></a></li><?php } ?>
+					<?php if ( $options['social_diaspora'] != "" ){ ?><li class="diaspora"><a href="<?php echo$options['social_diaspora']; ?>"><img src="<?php echo get_bloginfo('template_url'); ?>/images/diaspora.png" width="24" height="24" alt="Diaspora"></a></li><?php } ?>
+					<?php if ( $options['social_identica'] != "" ){ ?><li class="identica"><a href="<?php echo$options['social_identica']; ?>"><img src="<?php echo get_bloginfo('template_url'); ?>/images/identica.png" width="24" height="24" alt="identi.ca"></a></li><?php } ?>															
 				</ul>
                                  <?php }?>
 			</div>
