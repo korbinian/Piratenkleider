@@ -6,6 +6,7 @@
   </div>
 
 <?php 
+  global $defaultoptions;
     wp_footer();     
    
       $options = get_option( 'piratenkleider_theme_options' );
