@@ -132,7 +132,7 @@
                 <div  class="widget">
                     <h3>Schlagworte</h3>    
                       <div class="tagcloud">            
-                    <?php wp_tag_cloud(); ?>
+                    <?php wp_tag_cloud(array('smallest'  => 12, 'largest'   => 28)); ?>
                       </div>
                 </div>
             <?php } ?>
