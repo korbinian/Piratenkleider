@@ -50,6 +50,8 @@ MENÜS
    Bei dem Menü, welches der Hauptnavigation zugeordnet ist, sollte die
    Startseite der Website enthalten sein. Diese wird mittels CSS dann
    in ein Häuschensymbol umgewandelt.
+   Sollte kein Menu angelegt und der hauptnavigation zugewiesen werden,
+   wird ersatzweise ein Menü ausgehend von den vorhandenen Seiten aufgebaut.
 
 
 
@@ -62,9 +64,11 @@ INHALTE
 3. Besondere Artikel können auf der Startseite im Slider erscheinen.
    Dies ist ein von selbst wechselndes Artikelbild mit der Verlinkung
    zu einem Artikel. 
-   Um dies für einen Artikel zu machen, muss der Artikel zwei Dinge erfüllen:
-    a) Er muss die  Kategorie "Slider" haben.
-    b) Der Artikel sollte ein Artikelbild haben. 
+   Um dies für einen Artikel zu machen, muss der Artikel in der
+   für den Slider aktivierten Kategorie sein. (Siehe Punkt "Slider" unter den 
+    Optionen "Piratenkleider pimpen")
+   Sollte ein Artikel über kein definiertes Artikelbild verfügen, wird
+   das Defaultsliderbilder verwendet.       
 
 
 BEREICHE/WIDGETS
@@ -106,23 +110,44 @@ BEREICHE/WIDGETS
    dessen RSS-Feedadresse gezeigt
 
 
-THEME-OPTIONS "Piratenkleider pimpen"
+THEME-OPTION "Piratenkleider pimpen"
  
-  Das Ursprungstheme von Korbinian hatte noch keine eigene Theme-Option Seite.
-  Die neue Version enthält dagegen Theme Options, die nach und nach ausgebaut 
-  werden um "lokale" Einstellungen zu ändern.
+  Unter der Option "Piratenkleider pimpen" sind die grundlegenden
+  Optionen für das Theme einstellbar:
     - Newsletter-Box einschalten/abschalten
     - Social Media Buttons ein/ausschalten         
     - Anzahl der Nachrichten auf der Startseite und dessen Anordnung
       einstellen
     - Slider steuern        
-    - Metatag-Angaben ändern
     - Default Werbe-Sticker optional schaltbar
-    - Logo ändern
-       (allerdings derzeit festgelegt auf Logos der Größe 300x130 Pixel mit
-        Hintergrund in RGB #eeeeee . Ab Wordpress 3.4 kann eine neue Theme-
-        Version dies flexibler machen)
-    
+    - Webadressen für Newsletter, Mitgliederanträge und Spenden anpassbar
+    - Metatag-Angaben ändern
+      
+
+ 
+
+THEME-OPTION "Defaultbilder"
+   
+   Unter dieser Option lassen sich die Ersatzbilder festlegen, die angezeigt
+   werden, wenn  Artikel oder  Seiten kein "Artikelbild" besitzen.
+   Ausserdem können hier die Werbeposter beim Slider in der rechten Sidebar
+   ausgewählt und über URL-Angaben zusätzliche definiert werden.
+
+
+THEME OPTION "Kopfzeile"   
+
+   Diese Option dient dazu, das Logo zu ändern und ein eigenes Logo 
+   hochzuladen.
+   Wichtiger Hinweis:
+   Das Logo ist derzeit festgelegt auf eine Größe von 300x130 Pixeln.
+   Der Hintergrund sollte  in RGB #eeeeee sein.
+   Leider werden alle Bilder die hochgeladen werden in JPG umgewandelt,
+   wenn sie es nicht schon sind. Die Qualität der Umwandlung ist jedoch
+   nicht so gut.
+   Aus diesem Grund empfiehlt es sich, das Logo in der passenden
+   Größe und dem Hintergrund über einem eigenen Grafikprogramm 
+   vorzubereiten.
+
 
 VERWENDETE PLUGINS
   - Wenn das Plugin "Related Posts by Category" vorhanden und aktiviert ist,
