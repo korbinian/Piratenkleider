@@ -6,7 +6,7 @@ $(document).ready(function() {
     
     //    $(".first-teaser-widget-area div.no-js").bind(function() {    
     //        $(this).parent().removeClass("no-js");
-    //    });
+    //    }); 
 
         $(".no-js").bind(function() {    
             $(this).parent().removeClass("no-js");
