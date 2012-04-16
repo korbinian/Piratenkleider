@@ -38,7 +38,7 @@
      ?>
     <script src="<?php echo get_bloginfo('template_url'); ?>/js/flexslider.js"></script>  
     
-    <script type="text/javascript" charset="utf-8">
+    <script type="text/javascript">
         /* <![CDATA[ */
     $(window).load(function() {
        $('.flexslider').flexslider({
