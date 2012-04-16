@@ -21,19 +21,36 @@ $(document).ready(function() {
 		$(this).parent().removeClass("active");
 		$(this).removeClass("active");
 	});
-        
- 
-
 	$(".nav-main ul li ul li a").focus(function() {
+                $(this).parent().children("a").addClass("active");
+		$(this).parent().addClass("active");
 		$(this).parent().parent().parent().children("a").addClass("active");
 		$(this).parent().parent().parent().addClass("active");
 	});
 	
 	$(".nav-main ul li ul li a").blur(function() {
+		$(this).parent().removeClass("active");
+		$(this).removeClass("active");            
 		$(this).parent().parent().parent().children("a").removeClass("active");
 		$(this).parent().parent().parent().removeClass("active");
 	});
+	$(".nav-main ul li ul li ul li a").focus(function() {
+                $(this).parent().children("a").addClass("active");
+		$(this).parent().addClass("active");
+		$(this).parent().parent().parent().children("a").addClass("active");
+		$(this).parent().parent().parent().addClass("active");
+		$(this).parent().parent().parent().parent().parent().children("a").addClass("active");
+		$(this).parent().parent().parent().parent().parent().addClass("active");                
+	});
 	
+	$(".nav-main ul li ul li ul li a").blur(function() {
+		$(this).parent().removeClass("active");
+		$(this).removeClass("active");            
+		$(this).parent().parent().parent().children("a").removeClass("active");
+		$(this).parent().parent().parent().removeClass("active");                
+		$(this).parent().parent().parent().parent().parent().children("a").removeClass("active");
+		$(this).parent().parent().parent().parent().parent().removeClass("active");
+	});
 	
 	$(".nav-main ul li").hover(
 	//	function(){

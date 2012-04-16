@@ -14,7 +14,12 @@
             $options['alle-socialmediabuttons'] = $defaultoptions['alle-socialmediabuttons'];   
    if (!isset($options['newsletter'])) 
             $options['newsletter'] = $defaultoptions['newsletter'];
-
+    if (!isset($options['url-newsletteranmeldung'])) 
+            $options['url-newsletteranmeldung'] = $defaultoptions['url-newsletteranmeldung'];
+   if (!isset($options['url-mitgliedwerden'])) 
+        $options['url-mitgliedwerden'] = $defaultoptions['url-mitgliedwerden'];
+    if (!isset($options['url-spenden'])) 
+        $options['url-spenden'] = $defaultoptions['url-spenden'];
 ?>  
 <meta charset="<?php bloginfo( 'charset' ); ?>">
 <title><?php wp_title( '|', true, 'right' ); ?></title>
@@ -67,8 +72,8 @@ if (isset( $options['meta-keywords'] ) ) { ?>
                             <div class="skin">   
                                <h3 class="visuallyhidden">Sticker</h3>
                                <ul>
-                                   <li><a class="member" href="https://www.piratenpartei.de/mitmachen/mitglied-werden/">werde Pirat!</a></li>
-                                   <li><a class="spenden" href="https://www.piratenpartei.de/mitmachen/spenden/">Unterstütze uns mit deiner Spende!</a></li>                                  
+                                   <li><a class="member" href="<?php echo $options['url-mitgliedwerden']; ?>">werde Pirat!</a></li>
+                                   <li><a class="spenden" href="<?php echo $options['url-spenden']; ?>">Unterstütze uns mit deiner Spende!</a></li>                                  
                                </ul>                      
                             </div>                                     
 			</div>
@@ -92,12 +97,12 @@ if (isset( $options['meta-keywords'] ) ) { ?>
                                     if ( $options['alle-socialmediabuttons'] == "1" ){
                                  ?> 
                                  <ul class="socialmedia">
-					<?php if ( $options['social_facebook'] != "" ){ ?><li class="facebook"><a href="<?php echo$options['social_facebook']; ?>">Facebook</a></li><?php } ?>
-					<?php if ( $options['social_twitter'] != "" ){ ?><li class="twitter"><a href="<?php echo$options['social_twitter']; ?>">Twitter</a></li><?php } ?>
-					<?php if ( $options['social_youtube'] != "" ){ ?><li class="youtube"><a href="<?php echo$options['social_youtube']; ?>">Youtube</a></li><?php } ?>
-					<?php if ( $options['social_gplus'] != "" ){ ?><li class="gplus"><a href="<?php echo$options['social_gplus']; ?>">G+</a></li><?php } ?>
-					<?php if ( $options['social_diaspora'] != "" ){ ?><li class="diaspora"><a href="<?php echo$options['social_diaspora']; ?>">Diaspora</a></li><?php } ?>
-					<?php if ( $options['social_identica'] != "" ){ ?><li class="identica"><a href="<?php echo$options['social_identica']; ?>">identi.ca</a></li><?php } ?>															
+					<?php if ( $options['social_facebook'] != "" ){ ?><li class="facebook"><a href="<?php echo$options['social_facebook']; ?>"><img src="<?php echo get_bloginfo('template_url'); ?>/images/facebook.png" width="24" height="24" alt="Facebook"></a></li><?php } ?>
+					<?php if ( $options['social_twitter'] != "" ){ ?><li class="twitter"><a href="<?php echo$options['social_twitter']; ?>"><img src="<?php echo get_bloginfo('template_url'); ?>/images/twitter.png" width="24" height="24" alt="Twitter"></a></li><?php } ?>
+					<?php if ( $options['social_youtube'] != "" ){ ?><li class="youtube"><a href="<?php echo$options['social_youtube']; ?>"><img src="<?php echo get_bloginfo('template_url'); ?>/images/youtube.png" width="24" height="24" alt="YouTube"></a></li><?php } ?>
+					<?php if ( $options['social_gplus'] != "" ){ ?><li class="gplus"><a href="<?php echo$options['social_gplus']; ?>"><img src="<?php echo get_bloginfo('template_url'); ?>/images/gplus.png" width="24" height="24" alt="Google Plus"></a></li><?php } ?>
+					<?php if ( $options['social_diaspora'] != "" ){ ?><li class="diaspora"><a href="<?php echo$options['social_diaspora']; ?>"><img src="<?php echo get_bloginfo('template_url'); ?>/images/diaspora.png" width="24" height="24" alt="Diaspora"></a></li><?php } ?>
+					<?php if ( $options['social_identica'] != "" ){ ?><li class="identica"><a href="<?php echo$options['social_identica']; ?>"><img src="<?php echo get_bloginfo('template_url'); ?>/images/identica.png" width="24" height="24" alt="identi.ca"></a></li><?php } ?>															
 				</ul>
                                  <?php }?>
 			</div>
@@ -107,7 +112,7 @@ if (isset( $options['meta-keywords'] ) ) { ?>
 
 			<div class="newsletter">
 				<div class="skin">
-					<form method="post" action="https://service.piratenpartei.de/subscribe/newsletter">
+					<form method="post" action="<?php echo $options['url-newsletteranmeldung']; ?>">
 						<legend>Piratenpartei-Newsletter</legend>
 						<input type="text" name="email" placeholder="E-Mail">
                                                 <input type="submit" name="email-button" value="abonnieren" id="newslettersubmit">

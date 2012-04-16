@@ -95,8 +95,15 @@ function theme_options_do_page() {
                              if (!isset($options['num-article-startpage-fullwidth'])) 
                                 $options['num-article-startpage-fullwidth'] = $defaultoptions['num-article-startpage-fullwidth'];
                             if (!isset($options['num-article-startpage-halfwidth'])) 
-                                $options['num-article-startpage-halfwidth'] = $defaultoptions['num-article-startpage-halfwidth'];    
-	                                                        
+                                $options['num-article-startpage-halfwidth'] = $defaultoptions['num-article-startpage-halfwidth']; 
+
+                            if (!isset($options['url-newsletteranmeldung'])) 
+                                $options['url-newsletteranmeldung'] = $defaultoptions['url-newsletteranmeldung'];
+	                    if (!isset($options['url-mitgliedwerden'])) 
+                                $options['url-mitgliedwerden'] = $defaultoptions['url-mitgliedwerden'];
+                            if (!isset($options['url-spenden'])) 
+                                $options['url-spenden'] = $defaultoptions['url-spenden'];
+                            
                         ?>
 			<table class="form-table">
                                     
@@ -385,25 +392,55 @@ function theme_options_do_page() {
                                     </td>                                    
                                 </tr>    
                                 <tr valign="top">
+                                    <th scope="row">Links zu Spezialseiten</th>
+                                    <td>
+
+                                        <table>                                
+                                         <tr valign="top"><th scope="row">Mitglied werden</th>
+                                              <td>
+                                                        <input style="width: 40em;" id="piratenkleider_theme_options[url-mitgliedwerden]" class="regular-text" type="text" name="piratenkleider_theme_options[url-mitgliedwerden]" value="<?php esc_attr_e( $options['url-mitgliedwerden'] ); ?>" />
+                                                        <label class="description" for="piratenkleider_theme_options[url-mitgliedwerden]">URL, inkl. https://, zur Seite auf der sich Mitglieder bewerben können. Hier sollte entweder die URL zur Bundesseite <code><?php echo $defaultoptions['url-mitgliedwerden']; ?></code>
+                                                        oder die zu der entsprechenden Seite eines Landesverbandes stehen. Bitte mit https anstelle http, wenn möglich.</label>
+                                                </td>					
+                                        </tr>
+                                         <tr valign="top"><th scope="row">Spenden</th>
+                                              <td>
+                                                        <input style="width: 40em;" id="piratenkleider_theme_options[url-spenden]" class="regular-text" type="text"  name="piratenkleider_theme_options[url-spenden]" value="<?php esc_attr_e( $options['url-spenden'] ); ?>" />
+                                                        <label class="description" for="piratenkleider_theme_options[url-spenden]">URL, inkl. https://, zur Seite auf der Spenden gegeben werden können. Default: <code><?php echo $defaultoptions['url-spenden']; ?></code></label>
+                                                </td>					
+                                        </tr>
+                                        <tr valign="top"><th scope="row">Newsletter</th>
+                                          <td>
+						<input style="width: 40em;" id="piratenkleider_theme_options[url-newsletteranmeldung]" class="regular-text" type="text"  name="piratenkleider_theme_options[url-newsletteranmeldung]" value="<?php esc_attr_e( $options['url-newsletteranmeldung'] ); ?>" />
+						<label class="description" for="piratenkleider_theme_options[url-newsletteranmeldung]">URL, inkl. http://, zur Seite auf der man sich in Newsletter eingetragen werden kann. Default: <code><?php echo $defaultoptions['url-newsletteranmeldung']; ?></code></label>
+					</td>					
+                                        </tr>
+                                       </table>  
+                                       
+                                            
+                                            
+                                    </td>                                    
+                                </tr>
+                                <tr valign="top">
                                     <th scope="row"><?php _e( 'Meta-Angaben', 'piratenkleider' ); ?></th>
                                     <td>
 
                                         <table>                                
                                          <tr valign="top"><th scope="row"><?php _e( 'Author', 'piratenkleider' ); ?></th>
                                               <td>
-                                                        <input id="piratenkleider_theme_options[meta-author]" class="regular-text" type="text" length="5" name="piratenkleider_theme_options[meta-author]" value="<?php esc_attr_e( $options['meta-author'] ); ?>" />
+                                                        <input id="piratenkleider_theme_options[meta-author]" class="regular-text" type="text"  name="piratenkleider_theme_options[meta-author]" value="<?php esc_attr_e( $options['meta-author'] ); ?>" />
                                                         <label class="description" for="piratenkleider_theme_options[meta-author]"><?php _e( 'Optionale Autor-Angabe in dem Meta-Tag jeder Seite', 'piratenkleider' ); ?></label>
                                                 </td>					
                                         </tr>
                                          <tr valign="top"><th scope="row"><?php _e( 'Description', 'piratenkleider' ); ?></th>
                                               <td>
-                                                        <input id="piratenkleider_theme_options[meta-description]" class="regular-text" type="text" length="5" name="piratenkleider_theme_options[meta-description]" value="<?php esc_attr_e( $options['meta-description'] ); ?>" />
+                                                        <input id="piratenkleider_theme_options[meta-description]" class="regular-text" type="text"  name="piratenkleider_theme_options[meta-description]" value="<?php esc_attr_e( $options['meta-description'] ); ?>" />
                                                         <label class="description" for="piratenkleider_theme_options[meta-description]"><?php _e( 'Optionale Beschreibungstext in dem Meta-Tag jeder Seite (für alle gleich). Sollte nicht mehr als 140 Zeichen lang sein, wenn gesetzt.', 'piratenkleider' ); ?></label>
                                                 </td>					
                                         </tr>
                                         <tr valign="top"><th scope="row"><?php _e( 'Keywords', 'piratenkleider' ); ?></th>
                                           <td>
-						<input id="piratenkleider_theme_options[meta-keywords]" class="regular-text" type="text" length="5" name="piratenkleider_theme_options[meta-keywords]" value="<?php esc_attr_e( $options['meta-keywords'] ); ?>" />
+						<input id="piratenkleider_theme_options[meta-keywords]" class="regular-text" type="text" name="piratenkleider_theme_options[meta-keywords]" value="<?php esc_attr_e( $options['meta-keywords'] ); ?>" />
 						<label class="description" for="piratenkleider_theme_options[meta-keywords]"><?php _e( 'Optionale Schlüsselworte in dem Meta-Tag jeder Seite (für alle gleich). Durch Komma getrennt. Schlüsselworte sollten tatsächlich vorkommen.', 'piratenkleider' ); ?></label>
 					</td>					
                                         </tr>
@@ -489,7 +526,10 @@ function theme_options_validate( $input ) {
         $input['social_identica'] = wp_filter_nohtml_kses( $input['social_identica'] );            
         $input['feed_twitter'] = wp_filter_nohtml_kses( $input['feed_twitter'] );
 	
-
+        $input['url-newsletteranmeldung'] = esc_url( $input['url-newsletteranmeldung'] );
+        $input['url-mitgliedwerden'] = esc_url( $input['url-mitgliedwerden'] );
+        $input['url-spenden'] = esc_url( $input['url-spenden'] );
+ 
 	return $input;
 }
 
