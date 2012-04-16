@@ -53,7 +53,9 @@
                         </div>
                         <div class="widget">
                         <h3>Übersicht aller Kategorien</h3>
+                        <ul>                            
                           <?php wp_list_categories('title_li='); ?>                               
+                        </ul>
                          </div>
                         
                         
