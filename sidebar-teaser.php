@@ -3,6 +3,7 @@
 <?php if ( is_active_sidebar( 'first-teaser-widget-area' ) ) { ?>
         <?php dynamic_sidebar( 'first-teaser-widget-area' ); ?>
     <?php } else {        
+           global $defaultoptions;
          $options = get_option( 'piratenkleider_theme_options' );
          $catname = $options['slider-catname'];
          $bilderoptions = get_option( 'piratenkleider_theme_defaultbilder' ); 
