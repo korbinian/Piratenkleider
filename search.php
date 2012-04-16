@@ -48,7 +48,7 @@
                          <div  class="widget">
                             <h3>Artikel nach Schlagworten</h3>    
                             <div class="tagcloud">
-                            <?php wp_tag_cloud(); ?>
+                             <?php wp_tag_cloud(array('smallest'  => 12, 'largest'   => 28)); ?>
                              </div>
                         </div>
                         <div class="widget">
