@@ -10,7 +10,7 @@
             <div class="symbolbild"> 
               <img src="<?php echo get_bloginfo('template_url'); ?>/images/404.png" alt="" width="640" height="240" >
                <div class="caption">  
-                   <h2><?php printf( __( 'Autorarchiv: %s', 'twentyten' ), "<a class='url fn n' href='" . get_author_posts_url( get_the_author_meta( 'ID' ) ) . "' title='" . esc_attr( get_the_author() ) . "' rel='me'>" . get_the_author() . "</a>" ); ?></h2>
+                   <h2><?php printf( __( 'Autorarchiv: %s', 'twentyten' ), get_the_author() ); ?></h2>
                </div>   
            </div>                                 
           <?php } ?>                
@@ -18,15 +18,13 @@
         <div class="skin">
             
         <?php if ($options['aktiv-platzhalterbilder-indexseiten'] !=1) { ?>
-        <h1><?php printf( __( 'Autorarchiv: %s', 'twentyten' ), "<a class='url fn n' href='" . get_author_posts_url( get_the_author_meta( 'ID' ) ) . "' title='" . esc_attr( get_the_author() ) . "' rel='me'>" . get_the_author() . "</a>" ); ?></h1>
+        <h1><?php printf( __( 'Autorarchiv: %s', 'twentyten' ), get_the_author() ); ?></h1>
         <?php  }  ?>  
         
 <?php if ( get_the_author_meta( 'description' ) ) : ?>
-
-<?php echo get_avatar( get_the_author_meta('ID'), 60 ); ?>
-<h2><?php printf( __( 'About %s', 'twentyten' ), get_the_author() ); ?></h2>
-<?php the_author_meta( 'description' ); ?>
-
+    <h2>Informationen zum Autor</h2>
+    <?php the_author_meta( 'description' ); ?>
+    <hr>
 <?php endif; ?>
 
 <?php rewind_posts(); get_template_part( 'loop', 'author' ); ?>
