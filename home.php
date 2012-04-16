@@ -117,7 +117,10 @@
                 </div>
                 <div class="widget">
                 <h3>Kategorien</h3>
-                <?php wp_list_categories('title_li='); ?>
+                <ul>
+                    <?php wp_list_categories('title_li='); ?>
+                </ul>
+                
 
                 </div>
              <?php } ?>
