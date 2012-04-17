@@ -11,6 +11,9 @@ $(document).ready(function() {
         $(".no-js").bind(function() {    
             $(this).parent().removeClass("no-js");
         });
+        $(".first-teaser-widget-area .no-js").bind(function() {    
+            $(this).parent().removeClass("no-js");
+        });
         // Barrierefreie Hauptnavigation mit Tastatur
 	$(".nav-main ul li a").focus(function() {
 		$(this).parent().children("a").addClass("active");
@@ -61,7 +64,6 @@ $(document).ready(function() {
 		    $(this).removeClass("active");  
 		}
 	);	        
-}
-);
+});
 
 
