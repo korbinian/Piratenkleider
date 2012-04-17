@@ -16,7 +16,7 @@
             $options['url-mitgliedwerden'] = $defaultoptions['url-mitgliedwerden'];
         query_posts( array( 'category_name' => "$catname", 'posts_per_page' => $numberarticle) );
         
-        echo "<div class='flexslider no-js'>";
+        echo "<div class='flexslider'>";
         echo "<ul class='slides'>";
         if ( have_posts() ) while ( have_posts() ) : the_post();
             echo "<li class='slide'>";
