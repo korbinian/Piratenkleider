@@ -124,6 +124,7 @@ THEME-OPTION "Piratenkleider pimpen"
     - Default Werbe-Sticker optional schaltbar
     - Webadressen für Newsletter, Mitgliederanträge und Spenden anpassbar
     - Metatag-Angaben ändern
+    - Optionale Anzeige für Seitenbilder steuern
       
 
  
@@ -135,7 +136,18 @@ THEME-OPTION "Defaultbilder"
    Ausserdem können hier die Werbeposter beim Slider in der rechten Sidebar
    ausgewählt und über URL-Angaben zusätzliche definiert werden.
 
+   Die Defaultbilder die in der rechten Sidebar als Werbeplakate erscheinen
+   liegen im Ordner /plakate/ . 
+   Neue Defaultbilder sollten -egal ob als URL-Angabe oder als Datei-
+   in den Maßen 277x391 Pixel abgespeichert sein.
+   Bei einem anderen Größe wird das Bild entsprechend durch den Browser
+   umskaliert. Dies kann jedoch mit Qualitätseinbußen verbunden sein.
 
+   Eine komplette Liste an Werbeplakaten, die von der Piratenpartei eingesetzt
+   wird, kann im Wiki unter der Seite http://wiki.piratenpartei.de/Plakate
+   gefunden werden.
+   
+   
 THEME OPTION "Kopfzeile"   
 
    Diese Option dient dazu, das Logo zu ändern und ein eigenes Logo 
@@ -175,17 +187,13 @@ Administrative Hinweise für Wordpress Theme-Editoren:
 1. Default-Bilder
    Die Auswahl der default-Bilder ist in Arrays in der Datei
    theme-options.php abgelegt. Die Bilder liegen im Verzeichnis /images/  
-
-2. Startseite:
-   Die Startseite zeigt die letzten 3 Artikel, sowie den Teaser und weitere 
-   dynamische Teile.
-    Unterhalb des Menus kommt der Teaser.
-   Der Teaser bindet eine Bildliste  sich aus den 3 letzten  
-   Artikeln (! nicht Pages), die in der Kategorie "Slider" ein.
-  
-   Bei diesen Artikeln werden die jeweiligen Thumbnails der Artikelbilder 
+2. Default-Werbeplakate 
+   Die Defaultbilder die in der rechten Sidebar als Werbeplakate erscheinen
+   liegen im Ordner /plakate/ . 
+3. Bilder in Inhaltsbereich, unter dem Menu
+   Bei  Artikeln werden die jeweiligen Thumbnails der Artikelbilder 
    eingeblendet.
-   Hinweis: Dabei wird die Standardgröße für die Artikelbilder welche im Blog
+   Dabei wird die Standardgröße für die Artikelbilder welche im Blog
    festgelegt ist, verwendet. Bei neu eingerichteten Blogs wird die mittlere
    Bildgröße verwendet, die in x und y maximal 300 Pixel definieren und
    dann entsprechend umrechnen. 
