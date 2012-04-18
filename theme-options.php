@@ -16,7 +16,7 @@ function theme_options_init(){
  */
 function theme_options_add_page() {
 	add_theme_page( __( 'Piratenkleider pimpen', 'piratenkleider' ), __( 'Piratenkleider pimpen', 'piratenkleider' ), 'edit_theme_options', 'theme_options', 'theme_options_do_page' );
-        add_theme_page( __( 'Defaultbilder', 'piratenkleider' ), __( 'Defaultbilder', 'piratenkleider' ), 'edit_theme_defaultbilder', 'theme_defaultbilder', 'theme_defaultbilder_do_page' );
+        add_theme_page( __( 'Defaultbilder', 'piratenkleider' ), __( 'Defaultbilder', 'piratenkleider' ), 'edit_theme_options', 'theme_defaultbilder', 'theme_defaultbilder_do_page' );
 }
 
 
