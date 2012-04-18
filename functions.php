@@ -20,6 +20,7 @@ $defaultoptions = array(
     'src-jquery'    => get_bloginfo('template_url'). "/js/jquery.min.js",
     'src-layoutjs'    => get_bloginfo('template_url'). "/js/layout.js",
     'slider-aktiv'  => 1,
+    'aktiv-defaultseitenbild'    => 0,
     'slider-defaultwerbeplakate'    => 1,
     'slider-numberarticle'      => 3,
     'slider-slideshowSpeed'     => 8000,
@@ -79,49 +80,73 @@ $defaultbilder_liste = array(
  */
 $defaultplakate_liste = array(
 	'0' => array(
-		'src' =>	get_bloginfo('template_url').'/images/defaultplakat-agrarwirtschaft.jpg',
-		'label' => __( 'Plakat Agrarwirtschaft', 'piratenkleider' )
+		'src' =>	get_bloginfo('template_url').'/plakate/LTWNRW12_Plakat_A01.jpg',
+		'label' => __( 'Plakat LTWNRW12 A01', 'piratenkleider' )
 	),
 	'1' => array(
-		'src' =>	get_bloginfo('template_url').'/images/defaultplakat-freiheit.jpg',
-		'label' => __( 'Plakat Freiheit und Selbstbestimmung', 'piratenkleider' )
+		'src' =>	get_bloginfo('template_url').'/plakate/LTWNRW12_Plakat_B03.jpg',
+		'label' => __( 'Plakat LTWNRW12_Plakat_B03', 'piratenkleider' )
 	),
 	'2' => array(
-		'src' =>	get_bloginfo('template_url').'/images/defaultplakat-lebensmittel.jpg',
-		'label' => __( 'Plakat für gentechnikfreie Lebensmittel', 'piratenkleider' )
+		'src' =>	get_bloginfo('template_url').'/plakate/LTWNRW12_Plakat_C01.jpg',
+		'label' => __( 'Plakat LTWNRW12_Plakat_C01', 'piratenkleider' )
 	),
         '3' => array(
-		'src' =>	get_bloginfo('template_url').'/images/defaultplakat-mitbestimmung.jpg',
-		'label' => __( 'Plakat zur Mitbestimmung', 'piratenkleider' )
+		'src' =>	get_bloginfo('template_url').'/plakate/LTWNRW12_Plakat_D01.jpg',
+		'label' => __( 'Plakat LTWNRW12_Plakat_D01', 'piratenkleider' )
 	),
         '4' => array(
-		'src' =>	get_bloginfo('template_url').'/images/defaultplakat-wohnraum.jpg',
-		'label' => __( 'Plakat für bezahlbaren Wohnraum', 'piratenkleider' )
+		'src' =>	get_bloginfo('template_url').'/plakate/LTWNRW12_Plakat_E01.jpg',
+		'label' => __( 'Plakat LTWNRW12_Plakat_E01', 'piratenkleider' )
 	),
         '5' => array(
-		'src' =>	get_bloginfo('template_url').'/images/defaultplakat-oepnv.jpg',
-		'label' => __( 'Plakat ÖPNV', 'piratenkleider' )
+		'src' =>	get_bloginfo('template_url').'/plakate/LTWNRW12_Plakat_F03.jpg',
+		'label' => __( 'Plakat LTWNRW12_Plakat_F03', 'piratenkleider' )
 	),
 	'6' => array(
-		'src' =>	get_bloginfo('template_url').'/images/defaultplakat-warum-haengen.jpg',
-		'label' => __( 'Plakat Warum hänge ich hier', 'piratenkleider' )
+		'src' =>	get_bloginfo('template_url').'/plakate/LTWSH12_Echte-Mitbestimmung.jpg',
+		'label' => __( 'Plakat LTWSH12_Echte-Mitbestimmung', 'piratenkleider' )
 	),
 	'7' => array(
-		'src' =>	get_bloginfo('template_url').'/images/defaultplakat-vertraue-keinem-plakat.jpg',
-		'label' => __( 'Plakat Vertraue keinem Plakat', 'piratenkleider' )
+		'src' =>	get_bloginfo('template_url').'/plakate/LTWSH12_Fehmarnbelt.jpg',
+		'label' => __( 'Plakat LTWSH12_Fehmarnbelt', 'piratenkleider' )
 	),
         '8' => array(
-		'src' =>	get_bloginfo('template_url').'/images/defaultplakat-klarmachen-zum-aendern.jpg',
-		'label' => __( 'Plakat Klarmachen zum ändern', 'piratenkleider' )
+		'src' =>	get_bloginfo('template_url').'/plakate/LTWSH12_Freies-Wissen.jpg',
+		'label' => __( 'Plakat LTWSH12_Freies-Wissen', 'piratenkleider' )
 	),
         '9' => array(
-		'src' =>	get_bloginfo('template_url').'/images/defaultplakat-transparenz.jpg',
-		'label' => __( 'Plakat Transparenz', 'piratenkleider' )
+		'src' =>	get_bloginfo('template_url').'/plakate/LTWSH12_Ich-will-so-leben.jpg',
+		'label' => __( 'Plakat LTWSH12_Ich-will-so-leben', 'piratenkleider' )
 	),
        '10' => array(
-		'src' =>	get_bloginfo('template_url').'/images/defaultplakat-streife-statt-kameras.jpg',
-		'label' => __( 'Plakat Streife statt Kameras', 'piratenkleider' )
+		'src' =>	get_bloginfo('template_url').'/plakate/LTWSH12_Inseln-allgemein.jpg',
+		'label' => __( 'Plakat LTWSH12_Inseln-allgemein', 'piratenkleider' )
 	),
+        '11' => array(
+		'src' =>	get_bloginfo('template_url').'/plakate/LTWSH12_Naechster-Halt.jpg',
+		'label' => __( 'Plakat LTWSH12_Naechster-Halt', 'piratenkleider' )
+	),
+	'12' => array(
+		'src' =>	get_bloginfo('template_url').'/plakate/LTWSH12_Orange_isst_gesund.jpg',
+		'label' => __( 'Plakat LTWSH12_Orange_isst_gesund', 'piratenkleider' )
+	),
+	'13' => array(
+		'src' =>	get_bloginfo('template_url').'/plakate/LTWSH12_Transparenz.jpg',
+		'label' => __( 'Plakat LTWSH12_Transparenz', 'piratenkleider' )
+	),
+        '14' => array(
+		'src' =>	get_bloginfo('template_url').'/plakate/LTWSH12_Trau-keinem-Plakat.jpg',
+		'label' => __( 'Plakat LTWSH12_Trau-keinem-Plakat', 'piratenkleider' )
+	),
+        '15' => array(
+		'src' =>	get_bloginfo('template_url').'/plakate/LTWSH12_Warum_haenge_ich_hier.jpg',
+		'label' => __( 'Plakat LTWSH12_Warum_haenge_ich_hier', 'piratenkleider' )
+	),
+       '16' => array(
+		'src' =>	get_bloginfo('template_url').'/plakate/LTWSH12_Wir_sind_Romantiker.jpg',
+		'label' => __( 'Plakat LTWSH12_Wir_sind_Romantiker', 'piratenkleider' )
+	),    
         
 );
 // Aus gestalerischen Gründen müssen Plakate auf der Website exakt 277 Pixel breit sein. Die Höhe ist
