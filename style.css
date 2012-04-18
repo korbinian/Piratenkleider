@@ -818,40 +818,43 @@ html[xmlns] .slides {
     background: url("assets/cta-icons.png") no-repeat scroll 10px -190px transparent; }
 
 .content {
-  background: #ff8800 url("assets/bg-tags.png") -20% top fixed; }
-  .content .row {
+  background: #ff8800 url("assets/bg-tags.png") -20% top fixed;  
+ }
+.content .row {
     overflow: hidden;
-    background: #ff8800;
-    background: rgba(255, 136, 0, 0.7) !important; }
-  .content p, .content form {
+/*    background: white; */
+  background: #ff8800;
+    background: rgba(255, 136, 0, 0.7) !important; 
+}
+.content p, .content form {
     margin-bottom: 18px; }
-  .content img {
+.content img {
     margin: 0 10px 10px 0; }
-  .content ul {
+.content ul {
     margin: 0 0 18px 25px; }
-    .content ul li {
+.content ul li {
       margin-bottom: 5px;
       slist-style: url("assets/listitem.png") !important; }
-  .content ol {
+.content ol {
     margin: 0 0 18px 20px; }
-    .content ol li {
+.content ol li {
       margin-bottom: 5px; }
-  .content .startpage-widget-area ul li, 
-  .content .startpage-widget-area ol li {
+.content .startpage-widget-area ul li, 
+.content .startpage-widget-area ol li {
     list-style: none !important;
     margin-bottom: 0; }
-  .content .startpage-widget-area 
-  .first-startpage-widget-area ul li {
+.content .startpage-widget-area, 
+.first-startpage-widget-area ul li {
     margin-bottom: 5px; }
-  .content .startpage-widget-area ul.children {
+.content .startpage-widget-area ul.children {
     margin: 0 0 0 5px !important; }
-  .content .content-aside p, .content .content-aside table, .content .content-aside blockquote, .content .content-aside form, .content .content-aside img {
+.content .content-aside p, .content .content-aside table, .content .content-aside blockquote, .content .content-aside form, .content .content-aside img {
     margin-bottom: 20px; }
-  .content .content-aside ul, .content .content-aside ol {
+.content .content-aside ul, .content .content-aside ol {
     margin: 0 0 20px 0; }
-    .content .content-aside ul li, .content .content-aside ol li {
+.content .content-aside ul li, .content .content-aside ol li {
       list-style: none !important; }
-  .content ul {
+.content ul {
     list-style: disc; }
   .content ul ul, .content ol ol, .content ul ol, .content ol ul {
     margin-bottom: 0; }
@@ -1866,24 +1869,31 @@ div.ics-calendar-holder .ics-calendar-event {
     float: left;
     width: 66.6666%;
     min-height: 500px;
+    background: white;
   }
-    .content-primary .first-startpage-widget-area {
+  .content-primary .first-startpage-widget-area {
       width: 50%;
       float: left;
-      padding-top: 10px; }
-      .content-primary .first-startpage-widget-area .skin {
+      padding-top: 10px; 
+  }
+    .content-primary .first-startpage-widget-area .skin {
         padding-right: 10px; }
     .content-primary .second-startpage-widget-area {
       width: 50%;
       float: right;
       padding-top: 10px; }
-      .content-primary .second-startpage-widget-area .skin {
+    .content-primary .second-startpage-widget-area .skin {
         padding-left: 10px; }
 
   .content-aside {
+      background: #ff8800 url("assets/bg-tags.png") -20% top fixed; 
     float: right;
     width: 33.3333%; }
 
+    .content-aside .skin {
+           background: #ff8800;
+           background: rgba(255, 136, 0, 0.7) !important; 
+    }
   .columns .column1 {
     width: 50%; }
     .columns .column1 .post {
