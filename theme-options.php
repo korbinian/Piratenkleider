@@ -103,7 +103,8 @@ function theme_options_do_page() {
                                 $options['url-mitgliedwerden'] = $defaultoptions['url-mitgliedwerden'];
                             if (!isset($options['url-spenden'])) 
                                 $options['url-spenden'] = $defaultoptions['url-spenden'];
-                            
+                            if (!isset($options['aktiv-defaultseitenbild'])) 
+                               $options['aktiv-defaultseitenbild'] = $defaultoptions['aktiv-defaultseitenbild'];
                         ?>
 			<table class="form-table">
                                     
@@ -118,6 +119,13 @@ function theme_options_do_page() {
 					<td>
 						<input id="piratenkleider_theme_options[newsletter]" name="piratenkleider_theme_options[newsletter]" type="checkbox" value="1" <?php checked( '1', $options['newsletter'] ); ?> />
 						<label  for="piratenkleider_theme_options[newsletter]">Eingabemaske anzeigen</label>
+					</td>
+				</tr>
+                                <tr valign="top"><th scope="row">Defaultbilder für Seiten</th>
+					<td>
+						<input id="piratenkleider_theme_options[aktiv-defaultseitenbild]" name="piratenkleider_theme_options[aktiv-defaultseitenbild]" type="checkbox" value="1" <?php checked( '1', $options['aktiv-defaultseitenbild'] ); ?> />
+						<label  for="piratenkleider_theme_options[aktiv-defaultseitenbild]">Bilder für Seiten erzwingen, die von sich aus kein Artikelbild definiert haben. Wenn kein Artikelbild vorhanden ist,
+                                                wird ein Defaultbild gezeigt.</label>
 					</td>
 				</tr>
                                 <tr valign="top"><th scope="row">Platzhalterbilder für Indexseiten</th>
@@ -476,6 +484,12 @@ function theme_options_validate( $input ) {
 	if ( ! isset( $input['defaultwerbesticker'] ) )
 		$input['defaultwerbesticker'] = 0;
 	$input['defaultwerbesticker'] = ( $input['defaultwerbesticker'] == 1 ? 1 : 0 );    
+        
+        if ( ! isset( $input['aktiv-defaultseitenbild'] ) )
+		$input['aktiv-defaultseitenbild'] = 0;
+	$input['aktiv-defaultseitenbild'] = ( $input['aktiv-defaultseitenbild'] == 1 ? 1 : 0 );    
+        
+        
         
         if ( ! isset( $input['aktiv-autoren'] ) )
 		$input['aktiv-autoren'] = 0;
