@@ -1,69 +1,53 @@
-/* 
- * Spezielle JavaScript-Anweisungen für Piratenkleider-Theme 
+/**
+ * JS-Frameset fuer Piratenkleider
+ *
  */
 
-$(document).ready(function() {
-    
-    //    $(".first-teaser-widget-area div.no-js").bind(function() {    
-    //        $(this).parent().removeClass("no-js");
-    //    }); 
+/*
+ * Klasse no-js entfernen. Diese Klasse wurde im HTML statisch gesetzt.
+ * Mit CSS werden die mit dieser Klasse bezeichneten Bereiche
+ * unsichtbar gemacht. Durch JS entfernen wir die Klasse und 
+ * machen sie also erst dann aktiv, wenn JS an ist.
+ */ 
+$(window).load(function () {
+     $("div").removeClass('no-js')
+});  
 
-        $(".no-js").bind(function() {    
-            $(this).parent().removeClass("no-js");
-        });
-        $(".first-teaser-widget-area .no-js").bind(function() {    
-            $(this).parent().removeClass("no-js");
-        });
-        // Barrierefreie Hauptnavigation mit Tastatur
-	$(".nav-main ul li a").focus(function() {
-		$(this).parent().children("a").addClass("active");
-		$(this).parent().addClass("active");
-	});
-	
-	$(".nav-main ul li a").blur(function() {
-		$(this).parent().removeClass("active");
-		$(this).removeClass("active");
-	});
-	$(".nav-main ul li ul li a").focus(function() {
-                $(this).parent().children("a").addClass("active");
-		$(this).parent().addClass("active");
-		$(this).parent().parent().parent().children("a").addClass("active");
-		$(this).parent().parent().parent().addClass("active");
-	});
-	
-	$(".nav-main ul li ul li a").blur(function() {
-		$(this).parent().removeClass("active");
-		$(this).removeClass("active");            
-		$(this).parent().parent().parent().children("a").removeClass("active");
-		$(this).parent().parent().parent().removeClass("active");
-	});
-	$(".nav-main ul li ul li ul li a").focus(function() {
-                $(this).parent().children("a").addClass("active");
-		$(this).parent().addClass("active");
-		$(this).parent().parent().parent().children("a").addClass("active");
-		$(this).parent().parent().parent().addClass("active");
-		$(this).parent().parent().parent().parent().parent().children("a").addClass("active");
-		$(this).parent().parent().parent().parent().parent().addClass("active");                
-	});
-	
-	$(".nav-main ul li ul li ul li a").blur(function() {
-		$(this).parent().removeClass("active");
-		$(this).removeClass("active");            
-		$(this).parent().parent().parent().children("a").removeClass("active");
-		$(this).parent().parent().parent().removeClass("active");                
-		$(this).parent().parent().parent().parent().parent().children("a").removeClass("active");
-		$(this).parent().parent().parent().parent().parent().removeClass("active");
-	});
-	
-	$(".nav-main ul li").hover(
-	//	function(){
-	//	  	$(this).children("ul").css({top: "40px"});
-	//	},
-		function(){
-			$(this).children("a").removeClass("active");
-		    $(this).removeClass("active");  
-		}
-	);	        
+ /* Barrierefreie Hauptnavigation mit Tastatur
+ * @author          Thomas Kipf
+ * @copyright       Copyright 2005-2012, RRZE
+ * @license         CC-A 2.0 (http://creativecommons.org/licenses/by/2.0/)
+ * 
+ * Links, die via Tastatur einen Fikus bekommen, erhalten die Klasse
+ * "hover". Diese Klasse wird auf das aktive Element, sowie die darübergehenden
+ * Elemente vergeben.
+ * Die hover-Klasse ist parallel zu der normalen hover-Funktion im CSS
+ * zu definieren.
+ */
+
+
+
+$(document).focus(function() {
+    var menuLayers = 5; //Anzahl der Menue-Ebenen
+    var links = document.getElementById('nav').getElementsByTagName('a');
+    for (var i = 0; i < links.length; i++) {   
+        links[i].onfocus = function(){ 
+                    var e = this;
+                    for(var j = 0; j < menuLayers*2; j++){
+                            e = e.parentNode;
+                            if(e.nodeName=='UL'||e.nodeName=='SPAN') continue;
+                            if(e.nodeName!='LI') break;
+                            e.className += ' hover';
+                    }
+            };
+        links[i].onblur = function(){ 
+                    var e = this;
+                    for(var j = 0; j < menuLayers*2; j++){
+                            e = e.parentNode;
+                            if(e.nodeName=='UL'||e.nodeName=='SPAN') continue;
+                            if(e.nodeName!='LI') break;
+                            e.className = e.className.replace( /(?:^|\s)hover(?!\S)/ , '' );
+                    }
+            };
+    }
 });
-
-

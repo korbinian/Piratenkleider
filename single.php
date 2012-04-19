@@ -16,7 +16,7 @@
               <?php comments_popup_link( '0', '1', '%', 'comments-link', '-'); ?>
             </div>
             <div class="cal-icon">
-              <span class="day"><?php the_time('j'); ?></span>
+              <span class="day"><?php the_time('j.'); ?></span>
               <span class="month"><?php the_time('m.'); ?></span>
               <span class="year"><?php the_time('Y'); ?></span>
             </div>

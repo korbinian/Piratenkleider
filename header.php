@@ -71,7 +71,7 @@ if (isset( $options['meta-keywords'] ) ) { ?>
                       <?php if ( $options['defaultwerbesticker'] == "1" ){ ?>
 			<div class="sticker">
                             <div class="skin">   
-                               <h3 class="visuallyhidden">Sticker</h3>
+                               <h2 class="visuallyhidden">Sticker</h2>
                                <ul>
                                    <li><a class="member" href="<?php echo $options['url-mitgliedwerden']; ?>"><img src="<?php echo get_bloginfo('template_url'); ?>/images/werde-pirat.png" width="88" height="56" alt="Werde Pirat!"></a></li>
                                    <li><a class="spenden" href="<?php echo $options['url-spenden']; ?>"><img src="<?php echo get_bloginfo('template_url'); ?>/images/spenden.png" width="104" height="68" alt="Unterstütze uns mit deiner Spende!"></a></li>                                  
@@ -81,7 +81,9 @@ if (isset( $options['meta-keywords'] ) ) { ?>
                         <?php   } ?>
 			<div class="nav-top" role="navigation">
 				<?php get_search_form(); ?>
-				<h2 class="visuallyhidden">Topnavigation</h2>
+                            
+                            
+				<h2 class="visuallyhidden">Technische Navigation: Werkzeuge und weitere Portale</h2>
 				<?php
                                     if ( has_nav_menu( 'top' ) ) {
                                         wp_nav_menu( array( 'container_class' => 'menu-header', 'theme_location' => 'top' ) );
@@ -122,7 +124,7 @@ if (isset( $options['meta-keywords'] ) ) { ?>
 			</div>
                     <?php }?>
 			<div class="nav-main" role="navigation" id="nav">
-				<h2 class="visuallyhidden">Hauptnavigation</h2>
+				<h2 class="visuallyhidden">Navigation</h2>
 				<?php 
                                 if ( has_nav_menu( 'primary' ) ) {
                                     wp_nav_menu( array( 'container_class' => 'menu-header', 'theme_location' => 'primary', 'walker'  => new My_Walker_Nav_Menu()) );      
@@ -148,6 +150,9 @@ if (isset( $options['meta-keywords'] ) ) { ?>
 			</div>
 		</div>
 	</div>
+    
+    
+    
 
 	
 

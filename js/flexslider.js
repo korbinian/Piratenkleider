@@ -548,11 +548,11 @@
     controlNav: true,               //Boolean: Create navigation for paging control of each clide? Note: Leave true for manualControls usage
     keyboardNav: true,              //Boolean: Allow slider navigating via keyboard left/right keys
     mousewheel: false,              //Boolean: Allow slider navigating via mousewheel
-    prevText: "Previous",           //String: Set the text for the "previous" directionNav item
-    nextText: "Next",               //String: Set the text for the "next" directionNav item
-    pausePlay: false,               //Boolean: Create pause/play dynamic element
+    prevText: "Zurück",           //String: Set the text for the "previous" directionNav item
+    nextText: "Vorwärts",               //String: Set the text for the "next" directionNav item
+    pausePlay: true,               //Boolean: Create pause/play dynamic element
     pauseText: 'Pause',             //String: Set the text for the "pause" pausePlay item
-    playText: 'Play',               //String: Set the text for the "play" pausePlay item
+    playText: 'Starten',               //String: Set the text for the "play" pausePlay item
     randomize: false,               //Boolean: Randomize slide order
     slideToStart: 0,                //Integer: The slide that the slider should start on. Array notation (0 = first slide)
     animationLoop: true,            //Boolean: Should the animation loop? If false, directionNav will received "disable" classes at either end

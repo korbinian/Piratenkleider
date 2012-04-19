@@ -40,10 +40,10 @@
         </div>
         <div class="post-info">
           <div class="commentbubble">
-            <?php comments_popup_link( '0', '1', '%', 'comments-link', '-');?>
+            <?php comments_popup_link( '0<span class="skip"> Kommentare</span>', '1<span class="skip"> Kommentar</span>', '%<span class="skip"> Kommentare</span>', 'comments-link', '-');?>
           </div>
           <div class="cal-icon">
-            <span class="day"><?php the_time('j'); ?></span>
+            <span class="day"><?php the_time('j.'); ?></span>
             <span class="month"><?php the_time('m.'); ?></span>
             <span class="year"><?php the_time('Y'); ?></span>
           </div>

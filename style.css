@@ -68,6 +68,11 @@ audio:not([controls]) {
   box-sizing: border-box; }
 
 /* Utility ----------------------------------------------------------------- */
+.skip {
+    position: absolute;
+    left: -999em;
+    width: 1px;
+}
 .visuallyhidden {
   border: 0;
   clip: rect(0 0 0 0);
@@ -647,6 +652,11 @@ ul.socialmedia li a:focus img  {
     float: right;
     width: 100%; }
   
+
+.no-js {
+    display: none;
+    
+}
 .symbolbild, 
 .flexslider {
   width: 100%;
@@ -689,7 +699,9 @@ html[xmlns] .slides {
 * html .slides {
   height: 1%; }
 
-.no-js .slides > li:first-child {
+
+
+.slides > li:first-child {
   display: block;
 }
 
@@ -701,19 +713,30 @@ html[xmlns] .slides {
   top: 10px;
   right: 10px;
   overflow: hidden;
-  z-index: 800; }
-  .flex-control-nav li {
+  z-index: 800; 
+}
+.flex-control-nav li {
     float: left;
     margin-right: 1px; }
-    .flex-control-nav li a {
+.flex-control-nav li a {
       display: block;
       padding: 0px 5px;
       background: white;
       background: rgba(255, 255, 255, 0.5);
       cursor: pointer;
       color: black; }
-      .flex-control-nav li a.active {
+.flex-control-nav li a.active {
         background: white; }
+.flexslider .flex-pauseplay {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    overflow: hidden;
+    z-index: 800;
+    background: white;
+    cursor: pointer;
+    color: black; 
+}
 
 .slide h2 {
   margin-left: -5px; }
@@ -1407,9 +1430,7 @@ html[xmlns] .slides {
 .widget .widget-title {
     line-height: 25px; 
  }
- .no-js .twitterwidget {
-     display: none; 
- }    
+
  .content-aside .twitterwidget {
      margin-top: 20px;
      
@@ -1656,6 +1677,7 @@ div.ics-calendar-holder .ics-calendar-event {
       border-top-right-radius: 3px;
       border-bottom-right-radius: 3px;
       border-bottom-left-radius: 3px; }
+ 
  .header .newsletter .skin form {
         padding-bottom: 5px; }
  .header .newsletter .skin form input[type="text"] {
@@ -1677,6 +1699,7 @@ div.ics-calendar-holder .ics-calendar-event {
       border-top-right-radius: 3px;
       border-bottom-right-radius: 0;
       border-bottom-left-radius: 0; }
+  
     .nav-main ul.menu li {
         float: left; 
     }
@@ -1698,8 +1721,7 @@ div.ics-calendar-holder .ics-calendar-event {
           padding: 12px 10px 10px 10px;
           border-bottom: 0; }
 
-      .nav-main ul.menu li.active a,
-      .nav-main ul.menu li a:focus,
+
       .nav-main ul.menu li a:hover {
             color: #2d7dc5; 
       }
@@ -1711,37 +1733,33 @@ div.ics-calendar-holder .ics-calendar-event {
         text-indent: -999em;
         background: url("assets/home.gif") no-repeat center 10px !important; }
       
-     .nav-main ul.menu li.active a[title="Home"],  
      .nav-main ul.menu li a[title="Home"]:hover,
-     .nav-main ul.menu li.active a[title="Home"],
-     .nav-main ul.menu li.menu-item-home a:hover {
+     .nav-main ul.menu li a[title="Home"].hover,
+     .nav-main ul.menu li.menu-item-home a:hover,
+     .nav-main ul.menu li.menu-item-home a.hover {
           background: white url("assets/home.gif") no-repeat center 10px !important; }
      
      .nav-main ul.menu li.current_page_item a[title="Home"],
      .nav-main ul.menu li.current-menu-item.menu-item-home a {
         background: #111111 url("assets/home.gif") no-repeat center -107px !important; }
      
-     .nav-main ul.menu li.active a[title="Home"],
      .nav-main ul.menu li.current_page_item a[title="Home"]:hover,
-     .nav-main ul.menu li.current-menu-item.menu-item-home a:hover {
+     .nav-main ul.menu li.current_page_item a[title="Home"].hover,
+     .nav-main ul.menu li.current-menu-item.menu-item-home a:hover,
+     .nav-main ul.menu li.current-menu-item.menu-item-home a.hover {
           background: #111111 url("assets/home.gif") no-repeat center 10px !important; }
      
-     .nav-main ul.menu li.active ul li,
      .nav-main ul.menu li.page_item ul.children li:hover,
-     .nav-main ul.menu li.page_item ul.children li:focus,
-     .nav-main ul.menu li.active, 
-     .nav-main ul.menu li.has_children:focus, 
-     .nav-main ul.menu li.has_children:hover {
+     .nav-main ul.menu li.page_item ul.children li.hover,
+     .nav-main ul.menu li.has_children:hover,
+     .nav-main ul.menu li.has_children.hover {
         background: white; 
       }
      
-     .nav-main ul.menu li.active ul,
      .nav-main ul.menu li.page_item:hover ul,
-     .nav-main ul.menu li.page_item:focus ul,
-     .nav-main ul.menu li ul.children:focus,
-     .nav-main ul.menu li.active ul.sub-menu, 
-     .nav-main ul.menu li.has_children:focus ul.sub-menu, 
-     .nav-main ul.menu li.has_children:hover ul.sub-menu {
+     .nav-main ul.menu li.hover ul,
+     .nav-main ul.menu li.has_children:hover ul.sub-menu,
+     .nav-main ul.menu li.hover ul.sub-menu{
           top: 40px;
           background: white;
           width: 200px;
@@ -1760,31 +1778,30 @@ div.ics-calendar-holder .ics-calendar-event {
           z-index: 999; 
        }
      
-      .nav-main ul.menu li.active ul li a,
       .nav-main ul.menu li.page_item:hover ul li.current-page-item a,
-      .nav-main ul.menu li.active ul.sub-menu li.current-menu-item a,
-      .nav-main ul.menu li.has_children:hover ul.sub-menu li.current-menu-item a {
+      .nav-main ul.menu li.hover ul li.current-page-item a,
+      .nav-main ul.menu li.hover ul.sub-menu li.current-menu-item a {
             background: white;
             color: black; 
       }      
-      .nav-main ul.menu li.active ul.children hr,
       .nav-main ul.menu li:hover ul.children hr,
-      .nav-main ul.menu li.active ul.sub-menu hr,
-      .nav-main ul.menu li.has_children:hover ul.sub-menu hr {
+      .nav-main ul.menu li.hover ul.children hr,
+      .nav-main ul.menu li.has_children:hover ul.sub-menu hr,
+      .nav-main ul.menu li.hover ul.sub-menu hr {
             margin: 0 !important; 
       }
       
-      .nav-main ul.menu li.active ul li.active, 
       .nav-main ul.menu li.page_item:hover ul li, 
-      .nav-main ul.menu li.active ul.sub-menu li,
-      .nav-main ul.menu li.has_children:hover ul.sub-menu li {
+      .nav-main ul.menu li.hover ul li, 
+      .nav-main ul.menu li.has_children:hover ul.sub-menu li,
+      .nav-main ul.menu li.hover ul.sub-menu li {
             float: none;
             position: relative; 
       }
-      .nav-main ul.menu li.active ul li a,
       .nav-main ul.menu li.page_item:hover ul li a,
-      .nav-main ul.menu li.active ul.sub-menu li a,
-       .nav-main ul.menu li.has_children:hover ul.sub-menu li a {
+      .nav-main ul.menu li.hover ul li a,
+      .nav-main ul.menu li.has_children:hover ul.sub-menu li a,
+      .nav-main ul.menu li.hover ul.sub-menu li a {
               font-family: Helvetica, Arial, sans-serif;
               letter-spacing: 0;
               font-size: 12px;
@@ -1799,47 +1816,49 @@ div.ics-calendar-holder .ics-calendar-event {
               border-bottom-left-radius: 0; 
               z-index: 999;
        }
-       .nav-main ul.menu li.active ul.children li.active a,
+
        .nav-main ul.menu li.page_item:hover ul.children li a:hover,
-       .nav-main ul.menu li.active ul.sub-menu li.active a,
-       .nav-main ul.menu li.has_children:hover ul.sub-menu li a:hover {
+       .nav-main ul.menu li.hover ul.children li a.hover,
+       .nav-main ul.menu li.has_children:hover ul.sub-menu li a:hover,
+       .nav-main ul.menu li.hover ul.sub-menu li a.hover {
                 background: #2d7dc5;
                 color: white; }
-/*       .nav-main ul.menu li.page_item:hover ul.children li ul.children,
-       .nav-main ul.menu li.page_item:focus ul.children li ul.children,
+       .nav-main ul.menu li.page_item:hover ul.children li ul.children,
+       .nav-main ul.menu li.hover ul.children li ul.children,
        .nav-main ul.menu li.has_children:hover ul.sub-menu li ul.sub-menu,
-       .nav-main ul.menu li.has_children:focus ul.sub-menu li ul.sub-menu {
+       .nav-main ul.menu li.hover ul.sub-menu li ul.sub-menu {
               top: -999em; 
        }
-       */
-    /*   .nav-main ul.menu li.active ul.children li a,  */ 
+      
+
        .nav-main ul.menu li.page_item:hover ul.children li a,
-       .nav-main ul.menu li.active ul.sub-menu li.has_children a,
-       .nav-main ul.menu li.has_children:hover ul.sub-menu li.has_children a {
+       .nav-main ul.menu li.hover ul.children li a,
+       .nav-main ul.menu li.has_children:hover ul.sub-menu li.has_children a,
+       .nav-main ul.menu li.hover ul.sub-menu li.has_children a {
             background: url("assets/plus_black.gif") center right no-repeat; }
        
-        .nav-main ul.menu li.active ul.children li.active a,
        .nav-main ul.menu li.page_item:hover ul.children li a:hover,
-       .nav-main ul.menu li.active ul.sub-menu li.active a,
-       .nav-main ul.menu li.has_children:hover ul.sub-menu li.has_children a:hover {
+       .nav-main ul.menu li.hover ul.children li a.hover,
+       .nav-main ul.menu li.has_children:hover ul.sub-menu li.has_children a:hover,
+       .nav-main ul.menu li.hover ul.sub-menu li.has_children a.hover {
               background: #2d7dc5 url("assets/plus.gif") center right no-repeat; }
        
-       .nav-main ul.menu li.active ul.children li ul.children li a,
        .nav-main ul.menu li.page_item:hover ul.children li ul.children li a,
-       .nav-main ul.menu li.active ul.sub-menu li.has_children ul.sub-menu li a,
-       .nav-main ul.menu li.has_children:hover ul.sub-menu li.has_children ul.sub-menu li a {
+       .nav-main ul.menu li.hover ul.children li ul.children li a,
+       .nav-main ul.menu li.has_children:hover ul.sub-menu li.has_children ul.sub-menu li a,
+       .nav-main ul.menu li.hover ul.sub-menu li.has_children ul.sub-menu li a {
             background: white !important; }
        
-       .nav-main ul.menu li.active ul.children li.active ul.children li a,
        .nav-main ul.menu li.page_item:hover ul.children li.page_item ul.children li a:hover,
-       .nav-main ul.menu li.active ul.sub-menu li.active ul.sub-menu li a,
-       .nav-main ul.menu li.has_children:hover ul.sub-menu li.has_children ul.sub-menu li a:hover {
+       .nav-main ul.menu li.hover ul.children li.page_item ul.children li a.hover,
+       .nav-main ul.menu li.has_children:hover ul.sub-menu li.has_children ul.sub-menu li a:hover,
+       .nav-main ul.menu li.hover ul.sub-menu li.has_children ul.sub-menu li a.hover {
               background: #2d7dc5 !important; }
        
-       .nav-main ul.menu li.active ul.children li.active ul.children,
        .nav-main ul.menu li.page_item:hover ul.children li:hover ul.children,
-       .nav-main ul.menu li.active ul.sub-menu li.active ul.sub-menu,
-       .nav-main ul.menu li.has_children:hover ul.sub-menu li:hover ul.sub-menu {
+       .nav-main ul.menu li.hover ul.children li.hover ul.children,
+       .nav-main ul.menu li.has_children:hover ul.sub-menu li:hover ul.sub-menu,
+       .nav-main ul.menu li.hover ul.sub-menu li.hover ul.sub-menu {
             top: -5px;
             left: 190px; }
        
@@ -1850,6 +1869,7 @@ div.ics-calendar-holder .ics-calendar-event {
       
 
       .nav-main ul.menu li.current-page-item:hover > a,
+      .nav-main ul.menu li.current-menu-item.hover > a,
       .nav-main ul.menu li.current-menu-item:hover > a {
         background: white;
         color: black; 
@@ -1930,6 +1950,7 @@ div.ics-calendar-holder .ics-calendar-event {
   .second-teaser-widget-area .skin ul li a {
     padding: 1.5em 10px 1em 50px; } 
 }
+
 @media only screen and (max-width: 767px) {
   .logo {
     width: 100%;

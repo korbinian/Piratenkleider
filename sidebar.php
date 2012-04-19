@@ -9,8 +9,9 @@
    }    
    if ( $options['slider-defaultwerbeplakate'] == "1" ) {
     ?>
-    <hr>
-    <div class="flexslider fs2 no-js">
+     <hr>
+     <div class="flexslider fs2 no-js">
+        
             <ul class='slides'>
                 <?php 
                 $plakate = get_option( 'piratenkleider_theme_defaultbilder'); 
@@ -37,21 +38,18 @@
                   }
                 ?>                   
             </ul>
-    </div>
+        </div>
 <?php }
    if ( is_active_sidebar( 'sidebar-widget-area-afterplakate' ) )  {
-       ?>
-    <hr>
-   <?php 
-            dynamic_sidebar( 'sidebar-widget-area-afterplakate' );     
+          dynamic_sidebar( 'sidebar-widget-area-afterplakate' );     
    }    
  if ( $options['feed_twitter'] != "" ){ ?>
         <script>
         var twitter_name = "<?php echo $options['feed_twitter']; ?>";
         var twitter_count = <?php echo $options['feed_twitter_numberarticle']; ?>;
         </script>
-        <hr>
-        <div class="twitterwidget">
+        <div class="no-js twitterwidget">
+             <hr>
                 <h3><a href="https://twitter.com/#!/<?php echo $options['feed_twitter']; ?>">twitter.com/<?php echo $options['feed_twitter']; ?></a></h3>
                 <ul id="tweet_container"></ul>
         </div>
