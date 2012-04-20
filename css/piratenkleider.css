@@ -471,11 +471,12 @@ body {
   background-image: url("../assets/darkwave.png"), url("../assets/boat.png");
   background-position: -20% bottom, 56% bottom;
   background-repeat: repeat-x, no-repeat; }
+
+
 .header .branding {
     padding: 10px 0 0px 0; }
 .header input[type="text"] {
     border-color: silver;
-    width: 100%;
 }
 
 .logo {
@@ -633,7 +634,8 @@ ul.socialmedia li a:focus img  {
       color: gray;
       font-weight: lighter; }
  .newsletter .skin form input[type="text"] {
-      width: 20em;
+      max-width: 15em;
+      width: 80%;
  }
  .newsletter .skin form input[type="submit"] {
       position: absolute;
