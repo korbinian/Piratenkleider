@@ -414,11 +414,14 @@ button, input[type="submit"],
     -moz-transition: all 0.2s ease-in-out;
     -o-transition: all 0.2s ease-in-out;
     -webkit-transition: all 0.2s ease-in-out;
-    transition: all 0.2s ease-in-out; }
+    transition: all 0.2s ease-in-out; 
+  }
+  
   button:active, 
   input[type="submit"]:active, 
   .post-edit-link:active {
-    top: 1px; }
+    top: 1px; 
+  }
 
 body {
   background: white url("../assets/bg-tags_gray.jpg") -20% 0 fixed; }
@@ -472,7 +475,8 @@ body {
     padding: 10px 0 0px 0; }
 .header input[type="text"] {
     border-color: silver;
-    width: 100% !important; }
+    width: 100%;
+}
 
 .logo {
   display: inline-block;
@@ -508,6 +512,11 @@ body {
   background: #f7f7f7;
   background: rgba(255, 255, 255, 0.5);
   position: relative;
+}
+.searchform input#s {
+    width: 160px;
+    line-height: 1em;      
+    margin-top: 2px;
 }
 .searchform .searchsubmit {
     position: absolute;
@@ -614,21 +623,25 @@ ul.socialmedia li a:focus img  {
   border-top-left-radius: 3px;
   border-top-right-radius: 3px;
   border-bottom-right-radius: 3px;
-  border-bottom-left-radius: 3px; }
+  border-bottom-left-radius: 3px; 
+}
 .newsletter .skin form {
     overflow: hidden;
-    position: relative; }
-.newsletter .skin form legend {
+    position: relative; 
+}
+.newsletter .skin form label {
       color: gray;
       font-weight: lighter; }
  .newsletter .skin form input[type="text"] {
-      width: 100% !important; }
+      width: 20em;
+ }
  .newsletter .skin form input[type="submit"] {
       position: absolute;
-      right: -2px;
-      top: 15px; }
+ }
  .newsletter .skin form input[type="submit"]:active {
-        top: 0; }
+     background-color: #ff6600;
+     top: 22px;
+ }
 
 .breadcrumbs {
   background: black;

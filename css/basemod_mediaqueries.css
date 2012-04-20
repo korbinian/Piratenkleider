@@ -52,10 +52,7 @@
       height: 30px;     
       padding: 3px 5px 0 5px; 
     }
-   .nav-top form.searchform #s {
-        line-height: 18px;
-        width: 100%;         
-   }
+  
    .nav-top form.searchform .searchsubmit {
         top: 3px;
         right: 3px;
@@ -69,7 +66,7 @@
 
   .sticker {
     position: absolute;
-    top: 70px;
+    top: 50px;
     right: 8%; 
   }
   .sticker .skin {
@@ -79,12 +76,13 @@
   .header .branding {
     padding-top: 20px;
     padding-bottom: 0px;
-     min-height: 130px;
+    height: 150px;
   }
   .header .newsletter {
     float: right;
     width: 33.3333%;
-    margin: 0; }
+    margin: 0; 
+  }
  .header .newsletter .skin {
       -moz-border-radius-topleft: 3px;
       -moz-border-radius-topright: 3px;
@@ -99,8 +97,8 @@
         padding-bottom: 5px; }
  .header .newsletter .skin form input[type="text"] {
           float: left;
-          width: 90%;
-          margin-bottom: 0px; }
+          margin-bottom: 0px; 
+ }
 
   .nav-main {
     position: absolute;

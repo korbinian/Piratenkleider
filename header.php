@@ -34,26 +34,28 @@ if (isset( $options['meta-keywords'] ) ) { ?>
     <meta name="keywords" content="<?php echo $options['meta-keywords'] ?>">
 <?php } ?>
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-<meta name="viewport" content="width=device-width">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="cleartype" content="on">
 <link rel="apple-touch-icon" href="<?php echo get_bloginfo('template_url'); ?>/apple-touch-icon.png">
 <link rel="shortcut icon" href="<?php echo get_bloginfo('template_url'); ?>/favicon.ico">
 
 <link rel="profile" href="http://gmpg.org/xfn/11" />
 <link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo( 'stylesheet_url' ); ?>">
-<!--[if lt IE 9 ]>  <link rel="stylesheet" type="text/css" media="all" href="<?php echo get_bloginfo('template_url'); ?>/ie.css">  <![endif]-->
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 <?php if ( is_singular() && get_option( 'thread_comments' ) )
 		wp_enqueue_script( 'comment-reply' );
 	wp_head(); ?>
+<!--[if lte IE 7]>
+<link rel="stylesheet" href="<?php bloginfo( 'stylesheet_url' ); ?>/yaml/core/iehacks.min.css" type="text/css"/>
+<![endif]-->
 </head>
                       
 <body <?php body_class(); ?>>
 
-	<ul role="navigation" class="nav skiplinks">		
-		<li><a href="#nav">Zur Navigation springen</a></li>
-		<li><a href="#main-content">Zum Inhalt springen</a></li>
-                <li><a href="#searchform">Zur Suche springen</a></li>
+	<ul role="navigation" class="nav skiplinks ym-skiplinks">		
+		<li><a class="ym-skip" href="#nav">Zur Navigation springen</a></li>
+		<li><a class="ym-skip" href="#main-content">Zum Inhalt springen</a></li>
+                <li><a class="ym-skip" href="#searchform">Zur Suche springen</a></li>
 	</ul>
 
 
@@ -115,9 +117,9 @@ if (isset( $options['meta-keywords'] ) ) { ?>
 
 			<div class="newsletter">
 				<div class="skin">
-					<form method="post" action="<?php echo $options['url-newsletteranmeldung']; ?>">
-						<legend>Piratenpartei-Newsletter</legend>
-						<input type="text" name="email" placeholder="E-Mail">
+					<form method="post" action="<?php echo $options['url-newsletteranmeldung']; ?>">						
+                                                <label for="email-newsletter">Zum Newsletter anmelden (verlässt den Webauftritt):</label>
+						<input type="text" name="email-newsletter" id="email-newsletter" placeholder="E-Mail">
                                                 <input type="submit" name="email-button" value="abonnieren" id="newslettersubmit">
 					</form>
 				</div>

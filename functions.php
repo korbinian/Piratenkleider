@@ -19,6 +19,7 @@ $defaultoptions = array(
     'thumb-height'  => 240,
     'src-jquery'    => get_bloginfo('template_url'). "/js/jquery.min.js",
     'src-layoutjs'    => get_bloginfo('template_url'). "/js/layout.js",
+    'src-yaml-focusfix' => get_bloginfo('template_url'). "/yaml/core/js/yaml-focusfix.js",
     'slider-aktiv'  => 1,
     'aktiv-defaultseitenbild'    => 0,
     'slider-defaultwerbeplakate'    => 1,
@@ -722,6 +723,7 @@ if( !is_admin()){
 
         wp_register_script('layoutjs', $defaultoptions['src-layoutjs'] , false);
         wp_enqueue_script('layoutjs');
-       
+       wp_register_script('yaml-focusfix', $defaultoptions['src-yaml-focusfix'] , false);
+        wp_enqueue_script('yaml-focusfix');
         
 }
