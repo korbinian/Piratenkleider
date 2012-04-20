@@ -91,12 +91,13 @@
       border-top-left-radius: 3px;
       border-top-right-radius: 3px;
       border-bottom-right-radius: 3px;
-      border-bottom-left-radius: 3px; }
+      border-bottom-left-radius: 3px; 
+}
  
  .header .newsletter .skin form {
-        padding-bottom: 5px; }
+        padding-bottom: 5px; 
+ }
  .header .newsletter .skin form input[type="text"] {
-          float: left;
           margin-bottom: 0px; 
  }
 
