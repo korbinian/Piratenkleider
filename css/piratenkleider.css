@@ -1454,6 +1454,11 @@ ul.socialmedia li a:focus img  {
     padding: 1px 5px;
     display: block;
  }
+ .content-aside .widget li a.rsswidget:hover,
+ .content-aside .widget li a.rsswidget:focus {
+     
+       background: #ff8800;
+ }
  .content-aside .widget li .rssSummary {
     color:#333333;
     list-style: none outside none !important;

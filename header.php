@@ -53,9 +53,9 @@ if (isset( $options['meta-keywords'] ) ) { ?>
 <body <?php body_class(); ?>>
 
 	<ul role="navigation" class="nav skiplinks ym-skiplinks">		
-		<li><a class="ym-skip" href="#nav">Zur Navigation springen</a></li>
-		<li><a class="ym-skip" href="#main-content">Zum Inhalt springen</a></li>
-                <li><a class="ym-skip" href="#searchform">Zur Suche springen</a></li>
+		<li><a class="ym-skip" href="#nav">Zur Navigation springen.</a></li>
+		<li><a class="ym-skip" href="#main-content">Zum Inhalt springen.</a></li>
+                <li><a class="ym-skip" href="#searchform">Zur Suche springen.</a></li>
 	</ul>
 
 
