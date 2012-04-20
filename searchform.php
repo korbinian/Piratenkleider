@@ -1,4 +1,4 @@
-<h2 class="visuallyhidden">Suche</h2>
+<h2 class="skip">Suche</h2>
 
 <form method="get" class="searchform" action="<?php bloginfo('url'); ?>/">
 	<label class="visuallyhidden" for="s">Suchen:</label>
