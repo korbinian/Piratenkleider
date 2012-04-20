@@ -629,21 +629,18 @@ ul.socialmedia li a:focus img  {
 .newsletter .skin form {
     overflow: hidden;
     position: relative; 
+    width: 100%;
 }
 .newsletter .skin form label {
       color: gray;
-      font-weight: lighter; }
+      font-weight: lighter; 
+}
  .newsletter .skin form input[type="text"] {
       max-width: 15em;
-      width: 80%;
  }
  .newsletter .skin form input[type="submit"] {
-      position: absolute;
  }
- .newsletter .skin form input[type="submit"]:active {
-     background-color: #ff6600;
-     top: 22px;
- }
+
 
 .breadcrumbs {
   background: black;
@@ -719,7 +716,7 @@ ul.socialmedia li a:focus img  {
       -o-transition: all 0.2s ease-in-out;
       -webkit-transition: all 0.2s ease-in-out;
       transition: all 0.2s ease-in-out;
-      padding-left: 55px !important; }
+      padding-left: 60px !important; }
   
   
   
@@ -728,7 +725,7 @@ ul.socialmedia li a:focus img  {
 }
 .second-teaser-widget-area li.first a:focus,
 .second-teaser-widget-area li.first a:hover {
-    background: url("../images/icon-info.png") no-repeat scroll 10px top transparent; 
+    background: url("../images/icon-info.png") no-repeat scroll 20px center transparent; 
 }
 
 
@@ -737,7 +734,7 @@ ul.socialmedia li a:focus img  {
 }
 .second-teaser-widget-area li.second a:focus,
 .second-teaser-widget-area li.second a:hover {
-   background: url("../images/icon-helfe.png") no-repeat scroll 10px top transparent;
+   background: url("../images/icon-helfe.png") no-repeat scroll 20px center transparent;
 }
 .second-teaser-widget-area li.third a {
   background: url("../images/icon-profil.png") no-repeat scroll 10px center transparent;
@@ -745,7 +742,7 @@ ul.socialmedia li a:focus img  {
 
 .second-teaser-widget-area li.third a:focus,
 .second-teaser-widget-area li.third a:hover {
-    background: url("../images/icon-profil.png") no-repeat scroll 10px top transparent;
+    background: url("../images/icon-profil.png") no-repeat scroll 20px center transparent;
 }
 
 
