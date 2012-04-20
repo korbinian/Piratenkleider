@@ -1,0 +1,175 @@
+/*
+* CSS Slider Definitionen
+* 
+* @Theme Name: Piratenkleider
+* @Theme URI: https://github.com/xwolfde/Piratenkleider
+* @Description: Allgemeines Wordpress Theme für Webauftritte der Piratenpartei
+* @Author: Wolfgang Wiese (xwolf)
+* @Author URI: http://www.xwolf.de 
+*/
+
+.flexslider {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  position: relative; 
+  height: 240px;  
+  overflow: hidden;
+    /* Bilder die trotz cropping hoeher als 240 Pixel sind,
+      werden abgeschnitten */
+}
+.content-aside .flexslider {
+    height: 391px;    
+    margin-bottom: 10px;
+}
+.flexslider img {
+    /* Kommentare entfernen, wenn man möchte dass die Bilder an die 
+       proportionale Breite angepasst werden und nicht abgeschnitten werden: */
+    
+   /*  max-height: 240px;  
+      width: auto; 
+   */
+}
+
+.flexslider .slides > li {
+  display: none; 
+}
+
+.slides:after {
+  content: ".";
+  display: block;
+  clear: both;
+  visibility: hidden;
+  line-height: 0;
+  height: 0; }
+
+html[xmlns] .slides {
+  display: block; }
+
+* html .slides {
+  height: 1%;
+}
+
+
+.slides > li:first-child {
+  display: block;
+}
+
+.flex-direction-nav {
+  display: none; 
+}
+
+.flex-control-nav {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  overflow: hidden;
+  z-index: 800; 
+}
+.flex-control-nav li {
+    float: left;
+    margin-right: 1px; }
+.flex-control-nav li a {
+      display: block;
+      padding: 0px 5px;
+      background: white;
+      background: rgba(255, 255, 255, 0.5);
+      cursor: pointer;
+      color: black;
+}
+.flex-control-nav li a.active {
+        background: white; 
+}
+
+.flexslider .flex-pauseplay {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    overflow: hidden;
+    z-index: 800;
+    background: white;
+    cursor: pointer;
+    color: black; 
+    padding: 0.2em;
+}
+.flexslider .flex-pauseplay:hover {
+        background: #ff8800 !important; 
+}
+.slide .caption  h3 {
+  font-size: 22.8px;
+  line-height: 22px;
+  margin-left: -5px; 
+   margin-bottom: 0; 
+}
+.slide .caption h3 a {
+    background: #2d7dc5 !important;
+    padding: 2px 5px 0px 5px !important; 
+}
+.slide .caption h3 a:hover {
+      background: #ff8800 !important; 
+}
+
+
+.slide .caption {
+  background: transparent;
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  padding: 10px 20px;
+  text-align: right; 
+}
+.slide .caption p {
+    font-size: 12px;
+    margin-bottom: 5px; 
+    display: inline-block;
+    font-size: 18px !important;
+}
+.slide .caption a {
+    background: #2d7dc5;
+    color: white;
+    display: inline-block;
+    padding: 0 5px; 
+}
+
+
+
+
+@media only screen and (max-width: 767px) {  
+ .symbolbild, 
+  .flexslider, 
+  .flexslider img {
+        height: 240px;  
+        overflow: hidden;
+   }   
+   .content-aside .flexslider {
+        height: auto;    
+        margin-bottom: 10px;
+    }
+ 
+}
+
+@media only screen and (max-width: 479px) {  
+  .symbolbild, 
+  .flexslider, 
+  .flexslider img {
+        height: 240px;  
+        overflow: hidden;
+   }   
+   .content-aside .flexslider {
+        height: auto;    
+        margin-bottom: 10px;
+    }
+
+  .flexslider .caption {
+    padding: 5px 10px;
+  }
+  .flexslider .caption h2, 
+  .flexslider .caption h3 {
+      font-size: 12px !important;
+      font-family: Helvetica, Arial, sans-serif;
+      letter-spacing: 0px;
+  }
+
+}

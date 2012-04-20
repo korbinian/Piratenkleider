@@ -34,6 +34,10 @@ MENÜS
         Hierin werden alle statischen Seiten des Webauftritts aufgeführt, die
         in der Hauptnavigation im oberen Teil der Seite, aber unter dem Logo
         erscheinen.
+        Zu beachten ist, daß neben den Seiten des Webauftritts auch die 
+        Startseite hinzugefügt werden muss. Unter der Option Menuüs
+        findet sich die Startseite, wenn man bei der Box
+          "Listen" auf "Zige alle" klickt.   
     - Linkmenu
         Hier befinden sich Links zu Werkzeugen oder Arbeitsportalen, wie
         bspw. das Wiki oder das Forum.
@@ -198,7 +202,7 @@ Administrative Hinweise für Wordpress Theme-Editoren:
    Bildgröße verwendet, die in x und y maximal 300 Pixel definieren und
    dann entsprechend umrechnen. 
    Unter Einstellungen-Mediathek sollte daher  die mittlere Größe der Bilder 
-   auf 640 Pixel Breite und 240 Pixel Höhe festgesetzt werden.
+   auf 740 Pixel Breite und 240 Pixel Höhe festgesetzt werden.
    Bei Artikelbilder, die aber auf der Breite eine Höherskalierung bedürften
    klappt dies nicht so toll. Die Y-Achse wird dann doch gross gemacht.
    Daher sollte man darauf achten, daß nur solche Bilder gewählt werden die 

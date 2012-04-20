@@ -9,37 +9,27 @@ if (!isset($options['aktiv-defaultseitenbild']))
   <div class="row">
     <div class="content-primary">
      
-        <?php if (has_post_thumbnail()) { ?>
-          <div class="content-header">
-             <div class="symbolbild"> 
-                 <?php  the_post_thumbnail();  ?>
-                <div class="caption">  
-                   <h2><?php the_title(); ?></h2>
-                </div>   
-            </div>
-          </div>
-        <?php 
+        <div class="content-header">
+            
+          <h1 id="page-title"><span><?php the_title(); ?></span></h1>
+        
+        <?php if (has_post_thumbnail()) { 
+            echo '<div class="symbolbild">';
+              the_post_thumbnail(); 
+            echo '</div>';  
         } else {            
-           if ($options['aktiv-defaultseitenbild']==1) {
-            ?>
-                <div class="content-header">
-                <div class="symbolbild"> 
-                <?php     
+           if ($options['aktiv-defaultseitenbild']==1) {   
                 $bilderoptions = get_option( 'piratenkleider_theme_defaultbilder' ); 
-                $defaultbildsrc = $bilderoptions['seiten-defaultbildsrc'];                        
-                echo '<img src="'.$defaultbildsrc.'" width="640" height="240" alt="">';                        
-                ?>
-                <div class="caption">  
-                    <h2><?php the_title(); ?></h2>
-                </div>   
-                </div></div>
-                <?php 
+                $defaultbildsrc = $bilderoptions['seiten-defaultbildsrc'];     
+                 echo '<div class="symbolbild">';
+                 echo '<img src="'.$defaultbildsrc.'" width="640" height="240" alt="">';                        
+                 echo '</div>';  
            }            
         }   
          ?>
-      
+      </div>
       <div class="skin">
-         <h1 id="page-title"><span><?php the_title(); ?></span></h1>
+        
         <?php if ( have_posts() ) while ( have_posts() ) : the_post(); ?>
         <?php the_content(); ?>
         <?php wp_link_pages( array( 'before' => '' . __( 'Pages:', 'twentyten' ), 'after' => '' ) ); ?>
@@ -49,7 +39,9 @@ if (!isset($options['aktiv-defaultseitenbild']))
     </div>
 
     <div class="content-aside">
-      <div class="skin">         
+      <div class="skin">      
+          
+          <h1 class="skip">Weitere Informationen</h1>
         <?php 
        if ( has_nav_menu( 'primary' ) ) {
             wp_nav_menu( array( 'container_class' => 'menu-header', 'theme_location' => 'primary', 'walker'  => new My_Walker_Nav_Menu()) );      

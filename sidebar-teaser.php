@@ -3,7 +3,7 @@
 <?php if ( is_active_sidebar( 'first-teaser-widget-area' ) ) { ?>
         <?php dynamic_sidebar( 'first-teaser-widget-area' ); ?>
     <?php } else {        
-           global $defaultoptions;
+          global $defaultoptions;
          $options = get_option( 'piratenkleider_theme_options' );
          $catname = $options['slider-catname'];
          $bilderoptions = get_option( 'piratenkleider_theme_defaultbilder' ); 
@@ -16,7 +16,8 @@
             $options['url-mitgliedwerden'] = $defaultoptions['url-mitgliedwerden'];
         query_posts( array( 'category_name' => "$catname", 'posts_per_page' => $numberarticle) );
         
-        echo "<div class='flexslider'>";
+        echo '<div class="flexslider">';
+        echo '<h2 class="skip">Topthemen</h2>';
         echo "<ul class='slides'>";
         if ( have_posts() ) while ( have_posts() ) : the_post();
             echo "<li class='slide'>";
@@ -25,15 +26,15 @@
             } else {
                 echo '<img src="'.$defaultbildsrc.'" width="640" height="240" alt="">';                
             }
-            echo "<div class='caption'>";
-            echo "<h3>Topthema</h3>";
-            echo "<h2>";
+            echo '<div class="caption">';
+            echo '<p class="bebas">Topthema</p>';
+            echo "<h3>";
             echo "<a href=";
             the_permalink();
             echo ">";
             echo short_title('&hellip;', 6);
             echo "</a>";
-            echo "</h2>";
+            echo "</h3>";
             echo "</div>";
             echo "</li>";
         endwhile;

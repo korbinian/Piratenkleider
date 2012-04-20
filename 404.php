@@ -3,12 +3,12 @@
 <div class="section content">
   <div class="row">
     <div class="content-primary">
-      <div class="content-header">       
-         <div class="symbolbild"> 
-              <img src="<?php echo get_bloginfo('template_url'); ?>/images/404.png" alt="" width="640" height="240" >
+      <div class="content-header">
+          <h1>Seite nicht gefunden</h1>
+         <div class="symbolbild">                   
+              <img src="<?php echo get_bloginfo('template_url'); ?>/images/404.png" alt=""  >
                <div class="caption">  
-                   <h3>Seite nicht gefunden</h3>
-                   <h2>404</h2>
+                   <p style="font-size: 2em;" class="bebas">404</p>                  
                </div>   
            </div> 
          
@@ -27,7 +27,7 @@
 
     <div class="content-aside">
       <div class="skin">
-        
+        <h1 class="skip">Weitere Informationen</h1>
          <?php get_sidebar(); ?>
       </div>
     </div>

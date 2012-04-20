@@ -78,6 +78,7 @@
 
     <div class="content-aside">
       <div class="skin">
+       <h1 class="skip">Weitere Informationen</h1>
       <?php get_sidebar(); ?>
       </div>
     </div>

@@ -6,20 +6,17 @@
     <div class="content-primary">
       <div class="content-header">   
             <?php if ( have_posts() ) the_post(); ?>
+           <h1><?php printf( __( 'Autorarchiv: %s', 'twentyten' ), get_the_author() ); ?></h1>
+          
             <?php if ($options['aktiv-platzhalterbilder-indexseiten']) { ?>         
             <div class="symbolbild"> 
-              <img src="<?php echo get_bloginfo('template_url'); ?>/images/404.png" alt="" width="640" height="240" >
-               <div class="caption">  
-                   <h2><?php printf( __( 'Autorarchiv: %s', 'twentyten' ), get_the_author() ); ?></h2>
-               </div>   
+              <img src="<?php echo get_bloginfo('template_url'); ?>/images/404.png" alt="" > 
            </div>                                 
           <?php } ?>                
       </div>
         <div class="skin">
             
-        <?php if ($options['aktiv-platzhalterbilder-indexseiten'] !=1) { ?>
-        <h1><?php printf( __( 'Autorarchiv: %s', 'twentyten' ), get_the_author() ); ?></h1>
-        <?php  }  ?>  
+
         
 <?php if ( get_the_author_meta( 'description' ) ) : ?>
     <h2>Informationen zum Autor</h2>
@@ -37,7 +34,8 @@
     </div>
 
     <div class="content-aside">
-      <div class="skin">          
+      <div class="skin">      
+          <h1 class="skip">Weitere Informationen</h1>
          <?php get_sidebar(); ?>
       </div>
     </div>

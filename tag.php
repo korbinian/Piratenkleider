@@ -5,33 +5,30 @@
   <div class="row">
     <div class="content-primary">
       <div class="content-header">
+           <h1 id="page-title"><span><?php printf( __( 'Schlagwörterarchiv: %s', 'twentyten' ), '' . single_cat_title( '', false ) . '' ); ?></span></h1>
+          
           <?php if ($options['aktiv-platzhalterbilder-indexseiten']) { ?>         
           <div class="symbolbild"> 
-              <img src="<?php echo get_bloginfo('template_url'); ?>/images/default-kategorien.jpg" alt="" width="640" height="240" >
-               <div class="caption">  
-                   <h2><?php printf( __( 'Schlagwörterarchiv: %s', 'twentyten' ), '' . single_cat_title( '', false ) . '' ); ?></h2>
-               </div>   
+              <img src="<?php echo get_bloginfo('template_url'); ?>/images/default-kategorien.jpg" alt="" > 
            </div>                                 
           <?php } ?>                  
       </div>
         <div class="skin">
-            <?php if ($options['aktiv-platzhalterbilder-indexseiten'] !=1) { ?>
-             <h1><?php printf( __( 'Schlagwörterarchiv: %s', 'twentyten' ), '' . single_cat_title( '', false ) . '' ); ?></h1>                
-            <?php }
-            get_template_part( 'loop', 'tag' ); ?>
+            <?php get_template_part( 'loop', 'tag' ); ?>
              
              
               <div class="widget">
                 <h2>Übersicht aller Tags</h2>
                 <div class="tagcloud">                   
-                  <?php wp_tag_cloud(array('smallest'  => 12, 'largest'   => 28)); ?>                  
+                  <?php wp_tag_cloud(array('smallest'  => 14, 'largest'   => 28)); ?>                  
                 </div>    
             </div> 
        </div>
     </div>
 
     <div class="content-aside">
-      <div class="skin">                 
+      <div class="skin">       
+          <h1 class="skip">Weitere Informationen</h1>
          <?php get_sidebar(); ?>
       </div>
     </div>

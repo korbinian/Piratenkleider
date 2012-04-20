@@ -4,12 +4,12 @@
             dynamic_sidebar( 'second-footer-widget-area' );
         } else {                    
             if ( has_nav_menu( 'sub' ) ) { ?>
-                    <div class="widget"><h3 class="widget-title"><?php bloginfo( 'name' ); ?></h3> 
+                    <div class="widget"><h2><?php bloginfo( 'name' ); ?></h2> 
                     <?php wp_nav_menu( array( 'container_class' => 'menu-header', 'theme_location' => 'sub' ) ); ?>
                     </div>
             <?php } else { ?>
                 <div class="widget">
-                    <h3 class="widget-title"><?php bloginfo( 'name' ); ?></h3> 
+                    <h2><?php bloginfo( 'name' ); ?></h2> 
                     <div class="menu-header">
                         <ul id="menu-submenu" class="menu">
                             <li class="menu-item">URL: <a href="<?php bloginfo( 'url' ); ?>"><?php bloginfo( 'url' ); ?></a></li>

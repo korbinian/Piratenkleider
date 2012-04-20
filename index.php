@@ -3,16 +3,14 @@
   <div class="row">
     <div class="content-primary">
       <div class="content-header">
-          <div class="symbolbild">                
+           <h1><?php the_title(); ?></h1>
+          <div class="symbolbild">                   
               <?php 
               if (has_post_thumbnail()) {
                   the_post_thumbnail(); 
               } else {  ?>
-                  <img src="<?php echo get_bloginfo('template_url'); ?>/images/default-wissen.png" alt="" width="640" height="240" >
-                <?php  }  ?>            
-                <div class="caption">  
-                   <h2><?php the_title(); ?></h2>
-               </div>   
+                  <img src="<?php echo get_bloginfo('template_url'); ?>/images/default-wissen.png" alt=""  >
+                <?php  }  ?>                            
            </div>   
       </div>
         <div class="skin">

@@ -4,9 +4,10 @@
 endif; ?>
 
 <?php if ( have_comments() ) : ?>
-    <h3 id="comments-title">
+    <h2 id="comments-title">Kommentare</h2>
+     <p>   
     <?php printf( _n( 'Ein Kommentar zu %2$s', '%1$s Kommentare zu %2$s', get_comments_number(), 'piratenkleider' ), number_format_i18n( get_comments_number() ), '' . get_the_title() . '' ); ?>
-    </h3>
+    </p>
 
     <?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) :  ?>
             <?php previous_comments_link( __( '&larr; Ältere Kommentare', 'piratenkleider' ) ); ?>

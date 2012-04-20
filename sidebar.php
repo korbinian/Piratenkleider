@@ -44,13 +44,15 @@
           dynamic_sidebar( 'sidebar-widget-area-afterplakate' );     
    }    
  if ( $options['feed_twitter'] != "" ){ ?>
-        <script>
+        <script type="text/javascript">
+        /* <![CDATA[ */
         var twitter_name = "<?php echo $options['feed_twitter']; ?>";
         var twitter_count = <?php echo $options['feed_twitter_numberarticle']; ?>;
+        /* ]]> */
         </script>
         <div class="no-js twitterwidget">
              <hr>
-                <h3><a href="https://twitter.com/#!/<?php echo $options['feed_twitter']; ?>">twitter.com/<?php echo $options['feed_twitter']; ?></a></h3>
+                <h2><a href="https://twitter.com/#!/<?php echo $options['feed_twitter']; ?>">twitter.com/<?php echo $options['feed_twitter']; ?></a></h2>
                 <ul id="tweet_container"></ul>
         </div>
 <?php }?>

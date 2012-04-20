@@ -2,12 +2,11 @@
   $options = get_option( 'piratenkleider_theme_options' );  
   if (!isset($options['slider-aktiv'])) 
         $options['slider-aktiv'] = $defaultoptions['slider-aktiv'];
-  if ( $options['slider-aktiv'] == "1" ){
-?>  
+  if ( $options['slider-aktiv'] == "1" ){ ?>  
     <div class="section teaser">
-    <div class="row">
+        <div class="row">
     <?php get_sidebar( 'teaser' ); ?>
-    </div>
+        </div>  
     </div>
 <?php } ?>
 <div class="section content" id="main-content">
@@ -15,6 +14,8 @@
     <div class="content-primary">
       <div class="skin">
 
+          <h1 class="skip">Aktuelles</h1>
+          
       <?php
       $i = 0; 
       $col = 0; 
@@ -95,7 +96,7 @@
         
       
       <div class="startpage-widget-area">
-       
+          <h2 class="skip">Weitere Artikel</h2>
         <div class="first-startpage-widget-area">
           <div class="skin">
             <?php if ( is_active_sidebar( 'first-startpage-widget-area' ) ) { ?>
@@ -103,7 +104,7 @@
             <?php } else { ?>
               
                 <div class="widget">
-                <h3>Weitere Artikel</h3>
+                <h3>Vorherige Artikel</h3>
 
                 <ul>
                 <?php 
@@ -135,7 +136,7 @@
                 <div  class="widget">
                     <h3>Schlagworte</h3>    
                       <div class="tagcloud">            
-                    <?php wp_tag_cloud(array('smallest'  => 12, 'largest'   => 28)); ?>
+                    <?php wp_tag_cloud(array('smallest'  => 14, 'largest'   => 28)); ?>
                       </div>
                 </div>
             <?php } ?>
@@ -148,6 +149,7 @@
 
     <div class="content-aside">
       <div class="skin">
+          <h1 class="skip">Weitere Informationen</h1>
       <?php get_sidebar(); ?>
       </div>
     </div>

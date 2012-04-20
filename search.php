@@ -5,19 +5,16 @@
   <div class="row">
     <div class="content-primary">
       <div class="content-header">
+          <h1><?php printf( __( 'Suchergebnisse für: %s', 'twentyten' ), '' . get_search_query() . '' ); ?></h1>                
+          
           <?php if ($options['aktiv-platzhalterbilder-indexseiten']) { ?>         
           <div class="symbolbild"> 
-              <img src="<?php echo get_bloginfo('template_url'); ?>/images/default-suche.jpg" alt="" width="640" height="240" >
-               <div class="caption">  
-                   <h2><?php printf( __( 'Suchergebnisse für: %s', 'twentyten' ), '' . get_search_query() . '' ); ?></h2>
-               </div>   
+              <img src="<?php echo get_bloginfo('template_url'); ?>/images/default-suche.jpg" alt=""  >               
            </div>                                 
           <?php } ?>           
       </div>
         <div class="skin">
-            <?php if ($options['aktiv-platzhalterbilder-indexseiten'] !=1) { ?>
-              <h1><?php printf( __( 'Suchergebnisse für: %s', 'twentyten' ), '' . get_search_query() . '' ); ?></h1>                
-            <?php  }
+            <?php 
 	    if ( have_posts() ) : ?>
                 <?php
                 /* Run the loop for the search to output the results.
@@ -65,7 +62,8 @@
     </div>
 
     <div class="content-aside">
-      <div class="skin">                  
+      <div class="skin">        
+          <h1 class="skip">Weitere Informationen</h1>
          <?php get_sidebar(); ?>
       </div>
     </div>

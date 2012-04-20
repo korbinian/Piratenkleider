@@ -11,11 +11,11 @@
 
 
 $defaultoptions = array(
-    'content-width' => 640,
+    'content-width' => 740,
     'logo'          => get_template_directory_uri() .'/images/logo.png',
     'logo-width'    => 300,
     'logo-height'   => 130,
-    'thumb-width'   => 640,
+    'thumb-width'   => 740,
     'thumb-height'  => 240,
     'src-jquery'    => get_bloginfo('template_url'). "/js/jquery.min.js",
     'src-layoutjs'    => get_bloginfo('template_url'). "/js/layout.js",
@@ -388,8 +388,8 @@ function piratenkleider_widgets_init() {
                     gezeigt.', 'twentyten' ),
                 'before_widget' => '<div class="widget">',
                 'after_widget' => '</div>',
-                'before_title' => '<h3 class="widget-title">',
-                'after_title' => '</h3>',
+                'before_title' => '<h2>',
+                'after_title' => '</h2>',
         ) );
        // Sidebar2
         register_sidebar( array(
@@ -400,8 +400,8 @@ function piratenkleider_widgets_init() {
                     Optionen ein- oder abgeschaltet werden können.', 'twentyten' ),
                 'before_widget' => '<div class="widget">',
                 'after_widget' => '</div>',
-                'before_title' => '<h3 class="widget-title">',
-                'after_title' => '</h3>',
+                'before_title' => '<h2>',
+                'after_title' => '</h2>',
         ) );
 
         // Sliderbereich
@@ -444,7 +444,7 @@ function piratenkleider_widgets_init() {
                         der Kategorie "pm" gezeigt. ', 'twentyten' ),
                 'before_widget' => '<div class="widget">',
                 'after_widget' => '</div>',
-                'before_title' => '<h3 class="widget-title">',
+                'before_title' => '<h3>',
                 'after_title' => '</h3>',
         ) );
         // Startseite: Rechts  unterhalb der 3 Artikel, per default Anzeige
@@ -473,8 +473,8 @@ function piratenkleider_widgets_init() {
                    Wenn leer, wird hier nichts angezeigt.', 'twentyten' ),
                 'before_widget' => '<div class="widget">',
                 'after_widget' => '</div>',
-                'before_title' => '<h3 class="widget-title">',
-                'after_title' => '</h3>',
+                'before_title' => '<h2>',
+                'after_title' => '</h2>',
         ) );
 
         // Rechte Seite der Fußzeile
@@ -486,8 +486,8 @@ function piratenkleider_widgets_init() {
                     die Blogadresse und dessen RSS-Feedadresse gezeigt', 'twentyten' ),
                 'before_widget' => '<div class="widget">',
                 'after_widget' => '</div>',
-                'before_title' => '<h3 class="widget-title">',
-                'after_title' => '</h3>',
+                'before_title' => '<h2>',
+                'after_title' => '</h2>',
         ) );
 
 }

@@ -4,7 +4,8 @@
             <?php dynamic_sidebar( 'first-footer-widget-area' ); ?>
         <?php } else { ?>
             
-        <h3>Piratenpartei Deutschland <span style="display: inline; float: right; font-size: 0.8em;"><a href="http://www.piratenpartei.de">www.piratenpartei.de</a></span></h3>
+        <h2>Piratenpartei Deutschland</h2>
+        <p class="titelurl"><a href="http://www.piratenpartei.de">www.piratenpartei.de</a></p>
             <ul>
                 <li><a href="http://www.piratenpartei-bw.de/">Baden-Württemberg</a></li>   
                 <li><a href="http://www.piratenpartei-bayern.de/">Bayern</a></li>   
