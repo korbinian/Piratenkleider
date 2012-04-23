@@ -20,6 +20,8 @@ $defaultoptions = array(
     'src-jquery'    => get_bloginfo('template_url'). "/js/jquery.min.js",
     'src-layoutjs'    => get_bloginfo('template_url'). "/js/layout.js",
     'src-yaml-focusfix' => get_bloginfo('template_url'). "/yaml/core/js/yaml-focusfix.js",
+    'src-default-symbolbild-big'    => get_template_directory_uri() .'/images/default-vorlage.png',
+    'src-default-symbolbild'    => get_template_directory_uri() .'/images/default-vorlage-705x150.png',
     'slider-aktiv'  => 1,
     'aktiv-defaultseitenbild'    => 0,
     'slider-defaultwerbeplakate'    => 1,
@@ -37,6 +39,7 @@ $defaultoptions = array(
     'url-newsletteranmeldung'   => 'https://service.piratenpartei.de/subscribe/newsletter',
     'url-mitgliedwerden'        => 'https://www.piratenpartei.de/mitmachen/mitglied-werden/',
     'url-spenden'               => 'https://www.piratenpartei.de/mitmachen/spenden/',
+    
 );
 /**
  * Liste der Defaultbilder fuer Seiten und Slider
