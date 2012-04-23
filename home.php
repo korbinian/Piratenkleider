@@ -53,7 +53,7 @@
         <?php 
             the_content_rss('', FALSE, '', 80); 
           ?>
-          <a href="<?php the_permalink() ?>"><strong><?php the_title(); ?></strong> weiterlesen</a>
+          <a title="Zum Artikel <?php the_title(); ?>" href="<?php the_permalink() ?>">Weiterlesen  <span class="meta-nav">&rarr;</span></a>
         </div>
       </div>
 
