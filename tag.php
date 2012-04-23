@@ -1,5 +1,7 @@
 <?php get_header();    
   $options = get_option( 'piratenkleider_theme_options' );  
+   if (!isset($options['src-default-symbolbild'])) 
+            $options['src-default-symbolbild'] = $defaultoptions['src-default-symbolbild'];
 ?> 
 <div class="section content">
   <div class="row">
@@ -9,7 +11,7 @@
           
           <?php if ($options['aktiv-platzhalterbilder-indexseiten']) { ?>         
           <div class="symbolbild"> 
-              <img src="<?php echo get_bloginfo('template_url'); ?>/images/default-kategorien.jpg" alt="" > 
+              <img src="<?php echo $options['src-default-symbolbild']?>" alt="" >  
            </div>                                 
           <?php } ?>                  
       </div>
