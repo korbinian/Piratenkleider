@@ -1731,18 +1731,15 @@ div.ics-calendar-holder .ics-calendar-event {
   .header .branding {
     padding-top: 40px;
     padding-bottom: 0px;
-    height: 125px;
+    height: 180px;
     
   }
-  .header .newsletter {
-    
+  .header .newsletter {    
     width: 340px;
     margin: 0; 
     position: absolute;
     bottom: 0px;
-    right: 5%;
-    
-    
+    right: 5%;        
   }
  .header .newsletter .skin {
       -moz-border-radius-topleft: 3px;
