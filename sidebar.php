@@ -4,9 +4,31 @@
   if (!isset($options['slider-defaultwerbeplakate'])) 
        $options['slider-defaultwerbeplakate'] = $defaultoptions['slider-defaultwerbeplakate'];
   
+    if ( $options['newsletter'] == "1" ){
+     ?>            
+
+        <h2>Newsletter</h2>
+        <div class="newsletter">
+            
+                        <form method="post" action="<?php echo $options['url-newsletteranmeldung']; ?>">						
+                                <label for="email-newsletter">Zum Newsletter anmelden:</label>
+                                <input type="text" name="email-newsletter" id="email-newsletter" placeholder="E-Mail">
+                                <input type="submit" name="email-button" value="abonnieren" id="newslettersubmit">
+                                <p>Hinweis: Beim Aufruf wird der Webauftritt verlassen.
+                                </p>
+                        </form>           
+        </div>
+    <?php }
+
+    
   if ( is_active_sidebar( 'sidebar-widget-area' ) )  {
             dynamic_sidebar( 'sidebar-widget-area' );     
    }    
+   
+
+  
+
+
    if ( $options['slider-defaultwerbeplakate'] == "1" ) {
     ?>
      <hr>
@@ -44,15 +66,10 @@
           dynamic_sidebar( 'sidebar-widget-area-afterplakate' );     
    }    
  if ( $options['feed_twitter'] != "" ){ ?>
-        <script type="text/javascript">
-        /* <![CDATA[ */
-        var twitter_name = "<?php echo $options['feed_twitter']; ?>";
-        var twitter_count = <?php echo $options['feed_twitter_numberarticle']; ?>;
-        /* ]]> */
-        </script>
-        <div class="no-js twitterwidget">
+       
+        <div class="twitterwidget">
              <hr>
                 <h2><a href="https://twitter.com/#!/<?php echo $options['feed_twitter']; ?>">twitter.com/<?php echo $options['feed_twitter']; ?></a></h2>
-                <ul id="tweet_container"></ul>
+                <ul id="tweet_container"></ul>                                                              
         </div>
 <?php }?>

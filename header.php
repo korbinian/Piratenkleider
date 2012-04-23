@@ -119,20 +119,7 @@ if (isset( $options['meta-keywords'] ) ) { ?>
                                 <?php  } ?>
                                                                      
 			</div>
-                     <?php 
-                       if ( $options['newsletter'] == "1" ){
-                     ?>               
 
-			<div class="newsletter">
-				<div class="skin">
-					<form method="post" action="<?php echo $options['url-newsletteranmeldung']; ?>">						
-                                                <label for="email-newsletter">Zum Newsletter anmelden (verlässt den Webauftritt):</label>
-						<input type="text" name="email-newsletter" id="email-newsletter" placeholder="E-Mail">
-                                                <input type="submit" name="email-button" value="abonnieren" id="newslettersubmit">
-					</form>
-				</div>
-			</div>
-                    <?php }?>
                     <?php if ( $options['defaultwerbesticker'] == "1" ){ ?>
 			<div class="sticker">
                             <div class="skin">   

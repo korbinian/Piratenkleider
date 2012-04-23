@@ -52,8 +52,15 @@
     /* ]]> */
     </script> 
     <?php } ?>
-    <?php if ( $options['feed_twitter'] != "" ){ ?> 
+    <?php if ( $options['feed_twitter'] != "" ){ ?>     
+     <script type="text/javascript">
+        /* <![CDATA[ */
+        var twitter_name = "<?php echo $options['feed_twitter']; ?>";
+        var twitter_count = <?php echo $options['feed_twitter_numberarticle']; ?>;
+        /* ]]> */
+        </script>
     <script src="<?php echo get_bloginfo('template_url'); ?>/js/twitter.js"></script>
+    
     <?php } ?>
 </body>
 </html>
