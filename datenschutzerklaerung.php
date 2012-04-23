@@ -3,14 +3,18 @@
  Template Name: Datenschutzerklaerung
  */
 ?>
-<?php get_header(); ?>
+<?php get_header();
+        if (!isset($options['src-default-symbolbild'])) 
+            $options['src-default-symbolbild'] = $defaultoptions['src-default-symbolbild'];?>
 
 <div class="section content">
   <div class="row">
     <div class="content-primary">
       <div class="content-header">
         <h1 id="page-title"><span>Datenschutzerklärung</span></h1>
-        <img src="<?php echo get_bloginfo('template_url'); ?>/images/defaultbild-datenschutz.jpg" width="640" height="240" alt="">       
+         <div class="symbolbild"> 
+              <img src="<?php echo $options['src-default-symbolbild']?>" alt="" >
+           </div>      
       </div>
       <div class="skin">
 
