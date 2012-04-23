@@ -830,7 +830,20 @@ ul.socialmedia li a:focus img  {
   padding: 10px 20px;
   text-align: right; 
 }
-
+.content .symbolbild .aaarh {
+     background: transparent;
+     color: black;
+     font-family: "BebasNeueRegular", Helvetica, Arial, sans-serif;
+     text-transform: uppercase;
+     position: absolute;
+     font-size: 2em;
+    left: 350px;
+    line-height: 1.3em;
+    position: absolute;
+    text-transform: uppercase;
+    top: 40px;
+    width: 250px;
+}
 .content .symbolbild h2 {
     margin-bottom: 0; 
 }
@@ -941,8 +954,14 @@ ul.socialmedia li a:focus img  {
   height: 150px; 
   overflow: hidden;
 }
+.content-header-big {
+  position: relative;
+  height: 240px; 
+  overflow: hidden;
+}
   .content-header #page-title,
-  .content-header h1 {
+  .content-header h1,
+  .content-header-big h1  {
     position: absolute;
     left: 15px;
     top: 1.5em;
@@ -979,6 +998,7 @@ ul.socialmedia li a:focus img  {
 }
  .content-aside .newsletter form input[type="text"] {
       max-width: 15em;
+      width: 150px;  
  }
  .content-aside .newsletter p {
      margin: 5px;
@@ -1433,14 +1453,20 @@ ul.socialmedia li a:focus img  {
   background: black url("../assets/bg-tags_gray.jpg") -20% top fixed;
   overflow: hidden; 
 }
- .footer .row {
+.footer .row {
     background: rgba(0, 0, 0, 0.2);
-    color: #eeeeee; }
-  .footer ul li {
+    color: #eeeeee;
+}
+
+.footer ul li {
+   margin-bottom: 0; 
+   text-wrap: none;
+   text-height: 1em;
+   float: left; 
+ }
+ .footer .second-footer-widget-area .widget {
     margin-bottom: 0; 
-  }
-  .footer .second-footer-widget-area .widget {
-    margin-bottom: 0; }
+ }
 
 .footer .skin {
   overflow: hidden; 
@@ -1461,9 +1487,6 @@ ul.socialmedia li a:focus img  {
   -webkit-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out; }
 
-.footer ul li {
-  float: left; 
-}
    
  .footer .titelurl a {
      margin: 0 1em 1em 0em;
