@@ -70,17 +70,7 @@ if (isset( $options['meta-keywords'] ) ) { ?>
                                 <h1><img src="<?php header_image(); ?>" alt="<?php bloginfo( 'name' ); ?>"></h1>
                             <?php if ( ! is_home() ) { ?> </a>  <?php } ?> 
 			</div>
-                      <?php if ( $options['defaultwerbesticker'] == "1" ){ ?>
-			<div class="sticker">
-                            <div class="skin">   
-                               <h2 class="skip">Sticker</h2>
-                               <ul>
-                                   <li><a class="member" href="<?php echo $options['url-mitgliedwerden']; ?>"><img src="<?php echo get_bloginfo('template_url'); ?>/images/werde-pirat.png" width="88" height="56" alt="Werde Pirat!"></a></li>
-                                   <li><a class="spenden" href="<?php echo $options['url-spenden']; ?>"><img src="<?php echo get_bloginfo('template_url'); ?>/images/spenden.png" width="104" height="68" alt="Unterstütze uns mit deiner Spende!"></a></li>                                  
-                               </ul>                      
-                            </div>                                     
-			</div>
-                        <?php   } ?>
+                      
 			<div class="nav-top" role="navigation">
 				<?php get_search_form(); ?>
                             
@@ -111,20 +101,7 @@ if (isset( $options['meta-keywords'] ) ) { ?>
 				</ul>
                                  <?php }?>
 			</div>
-                    <?php 
-                       if ( $options['newsletter'] == "1" ){
-                     ?>               
-
-			<div class="newsletter">
-				<div class="skin">
-					<form method="post" action="<?php echo $options['url-newsletteranmeldung']; ?>">						
-                                                <label for="email-newsletter">Zum Newsletter anmelden (verlässt den Webauftritt):</label>
-						<input type="text" name="email-newsletter" id="email-newsletter" placeholder="E-Mail">
-                                                <input type="submit" name="email-button" value="abonnieren" id="newslettersubmit">
-					</form>
-				</div>
-			</div>
-                    <?php }?>
+                   
 			<div class="nav-main" role="navigation" id="nav">
 				<h2 class="skip">Navigation</h2>
 				<?php 
@@ -142,6 +119,31 @@ if (isset( $options['meta-keywords'] ) ) { ?>
                                 <?php  } ?>
                                                                      
 			</div>
+                     <?php 
+                       if ( $options['newsletter'] == "1" ){
+                     ?>               
+
+			<div class="newsletter">
+				<div class="skin">
+					<form method="post" action="<?php echo $options['url-newsletteranmeldung']; ?>">						
+                                                <label for="email-newsletter">Zum Newsletter anmelden (verlässt den Webauftritt):</label>
+						<input type="text" name="email-newsletter" id="email-newsletter" placeholder="E-Mail">
+                                                <input type="submit" name="email-button" value="abonnieren" id="newslettersubmit">
+					</form>
+				</div>
+			</div>
+                    <?php }?>
+                    <?php if ( $options['defaultwerbesticker'] == "1" ){ ?>
+			<div class="sticker">
+                            <div class="skin">   
+                               <h2 class="skip">Sticker</h2>
+                               <ul>
+                                   <li><a class="member" href="<?php echo $options['url-mitgliedwerden']; ?>"><img src="<?php echo get_bloginfo('template_url'); ?>/images/werde-pirat.png" width="88" height="56" alt="Werde Pirat!"></a></li>
+                                   <li><a class="spenden" href="<?php echo $options['url-spenden']; ?>"><img src="<?php echo get_bloginfo('template_url'); ?>/images/spenden.png" width="104" height="68" alt="Unterstütze uns mit deiner Spende!"></a></li>                                  
+                               </ul>                      
+                            </div>                                     
+			</div>
+                    <?php   } ?>
 		</div>
 	</div>
 
