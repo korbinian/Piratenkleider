@@ -116,7 +116,7 @@ BEREICHE/WIDGETS
    dessen RSS-Feedadresse gezeigt
 
 
-THEME-OPTION "Piratenkleider pimpen"
+THEME-OPTION "Takelage einstellen"
  
   Unter der Option "Piratenkleider pimpen" sind die grundlegenden
   Optionen für das Theme einstellbar:
@@ -133,7 +133,7 @@ THEME-OPTION "Piratenkleider pimpen"
 
  
 
-THEME-OPTION "Defaultbilder"
+THEME-OPTION "Segel setzen"
    
    Unter dieser Option lassen sich die Ersatzbilder festlegen, die angezeigt
    werden, wenn  Artikel oder  Seiten kein "Artikelbild" besitzen.
