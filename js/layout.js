@@ -26,10 +26,12 @@ $(window).load(function () {
  */
 
 
+/* $(document).focus(function() { */
 
-$(document).focus(function() {
+$(document).on("focusin", function() { 
     var menuLayers = 5; //Anzahl der Menue-Ebenen
     var links = document.getElementById('nav').getElementsByTagName('a');
+
     for (var i = 0; i < links.length; i++) {   
         links[i].onfocus = function(){ 
                     var e = this;
