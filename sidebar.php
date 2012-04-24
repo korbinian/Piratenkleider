@@ -7,9 +7,9 @@
     if ( $options['newsletter'] == "1" ){
      ?>            
 
-        <h2>Newsletter</h2>
+       
         <div class="newsletter">
-            
+             <h2>Newsletter</h2>
                         <form method="post" action="<?php echo $options['url-newsletteranmeldung']; ?>">						
                                 <label for="email-newsletter">Zum Newsletter anmelden:</label>
                                 <input type="text" name="email-newsletter" id="email-newsletter" value="E-Mail-Adresse eingeben" placeholder="E-Mail"

@@ -30,7 +30,6 @@
 	/* (en) Hide unneeded container of the screenlayout in print layout */
 	/* (de) Für den Druck nicht benötigte Container des Layouts abschalten */
 	nav,
-        .flexslider,
 	.ym-searchform {
 		display:none;
 	}
@@ -57,14 +56,55 @@
 
 	/*------------------------------------------------------------------------------------------------------*/
 
-	/* (en) optional URL output of hyperlinks in print layout */
-	/* (de) optionale Ausgabe der URLs von Hyperlinks */
-	/*
-	a[href]:after {
+
+	.content a[href]:after {
 		content:" <URL:"attr(href)">";
 		color:#444;
 		background:inherit;
 		font-style:italic;
 	}
-	*/
+	.post-info a[href]:after,
+        .post-meta a[href]:after,
+        .post-comments a[href]:after,
+        .content .content-aside a[href]:after        {
+		content:"";
+	}
+        .teaser,
+        .newsletter,
+        .nav-top,
+        .nav-main, 
+        .flexslider,
+        .sticker, 
+        #respond {
+            display: none;
+        }
+        .header {
+            height: auto;
+            background: #eee;
+            width: 100%;
+            border-bottom: 1px solid #000;
+                    margin: 0;
+            padding: 0;
+        }
+        .header .branding {
+            margin: 0;
+            padding: 0;
+        }
+        .header .branding img {            
+            
+        }
+    
+        .header .branding  img:after{content: attr(alt);}
+
+         .post-comments ol li .reply {
+        display: none;
+            }
+            
+          #footer  { 
+                color: #999; 
+                text-align: center; 
+                font-size: 10pt;                 
+                width: 5in; border-top: 1px solid #CCC; 
+                margin: .5in 1in; 
+          }
 }
