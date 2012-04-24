@@ -1722,7 +1722,7 @@ div.ics-calendar-holder .ics-calendar-event {
   }        
         
   .nav-top form.searchform {
-      float: right !important;
+      float: right;
       width: 200px;
       height: 30px;     
       padding: 3px 5px 0 5px; 

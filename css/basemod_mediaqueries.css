@@ -43,20 +43,72 @@
 
 
 
-@media only screen and (max-width: 479px) {
+@media only screen and (max-width: 600px) {
+    .header {
+        display: block;
+        height: auto;
+        padding: 0;
+        width: 100%;
+    }
+    .header .branding {
+        display: block;
+        width: 100%;    
+        margin: 0;
+        height: auto;
+    }
+
   .logo {
-    width: 100%;
+        width: 100%;
+        top: 0;
   }
    .logo img {
       margin: 0 auto;
       display: block;
+      height: 100px;
+      width: auto;
     }
     
     .sticker {
         display: none;
-    }  
+    }      
+    .teaser {
+        display: none;        
+    }
+    .nav-top {        
+        display: block;
+        width: 100%;   
+         position: relative;
+    }
     
-
+    .nav-top form.searchform {
+        float: none;
+        display: block;     
+    }
+    .nav-top div.menu-header {
+        float: none;
+        display: block;
+        width: 100%;   
+         position: relative;
+    }
+    .header ul.socialmedia {
+        display: block;
+        position: relative;
+        clear: both;
+        overflow: visible;
+        float: none;
+       
+    }
+    .nav-main {
+        display: block;
+        width: 100%;   
+        position: relative;     
+        max-width: 100%;
+        margin: 0;
+        padding: 0;
+    }
+    .nav-main ul.menu {
+        float: none;
+    }
     
  .skiplinks li {
     list-style: none;
@@ -95,7 +147,7 @@
     background-image: linear-gradient(top, #2d7dc5, #24639b); 
     
  }
-  .skiplinks li a:focus, 
+ .skiplinks li a:focus, 
  .skiplinks li a:hover {
       background: #24639b;
         color: black; }
@@ -106,14 +158,49 @@
         overflow: hidden;
    }   
    
-
-  .nav-top ul.menu li a, 
-  .nav-main ul.menu li a {
-    padding: 5px 18px;
+   .nav-top ul.menu li a {
+       padding: 5px 18px;
     margin-bottom: 2px;
     overflow: visible;
     position: relative;
     background: #2d7dc5;
+    color: white !important;
+    border: 1px solid #C96A00;
+    -moz-box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.5);
+    -webkit-box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.5);
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.5);
+    border-radius: 2px;
+    -moz-border-radius: 2px;
+    -webkit-border-radius: 2px;
+    text-shadow: 0 -1px 0 #C96A00;
+    background-color: #ff8800;
+       
+   }
+    .nav-top ul.menu li a:hover {
+      background: #24639b;
+    }
+    .nav-main {
+        width: 100%;
+        margin: 0;
+        float: none;
+        clear: both;
+    }
+  .nav-main ul.menu li a {
+      position: absolute;
+      float: none;
+      display: block;
+        position: static;
+        width: 100%;
+        display: block;
+        border: 0px solid;
+        background: #2d7dc5;
+        color: white;
+        outline: 0px;
+        text-align: center;
+       padding: 5px 18px;
+    margin-bottom: 2px;
+    
+    background: #2d7dc5; 
     color: white !important;
     border: 1px solid #2d7dc5;
     text-shadow: 0 -1px 1px rgba(0, 0, 0, 0.1);
@@ -131,12 +218,93 @@
     background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #2d7dc5), color-stop(1, #24639b));
     background-image: linear-gradient(top, #2d7dc5, #24639b);
   }
-  .nav-top ul.menu li a:hover, 
-  .nav-main ul.menu li a:hover {
-      background: #24639b;
-    }
 
+  .nav-main ul.menu li a:hover {
+      background: #4e96d7;
+    }
+ .nav-main ul.menu li a:focus, 
+ .nav-main ul.menu li a:hover {
+      background: #24639b;
+        color: black; 
+ }        
+        
   .nav-main {
     margin-bottom: 20px; 
+  }
+  .nav-main ul li {
+      float: none;
+      width: 100%;
+      
+  }
+  .nav-main ul li ul {
+      display: none;
+  }    
+  .content-primary {
+      width: 100%;
+      float: none;
+      min-height: 0;          
+  }
+   .content-aside {
+      width: 100%;
+      float: none;
+      min-height: 0;          
   } 
+  .content-primary .columns {
+      float: none;
+      clear: both;
+  }
+  .content-primary .columns .column0,
+    .content-primary .columns .column1,
+    .content-primary .columns .column2 {
+    float: none;
+    width: 100%;
+    display: block;
+    clear: both;
+  }
+    .content-primary .first-startpage-widget-area,
+    .content-primary .second-startpage-widget-area {
+    clear: both;
+    float: none;
+    padding-top: 10px;
+    width: 100%;
+    display: block;
+   }
+   .content-aside .flexslider {
+    display: none;
+   }
+   
+    .post-comments {
+     background: url("../assets/bg-tags.png") repeat fixed -20% top #FF8800;
+     padding: 3px;
+     margin: 10px 0px;
+  }
+  .post-comments a {
+      color: black;
+  }
+  .post-comments ol li {
+      border: 2px solid rgba(0, 0, 0, 0.2);
+  }
+   .post-comments ol li .comment-details {
+    color: #222222;
+    float: none;
+    width: auto;
+    font-size: 1em;
+    font-weight: bold;
+    padding-right: 2%;
+    text-align: left;
+   
+      background: none repeat scroll 0 0 rgba(0, 0, 0, 0.2);
+ }
+ .post-comments ol li .comment-body {
+    float: none;
+    width: auto;
+    background: #FFA500;
+ }
+ .post-comments ol li .reply {
+     display: none;
+ }
+ 
+
+
+ 
 }
