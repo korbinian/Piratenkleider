@@ -958,10 +958,41 @@ function theme_kontaktinfos_do_page() {
 				<input id="piratenkleider_theme_kontaktinfos[kontaktemail]" class="regular-text" type="text" length="5" name="piratenkleider_theme_kontaktinfos[kontaktemail]" value="<?php esc_attr_e( $options['kontaktemail'] ); ?>" />
 				<label class="description" for="piratenkleider_theme_kontaktinfos[kontaktemail]">
                                     Feste Mailadresse für offizielle Kontakte. 
-                                    <br>Zum Beispiel: <?php echo bloginfo('admin_email'); ?></code>
+                                    <br>Zum Beispiel: <code><?php echo bloginfo('admin_email'); ?></code>
                                 </label>
 			</td>
 		       </tr>
+                       
+                       <tr valign="top"><th scope="row">Datenschutzbeauftragter</th>
+			<td>
+				<p>Optionale Angaben zu einem Datenschutzbeauftragten. Wenn dieser nicht angegeben wird,
+                                wird die E-Mail-Adresse des Bundesdatenschutzbeauftragten angegeben.</p>
+                                 <table>                                
+
+                            <tr valign="top"><th scope="row">Name</th>
+                                <td>
+                                    <input id="piratenkleider_kontaktinfos[dsbperson]" class="regular-text" type="text" name="piratenkleider_kontaktinfos[dsbperson]" value="<?php esc_attr_e( $options['dsbperson'] ); ?>" />
+                                    <label class="description" for="piratenkleider_kontaktinfos[dsbperson]">
+                                        Name des DSB<br>
+                                        Zum Beispiel: <code>Martin Mustermann</code>
+                                    </label>
+                                </td>					
+                            </tr>
+                             <tr><th scope="row">E-Mailadresse</th>
+                            <td>
+				<input id="piratenkleider_theme_kontaktinfos[dsbemail]" class="regular-text" type="text" length="5" name="piratenkleider_theme_kontaktinfos[dsbemail]" value="<?php esc_attr_e( $options['dsbemail'] ); ?>" />
+				<label class="description" for="piratenkleider_theme_kontaktinfos[dsbemail]">
+                                    Feste Mailadresse für offizielle Kontakte. 
+                                    <br>Zum Beispiel:  <code>bundesbeauftragter@piraten-dsb.de</code>
+                                </label>
+			</td>
+                          </tr>
+                            
+                        </table>  
+			</td>
+		       </tr>
+                       
+                       
                     </table>
 
             <p class="submit">
@@ -980,17 +1011,18 @@ function theme_kontaktinfos_do_page() {
 function theme_kontaktinfos_validate( $input ) {
 	global $defaultbilder_liste;
 
-	
-        $input['slider-alternativesrc'] = wp_filter_nohtml_kses( $input['slider-alternativesrc'] );            
-        $input['slider-defaultbildsrc'] = wp_filter_nohtml_kses( $input['slider-defaultbildsrc'] );       
-        if ($input['slider-alternativesrc'] != '') {            
-            $input['slider-defaultbildsrc'] = $input['slider-alternativesrc'];
-        }
-        $input['seiten-alternativesrc'] = wp_filter_nohtml_kses( $input['seiten-alternativesrc'] );            
-        $input['seiten-defaultbildsrc'] = wp_filter_nohtml_kses( $input['seiten-defaultbildsrc'] );       
-        if ($input['seiten-alternativesrc'] != '') {            
-            $input['seiten-defaultbildsrc'] = $input['seiten-alternativesrc'];
-        }
-        $input['plakate-altadressen'] = wp_filter_post_kses( $input['plakate-altadressen'] );
+        $input['posttitel'] = wp_kses_normalize_entities( $input['posttitel'] );   
+        $input['postperson'] = wp_kses_normalize_entities( $input['postperson'] );   
+	$input['postsstrasse'] = wp_kses_normalize_entities( $input['poststrasse'] );   
+        $input['poststadt'] = wp_kses_normalize_entities( $input['poststadt'] );  
+        
+        $input['ladungtitel'] = wp_kses_normalize_entities( $input['ladungtitel'] );   
+        $input['ladungperson'] = wp_kses_normalize_entities( $input['ladungperson'] );   
+	$input['ladungstrasse'] = wp_kses_normalize_entities( $input['ladungstrasse'] );   
+        $input['ladungstadt'] = wp_kses_normalize_entities( $input['ladungstadt'] );      
+        
+        $input['kontaktemail'] = sanitize_email( $input['kontaktemail'] ); 
+        $input['dsbemail'] = sanitize_email( $input['dsbemail'] ); 
+        $input['dsbperson'] = wp_kses_normalize_entities( $input['dsbperson'] );   
 	return $input;
 }
