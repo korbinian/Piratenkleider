@@ -9,6 +9,7 @@ add_action( 'admin_menu', 'theme_options_add_page' );
 function theme_options_init(){
 	register_setting( 'piratenkleider_options', 'piratenkleider_theme_options', 'theme_options_validate' );
         register_setting( 'piratenkleider_defaultbilder', 'piratenkleider_theme_defaultbilder', 'theme_defaultbilder_validate' );
+        register_setting( 'piratenkleider_kontaktinfos', 'piratenkleider_theme_kontaktinfos', 'theme_kontaktinfos_validate' );
 }
 
 /**
@@ -17,6 +18,8 @@ function theme_options_init(){
 function theme_options_add_page() {
 	add_theme_page( __( 'Takelage einstellen', 'piratenkleider' ), __( 'Takelage einstellen', 'piratenkleider' ), 'edit_theme_options', 'theme_options', 'theme_options_do_page' );
         add_theme_page( __( 'Segel setzen', 'piratenkleider' ), __( 'Segel setzen', 'piratenkleider' ), 'edit_theme_options', 'theme_defaultbilder', 'theme_defaultbilder_do_page' );
+        add_theme_page( __( 'Captn & Crew', 'piratenkleider' ), __( 'Captn & Crew', 'piratenkleider' ), 'edit_theme_options', 'theme_kontaktinfos', 'theme_kontaktinfos_do_page' );
+
 }
 
 
@@ -549,7 +552,7 @@ function theme_options_validate( $input ) {
 
 
 /**
- * Create the options page
+ * Defaultbilder Optionen
  */
 function theme_defaultbilder_do_page() {
    global $defaultbilder_liste;
@@ -780,4 +783,214 @@ function theme_defaultbilder_validate( $input ) {
         $input['plakate-altadressen'] = wp_filter_post_kses( $input['plakate-altadressen'] );
 	return $input;
 }
-// adapted from http://planetozh.com/blog/2009/05/handling-plugins-options-in-wordpress-28-with-register_setting/
+
+
+
+
+/**
+ * Defaultbilder Optionen
+ */
+function theme_kontaktinfos_do_page() {
+   
+	if ( ! isset( $_REQUEST['settings-updated'] ) )
+		$_REQUEST['settings-updated'] = false;
+
+	?>
+        <style>
+                label.description {
+                    display: block;
+                }
+                div.wrap {
+                    max-width: 1200px;
+                    margin: 20px 0 0 0;
+                    background-image: url(<?php echo get_bloginfo('template_url')?>/images/logo.png);
+                    background-position: top right;
+                    background-repeat: no-repeat;
+                    
+                }
+                div.piratenkleider-optionen {
+                    max-width: 1200px;
+                    margin: 0;
+                    padding-top: 20px;
+                    padding-bottom: 0px;
+                    background-image: url(<?php echo get_bloginfo('template_url')?>/images/schiff-welle.gif);
+                    background-position: bottom left;
+                    background-repeat: no-repeat;
+                }
+                p.submit {
+                    margin-top: 100px;
+                    padding-left: 20px;
+                }
+                .wrap div.updated {
+                    margin-right: 300px;                    
+                }
+                label.tile {
+                    width: 320px;
+                    height: 150px;
+                    float: left;
+                    border: 1px solid #ccc;                    
+                    padding: 1px;
+                    margin: 5px;
+                }
+                label.tile:hover {
+                    background-color: #eee;
+                }
+                label.plakattile {
+                    width: 160px;
+                    height: 250px;
+                    float: left;
+                    border: 1px solid #ccc;                    
+                    padding: 1px;
+                    margin: 5px;
+                }
+                label.plakattile:hover {
+                    background-color: #eee;
+                }                
+            </style>
+	<div class="wrap">
+            
+            <div class="piratenkleider-optionen">  <!-- begin: .piratenkleider-optionen -->    
+		<?php screen_icon(); echo "<h2>" . get_current_theme() . __( ' Captn & Crew: Kontaktinformationen setzen ', 'piratenkleider' ) . "</h2>"; ?>
+
+		<?php if ( false !== $_REQUEST['settings-updated'] ) : ?>
+		<div class="updated fade"><p><strong><?php _e( 'Kontaktinformationen wurden gespeichert.', 'piratenkleider' ); ?></strong></p></div>
+		<?php endif; ?>
+
+		<form method="post" action="options.php">
+                    <?php settings_fields( 'piratenkleider_kontaktinfos' ); ?>
+                    <?php $options = get_option( 'piratenkleider_theme_kontaktinfos' ); 
+                        
+                        
+                    ?>
+                    <table class="form-table">
+                     
+                       <tr valign="top"><th scope="row">Offizielle Postanschrift</th>
+			<td>
+                            
+                        <table>                                
+                            <tr valign="top"><th scope="row">Name oder Titel</th>
+                                <td>
+                                    <input id="piratenkleider_kontaktinfos[posttitel]" class="regular-text" type="text" name="piratenkleider_kontaktinfos[posttitel]" value="<?php esc_attr_e( $options['posttitel'] ); ?>" />
+                                    <label class="description" for="piratenkleider_kontaktinfos[posttitel]">
+                                        Anschrift: Titel (1. Zeile). <br>
+                                        Zum Beispiel: <code>Piratenpartei</code>
+                                    </label>
+                                </td>					
+                            </tr>
+                            <tr valign="top"><th scope="row">zu Händen</th>
+                                <td>
+                                    <input id="piratenkleider_kontaktinfos[postperson]" class="regular-text" type="text" name="piratenkleider_kontaktinfos[postperson]" value="<?php esc_attr_e( $options['postperson'] ); ?>" />
+                                    <label class="description" for="piratenkleider_kontaktinfos[postperson]">
+                                        Anschrift: Optionale Personenangabe ("zu Händen") <br>
+                                        Zum Beispiel: <code>Martin Mustermann</code>
+                                    </label>
+                                </td>					
+                            </tr>
+                             <tr valign="top"><th scope="row">Strasse oder Postfach</th>
+                                <td>
+                                    <input id="piratenkleider_kontaktinfos[poststrasse]" class="regular-text" type="text" name="piratenkleider_kontaktinfos[poststrasse]" value="<?php esc_attr_e( $options['poststrasse'] ); ?>" />
+                                    <label class="description" for="piratenkleider_kontaktinfos[poststrasse]">
+                                        Anschrift: Strassenname und Nummer oder Postfachangabe oder freilassen <br>
+                                        Zum Beispiel: <code>Unbesonnenheitsweg 123b</code>
+                                    </label>
+                                </td>					
+                            </tr>
+                            <tr valign="top"><th scope="row">PLZ und Stadt</th>
+                                <td>
+                                    <input id="piratenkleider_kontaktinfos[poststadt]" class="regular-text" type="text" name="piratenkleider_kontaktinfos[poststadt]" value="<?php esc_attr_e( $options['poststadt'] ); ?>" />
+                                    <label class="description" for="piratenkleider_kontaktinfos[poststadt]">
+                                        Anschrift: Postleitzahl gefolgt von Stadt<br>
+                                        Zum Beispiel: <code>12345  Ankh-Morpork</code>
+                                    </label>
+                                </td>					
+                            </tr>
+                        </table>  	
+                            
+                            
+			</td>
+		       </tr>
+                       <tr valign="top"><th scope="row">Ladungsfähige Anschrift</th>
+			<td>
+				<p>Optionale Angaben für Rechtssachen. Werden diese Angaben frei gelassen, werden die
+                                    Daten der Postanschrift verwendet.</p>
+                                 <table>                                
+                            <tr valign="top"><th scope="row">Name oder Titel</th>
+                                <td>
+                                    <input id="piratenkleider_kontaktinfos[ladungtitel]" class="regular-text" type="text" name="piratenkleider_kontaktinfos[ladungtitel]" value="<?php esc_attr_e( $options['ladungtitel'] ); ?>" />
+                                    <label class="description" for="piratenkleider_kontaktinfos[ladungtitel]">
+                                        Anschrift: Titel (1. Zeile). <br>
+                                        Zum Beispiel: <code>Piratenpartei</code>
+                                    </label>
+                                </td>					
+                            </tr>
+                            <tr valign="top"><th scope="row">zu Händen</th>
+                                <td>
+                                    <input id="piratenkleider_kontaktinfos[ladungperson]" class="regular-text" type="text" name="piratenkleider_kontaktinfos[ladungperson]" value="<?php esc_attr_e( $options['ladungperson'] ); ?>" />
+                                    <label class="description" for="piratenkleider_kontaktinfos[ladungperson]">
+                                        Anschrift: Optionale Personenangabe ("zu Händen") <br>
+                                        Zum Beispiel: <code>Martin Mustermann</code>
+                                    </label>
+                                </td>					
+                            </tr>
+                             <tr valign="top"><th scope="row">Strasse oder Postfach</th>
+                                <td>
+                                    <input id="piratenkleider_kontaktinfos[ladungstrasse]" class="regular-text" type="text" name="piratenkleider_kontaktinfos[ladungstrasse]" value="<?php esc_attr_e( $options['ladungstrasse'] ); ?>" />
+                                    <label class="description" for="piratenkleider_kontaktinfos[ladungstrasse]">
+                                        Anschrift: Strassenname und Nummer oder Postfachangabe oder freilassen <br>
+                                        Zum Beispiel: <code>Unbesonnenheitsweg 123b</code>
+                                    </label>
+                                </td>					
+                            </tr>
+                            <tr valign="top"><th scope="row">PLZ und Stadt</th>
+                                <td>
+                                    <input id="piratenkleider_kontaktinfos[ladungstadt]" class="regular-text" type="text" name="piratenkleider_kontaktinfos[ladungstadt]" value="<?php esc_attr_e( $options['ladungstadt'] ); ?>" />
+                                    <label class="description" for="piratenkleider_kontaktinfos[ladungstadt]">
+                                        Anschrift: Postleitzahl gefolgt von Stadt<br>
+                                        Zum Beispiel: <code>12345  Ankh-Morpork</code>
+                                    </label>
+                                </td>					
+                            </tr>
+                        </table>  
+			</td>
+		       </tr>
+                        <tr valign="top"><th scope="row">Offizielle E-Mailadresse</th>
+			<td>
+				<input id="piratenkleider_theme_kontaktinfos[kontaktemail]" class="regular-text" type="text" length="5" name="piratenkleider_theme_kontaktinfos[kontaktemail]" value="<?php esc_attr_e( $options['kontaktemail'] ); ?>" />
+				<label class="description" for="piratenkleider_theme_kontaktinfos[kontaktemail]">
+                                    Feste Mailadresse für offizielle Kontakte. 
+                                    <br>Zum Beispiel: <?php echo bloginfo('admin_email'); ?></code>
+                                </label>
+			</td>
+		       </tr>
+                    </table>
+
+            <p class="submit">
+                    <input type="submit" class="button-primary" value="<?php _e( 'Speichern', 'piratenkleider' ); ?>" />
+            </p>
+        </form>               
+	</div>
+            
+        </div> <!-- end: .piratenkleider-optionen -->      
+	<?php
+}
+
+/**
+ * Sanitize and validate input. Accepts an array, return a sanitized array.
+ */
+function theme_kontaktinfos_validate( $input ) {
+	global $defaultbilder_liste;
+
+	
+        $input['slider-alternativesrc'] = wp_filter_nohtml_kses( $input['slider-alternativesrc'] );            
+        $input['slider-defaultbildsrc'] = wp_filter_nohtml_kses( $input['slider-defaultbildsrc'] );       
+        if ($input['slider-alternativesrc'] != '') {            
+            $input['slider-defaultbildsrc'] = $input['slider-alternativesrc'];
+        }
+        $input['seiten-alternativesrc'] = wp_filter_nohtml_kses( $input['seiten-alternativesrc'] );            
+        $input['seiten-defaultbildsrc'] = wp_filter_nohtml_kses( $input['seiten-defaultbildsrc'] );       
+        if ($input['seiten-alternativesrc'] != '') {            
+            $input['seiten-defaultbildsrc'] = $input['seiten-alternativesrc'];
+        }
+        $input['plakate-altadressen'] = wp_filter_post_kses( $input['plakate-altadressen'] );
+	return $input;
+}
