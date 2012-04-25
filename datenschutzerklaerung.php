@@ -4,6 +4,8 @@
  */
 ?>
 <?php get_header();
+ $options = get_option( 'piratenkleider_theme_options' );  
+ $kontaktinfos = get_option( 'piratenkleider_theme_kontaktinfos' );  
         if (!isset($options['src-default-symbolbild'])) 
             $options['src-default-symbolbild'] = $defaultoptions['src-default-symbolbild'];?>
 
@@ -11,10 +13,12 @@
   <div class="row">
     <div class="content-primary">
       <div class="content-header">
-        <h1 id="page-title"><span>Datenschutzerklärung</span></h1>
-         <div class="symbolbild"> 
+        <h1 id="page-title"><span>Datenschutzerklärung</span></h1>   
+        <?php if ($options['aktiv-platzhalterbilder-indexseiten']) { ?>         
+            <div class="symbolbild"> 
               <img src="<?php echo $options['src-default-symbolbild']?>" alt="" >
-           </div>      
+           </div>                                 
+          <?php } ?> 
       </div>
       <div class="skin">
 
@@ -28,7 +32,7 @@
               und welche Art von Daten zu welchem Zweck erhoben werden.</p>
           
                
-              <h3>Datenverarbeitung auf dieser Internetseite</h3>
+              <h2>Datenverarbeitung auf dieser Internetseite</h2>
 <p>Von ihrem Computer werden verschiedene Daten an uns übermittelt, diese sind 
     je nach Browser- und Betriebssytemtyp, -version und -einstellung unterschiedlich. 
     Einige davon können sein:</p>
@@ -49,7 +53,7 @@ Privatpersonen herausgeben. In unserem Wiki können sie nachlesen, wie sie
 die <a href="http://wiki.piratenpartei.de/HowTo">Übermittlung aller in diesem 
     Absatz genannten Daten an uns und andere unterbinden</a> können.</p>
 
-<h3>Cookies</h3>
+<h2>Cookies</h2>
 <p>Die Internetseiten verwenden an mehreren Stellen sogenannte Cookies.
     Cookies sind kleine Textdateien, die auf Ihrem Rechner abgelegt werden 
     und die Ihr Browser speichert. Cookies richten auf Ihrem Rechner keinen 
@@ -67,7 +71,7 @@ eine Session bereitstellen zu können, so dass sie sehen können, ob im Forum
 neue Beiträge geschrieben wurden.<br />
 In ihren Browsereinstellungen können sie die Annahme von Cookies unterbinden.</p>
 
-<h3>Newsletter</h3>
+<h2>Newsletter</h2>
 <p>Wenn Sie die von uns angebotenen Mailinglisten empfangen möchten, benötigen 
     wir von Ihnen eine gültige E-Mail-Adresse. Weitere Daten werden nicht 
     erhoben. Wir geben ihre E-Mailaddresse niemals an Dritte weiter, Einsicht
@@ -76,21 +80,48 @@ In ihren Browsereinstellungen können sie die Annahme von Cookies unterbinden.</
     Sie jederzeit widerrufen. Wenn sie sich aus dem Verteiler austragen, wird 
     ihre E-Mail-Adresse gelöscht.</p>
 
-<h3>Auskunftsrecht</h3>
+<h2>Auskunftsrecht</h2>
 <p>Sie haben jederzeit das Recht auf Auskunft über die bezüglich Ihrer Person 
     gespeicherten Daten, deren Herkunft und Empfänger sowie den Zweck der 
     Speicherung. Auskunft über die gespeicherten Daten gibt Ihnen die 
     Piratenpartei Deutschland. Wenden Sie sich dazu bitte an
-    <a title="bundesbeauftragter@piraten-dsb.de" href="mailto:bundesbeauftragter@piraten-dsb.de">bundesbeauftragter@piraten-dsb.de</a>.</p>
+    <?php if (isset($kontaktinfos['dsbemail'])) {
+        echo '<a href="mailto:'.$kontaktinfos['dsbemail'].'">';
+        if (isset($kontaktinfos['dsbperson'])) {
+            echo 'den/die Datenschutzbeauftrage/n ';
+            echo $kontaktinfos['dsbperson'];
+        } else {
+            echo 'bundesbeauftragter@piraten-dsb.de';
+        }
+       echo '</a>.';
+    } else {
+        echo '<a href="mailto:bundesbeauftragter@piraten-dsb.de">bundesbeauftragter@piraten-dsb.de</a>.';
+    }
+    ?>
+    
+</p>
 
-<h3>Weitere Informationen</h3>
+<h2>Weitere Informationen</h2>
 <p>Ihr Vertrauen ist uns wichtig. Daher werden wir Ihnen jederzeit Rede und 
     Antwort bezüglich der Verarbeitung Ihrer personenbezogenen Daten stehen. 
     Wenn Sie Fragen haben, die Ihnen diese Datenschutzerklärung nicht 
     beantworten konnte oder wenn Sie zu einem Punkt vertiefte Informationen 
     wünschen, wenden Sie sich bitte jederzeit an die Piraten. Sie können ihre
-    Fragen und Anregungen im Forum oder unter 
-    <a title="bundesbeauftragter@piraten-dsb.de" href="mailto:bundesbeauftragter@piraten-dsb.de">bundesbeauftragter@piraten-dsb.de</a> stellen.</p>
+    Fragen und Anregungen im Forum oder an 
+    <?php if (isset($kontaktinfos['dsbemail'])) {
+        echo '<a href="mailto:'.$kontaktinfos['dsbemail'].'">';
+        if (isset($kontaktinfos['dsbperson'])) {
+            echo 'den/die Datenschutzbeauftrage/n ';
+            echo $kontaktinfos['dsbperson'];
+        } else {
+            echo 'bundesbeauftragter@piraten-dsb.de';
+        }
+       echo '</a>.';      
+    } else {
+        echo '<a href="mailto:bundesbeauftragter@piraten-dsb.de">bundesbeauftragter@piraten-dsb.de</a>.';
+    }
+    ?> 
+    stellen.</p>
                    
           
       </div>
@@ -99,7 +130,7 @@ In ihren Browsereinstellungen können sie die Annahme von Cookies unterbinden.</
     <div class="content-aside">
       <div class="skin">
 
-          
+        <h1 class="skip">Weitere Informationen</h1>   
         <?php 
        if ( has_nav_menu( 'primary' ) ) {
             wp_nav_menu( array( 'container_class' => 'menu-header', 'theme_location' => 'primary', 'walker'  => new My_Walker_Nav_Menu()) );      
@@ -110,12 +141,7 @@ In ihren Browsereinstellungen können sie die Annahme von Cookies unterbinden.</
           </ul>
            <?php 
          } 
-        $custom_fields = get_post_custom();
-        if ($custom_fields['right_column'][0]<>'') {
-            echo $custom_fields['right_column'][0]; 
-        }  
-         ?>
-         <?php get_sidebar(); ?>
+        get_sidebar(); ?>
       </div>
     </div>
   </div>
