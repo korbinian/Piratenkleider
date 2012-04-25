@@ -1,11 +1,11 @@
 /*
 Theme Name: Piratenkleider
 Theme URI: https://github.com/xwolfde/Piratenkleider
-Description: Allgemeines Theme für Webauftritte der Piratenpartei
+Description: Allgemeines Theme für Webauftritte der Piratenpartei Deutschland
 Author: Wolfgang Wiese (xwolf)
 Author URI: http://www.xwolf.de 
 Version: 2.0
-Tags: orange, two-columns, responsive, fluid-width
+Tags: orange, two-columns, responsive, fluid-width, party, politics, german
 License: CC-BY-SA 3.0 
 License URI: http://creativecommons.org/licenses/by-sa/3.0/de/deed.de
 */
@@ -18,6 +18,7 @@ License URI: http://creativecommons.org/licenses/by-sa/3.0/de/deed.de
 @import url(css/basemod_navigation.css);
 @import url(css/basemod_slider.css);
 @import url(css/basemod_mediaqueries.css);
+@import url(css/basemod_linkicons.css);
 
 /* import print layout | Druck-Layout einbinden */
 @import url(css/print.css);

@@ -621,7 +621,52 @@ ul.socialmedia li a:focus img  {
     transform: rotate(5deg) scale(1.3);
 }  
 
+.textsticker {
+    position: absolute;
+    right: 8%;
+    top: 70px;
+    margin: 0 auto;
+    width: 350px;
+  }
+  .textsticker ul li {
+    float: left;
+    text-align: center;
+    width: 100px;
 
+    font-weight: bold;
+    font-family: "BebasNeueRegular",Helvetica,Arial,sans-serif;
+    letter-spacing: 1px;
+    margin: 10px;
+  }
+   .textsticker ul li a {
+        color: #6A6A6A;
+        font-size: 2em;
+        line-height: 0.6em;
+        -moz-transform: rotate(-5deg);
+        -ms-transform: rotate(-5deg); 
+        -o-transform: rotate(-5deg);
+        transform: rotate(-5deg);
+        -moz-transition: all 0.15s ease-in-out; 
+        -o-transition: all 0.15s ease-in-out; 
+        -ms-transition: all 0.15s ease-in-out;
+        transition: all 0.15s ease-in-out;
+   }
+   .textsticker ul li a span {
+      color: #FE8E0E;
+      font-size: 1.3em;
+   }
+   .textsticker ul li a:hover,
+   .textsticker ul li a:focus{
+        -moz-transform: rotate(1deg) scale(1.2);
+        -ms-transform: rotate(1deg)  scale(1.2);
+        -o-transform: rotate(1deg) scale(1.2);
+        transform: rotate(1deg) scale(1.2);   
+   }
+   .textsticker ul li a:hover span,
+   .textsticker ul li a:focus span{
+      color: #2d7dc5;
+   
+   }
 
 
 .header .newsletter .skin {
@@ -1694,22 +1739,24 @@ div.ics-calendar-holder .ics-calendar-event {
     position: absolute;
     top: 0;
     right: 0;
-    width: 100%;
-    height: 30px; }
+    width: auto;
+    height: 30px; 
+  }
   
   .nav-top a {
       height: 30px;
       display: block; 
   }
   .nav-top ul.socialmedia {
-      float: right; 
+      float: left; 
   }
   .nav-top div.menu-header {
-      float: right;
+      float: left;
   }
 
   .nav-top div.menu-header ul.menu li {
-          float: left; }
+          float: left; 
+  }
   .nav-top div.menu-header ul.menu li a {
             line-height: 30px;
             padding: 0 10px;
@@ -1722,7 +1769,7 @@ div.ics-calendar-holder .ics-calendar-event {
   }        
         
   .nav-top form.searchform {
-      float: right;
+      float: left;
       width: 200px;
       height: 30px;     
       padding: 3px 5px 0 5px; 
@@ -1854,9 +1901,7 @@ div.ics-calendar-holder .ics-calendar-event {
  
   
 
-.ie6 .nav-top #s, 
-.ie7 .nav-top #s {
-  width: 90% !important; }
+
 .ie6 .nav-top .searchsubmit, 
 .ie7 .nav-top .searchsubmit {
   margin-top: -1px; }
@@ -1906,19 +1951,20 @@ div.ics-calendar-holder .ics-calendar-event {
   position: absolute;
   top: 0;
   right: 20px;
-  width: 100%;
-  height: 30px; }
+  width: auto;
+  height: 30px; 
+}
 .ie7 .nav-top a, 
 .ie8 .nav-top a {
     height: 30px;
     display: block; }
 .ie7 .nav-top ul.socialmedia, 
 .ie8 .nav-top ul.socialmedia {
-    float: right; 
+    float: left; 
 }
 .ie7 .nav-top div.menu-header, 
 .ie8 .nav-top div.menu-header {
-    float: right; }
+    float: left; }
 
 
 .ie7 .nav-top div.menu-header ul.menu, 
@@ -1937,21 +1983,22 @@ div.ics-calendar-holder .ics-calendar-event {
             color: #2d7dc5; }
 .ie7 .nav-top form.searchform, 
 .ie8 .nav-top form.searchform {
-    float: right !important;
+    float: left;
     width: 200px;
     height: 30px;
     padding: 3px 5px 0 5px; }
 .ie7 .nav-top form.searchform #s, 
 .ie8 .nav-top form.searchform #s {
       line-height: 18px;
-      width: 100%; }
+     }
 .ie7 .nav-top form.searchform .searchsubmit, 
 .ie8 .nav-top form.searchform .searchsubmit {
       top: 3px;
       right: 3px;
       padding: 0;
       width: 24px;
-      height: 24px; }
+      height: 24px; 
+}
 .ie7 .nav-top form.searchform input, 
 .ie8 .nav-top form.searchform input {
       padding: 2px; }

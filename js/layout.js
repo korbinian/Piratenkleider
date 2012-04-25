@@ -26,7 +26,6 @@ $(window).load(function () {
  */
 
 
-/* $(document).focus(function() { */
 
 $(document).on("focusin", function() { 
     var menuLayers = 5; //Anzahl der Menue-Ebenen

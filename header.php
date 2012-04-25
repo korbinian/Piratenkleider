@@ -45,6 +45,7 @@ if (isset( $options['meta-keywords'] ) ) { ?>
 <?php if ( is_singular() && get_option( 'thread_comments' ) )
 		wp_enqueue_script( 'comment-reply' );
 	wp_head(); ?>
+
 <!--[if lte IE 7]>
 <link rel="stylesheet" href="<?php bloginfo( 'stylesheet_url' ); ?>/yaml/core/iehacks.min.css" type="text/css"/>
 <![endif]-->
@@ -71,12 +72,22 @@ if (isset( $options['meta-keywords'] ) ) { ?>
                             <?php if ( ! is_home() ) { ?> </a>  <?php } ?> 
 			</div>
                       
-			<div class="nav-top" role="navigation">
-				<?php get_search_form(); ?>
-                            
-                            
+			<div class="nav-top" role="navigation">				                                                        
 				<h2 class="skip">Service-Navigation</h2>
+                                 <?php 
+                                    if ( $options['alle-socialmediabuttons'] == "1" ){
+                                 ?> 
+                                 <ul class="socialmedia">
+					<?php if ( $options['social_facebook'] != "" ){ ?><li class="facebook"><a href="<?php echo$options['social_facebook']; ?>"><img src="<?php echo get_bloginfo('template_url'); ?>/images/facebook.png" width="24" height="24" alt="Facebook"></a></li><?php } ?>
+					<?php if ( $options['social_twitter'] != "" ){ ?><li class="twitter"><a href="<?php echo$options['social_twitter']; ?>"><img src="<?php echo get_bloginfo('template_url'); ?>/images/twitter.png" width="24" height="24" alt="Twitter"></a></li><?php } ?>
+					<?php if ( $options['social_youtube'] != "" ){ ?><li class="youtube"><a href="<?php echo$options['social_youtube']; ?>"><img src="<?php echo get_bloginfo('template_url'); ?>/images/youtube.png" width="24" height="24" alt="YouTube"></a></li><?php } ?>
+					<?php if ( $options['social_gplus'] != "" ){ ?><li class="gplus"><a href="<?php echo$options['social_gplus']; ?>"><img src="<?php echo get_bloginfo('template_url'); ?>/images/gplus.png" width="24" height="24" alt="Google Plus"></a></li><?php } ?>
+					<?php if ( $options['social_diaspora'] != "" ){ ?><li class="diaspora"><a href="<?php echo$options['social_diaspora']; ?>"><img src="<?php echo get_bloginfo('template_url'); ?>/images/diaspora.png" width="24" height="24" alt="Diaspora"></a></li><?php } ?>
+					<?php if ( $options['social_identica'] != "" ){ ?><li class="identica"><a href="<?php echo$options['social_identica']; ?>"><img src="<?php echo get_bloginfo('template_url'); ?>/images/identica.png" width="24" height="24" alt="identi.ca"></a></li><?php } ?>															
+				</ul>
+                                
 				<?php
+                                    }
                                     if ( has_nav_menu( 'top' ) ) {
                                         wp_nav_menu( array( 'container_class' => 'menu-header', 'theme_location' => 'top' ) );
                                     } else { ?>
@@ -88,18 +99,8 @@ if (isset( $options['meta-keywords'] ) ) { ?>
                                             <li><a href="http://flaschenpost.piratenpartei.de/">Flaschenpost</a></li>
                                         </ul>
                                     </div>                                                                                
-                                    <?php }
-                                    if ( $options['alle-socialmediabuttons'] == "1" ){
-                                 ?> 
-                                 <ul class="socialmedia">
-					<?php if ( $options['social_facebook'] != "" ){ ?><li class="facebook"><a href="<?php echo$options['social_facebook']; ?>"><img src="<?php echo get_bloginfo('template_url'); ?>/images/facebook.png" width="24" height="24" alt="Facebook"></a></li><?php } ?>
-					<?php if ( $options['social_twitter'] != "" ){ ?><li class="twitter"><a href="<?php echo$options['social_twitter']; ?>"><img src="<?php echo get_bloginfo('template_url'); ?>/images/twitter.png" width="24" height="24" alt="Twitter"></a></li><?php } ?>
-					<?php if ( $options['social_youtube'] != "" ){ ?><li class="youtube"><a href="<?php echo$options['social_youtube']; ?>"><img src="<?php echo get_bloginfo('template_url'); ?>/images/youtube.png" width="24" height="24" alt="YouTube"></a></li><?php } ?>
-					<?php if ( $options['social_gplus'] != "" ){ ?><li class="gplus"><a href="<?php echo$options['social_gplus']; ?>"><img src="<?php echo get_bloginfo('template_url'); ?>/images/gplus.png" width="24" height="24" alt="Google Plus"></a></li><?php } ?>
-					<?php if ( $options['social_diaspora'] != "" ){ ?><li class="diaspora"><a href="<?php echo$options['social_diaspora']; ?>"><img src="<?php echo get_bloginfo('template_url'); ?>/images/diaspora.png" width="24" height="24" alt="Diaspora"></a></li><?php } ?>
-					<?php if ( $options['social_identica'] != "" ){ ?><li class="identica"><a href="<?php echo$options['social_identica']; ?>"><img src="<?php echo get_bloginfo('template_url'); ?>/images/identica.png" width="24" height="24" alt="identi.ca"></a></li><?php } ?>															
-				</ul>
-                                 <?php }?>
+                                 <?php } 
+                                 get_search_form(); ?>
 			</div>
                    
 			<div class="nav-main" role="navigation" id="nav">
@@ -121,15 +122,17 @@ if (isset( $options['meta-keywords'] ) ) { ?>
 			</div>
 
                     <?php if ( $options['defaultwerbesticker'] == "1" ){ ?>
+         
 			<div class="sticker">
                             <div class="skin">   
                                <h2 class="skip">Sticker</h2>
                                <ul>
                                    <li><a class="member" href="<?php echo $options['url-mitgliedwerden']; ?>"><img src="<?php echo get_bloginfo('template_url'); ?>/images/werde-pirat.png" width="88" height="56" alt="Werde Pirat!"></a></li>
-                                   <li><a class="spenden" href="<?php echo $options['url-spenden']; ?>"><img src="<?php echo get_bloginfo('template_url'); ?>/images/spenden.png" width="104" height="68" alt="Unterstütze uns mit deiner Spende!"></a></li>                                  
+                                   <li><a class="spenden" href="<?php echo $options['url-spenden']; ?>"><img src="<?php echo get_bloginfo('template_url'); ?>/images/spenden.png" width="104" height="68" alt="Hilf uns mit einer Spende"></a></li>                                  
                                </ul>                      
-                            </div>                                     
+                            </div>                                                                                            
 			</div>
+                            
                     <?php   } ?>
 		</div>
 	</div>

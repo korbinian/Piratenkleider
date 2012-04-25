@@ -52,14 +52,16 @@
     }
     .header .branding {
         display: block;
-        width: 100%;    
+        width: 50%;    
         margin: 0;
-        height: auto;
+        min-width: 150px;
+        min-height: 120px;        
+        padding-left: 10px;
     }
 
   .logo {
-        width: 100%;
         top: 0;
+        margin-left: 10px;
   }
    .logo img {
       margin: 0 auto;
@@ -76,38 +78,66 @@
     }
     .nav-top {        
         display: block;
-        width: 100%;   
-         position: relative;
+        width: 40%;   
+        min-width: 200px;
+         position: absolute;
+         margin-bottom: 50px;
+         float:right;
+         height: 120px;
+         text-align: right;
     }
     
     .nav-top form.searchform {
-        float: none;
+        clear:both
         display: block;     
+        width: 100%;
+        background: white;
+        margin: 5px;
     }
+   
+    .nav-top .searchform input#s {       
+        line-height: 1.2em;
+        width: 15em;        
+        float: left;
+        
+    }
+   .nav-top form.searchform .searchsubmit {
+        position: relative;       
+        width: auto;
+        float: left;
+        text-indent: 0;
+        background: #2D7DC5;
+        height: inherit;
+        line-height: 1.2em;
+        overflow: none;
+        height: 1.4em;
+        
+    }
+    
     .nav-top div.menu-header {
         float: none;
         display: block;
         width: 100%;   
-         position: relative;
+        position: relative;
     }
     .header ul.socialmedia {
-        display: block;
+      /*  display: block;
         position: relative;
         clear: both;
-        overflow: visible;
-        float: none;
+        overflow: none;
+        float: none; */
        
     }
     .nav-main {
-        display: block;
+         display: block;
         width: 100%;   
         position: relative;     
         max-width: 100%;
         margin: 0;
-        padding: 0;
+        padding: 0; 
     }
     .nav-main ul.menu {
-        float: none;
+        float: none;  
     }
     
  .skiplinks li {

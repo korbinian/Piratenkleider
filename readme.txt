@@ -37,7 +37,7 @@ MENÜS
         Zu beachten ist, daß neben den Seiten des Webauftritts auch die 
         Startseite hinzugefügt werden muss. Unter der Option Menuüs
         findet sich die Startseite, wenn man bei der Box
-          "Listen" auf "Zige alle" klickt.   
+          "Listen" auf "Zeige alle" klickt.   
     - Linkmenu
         Hier befinden sich Links zu Werkzeugen oder Arbeitsportalen, wie
         bspw. das Wiki oder das Forum.
@@ -228,11 +228,44 @@ Administrative Hinweise für Wordpress Theme-Editoren:
    Bei der optischen Darstellung des Sliders werden Bilder, die höher sind als
    240 Pixel nach unten abgeschnitten. 
 
+4. Es ist ein CSS für Textsticker (statt grafischer Sticker) im Kopfteil
+   hinterlegt.
+   Um einsolchen Sticker abzulegen, wird ein Code wie dieser im header.php
+        <div class="textsticker">
+             <h2 class="skip">Sticker</h2>
+              <ul>
+                 <li><a class="member" href="<?php echo $options['url-mitgliedwerden']; ?>">Werde <span>Pirat!</span></a></li>
+                 <li><a class="spenden" href="<?php echo $options['url-spenden']; ?>">Hilf uns mit einer <span>Spende</span></a></li>                                  
+             </ul> 
+        </div> 
+       
+  Da allerdings noch nichtalle Browser CSS3 Transistions beherrschen und bei
+  denen die es können, die Transitions leider etwas "flatterig" wirken
+  und auch die Qualität der Texte (bei um 5 Grad gedrehten Texten) 
+  nicht optimal ist, sind Grafiken noch besser geeignet.
+
+5. Linkicons für bestimmte Dokumente werden über CSS gesteuert.
+   Um dies "abszuschalten", muss in der CSS-Datei style.css lediglich
+   das Stylesheet
+       @import url(css/basemod_linkicons.css);
+   auskommentiert werden.
+   Bei besonderen Links die nicht mit einem Icon ausgestattet werden sollen, 
+   kann auch die Klasse  .nolinkicon  gesetzt werden.
+   Linkicons werden nur für den Inhaltsbereich gesetzt.
 
 
-
-
-
- 
+ *Verbleibende ToDos:*
+- Inhaltsvorlage bauen für:
+  * div. Formulare
+  * Impressum
+  * Datenschutzerklärung
+  * Kontaktseite
+- Theme Option um Optionsseite zur EIngabe von Kontaktdaten bauen
+- User Doku ergänzen
+- Autorenstyleguide schreiben
+- Publizieren des Themes auf stuke und anderen Servern
+- ERlangen Website umstellen
+- Auf ER Website: Kategorien aufräumen
+- Externe Links optisch deutlicher unterscheidbar machen
 
 
