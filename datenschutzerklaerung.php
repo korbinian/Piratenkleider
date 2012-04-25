@@ -22,6 +22,12 @@
       </div>
       <div class="skin">
 
+          <?php if ( have_posts() ) while ( have_posts() ) : the_post(); ?>
+        <?php the_content(); ?>
+        <?php edit_post_link( __( 'Bearbeiten', 'twentyten' ), '', '' ); ?>
+        <?php endwhile; ?>
+          
+          
           <p>Die Piratenpartei Deutschland fordert nicht nur strengeren Datenschutz, sie setzt ihn auch selber praktisch um. 
               Personenbezogene Daten werden auf dieser Webseite nur im technisch unbedingt notwendigen Umfang erhoben.
               In keinem Fall werden die erhobenen Daten verkauft oder aus anderen Gründen an Dritte weitergegeben. 
