@@ -870,8 +870,8 @@ function theme_kontaktinfos_do_page() {
                         <table>                                
                             <tr valign="top"><th scope="row">Name oder Titel</th>
                                 <td>
-                                    <input id="piratenkleider_kontaktinfos[posttitel]" class="regular-text" type="text" name="piratenkleider_kontaktinfos[posttitel]" value="<?php esc_attr_e( $options['posttitel'] ); ?>" />
-                                    <label class="description" for="piratenkleider_kontaktinfos[posttitel]">
+                                    <input id="piratenkleider_theme_kontaktinfos[posttitel]" class="regular-text" type="text" name="piratenkleider_theme_kontaktinfos[posttitel]" value="<?php esc_attr_e( $options['posttitel'] ); ?>" />
+                                    <label class="description" for="piratenkleider_theme_kontaktinfos[posttitel]">
                                         Anschrift: Titel (1. Zeile). <br>
                                         Zum Beispiel: <code>Piratenpartei</code>
                                     </label>
@@ -879,8 +879,8 @@ function theme_kontaktinfos_do_page() {
                             </tr>
                             <tr valign="top"><th scope="row">zu Händen</th>
                                 <td>
-                                    <input id="piratenkleider_kontaktinfos[postperson]" class="regular-text" type="text" name="piratenkleider_kontaktinfos[postperson]" value="<?php esc_attr_e( $options['postperson'] ); ?>" />
-                                    <label class="description" for="piratenkleider_kontaktinfos[postperson]">
+                                    <input id="piratenkleider_theme_kontaktinfos[postperson]" class="regular-text" type="text" name="piratenkleider_theme_kontaktinfos[postperson]" value="<?php esc_attr_e( $options['postperson'] ); ?>" />
+                                    <label class="description" for="piratenkleider_theme_kontaktinfos[postperson]">
                                         Anschrift: Optionale Personenangabe ("zu Händen") <br>
                                         Zum Beispiel: <code>Martin Mustermann</code>
                                     </label>
@@ -888,8 +888,8 @@ function theme_kontaktinfos_do_page() {
                             </tr>
                              <tr valign="top"><th scope="row">Strasse oder Postfach</th>
                                 <td>
-                                    <input id="piratenkleider_kontaktinfos[poststrasse]" class="regular-text" type="text" name="piratenkleider_kontaktinfos[poststrasse]" value="<?php esc_attr_e( $options['poststrasse'] ); ?>" />
-                                    <label class="description" for="piratenkleider_kontaktinfos[poststrasse]">
+                                    <input id="piratenkleider_theme_kontaktinfos[poststrasse]" class="regular-text" type="text" name="piratenkleider_theme_kontaktinfos[poststrasse]" value="<?php esc_attr_e( $options['poststrasse'] ); ?>" />
+                                    <label class="description" for="piratenkleider_theme_kontaktinfos[poststrasse]">
                                         Anschrift: Strassenname und Nummer oder Postfachangabe oder freilassen <br>
                                         Zum Beispiel: <code>Unbesonnenheitsweg 123b</code>
                                     </label>
@@ -897,8 +897,8 @@ function theme_kontaktinfos_do_page() {
                             </tr>
                             <tr valign="top"><th scope="row">PLZ und Stadt</th>
                                 <td>
-                                    <input id="piratenkleider_kontaktinfos[poststadt]" class="regular-text" type="text" name="piratenkleider_kontaktinfos[poststadt]" value="<?php esc_attr_e( $options['poststadt'] ); ?>" />
-                                    <label class="description" for="piratenkleider_kontaktinfos[poststadt]">
+                                    <input id="piratenkleider_theme_kontaktinfos[poststadt]" class="regular-text" type="text" name="piratenkleider_theme_kontaktinfos[poststadt]" value="<?php esc_attr_e( $options['poststadt'] ); ?>" />
+                                    <label class="description" for="piratenkleider_theme_kontaktinfos[poststadt]">
                                         Anschrift: Postleitzahl gefolgt von Stadt<br>
                                         Zum Beispiel: <code>12345  Ankh-Morpork</code>
                                     </label>
@@ -916,8 +916,8 @@ function theme_kontaktinfos_do_page() {
                                  <table>                                
                             <tr valign="top"><th scope="row">Name oder Titel</th>
                                 <td>
-                                    <input id="piratenkleider_kontaktinfos[ladungtitel]" class="regular-text" type="text" name="piratenkleider_kontaktinfos[ladungtitel]" value="<?php esc_attr_e( $options['ladungtitel'] ); ?>" />
-                                    <label class="description" for="piratenkleider_kontaktinfos[ladungtitel]">
+                                    <input id="piratenkleider_theme_kontaktinfos[ladungtitel]" class="regular-text" type="text" name="piratenkleider_theme_kontaktinfos[ladungtitel]" value="<?php esc_attr_e( $options['ladungtitel'] ); ?>" />
+                                    <label class="description" for="piratenkleider_theme_kontaktinfos[ladungtitel]">
                                         Anschrift: Titel (1. Zeile). <br>
                                         Zum Beispiel: <code>Piratenpartei</code>
                                     </label>
@@ -925,8 +925,8 @@ function theme_kontaktinfos_do_page() {
                             </tr>
                             <tr valign="top"><th scope="row">zu Händen</th>
                                 <td>
-                                    <input id="piratenkleider_kontaktinfos[ladungperson]" class="regular-text" type="text" name="piratenkleider_kontaktinfos[ladungperson]" value="<?php esc_attr_e( $options['ladungperson'] ); ?>" />
-                                    <label class="description" for="piratenkleider_kontaktinfos[ladungperson]">
+                                    <input id="piratenkleider_theme_kontaktinfos[ladungperson]" class="regular-text" type="text" name="piratenkleider_theme_kontaktinfos[ladungperson]" value="<?php esc_attr_e( $options['ladungperson'] ); ?>" />
+                                    <label class="description" for="piratenkleider_theme_kontaktinfos[ladungperson]">
                                         Anschrift: Optionale Personenangabe ("zu Händen") <br>
                                         Zum Beispiel: <code>Martin Mustermann</code>
                                     </label>
@@ -934,8 +934,8 @@ function theme_kontaktinfos_do_page() {
                             </tr>
                              <tr valign="top"><th scope="row">Strasse oder Postfach</th>
                                 <td>
-                                    <input id="piratenkleider_kontaktinfos[ladungstrasse]" class="regular-text" type="text" name="piratenkleider_kontaktinfos[ladungstrasse]" value="<?php esc_attr_e( $options['ladungstrasse'] ); ?>" />
-                                    <label class="description" for="piratenkleider_kontaktinfos[ladungstrasse]">
+                                    <input id="piratenkleider_theme_kontaktinfos[ladungstrasse]" class="regular-text" type="text" name="piratenkleider_theme_kontaktinfos[ladungstrasse]" value="<?php esc_attr_e( $options['ladungstrasse'] ); ?>" />
+                                    <label class="description" for="piratenkleider_theme_kontaktinfos[ladungstrasse]">
                                         Anschrift: Strassenname und Nummer oder Postfachangabe oder freilassen <br>
                                         Zum Beispiel: <code>Unbesonnenheitsweg 123b</code>
                                     </label>
@@ -943,8 +943,8 @@ function theme_kontaktinfos_do_page() {
                             </tr>
                             <tr valign="top"><th scope="row">PLZ und Stadt</th>
                                 <td>
-                                    <input id="piratenkleider_kontaktinfos[ladungstadt]" class="regular-text" type="text" name="piratenkleider_kontaktinfos[ladungstadt]" value="<?php esc_attr_e( $options['ladungstadt'] ); ?>" />
-                                    <label class="description" for="piratenkleider_kontaktinfos[ladungstadt]">
+                                    <input id="piratenkleider_theme_kontaktinfos[ladungstadt]" class="regular-text" type="text" name="piratenkleider_theme_kontaktinfos[ladungstadt]" value="<?php esc_attr_e( $options['ladungstadt'] ); ?>" />
+                                    <label class="description" for="piratenkleider_theme_kontaktinfos[ladungstadt]">
                                         Anschrift: Postleitzahl gefolgt von Stadt<br>
                                         Zum Beispiel: <code>12345  Ankh-Morpork</code>
                                     </label>
@@ -971,8 +971,8 @@ function theme_kontaktinfos_do_page() {
 
                             <tr valign="top"><th scope="row">Name</th>
                                 <td>
-                                    <input id="piratenkleider_kontaktinfos[dsbperson]" class="regular-text" type="text" name="piratenkleider_kontaktinfos[dsbperson]" value="<?php esc_attr_e( $options['dsbperson'] ); ?>" />
-                                    <label class="description" for="piratenkleider_kontaktinfos[dsbperson]">
+                                    <input id="piratenkleider_theme_kontaktinfos[dsbperson]" class="regular-text" type="text" name="piratenkleider_theme_kontaktinfos[dsbperson]" value="<?php esc_attr_e( $options['dsbperson'] ); ?>" />
+                                    <label class="description" for="piratenkleider_theme_kontaktinfos[dsbperson]">
                                         Name des DSB<br>
                                         Zum Beispiel: <code>Martin Mustermann</code>
                                     </label>
@@ -1009,8 +1009,6 @@ function theme_kontaktinfos_do_page() {
  * Sanitize and validate input. Accepts an array, return a sanitized array.
  */
 function theme_kontaktinfos_validate( $input ) {
-	global $defaultbilder_liste;
-
         $input['posttitel'] = wp_kses_normalize_entities( $input['posttitel'] );   
         $input['postperson'] = wp_kses_normalize_entities( $input['postperson'] );   
 	$input['postsstrasse'] = wp_kses_normalize_entities( $input['poststrasse'] );   
@@ -1023,6 +1021,6 @@ function theme_kontaktinfos_validate( $input ) {
         
         $input['kontaktemail'] = sanitize_email( $input['kontaktemail'] ); 
         $input['dsbemail'] = sanitize_email( $input['dsbemail'] ); 
-        $input['dsbperson'] = wp_kses_normalize_entities( $input['dsbperson'] );   
+        $input['dsbperson'] = wp_filter_nohtml_kses( $input['dsbperson'] );   
 	return $input;
 }
