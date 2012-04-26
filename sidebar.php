@@ -1,5 +1,6 @@
 <?php           
   global $defaultoptions;
+  global $defaultplakate_liste;
   $options = get_option( 'piratenkleider_theme_options' );
   if (!isset($options['slider-defaultwerbeplakate'])) 
        $options['slider-defaultwerbeplakate'] = $defaultoptions['slider-defaultwerbeplakate'];
@@ -38,12 +39,23 @@
             <ul class='slides'>
                 <?php 
                 $plakate = get_option( 'piratenkleider_theme_defaultbilder'); 
+                    
                    if (is_array($plakate['plakate-src'])) {
                      foreach ($plakate['plakate-src'] as $current) {
                          ?>
                          <li class="slide"><img src="<?php echo $current ?>" width="277" height="391" alt=""></li>
                         <?php 
                      }
+                  } else {
+                      
+                      foreach ( $defaultplakate_liste as $dthis ) {    
+                        if (isset($dthis['src'])) {
+                          ?>
+                         <li class="slide"><img src="<?php echo $dthis['src'] ?>" width="277" height="391" alt=""></li>
+                        <?php       
+                            
+                        }
+                      }
                   }
                   if (isset($plakate['plakate-altadressen'])) {
                       $alturls = preg_split("/[\s,]+/", $plakate['plakate-altadressen']);

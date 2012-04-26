@@ -11,11 +11,11 @@
 
 
 $defaultoptions = array(
-    'content-width' => 740,
+    'content-width' => 665,
     'logo'          => get_template_directory_uri() .'/images/logo.png',
     'logo-width'    => 300,
     'logo-height'   => 130,
-    'thumb-width'   => 740,
+    'thumb-width'   => 705,
     'thumb-height'  => 240,
     'src-jquery'    => get_bloginfo('template_url'). "/js/jquery.min.js",
     'src-layoutjs'    => get_bloginfo('template_url'). "/js/layout.js",
@@ -24,7 +24,7 @@ $defaultoptions = array(
     'src-default-symbolbild'    => get_template_directory_uri() .'/images/default-vorlage-705x150.png',
     'slider-aktiv'  => 1,
     'aktiv-defaultseitenbild'    => 0,
-    'slider-defaultwerbeplakate'    => 1,
+    'slider-defaultwerbeplakate' => 1,
     'slider-numberarticle'      => 3,
     'slider-slideshowSpeed'     => 8000,
     'slider-animationDuration'  => 600,
@@ -161,11 +161,11 @@ if ( ! isset( $content_width ) )   $content_width = $defaultoptions['content-wid
 require_once ( get_stylesheet_directory() . '/theme-options.php' );
 
 /** Tell WordPress to run twentyten_setup() when the 'after_setup_theme' hook is run. */
-add_action( 'after_setup_theme', 'twentyten_setup' );
+add_action( 'after_setup_theme', 'piratenkleider_setup' );
 
-if ( ! function_exists( 'twentyten_setup' ) ):
+if ( ! function_exists( 'piratenkleider_setup' ) ):
 
-function twentyten_setup() {
+function piratenkleider_setup() {
      global $defaultoptions;
         // This theme styles the visual editor with editor-style.css to match the theme style.
         add_editor_style();
@@ -209,7 +209,7 @@ function twentyten_setup() {
         
         // Make theme available for translation
         // Translations can be filed in the /languages/ directory
-        load_theme_textdomain( 'twentyten', TEMPLATEPATH . '/languages' );
+        load_theme_textdomain( 'piratenkleider', TEMPLATEPATH . '/languages' );
 
         $locale = get_locale();
         $locale_file = TEMPLATEPATH . "/languages/$locale.php";
@@ -218,9 +218,9 @@ function twentyten_setup() {
 
         // This theme uses wp_nav_menu() in one location.
         register_nav_menus( array(
-                'primary' => __( 'Hauptnavigation <br />&nbsp; (Statische Seiten)', 'twentyten' ),
-                'top' => __( 'Linkmenu <br />&nbsp; (Links zu Webportalen wie Wiki, Forum, etc)', 'twentyten' ),
-                'sub' => __( 'Technische Navigation <br />&nbsp; (Kontakt, Impressunm, etc)', 'twentyten' ),
+                'primary' => __( 'Hauptnavigation <br />&nbsp; (Statische Seiten)', 'piratenkleider' ),
+                'top' => __( 'Linkmenu <br />&nbsp; (Links zu Webportalen wie Wiki, Forum, etc)', 'piratenkleider' ),
+                'sub' => __( 'Technische Navigation <br />&nbsp; (Kontakt, Impressunm, etc)', 'piratenkleider' ),
         ) );
 
         set_post_thumbnail_size( $defaultoptions['thumb-width'], $defaultoptions['thumb-height'], true );
@@ -389,7 +389,7 @@ function piratenkleider_widgets_init() {
                 'description' => __( 'Dieser Bereich befindet sich rechts vom Inhaltsbereich. 
                     Er ist geeignet für Werbeplakate, Hinweise und ähnliches.
                     Wenn leer, werden als Alternative einige der allgemeinen Standardplakate 
-                    gezeigt.', 'twentyten' ),
+                    gezeigt.', 'piratenkleider' ),
                 'before_widget' => '<div class="widget">',
                 'after_widget' => '</div>',
                 'before_title' => '<h2>',
@@ -401,7 +401,7 @@ function piratenkleider_widgets_init() {
                 'id' => 'sidebar-widget-area-afterplakate',
                 'description' => __( 'Dieser Bereich befindet sich rechts vom Inhaltsbereich.
                     Er ist nach den Werbeplakaten positioniert, die über die 
-                    Optionen ein- oder abgeschaltet werden können.', 'twentyten' ),
+                    Optionen ein- oder abgeschaltet werden können.', 'piratenkleider' ),
                 'before_widget' => '<div class="widget">',
                 'after_widget' => '</div>',
                 'before_title' => '<h2>',
@@ -415,7 +415,7 @@ function piratenkleider_widgets_init() {
                 'description' => __( 'Bereich oberhalb der 3 Artikelbilder.
                     Wenn leer, erscheinen hier wechselnden Bilder 
                     und Verlinkung mit Artikeln der Kategorie "Slider". 
-                    Angezeigt werden die Artikelbilder.', 'twentyten' ),
+                    Angezeigt werden die Artikelbilder.', 'piratenkleider' ),
                 'before_widget' => '<div class="widget">',
                 'after_widget' => '</div>',
                 'before_title' => '<h3 class="widget-title">',
@@ -429,7 +429,7 @@ function piratenkleider_widgets_init() {
                 'description' => __( 'Dieser Bereich ist rechts neben den Slider
                     und dem Hauptcontent positioniert. Wenn leer, werden hier
                     die 3 Links zur Piratenwebsite gezeigt zum Mitmachen
-                    oder Spenden', 'twentyten' ),
+                    oder Spenden', 'piratenkleider' ),
                 'before_widget' => '<div class="widget">',
                 'after_widget' => '</div>',
                 'before_title' => '<h3 class="widget-title">',
@@ -445,7 +445,7 @@ function piratenkleider_widgets_init() {
                 'id' => 'first-startpage-widget-area',
                 'description' => __( 'Bereich links unterhalb der 3 Presseartikel. 
                         Wenn leer, werden hier weitere Artikel aus
-                        der Kategorie "pm" gezeigt. ', 'twentyten' ),
+                        der Kategorie "pm" gezeigt. ', 'piratenkleider' ),
                 'before_widget' => '<div class="widget">',
                 'after_widget' => '</div>',
                 'before_title' => '<h3>',
@@ -458,7 +458,7 @@ function piratenkleider_widgets_init() {
                 'id' => 'second-startpage-widget-area',
                 'description' => __( 'Bereich rechts unterhalb der drei Presseartikel.
                          Wenn leer, wird hier eine Schlagwortliste 
-                         gezeigt.', 'twentyten' ),
+                         gezeigt.', 'piratenkleider' ),
                 'before_widget' => '<div class="widget">',
                 'after_widget' => '</div>',
                 'before_title' => '<h3 class="widget-title">',
@@ -474,7 +474,7 @@ function piratenkleider_widgets_init() {
                    anderen Piratenwebsites auf regionaler oder überegionaler Ebene.
                    Diese werden dann als Menu mit externen Links definiert und
                    dann als Widget dieser Sidebar zugeordnet.
-                   Wenn leer, wird hier nichts angezeigt.', 'twentyten' ),
+                   Wenn leer, wird hier nichts angezeigt.', 'piratenkleider' ),
                 'before_widget' => '<div class="widget">',
                 'after_widget' => '</div>',
                 'before_title' => '<h2>',
@@ -487,7 +487,7 @@ function piratenkleider_widgets_init() {
                 'id' => 'second-footer-widget-area',
                 'description' => __( 'Rechte Spalte im Fußbereich. Wenn leer, erscheint hier das
                     technische Menu (siehe Menüs). Wenn auch dieses nicht definiert ist, wird 
-                    die Blogadresse und dessen RSS-Feedadresse gezeigt', 'twentyten' ),
+                    die Blogadresse und dessen RSS-Feedadresse gezeigt', 'piratenkleider' ),
                 'before_widget' => '<div class="widget">',
                 'after_widget' => '</div>',
                 'before_title' => '<h2>',

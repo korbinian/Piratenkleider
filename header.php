@@ -2,7 +2,6 @@
 <!--[if lt IE 7 ]> <html <?php language_attributes(); ?> class="ie6"> <![endif]-->
 <!--[if IE 7 ]>    <html <?php language_attributes(); ?> class="ie7"> <![endif]-->
 <!--[if IE 8 ]>    <html <?php language_attributes(); ?> class="ie8"> <![endif]-->
-<!--[if IE 9 ]>    <html <?php language_attributes(); ?> class="ie9"> <![endif]-->
 <!--[if (gt IE 9)|!(IE)]><!--> <html <?php language_attributes(); ?>> <!--<![endif]-->
 
 <head>
@@ -23,6 +22,8 @@
         $options['url-spenden'] = $defaultoptions['url-spenden'];
 ?>  
 <meta charset="<?php bloginfo( 'charset' ); ?>">
+<!--[if IE]> <meta http-equiv="X-UA-Compatible" content="IE=9"> <![endif]-->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title><?php wp_title( '|', true, 'right' ); ?></title>
 <?php if (isset( $options['meta-description'] ) ) { ?>
     <meta name="description" content="<?php echo $options['meta-description'] ?>">
@@ -33,9 +34,7 @@ if (isset( $options['meta-author'] ) ) { ?>
 if (isset( $options['meta-keywords'] ) ) { ?>
     <meta name="keywords" content="<?php echo $options['meta-keywords'] ?>">
 <?php } ?>
-<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta http-equiv="cleartype" content="on">
+
 <link rel="apple-touch-icon" href="<?php echo get_bloginfo('template_url'); ?>/apple-touch-icon.png">
 <link rel="shortcut icon" href="<?php echo get_bloginfo('template_url'); ?>/favicon.ico">
 

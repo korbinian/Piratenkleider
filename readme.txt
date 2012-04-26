@@ -2,7 +2,7 @@ Piratenkleider
 - Wordpress-Theme für Webauftritte der Piratenpartei 
 =================================================
 
-Version 2.0 von Wolfgang Wiese (xwolf), April 2012
+Version 2.1 von Wolfgang Wiese (xwolf), April 2012
 
 
 DOWNLOADS
@@ -281,16 +281,8 @@ Denkbare weitere Features (ToDos)
 3. Wenn ein Artikel ein Artikelbild hat, dann wird dieses
    sonst nirgends gezeigt. Dabei wäre es -wie bei den Pages-
    doch auch sinnvoll, dieses bei der Einzelanzeige des Artikels anzugeben.
-
-
- *Verbleibende ToDos:*
-- Inhaltsvorlage bauen für:
-  * div. Formulare
-  * Kontaktseite
-- User Doku ergänzen
-- Autorenstyleguide schreiben
-- Publizieren des Themes auf stuke und anderen Servern
-- ERlangen Website umstellen
-- Auf ER Website: Kategorien aufräumen
+4. add_filer() einbauen, der alle externen Links mit einer entprechenden
+   CSS-Klasse ergänzt
+5. Plugin Social Media testen/CSS anpassen
 
 

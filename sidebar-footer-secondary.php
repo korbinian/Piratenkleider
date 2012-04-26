@@ -10,12 +10,11 @@
             <?php } else { ?>
                 <div class="widget">
                     <h2><?php bloginfo( 'name' ); ?></h2> 
-                    <div class="menu-header">
-                        <ul id="menu-submenu" class="menu">
-                            <li class="menu-item">URL: <a href="<?php bloginfo( 'url' ); ?>"><?php bloginfo( 'url' ); ?></a></li>
-                            <li class="menu-item">RSS-Feed: <a href="<?php bloginfo( 'rss_url' ); ?>"><?php bloginfo( 'rss_url' ); ?></a></li>
-                        </ul>
-                    </div>
+                    <p class="titelurl"><a href="<?php bloginfo( 'url' ); ?>"><?php bloginfo( 'url' ); ?></a></p>                 
+                    <ul>
+                        <li><a href="http://creativecommons.org/licenses/by/3.0/de/">CC-BY-SA 3.0</a></li>
+                        <li><a href="<?php bloginfo( 'rss_url' ); ?>">RSS-Feed</a></li>
+                    </ul>                   
                 </div>
             <?php } } ?>
     </div>

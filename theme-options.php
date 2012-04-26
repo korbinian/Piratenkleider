@@ -1017,7 +1017,71 @@ function theme_kontaktinfos_do_page() {
 			</td>
 		       </tr>
                        
-                       
+                       <tr valign="top"><th scope="row">Spendenformulare</th>
+			<td>
+				<p>Optionale Angaben für Spendenformulare, die mit dem Seiten-Template "Spenden" erstellt werden.
+                                    <br>
+                                    <strong>Achtung:</strong> Dies ersetzt nicht das 
+                                    richtige Eingabeformular. Das Formular wird
+                                    z.B.mit dem Plugin <em>Contact Form 7</em> erstellt und dann
+                                    als Makro in den Textbereich der Seite hinzugefügt.
+                                    <br>
+                                    Die folgenden Daten werden nur dazu verwendet, 
+                                    die Tabelle für die  feststehenden Informationen aufzubauen.
+                                </p>
+                                 <table>                                
+
+                            <tr valign="top"><th scope="row">Empfänger</th>
+                                <td>
+                                    <input id="piratenkleider_theme_kontaktinfos[spendenempfaenger]" class="regular-text" type="text" name="piratenkleider_theme_kontaktinfos[spendenempfaenger]" value="<?php esc_attr_e( $options['spendenempfaenger'] ); ?>" />
+                                    <label class="description" for="piratenkleider_theme_kontaktinfos[spendenempfaenger]">
+                                      Name des Empfängers/Konto der Spenden für Überweisungen. 
+                                    </label>
+                                </td>					
+                            </tr>
+                              <tr valign="top"><th scope="row">Kontonummer</th>
+                                <td>
+                                    <input id="piratenkleider_theme_kontaktinfos[spendenkonto]" class="regular-text" type="text" name="piratenkleider_theme_kontaktinfos[spendenkonto]" value="<?php esc_attr_e( $options['spendenkonto'] ); ?>" />
+                                    <label class="description" for="piratenkleider_theme_kontaktinfos[spendenkonto]">
+                                      Kontonummer des Empfängers
+                                    </label>
+                                </td>					
+                            </tr>
+                             <tr valign="top"><th scope="row">BLZ</th>
+                                <td>
+                                    <input id="piratenkleider_theme_kontaktinfos[spendenblz]" class="regular-text" type="text" name="piratenkleider_theme_kontaktinfos[spendenblz]" value="<?php esc_attr_e( $options['spendenblz'] ); ?>" />
+                                    <label class="description" for="piratenkleider_theme_kontaktinfos[spendenblz]">
+                                     Die Bankleitzahl.
+                                    </label>
+                                </td>					
+                            </tr>
+                            <tr valign="top"><th scope="row">Bank</th>
+                                <td>
+                                    <input id="piratenkleider_theme_kontaktinfos[spendenbank]" class="regular-text" type="text" name="piratenkleider_theme_kontaktinfos[spendenbank]" value="<?php esc_attr_e( $options['spendenbank'] ); ?>" />
+                                    <label class="description" for="piratenkleider_theme_kontaktinfos[spendenbank]">
+                                     Ausgeschriebener Name der Bank
+                                    </label>
+                                </td>					
+                            </tr>
+                             <tr valign="top"><th scope="row">IBAN</th>
+                                <td>
+                                    <input id="piratenkleider_theme_kontaktinfos[spendeniban]" class="regular-text" type="text" name="piratenkleider_theme_kontaktinfos[spendeniban]" value="<?php esc_attr_e( $options['spendeniban'] ); ?>" />
+                                    <label class="description" for="piratenkleider_theme_kontaktinfos[spendeniban]">
+                                     Internationale Bank Account Nummer
+                                    </label>
+                                </td>					
+                            </tr>
+                            <tr valign="top"><th scope="row">BIC</th>
+                                <td>
+                                    <input id="piratenkleider_theme_kontaktinfos[spendenbic]" class="regular-text" type="text" name="piratenkleider_theme_kontaktinfos[spendenbic]" value="<?php esc_attr_e( $options['spendenbic'] ); ?>" />
+                                    <label class="description" for="piratenkleider_theme_kontaktinfos[spendenbic]">
+                                    Business Identifier Code
+                                    </label>
+                                </td>					
+                            </tr>
+                        </table>  
+			</td>
+		       </tr>
                     </table>
 
             <p class="submit">

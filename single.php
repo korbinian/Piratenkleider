@@ -13,7 +13,7 @@
           </div>
           <div class="post-info">
             <div class="commentbubble">
-              <?php comments_popup_link( '0', '1', '%', 'comments-link', '-'); ?>
+              <?php comments_popup_link( '0', '1', '%', 'comments-link', ''); ?>
             </div>
             <div class="cal-icon">
               <span class="day"><?php the_time('j.'); ?></span>
@@ -32,7 +32,7 @@
                  piratenkleider_post_taxonominfo();  
                 ?>        
             </div>
-            <div><?php edit_post_link( __( 'Bearbeiten', 'twentyten' ), '', '' ); ?></div>
+            <div><?php edit_post_link( __( 'Bearbeiten', 'piratenkleider' ), '', '' ); ?></div>
           </div>
         </div>
 

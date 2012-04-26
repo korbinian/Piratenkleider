@@ -4,12 +4,13 @@
         <?php dynamic_sidebar( 'first-teaser-widget-area' ); ?>
     <?php } else {        
           global $defaultoptions;
+          global $defaultbilder_liste;
          $options = get_option( 'piratenkleider_theme_options' );
          $catname = $options['slider-catname'];
          $bilderoptions = get_option( 'piratenkleider_theme_defaultbilder' ); 
          $defaultbildsrc = $bilderoptions['slider-defaultbildsrc'];                        
-          
-         if (!isset($catname) ) $catname ="Slider";         
+         
+         if (!isset($catname) ) $catname = get_cat_name(1);         
          $numberarticle = $options['slider-numberarticle'];
          if (!isset($numberarticle) )  $numberarticle =3;   
          if (!isset($options['url-mitgliedwerden'])) 
@@ -24,7 +25,13 @@
             if (has_post_thumbnail()) {
                 the_post_thumbnail('full');
             } else {
-                echo '<img src="'.$defaultbildsrc.'" width="640" height="240" alt="">';                
+                if (isset($defaultbildsrc)) {  
+                    echo '<img src="'.$defaultbildsrc.'" width="'.$defaultoptions['thumb-width'].'" height="'.$defaultoptions['thumb-height'].'" alt="">';                
+                } else {
+                    $randombild = array_rand($defaultbilder_liste,2);
+                    echo '<img src="'.$defaultbilder_liste[$randombild[0]]['src'].'" width="'.$defaultoptions['thumb-width'].'" height="'.$defaultoptions['thumb-height'].'" alt="">'; 
+                    
+                }
             }
             echo '<div class="caption">';
             echo '<p class="bebas">Topthema</p>';

@@ -118,6 +118,7 @@ audio:not([controls]) {
 body {
     font-size: 0.8em;
     font-family: Helvetica, Arial, sans-serif;
+     line-height: 18px;
 }
 select, input, textarea, button {
   font-family: Helvetica, Arial, sans-serif;
@@ -476,6 +477,92 @@ body {
         background: #ff8800;
         color: black; }
 
+        /**
+	* ----------------------------------------------------------------------- #
+	*
+	* Generic Content Classes
+	*
+	* (en) standard classes for positioning and highlighting
+	* (de) Standardklassen zur Positionierung und Hervorhebung
+	*
+	* @section content-generic-classes
+	*/
+	.highlight {
+		color:#c30;
+	}
+
+	.dimmed {
+		color:#888;
+	}
+
+	.box {
+		border-radius: 0.3em;
+		border-width: 1px;
+		border-style: solid;
+		border-color: #888;
+		border-color: rgba(0,0,0,.3);
+		-webkit-box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2) inset;
+		-moz-box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2) inset;
+		box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2) inset;
+		color: #444;
+		color: rgba(0,0,0,.8);
+		padding: 1.4286em;
+		margin: 1.5em 0 0 0;
+	}
+
+	.box > *:first-child {
+		margin-top: 0;
+	}
+
+	.label {
+		font-family: Verdana, Geneva, sans-serif;
+		padding: 1px 6px 2px;
+		display: inline-block;
+		vertical-align:middle;
+		letter-spacing: normal;
+		white-space:nowrap;
+		-webkit-border-radius: 3px;
+		-moz-border-radius: 3px;
+		border-radius: 3px;
+		background: #06C;
+		color: #fff;
+		font-size: 10px;
+		line-height: 12px;
+	}
+
+	.info {
+		background:#f4f4f4;
+	}
+
+	.success {
+		background:#8c8;
+	}
+
+	.warning {
+		background:#cc8;
+	}
+
+	.error {
+		background:#c88;
+	}
+
+	.float-left {
+		float:left;
+		display:inline;
+		margin: 1.5em 1em 0 0;
+	}
+
+	.float-right {
+		float:right;
+		display:inline;
+		margin: 1.5em 0 0 1em;
+	}
+
+	.center {
+		display:block;
+		text-align:center;
+		margin: 1.5em auto 0 auto;
+	}
 
   
   
@@ -819,7 +906,12 @@ ul.socialmedia li a:focus img  {
 .content p, .content form {
     margin-bottom: 18px; }
 .content img {
-    margin: 0 10px 10px 0; }
+    margin: 0 10px 10px 0; 
+}
+.content img.aligncenter {
+        display: block;
+        margin: 10px auto;
+}
 .content ul {
     margin: 0 0 18px 25px; }
 .content ul li {
@@ -847,8 +939,20 @@ ul.socialmedia li a:focus img  {
 .content ul {
     list-style: disc; }
   .content ul ul, .content ol ol, .content ul ol, .content ol ul {
-    margin-bottom: 0; }
-
+    margin-bottom: 0; 
+  }
+  
+.content-primary h2 {
+    margin-top: 1em;
+  }
+ .content-primary h3 {
+    margin-top: 0.8em;
+  }
+.content-primary .post-title h2,
+ .content-primary .post-title h3 {
+    margin-top: 0.5em;
+  }
+ 
   
 .content .symbolbild {
   width: 100%;
