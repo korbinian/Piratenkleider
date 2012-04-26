@@ -4,14 +4,11 @@ Piratenkleider
 
 Version 2.0 von Wolfgang Wiese (xwolf), April 2012
 
-Dieses Theme basiert auf die Wordpress-Basisvorlage von Korbinian Polk,
-die bei der Bundeswebsite (http://www.piratenpartei.de) Anwendung
-fand.  
-
 
 DOWNLOADS
-    Version von xwolf: https://github.com/xwolfde/Piratenkleider
-    Altes Original von korbinian: https://github.com/korbinian/Piratenkleider
+
+    https://github.com/xwolfde/Piratenkleider
+    
     
 CREDITS & COPYRIGHT
 
@@ -19,11 +16,18 @@ CREDITS & COPYRIGHT
 
 
 AUTOREN / ENTWICKLER
+
    Wolfgang Wiese (xwolf), http://www.xwolf.de 
 
    Mit Hilfe von 
      Heiko Philippski, http://www.phindie.de/
      Kerstin Probiesch, http://www.barrierefreie-informationskultur.de
+
+VORVERSION
+
+Dieses Theme basiert auf die Wordpress-Basisvorlage von Korbinian Polk.  
+Das alte Original von korbinian kann auf github gefunden werden: 
+ https://github.com/korbinian/Piratenkleider
 
 
 
@@ -72,7 +76,7 @@ INHALTE
    zu einem Artikel. 
    Um dies für einen Artikel zu machen, muss der Artikel in der
    für den Slider aktivierten Kategorie sein. (Siehe Punkt "Slider" unter den 
-    Optionen "Piratenkleider pimpen")
+    Optionen "Takelage setzen")
    Sollte ein Artikel über kein definiertes Artikelbild verfügen, wird
    das Defaultsliderbilder verwendet.       
 
@@ -118,7 +122,7 @@ BEREICHE/WIDGETS
 
 THEME-OPTION "Takelage einstellen"
  
-  Unter der Option "Piratenkleider pimpen" sind die grundlegenden
+  Unter der Option "Takelage setzen" sind die grundlegenden
   Optionen für das Theme einstellbar:
     - Newsletter-Box einschalten/abschalten
     - Social Media Buttons ein/ausschalten         
@@ -150,7 +154,14 @@ THEME-OPTION "Segel setzen"
    Eine komplette Liste an Werbeplakaten, die von der Piratenpartei eingesetzt
    wird, kann im Wiki unter der Seite http://wiki.piratenpartei.de/Plakate
    gefunden werden.
-   
+
+
+THEME-OPTION "Captn & Crew"
+
+   Diese Option dient der Eintragung von Kontaktinformationen für die
+   Templateseiten um das Impressum, die Datenschutzerklärung und
+   optionalen Formularseiten.
+     
    
 THEME OPTION "Kopfzeile"   
 
@@ -171,11 +182,28 @@ VERWENDETE PLUGINS
   - Wenn das Plugin "Related Posts by Category" vorhanden und aktiviert ist,
     werden bei der Anzeige eines Artikels weitere Artikel verlinkt, die
     ggf. relevant sein könnten.
+ - Das Plugin "ICS Calendar" kann verwendet werden um Termin in Widgets
+   darzustellen.
+   Unter "Einstellungen -> "ICS Calendar" sollte dieses wie folgt 
+   konfiguriert werden:
 
+    General Settings:
+        URL to ICS File(s):
+         zum Beispiel für Bayern:
+         1. http://events.piratenpartei-bayern.de/events/ical?gid=&gid[]=10&cid=&subgroups=1&start=&end=
+         2. http://events.piratenpartei-bayern.de/index.php/events/ical?gid=&gid[]=13&cid=
+
+
+    Formatting:
+        Date Format:  "j.m."
+        Time Format:  "G:i"
+        Custom Event Format: (Yes)
+             %date-time%, %start-date%, %start-time%, %end-date%, %end-time%, 
+                %event-title%, %description%, %location%   
 
 EMPFEHLUNGEN FÜR WIDGETS
  
-1. Terminkalender:
+1. Terminkalender mit "ICS Calendar":
    Im Widget "Sidebar (Rechte Spalte) " sollte der ICS-Kalender für Termine 
    eingetragen werden.
    Darunter folgt eine weitere Text-Widget mit dem Inhalt:
@@ -186,22 +214,9 @@ EMPFEHLUNGEN FÜR WIDGETS
     dem Kalendersystem oder zu einzelnen Terminen. Daher ist es aus
     Usability-Gründen derzeit besser, dies mit einem Textwidget danach
     zu machen.)
-
    
 
-
-BUGS, PROBLEME, TODOS, WEITERE INFOS
-
-Denkbare weitere Features (ToDos)
-
-1. Welle+Schiff aendern im Kopfteil anpassbar machen um eigene
-   "Stadt-Skyline" o.ä. zu ergänzen. (vgl. piraten-bonn.de) 
-2. Bei den Defaultbildern nicht ein bestimmtes auswählen, sondern 
-   Zufallssteuerung erlauben
-3. Wenn ein Artikel ein Artikelbild hat, dann wird dieses
-   sonst nirgends gezeigt. Dabei wäre es -wie bei den Pages-
-   doch auch sinnvoll, dieses bei der Einzelanzeige des Artikels anzugeben.
- 
+    
 
 Administrative Hinweise für Wordpress Theme-Editoren:
 
@@ -254,18 +269,28 @@ Administrative Hinweise für Wordpress Theme-Editoren:
    Linkicons werden nur für den Inhaltsbereich gesetzt.
 
 
+
+BUGS, PROBLEME, TODOS, WEITERE INFOS
+
+Denkbare weitere Features (ToDos)
+
+1. Welle+Schiff aendern im Kopfteil anpassbar machen um eigene
+   "Stadt-Skyline" o.ä. zu ergänzen. (vgl. piraten-bonn.de) 
+2. Bei den Defaultbildern nicht ein bestimmtes auswählen, sondern 
+   Zufallssteuerung erlauben
+3. Wenn ein Artikel ein Artikelbild hat, dann wird dieses
+   sonst nirgends gezeigt. Dabei wäre es -wie bei den Pages-
+   doch auch sinnvoll, dieses bei der Einzelanzeige des Artikels anzugeben.
+
+
  *Verbleibende ToDos:*
 - Inhaltsvorlage bauen für:
   * div. Formulare
-  * Impressum
-  * Datenschutzerklärung
   * Kontaktseite
-- Theme Option um Optionsseite zur EIngabe von Kontaktdaten bauen
 - User Doku ergänzen
 - Autorenstyleguide schreiben
 - Publizieren des Themes auf stuke und anderen Servern
 - ERlangen Website umstellen
 - Auf ER Website: Kategorien aufräumen
-- Externe Links optisch deutlicher unterscheidbar machen
 
 

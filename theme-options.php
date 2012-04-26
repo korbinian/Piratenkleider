@@ -863,7 +863,31 @@ function theme_kontaktinfos_do_page() {
                         
                     ?>
                     <table class="form-table">
-                     
+                       <tr valign="top"><th scope="row">Impressumsangaben</th>
+			<td>
+                            <table>                                
+                            <tr valign="top"><th scope="row">Verantwortliche/r</th>
+                                <td>
+                                    <input id="piratenkleider_theme_kontaktinfos[impressumperson]" class="regular-text" type="text" name="piratenkleider_theme_kontaktinfos[impressumperson]" value="<?php esc_attr_e( $options['impressumperson'] ); ?>" />
+                                    <label class="description" for="piratenkleider_theme_kontaktinfos[impressumperson]">
+                                       Verantwortliche/r gemäß §5 TMG. <br>
+                                       Zum Beispiel: <code>Martin Mustermann</code>
+                                    </label>
+                                </td>					
+                            </tr>
+                            <tr valign="top"><th scope="row">Textbezeichnung Dienstanbieter</th>
+                                <td>
+                                    <input id="piratenkleider_theme_kontaktinfos[impressumdienstanbieter]" class="regular-text" type="text" name="piratenkleider_theme_kontaktinfos[impressumdienstanbieter]" value="<?php esc_attr_e( $options['impressumdienstanbieter'] ); ?>" />
+                                    <label class="description" for="piratenkleider_theme_kontaktinfos[impressumdienstanbieter]">
+                                        Textbezeichnung des Dienstanbieter des Webauftritts.<br>
+                                        Beispiel: <code>Kreisverband Musterstadt der Piratenpartei Deutschland 
+                                            vertreten durch den Vorstand Martin Mustermann, Doris Fischer und Florian Meister.</code>
+                                    </label>
+                                </td>					
+                            </tr>
+                            </table>
+			</td>
+		       </tr>
                        <tr valign="top"><th scope="row">Offizielle Postanschrift</th>
 			<td>
                             
@@ -927,7 +951,8 @@ function theme_kontaktinfos_do_page() {
                                 <td>
                                     <input id="piratenkleider_theme_kontaktinfos[ladungperson]" class="regular-text" type="text" name="piratenkleider_theme_kontaktinfos[ladungperson]" value="<?php esc_attr_e( $options['ladungperson'] ); ?>" />
                                     <label class="description" for="piratenkleider_theme_kontaktinfos[ladungperson]">
-                                        Anschrift: Optionale Personenangabe ("zu Händen") <br>
+                                        Anschrift: Optionale Personenangabe ("zu Händen"). SOllte in der Regel dieselbe Person sein,
+                                        die oben als verantwortliche Person für das Impressum definiert ist.<br>
                                         Zum Beispiel: <code>Martin Mustermann</code>
                                     </label>
                                 </td>					

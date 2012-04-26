@@ -13,19 +13,13 @@ $(window).load(function () {
      $("div").removeClass('no-js')
 });  
 
- /* Barrierefreie Hauptnavigation mit Tastatur
- * @author          Thomas Kipf
- * @copyright       Copyright 2005-2012, RRZE
- * @license         CC-A 2.0 (http://creativecommons.org/licenses/by/2.0/)
- * 
+ /* Barrierefreie Hauptnavigation mit Tastatur 
  * Links, die via Tastatur einen Fikus bekommen, erhalten die Klasse
  * "hover". Diese Klasse wird auf das aktive Element, sowie die darübergehenden
  * Elemente vergeben.
  * Die hover-Klasse ist parallel zu der normalen hover-Funktion im CSS
  * zu definieren.
  */
-
-
 
 $(document).on("focusin", function() { 
     var menuLayers = 5; //Anzahl der Menue-Ebenen

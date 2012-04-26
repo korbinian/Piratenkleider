@@ -3,7 +3,7 @@
     Created on : 25.04.2012, 16:46:37
     Author     : xwolf
     Description:
-        Automatsiche Linkicons
+        Automatische Linkicons über CSS
 */
 
 
@@ -20,7 +20,7 @@
 
 .content-primary a[href $=".ogg"], .content-primary a[href $=".OGG"],
 .content-primary a[href $=".mid"], .content-primary a[href $=".MID"],
-.content-primary a[href $=".midi"],.content-primary  a[href $=".MIDI"],
+.content-primary a[href $=".midi"],.content-primary a[href $=".MIDI"],
 .content-primary a[href $=".mp3"], .content-primary a[href $=".MP3"],
 .content-primary a[href $=".wav"], .content-primary a[href $=".WAV"],
 .content-primary a[href $=".wma"], .content-primary a[href $=".WMA"] {
@@ -29,7 +29,7 @@
 }
 .content-primary a[href $=".ogg"]:after, .content-primary a[href $=".OGG"]:after,
 .content-primary a[href $=".mid"]:after, .content-primary a[href $=".MID"]:after,
-.content-primary a[href $=".midi"]:after,.content-primary  a[href $=".MIDI"]:after,
+.content-primary a[href $=".midi"]:after,.content-primary a[href $=".MIDI"]:after,
 .content-primary a[href $=".mp3"]:after, .content-primary a[href $=".MP3"]:after,
 .content-primary a[href $=".wav"]:after, .content-primary a[href $=".WAV"]:after,
 .content-primary a[href $=".wma"]:after, .content-primary a[href $=".WMA"]:after {
@@ -38,7 +38,7 @@
 
 .content-primary a[href $=".ogm"], .content-primary a[href $=".OGM"],
 .content-primary a[href $=".avi"], .content-primary a[href $=".AVI"],
-.content-primary a[href $=".mpeg"],.content-primary  a[href $=".MPEG"],
+.content-primary a[href $=".mpeg"],.content-primary a[href $=".MPEG"],
 .content-primary a[href $=".mpg"], .content-primary a[href $=".MPG"] {
     background: url("../images/links/video.png") center left no-repeat;
     padding-left: 19px;
@@ -68,7 +68,15 @@
 .content-primary a[href $=".ppt"]:after, .content-primary a[href $=".PPT"]:after {
    content: " (Powerpoint-Folien) ";
 }
-
+.content-primary a[href $=".doc"], .content-primary a[href $=".DOC"],
+.content-primary a[href $=".docx"], .content-primary a[href $=".DOCX"] {
+    background: url("../images/links/word.gif") center left no-repeat;
+    padding-left: 19px;
+}
+.content-primary a[href $=".doc"]:after, .content-primary a[href $=".DOC"]:after,
+.content-primary a[href $=".docx"]:after, .content-primary a[href $=".DOCX"]:after {
+   content: " (Word) ";
+}
 .content-primary a[href $=".zip"], .content-primary a[href $=".ZIP"],
 .content-primary a[href $=".rar"], .content-primary a[href $=".RAR"],
 .content-primary a[href $=".exe"], .content-primary a[href $=".EXE"],

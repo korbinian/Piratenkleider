@@ -47,12 +47,12 @@
 	/* (en) optional output of acronyms and abbreviations*/
 	/* (de) optionale Ausgabe von Auszeichnung von Abkürzungen */
 
-	/*
+	
 	abbr[title]:after,
 	acronym[title]:after {
 		content:'(' attr(title) ')';
 	}
-	*/
+	
 
 	/*------------------------------------------------------------------------------------------------------*/
 

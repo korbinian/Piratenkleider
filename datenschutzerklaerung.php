@@ -14,15 +14,22 @@
     <div class="content-primary">
       <div class="content-header">
         <h1 id="page-title"><span>Datenschutzerklärung</span></h1>   
-        <?php if ($options['aktiv-platzhalterbilder-indexseiten']) { ?>         
+        <?php if (has_post_thumbnail()) { 
+            echo '<div class="symbolbild">';
+              the_post_thumbnail(); 
+            echo '</div>';  
+        } else {            
+           if ($options['aktiv-platzhalterbilder-indexseiten']) { ?>         
             <div class="symbolbild"> 
               <img src="<?php echo $options['src-default-symbolbild']?>" alt="" >
            </div>                                 
-          <?php } ?> 
+          <?php }     
+            }   
+         ?>
       </div>
       <div class="skin">
 
-          <?php if ( have_posts() ) while ( have_posts() ) : the_post(); ?>
+        <?php if ( have_posts() ) while ( have_posts() ) : the_post(); ?>
         <?php the_content(); ?>
         <?php edit_post_link( __( 'Bearbeiten', 'twentyten' ), '', '' ); ?>
         <?php endwhile; ?>
