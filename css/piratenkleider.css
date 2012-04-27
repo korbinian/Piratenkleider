@@ -109,6 +109,9 @@ audio:not([controls]) {
     width: 100%;
     height: 100%; 
   }
+  
+  
+
  .no-js {
     display: none;
     
@@ -441,6 +444,34 @@ button, input[type="submit"],
 body {
   background: white url("../assets/bg-tags_gray.jpg") -20% 0 fixed; }
 
+  .sticky {
+     border-radius: 0.3em;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #888;
+    border-color: rgba(0,0,0,.3);
+    -webkit-box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2) inset;
+    -moz-box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2) inset;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2) inset;
+    color: #444;
+    color: rgba(0,0,0,.8);
+
+     background: url("../assets/bg-tags.png") repeat fixed -20% top #FF8800;
+     padding: 5px 5px 20px 5px;
+     margin: 10px;
+ }
+ .sticky a {
+      color: black;
+     background: #f38100;
+    padding: 0 2px;
+ }      
+ .sticky a:hover,
+ .sticky a:focus {
+    
+    color: #000;
+    background: #d97300;
+ }      
+
 .section {
   padding: 0 10px; }
 
@@ -477,6 +508,9 @@ body {
         background: #ff8800;
         color: black; }
 
+ 
+ 
+ 
         /**
 	* ----------------------------------------------------------------------- #
 	*
@@ -1341,6 +1375,11 @@ ul.socialmedia li a:focus img  {
   margin: -5px 0 0 -10px;
   position: absolute; }
 
+.bypostauthor {
+        
+}
+
+
 .post-nav ul {
   list-style: none;
   margin: 0 0 20px 0;
@@ -1389,7 +1428,38 @@ ul.socialmedia li a:focus img  {
 }
 
 
+ .gallery {
+	margin: 10px 10px 10px 50px;        
+}
+ .gallery .gallery-item {
+	float: left;
+	margin-top: 10px;
+	text-align: center;
+	width: 33%;
+}
 
+ .gallery .gallery-caption {
+	margin-left: 0;
+}
+ .gallery dl {
+	margin: 0;
+}
+ .gallery img {
+	border: 5px solid #f1f1f1;
+}
+.gallery img:hover {
+	border: 5px solid #ff8800;
+}
+ .gallery-caption {
+	color: #888;
+	font-size: 12px;
+	margin: 0px 0 24px 0;
+}
+ .gallery br+br {
+	display: none; 
+}
+
+                                          
 
 .first-startpage-widget-area {
   float: left;
@@ -1412,8 +1482,11 @@ ul.socialmedia li a:focus img  {
     .first-startpage-widget-area li a {
       font-family: "BebasNeueRegular", Helvetica, Arial, sans-serif;
       font-size: 20px; }
-  .first-startpage-widget-area li:hover span.date {
-    opacity: 1; }
+    
+  .first-startpage-widget-area li:hover span.date,
+  .first-startpage-widget-area li:focus span.date {
+    opacity: 1;
+  }
   .first-startpage-widget-area a.all-articles {
     padding: 5px 10px;
     overflow: visible;

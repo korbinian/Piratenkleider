@@ -8,7 +8,7 @@
     <div class="content-primary">
       <div class="content-header">   
             <?php if ( have_posts() ) the_post(); ?>
-           <h1><?php printf( __( 'Autorarchiv: %s', 'twentyten' ), get_the_author() ); ?></h1>
+           <h1><?php printf( __( 'Autorarchiv: %s', 'piratenkleider' ), get_the_author() ); ?></h1>
           
             <?php if ($options['aktiv-platzhalterbilder-indexseiten']) { ?>         
             <div class="symbolbild"> 

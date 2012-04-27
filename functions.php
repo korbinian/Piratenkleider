@@ -17,9 +17,9 @@ $defaultoptions = array(
     'logo-height'   => 130,
     'thumb-width'   => 705,
     'thumb-height'  => 240,
-    'src-jquery'    => get_bloginfo('template_url'). "/js/jquery.min.js",
-    'src-layoutjs'    => get_bloginfo('template_url'). "/js/layout.js",
-    'src-yaml-focusfix' => get_bloginfo('template_url'). "/yaml/core/js/yaml-focusfix.js",
+    'src-jquery'    => get_template_directory_uri(). "/js/jquery.min.js",
+    'src-layoutjs'    => get_template_directory_uri(). "/js/layout.js",
+    'src-yaml-focusfix' => get_template_directory_uri(). "/yaml/core/js/yaml-focusfix.js",
     'src-default-symbolbild-big'    => get_template_directory_uri() .'/images/default-vorlage.png',
     'src-default-symbolbild'    => get_template_directory_uri() .'/images/default-vorlage-705x150.png',
     'slider-aktiv'  => 1,
@@ -39,6 +39,7 @@ $defaultoptions = array(
     'url-newsletteranmeldung'   => 'https://service.piratenpartei.de/subscribe/newsletter',
     'url-mitgliedwerden'        => 'https://www.piratenpartei.de/mitmachen/mitglied-werden/',
     'url-spenden'               => 'https://www.piratenpartei.de/mitmachen/spenden/',
+    'teaser_maxlength'          => 300,
     
 );
 /**
@@ -46,35 +47,35 @@ $defaultoptions = array(
  */
 $defaultbilder_liste = array(
 	'0' => array(
-		'src' =>	get_bloginfo('template_url').'/images/defaultbild-grundgesetz.jpg',
+		'src' =>	get_template_directory_uri().'/images/defaultbild-grundgesetz.jpg',
 		'label' => __( 'Plakat Grundgesetz', 'piratenkleider' )
 	),
 	'1' => array(
-		'src' =>	get_bloginfo('template_url').'/images/defaultbild-medien.jpg',
+		'src' =>	get_template_directory_uri().'/images/defaultbild-medien.jpg',
 		'label' => __( 'Medien', 'piratenkleider' )
 	),
 	'2' => array(
-		'src' =>	get_bloginfo('template_url').'/images/defaultbild-mitmachen.jpg',
+		'src' =>	get_template_directory_uri().'/images/defaultbild-mitmachen.jpg',
 		'label' => __( 'Mitmachen', 'piratenkleider' )
 	),
         '3' => array(
-		'src' =>	get_bloginfo('template_url').'/images/defaultbild-piraten.jpg',
+		'src' =>	get_template_directory_uri().'/images/defaultbild-piraten.jpg',
 		'label' => __( 'Piraten', 'piratenkleider' )
 	),
         '4' => array(
-		'src' =>	get_bloginfo('template_url').'/images/defaultbild-plakate.jpg',
+		'src' =>	get_template_directory_uri().'/images/defaultbild-plakate.jpg',
 		'label' => __( 'Plakate', 'piratenkleider' )
 	),
         '5' => array(
-		'src' =>	get_bloginfo('template_url').'/images/defaultbild-presse.jpg',
+		'src' =>	get_template_directory_uri().'/images/defaultbild-presse.jpg',
 		'label' => __( 'Presse', 'piratenkleider' )
 	),
         '6' => array(
-		'src' =>	get_bloginfo('template_url').'/images/defaultbild-protest.jpg',
+		'src' =>	get_template_directory_uri().'/images/defaultbild-protest.jpg',
 		'label' => __( 'Protest', 'piratenkleider' )
 	),
          '7' => array(
-		'src' =>	get_bloginfo('template_url').'/images/defaultbild-datenschutz.jpg',
+		'src' =>	get_template_directory_uri().'/images/defaultbild-datenschutz.jpg',
 		'label' => __( 'Datenschutz', 'piratenkleider' )
 	),
 );
@@ -84,76 +85,76 @@ $defaultbilder_liste = array(
  */
 $defaultplakate_liste = array(
 	'0' => array(
-		'src' =>	get_bloginfo('template_url').'/plakate/LTWNRW12_Plakat_A01.jpg',
+		'src' =>	get_template_directory_uri().'/plakate/LTWNRW12_Plakat_A01.jpg',
 		'label' => __( 'Plakat LTWNRW12 A01', 'piratenkleider' )
 	),
 	'1' => array(
-		'src' =>	get_bloginfo('template_url').'/plakate/LTWNRW12_Plakat_B03.jpg',
+		'src' =>	get_template_directory_uri().'/plakate/LTWNRW12_Plakat_B03.jpg',
 		'label' => __( 'Plakat LTWNRW12_Plakat_B03', 'piratenkleider' )
 	),
 	'2' => array(
-		'src' =>	get_bloginfo('template_url').'/plakate/LTWNRW12_Plakat_C01.jpg',
+		'src' =>	get_template_directory_uri().'/plakate/LTWNRW12_Plakat_C01.jpg',
 		'label' => __( 'Plakat LTWNRW12_Plakat_C01', 'piratenkleider' )
 	),
         '3' => array(
-		'src' =>	get_bloginfo('template_url').'/plakate/LTWNRW12_Plakat_D01.jpg',
+		'src' =>	get_template_directory_uri().'/plakate/LTWNRW12_Plakat_D01.jpg',
 		'label' => __( 'Plakat LTWNRW12_Plakat_D01', 'piratenkleider' )
 	),
         '4' => array(
-		'src' =>	get_bloginfo('template_url').'/plakate/LTWNRW12_Plakat_E01.jpg',
+		'src' =>	get_template_directory_uri().'/plakate/LTWNRW12_Plakat_E01.jpg',
 		'label' => __( 'Plakat LTWNRW12_Plakat_E01', 'piratenkleider' )
 	),
         '5' => array(
-		'src' =>	get_bloginfo('template_url').'/plakate/LTWNRW12_Plakat_F03.jpg',
+		'src' =>	get_template_directory_uri().'/plakate/LTWNRW12_Plakat_F03.jpg',
 		'label' => __( 'Plakat LTWNRW12_Plakat_F03', 'piratenkleider' )
 	),
 	'6' => array(
-		'src' =>	get_bloginfo('template_url').'/plakate/LTWSH12_Echte-Mitbestimmung.jpg',
+		'src' =>	get_template_directory_uri().'/plakate/LTWSH12_Echte-Mitbestimmung.jpg',
 		'label' => __( 'Plakat LTWSH12_Echte-Mitbestimmung', 'piratenkleider' )
 	),
 	'7' => array(
-		'src' =>	get_bloginfo('template_url').'/plakate/LTWSH12_Fehmarnbelt.jpg',
+		'src' =>	get_template_directory_uri().'/plakate/LTWSH12_Fehmarnbelt.jpg',
 		'label' => __( 'Plakat LTWSH12_Fehmarnbelt', 'piratenkleider' )
 	),
         '8' => array(
-		'src' =>	get_bloginfo('template_url').'/plakate/LTWSH12_Freies-Wissen.jpg',
+		'src' =>	get_template_directory_uri().'/plakate/LTWSH12_Freies-Wissen.jpg',
 		'label' => __( 'Plakat LTWSH12_Freies-Wissen', 'piratenkleider' )
 	),
         '9' => array(
-		'src' =>	get_bloginfo('template_url').'/plakate/LTWSH12_Ich-will-so-leben.jpg',
+		'src' =>	get_template_directory_uri().'/plakate/LTWSH12_Ich-will-so-leben.jpg',
 		'label' => __( 'Plakat LTWSH12_Ich-will-so-leben', 'piratenkleider' )
 	),
        '10' => array(
-		'src' =>	get_bloginfo('template_url').'/plakate/LTWSH12_Inseln-allgemein.jpg',
+		'src' =>	get_template_directory_uri().'/plakate/LTWSH12_Inseln-allgemein.jpg',
 		'label' => __( 'Plakat LTWSH12_Inseln-allgemein', 'piratenkleider' )
 	),
         '11' => array(
-		'src' =>	get_bloginfo('template_url').'/plakate/LTWSH12_Naechster-Halt.jpg',
+		'src' =>	get_template_directory_uri().'/plakate/LTWSH12_Naechster-Halt.jpg',
 		'label' => __( 'Plakat LTWSH12_Naechster-Halt', 'piratenkleider' )
 	),
 	'12' => array(
-		'src' =>	get_bloginfo('template_url').'/plakate/LTWSH12_Orange_isst_gesund.jpg',
+		'src' =>	get_template_directory_uri().'/plakate/LTWSH12_Orange_isst_gesund.jpg',
 		'label' => __( 'Plakat LTWSH12_Orange_isst_gesund', 'piratenkleider' )
 	),
 	'13' => array(
-		'src' =>	get_bloginfo('template_url').'/plakate/LTWSH12_Transparenz.jpg',
+		'src' =>	get_template_directory_uri().'/plakate/LTWSH12_Transparenz.jpg',
 		'label' => __( 'Plakat LTWSH12_Transparenz', 'piratenkleider' )
 	),
         '14' => array(
-		'src' =>	get_bloginfo('template_url').'/plakate/LTWSH12_Trau-keinem-Plakat.jpg',
+		'src' =>	get_template_directory_uri().'/plakate/LTWSH12_Trau-keinem-Plakat.jpg',
 		'label' => __( 'Plakat LTWSH12_Trau-keinem-Plakat', 'piratenkleider' )
 	),
         '15' => array(
-		'src' =>	get_bloginfo('template_url').'/plakate/LTWSH12_Warum_haenge_ich_hier.jpg',
+		'src' =>	get_template_directory_uri().'/plakate/LTWSH12_Warum_haenge_ich_hier.jpg',
 		'label' => __( 'Plakat LTWSH12_Warum_haenge_ich_hier', 'piratenkleider' )
 	),
        '16' => array(
-		'src' =>	get_bloginfo('template_url').'/plakate/LTWSH12_Wir_sind_Romantiker.jpg',
+		'src' =>	get_template_directory_uri().'/plakate/LTWSH12_Wir_sind_Romantiker.jpg',
 		'label' => __( 'Plakat LTWSH12_Wir_sind_Romantiker', 'piratenkleider' )
 	),    
         
 );
-// Aus gestalerischen Gründen müssen Plakate auf der Website exakt 277 Pixel breit sein. Die Höhe ist
+// Aus gestalerischen Gr&uuml;nden m&uuml;ssen Plakate auf der Website exakt 277 Pixel breit sein. Die H&ouml;he ist
 // flexibel, sollte jedoch auch gleich sein. In diesem Fall  391 Pixel.
 
 
@@ -266,7 +267,7 @@ function piratenkleider_filter_wp_title( $title, $separator ) {
 
         if ( is_search() ) {
                 // If we're a search, let's start over:
-                $title = sprintf( __( 'Suchergebnisse für %s', 'piratenkleider' ), '"' . get_search_query() . '"' );
+                $title = sprintf( __( 'Suchergebnisse f&uuml;r %s', 'piratenkleider' ), '"' . get_search_query() . '"' );
                 // Add a page number if we're on page 2 or more:
                 if ( $paged >= 2 )
                         $title .= " $separator " . sprintf( __( 'Page %s', 'piratenkleider' ), $paged );
@@ -295,12 +296,12 @@ add_filter( 'wp_title', 'piratenkleider_filter_wp_title', 10, 2 );
 
 
 function piratenkleider_excerpt_length( $length ) {
-        return 80;
+        return $defaultoptions['teaser_maxlength'];
 }
 add_filter( 'excerpt_length', 'piratenkleider_excerpt_length' );
 
 function piratenkleider_continue_reading_link() {
-        return ' <a href="'. get_permalink() . '">' . __( 'Weiterlesen <span class="meta-nav">&rarr;</span>', 'piratenkleider' ) . '</a>';
+        return ' <a title="Zum Artikel '.strip_tags(get_the_title()).'" href="'. get_permalink() . '">' . __( 'Weiterlesen <span class="meta-nav">&rarr;</span>', 'piratenkleider' ) . '</a>';
 }
 
 function piratenkleider_auto_excerpt_more( $more ) {
@@ -310,7 +311,7 @@ add_filter( 'excerpt_more', 'piratenkleider_auto_excerpt_more' );
 
 
 function piratenkleider_custom_excerpt_more( $output ) {
-        if ( has_excerpt() && ! is_attachment() ) {
+       if ( has_excerpt() && ! is_attachment() ) {      
                 $output .= piratenkleider_continue_reading_link();
         }
         return $output;
@@ -318,10 +319,14 @@ function piratenkleider_custom_excerpt_more( $output ) {
 add_filter( 'get_the_excerpt', 'piratenkleider_custom_excerpt_more' );
 
 
+
 function piratenkleider_remove_gallery_css( $css ) {
         return preg_replace( "#<style type='text/css'>(.*?)</style>#s", '', $css );
 }
 add_filter( 'gallery_style', 'piratenkleider_remove_gallery_css' );
+
+
+
 
 if ( ! function_exists( 'piratenkleider_comment' ) ) :
 /**
@@ -387,7 +392,7 @@ function piratenkleider_widgets_init() {
                 'name' => __( 'Sidebar (Rechte Spalte)', 'piratenkleider' ),
                 'id' => 'sidebar-widget-area',
                 'description' => __( 'Dieser Bereich befindet sich rechts vom Inhaltsbereich. 
-                    Er ist geeignet für Werbeplakate, Hinweise und ähnliches.
+                    Er ist geeignet f&uuml;r Werbeplakate, Hinweise und &auml;hnliches.
                     Wenn leer, werden als Alternative einige der allgemeinen Standardplakate 
                     gezeigt.', 'piratenkleider' ),
                 'before_widget' => '<div class="widget">',
@@ -400,8 +405,8 @@ function piratenkleider_widgets_init() {
                 'name' => __( 'Sidebar 2 (Rechts unter Plakaten)', 'piratenkleider' ),
                 'id' => 'sidebar-widget-area-afterplakate',
                 'description' => __( 'Dieser Bereich befindet sich rechts vom Inhaltsbereich.
-                    Er ist nach den Werbeplakaten positioniert, die über die 
-                    Optionen ein- oder abgeschaltet werden können.', 'piratenkleider' ),
+                    Er ist nach den Werbeplakaten positioniert, die &uuml;ber die 
+                    Optionen ein- oder abgeschaltet werden k&ouml;nnen.', 'piratenkleider' ),
                 'before_widget' => '<div class="widget">',
                 'after_widget' => '</div>',
                 'before_title' => '<h2>',
@@ -465,13 +470,13 @@ function piratenkleider_widgets_init() {
                 'after_title' => '</h3>',
         ) );
 
-        // Linke Seite der Fußzeile
+        // Linke Seite der Fu&szlig;zeile
         register_sidebar( array(
-                'name' => __( 'Fußbereich: Linke Seite', 'piratenkleider' ),
+                'name' => __( 'Fu&szlig;bereich: Linke Seite', 'piratenkleider' ),
                 'id' => 'first-footer-widget-area',
-                'description' => __( 'Bereich im Fußteil unter dem Haupttextbereich.
-                   Dieser Bereich eignet sich insbesondere für externe Links zu
-                   anderen Piratenwebsites auf regionaler oder überegionaler Ebene.
+                'description' => __( 'Bereich im Fu&szlig;teil unter dem Haupttextbereich.
+                   Dieser Bereich eignet sich insbesondere f&uuml;r externe Links zu
+                   anderen Piratenwebsites auf regionaler oder &uuml;beregionaler Ebene.
                    Diese werden dann als Menu mit externen Links definiert und
                    dann als Widget dieser Sidebar zugeordnet.
                    Wenn leer, wird hier nichts angezeigt.', 'piratenkleider' ),
@@ -481,12 +486,12 @@ function piratenkleider_widgets_init() {
                 'after_title' => '</h2>',
         ) );
 
-        // Rechte Seite der Fußzeile
+        // Rechte Seite der Fu&szlig;zeile
         register_sidebar( array(
-                'name' => __( 'Fußbereich: Rechte Spalte', 'piratenkleider' ),
+                'name' => __( 'Fu&szlig;bereich: Rechte Spalte', 'piratenkleider' ),
                 'id' => 'second-footer-widget-area',
-                'description' => __( 'Rechte Spalte im Fußbereich. Wenn leer, erscheint hier das
-                    technische Menu (siehe Menüs). Wenn auch dieses nicht definiert ist, wird 
+                'description' => __( 'Rechte Spalte im Fu&szlig;bereich. Wenn leer, erscheint hier das
+                    technische Menu (siehe Men&uuml;s). Wenn auch dieses nicht definiert ist, wird 
                     die Blogadresse und dessen RSS-Feedadresse gezeigt', 'piratenkleider' ),
                 'before_widget' => '<div class="widget">',
                 'after_widget' => '</div>',
@@ -507,10 +512,10 @@ add_action( 'widgets_init', 'piratenkleider_remove_recent_comments_style' );
 
 if ( ! function_exists( 'piratenkleider_post_pubdateinfo' ) ) :
 /**
- * Fusszeile unter Artikeln: Veröffentlichungsdatum
+ * Fusszeile unter Artikeln: Ver&ouml;ffentlichungsdatum
  */
 function piratenkleider_post_pubdateinfo() {
-        printf( __( '<span class="meta-prep">Veröffentlicht am</span> %1$s ', 'piratenkleider' ),
+        printf( __( '<span class="meta-prep">Ver&ouml;ffentlicht am</span> %1$s ', 'piratenkleider' ),
                 sprintf( '<span class="entry-date">%1$s</span>',
                         get_the_date()
                 )
@@ -557,6 +562,9 @@ function piratenkleider_post_taxonominfo() {
 endif;
 
 
+
+
+
 add_theme_support( 'post-thumbnails' );
 
 
@@ -599,13 +607,38 @@ class My_Walker_Nav_Menu extends Walker_Nav_Menu
   }
 }
 
-function get_custom_excerpt($string, $length){
-  $excerpt = $string;
+
+function get_piratenkleider_custom_excerpt( ){
+  global $defaultoptions;
+  global $post;
+  
+ 
+  if (has_excerpt()) {
+      return  get_the_excerpt();
+  } else {
+      $excerpt = get_the_content();
+       if (!isset($excerpt)) {
+          $excerpt = 'Kein Inhalt';
+        }
+  }
+  
   $excerpt = strip_shortcodes($excerpt);
-  $excerpt = strip_tags($excerpt);
-  $the_str = substr($excerpt, 0, $length);
-return $the_str;
+  $excerpt = strip_tags($excerpt); 
+  if (strlen($excerpt)<5) {
+      $excerpt = 'Kein Inhalt';
+  }
+// $excerpt =  closetags(strip_html_tags( $excerpt ));
+  if (strlen($excerpt) >  $defaultoptions['teaser_maxlength']) {
+    $the_str = substr($excerpt, 0, $defaultoptions['teaser_maxlength']);
+    $the_str .= "...";
+  }  else {
+      $the_str = $excerpt;
+  }
+  $the_str .= piratenkleider_continue_reading_link();
+  return $the_str;
 }
+
+
 
 function short_title($after = '', $length) {
    $mytitle = explode(' ', get_the_title(), $length);
@@ -630,7 +663,7 @@ function dimox_breadcrumbs() {
     echo '<div id="crumbs">';
  
     global $post;
-    $homeLink = get_bloginfo('url');
+    $homeLink = home_url('/');
     echo '<a href="' . $homeLink . '">' . $home . '</a> ' . $delimiter . ' ';
  
     if ( is_category() ) {
@@ -693,7 +726,7 @@ function dimox_breadcrumbs() {
       echo $before . get_the_title() . $after;
  
     } elseif ( is_search() ) {
-      echo $before . 'Suchergebnisse für "' . get_search_query() . '"' . $after;
+      echo $before . 'Suchergebnisse f&uuml;r "' . get_search_query() . '"' . $after;
  
     } elseif ( is_tag() ) {
       echo $before . 'Artikel mit Schlagwort "' . single_tag_title('', false) . '"' . $after;
@@ -709,7 +742,7 @@ function dimox_breadcrumbs() {
  
     if ( get_query_var('paged') ) {
       if ( is_category() || is_day() || is_month() || is_year() || is_search() || is_tag() || is_author() ) echo ' (';
-      echo __('Page') . ' ' . get_query_var('paged');
+      echo __('Page', 'piratenkleider') . ' ' . get_query_var('paged');
       if ( is_category() || is_day() || is_month() || is_year() || is_search() || is_tag() || is_author() ) echo ')';
     }
  

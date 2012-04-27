@@ -31,19 +31,19 @@
 
         <?php if ( have_posts() ) while ( have_posts() ) : the_post(); ?>
         <?php the_content(); ?>
-        <?php edit_post_link( __( 'Bearbeiten', 'twentyten' ), '', '' ); ?>
+        <?php edit_post_link( __( 'Bearbeiten', 'piratenkleider' ), '', '' ); ?>
         <?php endwhile; ?>
           
           
      <?php if ((isset($kontaktinfos['spendenkonto']))
           && (isset($kontaktinfos['spendenempfaenger']))
          && (isset($kontaktinfos['spendenblz']))) { ?>
-          <h2>Per Überweisung spenden</h2>
+          <h2>Per &Uuml;berweisung spenden</h2>
           
         <table>            
         <tbody>
         <tr>
-           <th>Empfänger</th>
+           <th>Empf&auml;nger</th>
          <td><?php esc_attr_e( $kontaktinfos['spendenempfaenger'] ); ?></td>
         </tr>
         <tr>
@@ -68,41 +68,41 @@
         </tr>
         <tr>
            <th>Verwendungszweck</th>
-           <td>Spende von Name, Vorname, Anschrift (ggf. mit Zusatz “Stichwort” 
+           <td>Spende von Name, Vorname, Anschrift (ggf. mit Zusatz "Stichwort" 
             und einem konkreten Verwendungszweck)</td>
         </tr>
         </tbody>
         </table>
           
-<p>Bei Angabe von Name und Anschrift im Feld <em>Verwendungszweck</em> übersenden 
+<p>Bei Angabe von Name und Anschrift im Feld <em>Verwendungszweck</em> &uuml;bersenden 
     wir ab einem Betrag von 200 Euro oder auf Wunsch eine formelle 
-    Zuwendungsbestätigung beziehungsweise eine Spendenbescheinigung zur 
+    Zuwendungsbest&auml;tigung beziehungsweise eine Spendenbescheinigung zur 
     Einreichung beim Finanzamt. Unterhalb dieses Betrages reicht dem Finanzamt 
-    der Einzahlungs- oder Überweisungs- oder Abbuchungsbeleg der eigenen Bank.</p>
+    der Einzahlungs- oder &Uuml;berweisungs- oder Abbuchungsbeleg der eigenen Bank.</p>
 
 
-<h3>Regelmäßige Spenden</h3>
-<p>Vielen Dank für Einzelspenden! <br>
-    Um aber langfristig planen zu können und Rücklagen für Wahlen aufbauen zu 
-    können freuen wir uns auch besonders über regelmäßige Spenden – auch kleine 
-    Beträge. Wenn Du einen Dauerauftrag bei Deiner Bank einrichten kannst 
-    würde uns das sehr helfen. Schon ein paar Euro im Monat ermöglichen uns 
-    auch langfristige Finanzierungen zu übernehmen – wie z.B.  für 
+<h3>Regelm&auml;&szlig;ige Spenden</h3>
+<p>Vielen Dank f&uuml;r Einzelspenden! <br>
+    Um aber langfristig planen zu k&ouml;nnen und R&uuml;cklagen f&uuml;r Wahlen aufbauen zu 
+    k&ouml;nnen freuen wir uns auch besonders &uuml;ber regelm&auml;&szlig;ige Spenden - auch kleine 
+    Betr&auml;ge. Wenn Du einen Dauerauftrag bei Deiner Bank einrichten kannst 
+    w&uuml;rde uns das sehr helfen. Schon ein paar Euro im Monat erm&ouml;glichen uns 
+    auch langfristige Finanzierungen zu &uuml;bernehmen - wie z.B.  f&uuml;r 
     <a href="http://www.anonym-surfen.de/">Anonymisierungsdienste</a>. Zudem sind 
     unsere Mitglieder aufgerufen freiwillig 1% ihres Netto-Einkommens monatlich
     zu spenden.</p>
 
 <h3>Steuer-Tipp</h3>
-<p>Bis zu einer Höhe von 1650 Euro (3300 Euro bei Ehepaaren) pro Jahr können 
-    Mitgliedsbeiträge und Spenden an politische Parteien als Steuerermäßigung
-    nach § 34g EStG geltend gemacht werden. Diese Steuerermäßigungen wirken 
-    sich zu fünfzig Prozent direkt steuermindernd aus. Das bedeutet, für jeden 
-    Euro Spende erhält man fünfzig Cent Steuerminderung. Hat man in einem Jahr 
-    mehr als 1650 Euro (3300 Euro bei Ehepaaren) an Mitgliedsbeiträgen und 
-    Spenden an politische Parteien bezahlt, kann man darüber hinaus gehende 
+<p>Bis zu einer H&ouml;he von 1650 Euro (3300 Euro bei Ehepaaren) pro Jahr k&ouml;nnen 
+    Mitgliedsbeitr&auml;ge und Spenden an politische Parteien als Steuererm&auml;&szlig;igung
+    nach  &sect; 34g EStG geltend gemacht werden. Diese Steuererm&auml;&szlig;igungen wirken 
+    sich zu f&uuml;nfzig Prozent direkt steuermindernd aus. Das bedeutet, f&uuml;r jeden 
+    Euro Spende erh&auml;lt man f&uuml;nfzig Cent Steuerminderung. Hat man in einem Jahr 
+    mehr als 1650 Euro (3300 Euro bei Ehepaaren) an Mitgliedsbeitr&auml;gen und 
+    Spenden an politische Parteien bezahlt, kann man dar&uuml;ber hinaus gehende 
     Spenden bis zu weiteren 1650 Euro (3300 Euro bei Ehepaaren) als 
-    Sonderausgaben nach § 10b EStG geltend machen. Sonderausgaben werden vom zu 
-    versteuernden Einkommen abgezogen. Wie viel man hier konkret spart, hängt 
+    Sonderausgaben nach &sect; 10b EStG geltend machen. Sonderausgaben werden vom zu 
+    versteuernden Einkommen abgezogen. Wie viel man hier konkret spart, h&auml;ngt 
     vom eigenen Steuersatz ab. (Stand: 11/2011)</p>
 
 <?php } else { ?>
@@ -110,10 +110,10 @@
 <div class="box warning">
     <p>
        
-        Für diesen Webauftritt wurden noch keine eigenen Informationen
+        F&uuml;r diesen Webauftritt wurden noch keine eigenen Informationen
         zu Spenden (eigene Kontonumer, BLZ u.a.) gespeichert.</p>
         <p>
-        Sollten Sie für die Piratenpartei Deutschland spenden wollen, 
+        Sollten Sie f&uuml;r die Piratenpartei Deutschland spenden wollen, 
         rufen Sie die
         <a href="https://www.piratenpartei.de/mitmachen/spenden/">Spendenseiten der Piratenpartei Deutschland</a>
         auf.        
@@ -122,10 +122,10 @@
 </div>
 <?php } ?>
 
-<h2>Wenn einmal etwas unklar sein sollte…</h2>
+<h2>Wenn einmal etwas unklar sein sollte...</h2>
 
-<p>Unsere Geschäftsstelle steht per E-Mail, Telefon oder Fax zur Verfügung. 
-    Alle Wege zu uns sind im Impressum aufgeführt.</p>
+<p>Unsere Gesch&auml;ftsstelle steht per E-Mail, Telefon oder Fax zur Verf&uuml;gung. 
+    Alle Wege zu uns sind im Impressum aufgef&uuml;hrt.</p>
           
           
       </div>

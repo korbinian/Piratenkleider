@@ -58,7 +58,7 @@
         <div class="textwidget">
             <ul>
             <li class="first"><a href="http://www.piratenpartei.de/politik/themen/"><div>Informiere dich</div> Unsere Themen & Ziele!</a></li>
-            <li class="second"><a href="http://www.piratenpartei.de/unterstutze-uns/"><div>Unterstütze uns</div> Mit deinem Engagement!</a></li>
+            <li class="second"><a href="http://www.piratenpartei.de/unterstutze-uns/"><div>Unterst&uuml;tze uns</div> Mit deinem Engagement!</a></li>
             <li class="third"><a href="<?php echo $options['url-mitgliedwerden']; ?>"><div>Werde Pirat!</div> Jetzt Mitglied werden!</a></li>
             </ul>
         </div>

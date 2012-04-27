@@ -1,5 +1,5 @@
 <?php if ( post_password_required() ) : ?>
-    <p>Dieser Artikel ist Passwortgeschützt. Bitte gib das Passwort ein um die Kommentare zu sehen.</p>
+    <p>Dieser Artikel ist Passwortgesch&uuml;tzt. Bitte gib das Passwort ein um die Kommentare zu sehen.</p>
     <?php return;
 endif; ?>
 
@@ -10,7 +10,7 @@ endif; ?>
     </p>
 
     <?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) :  ?>
-            <?php previous_comments_link( __( '&larr; Ältere Kommentare', 'piratenkleider' ) ); ?>
+            <?php previous_comments_link( __( '&larr; &Auml;ltere Kommentare', 'piratenkleider' ) ); ?>
             <?php next_comments_link( __( 'Neuere Kommentare &rarr;', 'piratenkleider' ) ); ?>
     <?php endif; ?>
     <ol>
@@ -19,12 +19,12 @@ endif; ?>
     </ol>
 
     <?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) :  ?>
-            <?php previous_comments_link( __( '&larr; Ältere Kommentare', 'piratenkleider' ) ); ?>
+            <?php previous_comments_link( __( '&larr; &Auml;ltere Kommentare', 'piratenkleider' ) ); ?>
             <?php next_comments_link( __( 'Neuere Kommentare &rarr;', 'piratenkleider' ) ); ?>
     <?php endif; ?>
 
 <?php else : if ( ! comments_open() ) : ?>
-	<p>Das Kommentieren dieses Artikels ist nicht (mehr) möglich.</p>
+	<p>Das Kommentieren dieses Artikels ist nicht (mehr) m&ouml;glich.</p>
 <?php endif; ?>
 
 <?php endif; ?>

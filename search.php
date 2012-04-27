@@ -7,7 +7,7 @@
   <div class="row">
     <div class="content-primary">
       <div class="content-header">
-          <h1><?php printf( __( 'Suchergebnisse für: %s', 'twentyten' ), '' . get_search_query() . '' ); ?></h1>                
+          <h1><?php printf( __( 'Suchergebnisse f&uuml;r: %s', 'piratenkleider' ), '' . get_search_query() . '' ); ?></h1>                
           
           <?php if ($options['aktiv-platzhalterbilder-indexseiten']) { ?>         
           <div class="symbolbild"> 
@@ -51,7 +51,7 @@
                              </div>
                         </div>
                         <div class="widget">
-                        <h3>Übersicht aller Kategorien</h3>
+                        <h3>&Uuml;bersicht aller Kategorien</h3>
                         <ul>                            
                           <?php wp_list_categories('title_li='); ?>                               
                         </ul>

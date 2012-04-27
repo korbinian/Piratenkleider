@@ -25,7 +25,7 @@
               Die von Ihnen gesuchte Seite konnte nicht gefunden werden.
           </p>
          <p>
-             Möchten Sie stattdessen im Webauftritt suchen?
+             M&ouml;chten Sie stattdessen im Webauftritt suchen?
          </p>    
               
          <?php get_search_form(); ?>

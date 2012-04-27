@@ -10,7 +10,7 @@
             <?php } else { ?>
                 <div class="widget">
                     <h2><?php bloginfo( 'name' ); ?></h2> 
-                    <p class="titelurl"><a href="<?php bloginfo( 'url' ); ?>"><?php bloginfo( 'url' ); ?></a></p>                 
+                    <p class="titelurl"><a href="<?php echo home_url('/'); ?>"><?php echo home_url('/'); ?></a></p>                 
                     <ul>
                         <li><a href="http://creativecommons.org/licenses/by/3.0/de/">CC-BY-SA 3.0</a></li>
                         <li><a href="<?php bloginfo( 'rss_url' ); ?>">RSS-Feed</a></li>

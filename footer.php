@@ -36,7 +36,7 @@
         if (! isset($animationType)) $animationType = 'slide';
         
      ?>
-    <script src="<?php echo get_bloginfo('template_url'); ?>/js/flexslider.js"></script>  
+    <script src="<?php echo get_template_directory_uri(); ?>/js/flexslider.js"></script>  
     
     <script type="text/javascript">
         /* <![CDATA[ */
@@ -59,7 +59,7 @@
         var twitter_count = <?php echo $options['feed_twitter_numberarticle']; ?>;
         /* ]]> */
         </script>
-    <script src="<?php echo get_bloginfo('template_url'); ?>/js/twitter.js"></script>
+    <script src="<?php echo get_template_directory_uri(); ?>/js/twitter.js"></script>
     
     <?php } ?>
 </body>

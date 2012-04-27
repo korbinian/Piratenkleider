@@ -5,8 +5,8 @@
                         echo '' . $category_description . ''; ?>	
                 <?php /* If there are no posts to display, such as an empty archive page */ ?>
                 <?php if ( ! have_posts() ) : ?>
-                        <h1><?php _e( 'Nichts gefunden', 'twentyten' ); ?></h1>
-                        <p><?php _e( 'Vielleicht hilft eine Suche weiter?', 'twentyten' ); ?></p>
+                        <h1><?php _e( 'Nichts gefunden', 'piratenkleider' ); ?></h1>
+                        <p><?php _e( 'Vielleicht hilft eine Suche weiter?', 'piratenkleider' ); ?></p>
                         <div class="fullwidth"><?php get_search_form(); ?></div>
                 <?php endif; ?>
 
@@ -14,9 +14,9 @@
 
                 <?php /* gallery */ ?>
 
-                <?php if ( in_category( _x('gallery', 'gallery category slug', 'twentyten') ) ) : ?>
+                <?php if ( in_category( _x('gallery', 'gallery category slug', 'piratenkleider') ) ) : ?>
                         <h2>
-                                <a href="<?php the_permalink(); ?>" title="<?php printf( esc_attr__( 'Permalink to %s', 'twentyten' ), the_title_attribute( 'echo=0' ) ); ?>" rel="bookmark">
+                                <a href="<?php the_permalink(); ?>" title="<?php printf( esc_attr__( 'Permalink to %s', 'piratenkleider' ), the_title_attribute( 'echo=0' ) ); ?>" rel="bookmark">
                                         <?php the_title(); ?>
                                 </a>
                         </h2>
@@ -34,8 +34,8 @@
                         <a href="<?php the_permalink(); ?>"><?php echo $image_img_tag; ?></a>
 
                         <p>
-                                <?php printf( __( 'Diese Galerie enthält <a %1$s>%2$s photos</a>.', 'twentyten' ),
-                                                        'href="' . get_permalink() . '" title="' . sprintf( esc_attr__( 'Permalink to %s', 'twentyten' ), the_title_attribute( 'echo=0' ) ) . '" rel="bookmark"',
+                                <?php printf( __( 'Diese Galerie enth&auml;lt <a %1$s>%2$s photos</a>.', 'piratenkleider' ),
+                                                        'href="' . get_permalink() . '" title="' . sprintf( esc_attr__( 'Permalink to %s', 'piratenkleider' ), the_title_attribute( 'echo=0' ) ) . '" rel="bookmark"',
                                                         $total_images
                                                 ); ?>
                         </p>
@@ -43,52 +43,52 @@
                         <?php the_excerpt(); ?>
                 <?php endif; ?>
 
-                        <a href="<?php echo get_term_link( _x('gallery', 'gallery category slug', 'twentyten'), 'category' ); ?>" title="<?php esc_attr_e( 'View posts in the Gallery category', 'twentyten' ); ?>"><?php _e( 'More Galleries', 'twentyten' ); ?></a>
+                        <a href="<?php echo get_term_link( _x('gallery', 'gallery category slug', 'piratenkleider'), 'category' ); ?>" title="<?php esc_attr_e( 'Zeige Artikel aus der Galerie', 'piratenkleider' ); ?>"><?php _e( 'Mehr Bildergalerien', 'piratenkleider' ); ?></a>
                                         |
-                                        <?php comments_popup_link( __( 'Hinterlasse einen Kommentar', 'twentyten' ), __( '1 Comment', 'twentyten' ), __( '% Comments', 'twentyten' ) ); ?>
-                                        <?php edit_post_link( __( 'Bearbeiten', 'twentyten' ), '|', '' ); ?>
+                                        <?php comments_popup_link( __( 'Hinterlasse einen Kommentar', 'piratenkleider' ), __( '1 Comment', 'piratenkleider' ), __( '% kommentare', 'piratenkleider' ) ); ?>
+                                        <?php edit_post_link( __( 'Bearbeiten', 'piratenkleider' ), '|', '' ); ?>
 
                 <?php /* asides */ ?>
 
-                <?php elseif ( in_category( _x('asides', 'asides category slug', 'twentyten') ) ) : ?>
+                <?php elseif ( in_category( _x('asides', 'asides category slug', 'piratenkleider') ) ) : ?>
 
                         <?php if ( is_archive() || is_search() ) : // Display excerpts for archives and search. ?>
                                 <?php the_excerpt(); ?>
                         <?php else : ?>
-                                <?php the_content( __( 'Weiterlesen', 'twentyten' ) ); ?>
+                                <?php the_content( __( 'Weiterlesen', 'piratenkleider' ) ); ?>
                         <?php endif; ?>
 
                                         <?php piratenkleider_post_pubdateinfo(); ?>
                                         |
-                                        <?php comments_popup_link( __( 'Hinterlasse einen Kommentar', 'twentyten' ), __( '1 Comment', 'Kommentar' ), __( '% Kommentare', 'twentyten' ) ); ?>
-                                        <?php edit_post_link( __( 'Bearbeiten', 'twentyten' ), '| ', '' ); ?>
+                                        <?php comments_popup_link( __( 'Hinterlasse einen Kommentar', 'piratenkleider' ), __( '1 Comment', 'Kommentar' ), __( '% Kommentare', 'piratenkleider' ) ); ?>
+                                        <?php edit_post_link( __( 'Bearbeiten', 'piratenkleider' ), '| ', '' ); ?>
 
                 <?php /* How to display all other posts. */ ?>
 
                 <?php else : ?>
-                                <h2><a href="<?php the_permalink(); ?>" title="<?php printf( esc_attr__( 'Permalink to %s', 'twentyten' ), the_title_attribute( 'echo=0' ) ); ?>" rel="bookmark"><?php the_title(); ?></a></h2>
+                                <h2><a href="<?php the_permalink(); ?>" title="<?php printf( esc_attr__( 'Permalink zu %s', 'piratenkleider' ), the_title_attribute( 'echo=0' ) ); ?>" rel="bookmark"><?php the_title(); ?></a></h2>
                                 <?php piratenkleider_post_pubdateinfo(); ?>
 
                 <?php if ( is_archive() || is_search() ) : // Only display excerpts for archives and search. ?>
                                 <?php the_excerpt(); ?>
                 <?php else : ?>
-                                <?php the_content( __( 'Weiterlesen', 'twentyten' ) ); ?>
-                                <?php wp_link_pages( array( 'before' => '' . __( 'Seiten:', 'twentyten' ), 'after' => '' ) ); ?>
+                                <?php the_content( __( 'Weiterlesen', 'piratenkleider' ) ); ?>
+                                <?php wp_link_pages( array( 'before' => '' . __( 'Seiten:', 'piratenkleider' ), 'after' => '' ) ); ?>
                 <?php endif; ?>
 
                                         <?php if ( count( get_the_category() ) ) : ?>
-                                                <?php printf( __( 'veröffentlicht unter  %2$s', 'twentyten' ), 'entry-utility-prep entry-utility-prep-cat-links', get_the_category_list( ', ' ) ); ?>
+                                                <?php printf( __( 'ver&ouml;ffentlicht unter  %2$s', 'piratenkleider' ), 'entry-utility-prep entry-utility-prep-cat-links', get_the_category_list( ', ' ) ); ?>
                                                 |
                                         <?php endif; ?>
                                         <?php
                                                 $tags_list = get_the_tag_list( '', ', ' );
                                                 if ( $tags_list ):
                                         ?>
-                                                <?php printf( __( 'Tagged %2$s', 'twentyten' ), 'entry-utility-prep entry-utility-prep-tag-links', $tags_list ); ?>
+                                                <?php printf( __( 'Tagged %2$s', 'piratenkleider' ), 'entry-utility-prep entry-utility-prep-tag-links', $tags_list ); ?>
                                                 |
                                         <?php endif; ?>
-                                        <?php comments_popup_link( __( 'Hinterlasse einen Kommentar', 'twentyten' ), __( '1 Kommentar', 'twentyten' ), __( '% Kommentare', 'twentyten' ) ); ?>
-                                        <?php edit_post_link( __( 'Bearbeiten', 'twentyten' ), '| ', '' ); ?>
+                                        <?php comments_popup_link( __( 'Hinterlasse einen Kommentar', 'piratenkleider' ), __( '1 Kommentar', 'piratenkleider' ), __( '% Kommentare', 'piratenkleider' ) ); ?>
+                                        <?php edit_post_link( __( 'Bearbeiten', 'piratenkleider' ), '| ', '' ); ?>
 
                         <?php comments_template( '', true ); 
                         ?>
@@ -100,6 +100,6 @@
 
                 <?php /* Display navigation to next/previous pages when applicable */ ?>
                 <?php if (  $wp_query->max_num_pages > 1 ) : ?>
-                                        <?php next_posts_link( __( '&larr; Ältere Beiträge', 'twentyten' ) ); ?>
-                                        <?php previous_posts_link( __( 'Neuere Beiträge &rarr;', 'twentyten' ) ); ?>
+                                        <?php next_posts_link( __( '&larr; &Auml;ltere Beitr&auml;ge', 'piratenkleider' ) ); ?>
+                                        <?php previous_posts_link( __( 'Neuere Beitr&auml;ge &rarr;', 'piratenkleider' ) ); ?>
                 <?php endif; ?>

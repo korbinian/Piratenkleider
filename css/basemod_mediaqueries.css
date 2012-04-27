@@ -303,7 +303,7 @@
     display: none;
    }
    
-    .post-comments {
+  .post-comments {
      background: url("../assets/bg-tags.png") repeat fixed -20% top #FF8800;
      padding: 3px;
      margin: 10px 0px;

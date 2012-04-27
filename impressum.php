@@ -31,7 +31,7 @@
 
         <?php if ( have_posts() ) while ( have_posts() ) : the_post(); ?>
         <?php the_content(); ?>
-        <?php edit_post_link( __( 'Bearbeiten', 'twentyten' ), '', '' ); ?>
+        <?php edit_post_link( __( 'Bearbeiten', 'piratenkleider' ), '', '' ); ?>
         <?php endwhile; ?>
           
           <?php if (isset($kontaktinfos['impressumdienstanbieter'])) { ?>
@@ -48,7 +48,7 @@
           
           <?php } ?>
            <?php if (isset($kontaktinfos['impressumperson'])) { ?>
-           <p>Verantwortlicher gemäß §5 TMG ist 
+          <p>Verantwortlicher gem&auml;&szlig; &sect;5 TMG ist 
                 <?php echo $kontaktinfos['impressumperson']; ?>.
           </p>
            <?php } ?>
@@ -79,7 +79,7 @@
            <?php if ((isset($kontaktinfos['ladungtitel'])) 
                   && (isset($kontaktinfos['ladungstrasse']))
                   && (isset($kontaktinfos['ladungstadt']))) { ?>  
-            <h2>Ladungsfähige Anschrift</h2>
+            <h2>Ladungsf&auml;hige Anschrift</h2>
              <address>
                 <?php echo $kontaktinfos['ladungtitel']?><br> 
                 <?php echo $kontaktinfos['ladungperson']?><br> 
@@ -91,7 +91,7 @@
                if ((isset($kontaktinfos['posttitel'])) 
                   && (isset($kontaktinfos['poststrasse']))
                   && (isset($kontaktinfos['poststadt']))) { ?>
-            <h2>Ladungsfähige Anschrift</h2>
+            <h2>Ladungsf&auml;hige Anschrift</h2>
              <address>
                 <?php echo $kontaktinfos['posttitel']?><br> 
                 <?php echo $kontaktinfos['postperson']?><br> 
@@ -105,27 +105,27 @@
             
             <h2>Rechtsvorschriften</h2>
 <ul>
-<li><a href="http://www.bundestag.de/dokumente/rechtsgrundlagen/pg_pdf.pdf" >Gesetz über politische Parteien (Parteiengesetz)</a></li>
+<li><a href="http://www.bundestag.de/dokumente/rechtsgrundlagen/pg_pdf.pdf" >Gesetz &uuml;ber politische Parteien (Parteiengesetz)</a></li>
 <li><a href="http://wiki.piratenpartei.de/Satzung_des_Landesverband_Bayern" >Satzung des Landesverbands Bayern der Piratenpartei Deutschland</a></li>
 <li><a href="http://wiki.piratenpartei.de/Satzung" >Satzung der Piratenpartei Deutschland</a></li>
 </ul>
             
-<h2>Haftung für Inhalte</h2>
+<h2>Haftung f&uuml;r Inhalte</h2>
 <p>
     Der Betreiber hat alle in seinem Bereich bereitgestellten Informationen nach 
-    bestem Wissen und Gewissen erarbeitet und geprüft. Es wird jedoch keine 
-    Gewähr für die Aktualität, Richtigkeit, Vollständigkeit oder Qualität und 
-    jederzeitige Verfügbarkeit der bereitgestellten Informationen übernommen.
+    bestem Wissen und Gewissen erarbeitet und gepr&uuml;ft. Es wird jedoch keine 
+    Gew&auml;hr f&uuml;r die Aktualit&auml;t, Richtigkeit, Vollst&auml;ndigkeit oder Qualit&auml;t und 
+    jederzeitige Verf&uuml;gbarkeit der bereitgestellten Informationen &uuml;bernommen.
 </p><p>
-Für etwaige Schäden, die beim Aufrufen oder Herunterladen von Daten durch 
+F&uuml;r etwaige Sch&auml;den, die beim Aufrufen oder Herunterladen von Daten durch 
 Computerviren oder der Installation oder Nutzung von Software verursacht 
 werden, wird nicht gehaftet.
 </p><p>
 Namentlich gekennzeichnete Internetseiten und Kommentare geben die Auffassungen 
 und Erkenntnisse der abfassenden Personen wieder.
-Der Betreiber behält es sich ausdrücklich vor, einzelne Webseiten, Kommentare
-oder das gesamte Angebot ohne gesonderte Ankündigung zu verändern, 
-zu ergänzen, zu löschen oder die Veröffentlichung zeitweise oder endgültig 
+Der Betreiber beh&auml;lt es sich ausdr&uuml;cklich vor, einzelne Webseiten, Kommentare
+oder das gesamte Angebot ohne gesonderte Ank&uuml;ndigung zu ver&auml;ndern, 
+zu erg&auml;nzen, zu l&ouml;schen oder die Ver&ouml;ffentlichung zeitweise oder endg&uuml;ltig 
 einzustellen. </p>
 
 <h2>Links und Verweise</h2>
@@ -174,22 +174,22 @@ haftet allein der jeweilige Anbieter der Seite, auf welche verwiesen wurde.
 Die durch die Seitenbetreiber erstellten Inhalte und Werke auf diesen Seiten 
 unterliegen dem deutschen Urheberrecht. 
 Soweit nicht anders gekennzeichnet, 
-stehen sämtliche Werke dieses Angebots unter einer 
+stehen s&auml;mtliche Werke dieses Angebots unter einer 
 <a href="http://creativecommons.org/licenses/by/3.0/de/" rel="license">    
     Creative Commons Namensnennung 3.0 Deutschland Lizenz</a>.
 </p>
 <p style="float:right; display: inline; margin: 1em;"><img src="http://i.creativecommons.org/l/by/3.0/de/88x31.png" alt="" /></p>
 <p>
-    Sie dürfen somit
+    Sie d&uuml;rfen somit
 </p>
 <ul>
-    <li>das Werk bzw. den Inhalt vervielfältigen, verbreiten und öffentlich 
-        zugänglich machen</li>
+    <li>das Werk bzw. den Inhalt vervielf&auml;ltigen, verbreiten und &ouml;ffentlich 
+        zug&auml;nglich machen</li>
     <li>Abwandlungen und Bearbeitungen des Werkes bzw. Inhaltes anfertigen</li>
     <li>das Werk kommerziell nutzen </li>               
 </ul>
 <p>Zu den folgenden Bedingungen:</p>
-<ul><li><b>Namensnennung</b> — Sie müssen den Namen des Autors/Rechteinhabers 
+<ul><li><b>Namensnennung</b> - Sie m&uuml;ssen den Namen des Autors/Rechteinhabers 
         in der von ihm festgelegten Weise nennen. </li></ul>
     
     
@@ -227,18 +227,18 @@ stehen sämtliche Werke dieses Angebots unter einer
 <h2>Datenschutz</h2>
 <p>
 Die Nutzung unserer Webseite ist in der Regel ohne Angabe personenbezogener 
-Daten möglich. Die Speicherung von Verbindungsdaten erfolgt nicht. Soweit auf 
+Daten m&ouml;glich. Die Speicherung von Verbindungsdaten erfolgt nicht. Soweit auf 
 unseren Seiten personenbezogene Daten (beispielsweise Name, Anschrift oder 
-eMail-Adressen) erhoben werden, erfolgt dies, soweit möglich, stets auf 
-freiwilliger Basis. Diese Daten werden ohne Ihre ausdrückliche Zustimmung
+eMail-Adressen) erhoben werden, erfolgt dies, soweit m&ouml;glich, stets auf 
+freiwilliger Basis. Diese Daten werden ohne Ihre ausdr&uuml;ckliche Zustimmung
 nicht an Dritte weitergegeben. 
-</p><p>Wir weisen darauf hin, dass die Datenübertragung 
-im Internet (z.B. bei der Kommunikation per E-Mail) Sicherheitslücken aufweisen 
-kann. Ein lückenloser Schutz der Daten vor dem Zugriff durch Dritte ist nicht 
-möglich. Der Nutzung von im Rahmen der Impressumspflicht veröffentlichten 
-Kontaktdaten durch Dritte zur Übersendung von nicht ausdrücklich angeforderter 
-Werbung und Informationsmaterialien wird hiermit ausdrücklich widersprochen. 
-Die Betreiber der Seiten behalten sich ausdrücklich rechtliche Schritte im Falle 
+</p><p>Wir weisen darauf hin, dass die Daten&uuml;bertragung 
+im Internet (z.B. bei der Kommunikation per E-Mail) Sicherheitsl&uuml;cken aufweisen 
+kann. Ein l&uuml;ckenloser Schutz der Daten vor dem Zugriff durch Dritte ist nicht 
+m&ouml;glich. Der Nutzung von im Rahmen der Impressumspflicht ver&ouml;ffentlichten 
+Kontaktdaten durch Dritte zur &Uuml;bersendung von nicht ausdr&uuml;cklich angeforderter 
+Werbung und Informationsmaterialien wird hiermit ausdr&uuml;cklich widersprochen. 
+Die Betreiber der Seiten behalten sich ausdr&uuml;cklich rechtliche Schritte im Falle 
 der unverlangten Zusendung von Werbeinformationen, etwa durch Spam-Mails, vor.</p>
 
       </div>

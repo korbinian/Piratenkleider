@@ -7,7 +7,7 @@
         <h2>Piratenpartei Deutschland</h2>
         <p class="titelurl"><a href="http://www.piratenpartei.de">www.piratenpartei.de</a></p>
             <ul>
-                <li><a href="http://www.piratenpartei-bw.de/">Baden-Württemberg</a></li>   
+                <li><a href="http://www.piratenpartei-bw.de/">Baden-W&uuml;rttemberg</a></li>   
                 <li><a href="http://www.piratenpartei-bayern.de/">Bayern</a></li>   
                 <li><a href="http://berlin.piratenpartei.de/">Berlin</a></li>   
                 <li><a href="http://www.piratenbrandenburg.de/">Brandenburg</a></li>   
@@ -22,7 +22,7 @@
                 <li><a href="http://www.piraten-sachsen.de/">Sachsen</a></li>   
                 <li><a href="http://www.piraten-lsa.de/">Sachsen-Anhalt</a></li>   
                 <li><a href="http://www.piratenpartei-sh.de/">Schleswig-Holstein</a></li>   
-                <li><a href="http://www.piraten-thueringen.de/">Thüringen</a></li>   
+                <li><a href="http://www.piraten-thueringen.de/">Th&uuml;ringen</a></li>   
             </ul>
         <?php } ?>    
     </div>

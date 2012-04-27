@@ -31,7 +31,7 @@
       ob_start();
       ?>
 
-      <div class="post" id="post-<?php the_ID(); ?>">
+      <div <?php post_class(); ?> id="post-<?php the_ID(); ?>" >
         <div class="post-title">
           <h2>
             <a href="<?php the_permalink(); ?>" rel="bookmark" title="<?php the_title(); ?>">
@@ -41,7 +41,7 @@
         </div>
         <div class="post-info">
           <div class="commentbubble">
-            <?php comments_popup_link( '0<span class="skip"> Kommentare</span>', '1<span class="skip"> Kommentar</span>', '%<span class="skip"> Kommentare</span>', 'comments-link', '-');?>
+            <?php comments_popup_link( '0<span class="skip"> Kommentare</span>', '1<span class="skip"> Kommentar</span>', '%<span class="skip"> Kommentare</span>', 'comments-link', '');?>
           </div>
           <div class="cal-icon">
             <span class="day"><?php the_time('j.'); ?></span>
@@ -50,10 +50,7 @@
           </div>
         </div>
         <div class="post-entry">
-        <?php 
-            the_content_rss('', FALSE, '', 80); 
-          ?>
-          <a title="Zum Artikel <?php the_title(); ?>" href="<?php the_permalink() ?>">Weiterlesen  <span class="meta-nav">&rarr;</span></a>
+        <?php echo get_piratenkleider_custom_excerpt(); ?>         
         </div>
       </div>
 

@@ -7,7 +7,7 @@
   <div class="row">
     <div class="content-primary">
       <div class="content-header">
-           <h1 id="page-title"><span><?php printf( __( 'Schlagwörterarchiv: %s', 'twentyten' ), '' . single_cat_title( '', false ) . '' ); ?></span></h1>
+           <h1 id="page-title"><span><?php printf( __( 'Schlagw&ouml;rterarchiv: %s', 'piratenkleider' ), '' . single_cat_title( '', false ) . '' ); ?></span></h1>
           
           <?php if ($options['aktiv-platzhalterbilder-indexseiten']) { ?>         
           <div class="symbolbild"> 
@@ -20,7 +20,7 @@
              
              
               <div class="widget">
-                <h2>Übersicht aller Tags</h2>
+                <h2>&Uuml;bersicht aller Tags</h2>
                 <div class="tagcloud">                   
                   <?php wp_tag_cloud(array('smallest'  => 14, 'largest'   => 28)); ?>                  
                 </div>    
