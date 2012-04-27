@@ -13,7 +13,7 @@
                 <?php while ( have_posts() ) : the_post(); ?>
 
 
-                <h2><a href="<?php the_permalink(); ?>" title="<?php printf( esc_attr__( 'Permalink to %s', 'twentyten' ), the_title_attribute( 'echo=0' ) ); ?>" rel="bookmark"><?php the_title(); ?></a></h2>
+                <h2><a href="<?php the_permalink(); ?>" title="<?php printf( esc_attr__( 'Permalink to %s', 'piratenkleider' ), the_title_attribute( 'echo=0' ) ); ?>" rel="bookmark"><?php the_title(); ?></a></h2>
                                  <p class="pupdateinfo"><?php piratenkleider_post_pubdateinfo(); ?></p>
                                 <p><?php echo get_piratenkleider_custom_excerpt(); ?></p>
                                 <?php wp_link_pages( array( 'before' => '' . __( 'Seiten:', 'piratenkleider' ), 'after' => '' ) ); ?>
