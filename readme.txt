@@ -2,7 +2,7 @@ Piratenkleider
 - Wordpress-Theme für Webauftritte der Piratenpartei 
 =================================================
 
-Version 2.1 von Wolfgang Wiese (xwolf), April 2012
+Version 2.2 von Wolfgang Wiese (xwolf), April 2012
 
 
 DOWNLOADS
@@ -134,15 +134,20 @@ THEME-OPTION "Takelage einstellen"
     - Metatag-Angaben ändern
     - Optionale Anzeige für Seitenbilder steuern
       
-
+   
  
 
 THEME-OPTION "Segel setzen"
    
    Unter dieser Option lassen sich die Ersatzbilder festlegen, die angezeigt
    werden, wenn  Artikel oder  Seiten kein "Artikelbild" besitzen.
+   Werden für den Slider keine Vorgaben gemacht, wird per Default die erste 
+   Kategorie ("Allgemein") verwendet und Bilder per Zufall ausgegeben.
+
    Ausserdem können hier die Werbeposter beim Slider in der rechten Sidebar
    ausgewählt und über URL-Angaben zusätzliche definiert werden.
+   Werden keine Bilder vorausgewählt, werden alle Werbeposter im
+   Slider definiert.
 
    Die Defaultbilder die in der rechten Sidebar als Werbeplakate erscheinen
    liegen im Ordner /plakate/ . 
@@ -281,7 +286,7 @@ Denkbare weitere Features (ToDos)
 3. Wenn ein Artikel ein Artikelbild hat, dann wird dieses
    sonst nirgends gezeigt. Dabei wäre es -wie bei den Pages-
    doch auch sinnvoll, dieses bei der Einzelanzeige des Artikels anzugeben.
-4. add_filer() einbauen, der alle externen Links mit einer entprechenden
+4. add_filter() einbauen, der alle externen Links mit einer entprechenden
    CSS-Klasse ergänzt
 5. Plugin Social Media testen/CSS anpassen
 
