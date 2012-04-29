@@ -164,14 +164,19 @@ a {
   vertical-align: baseline;
   position: relative;
   text-decoration: none;
-  color: #2d7dc5;
-  -webkit-tap-highlight-color: #2d7dc5; }
+  /* color: #2d7dc5;*/
+  color: #06C;
+  -webkit-tap-highlight-color: #2d7dc5; 
+}
   a:visited {
-    color: #2d7dc5; }
+    color: #2d7dc5;
+  }
   a:active {
-    top: 1px; }
+    top: 1px;
+  }
   a:hover {
-    color: #111; }
+    color: #111;
+  }
   a:hover, a.active {
     outline: 0px solid !important; }
   a:focus {
@@ -1038,17 +1043,29 @@ ul.socialmedia li a:focus img  {
   background: white; 
 
 }
-  .content-primary input[type="text"], .content-primary select, .content-primary textarea {
-    border: 1px solid silver; }
+  .content-primary input[type="text"], 
+  .content-primary select, 
+  .content-primary textarea {
+    border: 1px solid silver; 
+    font-size: 1em;
+  }
+  .content-primary input[type="text"]:hover, 
+  .content-primary textarea:hover,
+  .content-primary input[type="text"]:focus, 
+  .content-primary textarea:focus {
+    border: 1px solid black; 
+    background-color: beige;
+  }
   .content-primary .columns {
-    float: left; }
-    .content-primary .columns .column1, .content-primary .columns .column2 {
+    float: left; 
+  }
+  .content-primary .columns .column1, .content-primary .columns .column2 {
       margin-bottom: 20px; }
-      .content-primary .columns .column1 hr, .content-primary .columns .column2 hr {
+  .content-primary .columns .column1 hr, .content-primary .columns .column2 hr {
         display: none; }
-    .content-primary .columns .column1 {
+  .content-primary .columns .column1 {
       float: left; }
-    .content-primary .columns .column2 {
+  .content-primary .columns .column2 {
       float: right; }
   .content-primary .post-nav {
     margin-bottom: 20px;
@@ -1176,7 +1193,7 @@ ul.socialmedia li a:focus img  {
 .content-aside .newsletter  form label {
       font-weight: lighter; 
 }
- .content-aside .newsletter form input[type="text"] {
+.content-aside .newsletter form input[type="text"] {
       max-width: 15em;
       width: 150px;  
  }
@@ -1328,12 +1345,15 @@ ul.socialmedia li a:focus img  {
       text-align: right;
       color: #222;
       padding-right: 2%;
-      font-size: 10px; }
+      font-size: 0.9em; 
+    }
       .post-comments ol li .comment-details .comment-author a {
-        color: black; }
+      /*  color: black; */
+      }
       .post-comments ol li .comment-details .comment-author img {
         float: left;
-        margin: 0 10px 10px 0; }
+        margin: 0 10px 10px 0;
+      }
     .post-comments ol li .comment-body {
       float: left;
       width: 68%; }
