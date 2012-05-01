@@ -15,6 +15,13 @@
          if (!isset($numberarticle) )  $numberarticle =3;   
          if (!isset($options['url-mitgliedwerden'])) 
             $options['url-mitgliedwerden'] = $defaultoptions['url-mitgliedwerden'];
+         if (!isset($options['teaser-subtitle'])) 
+            $options['teaser-subtitle'] = $defaultoptions['teaser-subtitle'];
+          if (!isset($options['teaser-title-maxlength'])) 
+            $options['teaser-title-maxlength'] = $defaultoptions['teaser-title-maxlength'];        
+          if (!isset($options['teaser-title-words'])) 
+            $options['teaser-title-words'] = $defaultoptions['teaser-title-words'];
+          
         query_posts( array( 'category_name' => "$catname", 'posts_per_page' => $numberarticle) );
         
         echo '<div class="flexslider">';
@@ -34,12 +41,12 @@
                 }
             }
             echo '<div class="caption">';
-            echo '<p class="bebas">Topthema</p>';
+            echo '<p class="bebas">'.$options['teaser-subtitle'].'</p>';
             echo "<h3>";
             echo "<a href=";
             the_permalink();
             echo ">";
-            echo short_title('&hellip;', 6);
+            echo short_title('&hellip;', $options['teaser-title-words'], $options['teaser-title-maxlength']);
             echo "</a>";
             echo "</h3>";
             echo "</div>";

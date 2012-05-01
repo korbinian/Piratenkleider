@@ -41,7 +41,9 @@ $defaultoptions = array(
     'url-mitgliedwerden'        => 'https://www.piratenpartei.de/mitmachen/mitglied-werden/',
     'url-spenden'               => 'https://www.piratenpartei.de/mitmachen/spenden/',
     'teaser_maxlength'          => 300,
-    
+    'teaser-title-maxlength'    => 64,
+    'teaser-subtitle'           => 'Topthema',
+    'teaser-title-words'        => 10
 );
 /**
  * Liste der Defaultbilder fuer Seiten und Slider
@@ -641,15 +643,22 @@ function get_piratenkleider_custom_excerpt( ){
 
 
 
-function short_title($after = '', $length) {
+function short_title($after = '...', $length = 6, $textlen = 60) {
    $mytitle = explode(' ', get_the_title(), $length);
    if (count($mytitle)>=$length) {
        array_pop($mytitle);
-       $mytitle = implode(" ",$mytitle). $after;
-   } else {
-       $mytitle = implode(" ",$mytitle);
+       $morewords = 1;
+   } else {       
+       $morewords = 0;
    }
-       return $mytitle;
+   $mytitle = implode(" ",$mytitle);
+   if (strlen($mytitle)> $textlen) {
+       $mytitle = substr($mytitle, 0, $textlen);
+       $mytitle .= $after;
+   } elseif ($morewords==1) {
+       $mytitle .= $after;
+   }   
+   return $mytitle;
 }
 
 function dimox_breadcrumbs() {
