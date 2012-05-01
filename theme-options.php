@@ -699,7 +699,7 @@ function theme_defaultbilder_do_page() {
                             <label class="description" for="piratenkleider_theme_defaultbilder[slider-alternativesrc]">
                                 URL inkl. http:// zum Bild. Dieses kann auch vorher &uuml;ber den Mediendialog hochgeladen worden sein.                        
                                 <br>
-                                Das Bild sollte nicht breiter als 640 Pixel sein und seine wesentlichen Merkmale auf einer
+                                Das Bild sollte nicht breiter als 705 Pixel sein und seine wesentlichen Merkmale auf einer
                                 H&ouml;he von 240 Pixel zeigen. In der Darstellung der Seite wird ab 240 Pixel nach unten abgeschnitten.
                             </label>
                                  <br />
@@ -735,7 +735,7 @@ function theme_defaultbilder_do_page() {
                                <label class="description" for="piratenkleider_theme_defaultbilder[seiten-alternativesrc]">
                                 URL inkl. http:// zum Bild. Dieses kann auch vorher &uuml;ber den Mediendialog hochgeladen worden sein.                               
                                 <br>
-                                Das Bild sollte nicht breiter als 640 Pixel sein und seine wesentlichen Merkmale auf einer
+                                Das Bild sollte nicht breiter als 705 Pixel sein und seine wesentlichen Merkmale auf einer
                                 H&ouml;he von 150 Pixel zeigen. In der Darstellung der Seite wird ab 150 Pixel nach unten abgeschnitten.
                                    
                               </label>
