@@ -110,6 +110,14 @@ function theme_options_do_page() {
                                $options['aktiv-defaultseitenbild'] = $defaultoptions['aktiv-defaultseitenbild'];
                             if (!isset($options['aktiv-suche'])) 
                                $options['aktiv-suche'] = $defaultoptions['aktiv-suche'];
+                            
+                            if (!isset($options['teaser-title-maxlength'])) 
+                               $options['teaser-title-maxlength'] = $defaultoptions['teaser-title-maxlength'];
+                            if (!isset($options['teaser-subtitle'])) 
+                               $options['teaser-subtitle'] = $defaultoptions['teaser-subtitle'];
+                            if (!isset($options['teaser-title-words'])) 
+                               $options['teaser-title-words'] = $defaultoptions['teaser-title-words'];
+                            
                         ?>
 			<table class="form-table">
                                     
@@ -312,7 +320,7 @@ function theme_options_do_page() {
                                              <tr valign="top"><th scope="row"><?php _e( 'Slider aktivieren', 'piratenkleider' ); ?></th>
                                         	<td>
                                             	<input id="piratenkleider_theme_options[slider-aktiv]" name="piratenkleider_theme_options[slider-aktiv]" type="checkbox" value="1" <?php checked( '1', $options['slider-aktiv'] ); ?> />
-						<label for="piratenkleider_theme_options[slider-aktiv]">Slider auf der Startseite aktivieren.
+						<label for="piratenkleider_theme_options[slider-aktiv]">Slider im Teaserbereich auf der Startseite aktivieren.
                                                 <br>Die Auswahl der Plakatbilder kann unter den Defaultbildern angepasst werden.</label>
                                                 </td>
                                             </tr>
@@ -347,10 +355,7 @@ function theme_options_do_page() {
                                                     <label class="description" for="piratenkleider_theme_options[slider-catname]"><?php _e( 'Aus welcher Artikelkategorie sollen die Slider genommen werden', 'piratenkleider' ); ?></label>
                                             </td>
                                             </tr>
-                                            
-                                            
-                                            
-                                
+
                                             <tr valign="top"><th scope="row"><?php _e( 'Maximale Anzahl der Artikel', 'piratenkleider' ); ?></th>
                                             <td>
                                                     <select name="piratenkleider_theme_options[slider-numberarticle]">
@@ -405,6 +410,27 @@ function theme_options_do_page() {
                                                             <label class="description" for="piratenkleider_theme_options[slider-animationDuration]"><?php _e( 'Geschwindigkeit der Animation/Fading beim Bild&uuml;bergang in Milisekunden', 'piratenkleider' ); ?></label>
                                                     </td>					
                                             </tr>
+
+                                            
+                                            <tr valign="top"><th scope="row"><?php _e( 'Bezeichnender Titel f&uuml;r Teaser', 'piratenkleider' ); ?></th>
+                                                  <td>
+                                                            <input style="width: 15em;" id="piratenkleider_theme_options[teaser-subtitle]" class="regular-text" type="text" length="5" name="piratenkleider_theme_options[teaser-subtitle]" value="<?php esc_attr_e( $options['teaser-subtitle'] ); ?>" />
+                                                            <label class="description" for="piratenkleider_theme_options[teaser-subtitle]"><?php _e( 'Dieser Text wird oberhalb der Titel angezeigt', 'piratenkleider' ); ?></label>
+                                                    </td>					
+                                            </tr>
+                                            <tr valign="top"><th scope="row"><?php _e( 'Maximale Textl&auml;nge des Titels im Teaser', 'piratenkleider' ); ?></th>
+                                                  <td>
+                                                            <input style="width: 3em;" id="piratenkleider_theme_options[teaser-title-maxlength]" class="regular-text" type="text" length="5" name="piratenkleider_theme_options[teaser-title-maxlength]" value="<?php esc_attr_e( $options['teaser-title-maxlength'] ); ?>" />
+                                                            <label class="description" for="piratenkleider_theme_options[teaser-title-maxlength]"><?php _e( 'Wie lang darf der Titel insgesamt sein, bevor er gek&uuml;rzt wird', 'piratenkleider' ); ?></label>
+                                                    </td>					
+                                            </tr>
+                                            <tr valign="top"><th scope="row"><?php _e( 'Wortzahl des Titels im Teaser', 'piratenkleider' ); ?></th>
+                                                  <td>
+                                                            <input style="width: 3em;" id="piratenkleider_theme_options[teaser-title-words]" class="regular-text" type="text" length="5" name="piratenkleider_theme_options[teaser-title-words]" value="<?php esc_attr_e( $options['teaser-title-words'] ); ?>" />
+                                                            <label class="description" for="piratenkleider_theme_options[teaser-title-words]"><?php _e( 'Zahl der Worte im Teaser; Die maximale Textl&auml;nge begrenzt diesen Wert jedoch.', 'piratenkleider' ); ?></label>
+                                                    </td>					
+                                            </tr>
+                                            
                                             
                                                          
                                         </table>                                                                                
@@ -541,6 +567,11 @@ function theme_options_validate( $input ) {
         $input['slider-catname'] = wp_filter_nohtml_kses( $input['slider-catname'] );
         $input['slider-Direction'] = wp_filter_nohtml_kses( $input['slider-Direction'] );
         $input['slider-animationType'] = wp_filter_nohtml_kses( $input['slider-animationType'] );   
+        
+        $input['teaser-title-maxlength'] = wp_filter_nohtml_kses( $input['teaser-title-maxlength'] );
+        $input['teaser-subtitle'] = wp_filter_nohtml_kses( $input['teaser-subtitle'] );
+        $input['teaser-title-words'] = wp_filter_nohtml_kses( $input['teaser-title-words'] );
+        
         
         $input['meta-keywords'] = wp_filter_nohtml_kses( $input['meta-keywords'] );
         $input['meta-author'] = wp_filter_nohtml_kses( $input['meta-author'] );
