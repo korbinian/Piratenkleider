@@ -99,7 +99,11 @@ if (isset( $options['meta-keywords'] ) ) { ?>
                                         </ul>
                                     </div>                                                                                
                                  <?php } 
-                                 get_search_form(); ?>
+                                 if ( $options['aktiv-suche'] == "1" ){
+                                    get_search_form(); 
+                                 }
+                                   ?>
+                                
 			</div>
                    
 			<div class="nav-main" role="navigation" id="nav">

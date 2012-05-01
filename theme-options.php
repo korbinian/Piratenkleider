@@ -108,6 +108,8 @@ function theme_options_do_page() {
                                 $options['url-spenden'] = $defaultoptions['url-spenden'];
                             if (!isset($options['aktiv-defaultseitenbild'])) 
                                $options['aktiv-defaultseitenbild'] = $defaultoptions['aktiv-defaultseitenbild'];
+                            if (!isset($options['aktiv-suche'])) 
+                               $options['aktiv-suche'] = $defaultoptions['aktiv-suche'];
                         ?>
 			<table class="form-table">
                                     
@@ -116,6 +118,12 @@ function theme_options_do_page() {
 					<td>
 						<input id="piratenkleider_theme_options[defaultwerbesticker]" name="piratenkleider_theme_options[defaultwerbesticker]" type="checkbox" value="1" <?php checked( '1', $options['defaultwerbesticker'] ); ?> />
 						<label  for="piratenkleider_theme_options[defaultwerbesticker]">Sticker "Werde Pirat" und "Hilf uns mit einer Spende" anzeigen.</label>
+					</td>
+				</tr>
+                                <tr valign="top"><th scope="row">Suchmaske</th>
+					<td>
+						<input id="piratenkleider_theme_options[aktiv-suche]" name="piratenkleider_theme_options[aktiv-suche]" type="checkbox" value="1" <?php checked( '1', $options['aktiv-suche'] ); ?> />
+						<label  for="piratenkleider_theme_options[aktiv-suche]">Eingabemaske f&uuml;r Suche oben rechts anzeigen</label>
 					</td>
 				</tr>
 				<tr valign="top"><th scope="row">Piraten-Newsletter</th>
@@ -491,7 +499,9 @@ function theme_options_validate( $input ) {
         if ( ! isset( $input['aktiv-defaultseitenbild'] ) )
 		$input['aktiv-defaultseitenbild'] = 0;
 	$input['aktiv-defaultseitenbild'] = ( $input['aktiv-defaultseitenbild'] == 1 ? 1 : 0 );    
-        
+        if ( ! isset( $input['aktiv-suche'] ) )
+		$input['aktiv-suche'] = 0;
+	$input['aktiv-suche'] = ( $input['aktiv-suche'] == 1 ? 1 : 0 ); 
         
         
         if ( ! isset( $input['aktiv-autoren'] ) )
