@@ -204,7 +204,7 @@ stehen s&auml;mtliche Werke dieses Angebots unter einer
     <li><a href="http://www.jquery.com">JavaScript Framework jQuery</a> (GNU General Public License (GPL) Version 2)</li>
     <li><a href="http://flex.madebymufffin.com">jQuery FlexSlider</a> (MIT license)</li>
     <?php 
-    $theme_data = get_theme_data( get_theme_root() . '/Piratenkleider/style.css' );
+    $theme_data = get_theme_data( get_template_directory(). '/style.css' );
     ?>
     <li><a href="<?php echo $theme_data['URI']; ?>">Wordpress Theme <?php echo $theme_data['Name']; ?></a>, Version <?php echo $theme_data['Version']; ?>
     (Lizensiert unter der Creative Commons Namensnennung 3.0 Deutschland Lizenz</a>).</li>

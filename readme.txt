@@ -212,7 +212,7 @@ EMPFEHLUNGEN FÜR WIDGETS
    Im Widget "Sidebar (Rechte Spalte) " sollte der ICS-Kalender für Termine 
    eingetragen werden.
    Darunter folgt eine weitere Text-Widget mit dem Inhalt:
-   <a href="http://events.piratenpartei.de">Weitere Termine anzeigen</a>
+   <a href="http:// ..  link-zur-eventseite ...">Weitere Termine anzeigen</a>
 
    (Leider verfügt das ICS Plugin in der aktuellen Version noch  
     über keine Einstellung hinsichtlich der Sparche des Links zu 

@@ -18,8 +18,10 @@
             $options['url-newsletteranmeldung'] = $defaultoptions['url-newsletteranmeldung'];
    if (!isset($options['url-mitgliedwerden'])) 
         $options['url-mitgliedwerden'] = $defaultoptions['url-mitgliedwerden'];
-    if (!isset($options['url-spenden'])) 
-        $options['url-spenden'] = $defaultoptions['url-spenden'];
+   if (!isset($options['url-spenden'])) 
+      $options['url-spenden'] = $defaultoptions['url-spenden'];
+   if (!isset($options['aktiv-suche'])) 
+        $options['aktiv-suche'] = $defaultoptions['aktiv-suche'];
 ?>  
 <meta charset="<?php bloginfo( 'charset' ); ?>">
 <!--[if IE]> <meta http-equiv="X-UA-Compatible" content="IE=9"> <![endif]-->
