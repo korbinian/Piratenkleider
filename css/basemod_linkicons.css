@@ -66,7 +66,7 @@
     padding-left: 19px;
 }
 .content-primary a[href $=".ppt"]:after, .content-primary a[href $=".PPT"]:after {
-   content: " (Powerpoint-Folien) ";
+   content: " (Powerpoint-Datei) ";
 }
 .content-primary a[href $=".doc"], .content-primary a[href $=".DOC"],
 .content-primary a[href $=".docx"], .content-primary a[href $=".DOCX"] {
@@ -75,7 +75,7 @@
 }
 .content-primary a[href $=".doc"]:after, .content-primary a[href $=".DOC"]:after,
 .content-primary a[href $=".docx"]:after, .content-primary a[href $=".DOCX"]:after {
-   content: " (Word) ";
+   content: " (Word-Datei) ";
 }
 .content-primary a[href $=".zip"], .content-primary a[href $=".ZIP"],
 .content-primary a[href $=".rar"], .content-primary a[href $=".RAR"],
@@ -87,14 +87,16 @@
     background: url("../images/links/zip.gif") center left no-repeat;
     padding-left: 19px;
 }
-.content-primary a[href $=".zip"]:after, .content-primary a[href $=".ZIP"]:after,
 .content-primary a[href $=".rar"]:after, .content-primary a[href $=".RAR"]:after,
 .content-primary a[href $=".exe"]:after, .content-primary a[href $=".EXE"]:after,
 .content-primary a[href $=".msi"]:after, .content-primary a[href $=".MSI"]:after,
-.content-primary a[href $=".dmg"]:after,.content-primary a[href $=".DMG"]:after,
+.content-primary a[href $=".dmg"]:after,.content-primary a[href $=".DMG"]:after {
+    content: " (Archiv) ";
+}
+.content-primary a[href $=".zip"]:after, .content-primary a[href $=".ZIP"]:after,
 .content-primary a[href $=".gz"]:after, .content-primary a[href $=".GZ"]:after,
 .content-primary a[href *=".gzip"]:after, .content-primary a[href *=".GZIP"]:after {
-    content: " (Archiv) ";
+    content: " (ZIP-Datei) ";
 }
 
 .content-primary a.nolinkicon {
