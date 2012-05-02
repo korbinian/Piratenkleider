@@ -16,7 +16,7 @@
                 <li><a href="http://www.piratenpartei-hessen.de/">Hessen</a></li>   
                 <li><a href="http://www.piratenpartei-mv.de/">Mecklenburg-Vorpommern</a></li>   
                 <li><a href="http://www.piratenpartei-niedersachsen.de/">Niedersachsen</a></li>   
-                <li><a href="https://www.piratenpartei-nrw.de/">Nordrhein-Westfalen</a></li>   
+                <li><a href="http://www.piratenpartei-nrw.de/">Nordrhein-Westfalen</a></li>   
                 <li><a href="http://www.piraten-rlp.de/">Rheinland-Pfalz</a></li>   
                 <li><a href="http://www.piratenpartei-saarland.de/">Saarland</a></li>   
                 <li><a href="http://www.piraten-sachsen.de/">Sachsen</a></li>   
