@@ -2095,9 +2095,13 @@ div.ics-calendar-holder .ics-calendar-event {
     width: 33.3333%; }
 
 
- 
-  
+/* Besondere Tools-----------------------------------------------------------*/
+ ul.social_share_privacy_area {
+    list-style: none outside none;
+    
+}  
 
+/* IE Anpassungen -----------------------------------------------------------*/
 
 .ie6 .nav-top .searchsubmit, 
 .ie7 .nav-top .searchsubmit {
@@ -2294,9 +2298,6 @@ div.ics-calendar-holder .ics-calendar-event {
 .ie8 .second-footer-widget-area {
   float: right;
   width: 33.3333%; }
-
-
-
 
 
 .iesfs7 .flexslider .flex-pauseplay {
