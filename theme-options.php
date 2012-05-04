@@ -10,6 +10,7 @@ function theme_options_init(){
 	register_setting( 'piratenkleider_options', 'piratenkleider_theme_options', 'theme_options_validate' );
         register_setting( 'piratenkleider_defaultbilder', 'piratenkleider_theme_defaultbilder', 'theme_defaultbilder_validate' );
         register_setting( 'piratenkleider_kontaktinfos', 'piratenkleider_theme_kontaktinfos', 'theme_kontaktinfos_validate' );
+        register_setting( 'piratenkleider_designspecials', 'piratenkleider_theme_designspecials', 'theme_designspecials_validate' );
 }
 
 /**
@@ -19,7 +20,7 @@ function theme_options_add_page() {
 	add_theme_page( __( 'Takelage einstellen', 'piratenkleider' ), __( 'Takelage einstellen', 'piratenkleider' ), 'edit_theme_options', 'theme_options', 'theme_options_do_page' );
         add_theme_page( __( 'Segel setzen', 'piratenkleider' ), __( 'Segel setzen', 'piratenkleider' ), 'edit_theme_options', 'theme_defaultbilder', 'theme_defaultbilder_do_page' );
         add_theme_page( __( 'Captn & Crew', 'piratenkleider' ), __( 'Captn & Crew', 'piratenkleider' ), 'edit_theme_options', 'theme_kontaktinfos', 'theme_kontaktinfos_do_page' );
-
+        add_theme_page( __( 'Kl&uuml;verbaum', 'piratenkleider' ), __( 'Kl&uuml;verbaum', 'piratenkleider' ), 'edit_theme_options', 'theme_designspecials', 'theme_designspecials_do_page' );
 }
 
 
@@ -117,6 +118,9 @@ function theme_options_do_page() {
                                $options['teaser-subtitle'] = $defaultoptions['teaser-subtitle'];
                             if (!isset($options['teaser-title-words'])) 
                                $options['teaser-title-words'] = $defaultoptions['teaser-title-words'];
+
+                             if (!isset($options['aktiv-linkmenu'])) 
+                               $options['aktiv-linkmenu'] = $defaultoptions['aktiv-linkmenu'];
                             
                         ?>
 			<table class="form-table">
@@ -126,6 +130,12 @@ function theme_options_do_page() {
 					<td>
 						<input id="piratenkleider_theme_options[defaultwerbesticker]" name="piratenkleider_theme_options[defaultwerbesticker]" type="checkbox" value="1" <?php checked( '1', $options['defaultwerbesticker'] ); ?> />
 						<label  for="piratenkleider_theme_options[defaultwerbesticker]">Sticker "Werde Pirat" und "Hilf uns mit einer Spende" anzeigen.</label>
+					</td>
+				</tr>
+                                <tr valign="top"><th scope="row">Linkmenu</th>
+					<td>
+						<input id="piratenkleider_theme_options[aktiv-linkmenu]" name="piratenkleider_theme_options[aktiv-linkmenu]" type="checkbox" value="1" <?php checked( '1', $options['aktiv-linkmenu'] ); ?> />
+						<label  for="piratenkleider_theme_options[aktiv-linkmenu]">Linkmenu oben rechts, zwischen Social media Icons und Suchmaske anzeigen</label>
 					</td>
 				</tr>
                                 <tr valign="top"><th scope="row">Suchmaske</th>
@@ -528,6 +538,9 @@ function theme_options_validate( $input ) {
         if ( ! isset( $input['aktiv-suche'] ) )
 		$input['aktiv-suche'] = 0;
 	$input['aktiv-suche'] = ( $input['aktiv-suche'] == 1 ? 1 : 0 ); 
+        if ( ! isset( $input['aktiv-linkmenu'] ) )
+		$input['aktiv-linkmenu'] = 0;
+	$input['aktiv-linkmenu'] = ( $input['aktiv-linkmenu'] == 1 ? 1 : 0 );
         
         
         if ( ! isset( $input['aktiv-autoren'] ) )
@@ -829,7 +842,7 @@ function theme_defaultbilder_validate( $input ) {
 
 
 /**
- * Defaultbilder Optionen
+ * Kontaktinfos  Optionen
  */
 function theme_kontaktinfos_do_page() {
    
@@ -1152,5 +1165,238 @@ function theme_kontaktinfos_validate( $input ) {
         $input['kontaktemail'] = sanitize_email( $input['kontaktemail'] ); 
         $input['dsbemail'] = sanitize_email( $input['dsbemail'] ); 
         $input['dsbperson'] = wp_filter_nohtml_kses( $input['dsbperson'] );   
+	return $input;
+}
+
+
+
+
+/**
+ * Defaultbilder Optionen
+ */
+function theme_designspecials_do_page() {
+    global $defaultoptions;
+	if ( ! isset( $_REQUEST['settings-updated'] ) )
+		$_REQUEST['settings-updated'] = false;
+
+	?>
+        <style>
+                label.description {
+                    display: block;
+                }
+                div.wrap {
+                    max-width: 1200px;
+                    margin: 20px 0 0 0;
+                    background-image: url(<?php echo get_template_directory_uri()?>/images/logo.png);
+                    background-position: top right;
+                    background-repeat: no-repeat;
+                    
+                }
+                div.piratenkleider-optionen {
+                    max-width: 1200px;
+                    margin: 0;
+                    padding-top: 20px;
+                    padding-bottom: 0px;
+                    background-image: url(<?php echo get_template_directory_uri()?>/images/schiff-welle.gif);
+                    background-position: bottom left;
+                    background-repeat: no-repeat;
+                }
+                p.submit {
+                    margin-top: 100px;
+                    padding-left: 20px;
+                }
+                .wrap div.updated {
+                    margin-right: 300px;                    
+                }
+                label.tile {
+                    width: 320px;
+                    height: 150px;
+                    float: left;
+                    border: 1px solid #ccc;                    
+                    padding: 1px;
+                    margin: 5px;
+                }
+                label.tile:hover {
+                    background-color: #eee;
+                }
+                label.plakattile {
+                    width: 160px;
+                    height: 250px;
+                    float: left;
+                    border: 1px solid #ccc;                    
+                    padding: 1px;
+                    margin: 5px;
+                }
+                label.plakattile:hover {
+                    background-color: #eee;
+                }                
+            </style>
+	<div class="wrap">
+            
+            <div class="piratenkleider-optionen">  <!-- begin: .piratenkleider-optionen -->    
+		<?php screen_icon(); echo "<h2>" . get_current_theme() . __( ' Kl&uuml;verbaum: Erweiterte Designeinstellungen ', 'piratenkleider' ) . "</h2>"; ?>
+
+		<?php if ( false !== $_REQUEST['settings-updated'] ) : ?>
+		<div class="updated fade"><p><strong><?php _e( 'Designerinstellungen wurden gespeichert.', 'piratenkleider' ); ?></strong></p></div>
+		<?php endif; ?>
+                <p><b>Achtung:</b> Diese Einstellungen sollten nur in Ausnahmef&auml;llen ge&auml;ndert werden. Bei einer 
+                falschen Nutzung k&ouml;nnen Eingaben die Gestaltung des Webauftritts sch&auml;digen. <br>
+                In anderen Worten: <em>Jo min Jun. Dat wat du hier doust, dat geit voll uff de 
+                Basansegel. Pass du jo up!</em>
+                </p>
+                
+		<form method="post" action="options.php">
+                    <?php settings_fields( 'piratenkleider_designspecials' ); ?>
+                    <?php $options = get_option( 'piratenkleider_theme_designspecials' ); 
+                        
+                        
+                     if ( ! isset( $options['css-default-header-height'] ) ) 
+                            $options['css-default-header-height'] = $defaultoptions['css-default-header-height'];
+                     if ( ! isset( $options['css-default-branding-padding-top'] ) ) 
+                            $options['css-default-branding-padding-top'] = $defaultoptions['css-default-branding-padding-top'];
+
+                    ?>
+                    <table class="form-table">
+                       <tr valign="top"><th scope="row">Höhe des Kopfbereiches ( .header )</th>
+                        <td>
+                            <input id="piratenkleider_theme_designspecials[css-default-header-height]" type="text" 
+                                   name="piratenkleider_theme_designspecials[css-default-header-height]" 
+                                    style="width: 5em;"
+                                   value="<?php esc_attr_e( $options['css-default-header-height'] ); ?>" />
+                            <label class="description" for="piratenkleider_theme_designspecials[css-default-header-height]">
+                               Wenn dieser Wert sich von der Defaulteinstellung von
+                               <?php echo $defaultoptions['css-default-header-height']; ?> Pixel aus 
+                               der CSS Datei piratenkleider.css (Zeile 1926) 
+                               unterscheidet, wird er &uuml;ber ein Inline-CSS nachträglich
+                               im Kopfteil des HTML-Documents ge&auml;ndert.<br>
+                               <b>Achtung:</b> Die Verkleinerung der Höhe des Kopfteils ist
+                               nicht ungef&auml;hrlich. Zu beachten ist, dass der Kopfteil
+                               auch bei einer Vergr&ouml;&szlig;erung des Textes auf 200% noch
+                               gen&uuml;gend Platz haben muss!
+                            </label>
+                        </td>					                           
+		       </tr>
+                        <tr valign="top"><th scope="row">Abstand des Brandingbereiches (=Logo) nach oben ( .header .branding )</th>
+                        <td>
+                            <input id="piratenkleider_theme_designspecials[css-default-branding-padding-top]" type="text" 
+                                   name="piratenkleider_theme_designspecials[css-default-branding-padding-top]" 
+                                   style="width: 5em;"
+                                   value="<?php esc_attr_e( $options['css-default-branding-padding-top'] ); ?>" />
+                            <label class="description" for="piratenkleider_theme_designspecials[css-default-branding-padding-top]">
+                               Das Logo hat einen Abstand nach oben. Diese kann &uuml;ber diese Angabe reduziert werden.
+                                                              Wenn dieser Wert sich von der Defaulteinstellung von
+                               <?php echo $defaultoptions['css-default-branding-padding-top']; ?> Pixel aus 
+                               der CSS Datei piratenkleider.css 
+                               unterscheidet, wird er &uuml;ber ein Inline-CSS nachträglich
+                               im Kopfteil des HTML-Documents ge&auml;ndert.<br>
+                               
+                               <br><b>Achtung:</b> Wenn Socialmedia-Icons und Linkmenu oben auch erscheinen,
+                                sollte dieser Abstand nicht zu klein sein, da diese Icons und  der Text der Links
+                                bei steigender Gr&ouml;&szlig;e nach Links zum Logo wandert und es so zu &Uuml;berlapplungen
+                                kommen k&ouml;nnte.
+                            </label>
+                        </td>					                           
+		       </tr>
+                       
+
+                       <tr valign="top"><th scope="row">Hintergrund-Einstellungen im Kopfteil ( .header )</th>
+                           <td>
+                               <table>
+                                   <tr>
+                                       <th>background-color</th>
+                                       <td>
+                                           <input id="piratenkleider_theme_designspecials[css-default-header-background-color]" type="text" 
+                                           name="piratenkleider_theme_designspecials[css-default-header-background-color]" 
+                                          style="width: 35em;"
+                                           value="<?php esc_attr_e( $options['css-default-header-background-color'] ); ?>" />
+                                           <label class="description" for="piratenkleider_theme_designspecials[css-default-header-background-color]">
+                                                   Wenn gesetzt, &auml;ndert die Default-Hintergrundfarbe ab.
+                                            </label>
+                                       </td>                                                                              
+                                   </tr>
+                                   <tr>
+                                       <th>background-image</th>
+                                       <td>
+                                          <input id="piratenkleider_theme_designspecials[css-default-header-background-image]" type="text" 
+                                           name="piratenkleider_theme_designspecials[css-default-header-background-image]" 
+                                          style="width: 35em;"
+                                           value="<?php esc_attr_e( $options['css-default-header-background-image'] ); ?>" />
+                                           <label class="description" for="piratenkleider_theme_designspecials[css-default-header-background-image]">
+                                                   Wenn gesetzt, &auml;ndert  das Hintergrundbild.
+                                            </label>
+                                           
+                                       </td>                                                                              
+                                   </tr>
+                                   <tr>
+                                       <th>background-position</th>
+                                       <td>
+                                            <input id="piratenkleider_theme_designspecials[css-default-header-background-position]" type="text" 
+                                           name="piratenkleider_theme_designspecials[css-default-header-background-position]" 
+                                          style="width: 35em;"
+                                           value="<?php esc_attr_e( $options['css-default-header-background-position'] ); ?>" />
+                                           <label class="description" for="piratenkleider_theme_designspecials[css-default-header-background-position]">
+                                                  Wenn gesetzt, &auml;ndert die Position des Hintergrundbildes .
+                                            </label>
+                                           
+                                       </td>                                                                              
+                                   </tr>
+                                   <tr>
+                                       <th>background-repeat</th>
+                                       <td>
+                                            <input id="piratenkleider_theme_designspecials[css-default-header-background-repeat]" type="text" 
+                                           name="piratenkleider_theme_designspecials[css-default-header-background-repeat]" 
+                                          style="width: 35em;"
+                                           value="<?php esc_attr_e( $options['css-default-header-background-repeat'] ); ?>" />
+                                           <label class="description" for="piratenkleider_theme_designspecials[css-default-header-background-repeat]">
+                                                  Wenn gesetzt, &auml;ndert die Repeat-Eigenschaft des Hintergrundbildes.
+                                            </label>
+                                           
+                                       </td>                                                                              
+                                   </tr>
+                               </table> 
+                               
+                               
+                           </td>    
+                       </tr>
+                      
+                       
+                        <tr valign="top"><th scope="row">Eigene CSS-Anweisungen</th>
+                        <td>
+                            <textarea id="piratenkleider_theme_designspecials[css-eigene-anweisungen]" 
+                                      class="large-text" cols="30" rows="10" 
+                                      name="piratenkleider_theme_designspecials[css-eigene-anweisungen]"><?php echo esc_textarea( $options['css-eigene-anweisungen'] ); ?></textarea>
+                            <label class="description" 
+                                   for="piratenkleider_theme_designspecials[css-eigene-anweisungen]">
+                                       <?php _e( 'Eigene CSS-Anweisungen, die Inline im Kopfteil der Dokumente erg&auml;nzt werden', 'piratenkleider' ); ?></label>
+
+                        </td>					                           
+		       </tr>
+                    </table>
+
+            <p class="submit">
+                    <input type="submit" class="button-primary" value="<?php _e( 'Speichern', 'piratenkleider' ); ?>" />
+            </p>
+        </form>               
+	</div>
+            
+        </div> <!-- end: .piratenkleider-optionen -->      
+	<?php
+}
+
+/**
+ * Sanitize and validate input. Accepts an array, return a sanitized array.
+ */
+function theme_designspecials_validate( $input ) {
+        $input['css-default-branding-padding-top'] = wp_kses_normalize_entities( $input['css-default-branding-padding-top'] );   
+        $input['css-default-header-height'] = wp_kses_normalize_entities( $input['css-default-header-height'] );   
+        $input['css-eigene-anweisungen'] = wp_filter_post_kses( $input['css-eigene-anweisungen'] );
+        $input['css-default-header-background-color'] = wp_filter_post_kses( $input['css-default-header-background-color'] );
+        $input['css-default-header-background-image'] = wp_filter_post_kses( $input['css-default-header-background-image'] );
+        $input['css-default-header-background-position'] = wp_filter_post_kses( $input['css-default-header-background-position'] );
+        $input['css-default-header-background-repeat'] = wp_filter_post_kses( $input['css-default-header-background-repeat'] );
+
+    
+    
+    
 	return $input;
 }

@@ -14,7 +14,7 @@
             $options['alle-socialmediabuttons'] = $defaultoptions['alle-socialmediabuttons'];   
    if (!isset($options['newsletter'])) 
             $options['newsletter'] = $defaultoptions['newsletter'];
-    if (!isset($options['url-newsletteranmeldung'])) 
+   if (!isset($options['url-newsletteranmeldung'])) 
             $options['url-newsletteranmeldung'] = $defaultoptions['url-newsletteranmeldung'];
    if (!isset($options['url-mitgliedwerden'])) 
         $options['url-mitgliedwerden'] = $defaultoptions['url-mitgliedwerden'];
@@ -22,6 +22,46 @@
       $options['url-spenden'] = $defaultoptions['url-spenden'];
    if (!isset($options['aktiv-suche'])) 
         $options['aktiv-suche'] = $defaultoptions['aktiv-suche'];
+   if (!isset($options['aktiv-linkmenu'])) 
+       $options['aktiv-linkmenu'] = $defaultoptions['aktiv-linkmenu'];   
+   $designspecials = get_option( 'piratenkleider_theme_designspecials' );
+   if (isset($designspecials['css-default-header-height'])
+        && ($designspecials['css-default-header-height'] > 0)    
+        && ($designspecials['css-default-header-height'] != $defaultoptions['css-default-header-height'])) {
+       $cssadd .= '.header { height: '.$designspecials['css-default-header-height'].'px; }';
+       $cssadd .= "\n";
+    }
+    if (isset($designspecials['css-default-header-background-color'])
+         && (strlen($designspecials['css-default-header-background-color'])>3)) {
+        $cssadd .= '.header { background-color: '.$designspecials['css-default-header-background-color'].'; }';
+        $cssadd .= "\n";
+    }
+    if (isset($designspecials['css-default-header-background-image'])
+         && (strlen($designspecials['css-default-header-background-image'])>2)) {
+        $cssadd .= '.header { background-image: '.$designspecials['css-default-header-background-image'].'; }';
+        $cssadd .= "\n";
+    }
+     if (isset($designspecials['css-default-header-background-position'])
+         && (strlen($designspecials['css-default-header-background-position'])>2)) {
+        $cssadd .= '.header { background-position: '.$designspecials['css-default-header-background-position'].'; }';
+        $cssadd .= "\n";
+    }   
+     if (isset($designspecials['css-default-header-background-repeat'])
+         && (strlen($designspecials['css-default-header-background-repeat'])>2)) {
+        $cssadd .= '.header { background-repeat: '.$designspecials['css-default-header-background-repeat'].'; }';
+        $cssadd .= "\n";
+    } 
+    
+    if (isset($designspecials['css-default-branding-padding-top'])
+        && ($designspecials['css-default-branding-padding-top'] > 0)    
+        && ($designspecials['css-default-branding-padding-top'] != $defaultoptions['css-default-branding-padding-top'])) {
+       $cssadd .= '.header .branding { padding-top: '.$designspecials['css-default-branding-padding-top'].'px; }';
+       $cssadd .= "\n";
+    }
+    if (isset($designspecials['css-eigene-anweisungen'])) {
+       $cssadd .= $designspecials['css-eigene-anweisungen'];
+       $cssadd .= "\n";
+    }
 ?>  
 <meta charset="<?php bloginfo( 'charset' ); ?>">
 <!--[if IE]> <meta http-equiv="X-UA-Compatible" content="IE=9"> <![endif]-->
@@ -50,6 +90,12 @@ if (isset( $options['meta-keywords'] ) ) { ?>
 <!--[if lte IE 7]>
 <link rel="stylesheet" href="<?php bloginfo( 'stylesheet_url' ); ?>/yaml/core/iehacks.min.css" type="text/css"/>
 <![endif]-->
+
+<?php if (isset($cssadd)) {
+  echo "<style type=\"text/css\">\n";  
+  echo $cssadd;  
+  echo "</style>\n";  
+} ?>
 </head>
                       
 <body <?php body_class(); ?>>
@@ -89,9 +135,10 @@ if (isset( $options['meta-keywords'] ) ) { ?>
                                 
 				<?php
                                     }
-                                    if ( has_nav_menu( 'top' ) ) {
-                                        wp_nav_menu( array( 'container_class' => 'menu-header', 'theme_location' => 'top' ) );
-                                    } else { ?>
+                                    if ( $options['aktiv-linkmenu'] == "1" ){
+                                     if ( has_nav_menu( 'top' ) ) {
+                                            wp_nav_menu( array( 'container_class' => 'menu-header', 'theme_location' => 'top' ) );
+                                        } else { ?>
                                     <div class="menu-header">
                                         <ul id="menu-topmenu" class="menu">
                                             <li><a href="https://wiki.piratenpartei.de">Wiki</a></li>
@@ -100,7 +147,7 @@ if (isset( $options['meta-keywords'] ) ) { ?>
                                             <li><a href="http://flaschenpost.piratenpartei.de/">Flaschenpost</a></li>
                                         </ul>
                                     </div>                                                                                
-                                 <?php } 
+                                 <?php } } 
                                  if ( $options['aktiv-suche'] == "1" ){
                                     get_search_form(); 
                                  }

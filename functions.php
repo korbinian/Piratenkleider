@@ -34,16 +34,19 @@ $defaultoptions = array(
     'newsletter'                    => 1,
     'alle-socialmediabuttons'       => 1,
     'aktiv-platzhalterbilder-indexseiten'   => 0,
+    'aktiv-linkmenu'                 => 1,
     'feed_twitter_numberarticle'            => 3,
     'num-article-startpage-fullwidth'       => 1,
     'num-article-startpage-halfwidth'       => 4,
-    'url-newsletteranmeldung'   => 'https://service.piratenpartei.de/subscribe/newsletter',
-    'url-mitgliedwerden'        => 'https://www.piratenpartei.de/mitmachen/mitglied-werden/',
-    'url-spenden'               => 'https://www.piratenpartei.de/mitmachen/spenden/',
-    'teaser_maxlength'          => 300,
-    'teaser-title-maxlength'    => 64,
-    'teaser-subtitle'           => 'Topthema',
-    'teaser-title-words'        => 10
+    'url-newsletteranmeldung'       => 'https://service.piratenpartei.de/subscribe/newsletter',
+    'url-mitgliedwerden'            => 'https://www.piratenpartei.de/mitmachen/mitglied-werden/',
+    'url-spenden'                   => 'https://www.piratenpartei.de/mitmachen/spenden/',
+    'teaser_maxlength'              => 300,
+    'teaser-title-maxlength'        => 64,
+    'teaser-subtitle'               => 'Topthema',
+    'teaser-title-words'            => 10,
+    'css-default-header-height'     => 225,
+    'css-default-branding-padding-top'  => 40,
 );
 /**
  * Liste der Defaultbilder fuer Seiten und Slider
