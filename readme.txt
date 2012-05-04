@@ -167,6 +167,16 @@ THEME-OPTION "Captn & Crew"
    Templateseiten um das Impressum, die Datenschutzerklärung und
    optionalen Formularseiten.
      
+
+THEME-OPTION "Klüverbaum"
+
+   Diese Option ermöglicht die Änderungen spezieller CSS-Anweisungen im
+   Kopfteil der Seite, sowie das Einfügen eigener CSS-Anweisungen.
+   So ist es hier bspw. möglich anstelle der Wellen und dem Schiff
+   eine eigene Skyline als Hintergrundgrafik zu wählen.
+   Diese Optionenseite sollte nun vor erfahrenen Webadmins geändert werden,
+   die genau wissen was sie tun.
+   
    
 THEME OPTION "Kopfzeile"   
 
