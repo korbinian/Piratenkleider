@@ -101,11 +101,14 @@
             <?php } else { ?>
               
                 <div class="widget">
-                <h3>Vorherige Artikel</h3>
+                
 
                 <ul>
                 <?php 
                 $postslist = get_posts("numberposts=5&order=DESC&offset=$numentries"); 
+                if (isset($postslist)) {
+                    echo '<h3>Vorherige Artikel</h3>';
+                }
                 foreach ($postslist as $post) : setup_postdata($post); 
                 ?>
                 <li><a title="Post: <?php the_title(); ?>" href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
@@ -131,9 +134,13 @@
                 <?php dynamic_sidebar( 'second-startpage-widget-area' ); ?>
             <?php } else { ?>    
                 <div  class="widget">
-                    <h3>Schlagworte</h3>    
+                    <?php $tags = get_tags();
+                        if (isset($tags)) {
+                            echo '<h3>Schlagworte</h3>';
+                        }
+                     ?>
                       <div class="tagcloud">            
-                    <?php wp_tag_cloud(array('smallest'  => 14, 'largest'   => 28)); ?>
+                        <?php wp_tag_cloud(array('smallest'  => 14, 'largest'   => 28)); ?>
                       </div>
                 </div>
             <?php } ?>
