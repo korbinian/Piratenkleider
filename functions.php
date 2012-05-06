@@ -717,6 +717,26 @@ function short_title($after = '...', $length = 6, $textlen = 60) {
    return $mytitle;
 }
 
+function wpi_linkexternclass($content)
+    {
+        return preg_replace_callback('/<a[^>]+/', 'wpi_linkexternclass_callback', $content);
+    }
+ 
+function wpi_linkexternclass_callback($matches)
+    {
+        $link = $matches[0];
+        $site_link = get_bloginfo('url');
+ 
+            if (strpos($link, 'class') === false)
+            {
+                $link = preg_replace("%(href=\S(?!$site_link))%i", 'class="extern" $1', $link);
+            }       
+        return $link;
+    }
+add_filter('the_content', 'wpi_linkexternclass');
+
+
+
 function dimox_breadcrumbs() {
   global $defaultoptions;
   $delimiter = '/';
