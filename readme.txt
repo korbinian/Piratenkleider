@@ -133,7 +133,8 @@ THEME-OPTION "Takelage einstellen"
     - Webadressen für Newsletter, Mitgliederanträge und Spenden anpassbar
     - Metatag-Angaben ändern
     - Optionale Anzeige für Seitenbilder steuern
-      
+    - Menutyp  für die Darstellung der Seiten und Unterseiten in der
+      Sidebar steuern.
    
  
 
@@ -282,22 +283,5 @@ Administrative Hinweise für Wordpress Theme-Editoren:
    Bei besonderen Links die nicht mit einem Icon ausgestattet werden sollen, 
    kann auch die Klasse  .nolinkicon  gesetzt werden.
    Linkicons werden nur für den Inhaltsbereich gesetzt.
-
-
-
-BUGS, PROBLEME, TODOS, WEITERE INFOS
-
-Denkbare weitere Features (ToDos)
-
-1. Welle+Schiff aendern im Kopfteil anpassbar machen um eigene
-   "Stadt-Skyline" o.ä. zu ergänzen. (vgl. piraten-bonn.de) 
-2. Bei den Defaultbildern nicht ein bestimmtes auswählen, sondern 
-   Zufallssteuerung erlauben
-3. Wenn ein Artikel ein Artikelbild hat, dann wird dieses
-   sonst nirgends gezeigt. Dabei wäre es -wie bei den Pages-
-   doch auch sinnvoll, dieses bei der Einzelanzeige des Artikels anzugeben.
-4. add_filter() einbauen, der alle externen Links mit einer entprechenden
-   CSS-Klasse ergänzt
-5. Plugin Social Media testen/CSS anpassen
 
 

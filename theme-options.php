@@ -120,8 +120,12 @@ function theme_options_do_page() {
                                $options['teaser-title-words'] = $defaultoptions['teaser-title-words'];
 
                              if (!isset($options['aktiv-linkmenu'])) 
-                               $options['aktiv-linkmenu'] = $defaultoptions['aktiv-linkmenu'];
-                            
+                               $options['aktiv-linkmenu'] = $defaultoptions['aktiv-linkmenu'];                                                         
+                             if (!isset($options['zeige_subpagesonly'])) 
+                                $options['zeige_subpagesonly'] = $defaultoptions['zeige_subpagesonly'];
+                             if (!isset($options['zeige_sidebarpagemenu'])) 
+                                $options['zeige_sidebarpagemenu'] = $defaultoptions['zeige_sidebarpagemenu'];
+                             
                         ?>
 			<table class="form-table">
                                     
@@ -136,6 +140,17 @@ function theme_options_do_page() {
 					<td>
 						<input id="piratenkleider_theme_options[aktiv-linkmenu]" name="piratenkleider_theme_options[aktiv-linkmenu]" type="checkbox" value="1" <?php checked( '1', $options['aktiv-linkmenu'] ); ?> />
 						<label  for="piratenkleider_theme_options[aktiv-linkmenu]">Linkmenu oben rechts, zwischen Social media Icons und Suchmaske anzeigen</label>
+					</td>
+				</tr>
+                                <tr valign="top"><th scope="row">Seitenmenu rechts</th>
+					<td>
+						<input id="piratenkleider_theme_options[zeige_subpagesonly]" name="piratenkleider_theme_options[zeige_subpagesonly]" type="checkbox" value="1" <?php checked( '1', $options['zeige_subpagesonly'] ); ?> />
+						<label  for="piratenkleider_theme_options[zeige_subpagesonly]">Bei der Anzeige von Seiten rechts in der Sidebar nur das aktuelle Submenu zeigen. Bei Deaktivierung wird das vollst&auml;ndige Men&uuml; gezeigt. Dies ist f&uuml;r Webauftritte mit vielen Seiten nicht geeignet.</label>
+                                                
+                                                <p>Alternativ:</p>
+                                                <input id="piratenkleider_theme_options[zeige_sidebarpagemenu]" name="piratenkleider_theme_options[zeige_sidebarpagemenu]" type="checkbox" value="1" <?php checked( '1', $options['zeige_sidebarpagemenu'] ); ?> />
+						<label  for="piratenkleider_theme_options[zeige_sidebarpagemenu]">Seitenmen&uuml; in der Sidebar anzeigen.</label>
+                                          
 					</td>
 				</tr>
                                 <tr valign="top"><th scope="row">Suchmaske</th>
@@ -546,6 +561,14 @@ function theme_options_validate( $input ) {
         if ( ! isset( $input['aktiv-autoren'] ) )
 		$input['aktiv-autoren'] = 0;
 	$input['aktiv-autoren'] = ( $input['aktiv-autoren'] == 1 ? 1 : 0 );    
+
+	if ( ! isset( $input['zeige_sidebarpagemenu'] ) )
+		$input['zeige_sidebarpagemenu'] = 0;
+	$input['zeige_sidebarpagemenu'] = ( $input['zeige_sidebarpagemenu'] == 1 ? 1 : 0 );
+	if ( ! isset( $input['zeige_subpagesonly'] ) )
+		$input['zeige_subpagesonly'] = 0;
+	$input['zeige_subpagesonly'] = ( $input['zeige_subpagesonly'] == 1 ? 1 : 0 );        
+        
         
 	if ( ! isset( $input['newsletter'] ) )
 		$input['newsletter'] = 0;

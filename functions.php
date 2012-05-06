@@ -35,6 +35,8 @@ $defaultoptions = array(
     'alle-socialmediabuttons'       => 1,
     'aktiv-platzhalterbilder-indexseiten'   => 0,
     'aktiv-linkmenu'                 => 1,
+    'zeige_subpagesonly'             => 1,
+    'zeige_sidebarpagemenu'          => 1,
     'feed_twitter_numberarticle'            => 3,
     'num-article-startpage-fullwidth'       => 1,
     'num-article-startpage-halfwidth'       => 4,
@@ -611,6 +613,57 @@ class My_Walker_Nav_Menu extends Walker_Nav_Menu
 
     parent::display_element($el, $children, $max_depth, $depth, $args, $output);
   }
+}
+
+function get_piratenkleider_seitenmenu( $zeige_sidebarpagemenu = 1 , $zeige_subpagesonly =1 ){
+  global $defaultoptions;
+  global $post;
+  
+
+
+          if ($zeige_sidebarpagemenu==1) {   
+           if ($zeige_subpagesonly==1) {
+                //if the post has a parent
+
+                if($post->post_parent){
+                    //collect ancestor pages
+                    $relations = get_post_ancestors($post->ID);
+                    //get child pages
+                    $result = $wpdb->get_results( "SELECT ID FROM wp_posts WHERE post_parent = $post->ID AND post_type='page'" );
+                    if ($result){
+                        foreach($result as $pageID){
+                            array_push($relations, $pageID->ID);
+                        }
+                    }
+                    //add current post to pages
+                    array_push($relations, $post->ID);
+                    //get comma delimited list of children and parents and self
+                    $relations_string = implode(",",$relations);
+                    //use include to list only the collected pages. 
+                    $sidelinks = wp_list_pages("sort_column=menu_order&title_li=&echo=0&include=".$relations_string);
+                }else{
+                    // display only main level and children
+                    $sidelinks = wp_list_pages("sort_column=menu_order&title_li=&echo=0&depth=1&child_of=".$post->ID);
+                }
+
+                if ($sidelinks) { 
+                    echo '<ul class="menu">';                   
+                    echo $sidelinks; 
+                    echo '</ul>';         
+                } 
+                             
+             } else {
+          
+                if ( has_nav_menu( 'primary' ) ) {
+                    wp_nav_menu( array('depth' => 0, 'container_class' => 'menu-header', 'theme_location' => 'primary', 'walker'  => new My_Walker_Nav_Menu()) );      
+                } else { 
+                    echo '<ul class="menu">';   
+                     wp_page_menu( ); 
+                   echo '</ul>';                        
+                } 
+             }
+          }
+  
 }
 
 

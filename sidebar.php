@@ -5,6 +5,8 @@
   if (!isset($options['slider-defaultwerbeplakate'])) 
        $options['slider-defaultwerbeplakate'] = $defaultoptions['slider-defaultwerbeplakate'];
   
+   
+  
     if ( $options['newsletter'] == "1" ){
      ?>            
 
@@ -33,7 +35,7 @@
 
    if ( $options['slider-defaultwerbeplakate'] == "1" ) {
     ?>
-     <hr>
+     
      <div class="flexslider fs2 no-js">
         
             <ul class='slides'>
