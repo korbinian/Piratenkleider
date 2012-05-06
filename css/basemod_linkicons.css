@@ -99,6 +99,11 @@
     content: " (ZIP-Datei) ";
 }
 
+.content-primary a.extern {
+    background: url("../images/links/extern.gif") center left no-repeat;
+    padding-left: 10px;
+}
+
 .content-primary a.nolinkicon {
 	background: none;
 	padding-right: 0;
