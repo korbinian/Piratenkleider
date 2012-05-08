@@ -35,6 +35,8 @@ $defaultoptions = array(
     'alle-socialmediabuttons'       => 1,
     'aktiv-platzhalterbilder-indexseiten'   => 0,
     'aktiv-linkmenu'                 => 1,
+    'aktiv-avatar'                   => 1,
+    'src-default-avatar'             =>  get_template_directory_uri(). '/images/avataricon.gif',
     'zeige_subpagesonly'             => 1,
     'zeige_sidebarpagemenu'          => 1,
     'feed_twitter_numberarticle'            => 3,
@@ -233,12 +235,25 @@ function piratenkleider_setup() {
         ) );
 
         set_post_thumbnail_size( $defaultoptions['thumb-width'], $defaultoptions['thumb-height'], true );
-        /** Abschalten von Fehlermeldungen auf der Loginseite */
-        add_filter('login_errors', create_function('$a', "return null;"));
+        
+        /** Abschalten von Fehlermeldungen auf der Loginseite */      
+        // add_filter('login_errors', create_function('$a', "return null;"));
+        
+        
         /** Entfernen der Wordpressversionsnr im Header */
         remove_action('wp_head', 'wp_generator');
 }
 endif;
+
+add_filter( 'avatar_defaults', 'piratenkleider_avatar' );
+
+function piratenkleider_avatar ($avatar_defaults) {
+    global $defaultoptions;
+    $myavatar =  $defaultoptions['src-default-avatar']; 
+    $avatar_defaults[$myavatar] = "Piratenkleider";
+    return $avatar_defaults;
+}
+
 
 if ( ! function_exists( 'piratenkleider_admin_header_style' ) ) :
 /**
@@ -349,15 +364,28 @@ if ( ! function_exists( 'piratenkleider_comment' ) ) :
  */
 function piratenkleider_comment( $comment, $args, $depth ) {
         $GLOBALS['comment'] = $comment;
+        global $defaultoptions;
+        
+         $options = get_option( 'piratenkleider_theme_options' );  
+         if (!isset($options['aktiv-avatar'])) 
+            $options['aktiv-avatar'] = $defaultoptions['aktiv-avatar'];
+        
+        
         switch ( $comment->comment_type ) :
                 case '' :
         ?>
         <li <?php comment_class(); ?> id="li-comment-<?php comment_ID(); ?>">
                 <div id="comment-<?php comment_ID(); ?>">
                 <div class="comment-details">
+                    
                 <div class="comment-author vcard">
-
-                        <?php printf( __( '%s <span class="says">meinte am</span>', 'piratenkleider' ), sprintf( '<cite class="fn">%s</cite>', get_comment_author_link() ) ); ?>
+                    <?php if ($options['aktiv-avatar']==1) {
+                        echo '<div class="avatar">';
+                        echo get_avatar( $comment, 48, $defaultoptions['src-default-avatar']); 
+                        echo '</div>';   
+                    } 
+                    printf( __( '%s <span class="says">meinte am</span>', 'piratenkleider' ), sprintf( '<cite class="fn">%s</cite>', get_comment_author_link() ) ); 
+                    ?>
                 </div><!-- .comment-author .vcard -->
                 <?php if ( $comment->comment_approved == '0' ) : ?>
                         <em><?php _e( 'Der Kommentar wartet auf die Freischaltung.', 'piratenkleider' ); ?></em>
@@ -365,10 +393,10 @@ function piratenkleider_comment( $comment, $args, $depth ) {
                 <?php endif; ?>
 
                 <div class="comment-meta commentmetadata"><a href="<?php echo esc_url( get_comment_link( $comment->comment_ID ) ); ?>">
-                        <?php
-                                /* translators: 1: date, 2: time */
-                                printf( __( '%1$s um %2$s', 'piratenkleider' ), get_comment_date(),  get_comment_time() ); ?></a> Folgendes:<?php edit_comment_link( __( '(Edit)', 'piratenkleider' ), ' ' );
-                        ?>
+                   <?php
+                          /* translators: 1: date, 2: time */
+                       printf( __( '%1$s um %2$s', 'piratenkleider' ), get_comment_date(),  get_comment_time() ); ?></a> Folgendes:<?php edit_comment_link( __( '(Edit)', 'piratenkleider' ), ' ' );
+                    ?>
                 </div><!-- .comment-meta .commentmetadata -->
                 </div>
 
@@ -518,6 +546,7 @@ function piratenkleider_remove_recent_comments_style() {
 add_action( 'widgets_init', 'piratenkleider_remove_recent_comments_style' );
 
 
+
 if ( ! function_exists( 'piratenkleider_post_pubdateinfo' ) ) :
 /**
  * Fusszeile unter Artikeln: Ver&ouml;ffentlichungsdatum
@@ -568,9 +597,6 @@ function piratenkleider_post_taxonominfo() {
         );
 }
 endif;
-
-
-
 
 
 add_theme_support( 'post-thumbnails' );
@@ -836,6 +862,9 @@ function dimox_breadcrumbs() {
  
   }
 }
+
+
+
  
 if( !is_admin()){
 
@@ -849,3 +878,9 @@ if( !is_admin()){
         wp_enqueue_script('yaml-focusfix');
         
 }
+
+function custom_login() { 
+    echo '<link rel="stylesheet" type="text/css" href="'.get_template_directory_uri().'/css/custom-login.css" />'; 
+}
+add_action('login_head', 'custom_login');
+

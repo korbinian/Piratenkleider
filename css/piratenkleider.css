@@ -1338,10 +1338,12 @@ ul.socialmedia li a:focus img  {
     float: left;
     width: 100%; }
     .post-comments ol li p {
-      margin-bottom: 0; }
+      margin-bottom: 0; 
+    }
     .post-comments ol li .comment-details {
       float: left;
       width: 30%;
+      max-width: 180px;
       text-align: right;
       color: #222;
       padding-right: 2%;
@@ -1354,6 +1356,11 @@ ul.socialmedia li a:focus img  {
         float: left;
         margin: 0 10px 10px 0;
       }
+   .post-comments ol li .comment-details .comment-author .avatar {
+       
+       
+   }
+      
     .post-comments ol li .comment-body {
       float: left;
       width: 68%; }

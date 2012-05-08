@@ -322,8 +322,9 @@
     font-weight: bold;
     padding-right: 2%;
     text-align: left;
-   
-      background: none repeat scroll 0 0 rgba(0, 0, 0, 0.2);
+    max-width: none;
+    min-height: 50px;
+    background: none repeat scroll 0 0 rgba(0, 0, 0, 0.2);
  }
  .post-comments ol li .comment-body {
     float: none;
