@@ -125,7 +125,8 @@ function theme_options_do_page() {
                                 $options['zeige_subpagesonly'] = $defaultoptions['zeige_subpagesonly'];
                              if (!isset($options['zeige_sidebarpagemenu'])) 
                                 $options['zeige_sidebarpagemenu'] = $defaultoptions['zeige_sidebarpagemenu'];
-                             
+                             if (!isset($options['anonymize-user'])) 
+                                  $options['anonymize-user'] = $defaultoptions['anonymize-user'];
                         ?>
 			<table class="form-table">
                                     
@@ -182,6 +183,12 @@ function theme_options_do_page() {
 					<td>
 						<input id="piratenkleider_theme_options[aktiv-autoren]" name="piratenkleider_theme_options[aktiv-autoren]" type="checkbox" value="1" <?php checked( '1', $options['aktiv-autoren'] ); ?> />
 						<label  for="piratenkleider_theme_options[aktiv-autoren]">Bei der Anzeige von Artikeln den Autoren anzeigen und verlinken.</label>
+					</td>
+				</tr>
+                                 <tr valign="top"><th scope="row">Kommentarbenutzer anonymisieren</th>
+					<td>
+						<input id="piratenkleider_theme_options[anonymize-user]" name="piratenkleider_theme_options[anonymize-user]" type="checkbox" value="1" <?php checked( '1', $options['anonymize-user'] ); ?> />
+						<label  for="piratenkleider_theme_options[anonymize-user]">Wenn Personen Kommentare hinterlassen, wird deren IP-Adresse und der User-Agent-String geleert. Eine R&uuml;ckverfolgung ist damit nicht m&ouml;glich.</label>
 					</td>
 				</tr>
 				<tr valign="top">
@@ -556,7 +563,11 @@ function theme_options_validate( $input ) {
         if ( ! isset( $input['aktiv-linkmenu'] ) )
 		$input['aktiv-linkmenu'] = 0;
 	$input['aktiv-linkmenu'] = ( $input['aktiv-linkmenu'] == 1 ? 1 : 0 );
-        
+     
+        if ( ! isset( $input['anonymize-user'] ) )
+		$input['anonymize-user'] = 0;
+	$input['anonymize-user'] = ( $input['anonymize-user'] == 1 ? 1 : 0 );
+            
         
         if ( ! isset( $input['aktiv-autoren'] ) )
 		$input['aktiv-autoren'] = 0;
