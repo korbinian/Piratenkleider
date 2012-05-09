@@ -51,6 +51,8 @@ $defaultoptions = array(
     'teaser-title-words'            => 10,
     'css-default-header-height'     => 225,
     'css-default-branding-padding-top'  => 40,
+    'anonymize-user'                => 0,
+    
 );
 /**
  * Liste der Defaultbilder fuer Seiten und Slider
@@ -167,9 +169,20 @@ $defaultplakate_liste = array(
 // Aus gestalerischen Gr&uuml;nden m&uuml;ssen Plakate auf der Website exakt 277 Pixel breit sein. Die H&ouml;he ist
 // flexibel, sollte jedoch auch gleich sein. In diesem Fall  391 Pixel.
 
+$options = get_option( 'piratenkleider_theme_options' );
+if (!isset($options['anonymize-user'])) 
+            $options['anonymize-user'] = $defaultoptions['anonymize-user'];
+
+if ($options['anonymize-user']==1) {
+    /* IP-Adresse überschreiben */
+    $_SERVER["REMOTE_ADDR"] = "0.0.0.0";
+    /* UA-String überschreiben */
+    $_SERVER["HTTP_USER_AGENT"] = "";
+}
 
 if ( ! isset( $content_width ) )   $content_width = $defaultoptions['content-width'];
 require_once ( get_stylesheet_directory() . '/theme-options.php' );
+
 
 /** Tell WordPress to run twentyten_setup() when the 'after_setup_theme' hook is run. */
 add_action( 'after_setup_theme', 'piratenkleider_setup' );
