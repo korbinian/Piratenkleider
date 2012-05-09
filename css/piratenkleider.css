@@ -690,9 +690,6 @@ ul.socialmedia li a {
 ul.socialmedia li a img {
     margin: 2px;    
     border: 2px solid #eee;
-    box-shadow:
-        0px 1px 1px rgba(255,255,255,0.8) inset,
-        1px 1px 3px rgba(0,0,0,0.2);
 
     -moz-transition: all 0.15s ease-in-out; 
     -o-transition: all 0.15s ease-in-out; 
@@ -858,7 +855,8 @@ ul.socialmedia li a:focus img  {
 
 
 .second-teaser-widget-area .skin {
-  padding: 10px; }
+  padding: 10px; 
+}
 .second-teaser-widget-area li {
   margin-bottom: 1px;
   background: orange;
@@ -870,18 +868,22 @@ ul.socialmedia li a:focus img  {
   box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); 
   height: 72px;
 }
+
+
   .second-teaser-widget-area li a {
     padding: 1.5em 10px 1em 50px;
     border: 0px solid;
     color: black;
     display: block;
-    text-shadow: 0 0 0; }
+    text-shadow: 0 0 0; 
+  }
     .second-teaser-widget-area li a div {
       color: white;
       font-family: "BebasNeueRegular", Helvetica, Arial, sans-serif;
       letter-spacing: 1px;
       text-shadow: 0 -1px 1px #c36800;
-      font-size: 19px; }
+      font-size: 19px; 
+    }
    
     
   .second-teaser-widget-area li:focus,
@@ -927,9 +929,45 @@ ul.socialmedia li a:focus img  {
     background: url("../images/icon-profil.png") no-repeat scroll 20px center transparent;
 }
 
-
- .second-teaser-widget-area .skin ul li a {
-    padding: 1.5em 10px 1em 50px; } 
+ 
+ .teaserlinks ul {
+     margin: 0;
+     padding: 0;
+     
+ }
+ .teaserlinks ul li {
+     margin: 0;
+     padding: 0;
+     min-height: 70px;
+ }
+ .teaserlinks ul li {
+    background: none repeat scroll 0 0 orange;
+    border-radius: 2px 2px 2px 2px;
+    box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    margin-top: 1px;
+    margin-bottom: 1px;
+    /* width: 99%; */    
+  }
+ .teaserlinks ul li a {
+     color: white;
+     font-family: "BebasNeueRegular", Helvetica, Arial, sans-serif;
+     letter-spacing: 1px;
+     text-shadow: 0 -1px 1px #c36800;
+     font-size: 22px;     
+     padding-top: 14px;
+     padding-bottom: 0px;     
+     padding-left: 50px;
+     margin: 0;
+ }
+  .teaserlinks ul li a span {
+      padding-top: 4px;
+      font-size: 16px;
+      display: block;    
+      color: black;
+     text-shadow: 0 0 0; 
+     font-family: Helvetica, Arial, sans-serif;
+     text-transform: capitalize;
+  }
 
 
 .content {
@@ -2032,13 +2070,13 @@ div.ics-calendar-holder .ics-calendar-event {
 
  
       
-  .second-teaser-widget-area .skin ul li a {
-    padding: .8em 10px .3em 50px; }
 
   .teaser .first-teaser-widget-area {
-    width: 66.6666%; }
+    width: 66.6666%; 
+  }
   .teaser .second-teaser-widget-area {
-    width: 33.3333%; }
+    width: 33.3333%; 
+  }
 
   .content-primary {
     float: left;
@@ -2053,13 +2091,16 @@ div.ics-calendar-holder .ics-calendar-event {
       padding-top: 10px; 
   }
     .content-primary .first-startpage-widget-area .skin {
-        padding-right: 10px; }
+        padding-right: 10px; 
+    }
     .content-primary .second-startpage-widget-area {
       width: 50%;
       float: right;
-      padding-top: 10px; }
+      padding-top: 10px; 
+    }
     .content-primary .second-startpage-widget-area .skin {
-        padding-left: 10px; }
+        padding-left: 10px; 
+    }
 
   .content-aside {
       background: #ff8800 url("../assets/bg-tags.png") -20% top fixed; 

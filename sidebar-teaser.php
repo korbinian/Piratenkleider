@@ -62,13 +62,23 @@
     <?php if ( is_active_sidebar( 'second-teaser-widget-area' ) ) { ?>
         <?php dynamic_sidebar( 'second-teaser-widget-area' ); ?>
     <?php } else { ?>
-        <div class="textwidget">
+        <div class="textwidget teaserlinks">
             <ul>
-            <li class="first"><a href="http://www.piratenpartei.de/politik/themen/"><div>Informiere dich</div> Unsere Themen & Ziele!</a></li>
-            <li class="second"><a href="http://www.piratenpartei.de/unterstutze-uns/"><div>Unterst&uuml;tze uns</div> Mit deinem Engagement!</a></li>
-            <li class="third"><a href="<?php echo $options['url-mitgliedwerden']; ?>"><div>Werde Pirat!</div> Jetzt Mitglied werden!</a></li>
+                <li><a class="symbol symbol-idee" href="http://www.piratenpartei.de/politik/themen/">Informiere dich <span>über unsere Themen & Ziele!</span></a></li>
+                <li><a class="symbol symbol-herz" href="http://www.piratenpartei.de/unterstutze-uns/">Unterst&uuml;tze uns <span>mit deinem Engagement!</span></a></li>
+                <li><a class="symbol symbol-steuerrad" href="<?php echo $options['url-mitgliedwerden']; ?>">Werde Pirat! <span>Jetzt Mitglied werden!</span></a></li>
             </ul>
         </div>
+    
+    <!--
+          <div class="textwidget">
+            <ul>
+            <li class="first"><a  href="http://www.piratenpartei.de/politik/themen/"><div>Informiere dich</div> Unsere Themen & Ziele!</a></li>
+            <li class="second"><a href="http://www.piratenpartei.de/unterstutze-uns/"><div>Unterst&uuml;tze uns</div> Mit deinem Engagement!</a></li>
+            <li class="third"><a  href="<?php echo $options['url-mitgliedwerden']; ?>"><div>Werde Pirat!</div> Jetzt Mitglied werden!</a></li>
+            </ul>
+        </div>
+    -->
     <?php }  ?>
 </div>
 </div>
