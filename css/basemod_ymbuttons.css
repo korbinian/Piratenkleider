@@ -67,6 +67,14 @@
 .symbol-save:before { content: "\2714"; }
 .symbol-spark:before { content: "\2737"; }
 .symbol-star:before { content: "\2605"; }
+
+
+.symbol-euro:before { content: "\20AC"; }
+.symbol-dollar:before { content: "\0024"; }
+.symbol-copyright:before { content: "\00A9"; }
+
+
+
 .symbol-eins:before { content: "\2460"; }
 .symbol-zwei:before { content: "\2461"; }
 .symbol-drei:before { content: "\2462"; }

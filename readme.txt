@@ -2,7 +2,7 @@ Piratenkleider
 - Wordpress-Theme für Webauftritte der Piratenpartei 
 =================================================
 
-Version 2.2 von Wolfgang Wiese (xwolf), April 2012
+Version 2.3 von Wolfgang Wiese (xwolf), 10. Mai 2012
 
 
 DOWNLOADS
@@ -98,9 +98,10 @@ BEREICHE/WIDGETS
     entfällt der Slider.
 4. "Startseite: Rechter Aktionlinkbereich"
     Dieser Bereich ist rechts neben dem Slider. Auf der Piraten-Hauptsite
-    befinden sich dort 3 Links zu Spendern/Mitmachen und mitglied werden.
-    Diese drei sind auch hier als Default eingegeben. Durch Setzen einer
-    anderer Widgetfunktion kann hier was anderes erscheinen.
+    befinden sich dort 3 Links zu Spendern/Mitmachen und Mitglied werden.
+    Dieser 3 Teaserlinks können über die Theme-Option Takelage setzen
+    verändert werden. Wird das Widget genommen, wird dessen Inhalt jedoch
+    diese Änderungen überschreiben und der Widgetinhalt angezeigt.
 5. "Startseite: Links unten" 
     Dies ist auf der Startseite der Bereich rechts neben der Liste der weiteren
     Artikel.
@@ -128,8 +129,9 @@ THEME-OPTION "Takelage einstellen"
     - Social Media Buttons ein/ausschalten         
     - Anzahl der Nachrichten auf der Startseite und dessen Anordnung
       einstellen
-    - Slider steuern        
-    - Default Werbe-Sticker optional schaltbar
+    - Slider steuern     
+    - Teaserlinks ändern oder setzen
+    - Sticker ändern oder setzen
     - Webadressen für Newsletter, Mitgliederanträge und Spenden anpassbar
     - Metatag-Angaben ändern
     - Optionale Anzeige für Seitenbilder steuern
@@ -259,23 +261,32 @@ Administrative Hinweise für Wordpress Theme-Editoren:
    Bei der optischen Darstellung des Sliders werden Bilder, die höher sind als
    240 Pixel nach unten abgeschnitten. 
 
-4. Es ist ein CSS für Textsticker (statt grafischer Sticker) im Kopfteil
-   hinterlegt.
-   Um einsolchen Sticker abzulegen, wird ein Code wie dieser im header.php
-        <div class="textsticker">
-             <h2 class="skip">Sticker</h2>
-              <ul>
-                 <li><a class="member" href="<?php echo $options['url-mitgliedwerden']; ?>">Werde <span>Pirat!</span></a></li>
-                 <li><a class="spenden" href="<?php echo $options['url-spenden']; ?>">Hilf uns mit einer <span>Spende</span></a></li>                                  
-             </ul> 
-        </div> 
-       
-  Da allerdings noch nichtalle Browser CSS3 Transistions beherrschen und bei
-  denen die es können, die Transitions leider etwas "flatterig" wirken
-  und auch die Qualität der Texte (bei um 5 Grad gedrehten Texten) 
-  nicht optimal ist, sind Grafiken noch besser geeignet.
+4. Es können bis zu drei Sticker im Kopfteil der Webseite plaziert werden.
+   Unter der Theme-Optionen "Takelage setzen" kann man den Content
+   des Sticker sund die Ziel-Adresse eingeben.
+   Als Content kann HTML eingegeben werden um Bilder direkt einzublenden.
+   Es kann aber auch nur ein Text als COntent eingegeben werden.
+   Optisch ist es derzeit aufgrund der Verbreitung von CSS3 zu empfehlen,
+   ein Bild (wie in der Defaulteinstellung vorgegeben) einzugeben.
 
-5. Linkicons für bestimmte Dokumente werden über CSS gesteuert.
+     Beispiel für den Content:
+    <img src="'http://www.piratenpartei.de/images/werde-pirat.png" width="88" height="56" alt="Werde Pirat!">
+
+5.  Die Teaserlinks rechts neben dem Bildslider auf der Startseite können
+    individuell über die Theme-Option "Takelage setzen" gesetzt
+    werden. Auch hier können bis zu 3 solcher Links eingegeben werden.
+    Symbol, Zieladresse, Titel und Untertitel sind
+    eingebbar. Titel und Untertitel sollten jedoch nicht länger als
+    40 Zeichen sein.
+    Das Symbol kann aus einer vorgegebenen Liste ausgewählt werden.
+    
+    Die Teaserlinks können als Option auch als ganzes
+    deaktiviert werden indem ein Text-/Link-Widget in der
+       "Startseite: Rechter Aktionlinkbereich"
+    positioniert wuird.
+    
+
+6. Linkicons für bestimmte Dokumente werden über CSS gesteuert.
    Um dies "abszuschalten", muss in der CSS-Datei style.css lediglich
    das Stylesheet
        @import url(css/basemod_linkicons.css);

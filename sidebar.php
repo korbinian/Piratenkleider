@@ -48,8 +48,9 @@
                          <li class="slide"><img src="<?php echo $current ?>" width="277" height="391" alt=""></li>
                         <?php 
                      }
+                 
                   } else {
-                      
+                      if (!isset($plakate['plakate-altadressen'])) {
                       foreach ( $defaultplakate_liste as $dthis ) {    
                         if (isset($dthis['src'])) {
                           ?>
@@ -57,6 +58,7 @@
                         <?php       
                             
                         }
+                      }
                       }
                   }
                   if (isset($plakate['plakate-altadressen'])) {

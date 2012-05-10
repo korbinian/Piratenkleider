@@ -43,10 +43,8 @@ $defaultoptions = array(
     'num-article-startpage-fullwidth'       => 1,
     'num-article-startpage-halfwidth'       => 4,
     'url-newsletteranmeldung'       => 'https://service.piratenpartei.de/subscribe/newsletter',
-    'url-mitgliedwerden'            => 'https://www.piratenpartei.de/mitmachen/mitglied-werden/',
-    'url-spenden'                   => 'https://www.piratenpartei.de/mitmachen/spenden/',
     'teaser_maxlength'              => 300,
-    'teaser-title-maxlength'        => 64,
+    'teaser-title-maxlength'        => 50,
     'teaser-subtitle'               => 'Topthema',
     'teaser-title-words'            => 10,
     'css-default-header-height'     => 225,
@@ -69,6 +67,12 @@ $defaultoptions = array(
     'teaserlink3-url'               => 'https://www.piratenpartei.de/mitmachen/mitglied-werden', 
     'teaserlink3-symbol'            => 'steuerrad',
     
+    'stickerlink1-content'          => '<img src="'.get_template_directory_uri().'/images/werde-pirat.png" width="88" height="56" alt="Werde Pirat!">',
+    'stickerlink1-url'              => 'https://www.piratenpartei.de/mitmachen/mitglied-werden/',
+    'stickerlink2-content'          => '<img src="'.get_template_directory_uri().'/images/spenden.png" width="104" height="68" alt="Hilf uns mit einer Spende">',
+    'stickerlink2-url'              => 'https://www.piratenpartei.de/mitmachen/spenden/',
+    'stickerlink3-content'          => '',
+    'stickerlink3-url'              => '',    
     
 );
 /**
@@ -213,6 +217,11 @@ $defaultplakate_textsymbolliste = array(
     'eins'  => "2460",
     'zwei'  => "2461",    
     'drei'  => "2462", 
+    'euro'  => "20AC",
+    'dollar'  => "0024",
+    'copyright'  => "00A9",
+    
+    
 );
 
 
@@ -228,6 +237,8 @@ if ($options['anonymize-user']==1) {
     $_SERVER["REMOTE_ADDR"] = "0.0.0.0";
     /* UA-String überschreiben */
     $_SERVER["HTTP_USER_AGENT"] = "";
+    
+    update_option('require_name_email',0);
 }
 
 if ( ! isset( $content_width ) )   $content_width = $defaultoptions['content-width'];

@@ -159,6 +159,21 @@ function theme_options_do_page() {
                              if (!isset($options['teaserlink3-symbol'])) 
                                   $options['teaserlink3-symbol'] = $defaultoptions['teaserlink3-symbol'];  
                              
+                             
+                             if (!isset($options['stickerlink1-content'])  || (strlen(trim($options['stickerlink1-content']))<1 )) 
+                                $options['stickerlink1-content'] = $defaultoptions['stickerlink1-content'];                                
+                             if (!isset($options['stickerlink1-url'])  || (strlen(trim($options['stickerlink1-url']))<1 )) 
+                                $options['stickerlink1-url'] = $defaultoptions['stickerlink1-url'];
+                          
+                            if (!isset($options['stickerlink2-content']) || (strlen(trim($options['stickerlink2-content']))<1 )) 
+                                $options['stickerlink2-content'] = $defaultoptions['stickerlink2-content'];
+                            if (!isset($options['stickerlink2-url'])  || (strlen(trim($options['stickerlink2-url']))<1 )) 
+                                $options['stickerlink2-url'] = $defaultoptions['stickerlink2-url'];
+                            if (!isset($options['stickerlink2-content']) || (strlen(trim($options['stickerlink3-content']))<1 )) 
+                                $options['stickerlink3-content'] = $defaultoptions['stickerlink3-content'];
+                            if (!isset($options['stickerlink3-url'])  || (strlen(trim($options['stickerlink3-url']))<1 )) 
+                                $options['stickerlink3-url'] = $defaultoptions['stickerlink3-url'];
+                             
                         ?>
 			<table class="form-table">
                                     
@@ -200,7 +215,64 @@ function theme_options_do_page() {
 						<input id="piratenkleider_theme_options[defaultwerbesticker]" name="piratenkleider_theme_options[defaultwerbesticker]" type="checkbox" value="1" <?php checked( '1', $options['defaultwerbesticker'] ); ?> />
 						<label  for="piratenkleider_theme_options[defaultwerbesticker]">Sticker "Werde Pirat" und "Hilf uns mit einer Spende" anzeigen.</label>
                                                 </td>
-                                        </tr>
+                                          </tr>
+                                           <tr valign="top"><th scope="row"><?php _e( 'Sticker 1', 'piratenkleider' ); ?></th>
+                                             <td>
+                                                <table>                                                    
+                                                    <tr>
+                                                    <th><label for="piratenkleider_theme_options[stickerlink1-content]"> <?php _e( 'Content (Inline-HTML)', 'piratenkleider' ); ?>:</label></th>
+                                                    <td><input  class="regular-text" id="piratenkleider_theme_options[stickerlink1-content]" 
+                                                    type="text" name="piratenkleider_theme_options[stickerlink1-content]" 
+                                                    value="<?php esc_attr_e( $options['stickerlink1-content'] ); ?>" /></td>               
+                                                    </tr>
+                                                    
+                                                    <tr>
+                                                    <th><label for="piratenkleider_theme_options[stickerlink1-url]"> <?php _e( 'URL', 'piratenkleider' ); ?>:</label></th>
+                                                    <td><input  class="regular-text" id="piratenkleider_theme_options[stickerlink1-url]" 
+                                                    type="text" name="piratenkleider_theme_options[stickerlink1-url]" 
+                                                    value="<?php esc_attr_e( $options['stickerlink1-url'] ); ?>" /></td>               
+                                                    </tr>
+                                                </table>
+                                             </td>                                                 
+                                         </tr> 
+                                          <tr valign="top"><th scope="row"><?php _e( 'Sticker 2', 'piratenkleider' ); ?></th>
+                                             <td>
+                                                <table>                                                    
+                                                    <tr>
+                                                    <th><label for="piratenkleider_theme_options[stickerlink2-content]"> <?php _e( 'Content (Inline-HTML)', 'piratenkleider' ); ?>:</label></th>
+                                                    <td><input  class="regular-text" id="piratenkleider_theme_options[stickerlink2-content]" 
+                                                    type="text" name="piratenkleider_theme_options[stickerlink2-content]" 
+                                                    value="<?php esc_attr_e( $options['stickerlink2-content'] ); ?>" /></td>               
+                                                    </tr>
+                                                    
+                                                    <tr>
+                                                    <th><label for="piratenkleider_theme_options[stickerlink2-url]"> <?php _e( 'URL', 'piratenkleider' ); ?>:</label></th>
+                                                    <td><input  class="regular-text" id="piratenkleider_theme_options[stickerlink2-url]"
+                                                    type="text" name="piratenkleider_theme_options[stickerlink2-url]" 
+                                                    value="<?php esc_attr_e( $options['stickerlink2-url'] ); ?>" /></td>               
+                                                    </tr>
+                                                </table>
+                                             </td>                                                 
+                                         </tr>
+                                         <tr valign="top"><th scope="row"><?php _e( 'Sticker 3', 'piratenkleider' ); ?></th>
+                                             <td>
+                                                <table>                                                    
+                                                    <tr>
+                                                    <th><label for="piratenkleider_theme_options[stickerlink3-content]"> <?php _e( 'Content (Inline-HTML)', 'piratenkleider' ); ?>:</label></th>
+                                                    <td><input  class="regular-text" id="piratenkleider_theme_options[stickerlink3-content]" 
+                                                    type="text" name="piratenkleider_theme_options[stickerlink3-content]" 
+                                                    value="<?php esc_attr_e( $options['stickerlink3-content'] ); ?>" /></td>               
+                                                    </tr>
+                                                    
+                                                    <tr>
+                                                    <th><label for="piratenkleider_theme_options[stickerlink3-url]"> <?php _e( 'URL', 'piratenkleider' ); ?>:</label></th>
+                                                    <td><input  class="regular-text" id="piratenkleider_theme_options[stickerlink3-url]" 
+                                                    type="text" name="piratenkleider_theme_options[stickerlink3-url]" 
+                                                    value="<?php esc_attr_e( $options['stickerlink3-url'] ); ?>" /></td>               
+                                                    </tr>
+                                                </table>
+                                             </td>                                                 
+                                         </tr>
                                         </table>
                                 </td>
 				</tr>                                                                                                  
@@ -645,19 +717,7 @@ function theme_options_do_page() {
                                     <td>
 
                                         <table>                                
-                                         <tr valign="top"><th scope="row">Mitglied werden</th>
-                                              <td>
-                                                        <input style="width: 40em;" id="piratenkleider_theme_options[url-mitgliedwerden]" class="regular-text" type="text" name="piratenkleider_theme_options[url-mitgliedwerden]" value="<?php esc_attr_e( $options['url-mitgliedwerden'] ); ?>" />
-                                                        <label class="description" for="piratenkleider_theme_options[url-mitgliedwerden]">URL, inkl. https://, zur Seite auf der sich Mitglieder bewerben k&ouml;nnen. Hier sollte entweder die URL zur Bundesseite <code><?php echo $defaultoptions['url-mitgliedwerden']; ?></code>
-                                                        oder die zu der entsprechenden Seite eines Landesverbandes stehen. Bitte mit https anstelle http, wenn m&ouml;glich.</label>
-                                                </td>					
-                                        </tr>
-                                         <tr valign="top"><th scope="row">Spenden</th>
-                                              <td>
-                                                        <input style="width: 40em;" id="piratenkleider_theme_options[url-spenden]" class="regular-text" type="text"  name="piratenkleider_theme_options[url-spenden]" value="<?php esc_attr_e( $options['url-spenden'] ); ?>" />
-                                                        <label class="description" for="piratenkleider_theme_options[url-spenden]">URL, inkl. https://, zur Seite auf der Spenden gegeben werden k&ouml;nnen. Default: <code><?php echo $defaultoptions['url-spenden']; ?></code></label>
-                                                </td>					
-                                        </tr>
+                                     
                                         <tr valign="top"><th scope="row">Newsletter</th>
                                           <td>
 						<input style="width: 40em;" id="piratenkleider_theme_options[url-newsletteranmeldung]" class="regular-text" type="text"  name="piratenkleider_theme_options[url-newsletteranmeldung]" value="<?php esc_attr_e( $options['url-newsletteranmeldung'] ); ?>" />
@@ -715,7 +775,10 @@ function theme_options_do_page() {
                                         <tr valign="top"><th scope="row">Kommentarbenutzer anonymisieren</th>
 					<td>
 						<input id="piratenkleider_theme_options[anonymize-user]" name="piratenkleider_theme_options[anonymize-user]" type="checkbox" value="1" <?php checked( '1', $options['anonymize-user'] ); ?> />
-						<label  for="piratenkleider_theme_options[anonymize-user]"><?php _e( 'Wenn Personen Kommentare hinterlassen, wird deren IP-Adresse und der User-Agent-String geleert. Eine R&uuml;ckverfolgung ist damit nicht m&ouml;glich.', 'piratenkleider' ); ?></label>
+						<label  for="piratenkleider_theme_options[anonymize-user]"><?php _e( 'IP-Adresse und der User-Agent-String geleert, die Eingabe von E-Mail-Adressen wird verhindert', 'piratenkleider' ); ?></label>
+                                                <p><b>Achtung:</b> Diese Option deaktiviert auch die Avatar-Anzeige und
+                                                    setzt die Kommentareinstellung unter Einstellungen-Diskussion so,
+                                                    dass Benutzer keinen Namen und E-Mail-Adressen mehr eingeben m&uuml;ssen.</p>
 					</td>
                                         </tr>
                                         <tr valign="top"><th scope="row">Avatare anzeigen</th>
@@ -772,6 +835,19 @@ function theme_options_validate( $input ) {
          if ( ! isset( $input['aktiv-avatar'] ) )
 		$input['aktiv-avatar'] = 0;
 	$input['aktiv-avatar'] = ( $input['aktiv-avatar'] == 1 ? 1 : 0 );    
+        
+        if ($input['anonymize-user']==1) {
+            $input['aktiv-avatar'] = 0;
+        }
+        $options = get_option( 'piratenkleider_theme_options' );
+        if (!isset($options['anonymize-user'])) 
+            $options['anonymize-user'] = $defaultoptions['anonymize-user'];
+        
+        
+        if (($input['anonymize-user']==0) && ($options['anonymize-user']==1)) {
+            // Zurücksetzen der Sicherheitsoption
+             update_option('require_name_email',1);
+        }
         
 	if ( ! isset( $input['zeige_sidebarpagemenu'] ) )
 		$input['zeige_sidebarpagemenu'] = 0;
@@ -851,8 +927,15 @@ function theme_options_validate( $input ) {
          $input['teaserlink3-untertitel'] = wp_filter_nohtml_kses( $input['teaserlink3-untertitel'] );                      
          $input['teaserlink3-url'] = wp_filter_nohtml_kses( $input['teaserlink3-url'] );                 
          $input['teaserlink3-symbol'] = wp_filter_nohtml_kses( $input['teaserlink3-symbol'] );
-                             
         
+         
+         
+       
+
+         $input['stickerlink1-url'] = wp_filter_nohtml_kses( $input['stickerlink1-url'] );
+         $input['stickerlink2-url'] = wp_filter_nohtml_kses( $input['stickerlink2-url'] );
+         $input['stickerlink3-url'] = wp_filter_nohtml_kses( $input['stickerlink3-url'] );
+
         
 	return $input;
 }

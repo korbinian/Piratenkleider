@@ -16,10 +16,18 @@
             $options['newsletter'] = $defaultoptions['newsletter'];
    if (!isset($options['url-newsletteranmeldung'])) 
             $options['url-newsletteranmeldung'] = $defaultoptions['url-newsletteranmeldung'];
-   if (!isset($options['url-mitgliedwerden'])) 
-        $options['url-mitgliedwerden'] = $defaultoptions['url-mitgliedwerden'];
-   if (!isset($options['url-spenden'])) 
-      $options['url-spenden'] = $defaultoptions['url-spenden'];
+    if (!isset($options['stickerlink1-content'])) 
+        $options['stickerlink1-content'] = $defaultoptions['stickerlink1-content'];
+    if (!isset($options['stickerlink1-url'])) 
+        $options['stickerlink1-url'] = $defaultoptions['stickerlink1-url'];
+    if (!isset($options['stickerlink2-content'])) 
+        $options['stickerlink2-content'] = $defaultoptions['stickerlink2-content'];
+    if (!isset($options['stickerlink2-url'])) 
+        $options['stickerlink2-url'] = $defaultoptions['stickerlink2-url'];
+    if (!isset($options['stickerlink2-content'])) 
+        $options['stickerlink3-content'] = $defaultoptions['stickerlink3-content'];
+    if (!isset($options['stickerlink3-url'])) 
+        $options['stickerlink3-url'] = $defaultoptions['stickerlink3-url'];
    if (!isset($options['aktiv-suche'])) 
         $options['aktiv-suche'] = $defaultoptions['aktiv-suche'];
    if (!isset($options['aktiv-linkmenu'])) 
@@ -178,9 +186,24 @@ if (isset( $options['meta-keywords'] ) ) { ?>
 			<div class="sticker">
                             <div class="skin">   
                                <h2 class="skip">Sticker</h2>
+                               <?php 
+                               
+                               
+                                ?>
                                <ul>
-                                   <li><a class="member" href="<?php echo $options['url-mitgliedwerden']; ?>"><img src="<?php echo get_template_directory_uri(); ?>/images/werde-pirat.png" width="88" height="56" alt="Werde Pirat!"></a></li>
-                                   <li><a class="spenden" href="<?php echo $options['url-spenden']; ?>"><img src="<?php echo get_template_directory_uri(); ?>/images/spenden.png" width="104" height="68" alt="Hilf uns mit einer Spende"></a></li>                                  
+                                   <?php if (isset($options['stickerlink1-content']) && (strlen($options['stickerlink1-content']) > 1)
+                                           && isset($options['stickerlink1-url']) && (strlen($options['stickerlink1-url']) > 5) ) {
+                                       echo '<li><a href="'.$options['stickerlink1-url'].'">'.$options['stickerlink1-content'].'</a></li>';
+                                   } ?>
+                                   <?php if (isset($options['stickerlink2-content']) && (strlen($options['stickerlink2-content']) > 1)
+                                           && isset($options['stickerlink2-url']) && (strlen($options['stickerlink2-url']) > 5) ) {
+                                       echo '<li><a href="'.$options['stickerlink2-url'].'">'.$options['stickerlink2-content'].'</a></li>';
+                                   } ?>
+                                   <?php if (isset($options['stickerlink3-content']) && (strlen($options['stickerlink3-content']) > 1)
+                                           && isset($options['stickerlink3-url']) && (strlen($options['stickerlink3-url']) > 5) ) {
+                                       echo '<li><a href="'.$options['stickerlink3-url'].'">'.$options['stickerlink3-content'].'</a></li>';
+                                   } ?>                                                                                                                         
+
                                </ul>                      
                             </div>                                                                                            
 			</div>

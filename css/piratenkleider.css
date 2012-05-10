@@ -712,8 +712,6 @@ ul.socialmedia li a:focus img  {
 
 
 .sticker {
-  width: 350px;
-  margin: 0 auto; 
 
 }
 .sticker li {
@@ -721,6 +719,7 @@ ul.socialmedia li a:focus img  {
      height: 77px; 
       float: left;    
 }
+
 .sticker li a img {
     -moz-transition: all 0.15s ease-in-out; 
     -o-transition: all 0.15s ease-in-out; 
@@ -744,27 +743,32 @@ ul.socialmedia li a:focus img  {
     transform: rotate(5deg) scale(1.3);
 }  
 
-.textsticker {
+
+
+.sticker {
     position: absolute;
     right: 8%;
     top: 70px;
     margin: 0 auto;
-    width: 350px;
+ /*   width: 350px; */
   }
-  .textsticker ul li {
+  .sticker ul li {
     float: left;
     text-align: center;
     width: 100px;
-
+    font-size: 2em;
     font-weight: bold;
     font-family: "BebasNeueRegular",Helvetica,Arial,sans-serif;
     letter-spacing: 1px;
     margin: 10px;
+    line-height: 0.9em;
+     
   }
-   .textsticker ul li a {
+  .sticker ul li a {
         color: #6A6A6A;
-        font-size: 2em;
-        line-height: 0.6em;
+  }
+   .sticker ul li a span {
+ 
         -moz-transform: rotate(-5deg);
         -ms-transform: rotate(-5deg); 
         -o-transform: rotate(-5deg);
@@ -774,23 +778,24 @@ ul.socialmedia li a:focus img  {
         -ms-transition: all 0.15s ease-in-out;
         transition: all 0.15s ease-in-out;
    }
-   .textsticker ul li a span {
+   .sticker ul li a span.hell {
       color: #FE8E0E;
       font-size: 1.3em;
    }
-   .textsticker ul li a:hover,
-   .textsticker ul li a:focus{
+   .sticker ul li a:hover span,
+   .sticker ul li a:focus span{
         -moz-transform: rotate(1deg) scale(1.2);
         -ms-transform: rotate(1deg)  scale(1.2);
         -o-transform: rotate(1deg) scale(1.2);
-        transform: rotate(1deg) scale(1.2);   
+        transform: rotate(1deg) scale(1.2);  
+       
    }
-   .textsticker ul li a:hover span,
-   .textsticker ul li a:focus span{
-      color: #2d7dc5;
-   
+   .sticker ul li a:hover span.hell,
+   .sticker ul li a:focus span.hell {
+      color: #2d7dc5;   
    }
 
+   
 
 .header .newsletter .skin {
   padding: 10px 10px 5px 10px;

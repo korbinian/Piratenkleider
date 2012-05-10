@@ -25,8 +25,24 @@ endif; ?>
 
 <?php else : if ( ! comments_open() ) : ?>
 	<p>Das Kommentieren dieses Artikels ist nicht (mehr) m&ouml;glich.</p>
-<?php endif; ?>
+<?php endif; 
+ endif; 
+     
+$options = get_option( 'piratenkleider_theme_options' );
+if (!isset($options['anonymize-user'])) 
+            $options['anonymize-user'] = $defaultoptions['anonymize-user'];
 
-<?php endif; ?>
-
-<?php comment_form(); ?> 
+if ($options['anonymize-user']==1) {
+    // Emailadresse kann/soll weggelassen werden
+    $comments_args = array( 'fields' => array(
+        'author' => '<p class="comment-form-author">' . '<label for="author">' . __( 'Name', 'domainreference' ) . '</label> ' . ( $req ? '<span class="required">*</span>' : '' ) .
+	            '<input id="author" name="author" type="text" value="' . esc_attr( $commenter['comment_author'] ) . '" size="30"' . $aria_req . ' /></p>'
+       ),
+        'comment_notes_before' => ' '
+    );
+    comment_form( $comments_args); 
+        
+} else {
+    comment_form(); 
+}
+?> 
