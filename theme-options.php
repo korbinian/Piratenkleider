@@ -337,13 +337,13 @@ function theme_options_do_page() {
                                                     <th><label  for="piratenkleider_theme_options[teaserlink1-untertitel]">
                                                     <?php _e( 'Untertitel', 'piratenkleider' ); ?>:
                                                     </label></th>
-                                                    <td> <input style="width: 20em;" id="piratenkleider_theme_options[teaserlink1-untertitel]"  maxlength="40"
+                                                    <td> <input style="width: 20em;" id="piratenkleider_theme_options[teaserlink1-untertitel]" maxlength="40"
                                                     type="text" name="piratenkleider_theme_options[teaserlink1-untertitel]" 
                                                     value="<?php esc_attr_e( $options['teaserlink1-untertitel'] ); ?>" /></td>               
                                                     </tr>
                                                     <tr>
                                                     <th><label for="piratenkleider_theme_options[teaserlink1-url]"> <?php _e( 'URL', 'piratenkleider' ); ?>:</label></th>
-                                                    <td><input  class="regular-text" id="piratenkleider_theme_options[teaserlink1-url]" maxlength="40"
+                                                    <td><input  class="regular-text" id="piratenkleider_theme_options[teaserlink1-url]" 
                                                     type="text" name="piratenkleider_theme_options[teaserlink1-url]" 
                                                     value="<?php esc_attr_e( $options['teaserlink1-url'] ); ?>" /></td>               
                                                     </tr>
@@ -385,7 +385,7 @@ function theme_options_do_page() {
                                                     </tr>
                                                     <tr>
                                                     <th><label for="piratenkleider_theme_options[teaserlink2-url]"> <?php _e( 'URL', 'piratenkleider' ); ?>:</label></th>
-                                                    <td><input id="piratenkleider_theme_options[teaserlink2-url]" maxlength="40"
+                                                    <td><input id="piratenkleider_theme_options[teaserlink2-url]" 
                                                     type="text"  class="regular-text" name="piratenkleider_theme_options[teaserlink2-url]" 
                                                     value="<?php esc_attr_e( $options['teaserlink2-url'] ); ?>" /></td>               
                                                     </tr>
@@ -426,7 +426,7 @@ function theme_options_do_page() {
                                                     </tr>
                                                     <tr>
                                                     <th><label for="piratenkleider_theme_options[teaserlink3-url]"> <?php _e( 'URL', 'piratenkleider' ); ?>:</label></th>
-                                                    <td><input  class="regular-text" id="piratenkleider_theme_options[teaserlink3-url]" maxlength="40"
+                                                    <td><input  class="regular-text" id="piratenkleider_theme_options[teaserlink3-url]"
                                                     type="text" name="piratenkleider_theme_options[teaserlink3-url]" 
                                                     value="<?php esc_attr_e( $options['teaserlink3-url'] ); ?>" /></td>               
                                                     </tr>

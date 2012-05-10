@@ -177,7 +177,7 @@ Die durch die Seitenbetreiber erstellten Inhalte und Werke auf diesen Seiten
 unterliegen dem deutschen Urheberrecht. 
 Soweit nicht anders gekennzeichnet, 
 stehen s&auml;mtliche Werke dieses Angebots unter einer 
-<a href="http://creativecommons.org/licenses/by/3.0/de/" rel="license">    
+<a class="extern" href="http://creativecommons.org/licenses/by/3.0/de/" rel="license">    
     Creative Commons Namensnennung 3.0 Deutschland Lizenz</a>.
 </p>
 <p style="float:right; display: inline; margin: 1em;"><img src="http://i.creativecommons.org/l/by/3.0/de/88x31.png" alt="" /></p>
@@ -200,21 +200,31 @@ stehen s&auml;mtliche Werke dieses Angebots unter einer
     Dieses Webangebot verwendet folgende Werke von Dritten:
 </p>
 <ul>
-    <li><a href="http://www.yaml.de">YAML CSS Framework</a> (Lizensiert unter der
+    <li><a class="extern" href="http://www.yaml.de">YAML CSS Framework</a> (Lizensiert unter der
         Creative Commons Attribution 2.0 License).</li>
     
-    <li><a href="http://www.jquery.com">JavaScript Framework jQuery</a> (GNU General Public License (GPL) Version 2)</li>
-    <li><a href="http://flex.madebymufffin.com">jQuery FlexSlider</a> (MIT license)</li>
+    <li><a class="extern" href="http://www.jquery.com">JavaScript Framework jQuery</a> (GNU General Public License (GPL) Version 2)</li>
+    <li><a class="extern" href="http://flex.madebymufffin.com">jQuery FlexSlider</a> (MIT license)</li>
     <?php 
     $theme_data = get_theme_data( get_template_directory(). '/style.css' );
     ?>
-    <li><a href="<?php echo $theme_data['URI']; ?>">Wordpress Theme <?php echo $theme_data['Name']; ?></a>, Version <?php echo $theme_data['Version']; ?>
-    (Lizensiert unter der Creative Commons Namensnennung 3.0 Deutschland Lizenz</a>).</li>
-   
-        
+    <li><a class="extern" href="<?php echo $theme_data['URI']; ?>">Wordpress Theme <?php echo $theme_data['Name']; ?></a>, Version <?php echo $theme_data['Version']; ?>
+    (Lizensiert unter der Creative Commons Namensnennung 3.0 Deutschland Lizenz</a>).  </li>
+    <li><a class="extern" href="http://wiki.piratenpartei.de/Grafiken">Wallpaper und Bildmaterial der Piratenpartei Deutschland</a></li>    
 </ul>
+
+<h3>Credits</h3>
+    <p>
+        Das Wordpress-Theme wurde entwickelt von:     
+    </p>
     
-    
+   
+    <ul>
+        <li><a class="extern" href="http://www.xwolf.de">Wolfgang Wiese</a> (Programmierung, Neudesign, CSS, Barrierefreiheit, Dokumentation, Features nach Version 1.1)</li>
+        <li><a class="extern" href="http://www.korbinian-polk.de">Korbinian Polk</a> (Erstes Grunddesign und Erstellung eines Childtheme von TwentyTen)</li>               
+    </ul>
+        
+
 
 <p>Soweit die Inhalte auf dieser Seite nicht vom Betreiber erstellt wurden, 
     werden die Urheberrechte Dritter beachtet. Insbesondere werden Inhalte 

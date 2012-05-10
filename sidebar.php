@@ -33,7 +33,8 @@
   
 
 
-   if ( $options['slider-defaultwerbeplakate'] == "1" ) {
+   if (( $options['slider-defaultwerbeplakate'] == "1" ) && 
+       (is_array($plakate['plakate-src']) || (isset($plakate['plakate-altadressen'])) )) {
     ?>
      
      <div class="flexslider fs2 no-js">

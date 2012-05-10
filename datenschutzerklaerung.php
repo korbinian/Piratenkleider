@@ -64,7 +64,7 @@ speichern und den Ermittlungsbeh&ouml;rden auszuh&auml;ndigen. Soweit es uns erl
 werden wir sie in einem solchen Fall davon unterrichten. Im Falle eines laufenden 
 Ermitlungsverfahrens m&uuml;ssten wir diese Daten an Ermitlungsbeh&ouml;rden oder
 Privatpersonen herausgeben. In unserem Wiki k&ouml;nnen sie nachlesen, wie sie 
-die <a href="http://wiki.piratenpartei.de/HowTo">&Uuml;bermittlung aller in diesem 
+die <a class="extern" href="http://wiki.piratenpartei.de/HowTo">&Uuml;bermittlung aller in diesem 
     Absatz genannten Daten an uns und andere unterbinden</a> k&ouml;nnen.</p>
 
 <h2>Cookies</h2>

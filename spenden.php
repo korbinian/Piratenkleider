@@ -88,7 +88,7 @@
     Betr&auml;ge. Wenn Du einen Dauerauftrag bei Deiner Bank einrichten kannst 
     w&uuml;rde uns das sehr helfen. Schon ein paar Euro im Monat erm&ouml;glichen uns 
     auch langfristige Finanzierungen zu &uuml;bernehmen - wie z.B.  f&uuml;r 
-    <a href="http://www.anonym-surfen.de/">Anonymisierungsdienste</a>. Zudem sind 
+    <a class="extern" href="http://www.anonym-surfen.de/">Anonymisierungsdienste</a>. Zudem sind 
     unsere Mitglieder aufgerufen freiwillig 1% ihres Netto-Einkommens monatlich
     zu spenden.</p>
 
@@ -115,7 +115,7 @@
         <p>
         Sollten Sie f&uuml;r die Piratenpartei Deutschland spenden wollen, 
         rufen Sie die
-        <a href="https://www.piratenpartei.de/mitmachen/spenden/">Spendenseiten der Piratenpartei Deutschland</a>
+        <a class="extern" href="https://www.piratenpartei.de/mitmachen/spenden/">Spendenseiten der Piratenpartei Deutschland</a>
         auf.        
         
     </p>       
