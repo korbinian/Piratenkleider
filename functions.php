@@ -53,6 +53,23 @@ $defaultoptions = array(
     'css-default-branding-padding-top'  => 40,
     'anonymize-user'                => 0,
     
+    
+    'teaserlink1-title'             => 'Informiere dich',
+    'teaserlink1-untertitel'        => '&uuml;ber unsere Themen &amp; Ziele!',            
+    'teaserlink1-url'               => 'https://www.piratenpartei.de/politik/themen/', 
+    'teaserlink1-symbol'            => 'idee',
+    
+    'teaserlink2-title'             => 'Unterst&uuml;tze uns',
+    'teaserlink2-untertitel'        => 'mit deinem Engagement!',            
+    'teaserlink2-url'               => 'http://www.piratenpartei.de/unterstutze-uns/', 
+    'teaserlink2-symbol'            => 'herz',
+    
+    'teaserlink3-title'             => 'Werde Pirat!',
+    'teaserlink3-untertitel'        => 'jetzt Mitglied werden!',            
+    'teaserlink3-url'               => 'https://www.piratenpartei.de/mitmachen/mitglied-werden', 
+    'teaserlink3-symbol'            => 'steuerrad',
+    
+    
 );
 /**
  * Liste der Defaultbilder fuer Seiten und Slider
@@ -166,6 +183,39 @@ $defaultplakate_liste = array(
 	),    
         
 );
+
+/* 
+ * Auswahlliste fuer Textsymbole fuer den Teaser
+ */
+$defaultplakate_textsymbolliste = array(
+    'idee'  => "0021",
+    'person'  => "263A",
+    'herz'  => "2665",
+    'email'  => "2709",
+    'at'  => "0040",
+    'check'  => "2713",
+    'nocheck'  => "2717",
+    'telefon'  => "2706",
+    'anker'  => "2693",
+    'skull'  => "2620",
+    'female'  => "2640",
+    'male'  => "2642",
+    'malefemale'  => "26A5",
+    'schreiben'  => "270D",
+    'rollstuhl'  => "267F",
+    'steuerrad'  => "2638",
+    'musiknote'  => "266B",
+    'paragraph'  => "00A7",
+    'play'  => "25B6",
+    'save'  => "2714",
+    'spark'  => "2737",
+    'star'  => "2605",
+    'eins'  => "2460",
+    'zwei'  => "2461",    
+    'drei'  => "2462", 
+);
+
+
 // Aus gestalerischen Gr&uuml;nden m&uuml;ssen Plakate auf der Website exakt 277 Pixel breit sein. Die H&ouml;he ist
 // flexibel, sollte jedoch auch gleich sein. In diesem Fall  391 Pixel.
 
@@ -382,7 +432,7 @@ function piratenkleider_comment( $comment, $args, $depth ) {
          $options = get_option( 'piratenkleider_theme_options' );  
          if (!isset($options['aktiv-avatar'])) 
             $options['aktiv-avatar'] = $defaultoptions['aktiv-avatar'];
-        
+
         
         switch ( $comment->comment_type ) :
                 case '' :

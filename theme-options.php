@@ -29,7 +29,8 @@ function theme_options_add_page() {
  */
 function theme_options_do_page() {
 	global $defaultoptions;
-
+        global $defaultplakate_textsymbolliste;
+        
 	if ( ! isset( $_REQUEST['settings-updated'] ) )
 		$_REQUEST['settings-updated'] = false;
 
@@ -127,45 +128,43 @@ function theme_options_do_page() {
                                 $options['zeige_sidebarpagemenu'] = $defaultoptions['zeige_sidebarpagemenu'];
                              if (!isset($options['anonymize-user'])) 
                                   $options['anonymize-user'] = $defaultoptions['anonymize-user'];
+                             if (!isset($options['aktiv-avatar'])) 
+                                  $options['aktiv-avatar'] = $defaultoptions['aktiv-avatar'];   
+                             
+                             
+                             if (!isset($options['teaserlink1-title'])) 
+                                  $options['teaserlink1-title'] = $defaultoptions['teaserlink1-title'];   
+                             if (!isset($options['teaserlink1-untertitel'])) 
+                                  $options['teaserlink1-untertitel'] = $defaultoptions['teaserlink1-untertitel'];   
+                             if (!isset($options['teaserlink1-url'])) 
+                                  $options['teaserlink1-url'] = $defaultoptions['teaserlink1-url'];   
+                             if (!isset($options['teaserlink1-symbol'])) 
+                                  $options['teaserlink1-symbol'] = $defaultoptions['teaserlink1-symbol'];   
+                             
+                             if (!isset($options['teaserlink2-title'])) 
+                                  $options['teaserlink2-title'] = $defaultoptions['teaserlink2-title'];   
+                             if (!isset($options['teaserlink2-untertitel'])) 
+                                  $options['teaserlink2-untertitel'] = $defaultoptions['teaserlink2-untertitel'];   
+                             if (!isset($options['teaserlink2-url'])) 
+                                  $options['teaserlink2-url'] = $defaultoptions['teaserlink2-url'];   
+                             if (!isset($options['teaserlink2-symbol'])) 
+                                  $options['teaserlink2-symbol'] = $defaultoptions['teaserlink2-symbol'];  
+                             
+                             if (!isset($options['teaserlink3-title'])) 
+                                  $options['teaserlink3-title'] = $defaultoptions['teaserlink3-title'];   
+                             if (!isset($options['teaserlink3-untertitel'])) 
+                                  $options['teaserlink3-untertitel'] = $defaultoptions['teaserlink3-untertitel'];   
+                             if (!isset($options['teaserlink3-url'])) 
+                                  $options['teaserlink3-url'] = $defaultoptions['teaserlink3-url'];   
+                             if (!isset($options['teaserlink3-symbol'])) 
+                                  $options['teaserlink3-symbol'] = $defaultoptions['teaserlink3-symbol'];  
+                             
                         ?>
 			<table class="form-table">
                                     
                             
-                                <tr valign="top"><th scope="row">Werbesticker</th>
-					<td>
-						<input id="piratenkleider_theme_options[defaultwerbesticker]" name="piratenkleider_theme_options[defaultwerbesticker]" type="checkbox" value="1" <?php checked( '1', $options['defaultwerbesticker'] ); ?> />
-						<label  for="piratenkleider_theme_options[defaultwerbesticker]">Sticker "Werde Pirat" und "Hilf uns mit einer Spende" anzeigen.</label>
-					</td>
-				</tr>
-                                <tr valign="top"><th scope="row">Linkmenu</th>
-					<td>
-						<input id="piratenkleider_theme_options[aktiv-linkmenu]" name="piratenkleider_theme_options[aktiv-linkmenu]" type="checkbox" value="1" <?php checked( '1', $options['aktiv-linkmenu'] ); ?> />
-						<label  for="piratenkleider_theme_options[aktiv-linkmenu]">Linkmenu oben rechts, zwischen Social media Icons und Suchmaske anzeigen</label>
-					</td>
-				</tr>
-                                <tr valign="top"><th scope="row">Seitenmenu rechts</th>
-					<td>
-						<input id="piratenkleider_theme_options[zeige_subpagesonly]" name="piratenkleider_theme_options[zeige_subpagesonly]" type="checkbox" value="1" <?php checked( '1', $options['zeige_subpagesonly'] ); ?> />
-						<label  for="piratenkleider_theme_options[zeige_subpagesonly]">Bei der Anzeige von Seiten rechts in der Sidebar nur das aktuelle Submenu zeigen. Bei Deaktivierung wird das vollst&auml;ndige Men&uuml; gezeigt. Dies ist f&uuml;r Webauftritte mit vielen Seiten nicht geeignet.</label>
-                                                
-                                                <p>Alternativ:</p>
-                                                <input id="piratenkleider_theme_options[zeige_sidebarpagemenu]" name="piratenkleider_theme_options[zeige_sidebarpagemenu]" type="checkbox" value="1" <?php checked( '1', $options['zeige_sidebarpagemenu'] ); ?> />
-						<label  for="piratenkleider_theme_options[zeige_sidebarpagemenu]">Seitenmen&uuml; in der Sidebar anzeigen.</label>
-                                          
-					</td>
-				</tr>
-                                <tr valign="top"><th scope="row">Suchmaske</th>
-					<td>
-						<input id="piratenkleider_theme_options[aktiv-suche]" name="piratenkleider_theme_options[aktiv-suche]" type="checkbox" value="1" <?php checked( '1', $options['aktiv-suche'] ); ?> />
-						<label  for="piratenkleider_theme_options[aktiv-suche]">Eingabemaske f&uuml;r Suche oben rechts anzeigen</label>
-					</td>
-				</tr>
-				<tr valign="top"><th scope="row">Piraten-Newsletter</th>
-					<td>
-						<input id="piratenkleider_theme_options[newsletter]" name="piratenkleider_theme_options[newsletter]" type="checkbox" value="1" <?php checked( '1', $options['newsletter'] ); ?> />
-						<label  for="piratenkleider_theme_options[newsletter]">Eingabemaske anzeigen</label>
-					</td>
-				</tr>
+                              
+                              
                                 <tr valign="top"><th scope="row">Defaultbilder f&uuml;r Seiten</th>
 					<td>
 						<input id="piratenkleider_theme_options[aktiv-defaultseitenbild]" name="piratenkleider_theme_options[aktiv-defaultseitenbild]" type="checkbox" value="1" <?php checked( '1', $options['aktiv-defaultseitenbild'] ); ?> />
@@ -173,26 +172,205 @@ function theme_options_do_page() {
                                                 wird ein Defaultbild gezeigt.</label>
 					</td>
 				</tr>
-                                <tr valign="top"><th scope="row">Platzhalterbilder f&uuml;r Indexseiten</th>
+                                <tr valign="top"><th scope="row">Platzhalterbilder</th>
 					<td>
 						<input id="piratenkleider_theme_options[aktiv-platzhalterbilder-indexseiten]" name="piratenkleider_theme_options[aktiv-platzhalterbilder-indexseiten]" type="checkbox" value="1" <?php checked( '1', $options['aktiv-platzhalterbilder-indexseiten'] ); ?> />
 						<label  for="piratenkleider_theme_options[aktiv-platzhalterbilder-indexseiten]">Platzhalterbilder bei Indexseiten zu Kategorien, Tags, Suche und Archiv anzeigen</label>
 					</td>
 				</tr>
-				 <tr valign="top"><th scope="row">Autoren anzeigen</th>
-					<td>
-						<input id="piratenkleider_theme_options[aktiv-autoren]" name="piratenkleider_theme_options[aktiv-autoren]" type="checkbox" value="1" <?php checked( '1', $options['aktiv-autoren'] ); ?> />
-						<label  for="piratenkleider_theme_options[aktiv-autoren]">Bei der Anzeige von Artikeln den Autoren anzeigen und verlinken.</label>
-					</td>
-				</tr>
-                                 <tr valign="top"><th scope="row">Kommentarbenutzer anonymisieren</th>
-					<td>
-						<input id="piratenkleider_theme_options[anonymize-user]" name="piratenkleider_theme_options[anonymize-user]" type="checkbox" value="1" <?php checked( '1', $options['anonymize-user'] ); ?> />
-						<label  for="piratenkleider_theme_options[anonymize-user]">Wenn Personen Kommentare hinterlassen, wird deren IP-Adresse und der User-Agent-String geleert. Eine R&uuml;ckverfolgung ist damit nicht m&ouml;glich.</label>
-					</td>
-				</tr>
+				
+                               <tr valign="top">
+                                    <th scope="row">Kopfteil</th>
+                                    <td>
+                                        <table>
+                                              <tr valign="top"><th scope="row">Linkmenu</th>
+                                                <td>
+						<input id="piratenkleider_theme_options[aktiv-linkmenu]" name="piratenkleider_theme_options[aktiv-linkmenu]" type="checkbox" value="1" <?php checked( '1', $options['aktiv-linkmenu'] ); ?> />
+						<label  for="piratenkleider_theme_options[aktiv-linkmenu]">Linkmenu oben rechts, zwischen Social media Icons und Suchmaske anzeigen</label>
+                                                </td>
+                                    	</tr>
+                                             <tr valign="top"><th scope="row">Suchmaske</th>
+                                                <td>
+						<input id="piratenkleider_theme_options[aktiv-suche]" name="piratenkleider_theme_options[aktiv-suche]" type="checkbox" value="1" <?php checked( '1', $options['aktiv-suche'] ); ?> />
+						<label  for="piratenkleider_theme_options[aktiv-suche]">Eingabemaske f&uuml;r Suche oben rechts anzeigen</label>
+                                                </td>
+                                            </tr>
+                                           <tr valign="top"><th scope="row">Werbesticker</th>
+                                                <td>
+						<input id="piratenkleider_theme_options[defaultwerbesticker]" name="piratenkleider_theme_options[defaultwerbesticker]" type="checkbox" value="1" <?php checked( '1', $options['defaultwerbesticker'] ); ?> />
+						<label  for="piratenkleider_theme_options[defaultwerbesticker]">Sticker "Werde Pirat" und "Hilf uns mit einer Spende" anzeigen.</label>
+                                                </td>
+                                        </tr>
+                                        </table>
+                                </td>
+				</tr>                                                                                                  
+                                
+                                
+                                <tr valign="top">
+                                    <th scope="row">Sidebar</th>
+                                    <td>
+                                        <table>                                             
+                                            <tr valign="top"><th scope="row">Seitenmenu</th>
+                                                    <td>
+                                                            <input id="piratenkleider_theme_options[zeige_subpagesonly]" name="piratenkleider_theme_options[zeige_subpagesonly]" type="checkbox" value="1" <?php checked( '1', $options['zeige_subpagesonly'] ); ?> />
+                                                            <label  for="piratenkleider_theme_options[zeige_subpagesonly]">Bei der Anzeige von Seiten rechts in der Sidebar nur das aktuelle Submenu zeigen. Bei Deaktivierung wird das vollst&auml;ndige Men&uuml; gezeigt. Dies ist f&uuml;r Webauftritte mit vielen Seiten nicht geeignet.</label>
+
+                                                            <p>Alternativ:</p>
+                                                            <input id="piratenkleider_theme_options[zeige_sidebarpagemenu]" name="piratenkleider_theme_options[zeige_sidebarpagemenu]" type="checkbox" value="1" <?php checked( '1', $options['zeige_sidebarpagemenu'] ); ?> />
+                                                            <label  for="piratenkleider_theme_options[zeige_sidebarpagemenu]">Seitenmen&uuml; in der Sidebar anzeigen.</label>
+
+                                                    </td>
+                                            </tr>
+
+                                            <tr valign="top"><th scope="row">Piraten-Newsletter</th>
+                                                    <td>
+                                                            <input id="piratenkleider_theme_options[newsletter]" name="piratenkleider_theme_options[newsletter]" type="checkbox" value="1" <?php checked( '1', $options['newsletter'] ); ?> />
+                                                            <label  for="piratenkleider_theme_options[newsletter]">Eingabemaske anzeigen</label>
+                                                    </td>
+                                            </tr>
+                                            
+                                            <tr valign="top"><th scope="row"><?php _e( 'Plakatslider aktivieren', 'piratenkleider' ); ?></th>
+                                        	<td>
+                                            	<input id="piratenkleider_theme_options[slider-defaultwerbeplakate]" name="piratenkleider_theme_options[slider-defaultwerbeplakate]" type="checkbox" value="1" <?php checked( '1', $options['slider-defaultwerbeplakate'] ); ?> />
+						<label for="piratenkleider_theme_options[slider-defaultwerbeplakate]">Slider der Werbeplakate (rechte Sidebar-Spalte) werden angezeigt. 
+                                                    <br>Die Auswahl der Plakatbilder kann unter den Defaultbildern angepasst werden.</label>
+                                                </td>
+                                            </tr>
+                                            
+                                         <tr valign="top"><th scope="row"><?php _e( 'Teaserlink 1', 'piratenkleider' ); ?></th>
+                                             <td>
+
+                                                <table>
+                                                    <tr>
+                                                    <th><label  for="piratenkleider_theme_options[teaserlink1-symbol]"><?php _e( 'Symbol', 'piratenkleider' ); ?>:</label></th>
+                                                    <td><select name="piratenkleider_theme_options[teaserlink1-symbol]">
+                                                    <?php
+                                                    foreach($defaultplakate_textsymbolliste as $i => $value) {
+                                                    echo '<option style="font-size: 18px; width: 24px; text-align: center;" value="'.$i.'"';
+                                                    if ($i == $options['teaserlink1-symbol']) {
+                                                    echo ' selected="selected"'; 
+                                                    }
+                                                    echo '>&#x'.$value.';</option>';
+                                                    } 
+                                                    ?>
+                                                    </select></td>               
+                                                    </tr>
+                                                    <tr>
+                                                    <th><label for="piratenkleider_theme_options[teaserlink1-title]"> <?php _e( 'Titel', 'piratenkleider' ); ?>:</label></th>
+                                                    <td><input  style="width: 20em;" id="piratenkleider_theme_options[teaserlink1-title]" maxlength="40"
+                                                    type="text" name="piratenkleider_theme_options[teaserlink1-title]" 
+                                                    value="<?php esc_attr_e( $options['teaserlink1-title'] ); ?>" /></td>               
+                                                    </tr>
+                                                    <tr>
+                                                    <th><label  for="piratenkleider_theme_options[teaserlink1-untertitel]">
+                                                    <?php _e( 'Untertitel', 'piratenkleider' ); ?>:
+                                                    </label></th>
+                                                    <td> <input style="width: 20em;" id="piratenkleider_theme_options[teaserlink1-untertitel]"  maxlength="40"
+                                                    type="text" name="piratenkleider_theme_options[teaserlink1-untertitel]" 
+                                                    value="<?php esc_attr_e( $options['teaserlink1-untertitel'] ); ?>" /></td>               
+                                                    </tr>
+                                                    <tr>
+                                                    <th><label for="piratenkleider_theme_options[teaserlink1-url]"> <?php _e( 'URL', 'piratenkleider' ); ?>:</label></th>
+                                                    <td><input  class="regular-text" id="piratenkleider_theme_options[teaserlink1-url]" maxlength="40"
+                                                    type="text" name="piratenkleider_theme_options[teaserlink1-url]" 
+                                                    value="<?php esc_attr_e( $options['teaserlink1-url'] ); ?>" /></td>               
+                                                    </tr>
+                                                </table>
+                                             </td>                                                 
+                                         </tr>     
+
+                                          <tr valign="top"><th scope="row"><?php _e( 'Teaserlink 2', 'piratenkleider' ); ?></th>
+                                             <td>
+
+                                                <table>
+                                                    <tr>
+                                                    <th><label  for="piratenkleider_theme_options[teaserlink2-symbol]"><?php _e( 'Symbol', 'piratenkleider' ); ?>:</label></th>
+                                                    <td><select name="piratenkleider_theme_options[teaserlink2-symbol]">
+                                                    <?php
+                                                    foreach($defaultplakate_textsymbolliste as $i => $value) {
+                                                    echo '<option style="font-size: 18px; width: 24px; text-align: center;" value="'.$i.'"';
+                                                    if ($i == $options['teaserlink2-symbol']) {
+                                                    echo ' selected="selected"'; 
+                                                    }
+                                                    echo '>&#x'.$value.';</option>';
+                                                    } 
+                                                    ?>
+                                                    </select></td>               
+                                                    </tr>
+                                                    <tr>
+                                                    <th><label for="piratenkleider_theme_options[teaserlink2-title]"> <?php _e( 'Titel', 'piratenkleider' ); ?>:</label></th>
+                                                    <td><input style="width: 20em;" id="piratenkleider_theme_options[teaserlink2-title]" maxlength="40"
+                                                    type="text" name="piratenkleider_theme_options[teaserlink2-title]" 
+                                                    value="<?php esc_attr_e( $options['teaserlink2-title'] ); ?>" /></td>               
+                                                    </tr>
+                                                    <tr>
+                                                    <th><label  for="piratenkleider_theme_options[teaserlink2-untertitel]">
+                                                    <?php _e( 'Untertitel', 'piratenkleider' ); ?>:
+                                                    </label></th>
+                                                    <td> <input style="width: 20em;" id="piratenkleider_theme_options[teaserlink2-untertitel]"  maxlength="40"
+                                                    type="text" name="piratenkleider_theme_options[teaserlink2-untertitel]" 
+                                                    value="<?php esc_attr_e( $options['teaserlink2-untertitel'] ); ?>" /></td>               
+                                                    </tr>
+                                                    <tr>
+                                                    <th><label for="piratenkleider_theme_options[teaserlink2-url]"> <?php _e( 'URL', 'piratenkleider' ); ?>:</label></th>
+                                                    <td><input id="piratenkleider_theme_options[teaserlink2-url]" maxlength="40"
+                                                    type="text"  class="regular-text" name="piratenkleider_theme_options[teaserlink2-url]" 
+                                                    value="<?php esc_attr_e( $options['teaserlink2-url'] ); ?>" /></td>               
+                                                    </tr>
+                                                </table>
+                                             </td>                                                 
+                                         </tr> 
+                                          <tr valign="top"><th scope="row"><?php _e( 'Teaserlink 3', 'piratenkleider' ); ?></th>
+                                             <td>
+
+                                                <table>
+                                                    <tr>
+                                                    <th><label  for="piratenkleider_theme_options[teaserlink3-symbol]"><?php _e( 'Symbol', 'piratenkleider' ); ?>:</label></th>
+                                                    <td><select name="piratenkleider_theme_options[teaserlink3-symbol]">
+                                                    <?php
+                                                    foreach($defaultplakate_textsymbolliste as $i => $value) {
+                                                    echo '<option style="font-size: 18px; width: 24px; text-align: center;" value="'.$i.'"';
+                                                    if ($i == $options['teaserlink3-symbol']) {
+                                                    echo ' selected="selected"'; 
+                                                    }
+                                                    echo '>&#x'.$value.';</option>';
+                                                    } 
+                                                    ?>
+                                                    </select></td>               
+                                                    </tr>
+                                                    <tr>
+                                                    <th><label for="piratenkleider_theme_options[teaserlink3-title]"> <?php _e( 'Titel', 'piratenkleider' ); ?>:</label></th>
+                                                    <td><input style="width: 20em;" id="piratenkleider_theme_options[teaserlink3-title]" maxlength="40"
+                                                    type="text" name="piratenkleider_theme_options[teaserlink3-title]" 
+                                                    value="<?php esc_attr_e( $options['teaserlink3-title'] ); ?>" /></td>               
+                                                    </tr>
+                                                    <tr>
+                                                    <th><label  for="piratenkleider_theme_options[teaserlink3-untertitel]">
+                                                    <?php _e( 'Untertitel', 'piratenkleider' ); ?>:
+                                                    </label></th>
+                                                    <td> <input  style="width: 20em;" id="piratenkleider_theme_options[teaserlink3-untertitel]"  maxlength="40"
+                                                    type="text" name="piratenkleider_theme_options[teaserlink3-untertitel]" 
+                                                    value="<?php esc_attr_e( $options['teaserlink3-untertitel'] ); ?>" /></td>               
+                                                    </tr>
+                                                    <tr>
+                                                    <th><label for="piratenkleider_theme_options[teaserlink3-url]"> <?php _e( 'URL', 'piratenkleider' ); ?>:</label></th>
+                                                    <td><input  class="regular-text" id="piratenkleider_theme_options[teaserlink3-url]" maxlength="40"
+                                                    type="text" name="piratenkleider_theme_options[teaserlink3-url]" 
+                                                    value="<?php esc_attr_e( $options['teaserlink3-url'] ); ?>" /></td>               
+                                                    </tr>
+                                                </table>
+                                             </td>                                                 
+                                         </tr> 
+
+
+ 
+                                        </table>
+                                </td>
+				</tr>  
+                                
+                                
 				<tr valign="top">
-                                    <th scope="row">Beitr&auml;ge auf Startseite</th>
+                                    <th scope="row">Startseite</th>
                                     <td>
                                         <table>
                                             <tr valign="top"><th scope="row">Beitr&auml;ge &uuml;ber ganze Breite</th>
@@ -233,7 +411,7 @@ function theme_options_do_page() {
                                             </tr>
                                         </table>
                                     </td>
-                                    </tr>
+                                 </tr>
 				 <tr valign="top">
                                     <th scope="row"><?php _e( 'Social Media', 'piratenkleider' ); ?></th>
                                     <td>
@@ -356,13 +534,7 @@ function theme_options_do_page() {
                                                 <br>Die Auswahl der Plakatbilder kann unter den Defaultbildern angepasst werden.</label>
                                                 </td>
                                             </tr>
-                                             <tr valign="top"><th scope="row"><?php _e( 'Plakatslider aktivieren', 'piratenkleider' ); ?></th>
-                                        	<td>
-                                            	<input id="piratenkleider_theme_options[slider-defaultwerbeplakate]" name="piratenkleider_theme_options[slider-defaultwerbeplakate]" type="checkbox" value="1" <?php checked( '1', $options['slider-defaultwerbeplakate'] ); ?> />
-						<label for="piratenkleider_theme_options[slider-defaultwerbeplakate]">Slider der Werbeplakate (rechte Sidebar-Spalte) werden angezeigt. 
-                                                    <br>Die Auswahl der Plakatbilder kann unter den Defaultbildern angepasst werden.</label>
-                                                </td>
-                                            </tr>
+                                             
                                              <tr valign="top"><th scope="row"><?php _e( 'Kategorie', 'piratenkleider' ); ?></th>
                                             <td>
                                                     <select name="piratenkleider_theme_options[slider-catname]">
@@ -469,7 +641,7 @@ function theme_options_do_page() {
                                     </td>                                    
                                 </tr>    
                                 <tr valign="top">
-                                    <th scope="row">Links zu Spezialseiten</th>
+                                    <th scope="row">Spezialseiten</th>
                                     <td>
 
                                         <table>                                
@@ -530,7 +702,31 @@ function theme_options_do_page() {
                                         </p>
                                     </td>                                    
                                 </tr>    
-                                
+                                <tr valign="top">
+                                    <th scope="row"><?php _e( 'Sicherheit &amp; Anonymit&auml;t', 'piratenkleider' ); ?></th>
+                                    <td>
+                                        <table>
+                                        <tr valign="top"><th scope="row">Autoren anzeigen</th>
+					<td>
+						<input id="piratenkleider_theme_options[aktiv-autoren]" name="piratenkleider_theme_options[aktiv-autoren]" type="checkbox" value="1" <?php checked( '1', $options['aktiv-autoren'] ); ?> />
+						<label  for="piratenkleider_theme_options[aktiv-autoren]"><?php _e( 'Bei der Anzeige von Artikeln den Autoren anzeigen und verlinken.', 'piratenkleider' ); ?></label>
+					</td>
+                                        </tr>
+                                        <tr valign="top"><th scope="row">Kommentarbenutzer anonymisieren</th>
+					<td>
+						<input id="piratenkleider_theme_options[anonymize-user]" name="piratenkleider_theme_options[anonymize-user]" type="checkbox" value="1" <?php checked( '1', $options['anonymize-user'] ); ?> />
+						<label  for="piratenkleider_theme_options[anonymize-user]"><?php _e( 'Wenn Personen Kommentare hinterlassen, wird deren IP-Adresse und der User-Agent-String geleert. Eine R&uuml;ckverfolgung ist damit nicht m&ouml;glich.', 'piratenkleider' ); ?></label>
+					</td>
+                                        </tr>
+                                        <tr valign="top"><th scope="row">Avatare anzeigen</th>
+					<td>
+						<input id="piratenkleider_theme_options[aktiv-avatar]" name="piratenkleider_theme_options[aktiv-avatar]" type="checkbox" value="1" <?php checked( '1', $options['aktiv-avatar'] ); ?> />
+						<label  for="piratenkleider_theme_options[aktiv-avatar]"><?php _e( 'Bei Kommentaren werden Avatar-Bilder mit Hilfe von Gravatar oder anderen Diensten abgerufen. Dies erm&ouml;glicht allerdings theoretisch ein Tracking durch diese Dienste', 'piratenkleider' ); ?></label>
+					</td>
+                                        </tr>                                        
+                                       </table>                                         
+                                    </td>                                    
+                                </tr>    
 			</table>
 
 			<p class="submit">
@@ -573,6 +769,10 @@ function theme_options_validate( $input ) {
 		$input['aktiv-autoren'] = 0;
 	$input['aktiv-autoren'] = ( $input['aktiv-autoren'] == 1 ? 1 : 0 );    
 
+         if ( ! isset( $input['aktiv-avatar'] ) )
+		$input['aktiv-avatar'] = 0;
+	$input['aktiv-avatar'] = ( $input['aktiv-avatar'] == 1 ? 1 : 0 );    
+        
 	if ( ! isset( $input['zeige_sidebarpagemenu'] ) )
 		$input['zeige_sidebarpagemenu'] = 0;
 	$input['zeige_sidebarpagemenu'] = ( $input['zeige_sidebarpagemenu'] == 1 ? 1 : 0 );
@@ -635,6 +835,25 @@ function theme_options_validate( $input ) {
         $input['url-mitgliedwerden'] = esc_url( $input['url-mitgliedwerden'] );
         $input['url-spenden'] = esc_url( $input['url-spenden'] );
  
+        
+        
+         $input['teaserlink1-title'] =  wp_filter_nohtml_kses( $input['teaserlink1-title'] );                          
+         $input['teaserlink1-untertitel'] = wp_filter_nohtml_kses( $input['teaserlink1-untertitel'] );                      
+         $input['teaserlink1-url'] = wp_filter_nohtml_kses( $input['teaserlink1-url'] );                 
+         $input['teaserlink1-symbol'] = wp_filter_nohtml_kses( $input['teaserlink1-symbol'] );
+         
+         $input['teaserlink2-title'] =  wp_filter_nohtml_kses( $input['teaserlink2-title'] );                          
+         $input['teaserlink2-untertitel'] = wp_filter_nohtml_kses( $input['teaserlink2-untertitel'] );                      
+         $input['teaserlink2-url'] = wp_filter_nohtml_kses( $input['teaserlink2-url'] );                 
+         $input['teaserlink2-symbol'] = wp_filter_nohtml_kses( $input['teaserlink2-symbol'] );
+         
+         $input['teaserlink3-title'] =  wp_filter_nohtml_kses( $input['teaserlink3-title'] );                          
+         $input['teaserlink3-untertitel'] = wp_filter_nohtml_kses( $input['teaserlink3-untertitel'] );                      
+         $input['teaserlink3-url'] = wp_filter_nohtml_kses( $input['teaserlink3-url'] );                 
+         $input['teaserlink3-symbol'] = wp_filter_nohtml_kses( $input['teaserlink3-symbol'] );
+                             
+        
+        
 	return $input;
 }
 

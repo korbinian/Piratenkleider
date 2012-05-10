@@ -857,6 +857,11 @@ ul.socialmedia li a:focus img  {
 .second-teaser-widget-area .skin {
   padding: 10px; 
 }
+/* 
+.second-teaser-widget-area h3 {
+    position: absolute; left: -999em;width: 1px; height: 1px; display: inline;    
+}
+*/
 .second-teaser-widget-area li {
   margin-bottom: 1px;
   background: orange;
@@ -866,69 +871,63 @@ ul.socialmedia li a:focus img  {
   -moz-box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
   -webkit-box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
   box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); 
-  height: 72px;
 }
 
 
   .second-teaser-widget-area li a {
-    padding: 1.5em 10px 1em 50px;
+    padding: 1em 10px 1em 20px;
+    list-style: none outside none;
     border: 0px solid;
-    color: black;
+    color: white;  
+     font-size: 14px;     
     display: block;
     text-shadow: 0 0 0; 
+
   }
     .second-teaser-widget-area li a div {
-      color: white;
+      color: black;
       font-family: "BebasNeueRegular", Helvetica, Arial, sans-serif;
       letter-spacing: 1px;
       text-shadow: 0 -1px 1px #c36800;
       font-size: 19px; 
     }
    
-    
-  .second-teaser-widget-area li:focus,
-  .second-teaser-widget-area li:hover {
-    background: #ff8800;
-    -moz-transition: all 0.2s ease-in-out;
-    -o-transition: all 0.2s ease-in-out;
-    -webkit-transition: all 0.2s ease-in-out;
-    transition: all 0.2s ease-in-out; }
-   
+
   .second-teaser-widget-area li a:focus,  
-  .second-teaser-widget-area li a:hover {
-      -moz-transition: all 0.2s ease-in-out;
-      -o-transition: all 0.2s ease-in-out;
-      -webkit-transition: all 0.2s ease-in-out;
-      transition: all 0.2s ease-in-out;
-      padding-left: 60px !important; }
+  .second-teaser-widget-area li a:hover {    
+        background: #c96a00;
+        background: rgba(0, 0, 0, 0.2);  
+        color: white;
+  }
   
-  
-  
-.second-teaser-widget-area li.first a {
-  background: url("../images/icon-info.png") no-repeat scroll 10px center  transparent;
-}
-.second-teaser-widget-area li.first a:focus,
-.second-teaser-widget-area li.first a:hover {
-    background: url("../images/icon-info.png") no-repeat scroll 20px center transparent; 
-}
-
-
-.second-teaser-widget-area li.second a {
-  background: url("../images/icon-helfe.png") no-repeat scroll 10px center transparent;
-}
-.second-teaser-widget-area li.second a:focus,
-.second-teaser-widget-area li.second a:hover {
-   background: url("../images/icon-helfe.png") no-repeat scroll 20px center transparent;
-}
-.second-teaser-widget-area li.third a {
-  background: url("../images/icon-profil.png") no-repeat scroll 10px center transparent;
-}
-
-.second-teaser-widget-area li.third a:focus,
-.second-teaser-widget-area li.third a:hover {
-    background: url("../images/icon-profil.png") no-repeat scroll 20px center transparent;
-}
-
+  .second-teaser-widget-area .textwidget {      
+        margin-bottom: 1px;
+        background: orange;
+        border-radius: 2px;
+        -moz-border-radius: 2px;
+        -webkit-border-radius: 2px;
+        -moz-box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+        -webkit-box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+        box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); 
+        padding: 1em 10px 1em 20px;
+        list-style: none outside none;
+        color: white; 
+     font-size: 14px;     
+        display: block;
+        text-shadow: 0 0 0; 
+  }
+   .second-teaser-widget-area li.recentcomments {
+       color: white;
+       font-style: italic;
+       padding-left: 10px;
+   }
+   .second-teaser-widget-area li.recentcomments a {
+        font-style: normal;
+         padding: 0.3em 10px 0.5em 20px;
+   }
+ 
+ 
+ 
  
  .teaserlinks ul {
      margin: 0;
@@ -958,7 +957,23 @@ ul.socialmedia li a:focus img  {
      padding-bottom: 0px;     
      padding-left: 50px;
      margin: 0;
+       -moz-transition: all 0.3s ease-in-out;
+      -o-transition: all 0.3s ease-in-out;
+      -webkit-transition: all 0.3s ease-in-out;
+      transition: all 0.3s ease-in-out;    
  }
+  .teaserlinks ul li a:hover,
+  .teaserlinks ul li a:focus{
+       -moz-transition: all 0.2s ease-in-out;
+      -o-transition: all 0.2s ease-in-out;
+      -webkit-transition: all 0.2s ease-in-out;
+      transition: all 0.2s ease-in-out;
+      padding-left: 60px;
+      color: white;
+       background: none repeat scroll 0 0 orange;
+  }
+  
+  
   .teaserlinks ul li a span {
       padding-top: 4px;
       font-size: 16px;
@@ -968,7 +983,10 @@ ul.socialmedia li a:focus img  {
      font-family: Helvetica, Arial, sans-serif;
      text-transform: capitalize;
   }
-
+.teaserlinks ul li a:hover span,
+.teaserlinks ul li a:focus span { 
+       color: black;
+ }    
 
 .content {
   background: #ff8800 url("../assets/bg-tags.png") -20% top fixed;  

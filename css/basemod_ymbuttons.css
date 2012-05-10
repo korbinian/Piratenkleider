@@ -25,14 +25,25 @@
     font-size: 36px; 
     position: absolute;
     left: 10px;
-    padding-top: 18px;
+    padding-top: 10px;
     text-align: center;
     width: 30px;
     text-shadow: 0 -1px 1px #c36800;
+      -moz-transition: all 0.3s ease-in-out;
+      -o-transition: all 0.3s ease-in-out;
+      -webkit-transition: all 0.3s ease-in-out;
+      transition: all 0.3s ease-in-out;     
 }
-.teaserlinks .symbol:after {
-   
+.teaserlinks .symbol:hover:before {
+    left: 20px;
+          -moz-transition: all 0.2s ease-in-out;
+      -o-transition: all 0.2s ease-in-out;
+      -webkit-transition: all 0.2s ease-in-out;
+      transition: all 0.2s ease-in-out;
+    
 }
+
+
 .symbol-idee:before { content: "\0021"; }
 .symbol-person:before { content: "\263A"; }
 .symbol-herz:before { content: "\2665";   }
@@ -51,6 +62,11 @@
 .symbol-steuerrad:before { content: "\2638"; }
 .symbol-musiknote:before { content: "\266B"; }
 .symbol-paragraph:before { content: "\00A7"; }
+
+.symbol-play:before { content: "\25B6"; }
+.symbol-save:before { content: "\2714"; }
+.symbol-spark:before { content: "\2737"; }
+.symbol-star:before { content: "\2605"; }
 .symbol-eins:before { content: "\2460"; }
 .symbol-zwei:before { content: "\2461"; }
 .symbol-drei:before { content: "\2462"; }

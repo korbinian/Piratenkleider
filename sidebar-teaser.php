@@ -1,13 +1,16 @@
-
+<?php
+   global $defaultoptions;
+   global $defaultbilder_liste;
+   $options = get_option( 'piratenkleider_theme_options' );
+   $bilderoptions = get_option( 'piratenkleider_theme_defaultbilder' ); 
+?>          
 <div class="first-teaser-widget-area">
 <?php if ( is_active_sidebar( 'first-teaser-widget-area' ) ) { ?>
         <?php dynamic_sidebar( 'first-teaser-widget-area' ); ?>
     <?php } else {        
-          global $defaultoptions;
-          global $defaultbilder_liste;
-         $options = get_option( 'piratenkleider_theme_options' );
-         $catname = $options['slider-catname'];
-         $bilderoptions = get_option( 'piratenkleider_theme_defaultbilder' ); 
+
+       
+         $catname = $options['slider-catname'];        
          $defaultbildsrc = $bilderoptions['slider-defaultbildsrc'];                        
          
          if (!isset($catname) ) $catname = get_cat_name(1);         
@@ -61,24 +64,43 @@
 <div class="skin">
     <?php if ( is_active_sidebar( 'second-teaser-widget-area' ) ) { ?>
         <?php dynamic_sidebar( 'second-teaser-widget-area' ); ?>
-    <?php } else { ?>
-        <div class="textwidget teaserlinks">
-            <ul>
-                <li><a class="symbol symbol-idee" href="http://www.piratenpartei.de/politik/themen/">Informiere dich <span>über unsere Themen & Ziele!</span></a></li>
-                <li><a class="symbol symbol-herz" href="http://www.piratenpartei.de/unterstutze-uns/">Unterst&uuml;tze uns <span>mit deinem Engagement!</span></a></li>
-                <li><a class="symbol symbol-steuerrad" href="<?php echo $options['url-mitgliedwerden']; ?>">Werde Pirat! <span>Jetzt Mitglied werden!</span></a></li>
-            </ul>
-        </div>
+    <?php } else {
+                                 if (!isset($options['teaserlink1-title'])) 
+                                  $options['teaserlink1-title'] = $defaultoptions['teaserlink1-title'];   
+                             if (!isset($options['teaserlink1-untertitel'])) 
+                                  $options['teaserlink1-untertitel'] = $defaultoptions['teaserlink1-untertitel'];   
+                             if (!isset($options['teaserlink1-url'])) 
+                                  $options['teaserlink1-url'] = $defaultoptions['teaserlink1-url'];   
+                             if (!isset($options['teaserlink1-symbol'])) 
+                                  $options['teaserlink1-symbol'] = $defaultoptions['teaserlink1-symbol'];   
+                             
+                             if (!isset($options['teaserlink2-title'])) 
+                                  $options['teaserlink2-title'] = $defaultoptions['teaserlink2-title'];   
+                             if (!isset($options['teaserlink2-untertitel'])) 
+                                  $options['teaserlink2-untertitel'] = $defaultoptions['teaserlink2-untertitel'];   
+                             if (!isset($options['teaserlink2-url'])) 
+                                  $options['teaserlink2-url'] = $defaultoptions['teaserlink2-url'];   
+                             if (!isset($options['teaserlink2-symbol'])) 
+                                  $options['teaserlink2-symbol'] = $defaultoptions['teaserlink2-symbol'];  
+                             
+                             if (!isset($options['teaserlink3-title'])) 
+                                  $options['teaserlink3-title'] = $defaultoptions['teaserlink3-title'];   
+                             if (!isset($options['teaserlink3-untertitel'])) 
+                                  $options['teaserlink3-untertitel'] = $defaultoptions['teaserlink3-untertitel'];   
+                             if (!isset($options['teaserlink3-url'])) 
+                                  $options['teaserlink3-url'] = $defaultoptions['teaserlink3-url'];   
+                             if (!isset($options['teaserlink3-symbol'])) 
+                                  $options['teaserlink3-symbol'] = $defaultoptions['teaserlink3-symbol'];  
+     ?>
     
-    <!--
-          <div class="textwidget">
+        <div class="teaserlinks">
             <ul>
-            <li class="first"><a  href="http://www.piratenpartei.de/politik/themen/"><div>Informiere dich</div> Unsere Themen & Ziele!</a></li>
-            <li class="second"><a href="http://www.piratenpartei.de/unterstutze-uns/"><div>Unterst&uuml;tze uns</div> Mit deinem Engagement!</a></li>
-            <li class="third"><a  href="<?php echo $options['url-mitgliedwerden']; ?>"><div>Werde Pirat!</div> Jetzt Mitglied werden!</a></li>
+                <li><a class="symbol symbol-<?php echo $options['teaserlink1-symbol'] ?>" href="<?php echo $options['teaserlink1-url'] ?>"><?php echo $options['teaserlink1-title'] ?> <span><?php echo $options['teaserlink1-untertitel'] ?></span></a></li>
+                <li><a class="symbol symbol-<?php echo $options['teaserlink2-symbol'] ?>" href="<?php echo $options['teaserlink2-url'] ?>"><?php echo $options['teaserlink2-title'] ?> <span><?php echo $options['teaserlink2-untertitel'] ?></span></a></li>
+                <li><a class="symbol symbol-<?php echo $options['teaserlink3-symbol'] ?>" href="<?php echo $options['teaserlink3-url'] ?>"><?php echo $options['teaserlink3-title'] ?> <span><?php echo $options['teaserlink3-untertitel'] ?></span></a></li>
             </ul>
         </div>
-    -->
+
     <?php }  ?>
 </div>
 </div>

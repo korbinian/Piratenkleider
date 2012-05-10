@@ -30,14 +30,14 @@
         overflow: hidden;
    }   
 
-  .second-teaser-widget-area ul li a {
-    background: none !important;
-    padding: 5px 10px !important; }
-  .second-teaser-widget-area ul li div {
-    font-size: 16px !important;
-    letter-spacing: 0; }
-  .second-teaser-widget-area ul li span {
-    display: none; }
+   .teaserlinks .symbol:before {
+       display: none;
+   }
+  
+   .teaserlinks ul li a {
+       padding-left: 10px;
+   }
+  
 
 }
 
@@ -120,14 +120,7 @@
         width: 100%;   
         position: relative;
     }
-    .header ul.socialmedia {
-      /*  display: block;
-        position: relative;
-        clear: both;
-        overflow: none;
-        float: none; */
-       
-    }
+    
     .nav-main {
          display: block;
         width: 100%;   
@@ -284,8 +277,8 @@
       clear: both;
   }
   .content-primary .columns .column0,
-    .content-primary .columns .column1,
-    .content-primary .columns .column2 {
+  .content-primary .columns .column1,
+  .content-primary .columns .column2 {
     float: none;
     width: 100%;
     display: block;
