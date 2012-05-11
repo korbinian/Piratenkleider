@@ -213,7 +213,7 @@ function theme_options_do_page() {
                                            <tr valign="top"><th scope="row">Werbesticker</th>
                                                 <td>
 						<input id="piratenkleider_theme_options[defaultwerbesticker]" name="piratenkleider_theme_options[defaultwerbesticker]" type="checkbox" value="1" <?php checked( '1', $options['defaultwerbesticker'] ); ?> />
-						<label  for="piratenkleider_theme_options[defaultwerbesticker]">Sticker "Werde Pirat" und "Hilf uns mit einer Spende" anzeigen.</label>
+						<label  for="piratenkleider_theme_options[defaultwerbesticker]">Sticker anzeigen.</label>
                                                 </td>
                                           </tr>
                                            <tr valign="top"><th scope="row"><?php _e( 'Sticker 1', 'piratenkleider' ); ?></th>
