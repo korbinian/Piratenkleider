@@ -33,8 +33,7 @@
   
 
 
-   if (( $options['slider-defaultwerbeplakate'] == "1" ) && 
-       (is_array($plakate['plakate-src']) || (isset($plakate['plakate-altadressen'])) )) {
+   if ( $options['slider-defaultwerbeplakate'] == "1" ) {
     ?>
      
      <div class="flexslider fs2 no-js">
@@ -42,7 +41,7 @@
             <ul class='slides'>
                 <?php 
                 $plakate = get_option( 'piratenkleider_theme_defaultbilder'); 
-                    
+
                    if (is_array($plakate['plakate-src'])) {
                      foreach ($plakate['plakate-src'] as $current) {
                          ?>
@@ -51,15 +50,16 @@
                      }
                  
                   } else {
-                      if (!isset($plakate['plakate-altadressen'])) {
-                      foreach ( $defaultplakate_liste as $dthis ) {    
-                        if (isset($dthis['src'])) {
-                          ?>
-                         <li class="slide"><img src="<?php echo $dthis['src'] ?>" width="277" height="391" alt=""></li>
-                        <?php       
-                            
+
+                      if (strlen(trim($plakate['plakate-altadressen']))<2) {
+                        foreach ( $defaultplakate_liste as $dthis ) {    
+                            if (isset($dthis['src'])) {
+                            ?>
+                            <li class="slide"><img src="<?php echo $dthis['src'] ?>" width="277" height="391" alt=""></li>
+                            <?php       
+
+                            }
                         }
-                      }
                       }
                   }
                   if (isset($plakate['plakate-altadressen'])) {
