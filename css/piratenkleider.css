@@ -715,8 +715,10 @@ ul.socialmedia li a:focus img  {
 
 }
 .sticker li {
-      width: 129px;
-     height: 77px; 
+   /*   width: 129px;
+     height: 77px;  */
+     max-width: 200px; 
+     max-height: 150px; 
       float: left;    
 }
 
@@ -748,14 +750,15 @@ ul.socialmedia li a:focus img  {
 .sticker {
     position: absolute;
     right: 8%;
-    top: 70px;
+    /* top: 70px; */
+    top: 40px; 
     margin: 0 auto;
  /*   width: 350px; */
   }
   .sticker ul li {
     float: left;
     text-align: center;
-    width: 100px;
+   /* width: 100px; */
     font-size: 2em;
     font-weight: bold;
     font-family: "BebasNeueRegular",Helvetica,Arial,sans-serif;
@@ -2073,7 +2076,8 @@ div.ics-calendar-holder .ics-calendar-event {
 
   .sticker {
     position: absolute;
-    top: 70px;
+ /*   top: 70px; */
+    top: 40px;
     right: 8%; 
   }
   .sticker .skin {
