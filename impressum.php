@@ -205,7 +205,7 @@ stehen s&auml;mtliche Werke dieses Angebots unter einer
     
     <li><a class="extern" href="http://www.jquery.com">JavaScript Framework jQuery</a> (GNU General Public License (GPL) Version 2)</li>
     <li><a class="extern" href="http://flex.madebymufffin.com">jQuery FlexSlider</a> (MIT license)</li>
-    <li><a class="extern bebas" href="http://dharmatype.com/dharma-type/bebas-neue.html">Schrift Bebas Neue von Dharmatype</a> (<a href="http://dharmatype.com/free/License.txt">Freie Lizenz</a>)</li>
+    <li><a class="extern bebas" href="http://dharmatype.com/dharma-type/bebas-neue.html">Schrift Bebas Neue von Dharmatype</a> (SIL Open Font License 1.1)</li>
     <?php 
     $theme_data = get_theme_data( get_template_directory(). '/style.css' );
     ?>
