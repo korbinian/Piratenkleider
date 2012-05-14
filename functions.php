@@ -50,6 +50,7 @@ $defaultoptions = array(
     'css-default-header-height'     => 225,
     'css-default-branding-padding-top'  => 40,
     'anonymize-user'                => 0,
+    'anonymize-user-commententries' => 0,
     
     
     'teaserlink1-title'             => 'Informiere dich',

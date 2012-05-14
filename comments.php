@@ -34,13 +34,35 @@ if (!isset($options['anonymize-user']))
 
 if ($options['anonymize-user']==1) {
     // Emailadresse kann/soll weggelassen werden
-    $comments_args = array( 'fields' => array(
+    if (!isset($options['anonymize-user-commententries'])) 
+            $options['anonymize-user-commententries'] = $defaultoptions['anonymize-user-commententries'];
+    
+    if ($options['anonymize-user-commententries']==1) {
+        // Nur Autorname        
+         $comments_args = array( 'fields' => array(
         'author' => '<p class="comment-form-author">' . '<label for="author">' . __( 'Name', 'domainreference' ) . '</label> ' . ( $req ? '<span class="required">*</span>' : '' ) .
 	            '<input id="author" name="author" type="text" value="' . esc_attr( $commenter['comment_author'] ) . '" size="30"' . $aria_req . ' /></p>'
        ),
         'comment_notes_before' => ' '
-    );
-    comment_form( $comments_args); 
+        );
+        comment_form( $comments_args); 
+    } elseif ($options['anonymize-user-commententries']==2) {
+        // Name + URL
+         $comments_args = array( 'fields' => array(
+        'author' => '<p class="comment-form-author">' . '<label for="author">' . __( 'Name', 'domainreference' ) . '</label> ' . ( $req ? '<span class="required">*</span>' : '' ) .
+	            '<input id="author" name="author" type="text" value="' . esc_attr( $commenter['comment_author'] ) . '" size="30"' . $aria_req . ' /></p>',
+        'url'    => '<p class="comment-form-url"><label for="url">' . __( 'Website', 'domainreference' ) . '</label>'.
+	            '<input id="url" name="url" type="text" value="' . esc_attr( $commenter['comment_author_url'] ) . '" size="30" /></p>'
+       ),
+        'comment_notes_before' => ' '
+        );
+        comment_form( $comments_args); 
+    } else {
+        // WP-Default (Name+Email+URL)
+          comment_form(); 
+    }
+        
+   
         
 } else {
     comment_form(); 

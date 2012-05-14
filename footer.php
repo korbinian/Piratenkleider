@@ -61,6 +61,12 @@
         </script>
     <script src="<?php echo get_template_directory_uri(); ?>/js/twitter.js"></script>
     
-    <?php } ?>
+    <?php }
+    
+   $designspecials = get_option( 'piratenkleider_theme_designspecials' );
+   if (isset($designspecials['html-eigene-anweisungen'])
+        && strlen(trim($designspecials['html-eigene-anweisungen'])) > 0) {
+       echo $designspecials['html-eigene-anweisungen'];     
+   }  ?>       
 </body>
 </html>

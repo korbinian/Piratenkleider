@@ -712,93 +712,96 @@ ul.socialmedia li a:focus img  {
 
 
 .sticker {
+    position: absolute;
+    right: 8%;
+    top: 40px; 
+    margin: 0 auto;
+  }
+  .sticker ul li {
+    float: left;
+    text-align: center;
+    font-size: 30px;
+    font-family: "BebasNeueRegular",Helvetica,Arial,sans-serif;
+    letter-spacing: 1px;
+    margin: 10px;
+    line-height: 0.9em;
+    max-width: 200px; 
+    max-height: 150px;       
+    border: 2px solid transparent;     
+  }
 
-}
-.sticker li {
-   /*   width: 129px;
-     height: 77px;  */
-     max-width: 200px; 
-     max-height: 150px; 
-      float: left;    
-}
+  .sticker ul li a {    
+        color: #666;       
+  }
+ 
+   .sticker ul li a span {        
+     color: #ff8800;    
+   }
+   
+   .sticker ul li a:hover,
+   .sticker ul li a:focus {
+    color: #1a4872; 
+   } 
+
+   
+   .sticker ul li a:hover span,
+   .sticker ul li a:focus span {
+        color: #2d7dc5;  
+   }
 
 .sticker li a img {
-    -moz-transition: all 0.15s ease-in-out; 
-    -o-transition: all 0.15s ease-in-out; 
+    border: 2px solid transparent;
+}
+   
+.sticker li a img {
+    -moz-transition: all 0.15s ease-in-out;
+    -o-transition: all 0.15s ease-in-out;
     -ms-transition: all 0.15s ease-in-out;
     transition: all 0.15s ease-in-out;
     border: 2px solid transparent;
 }
 
-.sticker li a:hover img  {
+.sticker li a:hover img {
    border: 2px solid #ff8800;
     -moz-transform: rotate(5deg) scale(1.3);
-    -ms-transform: rotate(5deg)  scale(1.3);
+    -ms-transform: rotate(5deg) scale(1.3);
     -o-transform: rotate(5deg) scale(1.3);
       transform: rotate(5deg) scale(1.3);
 }
-.sticker li a:focus img  {
+.sticker li a:focus img {
     border: 2px solid #ff8800;
     -moz-transform: rotate(5deg) scale(1.3);
     -ms-transform: scale(1.3);
     -o-transform: scale(1.3);
     transform: rotate(5deg) scale(1.3);
-}  
+}
 
 
-
-.sticker {
-    position: absolute;
-    right: 8%;
-    /* top: 70px; */
-    top: 40px; 
-    margin: 0 auto;
- /*   width: 350px; */
-  }
-  .sticker ul li {
-    float: left;
-    text-align: center;
-   /* width: 100px; */
-    font-size: 2em;
-    font-weight: bold;
-    font-family: "BebasNeueRegular",Helvetica,Arial,sans-serif;
-    letter-spacing: 1px;
-    margin: 10px;
-    line-height: 0.9em;
-     
-  }
-  .sticker ul li a {
-        color: #6A6A6A;
-  }
-   .sticker ul li a span {
- 
+.sticker ul li a .gedreht  {
         -moz-transform: rotate(-5deg);
-        -ms-transform: rotate(-5deg); 
+        -ms-transform: rotate(-5deg);
         -o-transform: rotate(-5deg);
         transform: rotate(-5deg);
-        -moz-transition: all 0.15s ease-in-out; 
-        -o-transition: all 0.15s ease-in-out; 
+        -moz-transition: all 0.15s ease-in-out;
+        -o-transition: all 0.15s ease-in-out;
         -ms-transition: all 0.15s ease-in-out;
         transition: all 0.15s ease-in-out;
+           text-shadow: 0 -1px 1px #000;
+             border: 2px solid transparent;
    }
-   .sticker ul li a span.hell {
-      color: #FE8E0E;
-      font-size: 1.3em;
-   }
-   .sticker ul li a:hover span,
-   .sticker ul li a:focus span{
+  
+   .sticker ul li a:hover .gedreht ,
+   .sticker ul li a:focus .gedreht {
         -moz-transform: rotate(1deg) scale(1.2);
-        -ms-transform: rotate(1deg)  scale(1.2);
+        -ms-transform: rotate(1deg) scale(1.2);
         -o-transform: rotate(1deg) scale(1.2);
-        transform: rotate(1deg) scale(1.2);  
-       
-   }
-   .sticker ul li a:hover span.hell,
-   .sticker ul li a:focus span.hell {
-      color: #2d7dc5;   
+        transform: rotate(1deg) scale(1.2);
+         border: 2px solid #ff8800;
+         text-shadow: 0 -1px 1px #c36800;
    }
 
-   
+
+
 
 .header .newsletter .skin {
   padding: 10px 10px 5px 10px;
@@ -830,17 +833,21 @@ ul.socialmedia li a:focus img  {
 
 .breadcrumbs {
   background: black;
-  color: #eeeeee; }
+  color: #eeeeee; 
+}
 .breadcrumbs .skin {
     padding: 5px 20px 5px 15px;
-    color: silver; }
+    color: silver; 
+}
 .breadcrumbs .skin a {
       color: white;
       display: inline-block;
       padding: 0 5px;
-      background: rgba(255, 255, 255, 0.2); }
+      background: rgba(255, 255, 255, 0.2); 
+}
  .breadcrumbs .skin a:hover {
-        color: #ff8800; }
+        color: #ff8800; 
+ }
 
 .teaser {
   background: #ff8800 url("../assets/bg-tags.png") -20% top fixed; 
@@ -848,7 +855,8 @@ ul.socialmedia li a:focus img  {
 }
   .teaser .row {
     background: #c96a00;
-    background: rgba(0, 0, 0, 0.3) -20% 0 fixed; }
+    background: rgba(0, 0, 0, 0.3) -20% 0 fixed; 
+  }
   .teaser .first-teaser-widget-area {
     background: #111;
     float: left;
@@ -876,7 +884,9 @@ ul.socialmedia li a:focus img  {
   border-radius: 2px;
   -moz-border-radius: 2px;
   -webkit-border-radius: 2px;
+  -ms-border-radius: 2px;
   -moz-box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+  -ms-box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
   -webkit-box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
   box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); 
 }
@@ -913,14 +923,16 @@ ul.socialmedia li a:focus img  {
         background: orange;
         border-radius: 2px;
         -moz-border-radius: 2px;
+         -ms-border-radius: 2px;
         -webkit-border-radius: 2px;
         -moz-box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+        -ms-box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
         -webkit-box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
         box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); 
         padding: 1em 10px 1em 20px;
         list-style: none outside none;
         color: white; 
-     font-size: 14px;     
+        font-size: 14px;     
         display: block;
         text-shadow: 0 0 0; 
   }
@@ -965,9 +977,10 @@ ul.socialmedia li a:focus img  {
      padding-bottom: 0px;     
      padding-left: 50px;
      margin: 0;
-       -moz-transition: all 0.3s ease-in-out;
+      -moz-transition: all 0.3s ease-in-out;
       -o-transition: all 0.3s ease-in-out;
       -webkit-transition: all 0.3s ease-in-out;
+      -ms-transition: all 0.3s ease-in-out;
       transition: all 0.3s ease-in-out;    
  }
   .teaserlinks ul li a:hover,
@@ -975,6 +988,7 @@ ul.socialmedia li a:focus img  {
        -moz-transition: all 0.2s ease-in-out;
       -o-transition: all 0.2s ease-in-out;
       -webkit-transition: all 0.2s ease-in-out;
+      -ms-transition: all 0.2s ease-in-out;
       transition: all 0.2s ease-in-out;
       padding-left: 60px;
       color: white;
@@ -2331,9 +2345,7 @@ div.ics-calendar-holder .ics-calendar-event {
         width: 90%;
         margin-bottom: 0px; }
 
-.ie7 .second-teaser-widget-area .skin ul li a, 
-.ie8 .second-teaser-widget-area .skin ul li a {
-  padding: .8em 10px .3em 50px; }
+
 .ie7 .teaser .first-teaser-widget-area, 
 .ie8 .teaser .first-teaser-widget-area {
   width: 66.6666%; }
@@ -2395,7 +2407,7 @@ div.ics-calendar-holder .ics-calendar-event {
   width: 33.3333%; }
 
 
-.iesfs7 .flexslider .flex-pauseplay {
+.ie7 .fs2 .flexslider .flex-pauseplay {
     position: absolute;
     bottom: 10px;
     left: 10px;

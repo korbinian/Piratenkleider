@@ -173,7 +173,8 @@ function theme_options_do_page() {
                                 $options['stickerlink3-content'] = $defaultoptions['stickerlink3-content'];
                             if (!isset($options['stickerlink3-url'])  || (strlen(trim($options['stickerlink3-url']))<1 )) 
                                 $options['stickerlink3-url'] = $defaultoptions['stickerlink3-url'];
-                             
+                            if (!isset($options['anonymize-user-commententries'])) 
+                                $options['anonymize-user-commententries'] = $defaultoptions['anonymize-user-commententries']; 
                         ?>
 			<table class="form-table">
                                     
@@ -779,6 +780,21 @@ function theme_options_do_page() {
                                                 <p><b>Achtung:</b> Diese Option deaktiviert auch die Avatar-Anzeige und
                                                     setzt die Kommentareinstellung unter Einstellungen-Diskussion so,
                                                     dass Benutzer keinen Namen und E-Mail-Adressen mehr eingeben m&uuml;ssen.</p>
+                                                
+                                                <p>
+                                                   In diesem Fall angebotene Kommentarfelder:
+                                                </p>   
+                                                <select name="piratenkleider_theme_options[anonymize-user-commententries]">
+                                                        <?php 
+                                                                    $selected = $options['anonymize-user-commententries'];
+                                                        ?>            
+                                                        <option style="padding-right: 10px;" value="0" <?php if ($selected == '0') { echo 'selected="selected"'; }?>>Name, URL und E-Mail (Wordpress-Default)</option>					
+                                                        <option style="padding-right: 10px;" value="1" <?php if ($selected == '1') { echo 'selected="selected"'; }?>>Name</option>
+                                                        <option style="padding-right: 10px;" value="2" <?php if ($selected == '2') { echo 'selected="selected"'; }?>>Name und URL</option>
+                                                       	
+                                                    </select>
+                                                    <label class="description" for="piratenkleider_theme_options[anonymize-user-commententries]"><?php _e( 'Angebote Kommentarfelder zur freiwilligen Eingabe', 'piratenkleider' ); ?></label>
+
 					</td>
                                         </tr>
                                         <tr valign="top"><th scope="row">Avatare anzeigen</th>
@@ -842,12 +858,15 @@ function theme_options_validate( $input ) {
         $options = get_option( 'piratenkleider_theme_options' );
         if (!isset($options['anonymize-user'])) 
             $options['anonymize-user'] = $defaultoptions['anonymize-user'];
-        
-        
+     
+                               
         if (($input['anonymize-user']==0) && ($options['anonymize-user']==1)) {
             // Zurücksetzen der Sicherheitsoption
              update_option('require_name_email',1);
         }
+         if ( ! isset( $input['anonymize-user-commententries'] ) )
+		$input['anonymize-user-commententries'] = 0;
+	$input['anonymize-user-commententries'] = wp_filter_nohtml_kses( $input['anonymize-user-commententries'] );    
         
 	if ( ! isset( $input['zeige_sidebarpagemenu'] ) )
 		$input['zeige_sidebarpagemenu'] = 0;
@@ -1573,7 +1592,7 @@ function theme_designspecials_do_page() {
 		<?php screen_icon(); echo "<h2>" . get_current_theme() . __( ' Kl&uuml;verbaum: Erweiterte Designeinstellungen ', 'piratenkleider' ) . "</h2>"; ?>
 
 		<?php if ( false !== $_REQUEST['settings-updated'] ) : ?>
-		<div class="updated fade"><p><strong><?php _e( 'Designerinstellungen wurden gespeichert.', 'piratenkleider' ); ?></strong></p></div>
+		<div class="updated fade"><p><strong><?php _e( 'Designeinstellungen wurden gespeichert.', 'piratenkleider' ); ?></strong></p></div>
 		<?php endif; ?>
                 <p><b>Achtung:</b> Diese Einstellungen sollten nur in Ausnahmef&auml;llen ge&auml;ndert werden. Bei einer 
                 falschen Nutzung k&ouml;nnen Eingaben die Gestaltung des Webauftritts sch&auml;digen. <br>
@@ -1707,6 +1726,22 @@ function theme_designspecials_do_page() {
 
                         </td>					                           
 		       </tr>
+                       
+                         <tr valign="top"><th scope="row">Eigene HTML-Anweisungen</th>
+                        <td>
+                            <textarea id="piratenkleider_theme_designspecials[html-eigene-anweisungen]" 
+                                      class="large-text" cols="30" rows="10" 
+                                      name="piratenkleider_theme_designspecials[html-eigene-anweisungen]"><?php echo esc_textarea( $options['html-eigene-anweisungen'] ); ?></textarea>
+                            <label class="description" 
+                                   for="piratenkleider_theme_designspecials[html-eigene-anweisungen]">
+                                       <?php _e( 'Eigene HTML-Anweisungen,  die am Ende der Webseite, vor dem letzten &lt;/body&Gt;&lt;/html&gt; plaziert werden', 'piratenkleider' ); ?></label>
+                            <p> <b>Achtung:</b> Fehlerhafter HTML-, JavaScript oder CSS-Code an dieser Stelle
+                                kann zu einem Nicht-Funktionieren der gesamt Website f&uuml;hren!<br />
+                                Der hier eingegebene Code wird nicht gefiltert oder kontrolliert.
+                            </p>
+                        </td>					                           
+		       </tr>
+                       
                     </table>
 
             <p class="submit">
