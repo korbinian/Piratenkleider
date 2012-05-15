@@ -748,7 +748,7 @@ ul.socialmedia li a:focus img  {
    }
    
    .sticker ul li a .shadow {        
-         text-shadow: 1px 1px 1px #111; 
+         text-shadow: 1px 1px 1px #333; 
    }
   
     .sticker ul li a .animate {  
@@ -826,7 +826,7 @@ ul.socialmedia li a:focus img  {
         -ms-transform: rotate(-5deg);
         -o-transform: rotate(-5deg);
         transform: rotate(-5deg);
-        text-shadow: 1px 1px 1px #111; 
+        text-shadow: 1px 1px 1px #333; 
         border: 2px solid transparent;
    }
   
