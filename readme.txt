@@ -266,11 +266,10 @@ Administrative Hinweise für Wordpress Theme-Editoren:
    des Sticker sund die Ziel-Adresse eingeben.
    Als Content kann HTML eingegeben werden um Bilder direkt einzublenden.
    Es kann aber auch nur ein Text als COntent eingegeben werden.
-   Optisch ist es derzeit aufgrund der Verbreitung von CSS3 zu empfehlen,
-   ein Bild (wie in der Defaulteinstellung vorgegeben) einzugeben.
+   Hierbei können über CSS-Klassen auch Farben und eine 5 Grad Drehung
+   für die Texte bestimmt werden.
+   Siehe hier zu die FAQ der Dokumentation für Beispiele.
 
-     Beispiel für den Content:
-    <img src="'http://www.piratenpartei.de/images/werde-pirat.png" width="88" height="56" alt="Werde Pirat!">
 
 5.  Die Teaserlinks rechts neben dem Bildslider auf der Startseite können
     individuell über die Theme-Option "Takelage setzen" gesetzt
