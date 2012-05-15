@@ -563,6 +563,23 @@ function theme_options_do_page() {
                                             </label>
                                             </td>					
                                              </tr>
+                                             <tr valign="top"><th scope="row">Flickr</th>
+                                            <td>
+                                            <input id="piratenkleider_theme_options[social_flickr]" class="regular-text" type="text" length="5" name="piratenkleider_theme_options[social_flickr]" value="<?php esc_attr_e( $options['social_flickr'] ); ?>" />
+                                            <label class="description" for="piratenkleider_theme_options[social_flickr]">
+                                            <?php _e( 'URL inkl. http:// zur Flickr Seite', 'piratenkleider' ); ?>
+                                                
+                                            </label>
+                                            </td>					
+                                             </tr>
+                                             <tr valign="top"><th scope="row">Delicious</th>
+                                            <td>
+                                            <input id="piratenkleider_theme_options[social_delicious]" class="regular-text" type="text" length="5" name="piratenkleider_theme_options[social_delicious]" value="<?php esc_attr_e( $options['social_delicious'] ); ?>" />
+                                            <label class="description" for="piratenkleider_theme_options[social_delicious]">
+                                            <?php _e( 'URL inkl. http:// zur Delicious Seite', 'piratenkleider' ); ?>
+                                            </label>
+                                            </td>					
+                                             </tr>
                                         </table>                                                                                
                                     </td>                                    
                                 </tr>                                   
@@ -942,7 +959,12 @@ function theme_options_validate( $input ) {
         $input['social_youtube'] = wp_filter_nohtml_kses( $input['social_youtube'] );
         $input['social_gplus'] = wp_filter_nohtml_kses( $input['social_gplus'] );
         $input['social_diaspora'] = wp_filter_nohtml_kses( $input['social_diaspora'] );
-        $input['social_identica'] = wp_filter_nohtml_kses( $input['social_identica'] );            
+        $input['social_identica'] = wp_filter_nohtml_kses( $input['social_identica'] );
+        $input['social_flickr'] = wp_filter_nohtml_kses( $input['social_flickr'] );
+        $input['social_delicious'] = wp_filter_nohtml_kses( $input['social_delicious'] );        
+        
+        
+        
         $input['feed_twitter'] = wp_filter_nohtml_kses( $input['feed_twitter'] );
 	
         $input['url-newsletteranmeldung'] = esc_url( $input['url-newsletteranmeldung'] );
