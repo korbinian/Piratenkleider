@@ -747,6 +747,23 @@ ul.socialmedia li a:focus img  {
         color: #2d7dc5;  
    }
    
+   .sticker ul li a .shadow {        
+         text-shadow: 1px 1px 1px #111; 
+   }
+  
+    .sticker ul li a .animate {  
+        -moz-transition: all 0.15s ease-in-out;
+        -o-transition: all 0.15s ease-in-out;
+        -ms-transition: all 0.15s ease-in-out;
+        transition: all 0.15s ease-in-out;          
+    }    
+   .sticker ul li a:hover .animate ,
+   .sticker ul li a:focus .animate {
+         -moz-transform: rotate(1deg) scale(1.2);
+        -ms-transform: rotate(1deg) scale(1.2);
+        -o-transform: rotate(1deg) scale(1.2);
+        transform: rotate(1deg) scale(1.2); 
+   }
    
    .sticker ul li a .orange {        
      color: #ff8800;    
@@ -809,23 +826,11 @@ ul.socialmedia li a:focus img  {
         -ms-transform: rotate(-5deg);
         -o-transform: rotate(-5deg);
         transform: rotate(-5deg);
-  /*      -moz-transition: all 0.15s ease-in-out;
-        -o-transition: all 0.15s ease-in-out;
-        -ms-transition: all 0.15s ease-in-out;
-        transition: all 0.15s ease-in-out;  */
-           text-shadow: 0 -1px 1px #000;
-             border: 2px solid transparent;
+        text-shadow: 1px 1px 1px #111; 
+        border: 2px solid transparent;
    }
   
-   .sticker ul li a:hover .gedreht ,
-   .sticker ul li a:focus .gedreht {
-     /*   -moz-transform: rotate(1deg) scale(1.2);
-        -ms-transform: rotate(1deg) scale(1.2);
-        -o-transform: rotate(1deg) scale(1.2);
-        transform: rotate(1deg) scale(1.2);
-         border: 2px solid #ff8800; 
-         text-shadow: 0 -1px 1px #c36800; */
-   }
+
 
 
 

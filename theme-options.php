@@ -160,18 +160,18 @@ function theme_options_do_page() {
                                   $options['teaserlink3-symbol'] = $defaultoptions['teaserlink3-symbol'];  
                              
                              
-                             if (!isset($options['stickerlink1-content'])  || (strlen(trim($options['stickerlink1-content']))<1 )) 
+                             if (!isset($options['stickerlink1-content'])) 
                                 $options['stickerlink1-content'] = $defaultoptions['stickerlink1-content'];                                
-                             if (!isset($options['stickerlink1-url'])  || (strlen(trim($options['stickerlink1-url']))<1 )) 
+                             if (!isset($options['stickerlink1-url'])) 
                                 $options['stickerlink1-url'] = $defaultoptions['stickerlink1-url'];
                           
-                            if (!isset($options['stickerlink2-content']) || (strlen(trim($options['stickerlink2-content']))<1 )) 
+                            if (!isset($options['stickerlink2-content'])) 
                                 $options['stickerlink2-content'] = $defaultoptions['stickerlink2-content'];
-                            if (!isset($options['stickerlink2-url'])  || (strlen(trim($options['stickerlink2-url']))<1 )) 
+                            if (!isset($options['stickerlink2-url'])) 
                                 $options['stickerlink2-url'] = $defaultoptions['stickerlink2-url'];
-                            if (!isset($options['stickerlink2-content']) || (strlen(trim($options['stickerlink3-content']))<1 )) 
+                            if (!isset($options['stickerlink2-content'])) 
                                 $options['stickerlink3-content'] = $defaultoptions['stickerlink3-content'];
-                            if (!isset($options['stickerlink3-url'])  || (strlen(trim($options['stickerlink3-url']))<1 )) 
+                            if (!isset($options['stickerlink3-url'])) 
                                 $options['stickerlink3-url'] = $defaultoptions['stickerlink3-url'];
                             if (!isset($options['anonymize-user-commententries'])) 
                                 $options['anonymize-user-commententries'] = $defaultoptions['anonymize-user-commententries']; 
