@@ -826,8 +826,9 @@ ul.socialmedia li a:focus img  {
         -ms-transform: rotate(-5deg);
         -o-transform: rotate(-5deg);
         transform: rotate(-5deg);
-        text-shadow: 1px 1px 1px #333; 
-        border: 2px solid transparent;
+        text-shadow: 0px 2px 1px #333;
+        font-weight: 900;
+ /*       border: 2px solid transparent;  */
    }
   
 
