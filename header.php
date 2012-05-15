@@ -75,13 +75,14 @@
 <!--[if IE]> <meta http-equiv="X-UA-Compatible" content="IE=9"> <![endif]-->
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title><?php wp_title( '|', true, 'right' ); ?></title>
-<?php if (isset( $options['meta-description'] ) ) { ?>
+<?php
+if ((isset( $options['meta-description'] )) && ( strlen(trim($options['meta-description']))>1 )) { ?>
     <meta name="description" content="<?php echo $options['meta-description'] ?>">
 <?php }
-if (isset( $options['meta-author'] ) ) { ?>
+if ((isset( $options['meta-author'] )) && ( strlen(trim($options['meta-author']))>1 )) { ?>
     <meta name="author" content="<?php echo $options['meta-author'] ?>">
 <?php }
-if (isset( $options['meta-keywords'] ) ) { ?>
+if ((isset( $options['meta-keywords'] )) && ( strlen(trim($options['meta-keywords']))>1 )) { ?>
     <meta name="keywords" content="<?php echo $options['meta-keywords'] ?>">
 <?php } ?>
 
@@ -96,7 +97,7 @@ if (isset( $options['meta-keywords'] ) ) { ?>
 	wp_head(); ?>
 
 <!--[if lte IE 7]>
-<link rel="stylesheet" href="<?php bloginfo( 'stylesheet_url' ); ?>/yaml/core/iehacks.min.css" type="text/css"/>
+<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/yaml/core/iehacks.min.css" type="text/css"/>
 <![endif]-->
 
 <?php if (isset($cssadd)) {
@@ -128,7 +129,7 @@ if (isset( $options['meta-keywords'] ) ) { ?>
 			</div>
                       
 			<div class="nav-top" role="navigation">				                                                        
-				<h2 class="skip">Service-Navigation</h2>
+				<h2 class="skip"><?php echo $defaultoptions['default_text_title_techmenu']; ?></h2>
                                  <?php 
                                     if ( $options['alle-socialmediabuttons'] == "1" ){
                                  ?> 
@@ -164,7 +165,7 @@ if (isset( $options['meta-keywords'] ) ) { ?>
 			</div>
                    
 			<div class="nav-main" role="navigation" id="nav">
-				<h2 class="skip">Navigation</h2>
+				<h2 class="skip"><?php echo $defaultoptions['default_text_title_mainnav']; ?></h2>
 				<?php 
                                 if ( has_nav_menu( 'primary' ) ) {
                                     wp_nav_menu( array( 'container_class' => 'menu-header', 'theme_location' => 'primary', 'walker'  => new My_Walker_Nav_Menu()) );      
@@ -185,7 +186,7 @@ if (isset( $options['meta-keywords'] ) ) { ?>
          
 			<div class="sticker">
                             <div class="skin">   
-                               <h2 class="skip">Sticker</h2>
+                               <h2 class="skip"><?php echo $defaultoptions['default_text_title_sticker']; ?></h2>
                                <?php 
                                
                                

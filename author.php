@@ -8,7 +8,7 @@
     <div class="content-primary">
       <div class="content-header">   
             <?php if ( have_posts() ) the_post(); ?>
-           <h1><?php printf( __( 'Autorarchiv: %s', 'piratenkleider' ), get_the_author() ); ?></h1>
+           <h1><?php printf( __( '%s', 'piratenkleider' ), get_the_author() ); ?></h1>
           
             <?php if ($options['aktiv-platzhalterbilder-indexseiten']) { ?>         
             <div class="symbolbild"> 
@@ -20,8 +20,7 @@
             
 
         
-<?php if ( get_the_author_meta( 'description' ) ) : ?>
-    <h2>Informationen zum Autor</h2>
+<?php if ( get_the_author_meta( 'description' ) ) : ?>   
     <?php the_author_meta( 'description' ); ?>
     <hr>
 <?php endif; ?>
@@ -37,7 +36,7 @@
 
     <div class="content-aside">
       <div class="skin">      
-          <h1 class="skip">Weitere Informationen</h1>
+          <h1 class="skip"><?php echo $defaultoptions['default_text_title_sidebar']; ?></h1>
          <?php get_sidebar(); ?>
       </div>
     </div>

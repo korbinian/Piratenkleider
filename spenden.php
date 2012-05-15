@@ -134,7 +134,7 @@
     <div class="content-aside">
       <div class="skin">
 
-        <h1 class="skip">Weitere Informationen</h1>   
+        <h1 class="skip"><?php echo $defaultoptions['default_text_title_sidebar']; ?></h1>   
             <?php
             if (!isset($options['zeige_subpagesonly'])) 
             $options['zeige_subpagesonly'] = $defaultoptions['zeige_subpagesonly'];

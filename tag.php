@@ -7,7 +7,7 @@
   <div class="row">
     <div class="content-primary">
       <div class="content-header">
-           <h1 id="page-title"><span><?php printf( __( 'Schlagw&ouml;rterarchiv: %s', 'piratenkleider' ), '' . single_cat_title( '', false ) . '' ); ?></span></h1>
+           <h1 id="page-title"><span><?php printf( __( '%s', 'piratenkleider' ), '' .$defaultoptions['default_text_pretitle_tags']. single_cat_title( '', false ) . '' ); ?></span></h1>
           
           <?php if ($options['aktiv-platzhalterbilder-indexseiten']) { ?>         
           <div class="symbolbild"> 
@@ -30,7 +30,7 @@
 
     <div class="content-aside">
       <div class="skin">       
-          <h1 class="skip">Weitere Informationen</h1>
+          <h1 class="skip"><?php echo $defaultoptions['default_text_title_sidebar']; ?></h1>
          <?php get_sidebar(); ?>
       </div>
     </div>

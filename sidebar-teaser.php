@@ -10,10 +10,10 @@
     <?php } else {        
 
        
-         $catname = $options['slider-catname'];        
+      
          $defaultbildsrc = $bilderoptions['slider-defaultbildsrc'];                        
-         
-         if (!isset($catname) ) $catname = get_cat_name(1);         
+         $cat = $options['slider-catid'];
+         if (!isset($cat) ) $cat = 1;         
          $numberarticle = $options['slider-numberarticle'];
          if (!isset($numberarticle) )  $numberarticle =3;   
          if (!isset($options['url-mitgliedwerden'])) 
@@ -25,10 +25,10 @@
           if (!isset($options['teaser-title-words'])) 
             $options['teaser-title-words'] = $defaultoptions['teaser-title-words'];
           
-        query_posts( array( 'category_name' => "$catname", 'posts_per_page' => $numberarticle) );
+        query_posts( array( 'cat' => "$cat", 'posts_per_page' => $numberarticle) );
         
         echo '<div class="flexslider">';
-        echo '<h2 class="skip">Topthemen</h2>';
+        echo '<h2 class="skip">'.$defaultoptions['default_text_title_slider'].'</h2>';
         echo "<ul class='slides'>";
         if ( have_posts() ) while ( have_posts() ) : the_post();
             echo "<li class='slide'>";

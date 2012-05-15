@@ -733,21 +733,38 @@ ul.socialmedia li a:focus img  {
   .sticker ul li a {    
         color: #666;       
   }
- 
-   .sticker ul li a span {        
-     color: #ff8800;    
-   }
-   
-   .sticker ul li a:hover,
+ .sticker ul li a:hover,
    .sticker ul li a:focus {
     color: #1a4872; 
    } 
-
    
-   .sticker ul li a:hover span,
-   .sticker ul li a:focus span {
+   .sticker ul li a .orange {        
+     color: #ff8800;    
+   }
+  
+   .sticker ul li a:hover .orange,
+   .sticker ul li a:focus .orange {
         color: #2d7dc5;  
    }
+   
+    .sticker ul li a .cyan {        
+         color: #00B7B2;    
+   }
+  
+   .sticker ul li a:hover .cyan,
+   .sticker ul li a:focus .cyan {
+        color: #2d7dc5;  
+   }
+   
+    .sticker ul li a .violet {        
+         color: #983298;    
+   }
+  
+   .sticker ul li a:hover .violet,
+   .sticker ul li a:focus .violet {
+        color: #2D7DC5;  
+   }
+   
 
 .sticker li a img {
     border: 2px solid transparent;
@@ -796,8 +813,8 @@ ul.socialmedia li a:focus img  {
         -ms-transform: rotate(1deg) scale(1.2);
         -o-transform: rotate(1deg) scale(1.2);
         transform: rotate(1deg) scale(1.2);
-     /*    border: 2px solid #ff8800; */
-         text-shadow: 0 -1px 1px #c36800;
+     /*    border: 2px solid #ff8800; 
+         text-shadow: 0 -1px 1px #c36800; */
    }
 
 

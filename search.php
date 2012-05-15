@@ -7,7 +7,7 @@
   <div class="row">
     <div class="content-primary">
       <div class="content-header">
-          <h1><?php printf( __( 'Suchergebnisse f&uuml;r: %s', 'piratenkleider' ), '' . get_search_query() . '' ); ?></h1>                
+          <h1><?php printf( __( '%s', 'piratenkleider' ), '' . $defaultoptions['default_text_pretitle_search'].get_search_query() . '' ); ?></h1>                
           
           <?php if ($options['aktiv-platzhalterbilder-indexseiten']) { ?>         
           <div class="symbolbild"> 

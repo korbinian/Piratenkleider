@@ -5,7 +5,7 @@
   if ( $options['slider-aktiv'] == "1" ){ ?>  
     <div class="section teaser">
         <div class="row">
-    <?php get_sidebar( 'teaser' ); ?>
+            <?php get_sidebar( 'teaser' ); ?>
         </div>  
     </div>
 <?php } ?>
@@ -14,7 +14,7 @@
     <div class="content-primary">
       <div class="skin">
 
-          <h1 class="skip">Aktuelles</h1>
+          <h1 class="skip"><?php echo $defaultoptions['default_text_home_title_articles']; ?></h1>
           
       <?php
       $i = 0; 
@@ -107,17 +107,17 @@
                 <?php 
                 $postslist = get_posts("numberposts=5&order=DESC&offset=$numentries"); 
                 if (isset($postslist)) {
-                    echo '<h3>Vorherige Artikel</h3>';
+                    echo '<h3>'.$defaultoptions['default_text_home_title_prevarticle'].'</h3>';
                 }
                 foreach ($postslist as $post) : setup_postdata($post); 
                 ?>
-                <li><a title="Post: <?php the_title(); ?>" href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+                <li><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
                 <span class="date"><?php the_time('d.m.Y') ?></span></li>
                 <?php endforeach; ?>
                 </ul>
                 </div>
                 <div class="widget">
-                <h3>Kategorien</h3>
+                <h3><?php echo $defaultoptions['default_text_home_title_categories']; ?></h3>
                 <ul>
                     <?php wp_list_categories('title_li='); ?>
                 </ul>
@@ -136,7 +136,7 @@
                 <div  class="widget">
                     <?php $tags = get_tags();
                         if (isset($tags)) {
-                            echo '<h3>Schlagworte</h3>';
+                            echo '<h3>'.$defaultoptions['default_text_home_title_tags'].'</h3>';
                         }
                      ?>
                       <div class="tagcloud">            
@@ -153,8 +153,8 @@
 
     <div class="content-aside">
       <div class="skin">
-          <h1 class="skip">Weitere Informationen</h1>
-      <?php get_sidebar(); ?>
+          <h1 class="skip"><?php echo $defaultoptions['default_text_title_sidebar']; ?></h1>
+            <?php get_sidebar(); ?>
       </div>
     </div>
   </div>

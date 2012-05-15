@@ -77,6 +77,26 @@ $defaultoptions = array(
     'stickerlink3-content'          => '',
     'stickerlink3-url'              => '',    
     
+    'default_text_title_slider'     => 'Topthemen',
+    'default_text_pretitle_category'   => 'Kategorie: ',
+    'default_text_pretitle_tags'    => 'Schlagwort: ',
+    'default_text_pretitle_search'  => 'Suchergebnisse f&uuml;r: ',
+    'default_text_search_placeholder'      => 'Suchbegriff eingeben',
+    'default_text_breadcrumb_home'  => 'Startseite',
+    'default_text_breadcrumb_category'  => 'Artikel der Kategorie ',
+    'default_text_breadcrumb_tags'  => 'Artikel mit dem Tag ',
+    'default_text_breadcrumb_search'  => 'Suche ',
+    'default_text_breadcrumb_author'  => 'Artikel von ',
+    'default_text_home_title_prevarticle'  => '&Auml;ltere Artikel',
+    'default_text_home_title_categories'    => 'Kategorien',
+    'default_text_home_title_tags'  => 'Schlagworte',
+    'default_text_home_title_articles'  => 'Aktuelle Artikel',
+    'default_text_title_mainnav'    => 'Navigation',
+    'default_text_title_techmenu'  => 'Service-Navigation',
+    'default_text_title_sticker'    => 'Sticker',
+    'default_text_title_search'    => 'Suche',
+    'default_text_title_sidebar'    => 'Weitere Informationen'
+    
 );
 /**
  * Liste der Defaultbilder fuer Seiten und Slider
@@ -845,10 +865,12 @@ add_filter('the_content', 'wpi_linkexternclass');
 
 
 
+
+
 function dimox_breadcrumbs() {
   global $defaultoptions;
   $delimiter = '/';
-  $home = 'Startseite'; // text for the 'Home' link
+  $home = $defaultoptions['default_text_breadcrumb_home']; // text for the 'Home' link
   $before = '<span class="current">'; // tag before the current crumb
   $after = '</span>'; // tag after the current crumb
  
@@ -867,7 +889,7 @@ function dimox_breadcrumbs() {
       $thisCat = get_category($thisCat);
       $parentCat = get_category($thisCat->parent);
       if ($thisCat->parent != 0) echo(get_category_parents($parentCat, TRUE, ' ' . $delimiter . ' '));
-      echo $before . 'Kategorie "' . single_cat_title('', false) . '"' . $after;
+      echo $before . $defaultoptions['default_text_breadcrumb_category']. '"' . single_cat_title('', false) . '"' . $after;
  
     } elseif ( is_day() ) {
       echo '<a href="' . get_year_link(get_the_time('Y')) . '">' . get_the_time('Y') . '</a> ' . $delimiter . ' ';
@@ -920,26 +942,26 @@ function dimox_breadcrumbs() {
       echo $before . get_the_title() . $after;
  
     } elseif ( is_search() ) {
-      echo $before . 'Suchergebnisse f&uuml;r "' . get_search_query() . '"' . $after;
+      echo $before . $defaultoptions['default_text_breadcrumb_search'].'"' . get_search_query() . '"' . $after;
  
     } elseif ( is_tag() ) {
-      echo $before . 'Artikel mit Schlagwort "' . single_tag_title('', false) . '"' . $after;
+      echo $before . $defaultoptions['default_text_breadcrumb_tags']. '"' . single_tag_title('', false) . '"' . $after;
  
     } elseif ( is_author() ) {
        global $author;
       $userdata = get_userdata($author);
-      echo $before . 'Artikel von ' . $userdata->display_name . $after;
+      echo $before . $defaultoptions['default_text_breadcrumb_author']. $userdata->display_name . $after;
  
     } elseif ( is_404() ) {
-      echo $before . 'Fehler 404' . $after;
+      echo $before . '404' . $after;
     }
- 
+ /*
     if ( get_query_var('paged') ) {
       if ( is_category() || is_day() || is_month() || is_year() || is_search() || is_tag() || is_author() ) echo ' (';
       echo __('Page', 'piratenkleider') . ' ' . get_query_var('paged');
       if ( is_category() || is_day() || is_month() || is_year() || is_search() || is_tag() || is_author() ) echo ')';
     }
- 
+ */
     echo '</div>';
  
   }

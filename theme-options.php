@@ -175,6 +175,8 @@ function theme_options_do_page() {
                                 $options['stickerlink3-url'] = $defaultoptions['stickerlink3-url'];
                             if (!isset($options['anonymize-user-commententries'])) 
                                 $options['anonymize-user-commententries'] = $defaultoptions['anonymize-user-commententries']; 
+                            if (!isset($options['aktiv-commentreplylink'])) 
+                                $options['aktiv-commentreplylink'] = $defaultoptions['aktiv-commentreplylink'];                            
                         ?>
 			<table class="form-table">
                                     
@@ -610,9 +612,9 @@ function theme_options_do_page() {
                                              
                                              <tr valign="top"><th scope="row"><?php _e( 'Kategorie', 'piratenkleider' ); ?></th>
                                             <td>
-                                                    <select name="piratenkleider_theme_options[slider-catname]">
+                                                    <select name="piratenkleider_theme_options[slider-catid]">
                                                         <?php
-                                                         $selected = $options['slider-catname'];      
+                                                         $selected = $options['slider-catid'];      
                                                          if (!isset($selected) ) $selected ="Slider";  
                                                         $args=array(
                                                         'orderby' => 'name',
@@ -621,15 +623,15 @@ function theme_options_do_page() {
                                                         
                                                         $categories=get_categories($args);
                                                         foreach($categories as $category) {
-                                                            echo '<option value="'.$category->name.'"';
-                                                            if ($category->name == $selected) {
+                                                            echo '<option value="'.$category->cat_ID.'"';
+                                                            if ($category->cat_ID == $selected) {
                                                                  echo ' selected="selected"'; 
                                                             }
                                                             echo '>'.$category->name.' ('.$category->count.' Eintr&auml;ge)</option>';
                                                         } 
                                                         ?>
                                                     </select>
-                                                    <label class="description" for="piratenkleider_theme_options[slider-catname]"><?php _e( 'Aus welcher Artikelkategorie sollen die Slider genommen werden', 'piratenkleider' ); ?></label>
+                                                    <label class="description" for="piratenkleider_theme_options[slider-catid]"><?php _e( 'Aus welcher Artikelkategorie sollen die Slider genommen werden', 'piratenkleider' ); ?></label>
                                             </td>
                                             </tr>
 
@@ -806,6 +808,20 @@ function theme_options_do_page() {
                                        </table>                                         
                                     </td>                                    
                                 </tr>    
+                                  <tr valign="top">
+                                    <th scope="row"><?php _e( 'Sonstiges', 'piratenkleider' ); ?></th>
+                                    <td>
+                                        <table>
+                                        <tr valign="top"><th scope="row">Antwortlinks auf Kommentare</th>
+					<td>
+						<input id="piratenkleider_theme_options[aktiv-commentreplylink]" name="piratenkleider_theme_options[aktiv-commentreplylink]" type="checkbox" value="1" <?php checked( '1', $options['aktiv-commentreplylink'] ); ?> />
+						<label  for="piratenkleider_theme_options[aktiv-commentreplylink]"><?php _e( 'Bei der Anzeige von Kommentaren, wird unter diesen ein eigener Kommentarlink eingebaut, der das Antworten auf den Kommentar erlaubt. Dies kann zu einer Nutzung des Kommentarbereiches wie bei einem Forum f&uuml;hren, bei dem es zuletzt aber nicht mehr um den eigentlichen Beitrag geht.', 'piratenkleider' ); ?></label>
+					</td>
+                                        </tr>
+                                </table>                                         
+                                    </td>                                    
+                                </tr>             
+                                        
 			</table>
 
 			<p class="submit">
@@ -838,7 +854,10 @@ function theme_options_validate( $input ) {
         if ( ! isset( $input['aktiv-linkmenu'] ) )
 		$input['aktiv-linkmenu'] = 0;
 	$input['aktiv-linkmenu'] = ( $input['aktiv-linkmenu'] == 1 ? 1 : 0 );
-     
+        
+        if ( ! isset( $input['aktiv-commentreplylink'] ) )
+		$input['aktiv-commentreplylink'] = 0;
+	$input['aktiv-commentreplylink'] = ( $input['aktiv-commentreplylink'] == 1 ? 1 : 0 );
         if ( ! isset( $input['anonymize-user'] ) )
 		$input['anonymize-user'] = 0;
 	$input['anonymize-user'] = ( $input['anonymize-user'] == 1 ? 1 : 0 );
@@ -906,7 +925,7 @@ function theme_options_validate( $input ) {
          $input['slider-animationDuration'] = wp_filter_nohtml_kses( $input['slider-animationDuration'] );
         if ( ! isset( $input['slider-animationDuration'] ) )
 		$input['slider-animationDuration'] = 600;       
-        $input['slider-catname'] = wp_filter_nohtml_kses( $input['slider-catname'] );
+        $input['slider-catid'] = wp_filter_nohtml_kses( $input['slider-catid'] );
         $input['slider-Direction'] = wp_filter_nohtml_kses( $input['slider-Direction'] );
         $input['slider-animationType'] = wp_filter_nohtml_kses( $input['slider-animationType'] );   
         
