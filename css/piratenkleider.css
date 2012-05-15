@@ -1098,8 +1098,11 @@ ul.socialmedia li a:focus img  {
 .content .startpage-widget-area ul.children {
     margin: 0 0 0 5px ; 
 }
-.content .content-aside p, .content .content-aside table, .content .content-aside blockquote, .content .content-aside form, .content .content-aside img {
-    margin-bottom: 20px; }
+.content .content-aside p, .content .content-aside table, .content 
+.content-aside blockquote, .content .content-aside form, .content 
+.content-aside img {
+    margin-bottom: 20px; 
+}
 .content .content-aside ul, .content .content-aside ol {
     margin: 0 0 20px 0; }
 .content .content-aside ul li,
@@ -1107,8 +1110,10 @@ ul.socialmedia li a:focus img  {
       list-style: none;
 }
 .content ul {
-    list-style: disc; }
-  .content ul ul, .content ol ol, .content ul ol, .content ol ul {
+    list-style: disc; 
+}
+.content ul ul, .content ol ol, 
+.content ul ol, .content ol ul {
     margin-bottom: 0; 
   }
   
@@ -1693,7 +1698,8 @@ ul.socialmedia li a:focus img  {
 .content-aside a {
   color: black;
   background: #f38100;
-  padding: 0 2px; }
+  padding: 0 2px; 
+}
   .content-aside a:hover {
     color: #000;
     background: #d97300; }
@@ -1710,8 +1716,10 @@ ul.socialmedia li a:focus img  {
   border-radius: 2px;
   -moz-border-radius: 2px;
   -webkit-border-radius: 2px; }
-  .content-aside table td, .content-aside table th {
-    border-top: 1px solid #ff8800; }
+  .content-aside table td,
+  .content-aside table th {
+    border-top: 1px solid #ff8800; 
+  }
 .content-aside blockquote {
   margin: 0 0 20px 0;
   border: 0 solid;
@@ -1752,7 +1760,8 @@ ul.socialmedia li a:focus img  {
 .content-aside ul.menu li.current_page_ancestor > .children,
 .content-aside ul.menu li.current-menu-item > .sub-menu, 
 .content-aside ul.menu li.current-menu-ancestor > .sub-menu {
-  display: block !important; }
+  display: block !important; 
+}
 
 .content-aside ul.menu {
   background: #c96a00;
@@ -1790,7 +1799,13 @@ ul.socialmedia li a:focus img  {
     padding-left: 14px; }
 .content-aside ul.menu ul.children,
 .content-aside ul.menu ul.sub-menu {
-    margin: 0 0 0 5px; }
+    margin: 0 0 0 5px; 
+}
+
+.content-aside a.rsswidget img {
+    float: right;
+}
+
 
 .subcontent {
   background: black url("../assets/bg-tags_gray.jpg") -20% top fixed; }
