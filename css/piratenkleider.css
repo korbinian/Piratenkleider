@@ -738,6 +738,16 @@ ul.socialmedia li a:focus img  {
     color: #1a4872; 
    } 
    
+   .sticker ul li a .cicolor {        
+     color: #ff8800;    
+   }
+  
+   .sticker ul li a:hover .cicolor,
+   .sticker ul li a:focus .cicolor {
+        color: #2d7dc5;  
+   }
+   
+   
    .sticker ul li a .orange {        
      color: #ff8800;    
    }
@@ -774,7 +784,7 @@ ul.socialmedia li a:focus img  {
     -moz-transition: all 0.15s ease-in-out;
     -o-transition: all 0.15s ease-in-out;
     -ms-transition: all 0.15s ease-in-out;
-    transition: all 0.15s ease-in-out;
+    transition: all 0.15s ease-in-out; 
     border: 2px solid transparent;
 }
 
@@ -799,21 +809,21 @@ ul.socialmedia li a:focus img  {
         -ms-transform: rotate(-5deg);
         -o-transform: rotate(-5deg);
         transform: rotate(-5deg);
-        -moz-transition: all 0.15s ease-in-out;
+  /*      -moz-transition: all 0.15s ease-in-out;
         -o-transition: all 0.15s ease-in-out;
         -ms-transition: all 0.15s ease-in-out;
-        transition: all 0.15s ease-in-out;
+        transition: all 0.15s ease-in-out;  */
            text-shadow: 0 -1px 1px #000;
              border: 2px solid transparent;
    }
   
    .sticker ul li a:hover .gedreht ,
    .sticker ul li a:focus .gedreht {
-        -moz-transform: rotate(1deg) scale(1.2);
+     /*   -moz-transform: rotate(1deg) scale(1.2);
         -ms-transform: rotate(1deg) scale(1.2);
         -o-transform: rotate(1deg) scale(1.2);
         transform: rotate(1deg) scale(1.2);
-     /*    border: 2px solid #ff8800; 
+         border: 2px solid #ff8800; 
          text-shadow: 0 -1px 1px #c36800; */
    }
 
