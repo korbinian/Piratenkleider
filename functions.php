@@ -19,6 +19,7 @@ $defaultoptions = array(
     'thumb-height'                  => 240,
     'src-jquery'                    => get_template_directory_uri(). "/js/jquery.min.js",
     'src-layoutjs'                  => get_template_directory_uri(). "/js/layout.js",
+    'src-comment-reply'             => get_template_directory_uri(). "/js/comment-reply.js",
     'src-yaml-focusfix'             => get_template_directory_uri(). "/yaml/core/js/yaml-focusfix.js",
     'src-default-symbolbild-big'    => get_template_directory_uri() .'/images/default-vorlage.png',
     'src-default-symbolbild'        => get_template_directory_uri() .'/images/default-vorlage-705x150.png',
@@ -51,6 +52,7 @@ $defaultoptions = array(
     'css-default-branding-padding-top'  => 40,
     'anonymize-user'                => 0,
     'anonymize-user-commententries' => 0,
+    'aktiv-commentreplylink'        => 0,
     
     
     'teaserlink1-title'             => 'Informiere dich',
@@ -232,6 +234,7 @@ $defaultplakate_textsymbolliste = array(
 $options = get_option( 'piratenkleider_theme_options' );
 if (!isset($options['anonymize-user'])) 
             $options['anonymize-user'] = $defaultoptions['anonymize-user'];
+
 
 if ($options['anonymize-user']==1) {
     /* IP-Adresse überschreiben */
@@ -444,7 +447,8 @@ function piratenkleider_comment( $comment, $args, $depth ) {
          $options = get_option( 'piratenkleider_theme_options' );  
          if (!isset($options['aktiv-avatar'])) 
             $options['aktiv-avatar'] = $defaultoptions['aktiv-avatar'];
-
+        if (!isset($options['aktiv-commentreplylink'])) 
+            $options['aktiv-commentreplylink'] = $defaultoptions['aktiv-commentreplylink'];
         
         switch ( $comment->comment_type ) :
                 case '' :
@@ -476,10 +480,13 @@ function piratenkleider_comment( $comment, $args, $depth ) {
                 </div>
 
                 <div class="comment-body"><?php comment_text(); ?></div>
-
+                <?php if ($options['aktiv-commentreplylink']) { ?>
                 <div class="reply">
-                        <?php comment_reply_link( array_merge( $args, array( 'depth' => $depth, 'max_depth' => $args['max_depth'] ) ) ); ?>
-                </div><!-- .reply -->
+                        <?php comment_reply_link( array_merge( $args, array( 'depth' => $depth, 'max_depth' => $args['max_depth'] ) ) ); ?>                       
+                </div> <!-- .reply -->
+                <?php } ?>
+
+
         </div><!-- #comment-##  -->
 
         <?php
@@ -950,7 +957,21 @@ if( !is_admin()){
         wp_register_script('layoutjs', $defaultoptions['src-layoutjs'] , false);
         wp_enqueue_script('layoutjs');
        wp_register_script('yaml-focusfix', $defaultoptions['src-yaml-focusfix'] , false);
-        wp_enqueue_script('yaml-focusfix');
+       wp_enqueue_script('yaml-focusfix');
+       
+       /* Eigenes comment-reply, welches bei Focus zum Anfang des Formulars 
+        * springt und nicht in das Texteingabefeld, damit Tastaturbenutzer nicht 
+        * umständlich zurücktabben mussen
+        */
+
+       wp_deregister_script('comment-reply');
+       if (!isset($options['aktiv-commentreplylink'])) 
+            $options['aktiv-commentreplylink'] = $defaultoptions['aktiv-commentreplylink'];
+       if ($options['aktiv-commentreplylink']==1) {        
+            wp_register_script('comment-reply', $defaultoptions['src-comment-reply'] , false);
+            wp_enqueue_script('comment-reply');
+       }
+       
         
 }
 

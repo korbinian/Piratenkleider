@@ -796,7 +796,7 @@ ul.socialmedia li a:focus img  {
         -ms-transform: rotate(1deg) scale(1.2);
         -o-transform: rotate(1deg) scale(1.2);
         transform: rotate(1deg) scale(1.2);
-         border: 2px solid #ff8800;
+     /*    border: 2px solid #ff8800; */
          text-shadow: 0 -1px 1px #c36800;
    }
 
