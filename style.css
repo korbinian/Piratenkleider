@@ -22,9 +22,5 @@ License URI: http://creativecommons.org/licenses/by-sa/3.0/de/deed.de
 @import url(css/basemod_linkicons.css);
 @import url(css/basemod_ymbuttons.css);
 
-/* @import url(css/colors_de.css); */
-/* @import url(css/colors_tk.css); */
-/* @import url(css/colors_lu.css); */
-
 /* import print layout | Druck-Layout einbinden */
 @import url(css/print.css);
