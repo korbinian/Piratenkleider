@@ -49,7 +49,7 @@
           </ul>
             
            <?php if (has_filter( 'related_posts_by_category')) { ?>   
-          <h3>Das k&ouml;nnte dich auch interessieren:</h3>
+          <h3><?php _e("Weitere Artikel in diesem Themenkreis:", 'piratenkleider'); ?></h3>
           <ul class="related">
             <?php do_action(
             'related_posts_by_category',
@@ -78,7 +78,7 @@
 
     <div class="content-aside">
       <div class="skin">
-       <h1 class="skip">Weitere Informationen</h1>
+       <h1 class="skip"><?php echo $defaultoptions['default_text_title_sidebar']; ?></h1>
       <?php get_sidebar(); ?>
       </div>
     </div>

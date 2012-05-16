@@ -100,7 +100,9 @@ $defaultoptions = array(
     'default_text_title_skiplink_search'    => 'Zur Suche springen.',  
     'default_text_title_skiplink_content'   => 'Zum Inhalt springen.',
     'default_text_title_sidebar'            => 'Weitere Informationen',
-    'default_text_title_home_backlink'      => 'Zur&uuml;ck zur Startseite'
+    'default_text_title_home_backlink'      => 'Zur&uuml;ck zur Startseite',
+    'default_text_home_title_further'       => 'Weitere Artikel',
+    'default_text_comments_title'           => 'Kommentare',
     
 );
 /**

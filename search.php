@@ -29,7 +29,7 @@
                         <h2><?php _e("Nichts gefunden", 'piratenkleider'); ?></h2>
                         <p>
                             <?php _e("Es konnten keine Seiten oder Artikel gefunden werden, 
-                            die zu der Sucheingaben passten.
+                            die zu der Sucheingabe passten.
                             Bitte versuchen Sie es nochmal mit einer 
                             anderen Suche.", 'piratenkleider'); ?>
                             

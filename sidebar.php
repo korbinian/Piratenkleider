@@ -18,7 +18,7 @@
                                 <input type="text" name="email-newsletter" id="email-newsletter" value="E-Mail-Adresse eingeben" placeholder="E-Mail"
                                        onfocus="if(this.value=='E-Mail-Adresse eingeben')this.value='';" onblur="if(this.value=='')this.value='E-Mail-Adresse eingeben';">
                                 <input type="submit" name="email-button" value="abonnieren" id="newslettersubmit">
-                                <p>Hinweis: Beim Aufruf wird der Webauftritt verlassen.
+                                <p><?php _e("Hinweis: Beim Aufruf wird der Webauftritt verlassen.", 'piratenkleider'); ?>
                                 </p>
                         </form>           
         </div>

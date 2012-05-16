@@ -1,10 +1,10 @@
 <?php if ( post_password_required() ) : ?>
-    <p>Dieser Artikel ist Passwortgesch&uuml;tzt. Bitte gib das Passwort ein um die Kommentare zu sehen.</p>
+    <p><?php _e("Dieser Artikel ist Passwortgesch&uuml;tzt. Bitte gib das Passwort ein um die Kommentare zu sehen.", 'piratenkleider'); ?></p>
     <?php return;
 endif; ?>
 
 <?php if ( have_comments() ) : ?>
-    <h2 id="comments-title">Kommentare</h2>
+    <h2 id="comments-title"><?php echo $defaultoptions['default_text_comments_title']; ?></h2>
      <p>   
     <?php printf( _n( 'Ein Kommentar zu %2$s', '%1$s Kommentare zu %2$s', get_comments_number(), 'piratenkleider' ), number_format_i18n( get_comments_number() ), '' . get_the_title() . '' ); ?>
     </p>
@@ -24,7 +24,7 @@ endif; ?>
     <?php endif; ?>
 
 <?php else : if ( ! comments_open() ) : ?>
-	<p>Das Kommentieren dieses Artikels ist nicht (mehr) m&ouml;glich.</p>
+	<p><?php _e("Das Kommentieren dieses Artikels ist nicht (mehr) m&ouml;glich.", 'piratenkleider'); ?></p>
 <?php endif; 
  endif; 
      

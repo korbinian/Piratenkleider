@@ -21,12 +21,13 @@
          
       </div>
       <div class="skin">
-          <p> 
-              Die von Ihnen gesuchte Seite konnte nicht gefunden werden.
-          </p>
          <p>
-             M&ouml;chten Sie stattdessen im Webauftritt suchen?
-         </p>    
+                            <?php _e("Es konnten keine Seiten oder Artikel gefunden werden, 
+                            die zu eingegebene Adresse passte.
+                            Bitte versuchen Sie es nochmal mit einer 
+                            Suche.", 'piratenkleider'); ?>
+                            
+                        </p>
               
          <?php get_search_form(); ?>
       </div>
