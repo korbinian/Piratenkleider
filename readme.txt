@@ -2,7 +2,7 @@ Piratenkleider
 - Wordpress-Theme für Webauftritte der Piratenpartei 
 =================================================
 
-Version 2.4 von Wolfgang Wiese (xwolf), 11. Mai 2012
+Version 2.5 von Wolfgang Wiese (xwolf), 17. Mai 2012
 
 
 DOWNLOADS
@@ -175,6 +175,8 @@ THEME-OPTION "Klüverbaum"
 
    Diese Option ermöglicht die Änderungen spezieller CSS-Anweisungen im
    Kopfteil der Seite, sowie das Einfügen eigener CSS-Anweisungen.
+   Ausserdem können hier die bekannten Farbcodes anderer Länder aktiviert 
+   werden.
    So ist es hier bspw. möglich anstelle der Wellen und dem Schiff
    eine eigene Skyline als Hintergrundgrafik zu wählen.
    Diese Optionenseite sollte nun vor erfahrenen Webadmins geändert werden,
