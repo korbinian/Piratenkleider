@@ -110,9 +110,9 @@ if ((isset( $options['meta-keywords'] )) && ( strlen(trim($options['meta-keyword
 <body <?php body_class(); ?>>
 
 	<ul role="navigation" class="nav skiplinks">		
-		<li><a class="ym-skip" href="#nav">Zur Navigation springen.</a></li>
-		<li><a class="ym-skip" href="#main-content">Zum Inhalt springen.</a></li>
-                <li><a class="ym-skip" href="#searchform">Zur Suche springen.</a></li>
+		<li><a class="ym-skip" href="#nav"><?php echo $defaultoptions['default_text_title_skiplink_mainnav']; ?></a></li>
+		<li><a class="ym-skip" href="#main-content"><?php echo $defaultoptions['default_text_title_skiplink_content']; ?></a></li>
+                <li><a class="ym-skip" href="#searchform"><?php echo $defaultoptions['default_text_title_skiplink_search']; ?></a></li>
 	</ul>
 
 
@@ -120,7 +120,7 @@ if ((isset( $options['meta-keywords'] )) && ( strlen(trim($options['meta-keyword
 		<div class="row">
 			<div class="branding">
                             <?php if ( ! is_home() ) { ?>
-                            <a href="<?php echo home_url( '/' ); ?>" title="Zur&uuml;ck zur Startseite" rel="home" class="logo">
+                            <a href="<?php echo home_url( '/' ); ?>" title="<?php echo $defaultoptions['default_text_title_home_backlink']; ?>" rel="home" class="logo">
                             <?php }                                 
                                function piratenkleider_header_style() {} 
                             ?>                                                             

@@ -11,7 +11,7 @@
 
         ?>
 
-<div class="section content">
+<div class="section content" id="main-content">
   <div class="row">
     <div class="content-primary">
       <div class="content-header">

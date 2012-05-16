@@ -13,8 +13,8 @@ License URI: http://creativecommons.org/licenses/by-sa/3.0/de/deed.de
 */
 @font-face {
   font-family: 'BebasNeueRegular';
-  src: url("../assets/fonts/BebasNeue-webfont.eot");
-  src: url("../assets/fonts/BebasNeue-webfont.eot?#iefix") format("embedded-opentype"), url("../assets/fonts/BebasNeue-webfont.woff") format("woff"), url("../assets/fonts/BebasNeue-webfont.ttf") format("truetype"), url("../assets/fonts/BebasNeue-webfont.svg#BebasNeueRegular") format("svg");
+  src: url("../fonts/BebasNeue-webfont.eot");
+  src: url("../fonts/BebasNeue-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/BebasNeue-webfont.woff") format("woff"), url("../fonts/BebasNeue-webfont.ttf") format("truetype"), url("../fonts/BebasNeue-webfont.svg#BebasNeueRegular") format("svg");
   font-weight: normal;
   font-style: normal; 
 }
@@ -134,9 +134,10 @@ h1, h2, h3, h4, h5, h6 {
   margin-bottom: 9px;
   font-weight: normal; }
 
-h1, h2, h3, .bebas {
+h1, h2, h3, .bebas, .cifont {
   font-family: "BebasNeueRegular", Helvetica, Arial, sans-serif;
-  letter-spacing: 1px; }
+  letter-spacing: 1px; 
+}
 
 h1 {
   font-size: 26.4px;
@@ -177,10 +178,13 @@ a {
   a:hover {
     color: #111;
   }
-  a:hover, a.active {
-    outline: 0px solid !important; }
+  a:hover, 
+  a.active {
+    outline: 0px solid !important;
+  }
   a:focus {
-    outline: 1px dotted black; }
+    outline: 1px dotted black; 
+  }
 
 p {
   margin-bottom: 0; }
@@ -189,15 +193,18 @@ blockquote {
   margin: 18px;
   padding: 0 0 0 18px;
   text-indent: 18px;
-  border-left: 2px solid #eeeeee; }
+  border-left: 2px solid #eeeeee; 
+}
   blockquote p {
-    margin-bottom: 0; }
+    margin-bottom: 0; 
+  }
 
 b, strong {
   font-weight: bold; }
 
 q, i, em, cite, blockquote {
-  font-style: italic; }
+  font-style: italic; 
+}
 
 ins, mark {
   background-color: #ff8800;
@@ -206,7 +213,8 @@ ins, mark {
   font-style: italic; }
 
 del {
-  text-decoration: line-through; }
+  text-decoration: line-through; 
+}
 
 img {
   vertical-align: bottom;
@@ -266,7 +274,8 @@ hr {
 
 ::-moz-selection {
   background: #2d7dc5;
-  color: white; }
+  color: white;
+}
 
 img::selection {
   background: transparent; }
@@ -310,7 +319,8 @@ th, td {
   text-align: left;
   line-height: inherit;
   padding: 5px;
-  border-top: solid 1px #eeeeee; }
+  border-top: solid 1px #eeeeee; 
+}
 
 td {
   vertical-align: top; }
@@ -392,7 +402,8 @@ input, select, textarea {
   padding: 5px;
   border: 1px solid #eeeeee;
   background: white;
-  background: rgba(255, 255, 255, 0.6); }
+  background: rgba(255, 255, 255, 0.6); 
+}
 
 button, input, select, textarea {
   margin: 0;
@@ -411,7 +422,7 @@ button, input[type="submit"],
   overflow: visible;
   position: relative;
   background: #2d7dc5;
-  color: white !important;
+  color: white;
   margin: 0 2px 2px 0;
   border: 1px solid #2d7dc5;
   text-shadow: 0 -1px 1px rgba(0, 0, 0, 0.1);
@@ -447,7 +458,8 @@ button, input[type="submit"],
   }
 
 body {
-  background: white url("../assets/bg-tags_gray.jpg") -20% 0 fixed; }
+  background: white url("../images/int/bg-tags_gray.jpg") -20% 0 fixed; 
+}
 
   .sticky {
      border-radius: 0.3em;
@@ -461,7 +473,7 @@ body {
     color: #444;
     color: rgba(0,0,0,.8);
 
-     background: url("../assets/bg-tags.png") repeat fixed -20% top #FF8800;
+     background: url("../images/int/bg-tags.png") repeat fixed -20% top #FF8800;
      padding: 5px 5px 20px 5px;
      margin: 10px;
  }
@@ -471,8 +483,7 @@ body {
     padding: 0 2px;
  }      
  .sticky a:hover,
- .sticky a:focus {
-    
+ .sticky a:focus {    
     color: #000;
     background: #d97300;
  }      
@@ -511,7 +522,8 @@ body {
         padding: 5px; }
  .skiplinks li a:hover {
         background: #ff8800;
-        color: black; }
+        color: black; 
+ }
 
  
  
@@ -696,9 +708,9 @@ ul.socialmedia li a img {
     -ms-transition: all 0.15s ease-in-out;
     transition: all 0.15s ease-in-out;
 }
-ul.socialmedia li a:hover img  {
-   border: 2px solid #ff8800;
 
+ul.socialmedia li a:hover img  {
+   border: 2px solid white;
     -moz-transform: scale(1.3);
     -ms-transform: scale(1.3);
     -o-transform: scale(1.3);
@@ -802,7 +814,6 @@ ul.socialmedia li a:focus img  {
     -o-transition: all 0.15s ease-in-out;
     -ms-transition: all 0.15s ease-in-out;
     transition: all 0.15s ease-in-out; 
-    border: 2px solid transparent;
 }
 
 .sticker li a:hover img {
@@ -883,7 +894,7 @@ ul.socialmedia li a:focus img  {
  }
 
 .teaser {
-  background: #ff8800 url("../assets/bg-tags.png") -20% top fixed; 
+  background: #ff8800 url("../images/int/bg-tags.png") -20% top fixed; 
   height: 240px;
 }
   .teaser .row {
@@ -899,18 +910,10 @@ ul.socialmedia li a:focus img  {
     width: 100%; }
   
 
-
-
-
-
 .second-teaser-widget-area .skin {
   padding: 10px; 
 }
-/* 
-.second-teaser-widget-area h3 {
-    position: absolute; left: -999em;width: 1px; height: 1px; display: inline;    
-}
-*/
+
 .second-teaser-widget-area li {
   margin-bottom: 1px;
   background: orange;
@@ -930,7 +933,7 @@ ul.socialmedia li a:focus img  {
     list-style: none outside none;
     border: 0px solid;
     color: white;  
-     font-size: 14px;     
+    font-size: 14px;     
     display: block;
     text-shadow: 0 0 0; 
 
@@ -1043,14 +1046,13 @@ ul.socialmedia li a:focus img  {
        color: black;
  }    
 
-.content {
-  background: #ff8800 url("../assets/bg-tags.png") -20% top fixed;  
+ .content {
+  background: #ff8800 url("../images/int/bg-tags.png") -20% top fixed;
  }
 .content .row {
     overflow: hidden;
-/*    background: white; */
-  background: #ff8800;
-    background: rgba(255, 136, 0, 0.7) !important; 
+    background: #ff8800;
+    background: rgba(255, 136, 0, 0.7);
 }
 
 .content p, .content form {
@@ -1090,7 +1092,7 @@ ul.socialmedia li a:focus img  {
 }
 .content .startpage-widget-area ul li, 
 .content .startpage-widget-area ol li {
-    list-style: none;;
+    list-style: none;
     margin-bottom: 0; }
 .content .startpage-widget-area, 
 .first-startpage-widget-area ul li {
@@ -1210,7 +1212,7 @@ ul.socialmedia li a:focus img  {
       font-family: "BebasNeueRegular", Helvetica, Arial, sans-serif;
       font-size: 20px; }
     .content-primary .post-nav ul li {
-      list-style: none !important; }
+      list-style: none; }
     .content-primary .post-nav .back a {
       background: url("../assets/bigback.png") no-repeat center left;
       display: block;
@@ -1224,7 +1226,7 @@ ul.socialmedia li a:focus img  {
       .content-primary .post-nav .related li {
         list-style: none; }
         .content-primary .post-nav .related li img {
-          display: none !important; }
+          display: none; }
   .content-primary ol.az {
     margin: 0 !important;
     overflow: hidden;
@@ -1246,7 +1248,7 @@ ul.socialmedia li a:focus img  {
       .content-primary ol.az dl dd {
         margin-bottom: 5px; }
     .content-primary ol.az li {
-      list-style: none !important; }
+      list-style: none; }
   .content-primary .grid-3cols .figure {
     float: left;
     width: 33%;
@@ -1264,7 +1266,7 @@ ul.socialmedia li a:focus img  {
       padding: 0;
       overflow: hidden; }
       .content-primary .sprungmarken ol li {
-        list-style: none !important;
+        list-style: none;
         margin: 0;
         padding: 0; }
         .content-primary .sprungmarken ol li a {
@@ -1275,10 +1277,12 @@ ul.socialmedia li a:focus img  {
           display: inline-block;
           border-radius: 2px;
           -moz-border-radius: 2px;
-          -webkit-border-radius: 2px; }
+          -webkit-border-radius: 2px;
+        }
           .content-primary .sprungmarken ol li a:hover {
             background: #ff8800;
-            color: black; }
+            color: black;
+          }
     .content-primary .sprungmarken ol.azjumper li {
       float: left; }
 
@@ -1340,18 +1344,18 @@ ul.socialmedia li a:focus img  {
   
   
 .subnav {
-  margin: 0 !important;
-  padding: 0 !important;
+  margin: 0;
+  padding: 0;
   max-width: 50%;
   float: right;
-  margin: 0 0 10px 10px !important; }
+  margin: 0 0 10px 10px; }
 .subnav ul {
-    margin: 0 !important;
-    padding: 0 !important; }
+    margin: 0;
+    padding: 0; }
 .subnav li {
-    list-style: none !important;
-    margin: 0 0 0 0 !important;
-    padding: 0 !important;
+    list-style: none;
+    margin: 0 0 0 0;
+    padding: 0;
     text-align: right; }
 .subnav li a {
       background: #eee;
@@ -1371,25 +1375,26 @@ ul.socialmedia li a:focus img  {
 .single .post {
   position: relative; 
 }
-.single .social_share_privacy ul {
-  margin: 0; }
-  .single .social_share_privacy ul li {
-    list-style: none !important;
+ .single .social_share_privacy ul {
+     margin: 0; }
+ .single .social_share_privacy ul li {
+    list-style: none;
     height: auto; }
-    .single .social_share_privacy ul li .dummy_btn {
-      margin-left: 0; }
-    .single .social_share_privacy ul li .switch {
-      background: white;
-      width: 0; }
-  .single .social_share_privacy ul li.facebook, .single .social_share_privacy ul li.twitter {
+ .single .social_share_privacy ul li .dummy_btn {
+    margin-left: 0; }
+ .single .social_share_privacy ul li .switch {
+    background: white;
+    width: 0; }
+ .single .social_share_privacy ul li.facebook, .single .social_share_privacy ul li.twitter {
     width: 120px; }
-  .single .social_share_privacy ul .help_info.icon {
+ .single .social_share_privacy ul .help_info.icon {
     background: #2d7dc5 url("../assets/info.png") no-repeat center center scroll;
     border: 2px solid;
     width: 0;
     height: 0;
     padding: 6px 10px 8px 4px;
-    margin-top: 2px; }
+    margin-top: 2px; 
+    }
 .single .post-edit-link {
   margin-top: 20px; }
 
@@ -1411,7 +1416,7 @@ ul.socialmedia li a:focus img  {
     position: absolute;
     top: -5px;
     right: 0; }
-    .post .post-info .commentbubble a {
+  .post .post-info .commentbubble a {
       background: #ff8800;
       color: white;
       display: block;
@@ -1702,7 +1707,8 @@ ul.socialmedia li a:focus img  {
 }
   .content-aside a:hover {
     color: #000;
-    background: #d97300; }
+    background: #d97300; 
+  }
 .content-aside ul {
   margin: 0 0 18px 0; }
   .content-aside ul li {
@@ -1788,7 +1794,7 @@ ul.socialmedia li a:focus img  {
 .content-aside ul.menu li.active a,
 .content-aside ul.menu li a:hover,
 .content-aside ul.menu li a:focus {
-        color: white !important;
+        color: white;
         background: #2d7dc5; 
 }
       
@@ -1808,7 +1814,7 @@ ul.socialmedia li a:focus img  {
 
 
 .subcontent {
-  background: black url("../assets/bg-tags_gray.jpg") -20% top fixed; }
+  background: black url("../images/int/bg-tags_gray.jpg") -20% top fixed; }
   .subcontent .row {
     background: rgba(0, 0, 0, 0.2);
     color: #eeeeee; }
@@ -1842,7 +1848,7 @@ ul.socialmedia li a:focus img  {
     
     
 .footer {
-  background: black url("../assets/bg-tags_gray.jpg") -20% top fixed;
+  background: black url("../images/int/bg-tags_gray.jpg") -20% top fixed;
   overflow: hidden; 
 }
 .footer .row {
@@ -2003,14 +2009,14 @@ ul.socialmedia li a:focus img  {
   float: left; }
 
 .ics-calendar-header {
-  padding: 0 0 20px 0 !important;
-  text-align: left !important; }
+  padding: 0 0 20px 0;
+  text-align: left; }
  .ics-calendar-header a {
     padding: 5px 10px;
     overflow: visible;
     position: relative;
     background: #2d7dc5;
-    color: white !important;
+    color: white;
     margin: 0 2px 2px 0;
     border: 1px solid #2d7dc5;
     text-shadow: 0 -1px 1px rgba(0, 0, 0, 0.1);
@@ -2025,7 +2031,7 @@ ul.socialmedia li a:focus img  {
     background-image: -moz-linear-gradient(top, #2d7dc5, #24639b);
     background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #2d7dc5), color-stop(1, #24639b));
     background-image: linear-gradient(top, #2d7dc5, #24639b); }
-    .ics-calendar-header a:hover {
+  .ics-calendar-header a:hover {
       background-color: #2d7dc5;
       background-image: -moz-linear-gradient(top, #2d7dc5, #1a4872);
       background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #2d7dc5), color-stop(1, #1a4872));
@@ -2065,15 +2071,12 @@ div.ics-calendar-holder .ics-calendar-event {
   overflow: hidden;
   white-space: nowrap;
   font-size: 10px;
-  background: #2d7dc5 !important;
+  background: #2d7dc5;
   padding: 0 2px;
   color: white;
   border-radius: 2px;
   -moz-border-radius: 2px;
   -webkit-border-radius: 2px; }
-
-
-
 
 
   .header {
@@ -2108,9 +2111,9 @@ div.ics-calendar-holder .ics-calendar-event {
           float: left; 
   }
   .nav-top div.menu-header ul.menu li a {
-            line-height: 30px;
-            padding: 0 10px;
-            color: black; 
+        line-height: 30px;
+        padding: 0 10px;
+        color: black; 
   }
 
   .nav-top div.menu-header ul.menu li a:hover,
@@ -2138,8 +2141,7 @@ div.ics-calendar-holder .ics-calendar-event {
 
   .sticker {
     position: absolute;
- /*   top: 70px; */
-    top: 40px;
+    top: 50px;
     right: 8%; 
   }
   .sticker .skin {
@@ -2212,14 +2214,14 @@ div.ics-calendar-holder .ics-calendar-event {
     }
 
   .content-aside {
-      background: #ff8800 url("../assets/bg-tags.png") -20% top fixed; 
+      background: #ff8800 url("../images/int/bg-tags.png") -20% top fixed; 
     float: right;
     width: 33.3333%; }
 
-    .content-aside .skin {
-           background: #ff8800;
-           background: rgba(255, 136, 0, 0.7) !important; 
-    }
+  .content-aside .skin {
+   background: #ff8800;
+   background: rgba(255, 136, 0, 0.7); 
+  }
   .columns .column1 {
     width: 50%; }
     .columns .column1 .post {

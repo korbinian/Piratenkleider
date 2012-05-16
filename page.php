@@ -6,12 +6,10 @@ if (!isset($options['aktiv-defaultseitenbild']))
 
 ?>
 
-<div class="section content">
+<div class="section content" id="main-content">
   <div class="row">
-    <div class="content-primary">
-     
-        <div class="content-header">
-            
+    <div class="content-primary">     
+        <div class="content-header">            
           <h1 id="page-title"><span><?php the_title(); ?></span></h1>
         
         <?php if (has_post_thumbnail()) { 

@@ -83,8 +83,14 @@
       
       
       <?php if ( ! have_posts() ) : ?>
-        <h2>Nichts gefunden</h2>
-        <p>Entschuldigung, aber es wurde nichts gefunden. :(</p>
+       <h2><?php _e("Nichts gefunden", 'piratenkleider'); ?></h2>
+                        <p>
+                            <?php _e("Es konnten keine Seiten oder Artikel gefunden werden, 
+                            die zu der Sucheingaben passten.
+                            Bitte versuchen Sie es nochmal mit einer 
+                            anderen Suche.", 'piratenkleider'); ?>
+                            
+                        </p>
         <?php get_search_form(); ?>
         <hr>
       <?php endif; ?>
@@ -93,7 +99,7 @@
         
       
       <div class="startpage-widget-area">
-          <h2 class="skip">Weitere Artikel</h2>
+          <h2 class="skip"><?php echo $defaultoptions['default_text_home_title_further']; ?></h2>
         <div class="first-startpage-widget-area">
           <div class="skin">
             <?php if ( is_active_sidebar( 'first-startpage-widget-area' ) ) { ?>

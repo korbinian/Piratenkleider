@@ -11,7 +11,7 @@ License URI: http://creativecommons.org/licenses/by-sa/3.0/de/deed.de
 */
 
 /* import core styles | Basis-Stylesheets einbinden */
-@import url(yaml/core/base.css);
+@import url(yaml/core/base.min.css);
 
 /* import screen layout | Screen-Layout einbinden */
 @import url(css/piratenkleider.css);
@@ -20,6 +20,8 @@ License URI: http://creativecommons.org/licenses/by-sa/3.0/de/deed.de
 @import url(css/basemod_mediaqueries.css);
 @import url(css/basemod_linkicons.css);
 @import url(css/basemod_ymbuttons.css);
+
+@import url(css/colors_de.css); 
 
 /* import print layout | Druck-Layout einbinden */
 @import url(css/print.css);

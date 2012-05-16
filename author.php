@@ -3,7 +3,7 @@
     if (!isset($options['src-default-symbolbild'])) 
             $options['src-default-symbolbild'] = $defaultoptions['src-default-symbolbild'];
 ?> 
-<div class="section content">
+<div class="section content" id="main-content">
   <div class="row">
     <div class="content-primary">
       <div class="content-header">   

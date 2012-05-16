@@ -1,7 +1,7 @@
 <?php get_header();    
   $options = get_option( 'piratenkleider_theme_options' );  
 ?> 
-<div class="section content">
+<div class="section content" id="main-content">
   <div class="row">
     <div class="content-primary">
       <div class="skin">
