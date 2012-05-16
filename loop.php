@@ -100,6 +100,6 @@
 
                 <?php /* Display navigation to next/previous pages when applicable */ ?>
                 <?php if (  $wp_query->max_num_pages > 1 ) : ?>
-                                        <?php next_posts_link( __( '&larr; &Auml;ltere Beitr&auml;ge', 'piratenkleider' ) ); ?>
-                                        <?php previous_posts_link( __( 'Neuere Beitr&auml;ge &rarr;', 'piratenkleider' ) ); ?>
+                            <?php next_posts_link( __( '&larr; &Auml;ltere Beitr&auml;ge', 'piratenkleider' ) ); ?>
+                            <?php previous_posts_link( __( 'Neuere Beitr&auml;ge &rarr;', 'piratenkleider' ) ); ?>
                 <?php endif; ?>

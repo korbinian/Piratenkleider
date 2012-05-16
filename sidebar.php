@@ -8,16 +8,14 @@
    
   
     if ( $options['newsletter'] == "1" ){
-     ?>            
-
-       
+     ?>                   
         <div class="newsletter">
-             <h2>Newsletter</h2>
+             <h2><?php _e("Newsletter", 'piratenkleider'); ?></h2>
                         <form method="post" action="<?php echo $options['url-newsletteranmeldung']; ?>">						
-                                <label for="email-newsletter">Zum Newsletter anmelden:</label>
-                                <input type="text" name="email-newsletter" id="email-newsletter" value="E-Mail-Adresse eingeben" placeholder="E-Mail"
-                                       onfocus="if(this.value=='E-Mail-Adresse eingeben')this.value='';" onblur="if(this.value=='')this.value='E-Mail-Adresse eingeben';">
-                                <input type="submit" name="email-button" value="abonnieren" id="newslettersubmit">
+                                <label for="email-newsletter"><?php _e("Zum Newsletter anmelden", 'piratenkleider'); ?></label>
+                                <input type="text" name="email-newsletter" id="email-newsletter" value="<?php _e("E-Mail-Adresse eingeben", 'piratenkleider'); ?>" placeholder="<?php _e("E-Mail-Adresse eingeben", 'piratenkleider'); ?>"
+                                       onfocus="if(this.value=='<?php _e("E-Mail-Adresse eingeben", 'piratenkleider'); ?>')this.value='';" onblur="if(this.value=='')this.value='<?php _e("E-Mail-Adresse eingeben", 'piratenkleider'); ?>';">
+                                <input type="submit" name="email-button" value="<?php _e("anmelden", 'piratenkleider'); ?>" id="newslettersubmit">
                                 <p><?php _e("Hinweis: Beim Aufruf wird der Webauftritt verlassen.", 'piratenkleider'); ?>
                                 </p>
                         </form>           

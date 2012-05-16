@@ -1,11 +1,11 @@
 <?php 
 global $defaultoptions;
 ?>
-<h2 class="skip"><?php echo $defaultoptions['default_text_title_search']; ?></h2>
+<h2 class="skip"><?php _e("Suche", 'piratenkleider'); ?></h2>
 
 <form method="get" class="searchform" action="<?php echo home_url(); ?>/">
-	<label class="visuallyhidden" for="s"><?php echo $defaultoptions['default_text_title_search']; ?>:</label>
-	<input type="text" value="<?php the_search_query(); ?>" name="s" id="s" placeholder="<?php echo $defaultoptions['default_text_search_placeholder']; ?>"  
-            onfocus="if(this.value=='<?php echo $defaultoptions['default_text_search_placeholder']; ?>')this.value='';" onblur="if(this.value=='')this.value='<?php echo $defaultoptions['default_text_search_placeholder']; ?>';" />
-	<input type="submit" class="searchsubmit" value="suchen" />
+	<label class="visuallyhidden" for="s"><?php _e("Suche nach", 'piratenkleider'); ?>:</label>
+	<input type="text" value="<?php the_search_query(); ?>" name="s" id="s" placeholder="<?php _e("Suchbegriff eingeben", 'piratenkleider'); ?>"  
+            onfocus="if(this.value=='<?php _e("Suchbegriff eingeben", 'piratenkleider'); ?>')this.value='';" onblur="if(this.value=='')this.value='<?php _e("Suchbegriff eingeben", 'piratenkleider'); ?>';" />
+	<input type="submit" class="searchsubmit" value="<?php _e("Suchen", 'piratenkleider'); ?>" />
 </form>

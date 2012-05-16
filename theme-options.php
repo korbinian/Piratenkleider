@@ -179,9 +179,6 @@ function theme_options_do_page() {
                                 $options['aktiv-commentreplylink'] = $defaultoptions['aktiv-commentreplylink'];                            
                         ?>
 			<table class="form-table">
-                                    
-                            
-                              
                               
                                 <tr valign="top"><th scope="row">Defaultbilder f&uuml;r Seiten</th>
 					<td>
@@ -1635,10 +1632,9 @@ function theme_designspecials_do_page() {
 		<?php if ( false !== $_REQUEST['settings-updated'] ) : ?>
 		<div class="updated fade"><p><strong><?php _e( 'Designeinstellungen wurden gespeichert.', 'piratenkleider' ); ?></strong></p></div>
 		<?php endif; ?>
-                <p><b>Achtung:</b> Diese Einstellungen sollten nur in Ausnahmef&auml;llen ge&auml;ndert werden. Bei einer 
-                falschen Nutzung k&ouml;nnen Eingaben die Gestaltung des Webauftritts sch&auml;digen. <br>
-                In anderen Worten: <em>Jo min Jun. Dat wat du hier doust, dat geit voll uff de 
-                Basansegel. Pass du jo up!</em>
+                
+                <p> <?php _e( '<b>Achtung:</b> Diese Einstellungen sollten nur in Ausnahmef&auml;llen ge&auml;ndert werden. Bei einer 
+                falschen Nutzung k&ouml;nnen Eingaben die Gestaltung des Webauftritts sch&auml;digen.', 'piratenkleider' ); ?>           
                 </p>
                 
 		<form method="post" action="options.php">
@@ -1653,6 +1649,24 @@ function theme_designspecials_do_page() {
 
                     ?>
                     <table class="form-table">
+                        <tr valign="top"><th scope="row"><?php _e( 'L&auml;nderfarbe aktivieren', 'piratenkleider' ); ?></th>
+                        <td>
+                
+                                
+                        <select name="piratenkleider_theme_designspecials[css-colorfile]">
+                            <option value="" <?php if ( $options['css-colorfile'] == '') echo ' selected="selected"'; ?>><?php _e( 'Deutschland (Orange)', 'piratenkleider' ); ?></option>
+                            <option value="colors_lu.css" <?php if ( $options['css-colorfile'] == 'colors_lu.css') echo ' selected="selected"'; ?>><?php _e( 'Luxemburg (Violett)', 'piratenkleider' ); ?></option>
+                            <option value="colors_tk.css" <?php if ( $options['css-colorfile'] == 'colors_tk.css') echo ' selected="selected"'; ?>><?php _e( 'T&uuml;rkei (Cyan)', 'piratenkleider' ); ?></option>
+                        </select>   
+
+
+                        <label class="description" for="piratenkleider_theme_designspecials[css-colorfile]">
+                            <?php _e( 'Auswahl, welche l&auml;nderbezogene Farbvariante aktiviert werden soll.', 'piratenkleider' ); ?>
+                        </label>
+
+                        </td>					                           
+		       </tr>
+                       
                        <tr valign="top"><th scope="row">Höhe des Kopfbereiches ( .header )</th>
                         <td>
                             <input id="piratenkleider_theme_designspecials[css-default-header-height]" type="text" 
@@ -1806,9 +1820,7 @@ function theme_designspecials_validate( $input ) {
         $input['css-default-header-background-image'] = wp_filter_post_kses( $input['css-default-header-background-image'] );
         $input['css-default-header-background-position'] = wp_filter_post_kses( $input['css-default-header-background-position'] );
         $input['css-default-header-background-repeat'] = wp_filter_post_kses( $input['css-default-header-background-repeat'] );
-
-    
-    
-    
+        $input['css-colorfile'] = wp_filter_post_kses( $input['css-colorfile'] );
+   
 	return $input;
 }

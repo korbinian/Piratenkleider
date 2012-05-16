@@ -20,7 +20,7 @@
              
              
               <div class="widget">
-                <h2>&Uuml;bersicht aller Tags</h2>
+                <h2><?php _e( '&Uuml;bersicht &uuml;ber die Schlagworte', 'piratenkleider' ); ?></h2>
                 <div class="tagcloud">                   
                   <?php wp_tag_cloud(array('smallest'  => 14, 'largest'   => 28)); ?>                  
                 </div>    
@@ -30,7 +30,7 @@
 
     <div class="content-aside">
       <div class="skin">       
-          <h1 class="skip"><?php echo $defaultoptions['default_text_title_sidebar']; ?></h1>
+          <h1 class="skip"><?php _e( 'Weitere Informationen', 'piratenkleider' ); ?></h1>
          <?php get_sidebar(); ?>
       </div>
     </div>

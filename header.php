@@ -91,6 +91,9 @@ if ((isset( $options['meta-keywords'] )) && ( strlen(trim($options['meta-keyword
 
 <link rel="profile" href="http://gmpg.org/xfn/11" />
 <link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo( 'stylesheet_url' ); ?>">
+<?php if ((isset($designspecials['css-colorfile'])) && (strlen(trim($designspecials['css-colorfile']))>1)) { 
+    echo '<link rel="stylesheet" type="text/css" media="all" href="'.get_template_directory_uri().'/css/'.$designspecials['css-colorfile'].'">';
+} ?>
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 <?php if ( is_singular() && get_option( 'thread_comments' ) )
 		wp_enqueue_script( 'comment-reply' );
@@ -100,7 +103,7 @@ if ((isset( $options['meta-keywords'] )) && ( strlen(trim($options['meta-keyword
 <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/yaml/core/iehacks.min.css" type="text/css"/>
 <![endif]-->
 
-<?php if (isset($cssadd)) {
+<?php if ((isset($cssadd)) && (strlen(trim($cssadd))>1)) {
   echo "<style type=\"text/css\">\n";  
   echo $cssadd;  
   echo "</style>\n";  
@@ -110,9 +113,9 @@ if ((isset( $options['meta-keywords'] )) && ( strlen(trim($options['meta-keyword
 <body <?php body_class(); ?>>
 
 	<ul role="navigation" class="nav skiplinks">		
-		<li><a class="ym-skip" href="#nav"><?php echo $defaultoptions['default_text_title_skiplink_mainnav']; ?></a></li>
-		<li><a class="ym-skip" href="#main-content"><?php echo $defaultoptions['default_text_title_skiplink_content']; ?></a></li>
-                <li><a class="ym-skip" href="#searchform"><?php echo $defaultoptions['default_text_title_skiplink_search']; ?></a></li>
+		<li><a class="ym-skip" href="#nav"><?php _e( 'Zur Navigation springen.', 'piratenkleider' ); ?></a></li>
+		<li><a class="ym-skip" href="#main-content"><?php _e( 'Zum Inhalt springen.', 'piratenkleider' ); ?></a></li>
+                <li><a class="ym-skip" href="#searchform"><?php _e( 'Zur Suche springen.', 'piratenkleider' ); ?></a></li>
 	</ul>
 
 
@@ -129,7 +132,7 @@ if ((isset( $options['meta-keywords'] )) && ( strlen(trim($options['meta-keyword
 			</div>
                       
 			<div class="nav-top" role="navigation">				                                                        
-				<h2 class="skip"><?php echo $defaultoptions['default_text_title_techmenu']; ?></h2>
+				<h2 class="skip"><?php _e( 'Service-Navigation', 'piratenkleider' ); ?></h2>
                                  <?php 
                                     if ( $options['alle-socialmediabuttons'] == "1" ){
                                  ?> 
@@ -167,7 +170,7 @@ if ((isset( $options['meta-keywords'] )) && ( strlen(trim($options['meta-keyword
 			</div>
                    
 			<div class="nav-main" role="navigation" id="nav">
-				<h2 class="skip"><?php echo $defaultoptions['default_text_title_mainnav']; ?></h2>
+				<h2 class="skip"><?php _e( 'Navigation', 'piratenkleider' ); ?></h2>
 				<?php 
                                 if ( has_nav_menu( 'primary' ) ) {
                                     wp_nav_menu( array( 'container_class' => 'menu-header', 'theme_location' => 'primary', 'walker'  => new My_Walker_Nav_Menu()) );      
@@ -188,7 +191,7 @@ if ((isset( $options['meta-keywords'] )) && ( strlen(trim($options['meta-keyword
          
 			<div class="sticker">
                             <div class="skin">   
-                               <h2 class="skip"><?php echo $defaultoptions['default_text_title_sticker']; ?></h2>
+                               <h2 class="skip"><?php _e( 'Sticker', 'piratenkleider' ); ?></h2>
                                <?php 
                                
                                

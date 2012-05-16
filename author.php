@@ -28,15 +28,12 @@
 <?php rewind_posts(); get_template_part( 'loop', 'author' ); ?>
 
 
-            
-
-
        </div>
     </div>
 
     <div class="content-aside">
       <div class="skin">      
-          <h1 class="skip"><?php echo $defaultoptions['default_text_title_sidebar']; ?></h1>
+          <h1 class="skip"><?php _e( 'Weitere Informationen', 'piratenkleider' ); ?></h1>
          <?php get_sidebar(); ?>
       </div>
     </div>

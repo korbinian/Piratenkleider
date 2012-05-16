@@ -99,9 +99,9 @@ In ihren Browsereinstellungen k&ouml;nnen sie die Annahme von Cookies unterbinde
     gespeicherten Daten, deren Herkunft und Empf&auml;nger sowie den Zweck der 
     Speicherung. Auskunft &uuml;ber die gespeicherten Daten gibt Ihnen die 
     Piratenpartei Deutschland. Wenden Sie sich dazu bitte an
-    <?php if (isset($kontaktinfos['dsbemail'])) {
+    <?php if ( (isset($kontaktinfos['dsbemail'])) && (strlen(trim($kontaktinfos['dsbemail']))>1)) {
         echo '<a href="mailto:'.$kontaktinfos['dsbemail'].'">';
-        if (isset($kontaktinfos['dsbperson'])) {
+        if ((isset($kontaktinfos['dsbperson'])) && (strlen(trim($kontaktinfos['dsbperson']))>1)) {
             echo 'den/die Datenschutzbeauftrage/n ';
             echo $kontaktinfos['dsbperson'];
         } else {
@@ -122,9 +122,9 @@ In ihren Browsereinstellungen k&ouml;nnen sie die Annahme von Cookies unterbinde
     beantworten konnte oder wenn Sie zu einem Punkt vertiefte Informationen 
     w&uuml;nschen, wenden Sie sich bitte jederzeit an die Piraten. Sie k&ouml;nnen ihre
     Fragen und Anregungen im Forum oder an 
-    <?php if (isset($kontaktinfos['dsbemail'])) {
+    <?php if ((isset($kontaktinfos['dsbemail']))  && (strlen(trim($kontaktinfos['dsbemail']))>1)) {
         echo '<a href="mailto:'.$kontaktinfos['dsbemail'].'">';
-        if (isset($kontaktinfos['dsbperson'])) {
+        if ((isset($kontaktinfos['dsbperson']))  && (strlen(trim($kontaktinfos['dsbperson']))>1)) {
             echo 'den/die Datenschutzbeauftrage/n ';
             echo $kontaktinfos['dsbperson'];
         } else {
@@ -144,7 +144,7 @@ In ihren Browsereinstellungen k&ouml;nnen sie die Annahme von Cookies unterbinde
     <div class="content-aside">
       <div class="skin">
 
-        <h1 class="skip"><?php echo $defaultoptions['default_text_title_sidebar']; ?></h1>   
+        <h1 class="skip"><?php _e( 'Weitere Informationen', 'piratenkleider' ); ?></h1>   
             <?php
             if (!isset($options['zeige_subpagesonly'])) 
             $options['zeige_subpagesonly'] = $defaultoptions['zeige_subpagesonly'];

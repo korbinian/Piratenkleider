@@ -15,7 +15,7 @@
   <div class="row">
     <div class="content-primary">
       <div class="content-header">
-        <h1 id="page-title"><span>Impressum</span></h1>   
+        <h1 id="page-title"><span><?php _e( 'Impressum', 'piratenkleider' ); ?></span></h1>   
        <?php if (has_post_thumbnail()) { 
             echo '<div class="symbolbild">';
               the_post_thumbnail(); 
@@ -36,7 +36,7 @@
         <?php edit_post_link( __( 'Bearbeiten', 'piratenkleider' ), '', '' ); ?>
         <?php endwhile; ?>
           
-          <?php if (isset($kontaktinfos['impressumdienstanbieter'])) { ?>
+          <?php if ((isset($kontaktinfos['impressumdienstanbieter'])) && (strlen(trim($kontaktinfos['impressumdienstanbieter']))>1)) { ?>
           <p>
               Dienstanbieter dieser Seite ist der  
                <?php echo $kontaktinfos['impressumdienstanbieter']; ?>.               
@@ -49,15 +49,15 @@
           </p>
           
           <?php } ?>
-           <?php if (isset($kontaktinfos['impressumperson'])) { ?>
+           <?php if ((isset($kontaktinfos['impressumperson']))&& (strlen(trim($kontaktinfos['impressumperson']))>1)) { ?>
           <p>Verantwortlicher gem&auml;&szlig; &sect;5 TMG ist 
                 <?php echo $kontaktinfos['impressumperson']; ?>.
           </p>
            <?php } ?>
           
-            <?php if ((isset($kontaktinfos['posttitel'])) 
-                  && (isset($kontaktinfos['poststrasse']))
-                  && (isset($kontaktinfos['poststadt']))) { ?>
+            <?php if ((isset($kontaktinfos['posttitel'])) && (strlen(trim($kontaktinfos['posttitel']))>1)
+                  && (isset($kontaktinfos['poststrasse']))&& (strlen(trim($kontaktinfos['poststrasse']))>1)
+                  && (isset($kontaktinfos['poststadt'])) && (strlen(trim($kontaktinfos['poststadt']))>1)) { ?>
                 
             <h2>Postanschrift</h2>
             <address>
@@ -67,7 +67,7 @@
                 <?php echo $kontaktinfos['poststadt']?><br>                 
             </address>                  
            <?php } ?>
-           <?php if (isset($kontaktinfos['kontaktemail'])) { ?>
+           <?php if ((isset($kontaktinfos['kontaktemail'])) && (strlen(trim($kontaktinfos['kontaktemail']))>1)) { ?>
             <h2>E-Mail</h2>   
             <p>
                 <a href="mailto:<?php echo $kontaktinfos['kontaktemail']?>"><?php echo $kontaktinfos['kontaktemail']?></a>
@@ -78,9 +78,9 @@
                 <a href="mailto:<?php echo get_bloginfo( 'admin_email' )?>"><?php echo get_bloginfo( 'admin_email' )?></a>
             </p>    
            <?php } ?>
-           <?php if ((isset($kontaktinfos['ladungtitel'])) 
-                  && (isset($kontaktinfos['ladungstrasse']))
-                  && (isset($kontaktinfos['ladungstadt']))) { ?>  
+           <?php if ((isset($kontaktinfos['ladungtitel'])) && (strlen(trim($kontaktinfos['ladungtitel']))>1)
+                  && (isset($kontaktinfos['ladungstrasse']))&& (strlen(trim($kontaktinfos['ladungstrasse']))>1)
+                  && (isset($kontaktinfos['ladungstadt'])) && (strlen(trim($kontaktinfos['ladungstadt']))>1)) { ?>  
             <h2>Ladungsf&auml;hige Anschrift</h2>
              <address>
                 <?php echo $kontaktinfos['ladungtitel']?><br> 
@@ -90,9 +90,9 @@
             </address>  
             
           <?php } else { 
-               if ((isset($kontaktinfos['posttitel'])) 
-                  && (isset($kontaktinfos['poststrasse']))
-                  && (isset($kontaktinfos['poststadt']))) { ?>
+               if ((isset($kontaktinfos['posttitel']))  && (strlen(trim($kontaktinfos['posttitel']))>1) 
+                  && (isset($kontaktinfos['poststrasse']))  && (strlen(trim($kontaktinfos['poststrasse']))>1)
+                  && (isset($kontaktinfos['poststadt'])) && (strlen(trim($kontaktinfos['poststadt']))>1) ) { ?>
             <h2>Ladungsf&auml;hige Anschrift</h2>
              <address>
                 <?php echo $kontaktinfos['posttitel']?><br> 
@@ -201,17 +201,17 @@ stehen s&auml;mtliche Werke dieses Angebots unter einer
 </p>
 <ul>
     <li><a class="extern" href="http://www.yaml.de">YAML CSS Framework</a> (Lizensiert unter der
-        Creative Commons Attribution 2.0 License).</li>
+        <span lang="en">Creative Commons Attribution 2.0 License</span>).</li>
     
-    <li><a class="extern" href="http://www.jquery.com">JavaScript Framework jQuery</a> (GNU General Public License (GPL) Version 2)</li>
-    <li><a class="extern" href="http://flex.madebymufffin.com">jQuery FlexSlider</a> (MIT license)</li>
-    <li><a class="extern bebas" href="http://dharmatype.com/dharma-type/bebas-neue.html">Schrift Bebas Neue von Dharmatype</a> (SIL Open Font License 1.1)</li>
+    <li><a class="extern" href="http://www.jquery.com">JavaScript Framework jQuery</a> (<span lang="en">GNU General Public License (GPL)</span> Version 2)</li>
+    <li><a class="extern" href="http://flex.madebymufffin.com">jQuery FlexSlider</a> (<span lang="en">MIT License</span>)</li>
+    <li><a class="extern bebas" href="http://dharmatype.com/dharma-type/bebas-neue.html">Schrift Bebas Neue von Dharmatype</a> (span lang="en">SIL Open Font License</span> 1.1)</li>
     <?php 
     $theme_data = get_theme_data( get_template_directory(). '/style.css' );
     ?>
     <li><a class="extern" href="<?php echo $theme_data['URI']; ?>">Wordpress Theme <?php echo $theme_data['Name']; ?></a>, Version <?php echo $theme_data['Version']; ?>
-    (Lizensiert unter der Creative Commons Namensnennung 3.0 Deutschland Lizenz</a>).  </li>
-    <li><a class="extern" href="http://wiki.piratenpartei.de/Grafiken">Wallpaper und Bildmaterial der Piratenpartei Deutschland</a></li>    
+    (Lizensiert unter der Creative Commons Namensnennung 3.0 Deutschland Lizenz</a>)  </li>
+    <li><a class="extern" href="http://wiki.piratenpartei.de/Grafiken">Wallpaper und Bildmaterial der Piratenpartei Deutschland</a> (Lizensiert unter der Creative Commons Namensnennung 3.0 Deutschland Lizenz</a>)</li>    
 </ul>
 
 <h3>Credits</h3>
@@ -259,7 +259,7 @@ der unverlangten Zusendung von Werbeinformationen, etwa durch Spam-Mails, vor.</
 
     <div class="content-aside">
       <div class="skin">
-        <h1 class="skip"><?php echo $defaultoptions['default_text_title_sidebar']; ?></h1>   
+        <h1 class="skip"><?php _e( 'Weitere Informationen', 'piratenkleider' ); ?></h1>   
         
          <?php  
             if (!isset($options['zeige_subpagesonly'])) 

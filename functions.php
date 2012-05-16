@@ -2,10 +2,9 @@
 /**
  * Piratenkleider Theme Optionen
  *
- * @origin author: IT-Website-Crew, http://wiki.piratenpartei.de/Website-Team
  * @source http://github.com/xwolfde/Piratenkleider
  * @creator xwolf
- * @version 2.1
+ * @version 2.5
  * @licence CC-BY-SA 3.0 
  */
 
@@ -429,7 +428,7 @@ function piratenkleider_excerpt_length( $length ) {
 add_filter( 'excerpt_length', 'piratenkleider_excerpt_length' );
 
 function piratenkleider_continue_reading_link() {
-        return ' <a title="Zum Artikel '.strip_tags(get_the_title()).'" href="'. get_permalink() . '">' . __( 'Weiterlesen <span class="meta-nav">&rarr;</span>', 'piratenkleider' ) . '</a>';
+        return ' <a title="'.strip_tags(get_the_title()).'" href="'. get_permalink() . '">' . __( 'Weiterlesen <span class="meta-nav">&rarr;</span>', 'piratenkleider' ) . '</a>';
 }
 
 function piratenkleider_auto_excerpt_more( $more ) {
