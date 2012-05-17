@@ -20,6 +20,7 @@ AUTOREN / ENTWICKLER
    Wolfgang Wiese (xwolf), http://www.xwolf.de 
 
    Mit Hilfe von 
+     Andre Sendowski, http://www.iphone-notes.de/
      Heiko Philippski, http://www.phindie.de/
      Kerstin Probiesch, http://www.barrierefreie-informationskultur.de
 
@@ -272,6 +273,13 @@ Administrative Hinweise für Wordpress Theme-Editoren:
    für die Texte bestimmt werden.
    Siehe hier zu die FAQ der Dokumentation für Beispiele.
 
+    Vorhandene CSS-Klassen für Texte:
+     cicolor =  setzt die Farbe die jeweils als Grundfarbe des Designs 
+                definiert ist. (Default: orange)
+     gedreht = Dreht den ganzen Text um 5 Grad
+     animate = Lässt den Text bei einem Hover sich drehen und skalieren
+     shadow  = Gibt den Text einen Schattenwurf
+               (Bei gedrehten Text wird ein Schattenwurf automatisch gesetzt) 
 
 5.  Die Teaserlinks rechts neben dem Bildslider auf der Startseite können
     individuell über die Theme-Option "Takelage setzen" gesetzt
@@ -296,4 +304,21 @@ Administrative Hinweise für Wordpress Theme-Editoren:
    kann auch die Klasse  .nolinkicon  gesetzt werden.
    Linkicons werden nur für den Inhaltsbereich gesetzt.
 
+7. Farbcodes und Sprache der Texte
+   Laenderspezifische Farbcodes werden in den Dateien
+       /css/colors_tk.css  (für Türkei)
+       /css/colors_lu.css (für Luxemburg)
+       /css/colors_de.css (für Deutschland, jedoch nicht notwendig da Default)
+   abgelegt.
+   Diese greifen teilweise auf eigene Bilder zu. 
+   Diese Bilder sollten in /images/ liegen wenn sie allgemein sind und
+   in /images/int/ wenn es um Bilder geht, die länderspezifisch sind.
+
+   Hinsichtlich der Sprachübersetzung von Texten können eigene Language-Dateien
+   in einem Verzeichnis  /laguages/ abgelegt werden. Das Theme berücksichtigt
+   diese, wenn solche Sprachdateien vorhanden sind.
+   Zur Nutzung und Erstellung von Sprachdateien siehe
+    http://www.catswhocode.com/blog/how-to-make-a-translatable-wordpress-theme
+
+   
 
