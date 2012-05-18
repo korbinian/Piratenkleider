@@ -26,10 +26,11 @@
             $options['teaser-title-words'] = $defaultoptions['teaser-title-words'];
           
         query_posts( array( 'cat' => "$cat", 'posts_per_page' => $numberarticle) );
-        
-        echo '<div class="flexslider">';
-        echo '<h2 class="skip">'.$defaultoptions['default_text_title_slider'].'</h2>';
-        echo "<ul class='slides'>";
+        ?>
+        <div class="flexslider">
+            <h2 class="skip"><?php _e( 'Aktuelle Themen', 'piratenkleider' ); ?></h2>
+            <ul class="slides">
+        <?php 
         if ( have_posts() ) while ( have_posts() ) : the_post();
             echo "<li class='slide'>";
             if (has_post_thumbnail()) {

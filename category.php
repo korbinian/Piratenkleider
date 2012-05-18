@@ -7,7 +7,7 @@
   <div class="row">
     <div class="content-primary">
       <div class="content-header">
-            <h1><?php printf( __( '%s', 'piratenkleider' ), '' .$defaultoptions['default_text_pretitle_category']. single_cat_title( '', false ) . '' ); ?></h1>           
+            <h1><?php printf( __( 'Kategorie %s', 'piratenkleider' ), '' . single_cat_title( '', false ) . '' ); ?></h1>           
           <?php if ($options['aktiv-platzhalterbilder-indexseiten']) { ?>         
           <div class="symbolbild"> 
               <img src="<?php echo $options['src-default-symbolbild']?>" alt="" >           

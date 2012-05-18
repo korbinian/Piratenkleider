@@ -82,26 +82,11 @@ $defaultoptions = array(
     'default_text_pretitle_search'          => 'Suchergebnisse f&uuml;r: ',
     'default_text_search_placeholder'       => 'Suchbegriff eingeben',
     'default_text_breadcrumb_home'          => 'Startseite',
-    'default_text_breadcrumb_category'      => 'Artikel der Kategorie ',
-    'default_text_breadcrumb_tags'          => 'Artikel mit dem Tag ',
-    'default_text_breadcrumb_search'        => 'Suche ',
-    'default_text_breadcrumb_author'        => 'Artikel von ',
-    'default_text_home_title_prevarticle'   => '&Auml;ltere Artikel',
-    'default_text_home_title_categories'    => 'Kategorien',
-    'default_text_home_title_tags'          => 'Schlagworte',
-    'default_text_home_title_articles'      => 'Aktuelle Artikel',
-    'default_text_title_mainnav'            => 'Navigation',
-    'default_text_title_techmenu'           => 'Service-Navigation',
-    'default_text_title_sticker'            => 'Sticker',
-    'default_text_title_search'             => 'Suche',
-    'default_text_title_skiplink_mainnav'   => 'Zur Navigation springen.',
-    'default_text_title_skiplink_techmenu'  => 'Zur Service-Navigation springen.',
-    'default_text_title_skiplink_search'    => 'Zur Suche springen.',  
-    'default_text_title_skiplink_content'   => 'Zum Inhalt springen.',
-    'default_text_title_sidebar'            => 'Weitere Informationen',
-    'default_text_title_home_backlink'      => 'Zur&uuml;ck zur Startseite',
-    'default_text_home_title_further'       => 'Weitere Artikel',
-    'default_text_comments_title'           => 'Kommentare',
+
+
+
+
+
     
 );
 /**
@@ -876,7 +861,7 @@ add_filter('the_content', 'wpi_linkexternclass');
 function dimox_breadcrumbs() {
   global $defaultoptions;
   $delimiter = '/';
-  $home = $defaultoptions['default_text_breadcrumb_home']; // text for the 'Home' link
+  $home = __( 'Startseite', 'piratenkleider' ); // text for the 'Home' link
   $before = '<span class="current">'; // tag before the current crumb
   $after = '</span>'; // tag after the current crumb
  
@@ -895,7 +880,7 @@ function dimox_breadcrumbs() {
       $thisCat = get_category($thisCat);
       $parentCat = get_category($thisCat->parent);
       if ($thisCat->parent != 0) echo(get_category_parents($parentCat, TRUE, ' ' . $delimiter . ' '));
-      echo $before . $defaultoptions['default_text_breadcrumb_category']. '"' . single_cat_title('', false) . '"' . $after;
+      echo $before . __( 'Artikel der Kategorie ', 'piratenkleider' ). '"' . single_cat_title('', false) . '"' . $after;
  
     } elseif ( is_day() ) {
       echo '<a href="' . get_year_link(get_the_time('Y')) . '">' . get_the_time('Y') . '</a> ' . $delimiter . ' ';
@@ -948,15 +933,15 @@ function dimox_breadcrumbs() {
       echo $before . get_the_title() . $after;
  
     } elseif ( is_search() ) {
-      echo $before . $defaultoptions['default_text_breadcrumb_search'].'"' . get_search_query() . '"' . $after;
+      echo $before . __( 'Suche', 'piratenkleider' ).'"' . get_search_query() . '"' . $after;
  
     } elseif ( is_tag() ) {
-      echo $before . $defaultoptions['default_text_breadcrumb_tags']. '"' . single_tag_title('', false) . '"' . $after;
+      echo $before . __( 'Artikel mit Schlagwort ', 'piratenkleider' ). '"' . single_tag_title('', false) . '"' . $after;
  
     } elseif ( is_author() ) {
        global $author;
       $userdata = get_userdata($author);
-      echo $before . $defaultoptions['default_text_breadcrumb_author']. $userdata->display_name . $after;
+      echo $before . __( 'Artikel von ', 'piratenkleider' ). $userdata->display_name . $after;
  
     } elseif ( is_404() ) {
       echo $before . '404' . $after;

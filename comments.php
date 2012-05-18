@@ -4,7 +4,7 @@
 endif; ?>
 
 <?php if ( have_comments() ) : ?>
-    <h2 id="comments-title"><?php echo $defaultoptions['default_text_comments_title']; ?></h2>
+    <h2 id="comments-title"><?php _e("Kommentare", 'piratenkleider'); ?></h2>
      <p>   
     <?php printf( _n( 'Ein Kommentar zu %2$s', '%1$s Kommentare zu %2$s', get_comments_number(), 'piratenkleider' ), number_format_i18n( get_comments_number() ), '' . get_the_title() . '' ); ?>
     </p>
