@@ -74,19 +74,8 @@ $defaultoptions = array(
     'stickerlink2-content'          => '<img src="'.get_template_directory_uri().'/images/spenden.png" width="104" height="68" alt="Hilf uns mit einer Spende">',
     'stickerlink2-url'              => 'https://www.piratenpartei.de/mitmachen/spenden/',
     'stickerlink3-content'          => '',
-    'stickerlink3-url'              => '',    
+    'stickerlink3-url'              => ''  
     
-    'default_text_title_slider'             => 'Topthemen',
-    'default_text_pretitle_category'        => 'Kategorie: ',
-    'default_text_pretitle_tags'            => 'Schlagwort: ',
-    'default_text_pretitle_search'          => 'Suchergebnisse f&uuml;r: ',
-    'default_text_search_placeholder'       => 'Suchbegriff eingeben',
-    'default_text_breadcrumb_home'          => 'Startseite',
-
-
-
-
-
     
 );
 /**
