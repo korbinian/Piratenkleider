@@ -49,52 +49,7 @@ if (!isset($options['aktiv-defaultseitenbild']))
   
             if (!isset($options['zeige_sidebarpagemenu'])) 
             $options['zeige_sidebarpagemenu'] = $defaultoptions['zeige_sidebarpagemenu'];
-
-          if ($options['zeige_sidebarpagemenu']==1) {   
-           if ($options['zeige_subpagesonly']==1) {
-                //if the post has a parent
-
-                if($post->post_parent){
-                    //collect ancestor pages
-                    $relations = get_post_ancestors($post->ID);
-                    //get child pages
-                    $result = $wpdb->get_results( "SELECT ID FROM wp_posts WHERE post_parent = $post->ID AND post_type='page'" );
-                    if ($result){
-                        foreach($result as $pageID){
-                            array_push($relations, $pageID->ID);
-                        }
-                    }
-                    //add current post to pages
-                    array_push($relations, $post->ID);
-                    //get comma delimited list of children and parents and self
-                    $relations_string = implode(",",$relations);
-                    //use include to list only the collected pages. 
-                    $sidelinks = wp_list_pages("sort_column=menu_order&title_li=&echo=0&include=".$relations_string);
-                }else{
-                    // display only main level and children
-                    $sidelinks = wp_list_pages("sort_column=menu_order&title_li=&echo=0&depth=1&child_of=".$post->ID);
-                }
-
-                if ($sidelinks) { ?>
-                <ul class="menu">
-                    <?php //links in <li> tags
-                    echo $sidelinks; ?>
-                </ul>         
-                <?php } 
-                             
-             } else {
-          
-                if ( has_nav_menu( 'primary' ) ) {
-                    wp_nav_menu( array('depth' => 0, 'container_class' => 'menu-header', 'theme_location' => 'primary', 'walker'  => new My_Walker_Nav_Menu()) );      
-                } else { 
-                ?>
-                <ul class="menu">
-                    <?php  wp_page_menu( ); ?>
-                </ul> 
-                <?php 
-                } 
-             }
-          }
+            get_piratenkleider_seitenmenu($options['zeige_sidebarpagemenu'],$options['zeige_subpagesonly']);
         
         $custom_fields = get_post_custom();
         if ($custom_fields['right_column'][0]<>'') {

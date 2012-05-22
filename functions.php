@@ -727,50 +727,39 @@ function get_piratenkleider_seitenmenu( $zeige_sidebarpagemenu = 1 , $zeige_subp
   global $defaultoptions;
   global $post;
   
+    if ($zeige_sidebarpagemenu==1) {   
+        if ($zeige_subpagesonly==1) {
+            //if the post has a parent
 
-
-          if ($zeige_sidebarpagemenu==1) {   
-           if ($zeige_subpagesonly==1) {
-                //if the post has a parent
-
-                if($post->post_parent){
-                    //collect ancestor pages
-                    $relations = get_post_ancestors($post->ID);
-                    //get child pages
-                    $result = $wpdb->get_results( "SELECT ID FROM wp_posts WHERE post_parent = $post->ID AND post_type='page'" );
-                    if ($result){
-                        foreach($result as $pageID){
-                            array_push($relations, $pageID->ID);
-                        }
-                    }
-                    //add current post to pages
-                    array_push($relations, $post->ID);
-                    //get comma delimited list of children and parents and self
-                    $relations_string = implode(",",$relations);
-                    //use include to list only the collected pages. 
-                    $sidelinks = wp_list_pages("sort_column=menu_order&title_li=&echo=0&include=".$relations_string);
-                }else{
-                    // display only main level and children
-                    $sidelinks = wp_list_pages("sort_column=menu_order&title_li=&echo=0&depth=1&child_of=".$post->ID);
-                }
-
-                if ($sidelinks) { 
-                    echo '<ul class="menu">';                   
-                    echo $sidelinks; 
-                    echo '</ul>';         
+            if($post->post_parent){
+               if($post->ancestors) {
+                    $ancestors = end($post->ancestors);
+                    $sidelinks = wp_list_pages("title_li=&child_of=".$ancestors."&echo=0");
+                } else {                
+                    $sidelinks .= wp_list_pages("sort_column=menu_order&title_li=&echo=0&depth=5&child_of=".$post->post_parent);              
                 } 
-                             
-             } else {
-          
-                if ( has_nav_menu( 'primary' ) ) {
-                    wp_nav_menu( array('depth' => 0, 'container_class' => 'menu-header', 'theme_location' => 'primary', 'walker'  => new My_Walker_Nav_Menu()) );      
-                } else { 
-                    echo '<ul class="menu">';   
-                     wp_page_menu( ); 
-                   echo '</ul>';                        
-                } 
-             }
-          }
+            }else{
+                // display only main level and children
+                $sidelinks .= wp_list_pages("sort_column=menu_order&title_li=&echo=0&depth=5&child_of=".$post->ID);
+            }
+
+            if ($sidelinks) { 
+                echo '<ul class="menu">';                   
+                echo $sidelinks; 
+                echo '</ul>';         
+            } 
+
+        } else {
+
+            if ( has_nav_menu( 'primary' ) ) {
+                wp_nav_menu( array('depth' => 0, 'container_class' => 'menu-header', 'theme_location' => 'primary', 'walker'  => new My_Walker_Nav_Menu()) );      
+            } else { 
+                echo '<ul class="menu">';   
+                    wp_page_menu( ); 
+                echo '</ul>';                        
+            } 
+        }
+    }
   
 }
 
