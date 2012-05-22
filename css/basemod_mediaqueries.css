@@ -54,14 +54,14 @@
         display: block;
         width: 50%;    
         margin: 0;
-        min-width: 150px;
+        min-width: 120px;
         min-height: 120px;        
-        padding-left: 10px;
+        padding-left: 0px;
     }
 
   .logo {
         top: 0;
-        margin-left: 10px;
+        margin-left: 5px;
   }
    .logo img {
       margin: 0 auto;
@@ -79,7 +79,7 @@
     .nav-top {        
         display: block;
         width: 40%;   
-        min-width: 200px;
+        min-width: 150px;
          position: absolute;
          margin-bottom: 50px;
          float:right;
@@ -120,7 +120,18 @@
         width: 100%;   
         position: relative;
     }
-    
+    .nav-top div.menu-header ul.menu li a {
+        line-height: 22px;
+        padding: 0 5px;
+        background: none;
+        border: none;
+        box-shadow: none;
+        text-decoration: underline;
+        color: black;
+        border-radius: none;
+        text-shadow: 0 -1px 0 #EEEEEE;
+    }
+   
     .nav-main {
          display: block;
         width: 100%;   
