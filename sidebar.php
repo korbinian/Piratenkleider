@@ -31,15 +31,16 @@
   
 
 
-   if ( $options['slider-defaultwerbeplakate'] == "1" ) {
-    ?>
-     <?php 
-       echo '<div class="flexslider fs2 no-js" style="width: '.$defaultoptions['plakate-width'].'px;">';         
-            echo '<ul class="slides">';                
-                $plakate = get_option( 'piratenkleider_theme_defaultbilder'); 
+   if ( $options['slider-defaultwerbeplakate'] == "1" ) {     
+       $plakate = get_option( 'piratenkleider_theme_defaultbilder'); 
+       if ((is_array($plakate['plakate-src'])) || 
+                ((isset($plakate['plakate-altadressen']))
+                 && (strlen(trim($plakate['plakate-altadressen']))>5))
+           ) {
+            echo '<div class="flexslider fs2 no-js" style="width: '.$defaultoptions['plakate-width'].'px;">';         
+            echo '<ul class="slides">';                               
                    if (is_array($plakate['plakate-src'])) {              
-                     foreach ($plakate['plakate-src'] as $current) {
-                        
+                     foreach ($plakate['plakate-src'] as $current) {                        
                          echo '<li class="slide">';                         
                          echo '<img src="'.$current.'" width="'.$defaultoptions['plakate-width'].'" height="'.$defaultoptions['plakate-height'].'" alt="">';                                                      
                          if ((isset($plakate['plakate-title'])) && (strlen(trim($plakate['plakate-title']))>2)) {                                                                                      
@@ -59,8 +60,7 @@
                  
                   } 
                
-                  if (isset($plakate['plakate-altadressen'])) {
-                  
+                  if (isset($plakate['plakate-altadressen'])) {                  
                         $alturls = preg_split("/[\n\r]+/", $plakate['plakate-altadressen']);
                         if (is_array( $alturls )) {
                             foreach ( $alturls  as $current) {
@@ -93,6 +93,7 @@
             </ul>
         </div>
 <?php }
+   }
    if ( is_active_sidebar( 'sidebar-widget-area-afterplakate' ) )  {
           dynamic_sidebar( 'sidebar-widget-area-afterplakate' );     
    }    
