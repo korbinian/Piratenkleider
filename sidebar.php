@@ -33,47 +33,62 @@
 
    if ( $options['slider-defaultwerbeplakate'] == "1" ) {
     ?>
-     
-     <div class="flexslider fs2 no-js">
-        
-            <ul class='slides'>
-                <?php 
+     <?php 
+       echo '<div class="flexslider fs2 no-js" style="width: '.$defaultoptions['plakate-width'].'px;">';         
+            echo '<ul class="slides">';                
                 $plakate = get_option( 'piratenkleider_theme_defaultbilder'); 
-
-                   if (is_array($plakate['plakate-src'])) {
+                   if (is_array($plakate['plakate-src'])) {              
                      foreach ($plakate['plakate-src'] as $current) {
-                         ?>
-                         <li class="slide"><img src="<?php echo $current ?>" width="277" height="391" alt=""></li>
-                        <?php 
+                        
+                         echo '<li class="slide">';                         
+                         echo '<img src="'.$current.'" width="'.$defaultoptions['plakate-width'].'" height="'.$defaultoptions['plakate-height'].'" alt="">';                                                      
+                         if ((isset($plakate['plakate-title'])) && (strlen(trim($plakate['plakate-title']))>2)) {                                                                                      
+                             echo '<div class="caption"><p class="bebas">';                             
+                              if ((isset($plakate['plakate-url'])) && (strlen(trim($plakate['plakate-url']))>2)) {
+                                 echo '<a href="'.$plakate['plakate-url'].'">';
+                             }
+                             echo $plakate['plakate-title'];                                                   
+                             if ((isset($plakate['plakate-url'])) && (strlen(trim($plakate['plakate-url']))>2)) {
+                                 echo '</a>';
+                             }
+                             echo '</p></div>';     
+                         }                           
+                         echo '</li>';
+                        
                      }
                  
-                  } else {
-
-                      if (strlen(trim($plakate['plakate-altadressen']))<2) {
-                        foreach ( $defaultplakate_liste as $dthis ) {    
-                            if (isset($dthis['src'])) {
-                            ?>
-                            <li class="slide"><img src="<?php echo $dthis['src'] ?>" width="277" height="391" alt=""></li>
-                            <?php       
-
-                            }
-                        }
-                      }
-                  }
+                  } 
+               
                   if (isset($plakate['plakate-altadressen'])) {
-                      $alturls = preg_split("/[\s,]+/", $plakate['plakate-altadressen']);
-                      if (is_array( $alturls )) {
-                        foreach ( $alturls  as $current) {
-                            $thisurl = esc_url( $current );
-                            if ($thisurl <> '') {
-                               ?>
-                              <li class="slide"><img src="<?php echo  $thisurl ?>" width="277" height="391" alt=""></li>
-                             <?php  
-                            }
-                        
-                         }
-                     }
-                  }
+                  
+                        $alturls = preg_split("/[\n\r]+/", $plakate['plakate-altadressen']);
+                        if (is_array( $alturls )) {
+                            foreach ( $alturls  as $current) {
+                                list($thisurl,$thistitel,$thisweb) = explode("|", $current);
+                                $thisurl = esc_url( $thisurl );
+                                $thisweb = esc_url ($thisweb);
+                                
+                                if ($thisurl <> '') {
+                                
+                                    echo '<li class="slide">';                         
+                                    echo '<img src="'.$thisurl.'" width="'.$defaultoptions['plakate-width'].'" height="'.$defaultoptions['plakate-height'].'" alt="">';                                                      
+                                    if ((isset($thistitel)) && (strlen(trim($thistitel))>2)) {                                                                                      
+                                        echo '<div class="caption"><p class="bebas">';                             
+                                        if ((isset($thisweb)) && (strlen(trim($thisweb))>2)) {
+                                            echo '<a href="'.$thisweb.'">';
+                                        }
+                                        echo $thistitel;                                                   
+                                        if ((isset($thisweb)) && (strlen(trim($thisweb))>2)) {
+                                            echo '</a>';
+                                        }
+                                        echo '</p></div>';     
+                                    }                           
+                                    echo '</li>';
+                            
+                                 }            
+                              }
+                        }
+                  }     
                 ?>                   
             </ul>
         </div>

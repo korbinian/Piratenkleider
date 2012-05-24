@@ -1030,6 +1030,8 @@ function theme_options_validate( $input ) {
 function theme_defaultbilder_do_page() {
    global $defaultbilder_liste;
    global $defaultplakate_liste;
+   global $defaultoptions;
+   
 	if ( ! isset( $_REQUEST['settings-updated'] ) )
 		$_REQUEST['settings-updated'] = false;
 
@@ -1098,7 +1100,11 @@ function theme_defaultbilder_do_page() {
                     <?php $options = get_option( 'piratenkleider_theme_defaultbilder' ); 
                         $defaultbildsrc = $options['slider-defaultbildsrc']; 
                         $defaultseitenbildsrc = $options['seiten-defaultbildsrc']; 
-                        
+                      
+                        if ( ! isset( $options['plakate-url'] ) )
+                          $options['plakate-url'] = $defaultoptions['plakate-url']; 
+                        if ( ! isset( $options['plakate-title'] ) )
+                          $options['plakate-title'] = $defaultoptions['plakate-title'];                         
                     ?>
                     <table class="form-table">
                      <tr valign="top">
@@ -1129,11 +1135,10 @@ function theme_defaultbilder_do_page() {
                                 <h3><?php _e( 'Alternatives Sliderbild als URL', 'piratenkleider' ); ?></h3>
                                  <input id="piratenkleider_theme_defaultbilder[slider-alternativesrc]" class="regular-text" type="text" name="piratenkleider_theme_defaultbilder[slider-alternativesrc]" value="<?php esc_attr_e( $options['slider-alternativesrc'] ); ?>" />
                             <label class="description" for="piratenkleider_theme_defaultbilder[slider-alternativesrc]">
-                                <?php _e( 'URL inkl. http:// zum Bild. Dieses kann auch vorher &uuml;ber den Mediendialog hochgeladen worden sein.                        
+                                <?php _e( 'URL inkl. http:// zum Bild. Dieses kann auch vorher &uuml;ber den Mediendialog hochgeladen worden sein.', 'piratenkleider' ); ?>
                                 <br>
-                                Das Bild sollte nicht breiter als 705 Pixel sein und seine wesentlichen Merkmale auf einer
-                                H&ouml;he von 240 Pixel zeigen. In der Darstellung der Seite wird ab 240 Pixel nach unten abgeschnitten.', 'piratenkleider' ); ?>
-                                
+                                       <?php _e( 'Die Bilder sollten folgende Dimension haben: ', 'piratenkleider' ); ?>
+                                    <?php echo $defaultoptions['thumb-width'].'x'.$defaultoptions['thumb-height'].' Pixel' ?>
                             </label>
                                  <br />
                             </td>
@@ -1166,11 +1171,11 @@ function theme_defaultbilder_do_page() {
                                 <h3><?php _e( 'Alternatives Seitenbild als URL', 'piratenkleider' ); ?></h3>
                                 <input id="piratenkleider_theme_defaultbilder[seiten-alternativesrc]" class="regular-text" type="text" name="piratenkleider_theme_defaultbilder[seiten-alternativesrc]" value="<?php esc_attr_e( $options['seiten-alternativesrc'] ); ?>" />
                                <label class="description" for="piratenkleider_theme_defaultbilder[seiten-alternativesrc]">
-                                   <?php _e( 'URL inkl. http:// zum Bild. Dieses kann auch vorher &uuml;ber den Mediendialog hochgeladen worden sein.                               
+                                   <?php _e( 'URL inkl. http:// zum Bild. Dieses kann auch vorher &uuml;ber den Mediendialog hochgeladen worden sein. ', 'piratenkleider' ); ?>                              
                                 <br>
-                                Das Bild sollte nicht breiter als 705 Pixel sein und seine wesentlichen Merkmale auf einer
-                                H&ouml;he von 150 Pixel zeigen. In der Darstellung der Seite wird ab 150 Pixel nach unten abgeschnitten.', 'piratenkleider' ); ?>
-                                
+
+                                <?php _e( 'Die Bilder sollten folgende Dimension haben: ', 'piratenkleider' ); ?>
+                                    <?php echo $defaultoptions['thumb-width'].'x'.$defaultoptions['thumb-height'].' Pixel' ?>
                                    
                               </label>
                                  <br />
@@ -1203,11 +1208,26 @@ function theme_defaultbilder_do_page() {
                                     </label>
                                <?php } ?>        
                                 <br style="clear: left;"> 
-                                <p><?php _e( ' Diese Bilder werden in der Sidebar rechts gezeigt, sofern dieses &uuml;ber die Optionen (vgl. Slider) auch eingeschaltet ist.', 'piratenkleider' ); ?>
-                                    
-                                </p>
-                                    
-                                    
+                                <p><?php _e( ' Diese Bilder werden in der Sidebar rechts gezeigt, sofern dieses &uuml;ber die Optionen (vgl. Slider) auch eingeschaltet ist.', 'piratenkleider' ); ?></p>
+                                <table>
+                                    <tr>
+                                        <th><?php _e( 'Optionaler Ersatztitel', 'piratenkleider' ); ?></th>
+                                        <td> <input id="piratenkleider_theme_defaultbilder[plakate-title]" class="regular-text" type="text" name="piratenkleider_theme_defaultbilder[plakate-title]" value="<?php esc_attr_e( $options['plakate-title'] ); ?>" />
+                                        <label class="description" for="piratenkleider_theme_defaultbilder[plakate-title]">
+                                           <?php _e( 'Dieser Titel wird als Alternativ-Text verwendet. <br>
+                                       Solange keine Verlinkung erfolgt, ist diese Angabe optional, da die Plakatbilder dann
+                                       nur "Schmuckbilder" sind und keinen auf die Seite bezogenen Inhalt mitliefern.', 'piratenkleider' ); ?>
+                                         </label></td>
+                                    </tr>
+                                    <tr>
+                                        <th><?php _e( 'Optionale URL', 'piratenkleider' ); ?></th>
+                                        <td> <input id="piratenkleider_theme_defaultbilder[plakate-url]" class="regular-text" type="text" name="piratenkleider_theme_defaultbilder[plakate-url]" value="<?php esc_attr_e( $options['plakate-url'] ); ?>" />
+                                        <label class="description" for="piratenkleider_theme_defaultbilder[plakate-url]">
+                                           <?php _e( 'Optionale Webadresse zur Verlinkung der Plakate mit einer Informationsseite', 'piratenkleider' ); ?>
+                                         </label></td>
+                                    </tr>
+                                </table>    
+                                
                                 
                                 <h3><?php _e( 'Eigene Plaktbilder:', 'piratenkleider' ); ?></h3>
                                 
@@ -1216,11 +1236,19 @@ function theme_defaultbilder_do_page() {
 
                                 <p>    
                                     <?php _e( 'Angabe der URLs inkl. http:// zum Bild. Wenn es mehrere sind, werden
-                                die einzelnen Adressen durch ein Komma oder Umbruch getrennt. 
-                                Wenn oben Defaultplakate angeklickt sind, erscheinen diese Bilder zus&auml;tzlich.
-                                Diese Bilder k&ouml;nnen auch vorher &uuml;ber den Mediendialog hochgeladen worden sein.                               
+                                die einzelnen Adressen durch Zeilenumbruch getrennt. ', 'piratenkleider' ); ?>
+                                    <br>
+                                    <?php _e( 'Die Bilder sollten folgende Dimension haben: ', 'piratenkleider' ); ?>
+                                    <?php echo $defaultoptions['plakate-width'].'x'.$defaultoptions['plakate-height'].' Pixel' ?>
+                                   </p><p>
+                                 <?php _e( 'Sollen die Bilder zus&auml;tzlich mit einem eigenen Titel und einer Webadresse versehen werden
+                                     werden diese Angabe durch ein "|" zeichen in folgender Reihenfolge getrennt: <code>Bild URL|Titel|URL Webpage</code>', 'piratenkleider' ); ?>
                                 <br>
-                                Die Bilder sollten jeweils exakt 277x391 Pixel gro&szlig; sein.', 'piratenkleider' ); ?>
+                                    <?php _e( 'Beispiel: ', 'piratenkleider' ); ?></p>
+                                    <pre>http://www.piratenpartei.de/wp-content/uploads/2012/05/UrheberplakatSH283.jpg|Rechte f&uuml;r Urheber und Nutzer|http://www.kein-programm.de</pre>
+                                    <p>
+                                <?php _e( 'Wenn oben Defaultplakate angeklickt sind, erscheinen diese Bilder zus&auml;tzlich.
+                                Diese Bilder k&ouml;nnen auch vorher &uuml;ber den Mediendialog hochgeladen worden sein.', 'piratenkleider' ); ?>
                                 
                                  </p>      
                               </label>
@@ -1244,9 +1272,11 @@ function theme_defaultbilder_do_page() {
  */
 function theme_defaultbilder_validate( $input ) {
 	global $defaultbilder_liste;
-
+        global $defaultplakate_liste;
 	
         $input['slider-alternativesrc'] = wp_filter_nohtml_kses( $input['slider-alternativesrc'] );            
+              
+        
         $input['slider-defaultbildsrc'] = wp_filter_nohtml_kses( $input['slider-defaultbildsrc'] );       
         if ($input['slider-alternativesrc'] != '') {            
             $input['slider-defaultbildsrc'] = $input['slider-alternativesrc'];
@@ -1257,6 +1287,11 @@ function theme_defaultbilder_validate( $input ) {
             $input['seiten-defaultbildsrc'] = $input['seiten-alternativesrc'];
         }
         $input['plakate-altadressen'] = wp_filter_post_kses( $input['plakate-altadressen'] );
+        $input['plakate-url'] = wp_filter_nohtml_kses( $input['plakate-url'] );        
+        $input['plakate-title'] = wp_filter_nohtml_kses( $input['plakate-title'] );  
+        
+        
+     
 	return $input;
 }
 

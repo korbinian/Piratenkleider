@@ -20,8 +20,15 @@
 }
 .content-aside .flexslider {
     height: 391px;    
-    margin-bottom: 10px;
+    margin: 10px auto;
 }
+
+
+.content-aside .flex-control-nav {
+  display: none; 
+}
+
+
 .flexslider img {
     /* Kommentare entfernen, wenn man möchte dass die Bilder an die 
        proportionale Breite angepasst werden und nicht abgeschnitten werden: */
@@ -68,7 +75,8 @@ html[xmlns] .slides {
 }
 .flex-control-nav li {
     float: left;
-    margin-right: 1px; }
+    margin-right: 1px; 
+}
 .flex-control-nav li a {
       display: block;
       padding: 0px 5px;
@@ -81,7 +89,9 @@ html[xmlns] .slides {
         background: white; 
 }
 
-.flexslider .flex-pauseplay {
+
+.content-aside .flexslider .flex-pauseplay,
+.first-teaser-widget-area .flexslider .flex-pauseplay {
     position: absolute;
     bottom: 10px;
     left: 10px;
@@ -92,8 +102,12 @@ html[xmlns] .slides {
     color: black; 
     padding: 0.2em;
 }
+.content-aside .flexslider .flex-pauseplay {
+    bottom: inherit;
+    top: 10px;
+}
 .flexslider .flex-pauseplay:hover {
-        background: #ff8800 !important; 
+        background: #ff8800; 
 }
 .slide .caption  h3 {
   font-size: 22.8px;
@@ -102,15 +116,15 @@ html[xmlns] .slides {
    margin-bottom: 0; 
 }
 .slide .caption h3 a {
-    background: #2d7dc5 !important;
-    padding: 2px 5px 0px 5px !important; 
+    background: #2d7dc5;
+    padding: 2px 5px 0px 5px; 
 }
 .slide .caption h3 a:hover {
-      background: #ff8800 !important; 
+      background: #ff8800; 
 }
 
-
-.slide .caption {
+.content-aside .slide .caption,
+.first-teaser-widget-area .slide .caption {
   background: transparent;
   background: rgba(0, 0, 0, 0.5);
   color: white;
@@ -120,19 +134,23 @@ html[xmlns] .slides {
   padding: 10px 20px;
   text-align: right; 
 }
-.slide .caption p {
+.content-aside .slide .caption {
+    width: 100%;
+}
+.content-aside .slide .caption p,
+.first-teaser-widget-area .slide .caption p {
     font-size: 12px;
     margin-bottom: 5px; 
     display: inline-block;
-    font-size: 18px !important;
+    font-size: 18px;
 }
-.slide .caption a {
+.content-aside .slide .caption a,
+.first-teaser-widget-area .slide .caption a {
     background: #2d7dc5;
     color: white;
     display: inline-block;
     padding: 0 5px; 
 }
-
 
 
 
@@ -167,7 +185,7 @@ html[xmlns] .slides {
   }
   .flexslider .caption h2, 
   .flexslider .caption h3 {
-      font-size: 12px !important;
+      font-size: 12px;
       font-family: Helvetica, Arial, sans-serif;
       letter-spacing: 0px;
   }
