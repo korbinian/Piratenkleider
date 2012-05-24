@@ -758,7 +758,15 @@ ul.socialmedia li a:focus img  {
    .sticker ul li a:focus .cicolor {
         color: #2d7dc5;  
    }
-   
+   .sticker ul li a .small {
+       font-size: 30px;
+       line-height: 30px;
+   } 
+   .sticker ul li a .tiny { 
+       font-size: 26px;
+       line-height: 26px;
+       
+   } 
    .sticker ul li a .shadow {        
          text-shadow: 1px 1px 1px #333; 
    }
