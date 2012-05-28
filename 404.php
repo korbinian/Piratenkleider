@@ -1,7 +1,8 @@
 <?php get_header(); 
  $options = get_option( 'piratenkleider_theme_options' );
-  if (!isset($options['src-default-symbolbild-big'])) 
-            $options['src-default-symbolbild-big'] = $defaultoptions['src-default-symbolbild-big'];
+  $bilderoptions = get_option( 'piratenkleider_theme_defaultbilder' ); 
+   if (!isset($bilderoptions['src-default-symbolbild-404'])) 
+            $bilderoptions['src-default-symbolbild-404'] = $defaultoptions['src-default-symbolbild-404'];
  ?>
 
 <div class="section content">
@@ -10,7 +11,7 @@
       <div class="content-header-big">
           <h1>Seite nicht gefunden</h1>
          <div class="symbolbild">                   
-              <img src="<?php echo $options['src-default-symbolbild-big']?>" alt="" >
+              <img src="<?php echo $bilderoptions['src-default-symbolbild-404']?>" alt="" >
                <div class="caption">  
                    <p style="font-size: 2em;" class="bebas">404</p>                  
                </div>   

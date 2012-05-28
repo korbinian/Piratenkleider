@@ -1,7 +1,8 @@
 <?php get_header();    
   $options = get_option( 'piratenkleider_theme_options' );  
-      if (!isset($options['src-default-symbolbild'])) 
-            $options['src-default-symbolbild'] = $defaultoptions['src-default-symbolbild'];
+   $bilderoptions = get_option( 'piratenkleider_theme_defaultbilder' ); 
+   if (!isset($bilderoptions['src-default-symbolbild-archve'])) 
+            $bilderoptions['src-default-symbolbild-archve'] = $defaultoptions['src-default-symbolbild-archive'];
 ?> 
 <div class="section content" id="main-content">
   <div class="row">
@@ -21,7 +22,7 @@
           <?php if ( have_posts() ) the_post(); ?>
           <?php if ($options['aktiv-platzhalterbilder-indexseiten']) { ?>         
           <div class="symbolbild"> 
-             <img src="<?php echo $options['src-default-symbolbild']?>" alt="" >          
+             <img src="<?php echo $bilderoptions['src-default-symbolbild-archve']?>" alt="" >          
            </div>                                 
           <?php } ?>                     
       </div>

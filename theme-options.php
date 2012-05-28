@@ -1253,7 +1253,98 @@ function theme_defaultbilder_do_page() {
                                  </p>      
                               </label>
                                  <br />
-                            </td>
+                            </td>                            
+                        </tr>
+                        <tr valign="top">
+                        <th scope="row"><?php _e( 'Symbolbild f&uuml;r 404 Seite', 'piratenkleider' ); ?></th>
+                        <td>
+                            <input id="piratenkleider_theme_defaultbilder[src-default-symbolbild-404]" class="regular-text" type="text" name="piratenkleider_theme_defaultbilder[src-default-symbolbild-404]" value="<?php esc_attr_e( $options['src-default-symbolbild-404'] ); ?>" />
+                            <label class="description" for="piratenkleider_theme_defaultbilder[src-default-symbolbild-404]">
+                              <?php _e( 'URL f&uuml;r ein eigenes 404-Seitenbild.', 'piratenkleider' ); ?>
+                               <br>
+                               <?php _e( 'Default:', 'piratenkleider' ); ?><br>
+                               <code><?php echo $defaultoptions['src-default-symbolbild-404']?></code>
+                             </label>
+
+                        </td>
+                        </tr>
+                        <tr valign="top">
+                        <th scope="row"><?php _e( 'Symbolbild f&uuml;r Kategorie Seite', 'piratenkleider' ); ?></th>
+                        <td>
+                            <input id="piratenkleider_theme_defaultbilder[src-default-symbolbild-category]" class="regular-text" type="text" name="piratenkleider_theme_defaultbilder[src-default-symbolbild-category]" value="<?php esc_attr_e( $options['src-default-symbolbild-category'] ); ?>" />
+                            <label class="description" for="piratenkleider_theme_defaultbilder[src-default-symbolbild-category]">
+                              <?php _e( 'URL f&uuml;r ein eigenes Kategorien-Seitenbild.', 'piratenkleider' ); ?>
+                               <br>
+                               <?php _e( 'Default:', 'piratenkleider' ); ?><br>
+                               <code><?php echo $defaultoptions['src-default-symbolbild-category']?></code>
+                             </label>
+
+                        </td>
+                        </tr>
+                        <tr valign="top">
+                        <th scope="row"><?php _e( 'Symbolbild f&uuml;r Tag Seite', 'piratenkleider' ); ?></th>
+                        <td>
+                            <input id="piratenkleider_theme_defaultbilder[src-default-symbolbild-tag]" class="regular-text" type="text" name="piratenkleider_theme_defaultbilder[src-default-symbolbild-tag]" value="<?php esc_attr_e( $options['src-default-symbolbild-tag'] ); ?>" />
+                            <label class="description" for="piratenkleider_theme_defaultbilder[src-default-symbolbild-tag]">
+                              <?php _e( 'URL f&uuml;r ein eigenes Tag-Seitenbild.', 'piratenkleider' ); ?>
+                               <br>
+                               <?php _e( 'Default:', 'piratenkleider' ); ?><br>
+                               <code><?php echo $defaultoptions['src-default-symbolbild-tag']?></code>
+                             </label>
+
+                        </td>
+                        </tr>
+                        <tr valign="top">
+                        <th scope="row"><?php _e( 'Symbolbild f&uuml;r Autoren Seite', 'piratenkleider' ); ?></th>
+                        <td>
+                            <input id="piratenkleider_theme_defaultbilder[src-default-symbolbild-author]" class="regular-text" type="text" name="piratenkleider_theme_defaultbilder[src-default-symbolbild-author]" value="<?php esc_attr_e( $options['src-default-symbolbild-author'] ); ?>" />
+                            <label class="description" for="piratenkleider_theme_defaultbilder[src-default-symbolbild-author]">
+                              <?php _e( 'URL f&uuml;r ein eigenes Autoren-Seitenbild.', 'piratenkleider' ); ?>
+                               <br>
+                               <?php _e( 'Default:', 'piratenkleider' ); ?><br>
+                               <code><?php echo $defaultoptions['src-default-symbolbild-author']?></code>
+                             </label>
+
+                        </td>
+                        </tr>
+                        <tr valign="top">
+                        <th scope="row"><?php _e( 'Symbolbild f&uuml;r Archiv Seite', 'piratenkleider' ); ?></th>
+                        <td>
+                            <input id="piratenkleider_theme_defaultbilder[src-default-symbolbild-archive]" class="regular-text" type="text" name="piratenkleider_theme_defaultbilder[src-default-symbolbild-archive]" value="<?php esc_attr_e( $options['src-default-symbolbild-archive'] ); ?>" />
+                            <label class="description" for="piratenkleider_theme_defaultbilder[src-default-symbolbild-archive]">
+                              <?php _e( 'URL f&uuml;r ein eigenes Archiv-Seitenbild.', 'piratenkleider' ); ?>
+                               <br>
+                               <?php _e( 'Default:', 'piratenkleider' ); ?><br>
+                               <code><?php echo $defaultoptions['src-default-symbolbild-archive']?></code>
+                             </label>
+
+                        </td>
+                        </tr>
+                        <tr valign="top">
+                        <th scope="row"><?php _e( 'Symbolbild f&uuml;r Suchergebnis-Seite', 'piratenkleider' ); ?></th>
+                        <td>
+                            <input id="piratenkleider_theme_defaultbilder[src-default-symbolbild-search]" class="regular-text" type="text" name="piratenkleider_theme_defaultbilder[src-default-symbolbild-search]" value="<?php esc_attr_e( $options['src-default-symbolbild-search'] ); ?>" />
+                            <label class="description" for="piratenkleider_theme_defaultbilder[src-default-symbolbild-search]">
+                              <?php _e( 'URL f&uuml;r ein eigenes Suchergebnis-Seitenbild.', 'piratenkleider' ); ?>
+                               <br>
+                               <?php _e( 'Default:', 'piratenkleider' ); ?><br>
+                               <code><?php echo $defaultoptions['src-default-symbolbild-search']?></code>
+                             </label>
+
+                        </td>
+                        </tr>
+                        <tr valign="top">
+                        <th scope="row"><?php _e( 'Symbolbild f&uuml;r Tenmplate-Seiten', 'piratenkleider' ); ?></th>
+                        <td>
+                            <input id="piratenkleider_theme_defaultbilder[src-default-symbolbild]" class="regular-text" type="text" name="piratenkleider_theme_defaultbilder[src-default-symbolbild]" value="<?php esc_attr_e( $options['src-default-symbolbild'] ); ?>" />
+                            <label class="description" for="piratenkleider_theme_defaultbilder[src-default-symbolbild]">
+                              <?php _e( 'URL f&uuml;r ein Template-Seitenbild.', 'piratenkleider' ); ?>
+                               <br>
+                               <?php _e( 'Default:', 'piratenkleider' ); ?><br>
+                               <code><?php echo $defaultoptions['src-default-symbolbild']?></code>
+                             </label>
+
+                        </td>
                         </tr>
              </table>
 
@@ -1290,7 +1381,13 @@ function theme_defaultbilder_validate( $input ) {
         $input['plakate-url'] = wp_filter_nohtml_kses( $input['plakate-url'] );        
         $input['plakate-title'] = wp_filter_nohtml_kses( $input['plakate-title'] );  
         
-        
+        $input['src-default-symbolbild-404'] = wp_filter_nohtml_kses( $input['src-default-symbolbild-404'] ); 
+        $input['src-default-symbolbild-archive'] = wp_filter_nohtml_kses( $input['src-default-symbolbild-archive'] );
+        $input['src-default-symbolbild-author'] = wp_filter_nohtml_kses( $input['src-default-symbolbild-author'] );
+        $input['src-default-symbolbild-category'] = wp_filter_nohtml_kses( $input['src-default-symbolbild-category'] );
+        $input['src-default-symbolbild-tag'] = wp_filter_nohtml_kses( $input['src-default-symbolbild-tag'] );
+        $input['src-default-symbolbild-search'] = wp_filter_nohtml_kses( $input['src-default-symbolbild-search'] );
+        $input['src-default-symbolbild'] = wp_filter_nohtml_kses( $input['src-default-symbolbild'] );   
      
 	return $input;
 }
