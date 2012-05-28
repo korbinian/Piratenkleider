@@ -15,7 +15,12 @@
        
        Base color: #00B5B1 (rgb: 0, 181, 177)
        Special text font: Bebas Neue
-               
+        
+       NOTICE: This font must be replaced by another font, cause Bebas
+          does not contain all need chars. Please inform 
+          at piratenkleider@xwolf.de  about a possible and useful
+          font that can be used here.  
+
 */
 
 @font-face {
