@@ -1364,7 +1364,8 @@ function theme_defaultbilder_do_page() {
 function theme_defaultbilder_validate( $input ) {
 	global $defaultbilder_liste;
         global $defaultplakate_liste;
-	
+	global $defaultoptions;
+        
         $input['slider-alternativesrc'] = wp_filter_nohtml_kses( $input['slider-alternativesrc'] );            
               
         
@@ -1389,6 +1390,28 @@ function theme_defaultbilder_validate( $input ) {
         $input['src-default-symbolbild-search'] = wp_filter_nohtml_kses( $input['src-default-symbolbild-search'] );
         $input['src-default-symbolbild'] = wp_filter_nohtml_kses( $input['src-default-symbolbild'] );   
      
+        if (strlen(trim($input['src-default-symbolbild-404']))<5) {
+            $input['src-default-symbolbild-404'] = $defaultoptions['src-default-symbolbild-404'];
+        }
+        if (strlen(trim($input['src-default-symbolbild-archive']))<5) {
+            $input['src-default-symbolbild-archive'] = $defaultoptions['src-default-symbolbild-archive'];
+        }
+        if (strlen(trim($input['src-default-symbolbild-author']))<5) {
+            $input['src-default-symbolbild-author'] = $defaultoptions['src-default-symbolbild-author'];
+        }
+        if (strlen(trim($input['src-default-symbolbild-category']))<5) {
+            $input['src-default-symbolbild-category'] = $defaultoptions['src-default-symbolbild-category'];
+        }
+        if (strlen(trim($input['src-default-symbolbild-tag']))<5) {
+            $input['src-default-symbolbild-tag'] = $defaultoptions['src-default-symbolbild-tag'];
+        }
+        if (strlen(trim($input['src-default-symbolbild-search']))<5) {
+            $input['src-default-symbolbild-search'] = $defaultoptions['src-default-symbolbild-search'];
+        }
+        if (strlen(trim($input['src-default-symbolbild']))<5) {
+            $input['src-default-symbolbild'] = $defaultoptions['src-default-symbolbild'];
+        }
+        
 	return $input;
 }
 
