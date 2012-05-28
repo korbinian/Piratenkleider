@@ -2,7 +2,7 @@ Piratenkleider
 - Wordpress-Theme für Webauftritte der Piratenpartei 
 =================================================
 
-Version 2.5 von Wolfgang Wiese (xwolf), 17. Mai 2012
+Version 2.6 von Wolfgang Wiese (xwolf), 18. Mai 2012
 
 
 DOWNLOADS
@@ -164,6 +164,9 @@ THEME-OPTION "Segel setzen"
    wird, kann im Wiki unter der Seite http://wiki.piratenpartei.de/Plakate
    gefunden werden.
 
+   Weiterhin können die Symbolbilder für die Metaseiten Suche, Tags, Kategorien,
+   Autoren, Archiv und Templateseiten über die EIngabe einer eigenen Bild-URL
+   geändert werden. 
 
 THEME-OPTION "Captn & Crew"
 
