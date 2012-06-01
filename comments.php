@@ -40,7 +40,7 @@ if ($options['anonymize-user']==1) {
     if ($options['anonymize-user-commententries']==1) {
         // Nur Autorname        
          $comments_args = array( 'fields' => array(
-        'author' => '<p class="comment-form-author">' . '<label for="author">' . __( 'Name', 'domainreference' ) . '</label> ' . ( $req ? '<span class="required">*</span>' : '' ) .
+        'author' => '<p class="comment-form-author">' . '<label for="author">' . __( 'Name', 'piratenkleider' ) . '</label> ' . ( $req ? '<span class="required">*</span>' : '' ) .
 	            '<input id="author" name="author" type="text" value="' . esc_attr( $commenter['comment_author'] ) . '" size="30"' . $aria_req . ' /></p>'
        ),
         'comment_notes_before' => ' '
@@ -49,9 +49,9 @@ if ($options['anonymize-user']==1) {
     } elseif ($options['anonymize-user-commententries']==2) {
         // Name + URL
          $comments_args = array( 'fields' => array(
-        'author' => '<p class="comment-form-author">' . '<label for="author">' . __( 'Name', 'domainreference' ) . '</label> ' . ( $req ? '<span class="required">*</span>' : '' ) .
+        'author' => '<p class="comment-form-author">' . '<label for="author">' . __( 'Name', 'piratenkleider' ) . '</label> ' . ( $req ? '<span class="required">*</span>' : '' ) .
 	            '<input id="author" name="author" type="text" value="' . esc_attr( $commenter['comment_author'] ) . '" size="30"' . $aria_req . ' /></p>',
-        'url'    => '<p class="comment-form-url"><label for="url">' . __( 'Website', 'domainreference' ) . '</label>'.
+        'url'    => '<p class="comment-form-url"><label for="url">' . __( 'Website', 'piratenkleider' ) . '</label>'.
 	            '<input id="url" name="url" type="text" value="' . esc_attr( $commenter['comment_author_url'] ) . '" size="30" /></p>'
        ),
         'comment_notes_before' => ' '

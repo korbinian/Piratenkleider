@@ -60,7 +60,7 @@
 
                                         <?php piratenkleider_post_pubdateinfo(); ?>
                                         |
-                                        <?php comments_popup_link( __( 'Hinterlasse einen Kommentar', 'piratenkleider' ), __( '1 Comment', 'Kommentar' ), __( '% Kommentare', 'piratenkleider' ) ); ?>
+                                        <?php comments_popup_link( __( 'Hinterlasse einen Kommentar', 'piratenkleider' ), __( 'Ein Kommentar', 'piratenkleider' ), __( '% Kommentare', 'piratenkleider' ) ); ?>
                                         <?php edit_post_link( __( 'Bearbeiten', 'piratenkleider' ), '| ', '' ); ?>
 
                 <?php /* How to display all other posts. */ ?>

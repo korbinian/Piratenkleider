@@ -54,7 +54,7 @@ $defaultoptions = array(
     'teaser_maxlength'              => 300,
     'teaser-title-maxlength'        => 50,
     'teaser-subtitle'               => 'Topthema',
-    'teaser-title-words'            => 10,
+    'teaser-title-words'            => 7,
     'css-default-header-height'     => 225,
     'css-default-branding-padding-top'  => 40,
     'anonymize-user'                => 0,
@@ -62,18 +62,18 @@ $defaultoptions = array(
     'aktiv-commentreplylink'        => 0,
     
     
-    'teaserlink1-title'             => 'Informiere dich',
-    'teaserlink1-untertitel'        => '&uuml;ber unsere Themen &amp; Ziele!',            
+    'teaserlink1-title'             => __( 'Informiere dich', 'piratenkleider' ),
+    'teaserlink1-untertitel'        => __( '&uuml;ber unsere Themen &amp; Ziele!', 'piratenkleider' ),            
     'teaserlink1-url'               => 'https://www.piratenpartei.de/politik/themen/', 
     'teaserlink1-symbol'            => 'idee',
     
-    'teaserlink2-title'             => 'Unterst&uuml;tze uns',
-    'teaserlink2-untertitel'        => 'mit deinem Engagement!',            
+    'teaserlink2-title'             => __( 'Unterst&uuml;tze uns', 'piratenkleider' ),
+    'teaserlink2-untertitel'        => __( 'mit deinem Engagement!', 'piratenkleider' ),            
     'teaserlink2-url'               => 'http://www.piratenpartei.de/unterstutze-uns/', 
     'teaserlink2-symbol'            => 'herz',
     
-    'teaserlink3-title'             => 'Werde Pirat!',
-    'teaserlink3-untertitel'        => 'jetzt Mitglied werden!',            
+    'teaserlink3-title'             => __( 'Werde Pirat!', 'piratenkleider' ),
+    'teaserlink3-untertitel'        => __( 'jetzt Mitglied werden!', 'piratenkleider' ),            
     'teaserlink3-url'               => 'https://www.piratenpartei.de/mitmachen/mitglied-werden', 
     'teaserlink3-symbol'            => 'steuerrad',
     
