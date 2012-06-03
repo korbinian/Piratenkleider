@@ -306,7 +306,7 @@ function piratenkleider_setup() {
         
         // Make theme available for translation
         // Translations can be filed in the /languages/ directory
-        load_theme_textdomain( 'piratenkleider', TEMPLATEPATH . '/languages' );
+        load_theme_textdomain('piratenkleider', get_template_directory() . '/languages');
 
         $locale = get_locale();
         $locale_file = TEMPLATEPATH . "/languages/$locale.php";
