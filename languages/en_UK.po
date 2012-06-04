@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Piratenkleider 2.7\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2012-06-02 22:59+0100\n"
-"PO-Revision-Date: 2012-06-02 23:51+0100\n"
+"PO-Revision-Date: 2012-06-04 22:14+0100\n"
 "Last-Translator: Wolfgang Wiese <xwolf@xwolf.de>\n"
 "Language-Team: Fabian Müller, Wolfgang Wiese\n"
 "MIME-Version: 1.0\n"
@@ -584,20 +584,20 @@ msgstr "Category overview"
 
 #: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/searchform.php:7
 msgid "Suche nach"
-msgstr ""
+msgstr "Search for"
 
 #: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/searchform.php:8
 #: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/searchform.php:9
 msgid "Suchbegriff eingeben"
-msgstr ""
+msgstr "Enter search term"
 
 #: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/searchform.php:10
 msgid "Suchen"
-msgstr ""
+msgstr "Search"
 
 #: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/sidebar-teaser.php:31
 msgid "Aktuelle Themen"
-msgstr ""
+msgstr "Current topics"
 
 #: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/sidebar.php:13
 #: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:310
@@ -607,51 +607,51 @@ msgstr "Newsletter"
 
 #: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/sidebar.php:15
 msgid "Zum Newsletter anmelden"
-msgstr ""
+msgstr "Subscribe to our newsletter"
 
 #: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/sidebar.php:16
 #: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/sidebar.php:17
 msgid "E-Mail-Adresse eingeben"
-msgstr ""
+msgstr "Enter e-mail address"
 
 #: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/sidebar.php:18
 msgid "anmelden"
-msgstr ""
+msgstr "sign in"
 
 #: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/sidebar.php:19
 msgid "Hinweis: Beim Aufruf wird der Webauftritt verlassen."
-msgstr ""
+msgstr "Notice: Leaves this web site."
 
 #: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/single.php:52
 msgid "Weitere Artikel in diesem Themenkreis:"
-msgstr ""
+msgstr "Further articles of this subject"
 
 #: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/spenden.php:17
 msgid "Spenden"
-msgstr ""
+msgstr "Donate"
 
 #: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/spenden.php:42
 msgid "Per &Uuml;berweisung spenden"
-msgstr ""
+msgstr "Donate by bank transfer"
 
 #: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/spenden.php:47
 #: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:1651
 msgid "Empf&auml;nger"
-msgstr ""
+msgstr "Recipient"
 
 #: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/spenden.php:51
 #: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:1659
 msgid "Kontonummer"
-msgstr ""
+msgstr "Bank account number"
 
 #: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/spenden.php:55
 msgid "Bankleitzahl"
-msgstr ""
+msgstr "Bank identifier code"
 
 #: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/spenden.php:59
 #: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:1677
 msgid "Bank"
-msgstr ""
+msgstr "Bank"
 
 #: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/spenden.php:63
 #: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:1685
@@ -665,87 +665,87 @@ msgstr "BIC"
 
 #: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/spenden.php:71
 msgid "Verwendungszweck"
-msgstr ""
+msgstr "Reason for transfer"
 
 #: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/spenden.php:72
 msgid ""
 "Spende von Name, Vorname, Anschrift (ggf. mit Zusatz \"Stichwort\" \n"
 "            und einem konkreten Verwendungszweck)"
-msgstr ""
+msgstr "Donation from name, given name, address (with added keyword, if applicable)"
 
 #: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/tag.php:11
 #, php-format
 msgid "Schlagwort %s"
-msgstr ""
+msgstr "Tag %s"
 
 #: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/tag.php:24
 msgid "&Uuml;bersicht &uuml;ber die Schlagworte"
-msgstr ""
+msgstr "Tag overview"
 
 #: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:20
 msgid "Takelage einstellen"
-msgstr ""
+msgstr "Set rigs"
 
 #: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:21
 msgid "Segel setzen"
-msgstr ""
+msgstr "Set sails"
 
 #: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:22
 msgid "Captn & Crew"
-msgstr ""
+msgstr "Captn & Crew"
 
 #: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:23
 msgid "Kl&uuml;verbaum"
-msgstr ""
+msgstr "Jib boom"
 
 #: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:69
 msgid " Takelage einstellen: Konfiguration "
-msgstr ""
+msgstr "Set rigs: Configuration"
 
 #: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:72
 msgid "Optionen wurden gespeichert."
-msgstr ""
+msgstr "Save options"
 
 #: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:183
 #: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:1142
 msgid "Defaultbilder f&uuml;r Seiten"
-msgstr ""
+msgstr "Default images for pages"
 
 #: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:187
 msgid "Bilder f&uuml;r Seiten erzwingen, die von sich aus kein Artikelbild definiert haben. Wenn kein Artikelbild vorhanden ist, wird ein Defaultbild gezeigt."
-msgstr ""
+msgstr "Enforce images for pages without article image. If no article image is set, a default image is shown."
 
 #: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:191
 msgid "Platzhalterbilder"
-msgstr ""
+msgstr "placeholder image"
 
 #: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:195
 msgid "Platzhalterbilder bei Indexseiten zu Kategorien, Tags, Suche und Archiv anzeigen"
-msgstr ""
+msgstr "Show placeholder images on index pages for categories, tags, search and archive"
 
 #: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:201
 msgid "Kopfteil"
-msgstr ""
+msgstr "Header"
 
 #: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:204
 msgid "Linkmenu"
-msgstr ""
+msgstr "Link menu"
 
 #: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:208
 msgid "Linkmenu oben rechts, zwischen Social Media Icons und Suchmaske anzeigen"
-msgstr ""
+msgstr "Show link menu between social media icons and search form in the upper right"
 
 #: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:212
 msgid "Suchmaske"
-msgstr ""
+msgstr "Search form"
 
 #: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:216
 msgid "Eingabemaske f&uuml;r Suche oben rechts anzeigen"
-msgstr ""
+msgstr "Show search form in the upper right"
 
 #: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:224
 msgid "Sticker anzeigen"
-msgstr ""
+msgstr "Show sticker"
 
 #: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:228
 msgid "Sticker 1"
@@ -780,31 +780,31 @@ msgstr "Sidebar"
 
 #: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:294
 msgid "Seitenmenu"
-msgstr ""
+msgstr "Site menu"
 
 #: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:298
 msgid " Bei der Anzeige von Seiten rechts in der Sidebar nur das aktuelle Submenu zeigen. Bei Deaktivierung wird das vollst&auml;ndige Men&uuml; gezeigt. Dies ist f&uuml;r Webauftritte mit vielen Seiten nicht geeignet."
-msgstr ""
+msgstr "Show only the current submenu in the right sidebar when displaying pages. If deactivated, the complete menu will be shown, which isn’t recommended for websites with many pages."
 
 #: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:301
 msgid "Alternative Option:"
-msgstr ""
+msgstr "Alternative option:"
 
 #: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:304
 msgid "Seitenmen&uuml; in der Sidebar anzeigen."
-msgstr ""
+msgstr "Show site menu in sidebar."
 
 #: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:314
 msgid "Eingabemaske anzeigen"
-msgstr ""
+msgstr "Show form"
 
 #: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:319
 msgid "Plakatslider aktivieren"
-msgstr ""
+msgstr "Activade poster slider"
 
 #: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:323
 msgid "Slider der Werbeplakate (rechte Sidebar-Spalte) werden angezeigt.<br>Die Auswahl der Plakatbilder kann unter den Defaultbildern angepasst werden."
-msgstr ""
+msgstr "Poster slider (right sidebar) is shown"
 
 #: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:328
 msgid "Teaserlink 1"
@@ -838,19 +838,19 @@ msgstr "Teaser link 3"
 
 #: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:464
 msgid "Beitr&auml;ge &uuml;ber ganze Breite"
-msgstr ""
+msgstr "Entries over whole width"
 
 #: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:479
 msgid "Zahl der Beitr&auml;ge, die &uuml;ber die gesamte Inhaltsbreite gehen."
-msgstr ""
+msgstr "Number of articles filling the whole content width."
 
 #: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:483
 msgid "Beitr&auml;ge &uuml;ber halbe Breite"
-msgstr ""
+msgstr "Entries over half width"
 
 #: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:496
 msgid "Zahl der Beitr&auml;ge, die in Spalten mit je zwei Beitr&auml;gen nebeneinander, angezeigt werden."
-msgstr ""
+msgstr "Number of articles shown in two columns."
 
 #: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:505
 msgid "Social Media"
@@ -862,7 +862,7 @@ msgstr "Social Media Buttons"
 
 #: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:512
 msgid "Buttons anzeigen. <br>Hinweis: Es werden nur die Buttons gezeigt, bei denen in den folgenden Eingabefeldern Adressen definiert sind."
-msgstr ""
+msgstr "Show Buttons. <br>Notice: Only buttons with entries will be shown"
 
 #: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:522
 msgid "URL inkl. http:// zur Facebook Seite<br>Zum Beispiel: <code>http://www.facebook.com/PiratenparteiDeutschland</code>"
@@ -906,15 +906,15 @@ msgstr "Twitter nick"
 
 #: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:608
 msgid "Der reine Twitter Benutzername"
-msgstr ""
+msgstr "Solely the Twitter nick"
 
 #: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:611
 msgid "Maximale Anzahl der Twittermeldungen"
-msgstr ""
+msgstr "Maximum number of tweets"
 
 #: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:623
 msgid "Wieviele Twittermeldungen sollen maximal gezeigt werden"
-msgstr ""
+msgstr "How many tweets are to be shown at most"
 
 #: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:632
 msgid "Slider"
@@ -922,15 +922,15 @@ msgstr "Slider"
 
 #: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:635
 msgid "Slider aktivieren"
-msgstr ""
+msgstr "Activate slider"
 
 #: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:639
 msgid "Slider im Teaserbereich auf der Startseite aktivieren."
-msgstr ""
+msgstr "Activate slider on start page"
 
 #: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:640
 msgid "Die Auswahl der Plakatbilder kann unter den Defaultbildern angepasst werden."
-msgstr ""
+msgstr "You can chose the posters by the given default images"
 
 #: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:645
 msgid "Kategorie"
@@ -938,79 +938,79 @@ msgstr "Category"
 
 #: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:666
 msgid "Aus welcher Artikelkategorie sollen die Slider genommen werden"
-msgstr ""
+msgstr "From which article category should the sliders be taken"
 
 #: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:670
 msgid "Maximale Anzahl der Artikel"
-msgstr ""
+msgstr "Maximum number of articles"
 
 #: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:683
 msgid "Wieviele Slides sollen maximal gezeigt werden"
-msgstr ""
+msgstr "How many slides are to be shown at most"
 
 #: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:686
 msgid "Animationstyp"
-msgstr ""
+msgstr "animation type"
 
 #: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:697
 msgid "Wie soll der Slidewechsel optisch aussehen"
-msgstr ""
+msgstr "What should the slider change look like"
 
 #: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:700
 msgid "Richtung"
-msgstr ""
+msgstr "Direction"
 
 #: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:710
 msgid "Von wo sollen Bilder erscheinen"
-msgstr ""
+msgstr "From where should the images be taken"
 
 #: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:713
 msgid "Dauer Bildwechsel"
-msgstr ""
+msgstr "Duration of image change"
 
 #: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:716
 msgid "Geschwindigkeit des Bildwechsels in Milisekunden"
-msgstr ""
+msgstr "image change speed in miliseconds"
 
 #: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:720
 msgid "Animationsdauer"
-msgstr ""
+msgstr "animation duration"
 
 #: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:723
 msgid "Geschwindigkeit der Animation/Fading beim Bild&uuml;bergang in Milisekunden"
-msgstr ""
+msgstr "Image change animation/fading speed in miliseconds"
 
 #: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:728
 msgid "Bezeichnender Titel f&uuml;r Teaser"
-msgstr ""
+msgstr "Labelling term for the teaser"
 
 #: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:731
 msgid "Dieser Text wird oberhalb der Titel angezeigt"
-msgstr ""
+msgstr "This text is shown above the titles"
 
 #: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:734
 msgid "Maximale Textl&auml;nge des Titels im Teaser"
-msgstr ""
+msgstr "Maximum title length in teaser"
 
 #: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:737
 msgid "Wie lang darf der Titel insgesamt sein, bevor er gek&uuml;rzt wird"
-msgstr ""
+msgstr "How long is the title permitted to be before it is shortened"
 
 #: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:740
 msgid "Wortzahl des Titels im Teaser"
-msgstr ""
+msgstr "Title word count in teaser"
 
 #: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:743
 msgid "Zahl der Worte im Teaser; Die maximale Textl&auml;nge begrenzt diesen Wert jedoch."
-msgstr ""
+msgstr "Title word count in teaser; however, the maximum text length limits this value."
 
 #: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:753
 msgid "Spezialseiten"
-msgstr ""
+msgstr "Special pages"
 
 #: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:762
 msgid "URL, inkl. http://, zur Seite auf der man sich in Newsletter eingetragen werden kann."
-msgstr ""
+msgstr "URL (including http://) for newletter form."
 
 #: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:763
 #: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:1848
@@ -1020,7 +1020,7 @@ msgstr "Default:"
 
 #: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:774
 msgid "Meta-Angaben"
-msgstr ""
+msgstr "Meta information"
 
 #: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:778
 msgid "Author"
@@ -1028,7 +1028,7 @@ msgstr "Author"
 
 #: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:781
 msgid "Optionale Autor-Angabe in dem Meta-Tag jeder Seite"
-msgstr ""
+msgstr "Optional author information in every page’s meta tag"
 
 #: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:784
 msgid "Description"
@@ -1036,7 +1036,7 @@ msgstr "Description"
 
 #: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:787
 msgid "Optionale Beschreibungstext in dem Meta-Tag jeder Seite (f&uuml;r alle gleich). Sollte nicht mehr als 140 Zeichen lang sein, wenn gesetzt."
-msgstr ""
+msgstr "Optional description in every page’s meta tag. Should not exceed 140 characters."
 
 #: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:790
 msgid "Keywords"
@@ -1044,68 +1044,68 @@ msgstr "Keywords"
 
 #: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:793
 msgid "Optionale Schl&uuml;sselworte in dem Meta-Tag jeder Seite (f&uuml;r alle gleich). Durch Komma getrennt. Schl&uuml;sselworte sollten tats&auml;chlich vorkommen."
-msgstr ""
+msgstr "Optional keywords in every page’s meta tag. Separated by commas. Keywords should actually appear on the page."
 
 #: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:798
 msgid "Hinweis: Diese Angaben wirken auf alle Seiten und Artikel der Site. Dies ist jedoch nicht immer sinnvoll (insbes. bei Keywords und Description). "
-msgstr ""
+msgstr "Notice: This entries will be set for every page and article. "
 
 #: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:799
 msgid "Sollten zudem SEO-Plugins, wie bspw. wpSEO oder andere im Einsatz sein, sollten diese Angaben ebenfalls unausgef&uuml;llt bleiben.  "
-msgstr ""
+msgstr "If you are using SEO-plugins like wpSEO, it will be better to leave this blank."
 
 #: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:805
 msgid "Sicherheit &amp; Anonymit&auml;t"
-msgstr ""
+msgstr "Security &amp; anonymity"
 
 #: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:808
 msgid "Autoren anzeigen"
-msgstr ""
+msgstr "Show authors"
 
 #: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:811
 msgid "Bei der Anzeige von Artikeln den Autoren anzeigen und verlinken."
-msgstr ""
+msgstr "Show and link authors in articles."
 
 #: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:814
 msgid "Kommentarbenutzer anonymisieren"
-msgstr ""
+msgstr "Anonymize comment user"
 
 #: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:817
 msgid "IP-Adresse und der User-Agent-String geleert, die Eingabe von E-Mail-Adressen wird verhindert"
-msgstr ""
+msgstr "IP address and user agent string emptied; entering e-mail addresses is prohibited"
 
 #: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:819
 msgid "<b>Achtung:</b> Diese Option deaktiviert auch die Avatar-Anzeige und setzt die Kommentareinstellung unter Einstellungen-Diskussion so, dass Benutzer keinen Namen und E-Mail-Adressen mehr eingeben m&uuml;ssen."
-msgstr ""
+msgstr "<b>Attention:</b> This option also deactivates the display of avatars and will set comment form in a way, that users may leave name and e-mail blank."
 
 #: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:820
 msgid "In diesem Fall angebotene Kommentarfelder:"
-msgstr ""
+msgstr "commentary fields offered in this case:"
 
 #: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:832
 msgid "Angebote Kommentarfelder zur freiwilligen Eingabe"
-msgstr ""
+msgstr "Offered optional comment fields"
 
 #: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:839
 msgid "Bei Kommentaren werden Avatar-Bilder mit Hilfe von Gravatar oder anderen Diensten abgerufen. Dies erm&ouml;glicht allerdings theoretisch ein Tracking durch diese Dienste"
-msgstr ""
+msgstr "Avatars for comments are retrieved by Gravatar or other services. However, this theoretically allows for tracking by these services"
 
 #: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:846
 msgid "Sonstiges"
-msgstr ""
+msgstr "Other"
 
 #: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:849
 msgid "Antwortlinks auf Kommentare"
-msgstr ""
+msgstr "Reply links on comments"
 
 #: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:852
 msgid "Bei der Anzeige von Kommentaren, wird unter diesen ein eigener Kommentarlink eingebaut, der das Antworten auf den Kommentar erlaubt. Dies kann zu einer Nutzung des Kommentarbereiches wie bei einem Forum f&uuml;hren, bei dem es zuletzt aber nicht mehr um den eigentlichen Beitrag geht."
-msgstr ""
+msgstr "Show a reply link under each comment. This allows for the comment section to be used like a forum, including getting side-tracked."
 
 #: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:862
 #: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:1342
 msgid "Optionen speichern"
-msgstr ""
+msgstr "Save options"
 
 #: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:1086
 msgid " Segel setzen: Defaultbilder "
@@ -1113,93 +1113,93 @@ msgstr "Set sails: Default images"
 
 #: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:1089
 msgid "Defaultbilder wurden gespeichert."
-msgstr ""
+msgstr "Default images saved."
 
 #: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:1105
 msgid "Defaultbilder f&uuml;r Slider"
-msgstr ""
+msgstr "Default images for slider"
 
 #: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:1129
 msgid "Alternatives Sliderbild als URL"
-msgstr ""
+msgstr "Alternative slider image as URL"
 
 #: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:1132
 msgid "URL inkl. http:// zum Bild. Dieses kann auch vorher &uuml;ber den Mediendialog hochgeladen worden sein."
-msgstr ""
+msgstr "Image URL (including http://). The image may be uploaded beforehand using the media dialogue."
 
 #: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:1134
 #: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:1171
 #: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:1233
 msgid "Die Bilder sollten folgende Dimension haben: "
-msgstr ""
+msgstr "The images should have the following dimensions:"
 
 #: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:1165
 msgid "Alternatives Seitenbild als URL"
-msgstr ""
+msgstr "Alternative page image as URL"
 
 #: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:1168
 msgid "URL inkl. http:// zum Bild. Dieses kann auch vorher &uuml;ber den Mediendialog hochgeladen worden sein. "
-msgstr ""
+msgstr "Image URL (including http://). The image may be uploaded beforehand using the media dialogue."
 
 #: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:1179
 msgid "Defaultplakate f&uuml;r Sidebar"
-msgstr ""
+msgstr "Default posters for sidebar"
 
 #: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:1205
 msgid " Diese Bilder werden in der Sidebar rechts gezeigt, sofern dieses &uuml;ber die Optionen (vgl. Slider) auch eingeschaltet ist."
-msgstr ""
+msgstr "These pictures are shown in the right sidebar, if the sidebar is enabled in the options menu (compare to slider)."
 
 #: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:1208
 msgid "Optionaler Ersatztitel"
-msgstr ""
+msgstr "Optional alternative title"
 
 #: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:1211
 msgid "Dieser Titel wird als Alternativ-Text verwendet. "
-msgstr ""
+msgstr "This title is used as alternative text. "
 
 #: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:1212
 msgid "Solange keine Verlinkung erfolgt, ist diese Angabe optional, da die Plakatbilder dann nur \"Schmuckbilder\" sind und keinen auf die Seite bezogenen Inhalt mitliefern."
-msgstr ""
+msgstr "As long there is no reference to other websites, these entry is optional."
 
 #: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:1216
 msgid "Optionale URL"
-msgstr ""
+msgstr "Optional URL"
 
 #: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:1219
 msgid "Optionale Webadresse zur Verlinkung der Plakate mit einer Informationsseite"
-msgstr ""
+msgstr "Optional URL to link the posters to an information page"
 
 #: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:1225
 msgid "Eigene Plaktbilder:"
-msgstr ""
+msgstr "Own poster images:"
 
 #: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:1228
 msgid "Adressen alternativer Plakatbilder"
-msgstr ""
+msgstr "Addresses of alternative poster images"
 
 #: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:1231
 msgid "Angabe der URLs inkl. http:// zum Bild. Wenn es mehrere sind, werden die einzelnen Adressen durch Zeilenumbruch getrennt. "
-msgstr ""
+msgstr "URLs for images. If there is more than one, please devide by a line break."
 
 #: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:1236
 msgid "Sollen die Bilder zus&auml;tzlich mit einem eigenen Titel und einer Webadresse versehen werden werden diese Angabe durch ein \"|\" zeichen in folgender Reihenfolge getrennt: <code>Bild URL|Titel|URL Webpage</code>"
-msgstr ""
+msgstr "Shall the images in addition be furnished with an own title and a link, you can enter them here and devide image URL, title and website URL with the \"|\" char like this: <code>image URL|title|URL website</code>"
 
 #: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:1238
 msgid "Beispiel: "
-msgstr ""
+msgstr "Example:"
 
 #: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:1241
 msgid "Wenn oben Defaultplakate angeklickt sind, erscheinen diese Bilder zus&auml;tzlich. Diese Bilder k&ouml;nnen auch vorher &uuml;ber den Mediendialog hochgeladen worden sein."
-msgstr ""
+msgstr "If default posters are activated above, these pictures appear in addition."
 
 #: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:1249
 msgid "Symbolbild f&uuml;r 404 Seite"
-msgstr ""
+msgstr "Symbolic image for 404 pages"
 
 #: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:1253
 msgid "URL f&uuml;r ein eigenes 404-Seitenbild."
-msgstr ""
+msgstr "URL for a 404 page image."
 
 #: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:1255
 #: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:1268
@@ -1209,209 +1209,209 @@ msgstr ""
 #: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:1320
 #: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:1333
 msgid "Default:"
-msgstr ""
+msgstr "Default:"
 
 #: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:1262
 msgid "Symbolbild f&uuml;r Kategorie Seite"
-msgstr ""
+msgstr "Symbolic image for category pages"
 
 #: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:1266
 msgid "URL f&uuml;r ein eigenes Kategorien-Seitenbild."
-msgstr ""
+msgstr "URL for a category page image."
 
 #: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:1275
 msgid "Symbolbild f&uuml;r Tag Seite"
-msgstr ""
+msgstr "Symbolic image for tag pages"
 
 #: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:1279
 msgid "URL f&uuml;r ein eigenes Tag-Seitenbild."
-msgstr ""
+msgstr "URL for a tag page image."
 
 #: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:1288
 msgid "Symbolbild f&uuml;r Autoren Seite"
-msgstr ""
+msgstr "Symbolic image for author pages"
 
 #: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:1292
 msgid "URL f&uuml;r ein eigenes Autoren-Seitenbild."
-msgstr ""
+msgstr "URL for an author page image."
 
 #: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:1301
 msgid "Symbolbild f&uuml;r Archiv Seite"
-msgstr ""
+msgstr "Symbolic image for archive pages"
 
 #: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:1305
 msgid "URL f&uuml;r ein eigenes Archiv-Seitenbild."
-msgstr ""
+msgstr "URL for an archive page image."
 
 #: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:1314
 msgid "Symbolbild f&uuml;r Suchergebnis-Seite"
-msgstr ""
+msgstr "Symbolic image for search result pages"
 
 #: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:1318
 msgid "URL f&uuml;r ein eigenes Suchergebnis-Seitenbild."
-msgstr ""
+msgstr "URL for a search result page image."
 
 #: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:1327
 msgid "Symbolbild f&uuml;r Tenmplate-Seiten"
-msgstr ""
+msgstr "Symbolic image for template pages"
 
 #: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:1331
 msgid "URL f&uuml;r ein Template-Seitenbild."
-msgstr ""
+msgstr "URL for a template page image."
 
 #: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:1474
 msgid " Captn & Crew: Kontaktinformationen setzen "
-msgstr ""
+msgstr "Captain & Crew: Setting contact details"
 
 #: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:1477
 msgid "Kontaktinformationen wurden gespeichert."
-msgstr ""
+msgstr "Contact details saved."
 
 #: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:1487
 msgid "Impressumsangaben"
-msgstr ""
+msgstr "Legal details"
 
 #: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:1490
 msgid "Verantwortliche/r"
-msgstr ""
+msgstr "Responsible person"
 
 #: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:1494
 msgid "Verantwortliche/r gem&auml;&szlig; &sect; 5 TMG. <br>Zum Beispiel: <code>Martin Mustermann</code>"
-msgstr ""
+msgstr "Responsible person according to &sect; 5 TMG. <br>For example: <code>A. N. Other</code>"
 
 #: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:1499
 msgid "Textbezeichnung Dienstanbieter"
-msgstr ""
+msgstr "Denomination of the service provider"
 
 #: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:1503
 msgid "Textbezeichnung des Dienstanbieter des Webauftritts."
-msgstr ""
+msgstr "Denomination of the service provider of the web site."
 
 #: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:1504
 msgid " Beispiel: <code>Kreisverband Musterstadt der Piratenpartei Deutschland vertreten durch den Vorstand Martin Mustermann, Doris Fischer und Florian Meister.</code>"
-msgstr ""
+msgstr "Example: <code>Local Section of Pirate Party at Town. Responsible contacts are Vorstand Martin Mustermann, Doris Fischer and Florian Meister.</code>"
 
 #: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:1512
 msgid "Offizielle Postanschrift"
-msgstr ""
+msgstr "Official postal address"
 
 #: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:1516
 #: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:1562
 msgid "Name oder Titel"
-msgstr ""
+msgstr "Name or title"
 
 #: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:1520
 #: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:1566
 msgid "Anschrift: Titel (1. Zeile). <br>Zum Beispiel: <code>Piratenpartei</code>"
-msgstr ""
+msgstr "Adress: Title"
 
 #: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:1525
 #: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:1571
 msgid "zu H&auml;nden"
-msgstr ""
+msgstr "for the attention of"
 
 #: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:1529
 msgid "Anschrift: Optionale Personenangabe (\"zu H&auml;nden\") <br>Zum Beispiel: <code>Martin Mustermann</code>"
-msgstr ""
+msgstr "Address: Optional personal data (\"for the attention of\")."
 
 #: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:1534
 #: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:1580
 msgid "Strasse oder Postfach"
-msgstr ""
+msgstr "Street or P.O. box"
 
 #: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:1538
 msgid "Anschrift: Strassenname und Nummer oder Postfachangabe oder freilassen <br>Zum Beispiel: <code>Unbesonnenheitsweg 123b</code>"
-msgstr ""
+msgstr "Address: Street name and number or P.O. box or empty."
 
 #: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:1543
 #: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:1589
 msgid "PLZ und Stadt"
-msgstr ""
+msgstr "Postal code and city"
 
 #: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:1547
 #: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:1593
 msgid "Anschrift: Postleitzahl gefolgt von Stadt<br>Zum Beispiel: <code>12345  Ankh-Morpork</code>"
-msgstr ""
+msgstr "Address: Postal code and city"
 
 #: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:1557
 msgid "Ladungsf&auml;hige Anschrift"
-msgstr ""
+msgstr "Address at or to which a summons may be served"
 
 #: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:1560
 msgid "Optionale Angaben f&uuml;r Rechtssachen. Werden diese Angaben frei gelassen, werden die Daten der Postanschrift verwendet."
-msgstr ""
+msgstr "Optional information for legal details. If not entered, entries of postal informations are used."
 
 #: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:1575
 msgid " Anschrift: Optionale Personenangabe (\"zu H&auml;nden\"). Sollte in der Regel dieselbe Person sein, die oben als verantwortliche Person f&uuml;r das Impressum definiert ist.<br> Zum Beispiel: <code>Martin Mustermann</code>"
-msgstr ""
+msgstr "Address: Optional personal data (\"for the attention of\"). Should generally be the same person as defined as responsible person."
 
 #: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:1584
 msgid " Anschrift: Strassenname und Nummer oder Postfachangabe oder freilassen <br>Zum Beispiel: <code>Unbesonnenheitsweg 123b</code>"
-msgstr ""
+msgstr "Address: Street name and number or P.O. box or empty"
 
 #: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:1601
 msgid "Offizielle E-Mailadresse"
-msgstr ""
+msgstr "Official e-mail address"
 
 #: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:1605
 msgid "Feste Mailadresse f&uuml;r offizielle Kontakte.<br>Zum Beispiel: "
-msgstr ""
+msgstr "Constant e-mail address for official contact.<br>For example:"
 
 #: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:1611
 msgid "Datenschutzbeauftragter"
-msgstr ""
+msgstr "Data protection commissioner"
 
 #: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:1614
 msgid "Optionale Angaben zu einem Datenschutzbeauftragten. Wenn dieser nicht angegeben wird, wird die E-Mail-Adresse des Bundesdatenschutzbeauftragten angegeben."
-msgstr ""
+msgstr "Optional information regarding a data security commissioner. If not entered, the federal data security commissioner’s e-mail address will be shown."
 
 #: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:1621
 msgid "Name des DSB<br>Zum Beispiel: <code>Martin Mustermann</code>"
-msgstr ""
+msgstr "Name of the data security commissioner<br>For example: <code>A. N. Other</code>"
 
 #: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:1626
 msgid "E-Mailadresse"
-msgstr ""
+msgstr "e-mail address"
 
 #: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:1630
 msgid "Feste Mailadresse f&uuml;r offizielle Kontakte.<br>Zum Beispiel:  <code>bundesbeauftragter@piraten-dsb.de</code>"
-msgstr ""
+msgstr "Constant e-mail address for official contact.<br>For example: <code>data-security-commissioner@pirate-party.co.uk</code>"
 
 #: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:1640
 msgid "Spendenformulare"
-msgstr ""
+msgstr "Donation forms"
 
 #: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:1642
 msgid "Optionale Angaben f&uuml;r Spendenformulare, die mit dem Seiten-Template \"Spenden\" erstellt werden."
-msgstr ""
+msgstr "Optional information for donation forms created with the page template \"Donate\"."
 
 #: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:1644
 msgid "<strong>Achtung:</strong> Dies ersetzt nicht das richtige Eingabeformular. Das Formular wird z.B. mit dem Plugin <em>Contact Form 7</em> erstellt und dann als Makro in den Textbereich der Seite hinzugef&uuml;gt."
-msgstr ""
+msgstr "<strong>Attention:</strong> This does not replace the real form. The form will be created by a plugin like <em>Contact Form 7</em>."
 
 #: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:1646
 msgid "Die folgenden Daten werden nur dazu verwendet, die Tabelle f&uuml;r die  feststehenden Informationen aufzubauen."
-msgstr ""
+msgstr "The following informations are used to generate a table on the target page."
 
 #: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:1655
 msgid " Name des Empf&auml;ngers/Konto der Spenden f&uuml;r &Uuml;berweisungen. "
-msgstr ""
+msgstr "Recipients name / donation account for bank transfers."
 
 #: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:1663
 msgid " Kontonummer des Empf&auml;ngers"
-msgstr ""
+msgstr "Recipients bank account number"
 
 #: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:1668
 msgid "BLZ"
-msgstr ""
+msgstr "Bank identification number"
 
 #: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:1672
 msgid " Die Bankleitzahl."
-msgstr ""
+msgstr "The bank identification number."
 
 #: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:1681
 msgid "Ausgeschriebener Name der Bank"
-msgstr ""
+msgstr "Bank name in full"
 
 #: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:1689
 msgid "Internationale Bank Account Nummer"
@@ -1428,19 +1428,19 @@ msgstr "Save"
 
 #: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:1802
 msgid " Kl&uuml;verbaum: Erweiterte Designeinstellungen "
-msgstr ""
+msgstr "Jib Boom: Advanced design settings"
 
 #: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:1805
 msgid "Designeinstellungen wurden gespeichert."
-msgstr ""
+msgstr "Design settings saved."
 
 #: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:1808
 msgid "<b>Achtung:</b> Diese Einstellungen sollten nur in Ausnahmef&auml;llen ge&auml;ndert werden. Bei einer falschen Nutzung k&ouml;nnen Eingaben die Gestaltung des Webauftritts sch&auml;digen."
-msgstr ""
+msgstr "<b>Attention:</b> These settings should only be changed in exceptional cases. When used wrongly, they could seriously damage the web site design."
 
 #: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:1823
 msgid "L&auml;nderfarbe aktivieren"
-msgstr ""
+msgstr "Activate country specific colour"
 
 #: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:1828
 msgid "Deutschland (Orange)"
@@ -1456,35 +1456,35 @@ msgstr "Turkey (Cyan)"
 
 #: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:1835
 msgid "Auswahl, welche l&auml;nderbezogene Farbvariante aktiviert werden soll."
-msgstr ""
+msgstr "Selection which country specific colour variant should be activated."
 
 #: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:1841
 msgid "Höhe des Kopfbereiches ( .header )"
-msgstr ""
+msgstr "Header height ( .header )"
 
 #: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:1849
 msgid "Wenn dieser Wert sich von der Defaulteinstellung aus der CSS Datei piratenkleider.css (Zeile 1926) unterscheidet, wird er &uuml;ber ein Inline-CSS nachträglich im Kopfteil des HTML-Documents ge&auml;ndert."
-msgstr ""
+msgstr "If this differs by the default settings, it will be set as inline css in the header of the website."
 
 #: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:1851
 msgid "<b>Achtung:</b> Die Verkleinerung der Höhe des Kopfteils ist nicht ungef&auml;hrlich. Zu beachten ist, dass der Kopfteil auch bei einer Vergr&ouml;&szlig;erung des Textes auf 200% noch gen&uuml;gend Platz haben muss!"
-msgstr ""
+msgstr "<b>Notice:</b> To set a smaller height could have bad affects for browser displays with a big text size. "
 
 #: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:1855
 msgid "Abstand des Brandingbereiches (=Logo) nach oben ( .header .branding )"
-msgstr ""
+msgstr "spacing between branding area (= logo) and top (.header .branding )"
 
 #: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:1862
 msgid "Das Logo hat einen Abstand nach oben. Diese kann &uuml;ber diese Angabe reduziert werden. "
-msgstr ""
+msgstr "The logo has a margin to the top. This can be reduced with this declaration."
 
 #: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:1866
 msgid "<b>Achtung:</b> Wenn Socialmedia-Icons und Linkmenu oben auch erscheinen, sollte dieser Abstand nicht zu klein sein, da diese Icons und  der Text der Links bei steigender Gr&ouml;&szlig;e nach Links zum Logo wandert und es so zu &Uuml;berlapplungen kommen k&ouml;nnte."
-msgstr ""
+msgstr "<b>Attention:</b> If social media icons and the link menu also appear at the top this margin should not be too small, for these icons and the link text."
 
 #: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:1872
 msgid "Hintergrund-Einstellungen im Kopfteil ( .header )"
-msgstr ""
+msgstr "background settings in the header (.header)"
 
 #: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:1876
 msgid "background-color"
@@ -1492,7 +1492,7 @@ msgstr "background-color"
 
 #: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:1883
 msgid "Wenn gesetzt, &auml;ndert die Default-Hintergrundfarbe ab."
-msgstr ""
+msgstr "Changes default background colour if set."
 
 #: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:1888
 msgid "background-image"
@@ -1500,7 +1500,7 @@ msgstr "background-image"
 
 #: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:1895
 msgid "Wenn gesetzt, &auml;ndert  das Hintergrundbild."
-msgstr ""
+msgstr "Changes background image if set."
 
 #: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:1901
 msgid "background-position"
@@ -1508,7 +1508,7 @@ msgstr "background-position"
 
 #: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:1908
 msgid "Wenn gesetzt, &auml;ndert die Position des Hintergrundbildes."
-msgstr ""
+msgstr "Changes background image position if set."
 
 #: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:1914
 msgid "background-repeat"
@@ -1516,25 +1516,25 @@ msgstr "background-repeat"
 
 #: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:1921
 msgid "Wenn gesetzt, &auml;ndert die Repeat-Eigenschaft des Hintergrundbildes."
-msgstr ""
+msgstr "Changes repeat behaviour of background image if set."
 
 #: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:1933
 msgid "Eigene CSS-Anweisungen"
-msgstr ""
+msgstr "Own CSS code"
 
 #: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:1940
 msgid "Eigene CSS-Anweisungen, die Inline im Kopfteil der Dokumente erg&auml;nzt werden"
-msgstr ""
+msgstr "Own CSS code, which will be amended inline in the document header"
 
 #: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:1945
 msgid "Eigene HTML-Anweisungen"
-msgstr ""
+msgstr "Own HTML code"
 
 #: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:1952
 msgid "Eigene HTML-Anweisungen, die am Ende der Webseite, vor dem letzten &lt;/body&Gt;&lt;/html&gt; plaziert werden"
-msgstr ""
+msgstr "Own HTML code, which will be amended at the end of the web page (before the last &lt;/body&Gt;&lt;/html&gt;). "
 
 #: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:1953
 msgid "<b>Achtung:</b> Fehlerhafter HTML-, JavaScript oder CSS-Code an dieser Stelle kann zu einem Nicht-Funktionieren der gesamt Website f&uuml;hren!<br />Der hier eingegebene Code wird nicht gefiltert oder kontrolliert."
-msgstr ""
+msgstr "<b>Attention:</b> incorrect HTML, JavaScript or CSS code at this point could damage the display of the website."
 
