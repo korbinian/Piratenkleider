@@ -2,7 +2,7 @@ Piratenkleider
 - Wordpress-Theme für Webauftritte der Piratenpartei 
 =================================================
 
-Version 2.6 von Wolfgang Wiese (xwolf), 18. Mai 2012
+Version 2.7 von Wolfgang Wiese (xwolf), 4. Juni 2012
 
 
 DOWNLOADS
@@ -23,6 +23,7 @@ AUTOREN / ENTWICKLER
      Andre Sendowski, http://www.iphone-notes.de/
      Heiko Philippski, http://www.phindie.de/
      Kerstin Probiesch, http://www.barrierefreie-informationskultur.de
+     Fabian Müller, http://www.feals.de
 
 VORVERSION
 
@@ -323,5 +324,20 @@ Administrative Hinweise für Wordpress Theme-Editoren:
    Zur Nutzung und Erstellung von Sprachdateien siehe
     http://www.catswhocode.com/blog/how-to-make-a-translatable-wordpress-theme
 
+   Die Sprachdateien werden in der Form
+        Sprachcode_Landescode.mo   und
+        Sprachcode_Landescode.po
+   abgelegt. Beispielsweise
+        en_UK.po
+        en_UK.mo
+   
+   Um auf die andere Sprache zu wechseln wird im Backend und Settings die
+   Sprache auf die jeweilige Sprache gewechselt, sofern dies durch die
+   ortsabhängige Version der Wordpress-Installation nicht bereits geschehen ist.
+   Ab der Version 2.7 ist  bereits eine britisch englische Sprachübersetzung
+   beigelegt.
+   Zur eigenen Übersetzung kann die Datei
+      default.po
+   mit Hilfe des Editors poedit bearbeitet werden.
    
 
