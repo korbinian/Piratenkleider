@@ -69,7 +69,27 @@
         text-indent: -999em;
         background: url("../assets/home.gif") no-repeat center 10px; 
 }
-      
+.nav-main ul.menu li.current-menu-item.menu-item-home a {
+    background: url("../assets/home.gif") no-repeat scroll center -107px #111111 !important;
+}
+.nav-main ul.menu li.current-menu-item > a,
+.nav-main ul.menu li.current-page-item > a {
+    background: none repeat scroll 0 0 black;
+    color: white;
+}
+
+
+.nav-main ul.menu li.current-menu-item > a,
+.nav-main ul.menu li.current-page-ancestor > a,
+.nav-main ul.menu li.current-menu-ancestor > a
+{
+    background: none repeat scroll 0 0 black;
+    color: white;
+}
+
+
+
+
  .nav-main ul.menu li a[title="Home"]:hover,
  .nav-main ul.menu li a[title="Home"].hover,
  .nav-main ul.menu li.menu-item-home a:hover,
