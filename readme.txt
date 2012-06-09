@@ -203,7 +203,7 @@ THEME OPTION "Kopfzeile"
    vorzubereiten.
 
 
-VERWENDETE PLUGINS
+UNTERSTÜTZE PLUGINS
   - Wenn das Plugin "Related Posts by Category" vorhanden und aktiviert ist,
     werden bei der Anzeige eines Artikels weitere Artikel verlinkt, die
     ggf. relevant sein könnten.
@@ -225,6 +225,16 @@ VERWENDETE PLUGINS
         Custom Event Format: (Yes)
              %date-time%, %start-date%, %start-time%, %end-date%, %end-time%, 
                 %event-title%, %description%, %location%   
+ 
+ -Advanced Custom Fields
+  Mit Hilfe des Plugins Advanced Custom Fields können Seiten und Artikel um 
+  zusätzliche Felder ergänzt werden.
+  Im Theme wird dies bei Seiten (nicht Artikeln) unterstützt durch den 
+  optionalen Parameter “right_column”. Dieser erlaubt es, zusätzliche 
+  Informationen in der rechte Spalte (der Sidebar) zu ergänzen.
+
+  Konfiguration von Advanced Custom Fields. Siehe Online Doku.
+ 
 
 EMPFEHLUNGEN FÜR WIDGETS
  
