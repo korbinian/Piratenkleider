@@ -439,7 +439,7 @@ add_filter('wp_get_attachment_url', 'honor_ssl_for_attachments');
 function honor_ssl_for_attachments($url) {
 	$http = site_url(FALSE, 'http');
 	$https = site_url(FALSE, 'https');
-	return ( $_SERVER['HTTPS'] == 'on' ) ? str_replace($http, $https, $url) : $url;
+        return is_ssl() ? str_replace($http, $https, $url) : $url;
 }
 
 
