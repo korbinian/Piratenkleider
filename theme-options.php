@@ -1830,13 +1830,21 @@ function theme_designspecials_do_page() {
                             <option value="colors_tk.css" <?php if ( $options['css-colorfile'] == 'colors_tk.css') echo ' selected="selected"'; ?>><?php _e( 'T&uuml;rkei (Cyan)', 'piratenkleider' ); ?></option>
                         </select>   
 
-
                         <label class="description" for="piratenkleider_theme_designspecials[css-colorfile]">
                             <?php _e( 'Auswahl, welche l&auml;nderbezogene Farbvariante aktiviert werden soll.', 'piratenkleider' ); ?>
                         </label>
 
                         </td>					                           
 		       </tr>
+                       
+                       <tr valign="top"><th scope="row"><?php _e( 'Small Screen Device Sichtbarkeit', 'piratenkleider' ); ?></th>
+                            <td>
+                              <input id="piratenkleider_theme_designspecials[aktiv-mediaqueries-allparts]" name="piratenkleider_theme_designspecials[aktiv-mediaqueries-allparts]" type="checkbox" value="1" <?php checked( '1', $options['aktiv-mediaqueries-allparts'] ); ?> />
+                               <label  for="piratenkleider_theme_designspecials[aktiv-mediaqueries-allparts]">
+                                   <?php _e( 'F&uuml;r kleine Bildschirmaufl&ouml;sungen auch optionale Teile (Sticker, Slider) anzeigen.', 'piratenkleider' ); ?>
+                               </label>
+                            </td>
+			</tr>
                        
                        <tr valign="top"><th scope="row"><?php _e( 'Höhe des Kopfbereiches ( .header )', 'piratenkleider' ); ?></th>
                         <td>
@@ -1971,6 +1979,14 @@ function theme_designspecials_do_page() {
  * Sanitize and validate input. Accepts an array, return a sanitized array.
  */
 function theme_designspecials_validate( $input ) {
+    
+    
+    if ( ! isset( $input['aktiv-mediaqueries-allparts'] ) )
+		$input['aktiv-mediaqueries-allparts'] = 0;
+	$input['aktiv-mediaqueries-allparts'] = ( $input['aktiv-mediaqueries-allparts'] == 1 ? 1 : 0 );    
+    
+    
+    
         $input['css-default-branding-padding-top'] = wp_kses_normalize_entities( $input['css-default-branding-padding-top'] );   
         $input['css-default-header-height'] = wp_kses_normalize_entities( $input['css-default-header-height'] );   
         $input['css-eigene-anweisungen'] = wp_filter_post_kses( $input['css-eigene-anweisungen'] );

@@ -88,7 +88,6 @@ if ((isset( $options['meta-keywords'] )) && ( strlen(trim($options['meta-keyword
 
 <link rel="apple-touch-icon" href="<?php echo get_template_directory_uri(); ?>/apple-touch-icon.png">
 <link rel="shortcut icon" href="<?php echo get_template_directory_uri(); ?>/favicon.ico">
-
 <link rel="profile" href="http://gmpg.org/xfn/11" />
 <link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo( 'stylesheet_url' ); ?>">
 <?php if ((isset($designspecials['css-colorfile'])) && (strlen(trim($designspecials['css-colorfile']))>1)) { 
@@ -97,7 +96,11 @@ if ((isset( $options['meta-keywords'] )) && ( strlen(trim($options['meta-keyword
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 <?php if ( is_singular() && get_option( 'thread_comments' ) )
 		wp_enqueue_script( 'comment-reply' );
-	wp_head(); ?>
+wp_head(); 
+if (isset($designspecials['aktiv-mediaqueries-allparts']) && ($designspecials['aktiv-mediaqueries-allparts']==1)) {
+      echo '<link rel="stylesheet" type="text/css" media="screen" href="'.get_template_directory_uri().'/css/basemod_mediaqueries_allparts.css">';      
+}
+?>
 
 <!--[if lte IE 7]>
 <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/yaml/core/iehacks.min.css" type="text/css"/>

@@ -25,7 +25,7 @@ if ( !defined('ABSPATH') ) { die('-1'); }
   <div class="row">
     <div class="content-primary">
       <div class="content-header">
-        <h1 id="page-title"><span><?php the_title() ?></span></h1>   
+        <h1 id="page-title"><span><?php tribe_events_title();  the_title() ?></span></h1>   
         <?php if (has_post_thumbnail()) { 
             echo '<div class="symbolbild">';
               the_post_thumbnail(); 

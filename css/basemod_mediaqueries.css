@@ -11,8 +11,8 @@
 
 @media only screen and (max-width: 767px) {
   .logo {
-    width: 100%;
-    top: 40px;
+    max-width: 300px;
+    top: 0px;
   }
    .logo img {
       margin: 0 auto;
@@ -37,7 +37,9 @@
    .teaserlinks ul li a {
        padding-left: 10px;
    }
-  
+   .nav-main ul.menu li a {
+       padding: 12px 5px 10px;
+   }
 
 }
 
@@ -291,8 +293,8 @@
     display: block;
     clear: both;
   }
-    .content-primary .first-startpage-widget-area,
-    .content-primary .second-startpage-widget-area {
+   .content-primary .first-startpage-widget-area,
+   .content-primary .second-startpage-widget-area {
     clear: both;
     float: none;
     padding-top: 10px;
@@ -303,6 +305,12 @@
     display: none;
    }
    
+   .content-primary .skin {
+       padding: 0;
+   }
+   .single .post {
+       padding: 10px;
+   }
   .post-comments {
      background: url("../images/int/bg-tags.png") repeat fixed -20% top #FF8800;
      padding: 3px;
