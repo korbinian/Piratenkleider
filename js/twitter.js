@@ -7,7 +7,7 @@
 
 
 var callback_name = "tweet_callback";
-var twitter_search = "http://twitter.com/statuses/user_timeline";
+var twitter_search = "https://twitter.com/statuses/user_timeline";
 var return_type = "json";
 ( function() {
 var ts = document.createElement('script');
