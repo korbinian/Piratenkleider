@@ -810,26 +810,29 @@ function get_piratenkleider_custom_excerpt( ){
 
 
 
-function short_title($after = '...', $length = 6, $textlen = 60) {
-   $mytitle = explode(' ', get_the_title(), $length);
-   if (count($mytitle)>=$length) {
-       array_pop($mytitle);
+function short_title($after = '...', $length = 6, $textlen = 10) {
+   $thistitle =   get_the_title();  
+   $mytitle = explode(' ', get_the_title());
+   if ((count($mytitle)>$length) || (strlen($thistitle)> $textlen)) {
+       while(((count($mytitle)>$length) || (strlen($thistitle)> $textlen)) && (count($mytitle)>1)) {
+           array_pop($mytitle);
+           $thistitle = implode(" ",$mytitle);           
+       }       
        $morewords = 1;
-   } else {       
+   } else {              
        $morewords = 0;
    }
-   $mytitle = implode(" ",$mytitle);
-   if (strlen($mytitle)> $textlen) {
-       $mytitle = substr($mytitle, 0, $textlen);
-       $mytitle .= $after;
-   } elseif ($morewords==1) {
-       $mytitle .= $after;
+   if (strlen($thistitle)> $textlen) {
+      $thistitle = substr($thistitle, 0, $textlen);
+      $morewords = 1;     
+   }
+   if ($morewords==1) {
+       $thistitle .= $after;
    }   
-   return $mytitle;
+   return $thistitle;
 }
 
-function wpi_linkexternclass($content)
-    {
+function wpi_linkexternclass($content){
         return preg_replace_callback('/<a[^>]+/', 'wpi_linkexternclass_callback', $content);
     }
  

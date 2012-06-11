@@ -11,7 +11,7 @@
  .nav-main {
     position: absolute;
     bottom: 0; 
-    max-width: 90%;
+    max-width: 100%;
   }
 
 .nav-main ul.menu {

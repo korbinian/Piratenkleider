@@ -2,7 +2,7 @@ Piratenkleider
 - Wordpress-Theme für Webauftritte der Piratenpartei 
 =================================================
 
-Version 2.7 von Wolfgang Wiese (xwolf), 4. Juni 2012
+Version 2.7 von Wolfgang Wiese (xwolf), 11. Juni 2012
 
 
 DOWNLOADS
@@ -225,7 +225,9 @@ UNTERSTÜTZE PLUGINS
         Custom Event Format: (Yes)
              %date-time%, %start-date%, %start-time%, %end-date%, %end-time%, 
                 %event-title%, %description%, %location%   
- 
+
+   Die Zeitzone sollte auf UTC-Time gestellt werden.     
+
  -Advanced Custom Fields
   Mit Hilfe des Plugins Advanced Custom Fields können Seiten und Artikel um 
   zusätzliche Felder ergänzt werden.
@@ -234,7 +236,13 @@ UNTERSTÜTZE PLUGINS
   Informationen in der rechte Spalte (der Sidebar) zu ergänzen.
 
   Konfiguration von Advanced Custom Fields. Siehe Online Doku.
- 
+
+ - The Events Calendar
+   Das Plugin "The Events Calendar" wird oft verwendet um eine
+   Terminkalenderansicht zu ermöglichen. Um diese optimal in das Theme
+   einzubauen, wurden eigene Templatefiles im Verzeichnis /events/ hinterlegt.
+
+
 
 EMPFEHLUNGEN FÜR WIDGETS
  
