@@ -98,6 +98,13 @@
         
       
       <div class="startpage-widget-area">
+          
+          <?php 
+          $locale = get_locale();
+          echo 'locale: ', $locale;
+          ?>
+          
+          
           <h2 class="skip"><?php _e("Weitere Artikel", 'piratenkleider'); ?></h2>
         <div class="first-startpage-widget-area">
           <div class="skin">
