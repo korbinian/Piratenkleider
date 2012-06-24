@@ -48,7 +48,9 @@ img {
   max-width: 100%;
   border: 0;
   -ms-interpolation-mode: bicubic; }
-
+.ie8 img {
+    max-width: none; 
+} 
 article, aside, details, figcaption, figure, footer, header, hgroup, nav, section, summary {
   display: block; }
 
@@ -737,9 +739,14 @@ ul.socialmedia li a:focus img  {
     letter-spacing: 1px;
     margin: 10px;
     line-height: 0.9em;
-    max-width: 200px; 
-    max-height: 150px;       
-    border: 2px solid transparent;     
+     
+    border: 2px solid transparent;
+    display: inline-block;
+    width: auto;
+ /*  
+  *    max-width: 200px; 
+  *    max-height: 150px;  
+ */      
   }
 
   .sticker ul li a {    
@@ -815,6 +822,7 @@ ul.socialmedia li a:focus img  {
 
 .sticker li a img {
     border: 2px solid transparent;
+    max-width: none;
 }
    
 .sticker li a img {
@@ -839,7 +847,9 @@ ul.socialmedia li a:focus img  {
     transform: rotate(5deg) scale(1.3);
 }
 
-
+.sticker ul li a span {
+    display: inline-block;
+}
 .sticker ul li a .gedreht  {
         -moz-transform: rotate(355deg);
         -ms-transform: rotate(355deg);
@@ -847,7 +857,6 @@ ul.socialmedia li a:focus img  {
         transform: rotate(355deg);
         text-shadow: 0px 2px 1px #333;
         font-weight: 900;
-        display: inline-block;
    }
 
 
