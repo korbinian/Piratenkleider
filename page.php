@@ -20,7 +20,7 @@ if (!isset($options['aktiv-defaultseitenbild']))
            if ($options['aktiv-defaultseitenbild']==1) {   
                 $bilderoptions = get_option( 'piratenkleider_theme_defaultbilder' ); 
                 $defaultbildsrc = $bilderoptions['seiten-defaultbildsrc'];
-                if (isset($defaultbildsrc) && (strlen($defaultbildscr)>4)) {
+                if (isset($defaultbildsrc) && (strlen($defaultbildsrc)>4)) {
                   echo '<div class="symbolbild">';
                   echo '<img src="'.$defaultbildsrc.'"  alt="">';                        
                   echo '</div>';  
