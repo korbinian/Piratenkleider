@@ -1344,21 +1344,40 @@ ul.socialmedia li a:focus img  {
     overflow: hidden;
     position: relative; 
     width: 100%;
-    margin: 5px;
+    margin: 0 5px 5px 5px;
 }
 .content-aside .newsletter  form label {
       font-weight: lighter; 
+      font-size:0.9em;
 }
 .content-aside .newsletter form input[type="text"] {
       max-width: 15em;
       width: 150px;  
  }
+ 
  .content-aside .newsletter p {
-     margin: 5px;
-     
+    height: 1px;
+    font-size: 0px;
+    margin: 0;
+    padding: 0;
+    -moz-transition: all 0.2s ease-in-out;
+    -o-transition: all 0.2s ease-in-out;
+    -webkit-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;     
+ }  
+ .content-aside .newsletter:hover p,
+ .content-aside .newsletter:focus p {
+    height: auto;
+    font-size: 0.9em;
+    margin: 5px;
+    padding: 0;
+    -moz-transition: all 0.2s ease-in-out;
+    -o-transition: all 0.2s ease-in-out;
+    -webkit-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out; 
  }
-  
-  
+
+ 
 .subnav {
   margin: 0;
   padding: 0;
