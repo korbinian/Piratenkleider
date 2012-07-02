@@ -124,15 +124,15 @@ $defaultbilder_liste = array(
 	),
         '8' => array(
 		'src' =>	get_template_directory_uri().'/images/defaultbild-aufzeichnung.jpg',
-		'label' => __( 'Datenschutz', 'piratenkleider' )
+		'label' => __( 'Aufzeichnung', 'piratenkleider' )
 	),
         '9' => array(
 		'src' =>	get_template_directory_uri().'/images/defaultbild-kampagne.jpg',
-		'label' => __( 'Datenschutz', 'piratenkleider' )
+		'label' => __( 'Kampagne', 'piratenkleider' )
 	),
         '10' => array(
 		'src' =>	get_template_directory_uri().'/images/defaultbild-kirche.jpg',
-		'label' => __( 'Datenschutz', 'piratenkleider' )
+		'label' => __( 'Kirche', 'piratenkleider' )
 	),
 );
 
