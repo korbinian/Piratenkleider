@@ -141,11 +141,12 @@ if (isset($designspecials['aktiv-mediaqueries-allparts']) && ($designspecials['a
                                  ?> 
                                  <ul class="socialmedia">
 					<?php if ( $options['social_facebook'] != "" ){ ?><li class="facebook"><a href="<?php echo$options['social_facebook']; ?>"><img src="<?php echo get_template_directory_uri(); ?>/images/social-media/facebook-24x24.png" width="24" height="24" alt="Facebook"></a></li><?php } ?>
-					<?php if ( $options['social_twitter'] != "" ){ ?><li class="twitter"><a href="<?php echo$options['social_twitter']; ?>"><img src="<?php echo get_template_directory_uri(); ?>/images/social-media/twitter-24x24.png" width="24" height="24" alt="Twitter"></a></li><?php } ?>
-					<?php if ( $options['social_youtube'] != "" ){ ?><li class="youtube"><a href="<?php echo$options['social_youtube']; ?>"><img src="<?php echo get_template_directory_uri(); ?>/images/social-media/youtube-24x24.png" width="24" height="24" alt="YouTube"></a></li><?php } ?>
+					<?php if ( $options['social_twitter'] != "" ){ ?><li class="twitter"><a href="<?php echo$options['social_twitter']; ?>"><img src="<?php echo get_template_directory_uri(); ?>/images/social-media/twitter-24x24.png" width="24" height="24" alt="Twitter"></a></li><?php } ?>					
 					<?php if ( $options['social_gplus'] != "" ){ ?><li class="gplus"><a href="<?php echo$options['social_gplus']; ?>"><img src="<?php echo get_template_directory_uri(); ?>/images/social-media/gplus-24x24.png" width="24" height="24" alt="Google+"></a></li><?php } ?>
 					<?php if ( $options['social_diaspora'] != "" ){ ?><li class="diaspora"><a href="<?php echo$options['social_diaspora']; ?>"><img src="<?php echo get_template_directory_uri(); ?>/images/social-media/diaspora-24x24.png" width="24" height="24" alt="Diaspora"></a></li><?php } ?>
 					<?php if ( $options['social_identica'] != "" ){ ?><li class="identica"><a href="<?php echo$options['social_identica']; ?>"><img src="<?php echo get_template_directory_uri(); ?>/images/social-media/identica-24x24.png" width="24" height="24" alt="identi.ca"></a></li><?php } ?>															
+                                        <?php if ( $options['social_youtube'] != "" ){ ?><li class="youtube"><a href="<?php echo$options['social_youtube']; ?>"><img src="<?php echo get_template_directory_uri(); ?>/images/social-media/youtube-24x24.png" width="24" height="24" alt="YouTube"></a></li><?php } ?>
+                                        <?php if ( $options['social_itunes'] != "" ){ ?><li class="itunes"><a href="<?php echo$options['social_itunes']; ?>"><img src="<?php echo get_template_directory_uri(); ?>/images/social-media/itunes-24x24.png" width="24" height="24" alt="iTunes"></a></li><?php } ?>
                                         <?php if ( $options['social_flickr'] != "" ){ ?><li class="flickr"><a href="<?php echo$options['social_flickr']; ?>"><img src="<?php echo get_template_directory_uri(); ?>/images/social-media/flickr-24x24.png" width="24" height="24" alt="flickr"></a></li><?php } ?>		
                                         <?php if ( $options['social_delicious'] != "" ){ ?><li class="delicious"><a href="<?php echo$options['social_delicious']; ?>"><img src="<?php echo get_template_directory_uri(); ?>/images/social-media/delicious-24x24.png" width="24" height="24" alt="Delicious"></a></li><?php } ?>		
 				</ul>
@@ -155,16 +156,25 @@ if (isset($designspecials['aktiv-mediaqueries-allparts']) && ($designspecials['a
                                     if ( $options['aktiv-linkmenu'] == "1" ){
                                      if ( has_nav_menu( 'top' ) ) {
                                             wp_nav_menu( array( 'container_class' => 'menu-header', 'theme_location' => 'top' ) );
-                                        } else { ?>
-                                    <div class="menu-header">
-                                        <ul id="menu-topmenu" class="menu">
-                                            <li><a href="https://wiki.piratenpartei.de">Wiki</a></li>
-                                            <li><a href="https://lqfb.piratenpartei.de">Liquid Feedback</a></li>                                           
-                                            <li><a href="http://news.piratenpartei.de">Forum</a></li>
-                                            <li><a href="http://flaschenpost.piratenpartei.de/">Flaschenpost</a></li>
-                                        </ul>
-                                    </div>                                                                                
-                                 <?php } } 
+                                        } else {
+                                            global $default_toplink_liste;   
+
+                                            if (is_array($default_toplink_liste)) {     ?>
+                                              <div class="menu-header">
+                                                <ul id="menu-topmenu" class="menu">
+                                                <?php  
+                                                foreach($default_toplink_liste as $i => $value) {
+                                                    echo '<li><a href="'.$value.'">';                                                                                                        
+                                                    echo $i.'</a></li>';
+                                                }  
+                                                 ?>
+                                                </ul>
+                                            </div> 
+                                            <?php    
+                                            }
+                                  } 
+                                 
+                                 } 
                                  if ( $options['aktiv-suche'] == "1" ){
                                     get_search_form(); 
                                  }

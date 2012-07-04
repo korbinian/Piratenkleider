@@ -538,15 +538,7 @@ function theme_options_do_page() {
 					</td>					
                                         </tr>
                                         
-                                        <tr valign="top"><th scope="row">YouTube</th>
-                                          <td>
-						<input id="piratenkleider_theme_options[social_youtube]" class="regular-text" type="text" length="5" name="piratenkleider_theme_options[social_youtube]" value="<?php esc_attr_e( $options['social_youtube'] ); ?>" />
-						<label class="description" for="piratenkleider_theme_options[social_youtube]">
-                                                <?php _e( 'URL inkl. http:// zur YouTube Seite<br>Zum Beispiel: <code>http://www.youtube.com/user/piratenpartei</code>', 'piratenkleider' ); ?>
-                                                    
-                                                </label>
-					</td>					
-                                        </tr>
+                                       
                                       
                                         <tr valign="top"><th scope="row">G+</th>
                                           <td>
@@ -577,6 +569,24 @@ function theme_options_do_page() {
                                             </label>
                                             </td>					
                                              </tr>
+                                              <tr valign="top"><th scope="row">YouTube</th>
+                                          <td>
+						<input id="piratenkleider_theme_options[social_youtube]" class="regular-text" type="text" length="5" name="piratenkleider_theme_options[social_youtube]" value="<?php esc_attr_e( $options['social_youtube'] ); ?>" />
+						<label class="description" for="piratenkleider_theme_options[social_youtube]">
+                                                <?php _e( 'URL inkl. http:// zur YouTube Seite<br>Zum Beispiel: <code>http://www.youtube.com/user/piratenpartei</code>', 'piratenkleider' ); ?>
+                                                    
+                                                </label>
+					</td>					
+                                        </tr>
+                                         <tr valign="top"><th scope="row">iTunes</th>
+                                          <td>
+						<input id="piratenkleider_theme_options[social_itunes]" class="regular-text" type="text" length="5" name="piratenkleider_theme_options[social_itunes]" value="<?php esc_attr_e( $options['social_itunes'] ); ?>" />
+						<label class="description" for="piratenkleider_theme_options[social_itunes]">
+                                                <?php _e( 'URL inkl. http:// zur iTunes Seite', 'piratenkleider' ); ?>
+                                                    
+                                                </label>
+					</td>					
+                                        </tr>
                                              <tr valign="top"><th scope="row">Flickr</th>
                                             <td>
                                             <input id="piratenkleider_theme_options[social_flickr]" class="regular-text" type="text" length="5" name="piratenkleider_theme_options[social_flickr]" value="<?php esc_attr_e( $options['social_flickr'] ); ?>" />
@@ -974,6 +984,7 @@ function theme_options_validate( $input ) {
         $input['social_facebook'] = wp_filter_nohtml_kses( $input['social_facebook'] );
         $input['social_twitter'] = wp_filter_nohtml_kses( $input['social_twitter'] );
         $input['social_youtube'] = wp_filter_nohtml_kses( $input['social_youtube'] );
+        $input['social_itunes'] = wp_filter_nohtml_kses( $input['social_itunes'] );
         $input['social_gplus'] = wp_filter_nohtml_kses( $input['social_gplus'] );
         $input['social_diaspora'] = wp_filter_nohtml_kses( $input['social_diaspora'] );
         $input['social_identica'] = wp_filter_nohtml_kses( $input['social_identica'] );

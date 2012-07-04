@@ -77,9 +77,9 @@ $defaultoptions = array(
     'teaserlink3-url'               => 'https://www.piratenpartei.de/mitmachen/mitglied-werden', 
     'teaserlink3-symbol'            => 'steuerrad',
     
-    'stickerlink1-content'          => '<img src="'.get_template_directory_uri().'/images/werde-pirat.png" width="88" height="56" alt="Werde Pirat!">',
+    'stickerlink1-content'          => '<span class="gedreht">Werde<br><span class="cicolor">Pirat!</span></span>',
     'stickerlink1-url'              => 'https://www.piratenpartei.de/mitmachen/mitglied-werden/',
-    'stickerlink2-content'          => '<img src="'.get_template_directory_uri().'/images/spenden.png" width="104" height="68" alt="Hilf uns mit einer Spende">',
+    'stickerlink2-content'          => '<span class="gedreht"> <span class="cicolor">Spende</span><br><span class="small">und helfe mit </span> </span>',
     'stickerlink2-url'              => 'https://www.piratenpartei.de/mitmachen/spenden/',
     'stickerlink3-content'          => '',
     'stickerlink3-url'              => ''  
@@ -210,6 +210,17 @@ $defaultplakate_liste = array(
 	),    
         
 );
+/* 
+ * Default Links for Topmenu , can be overwritten bei widget  
+ */
+$default_toplink_liste = array(
+    'Wiki'              => 'https://wiki.piratenpartei.de',
+    'Liquid Feedback'   => 'https://lqfb.piratenpartei.de',
+    'Forum'             => 'http://news.piratenpartei.de',
+    'Flaschenpost'      => 'http://flaschenpost.piratenpartei.de'
+    
+);
+
 
 /* 
  * Auswahlliste fuer Textsymbole fuer den Teaser
@@ -242,9 +253,7 @@ $defaultplakate_textsymbolliste = array(
     'drei'  => "2462", 
     'euro'  => "20AC",
     'dollar'  => "0024",
-    'copyright'  => "00A9",
-    
-    
+    'copyright'  => "00A9",       
 );
 
 
