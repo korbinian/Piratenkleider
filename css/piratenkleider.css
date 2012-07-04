@@ -182,7 +182,7 @@ a {
   }
   a:hover, 
   a.active {
-    outline: 0px solid !important;
+    outline: 0px solid;
   }
   a:focus {
     outline: 1px dotted black; 
@@ -1629,6 +1629,19 @@ ul.socialmedia li a:focus img  {
   color: white;
   margin: 0;  
 }
+
+.wp-caption  p.wp-caption-text a {
+    color: white;
+   
+}
+
+.wp-caption  p.wp-caption-text a:focus,
+.wp-caption  p.wp-caption-text a:hover {
+    color: white;
+    text-transform: underline;
+    outline: 1px dotted white;    
+}
+
 
 
  .gallery {
