@@ -806,12 +806,12 @@ function get_piratenkleider_custom_excerpt( ){
   
   $excerpt = strip_shortcodes($excerpt);
   $excerpt = strip_tags($excerpt); 
-  if (strlen($excerpt)<5) {
+  if (mb_strlen($excerpt)<5) {
       $excerpt = 'Kein Inhalt';
   }
 // $excerpt =  closetags(strip_html_tags( $excerpt ));
-  if (strlen($excerpt) >  $defaultoptions['teaser_maxlength']) {
-    $the_str = substr($excerpt, 0, $defaultoptions['teaser_maxlength']);
+  if (mb_strlen($excerpt) >  $defaultoptions['teaser_maxlength']) {
+    $the_str = mb_substr($excerpt, 0, $defaultoptions['teaser_maxlength']);
     $the_str .= "...";
   }  else {
       $the_str = $excerpt;
@@ -825,8 +825,8 @@ function get_piratenkleider_custom_excerpt( ){
 function short_title($after = '...', $length = 6, $textlen = 10) {
    $thistitle =   get_the_title();  
    $mytitle = explode(' ', get_the_title());
-   if ((count($mytitle)>$length) || (strlen($thistitle)> $textlen)) {
-       while(((count($mytitle)>$length) || (strlen($thistitle)> $textlen)) && (count($mytitle)>1)) {
+   if ((count($mytitle)>$length) || (mb_strlen($thistitle)> $textlen)) {
+       while(((count($mytitle)>$length) || (mb_strlen($thistitle)> $textlen)) && (count($mytitle)>1)) {
            array_pop($mytitle);
            $thistitle = implode(" ",$mytitle);           
        }       
@@ -834,8 +834,8 @@ function short_title($after = '...', $length = 6, $textlen = 10) {
    } else {              
        $morewords = 0;
    }
-   if (strlen($thistitle)> $textlen) {
-      $thistitle = substr($thistitle, 0, $textlen);
+   if (mb_strlen($thistitle)> $textlen) {
+      $thistitle = mb_substr($thistitle, 0, $textlen);
       $morewords = 1;     
    }
    if ($morewords==1) {
