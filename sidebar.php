@@ -97,11 +97,60 @@
    if ( is_active_sidebar( 'sidebar-widget-area-afterplakate' ) )  {
           dynamic_sidebar( 'sidebar-widget-area-afterplakate' );     
    }    
- if ( $options['feed_twitter'] != "" ){ ?>
-       
+ if ( $options['feed_twitter'] != "" ){
+      
+       if (!isset($options['feed_twitter_numberarticle'])) {
+           $options['feed_twitter_numberarticle'] = 5;
+       }
+       if ($options['feed_twitter_numberarticle']==0) {
+           $options['feed_twitter_numberarticle'] =5;
+       }
+        include_once(ABSPATH . WPINC . '/feed.php');
+        $fetchlink =  'http://twitter.com/statuses/user_timeline.rss?screen_name='.$options['feed_twitter'].'&count='.$options['feed_twitter_numberarticle'];
+        // Get a SimplePie feed object from the specified feed source.
+        $rss = fetch_feed($fetchlink);
+        $name = $options['feed_twitter'];
+        if (!is_wp_error( $rss ) ) : // Checks that the object is created correctly 
+            // Figure out how many total items there are, but limit it to 5. 
+            $maxitems = $rss->get_item_quantity($options['feed_twitter_numberarticle']); 
+
+            // Build an array of all the items, starting with element 0 (first element).
+            $rss_items = $rss->get_items(0, $maxitems); 
+        endif;   ?>
         <div class="twitterwidget">
              <hr>
-                <h2><a href="https://twitter.com/#!/<?php echo $options['feed_twitter']; ?>">twitter.com/<?php echo $options['feed_twitter']; ?></a></h2>
-                <ul id="tweet_container"></ul>                                                              
-        </div>
-<?php }?>
+             <h2><a href="https://twitter.com/<?php echo $options['feed_twitter']; ?>">twitter.com/<?php echo $options['feed_twitter']; ?></a></h2>
+
+            <ul>
+                <?php if ($maxitems == 0) echo '<li>No items.</li>'; 
+                else
+                // Loop through each feed item and display each item as a hyperlink.
+                foreach ( $rss_items as $item ) : 
+                    echo '<li>';
+                   
+                    $thisentry = esc_attr( $item->get_title() ); 
+                    
+                    $thisentry = preg_replace("/^$name: /i", '', $thisentry);
+                    $thisentry = preg_replace('/#([A-Za-z0-9]+) /i', '<a href="http://search.twitter.com/search?q=$1">#$1</a> ', $thisentry);
+                    $thisentry = preg_replace('/\@([A-Za-z0-9]+) /i', '<a href="http://www.twitter.com/$1">@$1</a> ', $thisentry);
+                    $thisentry = preg_replace('/ (http[s|]:\/\/[a-z0-9A-Z\-_\.\/]+) /i', ' <a href="$1">$1</a> ', $thisentry); 
+                  
+
+                    
+                    echo $thisentry;
+                    if ($options['feed_twitter_showdate']==1) {
+                        echo '<span class="feed_date">';
+                        echo $item->get_date();    /* 'j F Y | g:i a' */
+                        echo '</span> ';
+                    }
+                    
+                    echo "</li>";
+                endforeach;
+                ?>
+            </ul>
+        </div>      
+        
+        
+     <?php }?>   
+        
+   

@@ -629,11 +629,23 @@ function theme_options_do_page() {
                                                         <option style="padding-right: 10px;" value="4" <?php if ($selected ==4) { echo 'selected="selected"'; }?>>4</option>
                                                         <option style="padding-right: 10px;" value="5" <?php if ($selected ==5) { echo 'selected="selected"'; }?>>5</option>
                                                         <option style="padding-right: 10px;" value="6" <?php if ($selected ==6) { echo 'selected="selected"'; }?>>6</option>							
+                                                        <option style="padding-right: 10px;" value="7" <?php if ($selected ==7) { echo 'selected="selected"'; }?>>7</option>	
+                                                        <option style="padding-right: 10px;" value="8" <?php if ($selected ==8) { echo 'selected="selected"'; }?>>8</option>	
+                                                        <option style="padding-right: 10px;" value="9" <?php if ($selected ==9) { echo 'selected="selected"'; }?>>9</option>	
+                                                        <option style="padding-right: 10px;" value="10" <?php if ($selected ==10) { echo 'selected="selected"'; }?>>10</option>	
+                                                        
                                                     </select>
                                                     <label class="description" for="piratenkleider_theme_options[feed_twitter_numberarticle]"><?php _e( 'Wieviele Twittermeldungen sollen maximal gezeigt werden', 'piratenkleider' ); ?></label>
                                             </td>
                                             </tr>             
-
+                                           <tr valign="top"><th scope="row"><?php _e( 'Tweet-Datum', 'piratenkleider' ); ?></th>
+                                        	<td>
+                                            	<input id="piratenkleider_theme_options[feed_twitter_showdate]" name="piratenkleider_theme_options[feed_twitter_showdate]" type="checkbox" value="1" <?php checked( '1', $options['feed_twitter_showdate'] ); ?> />
+						<label for="piratenkleider_theme_options[feed_twitter_showdate]">
+                                                    <?php _e( 'Datum der Twittermeldung anzeigen', 'piratenkleider' ); ?>
+                                                   </label>
+                                                </td>
+                                            </tr>         
                                          </table>                                                                                
                                     </td>                                    
                                 </tr>                            
@@ -950,6 +962,12 @@ function theme_options_validate( $input ) {
 		$input['aktiv-platzhalterbilder-indexseiten'] = 0;
 	$input['aktiv-platzhalterbilder-indexseiten'] = ( $input['aktiv-platzhalterbilder-indexseiten'] == 1 ? 1 : 0 );       
         
+        
+        
+        
+         if ( ! isset( $input['feed_twitter_showdate'] ) )
+		$input['feed_twitter_showdate'] = 0;
+	$input['feed_twitter_showdate'] = ( $input['feed_twitter_showdate'] == 1 ? 1 : 0 );         
         if ( ! isset( $input['slider-aktiv'] ) )
 		$input['slider-aktiv'] = 0;
 	$input['slider-aktiv'] = ( $input['slider-aktiv'] == 1 ? 1 : 0 );        

@@ -52,16 +52,7 @@
     /* ]]> */
     </script> 
     <?php } ?>
-    <?php if ( $options['feed_twitter'] != "" ){ ?>     
-     <script type="text/javascript">
-        /* <![CDATA[ */
-        var twitter_name = "<?php echo $options['feed_twitter']; ?>";
-        var twitter_count = <?php echo $options['feed_twitter_numberarticle']; ?>;
-        /* ]]> */
-        </script>
-    <script src="<?php echo get_template_directory_uri(); ?>/js/twitter.js"></script>
-    
-    <?php }
+  
     
    $designspecials = get_option( 'piratenkleider_theme_designspecials' );
    if (isset($designspecials['html-eigene-anweisungen'])

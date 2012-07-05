@@ -69,7 +69,7 @@ html[xmlns] .slides {
 .flex-control-nav {
   position: absolute;
   top: 10px;
-  right: 10px;
+  right: 62px;
   overflow: hidden;
   z-index: 800; 
 }
@@ -85,29 +85,37 @@ html[xmlns] .slides {
       cursor: pointer;
       color: black;
 }
-.flex-control-nav li a.active {
+.flex-control-nav li a.active,
+.flex-control-nav li a:hover,
+.flex-control-nav li a:focus {
         background: white; 
-}
+}  
 
 
 .content-aside .flexslider .flex-pauseplay,
 .first-teaser-widget-area .flexslider .flex-pauseplay {
     position: absolute;
-    bottom: 10px;
-    left: 10px;
+    top: 10px;
+    right: 10px;
+    width: 50px;
+    text-align: center;
+    padding: 0px 1px 1px 1px;
     overflow: hidden;
     z-index: 800;
     background: white;
+    background: rgba(255, 255, 255, 0.8);
     cursor: pointer;
     color: black; 
-    padding: 0.2em;
+
 }
 .content-aside .flexslider .flex-pauseplay {
     bottom: inherit;
     top: 10px;
+    left: 10px;
 }
-.flexslider .flex-pauseplay:hover {
-        background: #ff8800; 
+.flexslider .flex-pauseplay:hover,
+.flexslider .flex-pauseplay:focus {
+        background: white;
 }
 .slide .caption  h3 {
   font-size: 22.8px;
