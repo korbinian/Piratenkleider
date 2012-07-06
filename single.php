@@ -79,7 +79,19 @@
     <div class="content-aside">
       <div class="skin">
        <h1 class="skip"><?php _e( 'Weitere Informationen', 'piratenkleider' ); ?></h1>
-      <?php get_sidebar(); ?>
+       <?php
+       $custom_fields = get_post_custom();
+        if (($custom_fields['image_url'][0]<>'') && ($custom_fields['text'][0]<>'')) {   ?>
+            <div id="steckbrief">   
+                <?php echo wp_get_attachment_image( $custom_fields['image_url'][0], array(300,300) ); ?>             
+                <div class="text">
+                    <?php echo $custom_fields['text'][0]; ?>
+                </div>
+           </div>
+           <?php 
+        }         
+        get_sidebar(); 
+        ?>
       </div>
     </div>
   </div>
