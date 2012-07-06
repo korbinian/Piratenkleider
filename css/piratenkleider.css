@@ -1323,21 +1323,55 @@ ul.socialmedia li a:focus img  {
     padding: 3px 5px 1px 5px;
   }
 
-  .content-aside .newsletter {     
+  .content-aside #steckbrief {
+-moz-transition: all 406ms ease-out 0s;
+    background-color: white;
+    cursor: pointer;
+    display: inline-block;
+    padding: 10px 10px 30px;
+    z-index: 1;
+		box-shadow: 0 1px 8px #999999;
+                margin: 0 0 20px -20px;
+                -moz-transform: rotate(2deg);
+                transform: rotate(2deg);
+                
+  }
+  .content-aside #steckbrief:hover,
+  .content-aside #steckbrief:focus,
+  .content-aside #steckbrief:active {
+            -moz-transform: scale(1.1);
+            transform: scale(1.1);
+            z-index: 9;
+	}   
+  .content-aside #steckbrief img {
+    background-position: center center;
+    background-repeat: no-repeat;
+    border: 1px solid #EEEEEE; 
+    display: block;
+    margin: 0 0 15px;
+  } 
+    
+   .content-aside #steckbrief .text {
+                background-color: white;
+		font-family: "Helvetica Neue",Arial,Helvetica,sans-serif;
+		padding: 0.4em 0.8em 0.3em 0.8em;
+   } 
+  
+ .content-aside .newsletter {     
     background: none repeat scroll 0 0 #ffa500;
     border-radius: 2px 2px 2px 2px;
     box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
     margin-bottom: 1px;     
-  -moz-border-radius-topleft: 3px;
-  -moz-border-radius-topright: 3px;
-  -moz-border-radius-bottomright: 3px;
-  -moz-border-radius-bottomleft: 3px;
-  border-top-left-radius: 3px;
-  border-top-right-radius: 3px;
-  border-bottom-right-radius: 3px;
-  border-bottom-left-radius: 3px;     
-  padding: 10px;
-  margin-bottom: 20px;
+    -moz-border-radius-topleft: 3px;
+    -moz-border-radius-topright: 3px;
+    -moz-border-radius-bottomright: 3px;
+    -moz-border-radius-bottomleft: 3px;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+    border-bottom-left-radius: 3px;     
+    padding: 10px;
+    margin-bottom: 20px;
  } 
 
 .content-aside .newsletter  form {
