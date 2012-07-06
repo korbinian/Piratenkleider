@@ -149,7 +149,7 @@
                     $thisentry = preg_replace("/^$name: /i", '', $thisentry);
                     $thisentry = preg_replace('/\b((ftp|https?):\/\/[a-z0-9A-Z\-_\.\/]+)\b/i', ' <a href="$1">$1</a>', $thisentry);                      
                     $thisentry = preg_replace('/#([A-Za-z0-9]+)\b/i', '<a href="http://search.twitter.com/search?q=$1">#$1</a>', $thisentry);
-                    $thisentry = preg_replace('/\@([A-Za-z0-9]+)\b/i', '<a href="http://www.twitter.com/$1">@$1</a>', $thisentry);
+                    $thisentry = preg_replace('/\@([A-Za-z0-9_]+)\b/i', '<a href="http://www.twitter.com/$1">@$1</a>', $thisentry);
                     echo $thisentry;
                     if ($options['feed_twitter_showdate']==1) {
                         echo '<span class="feed_date">(';                        
