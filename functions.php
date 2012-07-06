@@ -4,7 +4,7 @@
  *
  * @source http://github.com/xwolfde/Piratenkleider
  * @creator xwolf
- * @version 2.5
+ * @version 2.8
  * @licence CC-BY-SA 3.0 
  */
 
@@ -60,7 +60,8 @@ $defaultoptions = array(
     'anonymize-user'                => 0,
     'anonymize-user-commententries' => 0,
     'aktiv-commentreplylink'        => 0,
-    
+    'twitter_cache_lifetime'        => 7200,
+    'feed_cache_lifetime'           => 14400,
     
     'teaserlink1-title'             => __( 'Informiere dich', 'piratenkleider' ),
     'teaserlink1-untertitel'        => __( '&uuml;ber unsere Themen &amp; Ziele!', 'piratenkleider' ),            
@@ -82,7 +83,9 @@ $defaultoptions = array(
     'stickerlink2-content'          => '<span class="gedreht"> <span class="cicolor">Spende</span><br><span class="small">und helfe mit </span> </span>',
     'stickerlink2-url'              => 'https://www.piratenpartei.de/mitmachen/spenden/',
     'stickerlink3-content'          => '',
-    'stickerlink3-url'              => ''  
+    'stickerlink3-url'              => '',
+    'default_footerlink_key'        => 'Bund',
+    'default_footerlink_show'       => 1
     
     
 );
@@ -221,6 +224,111 @@ $default_toplink_liste = array(
     
 );
 
+/*
+ * Default Links fuer den Footer
+ */
+
+ $default_footerlink_liste = array(
+     'Bund'  => array(
+        'title' => 'Piratenpartei Deutschland',
+        'url'   => 'http://www.piratenpartei.de',
+        'sublist'   => array(
+            'Baden-Württemberg' => 'http://www.piratenpartei-bw.de/',
+            'Bayern' => 'http://www.piratenpartei-bayern.de/',
+            'Berlin' => 'http://berlin.piratenpartei.de/',
+            'Brandenburg' => 'http://www.piratenbrandenburg.de/',
+            'Bremen' => 'http://bremen.piratenpartei.de/',
+            'Hamburg' => 'http://www.piratenpartei-hamburg.de/',
+            'Hessen' => 'http://www.piratenpartei-hessen.de/',
+            'Mecklenburg-Vorpommern' => 'http://www.piratenpartei-mv.de/',
+            'Niedersachsen' => 'http://www.piratenpartei-niedersachsen.de/',
+            'Nordrhein-Westfalen' => 'http://www.piratenpartei-nrw.de/',
+            'Rheinland-Pfalz' => 'http://www.piraten-rlp.de/',
+            'Saarland' => 'http://www.piratenpartei-saarland.de/',
+            'Sachsen' => 'http://www.piraten-sachsen.de/',
+            'Sachsen-Anhalt' => 'http://www.piraten-lsa.de/',
+            'Schleswig-Holstein' => 'http://www.piratenpartei-sh.de/',
+            'Thüringen' => 'http://www.piraten-thueringen.de/'
+        )
+     ),
+     'International' => array(
+         'title' => 'Piratenparteien International',
+         'url'  => 'http://www.pp-international.net/',
+         'sublist' => array(
+             'Argentinien' => 'http://www.partidopirata.com.ar/',
+                'Australien' => 'http://pirateparty.org.au/',
+              'Belgien' => 'http://pirateparty.be/',
+              'Brasilien' => 'http://www.partidopirata.org/',
+              'Bulgarien' => 'http://piratskapartia.bg/',
+              'Chile' => 'http://www.partidopirata.cl/',
+              'Dänemark' => 'http://piratpartiet.dk/',
+              'Finnland' => 'http://www.piraattipuolue.fi/',
+              'Frankreich' => 'http://partipirate.org/',
+              'Griechenland' => 'http://pirateparty.gr/',
+              'Guatemala' => 'http://partidopirata.org.gt/',
+              'Italien' => 'http://www.partito-pirata.it/',
+              'Kanada' => 'http://www.piratepartyofcanada.com/',
+              'Kasachstan' => 'http://pirateparty.kz/',
+              'Kolumbien' => 'http://pp.interlecto.net/',
+              'Lettland' => 'http://piratupartija.lv/',
+              'Litauen' => 'http://piratupartija.lt/',
+              'Luxemburg' => 'http://www.piratepartei.lu/',
+              'Marokko' => 'http://partipirate.ma/',
+              'Mexiko' => 'http://www.partidopiratamexicano.org/',
+             'Neuseeland' => 'http://pirateparty.org.nz/',
+             'Niederlande' => 'http://www.piratenpartij.nl/',
+             'Österreich' => 'http://piratenpartei.at/',
+             'Peru' => 'http://wiki.freeculture.org/Pirata',
+             'Polen' => 'http://www.partiapiratow.org.pl/',
+             'Portugal' => 'http://www.partidopiratapt.eu/',
+             'Rumänien' => 'http://www.partidulpiratilor.ro/',
+             'Russland' => 'http://pirate-party.ru/',
+             'Schweden' => 'http://www.piratpartiet.se/',
+             'Schweiz' => 'http://www.piratenpartei.ch/',
+             'Serbien' => 'http://www.piratskapartija.com/',
+             'Slowakei' => 'http://www.piratskastrana.sk/',
+             'Slowenien' => 'http://www.piratskastranka.net/',
+             'Spanien' => 'http://www.partidopirata.es/',
+              'Südkorea' => 'http://pirateparty.kr/',
+             'Tschechien' => 'http://www.ceskapiratskastrana.cz/',
+             'Tunesien' => 'http://partipirate-tn.org/',
+             'Türkei' => 'http://www.korsanpartisi.org/',
+             'Ukraine' => 'http://pp-ua.org/',
+             'Uruguay' => 'http://partidopirata.org.uy/',
+             'USA' => 'http://pirate-party.us/',
+             'Vereinigtes Königreich' => 'http://pirateparty.org.uk/',
+             'Weißrussland' => 'http://belpirat.blog.tut.by/',
+             'Zypern' => 'http://www.piratepartycyprus.com/',
+
+
+         )
+     ), 
+     'Baden-Württemberg' => array(
+         'title' => 'Piratenpartei Landesverband Baden-Württemberg',
+         'url'  => 'http://www.piratenpartei-bw.de/',
+         'sublist' => array(
+             'Bezirksverband Freiburg' => 'http://bzv-fr.piratenpartei-bw.de/',
+             'Bezirksverband Karlsruhe' => 'http://bzv-karlsruhe.piraten-bw.de/',
+             'Bezirksverband Stuttgart' => 'http://www.piraten-bzv-stuttgart.de/',
+             'Bezirksverband Tübingen' => 'http://bzv.piratenpartei-tuebingen.de/',
+         )
+     ),  
+     'Bayern' => array(
+         'title' => 'Piratenpartei Landesverband Bayern',
+         'url'  => 'http://www.piratenpartei-bayern.de/',
+         'sublist' => array(
+             'Bezirksverband Mittelfranken' => 'http://piraten-mfr.de/',
+             'Bezirksverband Niederbayern' => 'http://niederbayern.piratenpartei-bayern.de/',
+             'Bezirksverband Oberbayern' => 'http://oberbayern.piratenpartei.de/',
+             'Bezirksverband Oberfranken' => 'http://piraten-oberfranken.de/',
+             'Bezirksverband Oberpfalz' => 'http://oberpfalz.piratenpartei.de/',
+             'Bezirksverband Schwaben' => 'http://www.piraten-schwaben.de/',
+             'Bezirksverband Unterfranken' => 'http://piraten-ufr.de/',
+         )
+     ), 
+    
+    
+);
 
 /* 
  * Auswahlliste fuer Textsymbole fuer den Teaser
@@ -257,8 +365,6 @@ $defaultplakate_textsymbolliste = array(
 );
 
 
-// Aus gestalerischen Gr&uuml;nden m&uuml;ssen Plakate auf der Website exakt 277 Pixel breit sein. Die H&ouml;he ist
-// flexibel, sollte jedoch auch gleich sein. In diesem Fall  391 Pixel.
 
 $options = get_option( 'piratenkleider_theme_options' );
 if (!isset($options['anonymize-user'])) 
@@ -273,6 +379,26 @@ if ($options['anonymize-user']==1) {
     
     update_option('require_name_email',0);
 }
+
+if (!isset($options['feed_cache_lifetime'])) 
+            $options['feed_cache_lifetime'] = $defaultoptions['feed_cache_lifetime'];
+if (!isset($options['twitter_cache_lifetime'])) 
+            $options['twitter_cache_lifetime'] = $defaultoptions['twitter_cache_lifetime'];
+if ($options['feed_cache_lifetime'] < 600) {
+    $options['feed_cache_lifetime'] = 1800;
+}
+// Das holen von feeds sollte auf keinen Fall haeufiger als alle 10 Minuten erfolgen
+if ($options['twitter_cache_lifetime'] > $options['feed_cache_lifetime']) {
+    $options['twitter_cache_lifetime'] = $options['feed_cache_lifetime'];
+}
+// Twitter Feeds sollten nicht laenger warten als die allgemeine feeds
+ function feed_lifetime_cb( $seconds ) {
+            global $options;
+            // change the default feed cache recreation period to 2 hours
+            return $options['feed_cache_lifetime'];
+}
+add_filter( 'wp_feed_cache_transient_lifetime' , 'feed_lifetime_cb' );
+        
 
 if ( ! isset( $content_width ) )   $content_width = $defaultoptions['content-width'];
 require_once ( get_stylesheet_directory() . '/theme-options.php' );

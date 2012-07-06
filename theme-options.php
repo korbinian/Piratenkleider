@@ -176,7 +176,12 @@ function theme_options_do_page() {
                             if (!isset($options['anonymize-user-commententries'])) 
                                 $options['anonymize-user-commententries'] = $defaultoptions['anonymize-user-commententries']; 
                             if (!isset($options['aktiv-commentreplylink'])) 
-                                $options['aktiv-commentreplylink'] = $defaultoptions['aktiv-commentreplylink'];                            
+                                $options['aktiv-commentreplylink'] = $defaultoptions['aktiv-commentreplylink'];      
+                             if (!isset($options['default_footerlink_key']))                
+                                $options['default_footerlink_key'] = $defaultoptions['default_footerlink_key'];
+                             if (!isset($options['default_footerlink_show']))                
+                                $options['default_footerlink_show'] = $defaultoptions['default_footerlink_show'];
+                             
                         ?>
 			<table class="form-table">
                               
@@ -285,7 +290,45 @@ function theme_options_do_page() {
                                         </table>
                                 </td>
 				</tr>                                                                                                  
-                                
+                                <tr valign="top">
+                                    <th scope="row"><?php _e( 'Fußteil', 'piratenkleider' ); ?></th>
+                                    <td>
+                                        <table>
+                                              <tr valign="top"><th scope="row"><?php _e( 'Parteilinks', 'piratenkleider' ); ?></th>
+                                                <td>
+						<input id="piratenkleider_theme_options[default_footerlink_show]" name="piratenkleider_theme_options[default_footerlink_show]" type="checkbox" value="1" <?php checked( '1', $options['default_footerlink_show'] ); ?> />
+						<label  for="piratenkleider_theme_options[default_footerlink_show]">
+                                                    <?php _e( 'Im Fußteil eine Liste von Links zu Seiten der Piratenpartei anzeigen', 'piratenkleider' ); ?>
+                                                    </label>
+                                                </td>
+                                            </tr>
+                                            <tr valign="top"><th scope="row"><?php _e( 'Bereich', 'piratenkleider' ); ?></th>
+                                                <td>
+                                                    <select name="piratenkleider_theme_options[default_footerlink_key]">
+                                                    <?php
+                                                   global $default_footerlink_liste;
+                                                    foreach($default_footerlink_liste as $i => $value) {   
+                                                        
+                                                        echo '<option value="'.$i.'"';
+                                                            
+                                                       if ( $i == $options['default_footerlink_key'] ) {
+                                                         echo ' selected="selected"';
+                                                       }                                                                                                                                                                
+                                                        echo '>'.$i.'</option>';                                                                                                                                                              
+                                                        echo "\n";
+                                                       
+                                                    }  
+                                                    ?>
+                                                    </select>
+                                                    
+                                                    <label  for="piratenkleider_theme_options[default_footerlink_key]">
+                                                        <?php _e( 'Bereich oder Gliederung ausw&auml;hlen.', 'piratenkleider' ); ?>
+                                                    </label>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
                                 
                                 <tr valign="top">
                                     <th scope="row"><?php _e( 'Sidebar', 'piratenkleider' ); ?></th>
@@ -963,6 +1006,11 @@ function theme_options_validate( $input ) {
 	$input['aktiv-platzhalterbilder-indexseiten'] = ( $input['aktiv-platzhalterbilder-indexseiten'] == 1 ? 1 : 0 );       
         
         
+         if ( ! isset( $input['default_footerlink_show'] ) )
+		$input['default_footerlink_show'] = 0;
+	$input['default_footerlink_show'] = ( $input['default_footerlink_show'] == 1 ? 1 : 0 );       
+        
+         $input['default_footerlink_key'] = wp_filter_nohtml_kses( $input['default_footerlink_key'] );
         
         
          if ( ! isset( $input['feed_twitter_showdate'] ) )

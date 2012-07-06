@@ -2,28 +2,44 @@
     <div class="skin">
         <?php if ( is_active_sidebar( 'first-footer-widget-area' ) ) { ?>
             <?php dynamic_sidebar( 'first-footer-widget-area' ); ?>
-        <?php } else { ?>
+        <?php } else { 
             
-        <h2>Piratenpartei Deutschland</h2>
-        <p class="titelurl"><a href="http://www.piratenpartei.de">www.piratenpartei.de</a></p>
-            <ul>
-                <li><a href="http://www.piratenpartei-bw.de/">Baden-W&uuml;rttemberg</a></li>   
-                <li><a href="http://www.piratenpartei-bayern.de/">Bayern</a></li>   
-                <li><a href="http://berlin.piratenpartei.de/">Berlin</a></li>   
-                <li><a href="http://www.piratenbrandenburg.de/">Brandenburg</a></li>   
-                <li><a href="http://bremen.piratenpartei.de/">Bremen </a></li>   
-                <li><a href="http://www.piratenpartei-hamburg.de">Hamburg</a></li>   
-                <li><a href="http://www.piratenpartei-hessen.de/">Hessen</a></li>   
-                <li><a href="http://www.piratenpartei-mv.de/">Mecklenburg-Vorpommern</a></li>   
-                <li><a href="http://www.piratenpartei-niedersachsen.de/">Niedersachsen</a></li>   
-                <li><a href="http://www.piratenpartei-nrw.de/">Nordrhein-Westfalen</a></li>   
-                <li><a href="http://www.piraten-rlp.de/">Rheinland-Pfalz</a></li>   
-                <li><a href="http://www.piratenpartei-saarland.de/">Saarland</a></li>   
-                <li><a href="http://www.piraten-sachsen.de/">Sachsen</a></li>   
-                <li><a href="http://www.piraten-lsa.de/">Sachsen-Anhalt</a></li>   
-                <li><a href="http://www.piratenpartei-sh.de/">Schleswig-Holstein</a></li>   
-                <li><a href="http://www.piraten-thueringen.de/">Th&uuml;ringen</a></li>   
-            </ul>
-        <?php } ?>    
+        
+         global $default_footerlink_liste;   
+         global $defaultoptions;
+           $options = get_option( 'piratenkleider_theme_options' );
+           if (!isset($options['default_footerlink_key']))                
+            $options['default_footerlink_key'] = $defaultoptions['default_footerlink_key'];
+           if (!isset($options['default_footerlink_show']))                
+            $options['default_footerlink_show'] = $defaultoptions['default_footerlink_show'];
+           
+           
+            if ((is_array($default_footerlink_liste)) && ($options['default_footerlink_show']==1)) {     
+                  $bereich = $options['default_footerlink_key'];
+                  if (!isset($default_footerlink_liste[$bereich]['sublist'])) {
+                      $bereich =  $defaultoptions['default_footerlink_key'];
+                  }
+                  $title =   $default_footerlink_liste[$bereich]['title'];
+                  $url =   $default_footerlink_liste[$bereich]['url'];
+                  
+                  echo "<h2>".$title."</h2>";
+                  if ((isset($url)) && (strlen($url)>5)) {
+                    echo '<p class="titelurl"><a href="'.$url.'">'.$url.'</a></p>';
+                  }
+                  echo '<ul>';
+                  
+                  
+                  foreach($default_footerlink_liste[$bereich]['sublist'] as $i => $value) {
+                       echo '<li><a href="'.$value.'">';                                                                                                        
+                       echo $i.'</a></li>';
+                       echo "\n";
+                 }            
+                 echo '</ul>';                                          
+           }
+        } ?>
+        
+        
+        
+        
     </div>
 </div>

@@ -1854,9 +1854,7 @@ ul.socialmedia li a:focus img  {
     margin: 0 0 0 5px; 
 }
 
-.content-aside a.rsswidget img {
-    float: right;
-}
+
 
 
 .subcontent {
@@ -1908,6 +1906,22 @@ ul.socialmedia li a:focus img  {
    text-height: 1em;
    float: left; 
  }
+ 
+ .footer ul:before {
+		content:"";
+		display:table;
+	}
+ .footer ul:after {
+		clear:both;
+		content:".";
+		display:block;
+		font-size:0;
+		height:0;
+		visibility:hidden;
+                margin-bottom: 10px;
+	}
+ 
+ 
  .footer .second-footer-widget-area .widget {
     margin-bottom: 0; 
  }
@@ -1957,20 +1971,24 @@ ul.socialmedia li a:focus img  {
      line-height: 25px; 
      font-size: 20px; 
  }
+
  .content-aside .twitterwidget{
      margin-top: 20px;
      
  }
+ .content-aside .twitterwidget h2 img, 
+ .content-aside h2 a.rsswidget img {
+    margin: 0 5px 0 0;
+    padding: 0;
+    vertical-align: middle;
+}
  .content-aside .widget ul, 
  .content-aside .twitterwidget ul {
      margin-bottom: 5px;
     overflow: hidden;
  }  
- .content-aside .widget .widget-title a.rsswidget img {
-     float: right;
-     
- }  
- .content-aside .widget li a.rsswidget, 
+
+ .content-aside .widget li, 
  .content-aside .twitterwidget li {
   /*  color:#333333; */
     background: #c96a00;
@@ -1983,10 +2001,18 @@ ul.socialmedia li a:focus img  {
  .content-aside .twitterwidget li {  
         padding: 2px 5px;                                  
  }                                        
+ .content-aside .widget li a.rsswidget {
+     background: transparent;
+ }
  .content-aside .twitterwidget li a { 
     font-weight: bold;
     background: transparent; 
  }
+ 
+ .content-aside .widget li:hover,
+ .content-aside .widget li:focus,
+#ics-calendar-widget li:hover, 
+#ics-calendar-widget li:focus, 
  .content-aside .twitterwidget li:hover, 
  .content-aside .twitterwidget li:focus {
      background: #ff8800;
@@ -1995,11 +2021,23 @@ ul.socialmedia li a:focus img  {
  .content-aside .twitterwidget li a:focus {
      text-decoration: underline;
  }
+ .content-aside .widget li .rss-date,
  .content-aside .twitterwidget li .feed_date {
+     display: inline;
      font-size: 0.9em;
      font-style: oblique;
      color: #222;
      margin-left: 10px;
+ }
+ .content-aside .widget li .rss-date:before {
+     content: "(";
+ }
+  .content-aside .widget li .rss-date:after {
+     content: ")";
+ }
+ 
+ .content-aside .twitterwidget li .feed_date a {
+     font-weight: normal;     
  }
  .content-aside .widget li a.rsswidget:hover,
  .content-aside .widget li a.rsswidget:focus {    
@@ -2007,27 +2045,23 @@ ul.socialmedia li a:focus img  {
  }
  .content-aside .widget li .rssSummary {
     color:#333333;
-    list-style: none outside none !important;
+    list-style: none outside none;
     margin-bottom: 1px;
     padding: 1px 5px;
     display: block;
     font-style: italic;    
  }
- .content-aside .widget li .rss-date {
-     text-align: right;
-     display: block;
-    font-style: italic;
- }
+
 #ics-calendar-widget {
   overflow: hidden;
   margin-bottom: 5px; }
 #ics-calendar-widget li {
-    color: black !important;
+    color: black;
     background: #c96a00;
-    background: rgba(0, 0, 0, 0.2);
+    background: rgba(0, 0, 0, 0.1);
     margin-bottom: 1px;
     padding: 1px 5px;
-    list-style: none !important; }
+    list-style: none; }
 #ics-calendar-widget li strong {
       margin-right: 4px;
       display: block;

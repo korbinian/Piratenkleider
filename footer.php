@@ -51,7 +51,7 @@
     });    
     /* ]]> */
     </script> 
-    <?php } ?>
+    <?php }  
   
     
    $designspecials = get_option( 'piratenkleider_theme_designspecials' );
