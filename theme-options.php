@@ -1299,7 +1299,7 @@ function theme_defaultbilder_do_page() {
                                 </table>    
                                 
                                 
-                                <h3><?php _e( 'Eigene Plaktbilder:', 'piratenkleider' ); ?></h3>
+                                <h3><?php _e( 'Eigene Plakatbilder:', 'piratenkleider' ); ?></h3>
                                 
                                 <textarea id="piratenkleider_theme_defaultbilder[plakate-altadressen]" class="large-text" cols="30" rows="5" name="piratenkleider_theme_defaultbilder[plakate-altadressen]"><?php echo esc_textarea( $options['plakate-altadressen'] ); ?></textarea>
 				<label class="description" for="piratenkleider_theme_defaultbilder[plakate-altadressen]"><?php _e( 'Adressen alternativer Plakatbilder', 'piratenkleider' ); ?></label>
@@ -1401,7 +1401,7 @@ function theme_defaultbilder_do_page() {
                         </td>
                         </tr>
                         <tr valign="top">
-                        <th scope="row"><?php _e( 'Symbolbild f&uuml;r Tenmplate-Seiten', 'piratenkleider' ); ?></th>
+                        <th scope="row"><?php _e( 'Symbolbild f&uuml;r Template-Seiten', 'piratenkleider' ); ?></th>
                         <td>
                             <input id="piratenkleider_theme_defaultbilder[src-default-symbolbild]" class="regular-text" type="text" name="piratenkleider_theme_defaultbilder[src-default-symbolbild]" value="<?php esc_attr_e( $options['src-default-symbolbild'] ); ?>" />
                             <label class="description" for="piratenkleider_theme_defaultbilder[src-default-symbolbild]">
