@@ -326,7 +326,76 @@ $default_toplink_liste = array(
              'Bezirksverband Unterfranken' => 'http://piraten-ufr.de/',
          )
      ), 
-    
+    'Brandenburg' => array(
+        'title' => 'Piratenpartei Landesverband Brandenburg',
+        'url'  => 'http://www.piratenbrandenburg.de/',
+        'sublist' => array(
+            'Stadtverband Potsdam' => 'http://www.piraten-potsdam.de/',
+            'Kreisverband Brandenburg an der Havel' => 'http://brb.piratenbrandenburg.de/',
+            'Kreisverband Havelland' => 'http://hvl.piratenbrandenburg.de/',
+            'Kreisverband Märkisch-Oderland' => 'http://mol.piratenbrandenburg.de/',
+            'Kreisverband Oberhavel' => 'http://ohv.piratenbrandenburg.de/',
+            'Kreisverband Potsdam-Mittelmark' => 'http://pm.piratenbrandenburg.de/',
+            'Kreisverband Teltow-Fläming' => 'http://tf.piratenbrandenburg.de/',
+            'Regionalverband Barnim-Uckermark' => 'http://barum.piratenbrandenburg.de/',
+            'Regionalverband Dahme-Oder-Spree' => 'http://dos.piratenbrandenburg.de/',
+            'Regionalverband Prignitz-Ruppin' => 'http://pr.piratenbrandenburg.de/',
+            'Regionalverband Südbrandenburg' => 'http://cottbus.piratenbrandenburg.de/',
+        )
+    ),
+      'Rheinland-Pfalz' => array(
+        'title' => 'Piratenpartei Landesverband Rheinland-Pfalz',
+        'url'  => 'http://www.piraten-rlp.de',
+        'sublist' => array(
+            'Kreisverband Bad Kreuznach' => 'http://wiki.piratenpartei.de/Kreisverband_Bad_Kreuznach',
+            'Kreisverband Landau/Südliche Weinstraße' => 'http://wiki.piratenpartei.de/RP:Kreisverband_Landau/S%C3%BCdliche_Weinstra%C3%9Fe',
+            'Kreisverband Mittelhaardt' => 'http://www.piratenpartei-mittelhaardt.de',
+            'Kreisverband  Rhein-Pfalz' => 'http://wiki.piratenpartei.de/RP:Kreisverband_Rhein-Pfalz',
+            'Kreisverband Kreisverband Rheinhessen' => 'http://wiki.piratenpartei.de/RP:Kreisverband_Rheinhessen',
+            'Kreisverband Trier/Trier-Saarburg' => 'http://piraten-trier.de',
+        )
+    ),
+    'Nordrhein-Westfalen' => array(
+      'title' => 'Piratenpartei Landesverband Nordrhein-Westfalen',
+      'url' => 'http://www.piratenpartei-nrw.de/',
+      'sublist' => array(   
+        
+         'Kreisverband Bochum' =>'http://piratenbochum.de',
+           
+          )
+    ),
+    'Hamburg' => array(
+        'title' => 'Piratenpartei Landesverband Hamburg',
+        'url'  => 'http://www.piratenpartei-hamburg.de/',
+        'sublist' => array(
+            'Bezirksverband Bergedorf' => 'http://www.piratenpartei-bergedorf.de/',
+            'Bezirksverband Harburg' => 'http://www.piraten-harburg.de/',
+            'Bezirksverband Hamburg-Nord' => 'http://wiki.piratenpartei.de/HH:Bezirksverband_Nord',
+            'Eimbütteler Piraten (informell)' => 'http://wiki.piratenpartei.de/HH:Eimsb%C3%BCtteler_Piraten',
+        )
+    ),
+    'Hessen' => array(
+        'title' => 'Piratenpartei Landesverband Hessen',
+        'url'  => 'http://www.piratenpartei-hessen.de/',
+        'sublist' => array(
+            'Kreisverband Bergstraße' => 'http://www.piraten-bergstrasse.de/',
+            'Kreisverband Darmstadt/Darmstadt-Dieburg' => 'http://www.piratenpartei-darmstadt.de/',
+            'Kreisverband Frankfurt am Main' => 'http://www.piratenpartei-frankfurt.de/',
+            'Kreisverband Gießen' => 'http://www.piraten-giessen.de/',
+            'Kreisverband Gross-Gerau' => 'http://www.piratenpartei-gross-gerau.de/',
+            'Kreisverband Hochtaunus' => 'http://www.piratenpartei-hochtaunus.de/',
+            'Kreisverband Kassel' => 'http://www.piratenpartei-kassel.de/',
+            'Kreisverband Main-Kinzig' => 'http://www.kinzigpiraten.de/',
+            'Kreisverband Main-Taunus' => 'http://www.piraten-mtk.de/',
+            'Kreisverband Marburg-Biedenkopf' => 'http://www.piratenpartei-marburg.de/',
+            'Kreisverband Offenbach-Land' => 'http://www.kreispiraten-of.de/',
+            'Kreisverband Rheingau-Taunus' => 'http://www.piratenpartei-rtk.de/',
+            'Kreisverband Schwalm-Eder' => 'http://www.piraten-sek.de/',
+            'Kreisverband Waldeck-Frankenberg' => 'http://www.piraten-wa-fkb.de/',
+            'Kreisverband Wetterau' => 'http://www.piratenpartei-wetterau.de/',
+            'Kreisverband Wiesbaden' => 'http://www.piratenpartei-wiesbaden.de/',
+        )
+    ),
     
 );
 
