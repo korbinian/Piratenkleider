@@ -1903,6 +1903,7 @@ function theme_designspecials_do_page() {
                                 
                         <select name="piratenkleider_theme_designspecials[css-colorfile]">
                             <option value="" <?php if ( $options['css-colorfile'] == '') echo ' selected="selected"'; ?>><?php _e( 'Deutschland (Orange)', 'piratenkleider' ); ?></option>
+                            <option value="colors_at.css" <?php if ( $options['css-colorfile'] == 'colors_at.css') echo ' selected="selected"'; ?>><?php _e( '&Ouml;sterreich (Violett)', 'piratenkleider' ); ?></option>
                             <option value="colors_lu.css" <?php if ( $options['css-colorfile'] == 'colors_lu.css') echo ' selected="selected"'; ?>><?php _e( 'Luxemburg (Violett)', 'piratenkleider' ); ?></option>
                             <option value="colors_tk.css" <?php if ( $options['css-colorfile'] == 'colors_tk.css') echo ' selected="selected"'; ?>><?php _e( 'T&uuml;rkei (Cyan)', 'piratenkleider' ); ?></option>
                         </select>   
