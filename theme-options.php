@@ -97,6 +97,10 @@ function theme_options_do_page() {
                                 $options['slider-numberarticle'] = $defaultoptions['slider-numberarticle']; 
                             if ( ! isset( $options['feed_twitter_numberarticle'] ) )
                                 $options['feed_twitter_numberarticle'] = $defaultoptions['feed_twitter_numberarticle']; 
+                            if ( ! isset( $options['twitter_cache_lifetime'] ) )
+                                $options['twitter_cache_lifetime'] = $defaultoptions['twitter_cache_lifetime']; 
+                            
+                            
                              if (!isset($options['num-article-startpage-fullwidth'])) 
                                 $options['num-article-startpage-fullwidth'] = $defaultoptions['num-article-startpage-fullwidth'];
                             if (!isset($options['num-article-startpage-halfwidth'])) 
@@ -706,7 +710,14 @@ function theme_options_do_page() {
                                                     <?php _e( 'Datum der Twittermeldung anzeigen', 'piratenkleider' ); ?>
                                                    </label>
                                                 </td>
-                                            </tr>         
+                                            </tr>    
+                                            <tr valign="top"><th scope="row"><?php _e( 'Twitter Cache', 'piratenkleider' ); ?></th>
+                                          <td>
+						<input id="piratenkleider_theme_options[twitter_cache_lifetime]" class="regular-text" type="text" length="5" name="piratenkleider_theme_options[twitter_cache_lifetime]" value="<?php esc_attr_e( $options['twitter_cache_lifetime'] ); ?>" />
+						<label class="description" for="piratenkleider_theme_options[twitter_cache_lifetime]">
+                                                    <?php _e( 'Zeit in Sekunden f&uuml;r den Twitter-Cache. Dieser Wert darf nicht kleiner als 10 Minuten (=600) sein.', 'piratenkleider' ); ?></label>
+					</td>					
+                                        </tr>
                                          </table>                                                                                
                                     </td>                                    
                                 </tr>                            
@@ -1029,11 +1040,14 @@ function theme_options_validate( $input ) {
 	$input['default_footerlink_show'] = ( $input['default_footerlink_show'] == 1 ? 1 : 0 );       
         
          $input['default_footerlink_key'] = wp_filter_nohtml_kses( $input['default_footerlink_key'] );
+         
         
-        
+
          if ( ! isset( $input['feed_twitter_showdate'] ) )
 		$input['feed_twitter_showdate'] = 0;
 	$input['feed_twitter_showdate'] = ( $input['feed_twitter_showdate'] == 1 ? 1 : 0 );         
+        $input['twitter_cache_lifetime'] = wp_filter_nohtml_kses( $input['twitter_cache_lifetime'] );
+        
         if ( ! isset( $input['slider-aktiv'] ) )
 		$input['slider-aktiv'] = 0;
 	$input['slider-aktiv'] = ( $input['slider-aktiv'] == 1 ? 1 : 0 );        
