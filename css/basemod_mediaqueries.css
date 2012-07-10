@@ -308,6 +308,12 @@
    .content-primary .skin {
        padding: 0;
    }
+   .content-header,
+   .content-header-big {
+     margin-left: 0px;
+    }
+   
+   
    .single .post {
        padding: 10px;
    }
@@ -343,8 +349,24 @@
  .post-comments ol li .reply {
      display: none;
  }
- 
-
-
- 
+  
+#socialmedia_iconbar {
+         position: relative;
+         display: block;
+         top: inherit;
+         left: inherit;
+         width: auto;
+         background: black;
+         border-radius: 3px ; 
+         z-index: 10 ;
+         padding: 2px;
+         margin: 0px;
+         text-align: center;
+     }
+#socialmedia_iconbar ul.socialmedia {
+    list-style: none;
+    }
+    #socialmedia_iconbar ul.socialmedia li {
+        width: 34px;
+    }
 }
