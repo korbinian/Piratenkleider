@@ -324,7 +324,7 @@ $default_toplink_liste = array(
              'Bezirksverband Oberpfalz' => 'http://oberpfalz.piratenpartei.de/',
              'Bezirksverband Schwaben' => 'http://www.piraten-schwaben.de/',
              'Bezirksverband Unterfranken' => 'http://piraten-ufr.de/',
-         )
+         ) 
      ), 
     'Brandenburg' => array(
         'title' => 'Piratenpartei Landesverband Brandenburg',
@@ -343,7 +343,7 @@ $default_toplink_liste = array(
             'Regionalverband Südbrandenburg' => 'http://cottbus.piratenbrandenburg.de/',
         )
     ),
-      'Rheinland-Pfalz' => array(
+    'Rheinland-Pfalz' => array(
         'title' => 'Piratenpartei Landesverband Rheinland-Pfalz',
         'url'  => 'http://www.piraten-rlp.de',
         'sublist' => array(
