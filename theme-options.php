@@ -119,6 +119,10 @@ function theme_options_do_page() {
                             
                             if (!isset($options['teaser-title-maxlength'])) 
                                $options['teaser-title-maxlength'] = $defaultoptions['teaser-title-maxlength'];
+                            if (!isset($options['teaser_maxlength'])) 
+                               $options['teaser_maxlength'] = $defaultoptions['teaser_maxlength'];
+                            
+                            
                             if (!isset($options['teaser-subtitle'])) 
                                $options['teaser-subtitle'] = $defaultoptions['teaser-subtitle'];
                             if (!isset($options['teaser-title-words'])) 
@@ -837,7 +841,12 @@ function theme_options_do_page() {
                                                             <label class="description" for="piratenkleider_theme_options[teaser-title-words]"><?php _e( 'Zahl der Worte im Teaser; Die maximale Textl&auml;nge begrenzt diesen Wert jedoch.', 'piratenkleider' ); ?></label>
                                                     </td>					
                                             </tr>
-                                            
+                                             <tr valign="top"><th scope="row"><?php _e( 'L&auml;nge des Teasertextes (Artikelauszug)', 'piratenkleider' ); ?></th>
+                                                  <td>
+                                                            <input style="width: 3em;" id="piratenkleider_theme_options[teaser_maxlength]" class="regular-text" type="text" length="5" name="piratenkleider_theme_options[teaser_maxlength]" value="<?php esc_attr_e( $options['teaser_maxlength'] ); ?>" />
+                                                            <label class="description" for="piratenkleider_theme_options[teaser_maxlength]"><?php _e( 'Maximale Textl&auml;nge für Artikelauszüge auf der Startseite', 'piratenkleider' ); ?></label>
+                                                    </td>					
+                                            </tr>
                                             
                                                          
                                         </table>                                                                                
@@ -1072,6 +1081,7 @@ function theme_options_validate( $input ) {
         $input['slider-animationType'] = wp_filter_nohtml_kses( $input['slider-animationType'] );   
         
         $input['teaser-title-maxlength'] = wp_filter_nohtml_kses( $input['teaser-title-maxlength'] );
+        $input['teaser-maxlength'] = wp_filter_nohtml_kses( $input['teaser-maxlength'] );
         $input['teaser-subtitle'] = wp_filter_nohtml_kses( $input['teaser-subtitle'] );
         $input['teaser-title-words'] = wp_filter_nohtml_kses( $input['teaser-title-words'] );
         
