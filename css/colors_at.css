@@ -172,7 +172,7 @@
     }
   .teaser .row {
     background: #993399;
-    background: rgba(0, 0, 0, 0.3) -20% 0 fixed; 
+    background: rgba(0, 0, 0, 0.2) -20% 0 fixed; 
   }
   .teaser .first-teaser-widget-area {
     background: #111;
@@ -213,28 +213,32 @@
        color: white;
    }
 
- .teaserlinks ul li {
-    background-color: #937cb4;
+.teaserlinks ul li {
+    background-color: #5C388F;
+	color: white;
     box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
  
   }
+  .teaserlinks .symbol:before {
+    text-shadow: 0 -1px 1px rgba(0,0,0,0.2) !important; 
+  } 
  .teaserlinks ul li a {
-     color: white;
+     color: #EEE;
      font-family: "BebasNeueRegular", Helvetica, Arial, sans-serif;
      text-shadow: 0 -1px 1px #552554;
  }
   .teaserlinks ul li a:hover,
   .teaserlinks ul li a:focus{
       color: white;
-      background: none repeat scroll 0 0 #937cb4;
+      background: none repeat scroll 0 0 #5C388F;
   }
   .teaserlinks ul li a span {
-      color: black;
      text-shadow: 0 0 0; 
+	 color: #EEE;
   }
     .teaserlinks ul li a:hover span,
     .teaserlinks ul li a:focus span { 
-           color: black;
+           color: white;
      }    
 
     .content {
@@ -351,13 +355,35 @@
       background-image: linear-gradient(top, #2d7dc5, #1a4872);
  }
  
+.content-aside .newsletter {
+	background: none repeat scroll 0 0 rgba(76, 37, 130, 0.5);
+	box-shadow:none;
+}
+
+
+.content-aside .widget li {
+	 background:none;
+ }
+.content-aside .widget li:hover {
+	 background:#5C388F;
+ }
+.content-aside .widget li:hover,
+ .content-aside .widget li:focus,
+#ics-calendar-widget li:hover, 
+#ics-calendar-widget li:focus, 
+ .content-aside .twitterwidget li:hover, 
+ .content-aside .twitterwidget li:focus {
+     background: #5c388f;
+ }
+ .content-aside .twitterwidget li a:hover { color:#FFF; }
  .content-aside a {
-  color: white;
+  color: #EEE;
   background: rgba(255,255,255, 0.2);
+  padding:0.25em 0.4em;
 }
   .content-aside a:hover {
-    color: white;
-    background: rgba(255, 255, 255, 0.2); 
+    color: rgba(76, 37, 130, 0.8);
+    background: rgba(255,255,255, 0.8); 
   }
   
   .content-aside table td,
@@ -520,7 +546,8 @@ div.ics-calendar-holder .ics-calendar-event {
   }        
 
   .content-aside {
-      background: #4c2582 url("../images/int/bg-tags-at.png") -20% top fixed; 
+      background: #4c2582 url("../images/int/bg-tags-at.png") -20% top fixed;
+	  color:#eee;
    }
 
   .content-aside .skin {
@@ -580,18 +607,4 @@ div.ics-calendar-holder .ics-calendar-event {
     
  }
  
-.content-aside .newsletter {
-	background: none repeat scroll 0 0 rgba(0,0,0,0.2);
-	box-shadow:none;
-}
 
-.content-aside .widget li {
-     background:rgba(0,0,0,0.2);
- }
-.content-aside .widget li:hover {
-     background:rgba(0,0,0,0.3);
- }
-
-.teaserlinks .symbol:before {
-    text-shadow: 0 -1px 1px rgba(0,0,0,0.2) !important;
-}
