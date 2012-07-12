@@ -25,7 +25,16 @@
   src: url("../fonts/BebasNeue-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/BebasNeue-webfont.woff") format("woff"), url("../fonts/BebasNeue-webfont.ttf") format("truetype"), url("../fonts/BebasNeue-webfont.svg#BebasNeueRegular") format("svg");
   }
 
+@font-face {
+  font-family: 'DroidSans';
+  src: url("../fonts/DroidSans.eot?#iefix") format("embedded-opentype"), url("../fonts/DroidSans.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal; }
+
+
 @media screen, projection {
+	
+	body { font-family:'DroidSans', Helvetica, Arial, sans-serif; }
 
     h1, h2, h3, .bebas, .cifont {
       font-family: "BebasNeueRegular", Helvetica, Arial, sans-serif;
