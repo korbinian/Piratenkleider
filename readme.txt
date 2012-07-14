@@ -2,7 +2,7 @@ Piratenkleider
 - Wordpress-Theme für Webauftritte der Piratenpartei 
 =================================================
 
-Version 2.8 von Wolfgang Wiese (xwolf), 6. Juli 2012
+Version 2.9 von Wolfgang Wiese (xwolf), 10. Juli 2012
 
 
 DOWNLOADS
@@ -145,7 +145,7 @@ THEME-OPTION "Takelage einstellen"
     - Optionale Anzeige für Seitenbilder steuern
     - Menutyp  für die Darstellung der Seiten und Unterseiten in der
       Sidebar steuern.
-   
+   Sowie viele mehr...  
  
 
 THEME-OPTION "Segel setzen"
@@ -162,8 +162,6 @@ THEME-OPTION "Segel setzen"
 
    Die Defaultbilder die in der rechten Sidebar als Werbeplakate erscheinen
    liegen im Ordner /plakate/ . 
-   Neue Defaultbilder sollten -egal ob als URL-Angabe oder als Datei-
-   in den Maßen 277x391 Pixel abgespeichert sein.
    Bei einem anderen Größe wird das Bild entsprechend durch den Browser
    umskaliert. Dies kann jedoch mit Qualitätseinbußen verbunden sein.
 
