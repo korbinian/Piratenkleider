@@ -29,7 +29,7 @@ AUTOREN / ENTWICKLER
       Defaultgrafiken für Slider/Seitenbilder: Tobias M. Eckrich
       Weitere Bilder: Piratenwiki mit unterschiedlichen Autoren
       Bildbearbeitung für Piratenkleider 2.x: Wolfgang Wiese
-
+      Social Media Icons: Paul Robert Lloyd, http://paulrobertlloyd.com/2009/06/social_media_icons
 
 VORVERSION
 

@@ -1361,23 +1361,22 @@ display: inline-block;
   position: relative;
   height: 150px; 
   overflow: hidden;
-   margin-left: 10px;
 }
 .content-header-big {
   position: relative;
   height: 240px; 
   overflow: hidden;
-   margin-left: 10px;
 }
 .content-header #page-title,
 .content-header h1,
 .content-header-big h1  {
     position: absolute;
-    left: 15px;
+    left: 25px;
     top: 1.5em;
     display: inline-block;
     background: white;
     padding: 3px 5px 1px 5px;
+    
 }
 
 .content-aside #steckbrief {    
