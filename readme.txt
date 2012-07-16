@@ -8,6 +8,7 @@ Version 2.9 von Wolfgang Wiese (xwolf), 10. Juli 2012
 DOWNLOADS
 
     https://github.com/xwolfde/Piratenkleider
+	https://github.com/zwitschi/Piratenkleider (Österreich)
     
     
 CREDITS & COPYRIGHT
@@ -24,6 +25,7 @@ AUTOREN / ENTWICKLER
      Heiko Philippski, http://www.phindie.de/
      Kerstin Probiesch, http://www.barrierefreie-informationskultur.de
      Fabian Müller, http://www.feals.de
+	 Georg Sinn, http://zwitschi.net
 
    Quellen für Defaultbilder und CI-Materialen (CC-BY 3.0)
       Defaultgrafiken für Slider/Seitenbilder: Tobias M. Eckrich
@@ -332,8 +334,9 @@ Administrative Hinweise für Wordpress Theme-Editoren:
 
 7. Farbcodes und Sprache der Texte
    Laenderspezifische Farbcodes werden in den Dateien
-       /css/colors_tk.css  (für Türkei)
+	   /css/colors_tk.css  (für Türkei)
        /css/colors_lu.css (für Luxemburg)
+       /css/colors_at.css  (für Österreich)
        /css/colors_de.css (für Deutschland, jedoch nicht notwendig da Default)
    abgelegt.
    Diese greifen teilweise auf eigene Bilder zu. 
