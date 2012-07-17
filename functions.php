@@ -4,7 +4,7 @@
  *
  * @source http://github.com/xwolfde/Piratenkleider
  * @creator xwolf
- * @version 2.8
+ * @version 2.9.2
  * @licence CC-BY-SA 3.0 
  */
 
@@ -307,23 +307,23 @@ $default_toplink_liste = array(
          'title' => 'Piratenpartei Landesverband Baden-Württemberg',
          'url'  => 'http://www.piratenpartei-bw.de/',
          'sublist' => array(
-             'Bezirksverband Freiburg' => 'http://bzv-fr.piratenpartei-bw.de/',
-             'Bezirksverband Karlsruhe' => 'http://bzv-karlsruhe.piraten-bw.de/',
-             'Bezirksverband Stuttgart' => 'http://www.piraten-bzv-stuttgart.de/',
-             'Bezirksverband Tübingen' => 'http://bzv.piratenpartei-tuebingen.de/',
+             '<acronym title="Bezirksverband">BV</acronym> Freiburg' => 'http://bzv-fr.piratenpartei-bw.de/',
+             '<acronym title="Bezirksverband">BV</acronym> Karlsruhe' => 'http://bzv-karlsruhe.piraten-bw.de/',
+             '<acronym title="Bezirksverband">BV</acronym> Stuttgart' => 'http://www.piraten-bzv-stuttgart.de/',
+             '<acronym title="Bezirksverband">BV</acronym> Tübingen' => 'http://bzv.piratenpartei-tuebingen.de/',
          )
      ),  
      'Bayern' => array(
          'title' => 'Piratenpartei Landesverband Bayern',
          'url'  => 'http://www.piratenpartei-bayern.de/',
          'sublist' => array(
-             'Bezirksverband Mittelfranken' => 'http://piraten-mfr.de/',
-             'Bezirksverband Niederbayern' => 'http://niederbayern.piratenpartei-bayern.de/',
-             'Bezirksverband Oberbayern' => 'http://oberbayern.piratenpartei.de/',
-             'Bezirksverband Oberfranken' => 'http://piraten-oberfranken.de/',
-             'Bezirksverband Oberpfalz' => 'http://oberpfalz.piratenpartei.de/',
-             'Bezirksverband Schwaben' => 'http://www.piraten-schwaben.de/',
-             'Bezirksverband Unterfranken' => 'http://piraten-ufr.de/',
+             '<acronym title="Bezirksverband">BV</acronym> Mittelfranken' => 'http://piraten-mfr.de/',
+             '<acronym title="Bezirksverband">BV</acronym> Niederbayern' => 'http://niederbayern.piratenpartei-bayern.de/',
+             '<acronym title="Bezirksverband">BV</acronym> Oberbayern' => 'http://oberbayern.piratenpartei.de/',
+             '<acronym title="Bezirksverband">BV</acronym> Oberfranken' => 'http://piraten-oberfranken.de/',
+             '<acronym title="Bezirksverband">BV</acronym> Oberpfalz' => 'http://oberpfalz.piratenpartei.de/',
+             '<acronym title="Bezirksverband">BV</acronym> Schwaben' => 'http://www.piraten-schwaben.de/',
+             '<acronym title="Bezirksverband">BV</acronym> Unterfranken' => 'http://piraten-ufr.de/',
          ) 
      ), 
     'Brandenburg' => array(
@@ -331,28 +331,28 @@ $default_toplink_liste = array(
         'url'  => 'http://www.piratenbrandenburg.de/',
         'sublist' => array(
             'Stadtverband Potsdam' => 'http://www.piraten-potsdam.de/',
-            'Kreisverband Brandenburg an der Havel' => 'http://brb.piratenbrandenburg.de/',
-            'Kreisverband Havelland' => 'http://hvl.piratenbrandenburg.de/',
-            'Kreisverband Märkisch-Oderland' => 'http://mol.piratenbrandenburg.de/',
-            'Kreisverband Oberhavel' => 'http://ohv.piratenbrandenburg.de/',
-            'Kreisverband Potsdam-Mittelmark' => 'http://pm.piratenbrandenburg.de/',
-            'Kreisverband Teltow-Fläming' => 'http://tf.piratenbrandenburg.de/',
-            'Regionalverband Barnim-Uckermark' => 'http://barum.piratenbrandenburg.de/',
-            'Regionalverband Dahme-Oder-Spree' => 'http://dos.piratenbrandenburg.de/',
-            'Regionalverband Prignitz-Ruppin' => 'http://pr.piratenbrandenburg.de/',
-            'Regionalverband Südbrandenburg' => 'http://cottbus.piratenbrandenburg.de/',
+            '<acronym title="Kreisverband">KV</acronym> Brandenburg an der Havel' => 'http://brb.piratenbrandenburg.de/',
+            '<acronym title="Kreisverband">KV</acronym> Havelland' => 'http://hvl.piratenbrandenburg.de/',
+            '<acronym title="Kreisverband">KV</acronym> Märkisch-Oderland' => 'http://mol.piratenbrandenburg.de/',
+            '<acronym title="Kreisverband">KV</acronym> Oberhavel' => 'http://ohv.piratenbrandenburg.de/',
+            '<acronym title="Kreisverband">KV</acronym> Potsdam-Mittelmark' => 'http://pm.piratenbrandenburg.de/',
+            '<acronym title="Kreisverband">KV</acronym> Teltow-Fläming' => 'http://tf.piratenbrandenburg.de/',
+            '<acronym title="Regionalverband">RV</acronym> Barnim-Uckermark' => 'http://barum.piratenbrandenburg.de/',
+            '<acronym title="Regionalverband">RV</acronym> Dahme-Oder-Spree' => 'http://dos.piratenbrandenburg.de/',
+            '<acronym title="Regionalverband">RV</acronym> Prignitz-Ruppin' => 'http://pr.piratenbrandenburg.de/',
+            '<acronym title="Regionalverband">RV</acronym> Südbrandenburg' => 'http://cottbus.piratenbrandenburg.de/',
         )
     ),
     'Rheinland-Pfalz' => array(
         'title' => 'Piratenpartei Landesverband Rheinland-Pfalz',
         'url'  => 'http://www.piraten-rlp.de',
         'sublist' => array(
-            'Kreisverband Bad Kreuznach' => 'http://wiki.piratenpartei.de/Kreisverband_Bad_Kreuznach',
-            'Kreisverband Landau/Südliche Weinstraße' => 'http://wiki.piratenpartei.de/RP:Kreisverband_Landau/S%C3%BCdliche_Weinstra%C3%9Fe',
-            'Kreisverband Mittelhaardt' => 'http://www.piratenpartei-mittelhaardt.de',
-            'Kreisverband  Rhein-Pfalz' => 'http://wiki.piratenpartei.de/RP:Kreisverband_Rhein-Pfalz',
-            'Kreisverband Kreisverband Rheinhessen' => 'http://wiki.piratenpartei.de/RP:Kreisverband_Rheinhessen',
-            'Kreisverband Trier/Trier-Saarburg' => 'http://piraten-trier.de',
+            '<acronym title="Kreisverband">KV</acronym> Bad Kreuznach' => 'http://wiki.piratenpartei.de/<acronym title="Kreisverband">KV</acronym>_Bad_Kreuznach',
+            '<acronym title="Kreisverband">KV</acronym> Landau/Südliche Weinstraße' => 'http://wiki.piratenpartei.de/RP:<acronym title="Kreisverband">KV</acronym>_Landau/S%C3%BCdliche_Weinstra%C3%9Fe',
+            '<acronym title="Kreisverband">KV</acronym> Mittelhaardt' => 'http://www.piratenpartei-mittelhaardt.de',
+            '<acronym title="Kreisverband">KV</acronym>  Rhein-Pfalz' => 'http://wiki.piratenpartei.de/RP:<acronym title="Kreisverband">KV</acronym>_Rhein-Pfalz',
+            '<acronym title="Kreisverband">KV</acronym> <acronym title="Kreisverband">KV</acronym> Rheinhessen' => 'http://wiki.piratenpartei.de/RP:<acronym title="Kreisverband">KV</acronym>_Rheinhessen',
+            '<acronym title="Kreisverband">KV</acronym> Trier/Trier-Saarburg' => 'http://piraten-trier.de',
         )
     ),
     'Nordrhein-Westfalen' => array(
@@ -360,7 +360,7 @@ $default_toplink_liste = array(
       'url' => 'http://www.piratenpartei-nrw.de/',
       'sublist' => array(   
         
-         'Kreisverband Bochum' =>'http://piratenbochum.de',
+         '<acronym title="Kreisverband">KV</acronym> Bochum' =>'http://piratenbochum.de',
            
           )
     ),
@@ -368,9 +368,9 @@ $default_toplink_liste = array(
         'title' => 'Piratenpartei Landesverband Hamburg',
         'url'  => 'http://www.piratenpartei-hamburg.de/',
         'sublist' => array(
-            'Bezirksverband Bergedorf' => 'http://www.piratenpartei-bergedorf.de/',
-            'Bezirksverband Harburg' => 'http://www.piraten-harburg.de/',
-            'Bezirksverband Hamburg-Nord' => 'http://wiki.piratenpartei.de/HH:Bezirksverband_Nord',
+            '<acronym title="Bezirksverband">BV</acronym> Bergedorf' => 'http://www.piratenpartei-bergedorf.de/',
+            '<acronym title="Bezirksverband">BV</acronym> Harburg' => 'http://www.piraten-harburg.de/',
+            '<acronym title="Bezirksverband">BV</acronym> Hamburg-Nord' => 'http://wiki.piratenpartei.de/HH:<acronym title="Bezirksverband">BV</acronym>_Nord',
             'Eimbütteler Piraten (informell)' => 'http://wiki.piratenpartei.de/HH:Eimsb%C3%BCtteler_Piraten',
         )
     ),
@@ -378,25 +378,53 @@ $default_toplink_liste = array(
         'title' => 'Piratenpartei Landesverband Hessen',
         'url'  => 'http://www.piratenpartei-hessen.de/',
         'sublist' => array(
-            'Kreisverband Bergstraße' => 'http://www.piraten-bergstrasse.de/',
-            'Kreisverband Darmstadt/Darmstadt-Dieburg' => 'http://www.piratenpartei-darmstadt.de/',
-            'Kreisverband Frankfurt am Main' => 'http://www.piratenpartei-frankfurt.de/',
-            'Kreisverband Gießen' => 'http://www.piraten-giessen.de/',
-            'Kreisverband Gross-Gerau' => 'http://www.piratenpartei-gross-gerau.de/',
-            'Kreisverband Hochtaunus' => 'http://www.piratenpartei-hochtaunus.de/',
-            'Kreisverband Kassel' => 'http://www.piratenpartei-kassel.de/',
-            'Kreisverband Main-Kinzig' => 'http://www.kinzigpiraten.de/',
-            'Kreisverband Main-Taunus' => 'http://www.piraten-mtk.de/',
-            'Kreisverband Marburg-Biedenkopf' => 'http://www.piratenpartei-marburg.de/',
-            'Kreisverband Offenbach-Land' => 'http://www.kreispiraten-of.de/',
-            'Kreisverband Rheingau-Taunus' => 'http://www.piratenpartei-rtk.de/',
-            'Kreisverband Schwalm-Eder' => 'http://www.piraten-sek.de/',
-            'Kreisverband Waldeck-Frankenberg' => 'http://www.piraten-wa-fkb.de/',
-            'Kreisverband Wetterau' => 'http://www.piratenpartei-wetterau.de/',
-            'Kreisverband Wiesbaden' => 'http://www.piratenpartei-wiesbaden.de/',
+            '<acronym title="Kreisverband">KV</acronym> Bergstraße' => 'http://www.piraten-bergstrasse.de/',
+            '<acronym title="Kreisverband">KV</acronym> Darmstadt/Darmstadt-Dieburg' => 'http://www.piratenpartei-darmstadt.de/',
+            '<acronym title="Kreisverband">KV</acronym> Frankfurt am Main' => 'http://www.piratenpartei-frankfurt.de/',
+            '<acronym title="Kreisverband">KV</acronym> Gießen' => 'http://www.piraten-giessen.de/',
+            '<acronym title="Kreisverband">KV</acronym> Gross-Gerau' => 'http://www.piratenpartei-gross-gerau.de/',
+            '<acronym title="Kreisverband">KV</acronym> Hochtaunus' => 'http://www.piratenpartei-hochtaunus.de/',
+            '<acronym title="Kreisverband">KV</acronym> Kassel' => 'http://www.piratenpartei-kassel.de/',
+            '<acronym title="Kreisverband">KV</acronym> Main-Kinzig' => 'http://www.kinzigpiraten.de/',
+            '<acronym title="Kreisverband">KV</acronym> Main-Taunus' => 'http://www.piraten-mtk.de/',
+            '<acronym title="Kreisverband">KV</acronym> Marburg-Biedenkopf' => 'http://www.piratenpartei-marburg.de/',
+            '<acronym title="Kreisverband">KV</acronym> Offenbach-Land' => 'http://www.kreispiraten-of.de/',
+            '<acronym title="Kreisverband">KV</acronym> Rheingau-Taunus' => 'http://www.piratenpartei-rtk.de/',
+            '<acronym title="Kreisverband">KV</acronym> Schwalm-Eder' => 'http://www.piraten-sek.de/',
+            '<acronym title="Kreisverband">KV</acronym> Waldeck-Frankenberg' => 'http://www.piraten-wa-fkb.de/',
+            '<acronym title="Kreisverband">KV</acronym> Wetterau' => 'http://www.piratenpartei-wetterau.de/',
+            '<acronym title="Kreisverband">KV</acronym> Wiesbaden' => 'http://www.piratenpartei-wiesbaden.de/',
         )
     ),
-    
+   'Niedersachsen' => array(
+        'title' => 'Piratenpartei Niedersachsen',
+        'url' => 'http://www.piraten-nds.de/',
+        'sublist' => array(
+            '<acronym title="Stadtverband">SV</acronym> Braunschweig' => 'http://www.piratenpartei-braunschweig.de/',
+            '<acronym title="Kreisverband">KV</acronym> Celle' => 'http://www.piraten-celle.de/',    
+            '<acronym title="Stadtverband">SV</acronym> Delmenhorst' => 'http://www.piratenpartei-delmenhorst.de/',    
+            '<acronym title="Kreisverband">KV</acronym> Diepholz' => 'http://www.piratenpartei-diepholz.de/',    
+            '<acronym title="Kreisverband">KV</acronym> Goslar' => 'http://www.piraten-goslar.de/',    
+            '<acronym title="Kreisverband">KV</acronym> Göttingen' => 'http://www.piratenpartei-goettingen.de/',    
+            '<acronym title="Kreisverband">KV</acronym> Grafschaft Bentheim' => 'http://www.grafschafter-piraten.de/',    
+            '<acronym title="Kreisverband">KV</acronym> Hameln-Pyrmont' => 'http://www.piraten-hameln.de/',    
+            '<acronym title="Regionalverband">RV</acronym> Hannover' =>'http://www.piratenhannover.de/', 
+            '<acronym title="Kreisverband">KV</acronym> Helmstedt' => 'http://wiki.piratenpartei.de/NDS:Helmstedt',    
+            '<acronym title="Kreisverband">KV</acronym> Hildesheim' => 'http://www.piratenpartei-hildesheim.de/',    
+            '<acronym title="Kreisverband">KV</acronym> Niedersachsen-Nordost' => 'http://www.heide-piraten.de/',   
+            '<acronym title="Kreisverband">KV</acronym> Nienburg/Weser' => 'http://www.piraten-nienburg.de/',   
+            '<acronym title="Kreisverband">KV</acronym> Osnabrück' => 'http://www.piraten-osnabrueck.de',   
+            '<acronym title="Stadtverband">SV</acronym> Oldenburg' => 'http://www.piratenpartei-oldenburg.de/',   
+            '<acronym title="Kreisverband">KV</acronym> Oldenburg Land' => 'http://www.piratenpartei-landkreis-oldenburg.de/',   
+            '<acronym title="Kreisverband">KV</acronym> Peine' => 'http://wiki.piratenpartei.de/NDS:Kreisverband_Peine',   
+            '<acronym title="Kreisverband">KV</acronym> Stade' => 'http://www.piraten-stade.de/',   
+            '<acronym title="Kreisverband">KV</acronym> Schaumburg' => 'http://www.piraten-schaumburg.de/',            
+            '<acronym title="Kreisverband">KV</acronym> Wilhelmshaven' => 'http://www.piraten-whv.de/',   
+            '<acronym title="Kreisverband">KV</acronym> Wolfenbüttel-Salzgitter' => 'http://www.piratenpartei-wolfenbuettel.de/',   
+            '<acronym title="Stadtverband">SV</acronym> Wolfsburg' => 'http://wolfsburg.piratenpartei-nds.de/',   
+      
+        )
+    ),    
 );
 
 /* 

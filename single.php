@@ -38,7 +38,7 @@
 
         <hr>
 
-        <div class="post-comments">
+        <div class="post-comments" id="comments">
           <?php comments_template( '', true ); ?>
         </div>
 

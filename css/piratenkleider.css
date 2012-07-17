@@ -247,14 +247,11 @@ pre {
 code, kbd, samp, pre, tt, var {
   font-family: consolas, "courier new", courier, monospace; }
 
-abbr, acronym {
-  font-size: 85%;
-  text-transform: uppercase;
-  letter-spacing: .1em; }
 
 abbr[title], acronym[title], dfn[title] {
   border-bottom: 1px dotted;
-  cursor: help; }
+  cursor: help; 
+}
 
 hr {
   display: block;
