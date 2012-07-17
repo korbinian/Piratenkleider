@@ -256,7 +256,7 @@ $default_toplink_liste = array(
          'url'  => 'http://www.pp-international.net/',
          'sublist' => array(
              'Argentinien' => 'http://www.partidopirata.com.ar/',
-                'Australien' => 'http://pirateparty.org.au/',
+              'Australien' => 'http://pirateparty.org.au/',
               'Belgien' => 'http://pirateparty.be/',
               'Brasilien' => 'http://www.partidopirata.org/',
               'Bulgarien' => 'http://piratskapartia.bg/',
@@ -330,7 +330,7 @@ $default_toplink_liste = array(
         'title' => 'Piratenpartei Landesverband Brandenburg',
         'url'  => 'http://www.piratenbrandenburg.de/',
         'sublist' => array(
-            'Stadtverband Potsdam' => 'http://www.piraten-potsdam.de/',
+            '<acronym title="Stadtverband">SV</acronym> Potsdam' => 'http://www.piraten-potsdam.de/',
             '<acronym title="Kreisverband">KV</acronym> Brandenburg an der Havel' => 'http://brb.piratenbrandenburg.de/',
             '<acronym title="Kreisverband">KV</acronym> Havelland' => 'http://hvl.piratenbrandenburg.de/',
             '<acronym title="Kreisverband">KV</acronym> Märkisch-Oderland' => 'http://mol.piratenbrandenburg.de/',
@@ -394,6 +394,18 @@ $default_toplink_liste = array(
             '<acronym title="Kreisverband">KV</acronym> Waldeck-Frankenberg' => 'http://www.piraten-wa-fkb.de/',
             '<acronym title="Kreisverband">KV</acronym> Wetterau' => 'http://www.piratenpartei-wetterau.de/',
             '<acronym title="Kreisverband">KV</acronym> Wiesbaden' => 'http://www.piratenpartei-wiesbaden.de/',
+        )
+    ),
+     'Mecklenburg-Vorpommern' => array(
+        'title' => 'Piratenpartei Landesverband Mecklenburg-Vorpommern',
+        'url'  => 'http://www.piratenpartei-mv.de/',
+        'sublist' => array(
+            '<acronym title="Kreisverband">KV</acronym> Vorpommern-Greiswald' => 'http://piraten-hgw.de/',
+            'Rostock' => 'http://rostock.piratenpartei-mv.de/',
+            'Neubrandenburg' => 'http://piratenpartei-mv.de/stammtisch-neubrandenburg-0',
+            'Schwerin' => 'http://www.schweriner-piraten.de/',
+            'Usedom' => 'http://www.piraten-usedom.de/',
+           
         )
     ),
    'Niedersachsen' => array(
