@@ -343,27 +343,8 @@ $default_toplink_liste = array(
             '<acronym title="Regionalverband">RV</acronym> Südbrandenburg' => 'http://cottbus.piratenbrandenburg.de/',
         )
     ),
-    'Rheinland-Pfalz' => array(
-        'title' => 'Piratenpartei Landesverband Rheinland-Pfalz',
-        'url'  => 'http://www.piraten-rlp.de',
-        'sublist' => array(
-            '<acronym title="Kreisverband">KV</acronym> Bad Kreuznach' => 'http://wiki.piratenpartei.de/<acronym title="Kreisverband">KV</acronym>_Bad_Kreuznach',
-            '<acronym title="Kreisverband">KV</acronym> Landau/Südliche Weinstraße' => 'http://wiki.piratenpartei.de/RP:<acronym title="Kreisverband">KV</acronym>_Landau/S%C3%BCdliche_Weinstra%C3%9Fe',
-            '<acronym title="Kreisverband">KV</acronym> Mittelhaardt' => 'http://www.piratenpartei-mittelhaardt.de',
-            '<acronym title="Kreisverband">KV</acronym>  Rhein-Pfalz' => 'http://wiki.piratenpartei.de/RP:<acronym title="Kreisverband">KV</acronym>_Rhein-Pfalz',
-            '<acronym title="Kreisverband">KV</acronym> <acronym title="Kreisverband">KV</acronym> Rheinhessen' => 'http://wiki.piratenpartei.de/RP:<acronym title="Kreisverband">KV</acronym>_Rheinhessen',
-            '<acronym title="Kreisverband">KV</acronym> Trier/Trier-Saarburg' => 'http://piraten-trier.de',
-        )
-    ),
-    'Nordrhein-Westfalen' => array(
-      'title' => 'Piratenpartei Landesverband Nordrhein-Westfalen',
-      'url' => 'http://www.piratenpartei-nrw.de/',
-      'sublist' => array(   
-        
-         '<acronym title="Kreisverband">KV</acronym> Bochum' =>'http://piratenbochum.de',
-           
-          )
-    ),
+   
+    
     'Hamburg' => array(
         'title' => 'Piratenpartei Landesverband Hamburg',
         'url'  => 'http://www.piratenpartei-hamburg.de/',
@@ -437,6 +418,27 @@ $default_toplink_liste = array(
       
         )
     ),    
+    'Nordrhein-Westfalen' => array(
+      'title' => 'Piratenpartei Landesverband Nordrhein-Westfalen',
+      'url' => 'http://www.piratenpartei-nrw.de/',
+      'sublist' => array(   
+        
+         '<acronym title="Kreisverband">KV</acronym> Bochum' =>'http://piratenbochum.de',
+           
+          )
+    ),
+      'Rheinland-Pfalz' => array(
+        'title' => 'Piratenpartei Landesverband Rheinland-Pfalz',
+        'url'  => 'http://www.piraten-rlp.de',
+        'sublist' => array(
+            '<acronym title="Kreisverband">KV</acronym> Bad Kreuznach' => 'http://wiki.piratenpartei.de/<acronym title="Kreisverband">KV</acronym>_Bad_Kreuznach',
+            '<acronym title="Kreisverband">KV</acronym> Landau/Südliche Weinstraße' => 'http://wiki.piratenpartei.de/RP:<acronym title="Kreisverband">KV</acronym>_Landau/S%C3%BCdliche_Weinstra%C3%9Fe',
+            '<acronym title="Kreisverband">KV</acronym> Mittelhaardt' => 'http://www.piratenpartei-mittelhaardt.de',
+            '<acronym title="Kreisverband">KV</acronym>  Rhein-Pfalz' => 'http://wiki.piratenpartei.de/RP:<acronym title="Kreisverband">KV</acronym>_Rhein-Pfalz',
+            '<acronym title="Kreisverband">KV</acronym> <acronym title="Kreisverband">KV</acronym> Rheinhessen' => 'http://wiki.piratenpartei.de/RP:<acronym title="Kreisverband">KV</acronym>_Rheinhessen',
+            '<acronym title="Kreisverband">KV</acronym> Trier/Trier-Saarburg' => 'http://piraten-trier.de',
+        )
+    ),
 );
 
 /* 
