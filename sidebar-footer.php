@@ -26,8 +26,7 @@
                   if ((isset($url)) && (strlen($url)>5)) {
                     echo '<p class="titelurl"><a href="'.$url.'">'.$url.'</a></p>';
                   }
-                  echo '<ul>';
-                  
+                  echo '<ul class="default_footerlinks">';
                   
                   foreach($default_footerlink_liste[$bereich]['sublist'] as $i => $value) {
                        echo '<li><a href="'.$value.'">';                                                                                                        

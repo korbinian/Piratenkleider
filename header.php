@@ -135,37 +135,37 @@ if (isset($designspecials['aktiv-mediaqueries-allparts']) && ($designspecials['a
 			</div>
                       
 			<div class="nav-top" role="navigation">				                                                        
-				<h2 class="skip"><?php _e( 'Service-Navigation', 'piratenkleider' ); ?></h2>
-                                
-                                  <?php  
-                                  get_piratenkleider_socialmediaicons($options['alle-socialmediabuttons']); 
+                            <h2 class="skip"><?php _e( 'Service-Navigation', 'piratenkleider' ); ?></h2>
 
-                                    if ( $options['aktiv-linkmenu'] == "1" ){
-                                     if ( has_nav_menu( 'top' ) ) {
-                                            wp_nav_menu( array( 'container_class' => 'menu-header', 'theme_location' => 'top' ) );
-                                        } else {
-                                            global $default_toplink_liste;   
+                                <?php  
+                                get_piratenkleider_socialmediaicons($options['alle-socialmediabuttons']); 
 
-                                            if (is_array($default_toplink_liste)) {     ?>
-                                              <div class="menu-header">
-                                                <ul id="menu-topmenu" class="menu">
-                                                <?php  
-                                                foreach($default_toplink_liste as $i => $value) {
-                                                    echo '<li><a href="'.$value.'">';                                                                                                        
-                                                    echo $i.'</a></li>';
-                                                }  
-                                                 ?>
-                                                </ul>
-                                            </div> 
-                                            <?php    
-                                            }
-                                  } 
-                                 
-                                 } 
-                                 if ( $options['aktiv-suche'] == "1" ){
-                                    get_search_form(); 
-                                 }
-                                   ?>
+                                if ( $options['aktiv-linkmenu'] == "1" ){
+                                    if ( has_nav_menu( 'top' ) ) {
+                                        wp_nav_menu( array( 'container_class' => 'menu-header', 'theme_location' => 'top' ) );
+                                    } else {
+                                        global $default_toplink_liste;   
+
+                                        if (is_array($default_toplink_liste)) {     ?>
+                                            <div class="menu-header">
+                                            <ul id="menu-topmenu" class="menu">
+                                            <?php  
+                                            foreach($default_toplink_liste as $i => $value) {
+                                                echo '<li><a href="'.$value.'">';                                                                                                        
+                                                echo $i.'</a></li>';
+                                            }  
+                                            ?>
+                                            </ul>
+                                        </div> 
+                                        <?php    
+                                        }
+                                } 
+
+                                } 
+                                if ( $options['aktiv-suche'] == "1" ){
+                                get_search_form(); 
+                                }
+                                ?>
                                 
 			</div>
                    
@@ -191,11 +191,7 @@ if (isset($designspecials['aktiv-mediaqueries-allparts']) && ($designspecials['a
          
 			<div class="sticker">
                             <div class="skin">   
-                               <h2 class="skip"><?php _e( 'Sticker', 'piratenkleider' ); ?></h2>
-                               <?php 
-                               
-                               
-                                ?>
+                               <h2 class="skip"><?php _e( 'Sticker', 'piratenkleider' ); ?></h2>                             
                                <ul>
                                    <?php if (isset($options['stickerlink1-content']) && (strlen($options['stickerlink1-content']) > 1)
                                            && isset($options['stickerlink1-url']) && (strlen($options['stickerlink1-url']) > 5) ) {
