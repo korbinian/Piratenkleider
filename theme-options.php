@@ -664,11 +664,19 @@ function theme_options_do_page() {
                                             </label>
                                             </td>					
                                              </tr>
-                                              <tr valign="top"><th scope="row">Flattr</th>
+                                             <tr valign="top"><th scope="row">Flattr</th>
                                             <td>
                                             <input id="piratenkleider_theme_options[social_flattr]" class="regular-text" type="text" length="5" name="piratenkleider_theme_options[social_flattr]" value="<?php esc_attr_e( $options['social_flattr'] ); ?>" />
                                             <label class="description" for="piratenkleider_theme_options[social_flattr]">
                                             <?php _e( 'URL inkl. http:// zur Flattr Seite', 'piratenkleider' ); ?>
+                                            </label>
+                                            </td>					
+                                             </tr>
+                                             <tr valign="top"><th scope="row">Feed</th>
+                                            <td>
+                                            <input id="piratenkleider_theme_options[social_feed]" class="regular-text" type="text" length="5" name="piratenkleider_theme_options[social_feed]" value="<?php esc_attr_e( $options['social_feed'] ); ?>" />
+                                            <label class="description" for="piratenkleider_theme_options[social_feed]">
+                                            <?php _e( 'URL inkl. http:// zu einem RSS oder Atom Feed. Dies muss nicht unbedingt der von dieser Website sein, kann aber.', 'piratenkleider' ); ?>
                                             </label>
                                             </td>					
                                              </tr>
@@ -1099,7 +1107,7 @@ function theme_options_validate( $input ) {
         $input['social_flickr'] = wp_filter_nohtml_kses( $input['social_flickr'] );
         $input['social_delicious'] = wp_filter_nohtml_kses( $input['social_delicious'] );        
         $input['social_flattr'] = wp_filter_nohtml_kses( $input['social_flattr'] );        
-        
+        $input['social_feed'] = wp_filter_nohtml_kses( $input['social_feed'] );    
         
         $input['feed_twitter'] = wp_filter_nohtml_kses( $input['feed_twitter'] );
 	
@@ -1123,10 +1131,6 @@ function theme_options_validate( $input ) {
          $input['teaserlink3-untertitel'] = wp_filter_nohtml_kses( $input['teaserlink3-untertitel'] );                      
          $input['teaserlink3-url'] = wp_filter_nohtml_kses( $input['teaserlink3-url'] );                 
          $input['teaserlink3-symbol'] = wp_filter_nohtml_kses( $input['teaserlink3-symbol'] );
-        
-         
-         
-       
 
          $input['stickerlink1-url'] = wp_filter_nohtml_kses( $input['stickerlink1-url'] );
          $input['stickerlink2-url'] = wp_filter_nohtml_kses( $input['stickerlink2-url'] );

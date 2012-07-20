@@ -4,7 +4,7 @@
  *
  * @source http://github.com/xwolfde/Piratenkleider
  * @creator xwolf
- * @version 2.9.2
+ * @version 2.9.3
  * @licence CC-BY-SA 3.0 
  */
 
@@ -44,7 +44,7 @@ $defaultoptions = array(
     'aktiv-platzhalterbilder-indexseiten'   => 0,
     'aktiv-linkmenu'                 => 1,
     'aktiv-avatar'                   => 1,
-    'src-default-avatar'             =>  get_template_directory_uri(). '/images/avataricon.gif',
+    'src-default-avatar'             => get_template_directory_uri(). '/images/avataricon.gif',
     'zeige_subpagesonly'             => 1,
     'zeige_sidebarpagemenu'          => 1,
     'feed_twitter_numberarticle'            => 3,
@@ -704,13 +704,6 @@ function honor_ssl_for_attachments($url) {
 if ( ! function_exists( 'piratenkleider_comment' ) ) :
 /**
  * Template for comments and pingbacks.
- *
- * To override this walker in a child theme without modifying the comments template
- * simply create your own twentyten_comment(), and that function will be used instead.
- *
- * Used as a callback by wp_list_comments() for displaying the comments.
- *
- * @since Twenty Ten 1.0
  */
 function piratenkleider_comment( $comment, $args, $depth ) {
         $GLOBALS['comment'] = $comment;
@@ -956,11 +949,7 @@ endif;
 add_theme_support( 'post-thumbnails' );
 
 
-/**
- * Replaces items with '-' as title with li class="menu_separator"
- *
- * @author Thomas Scholz (toscho)
- */
+
 class My_Walker_Nav_Menu extends Walker_Nav_Menu
 {
     /**
@@ -995,6 +984,44 @@ class My_Walker_Nav_Menu extends Walker_Nav_Menu
   }
 }
 
+function get_piratenkleider_socialmediaicons( $darstellung = 1 ){
+    /* 
+     * Displays Social Media Icons
+     */
+
+    if ($darstellung ==0) {
+        /* Keine Links */
+        return; 
+    } 
+    if ($darstellung==2) {    
+           /* Links an der Seite */
+            echo '<div id="socialmedia_iconbar">';
+    }
+    $options = get_option( 'piratenkleider_theme_options' );
+    echo '<ul class="socialmedia">';       
+    if ( $options['social_facebook'] != "" ){ echo '<li class="facebook"><a href="'.$options['social_facebook'].'"><img src="'.get_template_directory_uri().'/images/social-media/facebook-24x24.png" width="24" height="24" alt="Facebook"></a></li>'; }
+    if ( $options['social_twitter'] != "" ){  echo '<li class="twitter"><a href="'.$options['social_twitter'].'"><img src="'.get_template_directory_uri().'/images/social-media/twitter-24x24.png" width="24" height="24" alt="Twitter"></a></li>'; }				
+    if ( $options['social_gplus'] != "" ){  echo '<li class="gplus"><a href="'.$options['social_gplus'].'"><img src="'.get_template_directory_uri().'/images/social-media/gplus-24x24.png" width="24" height="24" alt="Google+"></a></li>'; }
+    if ( $options['social_diaspora'] != "" ){  echo '<li class="diaspora"><a href="'.$options['social_diaspora'].'"><img src="'.get_template_directory_uri().'/images/social-media/diaspora-24x24.png" width="24" height="24" alt="Diaspora"></a></li>'; }
+    if ( $options['social_identica'] != "" ){  echo '<li class="identica"><a href="'.$options['social_identica'].'"><img src="'.get_template_directory_uri().'/images/social-media/identica-24x24.png" width="24" height="24" alt="identi.ca"></a></li>'; }															
+    if ( $options['social_youtube'] != "" ){  echo '<li class="youtube"><a href="'.$options['social_youtube'].'"><img src="'.get_template_directory_uri().'/images/social-media/youtube-24x24.png" width="24" height="24" alt="YouTube"></a></li>'; }
+    if ( $options['social_itunes'] != "" ){  echo '<li class="itunes"><a href="'.$options['social_itunes'].'"><img src="'.get_template_directory_uri().'/images/social-media/itunes-24x24.png" width="24" height="24" alt="iTunes"></a></li>'; }
+    if ( $options['social_flickr'] != "" ){  echo '<li class="flickr"><a href="'.$options['social_flickr'].'"><img src="'.get_template_directory_uri().'/images/social-media/flickr-24x24.png" width="24" height="24" alt="flickr"></a></li>'; }	
+    if ( $options['social_delicious'] != "" ){  echo '<li class="delicious"><a href="'.$options['social_delicious'].'"><img src="'.get_template_directory_uri().'/images/social-media/delicious-24x24.png" width="24" height="24" alt="Delicious"></a></li>'; }
+    if ( $options['social_flattr'] != "" ){  echo '<li class="flattr"><a href="'.$options['social_flattr'].'"><img src="'.get_template_directory_uri().'/images/social-media/flattr-24x24.png" width="24" height="24" alt="Flattr"></a></li>'; }
+    if ( $options['social_feed'] != "" ){  echo '<li class="feed"><a href="'.$options['social_feed'].'"><img src="'.get_template_directory_uri().'/images/social-media/feed-24x24.png" width="24" height="24" alt="RSS/Atom-Feed"></a></li>'; }
+    echo '</ul>';
+    
+        
+    if ($darstellung==2) {    
+           /* Links an der Seite */
+            echo '</div>';
+    }
+}
+
+/*
+ * Anzeige des Sidebar-Menus
+ */
 function get_piratenkleider_seitenmenu( $zeige_sidebarpagemenu = 1 , $zeige_subpagesonly =1 ){
   global $defaultoptions;
   global $post;
@@ -1035,7 +1062,9 @@ function get_piratenkleider_seitenmenu( $zeige_sidebarpagemenu = 1 , $zeige_subp
   
 }
 
-
+/*
+ * Erstellen des Extracts
+ */
 function get_piratenkleider_custom_excerpt( ){
   global $defaultoptions;
   global $post;
