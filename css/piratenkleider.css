@@ -247,14 +247,11 @@ pre {
 code, kbd, samp, pre, tt, var {
   font-family: consolas, "courier new", courier, monospace; }
 
-abbr, acronym {
-  font-size: 85%;
-  text-transform: uppercase;
-  letter-spacing: .1em; }
 
 abbr[title], acronym[title], dfn[title] {
   border-bottom: 1px dotted;
-  cursor: help; }
+  cursor: help; 
+}
 
 hr {
   display: block;
@@ -2038,7 +2035,7 @@ display: inline-block;
    margin-bottom: 0; 
    text-wrap: none;
    text-height: 1em;
-   float: left; 
+   display: inline-block;
  }
  
  .footer ul:before {
@@ -2054,7 +2051,9 @@ display: inline-block;
     visibility:hidden;
     margin-bottom: 10px;
 }
- 
+.footer ul.default_footerlinks li a img {
+    vertical-align: baseline;
+}
  
  .footer .second-footer-widget-area .widget {
     margin-bottom: 0; 

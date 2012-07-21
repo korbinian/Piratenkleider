@@ -2,13 +2,17 @@ Piratenkleider
 - Wordpress-Theme für Webauftritte der Piratenpartei 
 =================================================
 
-Version 2.9 von Wolfgang Wiese (xwolf), 10. Juli 2012
+Version 2.9.2 von Wolfgang Wiese (xwolf), 20. Juli 2012
 
 
 DOWNLOADS
 
-    https://github.com/xwolfde/Piratenkleider
-	https://github.com/zwitschi/Piratenkleider (Österreich)
+    Aus dem GIT-Repo (Letzte Arbeitsversion und Betas):
+        https://github.com/xwolfde/Piratenkleider	
+        https://github.com/zwitschi/Piratenkleider (Österreich)
+    
+    Projekt-Website (Releases)
+        http://piratenkleider.xwolf.de
     
     
 CREDITS & COPYRIGHT
@@ -25,13 +29,20 @@ AUTOREN / ENTWICKLER
      Heiko Philippski, http://www.phindie.de/
      Kerstin Probiesch, http://www.barrierefreie-informationskultur.de
      Fabian Müller, http://www.feals.de
-	 Georg Sinn, http://zwitschi.net
+     Georg Sinn, http://zwitschi.net
 
    Quellen für Defaultbilder und CI-Materialen (CC-BY 3.0)
       Defaultgrafiken für Slider/Seitenbilder: Tobias M. Eckrich
       Weitere Bilder: Piratenwiki mit unterschiedlichen Autoren
       Bildbearbeitung für Piratenkleider 2.x: Wolfgang Wiese
-      Social Media Icons: Paul Robert Lloyd, http://paulrobertlloyd.com/2009/06/social_media_icons
+
+   Weitere verwendete Inhalte:
+      Social Media Icons: Paul Robert Lloyd, http://paulrobertlloyd.com/2009/06/social_media_icons      
+      YAML CSS Framework (Lizensiert unter der Creative Commons Attribution 2.0 License).
+      JavaScript Framework jQuery (GNU General Public License (GPL) Version 2)
+      jQuery FlexSlider (MIT License)
+      Schrift Bebas Neue von Dharmatype (SIL Open Font License 1.1)
+
 
 VORVERSION
 

@@ -119,6 +119,10 @@ function theme_options_do_page() {
                             
                             if (!isset($options['teaser-title-maxlength'])) 
                                $options['teaser-title-maxlength'] = $defaultoptions['teaser-title-maxlength'];
+                            if (!isset($options['teaser_maxlength'])) 
+                               $options['teaser_maxlength'] = $defaultoptions['teaser_maxlength'];
+                            
+                            
                             if (!isset($options['teaser-subtitle'])) 
                                $options['teaser-subtitle'] = $defaultoptions['teaser-subtitle'];
                             if (!isset($options['teaser-title-words'])) 
@@ -660,11 +664,19 @@ function theme_options_do_page() {
                                             </label>
                                             </td>					
                                              </tr>
-                                              <tr valign="top"><th scope="row">Flattr</th>
+                                             <tr valign="top"><th scope="row">Flattr</th>
                                             <td>
                                             <input id="piratenkleider_theme_options[social_flattr]" class="regular-text" type="text" length="5" name="piratenkleider_theme_options[social_flattr]" value="<?php esc_attr_e( $options['social_flattr'] ); ?>" />
                                             <label class="description" for="piratenkleider_theme_options[social_flattr]">
                                             <?php _e( 'URL inkl. http:// zur Flattr Seite', 'piratenkleider' ); ?>
+                                            </label>
+                                            </td>					
+                                             </tr>
+                                             <tr valign="top"><th scope="row">Feed</th>
+                                            <td>
+                                            <input id="piratenkleider_theme_options[social_feed]" class="regular-text" type="text" length="5" name="piratenkleider_theme_options[social_feed]" value="<?php esc_attr_e( $options['social_feed'] ); ?>" />
+                                            <label class="description" for="piratenkleider_theme_options[social_feed]">
+                                            <?php _e( 'URL inkl. http:// zu einem RSS oder Atom Feed. Dies muss nicht unbedingt der von dieser Website sein, kann aber.', 'piratenkleider' ); ?>
                                             </label>
                                             </td>					
                                              </tr>
@@ -837,7 +849,12 @@ function theme_options_do_page() {
                                                             <label class="description" for="piratenkleider_theme_options[teaser-title-words]"><?php _e( 'Zahl der Worte im Teaser; Die maximale Textl&auml;nge begrenzt diesen Wert jedoch.', 'piratenkleider' ); ?></label>
                                                     </td>					
                                             </tr>
-                                            
+                                             <tr valign="top"><th scope="row"><?php _e( 'L&auml;nge des Teasertextes (Artikelauszug)', 'piratenkleider' ); ?></th>
+                                                  <td>
+                                                            <input style="width: 3em;" id="piratenkleider_theme_options[teaser_maxlength]" class="regular-text" type="text" length="5" name="piratenkleider_theme_options[teaser_maxlength]" value="<?php esc_attr_e( $options['teaser_maxlength'] ); ?>" />
+                                                            <label class="description" for="piratenkleider_theme_options[teaser_maxlength]"><?php _e( 'Maximale Textl&auml;nge für Artikelauszüge auf der Startseite', 'piratenkleider' ); ?></label>
+                                                    </td>					
+                                            </tr>
                                             
                                                          
                                         </table>                                                                                
@@ -1072,6 +1089,7 @@ function theme_options_validate( $input ) {
         $input['slider-animationType'] = wp_filter_nohtml_kses( $input['slider-animationType'] );   
         
         $input['teaser-title-maxlength'] = wp_filter_nohtml_kses( $input['teaser-title-maxlength'] );
+        $input['teaser-maxlength'] = wp_filter_nohtml_kses( $input['teaser-maxlength'] );
         $input['teaser-subtitle'] = wp_filter_nohtml_kses( $input['teaser-subtitle'] );
         $input['teaser-title-words'] = wp_filter_nohtml_kses( $input['teaser-title-words'] );
         
@@ -1089,7 +1107,7 @@ function theme_options_validate( $input ) {
         $input['social_flickr'] = wp_filter_nohtml_kses( $input['social_flickr'] );
         $input['social_delicious'] = wp_filter_nohtml_kses( $input['social_delicious'] );        
         $input['social_flattr'] = wp_filter_nohtml_kses( $input['social_flattr'] );        
-        
+        $input['social_feed'] = wp_filter_nohtml_kses( $input['social_feed'] );    
         
         $input['feed_twitter'] = wp_filter_nohtml_kses( $input['feed_twitter'] );
 	
@@ -1113,10 +1131,6 @@ function theme_options_validate( $input ) {
          $input['teaserlink3-untertitel'] = wp_filter_nohtml_kses( $input['teaserlink3-untertitel'] );                      
          $input['teaserlink3-url'] = wp_filter_nohtml_kses( $input['teaserlink3-url'] );                 
          $input['teaserlink3-symbol'] = wp_filter_nohtml_kses( $input['teaserlink3-symbol'] );
-        
-         
-         
-       
 
          $input['stickerlink1-url'] = wp_filter_nohtml_kses( $input['stickerlink1-url'] );
          $input['stickerlink2-url'] = wp_filter_nohtml_kses( $input['stickerlink2-url'] );
@@ -1461,8 +1475,6 @@ function theme_defaultbilder_do_page() {
  * Sanitize and validate input. Accepts an array, return a sanitized array.
  */
 function theme_defaultbilder_validate( $input ) {
-	global $defaultbilder_liste;
-        global $defaultplakate_liste;
 	global $defaultoptions;
         
         $input['slider-alternativesrc'] = wp_filter_nohtml_kses( $input['slider-alternativesrc'] );            
@@ -1533,7 +1545,7 @@ function theme_kontaktinfos_do_page() {
                 div.wrap {
                     max-width: 1200px;
                     margin: 20px 0 0 0;
-                    background-image: url(<?php echo get_template_directory_uri()?>/images/logo.png);
+                    background-image: url(<?php echo get_template_directory_uri(); ?>/images/logo.png);
                     background-position: top right;
                     background-repeat: no-repeat;
                     
@@ -1543,7 +1555,7 @@ function theme_kontaktinfos_do_page() {
                     margin: 0;
                     padding-top: 20px;
                     padding-bottom: 0px;
-                    background-image: url(<?php echo get_template_directory_uri()?>/images/schiff-welle.gif);
+                    background-image: url(<?php echo get_template_directory_uri(); ?>/images/schiff-welle.gif);
                     background-position: bottom left;
                     background-repeat: no-repeat;
                 }
@@ -1610,7 +1622,7 @@ function theme_kontaktinfos_do_page() {
                                     <input id="piratenkleider_theme_kontaktinfos[impressumdienstanbieter]" class="regular-text" type="text" name="piratenkleider_theme_kontaktinfos[impressumdienstanbieter]" value="<?php esc_attr_e( $options['impressumdienstanbieter'] ); ?>" />
                                     <label class="description" for="piratenkleider_theme_kontaktinfos[impressumdienstanbieter]">
                                         <?php _e( 'Textbezeichnung des Dienstanbieter des Webauftritts.', 'piratenkleider' ); ?><br>
-                                       <?php _e( ' Beispiel: <code>Kreisverband Musterstadt der Piratenpartei Deutschland vertreten durch den Vorstand Martin Mustermann, Doris Fischer und Florian Meister.</code>', 'piratenkleider' ); ?>
+                                       <?php _e( 'Beispiel: <code>Kreisverband Musterstadt der Piratenpartei Deutschland vertreten durch den Vorstand Martin Mustermann, Doris Fischer und Florian Meister.</code>', 'piratenkleider' ); ?>
                                         
                                     </label>
                                 </td>					
@@ -1761,7 +1773,7 @@ function theme_kontaktinfos_do_page() {
                                 <td>
                                     <input id="piratenkleider_theme_kontaktinfos[spendenempfaenger]" class="regular-text" type="text" name="piratenkleider_theme_kontaktinfos[spendenempfaenger]" value="<?php esc_attr_e( $options['spendenempfaenger'] ); ?>" />
                                     <label class="description" for="piratenkleider_theme_kontaktinfos[spendenempfaenger]">
-                                        <?php _e( ' Name des Empf&auml;ngers/Konto der Spenden f&uuml;r &Uuml;berweisungen. ', 'piratenkleider' ); ?>                                     
+                                        <?php _e( 'Name des Empf&auml;ngers/Konto der Spenden f&uuml;r &Uuml;berweisungen. ', 'piratenkleider' ); ?>                                     
                                     </label>
                                 </td>					
                             </tr>
@@ -1769,7 +1781,7 @@ function theme_kontaktinfos_do_page() {
                                 <td>
                                     <input id="piratenkleider_theme_kontaktinfos[spendenkonto]" class="regular-text" type="text" name="piratenkleider_theme_kontaktinfos[spendenkonto]" value="<?php esc_attr_e( $options['spendenkonto'] ); ?>" />
                                     <label class="description" for="piratenkleider_theme_kontaktinfos[spendenkonto]">
-                                        <?php _e( ' Kontonummer des Empf&auml;ngers', 'piratenkleider' ); ?>
+                                        <?php _e( 'Kontonummer des Empf&auml;ngers', 'piratenkleider' ); ?>
                                      
                                     </label>
                                 </td>					
@@ -1778,7 +1790,7 @@ function theme_kontaktinfos_do_page() {
                                 <td>
                                     <input id="piratenkleider_theme_kontaktinfos[spendenblz]" class="regular-text" type="text" name="piratenkleider_theme_kontaktinfos[spendenblz]" value="<?php esc_attr_e( $options['spendenblz'] ); ?>" />
                                     <label class="description" for="piratenkleider_theme_kontaktinfos[spendenblz]">
-                                        <?php _e( ' Die Bankleitzahl.', 'piratenkleider' ); ?>
+                                        <?php _e( 'Die Bankleitzahl.', 'piratenkleider' ); ?>
                                     
                                     </label>
                                 </td>					

@@ -4,7 +4,7 @@
  *
  * @source http://github.com/xwolfde/Piratenkleider
  * @creator xwolf
- * @version 2.8
+ * @version 2.9.3
  * @licence CC-BY-SA 3.0 
  */
 
@@ -44,7 +44,7 @@ $defaultoptions = array(
     'aktiv-platzhalterbilder-indexseiten'   => 0,
     'aktiv-linkmenu'                 => 1,
     'aktiv-avatar'                   => 1,
-    'src-default-avatar'             =>  get_template_directory_uri(). '/images/avataricon.gif',
+    'src-default-avatar'             => get_template_directory_uri(). '/images/avataricon.gif',
     'zeige_subpagesonly'             => 1,
     'zeige_sidebarpagemenu'          => 1,
     'feed_twitter_numberarticle'            => 3,
@@ -256,7 +256,7 @@ $default_toplink_liste = array(
          'url'  => 'http://www.pp-international.net/',
          'sublist' => array(
              'Argentinien' => 'http://www.partidopirata.com.ar/',
-                'Australien' => 'http://pirateparty.org.au/',
+              'Australien' => 'http://pirateparty.org.au/',
               'Belgien' => 'http://pirateparty.be/',
               'Brasilien' => 'http://www.partidopirata.org/',
               'Bulgarien' => 'http://piratskapartia.bg/',
@@ -303,74 +303,107 @@ $default_toplink_liste = array(
 
          )
      ), 
+      'International (mit Flaggen)' => array(
+         'title' => 'Piratenparteien International',
+         'url'  => 'http://www.pp-international.net/',
+         'sublist' => array(
+             '<img src="'.get_template_directory_uri().'/images/flags/ar.png" width="16" height="11" alt=""> Argentinien' => 'http://www.partidopirata.com.ar/',
+             '<img src="'.get_template_directory_uri().'/images/flags/au.png" width="16" height="11" alt=""> Australien' => 'http://pirateparty.org.au/',
+             '<img src="'.get_template_directory_uri().'/images/flags/be.png" width="16" height="11" alt=""> Belgien' => 'http://pirateparty.be/',
+             '<img src="'.get_template_directory_uri().'/images/flags/br.png" width="16" height="11" alt=""> Brasilien' => 'http://www.partidopirata.org/',
+              '<img src="'.get_template_directory_uri().'/images/flags/bg.png" width="16" height="11" alt=""> Bulgarien' => 'http://piratskapartia.bg/',
+              '<img src="'.get_template_directory_uri().'/images/flags/cl.png" width="16" height="11" alt=""> Chile' => 'http://www.partidopirata.cl/',
+              '<img src="'.get_template_directory_uri().'/images/flags/dk.png" width="16" height="11" alt=""> Dänemark' => 'http://piratpartiet.dk/',
+              '<img src="'.get_template_directory_uri().'/images/flags/uk.png" width="16" height="11" alt=""> England' => 'http://pirateparty.org.uk/',             
+              '<img src="'.get_template_directory_uri().'/images/flags/fi.png" width="16" height="11" alt=""> Finnland' => 'http://www.piraattipuolue.fi/',
+              '<img src="'.get_template_directory_uri().'/images/flags/fr.png" width="16" height="11" alt=""> Frankreich' => 'http://partipirate.org/',
+              '<img src="'.get_template_directory_uri().'/images/flags/gr.png" width="16" height="11" alt=""> Griechenland' => 'http://pirateparty.gr/',
+              '<img src="'.get_template_directory_uri().'/images/flags/gt.png" width="16" height="11" alt=""> Guatemala' => 'http://partidopirata.org.gt/',
+              '<img src="'.get_template_directory_uri().'/images/flags/it.png" width="16" height="11" alt=""> Italien' => 'http://www.partito-pirata.it/',
+              '<img src="'.get_template_directory_uri().'/images/flags/ca.png" width="16" height="11" alt=""> Kanada' => 'http://www.piratepartyofcanada.com/',
+              '<img src="'.get_template_directory_uri().'/images/flags/kz.png" width="16" height="11" alt=""> Kasachstan' => 'http://pirateparty.kz/',
+              '<img src="'.get_template_directory_uri().'/images/flags/co.png" width="16" height="11" alt=""> Kolumbien' => 'http://pp.interlecto.net/',
+              '<img src="'.get_template_directory_uri().'/images/flags/lv.png" width="16" height="11" alt=""> Lettland' => 'http://piratupartija.lv/',
+              '<img src="'.get_template_directory_uri().'/images/flags/lt.png" width="16" height="11" alt=""> Litauen' => 'http://piratupartija.lt/',
+              '<img src="'.get_template_directory_uri().'/images/flags/lu.png" width="16" height="11" alt=""> Luxemburg' => 'http://www.piratepartei.lu/',
+              '<img src="'.get_template_directory_uri().'/images/flags/ma.png" width="16" height="11" alt=""> Marokko' => 'http://partipirate.ma/',
+              '<img src="'.get_template_directory_uri().'/images/flags/mx.png" width="16" height="11" alt=""> Mexiko' => 'http://www.partidopiratamexicano.org/',
+             '<img src="'.get_template_directory_uri().'/images/flags/nz.png" width="16" height="11" alt="">  Neuseeland' => 'http://pirateparty.org.nz/',
+             '<img src="'.get_template_directory_uri().'/images/flags/nl.png" width="16" height="11" alt=""> Niederlande' => 'http://www.piratenpartij.nl/',
+             '<img src="'.get_template_directory_uri().'/images/flags/at.png" width="16" height="11" alt=""> Österreich' => 'http://piratenpartei.at/',
+             '<img src="'.get_template_directory_uri().'/images/flags/pe.png" width="16" height="11" alt=""> Peru' => 'http://wiki.freeculture.org/Pirata',
+             '<img src="'.get_template_directory_uri().'/images/flags/pl.png" width="16" height="11" alt=""> Polen' => 'http://www.partiapiratow.org.pl/',
+             '<img src="'.get_template_directory_uri().'/images/flags/pt.png" width="16" height="11" alt=""> Portugal' => 'http://www.partidopiratapt.eu/',
+             '<img src="'.get_template_directory_uri().'/images/flags/ro.png" width="16" height="11" alt=""> Rumänien' => 'http://www.partidulpiratilor.ro/',
+             '<img src="'.get_template_directory_uri().'/images/flags/ru.png" width="16" height="11" alt=""> Russland' => 'http://pirate-party.ru/',
+             '<img src="'.get_template_directory_uri().'/images/flags/se.png" width="16" height="11" alt=""> Schweden' => 'http://www.piratpartiet.se/',
+             '<img src="'.get_template_directory_uri().'/images/flags/ch.png" width="16" height="11" alt=""> Schweiz' => 'http://www.piratenpartei.ch/',
+             '<img src="'.get_template_directory_uri().'/images/flags/rs.png" width="16" height="11" alt=""> Serbien' => 'http://www.piratskapartija.com/',
+             '<img src="'.get_template_directory_uri().'/images/flags/sk.png" width="16" height="11" alt=""> Slowakei' => 'http://www.piratskastrana.sk/',
+             '<img src="'.get_template_directory_uri().'/images/flags/sl.png" width="16" height="11" alt=""> Slowenien' => 'http://www.piratskastranka.net/',
+             '<img src="'.get_template_directory_uri().'/images/flags/es.png" width="16" height="11" alt=""> Spanien' => 'http://www.partidopirata.es/',
+             '<img src="'.get_template_directory_uri().'/images/flags/kr.png" width="16" height="11" alt=""> Südkorea' => 'http://pirateparty.kr/',
+             '<img src="'.get_template_directory_uri().'/images/flags/cz.png" width="16" height="11" alt=""> Tschechien' => 'http://www.ceskapiratskastrana.cz/',
+             '<img src="'.get_template_directory_uri().'/images/flags/tn.png" width="16" height="11" alt=""> Tunesien' => 'http://partipirate-tn.org/',
+             '<img src="'.get_template_directory_uri().'/images/flags/tr.png" width="16" height="11" alt=""> Türkei' => 'http://www.korsanpartisi.org/',
+             '<img src="'.get_template_directory_uri().'/images/flags/ua.png" width="16" height="11" alt=""> Ukraine' => 'http://pp-ua.org/',
+             '<img src="'.get_template_directory_uri().'/images/flags/uy.png" width="16" height="11" alt=""> Uruguay' => 'http://partidopirata.org.uy/',
+             '<img src="'.get_template_directory_uri().'/images/flags/us.png" width="16" height="11" alt=""> USA' => 'http://pirate-party.us/',
+             '<img src="'.get_template_directory_uri().'/images/flags/by.png" width="16" height="11" alt=""> Weißrussland' => 'http://belpirat.blog.tut.by/',
+             '<img src="'.get_template_directory_uri().'/images/flags/cy.png" width="16" height="11" alt=""> Zypern' => 'http://www.piratepartycyprus.com/',
+
+
+         )
+     ), 
      'Baden-Württemberg' => array(
          'title' => 'Piratenpartei Landesverband Baden-Württemberg',
          'url'  => 'http://www.piratenpartei-bw.de/',
          'sublist' => array(
-             'Bezirksverband Freiburg' => 'http://bzv-fr.piratenpartei-bw.de/',
-             'Bezirksverband Karlsruhe' => 'http://bzv-karlsruhe.piraten-bw.de/',
-             'Bezirksverband Stuttgart' => 'http://www.piraten-bzv-stuttgart.de/',
-             'Bezirksverband Tübingen' => 'http://bzv.piratenpartei-tuebingen.de/',
+             '<acronym title="Bezirksverband">BV</acronym> Freiburg' => 'http://bzv-fr.piratenpartei-bw.de/',
+             '<acronym title="Bezirksverband">BV</acronym> Karlsruhe' => 'http://bzv-karlsruhe.piraten-bw.de/',
+             '<acronym title="Bezirksverband">BV</acronym> Stuttgart' => 'http://www.piraten-bzv-stuttgart.de/',
+             '<acronym title="Bezirksverband">BV</acronym> Tübingen' => 'http://bzv.piratenpartei-tuebingen.de/',
          )
      ),  
      'Bayern' => array(
          'title' => 'Piratenpartei Landesverband Bayern',
          'url'  => 'http://www.piratenpartei-bayern.de/',
          'sublist' => array(
-             'Bezirksverband Mittelfranken' => 'http://piraten-mfr.de/',
-             'Bezirksverband Niederbayern' => 'http://niederbayern.piratenpartei-bayern.de/',
-             'Bezirksverband Oberbayern' => 'http://oberbayern.piratenpartei.de/',
-             'Bezirksverband Oberfranken' => 'http://piraten-oberfranken.de/',
-             'Bezirksverband Oberpfalz' => 'http://oberpfalz.piratenpartei.de/',
-             'Bezirksverband Schwaben' => 'http://www.piraten-schwaben.de/',
-             'Bezirksverband Unterfranken' => 'http://piraten-ufr.de/',
+             '<acronym title="Bezirksverband">BV</acronym> Mittelfranken' => 'http://piraten-mfr.de/',
+             '<acronym title="Bezirksverband">BV</acronym> Niederbayern' => 'http://niederbayern.piratenpartei-bayern.de/',
+             '<acronym title="Bezirksverband">BV</acronym> Oberbayern' => 'http://oberbayern.piratenpartei.de/',
+             '<acronym title="Bezirksverband">BV</acronym> Oberfranken' => 'http://piraten-oberfranken.de/',
+             '<acronym title="Bezirksverband">BV</acronym> Oberpfalz' => 'http://oberpfalz.piratenpartei.de/',
+             '<acronym title="Bezirksverband">BV</acronym> Schwaben' => 'http://www.piraten-schwaben.de/',
+             '<acronym title="Bezirksverband">BV</acronym> Unterfranken' => 'http://piraten-ufr.de/',
          ) 
      ), 
     'Brandenburg' => array(
         'title' => 'Piratenpartei Landesverband Brandenburg',
         'url'  => 'http://www.piratenbrandenburg.de/',
         'sublist' => array(
-            'Stadtverband Potsdam' => 'http://www.piraten-potsdam.de/',
-            'Kreisverband Brandenburg an der Havel' => 'http://brb.piratenbrandenburg.de/',
-            'Kreisverband Havelland' => 'http://hvl.piratenbrandenburg.de/',
-            'Kreisverband Märkisch-Oderland' => 'http://mol.piratenbrandenburg.de/',
-            'Kreisverband Oberhavel' => 'http://ohv.piratenbrandenburg.de/',
-            'Kreisverband Potsdam-Mittelmark' => 'http://pm.piratenbrandenburg.de/',
-            'Kreisverband Teltow-Fläming' => 'http://tf.piratenbrandenburg.de/',
-            'Regionalverband Barnim-Uckermark' => 'http://barum.piratenbrandenburg.de/',
-            'Regionalverband Dahme-Oder-Spree' => 'http://dos.piratenbrandenburg.de/',
-            'Regionalverband Prignitz-Ruppin' => 'http://pr.piratenbrandenburg.de/',
-            'Regionalverband Südbrandenburg' => 'http://cottbus.piratenbrandenburg.de/',
+            '<acronym title="Stadtverband">SV</acronym> Potsdam' => 'http://www.piraten-potsdam.de/',
+            '<acronym title="Kreisverband">KV</acronym> Brandenburg an der Havel' => 'http://brb.piratenbrandenburg.de/',
+            '<acronym title="Kreisverband">KV</acronym> Havelland' => 'http://hvl.piratenbrandenburg.de/',
+            '<acronym title="Kreisverband">KV</acronym> Märkisch-Oderland' => 'http://mol.piratenbrandenburg.de/',
+            '<acronym title="Kreisverband">KV</acronym> Oberhavel' => 'http://ohv.piratenbrandenburg.de/',
+            '<acronym title="Kreisverband">KV</acronym> Potsdam-Mittelmark' => 'http://pm.piratenbrandenburg.de/',
+            '<acronym title="Kreisverband">KV</acronym> Teltow-Fläming' => 'http://tf.piratenbrandenburg.de/',
+            '<acronym title="Regionalverband">RV</acronym> Barnim-Uckermark' => 'http://barum.piratenbrandenburg.de/',
+            '<acronym title="Regionalverband">RV</acronym> Dahme-Oder-Spree' => 'http://dos.piratenbrandenburg.de/',
+            '<acronym title="Regionalverband">RV</acronym> Prignitz-Ruppin' => 'http://pr.piratenbrandenburg.de/',
+            '<acronym title="Regionalverband">RV</acronym> Südbrandenburg' => 'http://cottbus.piratenbrandenburg.de/',
         )
     ),
-    'Rheinland-Pfalz' => array(
-        'title' => 'Piratenpartei Landesverband Rheinland-Pfalz',
-        'url'  => 'http://www.piraten-rlp.de',
-        'sublist' => array(
-            'Kreisverband Bad Kreuznach' => 'http://wiki.piratenpartei.de/Kreisverband_Bad_Kreuznach',
-            'Kreisverband Landau/Südliche Weinstraße' => 'http://wiki.piratenpartei.de/RP:Kreisverband_Landau/S%C3%BCdliche_Weinstra%C3%9Fe',
-            'Kreisverband Mittelhaardt' => 'http://www.piratenpartei-mittelhaardt.de',
-            'Kreisverband  Rhein-Pfalz' => 'http://wiki.piratenpartei.de/RP:Kreisverband_Rhein-Pfalz',
-            'Kreisverband Kreisverband Rheinhessen' => 'http://wiki.piratenpartei.de/RP:Kreisverband_Rheinhessen',
-            'Kreisverband Trier/Trier-Saarburg' => 'http://piraten-trier.de',
-        )
-    ),
-    'Nordrhein-Westfalen' => array(
-      'title' => 'Piratenpartei Landesverband Nordrhein-Westfalen',
-      'url' => 'http://www.piratenpartei-nrw.de/',
-      'sublist' => array(   
-        
-         'Kreisverband Bochum' =>'http://piratenbochum.de',
-           
-          )
-    ),
+   
+    
     'Hamburg' => array(
         'title' => 'Piratenpartei Landesverband Hamburg',
         'url'  => 'http://www.piratenpartei-hamburg.de/',
         'sublist' => array(
-            'Bezirksverband Bergedorf' => 'http://www.piratenpartei-bergedorf.de/',
-            'Bezirksverband Harburg' => 'http://www.piraten-harburg.de/',
-            'Bezirksverband Hamburg-Nord' => 'http://wiki.piratenpartei.de/HH:Bezirksverband_Nord',
+            '<acronym title="Bezirksverband">BV</acronym> Bergedorf' => 'http://www.piratenpartei-bergedorf.de/',
+            '<acronym title="Bezirksverband">BV</acronym> Harburg' => 'http://www.piraten-harburg.de/',
+            '<acronym title="Bezirksverband">BV</acronym> Hamburg-Nord' => 'http://wiki.piratenpartei.de/HH:<acronym title="Bezirksverband">BV</acronym>_Nord',
             'Eimbütteler Piraten (informell)' => 'http://wiki.piratenpartei.de/HH:Eimsb%C3%BCtteler_Piraten',
         )
     ),
@@ -378,25 +411,102 @@ $default_toplink_liste = array(
         'title' => 'Piratenpartei Landesverband Hessen',
         'url'  => 'http://www.piratenpartei-hessen.de/',
         'sublist' => array(
-            'Kreisverband Bergstraße' => 'http://www.piraten-bergstrasse.de/',
-            'Kreisverband Darmstadt/Darmstadt-Dieburg' => 'http://www.piratenpartei-darmstadt.de/',
-            'Kreisverband Frankfurt am Main' => 'http://www.piratenpartei-frankfurt.de/',
-            'Kreisverband Gießen' => 'http://www.piraten-giessen.de/',
-            'Kreisverband Gross-Gerau' => 'http://www.piratenpartei-gross-gerau.de/',
-            'Kreisverband Hochtaunus' => 'http://www.piratenpartei-hochtaunus.de/',
-            'Kreisverband Kassel' => 'http://www.piratenpartei-kassel.de/',
-            'Kreisverband Main-Kinzig' => 'http://www.kinzigpiraten.de/',
-            'Kreisverband Main-Taunus' => 'http://www.piraten-mtk.de/',
-            'Kreisverband Marburg-Biedenkopf' => 'http://www.piratenpartei-marburg.de/',
-            'Kreisverband Offenbach-Land' => 'http://www.kreispiraten-of.de/',
-            'Kreisverband Rheingau-Taunus' => 'http://www.piratenpartei-rtk.de/',
-            'Kreisverband Schwalm-Eder' => 'http://www.piraten-sek.de/',
-            'Kreisverband Waldeck-Frankenberg' => 'http://www.piraten-wa-fkb.de/',
-            'Kreisverband Wetterau' => 'http://www.piratenpartei-wetterau.de/',
-            'Kreisverband Wiesbaden' => 'http://www.piratenpartei-wiesbaden.de/',
+            '<acronym title="Kreisverband">KV</acronym> Bergstraße' => 'http://www.piraten-bergstrasse.de/',
+            '<acronym title="Kreisverband">KV</acronym> Darmstadt/Darmstadt-Dieburg' => 'http://www.piratenpartei-darmstadt.de/',
+            '<acronym title="Kreisverband">KV</acronym> Frankfurt am Main' => 'http://www.piratenpartei-frankfurt.de/',
+            '<acronym title="Kreisverband">KV</acronym> Gießen' => 'http://www.piraten-giessen.de/',
+            '<acronym title="Kreisverband">KV</acronym> Gross-Gerau' => 'http://www.piratenpartei-gross-gerau.de/',
+            '<acronym title="Kreisverband">KV</acronym> Hochtaunus' => 'http://www.piratenpartei-hochtaunus.de/',
+            '<acronym title="Kreisverband">KV</acronym> Kassel' => 'http://www.piratenpartei-kassel.de/',
+            '<acronym title="Kreisverband">KV</acronym> Main-Kinzig' => 'http://www.kinzigpiraten.de/',
+            '<acronym title="Kreisverband">KV</acronym> Main-Taunus' => 'http://www.piraten-mtk.de/',
+            '<acronym title="Kreisverband">KV</acronym> Marburg-Biedenkopf' => 'http://www.piratenpartei-marburg.de/',
+            '<acronym title="Kreisverband">KV</acronym> Offenbach-Land' => 'http://www.kreispiraten-of.de/',
+            '<acronym title="Kreisverband">KV</acronym> Rheingau-Taunus' => 'http://www.piratenpartei-rtk.de/',
+            '<acronym title="Kreisverband">KV</acronym> Schwalm-Eder' => 'http://www.piraten-sek.de/',
+            '<acronym title="Kreisverband">KV</acronym> Waldeck-Frankenberg' => 'http://www.piraten-wa-fkb.de/',
+            '<acronym title="Kreisverband">KV</acronym> Wetterau' => 'http://www.piratenpartei-wetterau.de/',
+            '<acronym title="Kreisverband">KV</acronym> Wiesbaden' => 'http://www.piratenpartei-wiesbaden.de/',
         )
     ),
-    
+     'Mecklenburg-Vorpommern' => array(
+        'title' => 'Piratenpartei Landesverband Mecklenburg-Vorpommern',
+        'url'  => 'http://www.piratenpartei-mv.de/',
+        'sublist' => array(
+            '<acronym title="Kreisverband">KV</acronym> Vorpommern-Greiswald' => 'http://piraten-hgw.de/',
+            'Rostock' => 'http://rostock.piratenpartei-mv.de/',
+            'Neubrandenburg' => 'http://piratenpartei-mv.de/stammtisch-neubrandenburg-0',
+            'Schwerin' => 'http://www.schweriner-piraten.de/',
+            'Usedom' => 'http://www.piraten-usedom.de/',
+           
+        )
+    ),
+   'Niedersachsen' => array(
+        'title' => 'Piratenpartei Niedersachsen',
+        'url' => 'http://www.piraten-nds.de/',
+        'sublist' => array(
+            '<acronym title="Stadtverband">SV</acronym> Braunschweig' => 'http://www.piratenpartei-braunschweig.de/',
+            '<acronym title="Kreisverband">KV</acronym> Celle' => 'http://www.piraten-celle.de/',    
+            '<acronym title="Stadtverband">SV</acronym> Delmenhorst' => 'http://www.piratenpartei-delmenhorst.de/',    
+            '<acronym title="Kreisverband">KV</acronym> Diepholz' => 'http://www.piratenpartei-diepholz.de/',    
+            '<acronym title="Kreisverband">KV</acronym> Goslar' => 'http://www.piraten-goslar.de/',    
+            '<acronym title="Kreisverband">KV</acronym> Göttingen' => 'http://www.piratenpartei-goettingen.de/',    
+            '<acronym title="Kreisverband">KV</acronym> Grafschaft Bentheim' => 'http://www.grafschafter-piraten.de/',    
+            '<acronym title="Kreisverband">KV</acronym> Hameln-Pyrmont' => 'http://www.piraten-hameln.de/',    
+            '<acronym title="Regionalverband">RV</acronym> Hannover' =>'http://www.piratenhannover.de/', 
+            '<acronym title="Kreisverband">KV</acronym> Helmstedt' => 'http://wiki.piratenpartei.de/NDS:Helmstedt',    
+            '<acronym title="Kreisverband">KV</acronym> Hildesheim' => 'http://www.piratenpartei-hildesheim.de/',    
+            '<acronym title="Kreisverband">KV</acronym> Niedersachsen-Nordost' => 'http://www.heide-piraten.de/',   
+            '<acronym title="Kreisverband">KV</acronym> Nienburg/Weser' => 'http://www.piraten-nienburg.de/',   
+            '<acronym title="Kreisverband">KV</acronym> Osnabrück' => 'http://www.piraten-osnabrueck.de',   
+            '<acronym title="Stadtverband">SV</acronym> Oldenburg' => 'http://www.piratenpartei-oldenburg.de/',   
+            '<acronym title="Kreisverband">KV</acronym> Oldenburg Land' => 'http://www.piratenpartei-landkreis-oldenburg.de/',   
+            '<acronym title="Kreisverband">KV</acronym> Peine' => 'http://wiki.piratenpartei.de/NDS:Kreisverband_Peine',   
+            '<acronym title="Kreisverband">KV</acronym> Stade' => 'http://www.piraten-stade.de/',   
+            '<acronym title="Kreisverband">KV</acronym> Schaumburg' => 'http://www.piraten-schaumburg.de/',            
+            '<acronym title="Kreisverband">KV</acronym> Wilhelmshaven' => 'http://www.piraten-whv.de/',   
+            '<acronym title="Kreisverband">KV</acronym> Wolfenbüttel-Salzgitter' => 'http://www.piratenpartei-wolfenbuettel.de/',   
+            '<acronym title="Stadtverband">SV</acronym> Wolfsburg' => 'http://wolfsburg.piratenpartei-nds.de/',   
+      
+        )
+    ),    
+    'Nordrhein-Westfalen' => array(
+      'title' => 'Piratenpartei Landesverband Nordrhein-Westfalen',
+      'url' => 'http://www.piratenpartei-nrw.de/',
+      'sublist' => array(   
+        
+         '<acronym title="Kreisverband">KV</acronym> Bochum' =>'http://piratenbochum.de',
+         '<acronym title="Kreisverband">KV</acronym> Bonn' =>'http://piratenpartei-bonn.de/',
+         '<acronym title="Kreisverband">KV</acronym> Dortmund' =>'http://wiki.piratenpartei.de/NRW:Dortmund',
+         '<acronym title="Kreisverband">KV</acronym> Düsseldorf' =>'http://piratenpartei-duesseldorf.de/',
+         '<acronym title="Kreisverband">KV</acronym> Güterslohe' =>'http://www.piratenpartei-guetersloh.de/',
+         '<acronym title="Kreisverband">KV</acronym> Hagen' =>'http://wiki.piratenpartei.de/NRW:Hagen/Kreisverband',
+         '<acronym title="Kreisverband">KV</acronym> Kleve' =>'http://wiki.piratenpartei.de/NRW:Kreis_Kleve',
+         '<acronym title="Kreisverband">KV</acronym> Köln' =>'http://piratenpartei-koeln.de/',
+         '<acronym title="Kreisverband">KV</acronym> Krefeld' =>'http://wiki.piratenpartei.de/NRW:Krefeld/Kreisverband',
+         '<acronym title="Kreisverband">KV</acronym> Minden-Lübbecke' =>'http://wiki.piratenpartei.de/NRW:Kreis_Minden-L%C3%BCbbecke/Kreisverband',
+         '<acronym title="Kreisverband">KV</acronym> Münster' =>'http://www.piratenpartei-muenster.de/',
+         '<acronym title="Kreisverband">KV</acronym> Rhein-Sieg-Kreis' =>'http://wiki.piratenpartei.de/NRW:Rhein-Sieg-Kreis',
+         '<acronym title="Kreisverband">KV</acronym> Soest' =>'http://www.piratenpartei-soest.de/',
+         '<acronym title="Kreisverband">KV</acronym> Wesel' =>'http://wiki.piratenpartei.de/NRW:Kreis_Wesel',
+         '<acronym title="Kreisverband">KV</acronym> Bielefeld' =>'http://wiki.piratenpartei.de/NRW:Bielefeld',
+         '<acronym title="Kreisverband">KV</acronym> Lippe' =>'http://wiki.piratenpartei.de/NRW:Kreis_Lippe',
+         '<acronym title="Kreisverband">KV</acronym> Herford' =>'http://wiki.piratenpartei.de/NRW:Kreis_Herford',
+
+          )
+    ),
+      'Rheinland-Pfalz' => array(
+        'title' => 'Piratenpartei Landesverband Rheinland-Pfalz',
+        'url'  => 'http://www.piraten-rlp.de',
+        'sublist' => array(
+            '<acronym title="Kreisverband">KV</acronym> Bad Kreuznach' => 'http://wiki.piratenpartei.de/<acronym title="Kreisverband">KV</acronym>_Bad_Kreuznach',
+            '<acronym title="Kreisverband">KV</acronym> Landau/Südliche Weinstraße' => 'http://wiki.piratenpartei.de/RP:<acronym title="Kreisverband">KV</acronym>_Landau/S%C3%BCdliche_Weinstra%C3%9Fe',
+            '<acronym title="Kreisverband">KV</acronym> Mittelhaardt' => 'http://www.piratenpartei-mittelhaardt.de',
+            '<acronym title="Kreisverband">KV</acronym>  Rhein-Pfalz' => 'http://wiki.piratenpartei.de/RP:<acronym title="Kreisverband">KV</acronym>_Rhein-Pfalz',
+            '<acronym title="Kreisverband">KV</acronym> <acronym title="Kreisverband">KV</acronym> Rheinhessen' => 'http://wiki.piratenpartei.de/RP:<acronym title="Kreisverband">KV</acronym>_Rheinhessen',
+            '<acronym title="Kreisverband">KV</acronym> Trier/Trier-Saarburg' => 'http://piraten-trier.de',
+        )
+    ),
 );
 
 /* 
@@ -662,13 +772,6 @@ function honor_ssl_for_attachments($url) {
 if ( ! function_exists( 'piratenkleider_comment' ) ) :
 /**
  * Template for comments and pingbacks.
- *
- * To override this walker in a child theme without modifying the comments template
- * simply create your own twentyten_comment(), and that function will be used instead.
- *
- * Used as a callback by wp_list_comments() for displaying the comments.
- *
- * @since Twenty Ten 1.0
  */
 function piratenkleider_comment( $comment, $args, $depth ) {
         $GLOBALS['comment'] = $comment;
@@ -914,11 +1017,7 @@ endif;
 add_theme_support( 'post-thumbnails' );
 
 
-/**
- * Replaces items with '-' as title with li class="menu_separator"
- *
- * @author Thomas Scholz (toscho)
- */
+
 class My_Walker_Nav_Menu extends Walker_Nav_Menu
 {
     /**
@@ -953,6 +1052,44 @@ class My_Walker_Nav_Menu extends Walker_Nav_Menu
   }
 }
 
+function get_piratenkleider_socialmediaicons( $darstellung = 1 ){
+    /* 
+     * Displays Social Media Icons
+     */
+
+    if ($darstellung ==0) {
+        /* Keine Links */
+        return; 
+    } 
+    if ($darstellung==2) {    
+           /* Links an der Seite */
+            echo '<div id="socialmedia_iconbar">';
+    }
+    $options = get_option( 'piratenkleider_theme_options' );
+    echo '<ul class="socialmedia">';       
+    if ( $options['social_facebook'] != "" ){ echo '<li class="facebook"><a href="'.$options['social_facebook'].'"><img src="'.get_template_directory_uri().'/images/social-media/facebook-24x24.png" width="24" height="24" alt="Facebook"></a></li>'; }
+    if ( $options['social_twitter'] != "" ){  echo '<li class="twitter"><a href="'.$options['social_twitter'].'"><img src="'.get_template_directory_uri().'/images/social-media/twitter-24x24.png" width="24" height="24" alt="Twitter"></a></li>'; }				
+    if ( $options['social_gplus'] != "" ){  echo '<li class="gplus"><a href="'.$options['social_gplus'].'"><img src="'.get_template_directory_uri().'/images/social-media/gplus-24x24.png" width="24" height="24" alt="Google+"></a></li>'; }
+    if ( $options['social_diaspora'] != "" ){  echo '<li class="diaspora"><a href="'.$options['social_diaspora'].'"><img src="'.get_template_directory_uri().'/images/social-media/diaspora-24x24.png" width="24" height="24" alt="Diaspora"></a></li>'; }
+    if ( $options['social_identica'] != "" ){  echo '<li class="identica"><a href="'.$options['social_identica'].'"><img src="'.get_template_directory_uri().'/images/social-media/identica-24x24.png" width="24" height="24" alt="identi.ca"></a></li>'; }															
+    if ( $options['social_youtube'] != "" ){  echo '<li class="youtube"><a href="'.$options['social_youtube'].'"><img src="'.get_template_directory_uri().'/images/social-media/youtube-24x24.png" width="24" height="24" alt="YouTube"></a></li>'; }
+    if ( $options['social_itunes'] != "" ){  echo '<li class="itunes"><a href="'.$options['social_itunes'].'"><img src="'.get_template_directory_uri().'/images/social-media/itunes-24x24.png" width="24" height="24" alt="iTunes"></a></li>'; }
+    if ( $options['social_flickr'] != "" ){  echo '<li class="flickr"><a href="'.$options['social_flickr'].'"><img src="'.get_template_directory_uri().'/images/social-media/flickr-24x24.png" width="24" height="24" alt="flickr"></a></li>'; }	
+    if ( $options['social_delicious'] != "" ){  echo '<li class="delicious"><a href="'.$options['social_delicious'].'"><img src="'.get_template_directory_uri().'/images/social-media/delicious-24x24.png" width="24" height="24" alt="Delicious"></a></li>'; }
+    if ( $options['social_flattr'] != "" ){  echo '<li class="flattr"><a href="'.$options['social_flattr'].'"><img src="'.get_template_directory_uri().'/images/social-media/flattr-24x24.png" width="24" height="24" alt="Flattr"></a></li>'; }
+    if ( $options['social_feed'] != "" ){  echo '<li class="feed"><a href="'.$options['social_feed'].'"><img src="'.get_template_directory_uri().'/images/social-media/feed-24x24.png" width="24" height="24" alt="RSS/Atom-Feed"></a></li>'; }
+    echo '</ul>';
+    
+        
+    if ($darstellung==2) {    
+           /* Links an der Seite */
+            echo '</div>';
+    }
+}
+
+/*
+ * Anzeige des Sidebar-Menus
+ */
 function get_piratenkleider_seitenmenu( $zeige_sidebarpagemenu = 1 , $zeige_subpagesonly =1 ){
   global $defaultoptions;
   global $post;
@@ -993,7 +1130,9 @@ function get_piratenkleider_seitenmenu( $zeige_sidebarpagemenu = 1 , $zeige_subp
   
 }
 
-
+/*
+ * Erstellen des Extracts
+ */
 function get_piratenkleider_custom_excerpt( ){
   global $defaultoptions;
   global $post;
