@@ -2,12 +2,13 @@ Piratenkleider
 - Wordpress-Theme für Webauftritte der Piratenpartei 
 =================================================
 
-Version 2.8 von Wolfgang Wiese (xwolf), 6. Juli 2012
+Version 2.9 von Wolfgang Wiese (xwolf), 10. Juli 2012
 
 
 DOWNLOADS
 
     https://github.com/xwolfde/Piratenkleider
+	https://github.com/zwitschi/Piratenkleider (Österreich)
     
     
 CREDITS & COPYRIGHT
@@ -24,12 +25,13 @@ AUTOREN / ENTWICKLER
      Heiko Philippski, http://www.phindie.de/
      Kerstin Probiesch, http://www.barrierefreie-informationskultur.de
      Fabian Müller, http://www.feals.de
+	 Georg Sinn, http://zwitschi.net
 
    Quellen für Defaultbilder und CI-Materialen (CC-BY 3.0)
       Defaultgrafiken für Slider/Seitenbilder: Tobias M. Eckrich
       Weitere Bilder: Piratenwiki mit unterschiedlichen Autoren
       Bildbearbeitung für Piratenkleider 2.x: Wolfgang Wiese
-
+      Social Media Icons: Paul Robert Lloyd, http://paulrobertlloyd.com/2009/06/social_media_icons
 
 VORVERSION
 
@@ -145,7 +147,7 @@ THEME-OPTION "Takelage einstellen"
     - Optionale Anzeige für Seitenbilder steuern
     - Menutyp  für die Darstellung der Seiten und Unterseiten in der
       Sidebar steuern.
-   
+   Sowie viele mehr...  
  
 
 THEME-OPTION "Segel setzen"
@@ -162,8 +164,6 @@ THEME-OPTION "Segel setzen"
 
    Die Defaultbilder die in der rechten Sidebar als Werbeplakate erscheinen
    liegen im Ordner /plakate/ . 
-   Neue Defaultbilder sollten -egal ob als URL-Angabe oder als Datei-
-   in den Maßen 277x391 Pixel abgespeichert sein.
    Bei einem anderen Größe wird das Bild entsprechend durch den Browser
    umskaliert. Dies kann jedoch mit Qualitätseinbußen verbunden sein.
 
@@ -334,8 +334,9 @@ Administrative Hinweise für Wordpress Theme-Editoren:
 
 7. Farbcodes und Sprache der Texte
    Laenderspezifische Farbcodes werden in den Dateien
-       /css/colors_tk.css  (für Türkei)
+	   /css/colors_tk.css  (für Türkei)
        /css/colors_lu.css (für Luxemburg)
+       /css/colors_at.css  (für Österreich)
        /css/colors_de.css (für Deutschland, jedoch nicht notwendig da Default)
    abgelegt.
    Diese greifen teilweise auf eigene Bilder zu. 

@@ -97,6 +97,10 @@ function theme_options_do_page() {
                                 $options['slider-numberarticle'] = $defaultoptions['slider-numberarticle']; 
                             if ( ! isset( $options['feed_twitter_numberarticle'] ) )
                                 $options['feed_twitter_numberarticle'] = $defaultoptions['feed_twitter_numberarticle']; 
+                            if ( ! isset( $options['twitter_cache_lifetime'] ) )
+                                $options['twitter_cache_lifetime'] = $defaultoptions['twitter_cache_lifetime']; 
+                            
+                            
                              if (!isset($options['num-article-startpage-fullwidth'])) 
                                 $options['num-article-startpage-fullwidth'] = $defaultoptions['num-article-startpage-fullwidth'];
                             if (!isset($options['num-article-startpage-halfwidth'])) 
@@ -550,14 +554,24 @@ function theme_options_do_page() {
                                         <table>
                                             <tr valign="top"><th scope="row"><?php _e( 'Social Media Buttons', 'piratenkleider' ); ?></th>
                                         	<td>
-						<input id="piratenkleider_theme_options[alle-socialmediabuttons]" name="piratenkleider_theme_options[alle-socialmediabuttons]" type="checkbox" value="1" <?php checked( '1', $options['alle-socialmediabuttons'] ); ?> />
-						<label for="piratenkleider_theme_options[alle-socialmediabuttons]">
-                                                    <?php _e( 'Buttons anzeigen. <br>Hinweis: Es werden nur die Buttons gezeigt, bei denen in den folgenden Eingabefeldern Adressen definiert sind.', 'piratenkleider' ); ?>                                                   
+                                                 
+                                                <select name="piratenkleider_theme_options[alle-socialmediabuttons]">
+                                                        <?php
+                                                                    $selected = $options['alle-socialmediabuttons'];
+                                                        ?>            
+                                                        <option style="padding-right: 10px;" value="0" <?php if ($selected == '0') { echo 'selected="selected"'; }?>>Keine</option>
+                                                        <option style="padding-right: 10px;" value="1" <?php if ($selected == '1') { echo 'selected="selected"'; }?>>Oben anzeigen</option>                                                        
+                                                        <option style="padding-right: 10px;" value="2" <?php if ($selected == '2') { echo 'selected="selected"'; }?>>Links anzeigen</option>
+                                                        
+                                                    </select>    
+                                                        
+						<label class="description" for="piratenkleider_theme_options[alle-socialmediabuttons]">
+                                                    <?php _e( 'Die Auswahl werden die Social Media Buttons angezeigt. Dies kann entweder oben im Kopfteil oder links neben den Inhaltsbereich sein. <br>Hinweis: Es werden nur die Buttons gezeigt, bei denen in den folgenden Eingabefeldern Adressen definiert sind.', 'piratenkleider' ); ?>                                                   
                                                 </label>
                                                 </td>
                                             </tr>  
                                             
-                                            
+                                          
                                           <tr valign="top"><th scope="row">Facebook</th>
                                           <td>
 						<input id="piratenkleider_theme_options[social_facebook]" class="regular-text" type="text" length="5" name="piratenkleider_theme_options[social_facebook]" value="<?php esc_attr_e( $options['social_facebook'] ); ?>" />
@@ -646,6 +660,14 @@ function theme_options_do_page() {
                                             </label>
                                             </td>					
                                              </tr>
+                                              <tr valign="top"><th scope="row">Flattr</th>
+                                            <td>
+                                            <input id="piratenkleider_theme_options[social_flattr]" class="regular-text" type="text" length="5" name="piratenkleider_theme_options[social_flattr]" value="<?php esc_attr_e( $options['social_flattr'] ); ?>" />
+                                            <label class="description" for="piratenkleider_theme_options[social_flattr]">
+                                            <?php _e( 'URL inkl. http:// zur Flattr Seite', 'piratenkleider' ); ?>
+                                            </label>
+                                            </td>					
+                                             </tr>
                                         </table>                                                                                
                                     </td>                                    
                                 </tr>                                   
@@ -688,7 +710,14 @@ function theme_options_do_page() {
                                                     <?php _e( 'Datum der Twittermeldung anzeigen', 'piratenkleider' ); ?>
                                                    </label>
                                                 </td>
-                                            </tr>         
+                                            </tr>    
+                                            <tr valign="top"><th scope="row"><?php _e( 'Twitter Cache', 'piratenkleider' ); ?></th>
+                                          <td>
+						<input id="piratenkleider_theme_options[twitter_cache_lifetime]" class="regular-text" type="text" length="5" name="piratenkleider_theme_options[twitter_cache_lifetime]" value="<?php esc_attr_e( $options['twitter_cache_lifetime'] ); ?>" />
+						<label class="description" for="piratenkleider_theme_options[twitter_cache_lifetime]">
+                                                    <?php _e( 'Zeit in Sekunden f&uuml;r den Twitter-Cache. Dieser Wert darf nicht kleiner als 10 Minuten (=600) sein.', 'piratenkleider' ); ?></label>
+					</td>					
+                                        </tr>
                                          </table>                                                                                
                                     </td>                                    
                                 </tr>                            
@@ -999,7 +1028,7 @@ function theme_options_validate( $input ) {
 	$input['newsletter'] = ( $input['newsletter'] == 1 ? 1 : 0 );
 	if ( ! isset( $input['alle-socialmediabuttons'] ) )
 		$input['alle-socialmediabuttons'] = 0;
-	$input['alle-socialmediabuttons'] = ( $input['alle-socialmediabuttons'] == 1 ? 1 : 0 );
+	
         
         if ( ! isset( $input['aktiv-platzhalterbilder-indexseiten'] ) )
 		$input['aktiv-platzhalterbilder-indexseiten'] = 0;
@@ -1011,11 +1040,14 @@ function theme_options_validate( $input ) {
 	$input['default_footerlink_show'] = ( $input['default_footerlink_show'] == 1 ? 1 : 0 );       
         
          $input['default_footerlink_key'] = wp_filter_nohtml_kses( $input['default_footerlink_key'] );
+         
         
-        
+
          if ( ! isset( $input['feed_twitter_showdate'] ) )
 		$input['feed_twitter_showdate'] = 0;
 	$input['feed_twitter_showdate'] = ( $input['feed_twitter_showdate'] == 1 ? 1 : 0 );         
+        $input['twitter_cache_lifetime'] = wp_filter_nohtml_kses( $input['twitter_cache_lifetime'] );
+        
         if ( ! isset( $input['slider-aktiv'] ) )
 		$input['slider-aktiv'] = 0;
 	$input['slider-aktiv'] = ( $input['slider-aktiv'] == 1 ? 1 : 0 );        
@@ -1056,7 +1088,7 @@ function theme_options_validate( $input ) {
         $input['social_identica'] = wp_filter_nohtml_kses( $input['social_identica'] );
         $input['social_flickr'] = wp_filter_nohtml_kses( $input['social_flickr'] );
         $input['social_delicious'] = wp_filter_nohtml_kses( $input['social_delicious'] );        
-        
+        $input['social_flattr'] = wp_filter_nohtml_kses( $input['social_flattr'] );        
         
         
         $input['feed_twitter'] = wp_filter_nohtml_kses( $input['feed_twitter'] );

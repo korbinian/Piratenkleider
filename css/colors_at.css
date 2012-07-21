@@ -14,16 +14,10 @@
        This is the Austrian color file.
        
        Base color: #4c2582  , rgba(76,37,130, 0.2); 
-       Special text font: Bebas Neue
+       Special text font: Droid Sans
                
 
 */
-
-@font-face {
-  font-family: 'BebasNeueRegular';
-  src: url("../fonts/BebasNeue-webfont.eot");
-  src: url("../fonts/BebasNeue-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/BebasNeue-webfont.woff") format("woff"), url("../fonts/BebasNeue-webfont.ttf") format("truetype"), url("../fonts/BebasNeue-webfont.svg#BebasNeueRegular") format("svg");
-  }
 
 @font-face {
   font-family: 'DroidSans';
@@ -36,9 +30,6 @@
 	
 	body { font-family:'DroidSans', Helvetica, Arial, sans-serif; }
 
-    h1, h2, h3, .bebas, .cifont {
-      font-family: "BebasNeueRegular", Helvetica, Arial, sans-serif;
-    }
     a {     
       color: #06C;
       -webkit-tap-highlight-color: #2d7dc5; 
@@ -135,7 +126,6 @@
     }    
     
 .sticker ul li {  
-    font-family: "BebasNeueRegular",Helvetica,Arial,sans-serif; 
     border-color: transparent;     
   }
 
