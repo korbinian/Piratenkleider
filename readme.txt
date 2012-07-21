@@ -42,7 +42,7 @@ AUTOREN / ENTWICKLER
       JavaScript Framework jQuery (GNU General Public License (GPL) Version 2)
       jQuery FlexSlider (MIT License)
       Schrift Bebas Neue von Dharmatype (SIL Open Font License 1.1)
-
+	  Schrift Droid Sans von Ascender (http://www.droidfonts.com/), Apache License 2.0 http://www.apache.org/licenses/LICENSE-2.0
 
 VORVERSION
 
