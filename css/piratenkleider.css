@@ -745,20 +745,22 @@ ul.socialmedia li a:focus img  {
 .home #socialmedia_iconbar { 
     top: 234px;
 }    
-     #socialmedia_iconbar ul {
-       margin: 0;
-     }
-     #socialmedia_iconbar ul.socialmedia li {
-        margin:0;
-        padding: 0;
-     }
-     #socialmedia_iconbar ul.socialmedia li img  {
-      border: 2px solid black;
-     }
-     #socialmedia_iconbar ul.socialmedia li a:hover img  {
-        border: 2px solid black;
-     
-     }
+#socialmedia_iconbar ul {
+    margin: 0;
+}
+#socialmedia_iconbar ul.socialmedia li {
+    margin:0;
+    padding: 0;
+}
+#socialmedia_iconbar ul.socialmedia li a {
+    height: auto;
+}
+#socialmedia_iconbar ul.socialmedia li img  {
+    border: 2px solid black;
+}
+#socialmedia_iconbar ul.socialmedia li a:hover img  {
+    border: 2px solid black;
+}
 
 
 .sticker {
