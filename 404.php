@@ -16,20 +16,15 @@
                    <p style="font-size: 2em;" class="bebas">404</p>                  
                </div>   
               <div class="aaarh">
-                  <p>AAARH!<br>Ihr werdet sie nicht finden!</p>
+                  <p><?php _e("AAARH!<br>Ihr werdet sie nicht finden!",'piratenkleider'); ?></p>
               </div>
            </div> 
          
       </div>
       <div class="skin">
          <p>
-                            <?php _e("Es konnten keine Seiten oder Artikel gefunden werden, 
-                            die zu eingegebene Adresse passte.
-                            Bitte versuchen Sie es nochmal mit einer 
-                            Suche.", 'piratenkleider'); ?>
-                            
-                        </p>
-              
+           <?php _e("Es konnten keine Seiten oder Artikel gefunden werden, die zu eingegebene Adresse passte. Bitte versuchen Sie es nochmal mit einer Suche.", 'piratenkleider'); ?>
+         </p>              
          <?php get_search_form(); ?>
       </div>
     </div>
