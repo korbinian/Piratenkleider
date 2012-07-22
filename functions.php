@@ -314,6 +314,7 @@ $default_toplink_liste = array(
               '<img src="'.get_template_directory_uri().'/images/flags/bg.png" width="16" height="11" alt=""> Bulgarien' => 'http://piratskapartia.bg/',
               '<img src="'.get_template_directory_uri().'/images/flags/cl.png" width="16" height="11" alt=""> Chile' => 'http://www.partidopirata.cl/',
               '<img src="'.get_template_directory_uri().'/images/flags/dk.png" width="16" height="11" alt=""> Dänemark' => 'http://piratpartiet.dk/',
+              '<img src="'.get_template_directory_uri().'/images/flags/de.png" width="16" height="11" alt=""> Deutschland' => 'http://piratenpartei.de/',
               '<img src="'.get_template_directory_uri().'/images/flags/uk.png" width="16" height="11" alt=""> England' => 'http://pirateparty.org.uk/',             
               '<img src="'.get_template_directory_uri().'/images/flags/fi.png" width="16" height="11" alt=""> Finnland' => 'http://www.piraattipuolue.fi/',
               '<img src="'.get_template_directory_uri().'/images/flags/fr.png" width="16" height="11" alt=""> Frankreich' => 'http://partipirate.org/',
