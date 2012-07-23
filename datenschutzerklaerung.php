@@ -159,7 +159,7 @@ In ihren Browsereinstellungen k&ouml;nnen sie die Annahme von Cookies unterbinde
       </div>
     </div>
   </div>
-  <?php  get_piratenkleider_socialmediaicons($options['alle-socialmediabuttons']); ?>
+   <?php get_piratenkleider_socialmediaicons(2); ?>
 </div>
 
 <?php get_footer(); ?>

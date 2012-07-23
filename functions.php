@@ -4,7 +4,7 @@
  *
  * @source http://github.com/xwolfde/Piratenkleider
  * @creator xwolf
- * @version 2.9.3
+ * @version 2.9.4
  * @licence CC-BY-SA 3.0 
  */
 
@@ -262,6 +262,7 @@ $default_toplink_liste = array(
               'Bulgarien' => 'http://piratskapartia.bg/',
               'Chile' => 'http://www.partidopirata.cl/',
               'Dänemark' => 'http://piratpartiet.dk/',
+              'Deutschland' => 'http://www.piratenpartei.de/',
               'Finnland' => 'http://www.piraattipuolue.fi/',
               'Frankreich' => 'http://partipirate.org/',
               'Griechenland' => 'http://pirateparty.gr/',
@@ -1057,16 +1058,22 @@ function get_piratenkleider_socialmediaicons( $darstellung = 1 ){
     /* 
      * Displays Social Media Icons
      */
-
+    $options = get_option( 'piratenkleider_theme_options' );       
+    $zeigeoption = $options['alle-socialmediabuttons'];
+    
     if ($darstellung ==0) {
         /* Keine Links */
         return; 
     } 
-    if ($darstellung==2) {    
+    if ($darstellung!=$zeigeoption) {
+        /* Nichts anzeigen, da wir im falschen Modus sind */
+        return;        
+    }
+    if ($zeigeoption ==2) {    
            /* Links an der Seite */
             echo '<div id="socialmedia_iconbar">';
     }
-    $options = get_option( 'piratenkleider_theme_options' );
+   
     echo '<ul class="socialmedia">';       
     if ( $options['social_facebook'] != "" ){ echo '<li class="facebook"><a href="'.$options['social_facebook'].'"><img src="'.get_template_directory_uri().'/images/social-media/facebook-24x24.png" width="24" height="24" alt="Facebook"></a></li>'; }
     if ( $options['social_twitter'] != "" ){  echo '<li class="twitter"><a href="'.$options['social_twitter'].'"><img src="'.get_template_directory_uri().'/images/social-media/twitter-24x24.png" width="24" height="24" alt="Twitter"></a></li>'; }				
@@ -1082,7 +1089,7 @@ function get_piratenkleider_socialmediaicons( $darstellung = 1 ){
     echo '</ul>';
     
         
-    if ($darstellung==2) {    
+    if ($zeigeoption ==2) {    
            /* Links an der Seite */
             echo '</div>';
     }

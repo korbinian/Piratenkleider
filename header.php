@@ -138,7 +138,7 @@ if (isset($designspecials['aktiv-mediaqueries-allparts']) && ($designspecials['a
                             <h2 class="skip"><?php _e( 'Service-Navigation', 'piratenkleider' ); ?></h2>
 
                                 <?php  
-                                get_piratenkleider_socialmediaicons($options['alle-socialmediabuttons']); 
+                                   get_piratenkleider_socialmediaicons(1);  
 
                                 if ( $options['aktiv-linkmenu'] == "1" ){
                                     if ( has_nav_menu( 'top' ) ) {

@@ -165,7 +165,7 @@
       </div>
     </div>
   </div>
-  <?php  get_piratenkleider_socialmediaicons($options['alle-socialmediabuttons']); ?>
+  <?php  get_piratenkleider_socialmediaicons(2); ?>
 
 </div>
 
