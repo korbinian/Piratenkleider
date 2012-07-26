@@ -77,15 +77,24 @@
 }
 
 
-.nav-main ul.menu li.current-menu-item > a,
-.nav-main ul.menu li.current-page-ancestor > a,
-.nav-main ul.menu li.current-menu-ancestor > a
-{
+
+
+.nav-main ul.menu li.current-menu-item  > a,
+.nav-main ul.menu li.current-page-ancestor  > a,
+.nav-main ul.menu li.current-menu-ancestor > a {
     background: none repeat scroll 0 0 black;
     color: white;
 }
+ 
+.nav-main ul.menu li.current-menu-item:hover ul.sub-menu li.current-menu-item > a,
+.nav-main ul.menu li.current-page-item:hover ul.sub-menu li.current-page-item > a,
+.nav-main ul.menu li.current-page-ancestor:hover ul.sub-menu li.current-page-ancestor > a,
+.nav-main ul.menu li.current-menu-ancestor:hover ul.sub-menu li.current-menu-ancestor > a {
+    background-color: #ccc;
+    color: black;
+}
 
-
+ 
 
 
  .nav-main ul.menu li a[title="Home"]:hover,

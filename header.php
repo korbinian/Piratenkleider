@@ -33,6 +33,7 @@
    if (!isset($options['aktiv-linkmenu'])) 
        $options['aktiv-linkmenu'] = $defaultoptions['aktiv-linkmenu'];   
    $designspecials = get_option( 'piratenkleider_theme_designspecials' );
+   $cssadd = '';
    if (isset($designspecials['css-default-header-height'])
         && ($designspecials['css-default-header-height'] > 0)    
         && ($designspecials['css-default-header-height'] != $defaultoptions['css-default-header-height'])) {
