@@ -400,7 +400,7 @@ $default_toplink_liste = array(
         'sublist' => array(
             '<acronym title="Bezirksverband">BV</acronym> Bergedorf' => 'http://www.piratenpartei-bergedorf.de/',
             '<acronym title="Bezirksverband">BV</acronym> Harburg' => 'http://www.piraten-harburg.de/',
-            '<acronym title="Bezirksverband">BV</acronym> Hamburg-Nord' => 'http://wiki.piratenpartei.de/HH:<acronym title="Bezirksverband">BV</acronym>_Nord',
+            '<acronym title="Bezirksverband">BV</acronym> Hamburg-Nord' => 'http://wiki.piratenpartei.de/HH:Bezirksverband_Nord',
             'Eimbütteler Piraten (informell)' => 'http://wiki.piratenpartei.de/HH:Eimsb%C3%BCtteler_Piraten',
         )
     ),
@@ -496,11 +496,11 @@ $default_toplink_liste = array(
         'title' => 'Piratenpartei Landesverband Rheinland-Pfalz',
         'url'  => 'http://www.piraten-rlp.de',
         'sublist' => array(
-            '<acronym title="Kreisverband">KV</acronym> Bad Kreuznach' => 'http://wiki.piratenpartei.de/<acronym title="Kreisverband">KV</acronym>_Bad_Kreuznach',
-            '<acronym title="Kreisverband">KV</acronym> Landau/Südliche Weinstraße' => 'http://wiki.piratenpartei.de/RP:<acronym title="Kreisverband">KV</acronym>_Landau/S%C3%BCdliche_Weinstra%C3%9Fe',
+            '<acronym title="Kreisverband">KV</acronym> Bad Kreuznach' => 'http://wiki.piratenpartei.de/Kreisverband_Bad_Kreuznach',
+            '<acronym title="Kreisverband">KV</acronym> Landau/Südliche Weinstraße' => 'http://wiki.piratenpartei.de/RP:Kreisverband_Landau/S%C3%BCdliche_Weinstra%C3%9Fe',
             '<acronym title="Kreisverband">KV</acronym> Mittelhaardt' => 'http://www.piratenpartei-mittelhaardt.de',
-            '<acronym title="Kreisverband">KV</acronym>  Rhein-Pfalz' => 'http://wiki.piratenpartei.de/RP:<acronym title="Kreisverband">KV</acronym>_Rhein-Pfalz',
-            '<acronym title="Kreisverband">KV</acronym> <acronym title="Kreisverband">KV</acronym> Rheinhessen' => 'http://wiki.piratenpartei.de/RP:<acronym title="Kreisverband">KV</acronym>_Rheinhessen',
+            '<acronym title="Kreisverband">KV</acronym> Rhein-Pfalz' => 'http://wiki.piratenpartei.de/RP:Kreisverband_Rhein-Pfalz',
+            '<acronym title="Kreisverband">KV</acronym> Rheinhessen' => 'http://wiki.piratenpartei.de/RP:Kreisverband_Rheinhessen',
             '<acronym title="Kreisverband">KV</acronym> Trier/Trier-Saarburg' => 'http://piraten-trier.de',
         )
     ),
