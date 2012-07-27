@@ -11,8 +11,12 @@ License URI: http://creativecommons.org/licenses/by-sa/3.0/de/deed.de
 */
 @font-face {
   font-family: 'BebasNeueRegular';
+  /* 
   src: url("../fonts/BebasNeue-webfont.eot");
   src: url("../fonts/BebasNeue-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/BebasNeue-webfont.woff") format("woff"), url("../fonts/BebasNeue-webfont.ttf") format("truetype"), url("../fonts/BebasNeue-webfont.svg#BebasNeueRegular") format("svg");
+  */
+  
+  src: url("../fonts/BebasNeue-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/BebasNeue-webfont.ttf") format("truetype"); 
   font-weight: normal;
   font-style: normal; 
 }
@@ -1467,33 +1471,17 @@ display: inline-block;
       font-size:0.9em;
 }
 .content-aside .newsletter form input[type="text"] {
-      max-width: 15em;
-      width: 150px;  
+      width: 190px;
  }
  
  .content-aside .newsletter p {
-    height: 1px;
-    font-size: 0px;
-    margin: 0;
-    padding: 0;
-    -webkit-transition: all 0.2s ease-in-out;
-    -moz-transition: all 0.2s ease-in-out;
-    -ms-transition: all 0.2s ease-in-out;
-    -o-transition: all 0.2s ease-in-out;
-    transition: all 0.2s ease-in-out;     
- }  
- .content-aside .newsletter:hover p,
- .content-aside .newsletter:focus p {
+    display: block;
     height: auto;
-    font-size: 0.9em;
-    margin: 5px;
+    font-size: 0.8em;
     padding: 0;
-    -webkit-transition: all 0.2s ease-in-out;
-    -moz-transition: all 0.2s ease-in-out;
-    -ms-transition: all 0.2s ease-in-out;
-    -o-transition: all 0.2s ease-in-out;    
-    transition: all 0.2s ease-in-out; 
- }
+    margin-bottom: 0px;
+ }  
+ 
 
  
 .subnav {
@@ -2462,6 +2450,7 @@ div.ics-calendar-holder .ics-calendar-event {
     min-height: 500px;
     background: white;
     font-size: 1em;
+    position: relative; 
   }
   .content-primary .first-startpage-widget-area {
       width: 50%;
@@ -2526,6 +2515,26 @@ div.ics-calendar-holder .ics-calendar-event {
     list-style: none outside none;
     
 }  
+
+.content-primary .switchoff,
+.content-primary .switchon { 
+    position: absolute;
+    top: 10px;
+    right: 10px;    
+}    
+.content-primary .switchoff a img,
+.content-primary .switchon a img {
+    margin: 2px;
+    border: 2px dotted transparent;
+}
+.content-primary .switchoff a:hover,
+.content-primary .switchoff a:focus,
+.content-primary .switchon a:hover,
+.content-primary .switchon a:focus {
+    margin: 2px;
+    border: 2px dotted rgba(0,0,0,0.5);
+}
+  
 
 /* IE Anpassungen -----------------------------------------------------------*/
 

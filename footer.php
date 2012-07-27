@@ -52,7 +52,17 @@
     /* ]]> */
     </script> 
     <?php }  
-  
+        if (!isset($options['aktiv-dynamic-sidebar'])) 
+          $options['aktiv-dynamic-sidebar'] = $defaultoptions['aktiv-dynamic-sidebar'];      
+        if ($options['aktiv-dynamic-sidebar']==1) { 
+            ?>
+     <script type="text/javascript">
+        /* <![CDATA[ */
+        var $htmlOnSwitch = '<div class="switchoff"><a href="#"><img src="<?php echo get_template_directory_uri(); ?>/images/ausblenden.png" width="18" height="18" alt="<?php _e('Leiste ausblenden','piratenkleider'); ?>"></a></div>';
+        var $htmlOffSwitch = '<div class="switchon" ><a href="#"><img src="<?php echo get_template_directory_uri(); ?>/images/einblenden.png" width="18" height="18" alt="<?php _e('Leiste anzeigen','piratenkleider'); ?>"></a></div>';
+        /* ]]> */
+    </script> 
+       <?php }
     
    $designspecials = get_option( 'piratenkleider_theme_designspecials' );
    if (isset($designspecials['html-eigene-anweisungen'])

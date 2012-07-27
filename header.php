@@ -72,10 +72,10 @@
        $cssadd .= "\n";
     }
 ?>  
-<meta charset="<?php bloginfo( 'charset' ); ?>">
-<!--[if IE]> <meta http-equiv="X-UA-Compatible" content="IE=9"> <![endif]-->
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title><?php wp_title( '|', true, 'right' ); ?></title>
+    <meta charset="<?php bloginfo( 'charset' ); ?>">
+    <!--[if IE]> <meta http-equiv="X-UA-Compatible" content="IE=9"> <![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><?php wp_title( '|', true, 'right' ); ?></title>
 <?php
 if ((isset( $options['meta-description'] )) && ( strlen(trim($options['meta-description']))>1 )) { ?>
     <meta name="description" content="<?php echo $options['meta-description'] ?>">
@@ -86,20 +86,19 @@ if ((isset( $options['meta-author'] )) && ( strlen(trim($options['meta-author'])
 if ((isset( $options['meta-keywords'] )) && ( strlen(trim($options['meta-keywords']))>1 )) { ?>
     <meta name="keywords" content="<?php echo $options['meta-keywords'] ?>">
 <?php } ?>
-
-<link rel="apple-touch-icon" href="<?php echo get_template_directory_uri(); ?>/apple-touch-icon.png">
-<link rel="shortcut icon" href="<?php echo get_template_directory_uri(); ?>/favicon.ico">
-<link rel="profile" href="http://gmpg.org/xfn/11" />
-<link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo( 'stylesheet_url' ); ?>">
+    <link rel="apple-touch-icon" href="<?php echo get_template_directory_uri(); ?>/apple-touch-icon.png">
+    <link rel="shortcut icon" href="<?php echo get_template_directory_uri(); ?>/favicon.ico">
+    <link rel="profile" href="http://gmpg.org/xfn/11" />
+    <link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo( 'stylesheet_url' ); ?>">
 <?php if ((isset($designspecials['css-colorfile'])) && (strlen(trim($designspecials['css-colorfile']))>1)) { 
     echo '<link rel="stylesheet" type="text/css" media="all" href="'.get_template_directory_uri().'/css/'.$designspecials['css-colorfile'].'">';
 } ?>
-<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
+    <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 <?php if ( is_singular() && get_option( 'thread_comments' ) )
 		wp_enqueue_script( 'comment-reply' );
 wp_head(); 
 if (isset($designspecials['aktiv-mediaqueries-allparts']) && ($designspecials['aktiv-mediaqueries-allparts']==1)) {
-      echo '<link rel="stylesheet" type="text/css" media="screen" href="'.get_template_directory_uri().'/css/basemod_mediaqueries_allparts.css">';      
+      echo '    <link rel="stylesheet" type="text/css" media="screen" href="'.get_template_directory_uri().'/css/basemod_mediaqueries_allparts.css">';      
 }
 ?>
 
