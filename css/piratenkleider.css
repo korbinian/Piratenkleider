@@ -1471,7 +1471,7 @@ display: inline-block;
       font-size:0.9em;
 }
 .content-aside .newsletter form input[type="text"] {
-      width: 190px;
+      width: 150px;
  }
  
  .content-aside .newsletter p {
@@ -2522,6 +2522,7 @@ div.ics-calendar-holder .ics-calendar-event {
     top: 10px;
     right: 10px;    
     z-index: 99;
+    
 }    
 .content-primary .switchoff a img,
 .content-primary .switchon a img {
