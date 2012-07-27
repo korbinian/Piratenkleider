@@ -6,13 +6,7 @@
 label.description {
     display: block;
 }
-div.wrap {
-    margin: 20px 0 0 0;
-    background-image: url(../images/logo.png);
-    background-position: top right;
-    background-repeat: no-repeat;
-    padding: 0;
-}
+
 
 p.submit {
     margin-top: 10px;
