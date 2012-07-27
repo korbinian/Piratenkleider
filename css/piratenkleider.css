@@ -799,12 +799,12 @@ ul.socialmedia li a:focus img  {
     color: #2d7dc5;  
 }
 .sticker ul li a .small {
-   font-size: 30px;
-   line-height: 30px;
+   font-size: 25px;
+   line-height: 25px;
 } 
 .sticker ul li a .tiny { 
-   font-size: 26px;
-   line-height: 26px;
+   font-size: 20px;
+   line-height: 20px;
 
 } 
 .sticker ul li a .shadow {        
@@ -894,10 +894,17 @@ display: inline-block;
     -ms-transform: rotate(355deg);
     -o-transform: rotate(355deg);
     transform: rotate(355deg);
-    text-shadow: 0px 2px 1px #333;
+    text-shadow: 0px 2px 1px #666;
     font-weight: 900;
 }
-
+.sticker ul li a .gedreht .tiny {
+     text-shadow: 0px 1px 1px #999;
+      font-weight: normal;
+}
+.sticker ul li a .gedreht .small {
+     text-shadow: 0px 1px 1px #777;
+      font-weight: 500;
+}
 
 .header .newsletter .skin {
   padding: 10px 10px 5px 10px;
