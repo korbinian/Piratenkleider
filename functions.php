@@ -834,26 +834,26 @@ function dimox_breadcrumbs() {
  
 if( !is_admin()){
        wp_deregister_script('jquery');
-       wp_register_script('jquery', $defaultoptions['src-jquery'] , false);
+       wp_register_script('jquery', $defaultoptions['src-jquery'] , false, "1.7.2");
        wp_enqueue_script('jquery');
 
-       wp_register_script('layoutjs', $defaultoptions['src-layoutjs'] , false);
+       wp_register_script('layoutjs', $defaultoptions['src-layoutjs'] , false, $defaultoptions['js-version']);
        wp_enqueue_script('layoutjs');
-       wp_register_script('yaml-focusfix', $defaultoptions['src-yaml-focusfix'] , false);
+       wp_register_script('yaml-focusfix', $defaultoptions['src-yaml-focusfix'] , false, $defaultoptions['js-version']);
        wp_enqueue_script('yaml-focusfix');
        
        wp_deregister_script('comment-reply');
        if (!isset($options['aktiv-commentreplylink'])) 
             $options['aktiv-commentreplylink'] = $defaultoptions['aktiv-commentreplylink'];
        if ($options['aktiv-commentreplylink']==1) {        
-            wp_register_script('comment-reply', $defaultoptions['src-comment-reply'] , false);
+            wp_register_script('comment-reply', $defaultoptions['src-comment-reply'] , false,  $defaultoptions['js-version']);
             wp_enqueue_script('comment-reply');
        }  
       if (!isset($options['aktiv-dynamic-sidebar'])) 
           $options['aktiv-dynamic-sidebar'] = $defaultoptions['aktiv-dynamic-sidebar'];
       
        if ($options['aktiv-dynamic-sidebar']==1) {        
-            wp_register_script('dynamic-sidebar', $defaultoptions['src-dynamic-sidebar'] , false);
+            wp_register_script('dynamic-sidebar', $defaultoptions['src-dynamic-sidebar'] , false,  $defaultoptions['js-version']);
             wp_enqueue_script('dynamic-sidebar');
        }       
        

@@ -6,6 +6,7 @@
  
 
 $defaultoptions = array(
+    'js-version'                    => '2.10',
     'content-width'                 => 665,
     'logo'                          => get_template_directory_uri() .'/images/logo.png',
     'logo-width'                    => 300,
@@ -45,7 +46,7 @@ $defaultoptions = array(
     'aktiv-startseite-alteartikel'          => 1,
     'aktiv-startseite-alteartikel-num'      => 5,
     'aktiv-avatar'                          => 1,
-    'aktiv-dynamic-sidebar'                 => 1,
+    'aktiv-dynamic-sidebar'                 => 0,
     'src-default-avatar'                    => get_template_directory_uri(). '/images/avataricon.gif',
     'zeige_subpagesonly'                    => 1,
     'zeige_sidebarpagemenu'                 => 1,
