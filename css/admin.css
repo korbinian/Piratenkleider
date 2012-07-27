@@ -45,7 +45,9 @@ p.submit {
 #einstellungen input.regular-text {
     width: 30em;
 }
-
+#einstellungen select {
+    min-width: 4em;
+}
 h2.nav-tab-wrapper, h3.nav-tab-wrapper {
     margin-top: 30px;
 }
