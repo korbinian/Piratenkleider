@@ -4,7 +4,7 @@
  *
  * @source http://github.com/xwolfde/Piratenkleider
  * @creator xwolf
- * @version 2.9.5
+ * @version 2.9.6
  * @licence CC-BY-SA 3.0 
  */
 
@@ -825,8 +825,7 @@ function dimox_breadcrumbs() {
       if ( is_category() || is_day() || is_month() || is_year() || is_search() || is_tag() || is_author() ) echo ')';
     }
  */
-    echo '</div>';
- 
+    echo '</div>'; 
   }
 }
 
@@ -834,7 +833,6 @@ function dimox_breadcrumbs() {
 
  
 if( !is_admin()){
-
        wp_deregister_script('jquery');
        wp_register_script('jquery', $defaultoptions['src-jquery'] , false);
        wp_enqueue_script('jquery');
@@ -855,11 +853,10 @@ if( !is_admin()){
 }
 
 
-function my_admin_head() {
+function piratenkleider_admin_head() {
     echo '<link rel="stylesheet" type="text/css" href="'.get_template_directory_uri().'/css/admin.css" />'; 
 }
-
-add_action('admin_head', 'my_admin_head');
+add_action('admin_head', 'piratenkleider_admin_head');
 
 function custom_login() { 
     echo '<link rel="stylesheet" type="text/css" href="'.get_template_directory_uri().'/css/custom-login.css" />'; 

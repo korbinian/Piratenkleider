@@ -40,9 +40,15 @@
           </h2>
         </div>
         <div class="post-info">
-          <div class="commentbubble">
-            <?php comments_popup_link( '0<span class="skip"> Kommentare</span>', '1<span class="skip"> Kommentar</span>', '%<span class="skip"> Kommentare</span>', 'comments-link', '');?>
-          </div>
+         <?php  $num_comments = get_comments_number();
+          if ($num_comments>0) { ?>
+         <div class="commentbubble"> 
+            <?php 
+            // comments_popup_link( '0<span class="skip"> Kommentare</span>', '1<span class="skip"> Kommentar</span>', '%<span class="skip"> Kommentare</span>', 'comments-link', '');
+            comments_popup_link( '', '1<span class="skip"> Kommentar</span>', '%<span class="skip"> Kommentare</span>', 'comments-link', '%<span class="skip"> Kommentare</span>');
+            ?>
+          </div> 
+          <?php } ?>  
           <div class="cal-icon">
             <span class="day"><?php the_time('j.'); ?></span>
             <span class="month"><?php the_time('m.'); ?></span>
@@ -84,12 +90,9 @@
       
       <?php if ( ! have_posts() ) : ?>
        <h2><?php _e("Nichts gefunden", 'piratenkleider'); ?></h2>
-                        <p>
-                            <?php _e("Es konnten keine Artikel gefunden werden.
-                            Bitte versuchen Sie es nochmal mit einer 
-                            Suche.", 'piratenkleider'); ?>
-                            
-                        </p>
+        <p>
+            <?php _e("Es konnten keine Artikel gefunden werden. Bitte versuchen Sie es nochmal mit einer Suche.", 'piratenkleider'); ?>
+        </p>
         <?php get_search_form(); ?>
         <hr>
       <?php endif; ?>
@@ -99,38 +102,44 @@
       
       <div class="startpage-widget-area">
 
-          <h2 class="skip"><?php _e("Weitere Artikel", 'piratenkleider'); ?></h2>
+        <h2 class="skip"><?php _e("Weitere Artikel", 'piratenkleider'); ?></h2>
         <div class="first-startpage-widget-area">
           <div class="skin">
             <?php if ( is_active_sidebar( 'first-startpage-widget-area' ) ) { ?>
                 <?php dynamic_sidebar( 'first-startpage-widget-area' ); ?>
-            <?php } else { ?>
-              
-                <div class="widget">
-
-                <ul>
-                <?php 
-                $postslist = get_posts("numberposts=5&order=DESC&offset=$numentries"); 
-                if (isset($postslist)) { ?>
-                    <h3><?php _e("&Auml;ltere Artikel", 'piratenkleider'); ?></h3>
+            <?php } else { 
+                 if (!isset($options['aktiv-startseite-alteartikel'])) 
+                     $options['aktiv-startseite-alteartikel'] = $defaultoptions['aktiv-startseite-alteartikel'];
+                 if (!isset($options['aktiv-startseite-alteartikel-num'])) 
+                     $options['aktiv-startseite-alteartikel-num'] = $defaultoptions['aktiv-startseite-alteartikel-num'];
+                 if (!isset($options['aktiv-startseite-kategorien'])) 
+                     $options['aktiv-startseite-kategorien'] = $defaultoptions['aktiv-startseite-kategorien'];
+                 $numold = $options['aktiv-startseite-alteartikel-num'];
+                 
+                 if ($options['aktiv-startseite-alteartikel']==1) {                  
+                    $postslist = get_posts("numberposts=$numold&order=DESC&offset=$numentries"); 
+                    if (isset($postslist)) { ?>
+                        <div class="widget">
+                            <h3><?php _e("&Auml;ltere Artikel", 'piratenkleider'); ?></h3>
+                            <ul>
+                            <?php foreach ($postslist as $post) : setup_postdata($post); ?>
+                                <li><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+                                <span class="date"><?php the_time('d.m.Y') ?></span></li>
+                            <?php endforeach; ?>
+                            </ul>
+                        </div>              
                     <?php 
-                }
-                foreach ($postslist as $post) : setup_postdata($post); 
-                ?>
-                    <li><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
-                    <span class="date"><?php the_time('d.m.Y') ?></span></li>
-                    <?php endforeach; ?>
-                    </ul>
-                    </div>
-                    <div class="widget">
+                      }
+                  }
+                  if ($options['aktiv-startseite-kategorien']==1) { 
+               ?>
+                <div class="widget">
                     <h3><?php _e("Kategorien", 'piratenkleider'); ?></h3>
                     <ul>
                         <?php wp_list_categories('title_li='); ?>
                     </ul>
-
-
                 </div>
-             <?php } ?>
+             <?php } } ?>
           </div>
         </div>
 
@@ -138,19 +147,26 @@
         <div class="skin">
             <?php if ( is_active_sidebar( 'second-startpage-widget-area' ) ) { ?>
                 <?php dynamic_sidebar( 'second-startpage-widget-area' ); ?>
-            <?php } else { ?>    
+            <?php } else { 
+                if (!isset($options['aktiv-startseite-tags'])) 
+                     $options['aktiv-startseite-tags'] = $defaultoptions['aktiv-startseite-tags'];
+                
+                if ($options['aktiv-startseite-tags']==1) {
+                ?>    
                 <div  class="widget">
-                    <?php $tags = get_tags();
-                        if (isset($tags)) { ?>
-                              <h3><?php _e("Schlagworte", 'piratenkleider'); ?></h3>
-                            <?php    
-                        }
-                     ?>
-                      <div class="tagcloud">            
-                        <?php wp_tag_cloud(array('smallest'  => 14, 'largest'   => 28)); ?>
-                      </div>
+                    <?php 
+                     $tags = get_tags();
+                     if ((isset($tags)) && (!empty($tags))) { ?>
+                            <h3><?php _e("Schlagworte", 'piratenkleider'); ?></h3>
+
+                            <div class="tagcloud">            
+                                <?php wp_tag_cloud(array('smallest'  => 14, 'largest'   => 28)); ?>
+                            </div>
+                              
+                    <?php  }  ?>
+                     
                 </div>
-            <?php } ?>
+            <?php } } ?>
         </div>
       </div>
       </div>

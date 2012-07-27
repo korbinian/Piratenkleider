@@ -27,13 +27,24 @@ p.submit {
 #einstellungen div {
     margin-left: 10px;
 }
+#einstellungen table tr:hover,
+#einstellungen table tr:focus {
+    background-color: #eeeeee;
+    -webkit-transition: all 0.1s ease-in-out;
+  -moz-transition: all 0.1s ease-in-out;
+  -ms-transition: all 0.1s ease-in-out;
+  -o-transition: all 0.1s ease-in-out; 
+  transition: all 0.1s ease-in-out;
+}
 #einstellungen table th {
     text-align: left;   
     min-width: 200px;
 }
-#einstellungen table td {}
+#einstellungen table td {
+    padding-bottom: 5px;
+}
 
-#einstellungentable td table th {
+#einstellungen table td table th {
     min-width: 50px;
 }
 
