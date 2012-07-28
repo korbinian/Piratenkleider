@@ -65,7 +65,8 @@ $defaultoptions = array(
     'aktiv-commentreplylink'        => 0,
     'twitter_cache_lifetime'        => 14400,
     'feed_cache_lifetime'           => 14400,
-    
+    'use_wp_feed_defaults'          => 1,
+    'dir_feed_cache'                => '',
     'teaserlink1-title'             => __( 'Informiere dich', 'piratenkleider' ),
     'teaserlink1-untertitel'        => __( '&uuml;ber unsere Themen &amp; Ziele!', 'piratenkleider' ),            
     'teaserlink1-url'               => 'https://www.piratenpartei.de/politik/themen/', 

@@ -668,6 +668,58 @@ function short_title($after = '...', $length = 6, $textlen = 10) {
 }
 endif;
 
+if ( ! function_exists( 'piratenkleider_fetch_feed' ) ) :
+/*
+ * Feet holen mit direkter Angabe der SimplePie-Parameter
+ */
+function piratenkleider_fetch_feed($url,$lifetime=0) {
+    global $defaultoptions;
+    $options = get_option( 'piratenkleider_theme_options' );
+    
+ 
+    if (!isset($options['feed_cache_lifetime'])) 
+                $options['feed_cache_lifetime'] = $defaultoptions['feed_cache_lifetime'];
+
+    if ($lifetime==0){
+        $lifetime=  $options['feed_cache_lifetime'];
+    }
+    if ($lifetime < 600) $lifetime = 1800;
+    // Das holen von feeds sollte auf keinen Fall haeufiger als alle 10 Minuten erfolgen
+
+    require_once  (ABSPATH . WPINC . '/class-feed.php');
+
+    $feed = new SimplePie();
+    if ($defaultoptions['use_wp_feed_defaults']) {
+        $feed->set_cache_class('WP_Feed_Cache');
+        $feed->set_file_class('WP_SimplePie_File');
+    } else {
+        if ((isset($defaultoptions['dir_feed_cache'])) && (!empty($defaultoptions['dir_feed_cache']))) {
+            if (is_dir($defaultoptions['dir_feed_cache'])) { 
+                $feed->set_cache_location($defaultoptions['dir_feed_cache']);
+            } else {
+                mkdir($defaultoptions['dir_feed_cache']);
+                if (!is_dir($defaultoptions['dir_feed_cache'])) {
+                    echo "Wasnt able to create Feed-Cache directory";
+                } else {
+                    $feed->set_cache_location($defaultoptions['dir_feed_cache']);
+                }
+            }
+        }  
+    }
+    $feed->set_feed_url($url);
+    $feed->set_cache_duration($lifetime);
+    
+    do_action_ref_array( 'wp_feed_options', array( &$feed, $url ) );
+    $feed->init();
+    $feed->handle_content_type();
+
+    if ( $feed->error() )
+        return new WP_Error('simplepie-error', $feed->error());
+
+    return $feed;
+}
+endif;
+
 
 function wpi_linkexternclass($content){
         return preg_replace_callback('/<a[^>]+/', 'wpi_linkexternclass_callback', $content);

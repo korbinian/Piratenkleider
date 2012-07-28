@@ -105,27 +105,15 @@
        if ($options['feed_twitter_numberarticle']==0) {
            $options['feed_twitter_numberarticle'] =5;
        }
-        include_once(ABSPATH . WPINC . '/feed.php');
-        $fetchlink =  'http://twitter.com/statuses/user_timeline.rss?screen_name='.$options['feed_twitter'].'&count='.$options['feed_twitter_numberarticle'];
+       $fetchlink =  'http://twitter.com/statuses/user_timeline.rss?screen_name='.$options['feed_twitter'].'&count='.$options['feed_twitter_numberarticle'];
         // Get a SimplePie feed object from the specified feed source.
-        
-         if (!isset($options['twitter_cache_lifetime'])) {
+       if (!isset($options['twitter_cache_lifetime'])) {
              $options['twitter_cache_lifetime'] = $defaultoptions['twitter_cache_lifetime'];             
              if ($options['twitter_cache_lifetime'] <= 0) $options['twitter_cache_lifetime'] = 43200;
-         }
-         $lifetime = $options['twitter_cache_lifetime'];
-         
-        function twitter_lifetime_cb( $seconds ) {
-            global $lifetime;
-            // change the default feed cache recreation period to 2 hours
-            return $lifetime;
         }
-        
-        
-        add_filter( 'wp_feed_cache_transient_lifetime' , 'twitter_lifetime_cb' );
-        $rss = fetch_feed($fetchlink);
-        remove_filter( 'wp_feed_cache_transient_lifetime' , 'twitter_lifetime_cb' );
-        
+        $lifetime = $options['twitter_cache_lifetime'];
+               
+        $rss = piratenkleider_fetch_feed($fetchlink,$lifetime);        
         $name = $options['feed_twitter'];
         if (!is_wp_error( $rss ) ) : // Checks that the object is created correctly 
             // Figure out how many total items there are, but limit it to 5. 
@@ -134,6 +122,7 @@
             // Build an array of all the items, starting with element 0 (first element).
             $rss_items = $rss->get_items(0, $maxitems); 
         endif;   ?>
+
         <div class="twitterwidget">
              <hr>
              <h2><img src="<?php echo get_template_directory_uri(); ?>/images/social-media/twitter-24x24.png" width="24" height="24" alt=""><a href="https://twitter.com/<?php echo $options['feed_twitter']; ?>">twitter.com/<?php echo $options['feed_twitter']; ?></a></h2>
@@ -145,7 +134,8 @@
                 foreach ( $rss_items as $item ) : 
                     echo '<li>';
                    
-                    $thisentry = esc_attr( $item->get_title() ); 
+                     $thisentry = esc_attr( $item->get_title() ); 
+  
                     $thisentry = preg_replace("/^$name: /i", '', $thisentry);
                     $thisentry = preg_replace('/\b((ftp|https?):\/\/[a-z0-9A-Z\-_\.\/]+)\b/i', ' <a href="$1">$1</a>', $thisentry);                      
                     $thisentry = preg_replace('/#([A-Za-z0-9]+)\b/i', '<a href="http://search.twitter.com/search?q=$1">#$1</a>', $thisentry);
