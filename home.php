@@ -41,11 +41,20 @@
         </div>
         <div class="post-info">
          <?php  $num_comments = get_comments_number();
-          if ($num_comments>0) { ?>
+             if (!isset($options['zeige_commentbubble_null'])) 
+                $options['zeige_commentbubble_null'] = $defaultoptions['zeige_commentbubble_null'];   
+          if (($num_comments>0) || ( $options['zeige_commentbubble_null'])) { ?>
          <div class="commentbubble"> 
             <?php 
-            // comments_popup_link( '0<span class="skip"> Kommentare</span>', '1<span class="skip"> Kommentar</span>', '%<span class="skip"> Kommentare</span>', 'comments-link', '');
-            comments_popup_link( '', '1<span class="skip"> Kommentar</span>', '%<span class="skip"> Kommentare</span>', 'comments-link', '%<span class="skip"> Kommentare</span>');
+                if ($num_comments>0) {
+                   comments_popup_link( '0<span class="skip"> Kommentar</span>', '1<span class="skip"> Kommentar</span>', '%<span class="skip"> Kommentare</span>', 'comments-link', '%<span class="skip"> Kommentare</span>');           
+                } else {
+                    // Wenn der Zeitraum abgelaufen ist UND keine Kommentare gegeben waren, dann
+                    // liefert die Funktion keinen Link, sondern nur den Text . Daher dieser
+                    // Woraround:
+                    $link = get_comments_link();
+                    echo '<a href="'.$link.'">0<span class="skip"> Kommentar</span></a>';
+              }
             ?>
           </div> 
           <?php } ?>  

@@ -4,7 +4,7 @@
  *
  * @source http://github.com/xwolfde/Piratenkleider
  * @creator xwolf
- * @version 2.10
+ * @version 2.10.1
  * @licence CC-BY-SA 3.0 
  */
 
@@ -761,8 +761,7 @@ add_action( 'template_redirect', 'rw_relative_urls' );
             'month_link',
             'year_link',
         );
-        foreach ( $filters as $filter )
-        {
+        foreach ( $filters as $filter ) {
          add_filter( $filter, 'wp_make_link_relative' );
         }
     }

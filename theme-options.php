@@ -162,6 +162,7 @@ function theme_options_do_page($tab = '') {
         }        
         $options= get_option( 'piratenkleider_theme_options' );	
 
+        
         echo "<h3 class=\"nav-tab-wrapper\">\n";
         foreach($setoptions['piratenkleider_theme_options'] as $i => $value) {                
              $tabtitel = $value['tabtitle'];             
@@ -173,7 +174,9 @@ function theme_options_do_page($tab = '') {
         }
         echo "</h3>\n";
         ?>
-                
+       
+   
+                      
         <form method="post" action="options.php">
             <?php settings_fields( 'piratenkleider_options' ); ?>
             <input type="hidden" id="piratenkleider_theme_options[tab]" name="piratenkleider_theme_options[tab]"  value="<?php echo $tab; ?>">                       
@@ -210,7 +213,6 @@ function theme_options_do_page($tab = '') {
                                     echo $title;
                                     echo "</th>\n\t\t<td>";
                                  
-                                    //echo "AKTUELLER WERT $name: \"".$options[$name]."\" - DEFAULT: \"$default\"";
                                     if ((!isset($options[$name])) && (!empty($default))) {                                       
                                             $options[$name] = $default;                                                                               
                                     }
@@ -321,14 +323,15 @@ function theme_options_validate( $input ) {
        if ((empty($tab) && ($input['tab']))) {
             $tab = $input['tab'];
        }
-        $output['default_footerlink_show'] = 2;
+
         if (!isset($setoptions['piratenkleider_theme_options'][$tab])) {
             return $output;          
         }
-    
+
        if (isset($setoptions['piratenkleider_theme_options'][$tab]['fields'])) {
             foreach($setoptions['piratenkleider_theme_options'][$tab]['fields'] as $i => $value) {   
                 $name = $i;
+
                 $type = $value['type'];              
                 $default = $value['default'];
                 if ($type != "section") {
@@ -338,8 +341,7 @@ function theme_options_validate( $input ) {
                             $output[$name]  = ( $input[$name] == 1 ? 1 : 0 );    
                         } elseif ($type=='text') {
                              $output[$name]  =  wp_filter_nohtml_kses( $input[$name] ); 
-                        } elseif ($type=='html') {
-                            //  $input[$name]  =  esc_url( $input[$name] );    
+                        } elseif ($type=='html') {;    
                             $output[$name] = $input[$name];
                         } elseif ($type=='url') {
                              $output[$name]  =  esc_url( $input[$name] ); 
@@ -367,9 +369,11 @@ function theme_options_validate( $input ) {
                         }
                     }
                 }
+
             }
        }               
-    
+
+      
  
     if (isset($input['anonymize-user'])) {   
         if ($input['anonymize-user']==1) {

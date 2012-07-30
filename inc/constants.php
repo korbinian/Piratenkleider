@@ -50,6 +50,7 @@ $defaultoptions = array(
     'src-default-avatar'                    => get_template_directory_uri(). '/images/avataricon.gif',
     'zeige_subpagesonly'                    => 1,
     'zeige_sidebarpagemenu'                 => 1,
+    'zeige_commentbubble_null'              => 0,
     'feed_twitter_numberarticle'            => 3,
     'num-article-startpage-fullwidth'       => 1,
     'num-article-startpage-halfwidth'       => 4,
@@ -84,12 +85,13 @@ $defaultoptions = array(
     
     'stickerlink1-content'          => '<span class="gedreht">Werde<br><span class="cicolor">Pirat!</span></span>',
     'stickerlink1-url'              => 'https://www.piratenpartei.de/mitmachen/mitglied-werden/',
-    'stickerlink2-content'          => '<span class="gedreht"> <span class="cicolor">Spende</span><br><span class="small">und helfe mit </span> </span>',
+    'stickerlink2-content'          => '<span class="gedreht"><span class="cicolor">Spende</span><br><span class="small">und hilf mit </span> </span>',
     'stickerlink2-url'              => 'https://www.piratenpartei.de/mitmachen/spenden/',
     'stickerlink3-content'          => '',
     'stickerlink3-url'              => '',
     'default_footerlink_key'        => 'Bund',
-    'default_footerlink_show'       => 1        
+    'default_footerlink_show'       => 1,
+    
 );
 
 
@@ -1123,6 +1125,12 @@ $setoptions = array(
                   'label'   => __( 'Platzhalterbilder bei Indexseiten zu Kategorien, Tags, Suche und Archiv anzeigen.', 'piratenkleider' ),
                   'default' => $defaultoptions['aktiv-platzhalterbilder-indexseiten'],
               ),
+               'zeige_commentbubble_null' => array(
+                  'type'    => 'bool',
+                  'title'   => __( 'Kommentarbubble', 'piratenkleider' ),
+                  'label'   => __( 'Zeige den Kommentarbubble auch dann, wenn noch keine Kommentare abgegeben wurden', 'piratenkleider' ),
+                  'default' => $defaultoptions['zeige_commentbubble_null'],
+              ),                                             
               'url-newsletteranmeldung' => array(
                   'type'    => 'url',
                   'title'   => __( 'Newsletter', 'piratenkleider' ),
