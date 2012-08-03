@@ -770,6 +770,8 @@ function dimox_breadcrumbs() {
  
 if( !is_admin()){
        wp_deregister_script('jquery');
+        // muss trotz ThemeCheck Warnung drin bleiben, ansonsten wird veraltetes jQuery geladen
+       // und der Slider und anderes mag dann nicht mehr
        wp_register_script('jquery', $defaultoptions['src-jquery'] , false, "1.7.2");
        wp_enqueue_script('jquery');
 
