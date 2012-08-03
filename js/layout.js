@@ -12,7 +12,7 @@
 $(window).load(function () {
      $("div").removeClass('no-js')
 });  
-
+ 
  /* Barrierefreie Hauptnavigation mit Tastatur 
  * Links, die via Tastatur einen Fikus bekommen, erhalten die Klasse
  * "hover". Diese Klasse wird auf das aktive Element, sowie die darübergehenden

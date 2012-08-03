@@ -769,7 +769,7 @@ function dimox_breadcrumbs() {
 
  
 if( !is_admin()){
-     //  wp_deregister_script('jquery');
+       wp_deregister_script('jquery');
        wp_register_script('jquery', $defaultoptions['src-jquery'] , false, "1.7.2");
        wp_enqueue_script('jquery');
 

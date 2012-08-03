@@ -149,7 +149,8 @@ class Newsletter_Widget extends WP_Widget {
 	 */
 	public function widget( $args, $instance ) {            
             $options = get_option( 'piratenkleider_theme_options' );
-            if (!isset($options['url-newsletteranmeldung'])) {$options['url-newsletteranmeldung'] = $defaultoptions['url-newsletteranmeldung']; }
+            if (!isset($options['url-newsletteranmeldung'])) {
+                $options['url-newsletteranmeldung'] = $defaultoptions['url-newsletteranmeldung']; }
 		extract( $args );
 		$title = apply_filters( 'widget_title', $instance['title'] );
 
@@ -157,7 +158,7 @@ class Newsletter_Widget extends WP_Widget {
                     
                 echo '<div class="newsletter">';
                 echo $before_title . $title . $after_title;
-               if (!empty($options['url-newsletteranmeldung'])) {     
+               if (isset($options['url-newsletteranmeldung'])) {     
                  ?> 
                  
                         <form method="post" action="<?php echo $options['url-newsletteranmeldung']; ?>">						
@@ -170,8 +171,8 @@ class Newsletter_Widget extends WP_Widget {
                         </form>           
                 </div>
                 <?php 
-               } else {
-                  echo '<p>';
+               } else {                   
+                    echo '<p>';
                     _e("Fehler: Adresse des Newsletter-Dienstes ist nicht eingetragen. Bitte geben Sie diese Adresse zun&auml;chst bei den Theme-Optionen an.", 'piratenkleider'); 
                    echo '</p>';
                }
@@ -205,11 +206,12 @@ class Newsletter_Widget extends WP_Widget {
 	public function form( $instance ) {
 		if ( isset( $instance[ 'title' ] ) ) {
 			$title = $instance[ 'title' ];
-		}
-		else {
+		} else {
 			$title = __( 'Newsletter', 'piratenkleider' );
 		}		
-		 if (!isset($options['url-newsletteranmeldung'])) {$options['url-newsletteranmeldung'] = $defaultoptions['url-newsletteranmeldung']; }
+                $options = get_option( 'piratenkleider_theme_options' );
+		 if (!isset($options['url-newsletteranmeldung'])) {
+                     $options['url-newsletteranmeldung'] = $defaultoptions['url-newsletteranmeldung']; }
    
                  if (empty($options['url-newsletteranmeldung'])) {                                      
                    echo '<p>';
@@ -225,7 +227,7 @@ class Newsletter_Widget extends WP_Widget {
 	}
 
 } // class Newsletter_Widget
-// register Foo_Widget widget
+// register widget
 add_action( 'widgets_init', create_function( '', 'register_widget( "Newsletter_Widget" );' ) );
 
 
