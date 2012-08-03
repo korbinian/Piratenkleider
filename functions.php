@@ -102,7 +102,7 @@ function piratenkleider_setup() {
         load_theme_textdomain('piratenkleider', get_template_directory() . '/languages');
 
         $locale = get_locale();
-        $locale_file = TEMPLATEPATH . "/languages/$locale.php";
+        $locale_file = get_template_directory() . "/languages/$locale.php";
         if ( is_readable( $locale_file ) )
                 require_once( $locale_file );
 
@@ -123,6 +123,8 @@ function piratenkleider_setup() {
         remove_action('wp_head', 'wp_generator');
 }
 endif;
+
+require( get_template_directory() . '/inc/widgets.php' );
 
 
 function piratenkleider_avatar ($avatar_defaults) {
@@ -154,8 +156,7 @@ endif;
 if ( ! function_exists( 'piratenkleider_filter_wp_title' ) ) :   
 /*
  * Sets the title
- */
-    
+ */    
 function piratenkleider_filter_wp_title( $title, $separator ) {
         // Don't affect wp_title() calls in feeds.
         if ( is_feed() )
@@ -302,122 +303,6 @@ function piratenkleider_comment( $comment, $args, $depth ) {
 endif;
 
 
-function piratenkleider_widgets_init() {
-
-       // Sidebar
-        register_sidebar( array(
-                'name' => __( 'Sidebar (Rechte Spalte)', 'piratenkleider' ),
-                'id' => 'sidebar-widget-area',
-                'description' => __( 'Dieser Bereich befindet sich rechts vom Inhaltsbereich. 
-                    Er ist geeignet f&uuml;r Werbeplakate, Hinweise und &auml;hnliches.
-                    Wenn leer, werden als Alternative einige der allgemeinen Standardplakate 
-                    gezeigt.', 'piratenkleider' ),
-                'before_widget' => '<div class="widget">',
-                'after_widget' => '</div>',
-                'before_title' => '<h2>',
-                'after_title' => '</h2>',
-        ) );
-       // Sidebar2
-        register_sidebar( array(
-                'name' => __( 'Sidebar 2 (Rechts unter Plakaten)', 'piratenkleider' ),
-                'id' => 'sidebar-widget-area-afterplakate',
-                'description' => __( 'Dieser Bereich befindet sich rechts vom Inhaltsbereich.
-                    Er ist nach den Werbeplakaten positioniert, die &uuml;ber die 
-                    Optionen ein- oder abgeschaltet werden k&ouml;nnen.', 'piratenkleider' ),
-                'before_widget' => '<div class="widget">',
-                'after_widget' => '</div>',
-                'before_title' => '<h2>',
-                'after_title' => '</h2>',
-        ) );
-
-        // Sliderbereich
-        register_sidebar( array(
-                'name' => __( 'Startseite: Sliderbereich', 'piratenkleider' ),
-                'id' => 'first-teaser-widget-area',
-                'description' => __( 'Bereich oberhalb der 3 Artikelbilder.
-                    Wenn leer, erscheinen hier wechselnden Bilder 
-                    und Verlinkung mit Artikeln der Kategorie "Slider". 
-                    Angezeigt werden die Artikelbilder.', 'piratenkleider' ),
-                'before_widget' => '<div class="widget">',
-                'after_widget' => '</div>',
-                'before_title' => '<h3 class="widget-title">',
-                'after_title' => '</h3>',
-        ) );
-
-        // Rechter Aktionlinkbereich, neben Slider
-        register_sidebar( array(
-                'name' => __( 'Startseite: Rechter Aktionlinkbereich', 'piratenkleider' ),
-                'id' => 'second-teaser-widget-area',
-                'description' => __( 'Dieser Bereich ist rechts neben den Slider
-                    und dem Hauptcontent positioniert. Wenn leer, werden hier
-                    die 3 Links zur Piratenwebsite gezeigt zum Mitmachen
-                    oder Spenden', 'piratenkleider' ),
-                'before_widget' => '<div class="widget">',
-                'after_widget' => '</div>',
-                'before_title' => '<h3 class="widget-title">',
-                'after_title' => '</h3>',
-        ) );
-
-        
-
-        // Startseite: Links unterhalb der 3 Artikel, per default Anzeige
-        // der weiteren Artikel 
-        register_sidebar( array(
-                'name' => __( 'Startseite: Links unten', 'piratenkleider' ),
-                'id' => 'first-startpage-widget-area',
-                'description' => __( 'Bereich links unterhalb der 3 Presseartikel. 
-                        Wenn leer, werden hier weitere Artikel aus
-                        der Kategorie "pm" gezeigt. ', 'piratenkleider' ),
-                'before_widget' => '<div class="widget">',
-                'after_widget' => '</div>',
-                'before_title' => '<h3>',
-                'after_title' => '</h3>',
-        ) );
-        // Startseite: Rechts  unterhalb der 3 Artikel, per default Anzeige
-        //  der Schlagwortliste
-        register_sidebar( array(
-                'name' => __( 'Startseite: Rechts unten', 'piratenkleider' ),
-                'id' => 'second-startpage-widget-area',
-                'description' => __( 'Bereich rechts unterhalb der drei Presseartikel.
-                         Wenn leer, wird hier eine Schlagwortliste 
-                         gezeigt.', 'piratenkleider' ),
-                'before_widget' => '<div class="widget">',
-                'after_widget' => '</div>',
-                'before_title' => '<h3 class="widget-title">',
-                'after_title' => '</h3>',
-        ) );
-
-        // Linke Seite der Fu&szlig;zeile
-        register_sidebar( array(
-                'name' => __( 'Fu&szlig;bereich: Linke Seite', 'piratenkleider' ),
-                'id' => 'first-footer-widget-area',
-                'description' => __( 'Bereich im Fu&szlig;teil unter dem Haupttextbereich.
-                   Dieser Bereich eignet sich insbesondere f&uuml;r externe Links zu
-                   anderen Piratenwebsites auf regionaler oder &uuml;beregionaler Ebene.
-                   Diese werden dann als Menu mit externen Links definiert und
-                   dann als Widget dieser Sidebar zugeordnet.
-                   Wenn leer, wird hier nichts angezeigt.', 'piratenkleider' ),
-                'before_widget' => '<div class="widget">',
-                'after_widget' => '</div>',
-                'before_title' => '<h2>',
-                'after_title' => '</h2>',
-        ) );
-
-        // Rechte Seite der Fu&szlig;zeile
-        register_sidebar( array(
-                'name' => __( 'Fu&szlig;bereich: Rechte Spalte', 'piratenkleider' ),
-                'id' => 'second-footer-widget-area',
-                'description' => __( 'Rechte Spalte im Fu&szlig;bereich. Wenn leer, erscheint hier das
-                    technische Menu (siehe Men&uuml;s). Wenn auch dieses nicht definiert ist, wird 
-                    die Blogadresse und dessen RSS-Feedadresse gezeigt', 'piratenkleider' ),
-                'before_widget' => '<div class="widget">',
-                'after_widget' => '</div>',
-                'before_title' => '<h2>',
-                'after_title' => '</h2>',
-        ) );
-
-}
-add_action( 'widgets_init', 'piratenkleider_widgets_init' );
 
 
 function piratenkleider_remove_recent_comments_style() {
@@ -728,7 +613,7 @@ function wpi_linkexternclass($content){
 function wpi_linkexternclass_callback($matches)
     {
         $link = $matches[0];
-        $site_link = get_bloginfo('url');
+        $site_link = home_url();  
  
             if (strpos($link, 'class') === false)
             {
@@ -773,7 +658,7 @@ add_action( 'template_redirect', 'rw_relative_urls' );
 function wpi_relativeurl_callback($matches) {
 
         $link = $matches[0];
-        $site_link = get_bloginfo('url');
+        $site_link =  home_url();  
         $link = preg_replace("%href=\"$site_link%i", 'href="', $link); 
                 
         return $link;
@@ -884,7 +769,7 @@ function dimox_breadcrumbs() {
 
  
 if( !is_admin()){
-       wp_deregister_script('jquery');
+     //  wp_deregister_script('jquery');
        wp_register_script('jquery', $defaultoptions['src-jquery'] , false, "1.7.2");
        wp_enqueue_script('jquery');
 

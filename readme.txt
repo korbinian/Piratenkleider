@@ -2,7 +2,7 @@ Piratenkleider
 - Wordpress-Theme für Webauftritte der Piratenpartei 
 =================================================
 
-Version 2.10 von Wolfgang Wiese (xwolf), 27. Juli 2012
+Version 2.11 von Wolfgang Wiese (xwolf), 3. August 2012
 
 
 DOWNLOADS
@@ -42,7 +42,7 @@ AUTOREN / ENTWICKLER
       JavaScript Framework jQuery (GNU General Public License (GPL) Version 2)
       jQuery FlexSlider (MIT License)
       Schrift Bebas Neue von Dharmatype (SIL Open Font License 1.1)
-	  Schrift Droid Sans von Ascender (http://www.droidfonts.com/), Apache License 2.0 http://www.apache.org/licenses/LICENSE-2.0
+      Schrift Droid Sans von Ascender (http://www.droidfonts.com/), Apache License 2.0 http://www.apache.org/licenses/LICENSE-2.0
 
 VORVERSION
 
@@ -220,6 +220,22 @@ THEME OPTION "Kopfzeile"
    vorzubereiten.
 
 
+THEME EIGENE WIDGETS
+
+    Das Piratenkleider Theme enthält zwei Widgets, die für die verschiedenen
+    Sidebars eingesetzt werden können:
+    1. Widget "Piraten Linkliste"
+        Das Widget kann eine vorgegebene Liste von Bereichen oder
+        Gliederungen anzeigen. Dies entspricht der Liste die als Default
+        im Fußteil angezeigt werden kann.
+
+    2. Widget "Piraten Newsletter"
+        Das Widget kann ein Eingabeformular für den Newsletter 
+        verwendet werden, zu dem die Adresse unter den Optionen eingegeben
+        wurde.
+
+        
+
 UNTERSTÜTZE PLUGINS
   - Wenn das Plugin "Related Posts by Category" vorhanden und aktiviert ist,
     werden bei der Anzeige eines Artikels weitere Artikel verlinkt, die
@@ -345,10 +361,10 @@ Administrative Hinweise für Wordpress Theme-Editoren:
 
 7. Farbcodes und Sprache der Texte
    Laenderspezifische Farbcodes werden in den Dateien
-	   /css/colors_tk.css  (für Türkei)
-       /css/colors_lu.css (für Luxemburg)
-       /css/colors_at.css  (für Österreich)
-       /css/colors_de.css (für Deutschland, jedoch nicht notwendig da Default)
+    /css/colors_tk.css  (für Türkei)
+    /css/colors_lu.css (für Luxemburg)
+    /css/colors_at.css  (für Österreich)
+    /css/colors_de.css (für Deutschland, jedoch nicht notwendig da Default)
    abgelegt.
    Diese greifen teilweise auf eigene Bilder zu. 
    Diese Bilder sollten in /images/ liegen wenn sie allgemein sind und
@@ -376,4 +392,8 @@ Administrative Hinweise für Wordpress Theme-Editoren:
       default.po
    mit Hilfe des Editors poedit bearbeitet werden.
    
+7. Es werden teilweise Funktionen verwendet, die mit WP 3.4 "deprecated" sind.
+   Da das Theme allerdings noch bei einigen Installationen unter WP 3.4
+   eingesetzt wird, wurden diese Funktionen absichtlich noch nicht umgestellt.
+
 

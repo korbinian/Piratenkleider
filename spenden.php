@@ -45,27 +45,27 @@
         <tbody>
         <tr>
            <th><?php _e('Empf&auml;nger', 'piratenkleider' ); ?></th>
-         <td><?php esc_attr_e( $kontaktinfos['spendenempfaenger'] ); ?></td>
+         <td><?php echo esc_attr( $kontaktinfos['spendenempfaenger'] ); ?></td>
         </tr>
         <tr>
             <th><?php _e('Kontonummer', 'piratenkleider' ); ?></th>
-         <td><?php esc_attr_e( $kontaktinfos['spendenkonto'] ); ?></td>
+         <td><?php echo esc_attr( $kontaktinfos['spendenkonto'] ); ?></td>
         </tr>
         <tr>
            <th><?php _e('Bankleitzahl', 'piratenkleider' ); ?></th>
-            <td><?php esc_attr_e( $kontaktinfos['spendenblz'] ); ?></td>
+            <td><?php echo esc_attr( $kontaktinfos['spendenblz'] ); ?></td>
         </tr>
         <tr>
           <th><?php _e('Bank', 'piratenkleider' ); ?></th>
-           <td><?php esc_attr_e( $kontaktinfos['spendenbank'] ); ?></td>
+           <td><?php echo esc_attr( $kontaktinfos['spendenbank'] ); ?></td>
         </tr>
         <tr>
             <th><?php _e('IBAN', 'piratenkleider' ); ?></th>
-           <td><?php esc_attr_e( $kontaktinfos['spendeniban'] ); ?></td>
+           <td><?php echo esc_attr( $kontaktinfos['spendeniban'] ); ?></td>
         </tr>
         <tr>
            <th><?php _e('BIC', 'piratenkleider' ); ?></th>
-            <td><?php esc_attr_e( $kontaktinfos['spendenbic'] ); ?></td>
+            <td><?php echo esc_attr( $kontaktinfos['spendenbic'] ); ?></td>
         </tr>
         <tr>
            <th><?php _e('Verwendungszweck', 'piratenkleider' ); ?></th>

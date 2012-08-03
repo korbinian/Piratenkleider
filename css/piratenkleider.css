@@ -1,21 +1,16 @@
 /*
 Theme Name: Piratenkleider
-Theme URI: https://github.com/xwolfde/Piratenkleider
+Theme URI: http://piratenkleider.xwolf.de
 Description: Allgemeines Theme für Webauftritte der Piratenpartei
 Author: Wolfgang Wiese (xwolf)
 Author URI: http://www.xwolf.de 
-Version: 2.9
+Version: 2.11
 Tags: orange, two-columns, responsive, fluid-width
 License: CC-BY-SA 3.0 
 License URI: http://creativecommons.org/licenses/by-sa/3.0/de/deed.de
 */
 @font-face {
   font-family: 'BebasNeueRegular';
-  /* 
-  src: url("../fonts/BebasNeue-webfont.eot");
-  src: url("../fonts/BebasNeue-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/BebasNeue-webfont.woff") format("woff"), url("../fonts/BebasNeue-webfont.ttf") format("truetype"), url("../fonts/BebasNeue-webfont.svg#BebasNeueRegular") format("svg");
-  */
-  
   src: url("../fonts/BebasNeue-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/BebasNeue-webfont.ttf") format("truetype"); 
   font-weight: normal;
   font-style: normal; 
@@ -1119,7 +1114,10 @@ display: inline-block;
        color: black;
  }    
 
- .content {
+ #main-content {
+     position: relative;
+ } 
+.content {
   background: #ff8800 url("../images/int/bg-tags.png") -20% top fixed;
  }
 .content .row {
@@ -1173,9 +1171,10 @@ display: inline-block;
 .content .startpage-widget-area ul.children {
     margin: 0 0 0 5px ; 
 }
-.content .content-aside p, .content .content-aside table, .content 
-.content-aside blockquote, .content .content-aside form, .content 
-.content-aside img {
+.content .content-aside p, .content 
+.content-aside table, .content 
+.content-aside blockquote, 
+.content .content-aside form {
     margin-bottom: 20px; 
 }
 .content .content-aside ul, .content .content-aside ol {
@@ -1385,9 +1384,13 @@ display: inline-block;
     top: 1.5em;
     display: inline-block;
     background: white;
-    padding: 3px 5px 1px 5px;
-    
+    padding: 3px 5px 1px 5px;    
 }
+.content-aside a img {
+    margin: 0;
+    padding: 0; 
+}
+
 
 .content-aside #steckbrief {    
     background-color: white;
@@ -1795,28 +1798,28 @@ display: inline-block;
   width: 100%;
   overflow: hidden;
   padding-top: 30px; }
-  .first-startpage-widget-area .skin {
+.first-startpage-widget-area .skin {
     padding: 0 20px 0 0; }
-  .first-startpage-widget-area ul {
+.first-startpage-widget-area ul {
     margin: 0; }
-  .first-startpage-widget-area li {
+.first-startpage-widget-area li {
     list-style: none; }
-    .first-startpage-widget-area li span.date {
+.first-startpage-widget-area li span.date {
       margin-left: 0px;
       opacity: .5;
       -moz-transition: all 0.2s ease-in-out;
       -o-transition: all 0.2s ease-in-out;
       -webkit-transition: all 0.2s ease-in-out;
       transition: all 0.2s ease-in-out; }
-    .first-startpage-widget-area li a {
+.first-startpage-widget-area li a {
       font-family: "BebasNeueRegular", Helvetica, Arial, sans-serif;
       font-size: 20px; }
     
-  .first-startpage-widget-area li:hover span.date,
-  .first-startpage-widget-area li:focus span.date {
+.first-startpage-widget-area li:hover span.date,
+.first-startpage-widget-area li:focus span.date {
     opacity: 1;
   }
-  .first-startpage-widget-area a.all-articles {
+.first-startpage-widget-area a.all-articles {
     padding: 5px 10px;
     overflow: visible;
     position: relative;
@@ -1838,7 +1841,8 @@ display: inline-block;
     background-image: -moz-linear-gradient(top, #2d7dc5, #24639b);
     background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #2d7dc5), color-stop(1, #24639b));
     background-image: linear-gradient(top, #2d7dc5, #24639b); }
- .first-startpage-widget-area a.all-articles:hover {
+
+  .first-startpage-widget-area a.all-articles:hover {
       background-color: #2d7dc5;
       background-image: -moz-linear-gradient(top, #2d7dc5, #1a4872);
       background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #2d7dc5), color-stop(1, #1a4872));
@@ -1864,16 +1868,18 @@ display: inline-block;
 
 .content-aside a {
   color: black;
-  background: #f38100;
   padding: 0 2px; 
 }
-  .content-aside a:hover {
+.content-aside a:hover {
     color: #000;
-    background: #d97300; 
-  }
+   /* background: #d97300;  */
+   text-decoration: underline;
+}
+
 .content-aside ul {
-  margin: 0 0 18px 0; }
-  .content-aside ul li {
+  margin: 0 0 18px 0; 
+}
+.content-aside ul li {
     margin-bottom: 0;
     list-style: none;
     margin-bottom: 2px; }
@@ -1884,10 +1890,10 @@ display: inline-block;
   border-radius: 2px;
   -moz-border-radius: 2px;
   -webkit-border-radius: 2px; }
-  .content-aside table td,
-  .content-aside table th {
+.content-aside table td,
+.content-aside table th {
     border-top: 1px solid #ff8800; 
-  }
+}
 .content-aside blockquote {
   margin: 0 0 20px 0;
   border: 0 solid;
@@ -1985,16 +1991,16 @@ display: inline-block;
 
 .subcontent {
   background: black url("../images/int/bg-tags_gray.jpg") -20% top fixed; }
-  .subcontent .row {
+.subcontent .row {
     background: rgba(0, 0, 0, 0.2);
     color: #eeeeee; }
-  .subcontent p, .subcontent form {
+.subcontent p, .subcontent form {
     margin-bottom: 18px; }
-  .subcontent h2, 
-  .subcontent h3, 
-  .subcontent h4 {
+.subcontent h2, 
+.subcontent h3, 
+.subcontent h4 {
     margin-bottom: 10px; }
-  .subcontent a {
+.subcontent a {
     background: black;
     color: #2d7dc5;
     padding: 0 5px;
@@ -2009,12 +2015,12 @@ display: inline-block;
     -o-transition: all 0.2s ease-in-out;
     transition: all 0.2s ease-in-out; 
 }
-  .subcontent ul {
+.subcontent ul {
     margin: 0;
     list-style: none;
     margin-bottom: 10px; }
-    .subcontent ul li {
-      margin-bottom: 0; }
+ .subcontent ul li {
+    margin-bottom: 0; }
 
     
     
@@ -2028,6 +2034,9 @@ display: inline-block;
     color: #eeeeee;
 }
 
+.footer ul {
+    margin-left: 0;
+}
 .footer ul li {
    margin-bottom: 0; 
    text-wrap: none;
@@ -2076,13 +2085,6 @@ display: inline-block;
   -o-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out; 
 }
-  
- .footer .titelurl a {
-     margin: 0 1em 1em 0em;
-     font-size: 1.2em;
-     display: block;      
- }
- 
 
 /* Widgets --------------------------------------------------------------------*/
 .wpcf7-mail-sent-ok {
@@ -2091,7 +2093,7 @@ display: inline-block;
   font-weight: bold; }
 
 .widget {
-  margin-bottom: 20px;
+  margin-bottom: 10px;
   overflow: hidden; }
 .widget .widget-title {
     line-height: 25px; 
@@ -2146,7 +2148,7 @@ display: inline-block;
 #ics-calendar-widget li:focus, 
  .content-aside .twitterwidget li:hover, 
  .content-aside .twitterwidget li:focus {
-     background: #ff8800;
+     background: #ff8800; 
  }
  .content-aside .twitterwidget li a:hover, 
  .content-aside .twitterwidget li a:focus {

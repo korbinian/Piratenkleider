@@ -22,9 +22,11 @@
                   $title =   $default_footerlink_liste[$bereich]['title'];
                   $url =   $default_footerlink_liste[$bereich]['url'];
                   
-                  echo "<h2>".$title."</h2>";
+                 
                   if ((isset($url)) && (strlen($url)>5)) {
-                    echo '<p class="titelurl"><a href="'.$url.'">'.$url.'</a></p>';
+                        echo '<h2><a href="'.$url.'">'.$title.'</a></h2>';
+                  } else {
+                        echo "<h2>".$title."</h2>";
                   }
                   echo '<ul class="default_footerlinks">';
                   

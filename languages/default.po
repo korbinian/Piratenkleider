@@ -2,561 +2,386 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Piratenkleider\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-06-04 22:27+0100\n"
-"PO-Revision-Date: 2012-06-04 22:27+0100\n"
-"Last-Translator: Wolfgang Wiese <xwolf@xwolf.de>\n"
+"POT-Creation-Date: 2012-08-03 16:25+0100\n"
+"PO-Revision-Date: 2012-08-03 16:26+0100\n"
+"Last-Translator: Wolfgang Wiese <pirat@xwolf.de>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Poedit-KeywordsList: _;gettext;gettext_noop;__;_e\n"
 "X-Poedit-Basepath: .\n"
-"X-Poedit-SourceCharset: utf-8\n"
-"X-Poedit-SearchPath-0: E:\\work\\WWW\\web\\wordpress-tokenbus.de\\theme-arbeit\\Piratenkleider\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-SearchPath-0: F:\\www\\projekte\\WP-Theme-Piratenkleider\n"
 
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/404.php:26
-msgid ""
-"Es konnten keine Seiten oder Artikel gefunden werden, \n"
-"                            die zu eingegebene Adresse passte.\n"
-"                            Bitte versuchen Sie es nochmal mit einer \n"
-"                            Suche."
+#: F:\www\projekte\WP-Theme-Piratenkleider/404.php:19
+msgid "AAARH!<br>Ihr werdet sie nicht finden!"
 msgstr ""
 
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/404.php:39
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/archive.php:39
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/author.php:37
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/category.php:31
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/datenschutzerklaerung.php:148
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/home.php:162
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/impressum.php:263
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/index.php:27
+#: F:\www\projekte\WP-Theme-Piratenkleider/404.php:26
+msgid ""
+"Es konnten keine Seiten oder Artikel gefunden werden, die zu eingegebene "
+"Adresse passte. Bitte versuchen Sie es nochmal mit einer Suche."
+msgstr ""
+
+#: F:\www\projekte\WP-Theme-Piratenkleider/404.php:34
+#: F:\www\projekte\WP-Theme-Piratenkleider/archive.php:39
+#: F:\www\projekte\WP-Theme-Piratenkleider/author.php:37
+#: F:\www\projekte\WP-Theme-Piratenkleider/category.php:31
+#: F:\www\projekte\WP-Theme-Piratenkleider/datenschutzerklaerung.php:148
+#: F:\www\projekte\WP-Theme-Piratenkleider/home.php:188
+#: F:\www\projekte\WP-Theme-Piratenkleider/impressum.php:263
+#: F:\www\projekte\WP-Theme-Piratenkleider/index.php:27
+#: F:\www\projekte\WP-Theme-Piratenkleider/page.php:45
+#: F:\www\projekte\WP-Theme-Piratenkleider/search.php:71
+#: F:\www\projekte\WP-Theme-Piratenkleider/single.php:97
+#: F:\www\projekte\WP-Theme-Piratenkleider/spenden.php:138
+#: F:\www\projekte\WP-Theme-Piratenkleider/tag.php:34
+#: F:\www\projekte\WP-Theme-Piratenkleider/events/ecp-page-template.php:54
+#: F:\www\projekte\WP-Theme-Piratenkleider/events/ecp-single-template.php:64
 msgid "Weitere Informationen"
 msgstr ""
 
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/archive.php:12
+#: F:\www\projekte\WP-Theme-Piratenkleider/archive.php:12
 #, php-format
 msgid "Tagesarchiv: %s"
 msgstr ""
 
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/archive.php:14
+#: F:\www\projekte\WP-Theme-Piratenkleider/archive.php:14
 #, php-format
 msgid "Monatsarchiv: %s"
 msgstr ""
 
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/archive.php:16
+#: F:\www\projekte\WP-Theme-Piratenkleider/archive.php:16
 #, php-format
 msgid "Jahresarchiv: %s"
 msgstr ""
 
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/archive.php:18
+#: F:\www\projekte\WP-Theme-Piratenkleider/archive.php:18
 msgid "Blogarchiv"
 msgstr ""
 
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/author.php:12
+#: F:\www\projekte\WP-Theme-Piratenkleider/author.php:12
 #, php-format
 msgid "%s"
 msgstr ""
 
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/category.php:11
+#: F:\www\projekte\WP-Theme-Piratenkleider/category.php:11
 #, php-format
 msgid "Kategorie %s"
 msgstr ""
 
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/comments.php:2
-msgid "Dieser Artikel ist Passwortgesch&uuml;tzt. Bitte gib das Passwort ein um die Kommentare zu sehen."
+#: F:\www\projekte\WP-Theme-Piratenkleider/comments.php:2
+msgid ""
+"Dieser Artikel ist Passwortgesch&uuml;tzt. Bitte gib das Passwort ein um die "
+"Kommentare zu sehen."
 msgstr ""
 
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/comments.php:7
+#: F:\www\projekte\WP-Theme-Piratenkleider/comments.php:7
 msgid "Kommentare"
 msgstr ""
 
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/comments.php:13
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/comments.php:22
+#: F:\www\projekte\WP-Theme-Piratenkleider/comments.php:13
+#: F:\www\projekte\WP-Theme-Piratenkleider/comments.php:22
 msgid "&larr; &Auml;ltere Kommentare"
 msgstr ""
 
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/comments.php:14
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/comments.php:23
+#: F:\www\projekte\WP-Theme-Piratenkleider/comments.php:14
+#: F:\www\projekte\WP-Theme-Piratenkleider/comments.php:23
 msgid "Neuere Kommentare &rarr;"
 msgstr ""
 
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/comments.php:27
+#: F:\www\projekte\WP-Theme-Piratenkleider/comments.php:27
 msgid "Das Kommentieren dieses Artikels ist nicht (mehr) m&ouml;glich."
 msgstr ""
 
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/comments.php:43
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/comments.php:52
+#: F:\www\projekte\WP-Theme-Piratenkleider/comments.php:43
+#: F:\www\projekte\WP-Theme-Piratenkleider/comments.php:52
+#: F:\www\projekte\WP-Theme-Piratenkleider/theme-options.php:790
 msgid "Name"
 msgstr ""
 
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/comments.php:54
+#: F:\www\projekte\WP-Theme-Piratenkleider/comments.php:54
 msgid "Website"
 msgstr ""
 
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/datenschutzerklaerung.php:36
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/impressum.php:37
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/index.php:20
+#: F:\www\projekte\WP-Theme-Piratenkleider/datenschutzerklaerung.php:36
+#: F:\www\projekte\WP-Theme-Piratenkleider/impressum.php:37
+#: F:\www\projekte\WP-Theme-Piratenkleider/index.php:20
+#: F:\www\projekte\WP-Theme-Piratenkleider/loop.php:49
+#: F:\www\projekte\WP-Theme-Piratenkleider/loop.php:64
+#: F:\www\projekte\WP-Theme-Piratenkleider/loop.php:91
+#: F:\www\projekte\WP-Theme-Piratenkleider/page.php:37
+#: F:\www\projekte\WP-Theme-Piratenkleider/single.php:51
+#: F:\www\projekte\WP-Theme-Piratenkleider/spenden.php:35
 msgid "Bearbeiten"
 msgstr ""
 
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/functions.php:65
-msgid "Informiere dich"
+#: F:\www\projekte\WP-Theme-Piratenkleider/footer.php:61
+msgid "Leiste ausblenden"
 msgstr ""
 
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/functions.php:66
-msgid "&uuml;ber unsere Themen &amp; Ziele!"
+#: F:\www\projekte\WP-Theme-Piratenkleider/footer.php:62
+msgid "Leiste anzeigen"
 msgstr ""
 
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/functions.php:70
-msgid "Unterst&uuml;tze uns"
-msgstr ""
-
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/functions.php:71
-msgid "mit deinem Engagement!"
-msgstr ""
-
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/functions.php:75
-msgid "Werde Pirat!"
-msgstr ""
-
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/functions.php:76
-msgid "jetzt Mitglied werden!"
-msgstr ""
-
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/functions.php:95
-msgid "Plakat Grundgesetz"
-msgstr ""
-
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/functions.php:99
-msgid "Medien"
-msgstr ""
-
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/functions.php:103
-msgid "Mitmachen"
-msgstr ""
-
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/functions.php:107
-msgid "Piraten"
-msgstr ""
-
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/functions.php:111
-msgid "Plakate"
-msgstr ""
-
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/functions.php:115
-msgid "Presse"
-msgstr ""
-
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/functions.php:119
-msgid "Protest"
-msgstr ""
-
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/functions.php:123
-msgid "Datenschutz"
-msgstr ""
-
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/functions.php:133
-msgid "Plakat LTWNRW12 A01"
-msgstr ""
-
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/functions.php:137
-msgid "Plakat LTWNRW12_Plakat_B03"
-msgstr ""
-
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/functions.php:141
-msgid "Plakat LTWNRW12_Plakat_C01"
-msgstr ""
-
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/functions.php:145
-msgid "Plakat LTWNRW12_Plakat_D01"
-msgstr ""
-
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/functions.php:149
-msgid "Plakat LTWNRW12_Plakat_E01"
-msgstr ""
-
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/functions.php:153
-msgid "Plakat LTWNRW12_Plakat_F03"
-msgstr ""
-
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/functions.php:157
-msgid "Plakat LTWSH12_Echte-Mitbestimmung"
-msgstr ""
-
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/functions.php:161
-msgid "Plakat LTWSH12_Fehmarnbelt"
-msgstr ""
-
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/functions.php:165
-msgid "Plakat LTWSH12_Freies-Wissen"
-msgstr ""
-
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/functions.php:169
-msgid "Plakat LTWSH12_Ich-will-so-leben"
-msgstr ""
-
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/functions.php:173
-msgid "Plakat LTWSH12_Inseln-allgemein"
-msgstr ""
-
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/functions.php:177
-msgid "Plakat LTWSH12_Naechster-Halt"
-msgstr ""
-
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/functions.php:181
-msgid "Plakat LTWSH12_Orange_isst_gesund"
-msgstr ""
-
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/functions.php:185
-msgid "Plakat LTWSH12_Transparenz"
-msgstr ""
-
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/functions.php:189
-msgid "Plakat LTWSH12_Trau-keinem-Plakat"
-msgstr ""
-
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/functions.php:193
-msgid "Plakat LTWSH12_Warum_haenge_ich_hier"
-msgstr ""
-
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/functions.php:197
-msgid "Plakat LTWSH12_Wir_sind_Romantiker"
-msgstr ""
-
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/functions.php:318
+#: F:\www\projekte\WP-Theme-Piratenkleider/functions.php:111
 msgid "Hauptnavigation <br />&nbsp; (Statische Seiten)"
 msgstr ""
 
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/functions.php:319
+#: F:\www\projekte\WP-Theme-Piratenkleider/functions.php:112
 msgid "Linkmenu <br />&nbsp; (Links zu Webportalen wie Wiki, Forum, etc)"
 msgstr ""
 
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/functions.php:320
+#: F:\www\projekte\WP-Theme-Piratenkleider/functions.php:113
 msgid "Technische Navigation <br />&nbsp; (Kontakt, Impressunm, etc)"
 msgstr ""
 
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/functions.php:379
+#: F:\www\projekte\WP-Theme-Piratenkleider/functions.php:172
+#: F:\www\projekte\WP-Theme-Piratenkleider/search.php:11
 #, php-format
 msgid "Suchergebnisse f&uuml;r %s"
 msgstr ""
 
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/functions.php:382
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/functions.php:399
+#: F:\www\projekte\WP-Theme-Piratenkleider/functions.php:175
+#: F:\www\projekte\WP-Theme-Piratenkleider/functions.php:192
 #, php-format
-msgid "Page %s"
+msgid "Seite %s"
 msgstr ""
 
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/functions.php:413
+#: F:\www\projekte\WP-Theme-Piratenkleider/functions.php:207
 msgid "Weiterlesen <span class=\"meta-nav\">&rarr;</span>"
 msgstr ""
 
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/functions.php:474
+#: F:\www\projekte\WP-Theme-Piratenkleider/functions.php:266
 #, php-format
 msgid "%s <span class=\"says\">meinte am</span>"
 msgstr ""
 
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/functions.php:478
+#: F:\www\projekte\WP-Theme-Piratenkleider/functions.php:270
 msgid "Der Kommentar wartet auf die Freischaltung."
 msgstr ""
 
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/functions.php:485
+#: F:\www\projekte\WP-Theme-Piratenkleider/functions.php:277
 #, php-format
 msgid "%1$s um %2$s"
 msgstr ""
 
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/functions.php:485
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/functions.php:506
+#: F:\www\projekte\WP-Theme-Piratenkleider/functions.php:277
+#: F:\www\projekte\WP-Theme-Piratenkleider/functions.php:298
 msgid "(Edit)"
 msgstr ""
 
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/functions.php:506
+#: F:\www\projekte\WP-Theme-Piratenkleider/functions.php:298
 msgid "Pingback:"
 msgstr ""
 
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/functions.php:518
-msgid "Sidebar (Rechte Spalte)"
-msgstr ""
-
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/functions.php:520
-msgid ""
-"Dieser Bereich befindet sich rechts vom Inhaltsbereich. \n"
-"                    Er ist geeignet f&uuml;r Werbeplakate, Hinweise und &auml;hnliches.\n"
-"                    Wenn leer, werden als Alternative einige der allgemeinen Standardplakate \n"
-"                    gezeigt."
-msgstr ""
-
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/functions.php:531
-msgid "Sidebar 2 (Rechts unter Plakaten)"
-msgstr ""
-
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/functions.php:533
-msgid ""
-"Dieser Bereich befindet sich rechts vom Inhaltsbereich.\n"
-"                    Er ist nach den Werbeplakaten positioniert, die &uuml;ber die \n"
-"                    Optionen ein- oder abgeschaltet werden k&ouml;nnen."
-msgstr ""
-
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/functions.php:544
-msgid "Startseite: Sliderbereich"
-msgstr ""
-
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/functions.php:546
-msgid ""
-"Bereich oberhalb der 3 Artikelbilder.\n"
-"                    Wenn leer, erscheinen hier wechselnden Bilder \n"
-"                    und Verlinkung mit Artikeln der Kategorie \"Slider\". \n"
-"                    Angezeigt werden die Artikelbilder."
-msgstr ""
-
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/functions.php:558
-msgid "Startseite: Rechter Aktionlinkbereich"
-msgstr ""
-
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/functions.php:560
-msgid ""
-"Dieser Bereich ist rechts neben den Slider\n"
-"                    und dem Hauptcontent positioniert. Wenn leer, werden hier\n"
-"                    die 3 Links zur Piratenwebsite gezeigt zum Mitmachen\n"
-"                    oder Spenden"
-msgstr ""
-
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/functions.php:575
-msgid "Startseite: Links unten"
-msgstr ""
-
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/functions.php:577
-msgid ""
-"Bereich links unterhalb der 3 Presseartikel. \n"
-"                        Wenn leer, werden hier weitere Artikel aus\n"
-"                        der Kategorie \"pm\" gezeigt. "
-msgstr ""
-
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/functions.php:588
-msgid "Startseite: Rechts unten"
-msgstr ""
-
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/functions.php:590
-msgid ""
-"Bereich rechts unterhalb der drei Presseartikel.\n"
-"                         Wenn leer, wird hier eine Schlagwortliste \n"
-"                         gezeigt."
-msgstr ""
-
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/functions.php:601
-msgid "Fu&szlig;bereich: Linke Seite"
-msgstr ""
-
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/functions.php:603
-msgid ""
-"Bereich im Fu&szlig;teil unter dem Haupttextbereich.\n"
-"                   Dieser Bereich eignet sich insbesondere f&uuml;r externe Links zu\n"
-"                   anderen Piratenwebsites auf regionaler oder &uuml;beregionaler Ebene.\n"
-"                   Diese werden dann als Menu mit externen Links definiert und\n"
-"                   dann als Widget dieser Sidebar zugeordnet.\n"
-"                   Wenn leer, wird hier nichts angezeigt."
-msgstr ""
-
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/functions.php:617
-msgid "Fu&szlig;bereich: Rechte Spalte"
-msgstr ""
-
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/functions.php:619
-msgid ""
-"Rechte Spalte im Fu&szlig;bereich. Wenn leer, erscheint hier das\n"
-"                    technische Menu (siehe Men&uuml;s). Wenn auch dieses nicht definiert ist, wird \n"
-"                    die Blogadresse und dessen RSS-Feedadresse gezeigt"
-msgstr ""
-
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/functions.php:645
+#: F:\www\projekte\WP-Theme-Piratenkleider/functions.php:321
 #, php-format
 msgid "<span class=\"meta-prep\">Ver&ouml;ffentlicht am</span> %1$s "
 msgstr ""
 
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/functions.php:657
+#: F:\www\projekte\WP-Theme-Piratenkleider/functions.php:334
 #, php-format
 msgid "<span class=\"meta-prep-author\">von</span> %1$s "
 msgstr ""
 
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/functions.php:674
+#: F:\www\projekte\WP-Theme-Piratenkleider/functions.php:351
 #, php-format
-msgid "unter %1$s und tagged %2$s. <br>Hier der permanente <a href=\"%3$s\" title=\"Permalink to %4$s\" rel=\"bookmark\">Link</a> zu diesem Artikel."
+msgid ""
+"unter %1$s und tagged %2$s. <br>Hier der permanente <a href=\"%3$s\" title="
+"\"Permalink to %4$s\" rel=\"bookmark\">Link</a> zu diesem Artikel."
 msgstr ""
 
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/functions.php:676
+#: F:\www\projekte\WP-Theme-Piratenkleider/functions.php:353
 #, php-format
-msgid "unter %1$s. <br><a href=\"%3$s\" title=\"Permalink to %4$s\" rel=\"bookmark\">Permanenter Link</a> zu diesem Artikel."
+msgid ""
+"unter %1$s. <br><a href=\"%3$s\" title=\"Permalink to %4$s\" rel=\"bookmark"
+"\">Permanenter Link</a> zu diesem Artikel."
 msgstr ""
 
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/functions.php:678
+#: F:\www\projekte\WP-Theme-Piratenkleider/functions.php:355
 #, php-format
-msgid "<a href=\"%3$s\" title=\"Permalink to %4$s\" rel=\"bookmark\">Permanenter Link</a> zu diesem Artikel."
+msgid ""
+"<a href=\"%3$s\" title=\"Permalink to %4$s\" rel=\"bookmark\">Permanenter "
+"Link</a> zu diesem Artikel."
 msgstr ""
 
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/functions.php:850
+#: F:\www\projekte\WP-Theme-Piratenkleider/functions.php:672
+#: F:\www\projekte\WP-Theme-Piratenkleider/inc/constants.php:809
 msgid "Startseite"
 msgstr ""
 
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/functions.php:869
+#: F:\www\projekte\WP-Theme-Piratenkleider/functions.php:691
 msgid "Artikel der Kategorie "
 msgstr ""
 
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/functions.php:922
+#: F:\www\projekte\WP-Theme-Piratenkleider/functions.php:744
 msgid "Suche"
 msgstr ""
 
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/functions.php:925
+#: F:\www\projekte\WP-Theme-Piratenkleider/functions.php:747
 msgid "Artikel mit Schlagwort "
 msgstr ""
 
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/functions.php:930
+#: F:\www\projekte\WP-Theme-Piratenkleider/functions.php:752
 msgid "Artikel von "
 msgstr ""
 
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/header.php:116
+#: F:\www\projekte\WP-Theme-Piratenkleider/header.php:119
 msgid "Zur Navigation springen."
 msgstr ""
 
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/header.php:117
+#: F:\www\projekte\WP-Theme-Piratenkleider/header.php:120
 msgid "Zum Inhalt springen."
 msgstr ""
 
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/header.php:118
+#: F:\www\projekte\WP-Theme-Piratenkleider/header.php:121
 msgid "Zur Suche springen."
 msgstr ""
 
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/header.php:135
+#: F:\www\projekte\WP-Theme-Piratenkleider/header.php:138
 msgid "Service-Navigation"
 msgstr ""
 
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/header.php:173
+#: F:\www\projekte\WP-Theme-Piratenkleider/header.php:173
 msgid "Navigation"
 msgstr ""
 
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/header.php:194
+#: F:\www\projekte\WP-Theme-Piratenkleider/header.php:194
+#: F:\www\projekte\WP-Theme-Piratenkleider/inc/constants.php:593
 msgid "Sticker"
 msgstr ""
 
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/home.php:17
+#: F:\www\projekte\WP-Theme-Piratenkleider/home.php:17
 msgid "Aktuelle Artikel"
 msgstr ""
 
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/home.php:86
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/loop-author.php:8
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/loop-category.php:8
+#: F:\www\projekte\WP-Theme-Piratenkleider/home.php:101
+#: F:\www\projekte\WP-Theme-Piratenkleider/loop-author.php:8
+#: F:\www\projekte\WP-Theme-Piratenkleider/loop-category.php:8
+#: F:\www\projekte\WP-Theme-Piratenkleider/loop.php:8
+#: F:\www\projekte\WP-Theme-Piratenkleider/search.php:30
 msgid "Nichts gefunden"
 msgstr ""
 
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/home.php:88
+#: F:\www\projekte\WP-Theme-Piratenkleider/home.php:103
 msgid ""
-"Es konnten keine Artikel gefunden werden.\n"
-"                            Bitte versuchen Sie es nochmal mit einer \n"
-"                            Suche."
+"Es konnten keine Artikel gefunden werden. Bitte versuchen Sie es nochmal mit "
+"einer Suche."
 msgstr ""
 
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/home.php:101
+#: F:\www\projekte\WP-Theme-Piratenkleider/home.php:114
 msgid "Weitere Artikel"
 msgstr ""
 
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/home.php:114
+#: F:\www\projekte\WP-Theme-Piratenkleider/home.php:132
 msgid "&Auml;ltere Artikel"
 msgstr ""
 
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/home.php:125
+#: F:\www\projekte\WP-Theme-Piratenkleider/home.php:146
+#: F:\www\projekte\WP-Theme-Piratenkleider/inc/constants.php:828
 msgid "Kategorien"
 msgstr ""
 
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/home.php:144
+#: F:\www\projekte\WP-Theme-Piratenkleider/home.php:169
+#: F:\www\projekte\WP-Theme-Piratenkleider/inc/constants.php:834
 msgid "Schlagworte"
 msgstr ""
 
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/impressum.php:19
+#: F:\www\projekte\WP-Theme-Piratenkleider/impressum.php:19
 msgid "Impressum"
 msgstr ""
 
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/index.php:19
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/loop-author.php:19
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/loop-category.php:19
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/loop-search.php:12
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/loop-tag.php:20
+#: F:\www\projekte\WP-Theme-Piratenkleider/index.php:19
+#: F:\www\projekte\WP-Theme-Piratenkleider/loop-author.php:19
+#: F:\www\projekte\WP-Theme-Piratenkleider/loop-category.php:19
+#: F:\www\projekte\WP-Theme-Piratenkleider/loop-search.php:12
+#: F:\www\projekte\WP-Theme-Piratenkleider/loop-tag.php:20
+#: F:\www\projekte\WP-Theme-Piratenkleider/loop.php:76
+#: F:\www\projekte\WP-Theme-Piratenkleider/page.php:36
 msgid "Seiten:"
 msgstr ""
 
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/loop-author.php:9
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/loop-category.php:9
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/loop-tag.php:10
+#: F:\www\projekte\WP-Theme-Piratenkleider/loop-author.php:9
+#: F:\www\projekte\WP-Theme-Piratenkleider/loop-category.php:9
+#: F:\www\projekte\WP-Theme-Piratenkleider/loop-tag.php:10
+#: F:\www\projekte\WP-Theme-Piratenkleider/loop.php:9
 msgid "Vielleicht hilft eine Suche weiter?"
 msgstr ""
 
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/loop-author.php:27
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/loop-category.php:27
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/loop-search.php:20
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/loop-tag.php:28
+#: F:\www\projekte\WP-Theme-Piratenkleider/loop-author.php:27
+#: F:\www\projekte\WP-Theme-Piratenkleider/loop-category.php:27
+#: F:\www\projekte\WP-Theme-Piratenkleider/loop-search.php:20
+#: F:\www\projekte\WP-Theme-Piratenkleider/loop-tag.php:28
+#: F:\www\projekte\WP-Theme-Piratenkleider/loop.php:103
 msgid "&larr; &Auml;ltere Beitr&auml;ge"
 msgstr ""
 
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/loop-author.php:28
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/loop-category.php:28
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/loop-search.php:21
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/loop-tag.php:29
+#: F:\www\projekte\WP-Theme-Piratenkleider/loop-author.php:28
+#: F:\www\projekte\WP-Theme-Piratenkleider/loop-category.php:28
+#: F:\www\projekte\WP-Theme-Piratenkleider/loop-search.php:21
+#: F:\www\projekte\WP-Theme-Piratenkleider/loop-tag.php:29
+#: F:\www\projekte\WP-Theme-Piratenkleider/loop.php:104
 msgid "Neuere Beitr&auml;ge &rarr;"
 msgstr ""
 
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/loop-tag.php:9
+#: F:\www\projekte\WP-Theme-Piratenkleider/loop-tag.php:9
 msgid "Nicht gefunden"
 msgstr ""
 
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/loop.php:37
+#: F:\www\projekte\WP-Theme-Piratenkleider/loop.php:37
 #, php-format
 msgid "Diese Galerie enth&auml;lt <a %1$s>%2$s photos</a>."
 msgstr ""
 
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/loop.php:46
+#: F:\www\projekte\WP-Theme-Piratenkleider/loop.php:46
 msgid "Mehr Bildergalerien"
 msgstr ""
 
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/loop.php:48
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/loop.php:63
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/loop.php:90
+#: F:\www\projekte\WP-Theme-Piratenkleider/loop.php:48
+#: F:\www\projekte\WP-Theme-Piratenkleider/loop.php:63
+#: F:\www\projekte\WP-Theme-Piratenkleider/loop.php:90
 msgid "Hinterlasse einen Kommentar"
 msgstr ""
 
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/loop.php:48
+#: F:\www\projekte\WP-Theme-Piratenkleider/loop.php:48
 msgid "1 Comment"
 msgstr ""
 
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/loop.php:48
+#: F:\www\projekte\WP-Theme-Piratenkleider/loop.php:48
 msgid "% kommentare"
 msgstr ""
 
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/loop.php:58
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/loop.php:75
+#: F:\www\projekte\WP-Theme-Piratenkleider/loop.php:58
+#: F:\www\projekte\WP-Theme-Piratenkleider/loop.php:75
 msgid "Weiterlesen"
 msgstr ""
 
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/loop.php:63
+#: F:\www\projekte\WP-Theme-Piratenkleider/loop.php:63
 msgid "Ein Kommentar"
 msgstr ""
 
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/loop.php:63
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/loop.php:90
+#: F:\www\projekte\WP-Theme-Piratenkleider/loop.php:63
+#: F:\www\projekte\WP-Theme-Piratenkleider/loop.php:90
 msgid "% Kommentare"
 msgstr ""
 
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/loop.php:80
+#: F:\www\projekte\WP-Theme-Piratenkleider/loop.php:80
 #, php-format
 msgid "ver&ouml;ffentlicht unter  %2$s"
 msgstr ""
 
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/loop.php:87
+#: F:\www\projekte\WP-Theme-Piratenkleider/loop.php:87
 #, php-format
 msgid "Tagged %2$s"
 msgstr ""
 
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/loop.php:90
+#: F:\www\projekte\WP-Theme-Piratenkleider/loop.php:90
 msgid "1 Kommentar"
 msgstr ""
 
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/search.php:32
+#: F:\www\projekte\WP-Theme-Piratenkleider/search.php:32
 msgid ""
 "Es konnten keine Seiten oder Artikel gefunden werden, \n"
 "                            die zu der Sucheingabe passten.\n"
@@ -564,975 +389,1901 @@ msgid ""
 "                            anderen Suche."
 msgstr ""
 
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/search.php:41
+#: F:\www\projekte\WP-Theme-Piratenkleider/search.php:41
 msgid "Alternativ verwenden Sie einen der folgenden Links."
 msgstr ""
 
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/search.php:46
+#: F:\www\projekte\WP-Theme-Piratenkleider/search.php:46
 msgid "Archiv nach Monaten"
 msgstr ""
 
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/search.php:51
+#: F:\www\projekte\WP-Theme-Piratenkleider/search.php:51
 msgid "Artikel nach Schlagworten"
 msgstr ""
 
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/search.php:57
+#: F:\www\projekte\WP-Theme-Piratenkleider/search.php:57
 msgid "&Uuml;bersicht aller Kategorien"
 msgstr ""
 
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/searchform.php:7
-msgid "Suche nach"
-msgstr ""
-
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/searchform.php:8
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/searchform.php:9
-msgid "Suchbegriff eingeben"
-msgstr ""
-
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/searchform.php:10
-msgid "Suchen"
-msgstr ""
-
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/sidebar-teaser.php:31
+#: F:\www\projekte\WP-Theme-Piratenkleider/sidebar-teaser.php:31
 msgid "Aktuelle Themen"
 msgstr ""
 
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/sidebar.php:13
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:310
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:758
+#: F:\www\projekte\WP-Theme-Piratenkleider/sidebar.php:13
+#: F:\www\projekte\WP-Theme-Piratenkleider/inc/constants.php:695
+#: F:\www\projekte\WP-Theme-Piratenkleider/inc/constants.php:1123
+#: F:\www\projekte\WP-Theme-Piratenkleider/inc/widgets.php:210
 msgid "Newsletter"
 msgstr ""
 
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/sidebar.php:15
+#: F:\www\projekte\WP-Theme-Piratenkleider/sidebar.php:15
+#: F:\www\projekte\WP-Theme-Piratenkleider/inc/widgets.php:164
 msgid "Zum Newsletter anmelden"
 msgstr ""
 
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/sidebar.php:16
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/sidebar.php:17
+#: F:\www\projekte\WP-Theme-Piratenkleider/sidebar.php:16
+#: F:\www\projekte\WP-Theme-Piratenkleider/sidebar.php:17
+#: F:\www\projekte\WP-Theme-Piratenkleider/inc/widgets.php:165
+#: F:\www\projekte\WP-Theme-Piratenkleider/inc/widgets.php:166
 msgid "E-Mail-Adresse eingeben"
 msgstr ""
 
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/sidebar.php:18
+#: F:\www\projekte\WP-Theme-Piratenkleider/sidebar.php:18
+#: F:\www\projekte\WP-Theme-Piratenkleider/inc/widgets.php:167
 msgid "anmelden"
 msgstr ""
 
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/sidebar.php:19
+#: F:\www\projekte\WP-Theme-Piratenkleider/sidebar.php:19
+#: F:\www\projekte\WP-Theme-Piratenkleider/inc/widgets.php:168
 msgid "Hinweis: Beim Aufruf wird der Webauftritt verlassen."
 msgstr ""
 
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/single.php:52
+#: F:\www\projekte\WP-Theme-Piratenkleider/sidebar.php:131
+msgid "Es konnten keine Tweets geladen werden"
+msgstr ""
+
+#: F:\www\projekte\WP-Theme-Piratenkleider/sidebar.php:148
+msgid "Uhr"
+msgstr ""
+
+#: F:\www\projekte\WP-Theme-Piratenkleider/single.php:68
 msgid "Weitere Artikel in diesem Themenkreis:"
 msgstr ""
 
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/spenden.php:17
+#: F:\www\projekte\WP-Theme-Piratenkleider/spenden.php:17
 msgid "Spenden"
 msgstr ""
 
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/spenden.php:42
+#: F:\www\projekte\WP-Theme-Piratenkleider/spenden.php:42
 msgid "Per &Uuml;berweisung spenden"
 msgstr ""
 
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/spenden.php:47
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:1651
+#: F:\www\projekte\WP-Theme-Piratenkleider/spenden.php:47
+#: F:\www\projekte\WP-Theme-Piratenkleider/theme-options.php:824
 msgid "Empf&auml;nger"
 msgstr ""
 
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/spenden.php:51
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:1659
+#: F:\www\projekte\WP-Theme-Piratenkleider/spenden.php:51
+#: F:\www\projekte\WP-Theme-Piratenkleider/theme-options.php:832
 msgid "Kontonummer"
 msgstr ""
 
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/spenden.php:55
+#: F:\www\projekte\WP-Theme-Piratenkleider/spenden.php:55
 msgid "Bankleitzahl"
 msgstr ""
 
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/spenden.php:59
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:1677
+#: F:\www\projekte\WP-Theme-Piratenkleider/spenden.php:59
+#: F:\www\projekte\WP-Theme-Piratenkleider/theme-options.php:850
 msgid "Bank"
 msgstr ""
 
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/spenden.php:63
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:1685
+#: F:\www\projekte\WP-Theme-Piratenkleider/spenden.php:63
+#: F:\www\projekte\WP-Theme-Piratenkleider/theme-options.php:858
 msgid "IBAN"
 msgstr ""
 
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/spenden.php:67
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:1693
+#: F:\www\projekte\WP-Theme-Piratenkleider/spenden.php:67
+#: F:\www\projekte\WP-Theme-Piratenkleider/theme-options.php:866
 msgid "BIC"
 msgstr ""
 
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/spenden.php:71
+#: F:\www\projekte\WP-Theme-Piratenkleider/spenden.php:71
 msgid "Verwendungszweck"
 msgstr ""
 
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/spenden.php:72
+#: F:\www\projekte\WP-Theme-Piratenkleider/spenden.php:72
 msgid ""
 "Spende von Name, Vorname, Anschrift (ggf. mit Zusatz \"Stichwort\" \n"
 "            und einem konkreten Verwendungszweck)"
 msgstr ""
 
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/tag.php:11
+#: F:\www\projekte\WP-Theme-Piratenkleider/tag.php:11
 #, php-format
 msgid "Schlagwort %s"
 msgstr ""
 
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/tag.php:24
+#: F:\www\projekte\WP-Theme-Piratenkleider/tag.php:24
 msgid "&Uuml;bersicht &uuml;ber die Schlagworte"
 msgstr ""
 
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:20
+#: F:\www\projekte\WP-Theme-Piratenkleider/theme-options.php:20
+#: F:\www\projekte\WP-Theme-Piratenkleider/theme-options.php:21
+#: F:\www\projekte\WP-Theme-Piratenkleider/theme-options.php:48
 msgid "Takelage einstellen"
 msgstr ""
 
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:21
+#: F:\www\projekte\WP-Theme-Piratenkleider/theme-options.php:24
+#: F:\www\projekte\WP-Theme-Piratenkleider/theme-options.php:25
 msgid "Segel setzen"
 msgstr ""
 
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:22
+#: F:\www\projekte\WP-Theme-Piratenkleider/theme-options.php:28
+#: F:\www\projekte\WP-Theme-Piratenkleider/theme-options.php:29
 msgid "Captn & Crew"
 msgstr ""
 
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:23
+#: F:\www\projekte\WP-Theme-Piratenkleider/theme-options.php:31
+#: F:\www\projekte\WP-Theme-Piratenkleider/theme-options.php:32
 msgid "Kl&uuml;verbaum"
 msgstr ""
 
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:69
-msgid " Takelage einstellen: Konfiguration "
-msgstr ""
-
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:72
+#: F:\www\projekte\WP-Theme-Piratenkleider/theme-options.php:51
 msgid "Optionen wurden gespeichert."
 msgstr ""
 
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:183
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:1142
-msgid "Defaultbilder f&uuml;r Seiten"
+#: F:\www\projekte\WP-Theme-Piratenkleider/theme-options.php:188
+msgid "Optionen nicht definiert"
 msgstr ""
 
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:187
-msgid "Bilder f&uuml;r Seiten erzwingen, die von sich aus kein Artikelbild definiert haben. Wenn kein Artikelbild vorhanden ist, wird ein Defaultbild gezeigt."
-msgstr ""
-
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:191
-msgid "Platzhalterbilder"
-msgstr ""
-
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:195
-msgid "Platzhalterbilder bei Indexseiten zu Kategorien, Tags, Suche und Archiv anzeigen"
-msgstr ""
-
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:201
-msgid "Kopfteil"
-msgstr ""
-
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:204
-msgid "Linkmenu"
-msgstr ""
-
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:208
-msgid "Linkmenu oben rechts, zwischen Social Media Icons und Suchmaske anzeigen"
-msgstr ""
-
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:212
-msgid "Suchmaske"
-msgstr ""
-
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:216
-msgid "Eingabemaske f&uuml;r Suche oben rechts anzeigen"
-msgstr ""
-
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:224
-msgid "Sticker anzeigen"
-msgstr ""
-
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:228
-msgid "Sticker 1"
-msgstr ""
-
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:232
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:251
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:270
-msgid "Content (Inline-HTML)"
-msgstr ""
-
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:239
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:258
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:277
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:361
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:403
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:444
-msgid "URL"
-msgstr ""
-
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:247
-msgid "Sticker 2"
-msgstr ""
-
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:266
-msgid "Sticker 3"
-msgstr ""
-
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:291
-msgid "Sidebar"
-msgstr ""
-
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:294
-msgid "Seitenmenu"
-msgstr ""
-
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:298
-msgid " Bei der Anzeige von Seiten rechts in der Sidebar nur das aktuelle Submenu zeigen. Bei Deaktivierung wird das vollst&auml;ndige Men&uuml; gezeigt. Dies ist f&uuml;r Webauftritte mit vielen Seiten nicht geeignet."
-msgstr ""
-
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:301
-msgid "Alternative Option:"
-msgstr ""
-
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:304
-msgid "Seitenmen&uuml; in der Sidebar anzeigen."
-msgstr ""
-
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:314
-msgid "Eingabemaske anzeigen"
-msgstr ""
-
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:319
-msgid "Plakatslider aktivieren"
-msgstr ""
-
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:323
-msgid "Slider der Werbeplakate (rechte Sidebar-Spalte) werden angezeigt.<br>Die Auswahl der Plakatbilder kann unter den Defaultbildern angepasst werden."
-msgstr ""
-
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:328
-msgid "Teaserlink 1"
-msgstr ""
-
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:333
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:375
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:416
-msgid "Symbol"
-msgstr ""
-
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:347
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:389
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:430
-msgid "Titel"
-msgstr ""
-
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:354
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:396
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:437
-msgid "Untertitel"
-msgstr ""
-
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:370
-msgid "Teaserlink 2"
-msgstr ""
-
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:411
-msgid "Teaserlink 3"
-msgstr ""
-
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:464
-msgid "Beitr&auml;ge &uuml;ber ganze Breite"
-msgstr ""
-
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:479
-msgid "Zahl der Beitr&auml;ge, die &uuml;ber die gesamte Inhaltsbreite gehen."
-msgstr ""
-
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:483
-msgid "Beitr&auml;ge &uuml;ber halbe Breite"
-msgstr ""
-
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:496
-msgid "Zahl der Beitr&auml;ge, die in Spalten mit je zwei Beitr&auml;gen nebeneinander, angezeigt werden."
-msgstr ""
-
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:505
-msgid "Social Media"
-msgstr ""
-
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:508
-msgid "Social Media Buttons"
-msgstr ""
-
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:512
-msgid "Buttons anzeigen. <br>Hinweis: Es werden nur die Buttons gezeigt, bei denen in den folgenden Eingabefeldern Adressen definiert sind."
-msgstr ""
-
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:522
-msgid "URL inkl. http:// zur Facebook Seite<br>Zum Beispiel: <code>http://www.facebook.com/PiratenparteiDeutschland</code>"
-msgstr ""
-
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:535
-msgid "URL inkl. http:// zur Twitter Seite<br>Zum Beispiel: <code>https://twitter.com/#!/piratenpartei</code>"
-msgstr ""
-
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:545
-msgid "URL inkl. http:// zur YouTube Seite<br>Zum Beispiel: <code>http://www.youtube.com/user/piratenpartei</code>"
-msgstr ""
-
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:555
-msgid "URL inkl. http:// zur G+ Seite <br>Zum Beispiel: <code>https://plus.google.com/u/0/107862983960150496076/posts</code>"
-msgstr ""
-
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:565
-msgid "URL inkl. http:// zur Diaspora Seite <br>Zum Beispiel: <code>https://joindiaspora.com/u/piratenpartei</code>"
-msgstr ""
-
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:575
-msgid "URL inkl. http:// zur Identica Seite <br>Zum Beispiel:  <code>http://identi.ca/piratenpartei</code>   "
-msgstr ""
-
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:584
-msgid "URL inkl. http:// zur Flickr Seite"
-msgstr ""
-
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:592
-msgid "URL inkl. http:// zur Delicious Seite"
-msgstr ""
-
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:600
-msgid "Twitter Feed"
-msgstr ""
-
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:605
-msgid "Twitter Benutzername"
-msgstr ""
-
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:608
-msgid "Der reine Twitter Benutzername"
-msgstr ""
-
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:611
-msgid "Maximale Anzahl der Twittermeldungen"
-msgstr ""
-
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:623
-msgid "Wieviele Twittermeldungen sollen maximal gezeigt werden"
-msgstr ""
-
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:632
-msgid "Slider"
-msgstr ""
-
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:635
-msgid "Slider aktivieren"
-msgstr ""
-
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:639
-msgid "Slider im Teaserbereich auf der Startseite aktivieren."
-msgstr ""
-
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:640
-msgid "Die Auswahl der Plakatbilder kann unter den Defaultbildern angepasst werden."
-msgstr ""
-
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:645
-msgid "Kategorie"
-msgstr ""
-
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:666
-msgid "Aus welcher Artikelkategorie sollen die Slider genommen werden"
-msgstr ""
-
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:670
-msgid "Maximale Anzahl der Artikel"
-msgstr ""
-
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:683
-msgid "Wieviele Slides sollen maximal gezeigt werden"
-msgstr ""
-
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:686
-msgid "Animationstyp"
-msgstr ""
-
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:697
-msgid "Wie soll der Slidewechsel optisch aussehen"
-msgstr ""
-
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:700
-msgid "Richtung"
-msgstr ""
-
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:710
-msgid "Von wo sollen Bilder erscheinen"
-msgstr ""
-
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:713
-msgid "Dauer Bildwechsel"
-msgstr ""
-
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:716
-msgid "Geschwindigkeit des Bildwechsels in Milisekunden"
-msgstr ""
-
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:720
-msgid "Animationsdauer"
-msgstr ""
-
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:723
-msgid "Geschwindigkeit der Animation/Fading beim Bild&uuml;bergang in Milisekunden"
-msgstr ""
-
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:728
-msgid "Bezeichnender Titel f&uuml;r Teaser"
-msgstr ""
-
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:731
-msgid "Dieser Text wird oberhalb der Titel angezeigt"
-msgstr ""
-
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:734
-msgid "Maximale Textl&auml;nge des Titels im Teaser"
-msgstr ""
-
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:737
-msgid "Wie lang darf der Titel insgesamt sein, bevor er gek&uuml;rzt wird"
-msgstr ""
-
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:740
-msgid "Wortzahl des Titels im Teaser"
-msgstr ""
-
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:743
-msgid "Zahl der Worte im Teaser; Die maximale Textl&auml;nge begrenzt diesen Wert jedoch."
-msgstr ""
-
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:753
-msgid "Spezialseiten"
-msgstr ""
-
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:762
-msgid "URL, inkl. http://, zur Seite auf der man sich in Newsletter eingetragen werden kann."
-msgstr ""
-
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:763
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:1848
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:1863
-msgid "Vorgabe: "
-msgstr ""
-
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:774
-msgid "Meta-Angaben"
-msgstr ""
-
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:778
-msgid "Author"
-msgstr ""
-
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:781
-msgid "Optionale Autor-Angabe in dem Meta-Tag jeder Seite"
-msgstr ""
-
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:784
-msgid "Description"
-msgstr ""
-
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:787
-msgid "Optionale Beschreibungstext in dem Meta-Tag jeder Seite (f&uuml;r alle gleich). Sollte nicht mehr als 140 Zeichen lang sein, wenn gesetzt."
-msgstr ""
-
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:790
-msgid "Keywords"
-msgstr ""
-
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:793
-msgid "Optionale Schl&uuml;sselworte in dem Meta-Tag jeder Seite (f&uuml;r alle gleich). Durch Komma getrennt. Schl&uuml;sselworte sollten tats&auml;chlich vorkommen."
-msgstr ""
-
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:798
-msgid "Hinweis: Diese Angaben wirken auf alle Seiten und Artikel der Site. Dies ist jedoch nicht immer sinnvoll (insbes. bei Keywords und Description). "
-msgstr ""
-
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:799
-msgid "Sollten zudem SEO-Plugins, wie bspw. wpSEO oder andere im Einsatz sein, sollten diese Angaben ebenfalls unausgef&uuml;llt bleiben.  "
-msgstr ""
-
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:805
-msgid "Sicherheit &amp; Anonymit&auml;t"
-msgstr ""
-
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:808
-msgid "Autoren anzeigen"
-msgstr ""
-
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:811
-msgid "Bei der Anzeige von Artikeln den Autoren anzeigen und verlinken."
-msgstr ""
-
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:814
-msgid "Kommentarbenutzer anonymisieren"
-msgstr ""
-
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:817
-msgid "IP-Adresse und der User-Agent-String geleert, die Eingabe von E-Mail-Adressen wird verhindert"
-msgstr ""
-
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:819
-msgid "<b>Achtung:</b> Diese Option deaktiviert auch die Avatar-Anzeige und setzt die Kommentareinstellung unter Einstellungen-Diskussion so, dass Benutzer keinen Namen und E-Mail-Adressen mehr eingeben m&uuml;ssen."
-msgstr ""
-
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:820
-msgid "In diesem Fall angebotene Kommentarfelder:"
-msgstr ""
-
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:832
-msgid "Angebote Kommentarfelder zur freiwilligen Eingabe"
-msgstr ""
-
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:839
-msgid "Bei Kommentaren werden Avatar-Bilder mit Hilfe von Gravatar oder anderen Diensten abgerufen. Dies erm&ouml;glicht allerdings theoretisch ein Tracking durch diese Dienste"
-msgstr ""
-
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:846
-msgid "Sonstiges"
-msgstr ""
-
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:849
-msgid "Antwortlinks auf Kommentare"
-msgstr ""
-
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:852
-msgid "Bei der Anzeige von Kommentaren, wird unter diesen ein eigener Kommentarlink eingebaut, der das Antworten auf den Kommentar erlaubt. Dies kann zu einer Nutzung des Kommentarbereiches wie bei einem Forum f&uuml;hren, bei dem es zuletzt aber nicht mehr um den eigentlichen Beitrag geht."
-msgstr ""
-
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:862
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:1342
+#: F:\www\projekte\WP-Theme-Piratenkleider/theme-options.php:198
+#: F:\www\projekte\WP-Theme-Piratenkleider/theme-options.php:564
 msgid "Optionen speichern"
 msgstr ""
 
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:1086
+#: F:\www\projekte\WP-Theme-Piratenkleider/theme-options.php:310
 msgid " Segel setzen: Defaultbilder "
 msgstr ""
 
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:1089
+#: F:\www\projekte\WP-Theme-Piratenkleider/theme-options.php:313
 msgid "Defaultbilder wurden gespeichert."
 msgstr ""
 
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:1105
-msgid "Defaultbilder f&uuml;r Slider"
-msgstr ""
-
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:1129
+#: F:\www\projekte\WP-Theme-Piratenkleider/theme-options.php:358
 msgid "Alternatives Sliderbild als URL"
 msgstr ""
 
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:1132
-msgid "URL inkl. http:// zum Bild. Dieses kann auch vorher &uuml;ber den Mediendialog hochgeladen worden sein."
+#: F:\www\projekte\WP-Theme-Piratenkleider/theme-options.php:361
+msgid ""
+"URL inkl. http:// zum Bild. Dieses kann auch vorher &uuml;ber den "
+"Mediendialog hochgeladen worden sein."
 msgstr ""
 
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:1134
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:1171
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:1233
+#: F:\www\projekte\WP-Theme-Piratenkleider/theme-options.php:363
+#: F:\www\projekte\WP-Theme-Piratenkleider/theme-options.php:394
+#: F:\www\projekte\WP-Theme-Piratenkleider/theme-options.php:453
 msgid "Die Bilder sollten folgende Dimension haben: "
 msgstr ""
 
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:1165
+#: F:\www\projekte\WP-Theme-Piratenkleider/theme-options.php:388
 msgid "Alternatives Seitenbild als URL"
 msgstr ""
 
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:1168
-msgid "URL inkl. http:// zum Bild. Dieses kann auch vorher &uuml;ber den Mediendialog hochgeladen worden sein. "
+#: F:\www\projekte\WP-Theme-Piratenkleider/theme-options.php:391
+msgid ""
+"URL inkl. http:// zum Bild. Dieses kann auch vorher &uuml;ber den "
+"Mediendialog hochgeladen worden sein. "
 msgstr ""
 
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:1179
-msgid "Defaultplakate f&uuml;r Sidebar"
+#: F:\www\projekte\WP-Theme-Piratenkleider/theme-options.php:425
+msgid ""
+" Diese Bilder werden in der Sidebar rechts gezeigt, sofern dieses &uuml;ber "
+"die Optionen (vgl. Slider) auch eingeschaltet ist."
 msgstr ""
 
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:1205
-msgid " Diese Bilder werden in der Sidebar rechts gezeigt, sofern dieses &uuml;ber die Optionen (vgl. Slider) auch eingeschaltet ist."
-msgstr ""
-
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:1208
+#: F:\www\projekte\WP-Theme-Piratenkleider/theme-options.php:428
 msgid "Optionaler Ersatztitel"
 msgstr ""
 
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:1211
+#: F:\www\projekte\WP-Theme-Piratenkleider/theme-options.php:431
 msgid "Dieser Titel wird als Alternativ-Text verwendet. "
 msgstr ""
 
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:1212
-msgid "Solange keine Verlinkung erfolgt, ist diese Angabe optional, da die Plakatbilder dann nur \"Schmuckbilder\" sind und keinen auf die Seite bezogenen Inhalt mitliefern."
+#: F:\www\projekte\WP-Theme-Piratenkleider/theme-options.php:432
+msgid ""
+"Solange keine Verlinkung erfolgt, ist diese Angabe optional, da die "
+"Plakatbilder dann nur \"Schmuckbilder\" sind und keinen auf die Seite "
+"bezogenen Inhalt mitliefern."
 msgstr ""
 
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:1216
+#: F:\www\projekte\WP-Theme-Piratenkleider/theme-options.php:436
 msgid "Optionale URL"
 msgstr ""
 
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:1219
-msgid "Optionale Webadresse zur Verlinkung der Plakate mit einer Informationsseite"
+#: F:\www\projekte\WP-Theme-Piratenkleider/theme-options.php:439
+msgid ""
+"Optionale Webadresse zur Verlinkung der Plakate mit einer Informationsseite"
 msgstr ""
 
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:1225
-msgid "Eigene Plaktbilder:"
+#: F:\www\projekte\WP-Theme-Piratenkleider/theme-options.php:445
+msgid "Eigene Plakatbilder:"
 msgstr ""
 
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:1228
+#: F:\www\projekte\WP-Theme-Piratenkleider/theme-options.php:448
 msgid "Adressen alternativer Plakatbilder"
 msgstr ""
 
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:1231
-msgid "Angabe der URLs inkl. http:// zum Bild. Wenn es mehrere sind, werden die einzelnen Adressen durch Zeilenumbruch getrennt. "
+#: F:\www\projekte\WP-Theme-Piratenkleider/theme-options.php:451
+msgid ""
+"Angabe der URLs inkl. http:// zum Bild. Wenn es mehrere sind, werden die "
+"einzelnen Adressen durch Zeilenumbruch getrennt. "
 msgstr ""
 
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:1236
-msgid "Sollen die Bilder zus&auml;tzlich mit einem eigenen Titel und einer Webadresse versehen werden werden diese Angabe durch ein \"|\" zeichen in folgender Reihenfolge getrennt: <code>Bild URL|Titel|URL Webpage</code>"
+#: F:\www\projekte\WP-Theme-Piratenkleider/theme-options.php:456
+msgid ""
+"Sollen die Bilder zus&auml;tzlich mit einem eigenen Titel und einer "
+"Webadresse versehen werden werden diese Angabe durch ein \"|\" zeichen in "
+"folgender Reihenfolge getrennt: <code>Bild URL|Titel|URL Webpage</code>"
 msgstr ""
 
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:1238
+#: F:\www\projekte\WP-Theme-Piratenkleider/theme-options.php:458
 msgid "Beispiel: "
 msgstr ""
 
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:1241
-msgid "Wenn oben Defaultplakate angeklickt sind, erscheinen diese Bilder zus&auml;tzlich. Diese Bilder k&ouml;nnen auch vorher &uuml;ber den Mediendialog hochgeladen worden sein."
+#: F:\www\projekte\WP-Theme-Piratenkleider/theme-options.php:461
+msgid ""
+"Wenn oben Defaultplakate angeklickt sind, erscheinen diese Bilder zus&auml;"
+"tzlich. Diese Bilder k&ouml;nnen auch vorher &uuml;ber den Mediendialog "
+"hochgeladen worden sein."
 msgstr ""
 
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:1249
+#: F:\www\projekte\WP-Theme-Piratenkleider/theme-options.php:469
 msgid "Symbolbild f&uuml;r 404 Seite"
 msgstr ""
 
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:1253
+#: F:\www\projekte\WP-Theme-Piratenkleider/theme-options.php:473
 msgid "URL f&uuml;r ein eigenes 404-Seitenbild."
 msgstr ""
 
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:1255
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:1268
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:1281
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:1294
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:1307
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:1320
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:1333
+#: F:\www\projekte\WP-Theme-Piratenkleider/theme-options.php:475
+#: F:\www\projekte\WP-Theme-Piratenkleider/theme-options.php:488
+#: F:\www\projekte\WP-Theme-Piratenkleider/theme-options.php:501
+#: F:\www\projekte\WP-Theme-Piratenkleider/theme-options.php:514
+#: F:\www\projekte\WP-Theme-Piratenkleider/theme-options.php:527
+#: F:\www\projekte\WP-Theme-Piratenkleider/theme-options.php:540
+#: F:\www\projekte\WP-Theme-Piratenkleider/theme-options.php:553
 msgid "Default:"
 msgstr ""
 
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:1262
+#: F:\www\projekte\WP-Theme-Piratenkleider/theme-options.php:482
 msgid "Symbolbild f&uuml;r Kategorie Seite"
 msgstr ""
 
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:1266
+#: F:\www\projekte\WP-Theme-Piratenkleider/theme-options.php:486
 msgid "URL f&uuml;r ein eigenes Kategorien-Seitenbild."
 msgstr ""
 
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:1275
+#: F:\www\projekte\WP-Theme-Piratenkleider/theme-options.php:495
 msgid "Symbolbild f&uuml;r Tag Seite"
 msgstr ""
 
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:1279
+#: F:\www\projekte\WP-Theme-Piratenkleider/theme-options.php:499
 msgid "URL f&uuml;r ein eigenes Tag-Seitenbild."
 msgstr ""
 
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:1288
+#: F:\www\projekte\WP-Theme-Piratenkleider/theme-options.php:508
 msgid "Symbolbild f&uuml;r Autoren Seite"
 msgstr ""
 
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:1292
+#: F:\www\projekte\WP-Theme-Piratenkleider/theme-options.php:512
 msgid "URL f&uuml;r ein eigenes Autoren-Seitenbild."
 msgstr ""
 
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:1301
+#: F:\www\projekte\WP-Theme-Piratenkleider/theme-options.php:521
 msgid "Symbolbild f&uuml;r Archiv Seite"
 msgstr ""
 
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:1305
+#: F:\www\projekte\WP-Theme-Piratenkleider/theme-options.php:525
 msgid "URL f&uuml;r ein eigenes Archiv-Seitenbild."
 msgstr ""
 
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:1314
+#: F:\www\projekte\WP-Theme-Piratenkleider/theme-options.php:534
 msgid "Symbolbild f&uuml;r Suchergebnis-Seite"
 msgstr ""
 
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:1318
+#: F:\www\projekte\WP-Theme-Piratenkleider/theme-options.php:538
 msgid "URL f&uuml;r ein eigenes Suchergebnis-Seitenbild."
 msgstr ""
 
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:1327
-msgid "Symbolbild f&uuml;r Tenmplate-Seiten"
+#: F:\www\projekte\WP-Theme-Piratenkleider/theme-options.php:547
+msgid "Symbolbild f&uuml;r Template-Seiten"
 msgstr ""
 
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:1331
+#: F:\www\projekte\WP-Theme-Piratenkleider/theme-options.php:551
 msgid "URL f&uuml;r ein Template-Seitenbild."
 msgstr ""
 
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:1474
+#: F:\www\projekte\WP-Theme-Piratenkleider/theme-options.php:644
 msgid " Captn & Crew: Kontaktinformationen setzen "
 msgstr ""
 
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:1477
+#: F:\www\projekte\WP-Theme-Piratenkleider/theme-options.php:647
 msgid "Kontaktinformationen wurden gespeichert."
 msgstr ""
 
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:1487
+#: F:\www\projekte\WP-Theme-Piratenkleider/theme-options.php:660
 msgid "Impressumsangaben"
 msgstr ""
 
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:1490
+#: F:\www\projekte\WP-Theme-Piratenkleider/theme-options.php:663
 msgid "Verantwortliche/r"
 msgstr ""
 
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:1494
-msgid "Verantwortliche/r gem&auml;&szlig; &sect; 5 TMG. <br>Zum Beispiel: <code>Martin Mustermann</code>"
+#: F:\www\projekte\WP-Theme-Piratenkleider/theme-options.php:667
+msgid ""
+"Verantwortliche/r gem&auml;&szlig; &sect; 5 TMG. <br>Zum Beispiel: "
+"<code>Martin Mustermann</code>"
 msgstr ""
 
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:1499
+#: F:\www\projekte\WP-Theme-Piratenkleider/theme-options.php:672
 msgid "Textbezeichnung Dienstanbieter"
 msgstr ""
 
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:1503
+#: F:\www\projekte\WP-Theme-Piratenkleider/theme-options.php:676
 msgid "Textbezeichnung des Dienstanbieter des Webauftritts."
 msgstr ""
 
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:1504
-msgid " Beispiel: <code>Kreisverband Musterstadt der Piratenpartei Deutschland vertreten durch den Vorstand Martin Mustermann, Doris Fischer und Florian Meister.</code>"
+#: F:\www\projekte\WP-Theme-Piratenkleider/theme-options.php:677
+msgid ""
+"Beispiel: <code>Kreisverband Musterstadt der Piratenpartei Deutschland "
+"vertreten durch den Vorstand Martin Mustermann, Doris Fischer und Florian "
+"Meister.</code>"
 msgstr ""
 
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:1512
+#: F:\www\projekte\WP-Theme-Piratenkleider/theme-options.php:685
 msgid "Offizielle Postanschrift"
 msgstr ""
 
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:1516
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:1562
+#: F:\www\projekte\WP-Theme-Piratenkleider/theme-options.php:689
+#: F:\www\projekte\WP-Theme-Piratenkleider/theme-options.php:735
 msgid "Name oder Titel"
 msgstr ""
 
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:1520
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:1566
-msgid "Anschrift: Titel (1. Zeile). <br>Zum Beispiel: <code>Piratenpartei</code>"
+#: F:\www\projekte\WP-Theme-Piratenkleider/theme-options.php:693
+#: F:\www\projekte\WP-Theme-Piratenkleider/theme-options.php:739
+msgid ""
+"Anschrift: Titel (1. Zeile). <br>Zum Beispiel: <code>Piratenpartei</code>"
 msgstr ""
 
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:1525
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:1571
+#: F:\www\projekte\WP-Theme-Piratenkleider/theme-options.php:698
+#: F:\www\projekte\WP-Theme-Piratenkleider/theme-options.php:744
 msgid "zu H&auml;nden"
 msgstr ""
 
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:1529
-msgid "Anschrift: Optionale Personenangabe (\"zu H&auml;nden\") <br>Zum Beispiel: <code>Martin Mustermann</code>"
+#: F:\www\projekte\WP-Theme-Piratenkleider/theme-options.php:702
+msgid ""
+"Anschrift: Optionale Personenangabe (\"zu H&auml;nden\") <br>Zum Beispiel: "
+"<code>Martin Mustermann</code>"
 msgstr ""
 
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:1534
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:1580
+#: F:\www\projekte\WP-Theme-Piratenkleider/theme-options.php:707
+#: F:\www\projekte\WP-Theme-Piratenkleider/theme-options.php:753
 msgid "Strasse oder Postfach"
 msgstr ""
 
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:1538
-msgid "Anschrift: Strassenname und Nummer oder Postfachangabe oder freilassen <br>Zum Beispiel: <code>Unbesonnenheitsweg 123b</code>"
+#: F:\www\projekte\WP-Theme-Piratenkleider/theme-options.php:711
+msgid ""
+"Anschrift: Strassenname und Nummer oder Postfachangabe oder freilassen "
+"<br>Zum Beispiel: <code>Unbesonnenheitsweg 123b</code>"
 msgstr ""
 
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:1543
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:1589
+#: F:\www\projekte\WP-Theme-Piratenkleider/theme-options.php:716
+#: F:\www\projekte\WP-Theme-Piratenkleider/theme-options.php:762
 msgid "PLZ und Stadt"
 msgstr ""
 
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:1547
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:1593
-msgid "Anschrift: Postleitzahl gefolgt von Stadt<br>Zum Beispiel: <code>12345  Ankh-Morpork</code>"
+#: F:\www\projekte\WP-Theme-Piratenkleider/theme-options.php:720
+#: F:\www\projekte\WP-Theme-Piratenkleider/theme-options.php:766
+msgid ""
+"Anschrift: Postleitzahl gefolgt von Stadt<br>Zum Beispiel: <code>12345  Ankh-"
+"Morpork</code>"
 msgstr ""
 
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:1557
+#: F:\www\projekte\WP-Theme-Piratenkleider/theme-options.php:730
 msgid "Ladungsf&auml;hige Anschrift"
 msgstr ""
 
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:1560
-msgid "Optionale Angaben f&uuml;r Rechtssachen. Werden diese Angaben frei gelassen, werden die Daten der Postanschrift verwendet."
+#: F:\www\projekte\WP-Theme-Piratenkleider/theme-options.php:733
+msgid ""
+"Optionale Angaben f&uuml;r Rechtssachen. Werden diese Angaben frei gelassen, "
+"werden die Daten der Postanschrift verwendet."
 msgstr ""
 
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:1575
-msgid " Anschrift: Optionale Personenangabe (\"zu H&auml;nden\"). Sollte in der Regel dieselbe Person sein, die oben als verantwortliche Person f&uuml;r das Impressum definiert ist.<br> Zum Beispiel: <code>Martin Mustermann</code>"
+#: F:\www\projekte\WP-Theme-Piratenkleider/theme-options.php:748
+msgid ""
+" Anschrift: Optionale Personenangabe (\"zu H&auml;nden\"). Sollte in der "
+"Regel dieselbe Person sein, die oben als verantwortliche Person f&uuml;r das "
+"Impressum definiert ist.<br> Zum Beispiel: <code>Martin Mustermann</code>"
 msgstr ""
 
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:1584
-msgid " Anschrift: Strassenname und Nummer oder Postfachangabe oder freilassen <br>Zum Beispiel: <code>Unbesonnenheitsweg 123b</code>"
+#: F:\www\projekte\WP-Theme-Piratenkleider/theme-options.php:757
+msgid ""
+" Anschrift: Strassenname und Nummer oder Postfachangabe oder freilassen "
+"<br>Zum Beispiel: <code>Unbesonnenheitsweg 123b</code>"
 msgstr ""
 
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:1601
+#: F:\www\projekte\WP-Theme-Piratenkleider/theme-options.php:774
 msgid "Offizielle E-Mailadresse"
 msgstr ""
 
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:1605
+#: F:\www\projekte\WP-Theme-Piratenkleider/theme-options.php:778
 msgid "Feste Mailadresse f&uuml;r offizielle Kontakte.<br>Zum Beispiel: "
 msgstr ""
 
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:1611
+#: F:\www\projekte\WP-Theme-Piratenkleider/theme-options.php:784
 msgid "Datenschutzbeauftragter"
 msgstr ""
 
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:1614
-msgid "Optionale Angaben zu einem Datenschutzbeauftragten. Wenn dieser nicht angegeben wird, wird die E-Mail-Adresse des Bundesdatenschutzbeauftragten angegeben."
+#: F:\www\projekte\WP-Theme-Piratenkleider/theme-options.php:787
+msgid ""
+"Optionale Angaben zu einem Datenschutzbeauftragten. Wenn dieser nicht "
+"angegeben wird, wird die E-Mail-Adresse des Bundesdatenschutzbeauftragten "
+"angegeben."
 msgstr ""
 
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:1621
+#: F:\www\projekte\WP-Theme-Piratenkleider/theme-options.php:794
 msgid "Name des DSB<br>Zum Beispiel: <code>Martin Mustermann</code>"
 msgstr ""
 
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:1626
+#: F:\www\projekte\WP-Theme-Piratenkleider/theme-options.php:799
 msgid "E-Mailadresse"
 msgstr ""
 
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:1630
-msgid "Feste Mailadresse f&uuml;r offizielle Kontakte.<br>Zum Beispiel:  <code>bundesbeauftragter@piraten-dsb.de</code>"
+#: F:\www\projekte\WP-Theme-Piratenkleider/theme-options.php:803
+msgid ""
+"Feste Mailadresse f&uuml;r offizielle Kontakte.<br>Zum Beispiel:  "
+"<code>bundesbeauftragter@piraten-dsb.de</code>"
 msgstr ""
 
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:1640
+#: F:\www\projekte\WP-Theme-Piratenkleider/theme-options.php:813
 msgid "Spendenformulare"
 msgstr ""
 
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:1642
-msgid "Optionale Angaben f&uuml;r Spendenformulare, die mit dem Seiten-Template \"Spenden\" erstellt werden."
+#: F:\www\projekte\WP-Theme-Piratenkleider/theme-options.php:815
+msgid ""
+"Optionale Angaben f&uuml;r Spendenformulare, die mit dem Seiten-Template "
+"\"Spenden\" erstellt werden."
 msgstr ""
 
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:1644
-msgid "<strong>Achtung:</strong> Dies ersetzt nicht das richtige Eingabeformular. Das Formular wird z.B. mit dem Plugin <em>Contact Form 7</em> erstellt und dann als Makro in den Textbereich der Seite hinzugef&uuml;gt."
+#: F:\www\projekte\WP-Theme-Piratenkleider/theme-options.php:817
+msgid ""
+"<strong>Achtung:</strong> Dies ersetzt nicht das richtige Eingabeformular. "
+"Das Formular wird z.B. mit dem Plugin <em>Contact Form 7</em> erstellt und "
+"dann als Makro in den Textbereich der Seite hinzugef&uuml;gt."
 msgstr ""
 
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:1646
-msgid "Die folgenden Daten werden nur dazu verwendet, die Tabelle f&uuml;r die  feststehenden Informationen aufzubauen."
+#: F:\www\projekte\WP-Theme-Piratenkleider/theme-options.php:819
+msgid ""
+"Die folgenden Daten werden nur dazu verwendet, die Tabelle f&uuml;r die  "
+"feststehenden Informationen aufzubauen."
 msgstr ""
 
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:1655
-msgid " Name des Empf&auml;ngers/Konto der Spenden f&uuml;r &Uuml;berweisungen. "
+#: F:\www\projekte\WP-Theme-Piratenkleider/theme-options.php:828
+msgid ""
+"Name des Empf&auml;ngers/Konto der Spenden f&uuml;r &Uuml;berweisungen. "
 msgstr ""
 
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:1663
-msgid " Kontonummer des Empf&auml;ngers"
+#: F:\www\projekte\WP-Theme-Piratenkleider/theme-options.php:836
+msgid "Kontonummer des Empf&auml;ngers"
 msgstr ""
 
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:1668
+#: F:\www\projekte\WP-Theme-Piratenkleider/theme-options.php:841
 msgid "BLZ"
 msgstr ""
 
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:1672
-msgid " Die Bankleitzahl."
+#: F:\www\projekte\WP-Theme-Piratenkleider/theme-options.php:845
+msgid "Die Bankleitzahl."
 msgstr ""
 
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:1681
+#: F:\www\projekte\WP-Theme-Piratenkleider/theme-options.php:854
 msgid "Ausgeschriebener Name der Bank"
 msgstr ""
 
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:1689
+#: F:\www\projekte\WP-Theme-Piratenkleider/theme-options.php:862
 msgid "Internationale Bank Account Nummer"
 msgstr ""
 
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:1697
+#: F:\www\projekte\WP-Theme-Piratenkleider/theme-options.php:870
 msgid "Business Identifier Code"
 msgstr ""
 
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:1707
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:1961
+#: F:\www\projekte\WP-Theme-Piratenkleider/theme-options.php:880
+#: F:\www\projekte\WP-Theme-Piratenkleider/theme-options.php:1096
 msgid "Speichern"
 msgstr ""
 
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:1802
+#: F:\www\projekte\WP-Theme-Piratenkleider/theme-options.php:925
 msgid " Kl&uuml;verbaum: Erweiterte Designeinstellungen "
 msgstr ""
 
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:1805
+#: F:\www\projekte\WP-Theme-Piratenkleider/theme-options.php:928
 msgid "Designeinstellungen wurden gespeichert."
 msgstr ""
 
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:1808
-msgid "<b>Achtung:</b> Diese Einstellungen sollten nur in Ausnahmef&auml;llen ge&auml;ndert werden. Bei einer falschen Nutzung k&ouml;nnen Eingaben die Gestaltung des Webauftritts sch&auml;digen."
+#: F:\www\projekte\WP-Theme-Piratenkleider/theme-options.php:946
+msgid ""
+"<b>Achtung:</b><br> Diese Einstellungen sollten nur in Ausnahmef&auml;llen "
+"ge&auml;ndert werden. <br>Bei einer falschen Nutzung k&ouml;nnen Eingaben "
+"die Gestaltung des Webauftritts sch&auml;digen."
 msgstr ""
 
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:1823
+#: F:\www\projekte\WP-Theme-Piratenkleider/theme-options.php:949
 msgid "L&auml;nderfarbe aktivieren"
 msgstr ""
 
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:1828
+#: F:\www\projekte\WP-Theme-Piratenkleider/theme-options.php:954
 msgid "Deutschland (Orange)"
 msgstr ""
 
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:1829
+#: F:\www\projekte\WP-Theme-Piratenkleider/theme-options.php:955
+msgid "&Ouml;sterreich (Violett)"
+msgstr ""
+
+#: F:\www\projekte\WP-Theme-Piratenkleider/theme-options.php:956
 msgid "Luxemburg (Violett)"
 msgstr ""
 
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:1830
+#: F:\www\projekte\WP-Theme-Piratenkleider/theme-options.php:957
 msgid "T&uuml;rkei (Cyan)"
 msgstr ""
 
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:1835
+#: F:\www\projekte\WP-Theme-Piratenkleider/theme-options.php:961
 msgid "Auswahl, welche l&auml;nderbezogene Farbvariante aktiviert werden soll."
 msgstr ""
 
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:1841
-msgid "Höhe des Kopfbereiches ( .header )"
+#: F:\www\projekte\WP-Theme-Piratenkleider/theme-options.php:967
+msgid "Small Screen Device Sichtbarkeit"
 msgstr ""
 
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:1849
-msgid "Wenn dieser Wert sich von der Defaulteinstellung aus der CSS Datei piratenkleider.css (Zeile 1926) unterscheidet, wird er &uuml;ber ein Inline-CSS nachträglich im Kopfteil des HTML-Documents ge&auml;ndert."
+#: F:\www\projekte\WP-Theme-Piratenkleider/theme-options.php:971
+msgid ""
+"F&uuml;r kleine Bildschirmaufl&ouml;sungen auch optionale Teile (Sticker, "
+"Slider) anzeigen."
 msgstr ""
 
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:1851
-msgid "<b>Achtung:</b> Die Verkleinerung der Höhe des Kopfteils ist nicht ungef&auml;hrlich. Zu beachten ist, dass der Kopfteil auch bei einer Vergr&ouml;&szlig;erung des Textes auf 200% noch gen&uuml;gend Platz haben muss!"
+#: F:\www\projekte\WP-Theme-Piratenkleider/theme-options.php:976
+msgid "H&ouml;he des Kopfbereiches ( .header )"
 msgstr ""
 
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:1855
+#: F:\www\projekte\WP-Theme-Piratenkleider/theme-options.php:983
+#: F:\www\projekte\WP-Theme-Piratenkleider/theme-options.php:998
+msgid "Vorgabe: "
+msgstr ""
+
+#: F:\www\projekte\WP-Theme-Piratenkleider/theme-options.php:984
+msgid ""
+"Wenn dieser Wert sich von der Defaulteinstellung aus der CSS Datei "
+"piratenkleider.css (Zeile 1926) unterscheidet, wird er &uuml;ber ein Inline-"
+"CSS nachtr&auml;glich im Kopfteil des HTML-Documents ge&auml;ndert."
+msgstr ""
+
+#: F:\www\projekte\WP-Theme-Piratenkleider/theme-options.php:986
+msgid ""
+"<b>Achtung:</b> Die Verkleinerung der H&ouml;he des Kopfteils ist nicht "
+"ungef&auml;hrlich. Zu beachten ist, dass der Kopfteil auch bei einer "
+"Vergr&ouml;&szlig;erung des Textes auf 200% noch gen&uuml;gend Platz haben "
+"muss!"
+msgstr ""
+
+#: F:\www\projekte\WP-Theme-Piratenkleider/theme-options.php:990
 msgid "Abstand des Brandingbereiches (=Logo) nach oben ( .header .branding )"
 msgstr ""
 
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:1862
-msgid "Das Logo hat einen Abstand nach oben. Diese kann &uuml;ber diese Angabe reduziert werden. "
+#: F:\www\projekte\WP-Theme-Piratenkleider/theme-options.php:997
+msgid ""
+"Das Logo hat einen Abstand nach oben. Diese kann &uuml;ber diese Angabe "
+"reduziert werden. "
 msgstr ""
 
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:1866
-msgid "<b>Achtung:</b> Wenn Socialmedia-Icons und Linkmenu oben auch erscheinen, sollte dieser Abstand nicht zu klein sein, da diese Icons und  der Text der Links bei steigender Gr&ouml;&szlig;e nach Links zum Logo wandert und es so zu &Uuml;berlapplungen kommen k&ouml;nnte."
+#: F:\www\projekte\WP-Theme-Piratenkleider/theme-options.php:1001
+msgid ""
+"<b>Achtung:</b> Wenn Socialmedia-Icons und Linkmenu oben auch erscheinen, "
+"sollte dieser Abstand nicht zu klein sein, da diese Icons und  der Text der "
+"Links bei steigender Gr&ouml;&szlig;e nach Links zum Logo wandert und es so "
+"zu &Uuml;berlapplungen kommen k&ouml;nnte."
 msgstr ""
 
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:1872
+#: F:\www\projekte\WP-Theme-Piratenkleider/theme-options.php:1007
 msgid "Hintergrund-Einstellungen im Kopfteil ( .header )"
 msgstr ""
 
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:1876
+#: F:\www\projekte\WP-Theme-Piratenkleider/theme-options.php:1011
 msgid "background-color"
 msgstr ""
 
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:1883
+#: F:\www\projekte\WP-Theme-Piratenkleider/theme-options.php:1018
 msgid "Wenn gesetzt, &auml;ndert die Default-Hintergrundfarbe ab."
 msgstr ""
 
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:1888
+#: F:\www\projekte\WP-Theme-Piratenkleider/theme-options.php:1023
 msgid "background-image"
 msgstr ""
 
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:1895
+#: F:\www\projekte\WP-Theme-Piratenkleider/theme-options.php:1030
 msgid "Wenn gesetzt, &auml;ndert  das Hintergrundbild."
 msgstr ""
 
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:1901
+#: F:\www\projekte\WP-Theme-Piratenkleider/theme-options.php:1036
 msgid "background-position"
 msgstr ""
 
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:1908
+#: F:\www\projekte\WP-Theme-Piratenkleider/theme-options.php:1043
 msgid "Wenn gesetzt, &auml;ndert die Position des Hintergrundbildes."
 msgstr ""
 
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:1914
+#: F:\www\projekte\WP-Theme-Piratenkleider/theme-options.php:1049
 msgid "background-repeat"
 msgstr ""
 
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:1921
+#: F:\www\projekte\WP-Theme-Piratenkleider/theme-options.php:1056
 msgid "Wenn gesetzt, &auml;ndert die Repeat-Eigenschaft des Hintergrundbildes."
 msgstr ""
 
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:1933
+#: F:\www\projekte\WP-Theme-Piratenkleider/theme-options.php:1068
 msgid "Eigene CSS-Anweisungen"
 msgstr ""
 
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:1940
-msgid "Eigene CSS-Anweisungen, die Inline im Kopfteil der Dokumente erg&auml;nzt werden"
+#: F:\www\projekte\WP-Theme-Piratenkleider/theme-options.php:1075
+msgid ""
+"Eigene CSS-Anweisungen, die Inline im Kopfteil der Dokumente erg&auml;nzt "
+"werden"
 msgstr ""
 
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:1945
+#: F:\www\projekte\WP-Theme-Piratenkleider/theme-options.php:1080
 msgid "Eigene HTML-Anweisungen"
 msgstr ""
 
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:1952
-msgid "Eigene HTML-Anweisungen, die am Ende der Webseite, vor dem letzten &lt;/body&Gt;&lt;/html&gt; plaziert werden"
+#: F:\www\projekte\WP-Theme-Piratenkleider/theme-options.php:1087
+msgid ""
+"Eigene HTML-Anweisungen, die am Ende der Webseite, vor dem letzten &lt;/"
+"body&Gt;&lt;/html&gt; plaziert werden"
 msgstr ""
 
-#: E:\work\WWW\web\wordpress-tokenbus.de\theme-arbeit\Piratenkleider/theme-options.php:1953
-msgid "<b>Achtung:</b> Fehlerhafter HTML-, JavaScript oder CSS-Code an dieser Stelle kann zu einem Nicht-Funktionieren der gesamt Website f&uuml;hren!<br />Der hier eingegebene Code wird nicht gefiltert oder kontrolliert."
+#: F:\www\projekte\WP-Theme-Piratenkleider/theme-options.php:1088
+msgid ""
+"<b>Achtung:</b> Fehlerhafter HTML-, JavaScript oder CSS-Code an dieser "
+"Stelle kann zu einem Nicht-Funktionieren der gesamt Website f&uuml;hren!<br /"
+">Der hier eingegebene Code wird nicht gefiltert oder kontrolliert."
 msgstr ""
 
+#: F:\www\projekte\WP-Theme-Piratenkleider/events/ecp-single-template.php:52
+msgid "Edit"
+msgstr ""
+
+#: F:\www\projekte\WP-Theme-Piratenkleider/inc/constants.php:63
+msgid "Topthema"
+msgstr ""
+
+#: F:\www\projekte\WP-Theme-Piratenkleider/inc/constants.php:74
+msgid "Informiere dich"
+msgstr ""
+
+#: F:\www\projekte\WP-Theme-Piratenkleider/inc/constants.php:75
+msgid "&uuml;ber unsere Themen &amp; Ziele!"
+msgstr ""
+
+#: F:\www\projekte\WP-Theme-Piratenkleider/inc/constants.php:79
+msgid "Unterst&uuml;tze uns"
+msgstr ""
+
+#: F:\www\projekte\WP-Theme-Piratenkleider/inc/constants.php:80
+msgid "mit deinem Engagement!"
+msgstr ""
+
+#: F:\www\projekte\WP-Theme-Piratenkleider/inc/constants.php:84
+msgid "Werde Pirat!"
+msgstr ""
+
+#: F:\www\projekte\WP-Theme-Piratenkleider/inc/constants.php:85
+msgid "jetzt Mitglied werden!"
+msgstr ""
+
+#: F:\www\projekte\WP-Theme-Piratenkleider/inc/constants.php:107
+msgid "Plakat Grundgesetz"
+msgstr ""
+
+#: F:\www\projekte\WP-Theme-Piratenkleider/inc/constants.php:111
+msgid "Medien"
+msgstr ""
+
+#: F:\www\projekte\WP-Theme-Piratenkleider/inc/constants.php:115
+msgid "Mitmachen"
+msgstr ""
+
+#: F:\www\projekte\WP-Theme-Piratenkleider/inc/constants.php:119
+msgid "Piraten"
+msgstr ""
+
+#: F:\www\projekte\WP-Theme-Piratenkleider/inc/constants.php:123
+msgid "Plakate"
+msgstr ""
+
+#: F:\www\projekte\WP-Theme-Piratenkleider/inc/constants.php:127
+msgid "Presse"
+msgstr ""
+
+#: F:\www\projekte\WP-Theme-Piratenkleider/inc/constants.php:131
+msgid "Protest"
+msgstr ""
+
+#: F:\www\projekte\WP-Theme-Piratenkleider/inc/constants.php:135
+msgid "Datenschutz"
+msgstr ""
+
+#: F:\www\projekte\WP-Theme-Piratenkleider/inc/constants.php:139
+msgid "Aufzeichnung"
+msgstr ""
+
+#: F:\www\projekte\WP-Theme-Piratenkleider/inc/constants.php:143
+msgid "Kampagne"
+msgstr ""
+
+#: F:\www\projekte\WP-Theme-Piratenkleider/inc/constants.php:147
+msgid "Kirche"
+msgstr ""
+
+#: F:\www\projekte\WP-Theme-Piratenkleider/inc/constants.php:157
+msgid "Plakat LTWNRW12 A01"
+msgstr ""
+
+#: F:\www\projekte\WP-Theme-Piratenkleider/inc/constants.php:161
+msgid "Plakat LTWNRW12_Plakat_B03"
+msgstr ""
+
+#: F:\www\projekte\WP-Theme-Piratenkleider/inc/constants.php:165
+msgid "Plakat LTWNRW12_Plakat_C01"
+msgstr ""
+
+#: F:\www\projekte\WP-Theme-Piratenkleider/inc/constants.php:169
+msgid "Plakat LTWNRW12_Plakat_D01"
+msgstr ""
+
+#: F:\www\projekte\WP-Theme-Piratenkleider/inc/constants.php:173
+msgid "Plakat LTWNRW12_Plakat_E01"
+msgstr ""
+
+#: F:\www\projekte\WP-Theme-Piratenkleider/inc/constants.php:177
+msgid "Plakat LTWNRW12_Plakat_F03"
+msgstr ""
+
+#: F:\www\projekte\WP-Theme-Piratenkleider/inc/constants.php:181
+msgid "Plakat LTWSH12_Echte-Mitbestimmung"
+msgstr ""
+
+#: F:\www\projekte\WP-Theme-Piratenkleider/inc/constants.php:185
+msgid "Plakat LTWSH12_Fehmarnbelt"
+msgstr ""
+
+#: F:\www\projekte\WP-Theme-Piratenkleider/inc/constants.php:189
+msgid "Plakat LTWSH12_Freies-Wissen"
+msgstr ""
+
+#: F:\www\projekte\WP-Theme-Piratenkleider/inc/constants.php:193
+msgid "Plakat LTWSH12_Ich-will-so-leben"
+msgstr ""
+
+#: F:\www\projekte\WP-Theme-Piratenkleider/inc/constants.php:197
+msgid "Plakat LTWSH12_Inseln-allgemein"
+msgstr ""
+
+#: F:\www\projekte\WP-Theme-Piratenkleider/inc/constants.php:201
+msgid "Plakat LTWSH12_Naechster-Halt"
+msgstr ""
+
+#: F:\www\projekte\WP-Theme-Piratenkleider/inc/constants.php:205
+msgid "Plakat LTWSH12_Orange_isst_gesund"
+msgstr ""
+
+#: F:\www\projekte\WP-Theme-Piratenkleider/inc/constants.php:209
+msgid "Plakat LTWSH12_Transparenz"
+msgstr ""
+
+#: F:\www\projekte\WP-Theme-Piratenkleider/inc/constants.php:213
+msgid "Plakat LTWSH12_Trau-keinem-Plakat"
+msgstr ""
+
+#: F:\www\projekte\WP-Theme-Piratenkleider/inc/constants.php:217
+msgid "Plakat LTWSH12_Warum_haenge_ich_hier"
+msgstr ""
+
+#: F:\www\projekte\WP-Theme-Piratenkleider/inc/constants.php:221
+msgid "Plakat LTWSH12_Wir_sind_Romantiker"
+msgstr ""
+
+#: F:\www\projekte\WP-Theme-Piratenkleider/inc/constants.php:229
+msgid "Wiki"
+msgstr ""
+
+#: F:\www\projekte\WP-Theme-Piratenkleider/inc/constants.php:230
+msgid "Liquid Feedback"
+msgstr ""
+
+#: F:\www\projekte\WP-Theme-Piratenkleider/inc/constants.php:231
+msgid "Forum"
+msgstr ""
+
+#: F:\www\projekte\WP-Theme-Piratenkleider/inc/constants.php:232
+msgid "Flaschenpost"
+msgstr ""
+
+#: F:\www\projekte\WP-Theme-Piratenkleider/inc/constants.php:241
+#: F:\www\projekte\WP-Theme-Piratenkleider/inc/constants.php:274
+#: F:\www\projekte\WP-Theme-Piratenkleider/inc/constants.php:326
+msgid "Deutschland"
+msgstr ""
+
+#: F:\www\projekte\WP-Theme-Piratenkleider/inc/constants.php:242
+msgid "Piratenpartei Deutschland"
+msgstr ""
+
+#: F:\www\projekte\WP-Theme-Piratenkleider/inc/constants.php:245
+msgid "Baden-W&uuml;rttemberg"
+msgstr ""
+
+#: F:\www\projekte\WP-Theme-Piratenkleider/inc/constants.php:246
+msgid "Bayern"
+msgstr ""
+
+#: F:\www\projekte\WP-Theme-Piratenkleider/inc/constants.php:247
+msgid "Berlin"
+msgstr ""
+
+#: F:\www\projekte\WP-Theme-Piratenkleider/inc/constants.php:248
+msgid "Brandenburg"
+msgstr ""
+
+#: F:\www\projekte\WP-Theme-Piratenkleider/inc/constants.php:249
+msgid "Bremen"
+msgstr ""
+
+#: F:\www\projekte\WP-Theme-Piratenkleider/inc/constants.php:250
+msgid "Hamburg"
+msgstr ""
+
+#: F:\www\projekte\WP-Theme-Piratenkleider/inc/constants.php:251
+msgid "Hessen"
+msgstr ""
+
+#: F:\www\projekte\WP-Theme-Piratenkleider/inc/constants.php:252
+msgid "Mecklenburg-Vorpommern"
+msgstr ""
+
+#: F:\www\projekte\WP-Theme-Piratenkleider/inc/constants.php:253
+msgid "Niedersachsen"
+msgstr ""
+
+#: F:\www\projekte\WP-Theme-Piratenkleider/inc/constants.php:254
+msgid "Nordrhein-Westfalen"
+msgstr ""
+
+#: F:\www\projekte\WP-Theme-Piratenkleider/inc/constants.php:255
+msgid "Rheinland-Pfalz"
+msgstr ""
+
+#: F:\www\projekte\WP-Theme-Piratenkleider/inc/constants.php:256
+msgid "Saarland"
+msgstr ""
+
+#: F:\www\projekte\WP-Theme-Piratenkleider/inc/constants.php:257
+msgid "Sachsen"
+msgstr ""
+
+#: F:\www\projekte\WP-Theme-Piratenkleider/inc/constants.php:258
+msgid "Sachsen-Anhalt"
+msgstr ""
+
+#: F:\www\projekte\WP-Theme-Piratenkleider/inc/constants.php:259
+msgid "Schleswig-Holstein"
+msgstr ""
+
+#: F:\www\projekte\WP-Theme-Piratenkleider/inc/constants.php:260
+msgid "Th&uuml;ringen"
+msgstr ""
+
+#: F:\www\projekte\WP-Theme-Piratenkleider/inc/constants.php:263
+msgid "International"
+msgstr ""
+
+#: F:\www\projekte\WP-Theme-Piratenkleider/inc/constants.php:264
+#: F:\www\projekte\WP-Theme-Piratenkleider/inc/constants.php:316
+msgid "Piratenparteien International"
+msgstr ""
+
+#: F:\www\projekte\WP-Theme-Piratenkleider/inc/constants.php:267
+#: F:\www\projekte\WP-Theme-Piratenkleider/inc/constants.php:319
+msgid "Argentinien"
+msgstr ""
+
+#: F:\www\projekte\WP-Theme-Piratenkleider/inc/constants.php:268
+#: F:\www\projekte\WP-Theme-Piratenkleider/inc/constants.php:320
+msgid "Australien"
+msgstr ""
+
+#: F:\www\projekte\WP-Theme-Piratenkleider/inc/constants.php:269
+#: F:\www\projekte\WP-Theme-Piratenkleider/inc/constants.php:321
+msgid "Belgien"
+msgstr ""
+
+#: F:\www\projekte\WP-Theme-Piratenkleider/inc/constants.php:270
+#: F:\www\projekte\WP-Theme-Piratenkleider/inc/constants.php:322
+msgid "Brasilien"
+msgstr ""
+
+#: F:\www\projekte\WP-Theme-Piratenkleider/inc/constants.php:271
+#: F:\www\projekte\WP-Theme-Piratenkleider/inc/constants.php:323
+msgid "Bulgarien"
+msgstr ""
+
+#: F:\www\projekte\WP-Theme-Piratenkleider/inc/constants.php:272
+#: F:\www\projekte\WP-Theme-Piratenkleider/inc/constants.php:324
+msgid "Chile"
+msgstr ""
+
+#: F:\www\projekte\WP-Theme-Piratenkleider/inc/constants.php:273
+#: F:\www\projekte\WP-Theme-Piratenkleider/inc/constants.php:325
+msgid "D&auml;nemark"
+msgstr ""
+
+#: F:\www\projekte\WP-Theme-Piratenkleider/inc/constants.php:275
+#: F:\www\projekte\WP-Theme-Piratenkleider/inc/constants.php:327
+msgid "England"
+msgstr ""
+
+#: F:\www\projekte\WP-Theme-Piratenkleider/inc/constants.php:276
+#: F:\www\projekte\WP-Theme-Piratenkleider/inc/constants.php:328
+msgid "Finnland"
+msgstr ""
+
+#: F:\www\projekte\WP-Theme-Piratenkleider/inc/constants.php:277
+#: F:\www\projekte\WP-Theme-Piratenkleider/inc/constants.php:329
+msgid "Frankreich"
+msgstr ""
+
+#: F:\www\projekte\WP-Theme-Piratenkleider/inc/constants.php:278
+#: F:\www\projekte\WP-Theme-Piratenkleider/inc/constants.php:330
+msgid "Griechenland"
+msgstr ""
+
+#: F:\www\projekte\WP-Theme-Piratenkleider/inc/constants.php:279
+#: F:\www\projekte\WP-Theme-Piratenkleider/inc/constants.php:331
+msgid "Guatemala"
+msgstr ""
+
+#: F:\www\projekte\WP-Theme-Piratenkleider/inc/constants.php:280
+#: F:\www\projekte\WP-Theme-Piratenkleider/inc/constants.php:332
+msgid "Italien"
+msgstr ""
+
+#: F:\www\projekte\WP-Theme-Piratenkleider/inc/constants.php:281
+#: F:\www\projekte\WP-Theme-Piratenkleider/inc/constants.php:333
+msgid "Kanada"
+msgstr ""
+
+#: F:\www\projekte\WP-Theme-Piratenkleider/inc/constants.php:282
+#: F:\www\projekte\WP-Theme-Piratenkleider/inc/constants.php:334
+msgid "Kasachstan"
+msgstr ""
+
+#: F:\www\projekte\WP-Theme-Piratenkleider/inc/constants.php:283
+#: F:\www\projekte\WP-Theme-Piratenkleider/inc/constants.php:335
+msgid "Kolumbien"
+msgstr ""
+
+#: F:\www\projekte\WP-Theme-Piratenkleider/inc/constants.php:284
+#: F:\www\projekte\WP-Theme-Piratenkleider/inc/constants.php:336
+msgid "Lettland"
+msgstr ""
+
+#: F:\www\projekte\WP-Theme-Piratenkleider/inc/constants.php:285
+#: F:\www\projekte\WP-Theme-Piratenkleider/inc/constants.php:337
+msgid "Litauen"
+msgstr ""
+
+#: F:\www\projekte\WP-Theme-Piratenkleider/inc/constants.php:286
+#: F:\www\projekte\WP-Theme-Piratenkleider/inc/constants.php:338
+msgid "Luxemburg"
+msgstr ""
+
+#: F:\www\projekte\WP-Theme-Piratenkleider/inc/constants.php:287
+#: F:\www\projekte\WP-Theme-Piratenkleider/inc/constants.php:339
+msgid "Marokko"
+msgstr ""
+
+#: F:\www\projekte\WP-Theme-Piratenkleider/inc/constants.php:288
+#: F:\www\projekte\WP-Theme-Piratenkleider/inc/constants.php:340
+msgid "Mexiko"
+msgstr ""
+
+#: F:\www\projekte\WP-Theme-Piratenkleider/inc/constants.php:289
+#: F:\www\projekte\WP-Theme-Piratenkleider/inc/constants.php:341
+msgid "Neuseeland"
+msgstr ""
+
+#: F:\www\projekte\WP-Theme-Piratenkleider/inc/constants.php:290
+#: F:\www\projekte\WP-Theme-Piratenkleider/inc/constants.php:342
+msgid "Niederlande"
+msgstr ""
+
+#: F:\www\projekte\WP-Theme-Piratenkleider/inc/constants.php:291
+#: F:\www\projekte\WP-Theme-Piratenkleider/inc/constants.php:343
+msgid "&ouml;sterreich"
+msgstr ""
+
+#: F:\www\projekte\WP-Theme-Piratenkleider/inc/constants.php:292
+#: F:\www\projekte\WP-Theme-Piratenkleider/inc/constants.php:344
+msgid "Peru"
+msgstr ""
+
+#: F:\www\projekte\WP-Theme-Piratenkleider/inc/constants.php:293
+#: F:\www\projekte\WP-Theme-Piratenkleider/inc/constants.php:345
+msgid "Polen"
+msgstr ""
+
+#: F:\www\projekte\WP-Theme-Piratenkleider/inc/constants.php:294
+#: F:\www\projekte\WP-Theme-Piratenkleider/inc/constants.php:346
+msgid "Portugal"
+msgstr ""
+
+#: F:\www\projekte\WP-Theme-Piratenkleider/inc/constants.php:295
+#: F:\www\projekte\WP-Theme-Piratenkleider/inc/constants.php:347
+msgid "Rum&auml;nien"
+msgstr ""
+
+#: F:\www\projekte\WP-Theme-Piratenkleider/inc/constants.php:296
+#: F:\www\projekte\WP-Theme-Piratenkleider/inc/constants.php:348
+msgid "Russland"
+msgstr ""
+
+#: F:\www\projekte\WP-Theme-Piratenkleider/inc/constants.php:297
+#: F:\www\projekte\WP-Theme-Piratenkleider/inc/constants.php:349
+msgid "Schweden"
+msgstr ""
+
+#: F:\www\projekte\WP-Theme-Piratenkleider/inc/constants.php:298
+#: F:\www\projekte\WP-Theme-Piratenkleider/inc/constants.php:350
+msgid "Schweiz"
+msgstr ""
+
+#: F:\www\projekte\WP-Theme-Piratenkleider/inc/constants.php:299
+#: F:\www\projekte\WP-Theme-Piratenkleider/inc/constants.php:351
+msgid "Serbien"
+msgstr ""
+
+#: F:\www\projekte\WP-Theme-Piratenkleider/inc/constants.php:300
+#: F:\www\projekte\WP-Theme-Piratenkleider/inc/constants.php:352
+msgid "Slowakei"
+msgstr ""
+
+#: F:\www\projekte\WP-Theme-Piratenkleider/inc/constants.php:301
+#: F:\www\projekte\WP-Theme-Piratenkleider/inc/constants.php:353
+msgid "Slowenien"
+msgstr ""
+
+#: F:\www\projekte\WP-Theme-Piratenkleider/inc/constants.php:302
+#: F:\www\projekte\WP-Theme-Piratenkleider/inc/constants.php:354
+msgid "Spanien"
+msgstr ""
+
+#: F:\www\projekte\WP-Theme-Piratenkleider/inc/constants.php:303
+#: F:\www\projekte\WP-Theme-Piratenkleider/inc/constants.php:355
+msgid "S&uuml;dkorea"
+msgstr ""
+
+#: F:\www\projekte\WP-Theme-Piratenkleider/inc/constants.php:304
+#: F:\www\projekte\WP-Theme-Piratenkleider/inc/constants.php:356
+msgid "Tschechien"
+msgstr ""
+
+#: F:\www\projekte\WP-Theme-Piratenkleider/inc/constants.php:305
+#: F:\www\projekte\WP-Theme-Piratenkleider/inc/constants.php:357
+msgid "Tunesien"
+msgstr ""
+
+#: F:\www\projekte\WP-Theme-Piratenkleider/inc/constants.php:306
+#: F:\www\projekte\WP-Theme-Piratenkleider/inc/constants.php:358
+msgid "T&uuml;rkei"
+msgstr ""
+
+#: F:\www\projekte\WP-Theme-Piratenkleider/inc/constants.php:307
+#: F:\www\projekte\WP-Theme-Piratenkleider/inc/constants.php:359
+msgid "Ukraine"
+msgstr ""
+
+#: F:\www\projekte\WP-Theme-Piratenkleider/inc/constants.php:308
+#: F:\www\projekte\WP-Theme-Piratenkleider/inc/constants.php:360
+msgid "Uruguay"
+msgstr ""
+
+#: F:\www\projekte\WP-Theme-Piratenkleider/inc/constants.php:309
+#: F:\www\projekte\WP-Theme-Piratenkleider/inc/constants.php:361
+msgid "USA"
+msgstr ""
+
+#: F:\www\projekte\WP-Theme-Piratenkleider/inc/constants.php:310
+#: F:\www\projekte\WP-Theme-Piratenkleider/inc/constants.php:362
+msgid "Wei&szlig;russland"
+msgstr ""
+
+#: F:\www\projekte\WP-Theme-Piratenkleider/inc/constants.php:311
+#: F:\www\projekte\WP-Theme-Piratenkleider/inc/constants.php:363
+msgid "Zypern"
+msgstr ""
+
+#: F:\www\projekte\WP-Theme-Piratenkleider/inc/constants.php:315
+msgid "International (mit Flaggen)"
+msgstr ""
+
+#: F:\www\projekte\WP-Theme-Piratenkleider/inc/constants.php:569
+msgid "Eintr&auml;ge"
+msgstr ""
+
+#: F:\www\projekte\WP-Theme-Piratenkleider/inc/constants.php:577
+msgid "Kopfteil"
+msgstr ""
+
+#: F:\www\projekte\WP-Theme-Piratenkleider/inc/constants.php:581
+msgid "Linkmenu"
+msgstr ""
+
+#: F:\www\projekte\WP-Theme-Piratenkleider/inc/constants.php:582
+msgid ""
+"Linkmenu oben rechts, zwischen Social Media Icons und Suchmaske anzeigen"
+msgstr ""
+
+#: F:\www\projekte\WP-Theme-Piratenkleider/inc/constants.php:587
+msgid "Suchmaske"
+msgstr ""
+
+#: F:\www\projekte\WP-Theme-Piratenkleider/inc/constants.php:588
+msgid "Eingabemaske f&uuml;r Suche oben rechts anzeigen"
+msgstr ""
+
+#: F:\www\projekte\WP-Theme-Piratenkleider/inc/constants.php:594
+msgid "Sticker anzeigen (Hinweistexte oder Grafiken im Kopfteil)"
+msgstr ""
+
+#: F:\www\projekte\WP-Theme-Piratenkleider/inc/constants.php:599
+msgid "Sticker 1"
+msgstr ""
+
+#: F:\www\projekte\WP-Theme-Piratenkleider/inc/constants.php:603
+msgid "Sticker 1 (Text)"
+msgstr ""
+
+#: F:\www\projekte\WP-Theme-Piratenkleider/inc/constants.php:604
+#: F:\www\projekte\WP-Theme-Piratenkleider/inc/constants.php:622
+#: F:\www\projekte\WP-Theme-Piratenkleider/inc/constants.php:640
+msgid "Inhaltstext des Stickers (ggf. mit Inline-HTML)"
+msgstr ""
+
+#: F:\www\projekte\WP-Theme-Piratenkleider/inc/constants.php:610
+msgid "Sticker 1 (Adresse)"
+msgstr ""
+
+#: F:\www\projekte\WP-Theme-Piratenkleider/inc/constants.php:611
+#: F:\www\projekte\WP-Theme-Piratenkleider/inc/constants.php:629
+#: F:\www\projekte\WP-Theme-Piratenkleider/inc/constants.php:647
+msgid "URL zu der verlinkt werden soll"
+msgstr ""
+
+#: F:\www\projekte\WP-Theme-Piratenkleider/inc/constants.php:617
+msgid "Sticker 2"
+msgstr ""
+
+#: F:\www\projekte\WP-Theme-Piratenkleider/inc/constants.php:621
+msgid "Sticker 2 (Text)"
+msgstr ""
+
+#: F:\www\projekte\WP-Theme-Piratenkleider/inc/constants.php:628
+msgid "Sticker 2 (Adresse)"
+msgstr ""
+
+#: F:\www\projekte\WP-Theme-Piratenkleider/inc/constants.php:635
+msgid "Sticker 3"
+msgstr ""
+
+#: F:\www\projekte\WP-Theme-Piratenkleider/inc/constants.php:639
+msgid "Sticker 3 (Text)"
+msgstr ""
+
+#: F:\www\projekte\WP-Theme-Piratenkleider/inc/constants.php:646
+msgid "Sticker 3 (Adresse)"
+msgstr ""
+
+#: F:\www\projekte\WP-Theme-Piratenkleider/inc/constants.php:655
+msgid "Fu&szlig;teil"
+msgstr ""
+
+#: F:\www\projekte\WP-Theme-Piratenkleider/inc/constants.php:659
+msgid "Parteilinks"
+msgstr ""
+
+#: F:\www\projekte\WP-Theme-Piratenkleider/inc/constants.php:660
+msgid ""
+"Im Fu&szlig;teil eine Liste von Links zu Seiten der Piratenpartei anzeigen"
+msgstr ""
+
+#: F:\www\projekte\WP-Theme-Piratenkleider/inc/constants.php:665
+msgid "Bereich"
+msgstr ""
+
+#: F:\www\projekte\WP-Theme-Piratenkleider/inc/constants.php:666
+#: F:\www\projekte\WP-Theme-Piratenkleider/inc/widgets.php:336
+msgid "Bereich oder Gliederung ausw&auml;hlen."
+msgstr ""
+
+#: F:\www\projekte\WP-Theme-Piratenkleider/inc/constants.php:673
+msgid "Sidebar"
+msgstr ""
+
+#: F:\www\projekte\WP-Theme-Piratenkleider/inc/constants.php:677
+msgid "Seitenmenu"
+msgstr ""
+
+#: F:\www\projekte\WP-Theme-Piratenkleider/inc/constants.php:681
+msgid "Hierachische Struktur"
+msgstr ""
+
+#: F:\www\projekte\WP-Theme-Piratenkleider/inc/constants.php:682
+msgid ""
+"Bei der Anzeige von Seiten rechts in der Sidebar nur das aktuelle Submenu "
+"zeigen. Bei Deaktivierung wird das vollst&auml;ndige Men&uuml; gezeigt. Dies "
+"ist f&uuml;r Webauftritte mit vielen Seiten nicht geeignet."
+msgstr ""
+
+#: F:\www\projekte\WP-Theme-Piratenkleider/inc/constants.php:688
+msgid "Offene Struktur"
+msgstr ""
+
+#: F:\www\projekte\WP-Theme-Piratenkleider/inc/constants.php:689
+msgid ""
+"Men&uuml; mit allen Seiten in der Sidebar anzeigen, auch wenn diese nicht "
+"dem Hauptmenu zugeordnet und gegliedert sind"
+msgstr ""
+
+#: F:\www\projekte\WP-Theme-Piratenkleider/inc/constants.php:696
+msgid ""
+"Eingabemaske f&uuml;r den Eintrag in ein Newsletter (Mailingliste) anzeigen"
+msgstr ""
+
+#: F:\www\projekte\WP-Theme-Piratenkleider/inc/constants.php:701
+msgid "Plakatslider"
+msgstr ""
+
+#: F:\www\projekte\WP-Theme-Piratenkleider/inc/constants.php:702
+msgid ""
+"Slider der Werbeplakate (rechte Sidebar-Spalte) werden angezeigt.<br>Die "
+"Auswahl der Plakatbilder kann unter den Defaultbildern angepasst werden"
+msgstr ""
+
+#: F:\www\projekte\WP-Theme-Piratenkleider/inc/constants.php:707
+msgid "Teaserlink 1"
+msgstr ""
+
+#: F:\www\projekte\WP-Theme-Piratenkleider/inc/constants.php:711
+#: F:\www\projekte\WP-Theme-Piratenkleider/inc/constants.php:744
+#: F:\www\projekte\WP-Theme-Piratenkleider/inc/constants.php:777
+msgid "Symbol"
+msgstr ""
+
+#: F:\www\projekte\WP-Theme-Piratenkleider/inc/constants.php:719
+#: F:\www\projekte\WP-Theme-Piratenkleider/inc/constants.php:752
+#: F:\www\projekte\WP-Theme-Piratenkleider/inc/constants.php:785
+msgid "Titel"
+msgstr ""
+
+#: F:\www\projekte\WP-Theme-Piratenkleider/inc/constants.php:720
+#: F:\www\projekte\WP-Theme-Piratenkleider/inc/constants.php:753
+#: F:\www\projekte\WP-Theme-Piratenkleider/inc/constants.php:786
+msgid "Titelzeile des Teaserlinks"
+msgstr ""
+
+#: F:\www\projekte\WP-Theme-Piratenkleider/inc/constants.php:726
+#: F:\www\projekte\WP-Theme-Piratenkleider/inc/constants.php:759
+#: F:\www\projekte\WP-Theme-Piratenkleider/inc/constants.php:792
+msgid "Untertitel"
+msgstr ""
+
+#: F:\www\projekte\WP-Theme-Piratenkleider/inc/constants.php:727
+#: F:\www\projekte\WP-Theme-Piratenkleider/inc/constants.php:760
+#: F:\www\projekte\WP-Theme-Piratenkleider/inc/constants.php:793
+msgid "Zweite Zeile des Teaserlinks"
+msgstr ""
+
+#: F:\www\projekte\WP-Theme-Piratenkleider/inc/constants.php:733
+#: F:\www\projekte\WP-Theme-Piratenkleider/inc/constants.php:766
+#: F:\www\projekte\WP-Theme-Piratenkleider/inc/constants.php:799
+msgid "URL"
+msgstr ""
+
+#: F:\www\projekte\WP-Theme-Piratenkleider/inc/constants.php:734
+#: F:\www\projekte\WP-Theme-Piratenkleider/inc/constants.php:767
+#: F:\www\projekte\WP-Theme-Piratenkleider/inc/constants.php:800
+msgid "Webadresse zu der verlinkt werden soll"
+msgstr ""
+
+#: F:\www\projekte\WP-Theme-Piratenkleider/inc/constants.php:740
+msgid "Teaserlink 2"
+msgstr ""
+
+#: F:\www\projekte\WP-Theme-Piratenkleider/inc/constants.php:773
+msgid "Teaserlink 3"
+msgstr ""
+
+#: F:\www\projekte\WP-Theme-Piratenkleider/inc/constants.php:813
+msgid "Beitr&auml;ge &uuml;ber ganze Breite"
+msgstr ""
+
+#: F:\www\projekte\WP-Theme-Piratenkleider/inc/constants.php:814
+msgid "Zahl der Beitr&auml;ge, die &uuml;ber die gesamte Inhaltsbreite gehen."
+msgstr ""
+
+#: F:\www\projekte\WP-Theme-Piratenkleider/inc/constants.php:820
+msgid "Beitr&auml;ge &uuml;ber halbe Breite"
+msgstr ""
+
+#: F:\www\projekte\WP-Theme-Piratenkleider/inc/constants.php:821
+msgid ""
+"Zahl der Beitr&auml;ge, die in Spalten mit je zwei Beitr&auml;gen "
+"nebeneinander, angezeigt werden."
+msgstr ""
+
+#: F:\www\projekte\WP-Theme-Piratenkleider/inc/constants.php:829
+msgid "Liste der Kategorien anzeigen"
+msgstr ""
+
+#: F:\www\projekte\WP-Theme-Piratenkleider/inc/constants.php:835
+msgid "Liste der Schlagworte (Tagcloud) anzeigen"
+msgstr ""
+
+#: F:\www\projekte\WP-Theme-Piratenkleider/inc/constants.php:840
+msgid "&auml;ltere Artikel"
+msgstr ""
+
+#: F:\www\projekte\WP-Theme-Piratenkleider/inc/constants.php:841
+msgid "Liste mit &auml;lteren Artikeln anzeigen"
+msgstr ""
+
+#: F:\www\projekte\WP-Theme-Piratenkleider/inc/constants.php:846
+msgid "Zahl &auml;ltere Artikel"
+msgstr ""
+
+#: F:\www\projekte\WP-Theme-Piratenkleider/inc/constants.php:847
+msgid "Anzahl der zu verlinkenden &auml;lteren Artikel."
+msgstr ""
+
+#: F:\www\projekte\WP-Theme-Piratenkleider/inc/constants.php:854
+msgid "Slider"
+msgstr ""
+
+#: F:\www\projekte\WP-Theme-Piratenkleider/inc/constants.php:858
+msgid "Aktivieren"
+msgstr ""
+
+#: F:\www\projekte\WP-Theme-Piratenkleider/inc/constants.php:859
+msgid ""
+"Slider im Teaserbereich auf der Startseite aktivieren. <br>Die Auswahl der "
+"Plakatbilder kann unter den Defaultbildern angepasst werden."
+msgstr ""
+
+#: F:\www\projekte\WP-Theme-Piratenkleider/inc/constants.php:866
+msgid "Kategorie"
+msgstr ""
+
+#: F:\www\projekte\WP-Theme-Piratenkleider/inc/constants.php:867
+msgid "Aus welcher Artikelkategorie sollen die Slider genommen werden."
+msgstr ""
+
+#: F:\www\projekte\WP-Theme-Piratenkleider/inc/constants.php:873
+msgid "Maximale Anzahl der Artikel"
+msgstr ""
+
+#: F:\www\projekte\WP-Theme-Piratenkleider/inc/constants.php:874
+msgid "Wieviele Slides sollen maximal gezeigt werden."
+msgstr ""
+
+#: F:\www\projekte\WP-Theme-Piratenkleider/inc/constants.php:881
+msgid "Animationstyp"
+msgstr ""
+
+#: F:\www\projekte\WP-Theme-Piratenkleider/inc/constants.php:882
+msgid "Wie soll der Slidewechsel optisch aussehen."
+msgstr ""
+
+#: F:\www\projekte\WP-Theme-Piratenkleider/inc/constants.php:889
+msgid "Richtung"
+msgstr ""
+
+#: F:\www\projekte\WP-Theme-Piratenkleider/inc/constants.php:890
+msgid "Von wo sollen Bilder erscheinen."
+msgstr ""
+
+#: F:\www\projekte\WP-Theme-Piratenkleider/inc/constants.php:897
+msgid "Dauer Bildwechsel"
+msgstr ""
+
+#: F:\www\projekte\WP-Theme-Piratenkleider/inc/constants.php:898
+msgid "Geschwindigkeit des Bildwechsels in Milisekunden."
+msgstr ""
+
+#: F:\www\projekte\WP-Theme-Piratenkleider/inc/constants.php:904
+msgid "Animationsdauer"
+msgstr ""
+
+#: F:\www\projekte\WP-Theme-Piratenkleider/inc/constants.php:905
+msgid ""
+"Geschwindigkeit der Animation/Fading beim Bild&uuml;bergang in Milisekunden."
+msgstr ""
+
+#: F:\www\projekte\WP-Theme-Piratenkleider/inc/constants.php:911
+msgid "Bezeichnender Titel f&uuml;r Teaser"
+msgstr ""
+
+#: F:\www\projekte\WP-Theme-Piratenkleider/inc/constants.php:912
+msgid "Dieser Text wird oberhalb der Titel angezeigt."
+msgstr ""
+
+#: F:\www\projekte\WP-Theme-Piratenkleider/inc/constants.php:917
+msgid "Textl&auml;nge"
+msgstr ""
+
+#: F:\www\projekte\WP-Theme-Piratenkleider/inc/constants.php:918
+msgid "Maximale Textl&auml;nge des Titels im Teaser."
+msgstr ""
+
+#: F:\www\projekte\WP-Theme-Piratenkleider/inc/constants.php:923
+msgid "Wortzahl"
+msgstr ""
+
+#: F:\www\projekte\WP-Theme-Piratenkleider/inc/constants.php:924
+msgid ""
+"Zahl der Worte im Teaser; Die maximale Textl&auml;nge begrenzt diesen Wert "
+"jedoch."
+msgstr ""
+
+#: F:\www\projekte\WP-Theme-Piratenkleider/inc/constants.php:929
+msgid "L&auml;nge des Teasertextes (Artikelauszug)"
+msgstr ""
+
+#: F:\www\projekte\WP-Theme-Piratenkleider/inc/constants.php:930
+msgid ""
+"Maximale Textl&auml;nge f&uuml;r Artikelausz&uuml;ge auf der Startseite."
+msgstr ""
+
+#: F:\www\projekte\WP-Theme-Piratenkleider/inc/constants.php:938
+msgid "Social Media"
+msgstr ""
+
+#: F:\www\projekte\WP-Theme-Piratenkleider/inc/constants.php:943
+msgid "Position und Anzeige"
+msgstr ""
+
+#: F:\www\projekte\WP-Theme-Piratenkleider/inc/constants.php:944
+msgid ""
+"Die Auswahl werden die Social Media Buttons angezeigt. Dies kann entweder "
+"oben im Kopfteil oder links neben den Inhaltsbereich sein. <br>Hinweis: Es "
+"werden nur die Buttons gezeigt, bei denen in den folgenden Eingabefeldern "
+"Adressen definiert sind."
+msgstr ""
+
+#: F:\www\projekte\WP-Theme-Piratenkleider/inc/constants.php:945
+msgid "Keine Social Media Buttons"
+msgstr ""
+
+#: F:\www\projekte\WP-Theme-Piratenkleider/inc/constants.php:945
+msgid "Im Kopfteil"
+msgstr ""
+
+#: F:\www\projekte\WP-Theme-Piratenkleider/inc/constants.php:945
+msgid "Links anzeigen"
+msgstr ""
+
+#: F:\www\projekte\WP-Theme-Piratenkleider/inc/constants.php:950
+msgid "Facebook"
+msgstr ""
+
+#: F:\www\projekte\WP-Theme-Piratenkleider/inc/constants.php:951
+msgid "URL inkl. http:// zur Facebook Seite."
+msgstr ""
+
+#: F:\www\projekte\WP-Theme-Piratenkleider/inc/constants.php:955
+msgid "Twitter"
+msgstr ""
+
+#: F:\www\projekte\WP-Theme-Piratenkleider/inc/constants.php:956
+msgid "URL inkl. http:// zur Twitter Seite."
+msgstr ""
+
+#: F:\www\projekte\WP-Theme-Piratenkleider/inc/constants.php:960
+msgid "Google Plus"
+msgstr ""
+
+#: F:\www\projekte\WP-Theme-Piratenkleider/inc/constants.php:961
+msgid "URL inkl. http:// zur Google Plus Seite."
+msgstr ""
+
+#: F:\www\projekte\WP-Theme-Piratenkleider/inc/constants.php:965
+msgid "Diaspora"
+msgstr ""
+
+#: F:\www\projekte\WP-Theme-Piratenkleider/inc/constants.php:966
+msgid "URL inkl. http:// zur Diaspora Seite."
+msgstr ""
+
+#: F:\www\projekte\WP-Theme-Piratenkleider/inc/constants.php:970
+msgid "Identica"
+msgstr ""
+
+#: F:\www\projekte\WP-Theme-Piratenkleider/inc/constants.php:971
+msgid "URL inkl. http:// zur Identica Seite."
+msgstr ""
+
+#: F:\www\projekte\WP-Theme-Piratenkleider/inc/constants.php:975
+msgid "YouTube"
+msgstr ""
+
+#: F:\www\projekte\WP-Theme-Piratenkleider/inc/constants.php:976
+msgid "URL inkl. http:// zur YouTube Seite."
+msgstr ""
+
+#: F:\www\projekte\WP-Theme-Piratenkleider/inc/constants.php:980
+msgid "iTunes"
+msgstr ""
+
+#: F:\www\projekte\WP-Theme-Piratenkleider/inc/constants.php:981
+msgid "URL inkl. http:// zur iTunes Seite."
+msgstr ""
+
+#: F:\www\projekte\WP-Theme-Piratenkleider/inc/constants.php:985
+msgid "Flickr"
+msgstr ""
+
+#: F:\www\projekte\WP-Theme-Piratenkleider/inc/constants.php:986
+msgid "URL inkl. http:// zur Flickr Seite."
+msgstr ""
+
+#: F:\www\projekte\WP-Theme-Piratenkleider/inc/constants.php:990
+msgid "Delicious"
+msgstr ""
+
+#: F:\www\projekte\WP-Theme-Piratenkleider/inc/constants.php:991
+msgid "URL inkl. http:// zur Delicious Seite."
+msgstr ""
+
+#: F:\www\projekte\WP-Theme-Piratenkleider/inc/constants.php:995
+msgid "Flattr"
+msgstr ""
+
+#: F:\www\projekte\WP-Theme-Piratenkleider/inc/constants.php:996
+msgid "URL inkl. http:// zur Flattr Seite."
+msgstr ""
+
+#: F:\www\projekte\WP-Theme-Piratenkleider/inc/constants.php:1000
+msgid "Feed"
+msgstr ""
+
+#: F:\www\projekte\WP-Theme-Piratenkleider/inc/constants.php:1001
+msgid ""
+"URL inkl. http:// zu einem RSS oder Atom Feed. Dies muss nicht unbedingt der "
+"von dieser Website sein, kann aber."
+msgstr ""
+
+#: F:\www\projekte\WP-Theme-Piratenkleider/inc/constants.php:1005
+msgid "Twitter Sidebar-import"
+msgstr ""
+
+#: F:\www\projekte\WP-Theme-Piratenkleider/inc/constants.php:1009
+msgid "Benutzername"
+msgstr ""
+
+#: F:\www\projekte\WP-Theme-Piratenkleider/inc/constants.php:1010
+msgid ""
+"Der Twitter Benutzername. Wird zur Anzeige eines optionalen Twitter-Imports "
+"in der Sidebar verwendet."
+msgstr ""
+
+#: F:\www\projekte\WP-Theme-Piratenkleider/inc/constants.php:1015
+msgid "Anzahl"
+msgstr ""
+
+#: F:\www\projekte\WP-Theme-Piratenkleider/inc/constants.php:1016
+msgid "Wieviele Twittermeldungen sollen maximal gezeigt werden."
+msgstr ""
+
+#: F:\www\projekte\WP-Theme-Piratenkleider/inc/constants.php:1023
+msgid "Tweet-Datum"
+msgstr ""
+
+#: F:\www\projekte\WP-Theme-Piratenkleider/inc/constants.php:1024
+msgid "Datum der Twittermeldung anzeigen."
+msgstr ""
+
+#: F:\www\projekte\WP-Theme-Piratenkleider/inc/constants.php:1030
+msgid "Twitter Cache"
+msgstr ""
+
+#: F:\www\projekte\WP-Theme-Piratenkleider/inc/constants.php:1031
+msgid ""
+"Zeit in Sekunden f&uuml;r den Twitter-Cache. Dieser Wert darf nicht kleiner "
+"als 10 Minuten (=600) sein."
+msgstr ""
+
+#: F:\www\projekte\WP-Theme-Piratenkleider/inc/constants.php:1039
+msgid "Meta-Angaben"
+msgstr ""
+
+#: F:\www\projekte\WP-Theme-Piratenkleider/inc/constants.php:1043
+msgid "Autor"
+msgstr ""
+
+#: F:\www\projekte\WP-Theme-Piratenkleider/inc/constants.php:1044
+msgid "Optionale Autor-Angabe in dem Meta-Tag jeder Seite."
+msgstr ""
+
+#: F:\www\projekte\WP-Theme-Piratenkleider/inc/constants.php:1048
+msgid "Beschreibung"
+msgstr ""
+
+#: F:\www\projekte\WP-Theme-Piratenkleider/inc/constants.php:1049
+msgid ""
+"Optionale Beschreibungstext in dem Meta-Tag jeder Seite (f&uuml;r alle "
+"gleich). Sollte nicht mehr als 140 Zeichen lang sein, wenn gesetzt."
+msgstr ""
+
+#: F:\www\projekte\WP-Theme-Piratenkleider/inc/constants.php:1053
+msgid "Schl&uuml;sselworte"
+msgstr ""
+
+#: F:\www\projekte\WP-Theme-Piratenkleider/inc/constants.php:1054
+msgid ""
+"Optionale Schl&uuml;sselworte in dem Meta-Tag jeder Seite (f&uuml;r alle "
+"gleich). Durch Komma getrennt. Schl&uuml;sselworte sollten tats&auml;chlich "
+"vorkommen."
+msgstr ""
+
+#: F:\www\projekte\WP-Theme-Piratenkleider/inc/constants.php:1059
+msgid "Anonymit&auml;t &amp; Sicherheit"
+msgstr ""
+
+#: F:\www\projekte\WP-Theme-Piratenkleider/inc/constants.php:1063
+msgid "Autoren anzeigen"
+msgstr ""
+
+#: F:\www\projekte\WP-Theme-Piratenkleider/inc/constants.php:1064
+msgid "Bei der Anzeige von Artikeln den Autoren anzeigen und verlinken."
+msgstr ""
+
+#: F:\www\projekte\WP-Theme-Piratenkleider/inc/constants.php:1069
+msgid "Kommentarbenutzer anonymisieren"
+msgstr ""
+
+#: F:\www\projekte\WP-Theme-Piratenkleider/inc/constants.php:1070
+msgid ""
+"IP-Adresse und der User-Agent-String geleert, die Eingabe von E-Mail-"
+"Adressen wird verhindert.<br> Diese Option deaktiviert auch die Avatar-"
+"Anzeige und setzt die Kommentareinstellung unter Einstellungen-Diskussion "
+"so, dass Benutzer keinen Namen und E-Mail-Adressen mehr eingeben m&uuml;ssen."
+msgstr ""
+
+#: F:\www\projekte\WP-Theme-Piratenkleider/inc/constants.php:1075
+msgid "Selbstidentifikation"
+msgstr ""
+
+#: F:\www\projekte\WP-Theme-Piratenkleider/inc/constants.php:1076
+msgid "Angebotene Kommentarfelder zur freiwilligen Selbstidentifikation"
+msgstr ""
+
+#: F:\www\projekte\WP-Theme-Piratenkleider/inc/constants.php:1082
+msgid "Avatare anzeigen"
+msgstr ""
+
+#: F:\www\projekte\WP-Theme-Piratenkleider/inc/constants.php:1083
+msgid ""
+"Bei Kommentaren werden Avatar-Bilder mit Hilfe von Gravatar oder anderen "
+"Diensten abgerufen. Dies erm&ouml;glicht allerdings theoretisch ein Tracking "
+"durch diese Dienste."
+msgstr ""
+
+#: F:\www\projekte\WP-Theme-Piratenkleider/inc/constants.php:1089
+msgid "Sonstiges"
+msgstr ""
+
+#: F:\www\projekte\WP-Theme-Piratenkleider/inc/constants.php:1093
+msgid "Sidebar abblendbar"
+msgstr ""
+
+#: F:\www\projekte\WP-Theme-Piratenkleider/inc/constants.php:1094
+msgid ""
+"Benutzern via JavaScript die M&ouml;glichkeit geben, die Sidebar klein zu "
+"machen. <br>Hinweis: Der Status wird nicht gespeichert, um keine Cookies "
+"anzulegen; Die Funktion ist nicht sichtbnar, wenn man kein JavaScript an "
+"hat. Desweiteren ist die Funktion nur aktiv, wenn die Bildschirmbreite "
+"gr&ouml;&szlig;er als 600 Pixel ist."
+msgstr ""
+
+#: F:\www\projekte\WP-Theme-Piratenkleider/inc/constants.php:1099
+msgid "Antwortlinks auf Kommentare"
+msgstr ""
+
+#: F:\www\projekte\WP-Theme-Piratenkleider/inc/constants.php:1100
+msgid ""
+"Bei der Anzeige von Kommentaren, wird unter diesen ein eigener Kommentarlink "
+"eingebaut, der das Antworten auf den Kommentar erlaubt. Dies kann zu einer "
+"Nutzung des Kommentarbereiches wie bei einem Forum f&uuml;hren, bei dem es "
+"zuletzt aber nicht mehr um den eigentlichen Beitrag geht."
+msgstr ""
+
+#: F:\www\projekte\WP-Theme-Piratenkleider/inc/constants.php:1105
+msgid "Defaultbilder f&uuml;r Seiten"
+msgstr ""
+
+#: F:\www\projekte\WP-Theme-Piratenkleider/inc/constants.php:1106
+msgid ""
+"Bilder f&uuml;r Seiten erzwingen, die von sich aus kein Artikelbild "
+"definiert haben. Wenn kein Artikelbild vorhanden ist, wird ein Defaultbild "
+"gezeigt."
+msgstr ""
+
+#: F:\www\projekte\WP-Theme-Piratenkleider/inc/constants.php:1111
+msgid "Platzhalterbilder"
+msgstr ""
+
+#: F:\www\projekte\WP-Theme-Piratenkleider/inc/constants.php:1112
+msgid ""
+"Platzhalterbilder bei Indexseiten zu Kategorien, Tags, Suche und Archiv "
+"anzeigen."
+msgstr ""
+
+#: F:\www\projekte\WP-Theme-Piratenkleider/inc/constants.php:1117
+msgid "Kommentarbubble"
+msgstr ""
+
+#: F:\www\projekte\WP-Theme-Piratenkleider/inc/constants.php:1118
+msgid ""
+"Zeige den Kommentarbubble auch dann, wenn noch keine Kommentare abgegeben "
+"wurden"
+msgstr ""
+
+#: F:\www\projekte\WP-Theme-Piratenkleider/inc/constants.php:1124
+msgid ""
+"URL, inkl. http://, zur Seite auf der man sich in Newsletter eingetragen "
+"werden kann."
+msgstr ""
+
+#: F:\www\projekte\WP-Theme-Piratenkleider/inc/widgets.php:12
+msgid "Sidebar (Rechte Spalte)"
+msgstr ""
+
+#: F:\www\projekte\WP-Theme-Piratenkleider/inc/widgets.php:14
+msgid ""
+"Dieser Bereich befindet sich rechts vom Inhaltsbereich. \n"
+"                    Er ist geeignet f&uuml;r Werbeplakate, Hinweise und "
+"&auml;hnliches.\n"
+"                    Wenn leer, werden als Alternative einige der allgemeinen "
+"Standardplakate \n"
+"                    gezeigt."
+msgstr ""
+
+#: F:\www\projekte\WP-Theme-Piratenkleider/inc/widgets.php:25
+msgid "Sidebar 2 (Rechts unter Plakaten)"
+msgstr ""
+
+#: F:\www\projekte\WP-Theme-Piratenkleider/inc/widgets.php:27
+msgid ""
+"Dieser Bereich befindet sich rechts vom Inhaltsbereich.\n"
+"                    Er ist nach den Werbeplakaten positioniert, die &uuml;"
+"ber die \n"
+"                    Optionen ein- oder abgeschaltet werden k&ouml;nnen."
+msgstr ""
+
+#: F:\www\projekte\WP-Theme-Piratenkleider/inc/widgets.php:38
+msgid "Startseite: Sliderbereich"
+msgstr ""
+
+#: F:\www\projekte\WP-Theme-Piratenkleider/inc/widgets.php:40
+msgid ""
+"Bereich oberhalb der 3 Artikelbilder.\n"
+"                    Wenn leer, erscheinen hier wechselnden Bilder \n"
+"                    und Verlinkung mit Artikeln der Kategorie \"Slider\". \n"
+"                    Angezeigt werden die Artikelbilder."
+msgstr ""
+
+#: F:\www\projekte\WP-Theme-Piratenkleider/inc/widgets.php:52
+msgid "Startseite: Rechter Aktionlinkbereich"
+msgstr ""
+
+#: F:\www\projekte\WP-Theme-Piratenkleider/inc/widgets.php:54
+msgid ""
+"Dieser Bereich ist rechts neben den Slider\n"
+"                    und dem Hauptcontent positioniert. Wenn leer, werden "
+"hier\n"
+"                    die 3 Links zur Piratenwebsite gezeigt zum Mitmachen\n"
+"                    oder Spenden"
+msgstr ""
+
+#: F:\www\projekte\WP-Theme-Piratenkleider/inc/widgets.php:69
+msgid "Startseite: Links unten"
+msgstr ""
+
+#: F:\www\projekte\WP-Theme-Piratenkleider/inc/widgets.php:71
+msgid ""
+"Bereich links unterhalb der 3 Presseartikel. \n"
+"                        Wenn leer, werden hier weitere Artikel aus\n"
+"                        der Kategorie \"pm\" gezeigt. "
+msgstr ""
+
+#: F:\www\projekte\WP-Theme-Piratenkleider/inc/widgets.php:82
+msgid "Startseite: Rechts unten"
+msgstr ""
+
+#: F:\www\projekte\WP-Theme-Piratenkleider/inc/widgets.php:84
+msgid ""
+"Bereich rechts unterhalb der drei Presseartikel.\n"
+"                         Wenn leer, wird hier eine Schlagwortliste \n"
+"                         gezeigt."
+msgstr ""
+
+#: F:\www\projekte\WP-Theme-Piratenkleider/inc/widgets.php:95
+msgid "Fu&szlig;bereich: Linke Seite"
+msgstr ""
+
+#: F:\www\projekte\WP-Theme-Piratenkleider/inc/widgets.php:97
+msgid ""
+"Bereich im Fu&szlig;teil unter dem Haupttextbereich.\n"
+"                   Dieser Bereich eignet sich insbesondere f&uuml;r externe "
+"Links zu\n"
+"                   anderen Piratenwebsites auf regionaler oder &uuml;"
+"beregionaler Ebene.\n"
+"                   Diese werden dann als Menu mit externen Links definiert "
+"und\n"
+"                   dann als Widget dieser Sidebar zugeordnet.\n"
+"                   Wenn leer, wird hier nichts angezeigt."
+msgstr ""
+
+#: F:\www\projekte\WP-Theme-Piratenkleider/inc/widgets.php:111
+msgid "Fu&szlig;bereich: Rechte Spalte"
+msgstr ""
+
+#: F:\www\projekte\WP-Theme-Piratenkleider/inc/widgets.php:113
+msgid ""
+"Rechte Spalte im Fu&szlig;bereich. Wenn leer, erscheint hier das\n"
+"                    technische Menu (siehe Men&uuml;s). Wenn auch dieses "
+"nicht definiert ist, wird \n"
+"                    die Blogadresse und dessen RSS-Feedadresse gezeigt"
+msgstr ""
+
+#: F:\www\projekte\WP-Theme-Piratenkleider/inc/widgets.php:137
+msgid "Piraten Newsletter"
+msgstr ""
+
+#: F:\www\projekte\WP-Theme-Piratenkleider/inc/widgets.php:138
+msgid "Formular zur EIngabe einer Mailadresse zu einem Majordomolink angeben."
+msgstr ""
+
+#: F:\www\projekte\WP-Theme-Piratenkleider/inc/widgets.php:175
+#: F:\www\projekte\WP-Theme-Piratenkleider/inc/widgets.php:216
+msgid ""
+"Fehler: Adresse des Newsletter-Dienstes ist nicht eingetragen. Bitte geben "
+"Sie diese Adresse zun&auml;chst bei den Theme-Optionen an."
+msgstr ""
+
+#: F:\www\projekte\WP-Theme-Piratenkleider/inc/widgets.php:220
+msgid "Titel:"
+msgstr ""
+
+#: F:\www\projekte\WP-Theme-Piratenkleider/inc/widgets.php:243
+msgid "Piraten Linkliste"
+msgstr ""
+
+#: F:\www\projekte\WP-Theme-Piratenkleider/inc/widgets.php:244
+msgid "Linkliste mit verschiedenen Gliederungen und Bereichen der Partei"
+msgstr ""
