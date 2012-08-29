@@ -2,7 +2,7 @@ Piratenkleider
 - Wordpress-Theme für Webauftritte der Piratenpartei 
 =================================================
 
-Version 2.11 von Wolfgang Wiese (xwolf), 3. August 2012
+Version 2.11.1 von Wolfgang Wiese (xwolf), 29. August 2012
 
 
 DOWNLOADS
@@ -30,6 +30,7 @@ AUTOREN / ENTWICKLER
      Kerstin Probiesch, http://www.barrierefreie-informationskultur.de
      Fabian Müller, http://www.feals.de
      Georg Sinn, http://zwitschi.net
+
 
    Quellen für Defaultbilder und CI-Materialen (CC-BY 3.0)
       Defaultgrafiken für Slider/Seitenbilder: Tobias M. Eckrich
