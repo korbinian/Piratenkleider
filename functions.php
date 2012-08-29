@@ -45,8 +45,7 @@ add_filter( 'wp_feed_cache_transient_lifetime' , 'feed_lifetime_cb' );
         
 
 if ( ! isset( $content_width ) )   $content_width = $defaultoptions['content-width'];
-require_once ( get_stylesheet_directory() . '/theme-options.php' );
-
+require_once ( get_template_directory() . '/theme-options.php' );
 
 /** Tell WordPress to run twentyten_setup() when the 'after_setup_theme' hook is run. */
 add_action( 'after_setup_theme', 'piratenkleider_setup' );

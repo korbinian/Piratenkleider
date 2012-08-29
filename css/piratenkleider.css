@@ -2440,20 +2440,23 @@ div.ics-calendar-holder .ics-calendar-event {
       
 
   .teaser .first-teaser-widget-area {
-    width: 66.6666%; 
+    width: 67%; 
   }
   .teaser .second-teaser-widget-area {
-    width: 33.3333%; 
+    width: 33%; 
   }
 
   .content-primary {
     float: left;
-    width: 66.6666%;
+    width: 67%;
     min-height: 500px;
     background: white;
     font-size: 1em;
     position: relative; 
   }
+  .content-primary .skin {
+      margin-left: 10px;
+  }    
   .content-primary .first-startpage-widget-area {
       width: 50%;
       float: left;
@@ -2474,7 +2477,7 @@ div.ics-calendar-holder .ics-calendar-event {
   .content-aside {
       background: #ff8800 url("../images/int/bg-tags.png") -20% top fixed; 
     float: right;
-    width: 33.3333%; }
+    width: 33%; }
 
   .content-aside .skin {
    background: #ff8800;
@@ -2493,23 +2496,23 @@ div.ics-calendar-holder .ics-calendar-event {
 
   .first-subcontent-widget-area {
     float: left;
-    width: 33.3333%; }
+    width: 33%; }
 
   .second-subcontent-widget-area {
     float: left;
-    width: 33.3333%; }
+    width: 33%; }
 
   .third-subcontent-widget-area {
     float: right;
-    width: 33.3333%; }
+    width: 33%; }
 
   .first-footer-widget-area {
     float: left;
-    width: 66.6666%; }
+    width: 67%; }
 
   .second-footer-widget-area {
     float: right;
-    width: 33.3333%; }
+    width: 33%; }
 
 
 /* Besondere Tools-----------------------------------------------------------*/
@@ -2660,7 +2663,7 @@ div.ics-calendar-holder .ics-calendar-event {
 .ie7 .header .newsletter, 
 .ie8 .header .newsletter {
   float: right;
-  width: 33.3333%;
+  width: 33%;
   margin: 0; 
 }
 .ie7 .header .newsletter .skin,
@@ -2678,13 +2681,13 @@ div.ics-calendar-holder .ics-calendar-event {
 
 .ie7 .teaser .first-teaser-widget-area, 
 .ie8 .teaser .first-teaser-widget-area {
-  width: 66.6666%; }
+  width: 67%; }
 .ie7 .teaser .second-teaser-widget-area, 
 .ie8 .teaser .second-teaser-widget-area {
-  width: 33.3333%; }
+  width: 33%; }
 .ie7 .content-primary, .ie8 .content-primary {
   float: left;
-  width: 66.6666%; }
+  width: 67%; }
   .ie7 .content-primary .first-startpage-widget-area, 
   .ie8 .content-primary .first-startpage-widget-area {
     width: 50%;
@@ -2703,7 +2706,7 @@ div.ics-calendar-holder .ics-calendar-event {
       padding-left: 10px; }
 .ie7 .content-aside, .ie8 .content-aside {
   float: right;
-  width: 33.3333%; }
+  width: 33%; }
 .ie7 .columns .column1, .ie8 .columns .column1 {
   width: 50%; }
   .ie7 .columns .column1 .post, .ie8 .columns .column1 .post {
@@ -2718,24 +2721,24 @@ div.ics-calendar-holder .ics-calendar-event {
 .ie7 .first-subcontent-widget-area, 
 .ie8 .first-subcontent-widget-area {
   float: left;
-  width: 33.3333%; }
+  width: 33%; }
 .ie7 .second-subcontent-widget-area, 
 .ie8 .second-subcontent-widget-area {
   float: left;
-  width: 33.3333%; }
+  width: 33%; }
 .ie7 .third-subcontent-widget-area, 
 .ie8 .third-subcontent-widget-area {
   float: right;
-  width: 33.3333%; }
+  width: 33%; }
 .ie7 .first-footer-widget-area,
 .ie8 .first-footer-widget-area {
   float: left;
-  width: 66.6666%; }
+  width: 67%; }
 .ie7 .second-footer-widget-area,
 .ie8 .second-footer-widget-area {
   float: right;
-  width: 33.3333%; }
-
+  width: 33%;
+}
 
 .ie7 .fs2 .flexslider .flex-pauseplay {
     position: absolute;
