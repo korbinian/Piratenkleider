@@ -4,7 +4,7 @@
  *
  * @source http://github.com/xwolfde/Piratenkleider
  * @creator xwolf
- * @version 2.11.1
+ * @version 2.12
  * @licence CC-BY-SA 3.0 
  */
 
@@ -112,8 +112,7 @@ function piratenkleider_setup() {
                 'sub' => __( 'Technische Navigation <br />&nbsp; (Kontakt, Impressunm, etc)', 'piratenkleider' ),
         ) );
 
-        set_post_thumbnail_size( $defaultoptions['thumb-width'], $defaultoptions['thumb-height'], true );
-        
+       
         /** Abschalten von Fehlermeldungen auf der Loginseite */      
         // add_filter('login_errors', create_function('$a', "return null;"));
         

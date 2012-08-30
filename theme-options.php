@@ -361,7 +361,7 @@ function theme_defaultbilder_do_page() {
                                 <?php _e( 'URL inkl. http:// zum Bild. Dieses kann auch vorher &uuml;ber den Mediendialog hochgeladen worden sein.', 'piratenkleider' ); ?>
                                 <br>
                                        <?php _e( 'Die Bilder sollten folgende Dimension haben: ', 'piratenkleider' ); ?>
-                                    <?php echo $defaultoptions['thumb-width'].'x'.$defaultoptions['thumb-height'].' Pixel' ?>
+                                    <?php echo $defaultoptions['bigslider-thumb-width'].'x'.$defaultoptions['bigslider-thumb-height'].' Pixel' ?>
                             </label>
                 
 
@@ -392,7 +392,7 @@ function theme_defaultbilder_do_page() {
                                 <br>
 
                                 <?php _e( 'Die Bilder sollten folgende Dimension haben: ', 'piratenkleider' ); ?>
-                                    <?php echo $defaultoptions['thumb-width'].'x'.$defaultoptions['thumb-height'].' Pixel' ?>
+                                    <?php echo $defaultoptions['bigslider-thumb-width'].'x'.$defaultoptions['bigslider-thumb-height'].' Pixel' ?>
                                    
                               </label>
 
@@ -939,7 +939,8 @@ function theme_designspecials_do_page() {
                             $options['css-default-header-height'] = $defaultoptions['css-default-header-height'];
                      if ( ! isset( $options['css-default-branding-padding-top'] ) ) 
                             $options['css-default-branding-padding-top'] = $defaultoptions['css-default-branding-padding-top'];
-
+                        if ( ! isset( $options['css-fontfile'] ) ) 
+                            $options['css-fontfile'] = $defaultoptions['default-fontset-file'];
                     ?>
                     <div id="einstellungen">  
                        <div>
@@ -963,6 +964,23 @@ function theme_designspecials_do_page() {
 
                         </td>					                           
 		       </tr>
+                       
+                       <tr valign="top"><th scope="row"><?php _e( 'Stil der Schriftart &auml;ndern', 'piratenkleider' ); ?></th>
+                        <td>
+                                            
+                        <select name="piratenkleider_theme_designspecials[css-fontfile]">
+                            <option value="font-bebas.css" style="font-family: Bebas;" <?php if ( $options['css-fontfile'] == 'font-bebas.css') echo ' selected="selected"'; ?>><?php _e( 'Bebas Neue', 'piratenkleider' ); ?></option>
+                            <option value="font-droid.css" style="font-family: Droid;" <?php if ( $options['css-fontfile'] == 'font-droid.css') echo ' selected="selected"'; ?>><?php _e( 'Droid Sans', 'piratenkleider' ); ?></option>
+                            <option value="font-standard.css"  style="font-family: Helvetica, Arial, sans-serif;" <?php if ( $options['css-fontfile'] == 'font-standard.css') echo ' selected="selected"'; ?>><?php _e( 'Helvetica, Arial, sans-serif', 'piratenkleider' ); ?></option>
+                        </select>   
+
+                        <label class="description" for="piratenkleider_theme_designspecials[css-colorfile]">
+                            <?php _e( 'Auswahl, welcher Schriftstil f&uuml;r die Website verwendet werden soll.', 'piratenkleider' ); ?>
+                        </label>
+
+                        </td>					                           
+		       </tr>
+                       
                        
                        <tr valign="top"><th scope="row"><?php _e( 'Small Screen Device Sichtbarkeit', 'piratenkleider' ); ?></th>
                             <td>
@@ -1120,6 +1138,7 @@ function theme_designspecials_validate( $input ) {
         $input['css-default-header-background-position'] = wp_filter_post_kses( $input['css-default-header-background-position'] );
         $input['css-default-header-background-repeat'] = wp_filter_post_kses( $input['css-default-header-background-repeat'] );
         $input['css-colorfile'] = wp_filter_post_kses( $input['css-colorfile'] );
+        $input['css-fontfile'] = wp_filter_post_kses( $input['css-fontfile'] );
    
 	return $input;
 }

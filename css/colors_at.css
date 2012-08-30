@@ -19,17 +19,9 @@
 
 */
 
-@font-face {
-  font-family: 'DroidSans';
-  src: url("../fonts/DroidSans.eot?#iefix") format("embedded-opentype"), url("../fonts/DroidSans.ttf") format("truetype");
-  font-weight: normal;
-  font-style: normal; }
-
 
 @media screen, projection {
 	
-	body { font-family:'DroidSans', Helvetica, Arial, sans-serif; }
-
     a {     
       color: #06C;
       -webkit-tap-highlight-color: #2d7dc5; 
@@ -176,7 +168,10 @@
   .teaser .first-teaser-widget-area {
     background: #111;
  }
-
+  .first-teaser-widget-area .slide .textslider  {
+    background: #4c2582;
+    color: #ddd;
+  } 
   
     .second-teaser-widget-area li {
       background: #4c2582;
@@ -190,7 +185,7 @@
   }
     .second-teaser-widget-area li a div {
       color: black;
-      font-family: "BebasNeueRegular", Helvetica, Arial, sans-serif;
+      font-family: "FontPiratenkleiderHeadlines", Helvetica, Arial, sans-serif;
       text-shadow: 0 -1px 1px #552554;
 
     }
@@ -223,7 +218,7 @@
   } 
  .teaserlinks ul li a {
      color: #EEE;
-     font-family: "BebasNeueRegular", Helvetica, Arial, sans-serif;
+     font-family: "FontPiratenkleiderHeadlines", Helvetica, Arial, sans-serif;
      text-shadow: 0 -1px 1px #552554;
  }
   .teaserlinks ul li a:hover,
@@ -256,7 +251,7 @@
     .content .symbolbild .aaarh {
          background: transparent;
          color: black;
-         font-family: "BebasNeueRegular", Helvetica, Arial, sans-serif;
+         font-family: "FontPiratenkleiderHeadlines", Helvetica, Arial, sans-serif;
     }
   .content-primary input[type="text"]:hover, 
   .content-primary textarea:hover,
@@ -266,7 +261,7 @@
     background-color: beige;
   }
    .content-primary .post-nav a {
-      font-family: "BebasNeueRegular", Helvetica, Arial, sans-serif;
+      font-family: "FontPiratenkleiderHeadlines", Helvetica, Arial, sans-serif;
      }
       .content-primary .sprungmarken ol li a:hover {
           background: #4c2582;
@@ -289,7 +284,7 @@
   }
 
     .post .post-info .cal-icon .day {
-        font-family: "BebasNeueRegular", Helvetica, Arial, sans-serif;
+        font-family: "FontPiratenkleiderHeadlines", Helvetica, Arial, sans-serif;
     }
     .post .post-meta {
          color: #222;
@@ -332,7 +327,7 @@
     }
 
     .first-startpage-widget-area li a {
-      font-family: "BebasNeueRegular", Helvetica, Arial, sans-serif;
+      font-family: "FontPiratenkleiderHeadlines", Helvetica, Arial, sans-serif;
       }
      .first-startpage-widget-area a.all-articles {
         background: #2d7dc5;

@@ -6,15 +6,18 @@
  
 
 $defaultoptions = array(
-    'js-version'                    => '2.10',
+    'js-version'                    => '2.12',
     'content-width'                 => 665,
     'logo'                          => get_template_directory_uri() .'/images/logo.png',
     'logo-width'                    => 300,
     'logo-height'                   => 130,
-    'thumb-width'                   => 705,
-    'thumb-height'                  => 240,
+    'smallslider-thumb-width'       => 220,
+    'smallslider-thumb-height'      => 185,
+    'bigslider-thumb-width'         => 705,
+    'bigslider-thumb-height'        => 240,
     'plakate-width'                 => 277,
     'plakate-height'                => 391,
+    'default-fontset-file'          => 'font-bebas.css',
     'src-jquery'                    => get_template_directory_uri(). "/js/jquery.min.js",
     'src-layoutjs'                  => get_template_directory_uri(). "/js/layout.js",
     'src-comment-reply'             => get_template_directory_uri(). "/js/comment-reply.js",
@@ -27,10 +30,10 @@ $defaultoptions = array(
     'src-default-symbolbild-tag'    => get_template_directory_uri() .'/images/default-tag.png',
     'src-default-symbolbild-author' => get_template_directory_uri() .'/images/default-author.png',
     'src-default-symbolbild-archive' => get_template_directory_uri() .'/images/default-archive.png',
-    
+  
     'slider-aktiv'                  => 1,
     'aktiv-defaultseitenbild'       => 0,
-    'aktiv-suche'                   => 1,
+    'aktiv-suche'                   => 1,   
     'slider-defaultwerbeplakate'    => 1,
     'slider-numberarticle'          => 3,
     'slider-animationType'          => 'slide',
@@ -58,6 +61,7 @@ $defaultoptions = array(
     'num-article-startpage-fullwidth'       => 1,
     'num-article-startpage-halfwidth'       => 4,
     'url-newsletteranmeldung'       => 'https://service.piratenpartei.de/subscribe/newsletter',
+    'teaser-type'                   => 'big',
     'teaser_maxlength'              => 300,
     'teaser-title-maxlength'        => 50,
     'teaser-subtitle'               => __( 'Topthema', 'piratenkleider' ),
@@ -67,6 +71,7 @@ $defaultoptions = array(
     'anonymize-user'                => 0,
     'anonymize-user-commententries' => 0,
     'aktiv-commentreplylink'        => 0,
+    'default_comment_notes_before'  => '<p class="comment-notes">'.__( 'Deine E-Mail-Adresse wird nicht veröffentlicht. Erforderliche Felder sind markiert <span class="required">*</span>', 'piratenkleider' ). '</p>',
     'twitter_cache_lifetime'        => 14400,
     'feed_cache_lifetime'           => 14400,
     'use_wp_feed_defaults'          => 1,
@@ -350,7 +355,7 @@ $default_toplink_liste = array(
              '<img src="'.get_template_directory_uri().'/images/flags/ch.png" width="16" height="11" alt=""> '.__('Schweiz', 'piratenkleider') => 'http://www.piratenpartei.ch/',
              '<img src="'.get_template_directory_uri().'/images/flags/rs.png" width="16" height="11" alt=""> '.__('Serbien', 'piratenkleider') => 'http://www.piratskapartija.com/',
              '<img src="'.get_template_directory_uri().'/images/flags/sk.png" width="16" height="11" alt=""> '.__('Slowakei', 'piratenkleider') => 'http://www.piratskastrana.sk/',
-             '<img src="'.get_template_directory_uri().'/images/flags/sl.png" width="16" height="11" alt=""> '.__('Slowenien', 'piratenkleider') => 'http://www.piratskastranka.net/',
+             '<img src="'.get_template_directory_uri().'/images/flags/si.png" width="16" height="11" alt=""> '.__('Slowenien', 'piratenkleider') => 'http://www.piratskastranka.net/',
              '<img src="'.get_template_directory_uri().'/images/flags/es.png" width="16" height="11" alt=""> '.__('Spanien', 'piratenkleider') => 'http://www.partidopirata.es/',
              '<img src="'.get_template_directory_uri().'/images/flags/kr.png" width="16" height="11" alt=""> '.__('S&uuml;dkorea', 'piratenkleider') => 'http://pirateparty.kr/',
              '<img src="'.get_template_directory_uri().'/images/flags/cz.png" width="16" height="11" alt=""> '.__('Tschechien', 'piratenkleider') => 'http://www.ceskapiratskastrana.cz/',
@@ -884,6 +889,7 @@ $setoptions = array(
                   'default' => $defaultoptions['slider-animationType'],
                    'parent'  => 'sliderpars'
               ), 
+                 
               'slider-Direction' => array(
                   'type'    => 'select',
                   'title'   => __( 'Richtung', 'piratenkleider' ),
@@ -906,6 +912,15 @@ $setoptions = array(
                   'default' => $defaultoptions['slider-animationDuration'],
                    'parent'  => 'sliderpars'
               ),  
+             'teaser-type' => array(
+                  'type'    => 'select',
+                  'title'   => __( 'Teaser-Darstellung', 'piratenkleider' ),
+                  'label'   => __( 'Teaser mit großem Bild über gesamte Breite oder kleinem Thumbnail.', 'piratenkleider' ),
+                  'liste'   => array("big" => "big", "small" => "small"),
+                  'default' => $defaultoptions['teaser-type'],
+                   'parent'  => 'sliderpars'
+              ), 
+               
              'teaser-subtitle' => array(
                   'type'    => 'text',
                   'title'   => __( 'Bezeichnender Titel f&uuml;r Teaser', 'piratenkleider' ),
@@ -1099,6 +1114,11 @@ $setoptions = array(
                   'title'   => __( 'Antwortlinks auf Kommentare', 'piratenkleider' ),
                   'label'   => __( 'Bei der Anzeige von Kommentaren, wird unter diesen ein eigener Kommentarlink eingebaut, der das Antworten auf den Kommentar erlaubt. Dies kann zu einer Nutzung des Kommentarbereiches wie bei einem Forum f&uuml;hren, bei dem es zuletzt aber nicht mehr um den eigentlichen Beitrag geht.', 'piratenkleider' ),
                   'default' => $defaultoptions['aktiv-commentreplylink'],
+              ),
+              'comments_disclaimer'  => array(
+                  'type'    => 'text',
+                  'title'   => __( 'Kommentar-Disclaimer', 'piratenkleider' ),
+                  'label'   => __( 'Kurzer Hinweistext (ggf. Link) zu Regeln f&uuml;r Kommentare.', 'piratenkleider' ),
               ),
                'aktiv-defaultseitenbild' => array(
                   'type'    => 'bool',

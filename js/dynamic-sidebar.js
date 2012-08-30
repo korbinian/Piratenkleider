@@ -8,10 +8,10 @@ var $cssASideOnHideSidebar = {
     'width' : '0'   
 };
 var $cssPrimaryOnViewSidebar = {
-    'width' : '66.6666%' 
+    'width' : '67%' 
 };
 var $cssASideOnViewSidebar = {
-    'width' : '33.3333%' 
+    'width' : '33%' 
 };
 $.SetOnSwitch = function() {   
      $(".content-primary").prepend($htmlOnSwitch);     

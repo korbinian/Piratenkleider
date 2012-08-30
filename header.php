@@ -91,8 +91,15 @@ if ((isset( $options['meta-keywords'] )) && ( strlen(trim($options['meta-keyword
     <link rel="profile" href="http://gmpg.org/xfn/11" />
     <link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo( 'stylesheet_url' ); ?>">
 <?php if ((isset($designspecials['css-colorfile'])) && (strlen(trim($designspecials['css-colorfile']))>1)) { 
-    echo '<link rel="stylesheet" type="text/css" media="all" href="'.get_template_directory_uri().'/css/'.$designspecials['css-colorfile'].'">';
-} ?>
+        echo '<link rel="stylesheet" type="text/css" media="all" href="'.get_template_directory_uri().'/css/'.$designspecials['css-colorfile'].'">';
+    } 
+    if (!isset($designspecials['css-fontfile']))  {
+        $designspecials['css-fontfile'] = $defaultoptions['default-fontset-file'];
+    }
+    if ((isset($designspecials['css-fontfile'])) && (strlen(trim($designspecials['css-fontfile']))>1)) { 
+        echo '<link rel="stylesheet" type="text/css" media="all" href="'.get_template_directory_uri().'/css/'.$designspecials['css-fontfile'].'">';
+    } 
+?>
     <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 <?php if ( is_singular() && get_option( 'thread_comments' ) )
 		wp_enqueue_script( 'comment-reply' );

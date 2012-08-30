@@ -9,12 +9,7 @@ Tags: orange, two-columns, responsive, fluid-width
 License: CC-BY-SA 3.0 
 License URI: http://creativecommons.org/licenses/by-sa/3.0/de/deed.de
 */
-@font-face {
-  font-family: 'BebasNeueRegular';
-  src: url("../fonts/BebasNeue-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/BebasNeue-webfont.ttf") format("truetype"); 
-  font-weight: normal;
-  font-style: normal; 
-}
+
 html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary, time, mark, audio, video {
   margin: 0;
   padding: 0;
@@ -117,11 +112,11 @@ audio:not([controls]) {
 /* Typography -------------------------------------------------------------- */
 body {
     font-size: 0.8em;
-    font-family: Helvetica, Arial, sans-serif;
-     line-height: 18px;
+    font-family: "FontPiratenkleiderDefault", Helvetica, Arial, sans-serif;
+    line-height: 18px;
 }
 select, input, textarea, button {
-  font-family: Helvetica, Arial, sans-serif;
+  font-family: "FontPiratenkleiderDefault", Helvetica, Arial, sans-serif;
   font-size: 0.8em;
   line-height: 18px;
   color: black; 
@@ -129,10 +124,11 @@ select, input, textarea, button {
 
 h1, h2, h3, h4, h5, h6 {
   margin-bottom: 9px;
-  font-weight: normal; }
+  font-weight: normal; 
+}
 
 h1, h2, h3, .bebas, .cifont {
-  font-family: "BebasNeueRegular", Helvetica, Arial, sans-serif;
+  font-family: "FontPiratenkleiderHeadlines", Helvetica, Arial, sans-serif;
   letter-spacing: 1px; 
 }
 
@@ -772,7 +768,7 @@ ul.socialmedia li a:focus img  {
     float: left;
     text-align: center;
     font-size: 34px;
-    font-family: "BebasNeueRegular",Helvetica,Arial,sans-serif;
+    font-family: "FontPiratenkleiderHeadlines",Helvetica,Arial,sans-serif;
     letter-spacing: 1px;
     margin: 10px;
     line-height: 0.9em;     
@@ -969,8 +965,12 @@ display: inline-block;
     background: #c96a00;
     background: rgba(0, 0, 0, 0.3) -20% 0 fixed; 
   }
-  .teaser .first-teaser-widget-area {
-    background: #111;
+  
+   .first-teaser-widget-area .slide .textslider  {
+    background: #ff8800;  
+  } 
+  
+  .teaser .first-teaser-widget-area {   
     float: left;
     width: 100%; }
   .teaser .second-teaser-widget-area {
@@ -1010,7 +1010,7 @@ display: inline-block;
   }
     .second-teaser-widget-area li a div {
       color: black;
-      font-family: "BebasNeueRegular", Helvetica, Arial, sans-serif;
+      font-family: "FontPiratenkleiderHeadlines",  Helvetica, Arial, sans-serif;
       letter-spacing: 1px;
       text-shadow: 0 -1px 1px #c36800;
       font-size: 19px; 
@@ -1074,7 +1074,7 @@ display: inline-block;
   }
  .teaserlinks ul li a {
     color: white;
-    font-family: "BebasNeueRegular", Helvetica, Arial, sans-serif;
+    font-family: "FontPiratenkleiderHeadlines", Helvetica, Arial, sans-serif;
     letter-spacing: 1px;
     text-shadow: 0 -1px 1px #c36800;
     font-size: 22px;     
@@ -1106,7 +1106,7 @@ display: inline-block;
     display: block;    
     color: black;
     text-shadow: 0 0 0; 
-    font-family: Helvetica, Arial, sans-serif;
+    font-family: "FontPiratenkleiderDefault", Helvetica, Arial, sans-serif;
  
   }
 .teaserlinks ul li a:hover span,
@@ -1228,7 +1228,7 @@ display: inline-block;
 .content .symbolbild .aaarh {
     background: transparent;
     color: black;
-    font-family: "BebasNeueRegular", Helvetica, Arial, sans-serif;
+    font-family: "FontPiratenkleiderHeadlines", Helvetica, Arial, sans-serif;
     text-transform: uppercase;
     position: absolute;
     font-size: 2em;
@@ -1281,7 +1281,7 @@ display: inline-block;
     margin-bottom: 20px;
     overflow: hidden; }
     .content-primary .post-nav a {
-      font-family: "BebasNeueRegular", Helvetica, Arial, sans-serif;
+      font-family: "FontPiratenkleiderHeadlines", Helvetica, Arial, sans-serif;
       font-size: 20px; }
     .content-primary .post-nav ul li {
       list-style: none; }
@@ -1316,7 +1316,7 @@ display: inline-block;
 .content-primary ol.az dl {
     float: left; }
 .content-primary ol.az dl dt {
-    font-family: "BebasNeueRegular", Helvetica, Arial, sans-serif;
+    font-family: "FontPiratenkleiderHeadlines", Helvetica, Arial, sans-serif;
     font-size: 20px;
     font-weight: lighter;
     letter-spacing: 1px; }
@@ -1599,7 +1599,7 @@ display: inline-block;
   }
     .post .post-info .cal-icon .day {
       font-size: 24px;
-      font-family: "BebasNeueRegular", Helvetica, Arial, sans-serif;
+      font-family: "FontPiratenkleiderHeadlines", Helvetica, Arial, sans-serif;
       line-height: 18px; }
     .post .post-info .cal-icon .month {
       font-size: 10px; }
@@ -1812,7 +1812,7 @@ display: inline-block;
       -webkit-transition: all 0.2s ease-in-out;
       transition: all 0.2s ease-in-out; }
 .first-startpage-widget-area li a {
-      font-family: "BebasNeueRegular", Helvetica, Arial, sans-serif;
+      font-family: "FontPiratenkleiderHeadlines", Helvetica, Arial, sans-serif;
       font-size: 20px; }
     
 .first-startpage-widget-area li:hover span.date,
@@ -1860,7 +1860,7 @@ display: inline-block;
   padding: 0 0 0 20px; }
 
 .tagcloud {
-  font-family: "BebasNeueRegular", Helvetica, Arial, sans-serif;
+  font-family: "FontPiratenkleiderHeadlines", Helvetica, Arial, sans-serif;
   line-height: 1.8em;
   text-align: center;
   margin-top: 1em;      
