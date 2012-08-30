@@ -1,0 +1,22 @@
+/* 
+    Document   : font-standard.css
+    Created on : 30.08.2012, 13:31:28
+    Author     : xwolf
+    Description:
+      Font-Face Definitions: No special font
+}
+*/
+
+@font-face {
+  font-family: 'FontPiratenkleiderHeadlines';
+  font-weight: normal;
+  font-style: normal; 
+}
+@font-face {
+  font-family: 'FontPiratenkleiderDefault';
+  font-weight: normal;
+  font-style: normal; 
+}
+
+
+

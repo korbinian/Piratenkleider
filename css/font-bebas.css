@@ -1,0 +1,23 @@
+/* 
+    Document   : font-bebas.css
+    Created on : 30.08.2012, 13:31:28
+    Author     : xwolf
+    Description:
+      Font-Face Definition: Font Bebas Neue
+}
+*/
+
+@font-face {
+  font-family: 'FontPiratenkleiderHeadlines';
+  src: url("../fonts/BebasNeue-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/BebasNeue-webfont.ttf") format("truetype");  
+  font-weight: normal;
+  font-style: normal; 
+}
+@font-face {
+  font-family: 'FontPiratenkleiderDefault';
+  font-weight: normal;
+  font-style: normal; 
+}
+
+
+
