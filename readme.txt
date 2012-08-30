@@ -2,7 +2,7 @@ Piratenkleider
 - Wordpress-Theme für Webauftritte der Piratenpartei 
 =================================================
 
-Version 2.11.1 von Wolfgang Wiese (xwolf), 29. August 2012
+Version 2.12 von Wolfgang Wiese (xwolf), 30. August 2012
 
 
 DOWNLOADS
@@ -392,8 +392,13 @@ Administrative Hinweise für Wordpress Theme-Editoren:
    Zur eigenen Übersetzung kann die Datei
       default.po
    mit Hilfe des Editors poedit bearbeitet werden.
-   
-7. Es werden teilweise Funktionen verwendet, die mit WP 3.4 "deprecated" sind.
+
+8. Schriftfonts
+   Da die Standard-BEBAS-Schrift nicht ueberall passt, unterstützt das backend 
+   ab der Version 2.12 die Möglichkeit den Schriftfont zu aendern auf
+   DroidSans oder Standardschrift (Helvetica/Aria/Sans-Serif).
+  
+9. Es werden teilweise Funktionen verwendet, die mit WP 3.4 "deprecated" sind.
    Da das Theme allerdings noch bei einigen Installationen unter WP 3.4
    eingesetzt wird, wurden diese Funktionen absichtlich noch nicht umgestellt.
 
