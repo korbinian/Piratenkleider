@@ -709,6 +709,7 @@ $setoptions = array(
                   'default' => $defaultoptions['zeige_sidebarpagemenu'],
                   'parent'  => 'seitenmenu',
               ),
+              
               'newsletter' => array(
                   'type'    => 'bool',
                   'title'   => __( 'Newsletter', 'piratenkleider' ),
@@ -1122,7 +1123,14 @@ $setoptions = array(
                   'title'   => __( 'Sidebar abblendbar', 'piratenkleider' ),
                   'label'   => __( 'Benutzern via JavaScript die M&ouml;glichkeit geben, die Sidebar klein zu machen. <br>Hinweis: Der Status wird nicht gespeichert, um keine Cookies anzulegen; Die Funktion ist nicht sichtbnar, wenn man kein JavaScript an hat. Desweiteren ist die Funktion nur aktiv, wenn die Bildschirmbreite gr&ouml;&szlig;er als 600 Pixel ist.', 'piratenkleider' ),
                   'default' => $defaultoptions['aktiv-dynamic-sidebar'],
-              ),                              
+              ),         
+              'position_sidebarbottom' => array(
+                  'type'    => 'select',
+                  'title'   => __( 'Position der Sidebar', 'piratenkleider' ),
+                  'label'   => __( 'Sidebar rechts neben den Inhalt oder darunter positionieren. Wenn die Sidebar unter dem Inhalt positioniert wird, wird der Inhaltsbereich &uuml;ber die gesamte Breite gehen.', 'piratenkleider' ),
+                  'liste'   => array(0 => __( 'Rechts (Standard)', 'piratenkleider' ), 1 => __( 'Unter dem Inhalt', 'piratenkleider' )),
+                  'default' => 0,
+              ),
               'aktiv-commentreplylink' => array(
                   'type'    => 'bool',
                   'title'   => __( 'Antwortlinks auf Kommentare', 'piratenkleider' ),
