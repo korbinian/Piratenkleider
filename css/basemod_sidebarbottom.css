@@ -1,0 +1,16 @@
+/* 
+    Document   : basemod_sidebarbottom
+    Created on : 10.09.2012, 23:31:46
+    Author     : xwolf
+    Description:
+        Change position of sidebar to the bottom; Changing the width of the main
+        content to 100%;
+*/
+
+.content-primary {
+    width: 100%;
+}
+
+.content-aside {
+    width: 100%;
+}
