@@ -522,6 +522,20 @@ $default_toplink_liste = array(
             '<acronym title="Kreisverband">KV</acronym> Trier/Trier-Saarburg' => 'http://piraten-trier.de',
         )
     ),
+      'Thüringen' => array(
+        'title' => 'Piratenpartei Landesverband Thüringen',
+        'url'  => 'http://www.piraten-thueringen.de/',
+        'sublist' => array(
+            '<acronym title="Kreisverband">KV</acronym> Altenburger Land' => 'http://piraten-altenburger-land.de/',
+            '<acronym title="Kreisverband">KV</acronym> Wartburgkreis' => 'http://wartburgpiraten.de/',
+            '<acronym title="Kreisverband">KV</acronym> Erfurt' => 'http://www.piraten-erfurt.de/',
+            '<acronym title="Kreisverband">KV</acronym> Gera' => 'http://piraten-gera.de/',
+            '<acronym title="Kreisverband">KV</acronym> Gotha' => 'http://piraten-gotha.de/',
+            '<acronym title="Kreisverband">KV</acronym> Ilm-Kreis' => 'http://piraten-ilmkreis.de/',
+            '<acronym title="Kreisverband">KV</acronym> Schmalkalden-Meiningen' => 'http://piraten-schmalkalden-meiningen.de/',
+            '<acronym title="Kreisverband">KV</acronym> Jena' => 'http://jena.piraten-thueringen.de/',
+        )
+    ),
 );
 
 /* 
