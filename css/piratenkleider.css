@@ -454,34 +454,6 @@ body {
   background: white url("../images/int/bg-tags_gray.jpg") -20% 0 fixed; 
 }
 
-  .sticky {
-     border-radius: 0.3em;
-    border-width: 1px;
-    border-style: solid;
-    border-color: #888;
-    border-color: rgba(0,0,0,.3);
-    -webkit-box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2) inset;
-    -moz-box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2) inset;
-    -ms-box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2) inset;
-    -o-box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2) inset;
-    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2) inset;
-    color: #444;
-    color: rgba(0,0,0,.8);
-     background: url("../images/int/bg-tags.png") repeat fixed -20% top #FF8800;
-     padding: 5px 5px 20px 5px;
-     margin: 10px;
- }
- .sticky a {
-      color: black;
-     background: #f38100;
-    padding: 0 2px;
- }      
- .sticky a:hover,
- .sticky a:focus {    
-    color: #000;
-    background: #d97300;
- }      
-
 .section {
   padding: 0 10px; }
 
@@ -1620,6 +1592,46 @@ display: inline-block;
     float: left;
     font-size: 12px; }
 
+.post .disclaimer, 
+.sticky {
+    border-radius: 0.3em;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #888;
+    border-color: rgba(0,0,0,.3);
+    -webkit-box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2) inset;
+    -moz-box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2) inset;
+    -ms-box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2) inset;
+    -o-box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2) inset;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2) inset;
+    color: #444;
+    color: rgba(0,0,0,.8);
+    background: url("../images/int/bg-tags.png") repeat fixed -20% top #FF8800;
+    padding: 5px;
+    margin: 10px 20px 30px;    
+    position: relative;
+}
+.post .disclaimer {
+    clear: both;
+}
+.sticky {
+    padding: 5px 5px 20px 5px;
+    margin: 10px;
+}
+.post .disclaimer a, 
+.sticky a {
+    color: black;
+    background: #f38100;
+    padding: 0 2px;
+}      
+.post .disclaimer a:hover, 
+.post .disclaimer a:focus,
+.sticky a:hover,
+.sticky a:focus {    
+    color: #000;
+    background: #d97300;
+}      
+
 .post-comments #comments-title {
   margin-bottom: 20px; }
 .post-comments ol {
@@ -1642,17 +1654,12 @@ display: inline-block;
       padding-right: 2%;
       font-size: 0.9em; 
     }
-      .post-comments ol li .comment-details .comment-author a {
-      /*  color: black; */
-      }
+
       .post-comments ol li .comment-details .comment-author img {
         float: left;
         margin: 0 10px 10px 0;
       }
-   .post-comments ol li .comment-details .comment-author .avatar {
-       
-       
-   }
+
       
 .post-comments ol li .comment-body {
       float: left;

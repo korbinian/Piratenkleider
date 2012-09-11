@@ -13,6 +13,17 @@
           <div class="post-title">
             <h1><?php the_title(); ?></h1>
           </div>
+          
+           <?php 
+            if (($custom_fields['show-post-disclaimer'][0]<>'') 
+                 && ($options['post_disclaimer']<>'') 
+                 && ( ($custom_fields['show-post-disclaimer'][0]==1) || ($custom_fields['show-post-disclaimer'][0]==3)) 
+                ) {
+                echo '<div class="disclaimer">';
+                echo $options['post_disclaimer'];
+                echo '</div>';
+                }
+          ?>  
           <div class="post-info">           
               <?php 
                 $num_comments = get_comments_number();
@@ -40,16 +51,7 @@
             </div>
           </div>
             
-          <?php 
-            if (($custom_fields['show-post-disclaimer'][0]<>'') 
-                 && ($options['post_disclaimer']<>'') 
-                 && ( ($custom_fields['show-post-disclaimer'][0]==1) || ($custom_fields['show-post-disclaimer'][0]==3)) 
-                ) {
-                echo '<div class="disclaimer">';
-                echo $options['post_disclaimer'];
-                echo '</div>';
-                }
-          ?>
+          
             
           <div class="post-entry">
             <?php the_content(); ?>
