@@ -83,113 +83,120 @@ function theme_options_do_page($tab = '') {
           
           
         <div id="einstellungen">                                       
-                <div>
-                    <table>
-                    <?php
-                        if (isset($setoptions['piratenkleider_theme_options'][$tab]['fields'])) {
-                            foreach($setoptions['piratenkleider_theme_options'][$tab]['fields'] as $i => $value) {   
-                                $name = $i;
-                                $title = $value['title'];
-                                $type = $value['type'];
-                                $label = $value['label'];
-                                $parent = $value['parent'];
-                                $liste = $value['liste'];
-                                
-                                if ($type == 'section') {
-                                    if ($setsection != "") {
-                                         echo "\t\t\t</table>\n";   
-                                         echo "\t\t</td>\n";
-                                         echo "\t</tr>\n";
-                                    }
-                                    echo "\t<tr valign=\"top\">\n\t\t<th scope=\"row\">";
-                                    echo $title;
-                                    echo "</th>\n\t\t<td>";
-                                    echo "\t\t\t<table>\n";        
-                                    $setsection = $name;
-                                } else {
-                                
-                                    echo "\t<tr valign=\"top\">\n\t\t<th scope=\"row\">";
-                                    echo $title;
-                                    echo "</th>\n\t\t<td>";
-                                 
-                                    if ((!isset($options[$name])) && (isset($value['default'])) && (!empty($value['default']))) {                                       
-                                            $options[$name] = $value['default'];                                                                               
-                                    }
-                                    if ($type =='bool') {
-                                        echo "\t\t\t";
-                                        echo "<input id=\"piratenkleider_theme_options[$name]\" name=\"piratenkleider_theme_options[$name]\" 
-                                                type=\"checkbox\" value=\"1\" ".checked( $options[$name],1,false ).">\n";
-                                        echo "\t\t\t";
-                                        echo "<label for=\"piratenkleider_theme_options[$name]\">$label</label>\n";                                     
-                                    } elseif (($type=='text') ||($type=='html') ||($type=='url')) {
-                                        echo "\t\t\t";
-                                        echo "<input class=\"regular-text\" id=\"piratenkleider_theme_options[$name]\" 
-                                                type=\"text\" name=\"piratenkleider_theme_options[$name]\" 
-                                                value=\"".esc_attr( $options[$name] )."\"><br>\n";
+            <div>
+                <table>
+                <?php
+                    if (isset($setoptions['piratenkleider_theme_options'][$tab]['fields'])) {
+                        foreach($setoptions['piratenkleider_theme_options'][$tab]['fields'] as $i => $value) {   
+                            $name = $i;
+                            $title = $value['title'];
+                            $type = $value['type'];
+                            $label = $value['label'];
+                            $parent = $value['parent'];
+                            $liste = $value['liste'];
+
+                            if ($type == 'section') {
+                                if ($setsection != "") {
+                                        echo "\t\t\t</table>\n";   
+                                        echo "\t\t</td>\n";
+                                        echo "\t</tr>\n";
+                                }
+                                echo "\t<tr valign=\"top\">\n\t\t<th scope=\"row\">";
+                                echo $title;
+                                echo "</th>\n\t\t<td>";
+                                echo "\t\t\t<table>\n";        
+                                $setsection = $name;
+                            } else {
+
+                                echo "\t<tr valign=\"top\">\n\t\t<th scope=\"row\">";
+                                echo $title;
+                                echo "</th>\n\t\t<td>";
+
+                                if ((!isset($options[$name])) && (isset($value['default'])) && (!empty($value['default']))) {                                       
+                                        $options[$name] = $value['default'];                                                                               
+                                }
+                                if ($type =='bool') {
+                                    echo "\t\t\t";
+                                    echo "<input id=\"piratenkleider_theme_options[$name]\" name=\"piratenkleider_theme_options[$name]\" 
+                                            type=\"checkbox\" value=\"1\" ".checked( $options[$name],1,false ).">\n";
+                                    echo "\t\t\t";
+                                    echo "<label for=\"piratenkleider_theme_options[$name]\">$label</label>\n";                                     
+                                } elseif (($type=='text') ||($type=='html') ||($type=='url')) {
+                                    echo "\t\t\t";
+                                    echo "<input class=\"regular-text\" id=\"piratenkleider_theme_options[$name]\" 
+                                            type=\"text\" name=\"piratenkleider_theme_options[$name]\" 
+                                            value=\"".esc_attr( $options[$name] )."\"><br>\n";
+                                    echo "\t\t\t";
+                                    echo "<label for=\"piratenkleider_theme_options[$name]\">$label</label>\n";
+                                } elseif ($type=='textarea')  {
+                                    echo "\t\t\t";                                                                                                            
+                                    echo "<textarea class=\"large-text\" id=\"piratenkleider_theme_options[$name]\" 
+                                            cols=\"30\" rows=\"10\"  name=\"piratenkleider_theme_options[$name]\">"
+                                            .esc_attr( $options[$name] )."</textarea><br>\n";
+                                    echo "\t\t\t";
+                                    echo "<label for=\"piratenkleider_theme_options[$name]\">$label</label>\n";     
+                                } elseif ($type=='number') {
+                                    echo "\t\t\t";
+                                    echo "<input class=\"number\" size=\"5\" id=\"piratenkleider_theme_options[$name]\" 
+                                            type=\"text\" name=\"piratenkleider_theme_options[$name]\" 
+                                            value=\"".esc_attr( $options[$name] )."\"><br>\n";
+                                    echo "\t\t\t";
+                                    echo "<label for=\"piratenkleider_theme_options[$name]\">$label</label>\n";                                         
+                                } elseif ($type=='select') {
+                                    echo "\t\t\t";
+                                    echo "<select name=\"piratenkleider_theme_options[$name]\">\n";
+
+                                    foreach($liste as $i => $value) {   
+                                        echo "\t\t\t\t";
+                                        echo '<option value="'.$i.'"';
+                                        if ( $i == $options[$name] ) {
+                                            echo ' selected="selected"';
+                                        }                                                                                                                                                                
+                                        echo '>';
+                                        if (!is_array($value)) {
+                                            echo $value;
+                                        } else {
+                                            echo $i;
+                                        }     
+                                        echo '</option>';                                                                                                                                                              
+                                        echo "\n";                                            
+                                    }  
+                                        echo "</select><br>\n";                                   
                                         echo "\t\t\t";
                                         echo "<label for=\"piratenkleider_theme_options[$name]\">$label</label>\n"; 
-                                    } elseif ($type=='number') {
-                                        echo "\t\t\t";
-                                        echo "<input class=\"number\" size=\"5\" id=\"piratenkleider_theme_options[$name]\" 
-                                                type=\"text\" name=\"piratenkleider_theme_options[$name]\" 
-                                                value=\"".esc_attr( $options[$name] )."\"><br>\n";
-                                        echo "\t\t\t";
-                                        echo "<label for=\"piratenkleider_theme_options[$name]\">$label</label>\n";                                         
-                                    } elseif ($type=='select') {
-                                        echo "\t\t\t";
-                                        echo "<select name=\"piratenkleider_theme_options[$name]\">\n";
-                                        
-                                        foreach($liste as $i => $value) {   
-                                            echo "\t\t\t\t";
-                                            echo '<option value="'.$i.'"';
-                                            if ( $i == $options[$name] ) {
-                                                echo ' selected="selected"';
-                                            }                                                                                                                                                                
-                                            echo '>';
-                                            if (!is_array($value)) {
-                                                echo $value;
-                                            } else {
-                                                echo $i;
-                                            }     
-                                            echo '</option>';                                                                                                                                                              
-                                            echo "\n";                                            
-                                        }  
-                                         echo "</select><br>\n";                                   
-                                         echo "\t\t\t";
-                                         echo "<label for=\"piratenkleider_theme_options[$name]\">$label</label>\n"; 
-                                        
-                                    }
-                                    
-                                    
-                                     echo "\t\t</td>\n";
-                                     echo "\t</tr>\n";
-                                }     
-                                
-                                if (($setsection!="") && ($type != 'section') && (!isset($parent))) {
-                                    /*
-                                     * Kein Parent mehr 
-                                     */
-                                     echo "\t\t\t</table>\n";   
-                                     echo "\t\t</td>\n";
-                                     echo "\t</tr>\n";
-                                     $setsection = "";
-                                }                                                                 
-                            }
-                             if ($setsection!="") {
-                                    /*
-                                     * Kein Parent mehr 
-                                     */
-                                     echo "\t\t\t</table>\n";   
-                                     echo "\t\t</td>\n";
-                                     echo "\t</tr>\n";
-                                     $setsection = "";
-                                }    
-                        } else {
-                            _e( 'Optionen nicht definiert', 'piratenkleider' );
+
+                                }
+
+
+                                    echo "\t\t</td>\n";
+                                    echo "\t</tr>\n";
+                            }     
+
+                            if (($setsection!="") && ($type != 'section') && (!isset($parent))) {
+                                /*
+                                    * Kein Parent mehr 
+                                    */
+                                    echo "\t\t\t</table>\n";   
+                                    echo "\t\t</td>\n";
+                                    echo "\t</tr>\n";
+                                    $setsection = "";
+                            }                                                                 
                         }
-                    ?>
-                 </table>
-                </div>            
+                            if ($setsection!="") {
+                                /*
+                                    * Kein Parent mehr 
+                                    */
+                                    echo "\t\t\t</table>\n";   
+                                    echo "\t\t</td>\n";
+                                    echo "\t</tr>\n";
+                                    $setsection = "";
+                            }    
+                    } else {
+                        _e( 'Optionen nicht definiert', 'piratenkleider' );
+                    }
+                ?>
+                </table>
+            </div>            
                 
           
         </div>                                        
@@ -239,7 +246,9 @@ function theme_options_validate( $input ) {
                         if ($type=='bool') {
                             $output[$name]  = ( $input[$name] == 1 ? 1 : 0 );    
                         } elseif ($type=='text') {
-                             $output[$name]  =  wp_filter_nohtml_kses( $input[$name] ); 
+                             $output[$name]  =  wp_filter_nohtml_kses( $input[$name] );
+                         } elseif ($type=='textarea') {
+                             $output[$name]  =  $input[$name] ;     
                         } elseif ($type=='html') {;    
                             $output[$name] = $input[$name];
                         } elseif ($type=='url') {

@@ -1,11 +1,13 @@
 <?php get_header();    
-  $options = get_option( 'piratenkleider_theme_options' );  
+  $options = get_option( 'piratenkleider_theme_options' );    
 ?> 
 <div class="section content" id="main-content">
   <div class="row">
     <div class="content-primary">
       <div class="skin">
-        <?php if ( have_posts() ) while ( have_posts() ) : the_post(); ?>
+        <?php if ( have_posts() ) while ( have_posts() ) : the_post();         
+        $custom_fields = get_post_custom();
+        ?>
 
         <div <?php post_class(); ?> id="post-<?php the_ID(); ?>">
           <div class="post-title">
@@ -37,9 +39,31 @@
               <span class="year"><?php the_time('Y'); ?></span>
             </div>
           </div>
+            
+          <?php 
+            if (($custom_fields['show-post-disclaimer'][0]<>'') 
+                 && ($options['post_disclaimer']<>'') 
+                 && ( ($custom_fields['show-post-disclaimer'][0]==1) || ($custom_fields['show-post-disclaimer'][0]==3)) 
+                ) {
+                echo '<div class="disclaimer">';
+                echo $options['post_disclaimer'];
+                echo '</div>';
+                }
+          ?>
+            
           <div class="post-entry">
             <?php the_content(); ?>
           </div>
+             <?php 
+            if (($custom_fields['show-post-disclaimer'][0]<>'') 
+                 && ($options['post_disclaimer']<>'') 
+                 && ( ($custom_fields['show-post-disclaimer'][0]==2) || ($custom_fields['show-post-disclaimer'][0]==3)) 
+                ) {
+                echo '<div class="disclaimer">';
+                echo $options['post_disclaimer'];
+                echo '</div>';
+                }
+          ?>  
           <div class="post-meta">
             <div>
                <?php 
@@ -50,6 +74,7 @@
             </div>
             <div><?php edit_post_link( __( 'Bearbeiten', 'piratenkleider' ), '', '' ); ?></div>
           </div>
+          
         </div>
 
         <hr>
@@ -96,7 +121,7 @@
       <div class="skin">
        <h1 class="skip"><?php _e( 'Weitere Informationen', 'piratenkleider' ); ?></h1>
        <?php
-       $custom_fields = get_post_custom();
+       
         if ((($custom_fields['image_url'][0]<>'') && ($custom_fields['text'][0]<>''))
            || (($custom_fields['text'][0]<>'') && (has_post_thumbnail())))             
             {   ?>

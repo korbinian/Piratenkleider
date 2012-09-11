@@ -1167,6 +1167,12 @@ $setoptions = array(
                   'default' => $defaultoptions['url-newsletteranmeldung'],
                  
               ),  
+               'post_disclaimer' => array(
+                  'type'    => 'textarea',
+                  'title'   => __( 'Disclaimer für (Gast-)Artikel', 'piratenkleider' ),
+                  'label'   => __( 'Definiere ein Text als Disclaimer der bei Artikeln gezeigt werden kann. Disclaimer wird mit Custom Field show-post-disclaimer (= 0, 1,2,3) aktiviert.', 'piratenkleider' ),
+                  'default' => $defaultoptions['disclaimer_post'],
+              ),                    
                
           )
        ),

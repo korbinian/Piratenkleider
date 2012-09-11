@@ -30,6 +30,7 @@ AUTOREN / ENTWICKLER
      Kerstin Probiesch, http://www.barrierefreie-informationskultur.de
      Fabian Müller, http://www.feals.de
      Georg Sinn, http://zwitschi.net
+     Ralph Hinterleitner, rcs@deixis.at
 
 
    Quellen für Defaultbilder und CI-Materialen (CC-BY 3.0)
@@ -402,4 +403,12 @@ Administrative Hinweise für Wordpress Theme-Editoren:
    Da das Theme allerdings noch bei einigen Installationen unter WP 3.4
    eingesetzt wird, wurden diese Funktionen absichtlich noch nicht umgestellt.
 
+10. Mit der Version 2.13 ist eine optionale Fullsize-Sicht pro Seiten und Artikel
+   aber auch global für die gesamte Website möglich. Dabei wird die Sidebar
+   nach dem Inhaltsbereich positioniert.
+   Vgl: hierzu die FAQ: http://piratenkleider.xwolf.de/faq/artikel-und-seiten-mit-voller-inhaltsbreite-sidebar-verschieben/
 
+11. Mit Versin 2.13 ist es möglich mit Hilfe der Takelage-Sonstiges
+   Funktion "Disclaimer für (Gast-)Artikel" einen Text (HTML) zu definieren
+   der mit Hilfe des Custom Fields show-post-disclaimer um den Artikel
+   angezeigt werden kann.
