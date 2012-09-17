@@ -522,7 +522,7 @@ $default_toplink_liste = array(
             '<acronym title="Kreisverband">KV</acronym> Trier/Trier-Saarburg' => 'http://piraten-trier.de',
         )
     ),
-      'Thüringen' => array(
+      'Thueringen' => array(
         'title' => 'Piratenpartei Landesverband Thüringen',
         'url'  => 'http://www.piraten-thueringen.de/',
         'sublist' => array(

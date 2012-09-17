@@ -1706,6 +1706,10 @@ display: inline-block;
   margin: -5px 0 0 -10px;
   position: absolute; }
 
+img.wp-smiley {
+  margin: 0 0 5px 0;
+} 
+
 .bypostauthor {}
 
 
