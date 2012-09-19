@@ -598,14 +598,18 @@ body {
 
 
 .header .branding {
-    padding: 10px 0 0px 0; }
+    padding: 10px 0 0px 0; 
+}
 .header input[type="text"] {
     border-color: silver;
 }
-
+.branding p.slogan {
+    display: none;
+}
 .logo {
   display: inline-block;
-  overflow: hidden; }
+  overflow: hidden; 
+}
 
 .nav-top ul {
   display: none; }

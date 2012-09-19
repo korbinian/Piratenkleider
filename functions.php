@@ -796,7 +796,7 @@ if( !is_admin()){
        
        
 }
-
+function piratenkleider_header_style() {} 
 
 function piratenkleider_admin_head() {
     echo '<link rel="stylesheet" type="text/css" href="'.get_template_directory_uri().'/css/admin.css" />'; 
