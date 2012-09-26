@@ -51,7 +51,6 @@ require_once ( get_template_directory() . '/theme-options.php' );
 add_action( 'after_setup_theme', 'piratenkleider_setup' );
 
 if ( ! function_exists( 'piratenkleider_setup' ) ):
-
 function piratenkleider_setup() {
      global $defaultoptions;
         // This theme styles the visual editor with editor-style.css to match the theme style.
@@ -363,8 +362,21 @@ function piratenkleider_post_taxonominfo() {
 }
 endif;
 
+// this function initializes the iframe elements 
+// maybe wont work on multisite installations. please use plugins instead.
+function piratenkleider_change_mce_options($initArray) {
+    $ext = 'iframe[align|longdesc|name|width|height|frameborder|scrolling|marginheight|marginwidth|src]';
+    if ( isset( $initArray['extended_valid_elements'] ) ) {
+        $initArray['extended_valid_elements'] .= ',' . $ext;
+    } else {
+        $initArray['extended_valid_elements'] = $ext;
+    }
+    // maybe; set tiny paramter verify_html
+    $initArray['verify_html'] = false;
+    return $initArray;
+}
+add_filter('tiny_mce_before_init', 'piratenkleider_change_mce_options');
 
-add_theme_support( 'post-thumbnails' );
 
 
 
