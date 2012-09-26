@@ -345,7 +345,7 @@ $default_toplink_liste = array(
               '<img src="'.get_template_directory_uri().'/images/flags/mx.png" width="16" height="11" alt=""> '.__('Mexiko', 'piratenkleider') => 'http://www.partidopiratamexicano.org/',
              '<img src="'.get_template_directory_uri().'/images/flags/nz.png" width="16" height="11" alt="">  '.__('Neuseeland', 'piratenkleider') => 'http://pirateparty.org.nz/',
              '<img src="'.get_template_directory_uri().'/images/flags/nl.png" width="16" height="11" alt=""> '.__('Niederlande', 'piratenkleider') => 'http://www.piratenpartij.nl/',
-             '<img src="'.get_template_directory_uri().'/images/flags/at.png" width="16" height="11" alt=""> '.__('&ouml;sterreich', 'piratenkleider') => 'http://piratenpartei.at/',
+             '<img src="'.get_template_directory_uri().'/images/flags/at.png" width="16" height="11" alt=""> '.__('&Ouml;sterreich', 'piratenkleider') => 'http://piratenpartei.at/',
              '<img src="'.get_template_directory_uri().'/images/flags/pe.png" width="16" height="11" alt=""> '.__('Peru', 'piratenkleider') => 'http://wiki.freeculture.org/Pirata',
              '<img src="'.get_template_directory_uri().'/images/flags/pl.png" width="16" height="11" alt=""> '.__('Polen', 'piratenkleider') => 'http://www.partiapiratow.org.pl/',
              '<img src="'.get_template_directory_uri().'/images/flags/pt.png" width="16" height="11" alt=""> '.__('Portugal', 'piratenkleider') => 'http://www.partidopiratapt.eu/',
