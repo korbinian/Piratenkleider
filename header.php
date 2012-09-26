@@ -100,7 +100,7 @@ if ((isset( $options['meta-keywords'] )) && ( strlen(trim($options['meta-keyword
         echo '<link rel="stylesheet" type="text/css" media="all" href="'.get_template_directory_uri().'/css/'.$designspecials['css-fontfile'].'">';
     }        	
     $custom_fields = get_post_custom();    
-    if ( (($custom_fields['fullsize'][0] == true) && (is_single() || is_page())) 
+    if ( (($custom_fields['fullsize'][0] == true) && (is_single() || is_page() || is_page_template())) 
          ||
         ((isset($options['position_sidebarbottom'])) && ($options['position_sidebarbottom'] ==1))) { 
         echo '<link rel="stylesheet" type="text/css" media="all" href="'.get_template_directory_uri().'/css/basemod_sidebarbottom.css">';
