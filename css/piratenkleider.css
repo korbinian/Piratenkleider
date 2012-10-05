@@ -2559,7 +2559,30 @@ div.ics-calendar-holder .ics-calendar-event {
     margin: 2px;
     border: 2px dotted rgba(0,0,0,0.5);
 }
-  
+
+.post-entry .kraehennestplayer {
+    float: right;
+    width: 185px;
+    padding: 0px 5px;
+  overflow: visible;
+  position: relative;
+background: none repeat scroll 0 0 #EEEEEE;
+    box-shadow: 1px 1px 2px #444444;
+    margin-bottom: 5px;
+}
+.post-entry .kraehennestplayer p,
+.kraehennestplayer p {
+    margin-bottom: 0px;
+}
+.post-entry p.kraehennestplayerTitle {
+  background: url(../images/kraehennest-50.png) 5px 5px no-repeat;;
+  padding-left: 60px;
+}
+.kraehennestplayer object {
+    margin: 0 auto;
+}
+
+
 /* Flag Icons     -----------------------------------------------------------*/
 .flagicon-sprite, .flagicon-ar, .flagicon-at, .flagicon-au, .flagicon-be, .flagicon-bg, .flagicon-br, .flagicon-by, .flagicon-ca, .flagicon-ch, .flagicon-cl, .flagicon-co, .flagicon-cy, .flagicon-cz, .flagicon-de, .flagicon-dk, .flagicon-es, .flagicon-fi, .flagicon-fr, .flagicon-gr, .flagicon-gt, .flagicon-it, .flagicon-kr, .flagicon-kz, .flagicon-lt, .flagicon-lu, .flagicon-lv, .flagicon-ma, .flagicon-mx, .flagicon-nl, .flagicon-nz, .flagicon-pe, .flagicon-pl, .flagicon-pt, .flagicon-ro, .flagicon-rs, .flagicon-ru, .flagicon-se, .flagicon-si, .flagicon-sk, .flagicon-tn, .flagicon-tr, .flagicon-ua, .flagicon-uk, .flagicon-us, .flagicon-uy {
   width: 16px;

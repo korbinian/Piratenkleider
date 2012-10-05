@@ -137,7 +137,7 @@ html[xmlns] .slides {
 
 .content-aside .slide .caption,
 .first-teaser-widget-area .slide .caption {
-  background: trabsparent;
+  background: transparent;
   background: rgba(0, 0, 0, 0.5);
   color: white;
   position: absolute;
