@@ -30,7 +30,10 @@
 }
 
 
-.flexslider img {
+.flexslider .bigslider img {
+    
+    min-width: 705px;
+    
     /* Kommentare entfernen, wenn man möchte dass die Bilder an die 
        proportionale Breite angepasst werden und nicht abgeschnitten werden: */
     
@@ -134,7 +137,7 @@ html[xmlns] .slides {
 
 .content-aside .slide .caption,
 .first-teaser-widget-area .slide .caption {
-  background: transparent;
+  background: trabsparent;
   background: rgba(0, 0, 0, 0.5);
   color: white;
   position: absolute;
@@ -162,13 +165,16 @@ html[xmlns] .slides {
     z-index: 99;
 }
 .first-teaser-widget-area .slide .bigslider  {
-    background: none repeat scroll 0 0 #111111;
+  /*  background: none repeat scroll 0 0 #111111; */
+  position: relative;
 }
  
 .first-teaser-widget-area .slide .textslider  {
     box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
     margin: 0 5px 5px 5px;
     height: 235px;       
+    padding: 1em;
+    
 }
 .first-teaser-widget-area .slide .textslider img {
     float: left;    
