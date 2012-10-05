@@ -278,7 +278,14 @@ UNTERSTÜTZE PLUGINS
    Terminkalenderansicht zu ermöglichen. Um diese optimal in das Theme
    einzubauen, wurden eigene Templatefiles im Verzeichnis /events/ hinterlegt.
 
-
+ - Kraehennest Podcaster
+   (http://thegeek.de/neues-wordpress-plugin-der-krahennest-podcaster/)
+   Dieses Plugin ermöglicht das Einlesen der Krähennest Podcasts. Dabei handelt
+   es sich um vertonte Meldungen (http://kraehennest.piraten-wagen-mehr-demokratie.de/ )
+   Das Plugin erkennt wenn Artikel mit gleichem Titel wie im Podcast 
+   vorhanden sind und bindet in diesem Fall das Embedding für einen
+   Flashplayer ein.
+   
 
 EMPFEHLUNGEN FÜR WIDGETS
  
