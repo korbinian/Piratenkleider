@@ -31,6 +31,7 @@ AUTOREN / ENTWICKLER
      Fabian Müller, http://www.feals.de
      Georg Sinn, http://zwitschi.net
      Ralph Hinterleitner, rcs@deixis.at
+     Jan Schejbal, http://janschejbal.wordpress.com/
 
 
    Quellen für Defaultbilder und CI-Materialen (CC-BY 3.0)

@@ -2560,6 +2560,193 @@ div.ics-calendar-holder .ics-calendar-event {
     border: 2px dotted rgba(0,0,0,0.5);
 }
   
+/* Flag Icons     -----------------------------------------------------------*/
+.flagicon-sprite, .flagicon-ar, .flagicon-at, .flagicon-au, .flagicon-be, .flagicon-bg, .flagicon-br, .flagicon-by, .flagicon-ca, .flagicon-ch, .flagicon-cl, .flagicon-co, .flagicon-cy, .flagicon-cz, .flagicon-de, .flagicon-dk, .flagicon-es, .flagicon-fi, .flagicon-fr, .flagicon-gr, .flagicon-gt, .flagicon-it, .flagicon-kr, .flagicon-kz, .flagicon-lt, .flagicon-lu, .flagicon-lv, .flagicon-ma, .flagicon-mx, .flagicon-nl, .flagicon-nz, .flagicon-pe, .flagicon-pl, .flagicon-pt, .flagicon-ro, .flagicon-rs, .flagicon-ru, .flagicon-se, .flagicon-si, .flagicon-sk, .flagicon-tn, .flagicon-tr, .flagicon-ua, .flagicon-uk, .flagicon-us, .flagicon-uy {
+  width: 16px;
+  height: 11px;
+  display: inline-block;
+  background: url('../images/flags/flagicon.png') no-repeat;
+}
+
+.flagicon-ar {
+  background-position: 0 -234px;
+}
+
+.flagicon-at {
+  background-position: 0 -533px;
+}
+
+.flagicon-au {
+  background-position: 0 -13px;
+}
+
+.flagicon-be {
+  background-position: 0 -442px;
+}
+
+.flagicon-bg {
+  background-position: 0 -403px;
+}
+
+.flagicon-br {
+  background-position: 0 -78px;
+}
+
+.flagicon-by {
+  background-position: 0 -195px;
+}
+
+.flagicon-ca {
+  background-position: 0 -39px;
+}
+
+.flagicon-ch {
+  background-position: 0 -572px;
+}
+
+.flagicon-cl {
+  background-position: 0 -429px;
+}
+
+.flagicon-co {
+  background-position: 0 -338px;
+}
+
+.flagicon-cy {
+  background-position: 0 -481px;
+}
+
+.flagicon-cz {
+  background-position: 0 -364px;
+}
+
+.flagicon-de {
+  background-position: 0 -143px;
+}
+
+.flagicon-dk {
+  background-position: 0 -247px;
+}
+
+.flagicon-es {
+  background-position: 0 -377px;
+}
+
+.flagicon-fi {
+  background-position: 0 -312px;
+}
+
+.flagicon-fr {
+  background-position: 0 -156px;
+}
+
+.flagicon-gr {
+  background-position: 0 -325px;
+}
+
+.flagicon-gt {
+  background-position: 0 -286px;
+}
+
+.flagicon-it {
+  background-position: 0 -507px;
+}
+
+.flagicon-kr {
+  background-position: 0 -91px;
+}
+
+.flagicon-kz {
+  background-position: 0 -52px;
+}
+
+.flagicon-lt {
+  background-position: 0 -221px;
+}
+
+.flagicon-lu {
+  background-position: 0 -351px;
+}
+
+.flagicon-lv {
+  background-position: 0 -390px;
+}
+
+.flagicon-ma {
+  background-position: 0 -468px;
+}
+
+.flagicon-mx {
+  background-position: 0 -104px;
+}
+
+.flagicon-nl {
+  background-position: 0 -416px;
+}
+
+.flagicon-nz {
+  background-position: 0 -26px;
+}
+
+.flagicon-pe {
+  background-position: 0 -546px;
+}
+
+.flagicon-pl {
+  background-position: 0 -559px;
+}
+
+.flagicon-pt {
+  background-position: 0 -130px;
+}
+
+.flagicon-ro {
+  background-position: 0 -260px;
+}
+
+.flagicon-rs {
+  background-position: 0 -494px;
+}
+
+.flagicon-ru {
+  background-position: 0 -520px;
+}
+
+.flagicon-se {
+  background-position: 0 -169px;
+}
+
+.flagicon-si {
+  background-position: 0 -208px;
+}
+
+.flagicon-sk {
+  background-position: 0 -117px;
+}
+
+.flagicon-tn {
+  background-position: 0 -273px;
+}
+
+.flagicon-tr {
+  background-position: 0 -299px;
+}
+
+.flagicon-ua {
+  background-position: 0 -455px;
+}
+
+.flagicon-uk {
+  background-position: 0 0;
+}
+
+.flagicon-us {
+  background-position: 0 -65px;
+}
+
+.flagicon-uy {
+  background-position: 0 -182px;
+}
 
 /* IE Anpassungen -----------------------------------------------------------*/
 
