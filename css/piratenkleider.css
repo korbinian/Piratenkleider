@@ -463,11 +463,11 @@ body {
 }
 
 .row {
-  max-width: 1058px;
-  overflow: hidden;
+  max-width: 1052px;
+  overflow: hidden; 
   margin: 0 auto;
-}
-
+} 
+ 
 .skiplinks {
   margin: 0; }
  .skiplinks li {
@@ -1520,7 +1520,9 @@ display: inline-block;
     }
 .single .post-edit-link {
   margin-top: 20px; }
-
+.post {
+    display: inline-block;
+}
 .post .post-title {
   position: relative;
   float: left;
@@ -1555,6 +1557,13 @@ display: inline-block;
     -ms-border-radius: 14px; 
     -o-border-radius: 14px; 
     border-radius: 14px; 
+  }
+  .post .post-info .infoimage {
+    width: 130px;
+    height: auto;
+    max-height: 250px;
+    margin: 5px;
+    overflow: hidden;
   }
   .post .post-info .cal-icon {
     background: #eeeeee;   
@@ -2575,9 +2584,11 @@ background: none repeat scroll 0 0 #EEEEEE;
     margin-bottom: 0px;
 }
 .post-entry p.kraehennestplayerTitle {
-  background: url(../images/kraehennest-50.png) 5px 5px no-repeat;;
+  background: url(../images/kraehennest-50.png) 5px 5px no-repeat;
   padding-left: 60px;
+  min-height: 65px;
 }
+ 
 .kraehennestplayer object {
     margin: 0 auto;
 }

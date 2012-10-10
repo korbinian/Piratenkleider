@@ -500,6 +500,26 @@ function get_piratenkleider_seitenmenu( $zeige_sidebarpagemenu = 1 , $zeige_subp
 }
 endif;
 
+if ( ! function_exists( 'get_piratenkleider_firstpicture' ) ) :
+/*
+ * Erstes Bild aus einem Artikel auslesen, wenn dies vorhanden ist
+ */
+function get_piratenkleider_firstpicture($postid){
+    global $post, $posts;
+    $first_img = '';
+    ob_start();
+    ob_end_clean();
+    $output = preg_match_all('/<img.+src=[\'"]([^\'"]+)[\'"].*>/i', $post->post_content, $matches);
+    $first_img = $matches [1] [0];
+    if (!empty($first_img)){
+        $site_link =  home_url();  
+        $first_img = preg_replace("%$site_link%i",'', $first_img); 
+        $imagehtml = '<img src="'.$first_img.'" alt="" width="130">';
+        return $imagehtml;    
+    }
+}
+endif;
+
 
 if ( ! function_exists( 'get_piratenkleider_custom_excerpt' ) ) :
 /*

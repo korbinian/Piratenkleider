@@ -50,6 +50,7 @@ $defaultoptions = array(
     'aktiv-startseite-tags'                 => 1,
     'aktiv-startseite-alteartikel'          => 1,
     'aktiv-startseite-alteartikel-num'      => 5,
+    'aktiv-images-instead-date'             => 0,
     'aktiv-avatar'                          => 1,
     'aktiv-dynamic-sidebar'                 => 0,
     'src-default-avatar'                    => get_template_directory_uri(). '/images/avataricon.gif',
@@ -867,7 +868,15 @@ $setoptions = array(
                   'label'   => __( 'Anzahl der zu verlinkenden &auml;lteren Artikel.', 'piratenkleider' ),
                   'default' => $defaultoptions['aktiv-startseite-alteartikel-num'],
               ), 
-
+              'aktiv-images-instead-date' => array(
+                  'type'    => 'bool',
+                  'title'   => __( 'Thumbnails anstelle Datum', 'piratenkleider' ),
+                  'label'   => __( 'Wenn vorhanden, wird ein Thumbnail des ersten Bildes anstelle des Datums angezeigt', 'piratenkleider' ),
+                  'default' => $defaultoptions['aktiv-images-instead-date'],
+              ),
+               
+               
+               
                
               'sliderpars'  => array(
                   'type'    => 'section',
