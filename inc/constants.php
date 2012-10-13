@@ -523,6 +523,19 @@ $default_toplink_liste = array(
             '<acronym title="Kreisverband">KV</acronym> Trier/Trier-Saarburg' => 'http://piraten-trier.de',
         )
     ),
+      'Sachsen-Anhalt' => array(
+        'title' => 'Piratenpartei Landesverband Sachsen-Anhalt',
+        'url'  => 'http://www.piraten-lsa.de',
+        'sublist' => array(
+            '<acronym title="Regionalverband">RV</acronym> Altmark' => 'http://altmark-piraten.de/',
+            '<acronym title="Regionalverband">RV</acronym> Anhalt-Salzland' => 'http://www.piraten-anhalt.de/',
+            '<acronym title="Kreisverband">KV</acronym> B&ouml;rde' => 'http://www.piraten-boerde.de/',
+            '<acronym title="Kreisverband">KV</acronym> Magdeburg' => 'http://www.piraten-magdeburg.de/',
+            'Dessau' => 'http://www.piraten-dessau.de/',
+            'Halle (Saale)' => 'http://piraten-halle.de/',
+            'Harz' => 'http://piraten-harz.de/',
+        )
+    ),
       'Thueringen' => array(
         'title' => 'Piratenpartei Landesverband Thüringen',
         'url'  => 'http://www.piraten-thueringen.de/',
