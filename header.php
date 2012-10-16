@@ -97,7 +97,7 @@ if ((isset( $options['meta-keywords'] )) && ( strlen(trim($options['meta-keyword
         $designspecials['css-fontfile'] = $defaultoptions['default-fontset-file'];
     }
     if ((isset($designspecials['css-fontfile'])) && (strlen(trim($designspecials['css-fontfile']))>1)) { 
-        echo '<link rel="stylesheet" type="text/css" media="all" href="'.get_template_directory_uri().'/css/'.$designspecials['css-fontfile'].'">';
+        echo '<link rel="stylesheet" type="text/css" media="all and (min-width:500px)" href="'.get_template_directory_uri().'/css/'.$designspecials['css-fontfile'].'">';
     }        	
     $custom_fields = get_post_custom();    
     if ( (($custom_fields['fullsize'][0] == true) && (is_single() || is_page() || is_page_template())) 

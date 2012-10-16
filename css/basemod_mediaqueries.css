@@ -51,27 +51,26 @@
         height: auto;
         padding: 0;
         width: 100%;
+        position: relative;
     }
     .header .branding {
         display: block;
-        width: 50%;    
-        margin: 0;
-        min-width: 120px;
-        min-height: 120px;        
-        padding-left: 0px;
+        width: 100%;    
+        margin: 0 auto;
+        position: relative;
+        height: auto;        
+        padding: 10px;
+        text-align: center; 
     }
 
   .logo {
-        top: 0;
-        margin-left: 5px;
+        margin: 0 auto;
   }
    .logo img {
-      margin: 0 auto;
       display: block;
-      height: 100px;
-      width: auto;
+      width: 100%;
+      height: auto; 
     }
-    
     .sticker {
         display: none;
     }      
@@ -80,21 +79,23 @@
     }
     .nav-top {        
         display: block;
-        width: 40%;   
-        min-width: 150px;
-         position: absolute;
-         margin-bottom: 50px;
-         float:right;
-         height: 120px;
-         text-align: right;
+         position: relative;
+         margin: 0;
+         padding: 0;
+         width: auto;
+         min-width: 300px;
+         clear: both;
+         text-align: center;
     }
     
     .nav-top form.searchform {
-        clear:both
+        clear: both;
+        float: none;
         display: block;     
-        width: 100%;
+        width: 250px;
         background: white;
-        margin: 5px;
+        margin: 5px auto;
+        position: relative;     
     }
    
     .nav-top .searchform input#s {       
@@ -113,14 +114,13 @@
         line-height: 1.2em;
         overflow: none;
         height: 1.4em;
-        
-    }
+     }
     
     .nav-top div.menu-header {
         float: none;
-        display: block;
-        width: 100%;   
+        display: inline-block;
         position: relative;
+        text-align: center;   
     }
     .nav-top div.menu-header ul.menu li a {
         line-height: 22px;
@@ -135,7 +135,7 @@
     }
    
     .nav-main {
-         display: block;
+        display: block;
         width: 100%;   
         position: relative;     
         max-width: 100%;

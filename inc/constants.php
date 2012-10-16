@@ -6,7 +6,7 @@
  
 
 $defaultoptions = array(
-    'js-version'                    => '2.12',
+    'js-version'                    => '2.14',
     'content-width'                 => 665,
     'logo'                          => get_template_directory_uri() .'/images/logo.png',
     'logo-width'                    => 300,
@@ -18,6 +18,7 @@ $defaultoptions = array(
     'plakate-width'                 => 277,
     'plakate-height'                => 391,
     'default-fontset-file'          => 'font-bebas.css',
+    'url-twitterapi'                => 'https://api.twitter.com/1/statuses/user_timeline.rss',
     'src-jquery'                    => get_template_directory_uri(). "/js/jquery.min.js",
     'src-layoutjs'                  => get_template_directory_uri(). "/js/layout.js",
     'src-comment-reply'             => get_template_directory_uri(). "/js/comment-reply.js",

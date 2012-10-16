@@ -31,6 +31,7 @@
   
 
 
+   
    if ( $options['slider-defaultwerbeplakate'] == "1" ) {     
        $plakate = get_option( 'piratenkleider_theme_defaultbilder'); 
        if ((is_array($plakate['plakate-src'])) || 
@@ -105,8 +106,11 @@
        if ($options['feed_twitter_numberarticle']==0) {
            $options['feed_twitter_numberarticle'] =5;
        }
-       $fetchlink =  'http://twitter.com/statuses/user_timeline.rss?screen_name='.$options['feed_twitter'].'&count='.$options['feed_twitter_numberarticle'];
+
+       $fetchlink = $defaultoptions['url-twitterapi'].'?screen_name='.$options['feed_twitter'].'&count='.$options['feed_twitter_numberarticle'];
         // Get a SimplePie feed object from the specified feed source.
+ 
+
        if (!isset($options['twitter_cache_lifetime'])) {
              $options['twitter_cache_lifetime'] = $defaultoptions['twitter_cache_lifetime'];             
              if ($options['twitter_cache_lifetime'] <= 0) $options['twitter_cache_lifetime'] = 43200;
