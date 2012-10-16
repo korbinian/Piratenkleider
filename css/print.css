@@ -8,9 +8,7 @@
  *                  YAML-CDL (http://www.yaml.de/license.html)
  * @link            http://www.yaml.de
  * @package         yaml
- * @version         v4.0.1
- * @revision        $Revision: 724 $
- * @lastmodified    $Date: 2012-03-03 11:45:41 +0100 (Sa, 03 Mrz 2012) $
+ * @lastmodified    2012/10/16 $
  */
 
 
@@ -54,11 +52,9 @@
 	}
 	
 
-	/*------------------------------------------------------------------------------------------------------*/
-
-
+	/*-----------------------------------------------------------------------------------------------------*/
 	.content a[href]:after {
-		content:" <URL:"attr(href)">";
+		content: " <URL: "attr(href) ">";
 		color:#444;
 		background:inherit;
 		font-style:italic;
@@ -94,13 +90,17 @@
             padding: 0;
             height: 100px;
         }
-        
-
-         .post-comments ol li .reply {
+        .content-primary {
+             width: 100%;
+         }
+        .content-aside {
+            width: 100%;
+        }
+        .post-comments ol li .reply {
             display: none;
-            }
+        }
             
-          #footer  { 
+        #footer  { 
                 color: #999; 
                 text-align: center; 
                 font-size: 10pt;                 
