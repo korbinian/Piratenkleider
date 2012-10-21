@@ -108,7 +108,7 @@
             
             <h2>Rechtsvorschriften</h2>
 <ul>
-<li><a href="http://www.bundestag.de/dokumente/rechtsgrundlagen/pg_pdf.pdf" >Gesetz &uuml;ber politische Parteien (Parteiengesetz)</a></li>
+<li><a href="http://www.bundestag.de/bundestag/aufgaben/rechtsgrundlagen/pg_pdf.pdf" >Gesetz &uuml;ber politische Parteien (Parteiengesetz)</a></li>
 <li><a href="http://wiki.piratenpartei.de/Satzung" >Satzung der Piratenpartei Deutschland</a></li>
 <li><a href="http://wiki.piratenpartei.de/Satzungen" >Jeweilige Landessatzung  der Piratenpartei Deutschland</a></li>
 </ul>
