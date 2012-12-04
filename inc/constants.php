@@ -227,6 +227,54 @@ $defaultplakate_liste = array(
 		'src' =>	get_template_directory_uri().'/plakate/LTWSH12_Wir_sind_Romantiker.jpg',
 		'label' => __( 'Plakat LTWSH12_Wir_sind_Romantiker', 'piratenkleider' )
 	),    
+       '17' => array(
+		'src' =>	get_template_directory_uri().'/plakate/LTWNDS13_Awareness01.jpg',
+		'label' => __( 'Plakat LTWNDS13 "Zarteste Versuchung"', 'piratenkleider' )
+	),    
+       '18' => array(
+		'src' =>	get_template_directory_uri().'/plakate/LTWNDS13_Awareness02.jpg',
+		'label' => __( 'Plakat LTWNDS13 "Ich w&auml;hle es"', 'piratenkleider' )
+	),    
+       '19' => array(
+		'src' =>	get_template_directory_uri().'/plakate/LTWNDS13_Awareness03.jpg',
+		'label' => __( 'Plakat LTWNDS13 "Der Slogan"', 'piratenkleider' )
+	),    
+       '20' => array(
+		'src' =>	get_template_directory_uri().'/plakate/LTWNDS13_Awareness04.jpg',
+		'label' => __( 'Plakat LTWNDS13 "Entdecke dein Wahllokal"', 'piratenkleider' )
+	),    
+       '21' => array(
+		'src' =>	get_template_directory_uri().'/plakate/LTWNDS13_Awareness05.jpg',
+		'label' => __( 'Plakat LTWNDS13 "Rettet die Wahlen"', 'piratenkleider' )
+	),    
+       '22' => array(
+		'src' =>	get_template_directory_uri().'/plakate/LTWNDS13_Awareness06.jpg',
+		'label' => __( 'Plakat LTWNDS13 "Ich will so leben, wie ich bin"', 'piratenkleider' )
+	),    
+       '23' => array(
+		'src' =>	get_template_directory_uri().'/plakate/LTWNDS13_Awareness07.jpg',
+		'label' => __( 'Plakat LTWNDS13 "B&uuml;rger w&uuml;rden w&auml;hlen gehen"', 'piratenkleider' )
+	),    
+       '24' => array(
+		'src' =>	get_template_directory_uri().'/plakate/LTWNDS13_Awareness08.jpg',
+		'label' => __( 'Plakat LTWNDS13 "W&auml;hlen was verbindet"', 'piratenkleider' )
+	),    
+       '25' => array(
+		'src' =>	get_template_directory_uri().'/plakate/LTWNDS13_Awareness09.jpg',
+		'label' => __( 'Plakat LTWNDS13 "W&auml;hlen ist geil"', 'piratenkleider' )
+	),    
+       '26' => array(
+		'src' =>	get_template_directory_uri().'/plakate/LTWNDS13_Awareness10.jpg',
+		'label' => __( 'Plakat LTWNDS13 "Think different"', 'piratenkleider' )
+	),    
+       '27' => array(
+		'src' =>	get_template_directory_uri().'/plakate/LTWNDS13_Trust01.jpg',
+		'label' => __( 'Plakat LTWNDS13 "Alles andere ist Werbung"', 'piratenkleider' )
+	),    
+       '28' => array(
+		'src' =>	get_template_directory_uri().'/plakate/LTWNDS13_Trust02.jpg',
+		'label' => __( 'Plakat LTWNDS13 "Vertrau keinem Plakat"', 'piratenkleider' )
+	),    
         
 );
 /* 
