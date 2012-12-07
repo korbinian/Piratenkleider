@@ -504,12 +504,12 @@ if ( ! function_exists( 'get_piratenkleider_firstpicture' ) ) :
 /*
  * Erstes Bild aus einem Artikel auslesen, wenn dies vorhanden ist
  */
-function get_piratenkleider_firstpicture($postid){
-    global $post, $posts;
+function get_piratenkleider_firstpicture(){
+    global $post;
     $first_img = '';
     ob_start();
     ob_end_clean();
-    $output = preg_match_all('/<img.+src=[\'"]([^\'"]+)[\'"].*>/i', $post->post_content, $matches);
+    preg_match_all('/<img.+src=[\'"]([^\'"]+)[\'"].*>/i', $post->post_content, $matches);
     $first_img = $matches [1] [0];
     if (!empty($first_img)){
         $site_link =  home_url();  
