@@ -40,7 +40,7 @@
                 if (has_post_thumbnail()) {           
                  the_post_thumbnail(array($defaultoptions['bigslider-thumb-width'],$defaultoptions['bigslider-thumb-height']));
                 } else {
-                    if (isset($defaultbildsrc)) {  
+                    if ((isset($defaultbildsrc)) && (strlen(trim($defaultbildsrc))>2)) {  
                         echo '<img src="'.$defaultbildsrc.'" width="'.$defaultoptions['bigslider-thumb-width'].'" height="'.$defaultoptions['bigslider-thumb-height'].'" alt="">';                
                     } else {
                         $randombild = array_rand($defaultbilder_liste,2);

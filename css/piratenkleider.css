@@ -342,6 +342,11 @@ label, input[type="button"], input[type="submit"], input[type="image"], select, 
   cursor: pointer;
   *overflow: visible; }
 
+ input[type="email"] {
+  margin: 0 5px 5px 0;
+  padding: 5px;
+  font-size: 100%;
+}
 input[type="radio"], input[type="checkbox"] {
   margin: 5px;
   *height: 13px;
@@ -2595,7 +2600,7 @@ background: none repeat scroll 0 0 #EEEEEE;
 
 
 /* Flag Icons     -----------------------------------------------------------*/
-.flagicon-sprite, .flagicon-ar, .flagicon-at, .flagicon-au, .flagicon-be, .flagicon-bg, .flagicon-br, .flagicon-by, .flagicon-ca, .flagicon-ch, .flagicon-cl, .flagicon-co, .flagicon-cy, .flagicon-cz, .flagicon-de, .flagicon-dk, .flagicon-es, .flagicon-fi, .flagicon-fr, .flagicon-gr, .flagicon-gt, .flagicon-it, .flagicon-kr, .flagicon-kz, .flagicon-lt, .flagicon-lu, .flagicon-lv, .flagicon-ma, .flagicon-mx, .flagicon-nl, .flagicon-nz, .flagicon-pe, .flagicon-pl, .flagicon-pt, .flagicon-ro, .flagicon-rs, .flagicon-ru, .flagicon-se, .flagicon-si, .flagicon-sk, .flagicon-tn, .flagicon-tr, .flagicon-ua, .flagicon-uk, .flagicon-us, .flagicon-uy {
+.flagicon-sprite, .flagicon-ar, .flagicon-at, .flagicon-au, .flagicon-be, .flagicon-bg, .flagicon-br, .flagicon-by, .flagicon-ca, .flagicon-ch, .flagicon-cl, .flagicon-co, .flagicon-cy, .flagicon-cz, .flagicon-de, .flagicon-dk, .flagicon-es, .flagicon-fi, .flagicon-fr, .flagicon-gr, .flagicon-gt, .flagicon-is, .flagicon-it, .flagicon-kr, .flagicon-kz, .flagicon-lt, .flagicon-lu, .flagicon-lv, .flagicon-ma, .flagicon-mx, .flagicon-nl, .flagicon-nz, .flagicon-pe, .flagicon-pl, .flagicon-pt, .flagicon-ro, .flagicon-rs, .flagicon-ru, .flagicon-se, .flagicon-si, .flagicon-sk, .flagicon-tn, .flagicon-tr, .flagicon-ua, .flagicon-uk, .flagicon-us, .flagicon-uy {
   width: 16px;
   height: 11px;
   display: inline-block;
@@ -2680,6 +2685,10 @@ background: none repeat scroll 0 0 #EEEEEE;
 
 .flagicon-gt {
   background-position: 0 -286px;
+}
+
+.flagicon-is {
+  background-position: 0 -585px;
 }
 
 .flagicon-it {
