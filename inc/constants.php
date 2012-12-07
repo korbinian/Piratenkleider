@@ -1234,7 +1234,16 @@ $setoptions = array(
                   'title'   => __( 'Kommentarbubble', 'piratenkleider' ),
                   'label'   => __( 'Zeige den Kommentarbubble auch dann, wenn noch keine Kommentare abgegeben wurden', 'piratenkleider' ),
                   'default' => $defaultoptions['zeige_commentbubble_null'],
-              ),                                             
+              ),          
+              'aktiv-circleplayer'   => array(
+                  'type'    => 'bool',
+                  'title'   => __( 'Circle Player', 'piratenkleider' ),
+                  'label'   => __( 'Circle Player (HTML5 Player) f&uuml;r MP3/OGG-Dateien in einzelnen Beitr&auml;gen aktivieren.', 'piratenkleider' ),
+                  'default' => $defaultoptions['aktiv-circleplayer'],
+              ),   
+               
+                
+               
               'url-newsletteranmeldung' => array(
                   'type'    => 'url',
                   'title'   => __( 'Newsletter', 'piratenkleider' ),
