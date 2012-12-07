@@ -45,6 +45,7 @@ $defaultoptions = array(
     'aktiv-autoren'                 => 1,
     'newsletter'                    => 1,
     'alle-socialmediabuttons'               => 1,
+    'aktiv-circleplayer'                    => 1,
     'aktiv-platzhalterbilder-indexseiten'   => 0,
     'aktiv-linkmenu'                        => 1,
     'aktiv-startseite-kategorien'           => 1,

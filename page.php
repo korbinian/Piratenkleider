@@ -46,8 +46,7 @@ if (!isset($options['aktiv-defaultseitenbild']))
     </div>
 
     <div class="content-aside">
-      <div class="skin">      
-          
+      <div class="skin">                
           <h1 class="skip"><?php _e( 'Weitere Informationen', 'piratenkleider' ); ?></h1>
           
             <?php
@@ -62,9 +61,13 @@ if (!isset($options['aktiv-defaultseitenbild']))
         $custom_fields = get_post_custom();
         if ($custom_fields['right_column'][0]<>'') {
             echo $custom_fields['right_column'][0]; 
-        }  
-         ?>
-         <?php get_sidebar(); ?>
+        } 
+        if (!isset($options['aktiv-circleplayer'])) 
+            $options['aktiv-circleplayer'] = $defaultoptions['aktiv-circleplayer']; 
+        if ($options['aktiv-circleplayer']==1) {
+            piratenkleider_echo_player();
+        }
+         get_sidebar(); ?>
       </div>
     </div>
   </div>

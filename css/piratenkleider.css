@@ -2548,6 +2548,14 @@ div.ics-calendar-holder .ics-calendar-event {
 
 
 /* Besondere Tools-----------------------------------------------------------*/
+ ul.ts-fab-list li {
+    margin-bottom: 0px;
+    display: inline-block;
+}
+ul.ts-fab-list li a { 
+    height: auto; 
+}
+
  ul.social_share_privacy_area {
     list-style: none outside none;
     

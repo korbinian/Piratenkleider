@@ -32,6 +32,9 @@
         $options['aktiv-suche'] = $defaultoptions['aktiv-suche'];
    if (!isset($options['aktiv-linkmenu'])) 
        $options['aktiv-linkmenu'] = $defaultoptions['aktiv-linkmenu'];   
+   if (!isset($options['aktiv-circleplayer'])) 
+       $options['aktiv-circleplayer'] = $defaultoptions['aktiv-circleplayer'];   
+   
    $designspecials = get_option( 'piratenkleider_theme_designspecials' );
    $cssadd = '';
    if (isset($designspecials['css-default-header-height'])
@@ -91,28 +94,40 @@ if ((isset( $options['meta-keywords'] )) && ( strlen(trim($options['meta-keyword
     <link rel="profile" href="http://gmpg.org/xfn/11" />
     <link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo( 'stylesheet_url' ); ?>">
 <?php if ((isset($designspecials['css-colorfile'])) && (strlen(trim($designspecials['css-colorfile']))>1)) { 
-        echo '<link rel="stylesheet" type="text/css" media="all" href="'.get_template_directory_uri().'/css/'.$designspecials['css-colorfile'].'">';
+        echo '  <link rel="stylesheet" type="text/css" media="all" href="'.get_template_directory_uri().'/css/'.$designspecials['css-colorfile'].'">';
     } 
     if (!isset($designspecials['css-fontfile']))  {
         $designspecials['css-fontfile'] = $defaultoptions['default-fontset-file'];
     }
     if ((isset($designspecials['css-fontfile'])) && (strlen(trim($designspecials['css-fontfile']))>1)) { 
-        echo '<link rel="stylesheet" type="text/css" media="all and (min-width:500px)" href="'.get_template_directory_uri().'/css/'.$designspecials['css-fontfile'].'">';
+        echo '  <link rel="stylesheet" type="text/css" media="all and (min-width:500px)" href="'.get_template_directory_uri().'/css/'.$designspecials['css-fontfile'].'">';
     }        	
     $custom_fields = get_post_custom();    
-    if ( (($custom_fields['fullsize'][0] == true) && (is_single() || is_page() || is_page_template())) 
+    if ( (($custom_fields['fullsize'][0] == true) && is_singular()) 
          ||
         ((isset($options['position_sidebarbottom'])) && ($options['position_sidebarbottom'] ==1))) { 
-        echo '<link rel="stylesheet" type="text/css" media="all" href="'.get_template_directory_uri().'/css/basemod_sidebarbottom.css">';
+        echo '  <link rel="stylesheet" type="text/css" media="all" href="'.get_template_directory_uri().'/css/basemod_sidebarbottom.css">';
     } 
-?>
-    <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
-<?php if ( is_singular() && get_option( 'thread_comments' ) )
-		wp_enqueue_script( 'comment-reply' );
-wp_head(); 
-if (isset($designspecials['aktiv-mediaqueries-allparts']) && ($designspecials['aktiv-mediaqueries-allparts']==1)) {
+    echo '  <link rel="pingback" href="'.get_bloginfo( 'pingback_url' ).'">';    
+    if ( is_singular() ) {
+            if ( get_option( 'thread_comments' ) ) {
+    		wp_enqueue_script( 'comment-reply' );
+            }
+            if ($options['aktiv-circleplayer']==1) { 
+            ?>            
+    <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/circleplayer/css/not.the.skin.css">
+    <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/circleplayer/circle.skin/circle.player.css">                
+    <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/circleplayer/js/jquery.transform2d.js"></script>
+    <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/circleplayer/js/jquery.grab.js"></script>
+    <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/circleplayer/js/jquery.jplayer.js"></script>
+    <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/circleplayer/js/mod.csstransforms.min.js"></script>
+    <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/circleplayer/js/circle.player.js"></script>    
+            <?php  }
+    }    
+    wp_head(); 
+    if (isset($designspecials['aktiv-mediaqueries-allparts']) && ($designspecials['aktiv-mediaqueries-allparts']==1)) {
       echo '    <link rel="stylesheet" type="text/css" media="screen" href="'.get_template_directory_uri().'/css/basemod_mediaqueries_allparts.css">';      
-}
+    }
 ?>
 
 <!--[if lte IE 7]>

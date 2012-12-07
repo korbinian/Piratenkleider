@@ -65,35 +65,34 @@ function piratenkleider_setup() {
         
         /* 
          * Header-Kontrolle, bis WP 3.3
-         */ 
-     
+
         define('HEADER_TEXTCOLOR', '');
         define('HEADER_IMAGE', $defaultoptions['logo']); 
         define('HEADER_IMAGE_WIDTH',  $defaultoptions['logo-width'] ); // choose any number you like here
         define('HEADER_IMAGE_HEIGHT', $defaultoptions['logo-height'] ); // choose any number you like here         
         define('NO_HEADER_TEXT', true );
-    
+     
          add_custom_image_header('piratenkleider_header_style', 'piratenkleider_admin_header_style');
-        
-        /* Folgendes erst ab WP 3.4:
-         * Ich warte aber noch etwas ab, da einige Leute noch 3.3 einsetzen
-         * 
-            $args = array(
-            'width'         => 279,
-              'height'        => 88,
-            'default-image' => get_template_directory_uri() . '/images/logo.png',
+         */
+  
+        $args = array(
+            'width'         => 0,
+            'height'        => 0,
+            'default-image' => $defaultoptions['logo'],
             'uploads'       => true,
-               'random-default' => true,
-                'flex-height' => true,
-                'suggested-height' => 90,
-                'flex-width' => true,
-                'max-width' => 350,
-                'suggested-width' => 300,
-                
-            );
-            add_theme_support( 'custom-header', $args );
-             */
+            'random-default' => true,                      
+            'flex-height' => true,
+            'flex-width' => true,
+            'suggested-height' => $defaultoptions['logo-height'],
+            'suggested-width' => $defaultoptions['logo-width'],
+            'max-width' => 350,           
+        );
+       add_theme_support( 'custom-header', $args );
+            
         
+ 
+         
+         
         
         // Make theme available for translation
         // Translations can be filed in the /languages/ directory
@@ -131,6 +130,17 @@ function piratenkleider_avatar ($avatar_defaults) {
     return $avatar_defaults;
 }
 add_filter( 'avatar_defaults', 'piratenkleider_avatar' );
+
+/* Refuse spam-comments on media */
+function filter_media_comment_status( $open, $post_id ) {
+	$post = get_post( $post_id );
+	if( $post->post_type == 'attachment' ) {
+		return false;
+	}
+	return $open;
+}
+add_filter( 'comments_open', 'filter_media_comment_status', 10 , 2 );
+
 
 if ( ! function_exists( 'piratenkleider_admin_header_style' ) ) :
 /**
@@ -640,15 +650,12 @@ function wpi_linkexternclass($content){
         return preg_replace_callback('/<a[^>]+/', 'wpi_linkexternclass_callback', $content);
     }
  
-function wpi_linkexternclass_callback($matches)
-    {
+function wpi_linkexternclass_callback($matches) {
         $link = $matches[0];
         $site_link = home_url();  
- 
-            if (strpos($link, 'class') === false)
-            {
-                $link = preg_replace("%(href=\S(?!$site_link))%i", 'class="extern" $1', $link);
-            }       
+        if (strpos($link, 'class') === false) {
+            $link = preg_replace("%(href=\S(?!($site_link|#)))%i", 'class="extern" $1', $link);
+        }       
         return $link;
     }
 add_filter('the_content', 'wpi_linkexternclass');
@@ -840,3 +847,120 @@ function custom_login() {
 }
 add_action('login_head', 'custom_login');
 
+/* Circleplayer-Import
+ *    von Bejamin Stöcker (@EinfachBen)
+ */
+
+function get_post_audio_enclosure($information)
+{
+	$custom_keys = get_post_custom_keys();
+         echo "custom keys: <pre>";
+	var_dump($custom_keys); 
+         echo "</pre>";
+	if (in_array('enclosure',$custom_keys)) {
+		$custom_fields  = get_post_custom();
+		$enclosures = 	$custom_fields['enclosure'];
+                if (!isset($enclosures)) $enclosures= $custom_fields['_encloseme'];;
+                echo "enclosures: <pre>";
+                var_dump($enclosures); 
+                 echo "</pre>";
+		foreach($enclosures as $thatValue)
+		{
+			if(strstr($thatValue, 'audio/ogg')!="")
+			{
+				$ende = strpos($thatValue,".ogg");
+				$url =  substr($thatValue,0,$ende+4);
+				filter_var($url, FILTER_VALIDATE_URL);
+				$information['ogg'] = $url;
+			}
+			else if(strstr($thatValue, 'audio/mpeg')!="")
+			{
+				$ende = strpos($thatValue,".mp3");
+				$url =  substr($thatValue,0,$ende+4);
+				filter_var($url, FILTER_VALIDATE_URL);
+				$information['mp3'] = $url;
+			}
+		}
+	}
+	return $information;
+}
+function get_post_audio_fields($information)
+{
+	$custom_fields = get_post_custom();
+	if($custom_fields['audio_disable'][0] == true){
+		$information["mp3"] = "";
+		$information["ogg"] = "";
+		$information["text"] = "";
+		return $information;
+	} else {
+		if(filter_var($custom_fields['audio_mp3'][0], FILTER_VALIDATE_URL))
+			$information["mp3"] = $custom_fields['audio_mp3'][0];
+		if(filter_var($custom_fields['audio_ogg'][0], FILTER_VALIDATE_URL))
+			$information["ogg"] = $custom_fields['audio_ogg'][0];
+		if($custom_fields['audio_text'][0]<>'')
+			$information["text"] = $custom_fields['audio_text'][0];
+	}
+	return $information;
+}
+
+add_filter('get_post_audio_information','get_post_audio_enclosure',5);
+add_filter('get_post_audio_information','get_post_audio_fields',15);
+
+function piratenkleider_echo_player() {
+$information =  array('ogg'=>"",'mp3'=>"",'text'=>"");
+$information = apply_filters("get_post_audio_information",$information);
+$validInformation = filter_var($information['mp3'], FILTER_VALIDATE_URL);
+$validInformation = $validInformation && filter_var($information['ogg'], FILTER_VALIDATE_URL);
+
+if($validInformation) {
+?>
+<div class="widget" id="AudioPlayer">
+    <h2>Diesen Beitrag anh&ouml;ren</h2>
+    <script type="text/javascript">
+    $(document).ready(function(){
+
+    /*
+    * Instance CirclePlayer inside jQuery doc ready
+    *
+    * CirclePlayer(jPlayerSelector, media, options)
+    * jPlayerSelector: String - The css selector of the jPlayer div.
+    * media: Object - The media object used in jPlayer("setMedia",media).
+    * options: Object - The jPlayer options.
+    *
+    * Multiple instances must set the cssSelectorAncestor in the jPlayer options. Defaults to "#cp_container_1" in CirclePlayer.
+    */
+
+    var myCirclePlayer = new CirclePlayer("#jquery_jplayer_1",
+    {
+    mp3: "<?php echo $information['mp3'];?>",
+    oga: "<?php echo $information['ogg'];?>"
+    }, {
+    cssSelectorAncestor: "#cp_container_1"
+    });
+    });
+    </script>
+    <div id="jquery_jplayer_1" class="cp-jplayer"></div>  
+    <div id="cp_container_1" class="cp-container">
+        <div class="cp-buffer-holder"> <!-- .cp-gt50 only needed when buffer is > than 50% -->
+            <div class="cp-buffer-1"></div>
+            <div class="cp-buffer-2"></div>
+        </div>
+        <div class="cp-progress-holder"> <!-- .cp-gt50 only needed when progress is > than 50% -->
+            <div class="cp-progress-1"></div>
+            <div class="cp-progress-2"></div>
+        </div>
+        <div class="cp-circle-control"></div>
+        <ul class="cp-controls">
+            <li style="padding:0;"><a class="cp-play" tabindex="1">play</a></li>
+            <li style="padding:0;"><a class="cp-pause" style="display:none;" tabindex="1">pause</a></li> <!-- Needs the inline style here, or jQuery.show() uses display:inline instead of display:block -->
+        </ul>
+    </div>
+    Download: <a href="<?php echo $information['ogg'];?>">ogg</a>, <a href="<?php echo $information['mp3'];?>">mp3</a> <br/>
+    <?php if($information['text'][0]<>''){?>
+
+     <?php echo $information['text']." <br/>";
+     }?> 
+</div>
+<?php
+}	
+}
