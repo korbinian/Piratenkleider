@@ -24,30 +24,30 @@ AUTOREN / ENTWICKLER
 
    Wolfgang Wiese (xwolf), http://www.xwolf.de 
 
-   Mit Hilfe von 
-     * Andre Sendowski, http://www.iphone-notes.de/
-     * Heiko Philippski, http://www.phindie.de/
-     * Kerstin Probiesch, http://www.barrierefreie-informationskultur.de
-     * Fabian Müller, http://www.feals.de
-     * Georg Sinn, http://zwitschi.net
-     * Ralph Hinterleitner, rcs@deixis.at
-     * Jan Schejbal, http://janschejbal.wordpress.com/
-     * Marc Schieferdecker,  http://thegeek.de 
-     * Benjamin Stöcker, http://freiheitsworte.de 
+   Mit Hilfe und Unterstützung von: 
+     - Andre Sendowski, http://www.iphone-notes.de/
+     - Heiko Philippski, http://www.phindie.de/
+     - Kerstin Probiesch, http://www.barrierefreie-informationskultur.de
+     - Fabian Müller, http://www.feals.de
+     - Georg Sinn, http://zwitschi.net
+     - Ralph Hinterleitner, rcs@deixis.at
+     - Jan Schejbal, http://janschejbal.wordpress.com/
+     - Marc Schieferdecker,  http://thegeek.de 
+     - Benjamin Stöcker, http://freiheitsworte.de 
 
    Quellen für Defaultbilder und CI-Materialen (CC-BY 3.0)
-     * Defaultgrafiken für Slider/Seitenbilder: Tobias M. Eckrich
-     * Weitere Bilder: Piratenwiki mit unterschiedlichen Autoren
-     * Bildbearbeitung für Piratenkleider 2.x: Wolfgang Wiese
+     - Defaultgrafiken für Slider/Seitenbilder: Tobias M. Eckrich
+     - Weitere Bilder: Piratenwiki mit unterschiedlichen Autoren
+     - Bildbearbeitung für Piratenkleider 2.x: Wolfgang Wiese
 
    Weitere verwendete Inhalte:
-      * Social Media Icons: Paul Robert Lloyd, http://paulrobertlloyd.com/2009/06/social_media_icons      
-      * YAML CSS Framework (Lizensiert unter der Creative Commons Attribution 2.0 License).
-      * JavaScript Framework jQuery (GNU General Public License (GPL) Version 2)
-      * jQuery FlexSlider (MIT License)
-      * Schrift Bebas Neue von Dharmatype (SIL Open Font License 1.1)
-      * Schrift Droid Sans von Ascender (http://www.droidfonts.com/), Apache License 2.0 http://www.apache.org/licenses/LICENSE-2.0
-      * Circle Player, https://github.com/maboa/circleplayer (GNU General Public License (GPL) Version 2)
+     - Social Media Icons: Paul Robert Lloyd, http://paulrobertlloyd.com/2009/06/social_media_icons      
+     - YAML CSS Framework (Lizensiert unter der Creative Commons Attribution 2.0 License).
+     - JavaScript Framework jQuery (GNU General Public License (GPL) Version 2)
+     - jQuery FlexSlider (MIT License)
+     - Schrift Bebas Neue von Dharmatype (SIL Open Font License 1.1)
+     - Schrift Droid Sans von Ascender (http://www.droidfonts.com/), Apache License 2.0 http://www.apache.org/licenses/LICENSE-2.0
+     - Circle Player, https://github.com/maboa/circleplayer (GNU General Public License (GPL) Version 2)
 
 VORVERSION
 
