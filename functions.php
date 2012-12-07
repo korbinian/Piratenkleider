@@ -854,16 +854,16 @@ add_action('login_head', 'custom_login');
 function get_post_audio_enclosure($information)
 {
 	$custom_keys = get_post_custom_keys();
-         echo "custom keys: <pre>";
-	var_dump($custom_keys); 
-         echo "</pre>";
+    //     echo "custom keys: <pre>";
+	//var_dump($custom_keys); 
+         // echo "</pre>";
 	if (in_array('enclosure',$custom_keys)) {
 		$custom_fields  = get_post_custom();
 		$enclosures = 	$custom_fields['enclosure'];
                 if (!isset($enclosures)) $enclosures= $custom_fields['_encloseme'];;
-                echo "enclosures: <pre>";
-                var_dump($enclosures); 
-                 echo "</pre>";
+              //  echo "enclosures: <pre>";
+              //  var_dump($enclosures); 
+              //   echo "</pre>";
 		foreach($enclosures as $thatValue)
 		{
 			if(strstr($thatValue, 'audio/ogg')!="")
