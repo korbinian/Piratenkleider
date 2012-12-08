@@ -101,7 +101,7 @@ $defaultoptions = array(
     'stickerlink2-url'              => 'https://www.piratenpartei.de/mitmachen/spenden/',
     'stickerlink3-content'          => '',
     'stickerlink3-url'              => '',
-    'default_footerlink_key'        => 'Bund',
+    'default_footerlink_key'        => 'International (mit Flaggen)',
     'default_footerlink_show'       => 1,
     
 );
