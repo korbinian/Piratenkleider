@@ -90,10 +90,6 @@ function piratenkleider_setup() {
        add_theme_support( 'custom-header', $args );
             
         
- 
-         
-         
-        
         // Make theme available for translation
         // Translations can be filed in the /languages/ directory
         load_theme_textdomain('piratenkleider', get_template_directory() . '/languages');
@@ -470,9 +466,8 @@ if ( ! function_exists( 'get_piratenkleider_seitenmenu' ) ) :
  * Anzeige des Sidebar-Menus
  */
 function get_piratenkleider_seitenmenu( $zeige_sidebarpagemenu = 1 , $zeige_subpagesonly =1 ){
-  global $defaultoptions;
   global $post;
-  
+  $sidelinks = '';
     if ($zeige_sidebarpagemenu==1) {   
         if ($zeige_subpagesonly==1) {
             //if the post has a parent
@@ -887,17 +882,17 @@ function get_post_audio_enclosure($information)
 function get_post_audio_fields($information)
 {
 	$custom_fields = get_post_custom();
-	if($custom_fields['audio_disable'][0] == true){
+	if (isset($custom_fields['audio_disable']) && ($custom_fields['audio_disable'][0] == true)){
 		$information["mp3"] = "";
 		$information["ogg"] = "";
 		$information["text"] = "";
 		return $information;
 	} else {
-		if(filter_var($custom_fields['audio_mp3'][0], FILTER_VALIDATE_URL))
+		if (isset($custom_fields['audio_mp3']) && (filter_var($custom_fields['audio_mp3'][0], FILTER_VALIDATE_URL)))
 			$information["mp3"] = $custom_fields['audio_mp3'][0];
-		if(filter_var($custom_fields['audio_ogg'][0], FILTER_VALIDATE_URL))
+		if (isset($custom_fields['audio_ogg']) && (filter_var($custom_fields['audio_ogg'][0], FILTER_VALIDATE_URL)))
 			$information["ogg"] = $custom_fields['audio_ogg'][0];
-		if($custom_fields['audio_text'][0]<>'')
+		if (isset($custom_fields['audio_text']) && ($custom_fields['audio_text'][0]<>''))
 			$information["text"] = $custom_fields['audio_text'][0];
 	}
 	return $information;

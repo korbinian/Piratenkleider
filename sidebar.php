@@ -34,9 +34,8 @@
    
    if ( $options['slider-defaultwerbeplakate'] == "1" ) {     
        $plakate = get_option( 'piratenkleider_theme_defaultbilder'); 
-       if ((is_array($plakate['plakate-src'])) || 
-                ((isset($plakate['plakate-altadressen']))
-                 && (strlen(trim($plakate['plakate-altadressen']))>5))
+       if ( ((isset($plakate['plakate-src']) && (is_array($plakate['plakate-src'])))) || 
+            ((isset($plakate['plakate-altadressen'])) && (strlen(trim($plakate['plakate-altadressen']))>5))
            ) {
             echo '<div class="flexslider fs2 no-js" style="width: '.$defaultoptions['plakate-width'].'px;">';         
             echo '<ul class="slides">';                               
@@ -116,7 +115,7 @@
              if ($options['twitter_cache_lifetime'] <= 0) $options['twitter_cache_lifetime'] = 43200;
         }
         $lifetime = $options['twitter_cache_lifetime'];
-               
+        $maxitems = 0;       
         $rss = piratenkleider_fetch_feed($fetchlink,$lifetime);        
         $name = $options['feed_twitter'];
         if (!is_wp_error( $rss ) ) : // Checks that the object is created correctly 

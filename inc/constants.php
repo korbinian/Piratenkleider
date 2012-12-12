@@ -75,6 +75,7 @@ $defaultoptions = array(
     'anonymize-user-commententries' => 0,
     'aktiv-commentreplylink'        => 0,
     'default_comment_notes_before'  => '<p class="comment-notes">'.__( 'Deine E-Mail-Adresse wird nicht veröffentlicht. Erforderliche Felder sind markiert <span class="required">*</span>', 'piratenkleider' ). '</p>',
+    'disclaimer_post'               => '',
     'twitter_cache_lifetime'        => 14400,
     'feed_cache_lifetime'           => 14400,
     'use_wp_feed_defaults'          => 1,

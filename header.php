@@ -103,7 +103,7 @@ if ((isset( $options['meta-keywords'] )) && ( strlen(trim($options['meta-keyword
         echo '  <link rel="stylesheet" type="text/css" media="all and (min-width:500px)" href="'.get_template_directory_uri().'/css/'.$designspecials['css-fontfile'].'">';
     }        	
     $custom_fields = get_post_custom();    
-    if ( (($custom_fields['fullsize'][0] == true) && is_singular()) 
+    if ( ( (isset($custom_fields['fullsize'])) && ($custom_fields['fullsize'][0] == true) && is_singular()) 
          ||
         ((isset($options['position_sidebarbottom'])) && ($options['position_sidebarbottom'] ==1))) { 
         echo '  <link rel="stylesheet" type="text/css" media="all" href="'.get_template_directory_uri().'/css/basemod_sidebarbottom.css">';
