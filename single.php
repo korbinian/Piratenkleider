@@ -15,7 +15,8 @@
           </div>
           
            <?php 
-            if (($custom_fields['show-post-disclaimer'][0]<>'') 
+            if ( (isset($custom_fields['show-post-disclaimer']))
+                 && ($custom_fields['show-post-disclaimer'][0]<>'') 
                  && ($options['post_disclaimer']<>'') 
                  && ( ($custom_fields['show-post-disclaimer'][0]==1) || ($custom_fields['show-post-disclaimer'][0]==3)) 
                 ) {
@@ -57,7 +58,8 @@
             <?php the_content(); ?>
           </div>
              <?php 
-            if (($custom_fields['show-post-disclaimer'][0]<>'') 
+            if ( (isset($custom_fields['show-post-disclaimer']))
+                 &&   ($custom_fields['show-post-disclaimer'][0]<>'') 
                  && ($options['post_disclaimer']<>'') 
                  && ( ($custom_fields['show-post-disclaimer'][0]==2) || ($custom_fields['show-post-disclaimer'][0]==3)) 
                 ) {
@@ -136,7 +138,7 @@
                 } ?>
                 
                 <div class="text">
-                    <?php echo $custom_fields['text'][0]; ?>
+                     <?php echo do_shortcode(get_post_meta($post->ID, 'text', $single = true)); ?>
                 </div>
            </div>
            <?php 
