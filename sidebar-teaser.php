@@ -16,8 +16,7 @@
          if (!isset($cat) ) $cat = 1;         
          $numberarticle = $options['slider-numberarticle'];
          if (!isset($numberarticle) )  $numberarticle =3;   
-         if (!isset($options['url-mitgliedwerden'])) 
-            $options['url-mitgliedwerden'] = $defaultoptions['url-mitgliedwerden'];
+
          if (!isset($options['teaser-subtitle'])) 
             $options['teaser-subtitle'] = $defaultoptions['teaser-subtitle'];
           if (!isset($options['teaser-title-maxlength'])) 

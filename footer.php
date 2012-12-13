@@ -35,10 +35,10 @@
         if (! isset($slideDirection)) $slideDirection = 'horizontal';
         if (! isset($animationType)) $animationType = 'slide';
         
-     ?>
-    <script src="<?php echo get_template_directory_uri(); ?>/js/flexslider.js"></script>  
+        ?>
+       <script src="<?php echo get_template_directory_uri(); ?>/js/flexslider.js"></script>  
     
-    <script type="text/javascript">
+      <script type="text/javascript">
         /* <![CDATA[ */
     $(window).load(function() {
        $('.flexslider').flexslider({
@@ -46,11 +46,11 @@
          animationDuration: <?php echo $animationDuration ?>,
          slideDirection: "<?php echo $slideDirection ?>",
          animation: "<?php echo $animationType ?>",
-         pausePlay: true,
+         pausePlay: true
        });
     });    
     /* ]]> */
-    </script> 
+      </script> 
     <?php }  
         if (!isset($options['aktiv-dynamic-sidebar'])) 
           $options['aktiv-dynamic-sidebar'] = $defaultoptions['aktiv-dynamic-sidebar'];      

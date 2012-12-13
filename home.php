@@ -93,7 +93,9 @@
       <?php 
       $output = ob_get_contents();
       ob_end_clean();
-      $cols[$col++] .= $output;
+      if (isset($output)) {
+        $cols[$col++] = $output;
+      }
       endwhile;
       ?>
       <div class="columns">

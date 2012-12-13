@@ -4,7 +4,7 @@
  *
  * @source http://github.com/xwolfde/Piratenkleider
  * @creator xwolf
- * @version 2.12
+ * @version 2.14.2
  * @licence CC-BY-SA 3.0 
  */
 
@@ -118,6 +118,56 @@ endif;
 
 require( get_template_directory() . '/inc/widgets.php' );
 
+function piratenkleider_scripts() {
+    global $options;
+    global $defaultoptions;
+    
+     if ($options['slider-aktiv']==1) {
+    /* Flexslider 2.0 does not work with jQuery 1.8 yet :(  */
+     wp_enqueue_script(
+		'myjquery',
+		$defaultoptions['src-jquery'],
+		false,
+                "1.7.2"
+	);
+    }
+   
+    wp_enqueue_script(
+		'layoutjs',
+		$defaultoptions['src-layoutjs'],
+		array('myjquery'),
+                $defaultoptions['js-version']
+	);
+    wp_enqueue_script(
+		'yaml-focusfix',
+		$defaultoptions['src-yaml-focusfix'],
+		false,
+                $defaultoptions['js-version']
+	);
+    
+    if (!isset($options['aktiv-commentreplylink'])) 
+            $options['aktiv-commentreplylink'] = $defaultoptions['aktiv-commentreplylink'];
+    if ($options['aktiv-commentreplylink']==1) {        
+            wp_enqueue_script(
+		'comment-reply',
+		$defaultoptions['src-comment-reply'],
+		false,
+                $defaultoptions['js-version']
+	);  
+     }  
+      if (!isset($options['aktiv-dynamic-sidebar'])) 
+          $options['aktiv-dynamic-sidebar'] = $defaultoptions['aktiv-dynamic-sidebar'];
+      
+       if ($options['aktiv-dynamic-sidebar']==1) {        
+            wp_enqueue_script(
+		'dynamic-sidebar',
+		$defaultoptions['src-dynamic-sidebar'],
+		false,
+                $defaultoptions['js-version']
+            );  
+       }        
+}
+add_action('wp_enqueue_scripts', 'piratenkleider_scripts');
 
 function piratenkleider_avatar ($avatar_defaults) {
     global $defaultoptions;
@@ -515,12 +565,14 @@ function get_piratenkleider_firstpicture(){
     ob_start();
     ob_end_clean();
     preg_match_all('/<img.+src=[\'"]([^\'"]+)[\'"].*>/i', $post->post_content, $matches);
-    $first_img = $matches [1] [0];
-    if (!empty($first_img)){
-        $site_link =  home_url();  
-        $first_img = preg_replace("%$site_link%i",'', $first_img); 
-        $imagehtml = '<img src="'.$first_img.'" alt="" width="130">';
-        return $imagehtml;    
+    if ((is_array($matches[1])) && (isset($matches [1][0]))) {
+        $first_img = $matches [1][0];
+        if (!empty($first_img)){
+            $site_link =  home_url();  
+            $first_img = preg_replace("%$site_link%i",'', $first_img); 
+            $imagehtml = '<img src="'.$first_img.'" alt="" width="130">';
+            return $imagehtml;    
+        }
     }
 }
 endif;
@@ -800,36 +852,7 @@ function dimox_breadcrumbs() {
 
 
  
-if( !is_admin()){
-       wp_deregister_script('jquery');
-        // muss trotz ThemeCheck Warnung drin bleiben, ansonsten wird veraltetes jQuery geladen
-       // und der Slider und anderes mag dann nicht mehr
-       wp_register_script('jquery', $defaultoptions['src-jquery'] , false, "1.7.2");
-       wp_enqueue_script('jquery');
 
-       wp_register_script('layoutjs', $defaultoptions['src-layoutjs'] , false, $defaultoptions['js-version']);
-       wp_enqueue_script('layoutjs');
-       wp_register_script('yaml-focusfix', $defaultoptions['src-yaml-focusfix'] , false, $defaultoptions['js-version']);
-       wp_enqueue_script('yaml-focusfix');
-       
-       wp_deregister_script('comment-reply');
-       if (!isset($options['aktiv-commentreplylink'])) 
-            $options['aktiv-commentreplylink'] = $defaultoptions['aktiv-commentreplylink'];
-       if ($options['aktiv-commentreplylink']==1) {        
-            wp_register_script('comment-reply', $defaultoptions['src-comment-reply'] , false,  $defaultoptions['js-version']);
-            wp_enqueue_script('comment-reply');
-       }  
-      if (!isset($options['aktiv-dynamic-sidebar'])) 
-          $options['aktiv-dynamic-sidebar'] = $defaultoptions['aktiv-dynamic-sidebar'];
-      
-       if ($options['aktiv-dynamic-sidebar']==1) {        
-            wp_register_script('dynamic-sidebar', $defaultoptions['src-dynamic-sidebar'] , false,  $defaultoptions['js-version']);
-            wp_enqueue_script('dynamic-sidebar');
-       }       
-       
-       
-       
-}
 function piratenkleider_header_style() {} 
 
 function piratenkleider_admin_head() {

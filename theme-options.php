@@ -45,7 +45,7 @@ function theme_options_do_page($tab = '') {
 
 	<div class="wrap">            
             <div class="piratenkleider-optionen">  <!-- begin: .piratenkleider-optionen -->    
-		<?php screen_icon(); echo "<h2>" . get_current_theme().': ' . __( 'Takelage einstellen', 'piratenkleider' ) . "</h2>"; ?>
+		<?php screen_icon(); echo "<h2>" . wp_get_theme().': ' . __( 'Takelage einstellen', 'piratenkleider' ) . "</h2>"; ?>
 
 		<?php if ( false !== $_REQUEST['settings-updated'] ) : ?>
 		<div class="updated fade"><p><strong><?php _e( 'Optionen wurden gespeichert.', 'piratenkleider' ); ?></strong></p></div>
@@ -89,14 +89,14 @@ function theme_options_do_page($tab = '') {
                     if (isset($setoptions['piratenkleider_theme_options'][$tab]['fields'])) {
                         foreach($setoptions['piratenkleider_theme_options'][$tab]['fields'] as $i => $value) {   
                             $name = $i;
-                            $title = $value['title'];
-                            $type = $value['type'];
-                            $label = $value['label'];
-                            $parent = $value['parent'];
-                            $liste = $value['liste'];
+                            if (isset($value['title'])) $title = $value['title'];
+                            if (isset($value['type'])) $type = $value['type'];
+                            if (isset($value['label'])) $label = $value['label'];
+                            if (isset($value['parent'])) $parent = $value['parent'];
+                            if (isset($value['liste'])) $liste = $value['liste']; 
 
                             if ($type == 'section') {
-                                if ($setsection != "") {
+                                if ((isset($setsection)) && ($setsection != "")) {
                                         echo "\t\t\t</table>\n";   
                                         echo "\t\t</td>\n";
                                         echo "\t</tr>\n";
@@ -172,7 +172,7 @@ function theme_options_do_page($tab = '') {
                                     echo "\t</tr>\n";
                             }     
 
-                            if (($setsection!="") && ($type != 'section') && (!isset($parent))) {
+                            if ((isset($setsection)) && ($setsection!="") && ($type != 'section') && (!isset($parent))) {
                                 /*
                                     * Kein Parent mehr 
                                     */
@@ -321,7 +321,7 @@ function theme_defaultbilder_do_page() {
 	<div class="wrap">
             
             <div class="piratenkleider-optionen">  <!-- begin: .piratenkleider-optionen -->    
-		<?php screen_icon(); echo "<h2>" . get_current_theme() . __( ' Segel setzen: Defaultbilder ', 'piratenkleider' ) . "</h2>"; ?>
+		<?php screen_icon(); echo "<h2>" . wp_get_theme() . __( ' Segel setzen: Defaultbilder ', 'piratenkleider' ) . "</h2>"; ?>
 
 		<?php if ( false !== $_REQUEST['settings-updated'] ) : ?>
 		<div class="updated fade"><p><strong><?php _e( 'Defaultbilder wurden gespeichert.', 'piratenkleider' ); ?></strong></p></div>
@@ -655,7 +655,7 @@ function theme_kontaktinfos_do_page() {
 	<div class="wrap">
             
             <div class="piratenkleider-optionen">  <!-- begin: .piratenkleider-optionen -->    
-		<?php screen_icon(); echo "<h2>" . get_current_theme() . __( ' Captn & Crew: Kontaktinformationen setzen ', 'piratenkleider' ) . "</h2>"; ?>
+		<?php screen_icon(); echo "<h2>" . wp_get_theme() . __( ' Captn & Crew: Kontaktinformationen setzen ', 'piratenkleider' ) . "</h2>"; ?>
 
 		<?php if ( false !== $_REQUEST['settings-updated'] ) : ?>
 		<div class="updated fade"><p><strong><?php _e( 'Kontaktinformationen wurden gespeichert.', 'piratenkleider' ); ?></strong></p></div>
@@ -936,7 +936,7 @@ function theme_designspecials_do_page() {
 	<div class="wrap">
             
             <div class="piratenkleider-optionen">  <!-- begin: .piratenkleider-optionen -->    
-		<?php screen_icon(); echo "<h2>" . get_current_theme() . __( ' Kl&uuml;verbaum: Erweiterte Designeinstellungen ', 'piratenkleider' ) . "</h2>"; ?>
+		<?php screen_icon(); echo "<h2>" . wp_get_theme() . __( ' Kl&uuml;verbaum: Erweiterte Designeinstellungen ', 'piratenkleider' ) . "</h2>"; ?>
 
 		<?php if ( false !== $_REQUEST['settings-updated'] ) : ?>
 		<div class="updated fade"><p><strong><?php _e( 'Designeinstellungen wurden gespeichert.', 'piratenkleider' ); ?></strong></p></div>
