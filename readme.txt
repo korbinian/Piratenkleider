@@ -2,7 +2,7 @@ Piratenkleider
 - Wordpress-Theme für Webauftritte der Piratenpartei 
 =================================================
 
-Version 2.14.1 von Wolfgang Wiese (xwolf), 7. Dezember 2012
+Version 2.14.2 von Wolfgang Wiese (xwolf), 13. Dezember 2012
 
 
 DOWNLOADS
@@ -44,7 +44,7 @@ AUTOREN / ENTWICKLER
      - Social Media Icons: Paul Robert Lloyd, http://paulrobertlloyd.com/2009/06/social_media_icons      
      - YAML CSS Framework (Lizensiert unter der Creative Commons Attribution 2.0 License).
      - JavaScript Framework jQuery (GNU General Public License (GPL) Version 2)
-     - jQuery FlexSlider (MIT License)
+     - jQuery FlexSlider 2 (GPL v2)
      - Schrift Bebas Neue von Dharmatype (SIL Open Font License 1.1)
      - Schrift Droid Sans von Ascender (http://www.droidfonts.com/), Apache License 2.0 http://www.apache.org/licenses/LICENSE-2.0
      - Circle Player, https://github.com/maboa/circleplayer (GNU General Public License (GPL) Version 2)
@@ -293,6 +293,12 @@ UNTERSTÜTZE PLUGINS
   Mit Hilfe dieses Plugins können Informationen über den Blogautoren angezeigt 
   werden. Im Theme wurden einige wenige CSS Anpassungen gemacht um dieses
   optiomal zu unterstützen.  
+
+- xwolf Progress Bar
+  (https://github.com/xwolfde/xw-progressbar)
+  Anzeige von Fortschrittsbalken.
+
+
 
 EMPFEHLUNGEN FÜR WIDGETS
  
