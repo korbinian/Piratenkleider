@@ -328,12 +328,12 @@ $default_toplink_liste = array(
               __('Bulgarien', 'piratenkleider' ) => 'http://piratskapartia.bg/',
               __('Chile', 'piratenkleider' ) => 'http://www.partidopirata.cl/',
               __('D&auml;nemark', 'piratenkleider' ) => 'http://piratpartiet.dk/',
-              __('Deutschland', 'piratenkleider' ) => 'http://www.piratenpartei.de/',
-              __('England', 'piratenkleider' ) => 'http://pirateparty.org.uk/',
+              __('Deutschland', 'piratenkleider' ) => 'http://www.piratenpartei.de/',              
               __('Finnland', 'piratenkleider' ) => 'http://www.piraattipuolue.fi/',
               __('Frankreich', 'piratenkleider' ) => 'http://partipirate.org/',
               __('Griechenland', 'piratenkleider' ) => 'http://pirateparty.gr/',
               __('Guatemala', 'piratenkleider' ) => 'http://partidopirata.org.gt/',
+              __('Island', 'piratenkleider') => 'http://pirateparty.is/',        
               __('Italien', 'piratenkleider' ) => 'http://www.partito-pirata.it/',
               __('Kanada', 'piratenkleider' ) => 'http://www.piratepartyofcanada.com/',
               __('Kasachstan', 'piratenkleider' ) => 'http://pirateparty.kz/',
@@ -364,7 +364,8 @@ $default_toplink_liste = array(
              __('Ukraine', 'piratenkleider' ) => 'http://pp-ua.org/',
              __('Uruguay', 'piratenkleider' ) => 'http://partidopirata.org.uy/',
              __('USA', 'piratenkleider' ) => 'http://pirate-party.us/',             
-             __('Wei&szlig;russland', 'piratenkleider' ) => 'http://belpirat.blog.tut.by/',
+             __('Vereinigtes Königreich', 'piratenkleider') => 'http://pirateparty.org.uk/', 
+             __('Wei&szlig;russland', 'piratenkleider' ) => 'http://belpirat.blog.tut.by/',            
              __('Zypern', 'piratenkleider' ) => 'http://www.piratepartycyprus.com/',
 
          )
@@ -415,9 +416,9 @@ $default_toplink_liste = array(
              '<span class="flagicon-tr"></span> '.__('T&uuml;rkei', 'piratenkleider') => 'http://www.korsanpartisi.org/',
              '<span class="flagicon-ua"></span> '.__('Ukraine', 'piratenkleider') => 'http://pp-ua.org/',
              '<span class="flagicon-uy"></span> '.__('Uruguay', 'piratenkleider') => 'http://partidopirata.org.uy/',
-             '<span class="flagicon-us"></span> '.__('USA', 'piratenkleider') => 'http://pirate-party.us/',
-             '<span class="flagicon-by"></span> '.__('Wei&szlig;russland', 'piratenkleider') => 'http://belpirat.blog.tut.by/',
+             '<span class="flagicon-us"></span> '.__('USA', 'piratenkleider') => 'http://pirate-party.us/',             
              '<span class="flagicon-uk"></span> '.__('Vereinigtes Königreich', 'piratenkleider') => 'http://pirateparty.org.uk/',              
+             '<span class="flagicon-by"></span> '.__('Wei&szlig;russland', 'piratenkleider') => 'http://belpirat.blog.tut.by/',
              '<span class="flagicon-cy"></span> '.__('Zypern', 'piratenkleider') => 'http://www.piratepartycyprus.com/',
 
 
@@ -450,7 +451,7 @@ $default_toplink_liste = array(
         'title' => 'Piratenpartei Landesverband Brandenburg',
         'url'  => 'http://www.piratenbrandenburg.de/',
         'sublist' => array(
-            '<abbr title="Stadtverband">SV</abbr> Potsdam' => 'http://www.piraten-potsdam.de/',
+            '<abbr title="Stadtverband">SV</abbr> Potsdam' => 'http://potsdam.piratenbrandenburg.de/',
             '<abbr title="Kreisverband">KV</abbr> Brandenburg an der Havel' => 'http://brb.piratenbrandenburg.de/',
             '<abbr title="Kreisverband">KV</abbr> Havelland' => 'http://hvl.piratenbrandenburg.de/',
             '<abbr title="Kreisverband">KV</abbr> M&auml;rkisch-Oderland' => 'http://mol.piratenbrandenburg.de/',
