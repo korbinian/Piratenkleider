@@ -115,6 +115,7 @@ html[xmlns] .slides {
       cursor: pointer;
       color: black;
 }
+.flex-control-nav li a.flex-active,
 .flex-control-nav li a.active,
 .flex-control-nav li a:hover,
 .flex-control-nav li a:focus {
