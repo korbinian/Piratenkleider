@@ -713,8 +713,11 @@ add_action( 'template_redirect', 'rw_relative_urls' );
         // Don't do anything if:
         // - In feed
         // - In sitemap by WordPress SEO plugin
-        if ( is_feed() || get_query_var( 'sitemap' ) )
-        return;
+         // - Not if Wordpress HTTPS is activated
+
+        $wphttpsactive = in_array('wordpress-https/wordpress-https.php', (array) get_option('active_plugins', array() ) );
+        if ( is_feed() || get_query_var( 'sitemap' ) || $wphttpsactive )
+               return;
         $filters = array(
             'post_link',
             'post_type_link',
