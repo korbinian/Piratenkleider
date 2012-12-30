@@ -113,12 +113,12 @@ audio:not([controls]) {
 body {
     font-size: 0.8em;
     font-family: "FontPiratenkleiderDefault", Helvetica, Arial, sans-serif;
-    line-height: 18px;
+    line-height: 1.5em;
 }
 select, input, textarea, button {
   font-family: "FontPiratenkleiderDefault", Helvetica, Arial, sans-serif;
   font-size: 0.8em;
-  line-height: 18px;
+  line-height: 1.5em;
   color: black; 
 }
 
@@ -1366,7 +1366,9 @@ display: inline-block;
     display: inline-block;
     background: white;
     padding: 3px 5px 1px 5px;    
+    line-height: 1.25em;
 }
+
 .content-aside a img {
     margin: 0;
     padding: 0; 
