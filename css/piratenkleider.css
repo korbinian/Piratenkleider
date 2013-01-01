@@ -2487,6 +2487,7 @@ div.ics-calendar-holder .ics-calendar-event {
     background: white;
     font-size: 1em;
     position: relative; 
+    line-height: 1.6em; 
   }
   .content-primary .skin {
       margin-left: 10px;
