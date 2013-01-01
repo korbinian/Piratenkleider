@@ -700,14 +700,17 @@ function wpi_linkexternclass($content){
 function wpi_linkexternclass_callback($matches) {
         $link = $matches[0];
         $site_link = home_url();  
-        if (strpos($link, 'class') === false) {
+        if ((strpos($link, 'class') === false)
+           && (strpos($link, $site_link) === false)) {
             $link = preg_replace("%(href=\S(?!($site_link|#)))%i", 'class="extern" $1', $link);
         }       
         return $link;
     }
 add_filter('the_content', 'wpi_linkexternclass');
 
-
+/*
+ * Disabled. Will be replaced wih Wordpress HTTPS plugin.
+ * Makes problems with directory based multiside installations
 add_action( 'template_redirect', 'rw_relative_urls' );
     function rw_relative_urls() {
         // Don't do anything if:
@@ -737,20 +740,20 @@ add_action( 'template_redirect', 'rw_relative_urls' );
          add_filter( $filter, 'wp_make_link_relative' );
         }
     }
+ 
+*/
 
  function wpi_relativeurl($content){
         return preg_replace_callback('/<a[^>]+/', 'wpi_relativeurl_callback', $content);
     }
  
 function wpi_relativeurl_callback($matches) {
-
         $link = $matches[0];
         $site_link =  home_url();  
-        $link = preg_replace("%href=\"$site_link%i", 'href="', $link); 
-                
+        $link = preg_replace("%href=\"$site_link%i", 'href="', $link);                 
         return $link;
     }
-add_filter('the_content', 'wpi_relativeurl');
+ add_filter('the_content', 'wpi_relativeurl');
    
 
 function dimox_breadcrumbs() {

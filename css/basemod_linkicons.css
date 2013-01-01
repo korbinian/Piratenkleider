@@ -7,106 +7,126 @@
 */
 
 
-@media screen, projection
-{
+@media screen, projection {
   
 
-.content-primary a[href ^="mailto:"] {
-    background: url(../images/links/mail.gif) top right no-repeat;
-    padding-right: 18px;
-    margin-right: 4px;
+    .content-primary a[href ^="mailto:"] {
+        background: url(../images/links/mail.gif) top right no-repeat;
+        padding-right: 18px;
+        margin-right: 4px;
+    }
 
-}
+    .content-primary a[href $=".ogg"], .content-primary a[href $=".OGG"],
+    .content-primary a[href $=".mid"], .content-primary a[href $=".MID"],
+    .content-primary a[href $=".midi"],.content-primary a[href $=".MIDI"],
+    .content-primary a[href $=".mp3"], .content-primary a[href $=".MP3"],
+    .content-primary a[href $=".wav"], .content-primary a[href $=".WAV"],
+    .content-primary a[href $=".wma"], .content-primary a[href $=".WMA"] {
+        background: url("../images/links/audio.png") center left no-repeat;
+        padding-left: 19px;
+    }
+    .content-primary a[href $=".ogg"]:after, .content-primary a[href $=".OGG"]:after,
+    .content-primary a[href $=".mid"]:after, .content-primary a[href $=".MID"]:after,
+    .content-primary a[href $=".midi"]:after,.content-primary a[href $=".MIDI"]:after,
+    .content-primary a[href $=".mp3"]:after, .content-primary a[href $=".MP3"]:after,
+    .content-primary a[href $=".wav"]:after, .content-primary a[href $=".WAV"]:after,
+    .content-primary a[href $=".wma"]:after, .content-primary a[href $=".WMA"]:after {
+        content: " (Audio) ";
+    }
 
-.content-primary a[href $=".ogg"], .content-primary a[href $=".OGG"],
-.content-primary a[href $=".mid"], .content-primary a[href $=".MID"],
-.content-primary a[href $=".midi"],.content-primary a[href $=".MIDI"],
-.content-primary a[href $=".mp3"], .content-primary a[href $=".MP3"],
-.content-primary a[href $=".wav"], .content-primary a[href $=".WAV"],
-.content-primary a[href $=".wma"], .content-primary a[href $=".WMA"] {
-    background: url("../images/links/audio.png") center left no-repeat;
-    padding-left: 19px;
-}
-.content-primary a[href $=".ogg"]:after, .content-primary a[href $=".OGG"]:after,
-.content-primary a[href $=".mid"]:after, .content-primary a[href $=".MID"]:after,
-.content-primary a[href $=".midi"]:after,.content-primary a[href $=".MIDI"]:after,
-.content-primary a[href $=".mp3"]:after, .content-primary a[href $=".MP3"]:after,
-.content-primary a[href $=".wav"]:after, .content-primary a[href $=".WAV"]:after,
-.content-primary a[href $=".wma"]:after, .content-primary a[href $=".WMA"]:after {
-    content: " (Audio) ";
-}
+    .content-primary a[href $=".ogm"], .content-primary a[href $=".OGM"],
+    .content-primary a[href $=".avi"], .content-primary a[href $=".AVI"],
+    .content-primary a[href $=".mpeg"],.content-primary a[href $=".MPEG"],
+    .content-primary a[href $=".mpg"], .content-primary a[href $=".MPG"] {
+        background: url("../images/links/video.png") center left no-repeat;
+        padding-left: 19px;
+    }
+    .content-primary a[href $=".ogm"]:after, .content-primary a[href $=".OGM"]:after,
+    .content-primary a[href $=".avi"]:after, .content-primary a[href $=".AVI"]:after,
+    .content-primary a[href $=".mpeg"]:after,.content-primary  a[href $=".MPEG"]:after,
+    .content-primary a[href $=".mpg"]:after, .content-primary a[href $=".MPG"]:after {
+        content: " (Video) ";
+    }
 
-.content-primary a[href $=".ogm"], .content-primary a[href $=".OGM"],
-.content-primary a[href $=".avi"], .content-primary a[href $=".AVI"],
-.content-primary a[href $=".mpeg"],.content-primary a[href $=".MPEG"],
-.content-primary a[href $=".mpg"], .content-primary a[href $=".MPG"] {
-    background: url("../images/links/video.png") center left no-repeat;
-    padding-left: 19px;
-}
-.content-primary a[href $=".ogm"]:after, .content-primary a[href $=".OGM"]:after,
-.content-primary a[href $=".avi"]:after, .content-primary a[href $=".AVI"]:after,
-.content-primary a[href $=".mpeg"]:after,.content-primary  a[href $=".MPEG"]:after,
-.content-primary a[href $=".mpg"]:after, .content-primary a[href $=".MPG"]:after {
-    content: " (Video) ";
-}
+    .content-primary a[href $=".pdf"], .content-primary a[href $=".PDF"],
+    .content-primary a[href *=".pdf#"], .content-primary a[href *=".PDF#"],
+    .content-primary a[href *=".pdf?"],.content-primary a[href *=".PDF?"] {
+        background: url("../images/links/pdf.gif") center left no-repeat;
+        padding-left: 19px;
+    }
+    .content-primary a[href $=".pdf"]:after, .content-primary a[href $=".PDF"]:after,
+    .content-primary a[href *=".pdf#"]:after, .content-primary a[href *=".PDF#"]:after,
+    .content-primary a[href *=".pdf?"]:after,.content-primary a[href *=".PDF?"]:after {
+       content: " (PDF) ";
+    }
+    .content-primary a[href $=".ppt"], .content-primary a[href $=".PPT"]{
+        background: url("../images/links/ppt.gif") center left no-repeat;
+        padding-left: 19px;
+    }
+    .content-primary a[href $=".ppt"]:after, .content-primary a[href $=".PPT"]:after {
+       content: " (Powerpoint-Datei) ";
+    }
+    .content-primary a[href $=".doc"], .content-primary a[href $=".DOC"],
+    .content-primary a[href $=".docx"], .content-primary a[href $=".DOCX"] {
+        background: url("../images/links/word.gif") center left no-repeat;
+        padding-left: 19px;
+    }
+    .content-primary a[href $=".doc"]:after, .content-primary a[href $=".DOC"]:after,
+    .content-primary a[href $=".docx"]:after, .content-primary a[href $=".DOCX"]:after {
+       content: " (Word-Datei) ";
+    }
+    .content-primary a[href $=".zip"], .content-primary a[href $=".ZIP"],
+    .content-primary a[href $=".rar"], .content-primary a[href $=".RAR"],
+    .content-primary a[href $=".exe"], .content-primary a[href $=".EXE"],
+    .content-primary a[href $=".msi"], .content-primary a[href $=".MSI"],
+    .content-primary a[href $=".dmg"],.content-primary a[href $=".DMG"],
+    .content-primary a[href $=".gz"], .content-primary a[href $=".GZ"],
+    .content-primary a[href *=".gzip"], .content-primary a[href *=".GZIP"] {
+        background: url("../images/links/zip.gif") center left no-repeat;
+        padding-left: 19px;
+    }
+    .content-primary a[href $=".rar"]:after, .content-primary a[href $=".RAR"]:after,
+    .content-primary a[href $=".exe"]:after, .content-primary a[href $=".EXE"]:after,
+    .content-primary a[href $=".msi"]:after, .content-primary a[href $=".MSI"]:after,
+    .content-primary a[href $=".dmg"]:after,.content-primary a[href $=".DMG"]:after {
+        content: " (Archiv) ";
+    }
+    .content-primary a[href $=".zip"]:after, .content-primary a[href $=".ZIP"]:after,
+    .content-primary a[href $=".gz"]:after, .content-primary a[href $=".GZ"]:after,
+    .content-primary a[href *=".gzip"]:after, .content-primary a[href *=".GZIP"]:after {
+        content: " (ZIP-Datei) ";
+    }
 
-.content-primary a[href $=".pdf"], .content-primary a[href $=".PDF"],
-.content-primary a[href *=".pdf#"], .content-primary a[href *=".PDF#"],
-.content-primary a[href *=".pdf?"],.content-primary a[href *=".PDF?"] {
-    background: url("../images/links/pdf.gif") center left no-repeat;
-    padding-left: 19px;
-}
-.content-primary a[href $=".pdf"]:after, .content-primary a[href $=".PDF"]:after,
-.content-primary a[href *=".pdf#"]:after, .content-primary a[href *=".PDF#"]:after,
-.content-primary a[href *=".pdf?"]:after,.content-primary a[href *=".PDF?"]:after {
-   content: " (PDF) ";
-}
-.content-primary a[href $=".ppt"], .content-primary a[href $=".PPT"]{
-    background: url("../images/links/ppt.gif") center left no-repeat;
-    padding-left: 19px;
-}
-.content-primary a[href $=".ppt"]:after, .content-primary a[href $=".PPT"]:after {
-   content: " (Powerpoint-Datei) ";
-}
-.content-primary a[href $=".doc"], .content-primary a[href $=".DOC"],
-.content-primary a[href $=".docx"], .content-primary a[href $=".DOCX"] {
-    background: url("../images/links/word.gif") center left no-repeat;
-    padding-left: 19px;
-}
-.content-primary a[href $=".doc"]:after, .content-primary a[href $=".DOC"]:after,
-.content-primary a[href $=".docx"]:after, .content-primary a[href $=".DOCX"]:after {
-   content: " (Word-Datei) ";
-}
-.content-primary a[href $=".zip"], .content-primary a[href $=".ZIP"],
-.content-primary a[href $=".rar"], .content-primary a[href $=".RAR"],
-.content-primary a[href $=".exe"], .content-primary a[href $=".EXE"],
-.content-primary a[href $=".msi"], .content-primary a[href $=".MSI"],
-.content-primary a[href $=".dmg"],.content-primary a[href $=".DMG"],
-.content-primary a[href $=".gz"], .content-primary a[href $=".GZ"],
-.content-primary a[href *=".gzip"], .content-primary a[href *=".GZIP"] {
-    background: url("../images/links/zip.gif") center left no-repeat;
-    padding-left: 19px;
-}
-.content-primary a[href $=".rar"]:after, .content-primary a[href $=".RAR"]:after,
-.content-primary a[href $=".exe"]:after, .content-primary a[href $=".EXE"]:after,
-.content-primary a[href $=".msi"]:after, .content-primary a[href $=".MSI"]:after,
-.content-primary a[href $=".dmg"]:after,.content-primary a[href $=".DMG"]:after {
-    content: " (Archiv) ";
-}
-.content-primary a[href $=".zip"]:after, .content-primary a[href $=".ZIP"]:after,
-.content-primary a[href $=".gz"]:after, .content-primary a[href $=".GZ"]:after,
-.content-primary a[href *=".gzip"]:after, .content-primary a[href *=".GZIP"]:after {
-    content: " (ZIP-Datei) ";
-}
 
-.content-primary a.extern {
-    background: url("../images/links/extern.gif") center left no-repeat;
-    padding-left: 10px;
-}
+    .content-primary a.extern {
+        background: url("../images/links/extern.gif") center left no-repeat;
+        padding-left: 10px;
+    }
 
-.content-primary a.nolinkicon {
-	background: none;
-	padding-right: 0;
-}
+    .content-primary a[href *= "lqfb.piratenpartei.de"] {
+        background: url("../images/links/lqfb.png") center left no-repeat;
+        padding-left: 18px;
+    }
+    .content-primary a[href *= "wiki.piratenpartei.de"] {
+        background: url("../images/links/piratenwiki.png") center left no-repeat;
+        padding-left: 18px;
+    }
+    .content-primary a[href *= "feedback.piratenpartei-bayern.de"] {
+        background: url("../images/links/piratefeedback.png") center left no-repeat;
+        padding-left: 18px;
+    }
+    .content-primary a[href *= "de.wikipedia.org"] {
+        background: url("../images/links/wikipedia.png") center left no-repeat;
+        padding-left: 18px;
+    }
+    .content-primary a[href *= "piratenpad.de"] {
+        background: url("../images/links/piratenpad.png") center left no-repeat;
+        padding-left: 18px;
+    }
+
+    .content-primary a.nolinkicon {
+            background: none;
+            padding-right: 0;
+    }
 
 }
