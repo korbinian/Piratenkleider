@@ -56,10 +56,9 @@ html[xmlns] .slides {display: block;}
 }
 
 
-.flexslider .bigslider img {
-    
+.flexslider .bigslider img {    
     min-width: 705px;
-    
+
     /* Kommentare entfernen, wenn man möchte dass die Bilder an die 
        proportionale Breite angepasst werden und nicht abgeschnitten werden: */
     
@@ -194,6 +193,7 @@ html[xmlns] .slides {
 .first-teaser-widget-area .slide .bigslider  {
   /*  background: none repeat scroll 0 0 #111111; */
   position: relative;
+  height: 240px;
 }
  
 .first-teaser-widget-area .slide .textslider  {
@@ -216,7 +216,9 @@ html[xmlns] .slides {
 .first-teaser-widget-area .slide .textslider a {
     color: white;    
 }
-
+.content-aside .flexslider li.slide a {
+    padding: 0;
+}
 
 @media only screen and (max-width: 767px) {  
  .symbolbild, 
