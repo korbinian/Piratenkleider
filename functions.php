@@ -4,7 +4,7 @@
  *
  * @source http://github.com/xwolfde/Piratenkleider
  * @creator xwolf
- * @version 2.14.2
+ * @version 2.14.4
  * @licence CC-BY-SA 3.0 
  */
 
@@ -55,25 +55,11 @@ function piratenkleider_setup() {
      global $defaultoptions;
         // This theme styles the visual editor with editor-style.css to match the theme style.
         add_editor_style();
-
         // This theme uses post thumbnails
         add_theme_support( 'post-thumbnails' );
-
         // Add default posts and comments RSS feed links to head
         add_theme_support( 'automatic-feed-links' );
-
-        
-        /* 
-         * Header-Kontrolle, bis WP 3.3
-
-        define('HEADER_TEXTCOLOR', '');
-        define('HEADER_IMAGE', $defaultoptions['logo']); 
-        define('HEADER_IMAGE_WIDTH',  $defaultoptions['logo-width'] ); // choose any number you like here
-        define('HEADER_IMAGE_HEIGHT', $defaultoptions['logo-height'] ); // choose any number you like here         
-        define('NO_HEADER_TEXT', true );
-     
-         add_custom_image_header('piratenkleider_header_style', 'piratenkleider_admin_header_style');
-         */
+               
   
         $args = array(
             'width'         => 0,
@@ -93,7 +79,6 @@ function piratenkleider_setup() {
         // Make theme available for translation
         // Translations can be filed in the /languages/ directory
         load_theme_textdomain('piratenkleider', get_template_directory() . '/languages');
-
         $locale = get_locale();
         $locale_file = get_template_directory() . "/languages/$locale.php";
         if ( is_readable( $locale_file ) )
@@ -106,11 +91,12 @@ function piratenkleider_setup() {
                 'sub' => __( 'Technische Navigation <br />&nbsp; (Kontakt, Impressunm, etc)', 'piratenkleider' ),
         ) );
 
-       
+       if (!isset($options['login_errors'])) 
+            $options['login_errors'] = $defaultoptions['login_errors'];
+       if ($options['login_errors']==0) {
         /** Abschalten von Fehlermeldungen auf der Loginseite */      
-        // add_filter('login_errors', create_function('$a', "return null;"));
-        
-        
+           add_filter('login_errors', create_function('$a', "return null;"));
+       }        
         /** Entfernen der Wordpressversionsnr im Header */
         remove_action('wp_head', 'wp_generator');
 }
@@ -122,14 +108,15 @@ function piratenkleider_scripts() {
     global $options;
     global $defaultoptions;
     
-     if ($options['slider-aktiv']==1) {
-    /* Flexslider 2.0 does not work with jQuery 1.8 yet :(  */
+     if  ( (($options['slider-aktiv']==1) && (is_home() || is_front_page())) 
+	  || ($options['slider-defaultwerbeplakate']==1)  ) {
+    /* Flexslider 2.0 does not work with jQuery 1.8 yet :(       */
      wp_enqueue_script(
 		'myjquery',
 		$defaultoptions['src-jquery'],
 		false,
                 "1.7.2"
-	);
+	);    
     }
    
     wp_enqueue_script(
@@ -749,7 +736,7 @@ add_action( 'template_redirect', 'rw_relative_urls' );
  
 function wpi_relativeurl_callback($matches) {
         $link = $matches[0];
-        $site_link =  home_url();  
+        $site_link =  wp_make_link_relative(home_url());  
         $link = preg_replace("%href=\"$site_link%i", 'href="', $link);                 
         return $link;
     }
@@ -877,21 +864,18 @@ add_action('login_head', 'custom_login');
  *    von Bejamin Stöcker (@EinfachBen)
  */
 
-function get_post_audio_enclosure($information)
-{
+function get_post_audio_enclosure($information) {
 	$custom_keys = get_post_custom_keys();
-    //     echo "custom keys: <pre>";
-	//var_dump($custom_keys); 
-         // echo "</pre>";
 	if (in_array('enclosure',$custom_keys)) {
 		$custom_fields  = get_post_custom();
 		$enclosures = 	$custom_fields['enclosure'];
                 if (!isset($enclosures)) $enclosures= $custom_fields['_encloseme'];;
-              //  echo "enclosures: <pre>";
-              //  var_dump($enclosures); 
-              //   echo "</pre>";
-		foreach($enclosures as $thatValue)
-		{
+                /* 
+		  echo "enclosures: <pre>";
+                  var_dump($enclosures); 
+                  echo "</pre>";		  
+		 */
+		foreach($enclosures as $thatValue){
 			if(strstr($thatValue, 'audio/ogg')!="")
 			{
 				$ende = strpos($thatValue,".ogg");
@@ -938,8 +922,7 @@ $information = apply_filters("get_post_audio_information",$information);
 $validInformation = filter_var($information['mp3'], FILTER_VALIDATE_URL);
 $validInformation = $validInformation && filter_var($information['ogg'], FILTER_VALIDATE_URL);
 
-if($validInformation) {
-?>
+if($validInformation) {  ?>
 <div class="widget" id="AudioPlayer">
     <h2>Diesen Beitrag anh&ouml;ren</h2>
     <script type="text/javascript">
@@ -982,10 +965,9 @@ if($validInformation) {
         </ul>
     </div>
     Download: <a href="<?php echo $information['ogg'];?>">ogg</a>, <a href="<?php echo $information['mp3'];?>">mp3</a> <br/>
-    <?php if($information['text'][0]<>''){?>
-
-     <?php echo $information['text']." <br/>";
-     }?> 
+    <?php if(strlen(trim($information['text']))>2) { 
+      echo $information['text']." <br/>";
+     } ?>
 </div>
 <?php
 }	

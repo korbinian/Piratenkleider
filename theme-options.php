@@ -416,7 +416,7 @@ function theme_defaultbilder_do_page() {
                                 if ( ! isset( $checked ) ) $checked = '';
                                 foreach ( $defaultplakate_liste as $option ) {    
                                     $checked = '';
-                                    if (is_array($options['plakate-src'])) {
+                                    if ((isset($options['plakate-src'])) && (is_array($options['plakate-src']))) {
                                         foreach ($options['plakate-src'] as $current) {                                                                                      
                                             if ($current == $option['src']) {
                                                  $checked = "checked=\"checked\"";                                                                                            

@@ -116,7 +116,9 @@ if ((isset( $options['meta-keywords'] )) && ( strlen(trim($options['meta-keyword
             if ($options['aktiv-circleplayer']==1) { 
             ?>            
     <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/circleplayer/css/not.the.skin.css">
-    <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/circleplayer/circle.skin/circle.player.css">                
+    <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/circleplayer/circle.skin/circle.player.css">   
+    <!-- Circleplayer wants  an old jQuery version :( --> 
+    <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/circleplayer/js/jquery.min.js"></script>    
     <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/circleplayer/js/jquery.transform2d.js"></script>
     <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/circleplayer/js/jquery.grab.js"></script>
     <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/circleplayer/js/jquery.jplayer.js"></script>
