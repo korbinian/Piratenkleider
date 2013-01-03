@@ -29,7 +29,8 @@
       $slideDirection = $options['slider-Direction']; 
       $animationType = $options['slider-animationType']; 
 
-      if (($options['slider-aktiv']==1) || ($options['slider-defaultwerbeplakate']==1)) {
+       if  ( (($options['slider-aktiv']==1) && (is_home() || is_front_page())) 
+	  || ($options['slider-defaultwerbeplakate']==1)  ) {
         if ($slideshowSpeed <1000) {$slideshowSpeed=8000;}
         if ($animationDuration <100) {$animationDuration=600;}
         if (! isset($slideDirection)) $slideDirection = 'horizontal';
