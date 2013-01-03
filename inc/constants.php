@@ -31,7 +31,7 @@ $defaultoptions = array(
     'src-default-symbolbild-tag'    => get_template_directory_uri() .'/images/default-tag.png',
     'src-default-symbolbild-author' => get_template_directory_uri() .'/images/default-author.png',
     'src-default-symbolbild-archive' => get_template_directory_uri() .'/images/default-archive.png',
-  
+    'login_errors'		    => 1,
     'slider-aktiv'                  => 1,
     'aktiv-defaultseitenbild'       => 0,
     'aktiv-suche'                   => 1,   
@@ -1243,8 +1243,14 @@ $setoptions = array(
                   'label'   => __( 'Circle Player (HTML5 Player) f&uuml;r MP3/OGG-Dateien in einzelnen Beitr&auml;gen aktivieren.', 'piratenkleider' ),
                   'default' => $defaultoptions['aktiv-circleplayer'],
               ),   
-               
-                
+                'login_errors' => array(
+                  'type'    => 'select',
+                  'title'   => __( 'Fehlermeldung bei Login', 'piratenkleider' ),
+                  'label'   => __( 'Option um die Fehlermeldung beim Login im Backend ein oder abzuschalten, mit der angezeigt wird, warum der Login fehlschlug.', 'piratenkleider' ),
+                  'liste'   => array(1 => __( 'Fehlermeldung zeigen', 'piratenkleider' ), 0 => __( 'Keine Meldung', 'piratenkleider' )),
+                  'default' => 1,
+              ),
+
                
               'url-newsletteranmeldung' => array(
                   'type'    => 'url',
