@@ -2365,6 +2365,9 @@ div.ics-calendar-holder .ics-calendar-event {
   .header {
     height: 225px; 
     width: 100%;
+    background-color: #eeeeee;
+    background-repeat: repeat-x;
+    background-position: left bottom;
   }
 
   .nav-top ul {

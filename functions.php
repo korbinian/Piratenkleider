@@ -104,7 +104,7 @@ function piratenkleider_setup() {
 	        if ( $background ) {
 	                $image = " background-image: url('$background');";
 	
-	                $repeat = get_theme_mod( 'background_repeat', 'repeat' );
+	                $repeat = get_theme_mod( 'background_repeat', 'repeat-x' );
 	                if ( ! in_array( $repeat, array( 'no-repeat', 'repeat-x', 'repeat-y', 'repeat' ) ) )
 	                        $repeat = 'repeat-x';
 	                $repeat = " background-repeat: $repeat;";
