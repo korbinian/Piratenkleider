@@ -4,7 +4,7 @@ Theme URI: http://piratenkleider.xwolf.de
 Description: Allgemeines Theme für Webauftritte der Piratenpartei
 Author: Wolfgang Wiese (xwolf)
 Author URI: http://www.xwolf.de 
-Version: 2.14
+Version: 2.14.5
 Tags: orange, two-columns, responsive, fluid-width
 License: CC-BY-SA 3.0 
 License URI: http://creativecommons.org/licenses/by-sa/3.0/de/deed.de
@@ -254,7 +254,7 @@ hr {
   padding: 0;
   margin-bottom: 15px;
   margin-top: 5px;
-  background: url("../assets/jolly.png") no-repeat center center;
+  background: url("../images/jolly.png") no-repeat center center;
   height: 26px; }
 
 ::selection {
@@ -455,9 +455,6 @@ button, input[type="submit"],
     top: 1px; 
   }
 
-body {
-  background: white url("../images/int/bg-tags_gray.jpg") -20% 0 fixed; 
-}
 
 .section {
   padding: 0 10px; }
@@ -596,10 +593,15 @@ body {
   
 .header {
   position: relative;
-  background-color: #eeeeee;
-  background-image: url("../assets/darkwave.png"), url("../assets/boat.png");
-  background-position: -20% bottom, 56% bottom;
-  background-repeat: repeat-x, no-repeat; }
+/*
+    * Ueber Custom Header
+
+    background-color: #eeeeee;
+  background-image: url("../images/default-header-background.png");
+  background-position: left bottom;
+  background-repeat: repeat-x, no-repeat; 
+*/
+}
 
 
 .header .branding {
@@ -651,14 +653,14 @@ body {
     position: absolute;
     top: 10px;
     right: 8px;
-    background: #2d7dc5 url("../assets/lupe.png") no-repeat center center;
+    background: #2d7dc5 url("../images/lupe.png") no-repeat center center;
     width: 30px;
     height: 30px;
     overflow: hidden;
     text-indent: -999em; 
 }
 .searchform .searchsubmit:hover {
-    background: #24639b url("../assets/lupe.png") no-repeat center center;
+    background: #24639b url("../images/lupe.png") no-repeat center center;
 }
  
 .content .searchform .searchsubmit {
@@ -1267,11 +1269,11 @@ display: inline-block;
     .content-primary .post-nav ul li {
       list-style: none; }
     .content-primary .post-nav .back a {
-      background: url("../assets/bigback.png") no-repeat center left;
+      background: url("../images/bigback.png") no-repeat center left;
       display: block;
       padding-left: 25px; }
     .content-primary .post-nav .forward a {
-      background: url("../assets/bigforward.png") no-repeat center right;
+      background: url("../images/bigforward.png") no-repeat center right;
       display: block;
       padding-right: 25px; }
     .content-primary .post-nav .related {
@@ -1518,7 +1520,7 @@ display: inline-block;
  .single .social_share_privacy ul li.facebook, .single .social_share_privacy ul li.twitter {
     width: 120px; }
  .single .social_share_privacy ul .help_info.icon {
-    background: #2d7dc5 url("../assets/info.png") no-repeat center center scroll;
+    background: #2d7dc5 url("../images/info.png") no-repeat center center scroll;
     border: 2px solid;
     width: 0;
     height: 0;
@@ -2009,7 +2011,7 @@ img.wp-smiley {
       
 .content-aside ul.menu li.current_page_item > a,
 .content-aside ul.menu li.current-menu-item > a {
-    background: #2d7dc5 url("../assets/plus-left.gif") center left no-repeat;
+    background: #2d7dc5 url("../images/plus-left.gif") center left no-repeat;
     color: white;
     padding-left: 14px; }
 .content-aside ul.menu ul.children,

@@ -11,6 +11,8 @@ $defaultoptions = array(
     'logo'                          => get_template_directory_uri() .'/images/logo.png',
     'logo-width'                    => 300,
     'logo-height'                   => 130,
+    'background-header-image'	    => get_template_directory_uri() .'/images/default-header-background.png',
+    'background-header-color'	    => 'eeeeee',
     'smallslider-thumb-width'       => 220,
     'smallslider-thumb-height'      => 185,
     'bigslider-thumb-width'         => 705,
@@ -79,7 +81,7 @@ $defaultoptions = array(
     'anonymize-user'                => 0,
     'anonymize-user-commententries' => 0,
     'aktiv-commentreplylink'        => 0,
-    'default_comment_notes_before'  => '<p class="comment-notes">'.__( 'Deine E-Mail-Adresse wird nicht veröffentlicht. Erforderliche Felder sind markiert <span class="required">*</span>', 'piratenkleider' ). '</p>',
+    'default_comment_notes_before'  => '<p class="comment-notes">'.__( 'Deine E-Mail-Adresse wird nicht ver&ouml;ffentlicht. Erforderliche Felder sind markiert <span class="required">*</span>', 'piratenkleider' ). '</p>',
     'disclaimer_post'               => '',
     'twitter_cache_lifetime'        => 14400,
     'feed_cache_lifetime'           => 14400,
@@ -369,7 +371,7 @@ $default_toplink_liste = array(
              __('Ukraine', 'piratenkleider' ) => 'http://pp-ua.org/',
              __('Uruguay', 'piratenkleider' ) => 'http://partidopirata.org.uy/',
              __('USA', 'piratenkleider' ) => 'http://pirate-party.us/',             
-             __('Vereinigtes Königreich', 'piratenkleider') => 'http://pirateparty.org.uk/', 
+             __('Vereinigtes K&ouml;nigreich', 'piratenkleider') => 'http://pirateparty.org.uk/', 
              __('Wei&szlig;russland', 'piratenkleider' ) => 'http://belpirat.blog.tut.by/',            
              __('Zypern', 'piratenkleider' ) => 'http://www.piratepartycyprus.com/',
 
@@ -597,7 +599,7 @@ $default_toplink_liste = array(
         )
     ),
       'Thueringen' => array(
-        'title' => 'Piratenpartei Landesverband Thüringen',
+        'title' => 'Piratenpartei Landesverband Th&uuml;ringen',
         'url'  => 'http://www.piraten-thueringen.de/',
         'sublist' => array(
             '<abbr title="Kreisverband">KV</abbr> Altenburger Land' => 'http://piraten-altenburger-land.de/',
@@ -1012,7 +1014,7 @@ $setoptions = array(
              'teaser-type' => array(
                   'type'    => 'select',
                   'title'   => __( 'Teaser-Darstellung', 'piratenkleider' ),
-                  'label'   => __( 'Teaser mit großem Bild über gesamte Breite oder kleinem Thumbnail.', 'piratenkleider' ),
+                  'label'   => __( 'Teaser mit gro&szlig;em Bild &uuml;ber gesamte Breite oder kleinem Thumbnail.', 'piratenkleider' ),
                   'liste'   => array("big" => "big", "small" => "small"),
                   'default' => $defaultoptions['teaser-type'],
                    'parent'  => 'sliderpars'
@@ -1266,7 +1268,7 @@ $setoptions = array(
               ),  
                'post_disclaimer' => array(
                   'type'    => 'textarea',
-                  'title'   => __( 'Disclaimer für (Gast-)Artikel', 'piratenkleider' ),
+                  'title'   => __( 'Disclaimer f&uuml;r (Gast-)Artikel', 'piratenkleider' ),
                   'label'   => __( 'Definiere ein Text als Disclaimer der bei Artikeln gezeigt werden kann. Disclaimer wird mit Custom Field show-post-disclaimer (= 0, 1,2,3) aktiviert.', 'piratenkleider' ),
                   'default' => $defaultoptions['disclaimer_post'],
               ),                    

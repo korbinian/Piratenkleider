@@ -380,7 +380,7 @@
       
 .content-aside ul.menu li.current_page_item > a,
 .content-aside ul.menu li.current-menu-item > a {
-    background: #2d7dc5 url("../assets/plus-left.gif") center left no-repeat;
+    background: #2d7dc5 url("../images/plus-left.gif") center left no-repeat;
     color: white;
 }
 

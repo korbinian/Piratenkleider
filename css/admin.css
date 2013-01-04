@@ -16,6 +16,18 @@
   font-style: normal; 
 }
 
+
+ #headimg {
+            width: 350px;
+	    height: 120px;
+            background: no-repeat;
+	    border: 0;
+    }
+    #custom-background-image {
+	height: 225px;
+	background-position: bottom left !important; 
+	background-repeat: repeat-x, no-repeat;
+    }
 label.description {
     display: block;
 }

@@ -67,7 +67,7 @@
         padding-left: 25px;
         padding-right: 25px;
         text-indent: -999em;
-        background: url("../assets/home.gif") no-repeat center 10px; 
+        background: url("../images/home.gif") no-repeat center 10px; 
 }
 
 .nav-main ul.menu li.current-menu-item > a,
@@ -101,19 +101,19 @@
  .nav-main ul.menu li a[title="Home"].hover,
  .nav-main ul.menu li.menu-item-home a:hover,
  .nav-main ul.menu li.menu-item-home a.hover {
-      background: white url("../assets/home.gif") no-repeat center 10px; 
+      background: white url("../images/home.gif") no-repeat center 10px; 
  }
      
  .nav-main ul.menu li.current_page_item a[title="Home"],
  .nav-main ul.menu li.current-menu-item.menu-item-home a {
-    background: #111111 url("../assets/home.gif") no-repeat center -107px;
+    background: #111111 url("../images/home.gif") no-repeat center -107px;
  }
 
  .nav-main ul.menu li.current_page_item a[title="Home"]:hover,
  .nav-main ul.menu li.current_page_item a[title="Home"].hover,
  .nav-main ul.menu li.current-menu-item.menu-item-home a:hover,
  .nav-main ul.menu li.current-menu-item.menu-item-home a.hover {
-      background: #111111 url("../assets/home.gif") no-repeat center 10px; 
+      background: #111111 url("../images/home.gif") no-repeat center 10px; 
  }
      
 .nav-main ul.menu li ul {
@@ -206,7 +206,7 @@
    
    .nav-main ul.menu li:hover ul li.has_children,
    .nav-main ul.menu li.hover ul li.has_children {
-        background: url("../assets/plus_black.gif") center right no-repeat;
+        background: url("../images/plus_black.gif") center right no-repeat;
    }
 
     
@@ -218,7 +218,7 @@
 
    .nav-main ul.menu li:hover ul li:hover ul li.has_children,
    .nav-main ul.menu li.hover ul li.hover ul li.has_children { 
-        background: url("../assets/plus_black.gif") center right no-repeat;
+        background: url("../images/plus_black.gif") center right no-repeat;
    }
    .nav-main ul.menu li:hover ul li:hover ul li:hover ul li,
    .nav-main ul.menu li.hover ul li.hover ul li.hover ul li { 

@@ -47,7 +47,7 @@ AUTOREN / ENTWICKLER
      - jQuery FlexSlider 2 (GPL v2)
      - Schrift Bebas Neue von Dharmatype (SIL Open Font License 1.1)
      - Schrift Droid Sans von Ascender (http://www.droidfonts.com/), Apache License 2.0 http://www.apache.org/licenses/LICENSE-2.0
-     - Circle Player, https://github.com/maboa/circleplayer (GNU General Public License (GPL) Version 2)
+     - Circle Player, http://jplayer.org (GNU General Public License (GPL) Version 2)
 
 VORVERSION
 
@@ -443,3 +443,6 @@ Administrative Hinweise für Wordpress Theme-Editoren:
     HTML5-Audioplayer basiert auf den jPlayer (http://jplayer.org/download/)
     und ermöglicht es, im text eingebettete ogg/mp3-Dateien zu erkennen und in 
     der Sidebar rechts abspielen zu lassen.
+
+14. Ab version 2.14.5 kann der Hintergrund des Kopfteiles über das Backend
+    (fast) frei definiert werden.

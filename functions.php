@@ -65,15 +65,75 @@ function piratenkleider_setup() {
             'height'        => 0,
             'default-image' => $defaultoptions['logo'],
             'uploads'       => true,
-            'random-default' => true,                      
+            'random-default' => false,                      
             'flex-height' => true,
             'flex-width' => true,
+	    'header-text'   => false,
             'suggested-height' => $defaultoptions['logo-height'],
             'suggested-width' => $defaultoptions['logo-width'],
             'max-width' => 350,           
         );
        add_theme_support( 'custom-header', $args );
-            
+               
+       $args = array(
+	    'default-color' => $defaultoptions['background-header-color'],
+	    'default-image' => $defaultoptions['background-header-image'],
+	    'background_repeat'	=> 'repeat-x',
+	    'background_position_x'  => 'left',
+	    'background_position_y'  => 'bottom',
+	    'wp-head-callback'       => 'piratenkleider_custom_background_cb',	
+	);
+       
+	/**
+	 * piratenkleider custom background callback.
+	 *
+	 */
+	function piratenkleider_custom_background_cb() {
+	        // $background is the saved custom image, or the default image.
+	        $background = set_url_scheme( get_background_image() );
+	
+	        // $color is the saved custom color.
+	        // A default has to be specified in style.css. It will not be printed here.
+	        $color = get_theme_mod( 'background_color' );
+	
+	        if ( ! $background && ! $color )
+	                return;
+	
+	        $style = $color ? "background-color: #$color;" : '';
+	
+	        if ( $background ) {
+	                $image = " background-image: url('$background');";
+	
+	                $repeat = get_theme_mod( 'background_repeat', 'repeat' );
+	                if ( ! in_array( $repeat, array( 'no-repeat', 'repeat-x', 'repeat-y', 'repeat' ) ) )
+	                        $repeat = 'repeat-x';
+	                $repeat = " background-repeat: $repeat;";
+	
+	                $positionx = get_theme_mod( 'background_position_x', 'left' );
+	                if ( ! in_array( $positionx, array( 'center', 'right', 'left' ) ) )
+	                        $positionx = 'left';
+	                $positiony = get_theme_mod( 'background_position_y', 'bottom' );
+	                if ( ! in_array( $positiony, array( 'top', 'bottom' ) ) )
+	                        $positiony = 'bottom';
+			
+	                $position = " background-position: $positionx $positiony;";
+	
+	                $attachment = get_theme_mod( 'background_attachment', 'scroll' );
+	                if ( ! in_array( $attachment, array( 'fixed', 'scroll' ) ) )
+	                        $attachment = 'scroll';
+	                $attachment = " background-attachment: $attachment;";
+	
+	                $style .= $image . $repeat . $position . $attachment;
+	        }
+	    ?>
+	    <style type="text/css" id="custom-background-css">
+	    .header { <?php echo trim( $style ); ?> }
+	    </style>
+	    <?php
+	}       
+       
+	add_theme_support( 'custom-background', $args );
+       
         
         // Make theme available for translation
         // Translations can be filed in the /languages/ directory
@@ -216,23 +276,7 @@ function filter_media_comment_status( $open, $post_id ) {
 add_filter( 'comments_open', 'filter_media_comment_status', 10 , 2 );
 
 
-if ( ! function_exists( 'piratenkleider_admin_header_style' ) ) :
-/**
- * Styles the header image displayed on the Appearance > Header admin panel.
- */
-function piratenkleider_admin_header_style() {
-    ?>
-    <style type="text/css">
-    /* Shows the same border as on front end */
-    #headimg {
-            border-bottom: 1px solid #000;
-            border-top: 4px solid #000;
-            background-repeat: no-repeat;
-    }
-    </style>
-    <?php
-}
-endif;
+
 
 if ( ! function_exists( 'piratenkleider_filter_wp_title' ) ) :   
 /*
