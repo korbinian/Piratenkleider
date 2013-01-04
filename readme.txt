@@ -2,7 +2,7 @@ Piratenkleider
 - Wordpress-Theme für Webauftritte der Piratenpartei 
 =================================================
 
-Version 2.14.4 von Wolfgang Wiese (xwolf), 3. Januar 2013
+Version 2.14.5 von Wolfgang Wiese (xwolf), 4. Januar 2013
 
 
 DOWNLOADS
@@ -438,3 +438,8 @@ Administrative Hinweise für Wordpress Theme-Editoren:
     vorhandene Bilder anstelle des Datums eingeblendet werden. Hierzu gibt es
     im Backend eine Option: "Thumbnails anstelle Datum" 
     (Takelage einstellen->Startseite)
+
+13. Ab Version 2.14.5 ist der Circleplayer funktionsfähig. Dieser eingebaute 
+    HTML5-Audioplayer basiert auf den jPlayer (http://jplayer.org/download/)
+    und ermöglicht es, im text eingebettete ogg/mp3-Dateien zu erkennen und in 
+    der Sidebar rechts abspielen zu lassen.

@@ -19,8 +19,7 @@ if ($options['anonymize-user']==1) {
     /* IP-Adresse überschreiben */
     $_SERVER["REMOTE_ADDR"] = "0.0.0.0";
     /* UA-String überschreiben */
-    $_SERVER["HTTP_USER_AGENT"] = "";
-    
+    $_SERVER["HTTP_USER_AGENT"] = "";    
     update_option('require_name_email',0);
 }
 
@@ -107,9 +106,17 @@ require( get_template_directory() . '/inc/widgets.php' );
 function piratenkleider_scripts() {
     global $options;
     global $defaultoptions;
+    if (!isset($options['aktiv-circleplayer'])) 
+            $options['aktiv-circleplayer'] = $defaultoptions['aktiv-circleplayer']; 
+    if (!isset($options['aktiv-dynamic-sidebar'])) 
+          $options['aktiv-dynamic-sidebar'] = $defaultoptions['aktiv-dynamic-sidebar'];
+    if (!isset($options['aktiv-commentreplylink'])) 
+            $options['aktiv-commentreplylink'] = $defaultoptions['aktiv-commentreplylink'];
     
-     if  ( (($options['slider-aktiv']==1) && (is_home() || is_front_page())) 
-	  || ($options['slider-defaultwerbeplakate']==1)  ) {
+    if  ( (($options['slider-aktiv']==1) && (is_home() || is_front_page())) 
+	  || ($options['slider-defaultwerbeplakate']==1) 
+	  || ($options['aktiv-circleplayer']==1) 	    
+	  || ($options['aktiv-dynamic-sidebar']==1 ) ) {
     /* Flexslider 2.0 does not work with jQuery 1.8 yet :(       */
      wp_enqueue_script(
 		'myjquery',
@@ -117,8 +124,8 @@ function piratenkleider_scripts() {
 		false,
                 "1.7.2"
 	);    
-    }
-   
+    }         
+    
     wp_enqueue_script(
 		'layoutjs',
 		$defaultoptions['src-layoutjs'],
@@ -132,9 +139,8 @@ function piratenkleider_scripts() {
                 $defaultoptions['js-version']
 	);
     
-    if (!isset($options['aktiv-commentreplylink'])) 
-            $options['aktiv-commentreplylink'] = $defaultoptions['aktiv-commentreplylink'];
-    if ($options['aktiv-commentreplylink']==1) {        
+
+    if (is_singular() && ($options['aktiv-commentreplylink']==1) && get_option( 'thread_comments' )) {        
             wp_enqueue_script(
 		'comment-reply',
 		$defaultoptions['src-comment-reply'],
@@ -142,17 +148,52 @@ function piratenkleider_scripts() {
                 $defaultoptions['js-version']
 	);  
      }  
-      if (!isset($options['aktiv-dynamic-sidebar'])) 
-          $options['aktiv-dynamic-sidebar'] = $defaultoptions['aktiv-dynamic-sidebar'];
+
       
-       if ($options['aktiv-dynamic-sidebar']==1) {        
+    if ($options['aktiv-dynamic-sidebar']==1) {        
             wp_enqueue_script(
 		'dynamic-sidebar',
 		$defaultoptions['src-dynamic-sidebar'],
-		false,
+		array('myjquery'),
                 $defaultoptions['js-version']
             );  
-       }        
+    }     
+
+    if (is_singular() && ($options['aktiv-circleplayer']==1)) {
+	 wp_enqueue_script(
+		'jplayer',
+		$defaultoptions['src-jplayer'],
+		array('myjquery'),
+                $defaultoptions['js-version']
+            );  
+	  wp_enqueue_script(
+		'transform2d',
+		$defaultoptions['src-transform2d'],
+		array('jplayer'),
+                $defaultoptions['js-version']
+            );  
+	  wp_enqueue_script(
+		'grab',
+		$defaultoptions['src-grab'],
+		array('jplayer'),
+                $defaultoptions['js-version']
+            );  
+	  wp_enqueue_script(
+		'csstransforms',
+		$defaultoptions['src-csstransforms'],
+		array('jplayer'),
+                $defaultoptions['js-version']
+            );  
+	  wp_enqueue_script(
+		'circleplayer',
+		$defaultoptions['src-circleplayer'],
+		array('jplayer'),
+                $defaultoptions['js-version']
+            );  
+    }       
+   
+    
+       
 }
 add_action('wp_enqueue_scripts', 'piratenkleider_scripts');
 
@@ -870,11 +911,6 @@ function get_post_audio_enclosure($information) {
 		$custom_fields  = get_post_custom();
 		$enclosures = 	$custom_fields['enclosure'];
                 if (!isset($enclosures)) $enclosures= $custom_fields['_encloseme'];;
-                /* 
-		  echo "enclosures: <pre>";
-                  var_dump($enclosures); 
-                  echo "</pre>";		  
-		 */
 		foreach($enclosures as $thatValue){
 			if(strstr($thatValue, 'audio/ogg')!="")
 			{
@@ -917,58 +953,51 @@ add_filter('get_post_audio_information','get_post_audio_enclosure',5);
 add_filter('get_post_audio_information','get_post_audio_fields',15);
 
 function piratenkleider_echo_player() {
-$information =  array('ogg'=>"",'mp3'=>"",'text'=>"");
-$information = apply_filters("get_post_audio_information",$information);
-$validInformation = filter_var($information['mp3'], FILTER_VALIDATE_URL);
-$validInformation = $validInformation && filter_var($information['ogg'], FILTER_VALIDATE_URL);
+    $information =  array('ogg'=>"",'mp3'=>"",'text'=>"");
+    $information = apply_filters("get_post_audio_information",$information);
+    $validInformation = filter_var($information['mp3'], FILTER_VALIDATE_URL);
+    $validInformation = $validInformation && filter_var($information['ogg'], FILTER_VALIDATE_URL);
 
-if($validInformation) {  ?>
-<div class="widget" id="AudioPlayer">
-    <h2>Diesen Beitrag anh&ouml;ren</h2>
-    <script type="text/javascript">
-    $(document).ready(function(){
+    if($validInformation) {  ?>
+    <div class="widget" id="AudioPlayer">
+	<h3><?php _e( 'Diesen Beitrag anh&ouml;ren', 'piratenkleider' ); ?></h3>
 
-    /*
-    * Instance CirclePlayer inside jQuery doc ready
-    *
-    * CirclePlayer(jPlayerSelector, media, options)
-    * jPlayerSelector: String - The css selector of the jPlayer div.
-    * media: Object - The media object used in jPlayer("setMedia",media).
-    * options: Object - The jPlayer options.
-    *
-    * Multiple instances must set the cssSelectorAncestor in the jPlayer options. Defaults to "#cp_container_1" in CirclePlayer.
-    */
-
-    var myCirclePlayer = new CirclePlayer("#jquery_jplayer_1",
-    {
-    mp3: "<?php echo $information['mp3'];?>",
-    oga: "<?php echo $information['ogg'];?>"
-    }, {
-    cssSelectorAncestor: "#cp_container_1"
-    });
-    });
-    </script>
-    <div id="jquery_jplayer_1" class="cp-jplayer"></div>  
-    <div id="cp_container_1" class="cp-container">
-        <div class="cp-buffer-holder"> <!-- .cp-gt50 only needed when buffer is > than 50% -->
-            <div class="cp-buffer-1"></div>
-            <div class="cp-buffer-2"></div>
-        </div>
-        <div class="cp-progress-holder"> <!-- .cp-gt50 only needed when progress is > than 50% -->
-            <div class="cp-progress-1"></div>
-            <div class="cp-progress-2"></div>
-        </div>
-        <div class="cp-circle-control"></div>
-        <ul class="cp-controls">
-            <li style="padding:0;"><a class="cp-play" tabindex="1">play</a></li>
-            <li style="padding:0;"><a class="cp-pause" style="display:none;" tabindex="1">pause</a></li> <!-- Needs the inline style here, or jQuery.show() uses display:inline instead of display:block -->
-        </ul>
+	<script type="text/javascript">	   
+	//<![CDATA[
+	$(document).ready(function(){
+	var myCirclePlayer = new CirclePlayer("#jquery_jplayer_1",
+	{
+	mp3: "<?php echo $information['mp3'];?>",
+	oga: "<?php echo $information['ogg'];?>"
+	}, {
+	cssSelectorAncestor: "#cp_container_1",
+		swfPath: "js",
+		wmode: "window"
+	});
+	});
+	//]]>
+	</script>
+	<div id="jquery_jplayer_1" class="cp-jplayer"></div>  
+	<div id="cp_container_1" class="cp-container">
+	    <div class="cp-buffer-holder"> <!-- .cp-gt50 only needed when buffer is > than 50% -->
+		<div class="cp-buffer-1"></div>
+		<div class="cp-buffer-2"></div>
+	    </div>
+	    <div class="cp-progress-holder"> <!-- .cp-gt50 only needed when progress is > than 50% -->
+		<div class="cp-progress-1"></div>
+		<div class="cp-progress-2"></div>
+	    </div>
+	    <div class="cp-circle-control"></div>
+	    <ul class="cp-controls">
+		<li style="padding:0;"><a class="cp-play" tabindex="1">play</a></li>
+		<li style="padding:0;"><a class="cp-pause" style="display:none;" tabindex="1">pause</a></li> <!-- Needs the inline style here, or jQuery.show() uses display:inline instead of display:block -->
+	    </ul>
+	</div>
+	Download: <a href="<?php echo $information['ogg'];?>">ogg</a>, <a href="<?php echo $information['mp3'];?>">mp3</a> <br/>
+	<?php if(strlen(trim($information['text']))>2) { 
+	  echo $information['text']." <br/>";
+	 } ?>
     </div>
-    Download: <a href="<?php echo $information['ogg'];?>">ogg</a>, <a href="<?php echo $information['mp3'];?>">mp3</a> <br/>
-    <?php if(strlen(trim($information['text']))>2) { 
-      echo $information['text']." <br/>";
-     } ?>
-</div>
-<?php
-}	
+    <?php
+    }	
 }

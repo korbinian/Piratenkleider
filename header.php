@@ -109,22 +109,9 @@ if ((isset( $options['meta-keywords'] )) && ( strlen(trim($options['meta-keyword
         echo '  <link rel="stylesheet" type="text/css" media="all" href="'.get_template_directory_uri().'/css/basemod_sidebarbottom.css">';
     } 
     echo '  <link rel="pingback" href="'.get_bloginfo( 'pingback_url' ).'">';    
-    if ( is_singular() ) {
-            if ( get_option( 'thread_comments' ) ) {
-    		wp_enqueue_script( 'comment-reply' );
-            }
-            if ($options['aktiv-circleplayer']==1) { 
-            ?>            
-    <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/circleplayer/css/not.the.skin.css">
-    <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/circleplayer/circle.skin/circle.player.css">   
-    <!-- Circleplayer wants  an old jQuery version :( --> 
-    <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/circleplayer/js/jquery.min.js"></script>    
-    <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/circleplayer/js/jquery.transform2d.js"></script>
-    <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/circleplayer/js/jquery.grab.js"></script>
-    <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/circleplayer/js/jquery.jplayer.js"></script>
-    <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/circleplayer/js/mod.csstransforms.min.js"></script>
-    <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/circleplayer/js/circle.player.js"></script>    
-            <?php  }
+    if ( is_singular() && ($options['aktiv-circleplayer']==1) ) {  ?>            
+    <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/circle.player.css">   
+    <?php  
     }    
     wp_head(); 
     if (isset($designspecials['aktiv-mediaqueries-allparts']) && ($designspecials['aktiv-mediaqueries-allparts']==1)) {
