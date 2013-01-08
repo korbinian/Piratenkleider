@@ -1104,9 +1104,15 @@ display: inline-block;
   background: #ff8800 url("../images/int/bg-tags.png") -20% top fixed;
  }
 .content .row {
-    overflow: hidden;
+   /*  overflow: hidden; */
     background: #ff8800;
     background: rgba(255, 136, 0, 0.7);
+    -ms-word-break:break-word;
+    -webkit-word-break:  break-word;
+     word-break:  break-word;
+    -webkit-hyphens: auto;
+    -moz-hyphens: auto;
+        hyphens:  auto; 
 }
 
 .content p, .content form {
@@ -2493,6 +2499,8 @@ div.ics-calendar-holder .ics-calendar-event {
     font-size: 1em;
     position: relative; 
     line-height: 1.6em; 
+    display: block;
+   
   }
   .content-primary .skin {
       margin-left: 10px;
@@ -2515,9 +2523,11 @@ div.ics-calendar-holder .ics-calendar-event {
     }
 
   .content-aside {
-      background: #ff8800 url("../images/int/bg-tags.png") -20% top fixed; 
+    background: #ff8800 url("../images/int/bg-tags.png") -20% top fixed; 
     float: right;
-    width: 33%; }
+    width: 33%; 
+
+  }
 
   .content-aside .skin {
    background: #ff8800;

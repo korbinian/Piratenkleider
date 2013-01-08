@@ -13,7 +13,6 @@
 
 
 @media print {
-
 	/**
 	* @section basic layout preparation
 	*/
@@ -53,7 +52,7 @@
 	
 
 	/*-----------------------------------------------------------------------------------------------------*/
-	.content a[href]:after {
+	.content-primary .post .post-entry a[href]:after {
 		content: " <URL: "attr(href) ">";
 		color:#444;
 		background:inherit;
@@ -67,44 +66,94 @@
         .content .content-aside a[href]:after {
 		content:"";
 	}
-        .teaser,
+        .teaser,	
+	.breadcrumbs, 
         .newsletter,
         .nav-top,
         .nav-main, 
         .flexslider,
         .sticker, 
         .symbolbild,
+	.startpage-widget-area, 
+	.switchon, .switchoff,
+	.content-primary .post-nav, 	
+	#socialmedia_iconbar,
         #respond {
             display: none;
         }
         .header {
-            height: auto;
-            background: #eee;
-            width: 100%;
+            background: white !important;
+	    background-image: none !important;
             border-bottom: 1px solid #000;
             margin: 0;
             padding: 10px;
+	    position: relative;
+	    display: block;
+	    float: none;
+	    height: auto;
+	    width: auto;
         }
         .header .branding {
             margin: 0;
             padding: 0;
-            height: 100px;
+            height: auto;
+	    float: none;
+	    display: block;
         }
-        .content-primary {
+	.row {
+	    max-width: inherit;
+	    margin: 0;
+	    padding: 0;
+	    display: inherit;
+	    position: relative;
+	}
+	.content, 
+        .content-primary,
+	.content-aside,
+        .content-aside .skin {
              width: 100%;
+	     margin: 0;
+	     position: relative;
+	     display: block;
+	     float: none;
+	     background-image: none;
+	     background-color: white;
+	     height: auto;
+	     min-height:  inherit; 
          }
-        .content-aside {
-            width: 100%;
-        }
+	 .post {
+	     position: relative;
+	 }
+	 .section {
+	     padding: 0;
+	 }
+
         .post-comments ol li .reply {
             display: none;
         }
             
-        #footer  { 
+        .footer  { 
                 color: #999; 
                 text-align: center; 
                 font-size: 10pt;                 
-                width: 5in; border-top: 1px solid #CCC; 
-                margin: .5in 1in; 
+                width: 100%;
+		border-top: 1px solid #CCC; 
+		position: relative;
+		background-image: none;
+	        background-color: #eee;
           }
+	  .footer .row {
+	      background-image: none;
+	        background-color: #eee;
+	  }
+	  .first-footer-widget-area, 
+	  .second-footer-widget-area {
+	      display: block;
+	      float: none;
+	      width: 100%;
+	  }
+	  .footer a {
+	      color: black;
+	      background: #eee;	      
+	  }
 }
