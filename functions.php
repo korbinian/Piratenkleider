@@ -324,6 +324,7 @@ add_filter( 'wp_title', 'piratenkleider_filter_wp_title', 10, 2 );
 
 
 function piratenkleider_excerpt_length( $length ) {
+	global $defaultoptions;
         return $defaultoptions['teaser_maxlength'];
 }
 add_filter( 'excerpt_length', 'piratenkleider_excerpt_length' );
