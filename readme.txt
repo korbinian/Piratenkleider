@@ -2,7 +2,7 @@ Piratenkleider
 - Wordpress-Theme für Webauftritte der Piratenpartei 
 =================================================
 
-Version 2.14.5 von Wolfgang Wiese (xwolf), 4. Januar 2013
+Version 2.14.6 von Wolfgang Wiese (xwolf), 11. Januar 2013
 
 
 DOWNLOADS
@@ -441,8 +441,14 @@ Administrative Hinweise für Wordpress Theme-Editoren:
 
 13. Ab Version 2.14.5 ist der Circleplayer funktionsfähig. Dieser eingebaute 
     HTML5-Audioplayer basiert auf den jPlayer (http://jplayer.org/download/)
-    und ermöglicht es, im text eingebettete ogg/mp3-Dateien zu erkennen und in 
+    und ermöglicht es, im Text eingebettete ogg/mp3-Dateien zu erkennen und in 
     der Sidebar rechts abspielen zu lassen.
-
-14. Ab version 2.14.5 kann der Hintergrund des Kopfteiles über das Backend
+ 
+14. Ab Version 2.14.5 kann der Hintergrund des Kopfteiles über das Backend
     (fast) frei definiert werden.
+
+15. Ab Version 2.14.6 kann die Kategorieseite optisch genauso wie die Startseite
+    gezeigt werden (per Default aktiv). 
+    Als Slider werden dabei dann die letzten Artikel der Kategorie angezeigt.
+    Über das Backend kann wieder  (Takelage einstellen->Sonstiges) kann 
+    alternativ wieder die Listenansicht angezeigt werden.

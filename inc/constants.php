@@ -111,6 +111,7 @@ $defaultoptions = array(
     'default_footerlink_key'        => 'International (mit Flaggen)',
     'default_footerlink_show'       => 1,    
     'circleplayer-require-mp3fallback'	=> 1,
+    'category-startpageview'	    => 1,
     
 );
 
@@ -1272,7 +1273,15 @@ $setoptions = array(
                   'title'   => __( 'Disclaimer f&uuml;r (Gast-)Artikel', 'piratenkleider' ),
                   'label'   => __( 'Definiere ein Text als Disclaimer der bei Artikeln gezeigt werden kann. Disclaimer wird mit Custom Field show-post-disclaimer (= 0, 1,2,3) aktiviert.', 'piratenkleider' ),
                   'default' => $defaultoptions['disclaimer_post'],
-              ),                    
+              ),    
+	       
+	       'category-startpageview'   => array(
+                  'type'    => 'bool',
+                  'title'   => __( 'Kategoriedarstellung', 'piratenkleider' ),
+                  'label'   => __( 'Kategorieseiten wie Startseite darstellen', 'piratenkleider' ),
+                  'default' => $defaultoptions['category-startpageview'],
+              ),   
+	       
                
           )
        ),

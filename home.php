@@ -150,7 +150,7 @@
                  
                  if ($options['aktiv-startseite-alteartikel']==1) {                  
                     $postslist = get_posts("numberposts=$numold&order=DESC&offset=$numentries"); 
-                    if (isset($postslist)) { ?>
+                    if ((isset($postslist)) && (count($postslist)>0)) { ?>
                         <div class="widget">
                             <h3><?php _e("&Auml;ltere Artikel", 'piratenkleider'); ?></h3>
                             <ul>
@@ -188,7 +188,7 @@
                 <div  class="widget">
                     <?php 
                      $tags = get_tags();
-                     if ((isset($tags)) && (!empty($tags))) { ?>
+                     if ((isset($tags)) && (count($tags)>0)) { ?>
                             <h3><?php _e("Schlagworte", 'piratenkleider'); ?></h3>
 
                             <div class="tagcloud">            

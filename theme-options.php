@@ -131,8 +131,9 @@ function theme_options_do_page($tab = '') {
                                 } elseif ($type=='textarea')  {
                                     echo "\t\t\t";                                                                                                            
                                     echo "<textarea class=\"large-text\" id=\"piratenkleider_theme_options[$name]\" 
-                                            cols=\"30\" rows=\"10\"  name=\"piratenkleider_theme_options[$name]\">"
-                                            .esc_attr( $options[$name] )."</textarea><br>\n";
+                                            cols=\"30\" rows=\"10\"  name=\"piratenkleider_theme_options[$name]\">";
+				    if (isset($options[$name])) echo esc_attr( $options[$name] );
+				    echo "</textarea><br>\n";
                                     echo "\t\t\t";
                                     echo "<label for=\"piratenkleider_theme_options[$name]\">$label</label>\n";     
                                 } elseif ($type=='number') {
@@ -182,7 +183,7 @@ function theme_options_do_page($tab = '') {
                                     $setsection = "";
                             }                                                                 
                         }
-                            if ($setsection!="") {
+                            if ((isset($setsection)) && ($setsection!="")) {
                                 /*
                                     * Kein Parent mehr 
                                     */

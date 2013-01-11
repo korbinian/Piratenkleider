@@ -1027,13 +1027,13 @@ function piratenkleider_echo_player() {
     if (($options['circleplayer-require-mp3fallback']==1) && (!isset($information['mp3']))) {
 	return;
     }
-    if ($information['mp3'] 
-	    || $information['oga'] 
-	    || $information['ogg'] 
-	    || $information['mp4'] 
-	    || $information['m4a'] 
-	    || $information['m4v'] 
-	    || $information['ogv'] ) {	    	  
+    if (isset($information['mp3']) 
+	    || isset($information['oga']) 
+	    || isset($information['ogg']) 
+	    || isset($information['mp4']) 
+	    || isset($information['m4a']) 
+	    || isset($information['m4v']) 
+	    || isset($information['ogv']) ) {	    	  
 	
     ?>
 		

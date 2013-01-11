@@ -3,7 +3,6 @@
                 $category_description = category_description();
                 if ( ! empty( $category_description ) )
                         echo '' . $category_description . ''; ?>	
-                <?php /* If there are no posts to display, such as an empty archive page */ ?>
                 <?php if ( ! have_posts() ) : ?>
                         <h1><?php _e( 'Nichts gefunden', 'piratenkleider' ); ?></h1>
                         <p><?php _e( 'Vielleicht hilft eine Suche weiter?', 'piratenkleider' ); ?></p>
