@@ -333,7 +333,7 @@ function piratenkleider_excerpt_length( $length ) {
 add_filter( 'excerpt_length', 'piratenkleider_excerpt_length' );
 
 function piratenkleider_continue_reading_link() {
-        return ' <a title="'.strip_tags(get_the_title()).'" href="'. get_permalink() . '">' . __( 'Weiterlesen <span class="meta-nav">&rarr;</span>', 'piratenkleider' ) . '</a>';
+        return ' <a class="nobr" title="'.strip_tags(get_the_title()).'" href="'. get_permalink() . '">' . __( 'Weiterlesen <span class="meta-nav">&rarr;</span>', 'piratenkleider' ) . '</a>';
 }
 
 function piratenkleider_auto_excerpt_more( $more ) {

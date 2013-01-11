@@ -542,7 +542,7 @@ button, input[type="submit"],
         display: inline-block;
         vertical-align:middle;
         letter-spacing: normal;
-        white-space:nowrap;
+        white-space: nowrap;
         -webkit-border-radius: 3px;
         -moz-border-radius: 3px;
         -ms-border-radius: 3px;
@@ -587,20 +587,14 @@ button, input[type="submit"],
         text-align:center;
         margin: 1.5em auto 0 auto;
 }
-
+.nobr {
+    white-space: nowrap;
+}    
   
   
   
 .header {
   position: relative;
-/*
-    * Ueber Custom Header
-
-    background-color: #eeeeee;
-  background-image: url("../images/default-header-background.png");
-  background-position: left bottom;
-  background-repeat: repeat-x, no-repeat; 
-*/
 }
 
 
