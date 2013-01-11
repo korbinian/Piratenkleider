@@ -1048,21 +1048,21 @@ function piratenkleider_echo_player() {
 	{	
 	<?php 
 	    if (isset($information['mp3'])) { 
-		echo 'mp3: "'.$information['mp3'].'",';
+		echo '"mp3": "'.$information['mp3'].'",';
 		$supplied = 'mp3,';	
 	    }
-	    if (isset($information['m4a'])) { 		
+	    if ((isset($information['m4a'])) && (!empty($information['m4a']))) { 		
 		echo 'm4a: "'.$information['m4a'].'",';	    
 		$supplied = $supplied . 'm4a,';
-	    } else if (isset($information['mp4'])) { 
+	    } else if ( (isset($information['mp4'])) && (!empty($information['mp4']))) { 
 		echo 'm4a: "'.$information['mp4'].'",';
 		$supplied = $supplied . 'm4a,';
 	    } 	    
-	    if (isset($information['oga'])) { 		
-		echo 'oga: "'.$information['oga'].'",';
+	    if ((isset($information['oga'])) && (!empty($information['oga']))) { 		
+		echo '"oga": "'.$information['oga'].'",';
 		$supplied = $supplied . 'oga,';
-	    } else if (isset($information['ogg'])) { 
-		echo 'oga: "'.$information['ogg'].'",';
+	    } else if ((isset($information['ogg'])) && (!empty($information['ogg']))) { 
+		echo '"oga": "'.$information['ogg'].'",';
 		$supplied = $supplied . 'oga,';
 	    } 
 	    
