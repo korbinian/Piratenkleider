@@ -2630,7 +2630,8 @@ background: none repeat scroll 0 0 #EEEEEE;
 .flagicon-es, .flagicon-fi, .flagicon-fr, .flagicon-gr, .flagicon-gt, .flagicon-is, .flagicon-it, .flagicon-kr, 
 .flagicon-kz, .flagicon-lt, .flagicon-lu, .flagicon-lv, .flagicon-ma, .flagicon-mx, .flagicon-nl, .flagicon-nz, 
 .flagicon-pe, .flagicon-pl, .flagicon-pt, .flagicon-ro, .flagicon-rs, .flagicon-ru, .flagicon-se, .flagicon-si, 
-.flagicon-sk, .flagicon-tn, .flagicon-tr, .flagicon-ua, .flagicon-uk, .flagicon-us, .flagicon-uy, .flagicon-hr { 
+.flagicon-sk, .flagicon-tn, .flagicon-tr, .flagicon-ua, .flagicon-uk, .flagicon-us, .flagicon-uy, .flagicon-hr,
+.flagicon-il { 
   width: 16px;
   height: 11px;
   display: inline-block;
@@ -2723,6 +2724,9 @@ background: none repeat scroll 0 0 #EEEEEE;
 
 .flagicon-is {
   background-position: 0 -585px;
+}
+.flagicon-il {
+  background-position: 0 -610px;
 }
 
 .flagicon-it {
