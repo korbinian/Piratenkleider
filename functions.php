@@ -1027,14 +1027,15 @@ function piratenkleider_echo_player() {
     if (($options['circleplayer-require-mp3fallback']==1) && (!isset($information['mp3']))) {
 	return;
     }
-    if (isset($information['mp3']) 
-	    || isset($information['oga']) 
-	    || isset($information['ogg']) 
-	    || isset($information['mp4']) 
-	    || isset($information['m4a']) 
-	    || isset($information['m4v']) 
-	    || isset($information['ogv']) ) {	    	  
-	
+    if	((isset($information['mp3']) && (!empty($information['mp3'])))
+	    || (isset($information['oga'])  && (!empty($information['oga'])))
+	    || (isset($information['ogg'])  && (!empty($information['ogg'])))
+	    || (isset($information['mp4'])  && (!empty($information['mp4'])))
+	    || (isset($information['m4a'])  && (!empty($information['m4a'])))
+	    || (isset($information['m4v'])  && (!empty($information['m4v'])))
+	    || (isset($information['ogv']) && (!empty($information['ogv'])))
+	) {	    	  
+	 
     ?>
 		
     <div class="widget" id="AudioPlayer">
