@@ -6,7 +6,7 @@
   </div>
 
 <?php 
-  global $defaultoptions;
+    global $defaultoptions;
     wp_footer();     
    
       $options = get_option( 'piratenkleider_theme_options' );
@@ -23,23 +23,26 @@
             $options['slider-aktiv'] = $defaultoptions['slider-aktiv'];
         if (!isset($options['slider-defaultwerbeplakate'])) 
             $options['slider-defaultwerbeplakate'] = $defaultoptions['slider-defaultwerbeplakate'];
+        if (!isset($options['category-startpageview'])) 
+            $options['category-startpageview'] = $defaultoptions['category-startpageview'];  
       
+        
+       
       $slideshowSpeed = $options['slider-slideshowSpeed'];    
       $animationDuration = $options['slider-animationDuration'];    
       $slideDirection = $options['slider-Direction']; 
       $animationType = $options['slider-animationType']; 
 
-       if  ( (($options['slider-aktiv']==1) && (is_home() || is_front_page())) 
+       if  ( (($options['slider-aktiv']==1) && (is_home() || is_front_page()))
+          || (($options['slider-aktiv']==1) && is_category() && ($options['category-startpageview']==1))
 	  || ($options['slider-defaultwerbeplakate']==1)  ) {
         if ($slideshowSpeed <1000) {$slideshowSpeed=8000;}
         if ($animationDuration <100) {$animationDuration=600;}
         if (! isset($slideDirection)) $slideDirection = 'horizontal';
-        if (! isset($animationType)) $animationType = 'slide';
-        
+        if (! isset($animationType)) $animationType = 'slide';        
         ?>
-       <script src="<?php echo get_template_directory_uri(); ?>/js/flexslider.js"></script>  
-    
-      <script type="text/javascript">
+       <script src="<?php echo get_template_directory_uri(); ?>/js/flexslider.js"></script>      
+       <script type="text/javascript">
         /* <![CDATA[ */
     $(window).load(function() {
        $('.flexslider').flexslider({

@@ -172,8 +172,11 @@ function piratenkleider_scripts() {
           $options['aktiv-dynamic-sidebar'] = $defaultoptions['aktiv-dynamic-sidebar'];
     if (!isset($options['aktiv-commentreplylink'])) 
             $options['aktiv-commentreplylink'] = $defaultoptions['aktiv-commentreplylink'];
-    
+    if (!isset($options['category-startpageview'])) 
+            $options['category-startpageview'] = $defaultoptions['category-startpageview'];  
+       
     if  ( (($options['slider-aktiv']==1) && (is_home() || is_front_page())) 
+          || (($options['slider-aktiv']==1) && is_category() && ($options['category-startpageview']==1))
 	  || ($options['slider-defaultwerbeplakate']==1) 
 	  || ($options['aktiv-circleplayer']==1) 	    
 	  || ($options['aktiv-dynamic-sidebar']==1 ) ) {

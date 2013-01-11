@@ -1,6 +1,7 @@
 <?php get_header();    
   $options = get_option( 'piratenkleider_theme_options' );  
   $bilderoptions = get_option( 'piratenkleider_theme_defaultbilder' ); 
+
    if (!isset($bilderoptions['src-default-symbolbild-category'])) 
             $bilderoptions['src-default-symbolbild-category'] = $defaultoptions['src-default-symbolbild-category'];
    if (!isset($options['category-startpageview'])) 

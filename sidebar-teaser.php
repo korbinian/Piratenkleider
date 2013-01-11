@@ -8,9 +8,7 @@
 <?php if ( is_active_sidebar( 'first-teaser-widget-area' ) ) { ?>
         <?php dynamic_sidebar( 'first-teaser-widget-area' ); ?>
     <?php } else {        
-
-       
-      
+   
          $defaultbildsrc = $bilderoptions['slider-defaultbildsrc'];                        
          $cat = $options['slider-catid'];
 	 global $thisCat;
@@ -37,7 +35,7 @@
         if (isset($thisCatName)) {
 	    $subtitle = $thisCatName;
 	}
-	   
+
         query_posts( array( 'cat' => "$cat", 'posts_per_page' => $numberarticle) );
         ?>
         <div class="flexslider">
