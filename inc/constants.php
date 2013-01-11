@@ -109,7 +109,8 @@ $defaultoptions = array(
     'stickerlink3-content'          => '',
     'stickerlink3-url'              => '',
     'default_footerlink_key'        => 'International (mit Flaggen)',
-    'default_footerlink_show'       => 1,
+    'default_footerlink_show'       => 1,    
+    'circleplayer-require-mp3fallback'	=> 1,
     
 );
 

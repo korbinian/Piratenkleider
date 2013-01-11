@@ -952,31 +952,42 @@ add_action('login_head', 'custom_login');
 
 function get_post_audio_enclosure($information) {
 	$custom_keys = get_post_custom_keys();
+	// $allowed_output = array('mp3', 'oga', 'ogg', 'mp4','m4a','ogv','m4v');
+	$allowed_output = array('mp3', 'oga', 'ogg');
+	    
 	if (in_array('enclosure',$custom_keys)) {
 		$custom_fields  = get_post_custom();
 		$enclosures = 	$custom_fields['enclosure'];
                 if (!isset($enclosures)) $enclosures= $custom_fields['_encloseme'];;
+
 		foreach($enclosures as $thatValue){
-			if(strstr($thatValue, 'audio/ogg')!="")
-			{
+			$encdata = explode( "\n", $thatValue );
+			$extension = pathinfo( $encdata[0], PATHINFO_EXTENSION );
+			// $len = $encdata[1];
+			// $type = $encdata[2];						
+			if (in_array($extension, $allowed_output)) {
+			    $information[$extension] = $encdata[0];				  		    
+			}
+			/* 			
+			if(strstr($thatValue, 'audio/ogg')!="")	{
 				$ende = strpos($thatValue,".ogg");
 				$url =  substr($thatValue,0,$ende+4);
 				filter_var($url, FILTER_VALIDATE_URL);
 				$information['ogg'] = $url;
-			}
-			else if(strstr($thatValue, 'audio/mpeg')!="")
-			{
+			} else if(strstr($thatValue, 'audio/mpeg')!="")	{
 				$ende = strpos($thatValue,".mp3");
 				$url =  substr($thatValue,0,$ende+4);
 				filter_var($url, FILTER_VALIDATE_URL);
 				$information['mp3'] = $url;
 			}
+			*/
 		}
+		
+		
 	}
 	return $information;
 }
-function get_post_audio_fields($information)
-{
+function get_post_audio_fields($information) {
 	$custom_fields = get_post_custom();
 	if (isset($custom_fields['audio_disable']) && ($custom_fields['audio_disable'][0] == true)){
 		$information["mp3"] = "";
@@ -998,26 +1009,69 @@ add_filter('get_post_audio_information','get_post_audio_enclosure',5);
 add_filter('get_post_audio_information','get_post_audio_fields',15);
 
 function piratenkleider_echo_player() {
+    global $options;
+    global $defaultoptions;
+
+    if (!isset($options['aktiv-circleplayer'])) 
+            $options['aktiv-circleplayer'] = $defaultoptions['aktiv-circleplayer'];         
+    if ($options['aktiv-circleplayer']!=1) {
+	return;
+    }
+    if (!isset($options['circleplayer-require-mp3fallback'])) 
+        $options['circleplayer-require-mp3fallback'] = $defaultoptions['circleplayer-require-mp3fallback'];  
+    
     $information =  array('ogg'=>"",'mp3'=>"",'text'=>"");
     $information = apply_filters("get_post_audio_information",$information);
-    $validInformation = filter_var($information['mp3'], FILTER_VALIDATE_URL);
-    $validInformation = $validInformation && filter_var($information['ogg'], FILTER_VALIDATE_URL);
-
-    if($validInformation) {  ?>
+    
+    
+    if (($options['circleplayer-require-mp3fallback']==1) && (!isset($information['mp3']))) {
+	return;
+    }
+    if ($information['mp3'] 
+	    || $information['oga'] 
+	    || $information['ogg'] 
+	    || $information['mp4'] 
+	    || $information['m4a'] 
+	    || $information['m4v'] 
+	    || $information['ogv'] ) {	    	  
+	
+    ?>
+		
     <div class="widget" id="AudioPlayer">
 	<h3><?php _e( 'Diesen Beitrag anh&ouml;ren', 'piratenkleider' ); ?></h3>
 
 	<script type="text/javascript">	   
 	//<![CDATA[
 	$(document).ready(function(){
-	var myCirclePlayer = new CirclePlayer("#jquery_jplayer_1",
-	{
-	mp3: "<?php echo $information['mp3'];?>",
-	oga: "<?php echo $information['ogg'];?>"
+	var myCirclePlayer = new CirclePlayer("#jquery_jplayer_1", 
+	{	
+	<?php 
+	    if (isset($information['mp3'])) { 
+		echo 'mp3: "'.$information['mp3'].'",';
+		$supplied = 'mp3,';	
+	    }
+	    if (isset($information['m4a'])) { 		
+		echo 'm4a: "'.$information['m4a'].'",';	    
+		$supplied = $supplied . 'm4a,';
+	    } else if (isset($information['mp4'])) { 
+		echo 'm4a: "'.$information['mp4'].'",';
+		$supplied = $supplied . 'm4a,';
+	    } 	    
+	    if (isset($information['oga'])) { 		
+		echo 'oga: "'.$information['oga'].'",';
+		$supplied = $supplied . 'oga,';
+	    } else if (isset($information['ogg'])) { 
+		echo 'oga: "'.$information['ogg'].'",';
+		$supplied = $supplied . 'oga,';
+	    } 
+	    
+	    $supplied =rtrim($supplied,','); 
+	?>	    
 	}, {
 	cssSelectorAncestor: "#cp_container_1",
 		swfPath: "js",
-		wmode: "window"
+		wmode: "window",
+		supplied: "<?php echo $supplied;?>",
 	});
 	});
 	//]]>
@@ -1038,7 +1092,16 @@ function piratenkleider_echo_player() {
 		<li style="padding:0;"><a class="cp-pause" style="display:none;" tabindex="1">pause</a></li> <!-- Needs the inline style here, or jQuery.show() uses display:inline instead of display:block -->
 	    </ul>
 	</div>
-	Download: <a href="<?php echo $information['ogg'];?>">ogg</a>, <a href="<?php echo $information['mp3'];?>">mp3</a> <br/>
+	<?php _e( 'Download:', 'piratenkleider' ); 
+	$links = "";
+	foreach($information as $key=>$value){
+	    if ($key == 'text') { continue; }
+	    $links = $links . "<a href=\"$value\">$key</a>, ";
+	}
+	$links =rtrim($links,', '); 
+	echo $links;
+	?>			
+	<br/>
 	<?php if(strlen(trim($information['text']))>2) { 
 	  echo $information['text']." <br/>";
 	 } ?>
