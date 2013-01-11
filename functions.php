@@ -1024,7 +1024,9 @@ function piratenkleider_echo_player() {
     $information = apply_filters("get_post_audio_information",$information);
     
     
-    if (($options['circleplayer-require-mp3fallback']==1) && (!isset($information['mp3']))) {
+    if (($options['circleplayer-require-mp3fallback']==1) 
+		&& (!isset($information['mp3'])) 
+		&& (empty($information['mp3']))) {
 	return;
     }
     if	((isset($information['mp3']) && (!empty($information['mp3'])))
