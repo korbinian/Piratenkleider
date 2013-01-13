@@ -9,7 +9,6 @@ DOWNLOADS
 
     Aus dem GIT-Repo (Letzte Arbeitsversion und Betas):
         https://github.com/xwolfde/Piratenkleider	
-        https://github.com/zwitschi/Piratenkleider (Österreich)
     
     Projekt-Website (Releases)
         http://piratenkleider.xwolf.de
