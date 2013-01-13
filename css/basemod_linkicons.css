@@ -111,6 +111,10 @@
         background: url("../images/links/piratenwiki.png") center left no-repeat;
         padding-left: 18px;
     }
+    .content-primary a[href *= "news.piratenpartei.de"] {
+        background: url("../images/links/syncforum.png") center left no-repeat;
+        padding-left: 18px;
+    }
     .content-primary a[href *= "feedback.piratenpartei-bayern.de"] {
         background: url("../images/links/piratefeedback.png") center left no-repeat;
         padding-left: 18px;
