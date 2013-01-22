@@ -105,7 +105,9 @@
            $options['feed_twitter_numberarticle'] =5;
        }
 
-       $fetchlink = $defaultoptions['url-twitterapi'].'?screen_name='.$options['feed_twitter'].'&count='.$options['feed_twitter_numberarticle'];
+       $name = trim($options['feed_twitter']);
+
+       $fetchlink = $defaultoptions['url-twitterapi'].'?screen_name='.$name.'&count='.$options['feed_twitter_numberarticle'];
         // Get a SimplePie feed object from the specified feed source.
  
 
@@ -115,8 +117,7 @@
         }
         $lifetime = $options['twitter_cache_lifetime'];
         $maxitems = 0;       
-        $rss = piratenkleider_fetch_feed($fetchlink,$lifetime);        
-        $name = $options['feed_twitter'];
+        $rss = piratenkleider_fetch_feed($fetchlink,$lifetime);
         if (!is_wp_error( $rss ) ) : // Checks that the object is created correctly 
             // Figure out how many total items there are, but limit it to 5. 
             $maxitems = $rss->get_item_quantity($options['feed_twitter_numberarticle']); 
@@ -127,7 +128,7 @@
 
         <div class="twitterwidget">
              <hr>
-             <h2><img src="<?php echo get_template_directory_uri(); ?>/images/social-media/twitter-24x24.png" width="24" height="24" alt=""><a href="https://twitter.com/<?php echo $options['feed_twitter']; ?>">twitter.com/<?php echo $options['feed_twitter']; ?></a></h2>
+             <h2><img src="<?php echo get_template_directory_uri(); ?>/images/social-media/twitter-24x24.png" width="24" height="24" alt=""><a href="https://twitter.com/<?php echo $name; ?>">twitter.com/<?php echo $name; ?></a></h2>
 
             <ul>
                 <?php if ($maxitems == 0) echo '<li>'.__( 'Es konnten keine Tweets geladen werden', 'piratenkleider' ).'</li>'; 
