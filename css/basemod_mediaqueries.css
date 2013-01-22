@@ -319,6 +319,7 @@
    
    .single .post {
        padding: 10px;
+       max-width: 100%;
    }
   .post-comments {
      background: url("../images/int/bg-tags.png") repeat fixed -20% top #FF8800;
