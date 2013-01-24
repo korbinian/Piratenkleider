@@ -376,7 +376,7 @@ $default_toplink_liste = array(
              __('Uruguay', 'piratenkleider' ) => 'http://partidopirata.org.uy/',
              __('USA', 'piratenkleider' ) => 'http://pirate-party.us/',             
              __('Vereinigtes K&ouml;nigreich', 'piratenkleider') => 'http://pirateparty.org.uk/', 
-             __('Wei&szlig;russland', 'piratenkleider' ) => 'http://belpirat.blog.tut.by/',            
+             __('Wei&szlig;russland', 'piratenkleider' ) => 'http://pirates.by/',            
              __('Zypern', 'piratenkleider' ) => 'http://www.piratepartycyprus.com/',
 
          )
@@ -431,7 +431,7 @@ $default_toplink_liste = array(
              '<span class="flagicon-uy"></span> '.__('Uruguay', 'piratenkleider') => 'http://partidopirata.org.uy/',
              '<span class="flagicon-us"></span> '.__('USA', 'piratenkleider') => 'http://pirate-party.us/',             
              '<span class="flagicon-uk"></span> '.__('Vereinigtes Königreich', 'piratenkleider') => 'http://pirateparty.org.uk/',              
-             '<span class="flagicon-by"></span> '.__('Wei&szlig;russland', 'piratenkleider') => 'http://belpirat.blog.tut.by/',
+             '<span class="flagicon-by"></span> '.__('Wei&szlig;russland', 'piratenkleider') => 'http://pirates.by/',
              '<span class="flagicon-cy"></span> '.__('Zypern', 'piratenkleider') => 'http://www.piratepartycyprus.com/',
 
 
