@@ -668,7 +668,9 @@ $defaultplakate_textsymbolliste = array(
  } 
  $categories=get_categories(array('orderby' => 'name','order' => 'ASC'));
  foreach($categories as $category) {
-     $currentcatliste[$category->cat_ID] = $category->name.' ('.$category->count.' '.__('Eintr&auml;ge','piratenkleider').')';
+     if (!is_wp_error( $category )) {
+	$currentcatliste[$category->cat_ID] = $category->name.' ('.$category->count.' '.__('Eintr&auml;ge','piratenkleider').')';
+     }
  }        
         
 
