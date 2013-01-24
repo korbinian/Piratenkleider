@@ -213,6 +213,17 @@ stehen s&auml;mtliche Werke dieses Angebots unter einer
     <li><a class="extern" href="<?php echo $theme_data['URI']; ?>">Wordpress Theme <?php echo $theme_data['Name']; ?></a>, Version <?php echo $theme_data['Version']; ?>
     (Lizensiert unter der Creative Commons Namensnennung 3.0 Deutschland Lizenz</a>)  </li>
     <li><a class="extern" href="http://wiki.piratenpartei.de/Grafiken">Wallpaper und Bildmaterial der Piratenpartei Deutschland</a> (Lizensiert unter der Creative Commons Namensnennung 3.0 Deutschland Lizenz</a>)</li>    
+    <?php
+
+	$lizenzen = explode("\n", $kontaktinfos['lizenzen']);
+	if (is_array($lizenzen)) {
+		foreach ($lizenzen as $value) {
+			if (trim($value) != "") {
+				echo "<li>".$value."</li>";
+			}
+		}
+	}
+    ?>
 </ul>
 
 <h3>Credits</h3>
