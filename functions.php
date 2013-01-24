@@ -158,6 +158,9 @@ function piratenkleider_setup() {
        }        
         /** Entfernen der Wordpressversionsnr im Header */
         remove_action('wp_head', 'wp_generator');
+	
+	/* Zulassen von Shortcodes in Widgets */
+	add_filter('widget_text', 'do_shortcode');
 }
 endif;
 
@@ -202,7 +205,6 @@ function piratenkleider_scripts() {
                 $defaultoptions['js-version']
 	);
     
-
     if (is_singular() && ($options['aktiv-commentreplylink']==1) && get_option( 'thread_comments' )) {        
             wp_enqueue_script(
 		'comment-reply',
@@ -210,9 +212,7 @@ function piratenkleider_scripts() {
 		false,
                 $defaultoptions['js-version']
 	);  
-     }  
-
-      
+     }        
     if ($options['aktiv-dynamic-sidebar']==1) {        
             wp_enqueue_script(
 		'dynamic-sidebar',
@@ -253,10 +253,7 @@ function piratenkleider_scripts() {
 		array('jplayer'),
                 $defaultoptions['js-version']
             );  
-    }       
-   
-    
-       
+    }                    
 }
 add_action('wp_enqueue_scripts', 'piratenkleider_scripts');
 
