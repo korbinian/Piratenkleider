@@ -437,7 +437,7 @@ $default_toplink_liste = array(
 
          )
      ), 
-     'Baden-W&uuml;rttemberg' => array(
+     'Baden-Wuerttemberg' => array(
          'title' => 'Piratenpartei Landesverband Baden-W&uuml;rttemberg',
          'url'  => 'http://www.piratenpartei-bw.de/',
          'sublist' => array(
