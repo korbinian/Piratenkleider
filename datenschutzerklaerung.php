@@ -131,9 +131,9 @@ In ihren Browsereinstellungen k&ouml;nnen sie die Annahme von Cookies unterbinde
         } else {
             echo 'bundesbeauftragter@piraten-dsb.de';
         }
-       echo '</a>.';      
+       echo '</a>';      
     } else {
-        echo '<a href="mailto:bundesbeauftragter@piraten-dsb.de">bundesbeauftragter@piraten-dsb.de</a>.';
+        echo '<a href="mailto:bundesbeauftragter@piraten-dsb.de">bundesbeauftragter@piraten-dsb.de</a>';
     }
     ?> 
     stellen.</p>
