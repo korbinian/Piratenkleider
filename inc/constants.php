@@ -914,10 +914,9 @@ $setoptions = array(
            'tabtitle'   => __('Startseite', 'piratenkleider'),
            'fields' => array(
               'num-article-startpage-fullwidth' => array(
-                  'type'    => 'select',
+                  'type'    => 'number',
                   'title'   => __( 'Beitr&auml;ge &uuml;ber ganze Breite', 'piratenkleider' ),
                   'label'   => __( 'Zahl der Beitr&auml;ge, die &uuml;ber die gesamte Inhaltsbreite gehen.', 'piratenkleider' ),
-                  'liste'   => array(0 => 0, 1 => 1, 2 => 2, 3 => 3, 4 => 4, 5 => 5, 6=> 6),
                   'default' => $defaultoptions['num-article-startpage-fullwidth'],
               ),
               'num-article-startpage-halfwidth' => array(
