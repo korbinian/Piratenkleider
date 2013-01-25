@@ -63,6 +63,7 @@ $defaultoptions = array(
     'aktiv-avatar'                          => 1,
     'aktiv-dynamic-sidebar'                 => 0,
     'src-default-avatar'                    => get_template_directory_uri(). '/images/avataricon.gif',
+	'seitenmenu_mode'						=> 0,
     'zeige_subpagesonly'                    => 1,
     'zeige_sidebarpagemenu'                 => 1,
     'zeige_commentbubble_null'              => 0,
@@ -779,6 +780,14 @@ $setoptions = array(
               'seitenmenu'  => array(
                   'type'    => 'section',
                   'title'   => __( 'Seitenmenu', 'piratenkleider' ),
+              ),
+              'seitenmenu_mode' => array(
+                  'type'    => 'select',
+                  'title'   => __( 'Gliederung', 'piratenkleider' ),
+                  'label'   => __( 'Das Menü kann nach Seiten-Hierarchie oder Menü-Hierarche gegliedert werden.', 'piratenkleider' ),
+                  'default' => $defaultoptions['seitenmenu_mode'],
+				  'liste'   => array(0 => "Menüs", 1 => "Seiten"),
+                  'parent'  => 'seitenmenu',
               ),
               'zeige_subpagesonly' => array(
                   'type'    => 'bool',

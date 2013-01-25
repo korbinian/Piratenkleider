@@ -2019,9 +2019,16 @@ img.wp-smiley {
     margin: 0 0 0 5px; 
 }
 
+.content-aside .subpagesonly ul li{
+	display: none;
+}
 
-
-
+.content-aside .subpagesonly ul.menu li.current_page_item .children .children 
+.content-aside .subpagesonly ul.menu li.current_page_ancestor .children .children,
+.content-aside .subpagesonly ul.menu li.current-menu-item .sub-menu .sub-menu, 
+.content-aside .subpagesonly ul.menu li.current-menu-ancestor .sub-menu .sub-menu {
+    display: block; }
+	
 .subcontent {
   background: black url("../images/int/bg-tags_gray.jpg") -20% top fixed; }
 .subcontent .row {
