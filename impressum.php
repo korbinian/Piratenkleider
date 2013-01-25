@@ -268,7 +268,10 @@ der unverlangten Zusendung von Werbeinformationen, etwa durch Spam-Mails, vor.</
   
             if (!isset($options['zeige_sidebarpagemenu'])) 
             $options['zeige_sidebarpagemenu'] = $defaultoptions['zeige_sidebarpagemenu'];
-            get_piratenkleider_seitenmenu($options['zeige_sidebarpagemenu'],$options['zeige_subpagesonly']);
+            
+            if (!isset($options['seitenmenu_mode'])) 
+            $options['seitenmenu_mode'] = $defaultoptions['seitenmenu_mode'];
+            get_piratenkleider_seitenmenu($options['zeige_sidebarpagemenu'],$options['zeige_subpagesonly'],$options['seitenmenu_mode']);
 
         
          get_sidebar(); ?>
