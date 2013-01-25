@@ -588,41 +588,44 @@ if ( ! function_exists( 'get_piratenkleider_seitenmenu' ) ) :
 /*
  * Anzeige des Sidebar-Menus
  */
-function get_piratenkleider_seitenmenu( $zeige_sidebarpagemenu = 1 , $zeige_subpagesonly =1 ){
+function get_piratenkleider_seitenmenu( $zeige_sidebarpagemenu = 1 , $zeige_subpagesonly =1 , $seitenmenu_mode = 0 ){
   global $post;
   $sidelinks = '';
     if ($zeige_sidebarpagemenu==1) {   
-        if ($zeige_subpagesonly==1) {
-            //if the post has a parent
+		if (($seitenmenu_mode == 1) || (!has_nav_menu( 'primary' ))) {
+			if ($zeige_subpagesonly==1) {
+				//if the post has a parent
 
-            if($post->post_parent){
-               if($post->ancestors) {
-                    $ancestors = end($post->ancestors);
-                    $sidelinks = wp_list_pages("title_li=&child_of=".$ancestors."&echo=0");
-                } else {                
-                    $sidelinks .= wp_list_pages("sort_column=menu_order&title_li=&echo=0&depth=5&child_of=".$post->post_parent);              
-                } 
-            }else{
-                // display only main level and children
-                $sidelinks .= wp_list_pages("sort_column=menu_order&title_li=&echo=0&depth=5&child_of=".$post->ID);
-            }
+				if($post->post_parent){
+				   if($post->ancestors) {
+						$ancestors = end($post->ancestors);
+						$sidelinks = wp_list_pages("title_li=&child_of=".$ancestors."&echo=0");
+					} else {                
+						$sidelinks .= wp_list_pages("sort_column=menu_order&title_li=&echo=0&depth=5&child_of=".$post->post_parent);              
+					} 
+				}else{
+					// display only main level and children
+					$sidelinks .= wp_list_pages("sort_column=menu_order&title_li=&echo=0&depth=5&child_of=".$post->ID);
+				}
 
-            if ($sidelinks) { 
-                echo '<ul class="menu">';                   
-                echo $sidelinks; 
-                echo '</ul>';         
-            } 
+				if ($sidelinks) { 
+					echo '<ul class="menu">';                   
+					echo $sidelinks; 
+					echo '</ul>';         
+				} 
 
-        } else {
-
-            if ( has_nav_menu( 'primary' ) ) {
-                wp_nav_menu( array('depth' => 0, 'container_class' => 'menu-header', 'theme_location' => 'primary', 'walker'  => new My_Walker_Nav_Menu()) );      
-            } else { 
-                echo '<ul class="menu">';   
-                    wp_page_menu( ); 
-                echo '</ul>';                        
-            } 
-        }
+			} else {
+				echo '<ul class="menu">';   
+					wp_page_menu( ); 
+				echo '</ul>';                        
+			} 
+		} else {
+				if ($zeige_subpagesonly==1) {
+					wp_nav_menu( array('depth' => 0, 'container_class' => 'menu-header subpagesonly', 'theme_location' => 'primary', 'walker'  => new My_Walker_Nav_Menu()) );      
+				} else { 
+					wp_nav_menu( array('depth' => 0, 'container_class' => 'menu-header', 'theme_location' => 'primary', 'walker'  => new My_Walker_Nav_Menu()) );      
+				}
+		}
     }
   
 }
