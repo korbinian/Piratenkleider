@@ -201,7 +201,7 @@ stehen s&auml;mtliche Werke dieses Angebots unter einer
     Dieses Webangebot verwendet folgende Werke von Dritten:
 </p>
 <ul>
-    <li><a class="extern" href="http://www.yaml.de">YAML CSS Framework</a> (Lizensiert unter der
+    <li><a class="extern" href="http://www.yaml.de">YAML CSS Framework</a> (Lizenziert unter der
         <span lang="en">Creative Commons Attribution 2.0 License</span>).</li>
     
     <li><a class="extern" href="http://www.jquery.com">JavaScript Framework jQuery</a> (<span lang="en">GNU General Public License (GPL)</span> Version 2)</li>
@@ -211,8 +211,8 @@ stehen s&auml;mtliche Werke dieses Angebots unter einer
     $theme_data = get_theme_data( get_template_directory(). '/style.css' );
     ?>
     <li><a class="extern" href="<?php echo $theme_data['URI']; ?>">Wordpress Theme <?php echo $theme_data['Name']; ?></a>, Version <?php echo $theme_data['Version']; ?>
-    (Lizensiert unter der Creative Commons Namensnennung 3.0 Deutschland Lizenz</a>)  </li>
-    <li><a class="extern" href="http://wiki.piratenpartei.de/Grafiken">Wallpaper und Bildmaterial der Piratenpartei Deutschland</a> (Lizensiert unter der Creative Commons Namensnennung 3.0 Deutschland Lizenz</a>)</li>    
+    (Lizenziert unter der Creative Commons Namensnennung 3.0 Deutschland Lizenz</a>)  </li>
+    <li><a class="extern" href="http://wiki.piratenpartei.de/Grafiken">Wallpaper und Bildmaterial der Piratenpartei Deutschland</a> (Lizenziert unter der Creative Commons Namensnennung 3.0 Deutschland Lizenz</a>)</li>    
     <?php
 
 	$lizenzen = explode("\n", $kontaktinfos['lizenzen']);
