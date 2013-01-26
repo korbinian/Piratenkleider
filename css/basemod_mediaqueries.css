@@ -353,7 +353,28 @@
  .post-comments ol li .reply {
      display: none;
  }
-  
+
+.footer .first-footer-widget-area,
+.footer .second-footer-widget-area {
+    clear: both;
+    float: none;
+    padding-top: 10px;
+    width: 100%;
+    display: block;
+}
+   
+.footer .first-footer-widget-area .skin {
+	padding-bottom: 0px;
+}
+
+.footer .second-footer-widget-area {
+	padding-top: 0px;
+}
+
+.footer .second-footer-widget-area .skin {
+	padding-top: 0px;
+}
+ 
 #socialmedia_iconbar {
          position: relative;
          display: block;
