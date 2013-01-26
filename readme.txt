@@ -2,7 +2,7 @@ Piratenkleider
 - Wordpress-Theme für Webauftritte der Piratenpartei 
 =================================================
 
-Version 2.15.1 von Wolfgang Wiese (xwolf), 24. Januar 2013
+Version 2.15.2 von Wolfgang Wiese (xwolf), 26. Januar 2013
 
 
 DOWNLOADS
@@ -23,7 +23,7 @@ AUTOREN / ENTWICKLER
 
    Wolfgang Wiese (xwolf), http://www.xwolf.de 
 
-   Mit Hilfe und Unterstützung von: 
+   Mit Hilfe und Unterstützung von:      
      - Andre Sendowski, http://www.iphone-notes.de/
      - Heiko Philippski, http://www.phindie.de/
      - Kerstin Probiesch, http://www.barrierefreie-informationskultur.de
@@ -32,7 +32,8 @@ AUTOREN / ENTWICKLER
      - Ralph Hinterleitner, rcs@deixis.at
      - Jan Schejbal, http://janschejbal.wordpress.com/
      - Marc Schieferdecker,  http://thegeek.de 
-     - Benjamin Stöcker, http://freiheitsworte.de 
+     - Benjamin Stöcker, http://freiheitsworte.de
+     - Martin Stoppler, http://www.stoppe-gp.de/
 
    Quellen für Defaultbilder und CI-Materialen (CC-BY 3.0)
      - Defaultgrafiken für Slider/Seitenbilder: Tobias M. Eckrich

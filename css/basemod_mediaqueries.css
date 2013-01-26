@@ -180,8 +180,7 @@
     background-color: #2d7dc5;
     background-image: -moz-linear-gradient(top, #2d7dc5, #24639b);
     background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #2d7dc5), color-stop(1, #24639b));
-    background-image: linear-gradient(top, #2d7dc5, #24639b); 
-    
+    background-image: linear-gradient(top, #2d7dc5, #24639b);     
  }
  .skiplinks li a:focus, 
  .skiplinks li a:hover {
@@ -195,21 +194,21 @@
    }   
    
    .nav-top ul.menu li a {
-       padding: 5px 18px;
-    margin-bottom: 2px;
-    overflow: visible;
-    position: relative;
-    background: #2d7dc5;
-    color: white;
-    border: 1px solid #C96A00;
-    -moz-box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.5);
-    -webkit-box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.5);
-    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.5);
-    border-radius: 2px;
-    -moz-border-radius: 2px;
-    -webkit-border-radius: 2px;
-    text-shadow: 0 -1px 0 #C96A00;
-    background-color: #ff8800;
+        padding: 5px 18px;
+        margin-bottom: 2px;
+        overflow: visible;
+        position: relative;
+        background: #2d7dc5;
+        color: white;
+        border: 1px solid #C96A00;
+        -moz-box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.5);
+        -webkit-box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.5);
+        box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.5);
+        border-radius: 2px;
+        -moz-border-radius: 2px;
+        -webkit-border-radius: 2px;
+        text-shadow: 0 -1px 0 #C96A00;
+        background-color: #ff8800;
        
    }
     .nav-top ul.menu li a:hover {
@@ -316,7 +315,6 @@
      margin-left: 0px;
     }
    
-   
    .single .post {
        padding: 10px;
        max-width: 100%;
@@ -363,19 +361,18 @@
     display: block;
 }
    
-.footer .first-footer-widget-area .skin {
+    .footer .first-footer-widget-area .skin {
 	padding-bottom: 0px;
-}
+    }
 
-.footer .second-footer-widget-area {
+    .footer .second-footer-widget-area {
 	padding-top: 0px;
-}
-
-.footer .second-footer-widget-area .skin {
+    }
+    .footer .second-footer-widget-area .skin {
 	padding-top: 0px;
-}
+    }
  
-#socialmedia_iconbar {
+    #socialmedia_iconbar {
          position: relative;
          display: block;
          top: inherit;
@@ -388,7 +385,10 @@
          margin: 0px;
          text-align: center;
      }
-#socialmedia_iconbar ul.socialmedia {
+    .home #socialmedia_iconbar {
+         top: inherit;
+     }
+    #socialmedia_iconbar ul.socialmedia {
     list-style: none;
     }
     #socialmedia_iconbar ul.socialmedia li {
