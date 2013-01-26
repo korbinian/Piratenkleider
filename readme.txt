@@ -34,6 +34,7 @@ AUTOREN / ENTWICKLER
      - Marc Schieferdecker,  http://thegeek.de 
      - Benjamin Stöcker, http://freiheitsworte.de
      - Martin Stoppler, http://www.stoppe-gp.de/
+     - le Grand, http://www.lenz-online.org 
 
    Quellen für Defaultbilder und CI-Materialen (CC-BY 3.0)
      - Defaultgrafiken für Slider/Seitenbilder: Tobias M. Eckrich
@@ -52,7 +53,7 @@ AUTOREN / ENTWICKLER
 VORVERSION
 
 Dieses Theme basiert auf die Wordpress-Basisvorlage von Korbinian Polk.  
-Das alte Original von korbinian kann auf github gefunden werden: 
+Das alte Original von korbinian kann auf Github gefunden werden: 
  https://github.com/korbinian/Piratenkleider
 
 
