@@ -451,7 +451,6 @@ $default_toplink_liste = array(
              '<abbr title="Kreisverband">KV</abbr> Heilbronn' => 'http://www.piratenpartei-heilbronn.de',
              '<abbr title="Kreisverband">KV</abbr> Karlsruhe Land' => 'http://piraten-ka-land.de',
              '<abbr title="Kreisverband">KV</abbr> Karlsruhe Stadt' => 'http://www.piraten-karlsruhe.de',
-             '<abbr title="Kreisverband">KV</abbr> Konstanz' => 'http://www.piraten-konstanz.de',
              '<abbr title="Kreisverband">KV</abbr> Ludwigsburg' => 'http://www.piratenpartei-ludwigsburg.de',
              '<abbr title="Kreisverband">KV</abbr> Mannheim' => 'http://piratenpartei-mannheim.de',
              '<abbr title="Kreisverband">KV</abbr> Rastatt-Baden-Baden' => 'http://piraten-rastatt.de',
