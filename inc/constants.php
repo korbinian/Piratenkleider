@@ -518,6 +518,7 @@ $default_toplink_liste = array(
             '<abbr title="Kreisverband">KV</abbr> Main-Kinzig' => 'http://www.kinzigpiraten.de/',
             '<abbr title="Kreisverband">KV</abbr> Main-Taunus' => 'http://www.piraten-mtk.de/',
             '<abbr title="Kreisverband">KV</abbr> Marburg-Biedenkopf' => 'http://www.piratenpartei-marburg.de/',
+            '<abbr title="Kreisverband">KV</abbr> Odenwald' => 'http://www.piratenpartei-odenwald.de/',                                    
             '<abbr title="Kreisverband">KV</abbr> Offenbach-Land' => 'http://www.kreispiraten-of.de/',
             '<abbr title="Kreisverband">KV</abbr> Rheingau-Taunus' => 'http://www.piratenpartei-rtk.de/',
             '<abbr title="Kreisverband">KV</abbr> Schwalm-Eder' => 'http://www.piraten-sek.de/',
