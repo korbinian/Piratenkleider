@@ -2638,7 +2638,7 @@ background: none repeat scroll 0 0 #EEEEEE;
 .flagicon-kz, .flagicon-lt, .flagicon-lu, .flagicon-lv, .flagicon-ma, .flagicon-mx, .flagicon-nl, .flagicon-nz, 
 .flagicon-pe, .flagicon-pl, .flagicon-pt, .flagicon-ro, .flagicon-rs, .flagicon-ru, .flagicon-se, .flagicon-si, 
 .flagicon-sk, .flagicon-tn, .flagicon-tr, .flagicon-ua, .flagicon-uk, .flagicon-us, .flagicon-uy, .flagicon-hr,
-.flagicon-il { 
+.flagicon-il, .flagicon-hu  { 
   width: 16px;
   height: 11px;
   display: inline-block;
@@ -2724,7 +2724,9 @@ background: none repeat scroll 0 0 #EEEEEE;
 .flagicon-gt {
   background-position: 0 -286px;
 }
-
+.flagicon-hu {
+  background-position: 0 -624px;
+}
 .flagicon-hr {
   background-position: 0 -597px;
 }
@@ -2835,6 +2837,8 @@ background: none repeat scroll 0 0 #EEEEEE;
 .flagicon-uy {
   background-position: 0 -182px;
 }
+
+
 
 /* IE Anpassungen -----------------------------------------------------------*/
 
