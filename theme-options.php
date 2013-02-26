@@ -983,7 +983,10 @@ function theme_designspecials_do_page() {
                             <option value="" <?php if ( $options['css-colorfile'] == '') echo ' selected="selected"'; ?>><?php _e( 'Deutschland (Orange)', 'piratenkleider' ); ?></option>
                             <option value="colors_at.css" <?php if ( $options['css-colorfile'] == 'colors_at.css') echo ' selected="selected"'; ?>><?php _e( '&Ouml;sterreich (Violett)', 'piratenkleider' ); ?></option>
                             <option value="colors_lu.css" <?php if ( $options['css-colorfile'] == 'colors_lu.css') echo ' selected="selected"'; ?>><?php _e( 'Luxemburg (Violett)', 'piratenkleider' ); ?></option>
+                            <option value="colors_hu.css" <?php if ( $options['css-colorfile'] == 'colors_hu.css') echo ' selected="selected"'; ?>><?php _e( 'Ungarn (Violett)', 'piratenkleider' ); ?></option>                            
                             <option value="colors_tk.css" <?php if ( $options['css-colorfile'] == 'colors_tk.css') echo ' selected="selected"'; ?>><?php _e( 'T&uuml;rkei (Cyan)', 'piratenkleider' ); ?></option>
+                            <option value="colors_us.css" <?php if ( $options['css-colorfile'] == 'colors_us.css') echo ' selected="selected"'; ?>><?php _e( 'USA (Lila)', 'piratenkleider' ); ?></option>
+                            
                         </select>   
 
                         <label class="description" for="piratenkleider_theme_designspecials[css-colorfile]">

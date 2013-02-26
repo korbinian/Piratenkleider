@@ -2,7 +2,7 @@ Piratenkleider
 - Wordpress-Theme für Webauftritte der Piratenpartei 
 =================================================
 
-Version 2.15.2 von Wolfgang Wiese (xwolf), 26. Januar 2013
+Version 2.15.3 von Wolfgang Wiese (xwolf), 26. Februar 2013
 
 
 DOWNLOADS
@@ -453,3 +453,7 @@ Administrative Hinweise für Wordpress Theme-Editoren:
     Als Slider werden dabei dann die letzten Artikel der Kategorie angezeigt.
     Über das Backend kann wieder  (Takelage einstellen->Sonstiges) kann 
     alternativ wieder die Listenansicht angezeigt werden.
+
+16. Farbcodes für Ungarn und USA eingebaut.
+
+
