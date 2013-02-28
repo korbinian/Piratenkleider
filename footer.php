@@ -1,3 +1,5 @@
+</div>
+
 <div class="section footer">
     <div class="row">
         <?php get_sidebar( 'footer' ); ?>
