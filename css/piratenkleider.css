@@ -19,6 +19,10 @@ html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pr
   vertical-align: baseline;
   background: transparent; }
 
+body {
+	background: #ff8800 url("../images/int/bg-tags.png") -20% top fixed;
+}
+  
 blockquote, q {
   quotes: none; }
 
@@ -935,7 +939,7 @@ display: inline-block;
  }
 
 .teaser {
-  background: #ff8800 url("../images/int/bg-tags.png") -20% top fixed; 
+  //background: #ff8800 url("../images/int/bg-tags.png") -20% top fixed; 
   height: 240px;
 }
   .teaser .row {
@@ -1095,7 +1099,7 @@ display: inline-block;
      position: relative;
  } 
 .content {
-  background: #ff8800 url("../images/int/bg-tags.png") -20% top fixed;
+  //background: #ff8800 url("../images/int/bg-tags.png") -20% top fixed;
  }
 .content .row {
    /*  overflow: hidden; */
