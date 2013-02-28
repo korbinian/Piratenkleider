@@ -21,6 +21,9 @@
 
 
 @media screen, projection {
+    body {
+        background: #B127AF url("../images/int/bg-tags-lu.png") -20% top fixed; 
+    }
     a {     
       color: #06C;
       -webkit-tap-highlight-color: #2d7dc5; 
@@ -158,9 +161,7 @@
       background: rgba(255, 255, 255, 0.5);
     }
 
-  .teaser {
-    background: #B127AF url("../images/int/bg-tags-lu.png") -20% top fixed; 
-    }
+
   .teaser .row {
     background: #993399;
     background: rgba(0, 0, 0, 0.3) -20% 0 fixed; 
@@ -227,9 +228,7 @@
            color: black;
      }    
 
-    .content {
-     background: #B127AF url("../images/int/bg-tags-lu.png") -20% top fixed;  
-    }
+
     .content .row {
         background: #B127AF;
         background: rgba(153, 51, 153, 0.2); 
