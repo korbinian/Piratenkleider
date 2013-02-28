@@ -1534,7 +1534,7 @@ display: inline-block;
 .single .post-edit-link {
   margin-top: 20px; }
 .post {
-    display: inline-block;
+    word-wrap: break-word;
 }
 .post .post-title {
   position: relative;
