@@ -1254,7 +1254,7 @@ display: inline-block;
     background-color: beige;
   }
   .content-primary .columns {
-    float: left; 
+    //float: left; 
   }
   .content-primary .columns .column1, .content-primary .columns .column2 {
       margin-bottom: 20px; }
