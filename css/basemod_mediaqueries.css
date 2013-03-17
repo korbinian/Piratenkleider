@@ -295,6 +295,16 @@
     display: block;
     clear: both;
   }
+  .content-primary .columns .column2:before {
+	content: "";
+	display: block;
+	border: 0;
+	padding: 0;
+	margin-bottom: 15px;
+	margin-top: 5px;
+	background: url("../images/jolly.png") no-repeat center center;
+	height: 26px;
+  }
   .content-primary .columns .column2 .post {
     padding-left: 0px;
   }
