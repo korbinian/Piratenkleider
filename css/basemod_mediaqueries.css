@@ -295,6 +295,10 @@
     display: block;
     clear: both;
   }
+  .content-primary .columns .column2 .post {
+    padding-left: 0px;
+  }
+  
    .content-primary .first-startpage-widget-area,
    .content-primary .second-startpage-widget-area {
     clear: both;
