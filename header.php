@@ -135,7 +135,9 @@ if ((isset( $options['meta-keywords'] )) && ( strlen(trim($options['meta-keyword
 	<ul role="navigation" class="nav skiplinks">		
 		<li><a class="ym-skip" href="#nav"><?php _e( 'Zur Navigation springen.', 'piratenkleider' ); ?></a></li>
 		<li><a class="ym-skip" href="#main-content"><?php _e( 'Zum Inhalt springen.', 'piratenkleider' ); ?></a></li>
-                <li><a class="ym-skip" href="#searchform"><?php _e( 'Zur Suche springen.', 'piratenkleider' ); ?></a></li>
+		<?php if ( $options['aktiv-suche'] == "1" ){ ?>
+            <li><a class="ym-skip" href="#searchform"><?php _e( 'Zur Suche springen.', 'piratenkleider' ); ?></a></li>
+		<?php } ?>
 	</ul>
 
 
@@ -182,7 +184,9 @@ if ((isset( $options['meta-keywords'] )) && ( strlen(trim($options['meta-keyword
 
                                 } 
                                 if ( $options['aktiv-suche'] == "1" ){
+								echo '<div id="searchform">';
                                 get_search_form(); 
+								echo '</div>';
                                 }
                                 ?>
                                 
