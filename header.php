@@ -34,6 +34,14 @@
        $options['aktiv-linkmenu'] = $defaultoptions['aktiv-linkmenu'];   
    if (!isset($options['aktiv-circleplayer'])) 
        $options['aktiv-circleplayer'] = $defaultoptions['aktiv-circleplayer'];   
+   if (!isset($options['1april-prank'])) 
+       $options['1april-prank'] = $defaultoptions['1april-prank'];
+   if (!isset($options['1april-logo'])) 
+       $options['1april-logo'] = $defaultoptions['1april-logo'];
+   if (!isset($options['1april-prank-day'])) 
+       $options['1april-prank-day'] = $defaultoptions['1april-prank-day'];
+   if (!isset($options['1april-css'])) 
+       $options['1april-css'] = $defaultoptions['1april-css'];
    
    $designspecials = get_option( 'piratenkleider_theme_designspecials' );
    $cssadd = '';
@@ -93,9 +101,15 @@ if ((isset( $options['meta-keywords'] )) && ( strlen(trim($options['meta-keyword
     <link rel="shortcut icon" href="<?php echo get_template_directory_uri(); ?>/favicon.ico">
     <link rel="profile" href="http://gmpg.org/xfn/11" />
     <link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo( 'stylesheet_url' ); ?>">
-<?php if ((isset($designspecials['css-colorfile'])) && (strlen(trim($designspecials['css-colorfile']))>1)) { 
-        echo '  <link rel="stylesheet" type="text/css" media="all" href="'.get_template_directory_uri().'/css/'.$designspecials['css-colorfile'].'">';
-    } 
+    
+<?php 
+    if (($options['1april-prank']==1) && (date('m-d')==$options['1april-prank-day'])) {
+        echo '  <link rel="stylesheet" type="text/css" media="all" href="'.$options['1april-css'].'">';
+    } else {
+        if ((isset($designspecials['css-colorfile'])) && (strlen(trim($designspecials['css-colorfile']))>1)) { 
+            echo '  <link rel="stylesheet" type="text/css" media="all" href="'.get_template_directory_uri().'/css/'.$designspecials['css-colorfile'].'">';
+        } 
+    }    
     if (!isset($designspecials['css-fontfile']))  {
         $designspecials['css-fontfile'] = $defaultoptions['default-fontset-file'];
     }
@@ -136,7 +150,7 @@ if ((isset( $options['meta-keywords'] )) && ( strlen(trim($options['meta-keyword
 		<li><a class="ym-skip" href="#nav"><?php _e( 'Zur Navigation springen.', 'piratenkleider' ); ?></a></li>
 		<li><a class="ym-skip" href="#main-content"><?php _e( 'Zum Inhalt springen.', 'piratenkleider' ); ?></a></li>
 		<?php if ( $options['aktiv-suche'] == "1" ){ ?>
-            <li><a class="ym-skip" href="#searchform"><?php _e( 'Zur Suche springen.', 'piratenkleider' ); ?></a></li>
+                <li><a class="ym-skip" href="#searchform"><?php _e( 'Zur Suche springen.', 'piratenkleider' ); ?></a></li>
 		<?php } ?>
 	</ul>
 
@@ -146,9 +160,15 @@ if ((isset( $options['meta-keywords'] )) && ( strlen(trim($options['meta-keyword
 			<div class="branding">
                             <?php if ( ! is_home() ) { ?>
                             <a href="<?php echo home_url( '/' ); ?>" title="<?php echo $defaultoptions['default_text_title_home_backlink']; ?>" rel="home" class="logo">
-                            <?php } ?>                                                             
+                            <?php } 
+                                if (($options['1april-prank'] =="1") && (date('m-d') == $options['1april-prank-day']))  {                                
+                                    echo '<h1><img src="'.$options['1april-logo'].'" alt="'.get_bloginfo( 'name' ).'"></h1>';
+                                } else {    
+                            ?>                                                             
                                 <h1><img src="<?php header_image(); ?>" alt="<?php bloginfo( 'name' ); ?>"></h1>
-                            <?php if ( ! is_home() ) { ?> </a>  <?php } 
+                            <?php 
+                                }
+                                if ( ! is_home() ) { ?> </a>  <?php } 
                               if (strlen(trim(get_bloginfo( 'description' )))>1) {
                             ?> 
                             <p class="description slogan"><?php bloginfo( 'description' ); ?></p>
@@ -184,9 +204,10 @@ if ((isset( $options['meta-keywords'] )) && ( strlen(trim($options['meta-keyword
 
                                 } 
                                 if ( $options['aktiv-suche'] == "1" ){
-								echo '<div id="searchform">';
-                                get_search_form(); 
-								echo '</div>';
+                                    echo '<div id="searchform">';
+                                    get_search_form(); 
+                                    echo '</div>';
+
                                 }
                                 ?>
                                 

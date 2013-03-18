@@ -1,20 +1,10 @@
 /* 
-    Document   : colors_us
+    Document   : colors_pony
     Created on : 16.05.2012, 11:56:08
     Author     : xwolf
     Description:
-       Define corporate design colors for the theme.
-       Each pirate party in several countries use their own set of colors;
-       Therefor all color-settings are outsourced in files in
-       the form colors_LANG.css.
 
-       Settings in the color files will override settings in the
-       current basemods, which defines the default style (german colors).
-
-       This is the color file for USA.
-       
-       Base color: #B127AF  , rgba(153, 51, 153, 0.2); 
-       Special text font: Bebas Neue
+    Pony Colors - used for april, 1th. prank
                
 
 */
@@ -27,7 +17,7 @@
 
 @media screen, projection {
   body {
-    background: #B127AF url("../images/int/bg-tags-us.png") -20% top fixed; 
+    background: #B127AF url("../images/int/bg-tags-pony.png") -20% top fixed; 
     }
     h1, h2, h3, .bebas, .cifont {
       font-family: "BebasNeueRegular", Helvetica, Arial, sans-serif;
@@ -95,7 +85,7 @@
         box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2) inset;
         color: #444;
         color: rgba(0,0,0,.8);
-        background: url("../images/int/bg-tags-us.png") repeat fixed -20% top #B127AF;
+        background: url("../images/int/bg-tags-pony.png") repeat fixed -20% top #B127AF;
      }
      .sticky a {
          color: black;
@@ -267,7 +257,7 @@
           color: black;
         }
   .content-aside .newsletter {     
-    background-color: #ffa500;
+    background-color: #B127AF;
     box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
  } 
 
@@ -517,7 +507,7 @@ div.ics-calendar-holder .ics-calendar-event {
   }        
 
   .content-aside {
-      background: #B127AF url("../images/int/bg-tags-us.png") -20% top fixed; 
+      background: #B127AF url("../images/int/bg-tags-pony.png") -20% top fixed; 
    }
 
   .content-aside .skin {
@@ -559,7 +549,7 @@ div.ics-calendar-holder .ics-calendar-event {
  }        
            
   .post-comments {
-     background: url("../images/int/bg-tags-us.png") repeat fixed -20% top #B127AF;
+     background: url("../images/int/bg-tags-pony.png") repeat fixed -20% top #B127AF;
   }
   .post-comments a {
       color: black;

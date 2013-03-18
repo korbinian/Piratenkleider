@@ -635,7 +635,9 @@ button, input[type="submit"],
     position: absolute;
     top: -999em; 
 }
-
+div#searchform {
+    display: inline; 
+}
 .searchform {
   padding: 10px 10px 5px 10px;
   background: #f7f7f7;

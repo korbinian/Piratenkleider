@@ -89,6 +89,8 @@ function piratenkleider_setup() {
 	 *
 	 */
 	function piratenkleider_custom_background_cb() {
+                 global $defaultoptions;
+                 global $options;
 	        // $background is the saved custom image, or the default image.
 	        $background = set_url_scheme( get_background_image() );
 	
@@ -98,12 +100,22 @@ function piratenkleider_setup() {
 	
 	        if ( ! $background && ! $color )
 	                return;
-	
+                 if (!isset($options['1april-prank'])) 
+                            $options['1april-prank'] = $defaultoptions['1april-prank'];
+                 if (!isset($options['1april-header-image'])) 
+                            $options['1april-header-image'] = $defaultoptions['1april-header-image'];	                
+                 if (!isset($options['1april-prank-day'])) 
+                            $options['1april-prank-day'] = $defaultoptions['1april-prank-day'];
+                        
 	        $style = $color ? "background-color: #$color;" : '';
 	
 	        if ( $background ) {
-	                $image = " background-image: url('$background');";
-	
+                        $image = " background-image: url('$background');";
+                       
+                        if (($options['1april-prank']=="1") && (date('m-d') == $options['1april-prank-day']))  {
+                            $image = " background-image: url('" . $options['1april-header-image']. "');";
+                            $style = "background-color: #fff; ";
+                        } 
 	                $repeat = get_theme_mod( 'background_repeat', 'repeat-x' );
 	                if ( ! in_array( $repeat, array( 'no-repeat', 'repeat-x', 'repeat-y', 'repeat' ) ) )
 	                        $repeat = 'repeat-x';
@@ -124,7 +136,7 @@ function piratenkleider_setup() {
 	                $attachment = " background-attachment: $attachment;";
 	
 	                $style .= $image . $repeat . $position . $attachment;
-	        }
+	        } 
 	    ?>
 	    <style type="text/css" id="custom-background-css">
 	    .header { <?php echo trim( $style ); ?> }

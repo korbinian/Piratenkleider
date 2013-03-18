@@ -113,6 +113,11 @@ $defaultoptions = array(
     'default_footerlink_show'       => 1,    
     'circleplayer-require-mp3fallback'	=> 1,
     'category-startpageview'	    => 1,
+    '1april-prank'                  => 0,
+    '1april-logo'                   => get_template_directory_uri() .'/images/logo-pony.png',
+    '1april-header-image'           => get_template_directory_uri() .'/images/header-pony.png',
+    '1april-css'                    => get_template_directory_uri() .'/css/colors_pony.css',
+    '1april-prank-day'              => '04-01',
     
 );
 
@@ -1285,6 +1290,22 @@ $setoptions = array(
                   'label'   => __( 'Circle Player (HTML5 Player) f&uuml;r MP3/OGG-Dateien in einzelnen Beitr&auml;gen aktivieren.', 'piratenkleider' ),
                   'default' => $defaultoptions['aktiv-circleplayer'],
               ),   
+               
+              '1april-prank'   => array(
+                  'type'    => 'bool',
+                  'title'   => __( 'Aprilscherz', 'piratenkleider' ),
+                  'label'   => __( 'Am 1. April wird das Design um Ponys aufgewertet. Seit ihr mutig genug?', 'piratenkleider' ),
+                  'default' => $defaultoptions['1april-prank'],
+              ),   
+               '1april-prank-day' => array(
+                  'type'    => 'text',
+                  'title'   => __( 'Tag des Aprilscherzes', 'piratenkleider' ),
+                  'label'   => __( 'Optional kann man hier den Tag vom 1. April &auml;ndern. Sollte nat&uuml;rlich als Datum "04-01" haben, damit es sp&auml;ter richtig kommt. (Format: "MM-DD")', 'piratenkleider' ),
+                  'default' => $defaultoptions['1april-prank-day'],
+              ), 
+ 
+               
+               
                 'login_errors' => array(
                   'type'    => 'select',
                   'title'   => __( 'Fehlermeldung bei Login', 'piratenkleider' ),
@@ -1315,6 +1336,8 @@ $setoptions = array(
                   'default' => $defaultoptions['category-startpageview'],
               ),   
 	       
+               
+               
                
           )
        ),

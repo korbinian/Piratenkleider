@@ -986,6 +986,7 @@ function theme_designspecials_do_page() {
                             <option value="colors_hu.css" <?php if ( $options['css-colorfile'] == 'colors_hu.css') echo ' selected="selected"'; ?>><?php _e( 'Ungarn (Violett)', 'piratenkleider' ); ?></option>                            
                             <option value="colors_tk.css" <?php if ( $options['css-colorfile'] == 'colors_tk.css') echo ' selected="selected"'; ?>><?php _e( 'T&uuml;rkei (Cyan)', 'piratenkleider' ); ?></option>
                             <option value="colors_us.css" <?php if ( $options['css-colorfile'] == 'colors_us.css') echo ' selected="selected"'; ?>><?php _e( 'USA (Lila)', 'piratenkleider' ); ?></option>
+                            <option value="colors_pony.css" <?php if ( $options['css-colorfile'] == 'colors_pony.css') echo ' selected="selected"'; ?>><?php _e( 'My Little Pony', 'piratenkleider' ); ?></option>                            
                             
                         </select>   
 
