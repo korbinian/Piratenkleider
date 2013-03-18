@@ -1297,13 +1297,14 @@ $setoptions = array(
                   'label'   => __( 'Am 1. April wird das Design um Ponys aufgewertet. Seit ihr mutig genug?', 'piratenkleider' ),
                   'default' => $defaultoptions['1april-prank'],
               ),   
+               /* 
                '1april-prank-day' => array(
                   'type'    => 'text',
                   'title'   => __( 'Tag des Aprilscherzes', 'piratenkleider' ),
                   'label'   => __( 'Optional kann man hier den Tag vom 1. April &auml;ndern. Sollte nat&uuml;rlich als Datum "04-01" haben, damit es sp&auml;ter richtig kommt. (Format: "MM-DD")', 'piratenkleider' ),
                   'default' => $defaultoptions['1april-prank-day'],
               ), 
- 
+                */
                
                
                 'login_errors' => array(
