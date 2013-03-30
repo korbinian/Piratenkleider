@@ -674,7 +674,11 @@ function get_piratenkleider_custom_excerpt( ){
   global $defaultoptions;
   global $post;
   
- 
+  $options = get_option( 'piratenkleider_theme_options' );
+   
+  if (!isset($options['teaser_maxlength'])) 
+                $options['teaser_maxlength'] = $defaultoptions['teaser_maxlength'];
+    
   if (has_excerpt()) {
       return  get_the_excerpt();
   } else {
@@ -690,8 +694,8 @@ function get_piratenkleider_custom_excerpt( ){
       $excerpt = 'Kein Inhalt';
   }
 // $excerpt =  closetags(strip_html_tags( $excerpt ));
-  if (mb_strlen($excerpt) >  $defaultoptions['teaser_maxlength']) {
-    $the_str = mb_substr($excerpt, 0, $defaultoptions['teaser_maxlength']);
+  if (mb_strlen($excerpt) >  $options['teaser_maxlength']) {
+    $the_str = mb_substr($excerpt, 0, $options['teaser_maxlength']);
     $the_str .= "...";
   }  else {
       $the_str = $excerpt;

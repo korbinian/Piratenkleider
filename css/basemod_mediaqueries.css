@@ -336,7 +336,7 @@
   .post-comments {
      background: url("../images/int/bg-tags.png") repeat fixed -20% top #FF8800;
      padding: 3px;
-     margin: 10px 0px;
+     margin: 2px 5px 5px 5px;
   }
   .post-comments a {
       color: black;

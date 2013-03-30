@@ -461,11 +461,10 @@ button, input[type="submit"],
 
 
 .section {
-  padding: 0 10px; }
+  padding: 0 10px 0 36px; }
 
 .skin {
   padding: 20px; 
-  margin-left: 10px;
 }
 
 .row {
@@ -1255,20 +1254,20 @@ display: inline-block;
     border: 1px solid black; 
     background-color: beige;
   }
-  .content-primary .columns {
-    //float: left; 
-  }
+
   .content-primary .columns .column1, .content-primary .columns .column2 {
       margin-bottom: 20px; }
   .content-primary .columns .column1 hr, .content-primary .columns .column2 hr {
-        display: none; }
+        display: none; 
+  }
   .content-primary .columns .column1 {
       float: left; }
   .content-primary .columns .column2 {
       float: right; }
   .content-primary .post-nav {
     margin-bottom: 20px;
-    overflow: hidden; }
+    margin-left: 10px;
+  }
     .content-primary .post-nav a {
       font-family: "FontPiratenkleiderHeadlines", Helvetica, Arial, sans-serif;
       font-size: 20px; }
@@ -2116,6 +2115,7 @@ img.wp-smiley {
   
 .footer .skin {
   overflow: hidden; 
+  margin-left: 10px;
 }
 
 .footer a {
@@ -2510,7 +2510,7 @@ div.ics-calendar-holder .ics-calendar-event {
    
   }
   .content-primary .skin {
-      margin-left: 10px;
+      margin-left: 0px;
   }    
   .content-primary .first-startpage-widget-area {
       width: 50%;
@@ -2644,7 +2644,7 @@ background: none repeat scroll 0 0 #EEEEEE;
 .flagicon-kz, .flagicon-lt, .flagicon-lu, .flagicon-lv, .flagicon-ma, .flagicon-mx, .flagicon-nl, .flagicon-nz, 
 .flagicon-pe, .flagicon-pl, .flagicon-pt, .flagicon-ro, .flagicon-rs, .flagicon-ru, .flagicon-se, .flagicon-si, 
 .flagicon-sk, .flagicon-tn, .flagicon-tr, .flagicon-ua, .flagicon-uk, .flagicon-us, .flagicon-uy, .flagicon-hr,
-.flagicon-il, .flagicon-hu  { 
+.flagicon-il, .flagicon-hu, .flagicon-ee  { 
   width: 16px;
   height: 11px;
   display: inline-block;
@@ -2710,6 +2710,11 @@ background: none repeat scroll 0 0 #EEEEEE;
 .flagicon-dk {
   background-position: 0 -247px;
 }
+
+.flagicon-ee {
+  background-position: 0 -638px;
+}
+
 
 .flagicon-es {
   background-position: 0 -377px;

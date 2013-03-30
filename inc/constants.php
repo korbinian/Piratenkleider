@@ -343,7 +343,8 @@ $default_toplink_liste = array(
               __('Bulgarien', 'piratenkleider' ) => 'http://piratskapartia.bg/',
               __('Chile', 'piratenkleider' ) => 'http://www.partidopirata.cl/',
               __('D&auml;nemark', 'piratenkleider' ) => 'http://piratpartiet.dk/',
-              __('Deutschland', 'piratenkleider' ) => 'http://www.piratenpartei.de/',              
+              __('Deutschland', 'piratenkleider' ) => 'http://www.piratenpartei.de/', 
+              __('Estland', 'piratenkleider' ) => 'http://piraadipartei.ee/', 
               __('Finnland', 'piratenkleider' ) => 'http://www.piraattipuolue.fi/',
               __('Frankreich', 'piratenkleider' ) => 'http://partipirate.org/',
               __('Griechenland', 'piratenkleider' ) => 'http://pirateparty.gr/',
@@ -399,7 +400,8 @@ $default_toplink_liste = array(
               '<span class="flagicon-bg"></span> '.__('Bulgarien', 'piratenkleider') => 'http://piratskapartia.bg/',
               '<span class="flagicon-cl"></span> '.__('Chile', 'piratenkleider') => 'http://www.partidopirata.cl/',
               '<span class="flagicon-dk"></span> '.__('D&auml;nemark', 'piratenkleider') => 'http://piratpartiet.dk/',
-              '<span class="flagicon-de"></span> '.__('Deutschland', 'piratenkleider') => 'http://piratenpartei.de/',            
+              '<span class="flagicon-de"></span> '.__('Deutschland', 'piratenkleider') => 'http://piratenpartei.de/',   
+              '<span class="flagicon-ee"></span> '.__('Estland', 'piratenkleider') => 'http://piraadipartei.ee/',    
               '<span class="flagicon-fi"></span> '.__('Finnland', 'piratenkleider') => 'http://www.piraattipuolue.fi/',
               '<span class="flagicon-fr"></span> '.__('Frankreich', 'piratenkleider') => 'http://partipirate.org/',
               '<span class="flagicon-gr"></span> '.__('Griechenland', 'piratenkleider') => 'http://pirateparty.gr/',
@@ -989,7 +991,30 @@ $setoptions = array(
                   'label'   => __( 'Wenn vorhanden, wird ein Thumbnail des ersten Bildes anstelle des Datums angezeigt', 'piratenkleider' ),
                   'default' => $defaultoptions['aktiv-images-instead-date'],
               ),
-               
+             'teaser-subtitle' => array(
+                  'type'    => 'text',
+                  'title'   => __( 'Bezeichnender Titel f&uuml;r Teaser', 'piratenkleider' ),
+                  'label'   => __( 'Dieser Text wird oberhalb der Titel angezeigt.', 'piratenkleider' ),
+                  'default' => $defaultoptions['teaser-subtitle'],
+              ),  
+             'teaser-title-maxlength' => array(
+                  'type'    => 'number',
+                  'title'   => __( 'Textl&auml;nge', 'piratenkleider' ),
+                  'label'   => __( 'Maximale Textl&auml;nge des Titels im Teaser.', 'piratenkleider' ),
+                  'default' => $defaultoptions['teaser-title-maxlength'],
+              ),   
+             'teaser-title-words' => array(
+                  'type'    => 'number',
+                  'title'   => __( 'Wortzahl', 'piratenkleider' ),
+                  'label'   => __( 'Zahl der Worte im Teaser; Die maximale Textl&auml;nge begrenzt diesen Wert jedoch.', 'piratenkleider' ),
+                  'default' => $defaultoptions['teaser-title-words'],
+              ),
+             'teaser_maxlength' => array(
+                  'type'    => 'number',
+                  'title'   => __( 'L&auml;nge des Teasertextes (Artikelauszug)', 'piratenkleider' ),
+                  'label'   => __( 'Maximale Textl&auml;nge f&uuml;r Artikelausz&uuml;ge auf der Startseite.', 'piratenkleider' ),
+                  'default' => $defaultoptions['teaser_maxlength'],
+              ),                 
                
                
                
@@ -1060,30 +1085,7 @@ $setoptions = array(
                    'parent'  => 'sliderpars'
               ), 
                
-             'teaser-subtitle' => array(
-                  'type'    => 'text',
-                  'title'   => __( 'Bezeichnender Titel f&uuml;r Teaser', 'piratenkleider' ),
-                  'label'   => __( 'Dieser Text wird oberhalb der Titel angezeigt.', 'piratenkleider' ),
-                  'default' => $defaultoptions['teaser-subtitle'],
-              ),  
-             'teaser-title-maxlength' => array(
-                  'type'    => 'number',
-                  'title'   => __( 'Textl&auml;nge', 'piratenkleider' ),
-                  'label'   => __( 'Maximale Textl&auml;nge des Titels im Teaser.', 'piratenkleider' ),
-                  'default' => $defaultoptions['teaser-title-maxlength'],
-              ),   
-             'teaser-title-words' => array(
-                  'type'    => 'number',
-                  'title'   => __( 'Wortzahl', 'piratenkleider' ),
-                  'label'   => __( 'Zahl der Worte im Teaser; Die maximale Textl&auml;nge begrenzt diesen Wert jedoch.', 'piratenkleider' ),
-                  'default' => $defaultoptions['teaser-title-words'],
-              ),
-             'teaser_maxlength' => array(
-                  'type'    => 'number',
-                  'title'   => __( 'L&auml;nge des Teasertextes (Artikelauszug)', 'piratenkleider' ),
-                  'label'   => __( 'Maximale Textl&auml;nge f&uuml;r Artikelausz&uuml;ge auf der Startseite.', 'piratenkleider' ),
-                  'default' => $defaultoptions['teaser_maxlength'],
-              ),  
+
                
                
           )
@@ -1297,14 +1299,14 @@ $setoptions = array(
                   'label'   => __( 'Am 1. April wird das Design um Ponys aufgewertet. Seit ihr mutig genug?', 'piratenkleider' ),
                   'default' => $defaultoptions['1april-prank'],
               ),   
-               /* 
+                
                '1april-prank-day' => array(
                   'type'    => 'text',
                   'title'   => __( 'Tag des Aprilscherzes', 'piratenkleider' ),
                   'label'   => __( 'Optional kann man hier den Tag vom 1. April &auml;ndern. Sollte nat&uuml;rlich als Datum "04-01" haben, damit es sp&auml;ter richtig kommt. (Format: "MM-DD")', 'piratenkleider' ),
                   'default' => $defaultoptions['1april-prank-day'],
               ), 
-                */
+               
                
                
                 'login_errors' => array(

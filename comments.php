@@ -24,7 +24,7 @@ if ( have_comments() ) : ?>
              previous_comments_link( __( '&larr; &Auml;ltere Kommentare', 'piratenkleider' ) ); 
              next_comments_link( __( 'Neuere Kommentare &rarr;', 'piratenkleider' ) ); 
      endif; 
-     else : if ( ! comments_open() && ! is_page() && post_type_supports( get_post_type(), 'comments' )  ) : ?>
+     if ( ! comments_open() && ! is_page() && post_type_supports( get_post_type(), 'comments' )  ) : ?>
 	<p><?php _e("Das Kommentieren dieses Artikels ist nicht (mehr) m&ouml;glich.", 'piratenkleider'); ?></p>
 <?php
     endif; 
