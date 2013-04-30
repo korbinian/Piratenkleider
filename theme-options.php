@@ -1003,6 +1003,7 @@ function theme_designspecials_do_page() {
                         <select name="piratenkleider_theme_designspecials[css-fontfile]">
                             <option value="font-bebas.css" style="font-family: Bebas;" <?php if ( $options['css-fontfile'] == 'font-bebas.css') echo ' selected="selected"'; ?>><?php _e( 'Bebas Neue', 'piratenkleider' ); ?></option>
                             <option value="font-droid.css" style="font-family: Droid;" <?php if ( $options['css-fontfile'] == 'font-droid.css') echo ' selected="selected"'; ?>><?php _e( 'Droid Sans', 'piratenkleider' ); ?></option>
+                            <option value="font-politicshead.css" style="font-family: Politics Head;" <?php if ( $options['css-fontfile'] == 'font-politicshead.css') echo ' selected="selected"'; ?>><?php _e( 'Politics Head', 'piratenkleider' ); ?></option>
                             <option value="font-standard.css"  style="font-family: Helvetica, Arial, sans-serif;" <?php if ( $options['css-fontfile'] == 'font-standard.css') echo ' selected="selected"'; ?>><?php _e( 'Helvetica, Arial, sans-serif', 'piratenkleider' ); ?></option>
                         </select>   
 
