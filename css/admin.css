@@ -16,6 +16,13 @@
   font-style: normal; 
 }
 
+@font-face {
+  font-family: 'PoliticsHead';
+  src: url("../fonts/PoliticsHeadv1_9.eot") format("embedded-opentype"), url("../fonts/PoliticsHeadv1_9.ttf") format("truetype");   
+  font-weight: normal;
+  font-style: normal; 
+}
+
 
  #headimg {
             width: 350px;
@@ -98,4 +105,4 @@ label.plakattile {
 }
 label.plakattile:hover {
     background-color: #eee;
-} 
+}
