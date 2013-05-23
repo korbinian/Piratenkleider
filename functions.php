@@ -742,7 +742,7 @@ function piratenkleider_fetch_feed($url,$lifetime=0) {
     $feed->set_feed_url($url);
     $feed->set_cache_duration($lifetime);
     
-    do_action_ref_array( 'wp_feed_options', array( &$feed, $url ) );
+    do_action_ref_array( 'wp_feed_options', array( $feed, $url ) );
     $feed->init();
     $feed->handle_content_type();
 
