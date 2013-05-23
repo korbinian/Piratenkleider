@@ -35,6 +35,7 @@ AUTOREN / ENTWICKLER
      - Marc Schieferdecker,  http://thegeek.de 
      - Benjamin Stöcker, http://freiheitsworte.de     
      - le Grand, http://www.lenz-online.org 
+     - und vielen mehr!
 
    Quellen für Defaultbilder und CI-Materialen (CC-BY 3.0)
      - Defaultgrafiken für Slider/Seitenbilder: Tobias M. Eckrich
