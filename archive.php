@@ -1,8 +1,7 @@
-<?php get_header();    
-  $options = get_option( 'piratenkleider_theme_options' );  
-   $bilderoptions = get_option( 'piratenkleider_theme_defaultbilder' ); 
-   if (!isset($bilderoptions['src-default-symbolbild-archve'])) 
-            $bilderoptions['src-default-symbolbild-archve'] = $defaultoptions['src-default-symbolbild-archive'];
+<?php 
+    get_header();    
+    global $options;  
+    $bilderoptions = get_piratenkleider_options( 'piratenkleider_theme_defaultbilder' ); 
 ?> 
 <div class="section content" id="main-content">
   <div class="row">

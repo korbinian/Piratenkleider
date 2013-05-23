@@ -1,8 +1,7 @@
 <?php get_header();    
-  $options = get_option( 'piratenkleider_theme_options' );  
-  $bilderoptions = get_option( 'piratenkleider_theme_defaultbilder' ); 
-   if (!isset($bilderoptions['src-default-symbolbild-search'])) 
-            $bilderoptions['src-default-symbolbild-search'] = $defaultoptions['src-default-symbolbild-search'];
+    global $options;  
+    $bilderoptions = get_piratenkleider_options( 'piratenkleider_theme_defaultbilder' ); 
+
 ?> 
 <div class="section content" id="main-content">
   <div class="row">
@@ -29,10 +28,7 @@
              <?php else : ?>
                         <h2><?php _e("Nichts gefunden", 'piratenkleider'); ?></h2>
                         <p>
-                            <?php _e("Es konnten keine Seiten oder Artikel gefunden werden, 
-                            die zu der Sucheingabe passten.
-                            Bitte versuchen Sie es nochmal mit einer 
-                            anderen Suche.", 'piratenkleider'); ?>
+                            <?php _e("Es konnten keine Seiten oder Artikel gefunden werden, die zu der Sucheingabe passten. Bitte versuchen Sie es nochmal mit einer  anderen Suche.", 'piratenkleider'); ?>
                             
                         </p>
                         <?php get_search_form(); ?>

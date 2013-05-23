@@ -4,11 +4,10 @@
  */
 ?>
 <?php get_header();
- $options = get_option( 'piratenkleider_theme_options' );  
- $kontaktinfos = get_option( 'piratenkleider_theme_kontaktinfos' );  
- $bilderoptions = get_option( 'piratenkleider_theme_defaultbilder' ); 
-   if (!isset($bilderoptions['src-default-symbolbild'])) 
-            $bilderoptions['src-default-symbolbild'] = $defaultoptions['src-default-symbolbild'];
+    global $options;  
+    $bilderoptions = get_piratenkleider_options( 'piratenkleider_theme_defaultbilder' ); 
+    $kontaktinfos = get_option( 'piratenkleider_theme_kontaktinfos' );  
+
 ?>
 <div class="section content" id="main-content">
   <div class="row">
@@ -137,14 +136,7 @@
 
         <h1 class="skip"><?php _e( 'Weitere Informationen', 'piratenkleider' ); ?></h1>   
             <?php
-            if (!isset($options['zeige_subpagesonly'])) 
-            $options['zeige_subpagesonly'] = $defaultoptions['zeige_subpagesonly'];
-  
-            if (!isset($options['zeige_sidebarpagemenu'])) 
-            $options['zeige_sidebarpagemenu'] = $defaultoptions['zeige_sidebarpagemenu'];
             
-			if (!isset($options['seitenmenu_mode'])) 
-            $options['seitenmenu_mode'] = $defaultoptions['seitenmenu_mode'];
             get_piratenkleider_seitenmenu($options['zeige_sidebarpagemenu'],$options['zeige_subpagesonly'],$options['seitenmenu_mode']);
 
         

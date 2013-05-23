@@ -1,7 +1,6 @@
 <?php get_header();    
-  $options = get_option( 'piratenkleider_theme_options' );  
-  if (!isset($options['slider-aktiv'])) 
-        $options['slider-aktiv'] = $defaultoptions['slider-aktiv'];
+  global $options;  
+
   if ( $options['slider-aktiv'] == "1" ){ ?>  
     <div class="section teaser">
         <div class="row">
@@ -19,10 +18,7 @@
       <?php
       $i = 0; 
       $col = 0; 
-      if (!isset($options['num-article-startpage-fullwidth'])) 
-            $options['num-article-startpage-fullwidth'] = $defaultoptions['num-article-startpage-fullwidth'];
-      if (!isset($options['num-article-startpage-halfwidth'])) 
-            $options['num-article-startpage-halfwidth'] = $defaultoptions['num-article-startpage-halfwidth'];       
+      
       $numentries = $options['num-article-startpage-fullwidth'] + $options['num-article-startpage-halfwidth']; 
       $col_count = 3; 
       $cols = array();
@@ -140,12 +136,7 @@
             <?php if ( is_active_sidebar( 'first-startpage-widget-area' ) ) { ?>
                 <?php dynamic_sidebar( 'first-startpage-widget-area' ); ?>
             <?php } else { 
-                 if (!isset($options['aktiv-startseite-alteartikel'])) 
-                     $options['aktiv-startseite-alteartikel'] = $defaultoptions['aktiv-startseite-alteartikel'];
-                 if (!isset($options['aktiv-startseite-alteartikel-num'])) 
-                     $options['aktiv-startseite-alteartikel-num'] = $defaultoptions['aktiv-startseite-alteartikel-num'];
-                 if (!isset($options['aktiv-startseite-kategorien'])) 
-                     $options['aktiv-startseite-kategorien'] = $defaultoptions['aktiv-startseite-kategorien'];
+                
                  $numold = $options['aktiv-startseite-alteartikel-num'];
                  
                  if ($options['aktiv-startseite-alteartikel']==1) {                  

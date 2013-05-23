@@ -1,11 +1,7 @@
 <?php           
   global $defaultoptions;
-  global $defaultplakate_liste;
-  $options = get_option( 'piratenkleider_theme_options' );
-  if (!isset($options['slider-defaultwerbeplakate'])) 
-       $options['slider-defaultwerbeplakate'] = $defaultoptions['slider-defaultwerbeplakate'];
-  
-   
+  global $options;
+ 
   
     if ( $options['newsletter'] == "1" ){
      ?>                   

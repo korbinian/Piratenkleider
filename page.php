@@ -1,9 +1,6 @@
 <?php get_header();
-global $defaultoptions;
-$options = get_option( 'piratenkleider_theme_options' );
-if (!isset($options['aktiv-defaultseitenbild'])) 
-            $options['aktiv-defaultseitenbild'] = $defaultoptions['aktiv-defaultseitenbild'];
-
+    global $defaultoptions;
+    global $options;
 ?>
 
 <div class="section content" id="main-content">
@@ -51,14 +48,6 @@ if (!isset($options['aktiv-defaultseitenbild']))
           
             <?php
             
-            if (!isset($options['zeige_subpagesonly'])) 
-            $options['zeige_subpagesonly'] = $defaultoptions['zeige_subpagesonly'];
-  
-            if (!isset($options['zeige_sidebarpagemenu'])) 
-            $options['zeige_sidebarpagemenu'] = $defaultoptions['zeige_sidebarpagemenu'];
-            
-			if (!isset($options['seitenmenu_mode'])) 
-            $options['seitenmenu_mode'] = $defaultoptions['seitenmenu_mode'];
             get_piratenkleider_seitenmenu($options['zeige_sidebarpagemenu'],$options['zeige_subpagesonly'],$options['seitenmenu_mode']);
         
 

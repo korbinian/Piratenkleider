@@ -1,8 +1,5 @@
 <?php get_header(); 
- $options = get_option( 'piratenkleider_theme_options' );
-  $bilderoptions = get_option( 'piratenkleider_theme_defaultbilder' ); 
-   if (!isset($bilderoptions['src-default-symbolbild-404'])) 
-            $bilderoptions['src-default-symbolbild-404'] = $defaultoptions['src-default-symbolbild-404'];
+ $bilderoptions = get_piratenkleider_options( 'piratenkleider_theme_defaultbilder' ); 
  ?>
 
 <div class="section content">
@@ -36,7 +33,7 @@
       </div>
     </div>
   </div>
-       <?php  get_piratenkleider_socialmediaicons(2); ?>
+       <?php get_piratenkleider_socialmediaicons(2); ?>
 </div>
 
 <?php get_footer(); ?>
