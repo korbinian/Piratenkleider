@@ -7,41 +7,8 @@
 <head>
 <?php          
   global $defaultoptions;
-  $options = get_option( 'piratenkleider_theme_options' );
-   if (!isset($options['defaultwerbesticker'])) 
-            $options['defaultwerbesticker'] = $defaultoptions['defaultwerbesticker'];
-   if (!isset($options['alle-socialmediabuttons'])) 
-            $options['alle-socialmediabuttons'] = $defaultoptions['alle-socialmediabuttons'];   
-   if (!isset($options['newsletter'])) 
-            $options['newsletter'] = $defaultoptions['newsletter'];
-   if (!isset($options['url-newsletteranmeldung'])) 
-            $options['url-newsletteranmeldung'] = $defaultoptions['url-newsletteranmeldung'];
-    if (!isset($options['stickerlink1-content'])) 
-        $options['stickerlink1-content'] = $defaultoptions['stickerlink1-content'];
-    if (!isset($options['stickerlink1-url'])) 
-        $options['stickerlink1-url'] = $defaultoptions['stickerlink1-url'];
-    if (!isset($options['stickerlink2-content'])) 
-        $options['stickerlink2-content'] = $defaultoptions['stickerlink2-content'];
-    if (!isset($options['stickerlink2-url'])) 
-        $options['stickerlink2-url'] = $defaultoptions['stickerlink2-url'];
-    if (!isset($options['stickerlink2-content'])) 
-        $options['stickerlink3-content'] = $defaultoptions['stickerlink3-content'];
-    if (!isset($options['stickerlink3-url'])) 
-        $options['stickerlink3-url'] = $defaultoptions['stickerlink3-url'];
-   if (!isset($options['aktiv-suche'])) 
-        $options['aktiv-suche'] = $defaultoptions['aktiv-suche'];
-   if (!isset($options['aktiv-linkmenu'])) 
-       $options['aktiv-linkmenu'] = $defaultoptions['aktiv-linkmenu'];   
-   if (!isset($options['aktiv-circleplayer'])) 
-       $options['aktiv-circleplayer'] = $defaultoptions['aktiv-circleplayer'];   
-   if (!isset($options['1april-prank'])) 
-       $options['1april-prank'] = $defaultoptions['1april-prank'];
-   if (!isset($options['1april-logo'])) 
-       $options['1april-logo'] = $defaultoptions['1april-logo'];
-   if (!isset($options['1april-prank-day'])) 
-       $options['1april-prank-day'] = $defaultoptions['1april-prank-day'];
-   if (!isset($options['1april-css'])) 
-       $options['1april-css'] = $defaultoptions['1april-css'];
+  global $options;
+
    
    $designspecials = get_option( 'piratenkleider_theme_designspecials' );
    $cssadd = '';

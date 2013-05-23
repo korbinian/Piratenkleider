@@ -8,28 +8,10 @@
   </div>
 
 <?php 
+    global $options;
     global $defaultoptions;
     wp_footer();     
    
-      $options = get_option( 'piratenkleider_theme_options' );
-      
-        if (!isset($options['slider-slideshowSpeed'])) 
-            $options['slider-slideshowSpeed'] = $defaultoptions['slider-slideshowSpeed'];
-        if (!isset($options['slider-animationDuration'])) 
-            $options['slider-animationDuration'] = $defaultoptions['slider-animationDuration'];
-        if (!isset($options['slider-Direction'])) 
-            $options['slider-Direction'] = $defaultoptions['slider-Direction'];
-        if (!isset($options['slider-animationType'])) 
-            $options['slider-animationType'] = $defaultoptions['slider-animationType'];
-        if (!isset($options['slider-aktiv'])) 
-            $options['slider-aktiv'] = $defaultoptions['slider-aktiv'];
-        if (!isset($options['slider-defaultwerbeplakate'])) 
-            $options['slider-defaultwerbeplakate'] = $defaultoptions['slider-defaultwerbeplakate'];
-        if (!isset($options['category-startpageview'])) 
-            $options['category-startpageview'] = $defaultoptions['category-startpageview'];  
-      
-        
-       
       $slideshowSpeed = $options['slider-slideshowSpeed'];    
       $animationDuration = $options['slider-animationDuration'];    
       $slideDirection = $options['slider-Direction']; 
@@ -43,10 +25,10 @@
         if (! isset($slideDirection)) $slideDirection = 'horizontal';
         if (! isset($animationType)) $animationType = 'slide';        
         ?>
-       <script src="<?php echo get_template_directory_uri(); ?>/js/flexslider.js"></script>      
-       <script type="text/javascript">
+       <script src="<?php echo $defaultoptions['src-flexslider'] ?>"></script>      
+       <script type="text/javascript" charset="utf-8">
         /* <![CDATA[ */
-    $(window).load(function() {
+	jQuery(document).ready(function($) {
        $('.flexslider').flexslider({
          slideshowSpeed: <?php echo $slideshowSpeed ?>,
          animationDuration: <?php echo $animationDuration ?>,
@@ -58,8 +40,7 @@
     /* ]]> */
       </script> 
     <?php }  
-        if (!isset($options['aktiv-dynamic-sidebar'])) 
-          $options['aktiv-dynamic-sidebar'] = $defaultoptions['aktiv-dynamic-sidebar'];      
+   
         if ($options['aktiv-dynamic-sidebar']==1) { 
             ?>
      <script type="text/javascript">
