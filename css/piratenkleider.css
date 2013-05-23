@@ -1915,7 +1915,7 @@ img.wp-smiley {
   color: black;
   padding: 0 2px; 
 }
-.content-aside a:hover {
+.content-aside a:hover,.content-aside a:focus, .content-aside a:visited  {
     color: #000;
    /* background: #d97300;  */
    text-decoration: underline;
