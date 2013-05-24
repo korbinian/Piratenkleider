@@ -206,8 +206,9 @@
 }
 
   .symbolbild {
-        height: 240px;  
+        height: 100px;  
         overflow: hidden;
+        z-index: 10;
    }   
    
    .nav-top ul.menu li a {
@@ -350,7 +351,11 @@
      height: 100px;
      overflow: hidden;
     }
-   
+   .content-header h1,
+   .content-header-big h1{
+       z-index: 100;
+       top: 10px;
+   }
    .single .post {
        padding: 10px;
        max-width: 100%;
