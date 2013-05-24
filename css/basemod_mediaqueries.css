@@ -62,7 +62,9 @@
         padding: 10px;
         text-align: center; 
     }
-
+    .header .branding h1 {
+        margin-bottom: 0px;
+    }
   .logo {
         margin: 0 auto;
   }
@@ -83,39 +85,48 @@
          margin: 0;
          padding: 0;
          width: auto;
-         min-width: 300px;
+         min-width: 320px;
          clear: both;
          text-align: center;
+        height: auto; 
     }
     
     .nav-top form.searchform {
         clear: both;
-        float: none;
         display: block;     
-        width: 250px;
-        background: white;
-        margin: 5px auto;
+        width: 320px;
+        background: transparent;
+        margin: 5px auto 15px auto;
         position: relative;     
+        float: none; 
+        font-size: 1.2em;
     }
+   .nav-top form.searchform input {    
+       padding: 5px;      
+   }   
    
-    .nav-top .searchform input#s {       
-        line-height: 1.2em;
-        width: 15em;        
-        float: left;
-        
-    }
+   .searchform input#s {
+       width: 220px;  
+   } 
    .nav-top form.searchform .searchsubmit {
         position: relative;       
         width: auto;
-        float: left;
+        float: right;
         text-indent: 0;
         background: #2D7DC5;
         height: inherit;
-        line-height: 1.2em;
+        line-height: 1em;
         overflow: none;
-        height: 1.4em;
+        height: auto;
+        padding: 5px;
+        top: 0px;
+        margin-top: 2px;
+        left: -15px; 
      }
-    
+    .nav-top form.searchform .searchsubmit:after {
+       content: "a";
+       clear: both; 
+    }
     .nav-top div.menu-header {
         float: none;
         display: inline-block;
@@ -151,19 +162,19 @@
     width: 100%; 
  }
  .skiplinks li a {
-      position: absolute;
-      display: block;
-        position: static;
-        width: 100%;
-        display: block;
-        border: 0px solid;
-        background: #2d7dc5;
-        color: white;
-        outline: 0px;
-        text-align: center;
-       padding: 5px 18px;
+    position: absolute;
+    display: block;
+    position: static;
+    width: 100%;
+    display: block;
+    border: 0px solid;
+    background: #2d7dc5;
+    color: white;
+    outline: 0px;
+    text-align: center;
+    padding: 5px 18px;
     margin-bottom: 2px;
-    
+    font-size: 1.4em;
     background: #2d7dc5; 
     color: white;
     border: 1px solid #2d7dc5;
@@ -186,7 +197,10 @@
  .skiplinks li a:hover {
       background: #24639b;
         color: black; }
-    
+ #skiplink-nav, 
+ #skiplink-search {
+     display: none;
+ }   
     
   .symbolbild {
         height: 240px;  
@@ -278,6 +292,9 @@
       float: none;
       min-height: 0;          
   }
+  .content-primary .switchoff, .content-primary .switchon {
+      display: none;
+  }
    .content-aside {
       width: 100%;
       float: none;
@@ -322,11 +339,13 @@
    }
    
    .content-primary .skin {
-       padding: 0;
+       padding: 10px 5px 5px 5px;
    }
    .content-header,
    .content-header-big {
      margin-left: 0px;
+     height: 100px;
+     overflow: hidden;
     }
    
    .single .post {
@@ -408,4 +427,5 @@
     #socialmedia_iconbar ul.socialmedia li {
         width: 34px;
     }
+    
 }
