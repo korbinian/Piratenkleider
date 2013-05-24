@@ -49,7 +49,12 @@ html[xmlns] .slides {display: block;}
     margin: 10px auto 20px;
     
 }
-
+.content-aside .flexslider a:hover img,
+.content-aside .flexslider a:focus img, 
+.content-aside .flexslider a:visited img {
+    text-decoration: none;
+    border: none;
+}
 
 .content-aside .flex-control-nav {
   display: none; 
