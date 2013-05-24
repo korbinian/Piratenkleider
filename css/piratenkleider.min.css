@@ -4,12 +4,11 @@ Theme URI: http://piratenkleider.xwolf.de
 Description: Allgemeines Theme für Webauftritte der Piratenpartei
 Author: Wolfgang Wiese (xwolf)
 Author URI: http://www.xwolf.de 
-Version: 2.17 
+Version: 2.17.1 
 Tags: orange, two-columns, responsive, fluid-width
 License: CC-BY-SA 3.0 
 License URI: http://creativecommons.org/licenses/by-sa/3.0/de/deed.de
 */
-
 html,body,div,span,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,abbr,address,cite,code,del,dfn,em,img,ins,kbd,q,samp,small,strong,sub,sup,var,b,i,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,figcaption,figure,footer,header,hgroup,menu,nav,section,summary,time,mark,audio,video{border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent;margin:0;padding:0;}
 body{background:#f80 url(../images/int/bg-tags.png) -20% top fixed;min-height:100%;font-size:.8em;font-family:FontPiratenkleiderDefault, Helvetica, Arial, sans-serif;line-height:1.5em;}
 blockquote,q{quotes:none;}
@@ -100,7 +99,7 @@ input:focus,input:active,select:focus,select:active,textarea:focus,textarea:acti
 .nav-top ul.menu a:hover,.nav-top ul.menu a:focus{background:#FFF;z-index:999;}
 .nav-top ul.menu li.has_children ul.sub-menu{position:absolute;top:-999em;}
 div#searchform{display:inline;}
-.searchform{background:rgba(255,255,255,0.5);position:relative;padding:10px 10px 5px;}
+.searchform{font-size:1.2em;position:relative;padding:10px 10px 5px;}
 .searchform input#s{width:160px;line-height:1em;margin-top:2px;}
 .searchform .searchsubmit{position:absolute;top:10px;right:8px;background:#2d7dc5 url(../images/lupe.png) no-repeat center center;width:30px;height:30px;overflow:hidden;text-indent:-999em;}
 .searchform .searchsubmit:hover{background:#24639b url(../images/lupe.png) no-repeat center center;}
@@ -188,7 +187,7 @@ ul.socialmedia li a:focus img{border:2px solid #f80;background:#f80;}
 .content-primary .sprungmarken ol li a{background:#2d7dc5;color:#FFF;display:inline-block;-webkit-border-radius:2px;-moz-border-radius:2px;-ms-border-radius:2px;-o-border-radius:2px;border-radius:2px;margin:0 2px 2px 0;padding:2px 5px;}
 .content-header{position:relative;height:150px;overflow:hidden;}
 .content-header-big{position:relative;height:240px;overflow:hidden;}
-.content-header #page-title,.content-header h1,.content-header-big h1{position:absolute;left:25px;top:1.5em;display:inline-block;background:#FFF;line-height:1.25em;padding:3px 5px 1px;}
+.content-header #page-title,.content-header h1,.content-header-big h1{position:absolute;left:20px;top:1.5em;display:inline-block;background-color:rgba(255,255,255,0.9);line-height:1.25em;max-width:665px;padding:3px 5px 1px;}
 .content-aside #steckbrief{background-color:#FFF;cursor:pointer;display:inline-block;z-index:1;box-shadow:0 1px 8px #999;-webkit-transform:rotate(2deg);-moz-transform:rotate(2deg);-ms-transform:rotate(2deg);-o-transform:rotate(2deg);transform:rotate(2deg);-webkit-transition:all 406ms ease-out 0;-moz-transition:all 406ms ease-out 0;-ms-transition:all 406ms ease-out 0;-o-transition:all 406ms ease-out 0;transition:all 406ms ease-out 0;margin:0 0 20px -20px;padding:10px 10px 15px;}
 .content-aside #steckbrief:hover,.content-aside #steckbrief:focus,.content-aside #steckbrief:active{-webkit-transform:scale(1.1);-moz-transform:scale(1.1);-ms-transform:scale(1.1);-o-transform:scale(1.1);transform:scale(1.1);z-index:9;}
 .content-aside #steckbrief img{background-position:center center;background-repeat:no-repeat;border:1px solid #EEE;display:block;margin:0 0 15px;}
@@ -223,7 +222,7 @@ ul.socialmedia li a:focus img{border:2px solid #f80;background:#f80;}
 .post .disclaimer{clear:both;}
 .sticky{margin:10px;padding:5px 5px 20px;}
 .post .disclaimer a,.sticky a{color:#000;background:#f38100;padding:0 2px;}
-.post .disclaimer a:hover,.post .disclaimer a:focus,.sticky a:hover,.sticky a:visited,.sticky a:focus{color:#000;background:#d97300;text-decoration: underline;}
+.post .disclaimer a:hover,.post .disclaimer a:focus,.sticky a:visited,.sticky a:hover,.sticky a:focus{color:#000;background:#d97300;text-decoration:underline;}
 .post-comments ol li{margin-bottom:20px;overflow:hidden;float:left;width:100%;}
 .post-comments ol li p{margin-bottom:.5em;}
 .post-comments ol li .comment-details{float:left;width:30%;max-width:180px;text-align:right;color:#222;padding-right:2%;font-size:.9em;}
@@ -233,7 +232,7 @@ ul.socialmedia li a:focus img{border:2px solid #f80;background:#f80;}
 img.wp-smiley{margin:0 0 5px;}
 .post-nav ul{list-style:none;overflow:hidden;margin:0 0 20px;}
 .post-nav ul .forward{text-align:right;float:right;}
-.single .post-title{margin-bottom:40px;}
+.single .post-title,.content-primary .skin h1{margin-bottom:40px;}
 .entry-date,.meta-prep{font-size:10px;color:#222;}
 .wp-caption{text-align:center;max-width:100%;margin:5px;padding:5px;}
 .wp-caption p.wp-caption-text{position:relative;top:-2.4em;left:0;line-height:2em;text-align:left;display:block;background:rgba(0,0,0,0.5);color:#FFF;margin:0;padding:.2em;}
@@ -251,7 +250,7 @@ img.wp-smiley{margin:0 0 5px;}
 .second-startpage-widget-area .skin{padding:0 0 0 20px;}
 .tagcloud{font-family:FontPiratenkleiderHeadlines, Helvetica, Arial, sans-serif;line-height:1.8em;text-align:center;margin-top:1em;}
 .content-aside a{color:#000;padding:0 2px;}
-.content-aside a:hover,.content-aside a:visited,.content-aside a:focus{color:#000;text-decoration:underline;}
+.content-aside a:hover,.content-aside a:focus,.content-aside a:visited{color:#000;text-decoration:underline;}
 .content-aside ul li{list-style:none;margin-bottom:2px;}
 .content-aside table{background:rgba(0,0,0,0.2);border-radius:2px;-moz-border-radius:2px;-webkit-border-radius:2px;padding:5px;}
 .content-aside table td,.content-aside table th{border-top:1px solid #f80;}
@@ -272,6 +271,7 @@ img.wp-smiley{margin:0 0 5px;}
 .footer ul li{margin-bottom:0;text-wrap:none;text-height:1em;display:inline-block;}
 .footer ul:before{content:"";display:table;}
 .footer ul:after{clear:both;content:".";display:block;font-size:0;height:0;visibility:hidden;margin-bottom:10px;}
+.footer ul.skiplinks{margin-bottom:0;height:0;}
 .first-footer-widget-area .widget li a img,.second-footer-widget-area .widget li a img,.footer ul.default_footerlinks li a img{vertical-align:baseline;margin:0;}
 .footer .skin{overflow:hidden;margin-left:10px;}
 .footer a{background:#000;color:#2d7dc5;margin:0 2px 2px 0;padding:0 5px;}
