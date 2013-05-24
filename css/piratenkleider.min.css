@@ -166,7 +166,7 @@ ul.socialmedia li a:focus img{border:2px solid #f80;background:#f80;}
 .content-primary h2{margin-top:1em;}
 .content-primary h3{margin-top:.8em;}
 .content-primary .post-title h2,.content-primary .post-title h3{margin-top:.5em;}
-.content .symbolbild{width:100%;margin:0;padding:0;}
+.content .symbolbild{width:100%;margin:0;padding:0;height:auto;}
 .content .symbolbild .caption{background:rgba(0,0,0,0.5);color:#FFF;position:absolute;bottom:0;right:0;text-align:right;padding:10px 20px;}
 .content .symbolbild .aaarh{background:transparent;color:#000;font-family:FontPiratenkleiderHeadlines, Helvetica, Arial, sans-serif;font-size:2em;left:350px;line-height:1.3em;position:absolute;text-transform:uppercase;top:40px;width:250px;}
 .content .symbolbild h3{font-size:12px;margin-bottom:5px;}
@@ -185,8 +185,8 @@ ul.socialmedia li a:focus img{border:2px solid #f80;background:#f80;}
 .content-primary .sprungmarken ol{overflow:hidden;margin:0;padding:0;}
 .content-primary .sprungmarken ol li{list-style:none;margin:0;padding:0;}
 .content-primary .sprungmarken ol li a{background:#2d7dc5;color:#FFF;display:inline-block;-webkit-border-radius:2px;-moz-border-radius:2px;-ms-border-radius:2px;-o-border-radius:2px;border-radius:2px;margin:0 2px 2px 0;padding:2px 5px;}
-.content-header{position:relative;height:150px;overflow:hidden;}
-.content-header-big{position:relative;height:240px;overflow:hidden;}
+.content-header{position:relative;max-height:150px;overflow:hidden;}
+.content-header-big{position:relative;max-height:240px;overflow:hidden;}
 .content-header #page-title,.content-header h1,.content-header-big h1{position:absolute;left:20px;top:1.5em;display:inline-block;background-color:rgba(255,255,255,0.8);line-height:1.25em;max-width:665px;padding:3px 5px 1px;}
 .content-aside #steckbrief{background-color:#FFF;cursor:pointer;display:inline-block;z-index:1;box-shadow:0 1px 8px #999;-webkit-transform:rotate(2deg);-moz-transform:rotate(2deg);-ms-transform:rotate(2deg);-o-transform:rotate(2deg);transform:rotate(2deg);-webkit-transition:all 406ms ease-out 0;-moz-transition:all 406ms ease-out 0;-ms-transition:all 406ms ease-out 0;-o-transition:all 406ms ease-out 0;transition:all 406ms ease-out 0;margin:0 0 20px -20px;padding:10px 10px 15px;}
 .content-aside #steckbrief:hover,.content-aside #steckbrief:focus,.content-aside #steckbrief:active{-webkit-transform:scale(1.1);-moz-transform:scale(1.1);-ms-transform:scale(1.1);-o-transform:scale(1.1);transform:scale(1.1);z-index:9;}

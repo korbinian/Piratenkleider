@@ -209,6 +209,7 @@
         height: 100px;  
         overflow: hidden;
         z-index: 10;
+       max-width: 100%;
    }   
    
    .nav-top ul.menu li a {
