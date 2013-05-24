@@ -10,7 +10,7 @@
         <?php get_sidebar( 'footer-secondary' ); ?>  
     </div>
     <ul role="navigation" class="nav skiplinks">		
-		<li><a class="ym-skip" id="skiplink-top" href="#top"><?php _e( 'Nach oben springen', 'piratenkleider' ); ?></a></li>
+		<li><a class="ym-skip" id="skiplink-top" href="#top"><?php _e( 'Nach oben springen,', 'piratenkleider' ); ?></a></li>
 		<li><a class="ym-skip" id="skiplink-content-bottom" href="#main-content"><?php _e( 'Zum Beginn des Inhaltes springen.', 'piratenkleider' ); ?></a></li>
 		<?php if ( $options['aktiv-suche'] == "1" ){ ?>
                 <li><a class="ym-skip" id="skiplink-search-bottom" href="#searchform"><?php _e( 'Zur Suche springen.', 'piratenkleider' ); ?></a></li>
