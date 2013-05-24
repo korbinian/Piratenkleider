@@ -2115,6 +2115,11 @@ img.wp-smiley {
     visibility:hidden;
     margin-bottom: 10px;
 }
+.footer ul.skiplinks {
+     margin-bottom: 0px;
+     height: 0;
+}
+
 .first-footer-widget-area .widget li a img,
 .second-footer-widget-area .widget li a img, 
 .footer ul.default_footerlinks li a img {

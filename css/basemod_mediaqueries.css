@@ -201,7 +201,10 @@
  #skiplink-search {
      display: none;
  }   
-    
+  .footer ul.skiplinks {
+     height: auto;
+}
+
   .symbolbild {
         height: 240px;  
         overflow: hidden;
