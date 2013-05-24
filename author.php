@@ -1,30 +1,41 @@
 <?php get_header();    
   global $options;  
-  $bilderoptions = get_piratenkleider_options( 'piratenkleider_theme_defaultbilder' ); 
 ?> 
 <div class="section content" id="main-content">
   <div class="row">
     <div class="content-primary">
-      <div class="content-header">   
-            <?php if ( have_posts() ) the_post(); ?>
-           <h1><?php printf( __( '%s', 'piratenkleider' ), get_the_author() ); ?></h1>
-          
-            <?php if ($options['aktiv-platzhalterbilder-indexseiten']) { ?>         
-            <div class="symbolbild"> 
-              <img src="<?php echo  $bilderoptions['src-default-symbolbild-author']?>" alt="" >
-           </div>                                 
-          <?php } ?>                
-      </div>
-        <div class="skin">
-            
+	<?php if ( have_posts() ) the_post(); ?>
+	<?php
+	    $image_url = '';	  
+	    if (($options['aktiv-platzhalterbilder-indexseiten']==1) && (isset($options['src-default-symbolbild-author']))) {  
+		    $image_url = $options['src-default-symbolbild-author'];		    
+	    }	    
+	    
+	    if (isset($image_url) && (strlen($image_url)>4)) { 
+		if ($options['indexseitenbild-size']==1) {
+		    echo '<div class="content-header-big">';
+		} else {
+		    echo '<div class="content-header">';
+		}
+		?>    		    		    		        
+		   <h1 class="post-title"><span><?php printf( __( '%s', 'piratenkleider' ), get_the_author() ); ?></span></h1>
+		   <div class="symbolbild"><img src="<?php echo $image_url ?>" alt="">		  
+		   </div>
+		</div>  	
+	    <?php } ?>
+	
+      <div class="skin">
+	  
+	  <?php if (!(isset($image_url) && (strlen($image_url)>4))) { ?>
+	    <h1 class="post-title"><span><?php printf( __( '%s', 'piratenkleider' ), get_the_author() ); ?></span></h1>
+	<?php }  
+	
+	if ( get_the_author_meta( 'description' ) ) : ?>   
+	    <?php the_author_meta( 'description' ); ?>
+	   <hr>
+	<?php endif; ?>
 
-        
-<?php if ( get_the_author_meta( 'description' ) ) : ?>   
-    <?php the_author_meta( 'description' ); ?>
-    <hr>
-<?php endif; ?>
-
-<?php rewind_posts(); get_template_part( 'loop', 'author' ); ?>
+	<?php rewind_posts(); get_template_part( 'loop', 'author' ); ?>
 
 
        </div>

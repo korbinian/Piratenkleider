@@ -3,7 +3,6 @@
  * Piratenkleider Constants
  *
  **/ 
- 
 
 $defaultoptions = array(
     'js-version'                    => '2.15',
@@ -32,16 +31,26 @@ $defaultoptions = array(
     'src-grab'			    => get_template_directory_uri(). "/js/jquery.grab.js",
     'src-csstransforms'		    => get_template_directory_uri(). "/js/mod.csstransforms.min.js",
     'src-circleplayer'		    => get_template_directory_uri(). "/js/circle.player.js",
-    'src-default-symbolbild'        => get_template_directory_uri() .'/images/default-vorlage-705x150.png',
+    'src-default-symbolbild'        => get_template_directory_uri() .'/images/default-vorlage-705x150.png',    
     'src-default-symbolbild-404'    => get_template_directory_uri() .'/images/default-404.png',
     'src-default-symbolbild-category'   => get_template_directory_uri() .'/images/default-category.png',
     'src-default-symbolbild-search' => get_template_directory_uri() .'/images/default-search.png',
     'src-default-symbolbild-tag'    => get_template_directory_uri() .'/images/default-tag.png',
     'src-default-symbolbild-author' => get_template_directory_uri() .'/images/default-author.png',
     'src-default-symbolbild-archive' => get_template_directory_uri() .'/images/default-archive.png',
+    'src-default-artikel-symbolbild' => get_template_directory_uri() .'/images/default-vorlage.png',  
+    
     'login_errors'		    => 1,
-    'slider-aktiv'                  => 1,
+    'slider-aktiv'                  => 1,    
     'aktiv-defaultseitenbild'       => 0,
+    'seitenbild-size'		    => 1,
+    'seitenbild-url'		    => '',
+    'aktiv-artikelbild'		    => 1,
+    'artikelbild-size'		    => 1,    
+    'artikelbild-url'		    => '',
+    'aktiv-platzhalterbilder-indexseiten'   => 0,
+    'indexseitenbild-size'	    => 1,
+    
     'aktiv-suche'                   => 1,   
     'slider-defaultwerbeplakate'    => 1,
     'slider-numberarticle'          => 3,
@@ -54,7 +63,7 @@ $defaultoptions = array(
     'newsletter'                    => 1,
     'alle-socialmediabuttons'               => 1,
     'aktiv-circleplayer'                    => 1,
-    'aktiv-platzhalterbilder-indexseiten'   => 0,
+    
     'aktiv-linkmenu'                        => 1,
     'aktiv-startseite-kategorien'           => 1,
     'aktiv-startseite-tags'                 => 1,
@@ -170,6 +179,10 @@ $defaultbilder_liste = array(
         '10' => array(
 		'src' =>	get_template_directory_uri().'/images/defaultbild-kirche.jpg',
 		'label' => __( 'Kirche', 'piratenkleider' )
+	),
+	'11'=> array(
+		'src' =>	get_template_directory_uri().'/images/default-vorlage.png',
+		'label' => __( 'Default', 'piratenkleider' )
 	),
 );
 
@@ -700,10 +713,11 @@ $defaultplakate_textsymbolliste = array(
      }
  }        
         
-
+$curroptions = array_merge($defaultoptions, get_option('piratenkleider_theme_defaultbilder'), get_option('piratenkleider_theme_options'));	
 
 $setoptions = array(
    'piratenkleider_theme_options'   => array(
+       
        'kopfteil'   => array(
            'tabtitle'   => __('Kopfteil', 'piratenkleider'),
            'fields' => array(
@@ -800,6 +814,212 @@ $setoptions = array(
               ),
           )
        ),
+       
+       'contentbereich'   => array(
+           'tabtitle'   => __('Seiten &amp; Artikel', 'piratenkleider'),
+           'fields' => array(
+	          
+              'spezial'  => array(
+                  'type'    => 'section',
+                  'title'   => __( 'Spezielle Eigenschaften', 'piratenkleider' ),
+              ),
+	       
+              'aktiv-circleplayer'   => array(
+                  'type'    => 'bool',
+                  'title'   => __( 'Circle Player', 'piratenkleider' ),
+                  'label'   => __( 'Circle Player (HTML5 Player) f&uuml;r MP3/OGG-Dateien in einzelnen Beitr&auml;gen aktivieren.', 'piratenkleider' ),
+                  'default' => $defaultoptions['aktiv-circleplayer'],
+		  'parent'  => 'spezial'
+              ),   
+               
+              
+              'post_disclaimer' => array(
+                  'type'    => 'textarea',
+                  'title'   => __( 'Disclaimer f&uuml;r (Gast-)Artikel', 'piratenkleider' ),
+                  'label'   => __( 'Definiere ein Text als Disclaimer der bei Artikeln gezeigt werden kann. Disclaimer wird mit Custom Field show-post-disclaimer (= 0, 1,2,3) aktiviert.', 'piratenkleider' ),
+                  'default' => $defaultoptions['disclaimer_post'],
+		  'parent'  => 'spezial'
+              ),    
+	       
+	       'category-startpageview'   => array(
+                  'type'    => 'bool',
+                  'title'   => __( 'Darstellung Kategorieseiten', 'piratenkleider' ),
+                  'label'   => __( 'Kategorieseiten wie Startseite darstellen', 'piratenkleider' ),
+                  'default' => $defaultoptions['category-startpageview'],
+		  'parent'  => 'spezial'
+              ),   
+	       
+	      'darstellungseiten'  => array(
+                  'type'    => 'section',
+                  'title'   => __( 'Seitenbilder', 'piratenkleider' ),
+              ),
+	       
+	      'aktiv-defaultseitenbild' => array(
+                  'type'    => 'bool',
+                  'title'   => __( 'Defaultbilder f&uuml;r Seiten', 'piratenkleider' ),
+                  'label'   => __( 'Bilder f&uuml;r Seiten erzwingen, die von sich aus kein Artikelbild definiert haben. Wenn kein Artikelbild vorhanden ist, wird ein Defaultbild gezeigt.', 'piratenkleider' ),
+                  'default' => $defaultoptions['aktiv-defaultseitenbild'],
+		  'parent'  => 'darstellungseiten'
+              ),	      
+	      'seitenbild-size' => array(
+                  'type'    => 'select',
+                  'title'   => __( 'Gr&ouml;&szlig;e', 'piratenkleider' ),
+                  'label'   => __( 'Das Seitenbild kann in einem schmalen (150px) oder gro&szlig;en (240px) Ausschnitt dargestellt werden. ', 'piratenkleider' ),
+                  'default' => $defaultoptions['seitenbild-size'],		                     
+		  'liste'   => array(0 => "klein (150px)", 1 => "gro&szlig; (240px)"),
+		  'parent'  => 'darstellungseiten'
+              ),	
+	      'seiten-defaultbildsrc' => array(
+                  'type'    => 'bildlist',
+                  'title'   => __( 'Defaultbild', 'piratenkleider' ),
+                  'label'   => __( 'Ersatzbild für Seiten ohne eigenes Artikelbild.', 'piratenkleider' ),
+                  'default' => $defaultoptions['src-default-symbolbild'],		                     
+		  'liste'   => $defaultbilder_liste,
+		  'parent'  => 'darstellungseiten'
+              ),	
+	      'seitenbild-url' => array(
+                  'type'    => 'url',
+                  'title'   => __( 'URL', 'piratenkleider' ),
+                  'label'   => __( 'Webadresse f&uuml;r ein alternatives Seitenbild.', 'piratenkleider' ),
+                  'default' => $defaultoptions['seitenbild-url'],
+                  'parent'  => 'darstellungseiten',
+              ),
+	      'darstellungartikel'  => array(
+                  'type'    => 'section',
+                  'title'   => __( 'Artikelbilder', 'piratenkleider' ),
+              ),
+	       
+	      'aktiv-artikelbild' => array(
+                  'type'    => 'bool',
+                  'title'   => __( 'Defaultbilder f&uuml;r Artikel', 'piratenkleider' ),
+                  'label'   => __( 'Bilder f&uuml;r Artikel erzwingen, die von sich aus kein Artikelbild definiert haben. Wenn kein Artikelbild vorhanden ist, wird ein Defaultbild gezeigt.', 'piratenkleider' ),		  
+                  'default' => $defaultoptions['aktiv-artikelbild'],
+		  'parent'  => 'darstellungartikel'
+              ),
+	      'artikelbild-size' => array(
+                  'type'    => 'select',
+                  'title'   => __( 'Gr&ouml;&szlig;e', 'piratenkleider' ),
+                  'label'   => __( 'Das Artikelbild kann in einem schmalen (150px) oder gro&szlig;en (240px) Ausschnitt dargestellt werden. ', 'piratenkleider' ),
+                  'default' => $defaultoptions['artikelbild-size'],		                     
+		  'liste'   => array(0 => "klein (150px)", 1 => "gro&szlig; (240px)"),
+		  'parent'  => 'darstellungartikel'
+              ),	
+	      'artikelbild-src' => array(
+                  'type'    => 'bildlist',
+                  'title'   => __( 'Defaultbild', 'piratenkleider' ),
+                  'label'   => __( 'Ersatzbild für Seiten ohne eigenes Artikelbild.', 'piratenkleider' ),
+                  'default' => $defaultoptions['src-default-artikel-symbolbild'],		                     
+		  'liste'   => $defaultbilder_liste,
+		  'parent'  => 'darstellungartikel'
+              ),	
+	      'artikelbild-url' => array(
+                  'type'    => 'url',
+                  'title'   => __( 'URL', 'piratenkleider' ),
+                  'label'   => __( 'Webadresse f&uuml;r ein alternatives Artikelbild.', 'piratenkleider' ),
+                  'default' => $defaultoptions['artikelbild-url'],
+                  'parent'  => 'darstellungartikel',
+              ),
+	       
+	       'darstellungindexseiten'  => array(
+                  'type'    => 'section',
+                  'title'   => __( 'Indexseiten', 'piratenkleider' ),
+              ),
+              'aktiv-platzhalterbilder-indexseiten' => array(
+                  'type'    => 'bool',
+                  'title'   => __( 'Platzhalterbilder', 'piratenkleider' ),
+                  'label'   => __( 'Platzhalterbilder bei Indexseiten zu Kategorien, Tags, Suche und Archiv anzeigen.', 'piratenkleider' ),
+                  'default' => $defaultoptions['aktiv-platzhalterbilder-indexseiten'],
+		  'parent'  => 'darstellungindexseiten'
+              ),
+	      'indexseitenbild-size' => array(
+                  'type'    => 'select',
+                  'title'   => __( 'Gr&ouml;&szlig;e', 'piratenkleider' ),
+                  'label'   => __( 'Das Platzhalterbild kann in einem schmalen (150px) oder gro&szlig;en (240px) Ausschnitt dargestellt werden. ', 'piratenkleider' ),
+                  'default' => $defaultoptions['indexseitenbild-size'],		                     
+		  'liste'   => array(0 => "klein (150px)", 1 => "gro&szlig; (240px)"),
+		  'parent'  => 'darstellungindexseiten'
+              ),
+	      	       
+	     'src-default-symbolbild-404' => array(
+                  'type'    => 'imgurl',
+                  'title'   => __( 'Symbolbild für 404 Seite', 'piratenkleider' ),
+                  'label'   => __( 'URL f&uuml;r ein eigenes 404-Seitenbild.', 'piratenkleider' ),
+                  'default' => $defaultoptions['src-default-symbolbild-404'],
+                  'parent'  => 'darstellungindexseiten',
+              ),
+	     'src-default-symbolbild-category' => array(
+                  'type'    => 'imgurl',
+                  'title'   => __( 'Symbolbild für Kategorie Seite', 'piratenkleider' ),
+                  'label'   => __( 'URL f&uuml;r ein eigenes Kategorien-Seitenbild.', 'piratenkleider' ),
+                  'default' => $defaultoptions['src-default-symbolbild-category'],
+                  'parent'  => 'darstellungindexseiten',
+              ), 
+	      'src-default-symbolbild-tag' => array(
+                  'type'    => 'imgurl',
+                  'title'   => __( 'Symbolbild für Tag Seite', 'piratenkleider' ),
+                  'label'   => __( 'URL f&uuml;r ein eigenes Tag-Seitenbild.', 'piratenkleider' ),
+                  'default' => $defaultoptions['src-default-symbolbild-tag'],
+                  'parent'  => 'darstellungindexseiten',
+              ), 
+	       'src-default-symbolbild-author' => array(
+                  'type'    => 'imgurl',
+                  'title'   => __( 'Symbolbild für Autoren Seite', 'piratenkleider' ),
+                  'label'   => __( 'URL f&uuml;r ein eigenes Autoren-Seitenbild.', 'piratenkleider' ),
+                  'default' => $defaultoptions['src-default-symbolbild-author'],
+                  'parent'  => 'darstellungindexseiten',
+              ), 
+	       'src-default-symbolbild-archive' => array(
+                  'type'    => 'imgurl',
+                  'title'   => __( 'Symbolbild für Archiv Seite', 'piratenkleider' ),
+                  'label'   => __( 'URL f&uuml;r ein eigenes Archiv-Seitenbild.', 'piratenkleider' ),
+                  'default' => $defaultoptions['src-default-symbolbild-archive'],
+                  'parent'  => 'darstellungindexseiten',
+              ), 
+	        'src-default-symbolbild-search' => array(
+                  'type'    => 'imgurl',
+                  'title'   => __( 'Symbolbild für Suchergebnis-Seite', 'piratenkleider' ),
+                  'label'   => __( 'URL f&uuml;r ein eigenes Suchergebnis-Seitenbild.', 'piratenkleider' ),
+                  'default' => $defaultoptions['src-default-symbolbild-search'],
+                  'parent'  => 'darstellungindexseiten',
+              ), 
+	      'src-default-symbolbild' => array(
+                  'type'    => 'imgurl',
+                  'title'   => __( 'Symbolbild für Template-Seiten', 'piratenkleider' ),
+                  'label'   => __( 'URL f&uuml;r ein Template-Seitenbild.', 'piratenkleider' ),
+                  'default' => $defaultoptions['src-default-symbolbild'],
+                  'parent'  => 'darstellungindexseiten',
+              ),  
+	       
+
+	       
+	      'kommentare'  => array(
+                  'type'    => 'section',
+                  'title'   => __( 'Kommentare', 'piratenkleider' ),
+              ),
+	     'aktiv-commentreplylink' => array(
+                  'type'    => 'bool',
+                  'title'   => __( 'Antwortlinks', 'piratenkleider' ),
+                  'label'   => __( 'Bei der Anzeige von Kommentaren, wird unter diesen ein eigener Kommentarlink eingebaut, der das Antworten auf den Kommentar erlaubt. Dies kann zu einer Nutzung des Kommentarbereiches wie bei einem Forum f&uuml;hren, bei dem es zuletzt aber nicht mehr um den eigentlichen Beitrag geht.', 'piratenkleider' ),
+                  'default' => $defaultoptions['aktiv-commentreplylink'],	
+		 'parent'   => 'kommentare'
+              ),
+              'comments_disclaimer'  => array(
+                  'type'    => 'html',
+                  'title'   => __( 'Disclaimer', 'piratenkleider' ),
+                  'label'   => __( 'Kurzer Hinweistext (ggf. Link) zu Regeln f&uuml;r Kommentare.', 'piratenkleider' ),
+		  'parent'   => 'kommentare'
+              ),               
+               'zeige_commentbubble_null' => array(
+                  'type'    => 'bool',
+                  'title'   => __( 'Kommentarbubble', 'piratenkleider' ),
+                  'label'   => __( 'Zeige den Kommentarbubble auch dann, wenn noch keine Kommentare abgegeben wurden', 'piratenkleider' ),
+                  'default' => $defaultoptions['zeige_commentbubble_null'],
+		   'parent'   => 'kommentare'
+              ),            
+	       
+          )
+       ),
+       
        'sidebar'   => array(
            'tabtitle'   => __('Sidebar', 'piratenkleider'),
            'fields' => array(
@@ -1258,56 +1478,7 @@ $setoptions = array(
                   'liste'   => array(0 => __( 'Rechts (Standard)', 'piratenkleider' ), 1 => __( 'Unter dem Inhalt', 'piratenkleider' )),
                   'default' => 0,
               ),
-              'aktiv-commentreplylink' => array(
-                  'type'    => 'bool',
-                  'title'   => __( 'Antwortlinks auf Kommentare', 'piratenkleider' ),
-                  'label'   => __( 'Bei der Anzeige von Kommentaren, wird unter diesen ein eigener Kommentarlink eingebaut, der das Antworten auf den Kommentar erlaubt. Dies kann zu einer Nutzung des Kommentarbereiches wie bei einem Forum f&uuml;hren, bei dem es zuletzt aber nicht mehr um den eigentlichen Beitrag geht.', 'piratenkleider' ),
-                  'default' => $defaultoptions['aktiv-commentreplylink'],
-              ),
-              'comments_disclaimer'  => array(
-                  'type'    => 'html',
-                  'title'   => __( 'Kommentar-Disclaimer', 'piratenkleider' ),
-                  'label'   => __( 'Kurzer Hinweistext (ggf. Link) zu Regeln f&uuml;r Kommentare.', 'piratenkleider' ),
-              ),
-               'aktiv-defaultseitenbild' => array(
-                  'type'    => 'bool',
-                  'title'   => __( 'Defaultbilder f&uuml;r Seiten', 'piratenkleider' ),
-                  'label'   => __( 'Bilder f&uuml;r Seiten erzwingen, die von sich aus kein Artikelbild definiert haben. Wenn kein Artikelbild vorhanden ist, wird ein Defaultbild gezeigt.', 'piratenkleider' ),
-                  'default' => $defaultoptions['aktiv-defaultseitenbild'],
-              ),
-               'aktiv-platzhalterbilder-indexseiten' => array(
-                  'type'    => 'bool',
-                  'title'   => __( 'Platzhalterbilder', 'piratenkleider' ),
-                  'label'   => __( 'Platzhalterbilder bei Indexseiten zu Kategorien, Tags, Suche und Archiv anzeigen.', 'piratenkleider' ),
-                  'default' => $defaultoptions['aktiv-platzhalterbilder-indexseiten'],
-              ),
-               'zeige_commentbubble_null' => array(
-                  'type'    => 'bool',
-                  'title'   => __( 'Kommentarbubble', 'piratenkleider' ),
-                  'label'   => __( 'Zeige den Kommentarbubble auch dann, wenn noch keine Kommentare abgegeben wurden', 'piratenkleider' ),
-                  'default' => $defaultoptions['zeige_commentbubble_null'],
-              ),          
-              'aktiv-circleplayer'   => array(
-                  'type'    => 'bool',
-                  'title'   => __( 'Circle Player', 'piratenkleider' ),
-                  'label'   => __( 'Circle Player (HTML5 Player) f&uuml;r MP3/OGG-Dateien in einzelnen Beitr&auml;gen aktivieren.', 'piratenkleider' ),
-                  'default' => $defaultoptions['aktiv-circleplayer'],
-              ),   
-               
-              '1april-prank'   => array(
-                  'type'    => 'bool',
-                  'title'   => __( 'Aprilscherz', 'piratenkleider' ),
-                  'label'   => __( 'Am 1. April wird das Design um Ponys aufgewertet. Seit ihr mutig genug?', 'piratenkleider' ),
-                  'default' => $defaultoptions['1april-prank'],
-              ),   
-                
-               '1april-prank-day' => array(
-                  'type'    => 'text',
-                  'title'   => __( 'Tag des Aprilscherzes', 'piratenkleider' ),
-                  'label'   => __( 'Optional kann man hier den Tag vom 1. April &auml;ndern. Sollte nat&uuml;rlich als Datum "04-01" haben, damit es sp&auml;ter richtig kommt. (Format: "MM-DD")', 'piratenkleider' ),
-                  'default' => $defaultoptions['1april-prank-day'],
-              ), 
-               
+              
                
                
                 'login_errors' => array(
@@ -1326,21 +1497,20 @@ $setoptions = array(
                   'default' => $defaultoptions['url-newsletteranmeldung'],
                  
               ),  
-               'post_disclaimer' => array(
-                  'type'    => 'textarea',
-                  'title'   => __( 'Disclaimer f&uuml;r (Gast-)Artikel', 'piratenkleider' ),
-                  'label'   => __( 'Definiere ein Text als Disclaimer der bei Artikeln gezeigt werden kann. Disclaimer wird mit Custom Field show-post-disclaimer (= 0, 1,2,3) aktiviert.', 'piratenkleider' ),
-                  'default' => $defaultoptions['disclaimer_post'],
-              ),    
-	       
-	       'category-startpageview'   => array(
+              
+              '1april-prank'   => array(
                   'type'    => 'bool',
-                  'title'   => __( 'Kategoriedarstellung', 'piratenkleider' ),
-                  'label'   => __( 'Kategorieseiten wie Startseite darstellen', 'piratenkleider' ),
-                  'default' => $defaultoptions['category-startpageview'],
+                  'title'   => __( 'Aprilscherz', 'piratenkleider' ),
+                  'label'   => __( 'Am 1. April wird das Design um Ponys aufgewertet. Seit ihr mutig genug?', 'piratenkleider' ),
+                  'default' => $defaultoptions['1april-prank'],
               ),   
-	       
-               
+                
+               '1april-prank-day' => array(
+                  'type'    => 'text',
+                  'title'   => __( 'Tag des Aprilscherzes', 'piratenkleider' ),
+                  'label'   => __( 'Optional kann man hier den Tag vom 1. April &auml;ndern. Sollte nat&uuml;rlich als Datum "04-01" haben, damit es sp&auml;ter richtig kommt. (Format: "MM-DD")', 'piratenkleider' ),
+                  'default' => $defaultoptions['1april-prank-day'],
+              ),  
                
                
           )

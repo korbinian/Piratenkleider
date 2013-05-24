@@ -1,21 +1,40 @@
-<?php get_header(); ?>
+<?php get_header(); 
+global $options;  
+?>
 <div class="section content" id="main-content">
   <div class="row">
     <div class="content-primary">
-      <div class="content-header">
-           <h1><?php the_title(); ?></h1>
-          <div class="symbolbild">                   
-              <?php 
-              if (has_post_thumbnail()) {
-                  the_post_thumbnail(); 
-              } else {  ?>
-                  <img src="<?php echo get_template_directory_uri(); ?>/images/default-wissen.png" alt=""  >
-                <?php  }  ?>                            
-           </div>   
-      </div>
-        <div class="skin">
-        <?php if ( have_posts() ) while ( have_posts() ) : the_post(); ?>
-        <?php the_content(); ?>
+	
+	<?php if ( have_posts() ) while ( have_posts() ) : the_post();         
+        $custom_fields = get_post_custom();
+        ?>
+	<?php
+	    $image_url = '';	  
+	    if (($options['aktiv-platzhalterbilder-indexseiten']==1) && (isset($options['src-default-symbolbild']))) {  
+		    $image_url = $options['src-default-symbolbild'];		    
+	    }	    
+	    
+	    if (isset($image_url) && (strlen($image_url)>4)) { 
+		if ($options['indexseitenbild-size']==1) {
+		    echo '<div class="content-header-big">';
+		} else {
+		    echo '<div class="content-header">';
+		}
+		?>    		    		    		        
+		   <h1 class="post-title"><span><?php the_title(); ?></span></h1>
+		   <div class="symbolbild"><img src="<?php echo $image_url ?>" alt="">		  
+		   </div>
+		</div>  	
+	    <?php } ?>
+	
+      <div class="skin">
+	  
+	  <?php if (!(isset($image_url) && (strlen($image_url)>4))) { ?>
+	    <h1 class="post-title"><span><?php the_title(); ?></span></h1>
+	<?php }  
+	
+ 
+         the_content(); ?>
         <?php wp_link_pages( array( 'before' => '' . __( 'Seiten:', 'piratenkleider' ), 'after' => '' ) ); ?>
         <?php edit_post_link( __( 'Bearbeiten', 'piratenkleider' ), '', '' ); ?>
         <?php endwhile; ?>

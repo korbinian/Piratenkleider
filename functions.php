@@ -11,7 +11,7 @@
 require( get_template_directory() . '/inc/constants.php' );
 
 
-$options = array_merge($defaultoptions, get_option('piratenkleider_theme_options'));	
+$options = array_merge($defaultoptions, get_option('piratenkleider_theme_defaultbilder'), get_option('piratenkleider_theme_options'));	
     
     
 if ($options['anonymize-user']==1) {
@@ -866,7 +866,7 @@ function dimox_breadcrumbs() {
         echo $before . get_the_title() . $after;
       }
  
-    } elseif ( !is_single() && !is_page() && get_post_type() != 'post' && !is_404() ) {
+    } elseif ( !is_single() && !is_page() && !is_search() && get_post_type() != 'post' && !is_404() ) {
       $post_type = get_post_type_object(get_post_type());
       echo $before . $post_type->labels->singular_name . $after;
  
@@ -893,7 +893,7 @@ function dimox_breadcrumbs() {
       echo $before . get_the_title() . $after;
  
     } elseif ( is_search() ) {
-      echo $before . __( 'Suche', 'piratenkleider' ).'"' . get_search_query() . '"' . $after;
+      echo $before . __( 'Suche nach ', 'piratenkleider' ).'"' . get_search_query() . '"' . $after;
  
     } elseif ( is_tag() ) {
       echo $before . __( 'Artikel mit Schlagwort ', 'piratenkleider' ). '"' . single_tag_title('', false) . '"' . $after;

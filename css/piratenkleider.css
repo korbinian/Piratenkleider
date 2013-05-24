@@ -1368,12 +1368,14 @@ display: inline-block;
 .content-header h1,
 .content-header-big h1  {
     position: absolute;
-    left: 25px;
+    left: 20px;
     top: 1.5em;
     display: inline-block;
-    background: white;
+    background-color: white;
+    background-color: rgba(255, 255, 255, 0.9);
     padding: 3px 5px 1px 5px;    
     line-height: 1.25em;
+    max-width: 665px;
 }
 
 .content-aside a img {
@@ -1762,8 +1764,10 @@ img.wp-smiley {
 .home .post-entry p {
   margin-bottom: 0px; }
 
-.single .post-title {
-  margin-bottom: 40px; }
+.single .post-title, 
+.content-primary .skin h1 {  
+  margin-bottom: 40px; 
+}
 .single .post-entry p {
   margin-bottom: 20px; }
 

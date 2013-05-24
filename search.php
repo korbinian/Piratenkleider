@@ -6,17 +6,36 @@
 <div class="section content" id="main-content">
   <div class="row">
     <div class="content-primary">
-      <div class="content-header">
-          <h1><?php printf( __( 'Suchergebnisse f&uuml;r %s', 'piratenkleider' ), '' .get_search_query() . '' ); ?></h1>                
-          
-          <?php if ($options['aktiv-platzhalterbilder-indexseiten']) { ?>         
-          <div class="symbolbild"> 
-                    <img src="<?php echo $bilderoptions['src-default-symbolbild-search'] ?>" alt="" >              
-           </div>                                 
-          <?php } ?>           
-      </div>
-        <div class="skin">
-            <?php 
+	
+	
+	
+	
+	<?php
+	    $image_url = '';	  
+	    if (($options['aktiv-platzhalterbilder-indexseiten']==1) && (isset($options['src-default-symbolbild-search']))) {  
+		    $image_url = $options['src-default-symbolbild-search'];		    
+	    }	    
+	    
+	    if (isset($image_url) && (strlen($image_url)>4)) { 
+		if ($options['indexseitenbild-size']==1) {
+		    echo '<div class="content-header-big">';
+		} else {
+		    echo '<div class="content-header">';
+		}
+		?>    		    		    		        
+		   <h1 class="post-title"><span><?php printf( __( 'Suchergebnisse f&uuml;r %s', 'piratenkleider' ), '' .get_search_query() . '' ); ?></span></h1>
+		   <div class="symbolbild"><img src="<?php echo $image_url ?>" alt="">		  
+		   </div>
+		</div>  	
+	    <?php } ?>
+	
+      <div class="skin">
+	  
+	  <?php if (!(isset($image_url) && (strlen($image_url)>4))) { ?>
+	    <h1 class="post-title"><span><?php printf( __( 'Suchergebnisse f&uuml;r %s', 'piratenkleider' ), '' .get_search_query() . '' ); ?></span></h1>
+	<?php }  
+	
+	
 	    if ( have_posts() ) : ?>
                 <?php
                 /* Run the loop for the search to output the results.

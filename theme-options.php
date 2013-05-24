@@ -121,13 +121,40 @@ function theme_options_do_page($tab = '') {
                                             type=\"checkbox\" value=\"1\" ".checked( $options[$name],1,false ).">\n";
                                     echo "\t\t\t";
                                     echo "<label for=\"piratenkleider_theme_options[$name]\">$label</label>\n";                                     
-                                } elseif (($type=='text') ||($type=='html') ||($type=='url')) {
+                                } elseif ($type=='text') {
                                     echo "\t\t\t";
                                     echo "<input class=\"regular-text\" id=\"piratenkleider_theme_options[$name]\" 
                                             type=\"text\" name=\"piratenkleider_theme_options[$name]\" 
-                                            value=\"".esc_attr( $options[$name] )."\"><br>\n";
+					    value=\"";
+				    if (isset($options[$name])) echo esc_attr( $options[$name] );				
+				    
+				    echo "\"><br>\n";
                                     echo "\t\t\t";
                                     echo "<label for=\"piratenkleider_theme_options[$name]\">$label</label>\n";
+				} elseif (($type=='html') ||($type=='url')) {
+                                    echo "\t\t\t";
+                                    echo "<input class=\"large-text\" id=\"piratenkleider_theme_options[$name]\" 
+                                            type=\"text\" name=\"piratenkleider_theme_options[$name]\" 
+					    size=\"120\" value=\"";
+				    if (isset($options[$name])) echo esc_attr( $options[$name] );				
+				    
+				    echo "\"><br>\n";
+                                    echo "\t\t\t";
+                                    echo "<label for=\"piratenkleider_theme_options[$name]\">$label</label>\n";
+				} elseif ($type=='imgurl') {
+                                    echo "\t\t\t";
+                                    echo "<input class=\"large-text\" id=\"piratenkleider_theme_options[$name]\" 
+                                            type=\"text\" name=\"piratenkleider_theme_options[$name]\" 
+					    size=\"120\" value=\"";
+				    if (isset($options[$name])) echo esc_attr( $options[$name] );				
+				    echo "\"><br>\n";
+				    if (isset($options[$name])) {
+					    echo "<img class=\"imgurl\" src=\"".esc_attr( $options[$name] )."\" alt=\"\">\n";
+				    }    
+                                    echo "\t\t\t";
+                                    echo "<label for=\"piratenkleider_theme_options[$name]\">$label</label>\n";    
+
+				    
                                 } elseif ($type=='textarea')  {
                                     echo "\t\t\t";                                                                                                            
                                     echo "<textarea class=\"large-text\" id=\"piratenkleider_theme_options[$name]\" 
@@ -142,7 +169,29 @@ function theme_options_do_page($tab = '') {
                                             type=\"text\" name=\"piratenkleider_theme_options[$name]\" 
                                             value=\"".esc_attr( $options[$name] )."\"><br>\n";
                                     echo "\t\t\t";
-                                    echo "<label for=\"piratenkleider_theme_options[$name]\">$label</label>\n";                                         
+                                    echo "<label for=\"piratenkleider_theme_options[$name]\">$label</label>\n";  
+				} elseif ($type=='bildlist') {
+				   echo "\t\t\t";                                    
+                                    foreach($liste as $i => $value) {   
+                                        echo "\t\t\t\t";
+					$src = $value['src'];
+					$label = $value['label'];
+					echo "<label class=\"tile";
+					if ( $src == $options[$name] ) {
+                                            echo ' checked';
+                                        }  
+					echo "\">\n";
+                                        echo '<input type="radio" value="'.$src.'" 
+					    name="piratenkleider_theme_options['.$name.']"';
+                                        if ( $src == $options[$name] ) {
+                                            echo ' checked="checked"';
+                                        }                                                                                                                                                                
+                                        echo '> ';
+                                        echo $label.'<br><img src="'.$src.'" alt="" style="width: 320px; height: auto;">';					                                                                                                                                                                                                      
+                                        echo "</label>\n";                                          
+                                    }                                                                          
+                                    echo "<br style=\"clear: left;\">\n";
+				    
                                 } elseif ($type=='select') {
                                     echo "\t\t\t";
                                     echo "<select name=\"piratenkleider_theme_options[$name]\">\n";
@@ -252,7 +301,7 @@ function theme_options_validate( $input ) {
                              $output[$name]  =  $input[$name] ;     
                         } elseif ($type=='html') {;    
                             $output[$name] = $input[$name];
-                        } elseif ($type=='url') {
+                        } elseif (($type=='url') || ($type=='imgurl')) {
                              $output[$name]  =  esc_url( $input[$name] ); 
                         } elseif ($type=='number') {
                             $output[$name]  =  wp_filter_nohtml_kses( $input[$name] ); 
@@ -301,6 +350,8 @@ function theme_options_validate( $input ) {
             update_option('require_name_email',1);
         }
     }  
+
+	
    return $output;
 
 }
@@ -380,37 +431,6 @@ function theme_defaultbilder_do_page() {
                             </label>
                 
 
-                            <?php 
-                                if ( ! isset( $checked ) ) $checked = '';
-                                foreach ( $defaultbilder_liste as $option ) {
-                                        if ( '' != $defaultseitenbildsrc ) {
-                                                if ( $defaultseitenbildsrc == $option['src'] ) {
-                                                        $checked = "checked=\"checked\"";
-                                                } else {
-                                                        $checked = '';
-                                                }
-                                        }
-                                        ?>
-                                        <label class="tile">
-                                            <input type="radio" name="piratenkleider_theme_defaultbilder[seiten-defaultbildsrc]" value="<?php echo esc_attr( $option['src'] ); ?>" <?php echo $checked; ?> />                                                     
-                                            <?php echo $option['label']?>
-                                            <br> 
-                                            <img src="<?php echo $option['src'] ?>" style="width: 320px; height: auto;">
-
-                                        </label>
-                                <?php } ?>        
-                                <br style="clear: left;">   
-                                <h3><?php _e( 'Alternatives Seitenbild als URL', 'piratenkleider' ); ?></h3>
-                                <input id="piratenkleider_theme_defaultbilder[seiten-alternativesrc]" class="regular-text" type="text" name="piratenkleider_theme_defaultbilder[seiten-alternativesrc]" value="<?php echo esc_attr( $options['seiten-alternativesrc'] ); ?>" />
-                               <label class="description" for="piratenkleider_theme_defaultbilder[seiten-alternativesrc]">
-                                   <?php _e( 'URL inkl. http:// zum Bild. Dieses kann auch vorher &uuml;ber den Mediendialog hochgeladen worden sein. ', 'piratenkleider' ); ?>                              
-                                <br>
-
-                                <?php _e( 'Die Bilder sollten folgende Dimension haben: ', 'piratenkleider' ); ?>
-                                    <?php echo $defaultoptions['bigslider-thumb-width'].'x'.$defaultoptions['bigslider-thumb-height'].' Pixel' ?>
-                                   
-                              </label>
-
                                 
                                      
                             <?php                                                                                     
@@ -479,99 +499,7 @@ function theme_defaultbilder_do_page() {
                               </label>
 
                                       
-                      <table>
-                         <tr valign="top">
-                        <th scope="row"><?php _e( 'Symbolbild f&uuml;r 404 Seite', 'piratenkleider' ); ?></th>
-                        <td>
-                            <input id="piratenkleider_theme_defaultbilder[src-default-symbolbild-404]" class="regular-text" type="text" name="piratenkleider_theme_defaultbilder[src-default-symbolbild-404]" value="<?php echo esc_attr( $options['src-default-symbolbild-404'] ); ?>" />
-                            <label class="description" for="piratenkleider_theme_defaultbilder[src-default-symbolbild-404]">
-                              <?php _e( 'URL f&uuml;r ein eigenes 404-Seitenbild.', 'piratenkleider' ); ?>
-                               <br>
-                               <?php _e( 'Default:', 'piratenkleider' ); ?><br>
-                               <code><?php echo $defaultoptions['src-default-symbolbild-404']?></code>
-                             </label>
 
-                        </td>
-                        </tr>
-                        <tr valign="top">
-                        <th scope="row"><?php _e( 'Symbolbild f&uuml;r Kategorie Seite', 'piratenkleider' ); ?></th>
-                        <td>
-                            <input id="piratenkleider_theme_defaultbilder[src-default-symbolbild-category]" class="regular-text" type="text" name="piratenkleider_theme_defaultbilder[src-default-symbolbild-category]" value="<?php echo esc_attr( $options['src-default-symbolbild-category'] ); ?>" />
-                            <label class="description" for="piratenkleider_theme_defaultbilder[src-default-symbolbild-category]">
-                              <?php _e( 'URL f&uuml;r ein eigenes Kategorien-Seitenbild.', 'piratenkleider' ); ?>
-                               <br>
-                               <?php _e( 'Default:', 'piratenkleider' ); ?><br>
-                               <code><?php echo $defaultoptions['src-default-symbolbild-category']?></code>
-                             </label>
-
-                        </td>
-                        </tr>
-                        <tr valign="top">
-                        <th scope="row"><?php _e( 'Symbolbild f&uuml;r Tag Seite', 'piratenkleider' ); ?></th>
-                        <td>
-                            <input id="piratenkleider_theme_defaultbilder[src-default-symbolbild-tag]" class="regular-text" type="text" name="piratenkleider_theme_defaultbilder[src-default-symbolbild-tag]" value="<?php echo esc_attr( $options['src-default-symbolbild-tag'] ); ?>" />
-                            <label class="description" for="piratenkleider_theme_defaultbilder[src-default-symbolbild-tag]">
-                              <?php _e( 'URL f&uuml;r ein eigenes Tag-Seitenbild.', 'piratenkleider' ); ?>
-                               <br>
-                               <?php _e( 'Default:', 'piratenkleider' ); ?><br>
-                               <code><?php echo $defaultoptions['src-default-symbolbild-tag']?></code>
-                             </label>
-
-                        </td>
-                        </tr>
-                        <tr valign="top">
-                        <th scope="row"><?php _e( 'Symbolbild f&uuml;r Autoren Seite', 'piratenkleider' ); ?></th>
-                        <td>
-                            <input id="piratenkleider_theme_defaultbilder[src-default-symbolbild-author]" class="regular-text" type="text" name="piratenkleider_theme_defaultbilder[src-default-symbolbild-author]" value="<?php echo esc_attr( $options['src-default-symbolbild-author'] ); ?>" />
-                            <label class="description" for="piratenkleider_theme_defaultbilder[src-default-symbolbild-author]">
-                              <?php _e( 'URL f&uuml;r ein eigenes Autoren-Seitenbild.', 'piratenkleider' ); ?>
-                               <br>
-                               <?php _e( 'Default:', 'piratenkleider' ); ?><br>
-                               <code><?php echo $defaultoptions['src-default-symbolbild-author']?></code>
-                             </label>
-
-                        </td>
-                        </tr>
-                        <tr valign="top">
-                        <th scope="row"><?php _e( 'Symbolbild f&uuml;r Archiv Seite', 'piratenkleider' ); ?></th>
-                        <td>
-                            <input id="piratenkleider_theme_defaultbilder[src-default-symbolbild-archive]" class="regular-text" type="text" name="piratenkleider_theme_defaultbilder[src-default-symbolbild-archive]" value="<?php echo esc_attr( $options['src-default-symbolbild-archive'] ); ?>" />
-                            <label class="description" for="piratenkleider_theme_defaultbilder[src-default-symbolbild-archive]">
-                              <?php _e( 'URL f&uuml;r ein eigenes Archiv-Seitenbild.', 'piratenkleider' ); ?>
-                               <br>
-                               <?php _e( 'Default:', 'piratenkleider' ); ?><br>
-                               <code><?php echo $defaultoptions['src-default-symbolbild-archive']?></code>
-                             </label>
-
-                        </td>
-                        </tr>
-                        <tr valign="top">
-                        <th scope="row"><?php _e( 'Symbolbild f&uuml;r Suchergebnis-Seite', 'piratenkleider' ); ?></th>
-                        <td>
-                            <input id="piratenkleider_theme_defaultbilder[src-default-symbolbild-search]" class="regular-text" type="text" name="piratenkleider_theme_defaultbilder[src-default-symbolbild-search]" value="<?php echo esc_attr( $options['src-default-symbolbild-search'] ); ?>" />
-                            <label class="description" for="piratenkleider_theme_defaultbilder[src-default-symbolbild-search]">
-                              <?php _e( 'URL f&uuml;r ein eigenes Suchergebnis-Seitenbild.', 'piratenkleider' ); ?>
-                               <br>
-                               <?php _e( 'Default:', 'piratenkleider' ); ?><br>
-                               <code><?php echo $defaultoptions['src-default-symbolbild-search']?></code>
-                             </label>
-
-                        </td>
-                        </tr>
-                        <tr valign="top">
-                        <th scope="row"><?php _e( 'Symbolbild f&uuml;r Template-Seiten', 'piratenkleider' ); ?></th>
-                        <td>
-                            <input id="piratenkleider_theme_defaultbilder[src-default-symbolbild]" class="regular-text" type="text" name="piratenkleider_theme_defaultbilder[src-default-symbolbild]" value="<?php echo esc_attr( $options['src-default-symbolbild'] ); ?>" />
-                            <label class="description" for="piratenkleider_theme_defaultbilder[src-default-symbolbild]">
-                              <?php _e( 'URL f&uuml;r ein Template-Seitenbild.', 'piratenkleider' ); ?>
-                               <br>
-                               <?php _e( 'Default:', 'piratenkleider' ); ?><br>
-                               <code><?php echo $defaultoptions['src-default-symbolbild']?></code>
-                             </label>
-
-                        </td>
-                        </tr>
-             </table>
             </div>
     
             

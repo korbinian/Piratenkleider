@@ -75,7 +75,7 @@ p.submit {
 }
 
 #einstellungen input.regular-text {
-    width: 30em;
+    width: 40em;
 }
 #einstellungen select {
     min-width: 4em;
@@ -86,15 +86,21 @@ h2.nav-tab-wrapper, h3.nav-tab-wrapper {
 
 label.tile {
     width: 320px;
-    height: 150px;
-    float: left;
-    border: 1px solid #ccc;
-    padding: 1px;
+    height: auto;
+    float: left;    
+    padding: 0 2px;
     margin: 5px;
+    border: 3px solid transparent;
 }
 label.tile:hover {
     background-color: #eee;
 }
+label.tile img {
+    margin: 0;
+    padding: 0;
+}
+label.checked, label.tile:hover, label.tile:focus { border-color: orange; background: orange;} 
+
 label.plakattile {
     width: 160px;
     height: 250px;
@@ -105,4 +111,8 @@ label.plakattile {
 }
 label.plakattile:hover {
     background-color: #eee;
+}
+
+img.imgurl {
+    display: block;
 }

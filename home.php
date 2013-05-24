@@ -37,8 +37,7 @@
         </div>
         <div class="post-info">
          <?php  $num_comments = get_comments_number();
-             if (!isset($options['zeige_commentbubble_null'])) 
-                $options['zeige_commentbubble_null'] = $defaultoptions['zeige_commentbubble_null'];   
+  
           if (($num_comments>0) || ( $options['zeige_commentbubble_null'])) { ?>
          <div class="commentbubble"> 
             <?php 
