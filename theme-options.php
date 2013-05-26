@@ -8,7 +8,6 @@ add_action( 'admin_menu', 'theme_options_add_page' );
  */
 function theme_options_init(){
 	register_setting( 'piratenkleider_options', 'piratenkleider_theme_options', 'theme_options_validate' );
-        register_setting( 'piratenkleider_defaultbilder', 'piratenkleider_theme_defaultbilder', 'theme_defaultbilder_validate' );
         register_setting( 'piratenkleider_kontaktinfos', 'piratenkleider_theme_kontaktinfos', 'theme_kontaktinfos_validate' );
         register_setting( 'piratenkleider_designspecials', 'piratenkleider_theme_designspecials', 'theme_designspecials_validate' );
 }
@@ -20,11 +19,7 @@ function theme_options_add_page() {
 	add_theme_page( __( 'Takelage einstellen', 'piratenkleider' ),
                         __( 'Takelage einstellen', 'piratenkleider' ), 
                        'edit_theme_options', 'theme_options', 'theme_options_do_page' );
-         
-        add_theme_page( __( 'Segel setzen', 'piratenkleider' ), 
-                __( 'Segel setzen', 'piratenkleider' ), 
-                'edit_theme_options', 'theme_defaultbilder', 'theme_defaultbilder_do_page' );
-          
+                   
         add_theme_page( __( 'Captn & Crew', 'piratenkleider' ), 
                 __( 'Captn & Crew', 'piratenkleider' ), 
                 'edit_theme_options', 'theme_kontaktinfos', 'theme_kontaktinfos_do_page' );
@@ -39,6 +34,8 @@ function theme_options_add_page() {
  */
 function theme_options_do_page($tab = '') {
         global $setoptions;  
+        global $options;
+        
 	if ( ! isset( $_REQUEST['settings-updated'] ) )
 		$_REQUEST['settings-updated'] = false;
        ?>
@@ -60,7 +57,6 @@ function theme_options_do_page($tab = '') {
         if (!isset($setoptions['piratenkleider_theme_options'][$tab])) {
             echo "Invalid Tab-Option or undefined Option-Field $tab";            
         }        
-        $options= get_option( 'piratenkleider_theme_options' );	
 
         
         echo "<h3 class=\"nav-tab-wrapper\">\n";
@@ -191,7 +187,32 @@ function theme_options_do_page($tab = '') {
                                         echo "</label>\n";                                          
                                     }                                                                          
                                     echo "<br style=\"clear: left;\">\n";
-				    
+                                } elseif ($type=='bildchecklist') {
+				   echo "\t\t\t";                      
+                                    foreach ( $liste as $option ) {    
+                                        $checked = '';
+                                        if ((isset($options[$name])) && (is_array($options[$name]))) {
+                                            foreach ($options[$name] as $current) {    
+                                                if ($current == $option['src']) {
+                                                     $checked = "checked=\"checked\"";                                                                                            
+                                                     break;
+                                                }                                        
+                                            }
+                                        }                                    
+                                         ?>       
+                                        <label class="plakattile">
+                                            <div style="height: 40px; width: 100%; margin:0 auto; background-color: #F28900; color: white; display: block;">  
+                                            <input type="checkbox" name="piratenkleider_theme_options[<?php echo $name?>][]" 
+                                                   value="<?php echo esc_attr( $option['src'] ); ?>" <?php echo $checked; ?> />                                                     
+                                            <?php echo $option['label']?>
+                                            </div>
+                                            <div style="height: 200px; overflow: hidden; margin: 5px auto; width: 150px; padding: 0;">
+                                            <img src="<?php echo $option['src'] ?>" style="width: 150px; height: auto;  ">
+                                            </div>
+                                        </label>
+                                     <?php }                                                                                                                             
+                                    echo "<br style=\"clear: left;\">\n";
+
                                 } elseif ($type=='select') {
                                     echo "\t\t\t";
                                     echo "<select name=\"piratenkleider_theme_options[$name]\">\n";
@@ -211,12 +232,10 @@ function theme_options_do_page($tab = '') {
                                         echo '</option>';                                                                                                                                                              
                                         echo "\n";                                            
                                     }  
-                                        echo "</select><br>\n";                                   
-                                        echo "\t\t\t";
-                                        echo "<label for=\"piratenkleider_theme_options[$name]\">$label</label>\n"; 
+                                        echo "\t\t\t</select><br>\n";                                   
+                                        echo "\t\t\t<label for=\"piratenkleider_theme_options[$name]\">$label</label>\n"; 
 
                                 }
-
 
                                     echo "\t\t</td>\n";
                                     echo "\t</tr>\n";
@@ -307,6 +326,8 @@ function theme_options_validate( $input ) {
                             $output[$name]  =  wp_filter_nohtml_kses( $input[$name] ); 
                         } elseif ($type=='select') {                        
                             $output[$name]  =  wp_filter_nohtml_kses( $input[$name] ); 
+                        } elseif ($type=='bildchecklist') {                            
+                            $output[$name]  = $input[$name];
                         } else {
                             $output[$name]  =  wp_filter_nohtml_kses( $input[$name] );
                         }
@@ -316,6 +337,8 @@ function theme_options_validate( $input ) {
                             $output[$name] =0;
                         } elseif ($type=='text') {
                             $output[$name] = "";
+                        } elseif ($type=='textarea') {
+                            $output[$name] = "";     
                         } elseif ($type=='html') {
                             $output[$name] = "";    
                         } elseif ($type=='url') {
@@ -351,226 +374,24 @@ function theme_options_validate( $input ) {
         }
     }  
 
+   
+    if (($input['slider-alternativesrc'] != '') && (strlen(trim($input['slider-alternativesrc']))>10)) {            
+         $input['slider-defaultbildsrc'] = $input['slider-alternativesrc'];
+    }
+    if (($input['artikelbild-url'] != '') && (strlen(trim($input['artikelbild-url']))>10)) {          
+         $input['artikelbild-src'] = $input['artikelbild-url'];
+    }
+    
+    if (($input['seitenbild-url'] != '') && (strlen(trim($input['seitenbild-url']))>10)) {            
+         $input['seiten-defaultbildsrc'] = $input['seitenbild-url'];
+    }
+
+  
+    
 	
    return $output;
 
 }
-
-
-/**
- * Defaultbilder Optionen
- */
-function theme_defaultbilder_do_page() {
-   global $defaultbilder_liste;
-   global $defaultplakate_liste;
-   global $defaultoptions;
-   
-	if ( ! isset( $_REQUEST['settings-updated'] ) )
-		$_REQUEST['settings-updated'] = false;
-
-	?>
-      
-	<div class="wrap">
-            
-            <div class="piratenkleider-optionen">  <!-- begin: .piratenkleider-optionen -->    
-		<?php screen_icon(); echo "<h2>" . wp_get_theme() . __( ' Segel setzen: Defaultbilder ', 'piratenkleider' ) . "</h2>"; ?>
-
-		<?php if ( false !== $_REQUEST['settings-updated'] ) : ?>
-		<div class="updated fade"><p><strong><?php _e( 'Defaultbilder wurden gespeichert.', 'piratenkleider' ); ?></strong></p></div>
-		<?php endif; ?>
-
-                
-     
-        
-                
-		<form method="post" action="options.php">
-                    <?php settings_fields( 'piratenkleider_defaultbilder' ); ?>
-                    <?php $options = get_option( 'piratenkleider_theme_defaultbilder' ); 
-                        $defaultbildsrc = $options['slider-defaultbildsrc']; 
-                        $defaultseitenbildsrc = $options['seiten-defaultbildsrc']; 
-                      
-                        if ( ! isset( $options['plakate-url'] ) )
-                          $options['plakate-url'] = $defaultoptions['plakate-url']; 
-                        if ( ! isset( $options['plakate-title'] ) )
-                          $options['plakate-title'] = $defaultoptions['plakate-title'];                         
-                    ?>
-                    
-                    
-              <div id="einstellungen">                    
-                <div>
-                      
-
-                            <?php 
-                                if ( ! isset( $checked ) ) $checked = '';
-                                foreach ( $defaultbilder_liste as $option ) {
-
-
-                                        if ( '' != $defaultbildsrc ) {
-                                                if ( $defaultbildsrc == $option['src'] ) {
-                                                        $checked = "checked=\"checked\"";
-                                                } else {
-                                                        $checked = '';
-                                                }
-                                        }
-                                        ?>
-                                        <label class="tile">                                                                                          
-                                               <input type="radio" name="piratenkleider_theme_defaultbilder[slider-defaultbildsrc]" value="<?php echo esc_attr( $option['src'] ); ?>" <?php echo $checked; ?> />                                                                                                 
-                                            <?php echo $option['label']?>
-                                               <br> 
-                                            <img src="<?php echo $option['src'] ?>" style="margin: 5px auto; width: 320px; height: auto;">
-                                        </label>
-                                <?php } ?>        
-                                <br style="clear: left;">     
-                                <h3><?php _e( 'Alternatives Sliderbild als URL', 'piratenkleider' ); ?></h3>
-                                 <input id="piratenkleider_theme_defaultbilder[slider-alternativesrc]" class="regular-text" type="text" name="piratenkleider_theme_defaultbilder[slider-alternativesrc]" value="<?php echo esc_attr( $options['slider-alternativesrc'] ); ?>" />
-                            <label class="description" for="piratenkleider_theme_defaultbilder[slider-alternativesrc]">
-                                <?php _e( 'URL inkl. http:// zum Bild. Dieses kann auch vorher &uuml;ber den Mediendialog hochgeladen worden sein.', 'piratenkleider' ); ?>
-                                <br>
-                                       <?php _e( 'Die Bilder sollten folgende Dimension haben: ', 'piratenkleider' ); ?>
-                                    <?php echo $defaultoptions['bigslider-thumb-width'].'x'.$defaultoptions['bigslider-thumb-height'].' Pixel' ?>
-                            </label>
-                
-
-                                
-                                     
-                            <?php                                                                                     
-                                if ( ! isset( $checked ) ) $checked = '';
-                                foreach ( $defaultplakate_liste as $option ) {    
-                                    $checked = '';
-                                    if ((isset($options['plakate-src'])) && (is_array($options['plakate-src']))) {
-                                        foreach ($options['plakate-src'] as $current) {                                                                                      
-                                            if ($current == $option['src']) {
-                                                 $checked = "checked=\"checked\"";                                                                                            
-                                                 break;
-                                            }                                           ;
-                                        }
-                                    }                                    
-                                     ?>       
-                                    <label class="plakattile">
-                                        <div style="height: 40px; width: 100%; margin:0 auto; background-color: #F28900; color: white; display: block;">  
-                                        <input type="checkbox" name="piratenkleider_theme_defaultbilder[plakate-src][]" value="<?php echo esc_attr( $option['src'] ); ?>" <?php echo $checked; ?> />                                                     
-                                        <?php echo $option['label']?>
-                                        </div>
-                                        <div style="height: 200px; overflow: hidden; margin: 5px auto; width: 150px; padding: 0;">
-                                        <img src="<?php echo $option['src'] ?>" style="width: 150px; height: auto;  ">
-                                        </div>
-                                    </label>
-                               <?php } ?>        
-                                <br style="clear: left;"> 
-                                <p><?php _e( ' Diese Bilder werden in der Sidebar rechts gezeigt, sofern dieses &uuml;ber die Optionen (vgl. Slider) auch eingeschaltet ist.', 'piratenkleider' ); ?></p>
-                                <table>
-                                    <tr>
-                                        <th><?php _e( 'Optionaler Ersatztitel', 'piratenkleider' ); ?></th>
-                                        <td> <input id="piratenkleider_theme_defaultbilder[plakate-title]" class="regular-text" type="text" name="piratenkleider_theme_defaultbilder[plakate-title]" value="<?php echo esc_attr( $options['plakate-title'] ); ?>" />
-                                        <label class="description" for="piratenkleider_theme_defaultbilder[plakate-title]">
-                                           <?php _e( 'Dieser Titel wird als Alternativ-Text verwendet. ', 'piratenkleider' ); ?><br>
-                                        <?php _e( 'Solange keine Verlinkung erfolgt, ist diese Angabe optional, da die Plakatbilder dann nur "Schmuckbilder" sind und keinen auf die Seite bezogenen Inhalt mitliefern.', 'piratenkleider' ); ?>
-                                         </label></td>
-                                    </tr>
-                                    <tr>
-                                        <th><?php _e( 'Optionale URL', 'piratenkleider' ); ?></th>
-                                        <td> <input id="piratenkleider_theme_defaultbilder[plakate-url]" class="regular-text" type="text" name="piratenkleider_theme_defaultbilder[plakate-url]" value="<?php echo esc_attr( $options['plakate-url'] ); ?>" />
-                                        <label class="description" for="piratenkleider_theme_defaultbilder[plakate-url]">
-                                           <?php _e( 'Optionale Webadresse zur Verlinkung der Plakate mit einer Informationsseite', 'piratenkleider' ); ?>
-                                         </label></td>
-                                    </tr>
-                                </table>    
-                                
-                                
-                                <h3><?php _e( 'Eigene Plakatbilder:', 'piratenkleider' ); ?></h3>
-                                
-                                <textarea id="piratenkleider_theme_defaultbilder[plakate-altadressen]" class="large-text" cols="30" rows="5" name="piratenkleider_theme_defaultbilder[plakate-altadressen]"><?php echo esc_textarea( $options['plakate-altadressen'] ); ?></textarea>
-				<label class="description" for="piratenkleider_theme_defaultbilder[plakate-altadressen]"><?php _e( 'Adressen alternativer Plakatbilder', 'piratenkleider' ); ?></label>
-
-                                <p>    
-                                    <?php _e( 'Angabe der URLs inkl. http:// zum Bild. Wenn es mehrere sind, werden die einzelnen Adressen durch Zeilenumbruch getrennt. ', 'piratenkleider' ); ?>
-                                    <br>
-                                    <?php _e( 'Die Bilder sollten folgende Dimension haben: ', 'piratenkleider' ); ?>
-                                    <?php echo $defaultoptions['plakate-width'].'x'.$defaultoptions['plakate-height'].' Pixel' ?>
-                                   </p><p>
-                                 <?php _e( 'Sollen die Bilder zus&auml;tzlich mit einem eigenen Titel und einer Webadresse versehen werden werden diese Angabe durch ein "|" zeichen in folgender Reihenfolge getrennt: <code>Bild URL|Titel|URL Webpage</code>', 'piratenkleider' ); ?>
-                                <br>
-                                    <?php _e( 'Beispiel: ', 'piratenkleider' ); ?></p>
-                                    <pre>http://www.piratenpartei.de/wp-content/uploads/2012/05/UrheberplakatSH283.jpg|Rechte f&uuml;r Urheber und Nutzer|http://www.kein-programm.de</pre>
-                                    <p>
-                                <?php _e( 'Wenn oben Defaultplakate angeklickt sind, erscheinen diese Bilder zus&auml;tzlich. Diese Bilder k&ouml;nnen auch vorher &uuml;ber den Mediendialog hochgeladen worden sein.', 'piratenkleider' ); ?>
-                                
-                                 </p>      
-                              </label>
-
-                                      
-
-            </div>
-    
-            
-            <p class="submit">
-                    <input type="submit" class="button-primary" value="<?php _e( 'Optionen speichern', 'piratenkleider' ); ?>" />
-            </p>
-        </form>               
-	</div>
-            
-        </div> <!-- end: .piratenkleider-optionen -->      
-	<?php
-}
-
-/**
- * Sanitize and validate input. Accepts an array, return a sanitized array.
- */
-function theme_defaultbilder_validate( $input ) {
-	global $defaultoptions;
-        
-        $input['slider-alternativesrc'] = wp_filter_nohtml_kses( $input['slider-alternativesrc'] );            
-              
-        
-        $input['slider-defaultbildsrc'] = wp_filter_nohtml_kses( $input['slider-defaultbildsrc'] );       
-        if ($input['slider-alternativesrc'] != '') {            
-            $input['slider-defaultbildsrc'] = $input['slider-alternativesrc'];
-        }
-        $input['seiten-alternativesrc'] = wp_filter_nohtml_kses( $input['seiten-alternativesrc'] );            
-        $input['seiten-defaultbildsrc'] = wp_filter_nohtml_kses( $input['seiten-defaultbildsrc'] );       
-        if ($input['seiten-alternativesrc'] != '') {            
-            $input['seiten-defaultbildsrc'] = $input['seiten-alternativesrc'];
-        }
-        $input['plakate-altadressen'] = wp_filter_post_kses( $input['plakate-altadressen'] );
-        $input['plakate-url'] = wp_filter_nohtml_kses( $input['plakate-url'] );        
-        $input['plakate-title'] = wp_filter_nohtml_kses( $input['plakate-title'] );  
-        
-        $input['src-default-symbolbild-404'] = wp_filter_nohtml_kses( $input['src-default-symbolbild-404'] ); 
-        $input['src-default-symbolbild-archive'] = wp_filter_nohtml_kses( $input['src-default-symbolbild-archive'] );
-        $input['src-default-symbolbild-author'] = wp_filter_nohtml_kses( $input['src-default-symbolbild-author'] );
-        $input['src-default-symbolbild-category'] = wp_filter_nohtml_kses( $input['src-default-symbolbild-category'] );
-        $input['src-default-symbolbild-tag'] = wp_filter_nohtml_kses( $input['src-default-symbolbild-tag'] );
-        $input['src-default-symbolbild-search'] = wp_filter_nohtml_kses( $input['src-default-symbolbild-search'] );
-        $input['src-default-symbolbild'] = wp_filter_nohtml_kses( $input['src-default-symbolbild'] );   
-     
-        if (strlen(trim($input['src-default-symbolbild-404']))<5) {
-            $input['src-default-symbolbild-404'] = $defaultoptions['src-default-symbolbild-404'];
-        }
-        if (strlen(trim($input['src-default-symbolbild-archive']))<5) {
-            $input['src-default-symbolbild-archive'] = $defaultoptions['src-default-symbolbild-archive'];
-        }
-        if (strlen(trim($input['src-default-symbolbild-author']))<5) {
-            $input['src-default-symbolbild-author'] = $defaultoptions['src-default-symbolbild-author'];
-        }
-        if (strlen(trim($input['src-default-symbolbild-category']))<5) {
-            $input['src-default-symbolbild-category'] = $defaultoptions['src-default-symbolbild-category'];
-        }
-        if (strlen(trim($input['src-default-symbolbild-tag']))<5) {
-            $input['src-default-symbolbild-tag'] = $defaultoptions['src-default-symbolbild-tag'];
-        }
-        if (strlen(trim($input['src-default-symbolbild-search']))<5) {
-            $input['src-default-symbolbild-search'] = $defaultoptions['src-default-symbolbild-search'];
-        }
-        if (strlen(trim($input['src-default-symbolbild']))<5) {
-            $input['src-default-symbolbild'] = $defaultoptions['src-default-symbolbild'];
-        }
-        
-	return $input;
-}
-
-
-
-
 /**
  * Kontaktinfos  Optionen
  */

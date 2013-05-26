@@ -29,22 +29,21 @@
 
    
    if ( $options['slider-defaultwerbeplakate'] == "1" ) {     
-       $plakate = get_option( 'piratenkleider_theme_defaultbilder'); 
-       if ( ((isset($plakate['plakate-src']) && (is_array($plakate['plakate-src'])))) || 
-            ((isset($plakate['plakate-altadressen'])) && (strlen(trim($plakate['plakate-altadressen']))>5))
+       if ( ((isset($options['plakate-src']) && (is_array($options['plakate-src'])))) || 
+            ((isset($options['plakate-altadressen'])) && (strlen(trim($options['plakate-altadressen']))>5))
            ) {
             echo '<div class="flexslider fs2 no-js" style="width: '.$defaultoptions['plakate-width'].'px;">';         
             echo '<ul class="slides">';                               
-                   if (is_array($plakate['plakate-src'])) {              
-                     foreach ($plakate['plakate-src'] as $current) {                        
+                   if (is_array($options['plakate-src'])) {              
+                     foreach ($options['plakate-src'] as $current) {                        
                          echo '<li class="slide">';                         
                                                 
-			 if ((isset($plakate['plakate-url'])) && (strlen(trim($plakate['plakate-url']))>2)) {
-			     echo '<a href="'.$plakate['plakate-url'].'">';
+			 if ((isset($options['plakate-url'])) && (strlen(trim($options['plakate-url']))>2)) {
+			     echo '<a href="'.$options['plakate-url'].'">';
 			     echo '<img src="'.$current.'" style="max-width: '.$defaultoptions['plakate-width'].';" alt="';                                                      
                              // width="'.$defaultoptions['plakate-width'].'" height="'.$defaultoptions['plakate-height'].'" 
-			     if ((isset($plakate['plakate-title'])) && (strlen(trim($plakate['plakate-title']))>2)) {   
-				   echo $plakate['plakate-title'];     
+			     if ((isset($options['plakate-title'])) && (strlen(trim($options['plakate-title']))>2)) {   
+				   echo $options['plakate-title'];     
 			     }
 			     echo '">';                                                      			     
 			     echo '</a>';   
@@ -58,8 +57,8 @@
                      }                 
                   } 
                
-                  if ((isset($plakate['plakate-altadressen'])) && (strlen(trim($plakate['plakate-altadressen']))>2)) {                  
-                        $alturls = preg_split("/[\n\r]+/", $plakate['plakate-altadressen']);
+                  if ((isset($options['plakate-altadressen'])) && (strlen(trim($options['plakate-altadressen']))>2)) {                  
+                        $alturls = preg_split("/[\n\r]+/", $options['plakate-altadressen']);
                         if (is_array( $alturls )) {
                             foreach ( $alturls  as $current) {
                                 list($thisurl,$thistitel,$thisweb) = explode("|", $current);

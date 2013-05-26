@@ -1056,12 +1056,53 @@ $setoptions = array(
                   'label'   => __( 'Eingabemaske f&uuml;r den Eintrag in ein Newsletter (Mailingliste) anzeigen', 'piratenkleider' ),
                   'default' => $defaultoptions['newsletter'],
               ),
+              'plakate'  => array(
+                  'type'    => 'section',
+                  'title'   => __( 'Werbeplakate', 'piratenkleider' ),
+              ),
               'slider-defaultwerbeplakate' => array(
                   'type'    => 'bool',
-                  'title'   => __( 'Plakatslider', 'piratenkleider' ),
+                  'title'   => __( 'Plakate aktivieren', 'piratenkleider' ),
                   'label'   => __( 'Slider der Werbeplakate (rechte Sidebar-Spalte) werden angezeigt.<br>Die Auswahl der Plakatbilder kann unter den Defaultbildern angepasst werden', 'piratenkleider' ),
                   'default' => $defaultoptions['slider-defaultwerbeplakate'],
+                   'parent'  => 'plakate',
               ),
+               
+              'plakate-src' => array(
+                  'type'    => 'bildchecklist',
+                  'title'   => __( 'Plakatauswahl', 'piratenkleider' ),
+                  'label'   => __( 'Diese Bilder werden in der Sidebar rechts gezeigt, sofern dieses &uuml;ber die Optionen (vgl. Slider) auch eingeschaltet ist.', 'piratenkleider' ),
+                  'default' => $defaultoptions['plakate-src'],		                     
+		  'liste'   => $defaultplakate_liste,
+		  'parent'  => 'plakate'
+              ),
+              'plakate-title' => array(
+                  'type'    => 'text',
+                  'title'   => __( 'Optionaler Ersatztitel', 'piratenkleider' ),
+                  'label'   => __( 'Dieser Titel wird als Alternativ-Text verwendet.', 'piratenkleider' ),
+                  'default' => $defaultoptions['plakate-title'],
+                  'parent'  => 'plakate',
+              ),   
+              'plakate-url' => array(
+                  'type'    => 'url',
+                  'title'   => __( 'Optionale URL', 'piratenkleider' ),
+                  'label'   => __( 'Optionale Webadresse zur Verlinkung der Plakate mit einer Informationsseite.', 'piratenkleider' ),
+                  'default' => $defaultoptions['plakate-url'],
+                  'parent'  => 'plakate',
+              ),   
+              'plakate-altadressen' => array(
+                  'type'    => 'textarea',
+                  'title'   => __( 'Eigene Plakatbilder', 'piratenkleider' ),
+                  'label'   => __('Adressen alternativer Plakatbilder.<br>', 'piratenkleider').
+                  __( 'Angabe der URLs inkl. http:// zum Bild. Wenn es mehrere sind, werden die einzelnen Adressen durch Zeilenumbruch getrennt.', 'piratenkleider' ).
+                  __('Sollen die Bilder zus&auml;tzlich mit einem eigenen Titel und einer Webadresse versehen werden werden diese Angabe durch ein "|" zeichen in folgender Reihenfolge getrennt: <code>Bild URL|Titel|URL Webpage</code>', 'piratenkleider' ).
+                  __( 'Beispiel:<br>', 'piratenkleider' ).
+                  __( '<pre>http://www.piratenpartei.de/wp-content/uploads/2012/05/UrheberplakatSH283.jpg|Rechte f&uuml;r Urheber und Nutzer|http://www.kein-programm.de</pre><br>', 'piratenkleider' ).
+                  __( 'Wenn oben Defaultplakate angeklickt sind, erscheinen diese Bilder zus&auml;tzlich. Diese Bilder k&ouml;nnen auch vorher &uuml;ber den Mediendialog hochgeladen worden sein.', 'piratenkleider' ),                                                      
+                  'default' => $defaultoptions['plakate-altadressen'],
+                  'parent'  => 'plakate',
+              ),   
+               
               'teaser1'  => array(
                   'type'    => 'section',
                   'title'   => __( 'Teaserlink 1', 'piratenkleider' ),                      
@@ -1305,7 +1346,21 @@ $setoptions = array(
                   'default' => $defaultoptions['teaser-type'],
                    'parent'  => 'sliderpars'
               ), 
-               
+              'slider-defaultbildsrc' => array(
+                  'type'    => 'bildlist',
+                  'title'   => __( 'Defaultbild', 'piratenkleider' ),
+                  'label'   => __( 'Ersatz-Sliderbild für Seiten ohne eigenes Artikelbild.', 'piratenkleider' ),
+                  'default' => $defaultoptions['slider-defaultbildsrc'],		                     
+		  'liste'   => $defaultbilder_liste,
+		  'parent'  => 'darstellungartikel'
+              ),
+              'slider-alternativesrc' => array(
+                  'type'    => 'imgurl',
+                  'title'   => __( 'Externes Ersatzbild', 'piratenkleider' ),
+                  'label'   => __( 'URL f&uuml;r ein Ersatz-Sliderbild.', 'piratenkleider' ),
+                  'default' => $defaultoptions['slider-alternativesrc'],
+                  'parent'  => 'darstellungindexseiten',
+              ),   
 
                
                
