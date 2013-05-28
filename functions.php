@@ -147,9 +147,9 @@ function piratenkleider_setup() {
 
         // This theme uses wp_nav_menu() in one location.
         register_nav_menus( array(
-                'primary' => __( 'Hauptnavigation <br />&nbsp; (Statische Seiten)', 'piratenkleider' ),
-                'top' => __( 'Linkmenu <br />&nbsp; (Links zu Webportalen wie Wiki, Forum, etc)', 'piratenkleider' ),
-                'sub' => __( 'Technische Navigation <br />&nbsp; (Kontakt, Impressunm, etc)', 'piratenkleider' ),
+                'primary' => __( 'Hauptnavigation (Statische Seiten)', 'piratenkleider' ),
+                'top' => __( 'Linkmenu (Links zu Webportalen wie Wiki, Forum, etc)', 'piratenkleider' ),
+                'sub' => __( 'Technische Navigation (Kontakt, Impressum, etc)', 'piratenkleider' ),
         ) );
 
 
