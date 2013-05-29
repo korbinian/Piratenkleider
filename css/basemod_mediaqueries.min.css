@@ -1,0 +1,67 @@
+@media only screen and (max-width: 767px) {
+.flexslider,.flexslider img{overflow:hidden;}
+.content-aside .flexslider{height:auto;margin-bottom:10px;}
+.logo{max-width:300px;top:0;}
+.logo img{display:block;margin:0 auto;}
+.nav-top{width:200px;right:0;}
+.symbolbild{height:240px;overflow:hidden;}
+.teaserlinks ul li a{padding-left:10px;}
+.nav-main ul.menu li a{padding:12px 5px 10px;}
+.sticker,.teaserlinks .symbol:before{display:none;}
+}
+@media only screen and (max-width: 600px) {
+.header{display:block;height:auto;width:100%;position:relative;padding:0;}
+.header .branding{display:block;width:100%;position:relative;height:auto;text-align:center;margin:0 auto;padding:10px;}
+.header .branding h1{margin-bottom:0;}
+.logo{margin:0 auto;}
+.logo img{display:block;width:100%;height:auto;}
+.nav-top{display:block;position:relative;width:auto;min-width:320px;clear:both;text-align:center;height:auto;margin:0;padding:0;}
+.nav-top form.searchform{clear:both;display:block;width:320px;background:transparent;position:relative;float:none;font-size:1.2em;margin:5px auto 15px;}
+.nav-top form.searchform input{padding:5px;}
+.searchform input#s{width:220px;}
+.nav-top form.searchform .searchsubmit{position:relative;width:auto;float:right;text-indent:0;background:#2D7DC5;line-height:1em;overflow:none;height:auto;top:0;margin-top:2px;left:-15px;padding:5px;}
+.nav-top form.searchform .searchsubmit:after{content:"a";clear:both;}
+.nav-top div.menu-header{float:none;display:inline-block;position:relative;text-align:center;}
+.nav-top div.menu-header ul.menu li a{line-height:22px;background:none;border:none;box-shadow:none;text-decoration:underline;color:#000;border-radius:none;text-shadow:0 -1px 0 #EEE;padding:0 5px;}
+.nav-main{display:block;position:relative;max-width:100%;width:100%;float:none;clear:both;margin:0 0 20px;padding:0;}
+.nav-main ul.menu{float:none;}
+.skiplinks li{list-style:none;width:100%;}
+.skiplinks li a{position:static;width:100%;display:block;outline:0;text-align:center;margin-bottom:2px;font-size:1.4em;background:#2d7dc5;color:#FFF;border:1px solid #2d7dc5;border-top:1px solid #4e96d7;border-bottom:1px solid #1a4872;-moz-box-shadow:0 1px 3px rgba(0,0,0,0.5);-webkit-box-shadow:0 1px 3px rgba(0,0,0,0.5);box-shadow:0 1px 3px rgba(0,0,0,0.5);border-radius:2px;-moz-border-radius:2px;-webkit-border-radius:2px;text-shadow:0 -1px 0 #112e48;background-color:#2d7dc5;background-image:linear-gradient(top,#2d7dc5,#24639b);padding:5px 18px;}
+.footer ul.skiplinks{height:auto;}
+.symbolbild{height:100px;overflow:hidden;z-index:10;max-width:100%;}
+.nav-top ul.menu li a{margin-bottom:2px;overflow:visible;position:relative;background:#2d7dc5;color:#FFF;border:1px solid #C96A00;-moz-box-shadow:0 1px 3px rgba(0,0,0,0.5);-webkit-box-shadow:0 1px 3px rgba(0,0,0,0.5);box-shadow:0 1px 3px rgba(0,0,0,0.5);border-radius:2px;-moz-border-radius:2px;-webkit-border-radius:2px;text-shadow:0 -1px 0 #C96A00;background-color:#f80;padding:5px 18px;}
+.nav-top ul.menu li a:hover{background:#24639b;}
+.nav-main ul.menu li a{float:none;position:static;width:100%;display:block;color:#FFF;outline:0;text-align:center;margin-bottom:2px;border:1px solid #2d7dc5;border-top:1px solid #4e96d7;border-bottom:1px solid #1a4872;-moz-box-shadow:0 1px 3px rgba(0,0,0,0.5);-webkit-box-shadow:0 1px 3px rgba(0,0,0,0.5);box-shadow:0 1px 3px rgba(0,0,0,0.5);border-radius:2px;-moz-border-radius:2px;-webkit-border-radius:2px;text-shadow:0 -1px 0 #112e48;background-color:#2d7dc5;background-image:linear-gradient(top,#2d7dc5,#24639b);padding:5px 18px;}
+.nav-main ul.menu li a:hover{background:#4e96d7;}
+.nav-main ul li{float:none;width:100%;}
+.section{padding:0;}
+.content-primary .columns{float:none;clear:both;}
+.content-primary .columns .column0,.content-primary .columns .column1,.content-primary .columns .column2{float:none;width:100%;display:block;clear:both;}
+.content-primary .columns .column2:before{content:"";display:block;border:0;margin-bottom:15px;margin-top:5px;background:url(../images/jolly.png) no-repeat center center;height:26px;padding:0;}
+.content-primary .columns .column2 .post{padding-left:0;}
+.content-primary .skin{padding:10px 5px 5px;}
+.content-header,.content-header-big{margin-left:0;height:100px;overflow:hidden;}
+.content-header h1,.content-header-big h1{z-index:100;top:10px;}
+.single .post{max-width:100%;padding:10px;}
+.post-comments{background:url(../images/int/bg-tags.png) repeat fixed -20% top #F80;margin:2px 5px 5px;padding:3px;}
+.post-comments a{color:#000;}
+.post-comments ol li{border:2px solid rgba(0,0,0,0.2);}
+.post-comments ol li .comment-details{color:#222;float:none;width:auto;font-size:1em;font-weight:700;padding-right:2%;text-align:left;max-width:none;min-height:50px;background:none repeat scroll 0 0 rgba(0,0,0,0.2);}
+.post-comments ol li .comment-body{float:none;width:auto;background:#FFF;padding:5px;}
+.footer .first-footer-widget-area .skin{padding-bottom:0;}
+#socialmedia_iconbar{position:relative;display:block;top:inherit;left:inherit;width:auto;background:#000;border-radius:3px;z-index:10;text-align:center;margin:0;padding:2px;}
+.home #socialmedia_iconbar{top:inherit;}
+#socialmedia_iconbar ul.socialmedia{list-style:none;}
+#socialmedia_iconbar ul.socialmedia li{width:34px;}
+.sticker,.teaser,#skiplink-nav,#skiplink-search,.nav-main ul li ul,.content-primary .switchoff,.content-primary .switchon,.content-aside .flexslider,.post-comments ol li .reply{display:none;}
+.skiplinks li a:focus,.skiplinks li a:hover,.nav-main ul.menu li a:focus,.nav-main ul.menu li a:hover{background:#24639b;color:#000;}
+.content-primary,.content-aside{width:100%;float:none;min-height:0;}
+.content-primary .first-startpage-widget-area,.content-primary .second-startpage-widget-area,.footer .first-footer-widget-area,.footer .second-footer-widget-area{clear:both;float:none;padding-top:10px;width:100%;display:block;}
+.footer .second-footer-widget-area,.footer .second-footer-widget-area .skin{padding-top:0;}
+}
+@media only screen and (max-width: 479px) {
+.symbolbild,.flexslider,.flexslider img{overflow:hidden;}
+.content-aside .flexslider{height:auto;margin-bottom:10px;}
+.flexslider .caption{padding:5px 10px;}
+.flexslider .caption h2,.flexslider .caption h3{font-size:12px;font-family:Helvetica, Arial, sans-serif;letter-spacing:0;}
+}
