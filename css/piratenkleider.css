@@ -219,9 +219,6 @@ img {
   border: 0;
   -ms-interpolation-mode: bicubic;
 }  
-abbr[title], dfn[title] {
-  border-bottom: 1px dotted;
-  cursor: help; }
 
 small {
   font-size: 85%; }
@@ -251,6 +248,8 @@ abbr[title], acronym[title], dfn[title] {
   border-bottom: 1px dotted;
   cursor: help; 
 }
+
+
 
 hr {
   display: block;
@@ -2624,18 +2623,26 @@ ul.ts-fab-list li a {
     z-index: 99;
     
 }    
-.content-primary .switchoff a img,
-.content-primary .switchon a img {
-    margin: 2px;
-    border: 2px dotted transparent;
+
+.switchoff abbr[title], 
+.switchon abbr[title] {
+  cursor: e-resize; 
+  border: none;
 }
-.content-primary .switchoff a:hover,
-.content-primary .switchoff a:focus,
-.content-primary .switchon a:hover,
-.content-primary .switchon a:focus {
-    margin: 2px;
-    border: 2px dotted rgba(0,0,0,0.5);
+.switchoff a abbr, 
+.switchon a abbr {
+  text-decoration: none;
+  font-size: 1.2em;
 }
+
+.switchoff a:hover, 
+.switchoff a:focus
+.switchon a:hover, 
+.switchon a:focus  {
+  border: none;
+  text-shadow: 1px 1px 1px #333;
+}
+
 
 .post-entry .kraehennestplayer {
     float: right;

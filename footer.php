@@ -55,8 +55,8 @@
             ?>
      <script type="text/javascript">
         /* <![CDATA[ */
-        var $htmlOnSwitch = '<div class="switchoff"><a href="#"><img src="<?php echo get_template_directory_uri(); ?>/images/ausblenden.png" width="18" height="18" alt="<?php _e('Leiste ausblenden','piratenkleider'); ?>"></a></div>';
-        var $htmlOffSwitch = '<div class="switchon" ><a href="#"><img src="<?php echo get_template_directory_uri(); ?>/images/einblenden.png" width="18" height="18" alt="<?php _e('Leiste anzeigen','piratenkleider'); ?>"></a></div>';
+        var $htmlOnSwitch = '<div class="switchoff"><a href="#"><abbr title="<?php _e('Leiste ausblenden','piratenkleider'); ?>">&#9654;</abbr></a></div>';
+        var $htmlOffSwitch = '<div class="switchon" ><a href="#"><abbr title="<?php _e('Leiste anzeigen','piratenkleider'); ?>">&#9664;</abbr></a></div>';
         /* ]]> */
     </script> 
        <?php }
