@@ -212,7 +212,47 @@ function theme_options_do_page($tab = '') {
                                         </label>
                                      <?php }                                                                                                                             
                                     echo "<br style=\"clear: left;\">\n";
+				} elseif ($type=='urlchecklist') {
+				    
+	
+				    
+				   echo "\t\t\t";                      
+                                    foreach ( $liste as $entry => $listdata ) {    
+                                        $checked = '';
+					$value = '';
+    
+					
+				 	if (isset($options[$name][$entry]['content'])) {
+						$value = $options[$name][$entry]['content'];
+					    } else {
+						$value = $liste[$entry]['content'];
+					 }
+					 
+					  
+					 if ((isset($options[$name][$entry]['active']) && ($options[$name][$entry]['active']==1)) 
+						 && (filter_var($value, FILTER_VALIDATE_URL))) {
+					    $checked = "checked=\"checked\"";   
+					}
+                                         ?>       
+                                        <div style="display: inline-block; width: 90%;" class="<?php echo $name?>">
+					    <label for="piratenkleider_theme_options[<?php echo $name?>][<?php echo $entry?>][active]" class="<?php echo $entry?>" style="width: 120px; display: inline-block;">
+                                            <input type="checkbox" 
+						   id="piratenkleider_theme_options[<?php echo $name?>][<?php echo $entry?>][active]"
+						   name="piratenkleider_theme_options[<?php echo $name?>][<?php echo $entry?>][active]" 
+                                                   value="1" <?php echo $checked; ?>>                                                                                               
+					    <?php echo $liste[$entry]['name'] ?>
+					    </label>
+					    
+                                            <input id="piratenkleider_theme_options[<?php echo $name?>][<?php echo $entry?>][content]" 
+                                            type="text" name="piratenkleider_theme_options[<?php echo $name?>][<?php echo $entry?>][content]" 
+					    size="80" value="<?php echo $value?>">
+					  </div>
+					 <?php    
+					    
+				    }                                                                                                                   
+                                    echo "<br style=\"clear: left;\">\n";
 
+				    
                                 } elseif ($type=='select') {
                                     echo "\t\t\t";
                                     echo "<select name=\"piratenkleider_theme_options[$name]\">\n";
@@ -328,6 +368,8 @@ function theme_options_validate( $input ) {
                             $output[$name]  =  wp_filter_nohtml_kses( $input[$name] ); 
                         } elseif ($type=='bildchecklist') {                            
                             $output[$name]  = $input[$name];
+			} elseif ($type=='urlchecklist') {   	    			   
+			    $output[$name]  = $input[$name];
                         } else {
                             $output[$name]  =  wp_filter_nohtml_kses( $input[$name] );
                         }

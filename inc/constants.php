@@ -138,6 +138,93 @@ $defaultoptions = array(
 );
 
 
+/*
+ * Liste Social Media 
+ */
+$default_socialmedia_liste = array(
+    'delicious' => array(
+	'name' => 'Delicious',
+	'content'  => '',
+	'active' => 0,
+    ),
+    'diaspora' => array(
+	'name' => 'Diaspora',
+	'content'  => '',
+	'active' => 0,
+    ),
+    'facebook' => array(
+	'name' => 'Facebook',
+	'content'  => 'http://www.facebook.com/PiratenparteiDeutschland',
+	'active' => 0,
+    ),
+    'feed' => array(
+	'name' => 'RSS Feed',
+	'content'  => '',
+	'active' => 0,
+    ),
+    'flattr' => array(
+	'name' => 'Flattr',
+	'content'  => '',
+	'active' => 0,
+    ),
+    'flickr' => array(
+	'name' => 'Flickr',
+	'content'  => '',
+	'active' => 0,
+    ),
+    'gplus' => array(
+	'name' => 'Google Plus',
+	'content'  => 'https://plus.google.com/u/0/107862983960150496076/posts',
+	'active' => 0,
+    ),
+    'identica' => array(
+	'name' => 'Identica',
+	'content'  => '',
+	'active' => 0,
+    ),
+    'itunes' => array(
+	'name' => 'iTunes',
+	'content'  => '',
+	'active' => 0,
+    ),
+    'skype' => array(
+	'name' => 'Skype',
+	'content'  => '',
+	'active' => 0,
+    ),
+    'twitter' => array(
+	'name' => 'Twitter',
+	'content'  => 'https://twitter.com/#!/piratenpartei',
+	'active' => 0,
+    ),
+    'youtube' => array(
+	'name' => 'YouTube',
+	'content'  => '',
+	'active' => 0,
+    ),
+    'xing' => array(
+	'name' => 'Xing',
+	'content'  => '',
+	'active' => 0,
+    ),
+    'tumblr' => array(
+	'name' => 'Tumblr',
+	'content'  => '',
+	'active' => 0,
+    ),
+    'github' => array(
+	'name' => 'GitHub',
+	'content'  => '',
+	'active' => 0,
+    ),
+    'appnet' => array(
+	'name' => 'App.Net',
+	'content'  => '',
+	'active' => 0,
+    ),
+    
+); 
+
 /**
  * Liste der Defaultbilder fuer Seiten und Slider
  */
@@ -1383,6 +1470,12 @@ $setoptions = array(
                   'liste'   => array(0 => __( 'Keine Social Media Buttons', 'piratenkleider' ) ,  1 => __( 'Im Kopfteil', 'piratenkleider' ), 2 => __( 'Links anzeigen', 'piratenkleider' )),
                   'default' => $defaultoptions['alle-socialmediabuttons'],
               ),  
+	      'sm-list'  => array(
+		  'type'    => 'urlchecklist',
+		  'title'   => __( 'Social Media Plattformen', 'piratenkleider' ),
+		  'liste'   => $default_socialmedia_liste,
+	      ), 
+	       
               'social_facebook' => array(
                   'type'    => 'url',
                   'title'   => __( 'Facebook', 'piratenkleider' ),
@@ -1438,6 +1531,11 @@ $setoptions = array(
                   'title'   => __( 'Feed', 'piratenkleider' ),
                   'label'   => __( 'URL inkl. http:// zu einem RSS oder Atom Feed. Dies muss nicht unbedingt der von dieser Website sein, kann aber.', 'piratenkleider' ),
               ),  
+	       
+	       
+	       
+	       
+	       
               'twitterwidget'  => array(
                   'type'    => 'section',
                   'title'   => __( 'Twitter Sidebar-import', 'piratenkleider' ),                      

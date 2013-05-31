@@ -672,74 +672,6 @@ div#searchform {
   width: 100%; 
 }
 
-ul.socialmedia {
-  overflow: hidden;
-  margin-right: 0;
-  margin-top: 2px;
-}
-ul.socialmedia li {
-    float: left; 
-    width: 30px;
-}
-ul.socialmedia li a {
-    display: block;
-    padding: 0;
-}
-ul.socialmedia li a img {
-    margin: 2px;    
-    border: 2px solid #eee;
-    -webkit-transition: all 0.15s ease-in-out; 
-    -moz-transition: all 0.15s ease-in-out; 
-    -ms-transition: all 0.15s ease-in-out;
-    -o-transition: all 0.15s ease-in-out;     
-    transition: all 0.15s ease-in-out;
-}
-
-ul.socialmedia li a:hover img  {
-   border: 2px solid white;
-    -webkit-transform: scale(1.3);
-    -moz-transform: scale(1.3);
-    -ms-transform: scale(1.3);
-    -o-transform: scale(1.3);
-    transform: scale(1.3);
-}
-ul.socialmedia li a:focus img  {
-    border: 2px solid #ff8800;
-    background:  #ff8800;
-}    
-
-#socialmedia_iconbar {
-         position: fixed;
-         display: block;
-         top: 251px;
-         left: 0px;
-         width: 36px ;
-         background: black;
-         border-radius: 3px ; 
-         z-index: 10 ;
-         padding: 2px;
-         margin: 0px;
-         text-align: center;
-     }
-.home #socialmedia_iconbar { 
-    top: 234px;
-}    
-#socialmedia_iconbar ul {
-    margin: 0;
-}
-#socialmedia_iconbar ul.socialmedia li {
-    margin:0;
-    padding: 0;
-}
-#socialmedia_iconbar ul.socialmedia li a {
-    height: auto;
-}
-#socialmedia_iconbar ul.socialmedia li img  {
-    border: 2px solid black;
-}
-#socialmedia_iconbar ul.socialmedia li a:hover img  {
-    border: 2px solid black;
-}
 
 
 .sticker {
@@ -2882,6 +2814,105 @@ background: none repeat scroll 0 0 #EEEEEE;
 }
 
 
+/* Social Media Icons     ---------------------------------------------------*/
+
+ul.socialmedia {
+  overflow: hidden;
+  margin-right: 0;
+  margin-top: 2px;
+}
+ul.socialmedia li {
+    float: left; 
+    width: 30px;
+}
+ul.socialmedia li a {
+    display: block;
+    padding: 0;
+}
+ul.socialmedia li a img {
+    margin: 2px;    
+    border: 2px solid #eee;
+    -webkit-transition: all 0.15s ease-in-out; 
+    -moz-transition: all 0.15s ease-in-out; 
+    -ms-transition: all 0.15s ease-in-out;
+    -o-transition: all 0.15s ease-in-out;     
+    transition: all 0.15s ease-in-out;
+}
+
+ul.socialmedia li a:hover img  {
+   border: 2px solid white;
+    -webkit-transform: scale(1.3);
+    -moz-transform: scale(1.3);
+    -ms-transform: scale(1.3);
+    -o-transform: scale(1.3);
+    transform: scale(1.3);
+}
+ul.socialmedia li a:focus img  {
+    border: 2px solid #ff8800;
+    background:  #ff8800;
+}    
+
+#socialmedia_iconbar {
+         position: fixed;
+         display: block;
+         top: 251px;
+         left: 0px;
+         width: 36px ;
+         background: black;
+         border-radius: 3px ; 
+         z-index: 10 ;
+         padding: 2px;
+         margin: 0px;
+         text-align: center;
+     }
+.home #socialmedia_iconbar { 
+    top: 234px;
+}    
+#socialmedia_iconbar ul {
+    margin: 0;
+}
+#socialmedia_iconbar ul.socialmedia li {
+    margin:0;
+    padding: 0;
+}
+#socialmedia_iconbar ul.socialmedia li a {
+    height: auto;
+}
+#socialmedia_iconbar ul.socialmedia li img  {
+    border: 2px solid black;
+}
+#socialmedia_iconbar ul.socialmedia li a:hover img  {
+    border: 2px solid black;
+}
+
+
+.socialmedia_vlist {
+    
+    
+}
+.icon_delicious, .icon_disaspora, .icon_facebook, .icon_feed, .icon_flattr, 
+.icon_flickr, .icon_gplus, .icon_identica, .icon_itunes, .icon_skype,
+.icon_twitter, .icon_youtube, .icon_xing, .icon_tumblr, .icon_github {
+  width: 32px;
+  height: 32px;
+  display: inline-block;
+  background: url('../images/socialmedia/socialmedia-sprite.png') no-repeat;
+}
+.icon_delicious {background-position: 32px 0px;}
+.icon_disaspora {background-position: 32px 32px;}
+.icon_facebook  {background-position: 32px 64px;}
+.icon_feed      {background-position: 32px 96px;}
+.icon_flattr    {background-position: 32px 128px;}
+.icon_flickr    {background-position: 32px 160px;}
+.icon_gplus     {background-position: 32px 192px;}
+.icon_identica  {background-position: 32px 224px;}
+.icon_itunes    {background-position: 32px 256px;}
+.icon_skype     {background-position: 32px 288px;}
+.icon_twitter   {background-position: 32px 320px;}
+.icon_youtube   {background-position: 32px 352px;}
+.icon_xing      {background-position: 32px 384px;}
+.icon_tumblr    {background-position: 32px 416px;}
+.icon_github    {background-position: 32px 448px;}
 
 /* IE Anpassungen -----------------------------------------------------------*/
 
