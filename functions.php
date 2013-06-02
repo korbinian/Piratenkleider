@@ -24,6 +24,12 @@ if (is_array($old_bilderarray)) {
 $options['alle-socialmediabuttons'] =1;
 
 $options['social_flattr'] = 'http://irgenwo.dssdsd.de';
+$options['social_xing'] = 'http://irgenwo.dssdsd.de';
+$options['social_youtube'] = 'http://irgenwo.dssdsd.de';
+$options['social_twitter'] = 'http://irgenwo.dssdsd.de';
+$options['social_gplus'] = 'http://irgenwo.dssdsd.de';
+
+
 
 $options = piratenkleider_compatibility($options);
     // adjusts variables for downwards comptability
@@ -621,7 +627,7 @@ function get_piratenkleider_socialmediaicons( $darstellung = 1 ){
         if ((isset($options['sm-list'][$entry]['active']))
             && ($options['sm-list'][$entry]['active'] ==1)
             && (isset($options['sm-list'][$entry]['content']))) {
-            echo '<li class="'.$entry.'"><a href="'.$options['sm-list'][$entry]['content'].'">';
+            echo '<li class="icon_'.$entry.'"><a href="'.$options['sm-list'][$entry]['content'].'">';
             echo '<span>'.$listdata['name'].'</span></a></li>';
         }
     }
