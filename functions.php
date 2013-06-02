@@ -4,7 +4,7 @@
  *
  * @source http://github.com/xwolfde/Piratenkleider
  * @creator xwolf
- * @version 2.17
+ * @version 2.17.2
  * @licence CC-BY-SA 3.0 
  */
 
@@ -21,14 +21,6 @@ if (is_array($old_bilderarray)) {
 } else {
     $options = array_merge($defaultoptions,$old_options);	
 }    
-$options['alle-socialmediabuttons'] =1;
-
-$options['social_flattr'] = 'http://irgenwo.dssdsd.de';
-$options['social_xing'] = 'http://irgenwo.dssdsd.de';
-$options['social_youtube'] = 'http://irgenwo.dssdsd.de';
-$options['social_twitter'] = 'http://irgenwo.dssdsd.de';
-$options['social_gplus'] = 'http://irgenwo.dssdsd.de';
-
 
 
 $options = piratenkleider_compatibility($options);
