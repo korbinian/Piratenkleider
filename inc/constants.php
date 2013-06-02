@@ -1475,65 +1475,6 @@ $setoptions = array(
 		  'liste'   => $default_socialmedia_liste,
 	      ), 
 	       
-              'social_facebook' => array(
-                  'type'    => 'url',
-                  'title'   => __( 'Facebook', 'piratenkleider' ),
-                  'label'   => __( 'URL inkl. http:// zur Facebook Seite.', 'piratenkleider' ),
-              ), 
-              'social_twitter' => array(
-                  'type'    => 'url',
-                  'title'   => __( 'Twitter', 'piratenkleider' ),
-                  'label'   => __( 'URL inkl. http:// zur Twitter Seite.', 'piratenkleider' ),
-              ),  
-              'social_gplus' => array(
-                  'type'    => 'url',
-                  'title'   => __( 'Google Plus', 'piratenkleider' ),
-                  'label'   => __( 'URL inkl. http:// zur Google Plus Seite.', 'piratenkleider' ),
-              ),  
-              'social_diaspora' => array(
-                  'type'    => 'url',
-                  'title'   => __( 'Diaspora', 'piratenkleider' ),
-                  'label'   => __( 'URL inkl. http:// zur Diaspora Seite.', 'piratenkleider' ),
-              ),  
-              'social_identica' => array(
-                  'type'    => 'url',
-                  'title'   => __( 'Identica', 'piratenkleider' ),
-                  'label'   => __( 'URL inkl. http:// zur Identica Seite.', 'piratenkleider' ),
-              ),  
-              'social_youtube' => array(
-                  'type'    => 'url',
-                  'title'   => __( 'YouTube', 'piratenkleider' ),
-                  'label'   => __( 'URL inkl. http:// zur YouTube Seite.', 'piratenkleider' ),
-              ),  
-              'social_itunes' => array(
-                  'type'    => 'url',
-                  'title'   => __( 'iTunes', 'piratenkleider' ),
-                  'label'   => __( 'URL inkl. http:// zur iTunes Seite.', 'piratenkleider' ),
-              ),  
-              'social_flickr' => array(
-                  'type'    => 'url',
-                  'title'   => __( 'Flickr', 'piratenkleider' ),
-                  'label'   => __( 'URL inkl. http:// zur Flickr Seite.', 'piratenkleider' ),
-              ),  
-              'social_delicious' => array(
-                  'type'    => 'url',
-                  'title'   => __( 'Delicious', 'piratenkleider' ),
-                  'label'   => __( 'URL inkl. http:// zur Delicious Seite.', 'piratenkleider' ),
-              ),  
-              'social_flattr' => array(
-                  'type'    => 'url',
-                  'title'   => __( 'Flattr', 'piratenkleider' ),
-                  'label'   => __( 'URL inkl. http:// zur Flattr Seite.', 'piratenkleider' ),
-              ),  
-              'social_feed' => array(
-                  'type'    => 'url',
-                  'title'   => __( 'Feed', 'piratenkleider' ),
-                  'label'   => __( 'URL inkl. http:// zu einem RSS oder Atom Feed. Dies muss nicht unbedingt der von dieser Website sein, kann aber.', 'piratenkleider' ),
-              ),  
-	       
-	       
-	       
-	       
 	       
               'twitterwidget'  => array(
                   'type'    => 'section',

@@ -21,8 +21,12 @@ if (is_array($old_bilderarray)) {
 } else {
     $options = array_merge($defaultoptions,$old_options);	
 }    
+$options['alle-socialmediabuttons'] =1;
 
+$options['social_flattr'] = 'http://irgenwo.dssdsd.de';
 
+$options = piratenkleider_compatibility($options);
+    // adjusts variables for downwards comptability
     
 if ($options['anonymize-user']==1) {
     /* IP-Adresse überschreiben */
@@ -283,6 +287,56 @@ function get_piratenkleider_options( $field ){
 }
 endif;
 
+
+function piratenkleider_compatibility ($oldoptions) {
+    $newoptions = $oldoptions;
+    if ((isset($oldoptions['social_facebook'])) && (filter_var($oldoptions['social_facebook'], FILTER_VALIDATE_URL))) {
+        $newoptions['sm-list']['facebook']['content'] = $oldoptions['social_facebook'];
+        $newoptions['sm-list']['facebook']['active'] = 1;
+    }
+    if ((isset($oldoptions['social_twitter'])) && (filter_var($oldoptions['social_twitter'], FILTER_VALIDATE_URL))) {
+        $newoptions['sm-list']['twitter']['content'] = $oldoptions['social_twitter'];
+        $newoptions['sm-list']['twitter']['active'] = 1;
+    }    
+    if ((isset($oldoptions['social_gplus'])) && (filter_var($oldoptions['social_gplus'], FILTER_VALIDATE_URL))) {
+        $newoptions['sm-list']['gplus']['content'] = $oldoptions['social_gplus'];
+        $newoptions['sm-list']['gplus']['active'] = 1;
+    }   
+    if ((isset($oldoptions['social_diaspora'])) && (filter_var($oldoptions['social_diaspora'], FILTER_VALIDATE_URL))) {
+        $newoptions['sm-list']['diaspora']['content'] = $oldoptions['social_diaspora'];
+        $newoptions['sm-list']['diaspora']['active'] = 1;
+    }   
+    if ((isset($oldoptions['social_identica'])) && (filter_var($oldoptions['social_identica'], FILTER_VALIDATE_URL))) {
+        $newoptions['sm-list']['identica']['content'] = $oldoptions['social_identica'];
+        $newoptions['sm-list']['identica']['active'] = 1;
+    } 
+    if ((isset($oldoptions['social_youtube'])) && (filter_var($oldoptions['social_youtube'], FILTER_VALIDATE_URL))) {
+        $newoptions['sm-list']['youtube']['content'] = $oldoptions['social_youtube'];
+        $newoptions['sm-list']['youtube']['active'] = 1;
+    } 
+    if ((isset($oldoptions['social_itunes'])) && (filter_var($oldoptions['social_itunes'], FILTER_VALIDATE_URL))) {
+        $newoptions['sm-list']['itunes']['content'] = $oldoptions['social_itunes'];
+        $newoptions['sm-list']['itunes']['active'] = 1;
+    } 
+    if ((isset($oldoptions['social_flickr'])) && (filter_var($oldoptions['social_flickr'], FILTER_VALIDATE_URL))) {
+        $newoptions['sm-list']['flickr']['content'] = $oldoptions['social_flickr'];
+        $newoptions['sm-list']['flickr']['active'] = 1;
+    }     
+    if ((isset($oldoptions['social_delicious'])) && (filter_var($oldoptions['social_delicious'], FILTER_VALIDATE_URL))) {
+        $newoptions['sm-list']['delicious']['content'] = $oldoptions['social_delicious'];
+        $newoptions['sm-list']['delicious']['active'] = 1;
+    }  
+    if ((isset($oldoptions['social_flattr'])) && (filter_var($oldoptions['social_flattr'], FILTER_VALIDATE_URL))) {
+        $newoptions['sm-list']['flattr']['content'] = $oldoptions['social_flattr'];
+        $newoptions['sm-list']['flattr']['active'] = 1;
+    } 
+    if ((isset($oldoptions['social_feed'])) && (filter_var($oldoptions['social_feed'], FILTER_VALIDATE_URL))) {
+        $newoptions['sm-list']['feed']['content'] = $oldoptions['social_feed'];
+        $newoptions['sm-list']['feed']['active'] = 1;
+    }              
+    
+    return $newoptions;
+}
 
 if ( ! function_exists( 'piratenkleider_filter_wp_title' ) ) :   
 /*
@@ -545,7 +599,8 @@ if ( ! function_exists( 'get_piratenkleider_socialmediaicons' ) ) :
  * Displays Social Media Icons
  */
 function get_piratenkleider_socialmediaicons( $darstellung = 1 ){
-    global $options;       
+    global $options;
+    global $default_socialmedia_liste;
     $zeigeoption = $options['alle-socialmediabuttons'];
     
     if ($darstellung ==0) {
@@ -562,20 +617,16 @@ function get_piratenkleider_socialmediaicons( $darstellung = 1 ){
     }
    
     echo '<ul class="socialmedia">';       
-    if ( $options['social_facebook'] != "" ){ echo '<li class="facebook"><a href="'.$options['social_facebook'].'"><img src="'.get_template_directory_uri().'/images/social-media/facebook-24x24.png" width="24" height="24" alt="Facebook"></a></li>'; }
-    if ( $options['social_twitter'] != "" ){  echo '<li class="twitter"><a href="'.$options['social_twitter'].'"><img src="'.get_template_directory_uri().'/images/social-media/twitter-24x24.png" width="24" height="24" alt="Twitter"></a></li>'; }				
-    if ( $options['social_gplus'] != "" ){  echo '<li class="gplus"><a href="'.$options['social_gplus'].'"><img src="'.get_template_directory_uri().'/images/social-media/gplus-24x24.png" width="24" height="24" alt="Google+"></a></li>'; }
-    if ( $options['social_diaspora'] != "" ){  echo '<li class="diaspora"><a href="'.$options['social_diaspora'].'"><img src="'.get_template_directory_uri().'/images/social-media/diaspora-24x24.png" width="24" height="24" alt="Diaspora"></a></li>'; }
-    if ( $options['social_identica'] != "" ){  echo '<li class="identica"><a href="'.$options['social_identica'].'"><img src="'.get_template_directory_uri().'/images/social-media/identica-24x24.png" width="24" height="24" alt="identi.ca"></a></li>'; }															
-    if ( $options['social_youtube'] != "" ){  echo '<li class="youtube"><a href="'.$options['social_youtube'].'"><img src="'.get_template_directory_uri().'/images/social-media/youtube-24x24.png" width="24" height="24" alt="YouTube"></a></li>'; }
-    if ( $options['social_itunes'] != "" ){  echo '<li class="itunes"><a href="'.$options['social_itunes'].'"><img src="'.get_template_directory_uri().'/images/social-media/itunes-24x24.png" width="24" height="24" alt="iTunes"></a></li>'; }
-    if ( $options['social_flickr'] != "" ){  echo '<li class="flickr"><a href="'.$options['social_flickr'].'"><img src="'.get_template_directory_uri().'/images/social-media/flickr-24x24.png" width="24" height="24" alt="flickr"></a></li>'; }	
-    if ( $options['social_delicious'] != "" ){  echo '<li class="delicious"><a href="'.$options['social_delicious'].'"><img src="'.get_template_directory_uri().'/images/social-media/delicious-24x24.png" width="24" height="24" alt="Delicious"></a></li>'; }
-    if ( $options['social_flattr'] != "" ){  echo '<li class="flattr"><a href="'.$options['social_flattr'].'"><img src="'.get_template_directory_uri().'/images/social-media/flattr-24x24.png" width="24" height="24" alt="Flattr"></a></li>'; }
-    if ( $options['social_feed'] != "" ){  echo '<li class="feed"><a href="'.$options['social_feed'].'"><img src="'.get_template_directory_uri().'/images/social-media/feed-24x24.png" width="24" height="24" alt="RSS/Atom-Feed"></a></li>'; }
+    foreach ( $default_socialmedia_liste as $entry => $listdata ) {        
+        if ((isset($options['sm-list'][$entry]['active']))
+            && ($options['sm-list'][$entry]['active'] ==1)
+            && (isset($options['sm-list'][$entry]['content']))) {
+            echo '<li class="'.$entry.'"><a href="'.$options['sm-list'][$entry]['content'].'">';
+            echo '<span>'.$listdata['name'].'</span></a></li>';
+        }
+    }
     echo '</ul>';
-    
-        
+       
     if ($zeigeoption ==2) {    
            /* Links an der Seite */
             echo '</div>';

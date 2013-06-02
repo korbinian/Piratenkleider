@@ -213,15 +213,12 @@ function theme_options_do_page($tab = '') {
                                      <?php }                                                                                                                             
                                     echo "<br style=\"clear: left;\">\n";
 				} elseif ($type=='urlchecklist') {
-				    
-	
-				    
+				    				    
 				   echo "\t\t\t";                      
                                     foreach ( $liste as $entry => $listdata ) {    
                                         $checked = '';
 					$value = '';
     
-					
 				 	if (isset($options[$name][$entry]['content'])) {
 						$value = $options[$name][$entry]['content'];
 					    } else {
