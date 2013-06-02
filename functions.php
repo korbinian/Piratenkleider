@@ -10,9 +10,19 @@
 
 require( get_template_directory() . '/inc/constants.php' );
 
+$old_bilderarray =  get_option('piratenkleider_theme_defaultbilder');
+$old_options = get_option('piratenkleider_theme_options');
 
-$options = array_merge($defaultoptions, get_option('piratenkleider_theme_defaultbilder'), get_option('piratenkleider_theme_options'));	
-    
+if (!is_array($old_options)) {
+    $old_options = array();
+}
+if (is_array($old_bilderarray)) {
+    $options = array_merge($defaultoptions,$old_bilderarray, $old_options);	   
+} else {
+    $options = array_merge($defaultoptions,$old_options);	
+}    
+
+
     
 if ($options['anonymize-user']==1) {
     /* IP-Adresse überschreiben */
@@ -265,6 +275,9 @@ function get_piratenkleider_options( $field ){
 	$field = 'piratenkleider_theme_options';
     }
     $orig = get_option($field);
+    if (!is_array($orig)) {
+        $orig=array();
+    }
     $alloptions = array_merge( $defaultoptions, $orig  );	
     return $alloptions;
 }
@@ -1055,16 +1068,15 @@ function piratenkleider_echo_player() {
 	    } 
 	    
 	    $supplied =rtrim($supplied,','); 
-	?>	    
-	}, {
-	cssSelectorAncestor: "#cp_container_1",
-		swfPath: "js",
-		wmode: "window",
-		supplied: "<?php echo $supplied;?>",
-	});
+
+	echo "}, {";
+        echo ' cssSelectorAncestor: "#cp_container_1", swfPath: "js",
+		wmode: "window", supplied: "'.$supplied.'",';
+	echo '});
 	});
 	//]]>
-	</script>
+	</script>';
+        ?>
 	<div id="jquery_jplayer_1" class="cp-jplayer"></div>  
 	<div id="cp_container_1" class="cp-container">
 	    <div class="cp-buffer-holder"> <!-- .cp-gt50 only needed when buffer is > than 50% -->
@@ -1080,7 +1092,7 @@ function piratenkleider_echo_player() {
 		<li style="padding:0;"><a class="cp-play" tabindex="1">play</a></li>
 		<li style="padding:0;"><a class="cp-pause" style="display:none;" tabindex="1">pause</a></li> <!-- Needs the inline style here, or jQuery.show() uses display:inline instead of display:block -->
 	    </ul>
-	</div>
+	</div> 
 	<?php _e( 'Download:', 'piratenkleider' ); 
 	$links = "";
 	foreach($information as $key=>$value){

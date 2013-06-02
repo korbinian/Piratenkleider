@@ -66,7 +66,7 @@ $defaultoptions = array(
     
     'defaultwerbesticker'           => 1,
     'aktiv-autoren'                 => 1,
-    'newsletter'                    => 1,
+    'newsletter'                    => 0,
     'alle-socialmediabuttons'               => 1,
     'aktiv-circleplayer'                    => 1,
     
@@ -805,8 +805,7 @@ $defaultplakate_textsymbolliste = array(
 	$currentcatliste[$category->cat_ID] = $category->name.' ('.$category->count.' '.__('Eintr&auml;ge','piratenkleider').')';
      }
  }        
-        
-$curroptions = array_merge($defaultoptions, get_option('piratenkleider_theme_defaultbilder'), get_option('piratenkleider_theme_options'));	
+
 
 $setoptions = array(
    'piratenkleider_theme_options'   => array(
