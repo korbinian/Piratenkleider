@@ -25,6 +25,7 @@
 .nav-top div.menu-header ul.menu li a{line-height:22px;background:none;border:none;box-shadow:none;text-decoration:underline;color:#000;border-radius:none;text-shadow:0 -1px 0 #EEE;padding:0 5px;}
 .nav-main{display:block;position:relative;max-width:100%;width:100%;float:none;clear:both;margin:0 0 20px;padding:0;}
 .nav-main ul.menu{float:none;}
+.nav-top ul.socialmedia{display:inline-block;text-align:center;float:none;clear:both;}
 .skiplinks li{list-style:none;width:100%;}
 .skiplinks li a{position:static;width:100%;display:block;outline:0;text-align:center;margin-bottom:2px;font-size:1.4em;background:#2d7dc5;color:#FFF;border:1px solid #2d7dc5;border-top:1px solid #4e96d7;border-bottom:1px solid #1a4872;-moz-box-shadow:0 1px 3px rgba(0,0,0,0.5);-webkit-box-shadow:0 1px 3px rgba(0,0,0,0.5);box-shadow:0 1px 3px rgba(0,0,0,0.5);border-radius:2px;-moz-border-radius:2px;-webkit-border-radius:2px;text-shadow:0 -1px 0 #112e48;background-color:#2d7dc5;background-image:linear-gradient(top,#2d7dc5,#24639b);padding:5px 18px;}
 .footer ul.skiplinks{height:auto;}
