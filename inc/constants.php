@@ -5,7 +5,7 @@
  **/ 
 
 $defaultoptions = array(
-    'js-version'                    => '2.15',
+    'js-version'                    => '2.17',
     'content-width'                 => 665,
     'logo'                          => get_template_directory_uri() .'/images/logo.png',
     'logo-width'                    => 300,
@@ -159,8 +159,8 @@ $default_socialmedia_liste = array(
     ),
     'feed' => array(
 	'name' => 'RSS Feed',
-	'content'  => '',
-	'active' => 0,
+	'content'  => get_bloginfo( 'rss2_url' ),
+	'active' => 1,
     ),
     'flattr' => array(
 	'name' => 'Flattr',
@@ -175,7 +175,7 @@ $default_socialmedia_liste = array(
     'gplus' => array(
 	'name' => 'Google Plus',
 	'content'  => 'https://plus.google.com/u/0/107862983960150496076/posts',
-	'active' => 0,
+	'active' => 1,
     ),
     'identica' => array(
 	'name' => 'Identica',

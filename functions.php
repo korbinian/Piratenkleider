@@ -616,10 +616,19 @@ function get_piratenkleider_socialmediaicons( $darstellung = 1 ){
    
     echo '<ul class="socialmedia">';       
     foreach ( $default_socialmedia_liste as $entry => $listdata ) {        
-        if ((isset($options['sm-list'][$entry]['active']))
-            && ($options['sm-list'][$entry]['active'] ==1)
-            && (isset($options['sm-list'][$entry]['content']))) {
-            echo '<li class="icon_'.$entry.'"><a href="'.$options['sm-list'][$entry]['content'].'">';
+        
+        $value = '';
+        $active = 0;
+        if (isset($options['sm-list'][$entry]['content'])) {
+                $value = $options['sm-list'][$entry]['content'];
+        } else {
+                $value = $default_socialmedia_liste[$entry]['content'];
+         }
+         if (isset($options['sm-list'][$entry]['active'])) {
+                $active = $options['sm-list'][$entry]['active'];
+        }        
+        if (($active ==1) && ($value)) {
+            echo '<li class="icon_'.$entry.'"><a href="'.$value.'">';
             echo '<span>'.$listdata['name'].'</span></a></li>';
         }
     }

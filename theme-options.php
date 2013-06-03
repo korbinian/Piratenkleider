@@ -218,15 +218,17 @@ function theme_options_do_page($tab = '') {
                                     foreach ( $liste as $entry => $listdata ) {    
                                         $checked = '';
 					$value = '';
-    
+                                        $active = 0;
 				 	if (isset($options[$name][$entry]['content'])) {
 						$value = $options[$name][$entry]['content'];
-					    } else {
+					} else {
 						$value = $liste[$entry]['content'];
 					 }
-					 
-					  
-					 if ((isset($options[$name][$entry]['active']) && ($options[$name][$entry]['active']==1)) 
+					 if (isset($options[$name][$entry]['active'])) {
+						$active = $options[$name][$entry]['active'];
+                                         }
+					
+					 if (($active==1)  
 						 && (filter_var($value, FILTER_VALIDATE_URL))) {
 					    $checked = "checked=\"checked\"";   
 					}
