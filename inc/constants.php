@@ -180,7 +180,7 @@ $default_socialmedia_liste = array(
   
     'identica' => array(
 	'name' => 'Identica',
-	'content'  => '',
+	'content'  => 'http://identi.ca/piratenpartei',
 	'active' => 0,
     ),
     'itunes' => array(
@@ -196,7 +196,7 @@ $default_socialmedia_liste = array(
     
     'youtube' => array(
 	'name' => 'YouTube',
-	'content'  => '',
+	'content'  => 'http://www.youtube.com/user/piratenpartei',
 	'active' => 0,
     ),
     'xing' => array(
