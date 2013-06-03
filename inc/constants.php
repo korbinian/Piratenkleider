@@ -157,9 +157,14 @@ $default_socialmedia_liste = array(
 	'content'  => 'http://www.facebook.com/PiratenparteiDeutschland',
 	'active' => 0,
     ),
-    'feed' => array(
-	'name' => 'RSS Feed',
-	'content'  => get_bloginfo( 'rss2_url' ),
+    'twitter' => array(
+	'name' => 'Twitter',
+	'content'  => 'https://twitter.com/#!/piratenpartei',
+	'active' => 0,
+    ),
+    'gplus' => array(
+	'name' => 'Google Plus',
+	'content'  => 'https://plus.google.com/u/0/107862983960150496076/posts',
 	'active' => 1,
     ),
     'flattr' => array(
@@ -172,11 +177,7 @@ $default_socialmedia_liste = array(
 	'content'  => '',
 	'active' => 0,
     ),
-    'gplus' => array(
-	'name' => 'Google Plus',
-	'content'  => 'https://plus.google.com/u/0/107862983960150496076/posts',
-	'active' => 1,
-    ),
+  
     'identica' => array(
 	'name' => 'Identica',
 	'content'  => '',
@@ -192,11 +193,7 @@ $default_socialmedia_liste = array(
 	'content'  => '',
 	'active' => 0,
     ),
-    'twitter' => array(
-	'name' => 'Twitter',
-	'content'  => 'https://twitter.com/#!/piratenpartei',
-	'active' => 0,
-    ),
+    
     'youtube' => array(
 	'name' => 'YouTube',
 	'content'  => '',
@@ -222,7 +219,11 @@ $default_socialmedia_liste = array(
 	'content'  => '',
 	'active' => 0,
     ),
-    
+    'feed' => array(
+	'name' => 'RSS Feed',
+	'content'  => get_bloginfo( 'rss2_url' ),
+	'active' => 1,
+    ),
 ); 
 
 /**

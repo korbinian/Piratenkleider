@@ -607,8 +607,9 @@ function get_piratenkleider_socialmediaicons( $darstellung = 1 ){
     } 
     if ($darstellung!=$zeigeoption) {
         /* Nichts anzeigen, da wir im falschen Modus sind */
-        return;        
+        return;
     }
+ 
     if ($zeigeoption ==2) {    
            /* Links an der Seite */
             echo '<div id="socialmedia_iconbar">';

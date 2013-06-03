@@ -2075,7 +2075,7 @@ img.wp-smiley {
   margin: 0 2px 2px 0; 
 }
 
-.footer a:hover {
+.footer a:hover, .footer a:focus {
   background: #2d7dc5;
   color: white;
   -webkit-transition: all 0.2s ease-in-out;
@@ -2829,8 +2829,6 @@ ul.socialmedia li a {
     display: block;
     padding: 0;    
     margin: 0;
-    height: 32px;
-    width: 32px;
 }
 
 
@@ -2839,7 +2837,7 @@ ul.socialmedia li a {
          display: block;
          top: 251px;
          left: 0px;
-         width: 36px ;
+         width: 34px ;
          background: black;
          border-radius: 3px ; 
          z-index: 10 ;
@@ -2860,12 +2858,7 @@ ul.socialmedia li a {
 #socialmedia_iconbar ul.socialmedia li a {
     height: auto;
 }
-#socialmedia_iconbar ul.socialmedia li img  {
-    border: 2px solid black;
-}
-#socialmedia_iconbar ul.socialmedia li a:hover img  {
-    border: 2px solid black;
-}
+
 
 
 .icon_delicious, .icon_disaspora, .icon_facebook, .icon_feed, .icon_flattr, 
@@ -2910,6 +2903,7 @@ ul.socialmedia li a {
 .icon_tumblr:hover,.icon_tumblr:focus    {background-position: 0px -416px;}
 .icon_github:hover,.icon_github:focus    {background-position: 0px -448px;}
 .icon_appnet:hover,.icon_appnet:focus    {background-position: 0px -480px;}
+
 .socialmedia li a span {
    position: absolute;
    left: -9999em;
