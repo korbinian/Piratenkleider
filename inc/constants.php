@@ -42,8 +42,8 @@ $defaultoptions = array(
     'src-default-symbolbild-tag'    => get_template_directory_uri() .'/images/default-tag.png',
     'src-default-symbolbild-author' => get_template_directory_uri() .'/images/default-author.png',
     'src-default-symbolbild-archive' => get_template_directory_uri() .'/images/default-archive.png',
-    'src-default-artikel-symbolbild' => get_template_directory_uri() .'/images/default-vorlage.png',  
-    'slider-defaultbildsrc'	    => get_template_directory_uri() .'/images/default-vorlage.png',  	
+    'src-default-artikel-symbolbild' => get_template_directory_uri() .'/images/default-schiff.jpg',  
+    'slider-defaultbildsrc'	    => get_template_directory_uri() .'/images/default-schiff.jpg',  	
     'login_errors'		    => 1,
     'slider-aktiv'                  => 1,    
     'aktiv-defaultseitenbild'       => 0,
@@ -201,12 +201,12 @@ $default_socialmedia_liste = array(
     ),
     'xing' => array(
 	'name' => 'Xing',
-	'content'  => '',
+	'content'  => 'http://www.xing.com/net/piratenpartei',
 	'active' => 0,
     ),
     'tumblr' => array(
 	'name' => 'Tumblr',
-	'content'  => '',
+	'content'  => 'http://wirstellendasmalinfrage.tumblr.com',
 	'active' => 0,
     ),
     'github' => array(
@@ -277,6 +277,10 @@ $defaultbilder_liste = array(
 	'11'=> array(
 		'src' =>	get_template_directory_uri().'/images/default-vorlage.png',
 		'label' => __( 'Default', 'piratenkleider' )
+	),
+        '12'=> array(
+		'src' =>	get_template_directory_uri().'/images/default-schiff.jpg',
+		'label' => __( 'Default Schiff', 'piratenkleider' )
 	),
 );
 

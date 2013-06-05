@@ -2865,27 +2865,25 @@ ul.socialmedia li a {
 .icon_flickr, .icon_gplus, .icon_identica, .icon_itunes, .icon_skype,
 .icon_twitter, .icon_youtube, .icon_xing, .icon_tumblr, .icon_github,
 .icon_appnet {
-  width: 20px;
-  height: 20px;
   display: inline-block;
   background: url('../images/social-media/socialmedia-sprite.png') no-repeat;
 }
-.icon_delicious {background-position: -36px -2px;}
-.icon_disaspora {background-position: -36px -34px;}
-.icon_facebook  {background-position: -36px -66px;}
-.icon_feed      {background-position: -36px -98px;}
-.icon_flattr    {background-position: -36px -130px;}
-.icon_flickr    {background-position: -36px -162px;}
-.icon_gplus     {background-position: -36px -194px;}
-.icon_identica  {background-position: -36px -226px;}
-.icon_itunes    {background-position: -36px -258px;}
-.icon_skype     {background-position: -36px -290px;}
-.icon_twitter   {background-position: -36px -322px;}
-.icon_youtube   {background-position: -36px -354px;}
-.icon_xing      {background-position: -36px -386px;}
-.icon_tumblr    {background-position: -36px -418px;}
-.icon_github    {background-position: -36px -450px;}
-.icon_appnet    {background-position: -36px -482px;}
+.icon_delicious {background-position: -32px 0px;}
+.icon_disaspora {background-position: -32px -32px;}
+.icon_facebook  {background-position: -32px -64px;}
+.icon_feed      {background-position: -32px -96px;}
+.icon_flattr    {background-position: -32px -128px;}
+.icon_flickr    {background-position: -32px -160px;}
+.icon_gplus     {background-position: -32px -192px;}
+.icon_identica  {background-position: -32px -224px;}
+.icon_itunes    {background-position: -32px -256px;}
+.icon_skype     {background-position: -32px -288px;}
+.icon_twitter   {background-position: -32px -320px;}
+.icon_youtube   {background-position: -32px -352px;}
+.icon_xing      {background-position: -32px -384px;}
+.icon_tumblr    {background-position: -32px -416px;}
+.icon_github    {background-position: -32px -448px;}
+.icon_appnet    {background-position: -32px -480px;}
 
 .icon_delicious:hover,.icon_delicious:focus  {background-position: 0px 0px;}
 .icon_disaspora:hover,.icon_diaspora:focus {background-position: 0px -32px;}
@@ -2907,8 +2905,7 @@ ul.socialmedia li a {
 .socialmedia li a span {
    position: absolute;
    left: -9999em;
-   top: -9999em;
-   
+   top: -9999em;   
 }
 /* IE Anpassungen -----------------------------------------------------------*/
 
