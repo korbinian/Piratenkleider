@@ -70,24 +70,32 @@ if ((isset( $options['meta-keywords'] )) && ( strlen(trim($options['meta-keyword
     <link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo( 'stylesheet_url' ); ?>">
     
 <?php 
-    if (($options['1april-prank']==1) && (date('m-d')==$options['1april-prank-day'])) {
-        echo '  <link rel="stylesheet" type="text/css" media="all" href="'.$options['1april-css'].'">';
-    } else {
-        if ((isset($designspecials['css-colorfile'])) && (strlen(trim($designspecials['css-colorfile']))>1)) { 
-            echo '  <link rel="stylesheet" type="text/css" media="all" href="'.get_template_directory_uri().'/css/'.$designspecials['css-colorfile'].'">';
-        } 
-    }    
+   
+    if ((isset($designspecials['css-colorfile'])) && (strlen(trim($designspecials['css-colorfile']))>1)) { 
+            echo '    <link rel="stylesheet" type="text/css" media="all" href="'.get_template_directory_uri().'/css/'.$designspecials['css-colorfile'].'">';
+	    echo "\n";
+    }         
     if (!isset($designspecials['css-fontfile']))  {
         $designspecials['css-fontfile'] = $defaultoptions['default-fontset-file'];
     }
     if ((isset($designspecials['css-fontfile'])) && (strlen(trim($designspecials['css-fontfile']))>1)) { 
-        echo '  <link rel="stylesheet" type="text/css" media="all and (min-width:500px)" href="'.get_template_directory_uri().'/css/'.$designspecials['css-fontfile'].'">';
+        echo '    <link rel="stylesheet" type="text/css" media="all and (min-width:500px)" href="'.get_template_directory_uri().'/css/'.$designspecials['css-fontfile'].'">';
+        echo "\n";
+
     }        	
+      if ((isset($options['aktiv-linkicons'])) && ($options['aktiv-linkicons']==1)) { 
+        echo '    <link rel="stylesheet" type="text/css" media="screen,projection" href="'.$options['src-linkicons-css'].'">';
+        echo "\n";
+
+    }    
+    
+    
     $custom_fields = get_post_custom();    
     if ( ( (isset($custom_fields['fullsize'])) && ($custom_fields['fullsize'][0] == true) && is_singular()) 
          ||
         ((isset($options['position_sidebarbottom'])) && ($options['position_sidebarbottom'] ==1))) { 
-        echo '  <link rel="stylesheet" type="text/css" media="all" href="'.get_template_directory_uri().'/css/basemod_sidebarbottom.css">';
+        echo '    <link rel="stylesheet" type="text/css" media="all" href="'.get_template_directory_uri().'/css/basemod_sidebarbottom.css">';
+	echo "\n";
     } 
     echo '  <link rel="pingback" href="'.get_bloginfo( 'pingback_url' ).'">';    
     if ( is_singular() && ($options['aktiv-circleplayer']==1) ) {  ?>            
@@ -97,6 +105,7 @@ if ((isset( $options['meta-keywords'] )) && ( strlen(trim($options['meta-keyword
     wp_head(); 
     if (isset($designspecials['aktiv-mediaqueries-allparts']) && ($designspecials['aktiv-mediaqueries-allparts']==1)) {
       echo '    <link rel="stylesheet" type="text/css" media="screen" href="'.get_template_directory_uri().'/css/basemod_mediaqueries_allparts.css">';      
+      echo "\n";
     }
 ?>
 
@@ -127,17 +136,11 @@ if ((isset( $options['meta-keywords'] )) && ( strlen(trim($options['meta-keyword
 			<div class="branding">
                             <?php if ( ! is_home() ) { ?>
                             <a href="<?php echo home_url( '/' ); ?>" title="<?php echo $defaultoptions['default_text_title_home_backlink']; ?>" rel="home" class="logo">
-                            <?php } 
-                                if (($options['1april-prank'] =="1") && (date('m-d') == $options['1april-prank-day']))  {                                
-                                    echo '<h1><img src="'.$options['1april-logo'].'" alt="'.get_bloginfo( 'name' ).'"></h1>';
-                                } else {    
-                            ?>                                                             
+                            <?php } ?>                                                             
                                 <h1><img src="<?php header_image(); ?>" alt="<?php bloginfo( 'name' ); ?>"></h1>
-                            <?php 
-                                }
-                                if ( ! is_home() ) { ?> </a>  <?php } 
-                              if (strlen(trim(get_bloginfo( 'description' )))>1) {
-                            ?> 
+                            <?php                                
+                              if ( ! is_home() ) { ?> </a>  <?php } 
+                              if (strlen(trim(get_bloginfo( 'description' )))>1) { ?> 
                             <p class="description slogan"><?php bloginfo( 'description' ); ?></p>
                             <?php } ?>
 			</div>

@@ -35,15 +35,16 @@ $defaultoptions = array(
     'src-grab'			    => get_template_directory_uri(). "/js/jquery.grab.js",
     'src-csstransforms'		    => get_template_directory_uri(). "/js/mod.csstransforms.min.js",
     'src-circleplayer'		    => get_template_directory_uri(). "/js/circle.player.js",
-    'src-default-symbolbild'        => get_template_directory_uri() .'/images/default-vorlage-705x150.png',    
-    'src-default-symbolbild-404'    => get_template_directory_uri() .'/images/default-404.png',
-    'src-default-symbolbild-category'   => get_template_directory_uri() .'/images/default-category.png',
-    'src-default-symbolbild-search' => get_template_directory_uri() .'/images/default-search.png',
-    'src-default-symbolbild-tag'    => get_template_directory_uri() .'/images/default-tag.png',
-    'src-default-symbolbild-author' => get_template_directory_uri() .'/images/default-author.png',
-    'src-default-symbolbild-archive' => get_template_directory_uri() .'/images/default-archive.png',
-    'src-default-artikel-symbolbild' => get_template_directory_uri() .'/images/default-schiff.jpg',  
-    'slider-defaultbildsrc'	    => get_template_directory_uri() .'/images/default-schiff.jpg',  	
+    'src-default-symbolbild'        => get_template_directory_uri() .'/images/default-vorlage.jpg',
+    'src-default-symbolbild-404'    => get_template_directory_uri() .'/images/default-404.jpg',
+    'src-default-symbolbild-category'   => get_template_directory_uri() .'/images/default-vorlage.jpg',
+    'src-default-symbolbild-search' => get_template_directory_uri() .'/images/default-vorlage.jpg',
+    'src-default-symbolbild-tag'    => get_template_directory_uri() .'/images/default-vorlage.jpg',
+    'src-default-symbolbild-author' => get_template_directory_uri() .'/images/default-vorlage.jpg',
+    'src-default-symbolbild-archive' => get_template_directory_uri() .'/images/default-vorlage.jpg',
+    'src-default-artikel-symbolbild' => get_template_directory_uri() .'/images/default-vorlage.jpg',  
+    'slider-defaultbildsrc'	    => get_template_directory_uri() .'/images/default-vorlage.jpg',  	
+    'src-linkicons-css'		    => get_template_directory_uri() .'/css/basemod_linkicons.css', 
     'login_errors'		    => 1,
     'slider-aktiv'                  => 1,    
     'aktiv-defaultseitenbild'       => 0,
@@ -69,7 +70,7 @@ $defaultoptions = array(
     'newsletter'                    => 0,
     'alle-socialmediabuttons'               => 1,
     'aktiv-circleplayer'                    => 1,
-    
+    'aktiv-linkicons'			    => 1,
     'aktiv-linkmenu'                        => 1,
     'aktiv-startseite-kategorien'           => 1,
     'aktiv-startseite-tags'                 => 1,
@@ -129,11 +130,6 @@ $defaultoptions = array(
     'default_footerlink_show'       => 1,    
     'circleplayer-require-mp3fallback'	=> 1,
     'category-startpageview'	    => 1,
-    '1april-prank'                  => 0,
-    '1april-logo'                   => get_template_directory_uri() .'/images/logo-pony.png',
-    '1april-header-image'           => get_template_directory_uri() .'/images/header-pony.png',
-    '1april-css'                    => get_template_directory_uri() .'/css/colors_pony.css',
-    '1april-prank-day'              => '04-01',
     
 );
 
@@ -275,13 +271,21 @@ $defaultbilder_liste = array(
 		'label' => __( 'Kirche', 'piratenkleider' )
 	),
 	'11'=> array(
-		'src' =>	get_template_directory_uri().'/images/default-vorlage.png',
+		'src' =>	get_template_directory_uri().'/images/default-vorlage.jpg',
 		'label' => __( 'Default', 'piratenkleider' )
 	),
         '12'=> array(
-		'src' =>	get_template_directory_uri().'/images/default-schiff.jpg',
-		'label' => __( 'Default Schiff', 'piratenkleider' )
+		'src' =>	get_template_directory_uri().'/images/default-piraten.jpg',
+		'label' => __( 'Default Piraten', 'piratenkleider' )
 	),
+        '13'=> array(
+		'src' =>	get_template_directory_uri().'/images/default-position.jpg',
+		'label' => __( 'Default Position', 'piratenkleider' )
+	),
+          '14' => array(
+		'src' =>	get_template_directory_uri().'/images/default-orange.jpg',
+		'label' => __( 'Default Orange', 'piratenkleider' )
+	),  
 );
 
 /**
@@ -1533,11 +1537,8 @@ $setoptions = array(
                   'label'   => __( 'Sidebar rechts neben den Inhalt oder darunter positionieren. Wenn die Sidebar unter dem Inhalt positioniert wird, wird der Inhaltsbereich &uuml;ber die gesamte Breite gehen. Alternativ kann ein Custom Field "fullsize" definiert werden. Hat dies den Value 1, wird der Inhaltsbereich auf volle Seitenbreite dargestellt und die Sidebar nach unten verschoben', 'piratenkleider' ),
                   'liste'   => array(0 => __( 'Rechts (Standard)', 'piratenkleider' ), 1 => __( 'Unter dem Inhalt', 'piratenkleider' )),
                   'default' => 0,
-              ),
-              
-               
-               
-                'login_errors' => array(
+              ),                                            
+              'login_errors' => array(
                   'type'    => 'select',
                   'title'   => __( 'Fehlermeldung bei Login', 'piratenkleider' ),
                   'label'   => __( 'Option um die Fehlermeldung beim Login im Backend ein oder abzuschalten, mit der angezeigt wird, warum der Login fehlschlug.', 'piratenkleider' ),
@@ -1545,7 +1546,14 @@ $setoptions = array(
                   'default' => 1,
               ),
 
-               
+              'aktiv-linkicons' => array(
+                  'type'    => 'bool',
+                  'title'   => __( 'Linkicons anzeigen', 'piratenkleider' ),
+                  'label'   => __( 'Bei der Anzeige von Links in Artikeln und Seiten werden bekannte Adressen und Dateitypen mit Icons ergänzt.', 'piratenkleider' ),
+                  'default' => $defaultoptions['aktiv-linkicons'],                 
+              ),
+	       
+	       
               'url-newsletteranmeldung' => array(
                   'type'    => 'url',
                   'title'   => __( 'Newsletter', 'piratenkleider' ),
@@ -1554,19 +1562,7 @@ $setoptions = array(
                  
               ),  
               
-              '1april-prank'   => array(
-                  'type'    => 'bool',
-                  'title'   => __( 'Aprilscherz', 'piratenkleider' ),
-                  'label'   => __( 'Am 1. April wird das Design um Ponys aufgewertet. Seit ihr mutig genug?', 'piratenkleider' ),
-                  'default' => $defaultoptions['1april-prank'],
-              ),   
-                
-               '1april-prank-day' => array(
-                  'type'    => 'text',
-                  'title'   => __( 'Tag des Aprilscherzes', 'piratenkleider' ),
-                  'label'   => __( 'Optional kann man hier den Tag vom 1. April &auml;ndern. Sollte nat&uuml;rlich als Datum "04-01" haben, damit es sp&auml;ter richtig kommt. (Format: "MM-DD")', 'piratenkleider' ),
-                  'default' => $defaultoptions['1april-prank-day'],
-              ),  
+             
               'anonymitaet'  => array(
                   'type'    => 'section',
                   'title'   => __('Anonymit&auml;t &amp; Sicherheit', 'piratenkleider'),         

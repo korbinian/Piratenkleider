@@ -252,6 +252,9 @@
          color: black;
          font-family: "BebasNeueRegular", Helvetica, Arial, sans-serif;
     }
+    .content-header-big {
+	  background: url(../images/int/bg-tags-us.png);
+    }
   .content-primary input[type="text"]:hover, 
   .content-primary textarea:hover,
   .content-primary input[type="text"]:focus, 

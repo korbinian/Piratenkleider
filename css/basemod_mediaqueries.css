@@ -395,7 +395,7 @@
     text-align: left;
     max-width: none;
     min-height: 50px;
-    background: none repeat scroll 0 0 rgba(0, 0, 0, 0.2);
+    background: none repeat scroll 0 0 rgba(255, 255, 255, 0.4);
  }
  .post-comments ol li .comment-body {
     float: none;

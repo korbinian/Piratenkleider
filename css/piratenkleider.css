@@ -1295,6 +1295,7 @@ display: inline-block;
   position: relative;
   height: 240px; 
   overflow: hidden;
+  background: url(../images/int/bg-tags.png);
 }
 .content-header #page-title,
 .content-header h1,

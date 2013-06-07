@@ -47,7 +47,7 @@
 .post-comments{background:url(../images/int/bg-tags.png) repeat fixed -20% top #F80;margin:2px 5px 5px;padding:3px;}
 .post-comments a{color:#000;}
 .post-comments ol li{border:2px solid rgba(0,0,0,0.2);}
-.post-comments ol li .comment-details{color:#222;float:none;width:auto;font-size:1em;font-weight:700;padding-right:2%;text-align:left;max-width:none;min-height:50px;background:none repeat scroll 0 0 rgba(0,0,0,0.2);}
+.post-comments ol li .comment-details{color:#222;float:none;width:auto;font-size:1em;font-weight:700;padding-right:2%;text-align:left;max-width:none;min-height:50px;background:none repeat scroll 0 0 rgba(255,255,255,0.4);}
 .post-comments ol li .comment-body{float:none;width:auto;background:#FFF;padding:5px;}
 .footer .first-footer-widget-area .skin{padding-bottom:0;}
 #socialmedia_iconbar{position:relative;display:block;top:inherit;left:inherit;width:auto;background:#000;border-radius:3px;z-index:10;text-align:center;margin:0;padding:2px;}
