@@ -125,8 +125,10 @@
 
         <div class="post-nav">
           <ul>
-          <?php previous_post_link('<li class="back">%link</li>', '%title', $in_same_cat = false, $excluded_categories = ''); ?>
-          <?php next_post_link('<li class="forward">%link</li>', '%title', $in_same_cat = false, $excluded_categories = ''); ?>
+          <?php 
+           previous_post_link('<li class="back">&#8678; %link</li>', '%title'); 
+           next_post_link('<li class="forward">%link &#8680;</li>', '%title'); 
+           ?>
           </ul>
             
            <?php if (has_filter( 'related_posts_by_category')) { ?>   

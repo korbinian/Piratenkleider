@@ -1205,14 +1205,7 @@ display: inline-block;
       font-size: 20px; }
     .content-primary .post-nav ul li {
       list-style: none; }
-    .content-primary .post-nav .back a {
-      background: url("../images/bigback.png") no-repeat center left;
-      display: block;
-      padding-left: 25px; }
-    .content-primary .post-nav .forward a {
-      background: url("../images/bigforward.png") no-repeat center right;
-      display: block;
-      padding-right: 25px; }
+
     .content-primary .post-nav .related {
       padding-left: 0; }
       .content-primary .post-nav .related li {
