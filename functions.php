@@ -4,7 +4,7 @@
  *
  * @source http://github.com/xwolfde/Piratenkleider
  * @creator xwolf
- * @version 2.17.4
+ * @version 2.17.5
  * @licence CC-BY-SA 3.0 
  */
 
@@ -190,14 +190,7 @@ function piratenkleider_scripts() {
 		array('jquery'),
                 $defaultoptions['js-version']
 	);
- /*   wp_enqueue_script(
-*		'yaml-focusfix',
-*		$defaultoptions['src-yaml-focusfix'],
-*		false,
- *               $defaultoptions['js-version']
-*	);
-  * ausgelagert in layout.js und layout.min.js
- */   
+ 
     if (is_singular() && ($options['aktiv-commentreplylink']==1) && get_option( 'thread_comments' )) {        
             wp_enqueue_script(
 		'comment-reply',
