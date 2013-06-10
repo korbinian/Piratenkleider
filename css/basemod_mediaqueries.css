@@ -362,7 +362,7 @@
    .content-header,
    .content-header-big {
      margin-left: 0px;
-     height: 100px;
+     height: 11em;
      overflow: hidden;
     }
    .content-header h1,
@@ -375,7 +375,7 @@
        max-width: 100%;
    }
   .post-comments {
-     background: url("../images/int/bg-tags.png") repeat fixed -20% top #FF8800;
+     background: url("../images/int/bg-tags.png") repeat -20% top #FF8800;
      padding: 3px;
      margin: 2px 5px 5px 5px;
   }

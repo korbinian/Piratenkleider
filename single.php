@@ -104,6 +104,7 @@
                 echo '</div>';
                 }
           ?>  
+			
           <div class="post-meta">
             <div>
                <?php 
@@ -111,12 +112,19 @@
                 if ($options['aktiv-autoren']) piratenkleider_post_autorinfo();             
                  piratenkleider_post_taxonominfo();  
                 ?>        
-            </div>
-            <div><?php edit_post_link( __( 'Bearbeiten', 'piratenkleider' ), '', '' ); ?></div>
+            </div>            
           </div>
-          
+	  
+	  <div><?php edit_post_link( __( 'Bearbeiten', 'piratenkleider' ), '', '' ); ?></div>
         </div>
-
+	<div class="post-nav">
+		<ul>
+		<?php 
+		 previous_post_link('<li class="back">&#9664; %link</li>', '%title'); 
+		 next_post_link('<li class="forward">%link &#9654;</li>', '%title'); 
+		 ?>
+		</ul>
+	  </div>        
         <hr>
 
         <div class="post-comments" id="comments">
@@ -124,12 +132,6 @@
         </div>
 
         <div class="post-nav">
-          <ul>
-          <?php 
-           previous_post_link('<li class="back">&#8678; %link</li>', '%title'); 
-           next_post_link('<li class="forward">%link &#8680;</li>', '%title'); 
-           ?>
-          </ul>
             
            <?php if (has_filter( 'related_posts_by_category')) { ?>   
           <h3><?php _e("Weitere Artikel in diesem Themenkreis:", 'piratenkleider'); ?></h3>
