@@ -41,10 +41,10 @@
 .content-primary .columns .column2:before{content:"";display:block;border:0;margin-bottom:15px;margin-top:5px;background:url(../images/jolly.png) no-repeat center center;height:26px;padding:0;}
 .content-primary .columns .column2 .post{padding-left:0;}
 .content-primary .skin{padding:10px 5px 5px;}
-.content-header,.content-header-big{margin-left:0;height:100px;overflow:hidden;}
+.content-header,.content-header-big{margin-left:0;height:11em;overflow:hidden;}
 .content-header h1,.content-header-big h1{z-index:100;top:10px;}
 .single .post{max-width:100%;padding:10px;}
-.post-comments{background:url(../images/int/bg-tags.png) repeat fixed -20% top #F80;margin:2px 5px 5px;padding:3px;}
+.post-comments{background:url(../images/int/bg-tags.png) repeat -20% top #F80;margin:2px 5px 5px;padding:3px;}
 .post-comments a{color:#000;}
 .post-comments ol li{border:2px solid rgba(0,0,0,0.2);}
 .post-comments ol li .comment-details{color:#222;float:none;width:auto;font-size:1em;font-weight:700;padding-right:2%;text-align:left;max-width:none;min-height:50px;background:none repeat scroll 0 0 rgba(255,255,255,0.4);}

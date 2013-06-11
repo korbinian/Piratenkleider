@@ -167,12 +167,15 @@
        <h1 class="skip"><?php _e( 'Weitere Informationen', 'piratenkleider' ); ?></h1>
        <?php
        
-        if ((($custom_fields['image_url'][0]<>'') && ($custom_fields['text'][0]<>''))
-           || (($custom_fields['text'][0]<>'') && (has_post_thumbnail())))             
+        if (  
+		( isset($custom_fields['text']) && isset($custom_fields['image_url']) && 
+		   ($custom_fields['image_url'][0]<>'') && ($custom_fields['text'][0]<>''))
+		|| (
+			(isset($custom_fields['text']) && $custom_fields['text'][0]<>'') && (has_post_thumbnail())))             
             {   ?>
             <div id="steckbrief">   
                 <?php
-                if ($custom_fields['image_url'][0]<>'') {
+                if (isset($custom_fields['image_url']) &&  $custom_fields['image_url'][0]<>'') {
                     echo wp_get_attachment_image( $custom_fields['image_url'][0], array(300,300) ); 
                 } else {
                      the_post_thumbnail(array(300,300));

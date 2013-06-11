@@ -4,7 +4,7 @@ Theme URI: http://piratenkleider.xwolf.de
 Description: Allgemeines Theme für Webauftritte der Piratenpartei
 Author: Wolfgang Wiese (xwolf)
 Author URI: http://www.xwolf.de 
-Version: 2.17.3
+Version: 2.17.6
 Tags: orange, two-columns, responsive, fluid-width
 License: CC-BY-SA 3.0 
 License URI: http://creativecommons.org/licenses/by-sa/3.0/de/deed.de
@@ -2816,97 +2816,88 @@ background: none repeat scroll 0 0 #EEEEEE;
 
 /* Social Media Icons     ---------------------------------------------------*/
 
-ul.socialmedia {
-  overflow: hidden;
-  margin: 0;
-}
-ul.socialmedia li {
-    float: left; 
-    width: 32px;
-    height: 32px;
-}
-ul.socialmedia li a {
-    display: block;
-    padding: 0;    
-    margin: 0;
-}
-
-
 #socialmedia_iconbar {
          position: fixed;
          display: block;
          top: 251px;
          left: 0px;
-         width: 34px ;
+         width: 36px ;
          background: black;
          border-radius: 3px ; 
          z-index: 10 ;
          padding: 2px;
          margin: 0px;
          text-align: center;
-     }
+}
 .home #socialmedia_iconbar { 
     top: 234px;
-}    
-#socialmedia_iconbar ul {
+}   
+
+
+ul.socialmedia {
     margin: 0;
+} 
+.socialmedia li {
+    float: left; 
+    margin: 0;
+    padding: 0; 
 }
-#socialmedia_iconbar ul.socialmedia li {
-    margin:0;
-    padding: 0;
+.socialmedia a {
+   /* float: left; */
+    width: 32px;
+    height: 32px;
+    display: block;
+    padding: 0;    
+    margin: 0;       
+    overflow: hidden;
 }
-#socialmedia_iconbar ul.socialmedia li a {
-    height: auto;
+.socialmedia  a:before {
+	display: inline-block;
+	content: url('../images/social-media/socialmedia-sprite.png');
+	margin-left: -32px;
+}
+
+  
+
+
+.socialmedia .icon_delicious:before { margin-top: 0px;}
+.socialmedia .icon_diaspora:before  { margin-top:  -32px;}
+.socialmedia .icon_facebook:before  { margin-top:  -64px;}
+.socialmedia .icon_feed:before      {margin-top:  -96px;}
+.socialmedia .icon_flattr:before    { margin-top:  -128px;}
+.socialmedia .icon_flickr:before    { margin-top:  -160px;}
+.socialmedia .icon_gplus:before     { margin-top:  -192px;}
+.socialmedia .icon_identica:before  { margin-top:  -224px;}
+.socialmedia .icon_itunes:before    { margin-top: -256px;}
+.socialmedia .icon_skype:before     {margin-top: -288px;}
+.socialmedia .icon_twitter:before   {margin-top: -320px;}
+.socialmedia .icon_youtube:before   {margin-top: -352px;}
+.socialmedia .icon_xing:before      { margin-top:  -384px;}
+.socialmedia .icon_tumblr:before    { margin-top:  -416px;}
+.socialmedia .icon_github:before    {margin-top:  -448px;}
+.socialmedia .icon_appnet:before    { margin-top: -480px;}
+
+
+.socialmedia .icon_delicious:hover,.socialmedia  .icon_delicious:focus,
+.socialmedia .icon_diaspora:hover,.socialmedia .icon_diaspora:focus, 
+.socialmedia .icon_facebook:hover,.socialmedia .icon_facebook:focus,
+.socialmedia .icon_feed:hover,.socialmedia .icon_feed:focus,
+.socialmedia .icon_flattr:hover,.socialmedia .icon_flattr:focus,
+.socialmedia .icon_flickr:hover,.socialmedia .icon_flickr:focus, 
+.socialmedia .icon_gplus:hover,.socialmedia .icon_gplus:focus, 
+.socialmedia .icon_identica:hover,.socialmedia .icon_identica:focus, 
+.socialmedia .icon_itunes:hover,.socialmedia .icon_itunes:focus, 
+.socialmedia .icon_skype:hover,.socialmedia .icon_skype:focus,
+.socialmedia .icon_twitter:hover,.socialmedia .icon_twitter:focus, 
+.socialmedia .icon_youtube:hover,.socialmedia .icon_youtube:focus, 
+.socialmedia .icon_xing:hover,.socialmedia .icon_xing:focus, 
+.socialmedia .icon_tumblr:hover,.socialmedia .icon_tumblr:focus,
+.socialmedia .icon_github:hover,.socialmedia .icon_github:focus, 
+.socialmedia .icon_appnet:hover,.socialmedia .icon_appnet:focus {    
+    background-color: #0066CC; 
 }
 
 
-
-.icon_delicious, .icon_disaspora, .icon_facebook, .icon_feed, .icon_flattr, 
-.icon_flickr, .icon_gplus, .icon_identica, .icon_itunes, .icon_skype,
-.icon_twitter, .icon_youtube, .icon_xing, .icon_tumblr, .icon_github,
-.icon_appnet {
-  display: inline-block;
-  background: url('../images/social-media/socialmedia-sprite.png') no-repeat;
-}
-.icon_delicious {background-position: -32px 0px;}
-.icon_disaspora {background-position: -32px -32px;}
-.icon_facebook  {background-position: -32px -64px;}
-.icon_feed      {background-position: -32px -96px;}
-.icon_flattr    {background-position: -32px -128px;}
-.icon_flickr    {background-position: -32px -160px;}
-.icon_gplus     {background-position: -32px -192px;}
-.icon_identica  {background-position: -32px -224px;}
-.icon_itunes    {background-position: -32px -256px;}
-.icon_skype     {background-position: -32px -288px;}
-.icon_twitter   {background-position: -32px -320px;}
-.icon_youtube   {background-position: -32px -352px;}
-.icon_xing      {background-position: -32px -384px;}
-.icon_tumblr    {background-position: -32px -416px;}
-.icon_github    {background-position: -32px -448px;}
-.icon_appnet    {background-position: -32px -480px;}
-
-.icon_delicious:hover,.icon_delicious:focus  {background-position: 0px 0px;}
-.icon_disaspora:hover,.icon_diaspora:focus {background-position: 0px -32px;}
-.icon_facebook:hover,.icon_facebook:focus  {background-position: 0px -64px;}
-.icon_feed:hover,.icon_feed:focus      {background-position: 0px -96px;}
-.icon_flattr:hover,.icon_flattr:focus    {background-position: 0px -128px;}
-.icon_flickr:hover,.icon_flickr:focus    {background-position: 0px -160px;}
-.icon_gplus:hover,.icon_gplus:focus     {background-position: 0px -192px;}
-.icon_identica:hover,.icon_identica:focus  {background-position: 0px -224px;}
-.icon_itunes:hover,.icon_itunes:focus    {background-position: 0px -256px;}
-.icon_skype:hover,.icon_skype:focus     {background-position: 0px -288px;}
-.icon_twitter:hover,.icon_twitter:focus   {background-position: 0px -320px;}
-.icon_youtube:hover,.icon_youtube:focus   {background-position: 0px -352px;}
-.icon_xing:hover,.icon_xing:focus      {background-position: 0px -384px;}
-.icon_tumblr:hover,.icon_tumblr:focus    {background-position: 0px -416px;}
-.icon_github:hover,.icon_github:focus    {background-position: 0px -448px;}
-.icon_appnet:hover,.icon_appnet:focus    {background-position: 0px -480px;}
-
-.socialmedia li a span {
-   position: absolute;
-   left: -9999em;
-   top: -9999em;   
-}
 /* IE Anpassungen -----------------------------------------------------------*/
 
 .ie6 .nav-top .searchsubmit, 

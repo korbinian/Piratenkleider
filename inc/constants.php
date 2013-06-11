@@ -28,7 +28,6 @@ $defaultoptions = array(
     'src-flexslider'                => get_template_directory_uri(). "/js/jquery.flexslider-min.js",
     'src-layoutjs'                  => get_template_directory_uri(). "/js/layout.min.js",
     'src-comment-reply'             => get_template_directory_uri(). "/js/comment-reply.js",
-    'src-dynamic-sidebar'           => get_template_directory_uri(). "/js/dynamic-sidebar.min.js",
     'src-jplayer'		    => get_template_directory_uri(). "/js/jquery.jplayer.min.js",
     'src-transform2d'		    => get_template_directory_uri(). "/js/jquery.transform2d.js",
     'src-grab'			    => get_template_directory_uri(). "/js/jquery.grab.js",
