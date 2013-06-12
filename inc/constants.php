@@ -43,6 +43,7 @@ $defaultoptions = array(
     'src-default-artikel-symbolbild' => get_template_directory_uri() .'/images/default-vorlage.jpg',  
     'slider-defaultbildsrc'	    => get_template_directory_uri() .'/images/default-vorlage.jpg',  	
     'src-linkicons-css'		    => get_template_directory_uri() .'/css/basemod_linkicons.css', 
+    'dir-default-plakate'	    => '/plakate',
     'login_errors'		    => 1,
     'slider-aktiv'                  => 1,    
     'aktiv-defaultseitenbild'       => 0,
@@ -149,12 +150,12 @@ $default_socialmedia_liste = array(
     'facebook' => array(
 	'name' => 'Facebook',
 	'content'  => 'http://www.facebook.com/PiratenparteiDeutschland',
-	'active' => 0,
+	'active' => 1,
     ),
     'twitter' => array(
 	'name' => 'Twitter',
 	'content'  => 'https://twitter.com/#!/piratenpartei',
-	'active' => 0,
+	'active' => 1,
     ),
     'gplus' => array(
 	'name' => 'Google Plus',
@@ -191,7 +192,7 @@ $default_socialmedia_liste = array(
     'youtube' => array(
 	'name' => 'YouTube',
 	'content'  => 'http://www.youtube.com/user/piratenpartei',
-	'active' => 0,
+	'active' => 1,
     ),
     'xing' => array(
 	'name' => 'Xing',
@@ -201,7 +202,7 @@ $default_socialmedia_liste = array(
     'tumblr' => array(
 	'name' => 'Tumblr',
 	'content'  => 'http://wirstellendasmalinfrage.tumblr.com',
-	'active' => 0,
+	'active' => 1,
     ),
     'github' => array(
 	'name' => 'GitHub',
@@ -268,146 +269,53 @@ $defaultbilder_liste = array(
 		'src' =>	get_template_directory_uri().'/images/defaultbild-kirche.jpg',
 		'label' => __( 'Kirche', 'piratenkleider' )
 	),
-	'11'=> array(
+	'11' => array(
+		'src' =>	get_template_directory_uri().'/images/defaultbild-wiederstand.jpg',
+		'label' => __( 'Wiederstand', 'piratenkleider' )
+	), 
+        '12'=> array(
+		'src' =>	get_template_directory_uri().'/images/defaultbild-licht.jpg',
+		'label' => __( 'Licht', 'piratenkleider' )
+	),
+        '13'=> array(
+		'src' =>	get_template_directory_uri().'/images/defaultbild-laptop.jpg',
+		'label' => __( 'Laptop', 'piratenkleider' )
+	),
+        '14' => array(
+		'src' =>	get_template_directory_uri().'/images/defaultbild-netzwerk.jpg',
+		'label' => __( 'Netzwerk / Server', 'piratenkleider' )
+	), 
+	'15' => array(
+		'src' =>	get_template_directory_uri().'/images/defaultbild-piraten2.jpg',
+		'label' => __( 'Piraten 2', 'piratenkleider' )
+	), 
+	'16' => array(
+		'src' =>	get_template_directory_uri().'/images/defaultbild-piraten3.jpg',
+		'label' => __( 'Piraten 3', 'piratenkleider' )
+	), 
+	'17' => array(
+		'src' =>	get_template_directory_uri().'/images/defaultbild-fahne.jpg',
+		'label' => __( 'Piratenfahne', 'piratenkleider' )
+	), 
+	'18' => array(
+		'src' =>	get_template_directory_uri().'/images/defaultbild-server.jpg',
+		'label' => __( 'Server 1', 'piratenkleider' )
+	), 
+	'19' => array(
+		'src' =>	get_template_directory_uri().'/images/defaultbild-server2.jpg',
+		'label' => __( 'Server 2', 'piratenkleider' )
+	), 
+        '20' => array(
+		'src' =>	get_template_directory_uri().'/images/default-orange.jpg',
+		'label' => __( 'Orange BTW13', 'piratenkleider' )
+	), 
+	'21'=> array(
 		'src' =>	get_template_directory_uri().'/images/default-vorlage.jpg',
 		'label' => __( 'Default', 'piratenkleider' )
 	),
-        '12'=> array(
-		'src' =>	get_template_directory_uri().'/images/default-piraten.jpg',
-		'label' => __( 'Default Piraten', 'piratenkleider' )
-	),
-        '13'=> array(
-		'src' =>	get_template_directory_uri().'/images/default-position.jpg',
-		'label' => __( 'Default Position', 'piratenkleider' )
-	),
-          '14' => array(
-		'src' =>	get_template_directory_uri().'/images/default-orange.jpg',
-		'label' => __( 'Default Orange', 'piratenkleider' )
-	),  
 );
 
-/**
- * Liste der Default-Plakate fer die Sidebar
- */
-$defaultplakate_liste = array(
-	'0' => array(
-		'src' =>	get_template_directory_uri().'/plakate/LTWNRW12_Plakat_A01.jpg',
-		'label' => __( 'Plakat LTWNRW12 A01', 'piratenkleider' )
-	),
-	'1' => array(
-		'src' =>	get_template_directory_uri().'/plakate/LTWNRW12_Plakat_B03.jpg',
-		'label' => __( 'Plakat LTWNRW12_Plakat_B03', 'piratenkleider' )
-	),
-	'2' => array(
-		'src' =>	get_template_directory_uri().'/plakate/LTWNRW12_Plakat_C01.jpg',
-		'label' => __( 'Plakat LTWNRW12_Plakat_C01', 'piratenkleider' )
-	),
-        '3' => array(
-		'src' =>	get_template_directory_uri().'/plakate/LTWNRW12_Plakat_D01.jpg',
-		'label' => __( 'Plakat LTWNRW12_Plakat_D01', 'piratenkleider' )
-	),
-        '4' => array(
-		'src' =>	get_template_directory_uri().'/plakate/LTWNRW12_Plakat_E01.jpg',
-		'label' => __( 'Plakat LTWNRW12_Plakat_E01', 'piratenkleider' )
-	),
-        '5' => array(
-		'src' =>	get_template_directory_uri().'/plakate/LTWNRW12_Plakat_F03.jpg',
-		'label' => __( 'Plakat LTWNRW12_Plakat_F03', 'piratenkleider' )
-	),
-	'6' => array(
-		'src' =>	get_template_directory_uri().'/plakate/LTWSH12_Echte-Mitbestimmung.jpg',
-		'label' => __( 'Plakat LTWSH12_Echte-Mitbestimmung', 'piratenkleider' )
-	),
-	'7' => array(
-		'src' =>	get_template_directory_uri().'/plakate/LTWSH12_Fehmarnbelt.jpg',
-		'label' => __( 'Plakat LTWSH12_Fehmarnbelt', 'piratenkleider' )
-	),
-        '8' => array(
-		'src' =>	get_template_directory_uri().'/plakate/LTWSH12_Freies-Wissen.jpg',
-		'label' => __( 'Plakat LTWSH12_Freies-Wissen', 'piratenkleider' )
-	),
-        '9' => array(
-		'src' =>	get_template_directory_uri().'/plakate/LTWSH12_Ich-will-so-leben.jpg',
-		'label' => __( 'Plakat LTWSH12_Ich-will-so-leben', 'piratenkleider' )
-	),
-       '10' => array(
-		'src' =>	get_template_directory_uri().'/plakate/LTWSH12_Inseln-allgemein.jpg',
-		'label' => __( 'Plakat LTWSH12_Inseln-allgemein', 'piratenkleider' )
-	),
-        '11' => array(
-		'src' =>	get_template_directory_uri().'/plakate/LTWSH12_Naechster-Halt.jpg',
-		'label' => __( 'Plakat LTWSH12_Naechster-Halt', 'piratenkleider' )
-	),
-	'12' => array(
-		'src' =>	get_template_directory_uri().'/plakate/LTWSH12_Orange_isst_gesund.jpg',
-		'label' => __( 'Plakat LTWSH12_Orange_isst_gesund', 'piratenkleider' )
-	),
-	'13' => array(
-		'src' =>	get_template_directory_uri().'/plakate/LTWSH12_Transparenz.jpg',
-		'label' => __( 'Plakat LTWSH12_Transparenz', 'piratenkleider' )
-	),
-        '14' => array(
-		'src' =>	get_template_directory_uri().'/plakate/LTWSH12_Trau-keinem-Plakat.jpg',
-		'label' => __( 'Plakat LTWSH12_Trau-keinem-Plakat', 'piratenkleider' )
-	),
-        '15' => array(
-		'src' =>	get_template_directory_uri().'/plakate/LTWSH12_Warum_haenge_ich_hier.jpg',
-		'label' => __( 'Plakat LTWSH12_Warum_haenge_ich_hier', 'piratenkleider' )
-	),
-       '16' => array(
-		'src' =>	get_template_directory_uri().'/plakate/LTWSH12_Wir_sind_Romantiker.jpg',
-		'label' => __( 'Plakat LTWSH12_Wir_sind_Romantiker', 'piratenkleider' )
-	),    
-       '17' => array(
-		'src' =>	get_template_directory_uri().'/plakate/LTWNDS13_Awareness01.jpg',
-		'label' => __( 'Plakat LTWNDS13 "Zarteste Versuchung"', 'piratenkleider' )
-	),    
-       '18' => array(
-		'src' =>	get_template_directory_uri().'/plakate/LTWNDS13_Awareness02.jpg',
-		'label' => __( 'Plakat LTWNDS13 "Ich w&auml;hle es"', 'piratenkleider' )
-	),    
-       '19' => array(
-		'src' =>	get_template_directory_uri().'/plakate/LTWNDS13_Awareness03.jpg',
-		'label' => __( 'Plakat LTWNDS13 "Der Slogan"', 'piratenkleider' )
-	),    
-       '20' => array(
-		'src' =>	get_template_directory_uri().'/plakate/LTWNDS13_Awareness04.jpg',
-		'label' => __( 'Plakat LTWNDS13 "Entdecke dein Wahllokal"', 'piratenkleider' )
-	),    
-       '21' => array(
-		'src' =>	get_template_directory_uri().'/plakate/LTWNDS13_Awareness05.jpg',
-		'label' => __( 'Plakat LTWNDS13 "Rettet die Wahlen"', 'piratenkleider' )
-	),    
-       '22' => array(
-		'src' =>	get_template_directory_uri().'/plakate/LTWNDS13_Awareness06.jpg',
-		'label' => __( 'Plakat LTWNDS13 "Ich will so leben, wie ich bin"', 'piratenkleider' )
-	),    
-       '23' => array(
-		'src' =>	get_template_directory_uri().'/plakate/LTWNDS13_Awareness07.jpg',
-		'label' => __( 'Plakat LTWNDS13 "B&uuml;rger w&uuml;rden w&auml;hlen gehen"', 'piratenkleider' )
-	),    
-       '24' => array(
-		'src' =>	get_template_directory_uri().'/plakate/LTWNDS13_Awareness08.jpg',
-		'label' => __( 'Plakat LTWNDS13 "W&auml;hlen was verbindet"', 'piratenkleider' )
-	),    
-       '25' => array(
-		'src' =>	get_template_directory_uri().'/plakate/LTWNDS13_Awareness09.jpg',
-		'label' => __( 'Plakat LTWNDS13 "W&auml;hlen ist geil"', 'piratenkleider' )
-	),    
-       '26' => array(
-		'src' =>	get_template_directory_uri().'/plakate/LTWNDS13_Awareness10.jpg',
-		'label' => __( 'Plakat LTWNDS13 "Think different"', 'piratenkleider' )
-	),    
-       '27' => array(
-		'src' =>	get_template_directory_uri().'/plakate/LTWNDS13_Trust01.jpg',
-		'label' => __( 'Plakat LTWNDS13 "Alles andere ist Werbung"', 'piratenkleider' )
-	),    
-       '28' => array(
-		'src' =>	get_template_directory_uri().'/plakate/LTWNDS13_Trust02.jpg',
-		'label' => __( 'Plakat LTWNDS13 "Vertrau keinem Plakat"', 'piratenkleider' )
-	),    
-        
-);
+
 /* 
  * Default Links for Topmenu , can be overwritten bei widget  
  */
@@ -1325,7 +1233,7 @@ $setoptions = array(
                   'default' => $defaultoptions['slider-defaultwerbeplakate'],
                    'parent'  => 'plakate',
               ),
-               
+          /*     
               'plakate-src' => array(
                   'type'    => 'bildchecklist',
                   'title'   => __( 'Plakatauswahl', 'piratenkleider' ),
@@ -1334,6 +1242,17 @@ $setoptions = array(
 		  'liste'   => $defaultplakate_liste,
 		  'parent'  => 'plakate'
               ),
+	    */
+	   
+	       
+	      'plakate-src' => array(
+                  'type'    => 'bilddirchecklist',
+                  'title'   => __( 'Plakatauswahl', 'piratenkleider' ),
+                  'label'   => __( 'Diese Bilder werden in der Sidebar rechts gezeigt, sofern dieses &uuml;ber die Optionen (vgl. Slider) auch eingeschaltet ist.', 'piratenkleider' ),
+                  'default' => $defaultoptions['dir-default-plakate'],		                     
+		  'parent'  => 'plakate'
+              ), 
+	       
               'plakate-title' => array(
                   'type'    => 'text',
                   'title'   => __( 'Optionaler Ersatztitel', 'piratenkleider' ),

@@ -79,8 +79,7 @@ function theme_options_do_page($tab = '') {
           
           
         <div id="einstellungen">                                       
-            <div>
-                <table>
+	<table>	
                 <?php
                     if (isset($setoptions['piratenkleider_theme_options'][$tab]['fields'])) {
                         foreach($setoptions['piratenkleider_theme_options'][$tab]['fields'] as $i => $value) {   
@@ -93,20 +92,20 @@ function theme_options_do_page($tab = '') {
 
                             if ($type == 'section') {
                                 if ((isset($setsection)) && ($setsection != "")) {
-                                        echo "\t\t\t</table>\n";   
-                                        echo "\t\t</td>\n";
-                                        echo "\t</tr>\n";
+                                    echo "\t\t\t</table>\n";   
+                                    echo "\t\t</td>\n";
+                                    echo "\t</tr>\n";
                                 }
                                 echo "\t<tr valign=\"top\">\n\t\t<th scope=\"row\">";
                                 echo $title;
-                                echo "</th>\n\t\t<td>";
-                                echo "\t\t\t<table>\n";        
+                                echo "</th>\n\t\t<td>";                                 
+				echo "\t\t\t<table class=\"suboptions\">\n";      
                                 $setsection = $name;
                             } else {
 
-                                echo "\t<tr valign=\"top\">\n\t\t<th scope=\"row\">";
-                                echo $title;
-                                echo "</th>\n\t\t<td>";
+                               echo "\t<tr valign=\"top\">\n\t\t<th scope=\"row\">";
+                               echo $title;
+                               echo "</th>\n\t\t<td>";
 
                                 if ((!isset($options[$name])) && (isset($value['default'])) && (!empty($value['default']))) {                                       
                                         $options[$name] = $value['default'];                                                                               
@@ -206,12 +205,92 @@ function theme_options_do_page($tab = '') {
                                                    value="<?php echo esc_attr( $option['src'] ); ?>" <?php echo $checked; ?> />                                                     
                                             <?php echo $option['label']?>
                                             </div>
-                                            <div style="height: 200px; overflow: hidden; margin: 5px auto; width: 150px; padding: 0;">
-                                            <img src="<?php echo $option['src'] ?>" style="width: 150px; height: auto;  ">
+                                            <div style="height: 395px; overflow: hidden; margin: 5px auto; width: 280px; padding: 0;">
+                                            <img src="<?php echo $option['src'] ?>" style="width: 280px; height: auto;  ">
                                             </div>
                                         </label>
                                      <?php }                                                                                                                             
                                     echo "<br style=\"clear: left;\">\n";
+                                } elseif ($type=='bilddirchecklist') {
+				   echo "\t\t\t";      
+				   $dir = get_template_directory().$value['default'];
+				   
+				  
+				    if (is_dir($dir)) {	   
+				       $contents = dirToArray($dir);
+				       foreach ($contents as $key => $wert) {      
+					   if (is_array($wert)) {	
+
+					       echo "<h4>$key<h4>";
+					       foreach ($wert as $sub) {	       
+						   $bildurl = get_template_directory_uri().$value['default'].'/'.$key.'/'.$sub;
+						   $checked = '';
+						   if ((isset($options[$name])) && (is_array($options[$name]))) {
+							foreach ($options[$name] as $current) {    
+							    if ($current == $bildurl) {
+
+								 $checked = "checked=\"checked\"";                                                                                            
+								 break;
+							    }                                        
+							}
+						    } ?>
+
+						    <label class="plakattile" style="width: 280px; height: 435px">
+							<div style="height: 40px; width: 100%; margin:0 auto; background-color: #F28900; color: white; display: block;">  
+							<input type="checkbox" name="piratenkleider_theme_options[<?php echo $name?>][]" 
+							       value="<?php echo esc_attr( $bildurl ); ?>" <?php echo $checked; ?> />                                                     
+							<?php echo $sub ?>
+							</div>
+							<div style="height: 395px; overflow: hidden; margin: 5px auto; width: 280px; padding: 0;">
+							<img src="<?php echo $bildurl ?>" style="width: 280px; height: auto;  ">
+							</div>
+						    </label>		
+						    <?php    
+					       }
+					       echo "<br style=\"clear: left;\">\n";
+					   }      
+				       }
+				       // First Dir only
+
+				       $found=0;
+				       foreach ($contents as $key => $wert) {    
+					   if (!is_array($wert)) {              
+						    if ($found==0) {
+							print "<h4>".$value['default']."</h4>";
+							$found=1;
+						    }
+						   $bildurl = get_template_directory_uri().$value['default'].'/'.$wert;
+						   $checked = '';
+						   if ((isset($options[$name])) && (is_array($options[$name]))) {
+							foreach ($options[$name] as $current) {    
+							    if ($current == $bildurl) {
+
+								 $checked = "checked=\"checked\"";                                                                                            
+								 break;
+							    }                                        
+							}
+						    } ?>
+
+						    <label class="plakattile" style="width: 280px; height: 435px">
+							<div style="height: 40px; width: 100%; margin:0 auto; background-color: #F28900; color: white; display: block;">  
+							<input type="checkbox" name="piratenkleider_theme_options[<?php echo $name?>][]" 
+							       value="<?php echo esc_attr( $bildurl ); ?>" <?php echo $checked; ?> />                                                     
+							<?php echo $sub ?>
+							</div>
+							<div style="height: 395px; overflow: hidden; margin: 5px auto; width: 280px; padding: 0;">
+							<img src="<?php echo $bildurl ?>" style="width: 280px; height: auto;  ">
+							</div>
+						    </label>		
+						    <?php    	  	    	   	   	   	   
+					   }
+
+				       }
+					echo "<br style=\"clear: left;\">\n"; 
+				    }
+				   
+				   
+                                                                                                                            
+                                   				    
 				} elseif ($type=='urlchecklist') {
 				    				    
 				   echo "\t\t\t";                      
@@ -303,10 +382,9 @@ function theme_options_do_page($tab = '') {
                         _e( 'Optionen nicht definiert', 'piratenkleider' );
                     }
                 ?>
-                </table>
-            </div>            
+                     
                 
-          
+	</table>
         </div>                                        
                     
         <p class="submit">
@@ -365,7 +443,7 @@ function theme_options_validate( $input ) {
                             $output[$name]  =  wp_filter_nohtml_kses( $input[$name] ); 
                         } elseif ($type=='select') {                        
                             $output[$name]  =  wp_filter_nohtml_kses( $input[$name] ); 
-                        } elseif ($type=='bildchecklist') {                            
+                        } elseif (($type=='bildchecklist') || ($type=='bilddirchecklist')) {                            
                             $output[$name]  = $input[$name];
 			} elseif ($type=='urlchecklist') {   	    			   
 			    $output[$name]  = $input[$name];
@@ -963,3 +1041,31 @@ function theme_designspecials_validate( $input ) {
    
 	return $input;
 }
+
+/*
+ * Reads Directory and contents, ignoring unused files
+ */
+
+function dirToArray($dir) {  
+   $result = array();
+   $contents = scandir($dir);
+   $bad = array(".", "..", ".DS_Store", "_notes", "Thumbs.db", "Browse.plb");
+   $cdir = array_diff($contents, $bad);   
+   
+   foreach ($cdir as $key => $value) {
+      if (!in_array($value,array(".","..")))
+      {
+         if (is_dir($dir . DIRECTORY_SEPARATOR . $value))
+         {
+            $result[$value] = dirToArray($dir . DIRECTORY_SEPARATOR . $value);
+         }
+         else
+         {
+            $result[] = $value;
+         }
+      }
+   }
+  
+   return $result;
+} 
+

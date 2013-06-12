@@ -3128,7 +3128,7 @@ html[xmlns] .slides {display: block;}
       werden abgeschnitten */
 }
 .content-aside .flexslider {
-    height: 391px;    
+    height: auto;
     margin: 10px auto 20px;
     
 }
@@ -3202,7 +3202,6 @@ html[xmlns] .slides {
         background: white; 
 }  
 
-
 .content-aside .flexslider .flex-pauseplay,
 .first-teaser-widget-area .flexslider .flex-pauseplay {
     position: absolute;
@@ -3219,11 +3218,7 @@ html[xmlns] .slides {
     color: black; 
 
 }
-.content-aside .flexslider .flex-pauseplay {
-    bottom: inherit;
-    top: 10px;
-    left: 10px;
-}
+
 .flexslider .flex-pauseplay:hover,
 .flexslider .flex-pauseplay:focus {
         background: white;
