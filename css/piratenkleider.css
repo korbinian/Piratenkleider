@@ -2352,11 +2352,10 @@ div.ics-calendar-holder .ics-calendar-event {
     top: 0;
     right: 0;
     width: auto;
-    height: 30px; 
+    height: 32px; 
   }
   
-  .nav-top a {
-      height: 30px;
+  .nav-top a {      
       display: block; 
   }
   .nav-top ul.socialmedia {
@@ -2843,7 +2842,6 @@ ul.socialmedia {
     padding: 0; 
 }
 .socialmedia a {
-   /* float: left; */
     width: 32px;
     height: 32px;
     display: block;
@@ -2858,23 +2856,21 @@ ul.socialmedia {
 }
 
   
-
-
 .socialmedia .icon_delicious:before { margin-top: 0px;}
-.socialmedia .icon_diaspora:before  { margin-top:  -32px;}
-.socialmedia .icon_facebook:before  { margin-top:  -64px;}
-.socialmedia .icon_feed:before      {margin-top:  -96px;}
-.socialmedia .icon_flattr:before    { margin-top:  -128px;}
-.socialmedia .icon_flickr:before    { margin-top:  -160px;}
-.socialmedia .icon_gplus:before     { margin-top:  -192px;}
-.socialmedia .icon_identica:before  { margin-top:  -224px;}
+.socialmedia .icon_diaspora:before  { margin-top: -32px;}
+.socialmedia .icon_facebook:before  { margin-top: -64px;}
+.socialmedia .icon_feed:before      { margin-top: -96px;}
+.socialmedia .icon_flattr:before    { margin-top: -128px;}
+.socialmedia .icon_flickr:before    { margin-top: -160px;}
+.socialmedia .icon_gplus:before     { margin-top: -192px;}
+.socialmedia .icon_identica:before  { margin-top: -224px;}
 .socialmedia .icon_itunes:before    { margin-top: -256px;}
-.socialmedia .icon_skype:before     {margin-top: -288px;}
-.socialmedia .icon_twitter:before   {margin-top: -320px;}
-.socialmedia .icon_youtube:before   {margin-top: -352px;}
-.socialmedia .icon_xing:before      { margin-top:  -384px;}
-.socialmedia .icon_tumblr:before    { margin-top:  -416px;}
-.socialmedia .icon_github:before    {margin-top:  -448px;}
+.socialmedia .icon_skype:before     { margin-top: -288px;}
+.socialmedia .icon_twitter:before   { margin-top: -320px;}
+.socialmedia .icon_youtube:before   { margin-top: -352px;}
+.socialmedia .icon_xing:before      { margin-top: -384px;}
+.socialmedia .icon_tumblr:before    { margin-top: -416px;}
+.socialmedia .icon_github:before    { margin-top: -448px;}
 .socialmedia .icon_appnet:before    { margin-top: -480px;}
 
 
@@ -2936,9 +2932,6 @@ ul.socialmedia {
 .ie7 .single .post-info {
   display: none; 
 }
-
-
-
 
 .ie7 .nav-top ul, 
 .ie8 .nav-top ul {
@@ -3465,111 +3458,109 @@ html[xmlns] .slides {
       z-index: 999; 
  }
  
-
-
      
-  .nav-main ul.menu li ul li {
-        background: white;
-        color: black; 
-  }      
-  .nav-main ul.menu li:hover ul hr,
-  .nav-main ul.menu li.hover ul hr {
-        margin: 0 ; 
-  }
+.nav-main ul.menu li ul li {
+    background: white;
+    color: black; 
+}      
+.nav-main ul.menu li:hover ul hr,
+.nav-main ul.menu li.hover ul hr {
+    margin: 0 ; 
+}
 
-  .nav-main ul.menu li:hover ul li, 
-  .nav-main ul.menu li.hover ul li {
-        float: none;
-        position: relative; 
-  }
-  .nav-main ul.menu li:hover ul li a,
-  .nav-main ul.menu li.hover ul li a {
-          font-family: Helvetica, Arial, sans-serif;
-          letter-spacing: 0;
-          font-size: 12px;
-          padding: 2px 18px;
-          -moz-border-radius-topleft: 0;
-          -moz-border-radius-topright: 0;
-          -moz-border-radius-bottomright: 0;
-          -moz-border-radius-bottomleft: 0;
-          border-top-left-radius: 0;
-          border-top-right-radius: 0;
-          border-bottom-right-radius: 0;
-          border-bottom-left-radius: 0; 
-          z-index: 999;
-   }
+.nav-main ul.menu li:hover ul li, 
+.nav-main ul.menu li.hover ul li {
+    float: none;
+    position: relative; 
+}
+.nav-main ul.menu li:hover ul li a,
+.nav-main ul.menu li.hover ul li a {
+      font-family: Helvetica, Arial, sans-serif;
+      letter-spacing: 0;
+      font-size: 12px;
+      padding: 2px 18px;
+      -moz-border-radius-topleft: 0;
+      -moz-border-radius-topright: 0;
+      -moz-border-radius-bottomright: 0;
+      -moz-border-radius-bottomleft: 0;
+      border-top-left-radius: 0;
+      border-top-right-radius: 0;
+      border-bottom-right-radius: 0;
+      border-bottom-left-radius: 0; 
+      z-index: 999;
+}
 
-    .nav-main ul.menu li:hover ul li ul,
-    .nav-main ul.menu li.hover ul li ul {
-          top: -999em; 
-    }
-   
-    
-    .nav-main ul.menu li ul li a:hover,
-    .nav-main ul.menu li ul li.hover a {
-            background: #2d7dc5;
-            color: white; 
-    }
-    .nav-main ul.menu li ul li.hover ul li a{
-        background: white;
-        color: black;
-    }    
-   .nav-main ul.menu li ul li ul li.hover a {
-            background: #2d7dc5;
-            color: white; 
-   }
-   
-   
-   .nav-main ul.menu li:hover ul li.has_children,
-   .nav-main ul.menu li.hover ul li.has_children {
-        background: url("../images/plus_black.gif") center right no-repeat;
-   }
-
-    
-   
-   .nav-main ul.menu li:hover ul li:hover ul li,
-   .nav-main ul.menu li.hover ul li.hover ul li { 
-        background-image: none; 
-   }
-
-   .nav-main ul.menu li:hover ul li:hover ul li.has_children,
-   .nav-main ul.menu li.hover ul li.hover ul li.has_children { 
-        background: url("../images/plus_black.gif") center right no-repeat;
-   }
-   .nav-main ul.menu li:hover ul li:hover ul li:hover ul li,
-   .nav-main ul.menu li.hover ul li.hover ul li.hover ul li { 
-        background-image: none; 
-   }
+.nav-main ul.menu li:hover ul li ul,
+.nav-main ul.menu li.hover ul li ul {
+      top: -999em; 
+}
 
 
-       .nav-main ul.menu li:hover ul li:hover ul,
-       .nav-main ul.menu li.hover ul li.hover ul {
-            top: -5px;
-            left: 190px; 
-       }
-       .nav-main ul.menu li:hover ul li:hover ul li>ul,
-       .nav-main ul.menu li.hover ul li.hover ul li>ul{
-              top: -999em; 
-       }
-      .nav-main ul.menu li:hover ul li:hover ul li:hover ul,
-      .nav-main ul.menu li.hover ul li.hover ul li.hover ul {
-            top: 5px;
-            left: 190px; 
-       }
-       .nav-main ul.menu li:hover ul li:hover ul li:hover ul li>ul,
-       .nav-main ul.menu li.hover ul li.hover ul li.hover ul li>ul{
-              top: -999em; 
-       }
-      .nav-main ul.menu li:hover ul li:hover ul li:hover ul li:hover ul,
-      .nav-main ul.menu li.hover ul li.hover ul li.hover ul li.hover ul {
-            top: 5px;
-            left: 190px; 
-       }
-       .nav-main ul.menu li:hover ul li:hover ul li:hover ul li:hover ul li>ul,
-       .nav-main ul.menu li.hover ul li.hover ul li.hover ul li.hover ul li>ul{
-              top: -999em; 
-       }
-       
+.nav-main ul.menu li ul li a:hover,
+.nav-main ul.menu li ul li.hover a {
+	background: #2d7dc5;
+	color: white; 
+}
+.nav-main ul.menu li ul li.hover ul li a{
+    background: white;
+    color: black;
+}    
+.nav-main ul.menu li ul li ul li.hover a {
+	background: #2d7dc5;
+	color: white; 
+}
+
+
+.nav-main ul.menu li:hover ul li.has_children,
+.nav-main ul.menu li.hover ul li.has_children {
+    background: url("../images/plus_black.gif") center right no-repeat;
+}
+
+
+
+.nav-main ul.menu li:hover ul li:hover ul li,
+.nav-main ul.menu li.hover ul li.hover ul li { 
+    background-image: none; 
+}
+
+.nav-main ul.menu li:hover ul li:hover ul li.has_children,
+.nav-main ul.menu li.hover ul li.hover ul li.has_children { 
+    background: url("../images/plus_black.gif") center right no-repeat;
+}
+.nav-main ul.menu li:hover ul li:hover ul li:hover ul li,
+.nav-main ul.menu li.hover ul li.hover ul li.hover ul li { 
+    background-image: none; 
+}
+
+
+.nav-main ul.menu li:hover ul li:hover ul,
+.nav-main ul.menu li.hover ul li.hover ul {
+    top: -5px;
+    left: 190px; 
+}
+.nav-main ul.menu li:hover ul li:hover ul li>ul,
+.nav-main ul.menu li.hover ul li.hover ul li>ul{
+      top: -999em; 
+}
+.nav-main ul.menu li:hover ul li:hover ul li:hover ul,
+.nav-main ul.menu li.hover ul li.hover ul li.hover ul {
+    top: 5px;
+    left: 190px; 
+}
+.nav-main ul.menu li:hover ul li:hover ul li:hover ul li>ul,
+.nav-main ul.menu li.hover ul li.hover ul li.hover ul li>ul{
+      top: -999em; 
+}
+.nav-main ul.menu li:hover ul li:hover ul li:hover ul li:hover ul,
+.nav-main ul.menu li.hover ul li.hover ul li.hover ul li.hover ul {
+    top: 5px;
+    left: 190px; 
+}
+.nav-main ul.menu li:hover ul li:hover ul li:hover ul li:hover ul li>ul,
+.nav-main ul.menu li.hover ul li.hover ul li.hover ul li.hover ul li>ul{
+      top: -999em; 
+}
+
        
 
 .ie6 .nav-main ul.menu li ul,
@@ -3577,7 +3568,6 @@ html[xmlns] .slides {
   display: none !important; 
 }
 /* IE 7 und aelter haben keine Submenus und muessen daher das Seitenmenu nutzen */
-
 /* 
        Buttons und Symbolzeichen aus UTF;
        Teilweise uebernommen aus YAML
@@ -3594,7 +3584,6 @@ html[xmlns] .slides {
 .ym-save:before { content: "\2714"; }
 .ym-spark:before { content: "\2737"; }
 .ym-star:before { content: "\2605"; }
-
 
 
 .teaserlinks .symbol:before {
@@ -3620,7 +3609,6 @@ html[xmlns] .slides {
     transition: all 0.2s ease-in-out;    
 }
 
-
 .symbol-idee:before { content: "\0021"; }
 .symbol-person:before { content: "\263A"; }
 .symbol-herz:before { content: "\2665";   }
@@ -3639,19 +3627,13 @@ html[xmlns] .slides {
 .symbol-steuerrad:before { content: "\2638"; }
 .symbol-musiknote:before { content: "\266B"; }
 .symbol-paragraph:before { content: "\00A7"; }
-
 .symbol-play:before { content: "\25B6"; }
 .symbol-save:before { content: "\2714"; }
 .symbol-spark:before { content: "\2737"; }
 .symbol-star:before { content: "\2605"; }
-
-
 .symbol-euro:before { content: "\20AC"; }
 .symbol-dollar:before { content: "\0024"; }
 .symbol-copyright:before { content: "\00A9"; }
-
-
-
 .symbol-eins:before { content: "\2460"; }
 .symbol-zwei:before { content: "\2461"; }
 .symbol-drei:before { content: "\2462"; }
