@@ -2832,7 +2832,7 @@ background: none repeat scroll 0 0 #EEEEEE;
     top: 234px;
 }   
 
-
+.content #socialmedia_iconbar ul.socialmedia li, 
 ul.socialmedia {
     margin: 0;
 } 
