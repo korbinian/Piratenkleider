@@ -221,7 +221,7 @@ function theme_options_do_page($tab = '') {
 				       foreach ($contents as $key => $wert) {      
 					   if (is_array($wert)) {	
 
-					       echo "<h4>$key<h4>";
+					       echo "<h4>Ordner $key<h4>";
 					       foreach ($wert as $sub) {	       
 						   $bildurl = get_template_directory_uri().$value['default'].'/'.$key.'/'.$sub;
 						   $checked = '';
@@ -256,7 +256,7 @@ function theme_options_do_page($tab = '') {
 				       foreach ($contents as $key => $wert) {    
 					   if (!is_array($wert)) {              
 						    if ($found==0) {
-							print "<h4>".$value['default']."</h4>";
+							print "<h4>Ordner ".$value['default']."</h4>";
 							$found=1;
 						    }
 						   $bildurl = get_template_directory_uri().$value['default'].'/'.$wert;
