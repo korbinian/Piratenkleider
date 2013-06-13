@@ -16,14 +16,13 @@ $defaultoptions = array(
     'smallslider-thumb-height'      => 185,
     'bigslider-thumb-width'         => 705,
     'bigslider-thumb-height'        => 240,
-    'plakate-width'                 => 280,
-    'plakate-height'                => 395,
+    'plakate-width'                 => 296,
+    'plakate-height'                => 416,
     'plakate-title'		    => '',
     'plakate-url'		    => 'http://www.piratenpartei.de',
     'plakate-altadressen'	    => '',
     'plakate-src'		    => array(),
     'default-fontset-file'          => 'font-bebas.css',
-    'url-twitterapi'                => 'https://api.twitter.com/1/statuses/user_timeline.rss',
     'src-jquery'                    => get_template_directory_uri(). "/js/jquery.min.js",
     'src-flexslider'                => get_template_directory_uri(). "/js/jquery.flexslider-min.js",
     'src-layoutjs'                  => get_template_directory_uri(). "/js/layout.min.js",
@@ -83,8 +82,6 @@ $defaultoptions = array(
     'zeige_subpagesonly'                    => 1,
     'zeige_sidebarpagemenu'                 => 1,
     'zeige_commentbubble_null'              => 0,
-    'feed_twitter_numberarticle'            => 3,
-    'feed_twitter_showdate'                 => 1,
     'num-article-startpage-fullwidth'       => 1,
     'num-article-startpage-halfwidth'       => 4,
     'url-newsletteranmeldung'       => 'https://service.piratenpartei.de/subscribe/newsletter',
@@ -100,7 +97,6 @@ $defaultoptions = array(
     'aktiv-commentreplylink'        => 0,
     'default_comment_notes_before'  => '<p class="comment-notes">'.__( 'Deine E-Mail-Adresse wird nicht ver&ouml;ffentlicht. Erforderliche Felder sind markiert <span class="required">*</span>', 'piratenkleider' ). '</p>',
     'disclaimer_post'               => '',
-    'twitter_cache_lifetime'        => 14400,
     'feed_cache_lifetime'           => 14400,
     'use_wp_feed_defaults'          => 1,
     'dir_feed_cache'                => '',
@@ -144,7 +140,7 @@ $default_socialmedia_liste = array(
     ),
     'diaspora' => array(
 	'name' => 'Diaspora',
-	'content'  => '',
+	'content'  => 'https://joindiaspora.com/u/piratenpartei',
 	'active' => 0,
     ),
     'facebook' => array(
@@ -1401,39 +1397,7 @@ $setoptions = array(
 		  'liste'   => $default_socialmedia_liste,
 	      ), 
 	       
-	       
-              'twitterwidget'  => array(
-                  'type'    => 'section',
-                  'title'   => __( 'Twitter Sidebar-import', 'piratenkleider' ),                      
-              ),
-              'feed_twitter' => array(
-                  'type'    => 'text',
-                  'title'   => __( 'Benutzername', 'piratenkleider' ),
-                  'label'   => __( 'Der Twitter Benutzername. Wird zur Anzeige eines optionalen Twitter-Imports in der Sidebar verwendet.', 'piratenkleider' ),
-                  'parent'  => 'twitterwidget',
-              ), 
-             'feed_twitter_numberarticle' => array(
-                  'type'    => 'select',
-                  'title'   => __( 'Anzahl', 'piratenkleider' ),
-                  'label'   => __( 'Wieviele Twittermeldungen sollen maximal gezeigt werden.', 'piratenkleider' ),
-                  'default' => $defaultoptions['feed_twitter_numberarticle'],
-                  'liste'   => array(2 => 2,3 => 3, 4 => 4, 5 => 5, 6 => 6, 7 => 7, 8=> 8, 9 => 9, 10 => 10),
-                  'parent'  => 'twitterwidget',
-              ), 
-              'feed_twitter_showdate' => array(
-                  'type'    => 'bool',
-                  'title'   => __( 'Tweet-Datum', 'piratenkleider' ),
-                  'label'   => __( 'Datum der Twittermeldung anzeigen.', 'piratenkleider' ),
-                  'default' => $defaultoptions['feed_twitter_showdate'],
-                  'parent'  => 'twitterwidget',
-              ),  
-               'twitter_cache_lifetime' => array(
-                  'type'    => 'number',
-                  'title'   => __( 'Twitter Cache', 'piratenkleider' ),
-                  'label'   => __( 'Zeit in Sekunden f&uuml;r den Twitter-Cache. Dieser Wert darf nicht kleiner als 10 Minuten (=600) sein.', 'piratenkleider' ),
-                  'default' => $defaultoptions['twitter_cache_lifetime'],
-                  'parent'  => 'twitterwidget',
-              ), 
+
                
           )
        ),

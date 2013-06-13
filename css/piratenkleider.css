@@ -3129,7 +3129,7 @@ html[xmlns] .slides {display: block;}
 }
 .content-aside .flexslider {
     height: auto;
-    margin: 10px auto 20px;
+    margin: 10px 5px 10px 6px;
     
 }
 .content-aside .flexslider a:hover img,

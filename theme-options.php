@@ -235,14 +235,14 @@ function theme_options_do_page($tab = '') {
 							}
 						    } ?>
 
-						    <label class="plakattile" style="width: 280px; height: 435px">
+						    <label class="plakattile" style="width: 150px; height: 251px">
 							<div style="height: 40px; width: 100%; margin:0 auto; background-color: #F28900; color: white; display: block;">  
 							<input type="checkbox" name="piratenkleider_theme_options[<?php echo $name?>][]" 
 							       value="<?php echo esc_attr( $bildurl ); ?>" <?php echo $checked; ?> />                                                     
 							<?php echo $sub ?>
 							</div>
-							<div style="height: 395px; overflow: hidden; margin: 5px auto; width: 280px; padding: 0;">
-							<img src="<?php echo $bildurl ?>" style="width: 280px; height: auto;  ">
+							<div style="height: 211px; overflow: hidden; margin: 5px auto; width: 150px; padding: 0;">
+							<img src="<?php echo $bildurl ?>" style="width: 150px; height: auto;  ">
 							</div>
 						    </label>		
 						    <?php    
@@ -271,14 +271,14 @@ function theme_options_do_page($tab = '') {
 							}
 						    } ?>
 
-						    <label class="plakattile" style="width: 280px; height: 435px">
+						    <label class="plakattile" style="width: 150px; height: 251px">
 							<div style="height: 40px; width: 100%; margin:0 auto; background-color: #F28900; color: white; display: block;">  
 							<input type="checkbox" name="piratenkleider_theme_options[<?php echo $name?>][]" 
 							       value="<?php echo esc_attr( $bildurl ); ?>" <?php echo $checked; ?> />                                                     
 							<?php echo $sub ?>
 							</div>
-							<div style="height: 395px; overflow: hidden; margin: 5px auto; width: 280px; padding: 0;">
-							<img src="<?php echo $bildurl ?>" style="width: 280px; height: auto;  ">
+							<div style="height: 211px; overflow: hidden; margin: 5px auto; width: 150px; padding: 0;">
+							<img src="<?php echo $bildurl ?>" style="width: 150px; height: auto;  ">
 							</div>
 						    </label>		
 						    <?php    	  	    	   	   	   	   

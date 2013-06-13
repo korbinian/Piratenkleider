@@ -2,7 +2,7 @@ Piratenkleider
 - Wordpress-Theme für Webauftritte der Piratenpartei 
 =================================================
 
-Version 2.17.5 von Wolfgang Wiese (xwolf), 7. Juni 2013
+Version 2.17.8 von Wolfgang Wiese (xwolf), 13. Juni 2013
 
 
 DOWNLOADS
@@ -39,8 +39,10 @@ AUTOREN / ENTWICKLER
 
    Quellen für Defaultbilder und CI-Materialen (CC-BY 3.0)
      - Defaultgrafiken für Slider/Seitenbilder: Tobias M. Eckrich
+     - Plakatbilder ab Version 2.17: SG Gestaltung, sowie Projekt Piratestarter
      - Weitere Bilder: Piratenwiki mit unterschiedlichen Autoren
      - Bildbearbeitung für Piratenkleider 2.x: Wolfgang Wiese
+
 
    Weitere verwendete Inhalte:
      - Social Media Icons: Paul Robert Lloyd, http://paulrobertlloyd.com/2009/06/social_media_icons      
@@ -397,6 +399,8 @@ Administrative Hinweise für Wordpress Theme-Editoren:
     /css/colors_tk.css  (für Türkei)
     /css/colors_lu.css (für Luxemburg)
     /css/colors_at.css  (für Österreich)
+    /css/colors_us.css  (für USA)
+    /css/colors_hu.css  (für Ungarn)
     /css/colors_de.css (für Deutschland, jedoch nicht notwendig da Default)
    abgelegt.
    Diese greifen teilweise auf eigene Bilder zu. 
@@ -463,15 +467,11 @@ Administrative Hinweise für Wordpress Theme-Editoren:
     Über das Backend kann wieder  (Takelage einstellen->Sonstiges) kann 
     alternativ wieder die Listenansicht angezeigt werden.
 
-16. Farbcodes für Ungarn und USA eingebaut.
-
-17. Aber der Version 2.16 ist ein Aprilscherz enthalten. Dieser ist per Default
-    AUSgeschaltet, da es möglicherweise einigen Mut benötigt, es durchziehen.
-    Um es einzuschalten, wird im Backend unter Takelage eisntellen->Sonstiges
-    die Option "Aprilscherz" eingeschaltet.
-    Seit ihr mutig genug um es einzuschalten, ohne in den Code zu schauen, was
-    passiert?  Und seit ihr Manns und Fraues genug, es am Tag dann anzulassen?
-
-
-
+16. Mit der Version 2.17 sind wurden neue Defaultbilder eingeführt, sowie
+    Socialmedia- und Länderflaggen als Sprite umgesetzt.
+    
+17. Die bis zur Version enthaltene Twitter-Integration musste aufgrund der API-
+    Änderung von Twitter ab dem 11. Juni 2013 abgeschaltet werden. 
+    Für die Integration von Twitternachrichten oder Streams sollten stattdessen
+    eigene Plugins verwendet werden. 
 
