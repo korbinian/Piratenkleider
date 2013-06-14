@@ -10,43 +10,21 @@
   global $options;
 
    
-   $designspecials = get_option( 'piratenkleider_theme_designspecials' );
    $cssadd = '';
-   if (isset($designspecials['css-default-header-height'])
-        && ($designspecials['css-default-header-height'] > 0)    
-        && ($designspecials['css-default-header-height'] != $defaultoptions['css-default-header-height'])) {
-       $cssadd .= '.header { height: '.$designspecials['css-default-header-height'].'px; }';
+   if (isset($options['css-default-header-height'])
+        && ($options['css-default-header-height'] > 0)    
+        && ($options['css-default-header-height'] != $defaultoptions['css-default-header-height'])) {
+       $cssadd .= '.header { height: '.$options['css-default-header-height'].'px; }';
        $cssadd .= "\n";
     }
-    if (isset($designspecials['css-default-header-background-color'])
-         && (strlen($designspecials['css-default-header-background-color'])>3)) {
-        $cssadd .= '.header { background-color: '.$designspecials['css-default-header-background-color'].'; }';
-        $cssadd .= "\n";
-    }
-    if (isset($designspecials['css-default-header-background-image'])
-         && (strlen($designspecials['css-default-header-background-image'])>2)) {
-        $cssadd .= '.header { background-image: '.$designspecials['css-default-header-background-image'].'; }';
-        $cssadd .= "\n";
-    }
-     if (isset($designspecials['css-default-header-background-position'])
-         && (strlen($designspecials['css-default-header-background-position'])>2)) {
-        $cssadd .= '.header { background-position: '.$designspecials['css-default-header-background-position'].'; }';
-        $cssadd .= "\n";
-    }   
-     if (isset($designspecials['css-default-header-background-repeat'])
-         && (strlen($designspecials['css-default-header-background-repeat'])>2)) {
-        $cssadd .= '.header { background-repeat: '.$designspecials['css-default-header-background-repeat'].'; }';
-        $cssadd .= "\n";
-    } 
-    
-    if (isset($designspecials['css-default-branding-padding-top'])
-        && ($designspecials['css-default-branding-padding-top'] > 0)    
-        && ($designspecials['css-default-branding-padding-top'] != $defaultoptions['css-default-branding-padding-top'])) {
-       $cssadd .= '.header .branding { padding-top: '.$designspecials['css-default-branding-padding-top'].'px; }';
+    if (isset($options['css-default-branding-padding-top'])
+        && ($options['css-default-branding-padding-top'] > 0)    
+        && ($options['css-default-branding-padding-top'] != $defaultoptions['css-default-branding-padding-top'])) {
+       $cssadd .= '.header .branding { padding-top: '.$options['css-default-branding-padding-top'].'px; }';
        $cssadd .= "\n";
     }
-    if (isset($designspecials['css-eigene-anweisungen'])) {
-       $cssadd .= $designspecials['css-eigene-anweisungen'];
+    if (isset($options['css-eigene-anweisungen'])) {
+       $cssadd .= $options['css-eigene-anweisungen'];
        $cssadd .= "\n";
     }
 ?>  
@@ -67,19 +45,22 @@ if ((isset( $options['meta-keywords'] )) && ( strlen(trim($options['meta-keyword
     <link rel="apple-touch-icon" href="<?php echo get_template_directory_uri(); ?>/apple-touch-icon.png">
     <link rel="shortcut icon" href="<?php echo get_template_directory_uri(); ?>/favicon.ico">
     <link rel="profile" href="http://gmpg.org/xfn/11" />
-    <link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo( 'stylesheet_url' ); ?>">
- 
 <?php 
-   
-    if ((isset($designspecials['css-colorfile'])) && (strlen(trim($designspecials['css-colorfile']))>1)) { 
-            echo '    <link rel="stylesheet" type="text/css" media="all" href="'.get_template_directory_uri().'/css/'.$designspecials['css-colorfile'].'">';
+     if ((isset($options['aktiv-alternativestyle'])) && ($options['aktiv-alternativestyle'] != 'style.css')) {
+	 echo '    <link rel="stylesheet" type="text/css" media="all" href="'.get_template_directory_uri().'/css/'.$options['aktiv-alternativestyle'].'">';
+     } else {
+	 echo '    <link rel="stylesheet" type="text/css" media="all" href="'.get_bloginfo( 'stylesheet_url' ).'">';
+     }
+     echo "\n";   
+    if ((isset($options['css-colorfile'])) && (strlen(trim($options['css-colorfile']))>1)) { 
+            echo '    <link rel="stylesheet" type="text/css" media="all" href="'.get_template_directory_uri().'/css/'.$options['css-colorfile'].'">';
 	    echo "\n";
     }         
-    if (!isset($designspecials['css-fontfile']))  {
-        $designspecials['css-fontfile'] = $defaultoptions['default-fontset-file'];
+    if (!isset($options['css-fontfile']))  {
+        $options['css-fontfile'] = $defaultoptions['default-fontset-file'];
     }
-    if ((isset($designspecials['css-fontfile'])) && (strlen(trim($designspecials['css-fontfile']))>1)) { 
-        echo '    <link rel="stylesheet" type="text/css" media="all and (min-width:500px)" href="'.get_template_directory_uri().'/css/'.$designspecials['css-fontfile'].'">';
+    if ((isset($options['css-fontfile'])) && (strlen(trim($options['css-fontfile']))>1)) { 
+        echo '    <link rel="stylesheet" type="text/css" media="all and (min-width:500px)" href="'.get_template_directory_uri().'/css/'.$options['css-fontfile'].'">';
         echo "\n";
 
     }        	
@@ -103,7 +84,7 @@ if ((isset( $options['meta-keywords'] )) && ( strlen(trim($options['meta-keyword
     <?php  
     }    
     wp_head(); 
-    if (isset($designspecials['aktiv-mediaqueries-allparts']) && ($designspecials['aktiv-mediaqueries-allparts']==1)) {
+    if (isset($options['aktiv-mediaqueries-allparts']) && ($options['aktiv-mediaqueries-allparts']==1)) {
       echo '    <link rel="stylesheet" type="text/css" media="screen" href="'.get_template_directory_uri().'/css/basemod_mediaqueries_allparts.css">';      
       echo "\n";
     }

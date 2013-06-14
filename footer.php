@@ -61,10 +61,9 @@
     </script> 
        <?php }
     
-   $designspecials = get_option( 'piratenkleider_theme_designspecials' );
-   if (isset($designspecials['html-eigene-anweisungen'])
-        && strlen(trim($designspecials['html-eigene-anweisungen'])) > 0) {
-       echo $designspecials['html-eigene-anweisungen'];     
+   if (isset($options['html-eigene-anweisungen'])
+        && strlen(trim($options['html-eigene-anweisungen'])) > 0) {
+       echo $options['html-eigene-anweisungen'];     
    }  ?>       
 </body>
 </html>

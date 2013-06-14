@@ -4,25 +4,14 @@
  *
  * @source http://github.com/xwolfde/Piratenkleider
  * @creator xwolf
- * @version 2.17.7
+ * @version 2.17.8
  * @licence CC-BY-SA 3.0 
  */
 
 require( get_template_directory() . '/inc/constants.php' );
 
-$old_bilderarray =  get_option('piratenkleider_theme_defaultbilder');
-$old_options = get_option('piratenkleider_theme_options');
 
-if (!is_array($old_options)) {
-    $old_options = array();
-}
-if (is_array($old_bilderarray)) {
-    $options = array_merge($defaultoptions,$old_bilderarray, $old_options);	   
-} else {
-    $options = array_merge($defaultoptions,$old_options);	
-}    
-
-
+$options = get_option('piratenkleider_theme_options');
 $options = piratenkleider_compatibility($options);
     // adjusts variables for downwards comptability
     
@@ -37,12 +26,8 @@ if ($options['anonymize-user']==1) {
 if ($options['feed_cache_lifetime'] < 600) {
     $options['feed_cache_lifetime'] = 1800;
 }
-// Das holen von feeds sollte auf keinen Fall haeufiger als alle 10 Minuten erfolgen
-if ($options['twitter_cache_lifetime'] > $options['feed_cache_lifetime']) {
-    $options['twitter_cache_lifetime'] = $options['feed_cache_lifetime'];
-}
-// Twitter Feeds sollten nicht laenger warten als die allgemeine feeds
- function feed_lifetime_cb( ) {
+
+function feed_lifetime_cb( ) {
             global $options;
             // change the default feed cache recreation period to 2 hours
             return $options['feed_cache_lifetime'];
@@ -53,7 +38,6 @@ add_filter( 'wp_feed_cache_transient_lifetime' , 'feed_lifetime_cb' );
 if ( ! isset( $content_width ) )   $content_width = $defaultoptions['content-width'];
 require_once ( get_template_directory() . '/theme-options.php' );
 
-/** Tell WordPress to run twentyten_setup() when the 'after_setup_theme' hook is run. */
 add_action( 'after_setup_theme', 'piratenkleider_setup' );
 
 if ( ! function_exists( 'piratenkleider_setup' ) ):
@@ -114,10 +98,7 @@ function piratenkleider_setup() {
 	        if ( $background ) {
                         $image = " background-image: url('$background');";
                        
-                        if (($options['1april-prank']=="1") && (date('m-d') == $options['1april-prank-day']))  {
-                            $image = " background-image: url('" . $options['1april-header-image']. "');";
-                            $style = "background-color: #fff; ";
-                        } 
+                       
 	                $repeat = get_theme_mod( 'background_repeat', 'repeat-x' );
 	                if ( ! in_array( $repeat, array( 'no-repeat', 'repeat-x', 'repeat-y', 'repeat' ) ) )
 	                        $repeat = 'repeat-x';
@@ -274,10 +255,25 @@ endif;
 
 
 function piratenkleider_compatibility ($oldoptions) {
-    $newoptions = $oldoptions;
+    global $defaultoptions;
+    
+    $old_bilderarray =  get_option('piratenkleider_theme_defaultbilder');
+
+    if (!is_array($oldoptions)) {
+	$oldoptions = array();
+    }
+     
+    if (is_array($old_bilderarray))  {      
+	$newoptions = array_merge($defaultoptions,$old_bilderarray, $oldoptions);	  
+	delete_option('piratenkleider_theme_defaultbilder');
+    } else {
+	$newoptions = array_merge($defaultoptions,$oldoptions);	
+    }    
+    
+
     if ((isset($oldoptions['social_facebook'])) && (filter_var($oldoptions['social_facebook'], FILTER_VALIDATE_URL))) {
         $newoptions['sm-list']['facebook']['content'] = $oldoptions['social_facebook'];
-        $newoptions['sm-list']['facebook']['active'] = 1;
+        $newoptions['sm-list']['facebook']['active'] = 1;	
     }
     if ((isset($oldoptions['social_twitter'])) && (filter_var($oldoptions['social_twitter'], FILTER_VALIDATE_URL))) {
         $newoptions['sm-list']['twitter']['content'] = $oldoptions['social_twitter'];
@@ -319,7 +315,19 @@ function piratenkleider_compatibility ($oldoptions) {
         $newoptions['sm-list']['feed']['content'] = $oldoptions['social_feed'];
         $newoptions['sm-list']['feed']['active'] = 1;
     }              
+
     
+    $olddesignopt = get_option( 'piratenkleider_theme_designspecials' );
+    if ((is_array($olddesignopt)) && (count($olddesignopt)>0)) {
+	 $newoptions = array_merge($newoptions,$olddesignopt);
+	delete_option('piratenkleider_theme_designspecials');
+    }
+    
+    $diff = array_diff($newoptions, $oldoptions);
+    if (count($diff)) {
+	update_option('piratenkleider_theme_options', $newoptions);
+    }
+
     return $newoptions;
 }
 

@@ -95,6 +95,7 @@
 
      }      
      .sticky a:hover,
+     .sticky a:visited,
      .sticky a:focus {    
         color: #000;
         background: #d97300;

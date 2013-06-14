@@ -92,6 +92,7 @@ $defaultoptions = array(
     'teaser-title-words'            => 7,
     'css-default-header-height'     => 225,
     'css-default-branding-padding-top'  => 40,
+    'aktiv-mediaqueries-allparts'   => 0,
     'anonymize-user'                => 0,
     'anonymize-user-commententries' => 0,
     'aktiv-commentreplylink'        => 0,
@@ -165,7 +166,7 @@ $default_socialmedia_liste = array(
     ),
     'flickr' => array(
 	'name' => 'Flickr',
-	'content'  => '',
+	'content'  => 'http://www.flickr.com/photos/piratenpartei/',
 	'active' => 0,
     ),
   
@@ -324,7 +325,39 @@ $default_toplink_liste = array(
 );
 
 /*
- * Default Links fuer den Footer
+ * Default color modifications for standard css style
+ */
+$default_colorstyles = array(
+    ''  =>  __('Deutschland (Orange)', 'piratenkleider' ),
+    'colors_at.css' => __( '&Ouml;sterreich (Violett)', 'piratenkleider' ),
+    'colors_lu.css' => __( 'Luxemburg (Violett)', 'piratenkleider' ),
+    'colors_hu.css' => __( 'Ungarn (Violett)', 'piratenkleider' ),
+    'colors_tk.css' => __( 'T&uuml;rkei (Cyan)', 'piratenkleider' ),
+    'colors_us.css' => __( 'USA (Lila)', 'piratenkleider' ),
+
+ );
+          
+/*
+ * Default font modifications for standard css style
+ */
+$default_fontstyles = array(
+    'font-bebas.css'	=> __( 'Bebas Neue', 'piratenkleider' ),
+    'font-droid.css'	=> __( 'Droid Sans', 'piratenkleider' ),
+    'font-standard.css'	=> __( 'Helvetica, Arial, sans-serif', 'piratenkleider' ),
+
+ );
+
+/*
+ * Default font modifications for standard css style
+ */
+$default_alternativestyles = array(
+    'style.css'	    => __( 'Default Piratenkleider', 'piratenkleider' ),
+    'sample.css'    => __( 'Leeres Beispiel-CSS', 'piratenkleider' ),
+    'scapegoat.css' => __( 'Scapegoat-Adaption (ALPHA!!!)', 'piratenkleider' ),
+ );
+
+/*
+ * default links for pirate party worldwide and in germany
  */
 
  $default_footerlink_liste = array(
@@ -1228,18 +1261,7 @@ $setoptions = array(
                   'label'   => __( 'Slider der Werbeplakate (rechte Sidebar-Spalte) werden angezeigt.<br>Die Auswahl der Plakatbilder kann unter den Defaultbildern angepasst werden', 'piratenkleider' ),
                   'default' => $defaultoptions['slider-defaultwerbeplakate'],
                    'parent'  => 'plakate',
-              ),
-          /*     
-              'plakate-src' => array(
-                  'type'    => 'bildchecklist',
-                  'title'   => __( 'Plakatauswahl', 'piratenkleider' ),
-                  'label'   => __( 'Diese Bilder werden in der Sidebar rechts gezeigt, sofern dieses &uuml;ber die Optionen (vgl. Slider) auch eingeschaltet ist.', 'piratenkleider' ),
-                  'default' => $defaultoptions['plakate-src'],		                     
-		  'liste'   => $defaultplakate_liste,
-		  'parent'  => 'plakate'
-              ),
-	    */
-	   
+              ),	   
 	       
 	      'plakate-src' => array(
                   'type'    => 'bilddirchecklist',
@@ -1401,8 +1423,73 @@ $setoptions = array(
                
           )
        ),
+	'design'   => array(
+           'tabtitle'   => __( 'Design (Kl&uuml;verbaum)', 'piratenkleider' ),
+           'fields' => array(
+              
+	    'css-colorfile' => array(
+                  'type'    => 'select',
+                  'title'   => __( 'L&auml;nderfarbe aktivieren', 'piratenkleider' ),
+                  'label'   => __( 'Auswahl, welche l&auml;nderbezogene Farbvariante aktiviert werden soll.', 'piratenkleider' ),
+                  'default' => '',
+                  'liste'   => $default_colorstyles,
+              ),
+	      'css-fontfile' => array(
+                  'type'    => 'select',
+                  'title'   => __( 'Stil der Schriftart &auml;ndern', 'piratenkleider' ),
+                  'label'   => __( 'Auswahl, welcher Schriftstil f&uuml;r die Website verwendet werden soll.', 'piratenkleider' ),
+                  'default' => $defaultoptions['default-fontset-file'],
+                  'liste'   => $default_fontstyles,
+              ),
+	      'aktiv-mediaqueries-allparts' => array(
+                  'type'    => 'bool',
+                  'title'   => __( 'Small Screen Device Sichtbarkeit', 'piratenkleider' ),
+                  'label'   => __( 'F&uuml;r kleine Bildschirmaufl&ouml;sungen auch optionale Teile (Sticker, Slider) anzeigen.', 'piratenkleider' ),
+                  'default' => $defaultoptions['aktiv-mediaqueries-allparts'],
+              ),
+	      'aktiv-alternativestyle' => array(
+                  'type'    => 'select',
+                  'title'   => __( 'Grunddesign &auml;ndern', 'piratenkleider' ),
+                  'label'   => __( 'Aktiviert ein alternatives Design f&uuml;r die gesamte Website.', 'piratenkleider' ).
+			       __( '<br><strong>ACHTUNG: ALPHA-Status! Designs sind noch nicht fertig</strong>.', 'piratenkleider' ),
+                  'default' => 'style.css',
+                  'liste'   =>  $default_alternativestyles,
+              ),
 
+	       
+	      'css-default-header-height' => array(
+                  'type'    => 'number',
+                  'title'   => __( 'H&ouml;he des Kopfbereiches ( .header )', 'piratenkleider' ),
+                  'label'   => __( 'Hinweis: Die Verkleinerung der H&ouml;he des Kopfteils ist nicht ungef&auml;hrlich. Zu beachten ist, dass der Kopfteil auch bei einer Vergr&ouml;&szlig;erung des Textes auf 200% noch gen&uuml;gend Platz haben muss!', 'piratenkleider' ),
+                  'default' => $defaultoptions['css-default-header-height'],
+              ), 
+	      'css-default-branding-padding-top' => array(
+                  'type'    => 'number',
+                  'title'   => __( 'Abstand des Brandingbereiches (=Logo) nach oben ( .header .branding )', 'piratenkleider' ),
+                  'label'   => __( 'Das Logo hat einen Abstand nach oben. Diese kann &uuml;ber diese Angabe reduziert werden.', 'piratenkleider' ),
+                  'default' => $defaultoptions['css-default-branding-padding-top'],
+              ), 
+             
+	      'css-eigene-anweisungen' => array(
+                  'type'    => 'textarea',
+                  'title'   => __( 'CSS-Anweisungen', 'piratenkleider' ),
+                  'label'   => __( 'Eigene CSS-Anweisungen, die Inline im Kopfteil der Dokumente erg&auml;nzt werden', 'piratenkleider' ),
+                  'default' => '',
+              ),
+	       'html-eigene-anweisungen' => array(
+                  'type'    => 'textarea',
+                  'title'   => __( 'HTML-Anweisungen', 'piratenkleider' ),
+                  'label'   => __( 'Eigene HTML-Anweisungen, die am Ende der Webseite, vor dem letzten &lt;/body&gt;&lt;/html&gt; plaziert werden', 'piratenkleider' ).
+		    __( '<br><b>Achtung:</b> Fehlerhafter HTML-, JavaScript oder CSS-Code an dieser Stelle kann zu einem Nicht-Funktionieren der gesamt Website f&uuml;hren!<br />Der hier eingegebene Code wird nicht gefiltert oder kontrolliert.', 'piratenkleider' ),
+                  'default' => '',
+              ),
+	       
+          )
+       ),
 
+     
+       
+       
        'sonstiges'   => array(
            'tabtitle'   => __('Sonstiges', 'piratenkleider'),
            'fields' => array(
