@@ -472,3 +472,16 @@
       letter-spacing: 0px;
   }
 }
+
+   
+@media screen, projection and (min-width: 1021px) {
+    .content .row, 
+    .teaser .row {
+   	-webkit-box-shadow: 5px 0 10px rgba(0,0,0,0.3);
+        -moz-box-shadow: 5px 0 10px rgba(0,0,0,0.3);
+        -ms-box-shadow: 5px 0 10px rgba(0,0,0,0.3);
+        -o-box-shadow: 5px 0 10px rgba(0,0,0,0.3);
+	box-shadow: 5px 0 10px rgba(0,0,0,0.3);   
+    }	
+}  
+ 

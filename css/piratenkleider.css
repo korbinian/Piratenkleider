@@ -879,7 +879,7 @@ display: inline-block;
 }
   .teaser .row {
     background: #c96a00;
-    background: rgba(0, 0, 0, 0.3) -20% 0 fixed; 
+    background: rgba(0, 0, 0, 0.3) -20% 0;    
   }
   
    .first-teaser-widget-area .slide .textslider  {
@@ -1046,6 +1046,7 @@ display: inline-block;
     -webkit-hyphens: auto;
     -moz-hyphens: auto;
         hyphens:  auto; 
+
 }
 
 .content p, .content form {
@@ -3129,7 +3130,7 @@ html[xmlns] .slides {display: block;}
 }
 .content-aside .flexslider {
     height: auto;
-    margin: 10px 5px 10px 6px;
+    margin: 10px auto;
     
 }
 .content-aside .flexslider a:hover img,
