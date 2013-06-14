@@ -305,9 +305,13 @@ $defaultbilder_liste = array(
 	), 
         '20' => array(
 		'src' =>	get_template_directory_uri().'/images/default-orange.jpg',
-		'label' => __( 'Orange BTW13', 'piratenkleider' )
+		'label' => __( 'Orange SG Gestaltung BTW13', 'piratenkleider' )
 	), 
-	'21'=> array(
+	'21' => array(
+		'src' =>	get_template_directory_uri().'/images/default-blau.jpg',
+		'label' => __( 'Blau SG Gestaltung BTW13', 'piratenkleider' )
+	), 
+	'22'=> array(
 		'src' =>	get_template_directory_uri().'/images/default-vorlage.jpg',
 		'label' => __( 'Default', 'piratenkleider' )
 	),
