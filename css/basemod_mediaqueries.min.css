@@ -66,3 +66,6 @@
 .flexslider .caption{padding:5px 10px;}
 .flexslider .caption h2,.flexslider .caption h3{font-size:12px;font-family:Helvetica, Arial, sans-serif;letter-spacing:0;}
 }
+@media screen,projection and (min-width: 1021px) {
+.content .row,.teaser .row{-webkit-box-shadow:5px 0 10px rgba(0,0,0,0.3);-moz-box-shadow:5px 0 10px rgba(0,0,0,0.3);-ms-box-shadow:5px 0 10px rgba(0,0,0,0.3);-o-box-shadow:5px 0 10px rgba(0,0,0,0.3);box-shadow:5px 0 10px rgba(0,0,0,0.3);}
+}

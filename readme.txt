@@ -177,11 +177,12 @@ THEME-OPTION "Takelage einstellen"
     - Menutyp  für die Darstellung der Seiten und Unterseiten in der
       Sidebar steuern.
    Sowie viele mehr...  
- 
 
-THEME-OPTION "Segel setzen"
-   
-   Unter dieser Option lassen sich die Ersatzbilder festlegen, die angezeigt
+   Weitere besondere Funktionen:
+
+   Seiten & Artikel, sowie Sidebar:
+
+   Auf diesen Laschen können u.a. auch Ersatzbilder ausgewählt werden, die angezeigt
    werden, wenn  Artikel oder  Seiten kein "Artikelbild" besitzen.
    Werden für den Slider keine Vorgaben gemacht, wird per Default die erste 
    Kategorie ("Allgemein") verwendet und Bilder per Zufall ausgegeben.
@@ -195,23 +196,18 @@ THEME-OPTION "Segel setzen"
    liegen im Ordner /plakate/ . 
    Bei einem anderen Größe wird das Bild entsprechend durch den Browser
    umskaliert. Dies kann jedoch mit Qualitätseinbußen verbunden sein.
+   Neue und eigene Plakate können jederzeit durch Anlegen eines
+   neuen Unterordners unter /plakate/ inkl. der Bilddateien eingebunden werden.   
+  
 
-   Eine komplette Liste an Werbeplakaten, die von der Piratenpartei eingesetzt
-   wird, kann im Wiki unter der Seite http://wiki.piratenpartei.de/Plakate
-   gefunden werden.
-
-   Weiterhin können die Symbolbilder für die Metaseiten Suche, Tags, Kategorien,
-   Autoren, Archiv und Templateseiten über die EIngabe einer eigenen Bild-URL
-   geändert werden. 
-
-THEME-OPTION "Captn & Crew"
+   Captn&Crew:
 
    Diese Option dient der Eintragung von Kontaktinformationen für die
    Templateseiten um das Impressum, die Datenschutzerklärung und
    optionalen Formularseiten.
      
 
-THEME-OPTION "Klüverbaum"
+   Design(Klüverbaum):
 
    Diese Option ermöglicht die Änderungen spezieller CSS-Anweisungen im
    Kopfteil der Seite, sowie das Einfügen eigener CSS-Anweisungen.
@@ -236,6 +232,11 @@ THEME OPTION "Kopfzeile"
    Aus diesem Grund empfiehlt es sich, das Logo in der passenden
    Größe und dem Hintergrund über einem eigenen Grafikprogramm 
    vorzubereiten.
+
+THEME OPTION "Hinterhgrund"   
+    
+    Hier ist die Änderung des Hintergrundbildes, dessen Farben und 
+    Positionierung möglich.
 
 
 THEME EIGENE WIDGETS
