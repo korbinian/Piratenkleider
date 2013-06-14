@@ -429,7 +429,7 @@
  
     #socialmedia_iconbar {
          position: relative;
-         display: block;
+         display: inline-block;
          top: inherit;
          left: inherit;
          width: auto;
@@ -437,14 +437,16 @@
          border-radius: 3px ; 
          z-index: 10 ;
          padding: 2px;
-         margin: 0px;
+         margin: 0px auto;
          text-align: center;
+         width: 100%;
      }
     .home #socialmedia_iconbar {
          top: inherit;
      }
     #socialmedia_iconbar ul.socialmedia {
-    list-style: none;
+        list-style: none;
+        display: inline-block;
     }
     #socialmedia_iconbar ul.socialmedia li {
         width: 34px;
