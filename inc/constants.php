@@ -126,6 +126,7 @@ $defaultoptions = array(
     'default_footerlink_show'       => 1,    
     'circleplayer-require-mp3fallback'	=> 1,
     'category-startpageview'	    => 1,
+    'default_text_title_home_backlink' => __('Zur&uuml;ck zur Startseite','piratenkleider' ), 
     
 );
 
@@ -1591,8 +1592,137 @@ $setoptions = array(
                   'parent'  => 'meta',                    
               ),   
                
-          )
-       ),
+          ),
+	),          
+       'crew'   => array(
+           'tabtitle'   => __( 'Captn & Crew', 'piratenkleider' ),
+           'fields' => array(
+	        'impressum'  => array(
+                  'type'    => 'section',
+                  'title'   => __('Impressumsangaben', 'piratenkleider'),                   
+		),               
+               'impressumperson' => array(
+                  'type'    => 'text',
+                  'title'   => __( 'Verantwortliche/r', 'piratenkleider' ),
+                  'label'   => __( 'Verantwortliche/r gem&auml;&szlig; &sect; 5 TMG. <br>Zum Beispiel: <code>Martin Mustermann</code>', 'piratenkleider' ),
+		   'default'	=> '',
+                  'parent'  => 'impressum',
+		),  
+                'impressumdienstanbieter' => array(
+                  'type'    => 'text',
+                  'title'   => __( 'Dienstanbieter', 'piratenkleider' ),
+                  'label'   => __( 'Textbezeichnung des Dienstanbieter des Webauftritts.', 'piratenkleider' ),
+                  'parent'  => 'impressum',		    
+		), 
+	       'kontaktemail' => array(
+                  'type'    => 'email',
+                  'title'   => __( 'Offizielle E-Mailadresse', 'piratenkleider' ),
+                  'label'   => __( 'Feste Mailadresse f&uuml;r offizielle Kontakte.', 'piratenkleider' ),
+                  'parent'  => 'impressum',		    
+		), 
+	       'lizenzen' => array(
+                  'type'    => 'textarea',
+                  'title'   => __( 'Urheberrecht', 'piratenkleider' ),
+                  'label'   => __( 'Zus&auml;tzliche Angaben f&uuml;r den Abschnitt "Verwendete Werke und Lizenzen innerhalb dieses Webauftritts"', 'piratenkleider' ),
+                  'parent'  => 'impressum',		    
+		), 
+	       
+	      'postanschrift'  => array(
+                  'type'    => 'section',
+                  'title'   => __('Offizielle Postanschrift', 'piratenkleider'),                   
+		),               
+               'posttitel' => array(
+                  'type'    => 'text',
+                  'title'   => __( 'Name oder Titel', 'piratenkleider' ),
+                  'label'   => __( 'Anschrift: Titel (1. Zeile). <br>Zum Beispiel: <code>Piratenpartei</code>', 'piratenkleider' ),
+		  'default'	=> '',
+                  'parent'  => 'postanschrift',
+		),  
+                'postperson' => array(
+                  'type'    => 'text',
+                  'title'   => __( 'zu H&auml;nden', 'piratenkleider' ),
+                  'label'   => __( 'Anschrift: Optionale Personenangabe ("zu H&auml;nden") <br>Zum Beispiel: <code>Martin Mustermann</code>', 'piratenkleider' ),
+		  'default'	=> '',
+                  'parent'  => 'postanschrift',
+		 ),   
+		'poststrasse' => array(
+                  'type'    => 'text',
+                  'title'   => __( 'Strasse oder Postfach', 'piratenkleider' ),
+                  'label'   => __( 'Anschrift: Strassenname und Nummer oder Postfachangabe oder freilassen <br>Zum Beispiel: <code>Unbesonnenheitsweg 123b</code>', 'piratenkleider' ),
+		  'default'	=> '',
+                  'parent'  => 'postanschrift',
+		), 
+		'poststadt' => array(
+                  'type'    => 'text',
+                  'title'   => __( 'PLZ und Stadt', 'piratenkleider' ),
+                  'label'   => __( 'Anschrift: Postleitzahl gefolgt von Stadt<br>Zum Beispiel: <code>12345  Ankh-Morpork</code>', 'piratenkleider' ),
+		  'default'	=> '',
+                  'parent'  => 'postanschrift',
+		), 
+	       
+	       'ladung'  => array(
+                  'type'    => 'section',
+                  'title'   => __('Ladungsf&auml;hige Anschrift', 'piratenkleider'),                   
+		),               
+               'ladungtitel' => array(
+                  'type'    => 'text',
+                  'title'   => __( 'Name oder Titel', 'piratenkleider' ),
+                  'label'   => __( 'Anschrift: Titel (1. Zeile). <br>Zum Beispiel: <code>Piratenpartei</code>', 'piratenkleider' ),
+		  'default'	=> '',
+                  'parent'  => 'ladung',
+		),  
+                'ladungperson' => array(
+                  'type'    => 'text',
+                  'title'   => __( 'zu H&auml;nden', 'piratenkleider' ),
+                  'label'   => __( 'Anschrift: Optionale Personenangabe ("zu H&auml;nden") <br>Zum Beispiel: <code>Martin Mustermann</code>', 'piratenkleider' ),
+		  'default'	=> '',
+                  'parent'  => 'ladung',
+		 ),   
+		'ladungstrasse' => array(
+                  'type'    => 'text',
+                  'title'   => __( 'Strasse oder Postfach', 'piratenkleider' ),
+                  'label'   => __( 'Anschrift: Strassenname und Nummer oder Postfachangabe oder freilassen <br>Zum Beispiel: <code>Unbesonnenheitsweg 123b</code>', 'piratenkleider' ),
+		  'default'	=> '',
+                  'parent'  => 'ladung',
+		), 
+		'ladungstadt' => array(
+                  'type'    => 'text',
+                  'title'   => __( 'PLZ und Stadt', 'piratenkleider' ),
+                  'label'   => __( 'Anschrift: Postleitzahl gefolgt von Stadt<br>Zum Beispiel: <code>12345  Ankh-Morpork</code>', 'piratenkleider' ),
+		  'default'	=> '',
+                  'parent'  => 'ladung',
+		), 
+	       
+	       
+	       'dsb'  => array(
+                  'type'    => 'section',
+                  'title'   => __('Datenschutzbeauftragter', 'piratenkleider'),                   
+		),               
+               'dsbperson' => array(
+                  'type'    => 'text',
+                  'title'   => __( 'Name', 'piratenkleider' ),
+                  'label'   => __( 'Name des DSB<br>Zum Beispiel: <code>Martin Mustermann</code>', 'piratenkleider' ),
+		  'default'	=> '',
+                  'parent'  => 'dsb',
+		),  
+                'dsbemail' => array(
+                  'type'    => 'email',
+                  'title'   => __( 'E-Mailadresse', 'piratenkleider' ),
+                  'label'   => __( 'Feste Mailadresse f&uuml;r offizielle Kontakte.<br>Zum Beispiel:  <code>bundesbeauftragter@piraten-dsb.de</code>', 'piratenkleider' ),
+		  'default'	=> '',
+                  'parent'  => 'dsb',
+		 ),   
+		
+	       
+		    
+        
+
+	       
+	       
+	       
+	  
+	),   
+      ),
    )
 );
 

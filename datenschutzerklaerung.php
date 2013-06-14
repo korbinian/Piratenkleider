@@ -6,7 +6,6 @@
 <?php 
     get_header();
     global $options;  
-    $kontaktinfos = get_option( 'piratenkleider_theme_kontaktinfos' );  
      ?>
 
 <div class="section content" id="main-content">
@@ -125,17 +124,15 @@ In ihren Browsereinstellungen k&ouml;nnen sie die Annahme von Cookies unterbinde
     gespeicherten Daten, deren Herkunft und Empf&auml;nger sowie den Zweck der 
     Speicherung. Auskunft &uuml;ber die gespeicherten Daten gibt Ihnen die 
     Piratenpartei Deutschland. Wenden Sie sich dazu bitte an
-    <?php if ( (isset($kontaktinfos['dsbemail'])) && (strlen(trim($kontaktinfos['dsbemail']))>1)) {
-        echo '<a href="mailto:'.$kontaktinfos['dsbemail'].'">';
-        if ((isset($kontaktinfos['dsbperson'])) && (strlen(trim($kontaktinfos['dsbperson']))>1)) {
+    <?php if ( (isset($options['dsbemail'])) && (strlen(trim($options['dsbemail']))>1)) {
+        echo '<a href="mailto:'.$options['dsbemail'].'">';
+        if ((isset($options['dsbperson'])) && (strlen(trim($options['dsbperson']))>1)) {
             echo 'den/die Datenschutzbeauftrage/n ';
-            echo $kontaktinfos['dsbperson'];
-        } else {
-            echo 'bundesbeauftragter@piraten-dsb.de';
+            echo $options['dsbperson'];
         }
        echo '</a>.';
     } else {
-        echo '<a href="mailto:bundesbeauftragter@piraten-dsb.de">bundesbeauftragter@piraten-dsb.de</a>.';
+        echo 'Unbekannt :( (E-Mail-Adresse wurde noch nicht gesetzt!).';
     }
     ?>
     
@@ -148,17 +145,16 @@ In ihren Browsereinstellungen k&ouml;nnen sie die Annahme von Cookies unterbinde
     beantworten konnte oder wenn Sie zu einem Punkt vertiefte Informationen 
     w&uuml;nschen, wenden Sie sich bitte jederzeit an die Piraten. Sie k&ouml;nnen ihre
     Fragen und Anregungen im Forum oder an 
-    <?php if ((isset($kontaktinfos['dsbemail']))  && (strlen(trim($kontaktinfos['dsbemail']))>1)) {
-        echo '<a href="mailto:'.$kontaktinfos['dsbemail'].'">';
-        if ((isset($kontaktinfos['dsbperson']))  && (strlen(trim($kontaktinfos['dsbperson']))>1)) {
+    <?php if ((isset($options['dsbemail']))  && (strlen(trim($options['dsbemail']))>1)) {
+        echo '<a href="mailto:'.$options['dsbemail'].'">';
+        if ((isset($options['dsbperson']))  && (strlen(trim($options['dsbperson']))>1)) {
             echo 'den/die Datenschutzbeauftrage/n ';
-            echo $kontaktinfos['dsbperson'];
-        } else {
-            echo 'bundesbeauftragter@piraten-dsb.de';
+            echo $options['dsbperson'];
+
         }
        echo '</a>';      
     } else {
-        echo '<a href="mailto:bundesbeauftragter@piraten-dsb.de">bundesbeauftragter@piraten-dsb.de</a>';
+        echo 'Unbekannt :( (E-Mail-Adresse wurde noch nicht gesetzt!).';
     }
     ?> 
     stellen.</p>

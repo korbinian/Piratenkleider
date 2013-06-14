@@ -8,7 +8,6 @@ add_action( 'admin_menu', 'theme_options_add_page' );
  */
 function theme_options_init(){
 	register_setting( 'piratenkleider_options', 'piratenkleider_theme_options', 'theme_options_validate' );
-        register_setting( 'piratenkleider_kontaktinfos', 'piratenkleider_theme_kontaktinfos', 'theme_kontaktinfos_validate' );
 }
 
 /**
@@ -18,11 +17,7 @@ function theme_options_add_page() {
 	add_theme_page( __( 'Takelage einstellen', 'piratenkleider' ),
                         __( 'Takelage einstellen', 'piratenkleider' ), 
                        'edit_theme_options', 'theme_options', 'theme_options_do_page' );
-                   
-        add_theme_page( __( 'Captn & Crew', 'piratenkleider' ), 
-                __( 'Captn & Crew', 'piratenkleider' ), 
-                'edit_theme_options', 'theme_kontaktinfos', 'theme_kontaktinfos_do_page' );
-
+                          
 }
 
 
@@ -113,7 +108,7 @@ function theme_options_do_page($tab = '') {
                                             type=\"checkbox\" value=\"1\" ".checked( $options[$name],1,false ).">\n";
                                     echo "\t\t\t";
                                     echo "<label for=\"piratenkleider_theme_options[$name]\">$label</label>\n";                                     
-                                } elseif ($type=='text') {
+                                } elseif (($type=='text') || ($type=='email')) {
                                     echo "\t\t\t";
                                     echo "<input class=\"regular-text\" id=\"piratenkleider_theme_options[$name]\" 
                                             type=\"text\" name=\"piratenkleider_theme_options[$name]\" 
@@ -430,6 +425,8 @@ function theme_options_validate( $input ) {
                             $output[$name]  = ( $input[$name] == 1 ? 1 : 0 );    
                         } elseif ($type=='text') {
                              $output[$name]  =  wp_filter_nohtml_kses( $input[$name] );
+			} elseif ($type=='email') {
+                             $output[$name]  =  sanitize_email( $input[$name] );	     
                          } elseif ($type=='textarea') {
                              $output[$name]  =  $input[$name] ;     
                         } elseif ($type=='html') {;    
@@ -508,234 +505,6 @@ function theme_options_validate( $input ) {
    return $output;
 
 }
-/**
- * Kontaktinfos  Optionen
- */
-function theme_kontaktinfos_do_page() {
-   
-	if ( ! isset( $_REQUEST['settings-updated'] ) )
-		$_REQUEST['settings-updated'] = false;
-
-	?>
-       
-	<div class="wrap">
-            
-            <div class="piratenkleider-optionen">  <!-- begin: .piratenkleider-optionen -->    
-		<?php screen_icon(); echo "<h2>" . wp_get_theme() . __( ' Captn & Crew: Kontaktinformationen setzen ', 'piratenkleider' ) . "</h2>"; ?>
-
-		<?php if ( false !== $_REQUEST['settings-updated'] ) : ?>
-		<div class="updated fade"><p><strong><?php _e( 'Kontaktinformationen wurden gespeichert.', 'piratenkleider' ); ?></strong></p></div>
-		<?php endif; ?>
-
-		<form method="post" action="options.php">
-                    <?php settings_fields( 'piratenkleider_kontaktinfos' ); ?>
-                    <?php $options = get_option( 'piratenkleider_theme_kontaktinfos' ); 
-                        
-                        
-                    ?>
-                   <div id="einstellungen">  
-                       <div>
-                         
-                    <table class="form-table">
-                       <tr valign="top"><th scope="row"><?php _e( 'Impressumsangaben', 'piratenkleider' ); ?></th>
-			<td>
-                            <table>                                
-                            <tr valign="top"><th scope="row"><?php _e( 'Verantwortliche/r', 'piratenkleider' ); ?></th>
-                                <td>
-                                    <input id="piratenkleider_theme_kontaktinfos[impressumperson]" class="regular-text" type="text" name="piratenkleider_theme_kontaktinfos[impressumperson]" value="<?php echo esc_attr( $options['impressumperson'] ); ?>" />
-                                    <label class="description" for="piratenkleider_theme_kontaktinfos[impressumperson]">
-                                        <?php _e( 'Verantwortliche/r gem&auml;&szlig; &sect; 5 TMG. <br>Zum Beispiel: <code>Martin Mustermann</code>', 'piratenkleider' ); ?>
-                                        
-                                    </label>
-                                </td>					
-                            </tr>
-                            <tr valign="top"><th scope="row"><?php _e( 'Textbezeichnung Dienstanbieter', 'piratenkleider' ); ?></th>
-                                <td>
-                                    <input id="piratenkleider_theme_kontaktinfos[impressumdienstanbieter]" class="regular-text" type="text" name="piratenkleider_theme_kontaktinfos[impressumdienstanbieter]" value="<?php echo esc_attr( $options['impressumdienstanbieter'] ); ?>" />
-                                    <label class="description" for="piratenkleider_theme_kontaktinfos[impressumdienstanbieter]">
-                                        <?php _e( 'Textbezeichnung des Dienstanbieter des Webauftritts.', 'piratenkleider' ); ?><br>
-                                       <?php _e( 'Beispiel: <code>Kreisverband Musterstadt der Piratenpartei Deutschland vertreten durch den Vorstand Martin Mustermann, Doris Fischer und Florian Meister.</code>', 'piratenkleider' ); ?>
-                                        
-                                    </label>
-                                </td>					
-                            </tr>
-                            </table>
-			</td>
-		       </tr>
-                       <tr valign="top"><th scope="row"><?php _e( 'Offizielle Postanschrift', 'piratenkleider' ); ?></th>
-			<td>
-                            
-                        <table>                                
-                            <tr valign="top"><th scope="row"><?php _e( 'Name oder Titel', 'piratenkleider' ); ?></th>
-                                <td>
-                                    <input id="piratenkleider_theme_kontaktinfos[posttitel]" class="regular-text" type="text" name="piratenkleider_theme_kontaktinfos[posttitel]" value="<?php echo esc_attr( $options['posttitel'] ); ?>" />
-                                    <label class="description" for="piratenkleider_theme_kontaktinfos[posttitel]">
-                                        ><?php _e( 'Anschrift: Titel (1. Zeile). <br>Zum Beispiel: <code>Piratenpartei</code>', 'piratenkleider' ); ?>
-                                       
-                                    </label>
-                                </td>					
-                            </tr>
-                            <tr valign="top"><th scope="row"><?php _e( 'zu H&auml;nden', 'piratenkleider' ); ?></th>
-                                <td>
-                                    <input id="piratenkleider_theme_kontaktinfos[postperson]" class="regular-text" type="text" name="piratenkleider_theme_kontaktinfos[postperson]" value="<?php echo esc_attr( $options['postperson'] ); ?>" />
-                                    <label class="description" for="piratenkleider_theme_kontaktinfos[postperson]">
-                                        <?php _e( 'Anschrift: Optionale Personenangabe ("zu H&auml;nden") <br>Zum Beispiel: <code>Martin Mustermann</code>', 'piratenkleider' ); ?>
-                                       
-                                    </label>
-                                </td>					
-                            </tr>
-                             <tr valign="top"><th scope="row"><?php _e( 'Strasse oder Postfach', 'piratenkleider' ); ?></th>
-                                <td>
-                                    <input id="piratenkleider_theme_kontaktinfos[poststrasse]" class="regular-text" type="text" name="piratenkleider_theme_kontaktinfos[poststrasse]" value="<?php echo esc_attr( $options['poststrasse'] ); ?>" />
-                                    <label class="description" for="piratenkleider_theme_kontaktinfos[poststrasse]">
-                                        <?php _e( 'Anschrift: Strassenname und Nummer oder Postfachangabe oder freilassen <br>Zum Beispiel: <code>Unbesonnenheitsweg 123b</code>', 'piratenkleider' ); ?>
-                                        
-                                    </label>
-                                </td>					
-                            </tr>
-                            <tr valign="top"><th scope="row"><?php _e( 'PLZ und Stadt', 'piratenkleider' ); ?></th>
-                                <td>
-                                    <input id="piratenkleider_theme_kontaktinfos[poststadt]" class="regular-text" type="text" name="piratenkleider_theme_kontaktinfos[poststadt]" value="<?php echo esc_attr( $options['poststadt'] ); ?>" />
-                                    <label class="description" for="piratenkleider_theme_kontaktinfos[poststadt]">
-                                        <?php _e( 'Anschrift: Postleitzahl gefolgt von Stadt<br>Zum Beispiel: <code>12345  Ankh-Morpork</code>', 'piratenkleider' ); ?>
-                                        
-                                    </label>
-                                </td>					
-                            </tr>
-                        </table>  	
-                            
-                            
-			</td>
-		       </tr>
-                       <tr valign="top"><th scope="row"><?php _e( 'Ladungsf&auml;hige Anschrift', 'piratenkleider' ); ?></th>
-			<td>
-                            
-				<p><?php _e( 'Optionale Angaben f&uuml;r Rechtssachen. Werden diese Angaben frei gelassen, werden die Daten der Postanschrift verwendet.', 'piratenkleider' ); ?></p>
-                                 <table>                                
-                            <tr valign="top"><th scope="row"><?php _e( 'Name oder Titel', 'piratenkleider' ); ?></th>
-                                <td>
-                                    <input id="piratenkleider_theme_kontaktinfos[ladungtitel]" class="regular-text" type="text" name="piratenkleider_theme_kontaktinfos[ladungtitel]" value="<?php echo esc_attr( $options['ladungtitel'] ); ?>" />
-                                    <label class="description" for="piratenkleider_theme_kontaktinfos[ladungtitel]">
-                                        <?php _e( 'Anschrift: Titel (1. Zeile). <br>Zum Beispiel: <code>Piratenpartei</code>', 'piratenkleider' ); ?>
-                                        
-                                    </label>
-                                </td>					
-                            </tr>
-                            <tr valign="top"><th scope="row"><?php _e( 'zu H&auml;nden', 'piratenkleider' ); ?></th>
-                                <td>
-                                    <input id="piratenkleider_theme_kontaktinfos[ladungperson]" class="regular-text" type="text" name="piratenkleider_theme_kontaktinfos[ladungperson]" value="<?php echo esc_attr( $options['ladungperson'] ); ?>" />
-                                    <label class="description" for="piratenkleider_theme_kontaktinfos[ladungperson]">
-                                        <?php _e( ' Anschrift: Optionale Personenangabe ("zu H&auml;nden"). Sollte in der Regel dieselbe Person sein, die oben als verantwortliche Person f&uuml;r das Impressum definiert ist.<br> Zum Beispiel: <code>Martin Mustermann</code>', 'piratenkleider' ); ?>
-                                       
-                                    </label>
-                                </td>					
-                            </tr>
-                             <tr valign="top"><th scope="row"><?php _e( 'Strasse oder Postfach', 'piratenkleider' ); ?></th>
-                                <td>
-                                    <input id="piratenkleider_theme_kontaktinfos[ladungstrasse]" class="regular-text" type="text" name="piratenkleider_theme_kontaktinfos[ladungstrasse]" value="<?php echo esc_attr( $options['ladungstrasse'] ); ?>" />
-                                    <label class="description" for="piratenkleider_theme_kontaktinfos[ladungstrasse]">
-                                        <?php _e( ' Anschrift: Strassenname und Nummer oder Postfachangabe oder freilassen <br>Zum Beispiel: <code>Unbesonnenheitsweg 123b</code>', 'piratenkleider' ); ?>
-                                       
-                                    </label>
-                                </td>					
-                            </tr>
-                            <tr valign="top"><th scope="row"><?php _e( 'PLZ und Stadt', 'piratenkleider' ); ?></th>
-                                <td>
-                                    <input id="piratenkleider_theme_kontaktinfos[ladungstadt]" class="regular-text" type="text" name="piratenkleider_theme_kontaktinfos[ladungstadt]" value="<?php echo esc_attr( $options['ladungstadt'] ); ?>" />
-                                    <label class="description" for="piratenkleider_theme_kontaktinfos[ladungstadt]">
-                                        <?php _e( 'Anschrift: Postleitzahl gefolgt von Stadt<br>Zum Beispiel: <code>12345  Ankh-Morpork</code>', 'piratenkleider' ); ?>
-                                       
-                                    </label>
-                                </td>					
-                            </tr>
-                        </table>  
-			</td>
-		       </tr>
-                        <tr valign="top"><th scope="row"><?php _e( 'Offizielle E-Mailadresse', 'piratenkleider' ); ?></th>
-			<td>
-				<input id="piratenkleider_theme_kontaktinfos[kontaktemail]" class="regular-text" type="text" length="5" name="piratenkleider_theme_kontaktinfos[kontaktemail]" value="<?php echo esc_attr( $options['kontaktemail'] ); ?>" />
-				<label class="description" for="piratenkleider_theme_kontaktinfos[kontaktemail]">
-                                    <?php _e( 'Feste Mailadresse f&uuml;r offizielle Kontakte.<br>Zum Beispiel: ', 'piratenkleider' ); ?>
-                                    <code><?php echo bloginfo('admin_email'); ?></code>
-                                </label>
-			</td>
-		       </tr>
-                       
-                       <tr valign="top"><th scope="row"><?php _e( 'Datenschutzbeauftragter', 'piratenkleider' ); ?></th>
-			<td>
-				<p>
-                                    <?php _e( 'Optionale Angaben zu einem Datenschutzbeauftragten. Wenn dieser nicht angegeben wird, wird die E-Mail-Adresse des Bundesdatenschutzbeauftragten angegeben.', 'piratenkleider' ); ?></p>
-                                 <table>                                
-
-                            <tr valign="top"><th scope="row"><?php _e( 'Name', 'piratenkleider' ); ?></th>
-                                <td>
-                                    <input id="piratenkleider_theme_kontaktinfos[dsbperson]" class="regular-text" type="text" name="piratenkleider_theme_kontaktinfos[dsbperson]" value="<?php echo esc_attr( $options['dsbperson'] ); ?>" />
-                                    <label class="description" for="piratenkleider_theme_kontaktinfos[dsbperson]">
-                                        <?php _e( 'Name des DSB<br>Zum Beispiel: <code>Martin Mustermann</code>', 'piratenkleider' ); ?>
-                                       
-                                    </label>
-                                </td>					
-                            </tr>
-                             <tr><th scope="row"><?php _e( 'E-Mailadresse', 'piratenkleider' ); ?></th>
-                            <td>
-				<input id="piratenkleider_theme_kontaktinfos[dsbemail]" class="regular-text" type="text" length="5" name="piratenkleider_theme_kontaktinfos[dsbemail]" value="<?php echo esc_attr( $options['dsbemail'] ); ?>" />
-				<label class="description" for="piratenkleider_theme_kontaktinfos[dsbemail]">
-                                    <?php _e( 'Feste Mailadresse f&uuml;r offizielle Kontakte.<br>Zum Beispiel:  <code>bundesbeauftragter@piraten-dsb.de</code>', 'piratenkleider' ); ?>
-                                    
-                                </label>
-			</td>
-                          </tr>
-                            
-                        </table>  
-			</td>
-		       </tr>
-
-                       <tr valign="top"><th scope="row"><?php _e( 'Urheberrecht', 'piratenkleider' ); ?></th>
-			<td>
-				<p><?php _e( 'Zus&auml;tzliche Angaben f&uuml;r den Abschnitt "Verwendete Werke und Lizenzen innerhalb dieses Webauftritts"', 'piratenkleider' ); ?>
-                                </p>
-				<p>
-				<textarea id="piratenkleider_theme_kontaktinfos[lizenzen]" class="regular-text" cols="130" rows="10" name="piratenkleider_theme_kontaktinfos[lizenzen]"><?php echo esc_attr( $options['lizenzen'] ); ?></textarea>
-                                    <label class="description" for="piratenkleider_theme_kontaktinfos[lizenzen]">
-                                        <?php _e( 'Eine Angabe pro Zeile! ', 'piratenkleider' ); ?>                                     
-                                    </label>
-				</p> 
-			</td>
-		       </tr>
-                       
-                      
-		    </table>
-            </div></div>
-            <p class="submit">
-                    <input type="submit" class="button-primary" value="<?php _e( 'Speichern', 'piratenkleider' ); ?>" />
-            </p>
-        </form>               
-	</div>
-            
-        </div> <!-- end: .piratenkleider-optionen -->      
-	<?php
-}
-
-/**
- * Sanitize and validate input. Accepts an array, return a sanitized array.
- */
-function theme_kontaktinfos_validate( $input ) {
-        $input['posttitel'] = wp_kses_normalize_entities( $input['posttitel'] );   
-        $input['postperson'] = wp_kses_normalize_entities( $input['postperson'] );   
-	$input['postsstrasse'] = wp_kses_normalize_entities( $input['poststrasse'] );   
-        $input['poststadt'] = wp_kses_normalize_entities( $input['poststadt'] );  
-        
-        $input['ladungtitel'] = wp_kses_normalize_entities( $input['ladungtitel'] );   
-        $input['ladungperson'] = wp_kses_normalize_entities( $input['ladungperson'] );   
-	$input['ladungstrasse'] = wp_kses_normalize_entities( $input['ladungstrasse'] );   
-        $input['ladungstadt'] = wp_kses_normalize_entities( $input['ladungstadt'] );      
-        
-        $input['kontaktemail'] = sanitize_email( $input['kontaktemail'] ); 
-        $input['dsbemail'] = sanitize_email( $input['dsbemail'] ); 
-        $input['dsbperson'] = wp_filter_nohtml_kses( $input['dsbperson'] );   
-	return $input;
-}
-
 
 
 /*

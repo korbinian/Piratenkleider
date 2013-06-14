@@ -322,6 +322,13 @@ function piratenkleider_compatibility ($oldoptions) {
 	 $newoptions = array_merge($newoptions,$olddesignopt);
 	delete_option('piratenkleider_theme_designspecials');
     }
+    $oldkontaktinfos = get_option( 'piratenkleider_theme_kontaktinfos' );
+    if ((is_array($oldkontaktinfos)) && (count($oldkontaktinfos)>0)) {
+	 $newoptions = array_merge($newoptions,$oldkontaktinfos);
+	delete_option('piratenkleider_theme_kontaktinfos');
+    }
+    
+    
     
     $diff = array_diff($newoptions, $oldoptions);
     if (count($diff)) {

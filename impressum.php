@@ -5,9 +5,7 @@
 ?>
 <?php get_header();
     global $options;  
-    $kontaktinfos = get_piratenkleider_options( 'piratenkleider_theme_kontaktinfos' );  
-
-        ?>
+ ?>
 
 <div class="section content" id="main-content">
   <div class="row">
@@ -61,10 +59,10 @@
         <?php edit_post_link( __( 'Bearbeiten', 'piratenkleider' ), '', '' ); ?>
         <?php endwhile; ?>
           
-          <?php if ((isset($kontaktinfos['impressumdienstanbieter'])) && (strlen(trim($kontaktinfos['impressumdienstanbieter']))>1)) { ?>
+          <?php if ((isset($options['impressumdienstanbieter'])) && (strlen(trim($options['impressumdienstanbieter']))>1)) { ?>
           <p>
               Dienstanbieter dieser Seite ist der  
-               <?php echo $kontaktinfos['impressumdienstanbieter']; ?>.               
+               <?php echo $options['impressumdienstanbieter']; ?>.               
           </p>   
            <?php } else { ?>
           <h2><?php echo  get_bloginfo( 'name' ) ?></h2>  
@@ -74,28 +72,28 @@
           </p>
           
           <?php } ?>
-           <?php if ((isset($kontaktinfos['impressumperson']))&& (strlen(trim($kontaktinfos['impressumperson']))>1)) { ?>
+           <?php if ((isset($options['impressumperson']))&& (strlen(trim($options['impressumperson']))>1)) { ?>
           <p>Verantwortlicher gem&auml;&szlig; &sect;5 TMG ist 
-                <?php echo $kontaktinfos['impressumperson']; ?>.
+                <?php echo $options['impressumperson']; ?>.
           </p>
            <?php } ?>
           
-            <?php if ((isset($kontaktinfos['posttitel'])) && (strlen(trim($kontaktinfos['posttitel']))>1)
-                  && (isset($kontaktinfos['poststrasse']))&& (strlen(trim($kontaktinfos['poststrasse']))>1)
-                  && (isset($kontaktinfos['poststadt'])) && (strlen(trim($kontaktinfos['poststadt']))>1)) { ?>
+            <?php if ((isset($options['posttitel'])) && (strlen(trim($options['posttitel']))>1)
+                  && (isset($options['poststrasse']))&& (strlen(trim($options['poststrasse']))>1)
+                  && (isset($options['poststadt'])) && (strlen(trim($options['poststadt']))>1)) { ?>
                 
             <h2>Postanschrift</h2>
             <address>
-                <?php echo $kontaktinfos['posttitel']?><br> 
-                <?php echo $kontaktinfos['postperson']?><br> 
-                <?php echo $kontaktinfos['poststrasse']?><br> 
-                <?php echo $kontaktinfos['poststadt']?><br>                 
+                <?php echo $options['posttitel']?><br> 
+                <?php echo $options['postperson']?><br> 
+                <?php echo $options['poststrasse']?><br> 
+                <?php echo $options['poststadt']?><br>                 
             </address>                  
            <?php } ?>
-           <?php if ((isset($kontaktinfos['kontaktemail'])) && (strlen(trim($kontaktinfos['kontaktemail']))>1)) { ?>
+           <?php if ((isset($options['kontaktemail'])) && (strlen(trim($options['kontaktemail']))>1)) { ?>
             <h2>E-Mail</h2>   
             <p>
-                <a href="mailto:<?php echo $kontaktinfos['kontaktemail']?>"><?php echo $kontaktinfos['kontaktemail']?></a>
+                <a href="mailto:<?php echo $options['kontaktemail']?>"><?php echo $options['kontaktemail']?></a>
             </p>    
           <?php } else { ?>
             <h2>Admin E-Mail</h2>   
@@ -103,27 +101,27 @@
                 <a href="mailto:<?php echo get_bloginfo( 'admin_email' )?>"><?php echo get_bloginfo( 'admin_email' )?></a>
             </p>    
            <?php } ?>
-           <?php if ((isset($kontaktinfos['ladungtitel'])) && (strlen(trim($kontaktinfos['ladungtitel']))>1)
-                  && (isset($kontaktinfos['ladungstrasse']))&& (strlen(trim($kontaktinfos['ladungstrasse']))>1)
-                  && (isset($kontaktinfos['ladungstadt'])) && (strlen(trim($kontaktinfos['ladungstadt']))>1)) { ?>  
+           <?php if ((isset($options['ladungtitel'])) && (strlen(trim($options['ladungtitel']))>1)
+                  && (isset($options['ladungstrasse']))&& (strlen(trim($options['ladungstrasse']))>1)
+                  && (isset($options['ladungstadt'])) && (strlen(trim($options['ladungstadt']))>1)) { ?>  
             <h2>Ladungsf&auml;hige Anschrift</h2>
              <address>
-                <?php echo $kontaktinfos['ladungtitel']?><br> 
-                <?php echo $kontaktinfos['ladungperson']?><br> 
-                <?php echo $kontaktinfos['ladungstrasse']?><br> 
-                <?php echo $kontaktinfos['ladungstadt']?><br>                 
+                <?php echo $options['ladungtitel']?><br> 
+                <?php echo $options['ladungperson']?><br> 
+                <?php echo $options['ladungstrasse']?><br> 
+                <?php echo $options['ladungstadt']?><br>                 
             </address>  
             
           <?php } else { 
-               if ((isset($kontaktinfos['posttitel']))  && (strlen(trim($kontaktinfos['posttitel']))>1) 
-                  && (isset($kontaktinfos['poststrasse']))  && (strlen(trim($kontaktinfos['poststrasse']))>1)
-                  && (isset($kontaktinfos['poststadt'])) && (strlen(trim($kontaktinfos['poststadt']))>1) ) { ?>
+               if ((isset($options['posttitel']))  && (strlen(trim($options['posttitel']))>1) 
+                  && (isset($options['poststrasse']))  && (strlen(trim($options['poststrasse']))>1)
+                  && (isset($options['poststadt'])) && (strlen(trim($options['poststadt']))>1) ) { ?>
             <h2>Ladungsf&auml;hige Anschrift</h2>
              <address>
-                <?php echo $kontaktinfos['posttitel']?><br> 
-                <?php echo $kontaktinfos['postperson']?><br> 
-                <?php echo $kontaktinfos['poststrasse']?><br> 
-                <?php echo $kontaktinfos['poststadt']?><br>                 
+                <?php echo $options['posttitel']?><br> 
+                <?php echo $options['postperson']?><br> 
+                <?php echo $options['poststrasse']?><br> 
+                <?php echo $options['poststadt']?><br>                 
             </address>              
                <?php } ?>
          <?php } ?>
@@ -232,14 +230,14 @@ stehen s&auml;mtliche Werke dieses Angebots unter einer
     <li><a class="extern" href="http://flex.madebymufffin.com">jQuery FlexSlider</a> (<span lang="en">MIT License</span>)</li>
     <li><a class="extern bebas" href="http://dharmatype.com/dharma-type/bebas-neue.html">Schrift Bebas Neue von Dharmatype</a> (<span lang="en">SIL Open Font License</span> 1.1)</li>
     <?php 
-    $theme_data = get_theme_data( get_template_directory(). '/style.css' );
+    $theme_data = wp_get_theme();
     ?>
-    <li><a class="extern" href="<?php echo $theme_data['URI']; ?>">Wordpress Theme <?php echo $theme_data['Name']; ?></a>, Version <?php echo $theme_data['Version']; ?>
+    <li><a class="extern" href="<?php echo $theme_data['URI']; ?>">Wordpress Theme <?php echo $theme_data->Name; ?></a>, Version <?php echo $theme_data->Version; ?>
     (Lizenziert unter der Creative Commons Namensnennung 3.0 Deutschland Lizenz</a>)  </li>
     <li><a class="extern" href="http://wiki.piratenpartei.de/Grafiken">Wallpaper und Bildmaterial der Piratenpartei Deutschland</a> (Lizenziert unter der Creative Commons Namensnennung 3.0 Deutschland Lizenz</a>)</li>    
     <?php
 
-	$lizenzen = explode("\n", $kontaktinfos['lizenzen']);
+	$lizenzen = explode("\n", $options['lizenzen']);
 	if (is_array($lizenzen)) {
 		foreach ($lizenzen as $value) {
 			if (trim($value) != "") {
@@ -257,7 +255,7 @@ stehen s&auml;mtliche Werke dieses Angebots unter einer
     
    
     <ul>
-        <li><a class="extern" href="http://www.xwolf.de">Wolfgang Wiese</a> (Programmierung, Neudesign, CSS, Barrierefreiheit, Dokumentation, Features nach Version 1.1)</li>
+        <li><a class="extern" href="http://piratenkleider.xwolf.de">Wolfgang Wiese</a> (Programmierung, Neudesign, CSS, Barrierefreiheit, Dokumentation, Features nach Version 1.1)</li>
         <li><a class="extern" href="http://www.korbinian-polk.de">Korbinian Polk</a> (Erstes Grunddesign und Erstellung eines Childtheme von TwentyTen)</li>               
     </ul>
         
