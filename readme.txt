@@ -2,7 +2,7 @@ Piratenkleider
 - Wordpress-Theme für Webauftritte der Piratenpartei 
 =================================================
 
-Version 2.17.8 von Wolfgang Wiese (xwolf), 13. Juni 2013
+Version 2.17.8 von Wolfgang Wiese (xwolf), 14. Juni 2013
 
 
 DOWNLOADS
@@ -51,6 +51,7 @@ AUTOREN / ENTWICKLER
      - jQuery FlexSlider 2 (GPL v2)
      - Schrift Bebas Neue von Dharmatype (SIL Open Font License 1.1)
      - Schrift Droid Sans von Ascender (http://www.droidfonts.com/), Apache License 2.0 http://www.apache.org/licenses/LICENSE-2.0
+     - Schrift Awesome http://fontawesome.io von Dave Gandy (SIL Open Font License 1.1)
      - Circle Player, http://jplayer.org (GNU General Public License (GPL) Version 2)
 
 VORVERSION

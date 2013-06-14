@@ -703,71 +703,8 @@ function theme_kontaktinfos_do_page() {
 			</td>
 		       </tr>
                        
-                       <tr valign="top"><th scope="row"><?php _e( 'Spendenformulare', 'piratenkleider' ); ?></th>
-			<td>
-				<p><?php _e( 'Optionale Angaben f&uuml;r Spendenformulare, die mit dem Seiten-Template "Spenden" erstellt werden.', 'piratenkleider' ); ?>
-                                    <br>
-                                    <?php _e( '<strong>Achtung:</strong> Dies ersetzt nicht das richtige Eingabeformular. Das Formular wird z.B. mit dem Plugin <em>Contact Form 7</em> erstellt und dann als Makro in den Textbereich der Seite hinzugef&uuml;gt.', 'piratenkleider' ); ?>
-                                    <br>
-                                    <?php _e( 'Die folgenden Daten werden nur dazu verwendet, die Tabelle f&uuml;r die  feststehenden Informationen aufzubauen.', 'piratenkleider' ); ?>
-                                    
-                                </p>
-                                 <table>                                
-
-                            <tr valign="top"><th scope="row"><?php _e( 'Empf&auml;nger', 'piratenkleider' ); ?></th>
-                                <td>
-                                    <input id="piratenkleider_theme_kontaktinfos[spendenempfaenger]" class="regular-text" type="text" name="piratenkleider_theme_kontaktinfos[spendenempfaenger]" value="<?php echo esc_attr( $options['spendenempfaenger'] ); ?>" />
-                                    <label class="description" for="piratenkleider_theme_kontaktinfos[spendenempfaenger]">
-                                        <?php _e( 'Name des Empf&auml;ngers/Konto der Spenden f&uuml;r &Uuml;berweisungen. ', 'piratenkleider' ); ?>                                     
-                                    </label>
-                                </td>					
-                            </tr>
-                              <tr valign="top"><th scope="row"><?php _e( 'Kontonummer', 'piratenkleider' ); ?></th>
-                                <td>
-                                    <input id="piratenkleider_theme_kontaktinfos[spendenkonto]" class="regular-text" type="text" name="piratenkleider_theme_kontaktinfos[spendenkonto]" value="<?php echo esc_attr( $options['spendenkonto'] ); ?>" />
-                                    <label class="description" for="piratenkleider_theme_kontaktinfos[spendenkonto]">
-                                        <?php _e( 'Kontonummer des Empf&auml;ngers', 'piratenkleider' ); ?>
-                                     
-                                    </label>
-                                </td>					
-                            </tr>
-                             <tr valign="top"><th scope="row"><?php _e( 'BLZ', 'piratenkleider' ); ?></th>
-                                <td>
-                                    <input id="piratenkleider_theme_kontaktinfos[spendenblz]" class="regular-text" type="text" name="piratenkleider_theme_kontaktinfos[spendenblz]" value="<?php echo esc_attr( $options['spendenblz'] ); ?>" />
-                                    <label class="description" for="piratenkleider_theme_kontaktinfos[spendenblz]">
-                                        <?php _e( 'Die Bankleitzahl.', 'piratenkleider' ); ?>
-                                    
-                                    </label>
-                                </td>					
-                            </tr>
-                            <tr valign="top"><th scope="row"><?php _e( 'Bank', 'piratenkleider' ); ?></th>
-                                <td>
-                                    <input id="piratenkleider_theme_kontaktinfos[spendenbank]" class="regular-text" type="text" name="piratenkleider_theme_kontaktinfos[spendenbank]" value="<?php echo esc_attr( $options['spendenbank'] ); ?>" />
-                                    <label class="description" for="piratenkleider_theme_kontaktinfos[spendenbank]">
-                                        <?php _e( 'Ausgeschriebener Name der Bank', 'piratenkleider' ); ?>                                     
-                                    </label>
-                                </td>					
-                            </tr>
-                             <tr valign="top"><th scope="row"><?php _e( 'IBAN', 'piratenkleider' ); ?></th>
-                                <td>
-                                    <input id="piratenkleider_theme_kontaktinfos[spendeniban]" class="regular-text" type="text" name="piratenkleider_theme_kontaktinfos[spendeniban]" value="<?php echo esc_attr( $options['spendeniban'] ); ?>" />
-                                    <label class="description" for="piratenkleider_theme_kontaktinfos[spendeniban]">
-                                     <?php _e( 'Internationale Bank Account Nummer', 'piratenkleider' ); ?>
-                                    </label>
-                                </td>					
-                            </tr>
-                            <tr valign="top"><th scope="row"><?php _e( 'BIC', 'piratenkleider' ); ?></th>
-                                <td>
-                                    <input id="piratenkleider_theme_kontaktinfos[spendenbic]" class="regular-text" type="text" name="piratenkleider_theme_kontaktinfos[spendenbic]" value="<?php echo esc_attr( $options['spendenbic'] ); ?>" />
-                                    <label class="description" for="piratenkleider_theme_kontaktinfos[spendenbic]">
-                                    <?php _e( 'Business Identifier Code', 'piratenkleider' ); ?>
-                                    </label>
-                                </td>					
-                            </tr>
-                        </table>  
-			</td>
-		       </tr>
-                    </table>
+                      
+		    </table>
             </div></div>
             <p class="submit">
                     <input type="submit" class="button-primary" value="<?php _e( 'Speichern', 'piratenkleider' ); ?>" />

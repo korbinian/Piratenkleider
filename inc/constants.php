@@ -343,6 +343,8 @@ $default_colorstyles = array(
 $default_fontstyles = array(
     'font-bebas.css'	=> __( 'Bebas Neue', 'piratenkleider' ),
     'font-droid.css'	=> __( 'Droid Sans', 'piratenkleider' ),
+    'font-awesome.css'	=> __( 'Awesome', 'piratenkleider' ),
+    'font-bebas-awesome.css'	=> __( 'Bebas &amp; Awesome', 'piratenkleider' ),
     'font-standard.css'	=> __( 'Helvetica, Arial, sans-serif', 'piratenkleider' ),
 
  );
