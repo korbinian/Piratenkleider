@@ -29,7 +29,7 @@
 .skiplinks li{list-style:none;width:100%;}
 .skiplinks li a{position:static;width:100%;display:block;outline:0;text-align:center;margin-bottom:2px;font-size:1.4em;background:#2d7dc5;color:#FFF;border:1px solid #2d7dc5;border-top:1px solid #4e96d7;border-bottom:1px solid #1a4872;-moz-box-shadow:0 1px 3px rgba(0,0,0,0.5);-webkit-box-shadow:0 1px 3px rgba(0,0,0,0.5);box-shadow:0 1px 3px rgba(0,0,0,0.5);border-radius:2px;-moz-border-radius:2px;-webkit-border-radius:2px;text-shadow:0 -1px 0 #112e48;background-color:#2d7dc5;background-image:linear-gradient(top,#2d7dc5,#24639b);padding:5px 18px;}
 .footer ul.skiplinks{height:auto;}
-.symbolbild{height:100px;overflow:hidden;z-index:10;max-width:100%;}
+.symbolbild{overflow:hidden;z-index:10;max-width:100%;}
 .nav-top ul.menu li a{margin-bottom:2px;overflow:visible;position:relative;background:#2d7dc5;color:#FFF;border:1px solid #C96A00;-moz-box-shadow:0 1px 3px rgba(0,0,0,0.5);-webkit-box-shadow:0 1px 3px rgba(0,0,0,0.5);box-shadow:0 1px 3px rgba(0,0,0,0.5);border-radius:2px;-moz-border-radius:2px;-webkit-border-radius:2px;text-shadow:0 -1px 0 #C96A00;background-color:#f80;padding:5px 18px;}
 .nav-top ul.menu li a:hover{background:#24639b;}
 .nav-main ul.menu li a{float:none;position:static;width:100%;display:block;color:#FFF;outline:0;text-align:center;margin-bottom:2px;border:1px solid #2d7dc5;border-top:1px solid #4e96d7;border-bottom:1px solid #1a4872;-moz-box-shadow:0 1px 3px rgba(0,0,0,0.5);-webkit-box-shadow:0 1px 3px rgba(0,0,0,0.5);box-shadow:0 1px 3px rgba(0,0,0,0.5);border-radius:2px;-moz-border-radius:2px;-webkit-border-radius:2px;text-shadow:0 -1px 0 #112e48;background-color:#2d7dc5;background-image:linear-gradient(top,#2d7dc5,#24639b);padding:5px 18px;}

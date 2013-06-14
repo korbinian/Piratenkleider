@@ -1127,7 +1127,7 @@ display: inline-block;
  
   
 .content .symbolbild {
-  width: 100%;
+  max-width: 705px;
   margin: 0;
   padding: 0;
 }

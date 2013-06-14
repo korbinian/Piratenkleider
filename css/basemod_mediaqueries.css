@@ -218,8 +218,7 @@
      height: auto;
 }
 
-  .symbolbild {
-        height: 100px;  
+  .symbolbild {      
         overflow: hidden;
         z-index: 10;
        max-width: 100%;
