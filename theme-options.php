@@ -14,8 +14,8 @@ function theme_options_init(){
  * Load up the menu page
  */
 function theme_options_add_page() {
-	add_theme_page( __( 'Takelage einstellen', 'piratenkleider' ),
-                        __( 'Takelage einstellen', 'piratenkleider' ), 
+	add_theme_page( __( 'Piratenkleider Optionen', 'piratenkleider' ),
+                        __( 'Piratenkleider Optionen', 'piratenkleider' ), 
                        'edit_theme_options', 'theme_options', 'theme_options_do_page' );
                           
 }
