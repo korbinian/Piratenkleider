@@ -21,7 +21,6 @@
 	    $image_alt = '';
 	    if (has_post_thumbnail()) { 
 		$thumbid = get_post_thumbnail_id(get_the_ID());
-		 // array($options['bigslider-thumb-width'],$options['bigslider-thumb-height'])
 		$image_url_data = wp_get_attachment_image_src( $thumbid, 'full');
 		$image_url = $image_url_data[0];
 		$image_alt = trim(strip_tags( get_post_meta($thumbid, '_wp_attachment_image_alt', true) ));
@@ -59,9 +58,9 @@
         <?php edit_post_link( __( 'Bearbeiten', 'piratenkleider' ), '', '' ); ?>
         <?php endwhile; ?>
           
-          <?php if ((isset($options['impressumdienstanbieter'])) && (strlen(trim($options['impressumdienstanbieter']))>1)) { ?>
+          <?php if ((isset($options['impressumdienstanbieter'])) && (strlen(trim($options['impressumdienstanbieter']))>4)) { ?>
           <p>
-              Dienstanbieter dieser Seite ist der  
+              Dienstanbieter dieser Seite ist   
                <?php echo $options['impressumdienstanbieter']; ?>.               
           </p>   
            <?php } else { ?>
@@ -85,31 +84,45 @@
             <h2>Postanschrift</h2>
             <address>
                 <?php echo $options['posttitel']?><br> 
-                <?php echo $options['postperson']?><br> 
-                <?php echo $options['poststrasse']?><br> 
-                <?php echo $options['poststadt']?><br>                 
+                <?php  if ((isset($options['postperson'])) && (strlen(trim($options['postperson']))>4)) { 
+                    echo $options['postperson']. "<br>"; 
+                  }  
+                  echo $options['poststrasse']."<br>";
+                  echo $options['poststadt']."<br>";  
+                ?>  
             </address>                  
            <?php } ?>
-           <?php if ((isset($options['kontaktemail'])) && (strlen(trim($options['kontaktemail']))>1)) { ?>
-            <h2>E-Mail</h2>   
-            <p>
-                <a href="mailto:<?php echo $options['kontaktemail']?>"><?php echo $options['kontaktemail']?></a>
-            </p>    
+          
+            <h2>Digitale Kontaktaufnahme</h2>   
+            <ul>
+           <?php if ((isset($options['kontaktemail'])) && (strlen(trim($options['kontaktemail']))>4)) { ?>  
+                <li>E-Mail: <a href="mailto:<?php echo $options['kontaktemail']?>"><?php echo $options['kontaktemail']?></a></li>
           <?php } else { ?>
-            <h2>Admin E-Mail</h2>   
-            <p>
-                <a href="mailto:<?php echo get_bloginfo( 'admin_email' )?>"><?php echo get_bloginfo( 'admin_email' )?></a>
-            </p>    
-           <?php } ?>
+                <li>E-Mail: <a href="mailto:<?php echo get_bloginfo( 'admin_email' )?>"><?php echo get_bloginfo( 'admin_email' )?></a></li>
+           <?php } 
+             if ((isset($options['kontakttelefon'])) && (strlen(trim($options['kontakttelefon']))>4)) { ?>      
+             <li>Telefon: <?php echo $options['kontakttelefon']?></li>
+            <?php } 
+             if ((isset($options['kontaktfax'])) && (strlen(trim($options['kontaktfax']))>4)) { ?>      
+             <li>Fax: <?php echo $options['kontaktfax']?></li>
+            <?php } ?>
+          
+            </ul>
+          
+            
            <?php if ((isset($options['ladungtitel'])) && (strlen(trim($options['ladungtitel']))>1)
                   && (isset($options['ladungstrasse']))&& (strlen(trim($options['ladungstrasse']))>1)
                   && (isset($options['ladungstadt'])) && (strlen(trim($options['ladungstadt']))>1)) { ?>  
             <h2>Ladungsf&auml;hige Anschrift</h2>
              <address>
-                <?php echo $options['ladungtitel']?><br> 
-                <?php echo $options['ladungperson']?><br> 
-                <?php echo $options['ladungstrasse']?><br> 
-                <?php echo $options['ladungstadt']?><br>                 
+                 <?php 
+                echo $options['ladungtitel']."<br>";
+                if ((isset($options['ladungperson'])) && (strlen(trim($options['ladungperson']))>4)) { 
+                echo $options['ladungperson']."<br>";
+                }
+                echo $options['ladungstrasse']."<br>"; 
+                echo $options['ladungstadt']."<br>";             
+                ?>
             </address>  
             
           <?php } else { 
@@ -118,22 +131,29 @@
                   && (isset($options['poststadt'])) && (strlen(trim($options['poststadt']))>1) ) { ?>
             <h2>Ladungsf&auml;hige Anschrift</h2>
              <address>
-                <?php echo $options['posttitel']?><br> 
-                <?php echo $options['postperson']?><br> 
-                <?php echo $options['poststrasse']?><br> 
-                <?php echo $options['poststadt']?><br>                 
+                <?php 
+                echo $options['posttitel']."<br>";
+                 if ((isset($options['postperson'])) && (strlen(trim($options['postperson']))>1)) { 
+                 echo $options['postperson']."<br>";
+                }
+                 echo $options['poststrasse']."<br>"; 
+                  echo $options['poststadt']."<br>";
+                      ?>
             </address>              
                <?php } ?>
-         <?php } ?>
-          
-            
+         <?php } 
+         
+         
+         if ($options['zeigerechtsvorschriften']==1) { ?>
             
             <h2>Rechtsvorschriften</h2>
-<ul>
-<li><a href="http://www.bundestag.de/bundestag/aufgaben/rechtsgrundlagen/pg_pdf.pdf" >Gesetz &uuml;ber politische Parteien (Parteiengesetz)</a></li>
-<li><a href="http://wiki.piratenpartei.de/Satzung" >Satzung der Piratenpartei Deutschland</a></li>
-<li><a href="http://wiki.piratenpartei.de/Satzungen" >Jeweilige Landessatzung  der Piratenpartei Deutschland</a></li>
-</ul>
+    <ul>
+    <li><a href="http://www.bundestag.de/bundestag/aufgaben/rechtsgrundlagen/pg_pdf.pdf" >Gesetz &uuml;ber politische Parteien (Parteiengesetz)</a></li>
+    <li><a href="http://wiki.piratenpartei.de/Satzung" >Satzung der Piratenpartei Deutschland</a></li>
+    <li><a href="http://wiki.piratenpartei.de/Satzungen" >Jeweilige Landessatzung  der Piratenpartei Deutschland</a></li>
+    </ul>
+            
+            <?php } ?>
             
 <h2>Haftung f&uuml;r Inhalte</h2>
 <p>
@@ -203,7 +223,7 @@ stehen s&auml;mtliche Werke dieses Angebots unter einer
 <a class="extern" href="http://creativecommons.org/licenses/by/3.0/de/" rel="license">    
     Creative Commons Namensnennung 3.0 Deutschland Lizenz</a>.
 </p>
-<p style="float:right; display: inline; margin: 1em;"><img src="http://i.creativecommons.org/l/by/3.0/de/88x31.png" alt="" /></p>
+<p style="float:right; display: inline; margin: 1em;"><img src="<?php echo get_template_directory_uri(); ?>/images/cc-88x31.png" alt="" /></p>
 <p>
     Sie d&uuml;rfen somit
 </p>
@@ -276,7 +296,7 @@ stehen s&auml;mtliche Werke dieses Angebots unter einer
 Die Nutzung unserer Webseite ist in der Regel ohne Angabe personenbezogener 
 Daten m&ouml;glich. Die Speicherung von Verbindungsdaten erfolgt nicht. Soweit auf 
 unseren Seiten personenbezogene Daten (beispielsweise Name, Anschrift oder 
-eMail-Adressen) erhoben werden, erfolgt dies, soweit m&ouml;glich, stets auf 
+E-Mail-Adressen) erhoben werden, erfolgt dies, soweit m&ouml;glich, stets auf 
 freiwilliger Basis. Diese Daten werden ohne Ihre ausdr&uuml;ckliche Zustimmung
 nicht an Dritte weitergegeben. 
 </p><p>Wir weisen darauf hin, dass die Daten&uuml;bertragung 

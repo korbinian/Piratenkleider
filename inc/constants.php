@@ -82,6 +82,7 @@ $defaultoptions = array(
     'zeige_subpagesonly'                    => 1,
     'zeige_sidebarpagemenu'                 => 1,
     'zeige_commentbubble_null'              => 0,
+    'zeigerechtsvorschriften'               => 1,
     'num-article-startpage-fullwidth'       => 1,
     'num-article-startpage-halfwidth'       => 4,
     'url-newsletteranmeldung'       => 'https://service.piratenpartei.de/subscribe/newsletter',
@@ -1624,6 +1625,27 @@ $setoptions = array(
                   'label'   => __( 'Feste Mailadresse f&uuml;r offizielle Kontakte.', 'piratenkleider' ),
                   'parent'  => 'impressum',		    
 		), 
+               'kontakttelefon' => array(
+                  'type'    => 'text',
+                  'title'   => __( 'Telefon', 'piratenkleider' ),
+                  'label'   => __( 'Telefonnummer mit Vorwahl.', 'piratenkleider' ),
+		  'default'	=> '',
+                  'parent'  => 'impressum',
+		), 
+               'kontaktfax' => array(
+                  'type'    => 'text',
+                  'title'   => __( 'Fax', 'piratenkleider' ),
+                  'label'   => __( 'Faxnummer mit Vorwahl', 'piratenkleider' ),
+		  'default'	=> '',
+                  'parent'  => 'impressum',
+		), 
+                'zeigerechtsvorschriften' => array(
+                  'type'    => 'bool',
+                  'title'   => __( 'Rechtsvorschriften', 'piratenkleider' ),
+                  'label'   => __( 'Zeige Linkliste zu Rechtsvorschriften politischer Parteien', 'piratenkleider' ),
+		  'default'	=> $defaultoptions['zeigerechtsvorschriften'],
+                  'parent'  => 'impressum',
+		), 
 	       'lizenzen' => array(
                   'type'    => 'textarea',
                   'title'   => __( 'Urheberrecht', 'piratenkleider' ),
@@ -1634,7 +1656,8 @@ $setoptions = array(
 	      'postanschrift'  => array(
                   'type'    => 'section',
                   'title'   => __('Offizielle Postanschrift', 'piratenkleider'),                   
-		),               
+		),  
+      
                'posttitel' => array(
                   'type'    => 'text',
                   'title'   => __( 'Name oder Titel', 'piratenkleider' ),
@@ -1663,7 +1686,7 @@ $setoptions = array(
 		  'default'	=> '',
                   'parent'  => 'postanschrift',
 		), 
-	       
+                
 	       'ladung'  => array(
                   'type'    => 'section',
                   'title'   => __('Ladungsf&auml;hige Anschrift', 'piratenkleider'),                   
@@ -1696,6 +1719,7 @@ $setoptions = array(
 		  'default'	=> '',
                   'parent'  => 'ladung',
 		), 
+
 	       
 	       
 	       'dsb'  => array(
