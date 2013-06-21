@@ -3113,6 +3113,10 @@ ul.socialmedia {
 .slides:after {content: "."; display: block; clear: both; visibility: hidden; line-height: 0; height: 0;} 
 html[xmlns] .slides {display: block;} 
 * html .slides {height: 1%;}
+.content .content-aside ul.slides {
+    margin-bottom: 0px;    
+} 
+
 
 /* No JavaScript Fallback */
 /* If you are not using another script, such as Modernizr, make sure you
@@ -3140,11 +3144,11 @@ html[xmlns] .slides {display: block;}
     text-decoration: none;
     border: none;
 }
-
+/*
 .content-aside .flex-control-nav {
   display: none; 
 }
-
+*/ 
 
 .flexslider .bigslider img {    
     min-width: 705px;
@@ -3178,13 +3182,19 @@ html[xmlns] .slides {
   display: none; 
 }
 
-.flex-control-nav {
+.teaser .flex-control-nav {
   position: absolute;
   top: 10px;
   right: 62px;
   overflow: hidden;
   z-index: 800; 
 }
+.content-aside .flex-control-nav {
+    margin: 0 0 10px 0;
+    padding: 0;
+    float: left;
+}
+
 .flex-control-nav li {
     float: left;
     margin-right: 1px; 
@@ -3204,20 +3214,34 @@ html[xmlns] .slides {
         background: white; 
 }  
 
-.content-aside .flexslider .flex-pauseplay,
+
+
+.first-teaser-widget-area .flexslider .flex-pauseplay,
+.content-aside .flexslider .flex-pauseplay {
+    background: white;
+    background: rgba(255, 255, 255, 0.8);
+    cursor: pointer;
+    color: black; 
+}
+
 .first-teaser-widget-area .flexslider .flex-pauseplay {
     position: absolute;
     top: 10px;
     right: 10px;
     width: 50px;
     text-align: center;
-    padding: 0px 1px 1px 1px;
+    padding: 1px;
     overflow: hidden;
-    z-index: 800;
-    background: white;
-    background: rgba(255, 255, 255, 0.8);
-    cursor: pointer;
-    color: black; 
+    z-index: 800;  
+}
+
+
+.content-aside .flexslider .flex-pauseplay {
+    position: relative;
+    clear: left;
+    padding: 1px 5px 1px 5px;
+    margin: 0;
+    display: inline-block;
 
 }
 
@@ -3294,6 +3318,10 @@ html[xmlns] .slides {
 .first-teaser-widget-area .slide .textslider a {
     color: white;    
 }
+
+.content-aside .flexslider ol.flex-control-nav li {
+    margin: 0 1px;
+} 
 .content-aside .flexslider li.slide a {
     padding: 0;
 }

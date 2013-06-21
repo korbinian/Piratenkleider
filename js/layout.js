@@ -2,7 +2,9 @@
  * JS-Frameset fuer Piratenkleider
  *
  */
-
+    var $htmlOnSwitch = '';
+    var $htmlOffSwitch = '';
+    
 jQuery(document).ready(function($) {
 
 /*
@@ -59,6 +61,10 @@ jQuery(document).ready(function($) {
     var $cssASideOnViewSidebar = {
 	'width' : '33%' 
     };
+    
+
+    
+    
     $.SetOnSwitch = function() {   
 	 $(".content-primary").prepend($htmlOnSwitch);     
     };
