@@ -2,14 +2,13 @@
    global $defaultoptions;
    global $defaultbilder_liste;
    global $options;  
-   $bilderoptions = get_piratenkleider_options( 'piratenkleider_theme_defaultbilder' ); 
 ?>          
 <div class="first-teaser-widget-area">
 <?php if ( is_active_sidebar( 'first-teaser-widget-area' ) ) { ?>
         <?php dynamic_sidebar( 'first-teaser-widget-area' ); ?>
     <?php } else {        
    
-         $defaultbildsrc = $bilderoptions['slider-defaultbildsrc'];                        
+         $defaultbildsrc = $options['slider-defaultbildsrc'];                        
          $cat = $options['slider-catid'];
 	 global $thisCat;
 	 if (isset($thisCat)) {
