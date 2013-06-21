@@ -1479,12 +1479,12 @@ display: inline-block;
 .post .post-info {
   float: left;
   position: relative;
-  margin-top: -10px; }
+ }
   .post .post-info .commentbubble {
     display: inline-block;
     position: absolute;
     top: -5px;
-    right: 0; }
+    right: 7px; }
   .post .post-info .commentbubble a {
     background: #ff8800;
     color: white;
@@ -1512,7 +1512,7 @@ display: inline-block;
   .post .post-info .cal-icon {
     background: #eeeeee;   
     padding: 10px;
-    margin-right: 10px;
+    margin-right: 15px;
     margin-bottom: 5px;
     overflow: hidden;
     -webkit-box-shadow: 1px 1px 2px #444444;
