@@ -4,7 +4,7 @@
  *
  * @source http://github.com/xwolfde/Piratenkleider
  * @creator xwolf
- * @version 2.17.8
+ * @version 2.17.10
  * @licence CC-BY-SA 3.0 
  */
 
