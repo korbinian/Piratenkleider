@@ -171,7 +171,7 @@ a {
   a:active {
     top: 1px;
   }
-  a:hover {
+  a:hover, a:focus  {
     color: #111;
   }
   a:hover, 
@@ -1688,6 +1688,7 @@ img.wp-smiley {
     text-align: right;
     float: right; 
 }
+.post-nav a:hover,.post-nav a:focus{color: #000;text-decoration:underline;}
 
 .home .post-entry p {
   margin-bottom: 0px; }
