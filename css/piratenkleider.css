@@ -2835,14 +2835,18 @@ background: none repeat scroll 0 0 #EEEEEE;
     top: 234px;
 }   
 
+
 .content #socialmedia_iconbar ul.socialmedia li, 
 ul.socialmedia {
-    margin: 0;
+    margin: 0;    
 } 
 .socialmedia li {
     float: left; 
     margin: 0;
     padding: 0; 
+}
+ul.socialmedia {
+    list-style-type: none;
 }
 .socialmedia a {
     width: 32px;
@@ -3090,7 +3094,12 @@ ul.socialmedia {
   float: right;
   width: 33%;
 }
-
+.ie7 ul.socialmedia,
+.ie7 #socialmedia_iconbar,
+.ie7 .skiplinks,
+.ie7 p.slogan,
+.ie7 .flex-direction-nav,
+.ie7 .flex-control-nav {display:none;}
 
 
 /*
