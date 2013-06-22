@@ -2,7 +2,7 @@ Piratenkleider
 - Wordpress-Theme für Webauftritte der Piratenpartei 
 =================================================
 
-Version 2.17.8 von Wolfgang Wiese (xwolf), 14. Juni 2013
+Version 2.17.10 von Wolfgang Wiese (xwolf), 22. Juni 2013
 
 
 DOWNLOADS
@@ -114,8 +114,8 @@ INHALTE
    Dies ist ein von selbst wechselndes Artikelbild mit der Verlinkung
    zu einem Artikel. 
    Um dies für einen Artikel zu machen, muss der Artikel in der
-   für den Slider aktivierten Kategorie sein. (Siehe Punkt "Slider" unter den 
-    Optionen "Takelage setzen")
+   für den Slider aktivierten Kategorie sein. (Siehe Punkt "Startseite" unter 
+   den  Optionen)
    Sollte ein Artikel über kein definiertes Artikelbild verfügen, wird
    das Defaultsliderbilder verwendet.       
 
@@ -160,9 +160,9 @@ BEREICHE/WIDGETS
    dessen RSS-Feedadresse gezeigt
 
 
-THEME-OPTION "Takelage einstellen"
+THEME-OPTION 
  
-  Unter der Option "Takelage setzen" sind die grundlegenden
+  Unter der Optionen sind die grundlegenden
   Optionen für das Theme einstellbar:
     - Newsletter-Box einschalten/abschalten
     - Social Media Buttons ein/ausschalten         
@@ -233,7 +233,7 @@ THEME OPTION "Kopfzeile"
    Größe und dem Hintergrund über einem eigenen Grafikprogramm 
    vorzubereiten.
 
-THEME OPTION "Hinterhgrund"   
+THEME OPTION "Hintergrund"   
     
     Hier ist die Änderung des Hintergrundbildes, dessen Farben und 
     Positionierung möglich.
@@ -312,6 +312,8 @@ UNTERSTÜTZE PLUGINS
   (https://github.com/xwolfde/xw-progressbar)
   Anzeige von Fortschrittsbalken.
 
+- 2 Click Social Media Buttons
+  Anzeige von Social Media Buttons auf Artikelseiten.
 
 
 EMPFEHLUNGEN FÜR WIDGETS
