@@ -1668,7 +1668,9 @@ display: inline-block;
   display: inline-block;
   margin: -5px 0 0 -10px;
   position: absolute; }
-
+#respond{
+    clear:both;
+}
 img.wp-smiley {
   margin: 0 0 5px 0;
 } 
