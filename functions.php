@@ -14,7 +14,12 @@ require( get_template_directory() . '/inc/constants.php' );
 $options = get_option('piratenkleider_theme_options');
 $options = piratenkleider_compatibility($options);
     // adjusts variables for downwards comptability
-    
+
+// ** bw 2012-08-12 wordpress reverse proxy x-forwarded-for ip fix ** //
+if(isset($_SERVER['HTTP_X_FORWARDED_FOR'])) {
+  $xffaddrs = explode(',',$_SERVER['HTTP_X_FORWARDED_FOR']);
+  $_SERVER['REMOTE_ADDR'] = $xffaddrs[0];
+}    
 if ($options['anonymize-user']==1) {
     /* IP-Adresse überschreiben */
     $_SERVER["REMOTE_ADDR"] = "0.0.0.0";
