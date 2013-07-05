@@ -1147,20 +1147,7 @@ display: inline-block;
     padding: 10px 20px;
     text-align: right; 
 }
-.content .symbolbild .aaarh {
-    background: transparent;
-    color: black;
-    font-family: "FontPiratenkleiderHeadlines", Helvetica, Arial, sans-serif;
-    text-transform: uppercase;
-    position: absolute;
-    font-size: 2em;
-    left: 350px;
-    line-height: 1.3em;
-    position: absolute;
-    text-transform: uppercase;
-    top: 40px;
-    width: 250px;
-}
+
 .content .symbolbild h2 {
     margin-bottom: 0; 
 }

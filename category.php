@@ -1,29 +1,54 @@
 <?php get_header();    
   global $options;  
-  
-   
-   if ($options['category-startpageview']) {
-        global $wp_query;
+  global $wp_query;
       $cat_obj = $wp_query->get_queried_object();
       $thisCat = $cat_obj->term_id;
       $thisCatName =  get_cat_name($thisCat);
-	  
-	    if ( $options['slider-aktiv'] == "1" ){ ?>  
-	    <div class="section teaser">
-		<div class="row">
-		    <?php get_sidebar( 'teaser' ); ?>
-		</div>  
-	    </div>
-	<?php } ?>
-	
-	<div class="section content" id="main-content">
-  <div class="row">
-    <div class="content-primary">
-      <div class="skin">
+      
+  if (($options['category-teaser']) || (($options['category-startpageview']) && ( $options['slider-aktiv'] == "1" ))) { 
+    echo '<div class="section teaser"><div class="row">';   
+    get_sidebar( 'teaser' );
+    echo '</div></div>';    
+  } else {
+    $image_url = '';	  
+    if (($options['aktiv-platzhalterbilder-indexseiten']==1) && (isset($options['src-default-symbolbild-category']))) {  
+	$image_url = $options['src-default-symbolbild-category'];		    
+    }	    
 
-          <h1 class="skip"><?php _e("Aktuelle Artikel", 'piratenkleider'); ?></h1>
-          
-      <?php
+    if (isset($image_url) && (strlen($image_url)>4)) { 
+	if ($options['indexseitenbild-size']==1) {
+	    echo '<div class="content-header-big">';
+	} else {
+	    echo '<div class="content-header">';
+	}
+	?>    		    		    		        
+	   <h1 class="post-title"><span><?php printf( __( 'Kategorie %s', 'piratenkleider' ), '' . single_cat_title( '', false ) . '' ); ?></span></h1>
+	   <div class="symbolbild"><img src="<?php echo $image_url ?>" alt=""></div>
+	</div>  	
+    <?php } 
+  }
+  ?>
+  <div class="section content" id="main-content">
+     <div class="row">
+	<div class="content-primary">
+	    <div class="skin">
+	  
+		<?php 
+	  if (($options['category-teaser']) || (($options['category-startpageview']) && ( $options['slider-aktiv'] == "1" ))) { 	  
+		echo '<h1 class="skip">'.__("Aktuelle Artikel", 'piratenkleider').' ';
+		printf( __( 'Kategorie %s', 'piratenkleider' ), '' . single_cat_title( '', false ) . '' );
+		echo '</h1>';	    
+	  } else {
+	      if (!(isset($image_url) && (strlen($image_url)>4))) {
+		echo '<h1 class="post-title"><span>';
+		printf( __( 'Kategorie %s', 'piratenkleider' ), '' . single_cat_title( '', false ) . '' );
+		echo '</span></h1>';
+	      }
+	  }
+	 
+      
+      
+
       $i = 0; 
       $col = 0; 
       
@@ -41,56 +66,9 @@
 
       <div <?php post_class(); ?> id="post-<?php the_ID(); ?>" >
         <div class="post-title">
-          <h2>
-            <a href="<?php the_permalink(); ?>" rel="bookmark" title="<?php the_title(); ?>">
-              <?php the_title(); ?>
-            </a>
-          </h2>
+          <h2><a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a></h2>
         </div>
-        <div class="post-info">
-         <?php  $num_comments = get_comments_number();
-             if (!isset($options['zeige_commentbubble_null'])) 
-                $options['zeige_commentbubble_null'] = $defaultoptions['zeige_commentbubble_null'];   
-          if (($num_comments>0) || ( $options['zeige_commentbubble_null'])) { ?>
-         <div class="commentbubble"> 
-            <?php 
-                if ($num_comments>0) {
-                   comments_popup_link( '0<span class="skip"> Kommentar</span>', '1<span class="skip"> Kommentar</span>', '%<span class="skip"> Kommentare</span>', 'comments-link', '%<span class="skip"> Kommentare</span>');           
-                } else {
-                    // Wenn der Zeitraum abgelaufen ist UND keine Kommentare gegeben waren, dann
-                    // liefert die Funktion keinen Link, sondern nur den Text . Daher dieser
-                    // Woraround:
-                    $link = get_comments_link();
-                    echo '<a href="'.$link.'">0<span class="skip"> Kommentar</span></a>';
-              }
-            ?>
-          </div> 
-          <?php } 
-
-          if ($options['aktiv-images-instead-date']) {                                                    
-            $firstpic = get_piratenkleider_firstpicture();
-            if (!empty($firstpic)) { ?>                       
-                <div class="infoimage">                    
-                        <?php echo $firstpic ?>
-                </div>
-            <?php } else { ?>                        
-                <div class="cal-icon">
-                    <span class="day"><?php the_time('j.'); ?></span>
-                    <span class="month"><?php the_time('m.'); ?></span>
-                    <span class="year"><?php the_time('Y'); ?></span>
-                </div>
-                <?php 
-            }
-          } else { ?>
-              <div class="cal-icon">
-                <span class="day"><?php the_time('j.'); ?></span>
-                <span class="month"><?php the_time('m.'); ?></span>
-                <span class="year"><?php the_time('Y'); ?></span>
-            </div>
-          <?php } ?>  
-     
-         
-        </div>
+        <?php piratenkleider_post_datumsbox(); ?>	
         <div class="post-entry">
         <?php echo get_piratenkleider_custom_excerpt(); ?>         
         </div>
@@ -104,6 +82,9 @@
       }
       endwhile;
       ?>
+	  
+	  
+	  
       <div class="columns">
         <?php
         $z=1;
@@ -123,18 +104,35 @@
         ?>     
       </div>
 
-      
-      <?php if ( ! have_posts() ) : ?>
+
+<?php 
+// }  
+//   } else {
+//        get_template_part( 'loop', 'category' );        
+         
+  ?>
+
+	    
+	       <?php if ( ! have_posts() ) : ?>
        <h2><?php _e("Nichts gefunden", 'piratenkleider'); ?></h2>
         <p>
             <?php _e("Es konnten keine Artikel gefunden werden. Bitte versuchen Sie es nochmal mit einer Suche.", 'piratenkleider'); ?>
         </p>
         <?php get_search_form(); ?>
         <hr>
-      <?php endif; ?>                  
+      <?php endif; ?>   
+	
+	
       
       <div class="startpage-widget-area">
-
+ <div class="widget">               
+                <ul>
+                     <?php wp_list_categories('title_li='); ?> 
+                </ul>                                             
+            </div>
+        </div>
+	
+	
         <h2 class="skip"><?php _e("Weitere Artikel", 'piratenkleider'); ?></h2>
         <div class="first-startpage-widget-area">
           <div class="skin">
@@ -195,60 +193,20 @@
             <?php } } ?>
         </div>
       </div>
-      </div>
+</div>
+	 
+	 
+	 
 
-      </div>
-    </div>
-
-
-	<?php 
-   } else {
-?> 
-<div class="section content" id="main-content">
-  <div class="row">
-    <div class="content-primary">
-
-	  
-	  
-	<?php
-	    $image_url = '';	  
-	    if (($options['aktiv-platzhalterbilder-indexseiten']==1) && (isset($options['src-default-symbolbild-category']))) {  
-		    $image_url = $options['src-default-symbolbild-category'];		    
-	    }	    
+    </div>	    
 	    
-	    if (isset($image_url) && (strlen($image_url)>4)) { 
-		if ($options['indexseitenbild-size']==1) {
-		    echo '<div class="content-header-big">';
-		} else {
-		    echo '<div class="content-header">';
-		}
-		?>    		    		    		        
-		   <h1 class="post-title"><span><?php printf( __( 'Kategorie %s', 'piratenkleider' ), '' . single_cat_title( '', false ) . '' ); ?></span></h1>
-		   <div class="symbolbild"><img src="<?php echo $image_url ?>" alt=""></div>
-		</div>  	
-	    <?php } ?>
-	
-      <div class="skin">
-	  
-	  <?php if (!(isset($image_url) && (strlen($image_url)>4))) { ?>
-	    <h1 class="post-title"><span><?php printf( __( 'Kategorie %s', 'piratenkleider' ), '' . single_cat_title( '', false ) . '' ); ?></span></h1>
-	<?php } 
-	
-          get_template_part( 'loop', 'category' ); ?>       
-          <div class="widget">               
-                <ul>
-                     <?php wp_list_categories('title_li='); ?> 
-                </ul>                                             
-            </div>
-        </div>
-    </div>
-<?php } ?>
     <div class="content-aside">
       <div class="skin">  
           <h1 class="skip"><?php _e( 'Weitere Informationen', 'piratenkleider' ); ?></h1>
          <?php get_sidebar(); ?>
       </div>
     </div>
+
   </div>
    <?php get_piratenkleider_socialmediaicons(2); ?>
 </div>

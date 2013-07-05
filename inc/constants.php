@@ -127,6 +127,7 @@ $defaultoptions = array(
     'default_footerlink_show'       => 1,    
     'circleplayer-require-mp3fallback'	=> 1,
     'category-startpageview'	    => 1,
+    'category-teaser'		    => 1,
     'default_text_title_home_backlink' => __('Zur&uuml;ck zur Startseite','piratenkleider' ), 
     
 );

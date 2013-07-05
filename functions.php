@@ -498,6 +498,59 @@ function piratenkleider_remove_recent_comments_style() {
 add_action( 'widgets_init', 'piratenkleider_remove_recent_comments_style' );
 
 
+if ( ! function_exists( 'piratenkleider_post_datumsbox' ) ) :
+/**
+ * Erstellung der Datumsbox
+ */
+function piratenkleider_post_datumsbox() {
+    global $options;
+    echo '<div class="post-info">';
+          $num_comments = get_comments_number();           
+          if (($num_comments>0) || ( $options['zeige_commentbubble_null'])) { ?>
+         <div class="commentbubble"> 
+            <?php 
+                if ($num_comments>0) {
+                   comments_popup_link( '0<span class="skip"> Kommentar</span>', '1<span class="skip"> Kommentar</span>', '%<span class="skip"> Kommentare</span>', 'comments-link', '%<span class="skip"> Kommentare</span>');           
+                } else {
+                    // Wenn der Zeitraum abgelaufen ist UND keine Kommentare gegeben waren, dann
+                    // liefert die Funktion keinen Link, sondern nur den Text . Daher dieser
+                    // Woraround:
+                    $link = get_comments_link();
+                    echo '<a href="'.$link.'">0<span class="skip"> Kommentar</span></a>';
+              }
+            ?>
+          </div> 
+          <?php } 
+
+          if ($options['aktiv-images-instead-date']) {                                                    
+            $firstpic = get_piratenkleider_firstpicture();
+            if (!empty($firstpic)) { ?>                       
+                <div class="infoimage">                    
+                        <?php echo $firstpic ?>
+                </div>
+            <?php } else { ?>                        
+                <div class="cal-icon">
+                    <span class="day"><?php the_time('j.'); ?></span>
+                    <span class="month"><?php the_time('m.'); ?></span>
+                    <span class="year"><?php the_time('Y'); ?></span>
+                </div>
+                <?php 
+            }
+          } else { ?>
+              <div class="cal-icon">
+                <span class="day"><?php the_time('j.'); ?></span>
+                <span class="month"><?php the_time('m.'); ?></span>
+                <span class="year"><?php the_time('Y'); ?></span>
+            </div>
+          <?php }  
+     
+         
+    echo '</div>';
+    
+    
+}
+endif;
+
 
 if ( ! function_exists( 'piratenkleider_post_pubdateinfo' ) ) :
 /**

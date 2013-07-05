@@ -24,10 +24,7 @@
 		   <div class="symbolbild"><img src="<?php echo $image_url ?>" alt="">		  
 		    <div class="caption">  
 		     <p style="font-size: 2em;" class="bebas">404</p>                  
-		     </div> 
-		   <div class="aaarh">
-		    <p><?php _e("AAARH!<br>Ihr werdet sie nicht finden!",'piratenkleider'); ?></p>
-		    </div>
+		     </div> 		  
 		   </div>
 		</div>  	
 	    <?php } ?>
