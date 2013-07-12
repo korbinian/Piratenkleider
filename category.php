@@ -52,7 +52,7 @@
       $i = 0; 
       $col = 0; 
       
-      $numentries = $options['num-article-startpage-fullwidth'] + $options['num-article-startpage-halfwidth']; 
+      $numentries = $options['category-num-article-fullwidth'] + $options['category-num-article-halfwidth']; 
       $col_count = 3; 
       $cols = array();
      
@@ -62,17 +62,12 @@
       while (have_posts() && $i<$numentries) : the_post();
       $i++;
       ob_start();
+      
+      piratenkleider_post_teaser();
+      
       ?>
 
-      <div <?php post_class(); ?> id="post-<?php the_ID(); ?>" >
-        <div class="post-title">
-          <h2><a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a></h2>
-        </div>
-        <?php piratenkleider_post_datumsbox(); ?>	
-        <div class="post-entry">
-        <?php echo get_piratenkleider_custom_excerpt(); ?>         
-        </div>
-      </div>
+      
 
       <?php 
       $output = ob_get_contents();
@@ -89,9 +84,9 @@
         <?php
         $z=1;
         foreach($cols as $key => $col) {
-            if (( isset($options['num-article-startpage-fullwidth']))
-                && ($options['num-article-startpage-fullwidth']>$key )) {
-                    echo '<div class="column0">' . $col . '<hr></div>';                              
+            if (( isset($options['category-num-article-fullwidth']))
+                && ($options['category-num-article-fullwidth']>$key )) {
+                    echo $col;                              
                 } else {                                        
                     echo '<div class="column'.$z.'">' . $col . '</div>';                            
                     $z++;
@@ -105,12 +100,7 @@
       </div>
 
 
-<?php 
-// }  
-//   } else {
-//        get_template_part( 'loop', 'category' );        
-         
-  ?>
+
 
 	    
 	       <?php if ( ! have_posts() ) : ?>
@@ -124,75 +114,6 @@
 	
 	
       
-      <div class="startpage-widget-area">
- <div class="widget">               
-                <ul>
-                     <?php wp_list_categories('title_li='); ?> 
-                </ul>                                             
-            </div>
-        </div>
-	
-	
-        <h2 class="skip"><?php _e("Weitere Artikel", 'piratenkleider'); ?></h2>
-        <div class="first-startpage-widget-area">
-          <div class="skin">
-            <?php if ( is_active_sidebar( 'first-startpage-widget-area' ) ) { ?>
-                <?php dynamic_sidebar( 'first-startpage-widget-area' ); ?>
-            <?php } else { 
-
-                 $numold = $options['aktiv-startseite-alteartikel-num'];
-                 
-                 if ($options['aktiv-startseite-alteartikel']==1) {                  
-                    $postslist = get_posts("numberposts=$numold&order=DESC&offset=$numentries&cat=$thisCat"); 
-                    if ((isset($postslist)) && (count($postslist)>0)) { ?>
-                        <div class="widget">
-                            <h3><?php _e("&Auml;ltere Artikel", 'piratenkleider'); ?></h3>
-                            <ul>
-                            <?php foreach ($postslist as $post) : setup_postdata($post); ?>
-                                <li><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
-                                <span class="date"><?php the_time('d.m.Y') ?></span></li>
-                            <?php endforeach; ?>
-                            </ul>
-                        </div>              
-                    <?php 
-                      }
-                  }
-                  if ($options['aktiv-startseite-kategorien']==1) { 
-               ?>
-                <div class="widget">
-                    <h3><?php _e("Kategorien", 'piratenkleider'); ?></h3>
-                    <ul>
-                        <?php wp_list_categories('title_li='); ?>
-                    </ul>
-                </div>
-             <?php } } ?>
-          </div>
-        </div>
-
-        <div class="second-startpage-widget-area">
-        <div class="skin">
-            <?php if ( is_active_sidebar( 'second-startpage-widget-area' ) ) { ?>
-                <?php dynamic_sidebar( 'second-startpage-widget-area' ); ?>
-            <?php } else { 
-                
-                if ($options['aktiv-startseite-tags']==1) {
-                ?>    
-                <div  class="widget">
-                    <?php 
-		     $tags = get_tags();
-                     if ((isset($tags)) && (count($tags)>0)) { ?>
-                            <h3><?php _e("Schlagworte", 'piratenkleider'); ?></h3>
-
-                            <div class="tagcloud">            
-                                <?php wp_tag_cloud(array('smallest'  => 14, 'largest'   => 28)); ?>
-                            </div>
-                              
-                    <?php  }  ?>
-                     
-                </div>
-            <?php } } ?>
-        </div>
-      </div>
 </div>
 	 
 	 

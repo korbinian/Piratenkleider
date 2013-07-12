@@ -321,6 +321,16 @@ function piratenkleider_compatibility ($oldoptions) {
         $newoptions['sm-list']['feed']['active'] = 1;
     }              
 
+    if ((isset($oldoptions['category-startpageview'])) &&  $oldoptions['category-startpageview']==1) {
+	if ((!isset($oldoptions['category-num-article-fullwidth'])) && (isset($oldoptions['num-article-startpage-fullwidth']))) {
+	   $newoptions['category-num-article-fullwidth'] = $oldoptions['num-article-startpage-fullwidth'];
+	}
+	if ((!isset($oldoptions['category-num-article-halfwidth'])) && (isset($oldoptions['num-article-startpage-halfwidth']))) {
+	   $newoptions['category-num-article-halfwidth'] = $oldoptions['num-article-startpage-halfwidth'];
+	}
+    }
+   
+    
     
     $olddesignopt = get_option( 'piratenkleider_theme_designspecials' );
     if ((is_array($olddesignopt)) && (count($olddesignopt)>0)) {
@@ -497,6 +507,84 @@ function piratenkleider_remove_recent_comments_style() {
 }
 add_action( 'widgets_init', 'piratenkleider_remove_recent_comments_style' );
 
+if ( ! function_exists( 'piratenkleider_post_teaser' ) ) :
+/**
+ * Erstellung eines Artikelteasers
+ */
+function piratenkleider_post_teaser($titleup = 1, $showdatebox = 1, $showdateline = 0, $teaserlength = 200) {
+  global $options;
+  global $post;
+  
+  ?>
+   <div <?php post_class('ym-grid'); ?> id="post-<?php the_ID(); ?>" >
+   <?php  
+     if ($titleup==1) { ?>
+        <div class="post-title ym-gbox"><h2>          
+            <a href="<?php the_permalink(); ?>" rel="bookmark" title="<?php the_title(); ?>">
+              <?php the_title(); ?>
+            </a>
+	</h2></div>
+       
+       <div class="ym-grid"> 
+     <?php }	
+   
+    
+    if ($showdatebox==1) {	
+	  echo '<div class="post-info ym-gdatebox ym-gl"><div class="ym-gbox">';
+          $num_comments = get_comments_number();           
+          if (($num_comments>0) || ( $options['zeige_commentbubble_null'])) { 
+	    echo '<div class="commentbubble">'; 	
+                if ($num_comments>0) {
+                   comments_popup_link( '0<span class="skip"> Kommentar</span>', '1<span class="skip"> Kommentar</span>', '%<span class="skip"> Kommentare</span>', 'comments-link', '%<span class="skip"> Kommentare</span>');           
+                } else {
+                    // Wenn der Zeitraum abgelaufen ist UND keine Kommentare gegeben waren, dann
+                    // liefert die Funktion keinen Link, sondern nur den Text . Daher dieser
+                    // Woraround:
+                    $link = get_comments_link();
+                    echo '<a href="'.$link.'">0<span class="skip"> Kommentar</span></a>';
+              }
+             echo '</div>'; 
+           }
+	   ?>
+	   <div class="cal-icon">
+                    <span class="day"><?php the_time('j.'); ?></span>
+                    <span class="month"><?php the_time('m.'); ?></span>
+                    <span class="year"><?php the_time('Y'); ?></span>
+            </div>
+	   
+            <?php    
+    } else {
+	echo '<div class="post-info ym-gthumbbox ym-gl"><div class="ym-gbox">';
+	$firstpic = get_piratenkleider_firstpicture();
+	if (!empty($firstpic)) { ?>                       
+                <div class="infoimage">                    
+                        <?php echo $firstpic ?>
+                </div>
+         <?php
+	}
+    }
+    ?>
+       </div>
+    </div>
+	<?php 
+	if ($showdatebox==1) {	
+	    echo '<div class="post-entry ym-gdatebox-r ym-gr">';
+	} else {
+	    echo '<div class="post-entry ym-gthumbbox-r ym-gr">';
+	} 
+	?>    
+
+    
+	 <div class="ym-gbox">
+	    <?php echo get_piratenkleider_custom_excerpt(); ?>     
+	 </div>    
+    </div>
+    <?php if ($titleup==1) { echo '</div>'; } ?>
+ 
+    </div>
+    <?php 
+}
+endif;
 
 if ( ! function_exists( 'piratenkleider_post_datumsbox' ) ) :
 /**

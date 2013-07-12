@@ -85,6 +85,13 @@ $defaultoptions = array(
     'zeigerechtsvorschriften'               => 1,
     'num-article-startpage-fullwidth'       => 1,
     'num-article-startpage-halfwidth'       => 4,
+    
+    'category-startpageview'	    => 1,
+    'category-teaser'		    => 1,
+    'category-num-article-fullwidth'       => 10,
+    'category-num-article-halfwidth'       => 0,
+    'category-teaser-maxlength'		    => 100,
+    
     'url-newsletteranmeldung'       => 'https://service.piratenpartei.de/subscribe/newsletter',
     'teaser-type'                   => 'big',
     'teaser_maxlength'              => 300,
@@ -126,8 +133,7 @@ $defaultoptions = array(
     'default_footerlink_key'        => 'International (mit Flaggen)',
     'default_footerlink_show'       => 1,    
     'circleplayer-require-mp3fallback'	=> 1,
-    'category-startpageview'	    => 1,
-    'category-teaser'		    => 1,
+
     'default_text_title_home_backlink' => __('Zur&uuml;ck zur Startseite','piratenkleider' ), 
     
 );
@@ -1045,13 +1051,47 @@ $setoptions = array(
 		  'parent'  => 'spezial'
               ),    
 	       
-	       'category-startpageview'   => array(
+	       
+	      'category'  => array(
+                  'type'    => 'section',
+                  'title'   => __( 'Kategorieseiten', 'piratenkleider' ),
+              ),
+	       
+	      'category-teaser'   => array(
                   'type'    => 'bool',
-                  'title'   => __( 'Darstellung Kategorieseiten', 'piratenkleider' ),
-                  'label'   => __( 'Kategorieseiten wie Startseite darstellen', 'piratenkleider' ),
-                  'default' => $defaultoptions['category-startpageview'],
-		  'parent'  => 'spezial'
+                  'title'   => __( 'Slider aktivieren', 'piratenkleider' ),
+                  'label'   => __( 'Kategorieseiten Mit Slider wie auf Startseite darstellen', 'piratenkleider' ),
+                  'default' => $defaultoptions['category-teaser'],
+		  'parent'  => 'category'
               ),   
+	       
+	       
+	    'category-num-article-fullwidth' => array(
+                  'type'    => 'number',
+                  'title'   => __( 'Beitr&auml;ge &uuml;ber ganze Breite', 'piratenkleider' ),
+                  'label'   => __( 'Zahl der Beitr&auml;ge, die &uuml;ber die gesamte Inhaltsbreite gehen.', 'piratenkleider' ),
+                  'default' => $defaultoptions['category-num-article-fullwidth'],
+		'parent'  => 'category'
+              ),
+              'category-num-article-halfwidth' => array(
+                  'type'    => 'select',
+                  'title'   => __( 'Beitr&auml;ge &uuml;ber halbe Breite', 'piratenkleider' ),
+                  'label'   => __( 'Zahl der Beitr&auml;ge, die in Spalten mit je zwei Beitr&auml;gen nebeneinander, angezeigt werden.', 'piratenkleider' ),
+                  'liste'   => array(0 => 0, 2 => 2, 4 => 4, 6 => 6, 8 => 8),
+                  'default' => $defaultoptions['category-num-article-halfwidth'],
+		  'parent'  => 'category'
+              ),    
+	    'category-teaser-maxlength' => array(
+                  'type'    => 'number',
+                  'title'   => __( 'L&auml;nge des Teasertextes (Artikelauszug)', 'piratenkleider' ),
+                  'label'   => __( 'Maximale Textl&auml;nge f&uuml;r Artikelausz&uuml;ge auf der Startseite.', 'piratenkleider' ),
+                  'default' => $defaultoptions['category-teaser-maxlength'],
+		'parent'  => 'category'
+              ),                 
+ 
+	       
+	       
+	       
 	       
 	      'darstellungseiten'  => array(
                   'type'    => 'section',

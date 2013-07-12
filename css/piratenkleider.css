@@ -1694,6 +1694,25 @@ img.wp-smiley {
   font-size: 10px;
   color: #222;
 }
+.ym-gdatebox {
+    width: 60px;
+}
+.ym-gdatebox-r {
+    width: 605px;
+}
+.ym-gthumbbox {
+    width: 140px;
+}
+.ym-gthumbbox-r {
+    width: 525px;
+}
+
+.post .post-info .ym-gbox {
+    padding: 0;
+}
+
+
+
 
 .wp-caption {
   text-align: center;
@@ -3608,6 +3627,7 @@ html[xmlns] .slides {
 .ym-save:before { content: "\2714"; }
 .ym-spark:before { content: "\2737"; }
 .ym-star:before { content: "\2605"; }
+
 
 
 .teaserlinks .symbol:before {
