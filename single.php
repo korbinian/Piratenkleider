@@ -105,14 +105,13 @@
                 }
           ?>  
 			
-          <div class="post-meta">
-            <div>
+          <div class="post-meta"><p>
                <?php 
                 piratenkleider_post_pubdateinfo();    
                 if ($options['aktiv-autoren']) piratenkleider_post_autorinfo();             
                  piratenkleider_post_taxonominfo();  
-                ?>        
-            </div>            
+                ?>                  
+              </p>
           </div>
 	  
 	  <div><?php edit_post_link( __( 'Bearbeiten', 'piratenkleider' ), '', '' ); ?></div>

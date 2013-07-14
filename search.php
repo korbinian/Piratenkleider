@@ -100,8 +100,10 @@
       </div>
 
                    <?php if (  $wp_query->max_num_pages > 1 ) : ?>
+                        <div class="archiv-nav"><p>
                             <?php next_posts_link( __( '&larr; &Auml;ltere Beitr&auml;ge', 'piratenkleider' ) ); ?>
                             <?php previous_posts_link( __( 'Neuere Beitr&auml;ge &rarr;', 'piratenkleider' ) ); ?>
+                        </p></div> 
                 <?php endif; ?>                      
                 
                 

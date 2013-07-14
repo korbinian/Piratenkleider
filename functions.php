@@ -677,7 +677,7 @@ function piratenkleider_post_pubdateinfo($withtext = 1) {
     if ($withtext==1) {
 	echo '<span class="meta-prep">';
         echo __('Ver&ouml;ffentlicht am', 'piratenkleider' );
-	echo '</span>';
+	echo '</span> ';
     }
     printf('%1$s',
                 sprintf( '<span class="entry-date">%1$s</span>',
@@ -692,7 +692,7 @@ if ( ! function_exists( 'piratenkleider_post_autorinfo' ) ) :
  * Fusszeile unter Artikeln: Autorinfo
  */
 function piratenkleider_post_autorinfo() {
-        printf( __( '<span class="meta-prep-author">von</span> %1$s ', 'piratenkleider' ),               
+        printf( __( ' <span class="meta-prep-author">von</span> %1$s ', 'piratenkleider' ),               
                 sprintf( '<span class="author vcard"><a class="url fn n" href="%1$s" title="%2$s">%3$s</a></span> ',
                         get_author_posts_url( get_the_author_meta( 'ID' ) ),
                         sprintf( esc_attr__( 'Artikel von %s', 'piratenkleider' ), get_the_author() ),

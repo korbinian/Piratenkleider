@@ -1538,20 +1538,22 @@ display: inline-block;
     .post .cal {
 	margin-bottom: 5px;
     }
-    .post p.pubdateinfo {
+    p.pubdateinfo, .archiv-nav {
 	margin-bottom: 5px;
         font-weight: bold;
     }
-.post .post-meta, .post .pubdateinfo {
+ .post-meta, .pubdateinfo {
   overflow: hidden;
-  font-size: 0.9em;
   color: #666;
   width: 100%; 
 }
-
+.post  .post-meta, .post  .pubdateinfo {
+  font-size: 0.9em;
+}
   .post .post-meta .post-edit-link {
     float: left;
-    font-size: 12px; }
+     font-size: 0.9em;
+  }
 
 .post .disclaimer, 
 .sticky {
