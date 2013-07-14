@@ -1120,10 +1120,7 @@ display: inline-block;
  .content-primary h3 {
     margin-top: 0.8em;
   }
-.content-primary .post-title h2,
- .content-primary .post-title h3 {
-    margin-top: 0.5em;
-  }
+
  
   
 .content .symbolbild {
@@ -1429,49 +1426,62 @@ display: inline-block;
 .single .post {
   position: relative; 
 }
- .single .social_share_privacy ul {
-     margin: 0; }
- .single .social_share_privacy ul li {
-    list-style: none;
-    height: auto; }
- .single .social_share_privacy ul li .dummy_btn {
-    margin-left: 0; }
- .single .social_share_privacy ul li .switch {
-    background: white;
-    width: 0; }
- .single .social_share_privacy ul li.facebook, .single .social_share_privacy ul li.twitter {
-    width: 120px; }
- .single .social_share_privacy ul .help_info.icon {
-    background: #2d7dc5 url("../images/info.png") no-repeat center center scroll;
-    border: 2px solid;
-    width: 0;
-    height: 0;
-    padding: 6px 10px 8px 4px;
-    margin-top: 2px; 
-    }
+ 
+    
 .single .post-edit-link {
-  margin-top: 20px; }
+  margin-top: 20px; 
+}
+
+
 .post {
     word-wrap: break-word;
+    margin-top: 10px;
 }
-.post .post-title {
-  position: relative;
-  float: left;
-  width: 100%;
-  margin-bottom: 18px; }
-  .post .post-title h1 {
+
+.post .post-title h1 {
     line-height: 24px; 
-  }
+}
+.post-title h2, .post-title h3 {
+    margin-top: 0;
+}
+  
+
+
+
+
+.ym-column {
+  display: block;
+  overflow: hidden;
+  width: 100%;
+}
+.ym-col1 {  /* content */
+  float: left;
+  width: 70px;
+}
+
+.withthumb .ym-col1 {
+    width: 140px;
+}
+.ym-col3 { /* sidebar */
+  margin: 0 0 0 70px;
+}
+.withthumb .ym-col3 {
+   margin: 0 0 0 140px;
+}
+
+
 
 .post .post-info {
-  float: left;
-  position: relative;
- }
+    position: relative;
+}
+  
+
   .post .post-info .commentbubble {
     display: inline-block;
     position: absolute;
-    top: -5px;
-    right: 7px; }
+    top: 0px;
+    right: 2px; 
+  }
   .post .post-info .commentbubble a {
     background: #ff8800;
     color: white;
@@ -1490,45 +1500,43 @@ display: inline-block;
     border-radius: 14px; 
   }
   .post .post-info .infoimage {
-    width: 130px;
+    width: 120px;
     height: auto;
-    max-height: 250px;
-    margin: 5px;
+    max-height: 220px;
     overflow: hidden;
   }
   .post .post-info .cal-icon {
     background: #eeeeee;   
     padding: 10px;
-    margin-right: 15px;
-    margin-bottom: 5px;
+    margin: 5px 15px 5px 0px;
     overflow: hidden;
     -webkit-box-shadow: 1px 1px 2px #444444;
     -moz-box-shadow: 1px 1px 2px #444444;
     -ms-box-shadow: 1px 1px 2px #444444;
     -o-box-shadow: 1px 1px 2px #444444;
     box-shadow: 1px 1px 2px #444444; 
+    width: 50px;
   }
   .post .post-info .cal-icon span {
       display: block;
       text-align: center;
-      line-height: 10px; 
+      line-height: 12px; 
+      font-size: 10px; 
   }
     .post .post-info .cal-icon .day {
       font-size: 24px;
       font-family: "FontPiratenkleiderHeadlines", Helvetica, Arial, sans-serif;
       line-height: 18px; }
-    .post .post-info .cal-icon .month {
-      font-size: 10px; }
-    .post .post-info .cal-icon .year {
-      font-size: 10px; }
-    .post .post-entry {
-    padding-top: 10px; 
-    }
 
-.post .post-meta {
+
+
+    .post .cal {
+	margin-bottom: 5px;
+    }
+.post .post-meta, .post .cal {
   overflow: hidden;
-  font-size: 10px;
-  color: #222;
+  font-size: 12px;
+  color: #333;
   width: 100%; 
 }
 
@@ -1689,27 +1697,7 @@ img.wp-smiley {
 .single .post-entry p {
   margin-bottom: 20px; }
 
-.entry-date, 
-.meta-prep {
-  font-size: 10px;
-  color: #222;
-}
-.ym-gdatebox {
-    width: 60px;
-}
-.ym-gdatebox-r {
-    width: 605px;
-}
-.ym-gthumbbox {
-    width: 140px;
-}
-.ym-gthumbbox-r {
-    width: 525px;
-}
 
-.post .post-info .ym-gbox {
-    padding: 0;
-}
 
 
 
@@ -2533,6 +2521,27 @@ div.ics-calendar-holder .ics-calendar-event {
 
 
 /* Besondere Tools und Plugin-Unterstuetzung----------------------------------*/
+.single .social_share_privacy ul {
+     margin: 0; }
+ .single .social_share_privacy ul li {
+    list-style: none;
+    height: auto; }
+ .single .social_share_privacy ul li .dummy_btn {
+    margin-left: 0; }
+ .single .social_share_privacy ul li .switch {
+    background: white;
+    width: 0; }
+ .single .social_share_privacy ul li.facebook, .single .social_share_privacy ul li.twitter {
+    width: 120px; }
+ .single .social_share_privacy ul .help_info.icon {
+    background: #2d7dc5 url("../images/info.png") no-repeat center center scroll;
+    border: 2px solid;
+    width: 0;
+    height: 0;
+    padding: 6px 10px 8px 4px;
+    margin-top: 2px; 
+    }
+    
 ai1ec_event .cal-icon {
     display: none;
     /* Do not display the publish date of events created by the All in One Events

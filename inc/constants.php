@@ -86,18 +86,29 @@ $defaultoptions = array(
     'num-article-startpage-fullwidth'       => 1,
     'num-article-startpage-halfwidth'       => 4,
     
-    'category-startpageview'	    => 1,
-    'category-teaser'		    => 1,
-    'category-num-article-fullwidth'       => 10,
-    'category-num-article-halfwidth'       => 0,
-    'category-teaser-maxlength'		    => 100,
+    'category-startpageview'		    => 1,
+    'category-teaser'			    => 1,
+    'category-num-article-fullwidth'	    => 10,
+    'category-num-article-halfwidth'	    => 0,
+    'category-teaser-maxlength'		    => 100,        
+    'category-teaser-titleup'		    => 1, /* Titles up */ 
+    'category-teaser-datebox'		    => 1, /* 1 = Datebox, 0 = Thumbnail */ 
+    'category-teaser-dateline'		    => 0, /* 1 = show Date on line up of the text if no datebox */
     
-    'url-newsletteranmeldung'       => 'https://service.piratenpartei.de/subscribe/newsletter',
+
+    'teaser-thumbnail_width'		    => 120,
+    'teaser-thumbnail_height'		    => 120,
+    'teaser-thumbnail_crop'		    => 0,
+    'src-teaser-thumbnail_default'	    => get_template_directory_uri() .'/images/default-teaserthumb.gif',
+    'teaser-thumbnail_fallback'		    => 1,
+    
     'teaser-type'                   => 'big',
     'teaser_maxlength'              => 300,
     'teaser-title-maxlength'        => 50,
     'teaser-subtitle'               => __( 'Topthema', 'piratenkleider' ),
     'teaser-title-words'            => 7,
+  
+    'url-newsletteranmeldung'       => 'https://service.piratenpartei.de/subscribe/newsletter',
     'css-default-header-height'     => 225,
     'css-default-branding-padding-top'  => 40,
     'aktiv-mediaqueries-allparts'   => 0,

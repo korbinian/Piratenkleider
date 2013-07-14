@@ -134,6 +134,15 @@ function piratenkleider_setup() {
        
 	add_theme_support( 'custom-background', $args );
        
+	if ( function_exists( 'add_theme_support' ) ) {
+	    add_theme_support( 'post-thumbnails' );
+	    set_post_thumbnail_size( 150, 150 ); // default Post Thumbnail dimensions   
+	}
+
+	if ( function_exists( 'add_image_size' ) ) { 
+	    add_image_size( 'teaser-thumb', $options['teaser-thumbnail_width'], $options['teaser-thumbnail_height'], $options['teaser-thumbnail_crop'] ); //300 pixels wide (and unlimited height)
+	}
+	
         
         // Make theme available for translation
         // Translations can be filed in the /languages/ directory
@@ -511,26 +520,28 @@ if ( ! function_exists( 'piratenkleider_post_teaser' ) ) :
 /**
  * Erstellung eines Artikelteasers
  */
-function piratenkleider_post_teaser($titleup = 1, $showdatebox = 1, $showdateline = 0, $teaserlength = 200) {
+function piratenkleider_post_teaser($titleup = 1, $showdatebox = 1, $showdateline = 0, $teaserlength = 200, $thumbfallback = 1) {
   global $options;
   global $post;
   
-  ?>
-   <div <?php post_class('ym-grid'); ?> id="post-<?php the_ID(); ?>" >
-   <?php  
+  if ($showdatebox==0) { ?> 
+      <div <?php post_class('ym-column withthumb'); ?> id="post-<?php the_ID(); ?>" >
+  <?php } else { ?>
+      <div <?php post_class('ym-column'); ?> id="post-<?php the_ID(); ?>" >
+  <?php }
+        
      if ($titleup==1) { ?>
-        <div class="post-title ym-gbox"><h2>          
+        <div class="post-title ym-cbox"><h2>          
             <a href="<?php the_permalink(); ?>" rel="bookmark" title="<?php the_title(); ?>">
               <?php the_title(); ?>
             </a>
 	</h2></div>
        
-       <div class="ym-grid"> 
+       <div class="ym-column"> 
      <?php }	
    
-    
-    if ($showdatebox==1) {	
-	  echo '<div class="post-info ym-gdatebox ym-gl"><div class="ym-gbox">';
+    echo '<div class="post-info ym-col1"><div class="ym-cbox">';
+    if ($showdatebox==1) {		 
           $num_comments = get_comments_number();           
           if (($num_comments>0) || ( $options['zeige_commentbubble_null'])) { 
 	    echo '<div class="commentbubble">'; 	
@@ -553,36 +564,54 @@ function piratenkleider_post_teaser($titleup = 1, $showdatebox = 1, $showdatelin
             </div>
 	   
             <?php    
-    } else {
-	echo '<div class="post-info ym-gthumbbox ym-gl"><div class="ym-gbox">';
-	$firstpic = get_piratenkleider_firstpicture();
-	if (!empty($firstpic)) { ?>                       
-                <div class="infoimage">                    
-                        <?php echo $firstpic ?>
-                </div>
-         <?php
+    } else {		
+	echo '<div class="infoimage">';
+	if (has_post_thumbnail()) {
+	     echo get_the_post_thumbnail($post->ID, 'teaser-thumb');
+	  
+	} else {
+	
+	    $firstpic = get_piratenkleider_firstpicture();
+	    if (!empty($firstpic)) { ?>                       
+		<?php echo $firstpic ?>		    
+	    <?php
+	    } elseif ($thumbfallback==1) {
+		echo '<img src="'.$options['src-teaser-thumbnail_default'].'" alt="">';
+	    }
 	}
+	echo '</div>';
     }
     ?>
        </div>
     </div>
 	<?php 
-	if ($showdatebox==1) {	
-	    echo '<div class="post-entry ym-gdatebox-r ym-gr">';
-	} else {
-	    echo '<div class="post-entry ym-gthumbbox-r ym-gr">';
-	} 
-	?>    
-
+	echo '<div class="post-entry ym-col3">';
+	echo '<div class="ym-cbox ym-clearfix">';
+	  if ($titleup==0) { ?>       
+	    <div class="post-title"><h2>          
+	        <a href="<?php the_permalink(); ?>" rel="bookmark" title="<?php the_title(); ?>">
+	          <?php the_title(); ?>
+                </a>
+	    </h2></div>
+	   <?php }
+	   
+	   if (($showdatebox==0) && ($showdateline==1)) { ?>
+		<div class="cal">	   
+		   <span class="day"><?php the_time('j.'); ?></span>
+		   <span class="month"><?php the_time('m.'); ?></span>
+	           <span class="year"><?php the_time('Y'); ?></span>
+		</div>
+	   <?php }
+	   
+	   echo get_piratenkleider_custom_excerpt($teaserlength); ?>     
+	 </div>     
+	 <!-- .ym-ie-clearing only needed for IE6 & 7 support -->
+	<div class="ym-ie-clearing">&nbsp;</div>	
+    </div>
     
-	 <div class="ym-gbox">
-	    <?php echo get_piratenkleider_custom_excerpt(); ?>     
-	 </div>    
-    </div>
-    <?php if ($titleup==1) { echo '</div>'; } ?>
- 
-    </div>
-    <?php 
+    <?php if ($titleup==1) { echo '</div>'; }       
+    echo '</div>'; 
+
 }
 endif;
 
@@ -853,7 +882,7 @@ function get_piratenkleider_firstpicture(){
         if (!empty($first_img)){
             $site_link =  home_url();  
             $first_img = preg_replace("%$site_link%i",'', $first_img); 
-            $imagehtml = '<img src="'.$first_img.'" alt="" width="130">';
+            $imagehtml = '<img src="'.$first_img.'" alt="" >';
             return $imagehtml;    
         }
     }
@@ -865,12 +894,10 @@ if ( ! function_exists( 'get_piratenkleider_custom_excerpt' ) ) :
 /*
  * Erstellen des Extracts
  */
-function get_piratenkleider_custom_excerpt( ){
-  global $defaultoptions;
+function get_piratenkleider_custom_excerpt($length = 0, $continuenextline = 1){
   global $options;
   global $post;
-  
-    
+      
   if (has_excerpt()) {
       return  get_the_excerpt();
   } else {
@@ -879,20 +906,27 @@ function get_piratenkleider_custom_excerpt( ){
           $excerpt = __( 'Kein Inhalt', 'piratenkleider' );
         }
   }
-  
+  if ($length==0) {
+      $length = $options['teaser_maxlength'];
+  }
   $excerpt = strip_shortcodes($excerpt);
   $excerpt = strip_tags($excerpt); 
   if (mb_strlen($excerpt)<5) {
       $excerpt = __( 'Kein Inhalt', 'piratenkleider' );
   }
 
-  if (mb_strlen($excerpt) >  $options['teaser_maxlength']) {
-    $the_str = mb_substr($excerpt, 0, $options['teaser_maxlength']);
+  if (mb_strlen($excerpt) >  $length) {
+    $the_str = mb_substr($excerpt, 0, $length);
     $the_str .= "...";
   }  else {
       $the_str = $excerpt;
   }
+  $the_str = '<p>'.$the_str;
+  if ($continuenextline==1) {
+      $the_str .= '<br>';
+  }
   $the_str .= piratenkleider_continue_reading_link();
+  $the_str .= '</p>';
   return $the_str;
 }
 endif;

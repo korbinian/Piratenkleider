@@ -25,67 +25,12 @@
       while (have_posts() && $i<$numentries) : the_post();
       $i++;
       ob_start();
-      ?>
-
-      <div <?php post_class(); ?> id="post-<?php the_ID(); ?>" >
-        <div class="post-title">
-          <h2>
-            <a href="<?php the_permalink(); ?>" rel="bookmark" title="<?php the_title(); ?>">
-              <?php the_title(); ?>
-            </a>
-          </h2>
-        </div>
-        <div class="post-info">
-         <?php  $num_comments = get_comments_number();
-  
-          if (($num_comments>0) || ( $options['zeige_commentbubble_null'])) { ?>
-         <div class="commentbubble"> 
-            <?php 
-                if ($num_comments>0) {
-                   comments_popup_link( '0<span class="skip"> Kommentar</span>', '1<span class="skip"> Kommentar</span>', '%<span class="skip"> Kommentare</span>', 'comments-link', '%<span class="skip"> Kommentare</span>');           
-                } else {
-                    // Wenn der Zeitraum abgelaufen ist UND keine Kommentare gegeben waren, dann
-                    // liefert die Funktion keinen Link, sondern nur den Text . Daher dieser
-                    // Woraround:
-                    $link = get_comments_link();
-                    echo '<a href="'.$link.'">0<span class="skip"> Kommentar</span></a>';
-              }
-            ?>
-          </div> 
-          <?php } 
-
-          if ($options['aktiv-images-instead-date']) {                                                    
-            $firstpic = get_piratenkleider_firstpicture();
-            if (!empty($firstpic)) { ?>                       
-                <div class="infoimage">                    
-                        <?php echo $firstpic ?>
-                </div>
-            <?php } else { ?>                        
-                <div class="cal-icon">
-                    <span class="day"><?php the_time('j.'); ?></span>
-                    <span class="month"><?php the_time('m.'); ?></span>
-                    <span class="year"><?php the_time('Y'); ?></span>
-                </div>
-                <?php 
-            }
-          } else { ?>
-              <div class="cal-icon">
-                <span class="day"><?php the_time('j.'); ?></span>
-                <span class="month"><?php the_time('m.'); ?></span>
-                <span class="year"><?php the_time('Y'); ?></span>
-            </div>
-          <?php } ?>  
-            
-            
-            
-         
-        </div>
-        <div class="post-entry">
-        <?php echo get_piratenkleider_custom_excerpt(); ?>         
-        </div>
-      </div>
-
-      <?php 
+      if (( isset($options['num-article-startpage-fullwidth']))
+                && ($options['num-article-startpage-fullwidth']>=$i )) {
+		 piratenkleider_post_teaser(1,0,1,600,1);
+      } else {
+		 piratenkleider_post_teaser(1,0,1,150,1);    
+      }
       $output = ob_get_contents();
       ob_end_clean();
       if (isset($output)) {
