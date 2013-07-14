@@ -1540,11 +1540,12 @@ display: inline-block;
     }
     .post p.pubdateinfo {
 	margin-bottom: 5px;
+        font-weight: bold;
     }
 .post .post-meta, .post .pubdateinfo {
   overflow: hidden;
   font-size: 0.9em;
-  color: #333;
+  color: #666;
   width: 100%; 
 }
 

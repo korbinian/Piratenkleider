@@ -44,8 +44,13 @@
         foreach($cols as $key => $col) {
             if (( isset($options['num-article-startpage-fullwidth']))
                 && ($options['num-article-startpage-fullwidth']>$key )) {
-                    echo '<div class="column0">' . $col . '<hr></div>';                              
-                } else {                                        
+                    echo $col;                                               
+                } else {          
+                     if (( isset($options['num-article-startpage-fullwidth']))
+                            && ($options['num-article-startpage-fullwidth']==$key )
+                             && ($options['num-article-startpage-fullwidth']>0 )) {
+                         echo '<hr>';
+                        }                                              
                     echo '<div class="column'.$z.'">' . $col . '</div>';                            
                     $z++;
                     if ($z>2) {

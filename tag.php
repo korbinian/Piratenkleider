@@ -76,6 +76,11 @@
                 && ($options['category-num-article-fullwidth']>$key )) {
                     echo $col;                              
                 } else {                                        
+                     if (( isset($options['category-num-article-fullwidth']))
+                            && ($options['category-num-article-fullwidth']==$key )
+                            && ($options['category-num-article-fullwidth']>0) ) {
+                         echo '<hr>';
+                        } 
                     echo '<div class="column'.$z.'">' . $col . '</div>';                            
                     $z++;
                     if ($z>2) {
