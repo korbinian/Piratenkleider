@@ -1,7 +1,9 @@
 <?php get_header();    
     global $options;  
-    $bilderoptions = get_piratenkleider_options( 'piratenkleider_theme_defaultbilder' ); 
-
+  global $wp_query;
+      $cat_obj = $wp_query->get_queried_object();
+      $thisCat = $cat_obj->term_id;
+      $thisCatName =  get_cat_name($thisCat);    
 ?> 
 <div class="section content" id="main-content">
   <div class="row">
@@ -42,8 +44,63 @@
                  * If you want to overload this in a child theme then include a file
                  * called loop-search.php and that will be used instead.
                  */
-                 get_template_part( 'loop', 'search' );
-                ?>
+
+
+      $i = 0; 
+      $col = 0; 
+      
+      $numentries = $options['category-num-article-fullwidth'] + $options['category-num-article-halfwidth']; 
+      $col_count = 3; 
+      $cols = array();
+     
+      global $query_string;
+      query_posts( $query_string . '&cat=$thisCat' );
+ 
+      while (have_posts() && $i<$numentries) : the_post();
+      $i++;
+      ob_start();      
+      if (( isset($options['category-num-article-fullwidth']))
+                && ($options['category-num-article-fullwidth']>=$i )) {
+		 piratenkleider_post_teaser($options['category-teaser-titleup'],$options['category-teaser-datebox'],$options['category-teaser-dateline'],$options['category-teaser-maxlength'],$options['teaser-thumbnail_fallback']);
+      } else {
+		 piratenkleider_post_teaser($options['category-teaser-titleup-halfwidth'],$options['category-teaser-datebox-halfwidth'],$options['category-teaser-dateline-halfwidth'],$options['category-teaser-maxlength-halfwidth'],$options['teaser-thumbnail_fallback']);  
+      }    
+      $output = ob_get_contents();
+      ob_end_clean();
+      if (isset($output)) {
+        $cols[$col++] = $output;
+      }
+      endwhile;
+      ?>
+	  
+	  
+	  
+      <div class="columns">
+        <?php
+        $z=1;
+        foreach($cols as $key => $col) {
+            if (( isset($options['category-num-article-fullwidth']))
+                && ($options['category-num-article-fullwidth']>$key )) {
+                    echo $col;                              
+                } else {                                        
+                    echo '<div class="column'.$z.'">' . $col . '</div>';                            
+                    $z++;
+                    if ($z>2) {
+                        $z=1;
+                        echo '<hr style="clear: both;">';
+                    }
+                }            
+        }
+        ?>     
+      </div>
+
+                   <?php if (  $wp_query->max_num_pages > 1 ) : ?>
+                            <?php next_posts_link( __( '&larr; &Auml;ltere Beitr&auml;ge', 'piratenkleider' ) ); ?>
+                            <?php previous_posts_link( __( 'Neuere Beitr&auml;ge &rarr;', 'piratenkleider' ) ); ?>
+                <?php endif; ?>                      
+                
+                
+
              <?php else : ?>
                         <h2><?php _e("Nichts gefunden", 'piratenkleider'); ?></h2>
                         <p>

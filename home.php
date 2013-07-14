@@ -27,9 +27,9 @@
       ob_start();
       if (( isset($options['num-article-startpage-fullwidth']))
                 && ($options['num-article-startpage-fullwidth']>=$i )) {
-		 piratenkleider_post_teaser(1,0,1,600,1);
+		 piratenkleider_post_teaser($options['teaser-titleup'],$options['teaser-datebox'],$options['teaser-dateline'],$options['teaser_maxlength'],$options['teaser-thumbnail_fallback']);
       } else {
-		 piratenkleider_post_teaser(1,0,1,150,1);    
+		 piratenkleider_post_teaser($options['teaser-titleup-halfwidth'],$options['teaser-datebox-halfwidth'],$options['teaser-dateline-halfwidth'],$options['teaser-maxlength-halfwidth'],$options['teaser-thumbnail_fallback']);
       }
       $output = ob_get_contents();
       ob_end_clean();

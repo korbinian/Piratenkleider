@@ -62,15 +62,12 @@
       while (have_posts() && $i<$numentries) : the_post();
       $i++;
       ob_start();      
- //     piratenkleider_post_teaser($options['category-teaser-titleup'],$options['category-teaser-datebox'],$options['category-teaser-dateline'],$options['category-teaser-maxlength'],$options['teaser-thumbnail_fallback']);
-      piratenkleider_post_teaser(1,0,1,250,1);
-      
-
-      ?>
- 
-      
-
-      <?php 
+      if (( isset($options['category-num-article-fullwidth']))
+                && ($options['category-num-article-fullwidth']>=$i )) {
+		 piratenkleider_post_teaser($options['category-teaser-titleup'],$options['category-teaser-datebox'],$options['category-teaser-dateline'],$options['category-teaser-maxlength'],$options['teaser-thumbnail_fallback']);
+      } else {
+		 piratenkleider_post_teaser($options['category-teaser-titleup-halfwidth'],$options['category-teaser-datebox-halfwidth'],$options['category-teaser-dateline-halfwidth'],$options['category-teaser-maxlength-halfwidth'],$options['teaser-thumbnail_fallback']);  
+      }    
       $output = ob_get_contents();
       ob_end_clean();
       if (isset($output)) {
@@ -100,11 +97,13 @@
         ?>     
       </div>
 
-
-
-
-	    
-	       <?php if ( ! have_posts() ) : ?>
+                   <?php if (  $wp_query->max_num_pages > 1 ) : ?>
+                            <?php next_posts_link( __( '&larr; &Auml;ltere Beitr&auml;ge', 'piratenkleider' ) ); ?>
+                            <?php previous_posts_link( __( 'Neuere Beitr&auml;ge &rarr;', 'piratenkleider' ) ); ?>
+                <?php endif; ?>             
+                
+                
+    <?php if ( ! have_posts() ) : ?>
        <h2><?php _e("Nichts gefunden", 'piratenkleider'); ?></h2>
         <p>
             <?php _e("Es konnten keine Artikel gefunden werden. Bitte versuchen Sie es nochmal mit einer Suche.", 'piratenkleider'); ?>
@@ -113,8 +112,7 @@
         <hr>
       <?php endif; ?>   
 	
-	
-      
+
 </div>
 	 
 	 

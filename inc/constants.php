@@ -83,19 +83,23 @@ $defaultoptions = array(
     'zeige_sidebarpagemenu'                 => 1,
     'zeige_commentbubble_null'              => 0,
     'zeigerechtsvorschriften'               => 1,
-    'num-article-startpage-fullwidth'       => 1,
-    'num-article-startpage-halfwidth'       => 4,
     
-    'category-startpageview'		    => 1,
+
     'category-teaser'			    => 1,
     'category-num-article-fullwidth'	    => 10,
     'category-num-article-halfwidth'	    => 0,
-    'category-teaser-maxlength'		    => 100,        
-    'category-teaser-titleup'		    => 1, /* Titles up */ 
-    'category-teaser-datebox'		    => 1, /* 1 = Datebox, 0 = Thumbnail */ 
-    'category-teaser-dateline'		    => 0, /* 1 = show Date on line up of the text if no datebox */
     
+    'category-teaser-maxlength'		    => 500,            
+    'category-teaser-titleup'		    => 1, /* Titles up */ 
+    'category-teaser-datebox'		    => 0, /* 1 = Datebox, 0 = Thumbnail */ 
+    'category-teaser-dateline'		    => 0, /* 1 = show Date on line up of the text if no datebox */
+    'category-teaser-maxlength-halfwidth'   => 200,        
+    'category-teaser-titleup-halfwidth'	    => 1, /* Titles up */ 
+    'category-teaser-datebox-halfwidth'	    => 1, /* 1 = Datebox, 0 = Thumbnail */ 
+    'category-teaser-dateline-halfwidth'    => 0, /* 1 = show Date on line up of the text if no datebox */    
 
+    'num-article-startpage-fullwidth'       => 1,
+    'num-article-startpage-halfwidth'       => 4,
     'teaser-thumbnail_width'		    => 120,
     'teaser-thumbnail_height'		    => 120,
     'teaser-thumbnail_crop'		    => 0,
@@ -103,11 +107,21 @@ $defaultoptions = array(
     'teaser-thumbnail_fallback'		    => 1,
     
     'teaser-type'                   => 'big',
-    'teaser_maxlength'              => 300,
+    
     'teaser-title-maxlength'        => 50,
     'teaser-subtitle'               => __( 'Topthema', 'piratenkleider' ),
     'teaser-title-words'            => 7,
-  
+
+    'teaser_maxlength'              => 500,
+    'teaser-titleup'		    => 1, /* Titles up */ 
+    'teaser-datebox'		    => 0, /* 1 = Datebox, 0 = Thumbnail */ 
+    'teaser-dateline'		    => 0, /* 1 = show Date on line up of the text if no datebox */
+    'teaser-maxlength-halfwidth'   => 200,        
+    'teaser-titleup-halfwidth'	    => 1, /* Titles up */ 
+    'teaser-datebox-halfwidth'	    => 1, /* 1 = Datebox, 0 = Thumbnail */ 
+    'teaser-dateline-halfwidth'    => 0, /* 1 = show Date on line up of the text if no datebox */      
+    
+    
     'url-newsletteranmeldung'       => 'https://service.piratenpartei.de/subscribe/newsletter',
     'css-default-header-height'     => 225,
     'css-default-branding-padding-top'  => 40,
@@ -879,19 +893,7 @@ $setoptions = array(
       'startseite'   => array(
            'tabtitle'   => __('Startseite', 'piratenkleider'),
            'fields' => array(
-              'num-article-startpage-fullwidth' => array(
-                  'type'    => 'number',
-                  'title'   => __( 'Beitr&auml;ge &uuml;ber ganze Breite', 'piratenkleider' ),
-                  'label'   => __( 'Zahl der Beitr&auml;ge, die &uuml;ber die gesamte Inhaltsbreite gehen.', 'piratenkleider' ),
-                  'default' => $defaultoptions['num-article-startpage-fullwidth'],
-              ),
-              'num-article-startpage-halfwidth' => array(
-                  'type'    => 'select',
-                  'title'   => __( 'Beitr&auml;ge &uuml;ber halbe Breite', 'piratenkleider' ),
-                  'label'   => __( 'Zahl der Beitr&auml;ge, die in Spalten mit je zwei Beitr&auml;gen nebeneinander, angezeigt werden.', 'piratenkleider' ),
-                  'liste'   => array(0 => 0, 2 => 2, 4 => 4, 6 => 6, 8 => 8),
-                  'default' => $defaultoptions['num-article-startpage-halfwidth'],
-              ),
+             
                
               'aktiv-startseite-kategorien' => array(
                   'type'    => 'bool',
@@ -917,12 +919,7 @@ $setoptions = array(
                   'label'   => __( 'Anzahl der zu verlinkenden &auml;lteren Artikel.', 'piratenkleider' ),
                   'default' => $defaultoptions['aktiv-startseite-alteartikel-num'],
               ), 
-              'aktiv-images-instead-date' => array(
-                  'type'    => 'bool',
-                  'title'   => __( 'Thumbnails anstelle Datum', 'piratenkleider' ),
-                  'label'   => __( 'Wenn vorhanden, wird ein Thumbnail des ersten Bildes anstelle des Datums angezeigt', 'piratenkleider' ),
-                  'default' => $defaultoptions['aktiv-images-instead-date'],
-              ),
+             
              'teaser-subtitle' => array(
                   'type'    => 'text',
                   'title'   => __( 'Bezeichnender Titel f&uuml;r Teaser', 'piratenkleider' ),
@@ -941,14 +938,87 @@ $setoptions = array(
                   'label'   => __( 'Zahl der Worte im Teaser; Die maximale Textl&auml;nge begrenzt diesen Wert jedoch.', 'piratenkleider' ),
                   'default' => $defaultoptions['teaser-title-words'],
               ),
+               
+            'auszuege'  => array(
+                  'type'    => 'section',
+                  'title'   => __( 'Gestaltung Textausz&uuml;ge', 'piratenkleider' ),                      
+              ),      
+                'num-article-startpage-fullwidth' => array(
+                  'type'    => 'number',
+                  'title'   => __( 'Beitr&auml;ge &uuml;ber ganze Breite', 'piratenkleider' ),
+                  'label'   => __( 'Zahl der Beitr&auml;ge, die &uuml;ber die gesamte Inhaltsbreite gehen.', 'piratenkleider' ),
+                  'default' => $defaultoptions['num-article-startpage-fullwidth'],
+                    'parent'  => 'auszuege'
+              ),
+              'num-article-startpage-halfwidth' => array(
+                  'type'    => 'select',
+                  'title'   => __( 'Beitr&auml;ge &uuml;ber halbe Breite', 'piratenkleider' ),
+                  'label'   => __( 'Zahl der Beitr&auml;ge, die in Spalten mit je zwei Beitr&auml;gen nebeneinander, angezeigt werden.', 'piratenkleider' ),
+                  'liste'   => array(0 => 0, 2 => 2, 4 => 4, 6 => 6, 8 => 8),
+                  'default' => $defaultoptions['num-article-startpage-halfwidth'],
+                  'parent'  => 'auszuege'
+              ),               
+               
+               
              'teaser_maxlength' => array(
                   'type'    => 'number',
                   'title'   => __( 'L&auml;nge des Teasertextes (Artikelauszug)', 'piratenkleider' ),
                   'label'   => __( 'Maximale Textl&auml;nge f&uuml;r Artikelausz&uuml;ge auf der Startseite.', 'piratenkleider' ),
                   'default' => $defaultoptions['teaser_maxlength'],
+                 'parent'  => 'auszuege'
+              ),                        
+              'teaser-titleup' => array(
+                  'type'    => 'bool',
+                  'title'   => __( 'Titel oben', 'piratenkleider' ),
+                  'label'   => __( 'Titel &uuml;ber Logo/Datumsbox und Text', 'piratenkleider' ),
+                  'default' => $defaultoptions['teaser-titleup'],
+                  'parent'  => 'auszuege'
+              ), 
+              'teaser-datebox' => array(
+                  'type'    => 'bool',
+                  'title'   => __( 'Datumsbox', 'piratenkleider' ),
+                  'label'   => __( 'Datumsbox anzeigen. Alternativ Artikelbild, erstes Bild in Text oder Defaultbild', 'piratenkleider' ),
+                  'default' => $defaultoptions['teaser-datebox'],
+                  'parent'  => 'auszuege'
+              ), 
+               'teaser-dateline' => array(
+                  'type'    => 'bool',
+                  'title'   => __( 'Datumszeile', 'piratenkleider' ),
+                  'label'   => __( 'Datumszeile vor dem Text, falls keine Datumsbox angezeigt wird', 'piratenkleider' ),
+                  'default' => $defaultoptions['teaser-dateline'],
+                  'parent'  => 'auszuege'
+              ), 
+               
+                'teaser-maxlength-halfwidth' => array(
+                  'type'    => 'number',
+                  'title'   => __( 'L&auml;nge des Teasertextes', 'piratenkleider' ),
+                  'label'   => __( 'Maximale Textl&auml;nge f&uuml;r Artikelausz&uuml;ge (Bei Beitr&auml;gen &uuml;ber halbe Breite).', 'piratenkleider' ),
+                  'default' => $defaultoptions['teaser-maxlength-halfwidth'],
+		'parent'  => 'auszuege'
               ),                 
+             'teaser-titleup-halfwidth' => array(
+                  'type'    => 'bool',
+                  'title'   => __( 'Titel oben', 'piratenkleider' ),
+                  'label'   => __( 'Titel &uuml;ber Logo/Datumsbox und Text (Bei Beitr&auml;gen &uuml;ber halbe Breite).', 'piratenkleider' ),
+                  'default' => $defaultoptions['teaser-titleup-halfwidth'],
+                  'parent'  => 'auszuege'
+              ), 
+              'teaser-datebox-halfwidth' => array(
+                  'type'    => 'bool',
+                  'title'   => __( 'Datumsbox', 'piratenkleider' ),
+                  'label'   => __( 'Datumsbox anzeigen. Alternativ Artikelbild, erstes Bild in Text oder Defaultbild (Bei Beitr&auml;gen &uuml;ber halbe Breite).', 'piratenkleider' ),
+                  'default' => $defaultoptions['teaser-datebox-halfwidth'],
+                  'parent'  => 'auszuege'
+              ), 
+               'teaser-dateline-halfwidth' => array(
+                  'type'    => 'bool',
+                  'title'   => __( 'Datumszeile', 'piratenkleider' ),
+                  'label'   => __( 'Datumszeile vor dem Text, falls keine Datumsbox angezeigt wird (Bei Beitr&auml;gen &uuml;ber halbe Breite).', 'piratenkleider' ),
+                  'default' => $defaultoptions['teaser-dateline-halfwidth'],
+                  'parent'  => 'auszuege'
+              ), 
                
-               
+                           
                
               'sliderpars'  => array(
                   'type'    => 'section',
@@ -1065,13 +1135,13 @@ $setoptions = array(
 	       
 	      'category'  => array(
                   'type'    => 'section',
-                  'title'   => __( 'Kategorieseiten', 'piratenkleider' ),
+                  'title'   => __( 'Indexseiten (Kategorien, Tags und andere)', 'piratenkleider' ),
               ),
 	       
 	      'category-teaser'   => array(
                   'type'    => 'bool',
                   'title'   => __( 'Slider aktivieren', 'piratenkleider' ),
-                  'label'   => __( 'Kategorieseiten Mit Slider wie auf Startseite darstellen', 'piratenkleider' ),
+                  'label'   => __( 'Kategorieseiten mit Slider wie auf Startseite darstellen', 'piratenkleider' ),
                   'default' => $defaultoptions['category-teaser'],
 		  'parent'  => 'category'
               ),   
@@ -1095,13 +1165,65 @@ $setoptions = array(
 	    'category-teaser-maxlength' => array(
                   'type'    => 'number',
                   'title'   => __( 'L&auml;nge des Teasertextes (Artikelauszug)', 'piratenkleider' ),
-                  'label'   => __( 'Maximale Textl&auml;nge f&uuml;r Artikelausz&uuml;ge auf der Startseite.', 'piratenkleider' ),
+                  'label'   => __( 'Maximale Textl&auml;nge f&uuml;r Artikelausz&uuml;ge', 'piratenkleider' ),
                   'default' => $defaultoptions['category-teaser-maxlength'],
 		'parent'  => 'category'
               ),                 
- 
-	       
-	       
+             'category-teaser-titleup' => array(
+                  'type'    => 'bool',
+                  'title'   => __( 'Titel oben', 'piratenkleider' ),
+                  'label'   => __( 'Titel &uuml;ber Logo/Datumsbox und Text', 'piratenkleider' ),
+                  'default' => $defaultoptions['category-teaser-titleup'],
+                  'parent'  => 'category'
+              ), 
+              'category-teaser-datebox' => array(
+                  'type'    => 'bool',
+                  'title'   => __( 'Datumsbox', 'piratenkleider' ),
+                  'label'   => __( 'Datumsbox anzeigen. Alternativ Artikelbild, erstes Bild in Text oder Defaultbild', 'piratenkleider' ),
+                  'default' => $defaultoptions['category-teaser-datebox'],
+                  'parent'  => 'category'
+              ), 
+               'category-teaser-dateline' => array(
+                  'type'    => 'bool',
+                  'title'   => __( 'Datumszeile', 'piratenkleider' ),
+                  'label'   => __( 'Datumszeile vor dem Text, falls keine Datumsbox angezeigt wird', 'piratenkleider' ),
+                  'default' => $defaultoptions['category-teaser-dateline'],
+                  'parent'  => 'category'
+              ), 
+               
+                'category-teaser-maxlength-halfwidth' => array(
+                  'type'    => 'number',
+                  'title'   => __( 'L&auml;nge des Teasertextes', 'piratenkleider' ),
+                  'label'   => __( 'Maximale Textl&auml;nge f&uuml;r Artikelausz&uuml;ge (Bei Beitr&auml;gen &uuml;ber halbe Breite).', 'piratenkleider' ),
+                  'default' => $defaultoptions['category-teaser-maxlength-halfwidth'],
+		'parent'  => 'category'
+              ),                 
+             'category-teaser-titleup-halfwidth' => array(
+                  'type'    => 'bool',
+                  'title'   => __( 'Titel oben', 'piratenkleider' ),
+                  'label'   => __( 'Titel &uuml;ber Logo/Datumsbox und Text (Bei Beitr&auml;gen &uuml;ber halbe Breite).', 'piratenkleider' ),
+                  'default' => $defaultoptions['category-teaser-titleup-halfwidth'],
+                  'parent'  => 'category'
+              ), 
+              'category-teaser-datebox-halfwidth' => array(
+                  'type'    => 'bool',
+                  'title'   => __( 'Datumsbox', 'piratenkleider' ),
+                  'label'   => __( 'Datumsbox anzeigen. Alternativ Artikelbild, erstes Bild in Text oder Defaultbild (Bei Beitr&auml;gen &uuml;ber halbe Breite).', 'piratenkleider' ),
+                  'default' => $defaultoptions['category-teaser-datebox-halfwidth'],
+                  'parent'  => 'category'
+              ), 
+               'category-teaser-dateline-halfwidth' => array(
+                  'type'    => 'bool',
+                  'title'   => __( 'Datumszeile', 'piratenkleider' ),
+                  'label'   => __( 'Datumszeile vor dem Text, falls keine Datumsbox angezeigt wird (Bei Beitr&auml;gen &uuml;ber halbe Breite).', 'piratenkleider' ),
+                  'default' => $defaultoptions['category-teaser-dateline-halfwidth'],
+                  'parent'  => 'category'
+              ), 
+               
+
+               
+               
+               
 	       
 	       
 	      'darstellungseiten'  => array(

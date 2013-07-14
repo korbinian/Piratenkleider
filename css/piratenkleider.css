@@ -1474,7 +1474,12 @@ display: inline-block;
 .post .post-info {
     position: relative;
 }
-  
+.single .post .post-info {
+    width: 60px;
+    float: left;
+    margin-top: 0px;
+     margin-right: 10px;
+}  
 
   .post .post-info .commentbubble {
     display: inline-block;

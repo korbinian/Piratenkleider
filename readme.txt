@@ -2,7 +2,7 @@ Piratenkleider
 - Wordpress-Theme für Webauftritte der Piratenpartei 
 =================================================
 
-Version 2.17.11 von Wolfgang Wiese (xwolf), 5. Juli 2013
+Version 2.17.13 von Wolfgang Wiese (xwolf), 14. Juli 2013
 
 WORKING-RELEASE - DONT USE PRODUCTIVE
 
@@ -481,3 +481,15 @@ Administrative Hinweise für Wordpress Theme-Editoren:
     Für die Integration von Twitternachrichten oder Streams sollten stattdessen
     eigene Plugins verwendet werden. 
 
+18. Ab der Version 2.18 ist es möglich, die Darstellung der Artikelauszüge
+    auf Startseite und Spezialseiten zu definieren. So ist angebbar ob die
+    Auszuege ein- oder zwei spaltig nebeneinander sind, ob Überschriften
+    über oder neben der Datumsbox sind, ob eine Datumsbox da ist oder ein
+    Thumbnail usw.
+    Ausserdem lassen sich gleichzweitig ein und zweispalter darstellen
+    wobei diese jeweils unterschiedliche Eigenschaften haben.
+    Es ist somit möglich ganz oben als ersten Artikelauszug 500 Zeichen
+    und ein Bild anzugeben, während alle folgenden zweispalter kürzer sind
+    und nur eine Datumsbox zeigen anstelle des Thumbnails.
+
+ 

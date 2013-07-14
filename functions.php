@@ -338,7 +338,11 @@ function piratenkleider_compatibility ($oldoptions) {
 	   $newoptions['category-num-article-halfwidth'] = $oldoptions['num-article-startpage-halfwidth'];
 	}
     }
-   
+    if ((isset($oldoptions['aktiv-images-instead-date'])) && ($oldoptions['aktiv-images-instead-date']==1) 
+            && (!isset($oldoptions['teaser-datebox']))) {
+        $oldoptions['teaser-datebox'] = 0;
+    }
+  
     
     
     $olddesignopt = get_option( 'piratenkleider_theme_designspecials' );
