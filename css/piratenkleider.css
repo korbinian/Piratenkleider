@@ -1533,9 +1533,12 @@ display: inline-block;
     .post .cal {
 	margin-bottom: 5px;
     }
-.post .post-meta, .post .cal {
+    .post p.pubdateinfo {
+	margin-bottom: 5px;
+    }
+.post .post-meta, .post .pubdateinfo {
   overflow: hidden;
-  font-size: 12px;
+  font-size: 0.9em;
   color: #333;
   width: 100%; 
 }

@@ -62,8 +62,8 @@
       while (have_posts() && $i<$numentries) : the_post();
       $i++;
       ob_start();      
-      piratenkleider_post_teaser($options['category-teaser-titleup'],$options['category-teaser-datebox'],$options['category-teaser-dateline'],$options['category-teaser-maxlength'],$options['teaser-thumbnail_fallback']);
- //     piratenkleider_post_teaser(0,1,1,250,1);
+ //     piratenkleider_post_teaser($options['category-teaser-titleup'],$options['category-teaser-datebox'],$options['category-teaser-dateline'],$options['category-teaser-maxlength'],$options['teaser-thumbnail_fallback']);
+      piratenkleider_post_teaser(1,0,1,250,1);
       
 
       ?>

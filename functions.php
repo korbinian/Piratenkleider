@@ -596,11 +596,7 @@ function piratenkleider_post_teaser($titleup = 1, $showdatebox = 1, $showdatelin
 	   <?php }
 	   
 	   if (($showdatebox==0) && ($showdateline==1)) { ?>
-		<div class="cal">	   
-		   <span class="day"><?php the_time('j.'); ?></span>
-		   <span class="month"><?php the_time('m.'); ?></span>
-	           <span class="year"><?php the_time('Y'); ?></span>
-		</div>
+	    <p class="pubdateinfo"><?php piratenkleider_post_pubdateinfo(0); ?></p>	  	  
 	   <?php }
 	   
 	   echo get_piratenkleider_custom_excerpt($teaserlength); ?>     
@@ -673,8 +669,13 @@ if ( ! function_exists( 'piratenkleider_post_pubdateinfo' ) ) :
 /**
  * Fusszeile unter Artikeln: Ver&ouml;ffentlichungsdatum
  */
-function piratenkleider_post_pubdateinfo() {
-        printf( __( '<span class="meta-prep">Ver&ouml;ffentlicht am</span> %1$s ', 'piratenkleider' ),
+function piratenkleider_post_pubdateinfo($withtext = 1) {
+    if ($withtext==1) {
+	echo '<span class="meta-prep">';
+        echo __('Ver&ouml;ffentlicht am', 'piratenkleider' );
+	echo '</span>';
+    }
+    printf('%1$s',
                 sprintf( '<span class="entry-date">%1$s</span>',
                         get_the_date()
                 )
