@@ -78,6 +78,7 @@ $defaultoptions = array(
     'aktiv-images-instead-date'             => 0,
     'aktiv-avatar'                          => 1,
     'aktiv-dynamic-sidebar'                 => 0,
+    'aktiv-autokeywords'		    => 0,
     'src-default-avatar'                    => get_template_directory_uri(). '/images/avataricon.gif',
     'seitenmenu_mode'			    => 0,
     'zeige_subpagesonly'                    => 1,
@@ -1790,6 +1791,18 @@ $setoptions = array(
                   'label'   => __( 'Optionale Schl&uuml;sselworte in dem Meta-Tag jeder Seite (f&uuml;r alle gleich). Durch Komma getrennt. Schl&uuml;sselworte sollten tats&auml;chlich vorkommen.', 'piratenkleider' ),
                   'parent'  => 'meta',                    
               ),   
+	       
+	       'aktiv-autokeywords'  => array(
+                  'type'    => 'bool',
+                  'title'   => __( 'Keywords aus Tags', 'piratenkleider' ),
+                  'label'   => __( 'Metatag mit Keywords wird automatisch aus der Tagcloud erstellt. Wenn oben Keywords eingegeben wurden, werden diese erg&auml;nzt.', 'piratenkleider')
+		      .'<br>'. __('Hinweis: Google und andere Suchmaschinen nutzen diesen Metatag bereits seit 2009 nicht mehr.', 'piratenkleider' )		   
+		      .'<br>'. __('Der Zweck dieser Funktion besteht darin, Pseudo-SEO-Experten ruhig zu halten :)', 'piratenkleider' ),
+                  'default' => $defaultoptions['aktiv-autokeywords'],
+                  'parent'  => 'meta',
+              ),
+	      
+	       
                
           ),
 	),          

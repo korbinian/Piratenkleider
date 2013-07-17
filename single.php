@@ -47,46 +47,22 @@
 	<?php } ?>
  
         <div <?php post_class(); ?> id="post-<?php the_ID(); ?>">
-  
-          
 	    
            <?php 
-            if ( (isset($custom_fields['show-post-disclaimer']))
+		if ( (isset($custom_fields['show-post-disclaimer']))
                  && ($custom_fields['show-post-disclaimer'][0]<>'') 
                  && ($options['post_disclaimer']<>'') 
                  && ( ($custom_fields['show-post-disclaimer'][0]==1) || ($custom_fields['show-post-disclaimer'][0]==3)) 
                 ) {
-                echo '<div class="disclaimer">';
-                echo $options['post_disclaimer'];
-                echo '</div>';
+		   echo '<div class="disclaimer">';
+		   echo $options['post_disclaimer'];
+		   echo '</div>';
                 }
+		
+		
+		piratenkleider_post_datumsbox();		
           ?>  
-          <div class="post-info">           
-              <?php 
-                $num_comments = get_comments_number();
-                if (!isset($options['zeige_commentbubble_null'])) 
-                    $options['zeige_commentbubble_null'] = $defaultoptions['zeige_commentbubble_null'];   
-                if (($num_comments>0) || ( $options['zeige_commentbubble_null'])) { ?>
-         <div class="commentbubble"> 
-            <?php 
-                if ($num_comments>0) {
-                   comments_popup_link( '0<span class="skip"> Kommentar</span>', '1<span class="skip"> Kommentar</span>', '%<span class="skip"> Kommentare</span>', 'comments-link', '%<span class="skip"> Kommentare</span>');           
-                } else {
-                    // Wenn der Zeitraum abgelaufen ist UND keine Kommentare gegeben waren, dann
-                    // liefert die Funktion keinen Link, sondern nur den Text . Daher dieser
-                    // Woraround:
-                    $link = get_comments_link();
-                    echo '<a href="'.$link.'">0<span class="skip"> Kommentar</span></a>';
-              }
-            ?>
-          </div> 
-          <?php } ?>                       
-            <div class="cal-icon">
-              <span class="day"><?php the_time('j.'); ?></span>
-              <span class="month"><?php the_time('m.'); ?></span>
-              <span class="year"><?php the_time('Y'); ?></span>
-            </div>
-          </div>
+        
             
           
             

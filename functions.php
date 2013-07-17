@@ -270,6 +270,7 @@ endif;
 
 function piratenkleider_compatibility ($oldoptions) {
     global $defaultoptions;
+    $doupdate = 0;
     
     $old_bilderarray =  get_option('piratenkleider_theme_defaultbilder');
 
@@ -280,6 +281,7 @@ function piratenkleider_compatibility ($oldoptions) {
     if (is_array($old_bilderarray))  {      
 	$newoptions = array_merge($defaultoptions,$old_bilderarray, $oldoptions);	  
 	delete_option('piratenkleider_theme_defaultbilder');
+	$doupdate = 1;
     } else {
 	$newoptions = array_merge($defaultoptions,$oldoptions);	
     }    
@@ -349,17 +351,19 @@ function piratenkleider_compatibility ($oldoptions) {
     if ((is_array($olddesignopt)) && (count($olddesignopt)>0)) {
 	 $newoptions = array_merge($newoptions,$olddesignopt);
 	delete_option('piratenkleider_theme_designspecials');
+	$doupdate = 1;
     }
     $oldkontaktinfos = get_option( 'piratenkleider_theme_kontaktinfos' );
     if ((is_array($oldkontaktinfos)) && (count($oldkontaktinfos)>0)) {
 	 $newoptions = array_merge($newoptions,$oldkontaktinfos);
 	delete_option('piratenkleider_theme_kontaktinfos');
+	$doupdate = 1;
     }
     
     
     
-    $diff = array_diff($newoptions, $oldoptions);
-    if (count($diff)) {
+    
+    if ($doupdate==1) {
 	update_option('piratenkleider_theme_options', $newoptions);
     }
 
@@ -673,6 +677,42 @@ function piratenkleider_post_datumsbox() {
 }
 endif;
 
+if ( ! function_exists( 'piratenkleider_keywords' ) ) :
+/**
+ * Fusszeile unter Artikeln: Ver&ouml;ffentlichungsdatum
+ */
+function piratenkleider_keywords($maxlength = 140, $maxwords = 15 ) {
+    global $options;
+   
+    $csv_tags = '';
+    $tags = '';
+    if ($options['aktiv-autokeywords']) {   
+
+	$posttags = get_tags(array('number'=> $maxwords, 'orderby' => 'count', 'order'=> 'DESC'));
+	$tags = '';
+	    if (isset($posttags)) {
+		foreach($posttags as $tag) {
+		    $csv_tags .= $tag->name . ',';
+		}	
+		$tags = substr( $csv_tags,0,-2);
+	    }
+	if ((isset($options['meta-keywords'])) && (strlen(trim($options['meta-keywords']))>1 )) {
+	    $tags = $options['meta-keywords'].', '.$tags;
+	}
+    } else {
+	if ((isset($options['meta-keywords'])) && (strlen(trim($options['meta-keywords']))>1 )) {
+	    $tags = $options['meta-keywords'];
+	}	
+    }
+    if ((isset($tags)) && (strlen(trim($tags))>2 )) {
+	if (strlen(trim($tags))>$maxlength) {
+	    $tags = substr($tags,0,strpos($tags,",",$maxlength));
+	}	
+	echo '	<meta name="keywords" value="'.$tags.'">';
+    }
+   
+}
+endif;
 
 if ( ! function_exists( 'piratenkleider_post_pubdateinfo' ) ) :
 /**
@@ -1327,10 +1367,10 @@ function piratenkleider_echo_player() {
 	});
 	//]]>
 	</script>';
-        ?>
-	<div id="jquery_jplayer_1" class="cp-jplayer"></div>  
-	<div id="cp_container_1" class="cp-container">
-	    <div class="cp-buffer-holder"> <!-- .cp-gt50 only needed when buffer is > than 50% -->
+        
+	echo '<div id="jquery_jplayer_1" class="cp-jplayer"></div>';	
+	echo '<div id="cp_container_1" class="cp-container">';
+	echo '<div class="cp-buffer-holder"> <!-- .cp-gt50 only needed when buffer is > than 50% -->
 		<div class="cp-buffer-1"></div>
 		<div class="cp-buffer-2"></div>
 	    </div>
@@ -1343,21 +1383,20 @@ function piratenkleider_echo_player() {
 		<li style="padding:0;"><a class="cp-play" tabindex="1">play</a></li>
 		<li style="padding:0;"><a class="cp-pause" style="display:none;" tabindex="1">pause</a></li> <!-- Needs the inline style here, or jQuery.show() uses display:inline instead of display:block -->
 	    </ul>
-	</div> 
-	<?php _e( 'Download:', 'piratenkleider' ); 
+	</div>';
+	
+	_e( 'Download:', 'piratenkleider' ); 
 	$links = "";
 	foreach($information as $key=>$value){
 	    if ($key == 'text') { continue; }
 	    $links = $links . "<a href=\"$value\">$key</a>, ";
 	}
 	$links =rtrim($links,', '); 
-	echo $links;
-	?>			
-	<br/>
-	<?php if(strlen(trim($information['text']))>2) { 
+	echo $links; 		
+	echo '<br>';
+	if(strlen(trim($information['text']))>2) { 
 	  echo $information['text']." <br/>";
-	 } ?>
-    </div>
-    <?php
+	 } 
+	 echo '</div>';
     }	
 }

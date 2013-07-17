@@ -31,7 +31,7 @@ if ( have_comments() ) : ?>
     endif; 
  endif; 
      
-
+$comment_before = '';
 if (isset($options['comments_disclaimer'])) {
     $comment_before = '<div class="comment-disclaimer">'.$options['comments_disclaimer'] .'</div>';
 }

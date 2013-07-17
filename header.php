@@ -39,9 +39,8 @@ if ((isset( $options['meta-description'] )) && ( strlen(trim($options['meta-desc
 if ((isset( $options['meta-author'] )) && ( strlen(trim($options['meta-author']))>1 )) { ?>
     <meta name="author" content="<?php echo $options['meta-author'] ?>">
 <?php }
-if ((isset( $options['meta-keywords'] )) && ( strlen(trim($options['meta-keywords']))>1 )) { ?>
-    <meta name="keywords" content="<?php echo $options['meta-keywords'] ?>">
-<?php } ?>
+    piratenkleider_keywords(); ?>
+    
     <link rel="apple-touch-icon" href="<?php echo get_template_directory_uri(); ?>/apple-touch-icon.png">
     <link rel="shortcut icon" href="<?php echo get_template_directory_uri(); ?>/favicon.ico">
     <link rel="profile" href="http://gmpg.org/xfn/11" />
