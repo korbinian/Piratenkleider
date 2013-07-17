@@ -544,53 +544,56 @@ function piratenkleider_post_teaser($titleup = 1, $showdatebox = 1, $showdatelin
        <div class="ym-column"> 
      <?php }	
    
-    echo '<div class="post-info ym-col1"><div class="ym-cbox">';
-    if ($showdatebox==1) {		 
-          $num_comments = get_comments_number();           
-          if (($num_comments>0) || ( $options['zeige_commentbubble_null'])) { 
-	    echo '<div class="commentbubble">'; 	
-                if ($num_comments>0) {
-                   comments_popup_link( '0<span class="skip"> Kommentar</span>', '1<span class="skip"> Kommentar</span>', '%<span class="skip"> Kommentare</span>', 'comments-link', '%<span class="skip"> Kommentare</span>');           
-                } else {
-                    // Wenn der Zeitraum abgelaufen ist UND keine Kommentare gegeben waren, dann
-                    // liefert die Funktion keinen Link, sondern nur den Text . Daher dieser
-                    // Woraround:
-                    $link = get_comments_link();
-                    echo '<a href="'.$link.'">0<span class="skip"> Kommentar</span></a>';
-              }
-             echo '</div>'; 
-           }
-	   ?>
-	   <div class="cal-icon">
-                    <span class="day"><?php the_time('j.'); ?></span>
-                    <span class="month"><?php the_time('m.'); ?></span>
-                    <span class="year"><?php the_time('Y'); ?></span>
-            </div>
-	   
-            <?php    
-    } else {		
-	echo '<div class="infoimage">';
-	if (has_post_thumbnail()) {
-	     echo get_the_post_thumbnail($post->ID, 'teaser-thumb');
-	  
-	} else {
-	
-	    $firstpic = get_piratenkleider_firstpicture();
-	    if (!empty($firstpic)) { ?>                       
-		<?php echo $firstpic ?>		    
-	    <?php
-	    } elseif ($thumbfallback==1) {
-		echo '<img src="'.$options['src-teaser-thumbnail_default'].'" alt="">';
+    if ($showdatebox<2) { 
+	echo '<div class="post-info ym-col1"><div class="ym-cbox">';
+	if ($showdatebox==1) {		 
+	      $num_comments = get_comments_number();           
+	      if (($num_comments>0) || ( $options['zeige_commentbubble_null'])) { 
+		echo '<div class="commentbubble">'; 	
+		    if ($num_comments>0) {
+		       comments_popup_link( '0<span class="skip"> Kommentar</span>', '1<span class="skip"> Kommentar</span>', '%<span class="skip"> Kommentare</span>', 'comments-link', '%<span class="skip"> Kommentare</span>');           
+		    } else {
+			// Wenn der Zeitraum abgelaufen ist UND keine Kommentare gegeben waren, dann
+			// liefert die Funktion keinen Link, sondern nur den Text . Daher dieser
+			// Woraround:
+			$link = get_comments_link();
+			echo '<a href="'.$link.'">0<span class="skip"> Kommentar</span></a>';
+		  }
+		 echo '</div>'; 
+	       }
+	       ?>
+	       <div class="cal-icon">
+			<span class="day"><?php the_time('j.'); ?></span>
+			<span class="month"><?php the_time('m.'); ?></span>
+			<span class="year"><?php the_time('Y'); ?></span>
+		</div>
+
+		<?php    
+	} else {		
+	    echo '<div class="infoimage">';
+	    if (has_post_thumbnail()) {
+		 echo get_the_post_thumbnail($post->ID, 'teaser-thumb');
+
+	    } else {
+
+		$firstpic = get_piratenkleider_firstpicture();
+		if (!empty($firstpic)) { ?>                       
+		    <?php echo $firstpic ?>		    
+		<?php
+		} elseif ($thumbfallback==1) {
+		    echo '<img src="'.$options['src-teaser-thumbnail_default'].'" alt="">';
+		}
 	    }
-	}
-	echo '</div>';
-    }
-    ?>
-       </div>
-    </div>
+	    echo '</div>';
+	} ?>
+	   </div>	
+	</div>
 	<?php 
-	echo '<div class="post-entry ym-col3">';
-	echo '<div class="ym-cbox ym-clearfix">';
+	    echo '<div class="post-entry ym-col3">';
+	    echo '<div class="ym-cbox ym-clearfix">';	
+	} else {
+	     echo '<div class="post-entry ym-cbox">';
+	}
 	  if ($titleup==0) { ?>       
 	    <div class="post-title"><h2>          
 	        <a href="<?php the_permalink(); ?>" rel="bookmark" title="<?php the_title(); ?>">
@@ -604,9 +607,11 @@ function piratenkleider_post_teaser($titleup = 1, $showdatebox = 1, $showdatelin
 	   <?php }
 	   
 	   echo get_piratenkleider_custom_excerpt($teaserlength); ?>     
-	 </div>     
-	 <!-- .ym-ie-clearing only needed for IE6 & 7 support -->
-	<div class="ym-ie-clearing">&nbsp;</div>	
+	  <?php if ($showdatebox<2) {	?>  
+	 </div>    	
+	     <!-- .ym-ie-clearing only needed for IE6 & 7 support -->
+	    <div class="ym-ie-clearing">&nbsp;</div>	
+	<?php } ?>
     </div>
     
     <?php if ($titleup==1) { echo '</div>'; }       
