@@ -51,6 +51,7 @@ $defaultoptions = array(
     'aktiv-artikelbild'		    => 1,
     'artikelbild-size'		    => 1,    
     'artikelbild-url'		    => '',
+    'aktiv-commentsonpages'	    => 0,
     'aktiv-platzhalterbilder-indexseiten'   => 0,
     'indexseitenbild-size'	    => 1,
     
@@ -91,11 +92,11 @@ $defaultoptions = array(
     
     'category-teaser-maxlength'		    => 500,            
     'category-teaser-titleup'		    => 1, /* Titles up */ 
-    'category-teaser-datebox'		    => 0, /* 1 = Datebox, 0 = Thumbnail */ 
+    'category-teaser-datebox'		    => 0, /* 1 = Datebox, 0 = Thumbnail, 2 = No Datebox and no Thumbnail */ 
     'category-teaser-dateline'		    => 0, /* 1 = show Date on line up of the text if no datebox */
     'category-teaser-maxlength-halfwidth'   => 200,        
     'category-teaser-titleup-halfwidth'	    => 1, /* Titles up */ 
-    'category-teaser-datebox-halfwidth'	    => 1, /* 1 = Datebox, 0 = Thumbnail */ 
+    'category-teaser-datebox-halfwidth'	    => 1, /* 1 = Datebox, 0 = Thumbnail, 2 = No Datebox and no Thumbnail */ 
     'category-teaser-dateline-halfwidth'    => 0, /* 1 = show Date on line up of the text if no datebox */    
 
     'num-article-startpage-fullwidth'       => 1,
@@ -114,11 +115,11 @@ $defaultoptions = array(
 
     'teaser_maxlength'              => 500,
     'teaser-titleup'		    => 1, /* Titles up */ 
-    'teaser-datebox'		    => 0, /* 1 = Datebox, 0 = Thumbnail */ 
+    'teaser-datebox'		    => 0, /* 1 = Datebox, 0 = Thumbnail, 2 = No Datebox and no Thumbnail */ 
     'teaser-dateline'		    => 0, /* 1 = show Date on line up of the text if no datebox */
     'teaser-maxlength-halfwidth'   => 200,        
     'teaser-titleup-halfwidth'	    => 1, /* Titles up */ 
-    'teaser-datebox-halfwidth'	    => 1, /* 1 = Datebox, 0 = Thumbnail */ 
+    'teaser-datebox-halfwidth'	    => 1, /* 1 = Datebox, 0 = Thumbnail, 2 = No Datebox and no Thumbnail */ 
     'teaser-dateline-halfwidth'    => 0, /* 1 = show Date on line up of the text if no datebox */      
     
     
@@ -975,10 +976,13 @@ $setoptions = array(
                   'parent'  => 'auszuege'
               ), 
               'teaser-datebox' => array(
-                  'type'    => 'bool',
+                  'type'    => 'select',
                   'title'   => __( 'Datumsbox', 'piratenkleider' ),
                   'label'   => __( 'Datumsbox anzeigen. Alternativ Artikelbild, erstes Bild in Text oder Defaultbild', 'piratenkleider' ),
                   'default' => $defaultoptions['teaser-datebox'],
+		  'liste'   =>  array(0 => __("Thumbnail oder erstes Artikelbild anzeigen","piratenkleider"), 
+				1 => __("Datumsbox anzeigen","piratenkleider"), 
+				2 => __("Weder Datumsbox noch Thumbnail anzeigen","piratenkleider")),
                   'parent'  => 'auszuege'
               ), 
                'teaser-dateline' => array(
@@ -1004,10 +1008,13 @@ $setoptions = array(
                   'parent'  => 'auszuege'
               ), 
               'teaser-datebox-halfwidth' => array(
-                  'type'    => 'bool',
+                  'type'    => 'select',
                   'title'   => __( 'Datumsbox', 'piratenkleider' ),
                   'label'   => __( 'Datumsbox anzeigen. Alternativ Artikelbild, erstes Bild in Text oder Defaultbild (Bei Beitr&auml;gen &uuml;ber halbe Breite).', 'piratenkleider' ),
                   'default' => $defaultoptions['teaser-datebox-halfwidth'],
+		  'liste'   =>  array(0 => __("Thumbnail oder erstes Artikelbild anzeigen","piratenkleider"), 
+				1 => __("Datumsbox anzeigen","piratenkleider"), 
+				2 => __("Weder Datumsbox noch Thumbnail anzeigen","piratenkleider")),
                   'parent'  => 'auszuege'
               ), 
                'teaser-dateline-halfwidth' => array(
@@ -1177,10 +1184,13 @@ $setoptions = array(
                   'parent'  => 'category'
               ), 
               'category-teaser-datebox' => array(
-                  'type'    => 'bool',
+                  'type'    => 'select',
                   'title'   => __( 'Datumsbox', 'piratenkleider' ),
                   'label'   => __( 'Datumsbox anzeigen. Alternativ Artikelbild, erstes Bild in Text oder Defaultbild', 'piratenkleider' ),
                   'default' => $defaultoptions['category-teaser-datebox'],
+		  'liste'   =>  array(0 => __("Thumbnail oder erstes Artikelbild anzeigen","piratenkleider"), 
+				1 => __("Datumsbox anzeigen","piratenkleider"), 
+				2 => __("Weder Datumsbox noch Thumbnail anzeigen","piratenkleider")),
                   'parent'  => 'category'
               ), 
                'category-teaser-dateline' => array(
@@ -1206,10 +1216,13 @@ $setoptions = array(
                   'parent'  => 'category'
               ), 
               'category-teaser-datebox-halfwidth' => array(
-                  'type'    => 'bool',
+                  'type'    => 'select',
                   'title'   => __( 'Datumsbox', 'piratenkleider' ),
                   'label'   => __( 'Datumsbox anzeigen. Alternativ Artikelbild, erstes Bild in Text oder Defaultbild (Bei Beitr&auml;gen &uuml;ber halbe Breite).', 'piratenkleider' ),
                   'default' => $defaultoptions['category-teaser-datebox-halfwidth'],
+		  'liste'   =>  array(0 => __("Thumbnail oder erstes Artikelbild anzeigen","piratenkleider"), 
+				1 => __("Datumsbox anzeigen","piratenkleider"), 
+				2 => __("Weder Datumsbox noch Thumbnail anzeigen","piratenkleider")),
                   'parent'  => 'category'
               ), 
                'category-teaser-dateline-halfwidth' => array(
@@ -1378,6 +1391,13 @@ $setoptions = array(
                   'title'   => __( 'Antwortlinks', 'piratenkleider' ),
                   'label'   => __( 'Bei der Anzeige von Kommentaren, wird unter diesen ein eigener Kommentarlink eingebaut, der das Antworten auf den Kommentar erlaubt. Dies kann zu einer Nutzung des Kommentarbereiches wie bei einem Forum f&uuml;hren, bei dem es zuletzt aber nicht mehr um den eigentlichen Beitrag geht.', 'piratenkleider' ),
                   'default' => $defaultoptions['aktiv-commentreplylink'],	
+		 'parent'   => 'kommentare'
+              ),
+	      'aktiv-commentsonpages' => array(
+                  'type'    => 'bool',
+                  'title'   => __( 'Seiten', 'piratenkleider' ),
+                  'label'   => __( 'Kommentare auch auf Seiten (und nicht nur Artikeln) zulassen.', 'piratenkleider' ),
+                  'default' => $defaultoptions['aktiv-commentsonpages'],	
 		 'parent'   => 'kommentare'
               ),
               'comments_disclaimer'  => array(
