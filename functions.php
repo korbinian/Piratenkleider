@@ -532,7 +532,7 @@ function piratenkleider_post_teaser($titleup = 1, $showdatebox = 1, $showdatelin
   global $options;
   global $post;
   
-  $output = '';  
+    
   $sizeclass='';
   $leftbox = '';
   
@@ -559,50 +559,32 @@ function piratenkleider_post_teaser($titleup = 1, $showdatebox = 1, $showdatelin
 		$firstvideo = get_piratenkleider_firstvideo();
 		$fallbackimg = '<img src="'.$options['src-teaser-thumbnail_default'].'" alt="">';
 		if ($showdatebox==1) {
-		    if (isset($thumbnailcode)) {
-			$output = $thumbnailcode;
-		    } elseif (isset($firstpic)) {
-			$output = $firstpic;
-		    } elseif (isset($firstvideo)) {
-			$output = $firstvideo;
-			$sizeclass = 'ym-column withvideo';    
-		    } else {
-			$output = $fallbackimg;
-		    }
+		    if (!isset($output)) { $output = $thumbnailcode;}
+		    if (!isset($output)) { $output = $firstpic;}
+		    if ((!isset($output)) && (isset($firstvideo))) { $output = $firstvideo; $sizeclass = 'ym-column withvideo'; }		    
+		    if (!isset($output)) { $output = $fallbackimg;}		    
+		    if ((isset($output)) && ( strlen(trim($output))<10 )) {$output = $fallbackimg;}		    
 		} elseif ($showdatebox==2) {
-		    if (isset($firstpic)) {
-			$output = $firstpic;
-		    } elseif (isset($thumbnailcode)) {
-			$output = $thumbnailcode;
-		    } elseif (isset($firstvideo)) {
-			$output = $firstvideo;
-			$sizeclass = 'ym-column withvideo'; 
-		    } else {
-			$output = $fallbackimg;
-		    }
-		    
+		    if (!isset($output)) { $output = $firstpic;}
+		    if (!isset($output)) { $output = $thumbnailcode;}
+		    if ((!isset($output)) && (isset($firstvideo))) { $output = $firstvideo; $sizeclass = 'ym-column withvideo'; }		    
+		    if (!isset($output)) { $output = $fallbackimg;}		    
+		    if ((isset($output)) && ( strlen(trim($output))<10 )) {$output = $fallbackimg;}			    		    
 		} elseif ($showdatebox==3) {
-		    if (isset($firstvideo)) {
-			$output = $firstvideo;
-			$sizeclass = 'ym-column withvideo'; 
-		    } elseif (isset($thumbnailcode)) {
-			$output = $thumbnailcode;
-		    } elseif (isset($firstpic)) {
-			$output = $firstpic;
-		    } else {
-			$output = $fallbackimg;
-		    }
+		    if ((!isset($output)) && (isset($firstvideo))) { $output = $firstvideo; $sizeclass = 'ym-column withvideo'; }		    
+ 		    
+		    if (!isset($output)) { $output = $thumbnailcode;}
+		    if (!isset($output)) { $output = $firstpic;}
+		    if (!isset($output)) { $output = $fallbackimg;}
+		    if ((isset($output)) && ( strlen(trim($output))<10 )) {$output = $fallbackimg;}		    
+		    
 		} elseif ($showdatebox==4) {
-		    if (isset($firstvideo)) {
-			$output = $firstvideo;
-			$sizeclass = 'ym-column withvideo'; 
-		    } elseif (isset($firstpic)) {
-			$output = $firstpic;
-		    } elseif (isset($thumbnailcode)) {
-			$output = $thumbnailcode;
-		    } else {
-			$output = $fallbackimg;
-		    }
+		    if ((!isset($output)) && (isset($firstvideo))) { $output = $firstvideo; $sizeclass = 'ym-column withvideo'; }		    
+
+		    if (!isset($output)) { $output = $firstpic;}
+		    if (!isset($output)) { $output = $thumbnailcode;}
+		    if (!isset($output)) { $output = $fallbackimg;}
+		    if ((isset($output)) && ( strlen(trim($output))<10 )) {$output = $fallbackimg;}
 		} else {
 		    $output = $fallbackimg; 
 		}	
@@ -1000,9 +982,10 @@ function get_piratenkleider_firstpicture(){
     $first_img = '';
     ob_start();
     ob_end_clean();
-    preg_match_all('/<img.+src=[\'"]([^\'"]+)[\'"].*>/i', $post->post_content, $matches);
-    if ((is_array($matches[1])) && (isset($matches [1][0]))) {
-        $first_img = $matches [1][0];
+    $matches = array();
+    preg_match('/<img.+src=[\'"]([^\'"]+)[\'"].*>/i', $post->post_content, $matches);
+   if ((is_array($matches)) && (isset($matches[1]))) {
+        $first_img = $matches[1];
         if (!empty($first_img)){
             $site_link =  home_url();  
             $first_img = preg_replace("%$site_link%i",'', $first_img); 
@@ -1024,11 +1007,10 @@ function get_piratenkleider_firstvideo($width = 300, $height = 169, $nocookie =1
     ob_end_clean();
     $matches = array();
     preg_match('/src="([^\'"]*www\.youtube[^\'"]+)/i', $post->post_content, $matches);
-   // var_dump($matches);
+ 
     if ((is_array($matches)) && (isset($matches[1]))) {
         $entry = $matches[1];	
-	// echo "HEYJA!<br>";
-	// echo $entry;
+
         if (!empty($entry)){
 	    if ($nocookie==1) {
 		$entry = preg_replace('/youtube.com/','youtube-nocookie.com',$entry);
