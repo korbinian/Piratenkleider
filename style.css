@@ -17,7 +17,7 @@ License URI: http://creativecommons.org/licenses/by-sa/3.0/de/deed.de
 /* import screen layout | Screen-Layout einbinden */
 /*@import url(css/piratenkleider.css); */
 @import url(css/piratenkleider.css);
-/* @import url(css/basemod_mediaqueries.css); */
-@import url(css/basemod_mediaqueries.min.css); 
+@import url(css/basemod_mediaqueries.css); 
+/* @import url(css/basemod_mediaqueries.min.css); */
 /* import print layout | Druck-Layout einbinden */
 @import url(css/print.min.css);
