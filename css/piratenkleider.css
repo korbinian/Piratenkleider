@@ -1462,13 +1462,26 @@ display: inline-block;
 .withthumb .ym-col1 {
     width: 140px;
 }
+.withvideo .ym-col1 {
+    width: 300px;
+}
 .ym-col3 { /* sidebar */
   margin: 0 0 0 70px;
 }
 .withthumb .ym-col3 {
    margin: 0 0 0 140px;
 }
-
+.withvideo .ym-col3 {
+   margin: 0 0 0 320px;
+}
+.column1 .withvideo .ym-col1, 
+.column2 .withvideo .ym-col1, 
+.column1 .withvideo .ym-col3, 
+.column2 .withvideo .ym-col3 {
+    float: none;
+    width: 100%;
+    margin: 0;
+}
 
 
 .post .post-info {
@@ -1504,12 +1517,19 @@ display: inline-block;
     -o-border-radius: 14px; 
     border-radius: 14px; 
   }
-  .post .post-info .infoimage {
+  .post-info .infoimage {
     width: 120px;
     height: auto;
     max-height: 220px;
     overflow: hidden;
   }
+  .withvideo .post-info .infoimage {
+    width: 320px;
+    height: auto;
+    max-height: 220px;
+    overflow: hidden;
+  }
+  
   .post .post-info .cal-icon {
     background: #eeeeee;   
     padding: 10px;

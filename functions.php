@@ -532,11 +532,91 @@ function piratenkleider_post_teaser($titleup = 1, $showdatebox = 1, $showdatelin
   global $options;
   global $post;
   
-  if ($showdatebox==0) { ?> 
-      <div <?php post_class('ym-column withthumb'); ?> id="post-<?php the_ID(); ?>" >
-  <?php } else { ?>
-      <div <?php post_class('ym-column'); ?> id="post-<?php the_ID(); ?>" >
-  <?php }
+  $output = '';  
+  $sizeclass='';
+ $leftbox = '';
+  
+ 
+  
+  if (($showdatebox>1)  && ($showdatebox<5)) {
+       $sizeclass = 'ym-column withthumb';      
+       // Generate Thumb/Pic or Video first to find out which class we need
+       
+     
+	    $leftbox .=  '<div class="infoimage">';	    
+	    $sizeclass = 'ym-column withthumb'; 
+	    $thumbnailcode = '';	
+	    $firstpic = '';
+	    $firstvideo = '';
+	    if (has_post_thumbnail()) {
+		$thumbnailcode = get_the_post_thumbnail($post->ID, 'teaser-thumb');
+	    }
+	    if ($showdatebox==1) {
+		$output = $thumbnailcode;
+	    } else {
+		   
+		$firstpic = get_piratenkleider_firstpicture();
+		$firstvideo = get_piratenkleider_firstvideo();
+		$fallbackimg = '<img src="'.$options['src-teaser-thumbnail_default'].'" alt="">';
+		if ($showdatebox==1) {
+		    if (isset($thumbnailcode)) {
+			$output = $thumbnailcode;
+		    } elseif (isset($firstpic)) {
+			$output = $firstpic;
+		    } elseif (isset($firstvideo)) {
+			$output = $firstvideo;
+			$sizeclass = 'ym-column withvideo';    
+		    } else {
+			$output = $fallbackimg;
+		    }
+		} elseif ($showdatebox==2) {
+		    if (isset($firstpic)) {
+			$output = $firstpic;
+		    } elseif (isset($thumbnailcode)) {
+			$output = $thumbnailcode;
+		    } elseif (isset($firstvideo)) {
+			$output = $firstvideo;
+			$sizeclass = 'ym-column withvideo'; 
+		    } else {
+			$output = $fallbackimg;
+		    }
+		    
+		} elseif ($showdatebox==3) {
+		    if (isset($firstvideo)) {
+			$output = $firstvideo;
+			$sizeclass = 'ym-column withvideo'; 
+		    } elseif (isset($thumbnailcode)) {
+			$output = $thumbnailcode;
+		    } elseif (isset($firstpic)) {
+			$output = $firstpic;
+		    } else {
+			$output = $fallbackimg;
+		    }
+		} elseif ($showdatebox==4) {
+		    if (isset($firstvideo)) {
+			$output = $firstvideo;
+			$sizeclass = 'ym-column withvideo'; 
+		    } elseif (isset($firstpic)) {
+			$output = $firstpic;
+		    } elseif (isset($thumbnailcode)) {
+			$output = $thumbnailcode;
+		    } else {
+			$output = $fallbackimg;
+		    }
+		} else {
+		    $output = $fallbackimg; 
+		}	
+	    }
+    	    
+	    $leftbox .= $output;
+	    $leftbox .=  '</div>'; 
+  } else {
+       $sizeclass = 'ym-column';
+  }
+  
+  ?> 
+  <div <?php post_class($sizeclass); ?> id="post-<?php the_ID(); ?>" >
+    <?php 
         
      if ($titleup==1) { ?>
         <div class="post-title ym-cbox"><h2>          
@@ -547,10 +627,16 @@ function piratenkleider_post_teaser($titleup = 1, $showdatebox = 1, $showdatelin
        
        <div class="ym-column"> 
      <?php }	
-   
-    if ($showdatebox<2) { 
+   /* 0 = Datebox, 
+	 * 1 = Thumbnail (or: first picture, first video, fallback picture),
+	 * 2 = First picture (or: thumbnail, first video, fallback picture),
+	 * 3 = First video (or: thumbnail, first picture, fallback picture),
+	 * 4 = First video (or: first picture, thumbnail, fallback picture),
+	 * 5 = Nothing */
+     
+    if ($showdatebox<5) { 
 	echo '<div class="post-info ym-col1"><div class="ym-cbox">';
-	if ($showdatebox==1) {		 
+	if ($showdatebox==0) {		 
 	      $num_comments = get_comments_number();           
 	      if (($num_comments>0) || ( $options['zeige_commentbubble_null'])) { 
 		echo '<div class="commentbubble">'; 	
@@ -573,22 +659,8 @@ function piratenkleider_post_teaser($titleup = 1, $showdatebox = 1, $showdatelin
 		</div>
 
 		<?php    
-	} else {		
-	    echo '<div class="infoimage">';
-	    if (has_post_thumbnail()) {
-		 echo get_the_post_thumbnail($post->ID, 'teaser-thumb');
-
-	    } else {
-
-		$firstpic = get_piratenkleider_firstpicture();
-		if (!empty($firstpic)) { ?>                       
-		    <?php echo $firstpic ?>		    
-		<?php
-		} elseif ($thumbfallback==1) {
-		    echo '<img src="'.$options['src-teaser-thumbnail_default'].'" alt="">';
-		}
-	    }
-	    echo '</div>';
+	} else {	
+	    echo $leftbox;
 	} ?>
 	   </div>	
 	</div>
@@ -606,12 +678,12 @@ function piratenkleider_post_teaser($titleup = 1, $showdatebox = 1, $showdatelin
 	    </h2></div>
 	   <?php }
 	   
-	   if (($showdatebox==0) && ($showdateline==1)) { ?>
+	   if (($showdatebox!=0) && ($showdateline==1)) { ?>
 	    <p class="pubdateinfo"><?php piratenkleider_post_pubdateinfo(0); ?></p>	  	  
 	   <?php }
 	   
 	   echo get_piratenkleider_custom_excerpt($teaserlength); ?>     
-	  <?php if ($showdatebox<2) {	?>  
+	  <?php if (($showdatebox>1)  && ($showdatebox<5)) {	?>  
 	 </div>    	
 	     <!-- .ym-ie-clearing only needed for IE6 & 7 support -->
 	    <div class="ym-ie-clearing">&nbsp;</div>	
@@ -938,6 +1010,35 @@ function get_piratenkleider_firstpicture(){
     }
 }
 endif;
+
+
+if ( ! function_exists( 'get_piratenkleider_firstvideo' ) ) :
+/*
+ * Erstes Bild aus einem Artikel auslesen, wenn dies vorhanden ist
+ */
+function get_piratenkleider_firstvideo($width = 300, $height = 169, $nocookie =1){
+    global $post;
+    ob_start();
+    ob_end_clean();
+    $matches = array();
+    preg_match('/src="([^\'"]*www\.youtube[^\'"]+)/i', $post->post_content, $matches);
+   // var_dump($matches);
+    if ((is_array($matches)) && (isset($matches[1]))) {
+        $entry = $matches[1];	
+	// echo "HEYJA!<br>";
+	// echo $entry;
+        if (!empty($entry)){
+	    if ($nocookie==1) {
+		$entry = preg_replace('/youtube.com/','youtube-nocookie.com',$entry);
+	    }
+            $htmlout = '<iframe width="'.$width.'" height="'.$height.'" src="'.$entry.'" frameborder="0" allowfullscreen></iframe>';
+            return $htmlout;    
+        }
+
+    }
+}
+endif;
+
 
 
 if ( ! function_exists( 'get_piratenkleider_custom_excerpt' ) ) :
