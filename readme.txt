@@ -2,7 +2,7 @@ Piratenkleider
 - Wordpress-Theme für Webauftritte der Piratenpartei 
 =================================================
 
-Version 2.17.13 von Wolfgang Wiese (xwolf), 14. Juli 2013
+Version 2.17.15 von Wolfgang Wiese (xwolf), 18. Juli 2013
 
 WORKING-RELEASE - DONT USE PRODUCTIVE
 
@@ -491,5 +491,5 @@ Administrative Hinweise für Wordpress Theme-Editoren:
     Es ist somit möglich ganz oben als ersten Artikelauszug 500 Zeichen
     und ein Bild anzugeben, während alle folgenden zweispalter kürzer sind
     und nur eine Datumsbox zeigen anstelle des Thumbnails.
-
- 
+    Ebenso können YouTube-Videos angezeigt werden.
+   (Hinweis: Diese werden per Default auf youtube-nocookie.com umgeschrieben.)
