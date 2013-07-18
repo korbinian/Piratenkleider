@@ -531,12 +531,9 @@ if ( ! function_exists( 'piratenkleider_post_teaser' ) ) :
 function piratenkleider_post_teaser($titleup = 1, $showdatebox = 1, $showdateline = 0, $teaserlength = 200, $thumbfallback = 1, $usefloating = 0) {
   global $options;
   global $post;
-  
-    
+   
   $sizeclass='';
   $leftbox = '';
-  
- 
   
   if (($showdatebox>1)  && ($showdatebox<5)) {
        $sizeclass = 'ym-column withthumb';      
@@ -607,8 +604,7 @@ function piratenkleider_post_teaser($titleup = 1, $showdatebox = 1, $showdatelin
             <a href="<?php the_permalink(); ?>" rel="bookmark" title="<?php the_title(); ?>">
               <?php the_title(); ?>
             </a>
-	</h2></div>
-       
+	</h2></div>       
        <div class="ym-column"> 
      <?php }	
    /* 0 = Datebox, 
@@ -643,31 +639,29 @@ function piratenkleider_post_teaser($titleup = 1, $showdatebox = 1, $showdatelin
 		</div>
 
 		<?php    
-	} else {	
-	    echo $leftbox;
-	} ?>
-	   </div>	
-	</div>
-	<?php 
-	    echo '<div class="post-entry ym-col3">';
-	    echo '<div class="ym-cbox ym-clearfix">';	
+            } else {	
+                echo $leftbox;
+            } 
+            echo '</div></div>';
+            echo '<div class="post-entry ym-col3">';
+            echo '<div class="ym-cbox ym-clearfix">';	
 	} else {
 	     echo '<div class="post-entry ym-cbox">';
 	}
-	  if ($titleup==0) { ?>       
+	if ($titleup==0) { ?>       
 	    <div class="post-title"><h2>          
 	        <a href="<?php the_permalink(); ?>" rel="bookmark" title="<?php the_title(); ?>">
 	          <?php the_title(); ?>
                 </a>
 	    </h2></div>
-	   <?php }
+	 <?php }
 	   
-	   if (($showdatebox!=0) && ($showdateline==1)) { ?>
+	 if (($showdatebox!=0) && ($showdateline==1)) { ?>
 	    <p class="pubdateinfo"><?php piratenkleider_post_pubdateinfo(0); ?></p>	  	  
-	   <?php }
+	 <?php }
 	   
-	   echo get_piratenkleider_custom_excerpt($teaserlength); ?>     
-	  <?php if (($showdatebox>1)  && ($showdatebox<5)) {	?>  
+	 echo get_piratenkleider_custom_excerpt($teaserlength); ?>     
+	 <?php if ($showdatebox<5) {	?>  
 	 </div>    	
 	     <!-- .ym-ie-clearing only needed for IE6 & 7 support -->
 	    <div class="ym-ie-clearing">&nbsp;</div>	
@@ -1001,24 +995,36 @@ if ( ! function_exists( 'get_piratenkleider_firstvideo' ) ) :
 /*
  * Erstes Bild aus einem Artikel auslesen, wenn dies vorhanden ist
  */
-function get_piratenkleider_firstvideo($width = 300, $height = 169, $nocookie =1){
+function get_piratenkleider_firstvideo($width = 300, $height = 169, $nocookie =1, $searchplain =1){
     global $post;
     ob_start();
     ob_end_clean();
     $matches = array();
     preg_match('/src="([^\'"]*www\.youtube[^\'"]+)/i', $post->post_content, $matches);
- 
     if ((is_array($matches)) && (isset($matches[1]))) {
         $entry = $matches[1];	
-
         if (!empty($entry)){
 	    if ($nocookie==1) {
-		$entry = preg_replace('/youtube.com/','youtube-nocookie.com',$entry);
+		$entry = preg_replace('/youtube.com\/watch\?v=/','youtube-nocookie.com/embed/',$entry);
 	    }
             $htmlout = '<iframe width="'.$width.'" height="'.$height.'" src="'.$entry.'" frameborder="0" allowfullscreen></iframe>';
             return $htmlout;    
         }
-
+    }
+    // Schau noch nach YouTube-URLs die Plain im text sind. Hilfreich fuer
+    // Installationen auf Multisite ohne iFrame-Unterstützung
+    if ($searchplain==1) {
+       preg_match('/^\s*([^\'"]*www\.youtube[\/a-z0-9\.\-\?=]+)/i', $post->post_content, $matches);
+        if ((is_array($matches)) && (isset($matches[1]))) {
+            $entry = $matches[1];	
+            if (!empty($entry)){
+                if ($nocookie==1) {
+                    $entry = preg_replace('/youtube.com\/watch\?v=/','youtube-nocookie.com/embed/',$entry);
+                }
+                $htmlout = '<iframe width="'.$width.'" height="'.$height.'" src="'.$entry.'" frameborder="0" allowfullscreen></iframe>';
+                return $htmlout;    
+            }
+         }  
     }
 }
 endif;
@@ -1029,7 +1035,7 @@ if ( ! function_exists( 'get_piratenkleider_custom_excerpt' ) ) :
 /*
  * Erstellen des Extracts
  */
-function get_piratenkleider_custom_excerpt($length = 0, $continuenextline = 1){
+function get_piratenkleider_custom_excerpt($length = 0, $continuenextline = 1, $removeyoutube = 1){
   global $options;
   global $post;
       
@@ -1044,6 +1050,11 @@ function get_piratenkleider_custom_excerpt($length = 0, $continuenextline = 1){
   if ($length==0) {
       $length = $options['teaser_maxlength'];
   }
+  if ($removeyoutube==1) {
+   $excerpt = preg_replace('/^\s*([^\'"]*www\.youtube[\/a-z0-9\.\-\?=]+)/i','',$excerpt);
+   // preg_match('/^\s*([^\'"]*www\.youtube[\/a-z0-9\.\-\?=]+)/i', $excerpt, $matches);
+  }
+  
   $excerpt = strip_shortcodes($excerpt);
   $excerpt = strip_tags($excerpt); 
   if (mb_strlen($excerpt)<5) {
@@ -1388,7 +1399,6 @@ add_filter('get_post_audio_information','get_post_audio_fields',15);
 
 function piratenkleider_echo_player() {
     global $options;
-    global $defaultoptions;
       
     if ($options['aktiv-circleplayer']!=1) {
 	return;
