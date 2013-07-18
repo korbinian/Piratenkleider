@@ -100,10 +100,12 @@ $defaultoptions = array(
 	 * 3 = First video (or: thumbnail, first picture, fallback picture),
 	 * 4 = First video (or: first picture, thumbnail, fallback picture),
 	 * 5 = Nothing */ 
+    'category-teaser-floating'		    => 0,
     'category-teaser-dateline'		    => 0, /* 1 = show Date on line up of the text if no datebox */
     'category-teaser-maxlength-halfwidth'   => 200,        
     'category-teaser-titleup-halfwidth'	    => 1, /* Titles up */ 
     'category-teaser-datebox-halfwidth'	    => 1, 
+    'category-teaser-floating-halfwidth'    => 1,
     'category-teaser-dateline-halfwidth'    => 0, /* 1 = show Date on line up of the text if no datebox */    
 
     'num-article-startpage-fullwidth'       => 1,
@@ -122,11 +124,13 @@ $defaultoptions = array(
 
     'teaser_maxlength'              => 500,
     'teaser-titleup'		    => 1, /* Titles up */ 
-    'teaser-datebox'		    => 0, 	
+    'teaser-datebox'		    => 0,
+    'teaser-floating'		    => 0,
     'teaser-dateline'		    => 0, /* 1 = show Date on line up of the text if no datebox */
     'teaser-maxlength-halfwidth'   => 200,        
     'teaser-titleup-halfwidth'	    => 1, /* Titles up */ 
     'teaser-datebox-halfwidth'	    => 1, 
+    'teaser-floating-halfwidth'	    => 1,
     'teaser-dateline-halfwidth'    => 0, /* 1 = show Date on line up of the text if no datebox */      
     
     
@@ -996,7 +1000,13 @@ $setoptions = array(
 				5 => __("Nichts anzeigen","piratenkleider")), 
                   'parent'  => 'auszuege'
               ), 	              
-	       
+	      'teaser-floating' => array(
+                  'type'    => 'bool',
+                  'title'   => __( 'Flie&szlig;ender Text', 'piratenkleider' ),
+                  'label'   => __( 'Text umflie&szlig;t das Bild', 'piratenkleider' ),
+                  'default' => $defaultoptions['teaser-floating'],
+                  'parent'  => 'auszuege'
+              ),  
                'teaser-dateline' => array(
                   'type'    => 'bool',
                   'title'   => __( 'Datumszeile', 'piratenkleider' ),
@@ -1032,8 +1042,16 @@ $setoptions = array(
 				4 => __("Reihenfolge: Erstes Video, erstes Bild, Artikelbild oder Ersatzbild zeigen","piratenkleider"), 
 				5 => __("Nichts anzeigen","piratenkleider")), 
 
-                  'parent'  => 'auszuege'
+                  'parent'  => 'auszuege'		  
               ), 
+	      'teaser-floating-halfwidth' => array(
+                  'type'    => 'bool',
+                  'title'   => __( 'Flie&szlig;ender Text', 'piratenkleider' ),
+                  'label'   => __( 'Text umflie&szlig;t das Bild', 'piratenkleider' ),
+                  'default' => $defaultoptions['teaser-floating-halfwidth'],
+                  'parent'  => 'auszuege'
+              ), 	       
+	       
                'teaser-dateline-halfwidth' => array(
                   'type'    => 'bool',
                   'title'   => __( 'Datumszeile', 'piratenkleider' ),
@@ -1215,6 +1233,14 @@ $setoptions = array(
 
                   'parent'  => 'category'
               ), 
+	      'category-teaser-floating' => array(
+                  'type'    => 'bool',
+                  'title'   => __( 'Flie&szlig;ender Text', 'piratenkleider' ),
+                  'label'   => __( 'Text umflie&szlig;t das Bild', 'piratenkleider' ),
+                  'default' => $defaultoptions['category-teaser-floating'],
+                  'parent'  => 'category'
+              ), 
+	       
                'category-teaser-dateline' => array(
                   'type'    => 'bool',
                   'title'   => __( 'Datumszeile', 'piratenkleider' ),
@@ -1250,6 +1276,13 @@ $setoptions = array(
 				4 => __("Reihenfolge: Erstes Video, erstes Bild, Artikelbild oder Ersatzbild zeigen","piratenkleider"), 
 				5 => __("Nichts anzeigen","piratenkleider")), 
 
+                  'parent'  => 'category'
+              ), 
+	       'category-teaser-floating-halfwidth' => array(
+                  'type'    => 'bool',
+                  'title'   => __( 'Flie&szlig;ender Text', 'piratenkleider' ),
+                  'label'   => __( 'Text umflie&szlig;t das Bild', 'piratenkleider' ),
+                  'default' => $defaultoptions['category-teaser-floating-halfwidth'],
                   'parent'  => 'category'
               ), 
                'category-teaser-dateline-halfwidth' => array(

@@ -528,13 +528,13 @@ if ( ! function_exists( 'piratenkleider_post_teaser' ) ) :
 /**
  * Erstellung eines Artikelteasers
  */
-function piratenkleider_post_teaser($titleup = 1, $showdatebox = 1, $showdateline = 0, $teaserlength = 200, $thumbfallback = 1) {
+function piratenkleider_post_teaser($titleup = 1, $showdatebox = 1, $showdateline = 0, $teaserlength = 200, $thumbfallback = 1, $usefloating = 0) {
   global $options;
   global $post;
   
   $output = '';  
   $sizeclass='';
- $leftbox = '';
+  $leftbox = '';
   
  
   
@@ -613,7 +613,9 @@ function piratenkleider_post_teaser($titleup = 1, $showdatebox = 1, $showdatelin
   } else {
        $sizeclass = 'ym-column';
   }
-  
+  if ($usefloating==1) {
+      $sizeclass .= " usefloating";
+  }
   ?> 
   <div <?php post_class($sizeclass); ?> id="post-<?php the_ID(); ?>" >
     <?php 

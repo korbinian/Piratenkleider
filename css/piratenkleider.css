@@ -1463,7 +1463,7 @@ display: inline-block;
     width: 140px;
 }
 .withvideo .ym-col1 {
-    width: 300px;
+    width: 320px;
 }
 .ym-col3 { /* sidebar */
   margin: 0 0 0 70px;
@@ -1473,6 +1473,9 @@ display: inline-block;
 }
 .withvideo .ym-col3 {
    margin: 0 0 0 320px;
+}
+.usefloating .ym-col3 {
+    margin: 0;
 }
 .column1 .withvideo .ym-col1, 
 .column2 .withvideo .ym-col1, 
