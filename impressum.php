@@ -215,6 +215,7 @@ haftet allein der jeweilige Anbieter der Seite, auf welche verwiesen wurde.
       
 <h2>Urheberrecht</h2>
 
+<h3>Lizenz</h3>
 <p>
 Die durch die Seitenbetreiber erstellten Inhalte und Werke auf diesen Seiten 
 unterliegen dem deutschen Urheberrecht. 
@@ -275,7 +276,7 @@ stehen s&auml;mtliche Werke dieses Angebots unter einer
     
    
     <ul>
-        <li><a class="extern" href="http://piratenkleider.xwolf.de">Wolfgang Wiese</a> (Programmierung, Neudesign, CSS, Barrierefreiheit, Dokumentation, Features nach Version 1.1)</li>
+        <li><a class="extern" href="http://www.piratenkleider.de">Wolfgang Wiese</a> (Programmierung, Neudesign, CSS, Barrierefreiheit, Dokumentation, Features nach Version 1.1)</li>
         <li><a class="extern" href="http://www.korbinian-polk.de">Korbinian Polk</a> (Erstes Grunddesign und Erstellung eines Childtheme von TwentyTen)</li>               
     </ul>
         
@@ -293,16 +294,31 @@ stehen s&auml;mtliche Werke dieses Angebots unter einer
 
 <h2>Datenschutz</h2>
 <p>
-Die Nutzung unserer Webseite ist in der Regel ohne Angabe personenbezogener 
-Daten m&ouml;glich. Die Speicherung von Verbindungsdaten erfolgt nicht. Soweit auf 
-unseren Seiten personenbezogene Daten (beispielsweise Name, Anschrift oder 
-E-Mail-Adressen) erhoben werden, erfolgt dies, soweit m&ouml;glich, stets auf 
-freiwilliger Basis. Diese Daten werden ohne Ihre ausdr&uuml;ckliche Zustimmung
-nicht an Dritte weitergegeben. 
-</p><p>Wir weisen darauf hin, dass die Daten&uuml;bertragung 
-im Internet (z.B. bei der Kommunikation per E-Mail) Sicherheitsl&uuml;cken aufweisen 
+Die Nutzung des Webangebots ist ohne Angabe personenbezogener Daten m&ouml;glich. 
+Eine Speicherung von Verbindungsdaten (beispielsweise die aktuell genutzte 
+IP-Adresse in Kombination mit Zeitpunkt und einer Browseridentifikation) erfolgt 
+nicht.  
+Im System eintreffende IP-Adressen werden noch vor jeglicher Weiterverarbeitung
+anonymisiert.<br>
+Zu statistischen Zwecken werden Zugriffe auf Seiten des Webangebotes 
+verarbeitet. Dies erfolgt jedoch nur ohne personenbeziehbare Verbindungsdaten.
+</p>
+<p>
+Die Nutzung von Kommentaren erfolgt auf freiwilliger Basis. Hier
+werden zur Wiedererkennung der verschiedenen Kommentatoren Name und E-Mailadresse
+abgefragt. Diese Daten werden nicht verifiziert. Es ist jedem Benutzer möglich, 
+hier unzutreffende Daten einzugeben.
+</p>
+<p>Wir weisen darauf hin, dass die Daten&uuml;bertragung 
+im Internet allgemein (z.B. bei der Kommunikation per E-Mail) Sicherheitsl&uuml;cken aufweisen 
 kann. Ein l&uuml;ckenloser Schutz der Daten vor dem Zugriff durch Dritte ist nicht 
-m&ouml;glich. Der Nutzung von im Rahmen der Impressumspflicht ver&ouml;ffentlichten 
+m&ouml;glich. 
+</p>
+
+
+<h2>Sonstiges</h2>
+<p>
+Der Nutzung von im Rahmen der Impressumspflicht ver&ouml;ffentlichten 
 Kontaktdaten durch Dritte zur &Uuml;bersendung von nicht ausdr&uuml;cklich angeforderter 
 Werbung und Informationsmaterialien wird hiermit ausdr&uuml;cklich widersprochen. 
 Die Betreiber der Seiten behalten sich ausdr&uuml;cklich rechtliche Schritte im Falle 
