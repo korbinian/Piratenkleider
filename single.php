@@ -7,9 +7,7 @@
 	
 	<?php if ( have_posts() ) while ( have_posts() ) : the_post();         
         $custom_fields = get_post_custom();
-        ?>
 
-	<?php
 	    $image_url = '';
 	    $image_alt = '';
 	    if (has_post_thumbnail()) { 
@@ -58,8 +56,7 @@
 		   echo $options['post_disclaimer'];
 		   echo '</div>';
                 }
-		
-		
+				
 		piratenkleider_post_datumsbox();		
           ?>  
         

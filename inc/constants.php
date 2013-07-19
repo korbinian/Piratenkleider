@@ -75,7 +75,6 @@ $defaultoptions = array(
     'aktiv-startseite-tags'                 => 1,
     'aktiv-startseite-alteartikel'          => 1,
     'aktiv-startseite-alteartikel-num'      => 5,
-    'aktiv-images-instead-date'             => 0,
     'aktiv-avatar'                          => 1,
     'aktiv-dynamic-sidebar'                 => 0,
     'aktiv-autokeywords'		    => 0,
