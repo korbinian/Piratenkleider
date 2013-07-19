@@ -117,12 +117,16 @@
         </p>
         <?php get_search_form(); ?>
         <hr>
-      <?php endif; ?>   
+     <?php endif;
+     
+     
+     if ( is_active_sidebar( 'indexpages-widget-area' ) ) { 
+            dynamic_sidebar( 'indexpages-widget-area' ); 
+      } ?>
+	    
 	
 
 </div>
-	 
-	 
 	 
 
     </div>	    

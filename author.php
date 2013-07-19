@@ -99,9 +99,14 @@
                             <?php next_posts_link( __( '&larr; &Auml;ltere Beitr&auml;ge', 'piratenkleider' ) ); ?>
                             <?php previous_posts_link( __( 'Neuere Beitr&auml;ge &rarr;', 'piratenkleider' ) ); ?>
                         </p></div>       
-                <?php endif; ?>     
+                <?php endif; 
 
 
+	   
+	    if ( is_active_sidebar( 'indexpages-widget-area' ) ) { 
+		    dynamic_sidebar( 'indexpages-widget-area' ); 
+	    } ?>
+	   
        </div>
     </div>
 

@@ -97,16 +97,13 @@
                             <?php next_posts_link( __( '&larr; &Auml;ltere Beitr&auml;ge', 'piratenkleider' ) ); ?>
                             <?php previous_posts_link( __( 'Neuere Beitr&auml;ge &rarr;', 'piratenkleider' ) ); ?>
                           </p></div>       
-                <?php endif; ?>                
+                <?php endif;  
+		
+		if ( is_active_sidebar( 'indexpages-widget-area' ) ) { 
+		    dynamic_sidebar( 'indexpages-widget-area' ); 
+		} ?>
             
-            
-            
-              <div class="widget">
-                <h2><?php _e( '&Uuml;bersicht &uuml;ber die Schlagworte', 'piratenkleider' ); ?></h2>
-                <div class="tagcloud">                   
-                  <?php wp_tag_cloud(array('smallest'  => 14, 'largest'   => 28)); ?>                  
-                </div>    
-            </div> 
+
        </div>
     </div>
 

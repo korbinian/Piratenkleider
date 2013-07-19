@@ -51,10 +51,8 @@ function piratenkleider_widgets_init() {
         register_sidebar( array(
                 'name' => __( 'Startseite: Rechter Aktionlinkbereich', 'piratenkleider' ),
                 'id' => 'second-teaser-widget-area',
-                'description' => __( 'Dieser Bereich ist rechts neben den Slider
-                    und dem Hauptcontent positioniert. Wenn leer, werden hier
-                    die 3 Links zur Piratenwebsite gezeigt zum Mitmachen
-                    oder Spenden', 'piratenkleider' ),
+                'description' => __( 'Dieser Bereich ist rechts neben den Slider und dem Hauptcontent positioniert. Wenn leer, werden hier
+                    die Links zur Piratenwebsite gezeigt die unter Optionen definiert sind.', 'piratenkleider' ),
                 'before_widget' => '<div class="widget">',
                 'after_widget' => '</div>',
                 'before_title' => '<h3 class="widget-title">',
@@ -68,9 +66,7 @@ function piratenkleider_widgets_init() {
         register_sidebar( array(
                 'name' => __( 'Startseite: Links unten', 'piratenkleider' ),
                 'id' => 'first-startpage-widget-area',
-                'description' => __( 'Bereich links unterhalb der 3 Presseartikel. 
-                        Wenn leer, werden hier weitere Artikel aus
-                        der Kategorie "pm" gezeigt. ', 'piratenkleider' ),
+                'description' => __( 'Bereich links unterhalb der Artikel. Wenn leer, werden hier weitere Artikel gezeigt. ', 'piratenkleider' ),
                 'before_widget' => '<div class="widget">',
                 'after_widget' => '</div>',
                 'before_title' => '<h3>',
@@ -81,9 +77,7 @@ function piratenkleider_widgets_init() {
         register_sidebar( array(
                 'name' => __( 'Startseite: Rechts unten', 'piratenkleider' ),
                 'id' => 'second-startpage-widget-area',
-                'description' => __( 'Bereich rechts unterhalb der drei Presseartikel.
-                         Wenn leer, wird hier eine Schlagwortliste 
-                         gezeigt.', 'piratenkleider' ),
+                'description' => __( 'Bereich rechts unterhalb der Artikel der Startseite. Wenn leer, wird hier eine Schlagwortliste gezeigt.', 'piratenkleider' ),
                 'before_widget' => '<div class="widget">',
                 'after_widget' => '</div>',
                 'before_title' => '<h3 class="widget-title">',
@@ -117,6 +111,17 @@ function piratenkleider_widgets_init() {
                 'after_widget' => '</div>',
                 'before_title' => '<h2>',
                 'after_title' => '</h2>',
+        ) );
+	
+	// Widgets for indexpages (categories, tags, authorpage)
+        register_sidebar( array(
+                'name' => __( 'Indexseiten', 'piratenkleider' ),
+                'id' => 'indexpages-widget-area',
+                'description' => __( 'Widgetbereich unterhalb des Artikelindex einer Kategorie-, Autoren- oder Tagseite', 'piratenkleider' ),
+                'before_widget' => '<div class="widget">',
+                'after_widget' => '</div>',
+                'before_title' => '<h3 class="widget-title">',
+                'after_title' => '</h3>',
         ) );
 
 }
