@@ -315,6 +315,27 @@ kann. Ein l&uuml;ckenloser Schutz der Daten vor dem Zugriff durch Dritte ist nic
 m&ouml;glich. 
 </p>
 
+<h3>Einbindung von Diensten und Inhalten Dritter</h3>
+<p>
+Es kann vorkommen, dass innerhalb dieses Webangebots Inhalte Dritter,
+wie zum Beispiel Videos von YouTube, Kartenmaterial von Google-Maps,
+RSS-Feeds oder Grafiken von anderen Webseiten eingebunden werden.
+<br>
+Wir bemühen uns nur solche Inhalte zu verwenden, die direkt auf diesem
+Webauftritt liegen und somit keinem anderen Dienst ein Tracking
+ermöglichen.<br>
+Leider ist dies, insbesondere bei Videostreams und anderen Angeboten,
+die nur auf externen Plattformen bereit gestellt werden, oft
+nicht möglich. In diesen F&auml;llen haben wir keinen Einfluss darauf, falls
+die Dritt-Anbieter die IP-Adresse oder Eigenschaften des verwendeten
+Browsers speichern und auswerten.
+<br>
+Bei der Einbindung von Inhalten, bei denen die Möglichkeit besteht,
+Tracking zu umgehen, wird dieses genutzt. Beispielsweise bei der Nutzung
+von youtube-nocookie.com anstelle von youtube.com für die
+Einbindung von Videos.
+</p>
+
 
 <h2>Sonstiges</h2>
 <p>
