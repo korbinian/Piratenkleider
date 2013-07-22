@@ -8,8 +8,29 @@
 * @Author URI: http://www.xwolf.de 
 */
 
-@media only screen and (max-width: 1039px) {
-      .content-primary .columns {
+
+
+ 
+@media only screen and (max-width: 767px) {
+.row {
+  width: 100%;
+}     
+  .content-primary,  
+  .teaser .first-teaser-widget-area, 
+  .first-footer-widget-area {   
+    float: none;
+    width: 100%;
+    display: block;
+  }
+  
+  .content-aside, 
+  .teaser .second-teaser-widget-area, 
+  .second-footer-widget-area {
+   float: none;
+    width: 100%;
+     display: block;
+  }
+   .content-primary .columns {
       float: none;
       clear: both;
   }
@@ -34,9 +55,6 @@
   .content-primary .columns .column2 .post {
     padding-left: 0px;
   }
-  
-}    
-@media only screen and (max-width: 767px) {
     
  .withvideo .ym-col1, 
  .withvideo .ym-col3 {
@@ -90,6 +108,7 @@
 
 
 @media only screen and (max-width: 600px) {
+  
     .header {
         display: block;
         height: auto;
@@ -348,11 +367,7 @@
   .content-primary .switchoff, .content-primary .switchon {
       display: none;
   }
-   .content-aside {
-      width: 100%;
-      float: none;
-      min-height: 0;          
-  } 
+
   .content-primary .columns {
       float: none;
       clear: both;
@@ -445,9 +460,7 @@
 .footer .first-footer-widget-area,
 .footer .second-footer-widget-area {
     clear: both;
-    float: none;
     padding-top: 10px;
-    width: 100%;
     display: block;
 }
    

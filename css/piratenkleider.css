@@ -459,46 +459,6 @@ button, input[type="submit"],
   }
 
 
-.section {
-  padding: 0 10px 0 36px; }
-
-.skin {
-  padding: 20px; 
-}
-
-.row {
-  max-width: 1052px;
-  overflow: hidden; 
-  margin: 0 auto;
-} 
- 
-.skiplinks {
-  margin: 0; }
- .skiplinks li {
-    list-style: none;
-    width: 100%; }
- .skiplinks li a {
-    position: absolute;
-    display: block;
-    top: -100px; 
- }
- .skiplinks li a:focus, 
- .skiplinks li a:active {
-    position: static;
-    width: 100%;
-    display: block;
-    border: 0px solid;
-    background: #2d7dc5;
-    color: white;
-    outline: 0px;
-    text-align: center;
-    padding: 5px; 
- }
- .skiplinks li a:hover {
-    background: #ff8800;
-    color: black; 
- }
-
 /**
 * ----------------------------------------------------------------------- #
 *
@@ -592,7 +552,70 @@ button, input[type="submit"],
 .nobr {
     white-space: nowrap;
 }    
+    
+
+/**
+* ----------------------------------------------------------------------- #
+*
+* Structure
+*/ 
   
+.section {
+  padding: 0 10px 0 36px; }
+
+.skin {
+  padding: 20px; 
+}
+
+.row {
+  max-width: 1052px;
+  overflow: hidden; 
+  margin: 0 auto;
+  width: 1024px;
+} 
+
+  .content-primary,  
+  .teaser .first-teaser-widget-area, 
+  .first-footer-widget-area {   
+    float: left;
+    width: 705px;
+  }
+  
+  .content-aside, 
+  .teaser .second-teaser-widget-area, 
+  .second-footer-widget-area {
+    float: right;
+    width: 319px;
+  }
+ 
+.skiplinks {
+  margin: 0; }
+ .skiplinks li {
+    list-style: none;
+    width: 100%; }
+ .skiplinks li a {
+    position: absolute;
+    display: block;
+    top: -100px; 
+ }
+ .skiplinks li a:focus, 
+ .skiplinks li a:active {
+    position: static;
+    width: 100%;
+    display: block;
+    border: 0px solid;
+    background: #2d7dc5;
+    color: white;
+    outline: 0px;
+    text-align: center;
+    padding: 5px; 
+ }
+ .skiplinks li a:hover {
+    background: #ff8800;
+    color: black; 
+ }
+
+
   
   
 .header {
@@ -874,8 +897,7 @@ display: inline-block;
  }
 
 .teaser {
-/*  background: #ff8800 url("../images/int/bg-tags.png") -20% top fixed; */
-  height: 240px;
+    height: 240px;
 }
   .teaser .row {
     background: #c96a00;
@@ -886,12 +908,7 @@ display: inline-block;
     background: #ff8800;  
   } 
   
-  .teaser .first-teaser-widget-area {   
-    float: left;
-    width: 100%; }
-  .teaser .second-teaser-widget-area {
-    float: right;
-    width: 100%; }
+
   
 
 .second-teaser-widget-area .skin {
@@ -1033,11 +1050,8 @@ display: inline-block;
  #main-content {
      position: relative;
  } 
-.content {
-/*  background: #ff8800 url("../images/int/bg-tags.png") -20% top fixed; */
- }
+
 .content .row {
-   /*  overflow: hidden; */
     background: #ff8800;
     background: rgba(255, 136, 0, 0.7);
     -ms-word-break:break-word;
@@ -1879,13 +1893,12 @@ img.wp-smiley {
 
 .content-aside {
     background: #ff8800 url("../images/int/bg-tags.png") -20% top; 
-    float: right;
-    width: 33%; 
 }
 
 .content-aside .skin {
    background: #ff8800;
    background: rgba(255, 136, 0, 0.7); 
+   padding: 20px 6px 20px 6px;
 }
   
 .content-aside a {
@@ -1894,7 +1907,6 @@ img.wp-smiley {
 }
 .content-aside a:hover,.content-aside a:focus, .content-aside a:visited  {
     color: #000;
-   /* background: #d97300;  */
    text-decoration: underline;
 }
 
@@ -2107,41 +2119,166 @@ img.wp-smiley {
     font-style: italic;    
  }
 
- .subcontent {
-  background: black url("../images/int/bg-tags_gray.jpg") -20% top; }
-.subcontent .row {
-    background: rgba(0, 0, 0, 0.2);
-    color: #eeeeee; }
-.subcontent p, .subcontent form {
-    margin-bottom: 18px; }
-.subcontent h2, 
-.subcontent h3, 
-.subcontent h4 {
-    margin-bottom: 10px; }
-.subcontent a {
-    background: black;
-    color: #2d7dc5;
-    padding: 0 5px;
-    display: inline-block;
-    margin: 0 2px 2px 0; }
-.subcontent a:hover {
-    background: #2d7dc5;
-    color: white;
-    -webkit-transition: all 0.2s ease-in-out;
-    -moz-transition: all 0.2s ease-in-out;
-    -ms-transition: all 0.2s ease-in-out;
-    -o-transition: all 0.2s ease-in-out;
-    transition: all 0.2s ease-in-out; 
-}
-.subcontent ul {
-    margin: 0;
-    list-style: none;
-    margin-bottom: 10px; }
- .subcontent ul li {
-    margin-bottom: 0; }
 
+
+  .header {
+    height: 225px; 
+    width: 100%;
+    background-color: #eeeeee;
+    background-repeat: repeat-x;
+    background-position: left bottom;
+  }
+
+  .nav-top ul {
+    display: block; 
+  }
+
+  .nav-top {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: auto;
+    height: 32px; 
+  }
+  
+  .nav-top a {      
+      display: block; 
+  }
+  .nav-top ul.socialmedia {
+      float: left; 
+  }
+  .nav-top div.menu-header {
+      float: left;
+  }
+
+  .nav-top div.menu-header ul.menu li {
+          float: left; 
+  }
+  .nav-top div.menu-header ul.menu li a {
+        line-height: 30px;
+        padding: 0 10px;
+        color: black; 
+  }
+
+  .nav-top div.menu-header ul.menu li a:hover,
+  .nav-top div.menu-header ul.menu li a:focus {
+        color: #2d7dc5; 
+  }        
+        
+  .nav-top form.searchform {
+      float: left;
+      width: 200px;
+      height: 30px;     
+      padding: 3px 5px 0 5px; 
+    }
+  
+   .nav-top form.searchform .searchsubmit {
+        top: 3px;
+        right: 3px;
+        padding: 0;
+        width: 24px;
+        height: 24px; 
+   }
+   .nav-top form.searchform input {
+        padding: 2px;        
+    }
+
+  .sticker {
+    position: absolute;
+    top: 50px;
+    right: 8%; 
+  }
+  .sticker .skin {
+      padding: 10px; 
+  }
+
+  .header .branding {
+    padding-top: 40px;
+    padding-bottom: 0px;
+    height: 180px;
     
-    
+  }
+  .header .newsletter {    
+    width: 340px;
+    margin: 0; 
+    position: absolute;
+    bottom: 0px;
+    right: 5%;        
+  }
+ .header .newsletter .skin {
+      -webkit-border-radius-topleft: 3px;
+      -webkit-border-radius-topright: 3px;
+      -webkit-border-radius-bottomright: 3px;
+      -webkit-border-radius-bottomleft: 3px;
+      -moz-border-radius-topleft: 3px;
+      -moz-border-radius-topright: 3px;
+      -moz-border-radius-bottomright: 3px;
+      -moz-border-radius-bottomleft: 3px;
+      -ms-border-radius-topleft: 3px;
+      -ms-border-radius-topright: 3px;
+      -ms-border-radius-bottomright: 3px;
+      -ms-border-radius-bottomleft: 3px;
+      -o-border-radius-topleft: 3px;
+      -o-border-radius-topright: 3px;
+      -o-border-radius-bottomright: 3px;
+      -o-border-radius-bottomleft: 3px;
+      border-top-left-radius: 3px;
+      border-top-right-radius: 3px;
+      border-bottom-right-radius: 3px;
+      border-bottom-left-radius: 3px; 
+}
+ 
+ .header .newsletter .skin form {
+        padding-bottom: 5px; 
+ }
+ .header .newsletter .skin form input[type="text"] {
+          margin-bottom: 0px; 
+ }
+      
+
+
+
+  .content-primary {
+    min-height: 500px;
+    background: white;
+    font-size: 1em;
+    position: relative; 
+    line-height: 1.6em; 
+    display: block;
+   
+  }
+  .content-primary .skin {
+      margin-left: 0px;
+  }    
+  .content-primary .first-startpage-widget-area {
+      width: 50%;
+      float: left;
+      padding-top: 10px; 
+  }
+    .content-primary .first-startpage-widget-area .skin {
+        padding-right: 10px; 
+    }
+    .content-primary .second-startpage-widget-area {
+      width: 50%;
+      float: right;
+      padding-top: 10px; 
+    }
+    .content-primary .second-startpage-widget-area .skin {
+        padding-left: 10px; 
+    }
+
+
+  .columns .column1 {
+    width: 50%; }
+    .columns .column1 .post {
+      padding-right: 20px; }
+  .columns .column2 {
+    width: 50%; }
+    .columns .column2 .post {
+      padding-left: 20px; }
+      .columns .column2 .post .cal-icon {
+        margin-left: 0; }
+
     
 .footer {
   background: black url("../images/int/bg-tags_gray.jpg") -20% top fixed;
@@ -2212,6 +2349,7 @@ img.wp-smiley {
   -o-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out; 
 }
+
 
 /* Widgets --------------------------------------------------------------------*/
 .wpcf7-mail-sent-ok {
@@ -2366,194 +2504,6 @@ div.ics-calendar-holder .ics-calendar-event {
     -o-border-radius: 2px; 
     border-radius: 2px; 
 }
-
-
-  .header {
-    height: 225px; 
-    width: 100%;
-    background-color: #eeeeee;
-    background-repeat: repeat-x;
-    background-position: left bottom;
-  }
-
-  .nav-top ul {
-    display: block; 
-  }
-
-  .nav-top {
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: auto;
-    height: 32px; 
-  }
-  
-  .nav-top a {      
-      display: block; 
-  }
-  .nav-top ul.socialmedia {
-      float: left; 
-  }
-  .nav-top div.menu-header {
-      float: left;
-  }
-
-  .nav-top div.menu-header ul.menu li {
-          float: left; 
-  }
-  .nav-top div.menu-header ul.menu li a {
-        line-height: 30px;
-        padding: 0 10px;
-        color: black; 
-  }
-
-  .nav-top div.menu-header ul.menu li a:hover,
-  .nav-top div.menu-header ul.menu li a:focus {
-        color: #2d7dc5; 
-  }        
-        
-  .nav-top form.searchform {
-      float: left;
-      width: 200px;
-      height: 30px;     
-      padding: 3px 5px 0 5px; 
-    }
-  
-   .nav-top form.searchform .searchsubmit {
-        top: 3px;
-        right: 3px;
-        padding: 0;
-        width: 24px;
-        height: 24px; 
-   }
-   .nav-top form.searchform input {
-        padding: 2px;        
-    }
-
-  .sticker {
-    position: absolute;
-    top: 50px;
-    right: 8%; 
-  }
-  .sticker .skin {
-      padding: 10px; 
-  }
-
-  .header .branding {
-    padding-top: 40px;
-    padding-bottom: 0px;
-    height: 180px;
-    
-  }
-  .header .newsletter {    
-    width: 340px;
-    margin: 0; 
-    position: absolute;
-    bottom: 0px;
-    right: 5%;        
-  }
- .header .newsletter .skin {
-      -webkit-border-radius-topleft: 3px;
-      -webkit-border-radius-topright: 3px;
-      -webkit-border-radius-bottomright: 3px;
-      -webkit-border-radius-bottomleft: 3px;
-      -moz-border-radius-topleft: 3px;
-      -moz-border-radius-topright: 3px;
-      -moz-border-radius-bottomright: 3px;
-      -moz-border-radius-bottomleft: 3px;
-      -ms-border-radius-topleft: 3px;
-      -ms-border-radius-topright: 3px;
-      -ms-border-radius-bottomright: 3px;
-      -ms-border-radius-bottomleft: 3px;
-      -o-border-radius-topleft: 3px;
-      -o-border-radius-topright: 3px;
-      -o-border-radius-bottomright: 3px;
-      -o-border-radius-bottomleft: 3px;
-      border-top-left-radius: 3px;
-      border-top-right-radius: 3px;
-      border-bottom-right-radius: 3px;
-      border-bottom-left-radius: 3px; 
-}
- 
- .header .newsletter .skin form {
-        padding-bottom: 5px; 
- }
- .header .newsletter .skin form input[type="text"] {
-          margin-bottom: 0px; 
- }
-      
-
-  .teaser .first-teaser-widget-area {
-    width: 67%; 
-  }
-  .teaser .second-teaser-widget-area {
-    width: 33%; 
-  }
-
-  .content-primary {
-    float: left;
-    width: 67%;
-    min-height: 500px;
-    background: white;
-    font-size: 1em;
-    position: relative; 
-    line-height: 1.6em; 
-    display: block;
-   
-  }
-  .content-primary .skin {
-      margin-left: 0px;
-  }    
-  .content-primary .first-startpage-widget-area {
-      width: 50%;
-      float: left;
-      padding-top: 10px; 
-  }
-    .content-primary .first-startpage-widget-area .skin {
-        padding-right: 10px; 
-    }
-    .content-primary .second-startpage-widget-area {
-      width: 50%;
-      float: right;
-      padding-top: 10px; 
-    }
-    .content-primary .second-startpage-widget-area .skin {
-        padding-left: 10px; 
-    }
-
-
-  .columns .column1 {
-    width: 50%; }
-    .columns .column1 .post {
-      padding-right: 20px; }
-  .columns .column2 {
-    width: 50%; }
-    .columns .column2 .post {
-      padding-left: 20px; }
-      .columns .column2 .post .cal-icon {
-        margin-left: 0; }
-
-  .first-subcontent-widget-area {
-    float: left;
-    width: 33%; }
-
-  .second-subcontent-widget-area {
-    float: left;
-    width: 33%; }
-
-  .third-subcontent-widget-area {
-    float: right;
-    width: 33%; }
-
-  .first-footer-widget-area {
-    float: left;
-    width: 67%; }
-
-  .second-footer-widget-area {
-    float: right;
-    width: 33%; }
-
-
 /* Besondere Tools und Plugin-Unterstuetzung----------------------------------*/
 .single .social_share_privacy ul {
      margin: 0; }

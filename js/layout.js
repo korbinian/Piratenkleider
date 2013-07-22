@@ -56,10 +56,10 @@ jQuery(document).ready(function($) {
 	'width' : '0'   
     };
     var $cssPrimaryOnViewSidebar = {
-	'width' : '67%' 
+	'width' : '705px' 
     };
     var $cssASideOnViewSidebar = {
-	'width' : '33%' 
+	'width' : '319px' 
     };
     
 
@@ -95,7 +95,7 @@ jQuery(document).ready(function($) {
 
     
    var breite = $(window).width();
-   if (breite > 600) {
+   if (breite > 1000) {
     $.SetOnSwitch();
     $.SetOffSwitch();
     $(".switchon").toggle();
