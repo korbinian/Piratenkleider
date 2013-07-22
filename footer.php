@@ -36,7 +36,7 @@
         if (! isset($animationType)) $animationType = 'slide';        
         ?>
        <script src="<?php echo $defaultoptions['src-flexslider'] ?>"></script>      
-       <script type="text/javascript" charset="utf-8">
+       <script type="text/javascript">
         /* <![CDATA[ */
 	jQuery(document).ready(function($) {
        $('.flexslider').flexslider({
