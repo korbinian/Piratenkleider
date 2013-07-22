@@ -1738,10 +1738,12 @@ img.wp-smiley {
 .home .post-entry p {
   margin-bottom: 0px; }
 
+/*
 .single .post-title, 
 .content-primary .skin h1 {  
   margin-bottom: 40px; 
 }
+ */
 .single .post-entry p {
   margin-bottom: 20px; }
 
