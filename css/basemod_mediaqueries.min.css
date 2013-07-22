@@ -1,4 +1,10 @@
 @media only screen and (max-width: 767px) {
+.row{width:100%;}
+.content-primary .columns{float:none;clear:both;}
+.content-primary .columns .column0,.content-primary .columns .column1,.content-primary .columns .column2{float:none;width:100%;display:block;clear:both;}
+.content-primary .columns .column2:before{content:"";display:block;border:0;margin-bottom:15px;margin-top:5px;background:url(../images/jolly.png) no-repeat center center;height:26px;padding:0;}
+.content-primary .columns .column2 .post{padding-left:0;}
+.withvideo .ym-col1,.withvideo .ym-col3{float:none;width:100%;margin:0;}
 .flexslider,.flexslider img{overflow:hidden;}
 .content-aside .flexslider{height:auto;margin-bottom:10px;}
 .logo{max-width:300px;top:0;}
@@ -7,6 +13,7 @@
 .symbolbild{height:240px;overflow:hidden;}
 .teaserlinks ul li a{padding-left:10px;}
 .nav-main ul.menu li a{padding:12px 5px 10px;}
+.content-primary,.teaser .first-teaser-widget-area,.first-footer-widget-area,.content-aside,.teaser .second-teaser-widget-area,.second-footer-widget-area{float:none;width:100%;display:block;}
 .sticker,.teaserlinks .symbol:before{display:none;}
 }
 @media only screen and (max-width: 600px) {
@@ -36,10 +43,12 @@
 .nav-main ul.menu li a:hover{background:#4e96d7;}
 .nav-main ul li{float:none;width:100%;}
 .section{padding:0;}
+.content-primary{width:100%;float:none;min-height:0;}
 .content-primary .columns{float:none;clear:both;}
 .content-primary .columns .column0,.content-primary .columns .column1,.content-primary .columns .column2{float:none;width:100%;display:block;clear:both;}
 .content-primary .columns .column2:before{content:"";display:block;border:0;margin-bottom:15px;margin-top:5px;background:url(../images/jolly.png) no-repeat center center;height:26px;padding:0;}
 .content-primary .columns .column2 .post{padding-left:0;}
+.content-primary .first-startpage-widget-area,.content-primary .second-startpage-widget-area{clear:both;float:none;padding-top:10px;width:100%;display:block;}
 .content-primary .skin{padding:10px 5px 5px;}
 .content-header,.content-header-big{margin-left:0;height:11em;overflow:hidden;}
 .content-header h1,.content-header-big h1{z-index:100;top:10px;}
@@ -49,15 +58,14 @@
 .post-comments ol li{border:2px solid rgba(0,0,0,0.2);}
 .post-comments ol li .comment-details{color:#222;float:none;width:auto;font-size:1em;font-weight:700;padding-right:2%;text-align:left;max-width:none;min-height:50px;background:none repeat scroll 0 0 rgba(255,255,255,0.4);}
 .post-comments ol li .comment-body{float:none;width:auto;background:#FFF;padding:5px;}
+.footer .first-footer-widget-area,.footer .second-footer-widget-area{clear:both;padding-top:10px;display:block;}
 .footer .first-footer-widget-area .skin{padding-bottom:0;}
-#socialmedia_iconbar{position:relative;display:inline-block;top:inherit;left:inherit;width:auto;background:#000;border-radius:3px;z-index:10;text-align:center;margin:0 auto;padding:2px;width:100%;}
+#socialmedia_iconbar{position:relative;display:inline-block;top:inherit;left:inherit;background:#000;border-radius:3px;z-index:10;text-align:center;width:100%;margin:0 auto;padding:2px;}
 .home #socialmedia_iconbar{top:inherit;}
-#socialmedia_iconbar ul.socialmedia{list-style:none;display: inline-block;}
+#socialmedia_iconbar ul.socialmedia{list-style:none;display:inline-block;}
 #socialmedia_iconbar ul.socialmedia li{width:34px;}
 .sticker,.teaser,#skiplink-nav,#skiplink-search,.nav-main ul li ul,.content-primary .switchoff,.content-primary .switchon,.content-aside .flexslider,.post-comments ol li .reply{display:none;}
 .skiplinks li a:focus,.skiplinks li a:hover,.nav-main ul.menu li a:focus,.nav-main ul.menu li a:hover{background:#24639b;color:#000;}
-.content-primary,.content-aside{width:100%;float:none;min-height:0;}
-.content-primary .first-startpage-widget-area,.content-primary .second-startpage-widget-area,.footer .first-footer-widget-area,.footer .second-footer-widget-area{clear:both;float:none;padding-top:10px;width:100%;display:block;}
 .footer .second-footer-widget-area,.footer .second-footer-widget-area .skin{padding-top:0;}
 }
 @media only screen and (max-width: 479px) {
