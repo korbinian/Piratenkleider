@@ -2,7 +2,7 @@ Piratenkleider
 - Wordpress-Theme für Webauftritte der Piratenpartei 
 =================================================
 
-Version 2.18 von Wolfgang Wiese (xwolf), 22. Juli 2013
+Version 2.18 von Wolfgang Wiese (xwolf), 23. Juli 2013
 
 WORKING-RELEASE - DONT USE PRODUCTIVE
 
@@ -143,23 +143,31 @@ BEREICHE/WIDGETS
     Dieser 3 Teaserlinks können über die Theme-Option Takelage setzen
     verändert werden. Wird das Widget genommen, wird dessen Inhalt jedoch
     diese Änderungen überschreiben und der Widgetinhalt angezeigt.
-5. "Startseite: Links unten" 
+5. "Startseite: Introbereich"
+    Dieser Bereich befindet sich unter dem SLider bzw. Teaser auf der
+    Startseite und oberhalb des Inhalts. 
+    Es ist eine Möglichkeit, um feststehenden Inhalt unabhängig von den
+    aktuellen Artikeln auf der Startseite zu plazieren. 
+6. "Startseite: Links unten" 
     Dies ist auf der Startseite der Bereich rechts neben der Liste der weiteren
     Artikel.
     Es empfiehlt das Widget mit der Schlagwortliste zu füllen.
-6. "Startseite: Rechts unten" 
+7. "Startseite: Rechts unten" 
     Bereich rechts unterhalb der drei Presseartikel.
     Wenn leer, wird hier eine Schlagwortliste gezeigt.
-7. "Fußbereich: Linke Seite"
+8. "Fußbereich: Linke Seite"
    Bereich im Fußteil unter dem Haupttextbereich. Dieser Bereich eignet sich 
    insbesondere für externe Links zu anderen Piratenwebsites auf regionaler oder 
    überegionaler Ebene. Diese werden dann als Menu mit externen Links definiert 
    und dann als Widget dieser Sidebar zugeordnet. Wenn leer, wird hier nichts 
     angezeigt.
-8. "Fußbereich: Rechte Spalte"
+9. "Fußbereich: Rechte Spalte"
    Rechte Spalte im Fußbereich. Wenn leer, erscheint hier das technische Menu 
    (siehe Menüs). Wenn auch dieses nicht definiert ist, wird die Blogadresse und 
    dessen RSS-Feedadresse gezeigt
+10. "Indexseiten"
+   Dieser Bereich wird bei Indexseiten (Kategorien, Tags, Authorseiten, etc.)
+   unterhalb der jeweiligen Artikelliste plaziert.  
 
 
 THEME-OPTION 
@@ -493,3 +501,4 @@ Administrative Hinweise für Wordpress Theme-Editoren:
     und nur eine Datumsbox zeigen anstelle des Thumbnails.
     Ebenso können YouTube-Videos angezeigt werden.
    (Hinweis: Diese werden per Default auf youtube-nocookie.com umgeschrieben.)
+

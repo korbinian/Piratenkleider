@@ -70,30 +70,73 @@
               Die nachfolgende Erkl&auml;rung gibt Ihnen einen &Uuml;berblick dar&uuml;ber, wie wir diesen Schutz gew&auml;hrleisten 
               und welche Art von Daten zu welchem Zweck erhoben werden.</p>
           
-               
-              <h2>Datenverarbeitung auf dieser Internetseite</h2>
-<p>Von ihrem Computer werden verschiedene Daten an uns &uuml;bermittelt, diese sind 
-    je nach Browser- und Betriebssytemtyp, -version und -einstellung unterschiedlich. 
+               <h2>Datenverarbeitung auf diesem Webangebot</h2>
+
+<p>
+Die Nutzung des Webangebots ist ohne Angabe personenbezogener Daten m&ouml;glich. 
+Eine Speicherung von Verbindungsdaten (beispielsweise die aktuell genutzte 
+IP-Adresse in Kombination mit Zeitpunkt und einer Browseridentifikation) erfolgt 
+nicht.  
+Im System eintreffende IP-Adressen werden noch vor jeglicher Weiterverarbeitung
+anonymisiert.<br>
+Zu statistischen Zwecken werden Zugriffe auf Seiten des Webangebotes 
+verarbeitet. Dies erfolgt jedoch nur ohne personenbeziehbare Verbindungsdaten.
+</p>
+<p>
+Die Nutzung von Kommentaren erfolgt auf freiwilliger Basis. Hier
+werden zur Wiedererkennung der verschiedenen Kommentatoren Name und E-Mailadresse
+abgefragt. Diese Daten werden nicht verifiziert. Es ist jedem Benutzer möglich, 
+hier unzutreffende Daten einzugeben.
+</p>
+<p>Wir weisen darauf hin, dass die Daten&uuml;bertragung 
+im Internet allgemein (z.B. bei der Kommunikation per E-Mail) Sicherheitsl&uuml;cken aufweisen 
+kann. Ein l&uuml;ckenloser Schutz der Daten vor dem Zugriff durch Dritte ist nicht 
+m&ouml;glich. 
+</p>
+
+<p>Von ihrem Computer werden verschiedene Daten an aufgerufene Webangebote &uuml;bermittelt. 
+    Diese sind je nach Browser- und Betriebssytemtyp, -version und -einstellung unterschiedlich. 
     Einige davon k&ouml;nnen sein:</p>
 <ul>
-<li>Browsertyp/ -version</li>
-<li>verwendetes Betriebssystem</li>
-<li>Referrer URL (die zuvor besuchte Seite)</li>
-<li>Hostname des zugreifenden Rechners (IP Adresse)</li>
-<li>Uhrzeit der Serveranfrage.</li>
+    <li>Browsertyp/ -version</li>
+    <li>verwendetes Betriebssystem</li>
+    <li>Referrer URL (die zuvor besuchte Seite)</li>
+    <li>Hostname des zugreifenden Rechners (IP-Adresse)</li>
+    <li>Uhrzeit der Serveranfrage.</li>
 </ul>
-<p>Die Piratenpartei lehnt eine Speicherung derartiger Daten strikt ab.<br />
-Sollten unsere Systeme allerdings einmal zu Straftaten missbraucht werden, 
-kann es passieren, das wir dazu verpflichtet werden, diese und andere Daten zu
-speichern und den Ermittlungsbeh&ouml;rden auszuh&auml;ndigen. Soweit es uns erlaubt ist 
-werden wir sie in einem solchen Fall davon unterrichten. Im Falle eines laufenden 
-Ermitlungsverfahrens m&uuml;ssten wir diese Daten an Ermitlungsbeh&ouml;rden oder
-Privatpersonen herausgeben. In unserem Wiki k&ouml;nnen sie nachlesen, wie sie 
-die <a class="extern" href="http://wiki.piratenpartei.de/HowTo">&Uuml;bermittlung aller in diesem 
-    Absatz genannten Daten an uns und andere unterbinden</a> k&ouml;nnen.</p>
 
+<p>
+   Auf den Server dieses Webangebotes werden von diesen Datensätzen jene die eine
+   Identifizierung ermöglichen, anonymisiert: Die IP-Adresse wird mit einer anderen
+   Adresse überschrieben; Daten zum Browsertyp und Version werden gelöscht.
+</p>
+
+
+
+<h3>Einbindung von Diensten und Inhalten Dritter</h3>
+<p>
+Es kann vorkommen, dass innerhalb dieses Webangebots Inhalte Dritter,
+wie zum Beispiel Videos von YouTube, Kartenmaterial von Google-Maps,
+RSS-Feeds oder Grafiken von anderen Webseiten eingebunden werden.
+<br>
+Wir bemühen uns nur solche Inhalte zu verwenden, die direkt auf diesem
+Webauftritt liegen und somit keinem anderen Dienst ein Tracking
+ermöglichen.<br>
+Leider ist dies, insbesondere bei Videostreams und anderen Angeboten,
+die nur auf externen Plattformen bereit gestellt werden, oft
+nicht möglich. In diesen F&auml;llen haben wir keinen Einfluss darauf, falls
+die Dritt-Anbieter die IP-Adresse oder Eigenschaften des verwendeten
+Browsers speichern und auswerten.
+<br>
+Bei der Einbindung von Inhalten, bei denen die Möglichkeit besteht,
+Tracking zu umgehen, wird dieses genutzt. Beispielsweise bei der Nutzung
+von youtube-nocookie.com anstelle von youtube.com für die
+Einbindung von Videos.
+</p>
+               
+        
 <h2>Cookies</h2>
-<p>Die Internetseiten verwenden an mehreren Stellen sogenannte Cookies.
+<p>Das Webangebot kann an einigen Stellen sogenannte Cookies verwenden.
     Cookies sind kleine Textdateien, die auf Ihrem Rechner abgelegt werden 
     und die Ihr Browser speichert. Cookies richten auf Ihrem Rechner keinen 
     Schaden an und enthalten keine Viren. Die meisten der von uns verwendeten 

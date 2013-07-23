@@ -4,7 +4,7 @@
  *
  * @source http://github.com/xwolfde/Piratenkleider
  * @creator xwolf
- * @version 2.17.10
+ * @version 2.18
  * @licence CC-BY-SA 3.0 
  */
 
@@ -568,8 +568,7 @@ function piratenkleider_post_teaser($titleup = 1, $showdatebox = 1, $showdatelin
 		    if (!isset($output)) { $output = $fallbackimg;}		    
 		    if ((isset($output)) && ( strlen(trim($output))<10 )) {$output = $fallbackimg;}			    		    
 		} elseif ($showdatebox==3) {
-		    if ((!isset($output)) && (isset($firstvideo))) { $output = $firstvideo; $sizeclass = 'ym-column withvideo'; }		    
- 		    
+		    if ((!isset($output)) && (isset($firstvideo))) { $output = $firstvideo; $sizeclass = 'ym-column withvideo'; }		     		    
 		    if (!isset($output)) { $output = $thumbnailcode;}
 		    if (!isset($output)) { $output = $firstpic;}
 		    if (!isset($output)) { $output = $fallbackimg;}
@@ -577,7 +576,6 @@ function piratenkleider_post_teaser($titleup = 1, $showdatebox = 1, $showdatelin
 		    
 		} elseif ($showdatebox==4) {
 		    if ((!isset($output)) && (isset($firstvideo))) { $output = $firstvideo; $sizeclass = 'ym-column withvideo'; }		    
-
 		    if (!isset($output)) { $output = $firstpic;}
 		    if (!isset($output)) { $output = $thumbnailcode;}
 		    if (!isset($output)) { $output = $fallbackimg;}
@@ -662,9 +660,8 @@ function piratenkleider_post_teaser($titleup = 1, $showdatebox = 1, $showdatelin
 	   
 	 echo get_piratenkleider_custom_excerpt($teaserlength); ?>     
 	 <?php if ($showdatebox<5) {	?>  
-	 </div>    	
-	     <!-- .ym-ie-clearing only needed for IE6 & 7 support -->
-	    <div class="ym-ie-clearing">&nbsp;</div>	
+            </div>    	
+            <div class="ym-ie-clearing">&nbsp;</div>	
 	<?php } ?>
     </div>
     
@@ -1006,7 +1003,7 @@ function get_piratenkleider_firstvideo($width = 300, $height = 169, $nocookie =1
                 if ($nocookie==1) {
                     $entry = preg_replace('/youtube.com\/watch\?v=/','youtube-nocookie.com/embed/',$entry);
                 }
-                $htmlout = '<iframe width="'.$width.'" height="'.$height.'" src="'.$entry.'" frameborder="0" allowfullscreen></iframe>';
+                $htmlout = '<iframe width="'.$width.'" height="'.$height.'" src="'.$entry.'" allowfullscreen></iframe>';
                 return $htmlout;    
             }
          }  
@@ -1301,8 +1298,6 @@ function dimox_breadcrumbs() {
     echo '</div>'; 
   }
 }
-
-
 
  
 

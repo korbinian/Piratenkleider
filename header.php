@@ -101,15 +101,15 @@ if ((isset( $options['meta-author'] )) && ( strlen(trim($options['meta-author'])
 </head>
                       
 <body <?php body_class(); ?>>
-
-	<ul id="top" role="navigation" class="nav skiplinks">		
+        <nav role="navigation">
+            <ul id="top" class="nav skiplinks">		
 		<li><a class="ym-skip" id="skiplink-nav" href="#nav"><?php _e( 'Zur Navigation springen.', 'piratenkleider' ); ?></a></li>
 		<li><a class="ym-skip" id="skiplink-content" href="#main-content"><?php _e( 'Zum Inhalt springen.', 'piratenkleider' ); ?></a></li>
 		<?php if ( $options['aktiv-suche'] == "1" ){ ?>
                 <li><a class="ym-skip" id="skiplink-search" href="#searchform"><?php _e( 'Zur Suche springen.', 'piratenkleider' ); ?></a></li>
 		<?php } ?>
-	</ul>
-
+            </ul>
+        </nav>
 
 	<div class="section header">
 		<div class="row">
@@ -153,17 +153,21 @@ if ((isset( $options['meta-author'] )) && ( strlen(trim($options['meta-author'])
                                 } 
 
                                 } 
-                                if ( $options['aktiv-suche'] == "1" ){
-                                    echo '<div id="searchform">';
-                                    get_search_form(); 
-                                    echo '</div>';
-
-                                }
-                                ?>
+                                if ( $options['aktiv-suche'] == "1" ){ ?>
+                                    <div id="searchform">
+                                    <h2 class="skip"><?php _e("Suche", 'piratenkleider'); ?></h2>
+                                    <form method="get" class="searchform" action="<?php echo home_url(); ?>/">
+                                            <label class="visuallyhidden" for="s"><?php _e("Suche nach", 'piratenkleider'); ?>:</label>
+                                            <input type="text" value="<?php the_search_query(); ?>" name="s" id="s" placeholder="<?php _e("Suchbegriff eingeben", 'piratenkleider'); ?>"  
+                                                onfocus="if(this.value=='<?php _e("Suchbegriff eingeben", 'piratenkleider'); ?>')this.value='';" onblur="if(this.value=='')this.value='<?php _e("Suchbegriff eingeben", 'piratenkleider'); ?>';" />
+                                            <input type="submit" class="searchsubmit" value="<?php _e("Suchen", 'piratenkleider'); ?>" />
+                                    </form>
+                                    </div>
+                                 <?php } ?>
                                 
 			</div>
-                   
-			<div class="nav-main" role="navigation" id="nav">
+                        <nav role="navigation">
+			<div class="nav-main"  id="nav">
 				<h2 class="skip"><?php _e( 'Navigation', 'piratenkleider' ); ?></h2>
 				<?php 
                                 if ( has_nav_menu( 'primary' ) ) {
@@ -180,7 +184,7 @@ if ((isset( $options['meta-author'] )) && ( strlen(trim($options['meta-author'])
                                 <?php  } ?>
                                                                      
 			</div>
-
+                        </nav>        
                     <?php if ( $options['defaultwerbesticker'] == "1" ){ ?>
          
 			<div class="sticker">

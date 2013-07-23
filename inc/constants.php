@@ -5,7 +5,7 @@
  **/ 
 
 $defaultoptions = array(
-    'js-version'                    => '2.17',
+    'js-version'                    => '2.18',
     'content-width'                 => 665,
     'logo'                          => get_template_directory_uri() .'/images/logo.png',
     'logo-width'                    => 300,

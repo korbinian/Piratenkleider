@@ -58,9 +58,19 @@ function piratenkleider_widgets_init() {
                 'before_title' => '<h3 class="widget-title">',
                 'after_title' => '</h3>',
         ) );
-
         
 
+        // Widgets for indexpages (categories, tags, authorpage)
+        register_sidebar( array(
+                'name' => __( 'Startseite: Introbereich', 'piratenkleider' ),
+                'id' => 'startpage-intro-area',
+                'description' => __( 'Introbereich unterhalb des Sliders bzw. Teasers auf der Startseite. Hier lassen sich beispielsweise fest stehende Begr&uuml;ssungen oder andere Widgets setzen, die noch vor dem eigentlichen Artikeln kommen.', 'piratenkleider' ),
+                'before_widget' => '<div class="widget">',
+                'after_widget' => '</div>',
+                'before_title' => '<h2 class="widget-title">',
+                'after_title' => '</h2>',
+        ) );
+        
         // Startseite: Links unterhalb der 3 Artikel, per default Anzeige
         // der weiteren Artikel 
         register_sidebar( array(

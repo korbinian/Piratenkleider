@@ -13,6 +13,9 @@
     <div class="content-primary">
       <div class="skin">
 
+          <?php if ( is_active_sidebar( 'startpage-intro-area' ) ) { ?>
+                <?php dynamic_sidebar( 'startpage-intro-area' ); ?>
+            <?php } ?>          
           <h1 class="skip"><?php _e("Aktuelle Artikel", 'piratenkleider'); ?></h1>
           
       <?php
@@ -63,8 +66,6 @@
       </div>
 
       
-      
-      
       <?php if ( ! have_posts() ) : ?>
        <h2><?php _e("Nichts gefunden", 'piratenkleider'); ?></h2>
         <p>
@@ -73,12 +74,9 @@
         <?php get_search_form(); ?>
         <hr>
       <?php endif; ?>
-
-           
-        
-      
+ 
+     
       <div class="startpage-widget-area">
-
         <h2 class="skip"><?php _e("Weitere Artikel", 'piratenkleider'); ?></h2>
         <div class="first-startpage-widget-area">
           <div class="skin">
@@ -103,14 +101,13 @@
                     <?php 
                       }
                   }
-                  if ($options['aktiv-startseite-kategorien']==1) { 
-               ?>
-                <div class="widget">
+                  if ($options['aktiv-startseite-kategorien']==1) {  ?>
+                    <div class="widget">
                     <h3><?php _e("Kategorien", 'piratenkleider'); ?></h3>
                     <ul>
                         <?php wp_list_categories('title_li='); ?>
                     </ul>
-                </div>
+                    </div>
              <?php } } ?>
           </div>
         </div>
