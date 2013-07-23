@@ -339,13 +339,12 @@ function piratenkleider_compatibility ($oldoptions) {
 	if ((!isset($oldoptions['category-num-article-halfwidth'])) && (isset($oldoptions['num-article-startpage-halfwidth']))) {
 	   $newoptions['category-num-article-halfwidth'] = $oldoptions['num-article-startpage-halfwidth'];
 	}
+        $newoptions['category-teaser'] = 1;
+        $newoptions['category-startpageview'] =0;
+        $doupdate = 1;
     }
-    if ((isset($oldoptions['aktiv-images-instead-date'])) && ($oldoptions['aktiv-images-instead-date']==1) 
-            && (!isset($oldoptions['teaser-datebox']))) {
-        $oldoptions['teaser-datebox'] = 0;
-    }
-  
-    
+
+ 
     
     $olddesignopt = get_option( 'piratenkleider_theme_designspecials' );
     if ((is_array($olddesignopt)) && (count($olddesignopt)>0)) {
@@ -535,7 +534,7 @@ function piratenkleider_post_teaser($titleup = 1, $showdatebox = 1, $showdatelin
   $sizeclass='';
   $leftbox = '';
   
-  if (($showdatebox>1)  && ($showdatebox<5)) {
+  if (($showdatebox>0)  && ($showdatebox<5)) {
        $sizeclass = 'ym-column withthumb';      
        // Generate Thumb/Pic or Video first to find out which class we need
        
@@ -548,9 +547,6 @@ function piratenkleider_post_teaser($titleup = 1, $showdatebox = 1, $showdatelin
 	    if (has_post_thumbnail()) {
 		$thumbnailcode = get_the_post_thumbnail($post->ID, 'teaser-thumb');
 	    }
-	    if ($showdatebox==1) {
-		$output = $thumbnailcode;
-	    } else {
 		   
 		$firstpic = get_piratenkleider_firstpicture();
 		$firstvideo = get_piratenkleider_firstvideo();
@@ -583,7 +579,7 @@ function piratenkleider_post_teaser($titleup = 1, $showdatebox = 1, $showdatelin
 		} else {
 		    $output = $fallbackimg; 
 		}	
-	    }
+	   
     	    
 	    $leftbox .= $output;
 	    $leftbox .=  '</div>'; 
