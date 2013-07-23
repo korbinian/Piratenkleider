@@ -642,7 +642,9 @@ function piratenkleider_post_teaser($titleup = 1, $showdatebox = 1, $showdatelin
             } 
             echo '</div></div>';
             echo '<div class="post-entry ym-col3">';
-            echo '<div class="ym-cbox ym-clearfix">';	
+            echo '<div class="ym-cbox';
+            if ($usefloating==0) { echo ' ym-clearfix'; }
+            echo '">';	
 	} else {
 	     echo '<div class="post-entry ym-cbox">';
 	}
@@ -989,14 +991,14 @@ function get_piratenkleider_firstvideo($width = 300, $height = 169, $nocookie =1
 	    if ($nocookie==1) {
 		$entry = preg_replace('/youtube.com\/watch\?v=/','youtube-nocookie.com/embed/',$entry);
 	    }
-            $htmlout = '<iframe width="'.$width.'" height="'.$height.'" src="'.$entry.'" frameborder="0" allowfullscreen></iframe>';
+            $htmlout = '<iframe width="'.$width.'" height="'.$height.'" src="'.$entry.'" allowfullscreen></iframe>';
             return $htmlout;    
         }
     }
     // Schau noch nach YouTube-URLs die Plain im text sind. Hilfreich fuer
     // Installationen auf Multisite ohne iFrame-Unterstützung
     if ($searchplain==1) {
-       preg_match('/^\s*([^\'"]*www\.youtube[\/a-z0-9\.\-\?=]+)/i', $post->post_content, $matches);
+       preg_match('/\b(https?:\/\/www\.youtube[\/a-z0-9\.\-\?=]+)/i', $post->post_content, $matches);
         if ((is_array($matches)) && (isset($matches[1]))) {
             $entry = $matches[1];	
             if (!empty($entry)){
