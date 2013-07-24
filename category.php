@@ -9,45 +9,35 @@
     echo '<div class="section teaser"><div class="row">';   
     get_sidebar( 'teaser' );
     echo '</div></div>';    
-  } else {
-    $image_url = '';	  
-    if (($options['aktiv-platzhalterbilder-indexseiten']==1) && (isset($options['src-default-symbolbild-category']))) {  
-	$image_url = $options['src-default-symbolbild-category'];		    
-    }	    
-
-    if (isset($image_url) && (strlen($image_url)>4)) { 
-	if ($options['indexseitenbild-size']==1) {
-	    echo '<div class="content-header-big">';
-	} else {
-	    echo '<div class="content-header">';
-	}
-	?>    		    		    		        
-	   <h1 class="post-title"><span><?php printf( __( 'Kategorie %s', 'piratenkleider' ), '' . single_cat_title( '', false ) . '' ); ?></span></h1>
-	   <div class="symbolbild"><img src="<?php echo $image_url ?>" alt=""></div>
-	</div>  	
-    <?php } 
   }
   ?>
   <div class="section content" id="main-content">
      <div class="row">
 	<div class="content-primary">
-	    <div class="skin">
-	  
-		<?php 
-	  if (($options['category-teaser']) || (($options['category-startpageview']) && ( $options['slider-aktiv'] == "1" ))) { 	  
-		echo '<h1 class="skip">'.__("Aktuelle Artikel", 'piratenkleider').' ';
-		printf( __( 'Kategorie %s', 'piratenkleider' ), '' . single_cat_title( '', false ) . '' );
-		echo '</h1>';	    
-	  } else {
-	      if (!(isset($image_url) && (strlen($image_url)>4))) {
-		echo '<h1 class="post-title"><span>';
-		printf( __( 'Kategorie %s', 'piratenkleider' ), '' . single_cat_title( '', false ) . '' );
-		echo '</span></h1>';
-	      }
-	  }
-	 
-      
-      
+	<?php                 
+        $image_url = '';	  
+        if (($options['aktiv-platzhalterbilder-indexseiten']==1) && (isset($options['src-default-symbolbild-category']))) {  
+            $image_url = $options['src-default-symbolbild-category'];		    
+        }	    
+
+        if (isset($image_url) && (strlen($image_url)>4)) { 
+            if ($options['indexseitenbild-size']==1) {
+                echo '<div class="content-header-big">';
+            } else {
+                echo '<div class="content-header">';
+            }
+            ?>    		    		    		        
+               <h1 class="post-title"><span><?php printf( __( 'Kategorie %s', 'piratenkleider' ), '' . single_cat_title( '', false ) . '' ); ?></span></h1>
+               <div class="symbolbild"><img src="<?php echo $image_url ?>" alt=""></div>	 	
+               <?php                  
+              if (($options['category-teaser']) || (($options['category-startpageview']) && ( $options['slider-aktiv'] == "1" ))) { 	  
+                    echo '<h1 class="skip">'.__("Aktuelle Artikel", 'piratenkleider').' ';
+                    printf( __( 'Kategorie %s', 'piratenkleider' ), '' . single_cat_title( '', false ) . '' );
+                    echo '</h1>';	    	     
+              }
+        } 
+        echo '</div>';  
+
 
       $i = 0; 
       $col = 0; 
@@ -76,8 +66,14 @@
       endwhile;
       ?>
 	  
-	  
-	  
+	<div class="skin">    
+         <?php    
+	 if (!(isset($image_url) && (strlen($image_url)>4))) {
+		echo '<h1 class="post-title"><span>';
+		printf( __( 'Kategorie %s', 'piratenkleider' ), '' . single_cat_title( '', false ) . '' );
+		echo '</span></h1>';
+	      }
+        ?>      
       <div class="columns">
         <?php
         $z=1;
@@ -101,13 +97,12 @@
         }
         ?>     
       </div>
-
-                   <?php if (  $wp_query->max_num_pages > 1 ) : ?>
-                 <div class="archiv-nav"><p>
-                            <?php next_posts_link( __( '&larr; &Auml;ltere Beitr&auml;ge', 'piratenkleider' ) ); ?>
-                            <?php previous_posts_link( __( 'Neuere Beitr&auml;ge &rarr;', 'piratenkleider' ) ); ?>
-                     </p></div>
-                <?php endif; ?>             
+    <?php if (  $wp_query->max_num_pages > 1 ) : ?>
+     <div class="archiv-nav"><p>
+                <?php next_posts_link( __( '&larr; &Auml;ltere Beitr&auml;ge', 'piratenkleider' ) ); ?>
+                <?php previous_posts_link( __( 'Neuere Beitr&auml;ge &rarr;', 'piratenkleider' ) ); ?>
+         </p></div>
+    <?php endif; ?>             
                 
                 
     <?php if ( ! have_posts() ) : ?>
@@ -123,11 +118,8 @@
      if ( is_active_sidebar( 'indexpages-widget-area' ) ) { 
             dynamic_sidebar( 'indexpages-widget-area' ); 
       } ?>
-	    
-	
-
-</div>
-	 
+	    	
+        </div>
 
     </div>	    
 	    

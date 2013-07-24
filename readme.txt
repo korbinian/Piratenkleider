@@ -2,9 +2,7 @@ Piratenkleider
 - Wordpress-Theme für Webauftritte der Piratenpartei 
 =================================================
 
-Version 2.18 von Wolfgang Wiese (xwolf), 23. Juli 2013
-
-WORKING-RELEASE - DONT USE PRODUCTIVE
+Version 2.18.1 von Wolfgang Wiese (xwolf), 24. Juli 2013
 
 
 DOWNLOADS
@@ -13,9 +11,13 @@ DOWNLOADS
         https://github.com/xwolfde/Piratenkleider	
     
     Projekt-Website (Releases)
-        http://piratenkleider.xwolf.de
+        http://www.piratenkleider.de
     
-    
+    Dokumentation
+        http://doku.piratenkleider.de  (gepflegt von Matthias Kopp)
+
+
+
 CREDITS & COPYRIGHT
 
  CC-BY-SA 3.0, http://creativecommons.org/licenses/by-sa/3.0/de/deed.de
@@ -27,11 +29,12 @@ AUTOREN / ENTWICKLER
 
    Mit Hilfe und Unterstützung von:      
      - Martin Stoppler, http://www.stoppe-gp.de/
-     - Andre Sendowski, http://www.iphone-notes.de/
-     - Heiko Philippski, http://www.phindie.de/
+     - Matthias Kopp, http://piratenkleider.emkay,de 
      - Kerstin Probiesch, http://www.barrierefreie-informationskultur.de
      - Fabian Müller, http://www.feals.de
      - Georg Sinn, http://zwitschi.net
+     - Andre Sendowski, http://www.iphone-notes.de/
+     - Heiko Philippski, http://www.phindie.de/
      - Ralph Hinterleitner, rcs@deixis.at
      - Jan Schejbal, http://janschejbal.wordpress.com/
      - Marc Schieferdecker,  http://thegeek.de 
@@ -181,7 +184,7 @@ THEME-OPTION
     - Slider steuern     
     - Teaserlinks ändern oder setzen
     - Sticker ändern oder setzen
-    - Webadressen für Newsletter, Mitgliederanträge und Spenden anpassbar
+    - Webadressen für Newsletter anpassbar
     - Metatag-Angaben ändern
     - Optionale Anzeige für Seitenbilder steuern
     - Menutyp  für die Darstellung der Seiten und Unterseiten in der

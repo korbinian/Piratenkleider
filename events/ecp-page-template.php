@@ -15,11 +15,8 @@ if ( !defined('ABSPATH') ) { die('-1'); }
 
 ?>	
 <?php get_header();
- $options = get_option( 'piratenkleider_theme_options' );  
- $kontaktinfos = get_option( 'piratenkleider_theme_kontaktinfos' );  
- $bilderoptions = get_option( 'piratenkleider_theme_defaultbilder' ); 
-   if (!isset($bilderoptions['src-default-symbolbild'])) 
-            $bilderoptions['src-default-symbolbild'] = $defaultoptions['src-default-symbolbild'];
+ global $options;  
+
 ?>
 <?php tribe_events_before_html() ?>
 <div class="section content" id="main-content">
@@ -34,7 +31,7 @@ if ( !defined('ABSPATH') ) { die('-1'); }
         } else {            
            if ($options['aktiv-platzhalterbilder-indexseiten']) { ?>         
             <div class="symbolbild"> 
-              <img src="<?php echo $bilderoptions['src-default-symbolbild']?>" alt="" >
+              <img src="<?php echo $options['src-default-symbolbild']?>" alt="" >
            </div>                                 
           <?php }     
             }   
@@ -53,14 +50,7 @@ if ( !defined('ABSPATH') ) { die('-1'); }
 
         <h1 class="skip"><?php _e( 'Weitere Informationen', 'piratenkleider' ); ?></h1>   
             <?php
-            if (!isset($options['zeige_subpagesonly'])) 
-            $options['zeige_subpagesonly'] = $defaultoptions['zeige_subpagesonly'];
-  
-            if (!isset($options['zeige_sidebarpagemenu'])) 
-            $options['zeige_sidebarpagemenu'] = $defaultoptions['zeige_sidebarpagemenu'];
-			
-            if (!isset($options['seitenmenu_mode'])) 
-            $options['seitenmenu_mode'] = $defaultoptions['seitenmenu_mode'];
+           
             get_piratenkleider_seitenmenu($options['zeige_sidebarpagemenu'],$options['zeige_subpagesonly'],$options['seitenmenu_mode']);
 
         
