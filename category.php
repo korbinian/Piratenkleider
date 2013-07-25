@@ -4,21 +4,22 @@
       $cat_obj = $wp_query->get_queried_object();
       $thisCat = $cat_obj->term_id;
       $thisCatName =  get_cat_name($thisCat);
-      
+       $image_url = '';	
   if (($options['category-teaser']) || (($options['category-startpageview']) && ( $options['slider-aktiv'] == "1" ))) { 
     echo '<div class="section teaser"><div class="row">';   
     get_sidebar( 'teaser' );
     echo '</div></div>';    
+  } else {
+        if (($options['aktiv-platzhalterbilder-indexseiten']==1) && (isset($options['src-default-symbolbild-category']))) {  
+            $image_url = $options['src-default-symbolbild-category'];		    
+        }	
   }
   ?>
   <div class="section content" id="main-content">
      <div class="row">
 	<div class="content-primary">
 	<?php                 
-        $image_url = '';	  
-        if (($options['aktiv-platzhalterbilder-indexseiten']==1) && (isset($options['src-default-symbolbild-category']))) {  
-            $image_url = $options['src-default-symbolbild-category'];		    
-        }	    
+                   
 
         if (isset($image_url) && (strlen($image_url)>4)) { 
             if ($options['indexseitenbild-size']==1) {
@@ -35,8 +36,9 @@
                     printf( __( 'Kategorie %s', 'piratenkleider' ), '' . single_cat_title( '', false ) . '' );
                     echo '</h1>';	    	     
               }
+               echo '</div>';  
         } 
-        echo '</div>';  
+       
 
 
       $i = 0; 
@@ -68,7 +70,7 @@
 	  
 	<div class="skin">    
          <?php    
-	 if (!(isset($image_url) && (strlen($image_url)>4))) {
+	 if (!(isset($image_url) && (strlen($image_url)>4)) && (!($options['category-teaser']))) {
 		echo '<h1 class="post-title"><span>';
 		printf( __( 'Kategorie %s', 'piratenkleider' ), '' . single_cat_title( '', false ) . '' );
 		echo '</span></h1>';
