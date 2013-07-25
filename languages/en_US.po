@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Piratenkleider v2.18.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-06-12 21:36+0100\n"
-"PO-Revision-Date: 2013-07-24 21:22:24+0000\n"
+"PO-Revision-Date: 2013-07-25 18:18:51+0000\n"
 "Last-Translator: Wolfgang Wiese <xwolf@xwolf.de>\n"
 "Language-Team: Fabian Müller, Wolfgang Wiese\n"
 "MIME-Version: 1.0\n"
@@ -2551,9 +2551,7 @@ msgid "Symbolbild/Datumsbox"
 msgstr "Thumbnail or datebox"
 
 #: inc/constants.php:991
-#: inc/constants.php:1034
 #: inc/constants.php:1223
-#: inc/constants.php:1268
 #@ piratenkleider
 msgid "Links des Textauszuges das Datum, das Artikelbild, ein Bild des Artikels oder ein verlinktes Video anzeigen; Abhängig vom Inhalt des Artikels."
 msgstr "Datebox, thumbnail or video is positioned left of the text content "
@@ -2615,9 +2613,7 @@ msgid "Flie&szlig;ender Text"
 msgstr "Floating text"
 
 #: inc/constants.php:1005
-#: inc/constants.php:1049
 #: inc/constants.php:1238
-#: inc/constants.php:1283
 #@ piratenkleider
 msgid "Text umflie&szlig;t das Bild"
 msgstr "Text is floating to the picture"
@@ -2857,4 +2853,16 @@ msgstr "Show articles of gallery"
 #@ piratenkleider
 msgid "Piratenkleider Optionen"
 msgstr "Piratenkleider Options"
+
+#: inc/constants.php:1034
+#: inc/constants.php:1268
+#@ piratenkleider
+msgid "Links des Textauszuges das Datum, das Artikelbild, ein Bild des Artikels oder ein verlinktes Video anzeigen; Abhängig vom Inhalt des Artikels. (Bei Beitr&auml;gen &uuml;ber halbe Breite)"
+msgstr "Show datebox, thumbnail or youtube video left of the text. (on articles in half width)"
+
+#: inc/constants.php:1049
+#: inc/constants.php:1283
+#@ piratenkleider
+msgid "Text umflie&szlig;t das Bild (Bei Beitr&auml;gen &uuml;ber halbe Breite)"
+msgstr "Textflow around picture (on entrys with half width)"
 
