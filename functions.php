@@ -873,7 +873,7 @@ function piratenkleider_post_taxonominfo() {
         }
         // Prints the string, replacing the placeholders.
         printf(
-                $posted_in,
+                ' '.$posted_in,
                 get_the_category_list( ', ' ),
                 $tag_list,
                 get_permalink(),
