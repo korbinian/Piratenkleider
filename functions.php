@@ -20,6 +20,8 @@ if(isset($_SERVER['HTTP_X_FORWARDED_FOR'])) {
   $xffaddrs = explode(',',$_SERVER['HTTP_X_FORWARDED_FOR']);
   $_SERVER['REMOTE_ADDR'] = $xffaddrs[0];
 }    
+$_SERVER['REMOTE_ADDR'] = getAnonymIp($_SERVER['REMOTE_ADDR']);
+
 if ($options['anonymize-user']==1) {
     /* IP-Adresse überschreiben */
     $_SERVER["REMOTE_ADDR"] = "0.0.0.0";
@@ -31,6 +33,27 @@ if ($options['anonymize-user']==1) {
 if ($options['feed_cache_lifetime'] < 600) {
     $options['feed_cache_lifetime'] = 1800;
 }
+
+/* Anonymize IP */
+function getAnonymIp( $ip, $strongness = 2 ) {
+    
+    if ($strongness==2) {
+	/* Strong BSI Norm: last two oktetts to 0 */
+	return preg_replace('/[0-9]+.[0-9]+\z/', '0.0', $ip);	
+    } elseif ($strongness==1) {
+	/* Weak BSI Norm: last two oktetts to 0 */
+	return preg_replace('/[0-9]+\z/', '0', $ip);	
+    } elseif ($strongness==0) {
+	/* No anonymizing */
+	return $ip;		
+    } else {
+	/* Strong BSI Norm: last two oktetts to 0 */
+	return preg_replace('/[0-9]+.[0-9]+\z/', '0.0', $ip);	
+    }
+    
+}       
+
+
 
 function feed_lifetime_cb( ) {
             global $options;
