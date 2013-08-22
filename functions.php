@@ -178,6 +178,56 @@ function piratenkleider_scripts() {
     global $options;
     global $defaultoptions;
 
+     if ( !is_admin() ) { 
+	$theme  = wp_get_theme();
+	
+	
+	 if ((isset($options['aktiv-alternativestyle'])) && ($options['aktiv-alternativestyle'] != 'style.css')) {
+	     wp_enqueue_style( 'alternativestyle', get_template_directory_uri().'/css/'.$options['aktiv-alternativestyle'] );	     
+	} else {
+	    wp_register_style( 'piratenkleider', get_bloginfo( 'stylesheet_url' ), false, $theme['Version'] );
+	    wp_enqueue_style( 'piratenkleider' );
+	}     		
+    }    
+    if ((isset($options['css-colorfile'])) && (strlen(trim($options['css-colorfile']))>1)) { 
+	 wp_enqueue_style( 'color', get_template_directory_uri().'/css/'.$options['css-colorfile'] );	             
+    }        
+    
+    if (!isset($options['css-fontfile']))  {
+        $options['css-fontfile'] = $defaultoptions['default-fontset-file'];
+    }
+    
+    if ((isset($options['css-fontfile'])) && (strlen(trim($options['css-fontfile']))>1)) { 
+	wp_enqueue_style( 'font', get_template_directory_uri().'/css/'.$options['css-fontfile'],array(),false,'all and (min-width:500px)' );	             
+    }        	
+    
+    if (isset($options['aktiv-mediaqueries-allparts']) && ($options['aktiv-mediaqueries-allparts']==1)) {
+	wp_enqueue_style( 'basemod_mediaqueries_allparts', $defaultoptions['src-basemod_mediaqueries_allparts'] );
+    }
+	
+    if (isset($options['aktiv-mediaqueries-allparts']) && ($options['aktiv-mediaqueries-allparts']==1)) {
+	wp_enqueue_style( 'basemod_mediaqueries_allparts', $defaultoptions['src-basemod_mediaqueries_allparts'] );
+    }
+    if ((isset($options['aktiv-linkicons'])) && ($options['aktiv-linkicons']==1)) { 
+       wp_enqueue_style( 'basemod_linkicons', $defaultoptions['src-linkicons-css'] );
+    }    
+    
+     if ( is_singular() ) {
+	 if ($options['aktiv-circleplayer']==1)  {         
+	     wp_enqueue_style( 'circleplayer', $defaultoptions['src-circleplayer_css'] );
+	}
+	 $custom_fields = get_post_custom(); 
+	 if ( (isset($custom_fields['fullsize'])) && ($custom_fields['fullsize'][0] == true))  {
+	    wp_enqueue_style( 'basemod_sidebarbottom', $defaultoptions['src-basemod_sidebarbottom'] ); 
+	 }
+     } 
+    if ((isset($options['position_sidebarbottom'])) && ($options['position_sidebarbottom'] ==1)) {
+	    wp_enqueue_style( 'basemod_sidebarbottom', $defaultoptions['src-basemod_sidebarbottom'] ); 
+    }
+    
+       
+    
+	    
 
     wp_enqueue_script(
 		'layoutjs',
@@ -248,6 +298,14 @@ function filter_media_comment_status( $open, $post_id ) {
 	return $open;
 }
 add_filter( 'comments_open', 'filter_media_comment_status', 10 , 2 );
+
+/* Format list for Tagclouds also in widgets */
+function edit_args_tag_cloud_widget($args) {
+    $args = array('format' => 'list');
+    return $args;
+}
+add_filter('widget_tag_cloud_args','edit_args_tag_cloud_widget');
+
 
 if ( ! function_exists( 'get_piratenkleider_options' ) ) :
 /*

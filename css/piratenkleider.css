@@ -553,6 +553,20 @@ button, input[type="submit"],
     white-space: nowrap;
 }    
     
+.tagcloud {
+  font-family: "FontPiratenkleiderHeadlines", Helvetica, Arial, sans-serif;
+  line-height: 1.8em;
+  text-align: center;
+  margin-top: 1em;      
+}
+ul.wp-tag-cloud {
+    list-style-type: none;
+    margin: 0;
+}
+.content-aside .widget ul.wp-tag-cloud li,
+ul.wp-tag-cloud li {
+    display: inline;
+}
 
 /**
 * ----------------------------------------------------------------------- #
@@ -1344,6 +1358,7 @@ display: inline-block;
     border: 1px solid #EEEEEE; 
     display: block;
     margin: 0 0 15px;
+    max-width: 275px;
   } 
     
    .content-aside #steckbrief .text {
@@ -1884,12 +1899,6 @@ img.wp-smiley {
 .second-startpage-widget-area .skin {
   padding: 0 0 0 20px; }
 
-.tagcloud {
-  font-family: "FontPiratenkleiderHeadlines", Helvetica, Arial, sans-serif;
-  line-height: 1.8em;
-  text-align: center;
-  margin-top: 1em;      
-}
 
 
 .content-aside {
@@ -2119,7 +2128,8 @@ img.wp-smiley {
     display: block;
     font-style: italic;    
  }
-
+ 
+ 
 
 
   .header {

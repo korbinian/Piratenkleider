@@ -129,7 +129,7 @@
                             <h3><?php _e("Schlagworte", 'piratenkleider'); ?></h3>
 
                             <div class="tagcloud">            
-                                <?php wp_tag_cloud(array('smallest'  => 14, 'largest'   => 28)); ?>
+                                <?php wp_tag_cloud(array('format' => 'list', 'smallest'  => 14, 'largest'   => 28)); ?>
                             </div>
                               
                     <?php  }  ?>

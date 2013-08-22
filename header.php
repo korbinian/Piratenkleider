@@ -45,48 +45,11 @@ if ((isset( $options['meta-author'] )) && ( strlen(trim($options['meta-author'])
     <link rel="shortcut icon" href="<?php echo get_template_directory_uri(); ?>/favicon.ico">
     <link rel="profile" href="http://gmpg.org/xfn/11" />
 <?php 
-     if ((isset($options['aktiv-alternativestyle'])) && ($options['aktiv-alternativestyle'] != 'style.css')) {
-	 echo '    <link rel="stylesheet" type="text/css" media="all" href="'.get_template_directory_uri().'/css/'.$options['aktiv-alternativestyle'].'">';
-     } else {
-	 echo '    <link rel="stylesheet" type="text/css" media="all" href="'.get_bloginfo( 'stylesheet_url' ).'">';
-     }
-     echo "\n";   
-    if ((isset($options['css-colorfile'])) && (strlen(trim($options['css-colorfile']))>1)) { 
-            echo '    <link rel="stylesheet" type="text/css" media="all" href="'.get_template_directory_uri().'/css/'.$options['css-colorfile'].'">';
-	    echo "\n";
-    }         
-    if (!isset($options['css-fontfile']))  {
-        $options['css-fontfile'] = $defaultoptions['default-fontset-file'];
-    }
-    if ((isset($options['css-fontfile'])) && (strlen(trim($options['css-fontfile']))>1)) { 
-        echo '    <link rel="stylesheet" type="text/css" media="all and (min-width:500px)" href="'.get_template_directory_uri().'/css/'.$options['css-fontfile'].'">';
-        echo "\n";
-
-    }        	
-      if ((isset($options['aktiv-linkicons'])) && ($options['aktiv-linkicons']==1)) { 
-        echo '    <link rel="stylesheet" type="text/css" media="screen,projection" href="'.$options['src-linkicons-css'].'">';
-        echo "\n";
-
-    }    
+  
+   wp_head(); 
     
-    
-    $custom_fields = get_post_custom();    
-    if ( ( (isset($custom_fields['fullsize'])) && ($custom_fields['fullsize'][0] == true) && is_singular()) 
-         ||
-        ((isset($options['position_sidebarbottom'])) && ($options['position_sidebarbottom'] ==1))) { 
-        echo '    <link rel="stylesheet" type="text/css" media="all" href="'.get_template_directory_uri().'/css/basemod_sidebarbottom.css">';
-	echo "\n";
-    } 
     echo '  <link rel="pingback" href="'.get_bloginfo( 'pingback_url' ).'">';    
-    if ( is_singular() && ($options['aktiv-circleplayer']==1) ) {  ?>            
-    <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/circle.player.css">   
-    <?php  
-    }    
-    wp_head(); 
-    if (isset($options['aktiv-mediaqueries-allparts']) && ($options['aktiv-mediaqueries-allparts']==1)) {
-      echo '    <link rel="stylesheet" type="text/css" media="screen" href="'.get_template_directory_uri().'/css/basemod_mediaqueries_allparts.css">';      
-      echo "\n";
-    }
+
 ?>
 
 <!--[if lte IE 7]>
