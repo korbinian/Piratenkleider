@@ -1303,6 +1303,7 @@ $setoptions = array(
 		  'liste'   =>  array(
 				0 => __("Nur wenn Artikel l&auml;nger ist als Textauszug","piratenkleider"), 
 				1 => __("Immer anzeigen","piratenkleider"), 	    
+			        2 => __("Nie anzeigen","piratenkleider"), 	    
 				), 
                   'parent'  => 'category'
 		),  

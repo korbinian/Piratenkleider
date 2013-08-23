@@ -1134,12 +1134,13 @@ function get_piratenkleider_custom_excerpt($length = 0, $continuenextline = 1, $
   if (isset($options['continuelink']) && ($options['continuelink'] != $alwayscontinuelink)) {
       $alwayscontinuelink = $options['continuelink'];
   }
-  
-  if (($needcontinue==1) || ($alwayscontinuelink==1)) {
-      if ($continuenextline==1) {
-	  $the_str .= '<br>';
+  if ($alwayscontinuelink < 2) {
+      if (($needcontinue==1) || ($alwayscontinuelink==1)) {
+	  if ($continuenextline==1) {
+	      $the_str .= '<br>';
+	  }
+	  $the_str .= piratenkleider_continue_reading_link();
       }
-      $the_str .= piratenkleider_continue_reading_link();
   }
   $the_str .= '</p>';
   return $the_str;
