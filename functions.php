@@ -1096,7 +1096,7 @@ if ( ! function_exists( 'get_piratenkleider_custom_excerpt' ) ) :
 /*
  * Erstellen des Extracts
  */
-function get_piratenkleider_custom_excerpt($length = 0, $continuenextline = 1, $removeyoutube = 1){
+function get_piratenkleider_custom_excerpt($length = 0, $continuenextline = 1, $removeyoutube = 1, $alwayscontinuelink = 0){
   global $options;
   global $post;
       
@@ -1122,17 +1122,25 @@ function get_piratenkleider_custom_excerpt($length = 0, $continuenextline = 1, $
       $excerpt = __( 'Kein Inhalt', 'piratenkleider' );
   }
 
+  $needcontinue =0;
   if (mb_strlen($excerpt) >  $length) {
     $the_str = mb_substr($excerpt, 0, $length);
     $the_str .= "...";
+    $needcontinue = 1;
   }  else {
       $the_str = $excerpt;
   }
   $the_str = '<p>'.$the_str;
-  if ($continuenextline==1) {
-      $the_str .= '<br>';
+  if (isset($options['continuelink']) && ($options['continuelink'] != $alwayscontinuelink)) {
+      $alwayscontinuelink = $options['continuelink'];
   }
-  $the_str .= piratenkleider_continue_reading_link();
+  
+  if (($needcontinue==1) || ($alwayscontinuelink==1)) {
+      if ($continuenextline==1) {
+	  $the_str .= '<br>';
+      }
+      $the_str .= piratenkleider_continue_reading_link();
+  }
   $the_str .= '</p>';
   return $the_str;
 }

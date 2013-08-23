@@ -58,7 +58,7 @@ $defaultoptions = array(
     'aktiv-commentsonpages'	    => 0,
     'aktiv-platzhalterbilder-indexseiten'   => 0,
     'indexseitenbild-size'	    => 1,
-    
+    'continuelink'		    => 0,
     'aktiv-suche'                   => 1,   
     'slider-defaultwerbeplakate'    => 1,
     'slider-numberarticle'          => 3,
@@ -1295,6 +1295,17 @@ $setoptions = array(
                   'default' => $defaultoptions['category-teaser-dateline-halfwidth'],
                   'parent'  => 'category'
               ), 
+	      'continuelink'   => array(
+                  'type'    => 'select',
+                  'title'   => __( 'Weiterlesen-Link', 'piratenkleider' ),
+                  'label'   => __( 'Anzeige des Links zum Weiterlesen immer anzeigen oder nur dann, wenn der Textauszug auf einer Indexseite gek&uuml;rzt werden muss.', 'piratenkleider' ),
+                  'default' => $defaultoptions['category-teaser-datebox-halfwidth'],
+		  'liste'   =>  array(
+				0 => __("Nur wenn Artikel l&auml;nger ist als Textauszug","piratenkleider"), 
+				1 => __("Immer anzeigen","piratenkleider"), 	    
+				), 
+                  'parent'  => 'category'
+		),  
                
 
                
@@ -1442,7 +1453,6 @@ $setoptions = array(
                   'default' => $defaultoptions['src-default-symbolbild'],
                   'parent'  => 'darstellungindexseiten',
               ),  
-	       
 
 	       
 	      'kommentare'  => array(
