@@ -36,7 +36,7 @@
             if ($options['teaser-type'] == 'big') {
                  echo '<div class="bigslider">';
                 if (has_post_thumbnail()) {           
-                 the_post_thumbnail(array($defaultoptions['bigslider-thumb-width'],$defaultoptions['bigslider-thumb-height']));
+                 the_post_thumbnail(array($defaultoptions['bigslider-thumb-width'],$defaultoptions['bigslider-thumb-height']),array('alt'=> ''));
                 } else {
                     if ((isset($defaultbildsrc)) && (strlen(trim($defaultbildsrc))>2)) {  
                         echo '<img src="'.$defaultbildsrc.'" width="'.$defaultoptions['bigslider-thumb-width'].'" height="'.$defaultoptions['bigslider-thumb-height'].'" alt="">';                
@@ -55,7 +55,7 @@
             } else {
                 echo '<div class="textslider">';
                 if (has_post_thumbnail()) {           
-                    the_post_thumbnail(array($defaultoptions['smallslider-thumb-width'],$defaultoptions['smallslider-thumb-height']));                
+                    the_post_thumbnail(array($defaultoptions['smallslider-thumb-width'],$defaultoptions['smallslider-thumb-height']),array('alt'=> ''));                
                } else {
                     if ((isset($defaultbildsrc)) && (strlen(trim($defaultbildsrc))>2)) {
                         echo '<img src="'.$defaultbildsrc.'" width="'.$defaultoptions['smallslider-thumb-width'].'" height="'.$defaultoptions['smallslider-thumb-height'].'" alt="">';                
