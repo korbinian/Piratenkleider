@@ -819,7 +819,7 @@ function piratenkleider_keywords($maxlength = 140, $maxwords = 15 ) {
 	if (strlen(trim($tags))>$maxlength) {
 	    $tags = substr($tags,0,strpos($tags,",",$maxlength));
 	}	
-	echo '	<meta name="keywords" value="'.$tags.'">';
+	echo '	<meta name="keywords" content="'.$tags.'">';
     }
    
 }
