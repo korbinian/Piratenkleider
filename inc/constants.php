@@ -7,6 +7,8 @@
 $defaultoptions = array(
     'js-version'                    => '2.18',
     'content-width'                 => 665,
+    'yt-content-width'              => 665,
+    'yt-content-height'             => 500,
     'logo'                          => get_template_directory_uri() .'/images/logo.png',
     'logo-width'                    => 300,
     'logo-height'                   => 130,

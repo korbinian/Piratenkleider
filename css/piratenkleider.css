@@ -1085,6 +1085,7 @@ display: inline-block;
     display: block;
     margin: 10px auto;
 }
+
 .content ul {
     margin: 0 0 18px 25px;
 }
@@ -1832,7 +1833,13 @@ img.wp-smiley {
 	display: none; 
 }
                                           
-
+.embed-youtube p img {
+    margin: 0 10px 0;
+} 
+.embed-youtube p a.extern {
+    background: none;
+    padding-left: 0;
+}
 .first-startpage-widget-area {
   float: left;
   width: 100%;
