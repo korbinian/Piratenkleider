@@ -1075,11 +1075,13 @@ function get_piratenkleider_firstvideo($width = 300, $height = 169, $nocookie =1
     // Schau noch nach YouTube-URLs die Plain im text sind. Hilfreich fuer
     // Installationen auf Multisite ohne iFrame-Unterstützung
     if ($searchplain==1) {
-       preg_match('/\b(https?:\/\/www\.youtube[\/a-z0-9\.\-\?=]+)/i', $post->post_content, $matches);
+       
+       preg_match('/\b(https?:\/\/www\.youtube[\-a-z]*\.com\/(watch|embed)[\/a-z0-9\.\-&;\?_=]+)/i', $post->post_content, $matches);
         if ((is_array($matches)) && (isset($matches[1]))) {
             $entry = $matches[1];	
             if (!empty($entry)){
                 if ($nocookie==1) {
+                    $entry = preg_replace('/feature=player_embedded&amp;/','',$entry);
                     $entry = preg_replace('/youtube.com\/watch\?v=/','youtube-nocookie.com/embed/',$entry);
                 }
                 $htmlout = '<iframe width="'.$width.'" height="'.$height.'" src="'.$entry.'" allowfullscreen></iframe>';
