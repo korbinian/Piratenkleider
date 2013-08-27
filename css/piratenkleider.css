@@ -1341,7 +1341,8 @@ display: inline-block;
     -moz-transition: all 406ms ease-out 0s;
     -ms-transition: all 406ms ease-out 0s;
     -o-transition: all 406ms ease-out 0s;
-    transition: all 406ms ease-out 0s;                    
+    transition: all 406ms ease-out 0s;            
+    max-width: 280px;
 }
   .content-aside #steckbrief:hover,
   .content-aside #steckbrief:focus,
@@ -1358,8 +1359,8 @@ display: inline-block;
     background-repeat: no-repeat;
     border: 1px solid #EEEEEE; 
     display: block;
-    margin: 0 0 15px;
-    max-width: 275px;
+    margin: 0 auto;
+    max-width: 260px;
   } 
     
    .content-aside #steckbrief .text {
