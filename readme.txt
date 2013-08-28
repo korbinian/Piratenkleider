@@ -2,7 +2,7 @@ Piratenkleider
 - Wordpress-Theme für Webauftritte der Piratenpartei 
 ====================================================
 
-Version 2.18.1 von Wolfgang Wiese (xwolf), 25. Juli 2013
+Version 2.18.5 von Wolfgang Wiese (xwolf), 28. August 2013
 
 
 DOWNLOADS
@@ -13,8 +13,6 @@ DOWNLOADS
     Projekt-Website (Releases)
         http://www.piratenkleider.de
     
-    Dokumentation
-        http://doku.piratenkleider.de  (gepflegt von Matthias Kopp)
 
 
 
@@ -58,6 +56,15 @@ AUTOREN / ENTWICKLER
      - Schrift Droid Sans von Ascender (http://www.droidfonts.com/), Apache License 2.0 http://www.apache.org/licenses/LICENSE-2.0
      - Schrift Awesome http://fontawesome.io von Dave Gandy (SIL Open Font License 1.1)
      - Circle Player, http://jplayer.org (GNU General Public License (GPL) Version 2)
+
+
+FEEDBACK & BUGS
+
+Feedback, Vorschläge für neue Features aber auch Bugs können im GitHub
+gemeldet werden: https://github.com/xwolfde/Piratenkleider/issues
+Alternativ zum GitHub stehen auch die Kommentarfelder bei http://www.piratenkleider.de
+zur Verfügung.  
+
 
 VORVERSION
 
@@ -504,4 +511,10 @@ Administrative Hinweise für Wordpress Theme-Editoren:
     und nur eine Datumsbox zeigen anstelle des Thumbnails.
     Ebenso können YouTube-Videos angezeigt werden.
    (Hinweis: Diese werden per Default auf youtube-nocookie.com umgeschrieben.)
+
+
+19. Ab der Version 2.18.5 werden YouTube-Embeddings optional mit einem eigenen
+    iFRame-Embedding versehen welches aus Gründen der Barrierefreiheit
+    vor dem Embedding einen Link zu YouTube setzt. Ausserdem wird das Embedding
+    selbst über youtube-nocookie.com geholt.
 
