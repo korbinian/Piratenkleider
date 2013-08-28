@@ -1809,7 +1809,12 @@ $setoptions = array(
                  
               ),  
               
-             
+              'yt-alternativeembed' => array(
+                  'type'    => 'bool',
+                  'title'   => __( 'YouTube-Links', 'piratenkleider' ),
+                  'label'   => __( 'YouTube-Links automatisch mit eigenem verlinkten iFrame-Embed anreichern, der die tracking-sichere Website youtube-nocookie.com nutzt.', 'piratenkleider' ),
+                  'default' => $defaultoptions['yt-alternativeembed'],
+              ),  
               'anonymitaet'  => array(
                   'type'    => 'section',
                   'title'   => __('Anonymit&auml;t &amp; Sicherheit', 'piratenkleider'),         
@@ -1877,7 +1882,7 @@ $setoptions = array(
                   'default' => $defaultoptions['aktiv-autokeywords'],
                   'parent'  => 'meta',
               ),
-	      
+	                  
 	       
                
           ),
