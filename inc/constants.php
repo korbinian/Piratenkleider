@@ -179,6 +179,8 @@ $defaultoptions = array(
     'default_text_title_home_backlink' => __('Zur&uuml;ck zur Startseite','piratenkleider' ), 
     'yt-alternativeembed'           => 1,
         /* YouTube Videos ueber eigenen Embedcode gestalten und an youtbe-nocookie lenken */
+    'yt-norel'			 => 1,
+	/* Keine weiteren Videos vorschlagen */
 );
 
 
