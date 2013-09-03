@@ -417,6 +417,7 @@
 	position: relative;
 	left: inherit;
 	top: inherit;     
+	min-height: 3em;	
     }
    .content-header h1,
    .content-header-big h1{
@@ -425,10 +426,11 @@
 	left: inherit;
 	top: inherit; 
 	padding: 10px;
+	width: 100%;
 	margin: 0;
    }
    .content .symbolbild {
-       background-size: 50%;
+       background-size: auto 100px;      
        top: 0;
        left: 0;
        position: absolute;
