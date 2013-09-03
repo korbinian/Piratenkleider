@@ -32,7 +32,7 @@
        if ( ((isset($options['plakate-src']) && (is_array($options['plakate-src'])))) || 
             ((isset($options['plakate-altadressen'])) && (strlen(trim($options['plakate-altadressen']))>5))
            ) {
-            echo '<div class="flexslider fs2 no-js" style="width: '.$defaultoptions['plakate-width'].'px;">';         
+            echo '<div class="slidersidebar fs2 no-js" style="width: '.$defaultoptions['plakate-width'].'px;">';         
             echo '<ul class="slides">';                               
                    if (is_array($options['plakate-src'])) {              
                      foreach ($options['plakate-src'] as $current) {                        

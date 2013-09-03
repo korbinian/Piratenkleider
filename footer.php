@@ -40,14 +40,28 @@
        <script type="text/javascript">
         /* <![CDATA[ */
 	jQuery(document).ready(function($) {
-       $('.flexslider').flexslider({
-         slideshowSpeed: <?php echo $slideshowSpeed ?>,
-         animationDuration: <?php echo $animationDuration ?>,
-         slideDirection: "<?php echo $slideDirection ?>",
-         animation: "<?php echo $animationType ?>",
-         pausePlay: true
-       });
-    });    
+	 $('.flexslider').flexslider({
+	    slideshowSpeed: <?php echo $slideshowSpeed ?>,
+	    animationSpeed: <?php echo $animationDuration ?>,
+	    direction: "<?php echo $slideDirection ?>",
+	    animation: "<?php echo $animationType ?>",
+	    pausePlay: true,
+	    keyboard: true,
+	    touch: true,
+           });	   
+	<?php if ($options['slider-defaultwerbeplakate']==1) { ?>
+	 $('.slidersidebar').flexslider({
+	    slideshowSpeed: <?php echo $slideshowSpeed ?>,
+	    animationSpeed: <?php echo $animationDuration ?>,
+	    animation: "fade",
+	    pausePlay: true,
+	    keyboard: true,
+	    touch: true,
+	    smoothHeight: true
+           });
+	   <?php } ?>
+	});        
+	
     /* ]]> */
       </script> 
     <?php }  
