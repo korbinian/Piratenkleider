@@ -47,6 +47,7 @@
 	    animation: "<?php echo $animationType ?>",
 	    pausePlay: true,
 	    keyboard: true,
+	    multipleKeyboard: true,
 	    touch: true,
            });	   
 	<?php if ($options['slider-defaultwerbeplakate']==1) { ?>
@@ -56,6 +57,7 @@
 	    animation: "fade",
 	    pausePlay: true,
 	    keyboard: true,
+	    multipleKeyboard: true,
 	    touch: true,
 	    smoothHeight: true
            });
