@@ -411,14 +411,27 @@
    }
    .content-header,
    .content-header-big {
-     margin-left: 0px;
-     height: 11em;
-     overflow: hidden;
+	margin: 0;
+	height: auto;
+	overflow: hidden;
+	position: relative;
+	left: inherit;
+	top: inherit;     
     }
    .content-header h1,
    .content-header-big h1{
-       z-index: 100;
-       top: 10px;
+	z-index: 100;
+	position: relative;
+	left: inherit;
+	top: inherit; 
+	padding: 10px;
+	margin: 0;
+   }
+   .content .symbolbild {
+       background-size: 50%;
+       top: 0;
+       left: 0;
+       position: absolute;
    }
    .single .post {
        padding: 10px;

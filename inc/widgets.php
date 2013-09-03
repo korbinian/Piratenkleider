@@ -359,4 +359,119 @@ class ParteiLinkliste_Widget extends WP_Widget {
 // register widget
 add_action( 'widgets_init', create_function( '', 'register_widget( "ParteiLinkliste_Widget" );' ) );
 
+
+/**
+ * Adds Newsletter_Widget widget.
+ */
+class Bannerlink_Widget extends WP_Widget {
+
+	/**
+	 * Register widget with WordPress.
+	 */
+	public function __construct() {
+		parent::__construct(
+	 		'Bannerlink_Widget', // Base ID
+                        __( 'Banner/Logo Link', 'piratenkleider' ),
+			array( 'description' => __( 'Schalten von Link mit einem Logo oder Banner', 'piratenkleider' ), ) // Args
+		);
+	}
+	public function form($instance) {
+	    $defaults = array(
+		'title' => '',
+		'url'	=> '',
+		'image_url'	=> '',
+		'image_id'  => 0
+	    );
+	    $instance = wp_parse_args((array)$instance, $defaults);
+	    $title = $instance['title'];
+	    $url = $instance['url'];
+	    $image_url = $instance['image_url'];
+	    $image_id = $instance['image_id'];
+	    ?>
+		    <p>
+			<label for="<?php echo $this->get_field_id('title'); ?>"><?php echo 'Titel:'; ?></label>
+			<input class="widefat" id="<?php echo $this->get_field_id('title'); ?>" 
+			       name="<?php echo $this->get_field_name('title'); ?>" 
+			       type="text" value="<?php echo esc_attr($title); ?>" />
+	  
+		    </p>
+		    <p>
+			<label for="<?php echo $this->get_field_id('url'); ?>"><?php echo 'Ziel-URL (inkl. http(s)):'; ?></label>
+			<input class="widefat" id="<?php echo $this->get_field_id('url'); ?>" 
+			       name="<?php echo $this->get_field_name('url'); ?>" 
+			       type="text" value="<?php echo esc_attr($url); ?>" />
+	  
+		    </p>
+		     <p>
+			<label for="<?php echo $this->get_field_id('image_url'); ?>"><?php echo 'Bild-URL (inkl. http(s)):'; ?></label>
+			<input 	class="image_url widefat" id="<?php echo $this->get_field_id('image_url'); ?>" 
+			       name="<?php echo $this->get_field_name('image_url'); ?>" 
+			       type="text" value="<?php echo esc_attr($image_url); ?>" />
+			<input type="hidden" class="image_id" id="<?php echo $this->get_field_id('image_id'); ?>" 
+			       name="<?php echo $this->get_field_name('image_id'); ?>" />
+			<input class="upload_image_button" value="<?php _e('Hochladen / Ausw&auml;hlen', 'piratenkleider'); ?>" type="button" />
+
+			    <br /><?php _e('Gebe eine URL zu einem Bild ein oder verwende die Mediathek um es hochzuladen oder um ein vorhandenes Bild auszuw&auml;hlen.', 'piratenkleider'); ?>
+	  
+		    </p>
+		    <?php 
+	}
+	
+	public function update($new_instance, $old_instance) {
+	    $instance = array();
+	    $instance['title'] = strip_tags($new_instance['title']);
+	    $instance['url'] = esc_url($new_instance['url']);	    
+	    $instance['image_url'] = esc_url($new_instance['image_url']);
+	    $instance['image_id'] = intval($new_instance['image_id']);
+	    return $instance;
+	}
+	
+	public function widget($args, $instance) {
+	    global $defaultoptions;
+	    
+	    extract($args);
+	    $title = apply_filters('widget_title', $instance['title']);
+	    $url = esc_url($instance['url']);
+	    $image_url = esc_url($instance['image_url']);
+	    $image_id = intval($instance['image_id']);
+	    $image_width = $defaultoptions['bannerlink-width'];
+	    $image_height =0;
+	    if ($image_id >0) {
+		// Get Thumbnail instead of original 
+		$image_attributes = wp_get_attachment_image_src( $image_id, array($defaultoptions['bannerlink-width'],$defaultoptions['bannerlink-height']) ); 
+		$image_url = $image_attributes[0];
+		$image_width = $image_attributes[1];
+		$image_height = $image_attributes[2];
+	    }
+	    if (isset($url)) {
+		$url = wp_make_link_relative($url);
+	    }
+	    if (isset($image_url)) {
+		$image_url = wp_make_link_relative($image_url);
+	    }
+	    if (!isset($url) && !isset($image_url)) {
+		return;
+	    }
+	    echo $before_widget;
+	    
+	    echo '<p class="bannerlink">';
+	    echo '<a href="'.$url.'">';
+	    if ($image_url) {
+		if ($image_height > 0) {
+		    echo '<img src="'.$image_url.'" width="'.$image_width.'" height="'.$image_height.'" alt="'.$title.'">';
+		} else {
+		    echo '<img src="'.$image_url.'" style="max-width: '.$defaultoptions['bannerlink-width'].'; height: auto;" alt="'.$title.'">';
+		}
+	    } else {
+		echo $title;
+	    }
+	    echo "</a></p>\n";
+	    echo $after_widget;
+	}
+	
+}	
+//
+// register widget
+add_action( 'widgets_init', create_function( '', 'register_widget( "Bannerlink_Widget" );' ) );
+
 ?>

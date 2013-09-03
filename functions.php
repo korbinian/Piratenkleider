@@ -328,7 +328,8 @@ function piratenkleider_scripts() {
 		array('jplayer'),
                 $defaultoptions['js-version']
             );  
-    }                    
+    }       
+
 }
 add_action('wp_enqueue_scripts', 'piratenkleider_scripts');
 
@@ -938,17 +939,17 @@ class My_Walker_Nav_Menu extends Walker_Nav_Menu {
      * @param  array $args    Additional strings.
      * @return void
      */
-    public function start_el( &$output, $item, $depth, $args ) {
+    public function start_el( &$output, $item, $depth = 0, $args = array(), $id = 0) {
         if ( '-' === $item->title )
         {
             // you may remove the <hr> here and use plain CSS.
             $output .= '<li class="menu_separator"><hr>';
         } else{
-            parent::start_el( $output, $item, $depth, $args );
+            parent::start_el( $output, $item, $depth, $args, $id);
         }
     }
     /* Klasse has_children einfuegen */
-    public function display_element($el, &$children, $max_depth, $depth = 0, $args, &$output){
+    public function display_element($el, &$children, $max_depth, $depth = 0, $args = array(), &$output){
         $id = $this->db_fields['id'];
 
         if(isset($children[$el->$id]))
@@ -1362,8 +1363,6 @@ function dimox_breadcrumbs() {
         echo '<a href="' . $homeLink . '/' . $slug['slug'] . '/">' . $post_type->labels->singular_name . '</a> ' . $delimiter . ' ';
         echo $before . get_the_title() . $after;
       } else {
-        $cat = get_the_category(); $cat = $cat[0];
-        echo is_wp_error( $cat_parents = get_category_parents($cat, TRUE, ' ' . $delimiter . ' ') ) ? '' : $cat_parents;
         echo $before . get_the_title() . $after;
       }
  
@@ -1373,8 +1372,6 @@ function dimox_breadcrumbs() {
  
     } elseif ( is_attachment() ) {
       $parent = get_post($post->post_parent);
-      $cat = get_the_category($parent->ID); $cat = $cat[0];
-      echo is_wp_error( $cat_parents = get_category_parents($cat, TRUE, ' ' . $delimiter . ' ') ) ? '' : $cat_parents;
       echo '<a href="' . get_permalink($parent) . '">' . $parent->post_title . '</a> ' . $delimiter . ' ';
       echo $before . get_the_title() . $after;
  
@@ -1422,10 +1419,26 @@ function dimox_breadcrumbs() {
 
 function piratenkleider_header_style() {} 
 
-function piratenkleider_admin_head() {
-    echo '<link rel="stylesheet" type="text/css" href="'.get_template_directory_uri().'/css/admin.css" />'; 
+/*
+  function piratenkleider_admin_head() {
+     echo '<link rel="stylesheet" type="text/css" href="'.get_template_directory_uri().'/css/admin.css" />'; 
+
 }
 add_action('admin_head', 'piratenkleider_admin_head');
+*/
+
+
+function piratenkleider_admin_style() {
+    wp_enqueue_script('jquery');	
+    wp_enqueue_media();
+    
+         wp_register_style( 'themeadminstyle', get_template_directory_uri().'/css/admin.css' );	   
+         wp_register_script('themeadminscripts', get_template_directory_uri().'/js/admin.js', array('jquery','media-upload','thickbox'));    
+           wp_enqueue_style( 'themeadminstyle' );	
+	   wp_enqueue_script('themeadminscripts');	   
+}
+add_action( 'admin_enqueue_scripts', 'piratenkleider_admin_style' );
+
 
 function custom_login() { 
     echo '<link rel="stylesheet" type="text/css" href="'.get_template_directory_uri().'/css/custom-login.css" />'; 
