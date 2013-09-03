@@ -9,7 +9,7 @@ jQuery(document).ready(function($){
 
     $('.upload_image_button').click(function(e) {
         e.preventDefault();
- 
+
         //If the uploader object has already been created, reopen the dialog
         if (custom_uploader) {
             custom_uploader.open();

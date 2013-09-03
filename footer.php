@@ -40,6 +40,7 @@
        <script type="text/javascript">
         /* <![CDATA[ */
 	jQuery(document).ready(function($) {
+         <?php if ($options['slider-aktiv']==1) { ?>        
 	 $('.flexslider').flexslider({
 	    slideshowSpeed: <?php echo $slideshowSpeed ?>,
 	    animationSpeed: <?php echo $animationDuration ?>,
@@ -49,18 +50,33 @@
 	    keyboard: true,
 	    multipleKeyboard: true,
 	    touch: true,
+            directionNav: false,
+            controlNav: true,     
+            pauseText: "<?php _e('Stop','piratenkleider'); ?>",
+            playText: "<?php _e('Start','piratenkleider'); ?>",            
            });	   
-	<?php if ($options['slider-defaultwerbeplakate']==1) { ?>
-	 $('.slidersidebar').flexslider({
-	    slideshowSpeed: <?php echo $slideshowSpeed ?>,
-	    animationSpeed: <?php echo $animationDuration ?>,
-	    animation: "fade",
-	    pausePlay: true,
-	    keyboard: true,
-	    multipleKeyboard: true,
-	    touch: true,
-	    smoothHeight: true
-           });
+         <?php } 
+         if ($options['slider-defaultwerbeplakate']==1) { ?>
+                 
+          var breite = $(window).width();
+          if (breite > 600) {        
+             $('.slidersidebar').flexslider({
+                slideshowSpeed: <?php echo $slideshowSpeed ?>,
+                animationSpeed: <?php echo $animationDuration ?>,
+                animation: "fade",
+                pausePlay: true,
+                keyboard: true,
+                multipleKeyboard: true,
+                touch: true,
+                smoothHeight: true, 
+                directionNav: true,
+                controlNav: false,
+                nextText: "<?php _e('Vor','piratenkleider'); ?>",
+                prevText: "<?php _e('Zur&uuml;ck','piratenkleider'); ?>",
+                pauseText: "<?php _e('Stop','piratenkleider'); ?>",
+                playText: "<?php _e('Start','piratenkleider'); ?>",
+               });
+           }
 	   <?php } ?>
 	});        
 	

@@ -1122,18 +1122,7 @@ display: inline-block;
 .content .startpage-widget-area ul.children {
     margin: 0 0 0 5px ; 
 }
-.content .content-aside p, .content 
-.content-aside table, .content 
-.content-aside blockquote, 
-.content .content-aside form {
-    margin-bottom: 20px; 
-}
-.content .content-aside ul, .content .content-aside ol {
-    margin: 0 0 20px 0; }
-.content .content-aside ul li,
-.content .content-aside ol li {
-      list-style: none;
-}
+
 .content ul {
     list-style: disc; 
 }
@@ -1318,6 +1307,20 @@ display: inline-block;
     max-width: 665px;
 }
 
+
+.content-aside p, 
+.content-aside table, 
+.content-aside blockquote, 
+.content-aside form {
+    margin-bottom: 20px; 
+}
+.content-aside ul, 
+.content-aside ol {
+    margin: 0 0 20px 0; }
+.content-aside ul li,
+.content-aside ol li {
+      list-style: none;
+}
 .content-aside a img {
     margin: 0;
     padding: 0; 
@@ -3189,11 +3192,7 @@ html[xmlns] .slides {display: block;}
     text-decoration: none;
     border: none;
 }
-/*
-.content-aside .flex-control-nav {
-  display: none; 
-}
-*/ 
+
 
 .flexslider .bigslider img {    
     min-width: 705px;
@@ -3222,19 +3221,18 @@ html[xmlns] .slides {
 .slides > li:first-child {
   display: block;
 }
-
+.flex-pauseplay,
+.flex-control-nav,  
 .flex-direction-nav {
-  display: none; 
+    z-index: 10;
 }
-
-.teaser .flex-control-nav {
+.flex-control-nav {
   position: absolute;
   top: 10px;
   right: 62px;
   overflow: hidden;
-  z-index: 800; 
 }
-
+.slidersidebar .flex-direction-nav,
 .slidersidebar .flex-control-nav {
     margin: 0 0 10px 0;
     padding: 0;
@@ -3242,39 +3240,40 @@ html[xmlns] .slides {
     position: absolute;
     top: 10px;    
     right: 10px;
-    max-width: 200px;
+    max-width: 210px;
 }
 
-.flex-control-nav li {
+.flex-control-nav li, 
+.flex-direction-nav li {
     float: left;
     margin-right: 1px; 
 }
-.flex-control-nav li a {
+.flex-control-nav li a,
+.flex-direction-nav li a {
       display: block;
       padding: 0px 5px;
-      background: white;
-      background: rgba(255, 255, 255, 0.5);
-      cursor: pointer;
-      color: black;
 }
 .flex-control-nav li a.flex-active,
 .flex-control-nav li a.active,
 .flex-control-nav li a:hover,
-.flex-control-nav li a:focus {
+.flex-control-nav li a:focus, 
+.flex-direction-nav li a.flex-active,
+.flex-direction-nav li a.active,
+.flex-direction-nav li a:hover,
+.flex-direction-nav li a:focus{
         background: white; 
 }  
 
-
-
-.first-teaser-widget-area .flexslider .flex-pauseplay,
-.slidersidebar .flex-pauseplay {
-    background: white;
-    background: rgba(255, 255, 255, 0.8);
+.flex-control-nav li a,
+.flex-direction-nav li a,
+.flex-pauseplay {
+      background: white;
+      background: rgba(255, 255, 255, 0.5);
     cursor: pointer;
     color: black; 
 }
 
-.first-teaser-widget-area .flexslider .flex-pauseplay {
+ .flexslider .flex-pauseplay {
     position: absolute;
     top: 10px;
     right: 10px;

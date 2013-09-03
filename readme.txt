@@ -2,7 +2,7 @@ Piratenkleider
 - Wordpress-Theme für Webauftritte der Piratenpartei 
 ====================================================
 
-Version 2.18.5 von Wolfgang Wiese (xwolf), 28. August 2013
+Version 2.18.7 von Wolfgang Wiese (xwolf), 3. September 2013
 
 
 DOWNLOADS
@@ -518,3 +518,7 @@ Administrative Hinweise für Wordpress Theme-Editoren:
     vor dem Embedding einen Link zu YouTube setzt. Ausserdem wird das Embedding
     selbst über youtube-nocookie.com geholt.
 
+20. Ab der Version 2.18.7 ist ein neues Widget enthalten mit dessen Hilfe
+    auf einfache Weise Bilder oder Logolinks in die Sidebar plaziert werden
+    können. Diese Bilder können via URL oder aus der Mediathek ausgewählt
+    werden und haben dann gleich die korrekten Größe für die Sidebar.

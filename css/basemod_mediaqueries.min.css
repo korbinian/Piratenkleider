@@ -6,7 +6,7 @@
 .content-primary .columns .column2 .post{padding-left:0;}
 .withvideo .ym-col1,.withvideo .ym-col3{float:none;width:100%;margin:0;}
 .flexslider,.flexslider img{overflow:hidden;}
-.content-aside .flexslider{height:auto;margin-bottom:10px;}
+.slidersidebar{height:auto;margin-bottom:10px;}
 .logo{max-width:300px;top:0;}
 .logo img{display:block;margin:0 auto;}
 .nav-top{width:200px;right:0;}
@@ -50,8 +50,9 @@
 .content-primary .columns .column2 .post{padding-left:0;}
 .content-primary .first-startpage-widget-area,.content-primary .second-startpage-widget-area{clear:both;float:none;padding-top:10px;width:100%;display:block;}
 .content-primary .skin{padding:10px 5px 5px;}
-.content-header,.content-header-big{margin-left:0;height:11em;overflow:hidden;}
-.content-header h1,.content-header-big h1{z-index:100;top:10px;}
+.content-header,.content-header-big{height:auto;overflow:hidden;position:relative;left:inherit;top:inherit;min-height:3em;margin:0;}
+.content-header h1,.content-header-big h1{z-index:100;position:relative;left:inherit;top:inherit;width:100%;margin:0;padding:10px;}
+.content .symbolbild{background-size:auto 100px;top:0;left:0;position:absolute;}
 .single .post{max-width:100%;padding:10px;}
 .post-comments{background:url(../images/int/bg-tags.png) repeat -20% top #F80;margin:2px 5px 5px;padding:3px;}
 .post-comments a{color:#000;}
@@ -64,13 +65,13 @@
 .home #socialmedia_iconbar{top:inherit;}
 #socialmedia_iconbar ul.socialmedia{list-style:none;display:inline-block;}
 #socialmedia_iconbar ul.socialmedia li{width:34px;}
-.sticker,.teaser,#skiplink-nav,#skiplink-search,.nav-main ul li ul,.content-primary .switchoff,.content-primary .switchon,.content-aside .flexslider,.post-comments ol li .reply{display:none;}
+.sticker,.teaser,#skiplink-nav,#skiplink-search,.nav-main ul li ul,.content-primary .switchoff,.content-primary .switchon,.post-comments ol li .reply{display:none;}
 .skiplinks li a:focus,.skiplinks li a:hover,.nav-main ul.menu li a:focus,.nav-main ul.menu li a:hover{background:#24639b;color:#000;}
 .footer .second-footer-widget-area,.footer .second-footer-widget-area .skin{padding-top:0;}
 }
 @media only screen and (max-width: 479px) {
 .symbolbild,.flexslider,.flexslider img{overflow:hidden;}
-.content-aside .flexslider{height:auto;margin-bottom:10px;}
+.slidersidebar{height:auto;margin-bottom:10px;}
 .flexslider .caption{padding:5px 10px;}
 .flexslider .caption h2,.flexslider .caption h3{font-size:12px;font-family:Helvetica, Arial, sans-serif;letter-spacing:0;}
 }
