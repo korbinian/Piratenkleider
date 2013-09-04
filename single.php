@@ -82,7 +82,8 @@
                <?php 
                 piratenkleider_post_pubdateinfo();    
                 if ($options['aktiv-autoren']) piratenkleider_post_autorinfo();             
-                 piratenkleider_post_taxonominfo();  
+                echo '';  
+		piratenkleider_post_taxonominfo();  
                 ?>                  
               </p>
           </div>
