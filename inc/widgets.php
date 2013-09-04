@@ -361,7 +361,7 @@ add_action( 'widgets_init', create_function( '', 'register_widget( "ParteiLinkli
 
 
 /**
- * Adds Newsletter_Widget widget.
+ * Adds Bannerlink_Widget widget.
  */
 class Bannerlink_Widget extends WP_Widget {
 
