@@ -123,7 +123,7 @@
             'rel' => 'follow',
             'type' => 'post',
             'image' => array(1, 1),
-            'message' => 'Keine Treffer'
+            'message' => __('Keine Treffer','piratenkleider')
             )
             ) ?>
           </ul>
