@@ -1419,14 +1419,6 @@ function dimox_breadcrumbs() {
 
 function piratenkleider_header_style() {} 
 
-/*
-  function piratenkleider_admin_head() {
-     echo '<link rel="stylesheet" type="text/css" href="'.get_template_directory_uri().'/css/admin.css" />'; 
-
-}
-add_action('admin_head', 'piratenkleider_admin_head');
-*/
-
 
 function piratenkleider_admin_style() {
     wp_enqueue_script('jquery');	
