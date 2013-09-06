@@ -93,7 +93,7 @@
         /* ]]> */
     </script> 
     <?php }
-    if (isset($options['aktiv-wombat'])) { ?>
+    if ((isset($options['aktiv-wombat'])) && ($options['aktiv-wombat']==1)) { ?>
 	<div id="wombat">
 	    <img src="<?php echo get_template_directory_uri() ?>/images/wombat-orange-klein.png" alt="">
 	</div>   
