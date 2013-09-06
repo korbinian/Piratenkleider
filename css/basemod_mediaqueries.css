@@ -136,12 +136,12 @@
       width: 100%;
       height: auto; 
     }
-    .sticker {
+    #wombat,
+    .sticker,
+    .teaser {
         display: none;
     }      
-    .teaser {
-        display: none;        
-    }
+
     .nav-top {        
         display: block;
          position: relative;
@@ -537,6 +537,7 @@
   .slidersidebar {
  /*  display: none; */
   }
+  
 }
 
    
