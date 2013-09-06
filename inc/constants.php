@@ -183,6 +183,7 @@ $defaultoptions = array(
         /* YouTube Videos ueber eigenen Embedcode gestalten und an youtbe-nocookie lenken */
     'yt-norel'			 => 1,
 	/* Keine weiteren Videos vorschlagen */
+    'aktiv-wombat'		    => 0,
 );
 
 
@@ -1819,6 +1820,14 @@ $setoptions = array(
                   'label'   => __( 'YouTube-Links automatisch mit eigenem verlinkten iFrame-Embed anreichern, der die tracking-sichere Website youtube-nocookie.com nutzt.', 'piratenkleider' ),
                   'default' => $defaultoptions['yt-alternativeembed'],
               ),  
+	       
+	      'aktiv-wombat' => array(
+                  'type'    => 'bool',
+                  'title'   => __( 'Wombat', 'piratenkleider' ),
+                  'label'   => __( 'Aktiviert die Anzeige des kleinen Wombats (CC by Nicole Britz)', 'piratenkleider' ),
+                  'default' => $defaultoptions['aktiv-wombat'],
+              ),   
+	       
               'anonymitaet'  => array(
                   'type'    => 'section',
                   'title'   => __('Anonymit&auml;t &amp; Sicherheit', 'piratenkleider'),         

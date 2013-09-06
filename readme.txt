@@ -2,7 +2,7 @@ Piratenkleider
 - Wordpress-Theme für Webauftritte der Piratenpartei 
 ====================================================
 
-Version 2.18.7 von Wolfgang Wiese (xwolf), 3. September 2013
+Version 2.18.8 von Wolfgang Wiese (xwolf), 6. September 2013
 
 
 DOWNLOADS
@@ -38,6 +38,7 @@ AUTOREN / ENTWICKLER
      - Marc Schieferdecker,  http://thegeek.de 
      - Benjamin Stöcker, http://freiheitsworte.de     
      - le Grand, http://www.lenz-online.org 
+     - Nicole Britz, http://twitter.com/dyfustic
      - und vielen mehr!
 
    Quellen für Defaultbilder und CI-Materialen (CC-BY 3.0)
@@ -45,7 +46,7 @@ AUTOREN / ENTWICKLER
      - Plakatbilder ab Version 2.17: SG Gestaltung, sowie Projekt Piratestarter
      - Weitere Bilder: Piratenwiki mit unterschiedlichen Autoren
      - Bildbearbeitung für Piratenkleider 2.x: Wolfgang Wiese
-
+     - Comicbild Wombat: CC BY CA, Nicole Britz
 
    Weitere verwendete Inhalte:
      - Social Media Icons: Paul Robert Lloyd, http://paulrobertlloyd.com/2009/06/social_media_icons      

@@ -92,7 +92,12 @@
          $htmlOffSwitch = '<div class="switchon" ><a href="#"><abbr title="<?php _e('Leiste anzeigen','piratenkleider'); ?>">&#9664;</abbr></a></div>';
         /* ]]> */
     </script> 
-       <?php }
+    <?php }
+    if (isset($options['aktiv-wombat'])) { ?>
+	<div id="wombat">
+	    <img src="<?php echo get_template_directory_uri() ?>/images/wombat-orange-klein.png" alt="">
+	</div>   
+   <?php }   
     
    if (isset($options['html-eigene-anweisungen'])
         && strlen(trim($options['html-eigene-anweisungen'])) > 0) {

@@ -3715,3 +3715,12 @@ html[xmlns] .slides {
 .symbol-zwei:before { content: "\2461"; }
 .symbol-drei:before { content: "\2462"; }
 
+#wombat {
+    position: absolute;
+    top: 140px;
+    right: 10px;
+}
+#wombat img {
+    margin: 0;
+    padding: 0;
+}
