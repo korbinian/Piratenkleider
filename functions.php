@@ -1421,13 +1421,11 @@ function piratenkleider_header_style() {}
 
 
 function piratenkleider_admin_style() {
-    wp_enqueue_script('jquery');	
+    wp_register_style( 'themeadminstyle', get_template_directory_uri().'/css/admin.css' );	   
+    wp_enqueue_style( 'themeadminstyle' );	
     wp_enqueue_media();
-    
-         wp_register_style( 'themeadminstyle', get_template_directory_uri().'/css/admin.css' );	   
-         wp_register_script('themeadminscripts', get_template_directory_uri().'/js/admin.js', array('jquery'));    
-           wp_enqueue_style( 'themeadminstyle' );	
-	   wp_enqueue_script('themeadminscripts');	   
+    wp_register_script('themeadminscripts', get_template_directory_uri().'/js/admin.js', array('jquery'));    
+    wp_enqueue_script('themeadminscripts');	   
 }
 add_action( 'admin_enqueue_scripts', 'piratenkleider_admin_style' );
 

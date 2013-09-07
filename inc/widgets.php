@@ -396,23 +396,27 @@ class Bannerlink_Widget extends WP_Widget {
 	  
 		    </p>
 		    <p>
-			<label for="<?php echo $this->get_field_id('url'); ?>"><?php echo 'Ziel-URL (inkl. http(s)):'; ?></label>
+			<label for="<?php echo $this->get_field_id('url'); ?>"><?php echo 'Ziel-URL:'; ?></label>
 			<input class="widefat" id="<?php echo $this->get_field_id('url'); ?>" 
 			       name="<?php echo $this->get_field_name('url'); ?>" 
 			       type="text" value="<?php echo esc_attr($url); ?>" />
 	  
 		    </p>
 		     <p>
-			<label for="<?php echo $this->get_field_id('image_url'); ?>"><?php echo 'Bild-URL (inkl. http(s)):'; ?></label>
-			<input 	class="image_url widefat" id="<?php echo $this->get_field_id('image_url'); ?>" 
+			<label for="<?php echo $this->get_field_id('image_url'); ?>"><?php _e('Bild-URL:','piratenkleider'); ?>
+                        	<input 	class="image_url widefat" id="<?php echo $this->get_field_id('image_url'); ?>" 
 			       name="<?php echo $this->get_field_name('image_url'); ?>" 
 			       type="text" value="<?php echo esc_attr($image_url); ?>" />
-			<input type="hidden" class="image_id" id="<?php echo $this->get_field_id('image_id'); ?>" 
-			       name="<?php echo $this->get_field_name('image_id'); ?>" />
-			<input class="upload_image_button" value="<?php _e('Hochladen / Ausw&auml;hlen', 'piratenkleider'); ?>" type="button" />
+                  
+
+                        	<input type="hidden" id="<?php echo $this->get_field_id('image_id'); ?>" 
+                                  class="image_id"  name="<?php echo $this->get_field_name('image_id'); ?>" />
+                                <input
+                                    id="<?php echo $this->get_field_id('image_url'); ?>_button"
+                                    class="upload_image_button" value="<?php _e('Hochladen / Ausw&auml;hlen', 'piratenkleider'); ?>" type="button" />
 
 			    <br /><?php _e('Gebe eine URL zu einem Bild ein oder verwende die Mediathek um es hochzuladen oder um ein vorhandenes Bild auszuw&auml;hlen.', 'piratenkleider'); ?>
-	  
+                        </label> 
 		    </p>
 		    <?php 
 	}
@@ -455,7 +459,8 @@ class Bannerlink_Widget extends WP_Widget {
 	    echo $before_widget;
 	    
 	    echo '<p class="bannerlink">';
-	    echo '<a href="'.$url.'">';
+            if ((isset($url)) && (strlen($url)>0))
+                echo '<a href="'.$url.'">';
 	    if ($image_url) {
 		if ($image_height > 0) {
 		    echo '<img src="'.$image_url.'" width="'.$image_width.'" height="'.$image_height.'" alt="'.$title.'">';
@@ -465,7 +470,9 @@ class Bannerlink_Widget extends WP_Widget {
 	    } else {
 		echo $title;
 	    }
-	    echo "</a></p>\n";
+             if ((isset($url)) && (strlen($url)>0))
+                echo '</a>';
+	    echo "</p>\n";
 	    echo $after_widget;
 	}
 	
