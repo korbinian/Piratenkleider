@@ -1,3 +1,10 @@
+@media only screen and (max-width: 1024px) {
+.section {padding: 0 6px;}
+.content .startpage-widget-area, .first-startpage-widget-area ul li {padding: 0 12px;}
+.content-aside .skin {padding: 20px 1px;}
+.second-teaser-widget-area .skin,.sticker .skin, .ie7 .sticker .skin, .ie8 .sticker .skin {padding: 10px 1px;}
+.content-aside .slidersidebar {margin: 10px 1px;}
+}
 @media only screen and (max-width: 767px) {
 .row{width:100%;}
 .content-primary .columns{float:none;clear:both;}
