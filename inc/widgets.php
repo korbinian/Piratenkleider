@@ -447,12 +447,12 @@ class Bannerlink_Widget extends WP_Widget {
 		$image_width = $image_attributes[1];
 		$image_height = $image_attributes[2];
 	    }
-	    if (isset($url)) {
-		$url = wp_make_link_relative($url);
-	    }
-	    if (isset($image_url)) {
-		$image_url = wp_make_link_relative($image_url);
-	    }
+	//    if (isset($url)) {
+	//	$url = wp_make_link_relative($url);
+	//    }
+	//    if (isset($image_url)) {
+	//	$image_url = wp_make_link_relative($image_url);
+	//    }
 	    if (!isset($url) && !isset($image_url)) {
 		return;
 	    }
