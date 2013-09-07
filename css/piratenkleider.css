@@ -1301,7 +1301,7 @@ display: inline-block;
     top: 1.5em;
     display: inline-block;
     background-color: white;
-    background-color: rgba(255, 255, 255, 0.6);
+    background-color: rgba(255, 255, 255, 0.8);
     padding: 3px 5px 1px 5px;    
     line-height: 1.25em;
     max-width: 665px;
