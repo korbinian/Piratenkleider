@@ -1265,7 +1265,7 @@ function wpi_linkexternclass_callback($matches) {
         if ((strpos($link, 'class') === false)
 		   && (strpos($link, 'mailto:') === false)
                    && (strpos($link, 'http') >0)
-                    && (strpos($link, $site_link) === false)) {
+                   && (strpos($link, $site_link) === false)) {
             $link = preg_replace("%(href=\S(?!($site_link|#)))%i", 'class="extern" $1', $link);
         }       
         return $link;
