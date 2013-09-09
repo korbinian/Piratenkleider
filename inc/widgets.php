@@ -142,10 +142,6 @@ add_action( 'widgets_init', 'piratenkleider_widgets_init' );
  * Adds Newsletter_Widget widget.
  */
 class Newsletter_Widget extends WP_Widget {
-
-	/**
-	 * Register widget with WordPress.
-	 */
 	public function __construct() {
 		parent::__construct(
 	 		'Newsletter_Widget', // Base ID
@@ -153,92 +149,77 @@ class Newsletter_Widget extends WP_Widget {
 			array( 'description' => __( 'Formular zur EIngabe einer Mailadresse zu einem Majordomolink angeben.', 'piratenkleider' ), ) // Args
 		);
 	}
-
-	/**
-	 * Front-end display of widget.
-	 *
-	 * @see WP_Widget::widget()
-	 *
-	 * @param array $args     Widget arguments.
-	 * @param array $instance Saved values from database.
-	 */
-	public function widget( $args, $instance ) {            
-            $options = get_option( 'piratenkleider_theme_options' );
-            if (!isset($options['url-newsletteranmeldung'])) {
-                $options['url-newsletteranmeldung'] = $defaultoptions['url-newsletteranmeldung']; }
+	
+	public function widget( $args, $instance ) {                
 		extract( $args );
 		$title = apply_filters( 'widget_title', $instance['title'] );
-
-		echo $before_widget;				
-                    
+		$url = esc_url($instance['url']);
+				
+		echo $before_widget;				                    
                 echo '<div class="newsletter">';
                 echo $before_title . $title . $after_title;
-               if (isset($options['url-newsletteranmeldung'])) {     
                  ?> 
                  
-                        <form method="post" action="<?php echo $options['url-newsletteranmeldung']; ?>">						
-                                <label for="email-newsletter"><?php _e("Zum Newsletter anmelden", 'piratenkleider'); ?></label>
-                                <input type="text" name="email-newsletter" id="email-newsletter" value="<?php _e("E-Mail-Adresse eingeben", 'piratenkleider'); ?>" placeholder="<?php _e("E-Mail-Adresse eingeben", 'piratenkleider'); ?>"
+                        <form method="post" action="<?php echo $url; ?>">						
+                                <label for="email"><?php _e("Zum Newsletter anmelden", 'piratenkleider'); ?>
+                                <input type="text" name="email" value="<?php _e("E-Mail-Adresse eingeben", 'piratenkleider'); ?>" placeholder="<?php _e("E-Mail-Adresse eingeben", 'piratenkleider'); ?>"
                                        onfocus="if(this.value=='<?php _e("E-Mail-Adresse eingeben", 'piratenkleider'); ?>')this.value='';" onblur="if(this.value=='')this.value='<?php _e("E-Mail-Adresse eingeben", 'piratenkleider'); ?>';">
-                                <input type="submit" name="email-button" value="<?php _e("anmelden", 'piratenkleider'); ?>" id="newslettersubmit">
-                                <p><?php _e("Hinweis: Beim Aufruf wird der Webauftritt verlassen.", 'piratenkleider'); ?>
-                                </p>
+                                <input type="submit" name="email-button" value="<?php _e("Anmelden", 'piratenkleider'); ?>" id="newslettersubmit">
+				</label>
+		    <?php 	    
+		    $site_link = home_url();
+		    if ((isset($url))&& (strpos($url, $site_link) !== false)) {  
+			echo "<p>";
+			_e("Hinweis: Beim Aufruf wird der Webauftritt verlassen.", 'piratenkleider');
+			echo "</p>";
+		    }	?>		    
                         </form>           
                 </div>
                 <?php 
-               } else {                   
-                    echo '<p>';
-                    _e("Fehler: Adresse des Newsletter-Dienstes ist nicht eingetragen. Bitte geben Sie diese Adresse zun&auml;chst bei den Theme-Optionen an.", 'piratenkleider'); 
-                   echo '</p>';
-               }
+ 
                echo $after_widget;
                 
                 
 	}
 
-	/**
-	 * Sanitize widget form values as they are saved.
-	 *
-	 * @see WP_Widget::update()
-	 *
-	 * @param array $new_instance Values just sent to be saved.
-	 * @param array $old_instance Previously saved values from database.
-	 *
-	 * @return array Updated safe values to be saved.
-	 */
+	
 	public function update( $new_instance, $old_instance ) {
 		$instance = array();
 		$instance['title'] = strip_tags( $new_instance['title'] );
-
+		$instance['url'] = esc_url($new_instance['newsletter_url']);	    
 		return $instance;
 	}
 
-	/**
-	 * Back-end widget form.
-	 * @see WP_Widget::form()
-	 * @param array $instance Previously saved values from database.
-	 */
+	
 	public function form( $instance ) {
-		if ( isset( $instance[ 'title' ] ) ) {
-			$title = $instance[ 'title' ];
-		} else {
-			$title = __( 'Newsletter', 'piratenkleider' );
-		}		
-                $options = get_option( 'piratenkleider_theme_options' );
-		 if (!isset($options['url-newsletteranmeldung'])) {
-                     $options['url-newsletteranmeldung'] = $defaultoptions['url-newsletteranmeldung']; }
-   
-                 if (empty($options['url-newsletteranmeldung'])) {                                      
-                   echo '<p>';
-                    _e("Fehler: Adresse des Newsletter-Dienstes ist nicht eingetragen. Bitte geben Sie diese Adresse zun&auml;chst bei den Theme-Optionen an.", 'piratenkleider'); 
-                   echo '</p>';
-		 } else {  ?>                 
-                     <p>
-                    <label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e( 'Titel:', 'piratenkleider' ); ?></label> 
+	    global $defaultoptions;
+	   
+	    
+	    $defaults = array(
+		'title'		    => __( 'Newsletter', 'piratenkleider' ),
+		'newsletter_url'    => $defaultoptions['url-newsletteranmeldung'],
+	    );
+	    $instance = wp_parse_args((array)$instance, $defaults);
+	    $title = $instance['title'];
+	    $url = $instance['newsletter_url'];
+	    
+	    ?> 
+		
+		    
+		
+		 <p>
+                    <label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e( 'Titel:', 'piratenkleider' ); ?>
                     <input class="widefat" id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" type="text" value="<?php echo esc_attr( $title ); ?>" />
-                    </p>
+		    </label> 
+                </p>
+             
+		 <p>
+		    <label for="<?php echo $this->get_field_id( 'newsletter_url' ); ?>"><?php _e( 'CGI-URL zur Registrierung im Newsletter:', 'piratenkleider' ); ?>
+		    <input class="widefat" id="<?php echo $this->get_field_id( 'newsletter_url' ); ?>" name="<?php echo $this->get_field_name( 'newsletter_url' ); ?>" type="text" value="<?php echo esc_attr( $url ); ?>" />
+		    </label> 
+		</p>
                  <?php
-                 }
+                
 	}
 
 } // class Newsletter_Widget
@@ -262,15 +243,9 @@ class ParteiLinkliste_Widget extends WP_Widget {
 		);
 	}
 
-	/**
-	 * Front-end display of widget.
-	 *
-	 * @see WP_Widget::widget()
-	 *
-	 * @param array $args     Widget arguments.
-	 * @param array $instance Saved values from database.
-	 */
-	public function widget( $args, $instance ) {            
+	
+	public function widget( $args, $instance ) {     
+	    global $defaultoptions;
             extract( $args );
             $bereich =  $instance['bereich'] ;
             if ((!isset($bereich)) || (empty($bereich))) {
@@ -301,29 +276,16 @@ class ParteiLinkliste_Widget extends WP_Widget {
                 
 	}
 
-	/**
-	 * Sanitize widget form values as they are saved.
-	 *
-	 * @see WP_Widget::update()
-	 *
-	 * @param array $new_instance Values just sent to be saved.
-	 * @param array $old_instance Previously saved values from database.
-	 *
-	 * @return array Updated safe values to be saved.
-	 */
+	
 	public function update( $new_instance, $old_instance ) {
 		$instance = array();
                 $instance['bereich'] = strip_tags( $new_instance['bereich'] );
 		return $instance;
 	}
 
-	/**
-	 * Back-end widget form.
-	 * @see WP_Widget::form()
-	 * @param array $instance Previously saved values from database.
-	 */
+	
 	public function form( $instance ) {
-		
+		global $defaultoptions;
                 if ( isset( $instance[ 'bereich' ] ) ) {
 			$bereich = $instance[ 'bereich' ];
 		} else {
@@ -365,9 +327,7 @@ add_action( 'widgets_init', create_function( '', 'register_widget( "ParteiLinkli
  */
 class Bannerlink_Widget extends WP_Widget {
 
-	/**
-	 * Register widget with WordPress.
-	 */
+	
 	public function __construct() {
 		parent::__construct(
 	 		'Bannerlink_Widget', // Base ID

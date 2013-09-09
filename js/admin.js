@@ -12,7 +12,8 @@ jQuery(document).ready(function($){
         var button = $(this);
         var id = button.attr('id').replace('_button', '');
         var idimgid = button.attr('id').replace('url_button', 'id'); 
-        var idtitle = button.attr('id').replace('image_url_button', 'title'); 
+        var idtitle = button.attr('id').replace('image_url_button', 'title');
+	
         //If the uploader object has already been created, reopen the dialog
         if (custom_uploader) {
             custom_uploader.open();
