@@ -466,7 +466,7 @@ class Bannerlink_Widget extends WP_Widget {
 		if ($image_height > 0) {
 		    echo '<img src="'.$image_url.'" width="'.$image_width.'" height="'.$image_height.'" alt="'.$title.'">';
 		} else {
-		    echo '<img src="'.$image_url.'" style="max-width: '.$defaultoptions['bannerlink-width'].'; height: auto;" alt="'.$title.'">';
+		    echo '<img src="'.$image_url.'" style="max-width: '.$defaultoptions['bannerlink-width'].'px; height: auto;" alt="'.$title.'">';
 		}
 	    } else {
 		echo $title;
