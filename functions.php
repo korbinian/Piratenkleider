@@ -196,9 +196,9 @@ function piratenkleider_setup() {
         if ($options['yt-alternativeembed']) {
         /* Filter fuer YouTube Embed mit nocookie: */     
     #    wp_oembed_remove_provider( '#https://(www\.)?youtube.com/watch.*#i' );
-            wp_embed_register_handler( 'ytnocookie', '#https?://www\.youtube\-nocookie\.com/embed/([a-z0-9\-]+)#i', 'wp_embed_handler_ytnocookie' );
-            wp_embed_register_handler( 'ytnormal', '#https?://www\.youtube\.com/watch\?v=([a-z0-9\-]+)#i', 'wp_embed_handler_ytnocookie' );
-            wp_embed_register_handler( 'ytnormal2', '#https?://www\.youtube\.com/watch\?feature=player_embedded&v=([a-z0-9\-]+)#i', 'wp_embed_handler_ytnocookie' );
+            wp_embed_register_handler( 'ytnocookie', '#https?://www\.youtube\-nocookie\.com/embed/([a-z0-9\-_]+)#i', 'wp_embed_handler_ytnocookie' );
+            wp_embed_register_handler( 'ytnormal', '#https?://www\.youtube\.com/watch\?v=([a-z0-9\-_]+)#i', 'wp_embed_handler_ytnocookie' );
+            wp_embed_register_handler( 'ytnormal2', '#https?://www\.youtube\.com/watch\?feature=player_embedded&v=([a-z0-9\-_]+)#i', 'wp_embed_handler_ytnocookie' );
         }
 
 	function wp_embed_handler_ytnocookie( $matches, $attr, $url, $rawattr ) {
