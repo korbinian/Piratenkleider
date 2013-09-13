@@ -1109,14 +1109,12 @@ function get_piratenkleider_firstvideo($width = 300, $height = 169, $nocookie =1
        preg_match('/\b(https?:\/\/www\.youtube[\-a-z]*\.com\/(watch|embed)[\/a-z0-9\.\-&;\?_=]+)/i', $post->post_content, $matches);
         if ((is_array($matches)) && (isset($matches[1]))) {
             $entry = $matches[1];
-	    echo "THISENTRY: ".$entry;
             if (!empty($entry)){
-          //      if ($nocookie==1) {
+                if ($nocookie==1) {
                     $entry = preg_replace('/feature=player_embedded&amp;/','',$entry);
 		    $entry = preg_replace('/feature=player_embedded&/','',$entry);
                     $entry = preg_replace('/youtube.com\/watch\?v=/','youtube-nocookie.com/embed/',$entry);
-           //     }
-		     echo "<br>THISENTRY: ".$entry;
+                }
                 $htmlout = '<iframe width="'.$width.'" height="'.$height.'" src="'.$entry.'" allowfullscreen></iframe>';
                 return $htmlout;    
             }
@@ -1147,7 +1145,7 @@ function get_piratenkleider_custom_excerpt($length = 0, $continuenextline = 1, $
       $length = $options['teaser_maxlength'];
   }
   if ($removeyoutube==1) {
-   $excerpt = preg_replace('/^\s*([^\'"]*www\.youtube[\/a-z0-9\.\-\?=]+)/i','',$excerpt);
+   $excerpt = preg_replace('/\s+(https?:\/\/www\.youtube[\/a-z0-9\.\-\?&;=_]+)/i','',$excerpt);
    // preg_match('/^\s*([^\'"]*www\.youtube[\/a-z0-9\.\-\?=]+)/i', $excerpt, $matches);
   }
   
