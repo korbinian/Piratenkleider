@@ -1587,9 +1587,9 @@ display: inline-block;
     .post .post-info .cal-icon .day {
       font-size: 24px;
       font-family: "FontPiratenkleiderHeadlines", Helvetica, Arial, sans-serif;
-      line-height: 18px; }
-
-
+      line-height: 18px; 
+      white-space: nowrap; 
+    }
 
     .post .cal {
 	margin-bottom: 5px;
