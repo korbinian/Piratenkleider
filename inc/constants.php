@@ -724,12 +724,15 @@ $default_alternativestyles = array(
         'title' => 'Piratenpartei Landesverband Rheinland-Pfalz',
         'url'  => 'http://www.piraten-rlp.de',
         'sublist' => array(
+            '<abbr title="Kreisverband">KV</abbr> Altenkirchen' => 'http://wiki.piratenpartei.de/RP:Kreisverband_Altenkirchen',
+            '<abbr title="Kreisverband">KV</abbr> Koblenz' => 'http://wiki.piratenpartei.de/RP:Kreisverband_Koblenz',	    
             '<abbr title="Kreisverband">KV</abbr> Bad Kreuznach' => 'http://wiki.piratenpartei.de/Kreisverband_Bad_Kreuznach',
-            '<abbr title="Kreisverband">KV</abbr> Landau/S&uuml;dliche Weinstra&szlig;e' => 'http://wiki.piratenpartei.de/RP:Kreisverband_Landau/S%C3%BCdliche_Weinstra%C3%9Fe',
             '<abbr title="Kreisverband">KV</abbr> Mittelhaardt' => 'http://www.piratenpartei-mittelhaardt.de',
             '<abbr title="Kreisverband">KV</abbr> Rhein-Pfalz' => 'http://wiki.piratenpartei.de/RP:Kreisverband_Rhein-Pfalz',
             '<abbr title="Kreisverband">KV</abbr> Rheinhessen' => 'http://wiki.piratenpartei.de/RP:Kreisverband_Rheinhessen',
-            '<abbr title="Kreisverband">KV</abbr> Trier/Trier-Saarburg' => 'http://piraten-trier.de',
+            '<abbr title="Kreisverband">KV</abbr> S&uuml;dpfalz' => 'http://wiki.piratenpartei.de/RP:Kreisverband_S%C3%BCdpfalz',
+	    '<abbr title="Kreisverband">KV</abbr> Trier/Trier-Saarburg' => 'http://piraten-trier.de',
+	    '<abbr title="Kreisverband">KV</abbr> Worms' => 'http://www.piraten-worms.de',
         )
     ),
       'Sachsen-Anhalt' => array(
