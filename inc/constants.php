@@ -380,8 +380,8 @@ $defaultbilder_liste = array(
 $default_toplink_liste = array(
     __('Wiki', 'piratenkleider' )               => 'https://wiki.piratenpartei.de',
     __('Liquid Feedback', 'piratenkleider' )    => 'https://lqfb.piratenpartei.de',
-    __('Forum', 'piratenkleider' )              => 'http://news.piratenpartei.de',
-    __('Flaschenpost', 'piratenkleider' )       => 'http://flaschenpost.piratenpartei.de'
+    __('Forum', 'piratenkleider' )              => 'https://news.piratenpartei.de',
+    __('Flaschenpost', 'piratenkleider' )       => 'https://flaschenpost.piratenpartei.de'
     
 );
 
