@@ -5,7 +5,7 @@
  **/ 
 
 $defaultoptions = array(
-    'js-version'                    => '2.18',
+    'js-version'                    => '2.19',
     'content-width'                 => 665,
     'yt-content-width'              => 665,
     'yt-content-height'             => 500,
