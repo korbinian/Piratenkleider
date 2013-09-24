@@ -100,30 +100,26 @@ if ((isset( $options['meta-author'] )) && ( strlen(trim($options['meta-author'])
                                             <div class="menu-header">
                                             <ul id="menu-topmenu" class="menu">
                                             <?php  
-                                          
 					    
-					    
-    foreach ( $default_toplink_liste as $entry => $listdata ) {        
-        
-        $value = '';
-        $active = 0;
-        if (isset($options['toplinkliste'][$entry]['content'])) {
-                $value = $options['toplinkliste'][$entry]['content'];
-        } else {
-                $value = $default_toplink_liste[$entry]['content'];
-         }
-         if (isset($options['toplinkliste'][$entry]['active'])) {
-                $active = $options['toplinkliste'][$entry]['active'];        
-	 }    
-	 
-            
-        if (($active ==1) && ($value)) {
-            echo '<li><a class="icon_'.$entry.'" href="'.$value.'">';
-            echo $listdata['name'].'</a></li>';
-        }
-    }					    
-					    
-					    
+					    foreach ( $default_toplink_liste as $entry => $listdata ) {        
+
+						$value = '';
+						$active = 0;
+						if (isset($options['toplinkliste'][$entry]['content'])) {
+							$value = $options['toplinkliste'][$entry]['content'];
+						} else {
+							$value = $default_toplink_liste[$entry]['content'];
+						 }
+						 if (isset($options['toplinkliste'][$entry]['active'])) {
+							$active = $options['toplinkliste'][$entry]['active'];        
+						 }    
+
+
+						if (($active ==1) && ($value)) {
+						    echo '<li><a class="icon_'.$entry.'" href="'.$value.'">';
+						    echo $listdata['name'].'</a></li>';
+						}
+					    }					    					    
                                             ?>
                                             </ul>
                                         </div> 
