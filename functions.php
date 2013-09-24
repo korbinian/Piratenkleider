@@ -4,7 +4,7 @@
  *
  * @source http://github.com/xwolfde/Piratenkleider
  * @creator xwolf
- * @version 2.19
+ * @version 2.19.3
  * @licence CC-BY-SA 3.0 
  */
 
@@ -454,6 +454,11 @@ function piratenkleider_compatibility ($oldoptions) {
         $doupdate = 1;
     }
 
+    if (!isset($newoptions['toplinkliste']))  {     
+	global $default_toplink_liste;
+	$newoptions['toplinkliste'] =  $default_toplink_liste;
+	 $doupdate = 1;
+    }
  
     
     $olddesignopt = get_option( 'piratenkleider_theme_designspecials' );
@@ -1096,9 +1101,10 @@ function get_piratenkleider_firstvideo($width = 300, $height = 169, $nocookie =1
         if (!empty($entry)){
 	    if ($nocookie==1) {
 		$entry = preg_replace('/feature=player_embedded&amp;/','',$entry);
+		$entry = preg_replace('/feature=player_embedded&/','',$entry);
 		$entry = preg_replace('/youtube.com\/watch\?v=/','youtube-nocookie.com/embed/',$entry);
 	    }
-            $htmlout = '<iframe width="'.$width.'" height="'.$height.'" src="'.$entry.'" allowfullscreen></iframe>';
+            $htmlout = '<iframe width="'.$width.'" height="'.$height.'" src="'.$entry.'" allowfullscreen="true"></iframe>';
             return $htmlout;    
         }
     }
@@ -1135,6 +1141,7 @@ function get_piratenkleider_custom_excerpt($length = 0, $continuenextline = 1, $
       
   if (has_excerpt()) {
       return  get_the_excerpt();
+      
   } else {
       $excerpt = get_the_content();
        if (!isset($excerpt)) {
@@ -1143,6 +1150,9 @@ function get_piratenkleider_custom_excerpt($length = 0, $continuenextline = 1, $
   }
   if ($length==0) {
       $length = $options['teaser_maxlength'];
+      if ($length <=0) {
+	  $length = 100;
+      }
   }
   if ($removeyoutube==1) {
    $excerpt = preg_replace('/\s+(https?:\/\/www\.youtube[\/a-z0-9\.\-\?&;=_]+)/i','',$excerpt);

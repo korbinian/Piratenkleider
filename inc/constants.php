@@ -171,7 +171,7 @@ $defaultoptions = array(
     'stickerlink1-content'          => '<span class="gedreht">Werde<br><span class="cicolor">Pirat!</span></span>',
     'stickerlink1-url'              => 'https://www.piratenpartei.de/mitmachen/mitglied-werden/',
     'stickerlink2-content'          => '<span class="gedreht"><span class="cicolor">Spende</span><br><span class="small">und hilf mit </span> </span>',
-    'stickerlink2-url'              => 'https://www.piratenpartei.de/mitmachen/spenden/',
+    'stickerlink2-url'              => 'https://spenden.piratenpartei.de/',
     'stickerlink3-content'          => '',
     'stickerlink3-url'              => '',
     'default_footerlink_key'        => 'International (mit Flaggen)',
@@ -256,7 +256,7 @@ $default_socialmedia_liste = array(
     'tumblr' => array(
 	'name' => 'Tumblr',
 	'content'  => 'http://wirstellendasmalinfrage.tumblr.com',
-	'active' => 1,
+	'active' => 0,
     ),
     'github' => array(
 	'name' => 'GitHub',
@@ -274,6 +274,51 @@ $default_socialmedia_liste = array(
 	'active' => 1,
     ),
 ); 
+
+
+/* 
+ * Default Links for Topmenu , can be overwritten bei widget  
+ */
+$default_toplink_liste = array(
+    
+    'link1'  => array(
+	'name'	    => __('Wiki', 'piratenkleider' ),
+	'content'  => 'https://wiki.piratenpartei.de',
+	'active'    => 1,
+    ),
+    'link2'  => array(
+	'name'	    => __('Liquid Feedback', 'piratenkleider' ),
+	'content'  => 'https://lqfb.piratenpartei.de',
+	'active'    => 1,
+    ),
+    'link3'  => array(
+	'name'	    => __('Forum', 'piratenkleider' ),
+	'content'  => 'https://news.piratenpartei.de',
+	'active'    => 1,
+    ),
+    'link4'  => array(
+	'name'	    => __('Vorstand', 'piratenkleider' ),
+	'content'  => 'https://vorstand.piratenpartei.de',
+	'active'    => 0,
+    ),  
+    'link5'  => array(
+	'name'	    => __('Flaschenpost', 'piratenkleider' ),
+	'content'  => 'https://flaschenpost.piratenpartei.de',
+	'active'    => 1,
+    ),
+    'link6'  => array(
+	'name'	    => __('Spenden', 'piratenkleider' ),
+	'content'  => 'https://spenden.piratenpartei.de',
+	'active'    => 1,
+    ),
+    'link7'  => array(
+	'name'	    => __('Shop', 'piratenkleider' ),
+	'content'  => 'https://pshop.piratenpartei.de',
+	'active'    => 1,
+    ),   
+     
+    
+);
 
 /**
  * Liste der Defaultbilder fuer Seiten und Slider
@@ -374,16 +419,7 @@ $defaultbilder_liste = array(
 );
 
 
-/* 
- * Default Links for Topmenu , can be overwritten bei widget  
- */
-$default_toplink_liste = array(
-    __('Wiki', 'piratenkleider' )               => 'https://wiki.piratenpartei.de',
-    __('Liquid Feedback', 'piratenkleider' )    => 'https://lqfb.piratenpartei.de',
-    __('Forum', 'piratenkleider' )              => 'https://news.piratenpartei.de',
-    __('Flaschenpost', 'piratenkleider' )       => 'https://flaschenpost.piratenpartei.de'
-    
-);
+
 
 /*
  * Default color modifications for standard css style
@@ -895,6 +931,17 @@ $setoptions = array(
                   'default' => $defaultoptions['stickerlink3-url'],
                   'parent'  => 'stickerlink3',
               ),
+	      'toplinks'  => array(
+                  'type'    => 'section',
+                  'title'   => __( 'Toplinks', 'piratenkleider' ),
+              ),
+	      'toplinkliste'  => array(
+		  'type'    => 'urlchecklist',
+		  'title'   => __( 'Portale', 'piratenkleider' ),
+		  'liste'   => $default_toplink_liste,
+		  'parent'  => 'toplinks',
+		  'label'   => __( 'Definition einer Linkliste zu Standardportalen. Diese Liste kann Alternativ durch die Definiton eines Men&uuml;s und Zuordnung dieses zu dem Men&uuml;bereich "Linkmenu" verwaltet werden. Ist kein eigenes Men&uuml; definiert, werden diese Werte als Alternative verwendet.', 'piratenkleider' ),
+	      ), 
                
            )
        ),

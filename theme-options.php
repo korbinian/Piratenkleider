@@ -296,9 +296,8 @@ function theme_options_do_page($tab = '') {
 						$value = $liste[$entry]['content'];
 					 }
 					 if (isset($options[$name][$entry]['active'])) {
-						$active = $options[$name][$entry]['active'];
-                                         }
-					
+						$active = $options[$name][$entry]['active'];		 
+					 }
 					 if (($active==1)  
 						 && (filter_var($value, FILTER_VALIDATE_URL))) {
 					    $checked = "checked=\"checked\"";   
@@ -319,7 +318,10 @@ function theme_options_do_page($tab = '') {
 					  </div>
 					 <?php    
 					    
-				    }                                                                                                                   
+				    }
+				    if (isset($label)) {
+					echo "<p>".$label."</p>\n";
+				    }
                                     echo "<br style=\"clear: left;\">\n";
 
 				    
