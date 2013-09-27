@@ -492,37 +492,25 @@ function piratenkleider_filter_wp_title( $title, $separator ) {
         // Don't affect wp_title() calls in feeds.
         if ( is_feed() )
                 return $title;
-
-        // The $paged global variable contains the page number of a listing of posts.
-        // The $page global variable contains the page number of a single post that is paged.
-        // We'll display whichever one applies, if we're not looking at the first page.
         global $paged, $page;
 
         if ( is_search() ) {
-                // If we're a search, let's start over:
                 $title = sprintf( __( 'Suchergebnisse f&uuml;r %s', 'piratenkleider' ), '"' . get_search_query() . '"' );
-                // Add a page number if we're on page 2 or more:
                 if ( $paged >= 2 )
                         $title .= " $separator " . sprintf( __( 'Seite %s', 'piratenkleider' ), $paged );
-                // Add the site name to the end:
                 $title .= " $separator " . get_bloginfo( 'name', 'display' );
-                // We're done. Let's send the new title back to wp_title():
                 return $title;
         }
 
-        // Otherwise, let's start by adding the site name to the end:
         $title .= get_bloginfo( 'name', 'display' );
 
-        // If we have a site description and we're on the home/front page, add the description:
         $site_description = get_bloginfo( 'description', 'display' );
         if ( $site_description && ( is_home() || is_front_page() ) )
                 $title .= " $separator " . $site_description;
 
-        // Add a page number if necessary:
         if ( $paged >= 2 || $page >= 2 )
                 $title .= " $separator " . sprintf( __( 'Seite %s', 'piratenkleider' ), max( $paged, $page ) );
 
-        // Return the new title to wp_title():
         return $title;
 }
 endif;
@@ -935,28 +923,15 @@ add_filter('tiny_mce_before_init', 'piratenkleider_change_mce_options');
 
 
 class My_Walker_Nav_Menu extends Walker_Nav_Menu {
-    /**
-     * Start the element output.
-     *
-     * @param  string $output Passed by reference. Used to append additional content.
-     * @param  object $item   Menu item data object.
-     * @param  int $depth     Depth of menu item. May be used for padding.
-     * @param  array $args    Additional strings.
-     * @return void
-     */
     public function start_el( &$output, $item, $depth = 0, $args = array(), $id = 0) {
-        if ( '-' === $item->title )
-        {
-            // you may remove the <hr> here and use plain CSS.
+        if ( '-' === $item->title ) {
             $output .= '<li class="menu_separator"><hr>';
         } else{
             parent::start_el( $output, $item, $depth, $args, $id);
         }
     }
-    /* Klasse has_children einfuegen */
     public function display_element($el, &$children, $max_depth, $depth = 0, $args = array(), &$output){
         $id = $this->db_fields['id'];
-
         if(isset($children[$el->$id]))
             $el->classes[] = 'has_children';
 
@@ -1138,6 +1113,7 @@ if ( ! function_exists( 'get_piratenkleider_custom_excerpt' ) ) :
 function get_piratenkleider_custom_excerpt($length = 0, $continuenextline = 1, $removeyoutube = 1, $alwayscontinuelink = 0){
   global $options;
   global $post;
+  global $defaultoptions;
       
   if (has_excerpt()) {
       return  get_the_excerpt();
@@ -1155,12 +1131,13 @@ function get_piratenkleider_custom_excerpt($length = 0, $continuenextline = 1, $
       }
   }
   if ($removeyoutube==1) {
-   $excerpt = preg_replace('/\s+(https?:\/\/www\.youtube[\/a-z0-9\.\-\?&;=_]+)/i','',$excerpt);
-   // preg_match('/^\s*([^\'"]*www\.youtube[\/a-z0-9\.\-\?=]+)/i', $excerpt, $matches);
+    $excerpt = preg_replace('/\s+(https?:\/\/www\.youtube[\/a-z0-9\.\-\?&;=_]+)/i','',$excerpt);
   }
   
   $excerpt = strip_shortcodes($excerpt);
-  $excerpt = strip_tags($excerpt); 
+  $excerpt = strip_tags($excerpt, $defaultoptions['excerpt_allowtags']); 
+  
+  
   if (mb_strlen($excerpt)<5) {
       $excerpt = __( 'Kein Inhalt', 'piratenkleider' );
   }
@@ -1284,40 +1261,6 @@ function wpi_linkexternclass_callback($matches) {
     }
 add_filter('the_content', 'wpi_linkexternclass');
 
-/*
- * Disabled. Will be replaced wih Wordpress HTTPS plugin.
- * Makes problems with directory based multiside installations
-add_action( 'template_redirect', 'rw_relative_urls' );
-    function rw_relative_urls() {
-        // Don't do anything if:
-        // - In feed
-        // - In sitemap by WordPress SEO plugin
-         // - Not if Wordpress HTTPS is activated
-
-        $wphttpsactive = in_array('wordpress-https/wordpress-https.php', (array) get_option('active_plugins', array() ) );
-        if ( is_feed() || get_query_var( 'sitemap' ) || $wphttpsactive )
-               return;
-        $filters = array(
-            'post_link',
-            'post_type_link',
-            'page_link',
-            'attachment_link',
-            'get_shortlink',
-            'post_type_archive_link',
-            'get_pagenum_link',
-            'get_comments_pagenum_link',
-            'term_link',
-            'search_link',
-            'day_link',
-            'month_link',
-            'year_link',
-        );
-        foreach ( $filters as $filter ) {
-         add_filter( $filter, 'wp_make_link_relative' );
-        }
-    }
- 
-*/
 
  function wpi_relativeurl($content){
         return preg_replace_callback('/<a[^>]+/', 'wpi_relativeurl_callback', $content);
