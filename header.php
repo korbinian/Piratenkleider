@@ -190,7 +190,7 @@ if ((isset( $options['meta-author'] )) && ( strlen(trim($options['meta-author'])
 	<div class="section breadcrumbs">
 		<div class="row">
 			<div class="skin">
-				<?php if (function_exists('dimox_breadcrumbs')) dimox_breadcrumbs(); ?>
+				<?php if (function_exists('piratenkleider_breadcrumb')) piratenkleider_breadcrumb(); ?>
 			</div>
 		</div>
 	</div>
