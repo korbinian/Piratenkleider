@@ -4,7 +4,7 @@
  *
  * @source http://github.com/xwolfde/Piratenkleider
  * @creator xwolf
- * @version 2.19.3
+ * @version 2.19.4
  * @licence CC-BY-SA 3.0 
  */
 
@@ -30,41 +30,12 @@ if ($options['anonymize-user']==1) {
     update_option('require_name_email',0);
 }
 
-if ($options['feed_cache_lifetime'] < 600) {
-    $options['feed_cache_lifetime'] = 1800;
-}
-
-/* Anonymize IP */
-function getAnonymIp( $ip, $strongness = 2 ) {
-    
-    if ($strongness==2) {
-	/* Strong BSI Norm: last two oktetts to 0 */
-	return preg_replace('/[0-9]+.[0-9]+\z/', '0.0', $ip);	
-    } elseif ($strongness==1) {
-	/* Weak BSI Norm: last two oktetts to 0 */
-	return preg_replace('/[0-9]+\z/', '0', $ip);	
-    } elseif ($strongness==0) {
-	/* No anonymizing */
-	return $ip;		
-    } else {
-	/* Strong BSI Norm: last two oktetts to 0 */
-	return preg_replace('/[0-9]+.[0-9]+\z/', '0.0', $ip);	
-    }
-    
-}       
+  
 
 
+require_once ( get_template_directory() . '/theme-options.php' );     
 
-function feed_lifetime_cb( ) {
-            global $options;
-            // change the default feed cache recreation period to 2 hours
-            return $options['feed_cache_lifetime'];
-}
-add_filter( 'wp_feed_cache_transient_lifetime' , 'feed_lifetime_cb' );
-        
 
-if ( ! isset( $content_width ) )   $content_width = $defaultoptions['content-width'];
-require_once ( get_template_directory() . '/theme-options.php' );
 
 add_action( 'after_setup_theme', 'piratenkleider_setup' );
 
@@ -72,6 +43,10 @@ if ( ! function_exists( 'piratenkleider_setup' ) ):
 function piratenkleider_setup() {
      global $defaultoptions;
      global $options;
+
+
+	if ( ! isset( $content_width ) )   $content_width = $defaultoptions['content-width'];
+     
         // This theme styles the visual editor with editor-style.css to match the theme style.
         add_editor_style();
         // This theme uses post thumbnails
@@ -184,7 +159,7 @@ function piratenkleider_setup() {
 
 
        if ($options['login_errors']==0) {
-        /** Abschalten von Fehlermeldungen auf der Loginseite */      
+	    /** Abschalten von Fehlermeldungen auf der Loginseite */      
            add_filter('login_errors', create_function('$a', "return null;"));
        }        
         /** Entfernen der Wordpressversionsnr im Header */
@@ -333,6 +308,31 @@ function piratenkleider_scripts() {
 }
 add_action('wp_enqueue_scripts', 'piratenkleider_scripts');
 
+/* Anonymize IP */
+function getAnonymIp( $ip, $strongness = 2 ) {
+    
+    if ($strongness==2) {
+	/* Strong BSI Norm: last two oktetts to 0 */
+	return preg_replace('/[0-9]+.[0-9]+\z/', '0.0', $ip);	
+    } elseif ($strongness==1) {
+	/* Weak BSI Norm: last two oktetts to 0 */
+	return preg_replace('/[0-9]+\z/', '0', $ip);	
+    } elseif ($strongness==0) {
+	/* No anonymizing */
+	return $ip;		
+    } else {
+	/* Strong BSI Norm: last two oktetts to 0 */
+	return preg_replace('/[0-9]+.[0-9]+\z/', '0.0', $ip);	
+    }
+    
+}     
+
+function feed_lifetime_cb( ) {
+            global $options;
+            return $options['feed_cache_lifetime'];
+}
+add_filter( 'wp_feed_cache_transient_lifetime' , 'feed_lifetime_cb' );
+        
 function piratenkleider_avatar ($avatar_defaults) {
     global $defaultoptions;
     $myavatar =  $defaultoptions['src-default-avatar']; 
