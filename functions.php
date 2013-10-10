@@ -4,7 +4,7 @@
  *
  * @source http://github.com/xwolfde/Piratenkleider
  * @creator xwolf
- * @version 2.19.4
+ * @version 2.19.5
  * @licence CC-BY-SA 3.0 
  */
 
@@ -32,12 +32,10 @@ if ($options['anonymize-user']==1) {
 
   
 
-
 require_once ( get_template_directory() . '/theme-options.php' );     
 
 
 
-add_action( 'after_setup_theme', 'piratenkleider_setup' );
 
 if ( ! function_exists( 'piratenkleider_setup' ) ):
 function piratenkleider_setup() {
@@ -95,33 +93,38 @@ function piratenkleider_setup() {
 	
 	        if ( ! $background && ! $color )
 	                return;
-                        
+                       
+		
 	        $style = $color ? "background-color: #$color;" : '';
 	
 	        if ( $background ) {
                         $image = " background-image: url('$background');";
                        
-                       
-	                $repeat = get_theme_mod( 'background_repeat', 'repeat-x' );
-	                if ( ! in_array( $repeat, array( 'no-repeat', 'repeat-x', 'repeat-y', 'repeat' ) ) )
-	                        $repeat = 'repeat-x';
-	                $repeat = " background-repeat: $repeat;";
-	
-	                $positionx = get_theme_mod( 'background_position_x', 'left' );
-	                if ( ! in_array( $positionx, array( 'center', 'right', 'left' ) ) )
-	                        $positionx = 'left';
-	                $positiony = get_theme_mod( 'background_position_y', 'bottom' );
-	                if ( ! in_array( $positiony, array( 'top', 'bottom' ) ) )
-	                        $positiony = 'bottom';
-			
-	                $position = " background-position: $positionx $positiony;";
-	
-	                $attachment = get_theme_mod( 'background_attachment', 'scroll' );
-	                if ( ! in_array( $attachment, array( 'fixed', 'scroll' ) ) )
-	                        $attachment = 'scroll';
-	                $attachment = " background-attachment: $attachment;";
-	
-	                $style .= $image . $repeat . $position . $attachment;
+                       if ($background == $defaultoptions['background-header-image']) {
+			   $style .= $image;
+			} else {
+			    $repeat = get_theme_mod( 'background_repeat', 'repeat-x' );
+			    if ( ! in_array( $repeat, array( 'no-repeat', 'repeat-x', 'repeat-y', 'repeat' ) ) )
+				    $repeat = 'repeat-x';
+			    $repeat = " background-repeat: $repeat;";
+
+			    $positionx = get_theme_mod( 'background_position_x', 'left' );
+			    if ( ! in_array( $positionx, array( 'center', 'right', 'left' ) ) )
+				    $positionx = 'left';
+			    $positiony = get_theme_mod( 'background_position_y', 'bottom' );
+			    if ( ! in_array( $positiony, array( 'top', 'bottom' ) ) )
+				    $positiony = 'bottom';
+
+			    $position = " background-position: $positionx $positiony;";
+
+			    $attachment = get_theme_mod( 'background_attachment', 'scroll' );
+			    if ( ! in_array( $attachment, array( 'fixed', 'scroll' ) ) )
+				    $attachment = 'scroll';
+			    $attachment = " background-attachment: $attachment;";
+
+			    $style .= $image . $repeat . $position . $attachment;
+		      }
+		       
 	        } 
 		
 	    
@@ -197,6 +200,7 @@ function piratenkleider_setup() {
 
 }
 endif;
+add_action( 'after_setup_theme', 'piratenkleider_setup' );
 
 require( get_template_directory() . '/inc/widgets.php' );
 
