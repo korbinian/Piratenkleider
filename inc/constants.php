@@ -119,12 +119,11 @@ $defaultoptions = array(
     'num-article-startpage-halfwidth'       => 4,
     'teaser-thumbnail_width'		    => 120,
     'teaser-thumbnail_height'		    => 120,
-    'teaser-thumbnail_crop'		    => 0,
+    'teaser-thumbnail_crop'		    => 1,
     'src-teaser-thumbnail_default'	    => get_template_directory_uri() .'/images/default-teaserthumb.gif',
     'teaser-thumbnail_fallback'		    => 1,
     
-    'teaser-type'                   => 'big',
-    
+    'teaser-type'                   => 'big',    
     'teaser-title-maxlength'        => 50,
     'teaser-subtitle'               => __( 'Topthema', 'piratenkleider' ),
     'teaser-title-words'            => 7,
@@ -190,6 +189,11 @@ $defaultoptions = array(
     'breadcrumb_beforehtml'	    =>  '<span class="current">',
     'breadcrumb_afterhtml'	    =>  '</span>',
     
+    'aktiv-linktipps'			    => 0,
+    'linktipp-thumbnail_width'		    => 200,
+    'linktipp-thumbnail_height'		    => 200,
+    'linktipp-thumbnail_crop'		    => 1,
+    'src-linktipp-thumbnail_default'	    => get_template_directory_uri() .'/images/default-teaserthumb.gif',
 );
 
 
@@ -1951,7 +1955,20 @@ $setoptions = array(
                   'default' => $defaultoptions['aktiv-autokeywords'],
                   'parent'  => 'meta',
               ),
-	                  
+	       'linktipps'  => array(
+                  'type'    => 'section',
+                  'title'   => __('Leseempfehlungen', 'piratenkleider'),                   
+              ),            
+	        'aktiv-linktipps'  => array(
+                  'type'    => 'bool',
+                  'title'   => __( 'Aktivieren', 'piratenkleider' ),
+                  'label'   => __( 'Verwaltung von Leseempfehlungen bzw. Linktipps aktivieren', 'piratenkleider')
+		      .'<br>'. __('Dies f&uuml;gt eine neue Verwaltung im Backend ein, mit denen spezielle Seiten, die nur einen kurzen Text und einen (externen) Link enthalten, als neue Beitrag auf den Indexseiten angezeigt werden k&ouml;nnen.', 'piratenkleider' ),		   
+                  'default' => $defaultoptions['aktiv-linktipps'],
+                  'parent'  => 'linktipps',
+              ),
+	      
+	       
 	       
                
           ),

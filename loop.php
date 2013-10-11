@@ -1,7 +1,6 @@
    <?php
    global $options;
 
-     
                 $category_description = category_description();
                 if ( ! empty( $category_description ) )
                         echo '' . $category_description . ''; 

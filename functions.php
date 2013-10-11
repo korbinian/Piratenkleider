@@ -197,6 +197,11 @@ function piratenkleider_setup() {
 		return apply_filters( 'embed_ytnocookie', $embed, $matches, $attr, $url, $rawattr );
 
 	}
+	
+	if ($options['aktiv-linktipps']) {
+	    require( get_template_directory() . '/inc/custom-posts.php' );
+	}
+	
 
 }
 endif;
