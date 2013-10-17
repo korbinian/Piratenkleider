@@ -5,7 +5,11 @@ global $options;
   <div class="row">
     <div class="content-primary">
 	
-	<?php if ( have_posts() ) while ( have_posts() ) : the_post();         
+	<?php 
+
+
+	
+	if ( have_posts() ) while ( have_posts() ) : the_post();         
         $custom_fields = get_post_custom();
         ?>
 	<?php

@@ -1292,8 +1292,9 @@ function piratenkleider_breadcrumb() {
   $before	= $defaultoptions['breadcrumb_beforehtml']; // '<span class="current">'; // tag before the current crumb
   $after	= $defaultoptions['breadcrumb_afterhtml']; // '</span>'; // tag after the current crumb
  
+  echo '<div id="crumbs">'; 
   if ( !is_home() && !is_front_page() || is_paged() ) { 
-    echo '<div id="crumbs">'; 
+    
     global $post;
     
     $homeLink = home_url('/');
@@ -1366,8 +1367,13 @@ function piratenkleider_breadcrumb() {
       if ( is_category() || is_day() || is_month() || is_year() || is_search() || is_tag() || is_author() ) echo ')';
     }
  */
-    echo '</div>'; 
+   
+  } elseif (is_front_page()) {
+	echo $before . $home . $after;
+  } elseif (is_home()) {
+	echo $before . get_the_title(get_option('page_for_posts')) . $after;
   }
+   echo '</div>'; 
 }
 
  

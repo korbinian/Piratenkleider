@@ -25,20 +25,26 @@
       $numentries = $options['num-article-startpage-fullwidth'] + $options['num-article-startpage-halfwidth']; 
       $col_count = 3; 
       $cols = array();
+     
+     if (($options['aktiv-linktipps']) && ($options['linktipps-onstart']==1)) {
+	    global $wp_query;
+	    $args = array_merge( $wp_query->query, array( 'post_type' => array('linktipps','post') ) );
+	    query_posts( $args );
+     }
       while (have_posts() && $i<$numentries) : the_post();
-      $i++;
-      ob_start();
-      if (( isset($options['num-article-startpage-fullwidth']))
-                && ($options['num-article-startpage-fullwidth']>=$i )) {
-		 piratenkleider_post_teaser($options['teaser-titleup'],$options['teaser-datebox'],$options['teaser-dateline'],$options['teaser_maxlength'],$options['teaser-thumbnail_fallback'],$options['teaser-floating']);
-      } else {
-		 piratenkleider_post_teaser($options['teaser-titleup-halfwidth'],$options['teaser-datebox-halfwidth'],$options['teaser-dateline-halfwidth'],$options['teaser-maxlength-halfwidth'],$options['teaser-thumbnail_fallback'],$options['teaser-floating-halfwidth']);
-      }
-      $output = ob_get_contents();
-      ob_end_clean();
-      if (isset($output)) {
-        $cols[$col++] = $output;
-      }
+	  $i++;
+	  ob_start();
+	  if (( isset($options['num-article-startpage-fullwidth']))
+		    && ($options['num-article-startpage-fullwidth']>=$i )) {
+		     piratenkleider_post_teaser($options['teaser-titleup'],$options['teaser-datebox'],$options['teaser-dateline'],$options['teaser_maxlength'],$options['teaser-thumbnail_fallback'],$options['teaser-floating']);
+	  } else {
+		     piratenkleider_post_teaser($options['teaser-titleup-halfwidth'],$options['teaser-datebox-halfwidth'],$options['teaser-dateline-halfwidth'],$options['teaser-maxlength-halfwidth'],$options['teaser-thumbnail_fallback'],$options['teaser-floating-halfwidth']);
+	  }
+	  $output = ob_get_contents();
+	  ob_end_clean();
+	  if (isset($output)) {
+	    $cols[$col++] = $output;
+	  }
       endwhile;
       ?>
       <div class="columns">

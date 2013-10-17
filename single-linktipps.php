@@ -71,6 +71,7 @@ get_header();
           
             
           <div class="post-entry">
+	      
             <?php the_content(); ?>
           </div>
              <?php 
