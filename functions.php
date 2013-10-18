@@ -642,15 +642,79 @@ if ( ! function_exists( 'piratenkleider_post_teaser' ) ) :
 function piratenkleider_post_teaser($titleup = 1, $showdatebox = 1, $showdateline = 0, $teaserlength = 200, $thumbfallback = 1, $usefloating = 0) {
   global $options;
   global $post;
-   
+   $post_id = $post->ID;
   $sizeclass='';
+  if (  'linktipps'== get_post_type()  ) {
+      $title = get_the_title(); 
+      $linktipp_url = get_post_meta( $post_id, 'linktipp_url', true );
+      $linktipp_image = get_post_meta( $post_id, 'linktipp_image', true );
+      $linktipp_untertitel = get_post_meta( $post_id, 'linktipp_untertitel', true );
+      $linktipp_text = get_post_meta( $post_id, 'linktipp_text', true );
+      if (isset($linktipp_untertitel) && !isset($title)) {
+	  $title = $linktipp_untertitel;
+	  $linktipp_untertitel = '';
+      } 
+      if (isset($title) && strlen(trim($title))>1  
+	      && isset($linktipp_url)  && strlen(trim($linktipp_url))>1 
+	      && (isset($linktipp_image) || isset($linktipp_text))) {  
+	  
+	    $sizeclass = 'ym-column'; ?>
+	   <div <?php post_class($sizeclass); ?> id="post-<?php the_ID(); ?>" >
+	    <?php 
+	     if ($options['linktipps-titlepos']!=1) { 
+		echo '<div class="post-title ym-cbox"><h2>';   
+		if ($options['linktipps-linkpos']==0) { 	
+		    echo '<a href="'.$linktipp_url.'" rel="bookmark">';
+		}    
+		echo $title;
+		if ($options['linktipps-linkpos']==0) { echo '</a>'; }
+		echo '</h2></div>';  
+	     } 
+	     echo '<div class="ym-column"><div class="post-entry ym-cbox"><p>';
+		 if ($options['linktipps-linkpos']==1) {    
+		     echo '<a href="'.$linktipp_url.'">';
+		 }
+		 if (isset($linktipp_image)) {
+		     echo '<img src="'.$linktipp_image.'" alt="'.$linktipp_text.'">';
+		     
+		     // 'linktipp-thumbnail_width'		    => 200,
+		    //  'linktipp-thumbnail_height'		    => 200,
+		     
+		 } else {
+		     echo $linktipp_text;
+		 }
+		 if ($options['linktipps-linkpos']==1) {    
+		     echo '</a>';
+		 }
+	     echo '</p></div></div>'; 
+	       
+	     if ($options['linktipps-titlepos']==1) { 
+		echo '<div class="post-title ym-cbox"><h2>';   
+		if ($options['linktipps-linkpos']==0) { 	
+		    echo '<a href="'.$linktipp_url.'" rel="bookmark">';
+		}    
+		echo $title;
+		if ($options['linktipps-linkpos']==0) { echo '</a>'; }
+		echo '</h2></div>'; 
+	      } 
+	      if ($options['linktipps-linkpos']==2) { 
+		  echo '<p class="linktipp-url"><a href="'.$linktipp_url.'">'.$linktipp_url.'</a></p>'; 
+		  
+	      }
+	      
+	  echo '</div>';
+       }
+      return;
+      
+	//      'linktipps-titlepos'		    => 0, // 0 = ueber Bild/Text, 1 = unter Bild/Text
+	//	'linktipps-linkpos'			    => 0, // 0 = Link auf dem Titel, 1 = Link auf Text/Bild, 2 = URL unter Bild/Text anzeigen&verlinken
+  }
+ 
   $leftbox = '';
-  
   if (($showdatebox>0)  && ($showdatebox<5)) {
        $sizeclass = 'ym-column withthumb';      
        // Generate Thumb/Pic or Video first to find out which class we need
-       
-     
+
 	    $leftbox .=  '<div class="infoimage">';	    
 	    $sizeclass = 'ym-column withthumb'; 
 	    $thumbnailcode = '';	
@@ -680,8 +744,7 @@ function piratenkleider_post_teaser($titleup = 1, $showdatebox = 1, $showdatelin
 		    if (!isset($output)) { $output = $thumbnailcode;}
 		    if (!isset($output)) { $output = $firstpic;}
 		    if (!isset($output)) { $output = $fallbackimg;}
-		    if ((isset($output)) && ( strlen(trim($output))<10 )) {$output = $fallbackimg;}		    
-		    
+		    if ((isset($output)) && ( strlen(trim($output))<10 )) {$output = $fallbackimg;}		    		    
 		} elseif ($showdatebox==4) {
 		    if ((!isset($output)) && (isset($firstvideo))) { $output = $firstvideo; $sizeclass = 'ym-column withvideo'; }		    
 		    if (!isset($output)) { $output = $firstpic;}
@@ -758,7 +821,7 @@ function piratenkleider_post_teaser($titleup = 1, $showdatebox = 1, $showdatelin
 	}
 	if ($titleup==0) { ?>       
 	    <div class="post-title"><h2>          
-	        <a href="<?php the_permalink(); ?>" rel="bookmark" title="<?php the_title(); ?>">
+	        <a href="<?php the_permalink(); ?>" rel="bookmark">
 	          <?php the_title(); ?>
                 </a>
 	    </h2></div>

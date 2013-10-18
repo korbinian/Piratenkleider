@@ -13,19 +13,19 @@ function piratenkleider_custom_post_linktipps() {
 		
 	);
 	$args = array(
-	    'labels'        => $labels,
-	    'description'   => __( 'Erstellen und Verwalten von Leseempfehlungen und Linktipps', 'piratenkleider' ),
-	    'public' => true,
-	    'menu_position' => 7,
-	    'supports'      => array( 'title' ),
-	    'has_archive'   => true,	
+	    'labels'		=> $labels,
+	    'description'	=> __( 'Erstellen und Verwalten von Leseempfehlungen und Linktipps', 'piratenkleider' ),
+	    'public'		=> true,
+	    'menu_position'	=> 7,
+	    'supports'		=> array( 'title' ),
+	    'has_archive'	=> true,	
 	    'exclude_from_search' => true,
-	    'query_var' => true,
-	    'rewrite' => array( 'slug' => 'linktipps','with_front' => FALSE), 
-	    'capability_type' => 'post',
-	    'hierarchical' => false,
-	    'taxonomies' => false,
-	    'menu_icon' => get_stylesheet_directory_uri() . '/images/icon-internet.png',
+	    'query_var'		=> true,
+	    'rewrite'		=> array( 'slug' => 'linktipps','with_front' => FALSE), 
+	    'capability_type'	=> 'post',
+	    'hierarchical'	=> false,
+	    'taxonomies'	=> false,
+	    'menu_icon'		=> get_stylesheet_directory_uri() . '/images/icon-internet.png',
 	);
 	register_post_type( 'linktipps', $args );		
 }
@@ -35,9 +35,9 @@ add_action( 'init', 'piratenkleider_custom_post_linktipps' );
 function piratenkleider_taxonomies_linktipps() {
 	$labels = array();
 	$args = array(
-		'labels' => $labels,
-		'hierarchical' => true,
-		'rewrite' => array('slug' => 'linktipps' )
+		'labels'	=> $labels,
+		'hierarchical'	=> true,
+		'rewrite'	=> array('slug' => 'linktipps' )
 	);
 	register_taxonomy( 'linktipp_category', 'linktipps', $args );
 }
@@ -120,23 +120,22 @@ function linktipp_metabox_save( $post_id ) {
 	}
 	
 	$url = $_POST['linktipp_url'];
-	if (!filter_var($url, FILTER_VALIDATE_URL)) {
-	    return;
+	if (filter_var($url, FILTER_VALIDATE_URL)) {
+	    update_post_meta( $post_id, 'linktipp_url', $url );
 	}
-	update_post_meta( $post_id, 'linktipp_url', $url );
 	
 	$urlimg = $_POST['linktipp_image'];
-	if (!filter_var($urlimg, FILTER_VALIDATE_URL)) {
-	    return;
+	if (filter_var($urlimg, FILTER_VALIDATE_URL)) {
+	    update_post_meta( $post_id, 'linktipp_image', $urlimg );
 	}
-	update_post_meta( $post_id, 'linktipp_image', $urlimg );
-	
+
 	if( isset( $_POST[ 'linktipp_text' ] ) ) {
 	    update_post_meta( $post_id, 'linktipp_text', sanitize_text_field( $_POST[ 'linktipp_text' ] ) );
 	}
 	if( isset( $_POST[ 'linktipp_untertitel' ] ) ) {
 	    update_post_meta( $post_id, 'linktipp_untertitel', sanitize_text_field( $_POST[ 'linktipp_untertitel' ] ) );
 	}
+	
     
 }
 add_action( 'save_post', 'linktipp_metabox_save' );
@@ -146,7 +145,7 @@ add_action( 'save_post', 'linktipp_metabox_save' );
 function linktipp_metabox_updated_messages( $messages ) {
 	global $post, $post_ID;
 	$messages['linktipps'] = array(
-		0 => '', 
+		0 => '',
 		1 => __('Die Leseempfehlung wurde aktualisiert. ', 'piratenkleider'),
 		2 => __('Die Leseempfehlung wurde aktualisiert.', 'piratenkleider'),
 		3 => __('Leseempfehlung wurde gel&ouml;scht.', 'piratenkleider'),
