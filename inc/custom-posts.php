@@ -24,7 +24,7 @@ function piratenkleider_custom_post_linktipps() {
 	    'rewrite'		=> array( 'slug' => 'linktipps','with_front' => FALSE), 
 	    'capability_type'	=> 'post',
 	    'hierarchical'	=> false,
-	    'taxonomies'	=> false,
+	//    'taxonomies'	=> false,
 	    'menu_icon'		=> get_stylesheet_directory_uri() . '/images/icon-internet.png',
 	);
 	register_post_type( 'linktipps', $args );		
@@ -55,7 +55,7 @@ function piratenkleider_linktipp_metabox() {
 }
 function linktipp_metabox_content( $post ) {
     global $defaultoptions;
-    
+    global $post;
 	wp_nonce_field( plugin_basename( __FILE__ ), 'linktipp_metabox_content_nonce' );
 	?>
 	
@@ -77,16 +77,30 @@ function linktipp_metabox_content( $post ) {
 	     
 	    
 		<?php
-		    $bild = esc_attr( get_post_meta( $post->ID, 'linktipp_image', true ) );
-		    if (filter_var($bild, FILTER_VALIDATE_URL)) {
-			echo '<img id="linktipp_image-show" src="'.$bild.'" alt="" style="width: '.$defaultoptions['linktipp-thumbnail_width'].'px; height: auto;">';
-		    } else {
+		 $linktipp_imgid = get_post_meta( $post->ID, 'linktipp_imgid', true );
+		 $linktipp_image = get_post_meta( $post->ID, 'linktipp_image', true );
+		
+		 if (isset($linktipp_imgid) && ($linktipp_imgid>0)) {
+		     $image_attributes = wp_get_attachment_image_src( $linktipp_imgid, 'linktipp-thumb' );
+		     if (is_array($image_attributes)) {
+			echo '<img id="linktipp_image-show" src="'.$image_attributes[0].'" width="'.$image_attributes[1].'" height="'.$image_attributes[2].'">';
+			$linktipp_image = $image_attributes[0];
+		     }
+		     
+		 } elseif (filter_var($linktipp_image, FILTER_VALIDATE_URL)) {
+			echo '<img id="linktipp_image-show" src="'.$linktipp_image.'" alt="" style="width: '.$defaultoptions['linktipp-thumbnail_width'].'px; height: auto;">';
+		 } else {
 			echo '<img id="linktipp_image-show" src="'.$defaultoptions['src-linktipp-thumbnail_default'].'" alt="" style="width: '.$defaultoptions['linktipp-thumbnail_width'].'px; height: auto;">';			
-		    }
-		    echo '<br /><span class="custom_default_image" style="display:none">'.$defaultoptions['src-linktipp-thumbnail_default'].'</span>';  
+		 }
+		 echo '<br /><span class="custom_default_image" style="display:none">'.$defaultoptions['src-linktipp-thumbnail_default'].'</span>';  
 		?>
-	     <input type="text" name="linktipp_image" size="50" id="linktipp_image" value="<?php echo esc_attr( get_post_meta( $post->ID, 'linktipp_image', true ) ); ?>" />
-	    <input type="button" id="linktipp_image-button" class="button" value="<?php _e( "Bild ausw&auml;hlen oder hochladen", 'piratenkleider' ); ?>" />
+	     <input type="text" name="linktipp_image" size="50" id="linktipp_image" 
+		    value="<?php echo $linktipp_image; ?>" />
+	     <input type="hidden" name="linktipp_imgid" id="linktipp_imgid" 
+		    value="<?php echo $linktipp_imgid; ?>" />	    
+	     
+	     
+	     <input type="button" id="linktipp_image-button" class="button" value="<?php _e( "Bild ausw&auml;hlen oder hochladen", 'piratenkleider' ); ?>" />
 	    <small> <a href="#" class="custom_clear_image_button">Bild entfernen</a></small> 
 	</p>
 	
@@ -124,9 +138,15 @@ function linktipp_metabox_save( $post_id ) {
 	    update_post_meta( $post_id, 'linktipp_url', $url );
 	}
 	
-	$urlimg = $_POST['linktipp_image'];
-	if (filter_var($urlimg, FILTER_VALIDATE_URL)) {
-	    update_post_meta( $post_id, 'linktipp_image', $urlimg );
+	
+	$imgid = intval($_POST['linktipp_imgid']);
+	if ($imgid) {
+	    update_post_meta( $post_id, 'linktipp_imgid', $imgid );
+	} else {
+	    $urlimg = $_POST['linktipp_image'];
+	    if (filter_var($urlimg, FILTER_VALIDATE_URL)) {
+		update_post_meta( $post_id, 'linktipp_image', $urlimg );
+	    }
 	}
 
 	if( isset( $_POST[ 'linktipp_text' ] ) ) {

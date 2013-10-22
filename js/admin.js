@@ -76,7 +76,8 @@ jQuery(document).ready(function($){
         //When a file is selected, grab the URL and set it as the text field's value
         custom_uploader.on('select', function() {
             var attachment = custom_uploader.state().get('selection').first().toJSON();            
-            $('#linktipp_image').val(attachment.url);     
+            $('#linktipp_image').val(attachment.url); 
+	    $('#linktipp_imgid').val(attachment.id); 
 	    $('#linktipp_image-show').attr('src', attachment.url);   
            
         });
@@ -89,7 +90,8 @@ jQuery(document).ready(function($){
     $('.custom_clear_image_button').click(function() {  
         var defaultImage = $(this).parent().siblings('.custom_default_image').text();  
         $(this).parent().siblings('#linktipp_image').val('');  
-        $(this).parent().siblings('#linktipp_image-show').attr('src', defaultImage);  
+        $(this).parent().siblings('#linktipp_imgid').val('');  
+        $(this).parent().siblings('#linktipp_image-show').attr('src', defaultImage);
         return false;  
     });  
     
