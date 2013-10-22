@@ -196,7 +196,7 @@ $defaultoptions = array(
     'src-linktipp-thumbnail_default'	    => get_template_directory_uri() .'/images/default-teaserthumb.gif',
     'linktipps-onstart'			    => 1,
     'linktipps-titlepos'		    => 0, // 0 = ueber Bild/Text, 1 = unter Bild/Text
-    'linktipps-linkpos'			    => 0, // 0 = Link auf dem Titel, 1 = Link auf Text/Bild, 2 = URL unter Bild/Text anzeigen&verlinken
+    'linktipps-linkpos'			    => 1, // 0 = Link auf dem Titel, 1 = Link auf Text/Bild, 2 = URL unter Bild/Text anzeigen&verlinken
     'linktipps-subtitlepos'		    => 0, // 0 = oben, vor Titel, 1 = oben nach titel, 2 = unten
 );
 
@@ -1971,9 +1971,37 @@ $setoptions = array(
                   'default' => $defaultoptions['aktiv-linktipps'],
                   'parent'  => 'linktipps',
               ),
+               
+              'linktipps-titlepos'  => array(
+                  'type'    => 'select',
+                  'title'   => __( '&Uuml;berschrift', 'piratenkleider' ),
+                  'label'   => __( 'Anzeigeposition der &Uuml;berschrift', 'piratenkleider'),		   
+                  'default' => $defaultoptions['linktipps-titlepos'],
+                  'liste'   => array( 0 => "&Uuml;ber dem Text/Bild", 1=> "Unter dem Text/Bild"),
+                  'parent'  => 'linktipps',
+              ),
+                'linktipps-subtitlepos'  => array(
+                  'type'    => 'select',
+                  'title'   => __( 'Untertitel', 'piratenkleider' ),
+                  'label'   => __( 'Anzeigeposition des Untertitels', 'piratenkleider'),		   
+                  'default' => $defaultoptions['linktipps-subtitlepos'],
+                  'liste'   => array( 0 => "Oben",
+                      1 => "Unten"),
+                  'parent'  => 'linktipps',
+              ),
+              'linktipps-linkpos'  => array(
+                  'type'    => 'select',
+                  'title'   => __( 'Link', 'piratenkleider' ),
+                  'label'   => __( 'Verlinkung auf Bereich festlegen', 'piratenkleider'),		   
+                  'default' => $defaultoptions['linktipps-linkpos'],
+                  'liste'   => array( 0 => "Link auf dem Titel",
+                      1 => "Link auf Text/Bild",
+                      2 => "URL unter Bild/Text anzeigen",
+                      3 => "Link auf Titel und URL unten"),
+                  'parent'  => 'linktipps',
+              ),
+             
 	      
-	       
-	       
                
           ),
 	),          

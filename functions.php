@@ -672,14 +672,13 @@ function piratenkleider_post_teaser($titleup = 1, $showdatebox = 1, $showdatelin
 		if ($options['linktipps-subtitlepos']==0) { 
 		    echo '<h3 class="subtitle">'.$linktipp_untertitel.'</h3>';
 		}
-		
-		
+
 		    echo '<h2>';   
-		    if ($options['linktipps-linkpos']==0) { 	
+		   if (($options['linktipps-linkpos']==0) || ($options['linktipps-linkpos']==3)) {	
 			echo '<a href="'.$linktipp_url.'" rel="bookmark">';
 		    }    
 		    echo $title;
-		    if ($options['linktipps-linkpos']==0) { echo '</a>'; }
+		    if (($options['linktipps-linkpos']==0) || ($options['linktipps-linkpos']==3)) { echo '</a>'; }
 		    echo '</h2>';
 		    if ($options['linktipps-subtitlepos']==1) { 
 			echo '<h3 class="subtitle">'.$linktipp_untertitel.'</h3>';
@@ -697,34 +696,43 @@ function piratenkleider_post_teaser($titleup = 1, $showdatebox = 1, $showdatelin
 			echo '<img src="'.$image_attributes[0].'" width="'.$image_attributes[1].'" height="'.$image_attributes[2].'" alt="'.$linktipp_text.'">';
 		     }
 		 } elseif (isset($linktipp_image)) {
-		     echo '<img src="'.$linktipp_image.'" alt="'.$linktipp_text.'">'; 
-		 } else {
-		     echo $linktipp_text;
-		 }
+		     echo '<img src="'.$linktipp_image.'" alt="">'; 
+		 }                 		
 		 if ($options['linktipps-linkpos']==1) {    
 		     echo '</a>';
 		 }
-	     echo '</p></div></div>'; 
+                if (isset($linktipp_text)) {
+		     echo $linktipp_text;
+                }     
+	     echo '</p>';
+             
+             echo '</div>'; 
 	       
 	     if ($options['linktipps-titlepos']==1) { 
-		echo '<div class="post-title ym-cbox"><h2>';   
-		if ($options['linktipps-linkpos']==0) { 	
+		echo '<div class="post-title ym-cbox">';
+                if ($options['linktipps-subtitlepos']==0) { 
+		    echo '<h3 class="subtitle">'.$linktipp_untertitel.'</h3>';
+		}
+                echo '<h2>';   
+		if (($options['linktipps-linkpos']==0) || ($options['linktipps-linkpos']==3)) { 	
 		    echo '<a href="'.$linktipp_url.'" rel="bookmark">';
 		}    
 		echo $title;
-		if ($options['linktipps-linkpos']==0) { echo '</a>'; }
-		echo '</h2></div>'; 
+		if (($options['linktipps-linkpos']==0) || ($options['linktipps-linkpos']==3)) { echo '</a>'; }
+		echo '</h2>';
+                if ($options['linktipps-subtitlepos']==1) { 
+                    echo '<h3 class="subtitle">'.$linktipp_untertitel.'</h3>';
+                }
+                echo '</div>'; 
 	      }
 	      
-	      if ($options['linktipps-subtitlepos']==2) { 
-		echo '<h3 class="subtitle">'.$linktipp_untertitel.'</h3>';
-	      }
 	      
-	      if ($options['linktipps-linkpos']==2) { 
+	      
+	      if (($options['linktipps-linkpos']==2) || ($options['linktipps-linkpos']==3)) { 
 		  echo '<p class="linktipp-url"><a href="'.$linktipp_url.'">'.$linktipp_url.'</a></p>'; 
 		  
 	      }
-	      
+	       echo '</div>'; 
 	  echo '</div>';
        }
       return;
