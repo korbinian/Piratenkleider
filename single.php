@@ -29,8 +29,10 @@
 		} else {
 		    echo '<div class="content-header">';
 		}
-		?>    		    		    		        
-		   <h1 class="post-title"><span><?php the_title(); ?></span></h1>
+		?>  
+	        <header>
+		    <h1 class="post-title"><span><?php the_title(); ?></span></h1>
+		</header>    
 		   <div class="symbolbild"><img src="<?php echo $image_url ?>" alt="">
 		   <?php if (isset($image_alt) && (strlen($image_alt)>1)) {
 		     echo '<div class="caption">'.$image_alt.'</div>';  
@@ -44,7 +46,7 @@
 	    <h1 class="post-title"><span><?php the_title(); ?></span></h1>
 	<?php } ?>
  
-        <div <?php post_class(); ?> id="post-<?php the_ID(); ?>">
+        <section <?php post_class(); ?> id="post-<?php the_ID(); ?>">
 	    
            <?php 
 		if ( (isset($custom_fields['show-post-disclaimer']))
@@ -60,12 +62,10 @@
 		piratenkleider_post_datumsbox();		
           ?>  
         
-            
-          
-            
-          <div class="post-entry">
+    
+          <article class="post-entry">
             <?php the_content(); ?>
-          </div>
+          </article>
              <?php 
             if ( (isset($custom_fields['show-post-disclaimer']))
                  &&   ($custom_fields['show-post-disclaimer'][0]<>'') 
@@ -87,9 +87,9 @@
                 ?>                  
               </p>
           </div>
-	  
+	 
 	  <div><?php edit_post_link( __( 'Bearbeiten', 'piratenkleider' ), '', '' ); ?></div>
-        </div>
+        </section>
 	<div class="post-nav">
 		<ul>
 		<?php 

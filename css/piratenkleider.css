@@ -1521,6 +1521,22 @@ display: inline-block;
     margin: 0;
 }
 
+.columns .column1 {
+    width: 50%; 
+}
+.columns .column1 .post {
+    padding-right: 20px; 
+}
+.columns .column2 {
+    width: 50%; 
+}
+.columns .column2 .post {
+    padding-left: 20px; 
+}
+.columns .column2 .post .cal-icon {
+    margin-left: 0; 
+}
+
 
 .post .post-info {
     position: relative;
@@ -2310,16 +2326,7 @@ img.wp-smiley {
     }
 
 
-  .columns .column1 {
-    width: 50%; }
-    .columns .column1 .post {
-      padding-right: 20px; }
-  .columns .column2 {
-    width: 50%; }
-    .columns .column2 .post {
-      padding-left: 20px; }
-      .columns .column2 .post .cal-icon {
-        margin-left: 0; }
+
 
     
 .footer {

@@ -33,8 +33,10 @@
 		    } else {
 			echo '<div class="content-header">';
 		    }
-		    ?>    		    		    		        
-		       <h1 class="post-title"><span><?php the_title(); ?></span></h1>
+		    ?>
+			<header>
+			    <h1 class="post-title"><span><?php the_title(); ?></span></h1>
+			</header>	    
 		       <div class="symbolbild"><img src="<?php echo $image_url ?>" alt="">
 		       <?php if (isset($image_alt) && (strlen($image_alt)>1)) {
 			 echo '<div class="caption">'.$image_alt.'</div>';  
@@ -45,10 +47,11 @@
 
 	     <div class="skin">
 	    <?php if (!(isset($image_url) && (strlen($image_url)>4))) { ?>
-		<h1 class="post-title"><span><?php the_title(); ?></span></h1>
-	    <?php } ?>
-	    <?php the_content(); 
-
+		<header><h1 class="post-title"><span><?php the_title(); ?></span></h1></header>
+	    <?php } 
+		echo '<article>';
+		   the_content(); 
+		echo '</article>';
 	    if ($options['aktiv-commentsonpages']==1) {
 		echo '<div class="post-comments" id="comments">';
 		 comments_template( '', true );

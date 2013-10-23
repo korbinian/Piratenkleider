@@ -663,77 +663,88 @@ function piratenkleider_post_teaser($titleup = 1, $showdatebox = 1, $showdatelin
 	      && isset($linktipp_url)  && strlen(trim($linktipp_url))>1 
 	      && (isset($linktipp_imgid) || isset($linktipp_image) || isset($linktipp_text))) {  
 	  
-	    $sizeclass = 'ym-column'; ?>
-	   <div <?php post_class($sizeclass); ?> id="post-<?php the_ID(); ?>" >
+	    $sizeclass = 'ym-column post'; ?>
+	   <section <?php post_class($sizeclass); ?> id="post-<?php the_ID(); ?>" >
 	    <?php 
 	     if ($options['linktipps-titlepos']!=1) { 
-		echo '<div class="post-title ym-cbox">';
-		
-		if ($options['linktipps-subtitlepos']==0) { 
-		    echo '<h3 class="subtitle">'.$linktipp_untertitel.'</h3>';
-		}
+		echo '<header class="post-title ym-cbox">';
+		    if (mb_strlen(trim($linktipp_untertitel))>1) {
+			echo '<hgroup>';
+		    }
+		    if (($options['linktipps-subtitlepos']==0) && (mb_strlen(trim($linktipp_untertitel))>1)) {
+			echo '<h3 class="subtitle">'.$linktipp_untertitel.'</h3>';
+		    }
 
-		    echo '<h2>';   
+		   echo '<h2>';   
 		   if (($options['linktipps-linkpos']==0) || ($options['linktipps-linkpos']==3)) {	
 			echo '<a href="'.$linktipp_url.'" rel="bookmark">';
 		    }    
 		    echo $title;
 		    if (($options['linktipps-linkpos']==0) || ($options['linktipps-linkpos']==3)) { echo '</a>'; }
 		    echo '</h2>';
-		    if ($options['linktipps-subtitlepos']==1) { 
+		    if (($options['linktipps-subtitlepos']==1) && (mb_strlen(trim($linktipp_untertitel))>1)) { 
+			echo '<h3 class="subtitle">'.$linktipp_untertitel.'</h3>';
+			
+		    }
+		    if (mb_strlen(trim($linktipp_untertitel))>1) {
+			echo '</hgroup>';
+		    }
+		echo '</header>';  
+	     } 
+	     echo '<div class="ym-column">';
+		 echo '<article class="post-entry ym-cbox"><p>';
+		     if ($options['linktipps-linkpos']==1) {    
+			 echo '<a href="'.$linktipp_url.'">';
+		     }
+
+		     if (isset($linktipp_imgid) && ($linktipp_imgid>0)) {
+			 $image_attributes = wp_get_attachment_image_src( $linktipp_imgid, 'linktipp-thumb' );
+			 if (is_array($image_attributes)) {
+			    echo '<img src="'.$image_attributes[0].'" width="'.$image_attributes[1].'" height="'.$image_attributes[2].'" alt="'.$linktipp_text.'">';
+			 }
+		     } elseif (isset($linktipp_image)) {
+			 echo '<img src="'.$linktipp_image.'" alt="">'; 
+		     }                 		
+		     if ($options['linktipps-linkpos']==1) {    
+			 echo '</a>';
+		     }
+		    if (isset($linktipp_text)) {
+			 echo $linktipp_text;
+		    }     
+		 echo '</p>';
+
+		 echo '</article>'; 
+
+		 if ($options['linktipps-titlepos']==1) { 
+		    echo '<header class="post-title ym-cbox">';
+		    if (str_len(trim($linktipp_untertitel))>1) {
+			echo '<hgroup>';
+		    }
+		    if (($options['linktipps-subtitlepos']==0) && (str_len(trim($linktipp_untertitel))>1)) {
 			echo '<h3 class="subtitle">'.$linktipp_untertitel.'</h3>';
 		    }
-		echo '</div>';  
-	     } 
-	     echo '<div class="ym-column"><div class="post-entry ym-cbox"><p>';
-		 if ($options['linktipps-linkpos']==1) {    
-		     echo '<a href="'.$linktipp_url.'">';
-		 }
-		 
-		 if (isset($linktipp_imgid) && ($linktipp_imgid>0)) {
-		     $image_attributes = wp_get_attachment_image_src( $linktipp_imgid, 'linktipp-thumb' );
-		     if (is_array($image_attributes)) {
-			echo '<img src="'.$image_attributes[0].'" width="'.$image_attributes[1].'" height="'.$image_attributes[2].'" alt="'.$linktipp_text.'">';
-		     }
-		 } elseif (isset($linktipp_image)) {
-		     echo '<img src="'.$linktipp_image.'" alt="">'; 
-		 }                 		
-		 if ($options['linktipps-linkpos']==1) {    
-		     echo '</a>';
-		 }
-                if (isset($linktipp_text)) {
-		     echo $linktipp_text;
-                }     
-	     echo '</p>';
-             
-             echo '</div>'; 
-	       
-	     if ($options['linktipps-titlepos']==1) { 
-		echo '<div class="post-title ym-cbox">';
-                if ($options['linktipps-subtitlepos']==0) { 
-		    echo '<h3 class="subtitle">'.$linktipp_untertitel.'</h3>';
-		}
-                echo '<h2>';   
-		if (($options['linktipps-linkpos']==0) || ($options['linktipps-linkpos']==3)) { 	
-		    echo '<a href="'.$linktipp_url.'" rel="bookmark">';
-		}    
-		echo $title;
-		if (($options['linktipps-linkpos']==0) || ($options['linktipps-linkpos']==3)) { echo '</a>'; }
-		echo '</h2>';
-                if ($options['linktipps-subtitlepos']==1) { 
-                    echo '<h3 class="subtitle">'.$linktipp_untertitel.'</h3>';
-                }
-                echo '</div>'; 
-	      }
+		    echo '<h2>';   
+		    if (($options['linktipps-linkpos']==0) || ($options['linktipps-linkpos']==3)) { 	
+			echo '<a href="'.$linktipp_url.'" rel="bookmark">';
+		    }    
+		    echo $title;
+		    if (($options['linktipps-linkpos']==0) || ($options['linktipps-linkpos']==3)) { echo '</a>'; }
+		    echo '</h2>';
+		    if (($options['linktipps-subtitlepos']==1) && (str_len(trim($linktipp_untertitel))>1)) {
+			echo '<h3 class="subtitle">'.$linktipp_untertitel.'</h3>';
+		    }
+		    if (str_len(trim($linktipp_untertitel))>1) {
+			echo '</hgroup>';
+		    }
+		    echo '</header>'; 
+		  }
+		  if (($options['linktipps-linkpos']==2) || ($options['linktipps-linkpos']==3)) { 
+		      echo '<footer class="linktipp-url"><a href="'.$linktipp_url.'">'.$linktipp_url.'</a></footer>'; 
+
+		  }
 	      
-	      
-	      
-	      if (($options['linktipps-linkpos']==2) || ($options['linktipps-linkpos']==3)) { 
-		  echo '<p class="linktipp-url"><a href="'.$linktipp_url.'">'.$linktipp_url.'</a></p>'; 
-		  
-	      }
-	       echo '</div>'; 
-	  echo '</div>';
+	      echo '</div>'; 
+	  echo '</section>';
        }
       return;
       
@@ -796,15 +807,15 @@ function piratenkleider_post_teaser($titleup = 1, $showdatebox = 1, $showdatelin
       $sizeclass .= " usefloating";
   }
   ?> 
-  <div <?php post_class($sizeclass); ?> id="post-<?php the_ID(); ?>" >
+  <section <?php post_class($sizeclass); ?> id="post-<?php the_ID(); ?>" >
     <?php 
         
      if ($titleup==1) { ?>
-        <div class="post-title ym-cbox"><h2>          
+        <header class="post-title ym-cbox"><h2>          
             <a href="<?php the_permalink(); ?>" rel="bookmark" title="<?php the_title(); ?>">
               <?php the_title(); ?>
             </a>
-	</h2></div>       
+	</h2></header>       
        <div class="ym-column"> 
      <?php }	
    /* 0 = Datebox, 
@@ -843,19 +854,19 @@ function piratenkleider_post_teaser($titleup = 1, $showdatebox = 1, $showdatelin
                 echo $leftbox;
             } 
             echo '</div></div>';
-            echo '<div class="post-entry ym-col3">';
+            echo '<article class="post-entry ym-col3">';
             echo '<div class="ym-cbox';
             if ($usefloating==0) { echo ' ym-clearfix'; }
             echo '">';	
 	} else {
-	     echo '<div class="post-entry ym-cbox">';
+	     echo '<article class="post-entry ym-cbox">';
 	}
 	if ($titleup==0) { ?>       
-	    <div class="post-title"><h2>          
+	    <header class="post-title"><h2>          
 	        <a href="<?php the_permalink(); ?>" rel="bookmark">
 	          <?php the_title(); ?>
                 </a>
-	    </h2></div>
+	    </h2></header>
 	 <?php }
 	   
 	 if (($showdatebox!=0) && ($showdateline==1)) { ?>
@@ -867,10 +878,10 @@ function piratenkleider_post_teaser($titleup = 1, $showdatebox = 1, $showdatelin
             </div>    	
             <div class="ym-ie-clearing">&nbsp;</div>	
 	<?php } ?>
-    </div>
+	</article>
     
     <?php if ($titleup==1) { echo '</div>'; }       
-    echo '</div>'; 
+    echo '</section>'; 
 
 }
 endif;

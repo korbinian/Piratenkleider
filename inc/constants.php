@@ -194,7 +194,6 @@ $defaultoptions = array(
     'linktipp-thumbnail_height'		    => 210,
     'linktipp-thumbnail_crop'		    => 1,
     'src-linktipp-thumbnail_default'	    => get_template_directory_uri() .'/images/default-teaserthumb.gif',
-    'linktipps-onstart'			    => 1,
     'linktipps-titlepos'		    => 0, // 0 = ueber Bild/Text, 1 = unter Bild/Text
     'linktipps-linkpos'			    => 1, // 0 = Link auf dem Titel, 1 = Link auf Text/Bild, 2 = URL unter Bild/Text anzeigen&verlinken
     'linktipps-subtitlepos'		    => 0, // 0 = oben, vor Titel, 1 = oben nach titel, 2 = unten

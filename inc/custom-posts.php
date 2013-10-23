@@ -15,10 +15,11 @@ function piratenkleider_custom_post_linktipps() {
 	$args = array(
 	    'labels'		=> $labels,
 	    'description'	=> __( 'Erstellen und Verwalten von Leseempfehlungen und Linktipps', 'piratenkleider' ),
-	    'public'		=> true,
+	    'public'		=> false,
+	    'show_ui'		=> true,
 	    'menu_position'	=> 7,
 	    'supports'		=> array( 'title' ),
-	    'has_archive'	=> true,	
+	 //   'has_archive'	=> true,	
 	    'exclude_from_search' => true,
 	    'query_var'		=> true,
 	    'rewrite'		=> array( 'slug' => 'linktipps','with_front' => FALSE), 
@@ -41,7 +42,7 @@ function piratenkleider_taxonomies_linktipps() {
 	);
 	register_taxonomy( 'linktipp_category', 'linktipps', $args );
 }
-add_action( 'init', 'piratenkleider_taxonomies_linktipps' );
+// add_action( 'init', 'piratenkleider_taxonomies_linktipps' );
 
 function piratenkleider_linktipp_metabox() {
     add_meta_box( 

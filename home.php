@@ -26,7 +26,7 @@
       $col_count = 3; 
       $cols = array();
      
-     if (($options['aktiv-linktipps']) && ($options['linktipps-onstart']==1)) {
+     if ($options['aktiv-linktipps']) {
 	    global $wp_query;
 	    $args = array_merge( $wp_query->query, array( 'post_type' => array('linktipps','post') ) );
 	    query_posts( $args );
