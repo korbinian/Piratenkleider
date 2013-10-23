@@ -42,7 +42,7 @@ function piratenkleider_taxonomies_linktipps() {
 	);
 	register_taxonomy( 'linktipp_category', 'linktipps', $args );
 }
-// add_action( 'init', 'piratenkleider_taxonomies_linktipps' );
+add_action( 'init', 'piratenkleider_taxonomies_linktipps' );
 
 function piratenkleider_linktipp_metabox() {
     add_meta_box( 
@@ -57,6 +57,7 @@ function piratenkleider_linktipp_metabox() {
 function linktipp_metabox_content( $post ) {
     global $defaultoptions;
     global $post;
+ 
 	wp_nonce_field( plugin_basename( __FILE__ ), 'linktipp_metabox_content_nonce' );
 	?>
 	
@@ -119,7 +120,11 @@ add_action( 'add_meta_boxes', 'piratenkleider_linktipp_metabox' );
 
 
 function linktipp_metabox_save( $post_id ) {
+    if (  'linktipps'!= get_post_type()  ) {
+	return;
+    }
 
+	
 	if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) 
 	return;
 
@@ -177,5 +182,149 @@ function linktipp_metabox_updated_messages( $messages ) {
 }
 add_filter( 'post_updated_messages', 'linktipp_metabox_updated_messages' );
 
+// [bartag foo="foo-value"]
+function linktipps_shortcode( $atts ) {
+    global $options;
+	extract( shortcode_atts( array(
+		'cat' => '',
+		'num' => 5,
+	), $atts ) );
+	
+	$cat = sanitize_text_field($cat);
+	if ((isset($cat)) && ( strlen(trim($cat))>0)) {
+	    $args = array(
+			'post_type' => 'linktipps',
+			'tax_query' => array(
+				array(
+					'taxonomy' => 'linktipp_category',
+					'field' => 'slug',
+					'terms' => $cat
+				    )
+			)
+		);
+	} else {
+	    $args = array(
+			'post_type' => 'linktipps'
+	    );
+	}
+	
+	$links = new WP_Query( $args );
+		if( $links->have_posts() ) {
+		    $i=0;
+		    $out = '';
+		    while ($links->have_posts() && ($i<$num) ) {
+			$links->the_post();
+			$i++;
+
+			
+			    $post_id = $links->post->ID;
+			    $title = get_the_title(); 
+			  $linktipp_url = get_post_meta( $post_id, 'linktipp_url', true );
+			  $linktipp_imgid = get_post_meta( $post_id, 'linktipp_imgid', true );
+			  $linktipp_image = get_post_meta( $post_id, 'linktipp_image', true );
+			  $linktipp_untertitel = get_post_meta( $post_id, 'linktipp_untertitel', true );
+			  $linktipp_text = get_post_meta( $post_id, 'linktipp_text', true );
+			  if (isset($linktipp_untertitel) && !isset($title)) {
+			      $title = $linktipp_untertitel;
+			      $linktipp_untertitel = '';
+			  } 
+			 
+
+
+				$sizeclass = 'ym-column linktipps'; 
+			      $out .= '<section class="'.$sizeclass.'" id="post-'.$post_id.'" >';
+
+				 if ($options['linktipps-titlepos']!=1) { 
+				    echo '<header class="post-title ym-cbox">';
+					if (mb_strlen(trim($linktipp_untertitel))>1) {
+					    $out .= '<hgroup>';
+					}
+					if (($options['linktipps-subtitlepos']==0) && (mb_strlen(trim($linktipp_untertitel))>1)) {
+					    $out .= '<h3 class="subtitle">'.$linktipp_untertitel.'</h3>';
+					}
+
+				       $out .= '<h2>';   
+				       if (($options['linktipps-linkpos']==0) || ($options['linktipps-linkpos']==3)) {	
+					    $out .= '<a href="'.$linktipp_url.'" rel="bookmark">';
+					}    
+					$out .=  $title;
+					if (($options['linktipps-linkpos']==0) || ($options['linktipps-linkpos']==3)) { echo '</a>'; }
+					$out .= '</h2>';
+					if (($options['linktipps-subtitlepos']==1) && (mb_strlen(trim($linktipp_untertitel))>1)) { 
+					    $out .= '<h3 class="subtitle">'.$linktipp_untertitel.'</h3>';
+
+					}
+					if (mb_strlen(trim($linktipp_untertitel))>1) {
+					    $out .= '</hgroup>';
+					}
+				    $out .= '</header>';  
+				 } 
+				 $out .= '<div class="ym-column">';
+				     $out .= '<article class="post-entry ym-cbox"><p>';
+					 if ($options['linktipps-linkpos']==1) {    
+					     $out .= '<a href="'.$linktipp_url.'">';
+					 }
+
+					 if (isset($linktipp_imgid) && ($linktipp_imgid>0)) {
+					     $image_attributes = wp_get_attachment_image_src( $linktipp_imgid, 'linktipp-thumb' );
+					     if (is_array($image_attributes)) {
+						$out .= '<img src="'.$image_attributes[0].'" width="'.$image_attributes[1].'" height="'.$image_attributes[2].'" alt="'.$linktipp_text.'">';
+					     }
+					 } elseif (isset($linktipp_image)) {
+					     $out .= '<img src="'.$linktipp_image.'" alt="">'; 
+					 }                 		
+					 if ($options['linktipps-linkpos']==1) {    
+					     $out .= '</a>';
+					 }
+					if (isset($linktipp_text)) {
+					     $out .=  $linktipp_text;
+					}     
+				     $out .= '</p>';
+				     $out .= '</article>'; 
+
+				     if ($options['linktipps-titlepos']==1) { 
+					$out .= '<header class="post-title ym-cbox">';
+					if (str_len(trim($linktipp_untertitel))>1) {
+					    $out .= '<hgroup>';
+					}
+					if (($options['linktipps-subtitlepos']==0) && (str_len(trim($linktipp_untertitel))>1)) {
+					    $out .= '<h3 class="subtitle">'.$linktipp_untertitel.'</h3>';
+					}
+					$out .= '<h2>';   
+					if (($options['linktipps-linkpos']==0) || ($options['linktipps-linkpos']==3)) { 	
+					    $out .= '<a href="'.$linktipp_url.'" rel="bookmark">';
+					}    
+					$out .=  $title;
+					if (($options['linktipps-linkpos']==0) || ($options['linktipps-linkpos']==3)) { echo '</a>'; }
+					$out .= '</h2>';
+					if (($options['linktipps-subtitlepos']==1) && (str_len(trim($linktipp_untertitel))>1)) {
+					    $out .= '<h3 class="subtitle">'.$linktipp_untertitel.'</h3>';
+					}
+					if (str_len(trim($linktipp_untertitel))>1) {
+					    $out .= '</hgroup>';
+					}
+					$out .= '</header>'; 
+				      }
+				      if (($options['linktipps-linkpos']==2) || ($options['linktipps-linkpos']==3)) { 
+					  $out .= '<footer class="linktipp-url"><a href="'.$linktipp_url.'">'.$linktipp_url.'</a></footer>'; 
+
+				      }
+
+				  $out .= '</div>'; 
+			      $out .= '</section>';
+				
+	  
+		    }
+		    
+
+		  
+			
+		} else {
+			$out = __('Es konnten keine Leseempfehlungen gefunden werden', 'piratenkleider');
+		}
+	
+	return $out;
+}
+add_shortcode( 'linktipps', 'linktipps_shortcode' );
 
 ?>

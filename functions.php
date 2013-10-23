@@ -712,7 +712,6 @@ function piratenkleider_post_teaser($titleup = 1, $showdatebox = 1, $showdatelin
 			 echo $linktipp_text;
 		    }     
 		 echo '</p>';
-
 		 echo '</article>'; 
 
 		 if ($options['linktipps-titlepos']==1) { 
@@ -747,9 +746,6 @@ function piratenkleider_post_teaser($titleup = 1, $showdatebox = 1, $showdatelin
 	  echo '</section>';
        }
       return;
-      
-	//      'linktipps-titlepos'		    => 0, // 0 = ueber Bild/Text, 1 = unter Bild/Text
-	//	'linktipps-linkpos'			    => 0, // 0 = Link auf dem Titel, 1 = Link auf Text/Bild, 2 = URL unter Bild/Text anzeigen&verlinken
   }
  
   $leftbox = '';
