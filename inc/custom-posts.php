@@ -231,7 +231,7 @@ function linktipps_shortcode( $atts ) {
 			 
 
 
-				$sizeclass = 'ym-column linktipps'; 
+				$sizeclass = 'shortcode ym-column linktipps'; 
 			      $out .= '<section class="'.$sizeclass.'" id="post-'.$post_id.'" >';
 
 				 if ($options['linktipps-titlepos']!=1) { 
