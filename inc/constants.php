@@ -791,7 +791,7 @@ $default_alternativestyles = array(
             '<abbr title="Regionalverband">RV</abbr> Altmark' => 'http://altmark-piraten.de/',
             '<abbr title="Regionalverband">RV</abbr> Anhalt-Salzland' => 'http://www.piraten-anhalt.de/',
             '<abbr title="Kreisverband">KV</abbr> B&ouml;rde' => 'http://www.piraten-boerde.de/',
-            '<abbr title="Kreisverband">KV</abbr> Magdeburg' => 'http://www.piraten-magdeburg.de/',
+    //        '<abbr title="Kreisverband">KV</abbr> Magdeburg' => 'http://www.piraten-magdeburg.de/',
             'Dessau' => 'http://www.piraten-dessau.de/',
             'Halle (Saale)' => 'http://piraten-halle.de/',
             'Harz' => 'http://piraten-harz.de/',
