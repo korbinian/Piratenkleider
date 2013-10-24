@@ -65,7 +65,11 @@
 	?>
       </div>
     </div>
-
+    <?php 
+	$nosidebar = get_post_meta( get_the_ID(), 'piratenkleider_nosidebar', true ); 
+	if( !empty( $nosidebar ) && $nosidebar==1) {
+	    echo "<!-- no sidebar -->\n";
+	} else { ?>
     <div class="content-aside">
       <div class="skin">                
           <h1 class="skip"><?php _e( 'Weitere Informationen', 'piratenkleider' ); ?></h1>
@@ -87,6 +91,7 @@
          get_sidebar(); ?>
       </div>
     </div>
+	<?php } ?>
   </div>
  <?php get_piratenkleider_socialmediaicons(2); ?>
 </div>

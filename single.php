@@ -124,38 +124,45 @@
       </div>
 	 <?php endwhile; // end of the loop. ?>
     </div>
+    
+    <?php 
+	$nosidebar = get_post_meta( get_the_ID(), 'piratenkleider_nosidebar', true ); 
+	if( !empty( $nosidebar ) && $nosidebar==1) {
+	    echo "<!-- no sidebar -->\n";
+	} else {
+	?>
+	    <div class="content-aside">
+	      <div class="skin">
+	       <h1 class="skip"><?php _e( 'Weitere Informationen', 'piratenkleider' ); ?></h1>
+	       <?php
 
-    <div class="content-aside">
-      <div class="skin">
-       <h1 class="skip"><?php _e( 'Weitere Informationen', 'piratenkleider' ); ?></h1>
-       <?php
-       
-        if (  
-		( isset($custom_fields['text']) && isset($custom_fields['image_url']) && 
-		   ($custom_fields['image_url'][0]<>'') && ($custom_fields['text'][0]<>''))
-		|| (
-			(isset($custom_fields['text']) && $custom_fields['text'][0]<>'') && (has_post_thumbnail())))             
-            {   ?>
-            <div id="steckbrief">   
-                <?php
-                if (isset($custom_fields['image_url']) &&  $custom_fields['image_url'][0]<>'') {
-                    echo wp_get_attachment_image( $custom_fields['image_url'][0], array(300,300) ); 
-                } else {
-                     the_post_thumbnail(array(300,300));
-                } ?>
-                
-                <div class="text">
-                     <?php echo do_shortcode(get_post_meta($post->ID, 'text', $single = true)); ?>
-                </div>
-           </div>
-           <?php 
-        }  
-       
-        piratenkleider_echo_player();       
-        get_sidebar(); 
-        ?>
-      </div>
-    </div>
+		if (  
+			( isset($custom_fields['text']) && isset($custom_fields['image_url']) && 
+			   ($custom_fields['image_url'][0]<>'') && ($custom_fields['text'][0]<>''))
+			|| (
+				(isset($custom_fields['text']) && $custom_fields['text'][0]<>'') && (has_post_thumbnail())))             
+		    {   ?>
+		    <div id="steckbrief">   
+			<?php
+			if (isset($custom_fields['image_url']) &&  $custom_fields['image_url'][0]<>'') {
+			    echo wp_get_attachment_image( $custom_fields['image_url'][0], array(300,300) ); 
+			} else {
+			     the_post_thumbnail(array(300,300));
+			} ?>
+
+			<div class="text">
+			     <?php echo do_shortcode(get_post_meta($post->ID, 'text', $single = true)); ?>
+			</div>
+		   </div>
+		   <?php 
+		}  
+
+		piratenkleider_echo_player();       
+		get_sidebar(); 
+		?>
+	      </div>
+	    </div>
+	<?php } ?>
   </div>
  <?php get_piratenkleider_socialmediaicons(2); ?>
 </div>

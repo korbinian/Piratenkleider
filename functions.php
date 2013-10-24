@@ -255,8 +255,11 @@ function piratenkleider_scripts() {
 	 if ($options['aktiv-circleplayer']==1)  {         
 	     wp_enqueue_style( 'circleplayer', $defaultoptions['src-circleplayer_css'] );
 	}
+	
+	 $nosidebar = get_post_meta( get_the_ID(), 'piratenkleider_nosidebar', true );
 	 $custom_fields = get_post_custom(); 
-	 if ( (isset($custom_fields['fullsize'])) && ($custom_fields['fullsize'][0] == true))  {
+	 if ( ( !empty( $nosidebar ) && $nosidebar==1) 
+	     || ((isset($custom_fields['fullsize'])) && ($custom_fields['fullsize'][0] == true)))  {
 	    wp_enqueue_style( 'basemod_sidebarbottom', $defaultoptions['src-basemod_sidebarbottom'] ); 
 	 }
      } 

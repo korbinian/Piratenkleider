@@ -85,6 +85,10 @@
     <?php }  
    
         if ($options['aktiv-dynamic-sidebar']==1) { 
+	    $nosidebar = get_post_meta( get_the_ID(), 'piratenkleider_nosidebar', true );
+	    if( empty( $nosidebar ) || $nosidebar==0) {
+		
+	    
             ?>
      <script type="text/javascript">
         /* <![CDATA[ */
@@ -92,7 +96,7 @@
          $htmlOffSwitch = '<div class="switchon" ><a href="#"><abbr title="<?php _e('Leiste anzeigen','piratenkleider'); ?>">&#9664;</abbr></a></div>';
         /* ]]> */
     </script> 
-    <?php }
+	<?php } }
     if ((isset($options['aktiv-wombat'])) && ($options['aktiv-wombat']==1)) { ?>
 	<div id="wombat">
 	    <img src="<?php echo get_template_directory_uri() ?>/images/wombat-orange-klein.png" alt="">

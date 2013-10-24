@@ -537,3 +537,7 @@ Administrative Hinweise für Wordpress Theme-Editoren:
     wobei <num> die Zahl der anzuzeigenden Lesetipps ist.
     Ebenso kann die Kategorie der Linktipps eingegrenzt werden, wenn 
     diese verwendet wurden: [linktipps cat="<name>"]
+
+    Für Artikel und Pages wurde eine neue Custom Field "piratenkleider_nosidebar"
+    eingefuegt. Wenn dieses gesetzt ist, wird die Sidebar weggelassen und
+    nicht nru ausgeblendet und nach unten verschoben.
