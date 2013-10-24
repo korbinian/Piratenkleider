@@ -1470,9 +1470,9 @@ function piratenkleider_breadcrumb() {
     }
  */
    
-  } elseif (is_front_page()) {
+  } elseif (is_front_page() && $defaultoptions['zeige_breadcrump_frontpages']) {
 	echo $before . $home . $after;
-  } elseif (is_home()) {
+  } elseif (is_home() && $defaultoptions['zeige_breadcrump_frontpages']) {
 	echo $before . get_the_title(get_option('page_for_posts')) . $after;
   }
    echo '</div>'; 

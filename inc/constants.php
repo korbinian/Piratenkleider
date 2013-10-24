@@ -92,7 +92,7 @@ $defaultoptions = array(
     'zeige_sidebarpagemenu'                 => 1,
     'zeige_commentbubble_null'              => 0,
     'zeigerechtsvorschriften'               => 1,
-    
+    'zeige_breadcrump_frontpages'           => 0,
 
     'category-teaser'			    => 1,
     'category-num-article-fullwidth'	    => 10,
