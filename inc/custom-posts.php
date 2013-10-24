@@ -1,6 +1,6 @@
 <?php
 /*
- *  Custom Post Functions
+ *  Custom Post Functionen zu Linktipps
  */
 
 
@@ -316,11 +316,11 @@ function linktipps_shortcode( $atts ) {
 	  
 		    }
 		    wp_reset_postdata();
-
-		  
-			
+	
 		} else {
-			$out = __('Es konnten keine Leseempfehlungen gefunden werden', 'piratenkleider');
+			$out = '<section class="shortcode linktipps"><p>';
+			$out .= __('Es konnten keine Leseempfehlungen gefunden werden.', 'piratenkleider');
+			$out .= "</p></section>\n";
 		}
 	
 	return $out;

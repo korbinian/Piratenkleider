@@ -2,7 +2,7 @@ Piratenkleider
 - Wordpress-Theme für Webauftritte der Piratenpartei 
 ====================================================
 
-Version 2.19.7 von Wolfgang Wiese (xwolf), 23. Oktober 2013
+Version 2.19.8 von Wolfgang Wiese (xwolf), 24. Oktober 2013
 
 
 DOWNLOADS
@@ -533,5 +533,7 @@ Administrative Hinweise für Wordpress Theme-Editoren:
     Die Lesetipps müssen gesondert aktiviert werden.
 
     Zur Darstellung einzelner Lesetipps oder einer Liste von diesen
-    innerhalb von Artikeln kann ein Shortcode [linktipps <num>] verwendet werden
-    eobei <num> die Zahl der anzuzeigenden Lesetipps ist.
+    innerhalb von Artikeln kann ein Shortcode [linktipps num="<num>"] verwendet werden
+    wobei <num> die Zahl der anzuzeigenden Lesetipps ist.
+    Ebenso kann die Kategorie der Linktipps eingegrenzt werden, wenn 
+    diese verwendet wurden: [linktipps cat="<name>"]
