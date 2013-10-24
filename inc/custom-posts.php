@@ -38,7 +38,7 @@ function piratenkleider_taxonomies_linktipps() {
 	$args = array(
 		'labels'	=> $labels,
 		'hierarchical'	=> true,
-		'rewrite'	=> array('slug' => 'linktipps' )
+		'rewrite'	=> false,
 	);
 	register_taxonomy( 'linktipp_category', 'linktipps', $args );
 }
@@ -215,27 +215,23 @@ function linktipps_shortcode( $atts ) {
 		    while ($links->have_posts() && ($i<$num) ) {
 			$links->the_post();
 			$i++;
-
-			
+	
 			    $post_id = $links->post->ID;
 			    $title = get_the_title(); 
-			  $linktipp_url = get_post_meta( $post_id, 'linktipp_url', true );
-			  $linktipp_imgid = get_post_meta( $post_id, 'linktipp_imgid', true );
-			  $linktipp_image = get_post_meta( $post_id, 'linktipp_image', true );
-			  $linktipp_untertitel = get_post_meta( $post_id, 'linktipp_untertitel', true );
-			  $linktipp_text = get_post_meta( $post_id, 'linktipp_text', true );
+			    $linktipp_url = get_post_meta( $post_id, 'linktipp_url', true );
+			    $linktipp_imgid = get_post_meta( $post_id, 'linktipp_imgid', true );
+			    $linktipp_image = get_post_meta( $post_id, 'linktipp_image', true );
+			    $linktipp_untertitel = get_post_meta( $post_id, 'linktipp_untertitel', true );
+			    $linktipp_text = get_post_meta( $post_id, 'linktipp_text', true );
 			  if (isset($linktipp_untertitel) && !isset($title)) {
 			      $title = $linktipp_untertitel;
 			      $linktipp_untertitel = '';
 			  } 
 			 
-
-
-				$sizeclass = 'shortcode ym-column linktipps'; 
-			      $out .= '<section class="'.$sizeclass.'" id="post-'.$post_id.'" >';
-
+			      $out .= '<section class="shortcode ym-column linktipps" id="post-'.$post_id.'" >';
+			      $out .= "\n";
 				 if ($options['linktipps-titlepos']!=1) { 
-				    echo '<header class="post-title ym-cbox">';
+				    $out .=  '<header class="post-title ym-cbox">';
 					if (mb_strlen(trim($linktipp_untertitel))>1) {
 					    $out .= '<hgroup>';
 					}
@@ -258,9 +254,12 @@ function linktipps_shortcode( $atts ) {
 					    $out .= '</hgroup>';
 					}
 				    $out .= '</header>';  
+				     $out .= "\n";
 				 } 
 				 $out .= '<div class="ym-column">';
+				  $out .= "\n";
 				     $out .= '<article class="post-entry ym-cbox"><p>';
+				     $out .= "\n";
 					 if ($options['linktipps-linkpos']==1) {    
 					     $out .= '<a href="'.$linktipp_url.'">';
 					 }
@@ -280,7 +279,7 @@ function linktipps_shortcode( $atts ) {
 					     $out .=  $linktipp_text;
 					}     
 				     $out .= '</p>';
-				     $out .= '</article>'; 
+				     $out .= "</article>\n"; 
 
 				     if ($options['linktipps-titlepos']==1) { 
 					$out .= '<header class="post-title ym-cbox">';
@@ -304,18 +303,19 @@ function linktipps_shortcode( $atts ) {
 					    $out .= '</hgroup>';
 					}
 					$out .= '</header>'; 
+					 $out .= "\n";
 				      }
 				      if (($options['linktipps-linkpos']==2) || ($options['linktipps-linkpos']==3)) { 
 					  $out .= '<footer class="linktipp-url"><a href="'.$linktipp_url.'">'.$linktipp_url.'</a></footer>'; 
 
 				      }
 
-				  $out .= '</div>'; 
-			      $out .= '</section>';
+				  $out .= "</div>\n"; 
+			      $out .= "</section>\n";
 				
 	  
 		    }
-		    
+		    wp_reset_postdata();
 
 		  
 			

@@ -30,9 +30,9 @@
 		    echo '<div class="content-header">';
 		}
 		?>  
-	        <header>
-		    <h1 class="post-title"><span><?php the_title(); ?></span></h1>
-		</header>    
+		    <header>
+			<h1 class="post-title"><span><?php the_title(); ?></span></h1>
+		    </header>    
 		   <div class="symbolbild"><img src="<?php echo $image_url ?>" alt="">
 		   <?php if (isset($image_alt) && (strlen($image_alt)>1)) {
 		     echo '<div class="caption">'.$image_alt.'</div>';  
@@ -47,25 +47,19 @@
 	<?php } ?>
  
         <section <?php post_class(); ?> id="post-<?php the_ID(); ?>">
-	    
-           <?php 
+	    <?php 
 		if ( (isset($custom_fields['show-post-disclaimer']))
                  && ($custom_fields['show-post-disclaimer'][0]<>'') 
                  && ($options['post_disclaimer']<>'') 
                  && ( ($custom_fields['show-post-disclaimer'][0]==1) || ($custom_fields['show-post-disclaimer'][0]==3)) 
                 ) {
-		   echo '<div class="disclaimer">';
-		   echo $options['post_disclaimer'];
-		   echo '</div>';
-                }
-				
-		piratenkleider_post_datumsbox();		
-          ?>  
-        
-    
-          <article class="post-entry">
-            <?php the_content(); ?>
-          </article>
+		   echo '<div class="disclaimer">'.$options['post_disclaimer'].'</div>';
+                }				
+		piratenkleider_post_datumsbox();  ?>  
+
+	      <article class="post-entry">
+		<?php the_content(); ?>
+	      </article>
              <?php 
             if ( (isset($custom_fields['show-post-disclaimer']))
                  &&   ($custom_fields['show-post-disclaimer'][0]<>'') 
@@ -77,18 +71,16 @@
                 echo '</div>';
                 }
           ?>  
-			
-          <div class="post-meta"><p>
-               <?php 
-                piratenkleider_post_pubdateinfo();    
-                if ($options['aktiv-autoren']) piratenkleider_post_autorinfo();             
-                echo ' ';  
-		piratenkleider_post_taxonominfo();  
-                ?>                  
-              </p>
-          </div>
-	 
-	  <div><?php edit_post_link( __( 'Bearbeiten', 'piratenkleider' ), '', '' ); ?></div>
+		<div class="post-meta"><p>
+		       <?php 
+			piratenkleider_post_pubdateinfo();    
+			if ($options['aktiv-autoren']) piratenkleider_post_autorinfo();             
+			echo ' ';  
+			piratenkleider_post_taxonominfo();  
+			?>                  
+		      </p>
+		</div>
+		<div><?php edit_post_link( __( 'Bearbeiten', 'piratenkleider' ), '', '' ); ?></div>
         </section>
 	<div class="post-nav">
 		<ul>
@@ -103,34 +95,32 @@
         <div class="post-comments" id="comments">
           <?php comments_template( '', true ); ?>
         </div>
-
-        <div class="post-nav">
-            
-           <?php if (has_filter( 'related_posts_by_category')) { ?>   
-          <h3><?php _e("Weitere Artikel in diesem Themenkreis:", 'piratenkleider'); ?></h3>
-          <ul class="related">
-            <?php do_action(
-            'related_posts_by_category',
-            array(
-            'orderby' => 'post_date',
-            'order' => 'DESC',
-            'limit' => 5,
-            'echo' => true,
-            'before' => '<li>',
-            'inside' => '',
-            'outside' => '',
-            'after' => '</li>',
-            'rel' => 'follow',
-            'type' => 'post',
-            'image' => array(1, 1),
-            'message' => __('Keine Treffer','piratenkleider')
-            )
-            ) ?>
+        
+        <?php if (has_filter( 'related_posts_by_category')) { ?>  
+	    <div class="post-nav">
+	      <h3><?php _e("Weitere Artikel in diesem Themenkreis:", 'piratenkleider'); ?></h3>
+	      <ul class="related">
+		<?php do_action(
+		'related_posts_by_category',
+		array(
+		'orderby' => 'post_date',
+		'order' => 'DESC',
+		'limit' => 5,
+		'echo' => true,
+		'before' => '<li>',
+		'inside' => '',
+		'outside' => '',
+		'after' => '</li>',
+		'rel' => 'follow',
+		'type' => 'post',
+		'image' => array(1, 1),
+		'message' => __('Keine Treffer','piratenkleider')
+		)
+		) ?>
           </ul>
+	  </div>
           <?php } ?>
-        </div>
-
-       
+        
       </div>
 	 <?php endwhile; // end of the loop. ?>
     </div>

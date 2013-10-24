@@ -530,7 +530,7 @@ div.ics-calendar-holder .ics-calendar-event {
    .nav-top ul.menu li a {
         background: #2d7dc5;
         color: white;
-        border-color #C96A00;
+        border-color: #C96A00;
         text-shadow: 0 -1px 0 #C96A00;
         background-color: #ff8800;     
    }

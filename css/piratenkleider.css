@@ -1335,8 +1335,8 @@ display: inline-block;
     display: inline-block;
     padding: 10px 10px 15px;
     z-index: 1;
-    box-shadow: 0 1px 8px #999999;
-    margin: 0 0 20px -20px;
+    box-shadow: 2px 2px 8px #333;
+    margin: 0 0 20px;
     -webkit-transform: rotate(2deg);
     -moz-transform: rotate(2deg);
     -ms-transform: rotate(2deg);
@@ -1347,7 +1347,7 @@ display: inline-block;
     -ms-transition: all 406ms ease-out 0s;
     -o-transition: all 406ms ease-out 0s;
     transition: all 406ms ease-out 0s;            
-    max-width: 280px;
+    max-width: 300px;
 }
   .content-aside #steckbrief:hover,
   .content-aside #steckbrief:focus,

@@ -648,7 +648,7 @@ function piratenkleider_post_teaser($titleup = 1, $showdatebox = 1, $showdatelin
   global $post;
    $post_id = $post->ID;
   $sizeclass='';
-  if (  'linktipps'== get_post_type()  ) {
+  if ('linktipps'== get_post_type()  ) {
       $title = get_the_title(); 
       $linktipp_url = get_post_meta( $post_id, 'linktipp_url', true );
       $linktipp_imgid = get_post_meta( $post_id, 'linktipp_imgid', true );
@@ -679,7 +679,7 @@ function piratenkleider_post_teaser($titleup = 1, $showdatebox = 1, $showdatelin
 		   if (($options['linktipps-linkpos']==0) || ($options['linktipps-linkpos']==3)) {	
 			echo '<a href="'.$linktipp_url.'" rel="bookmark">';
 		    }    
-		    echo $title;
+		    echo trim($title);
 		    if (($options['linktipps-linkpos']==0) || ($options['linktipps-linkpos']==3)) { echo '</a>'; }
 		    echo '</h2>';
 		    if (($options['linktipps-subtitlepos']==1) && (mb_strlen(trim($linktipp_untertitel))>1)) { 
@@ -711,8 +711,7 @@ function piratenkleider_post_teaser($titleup = 1, $showdatebox = 1, $showdatelin
 		    if (isset($linktipp_text)) {
 			 echo $linktipp_text;
 		    }     
-		 echo '</p>';
-		 echo '</article>'; 
+		 echo '</p></article>'; 
 
 		 if ($options['linktipps-titlepos']==1) { 
 		    echo '<header class="post-title ym-cbox">';
@@ -875,8 +874,7 @@ function piratenkleider_post_teaser($titleup = 1, $showdatebox = 1, $showdatelin
             <div class="ym-ie-clearing">&nbsp;</div>	
 	<?php } ?>
 	</article>
-    
-    <?php if ($titleup==1) { echo '</div>'; }       
+        <?php if ($titleup==1) { echo '</div>'; }       
     echo '</section>'; 
 
 }
