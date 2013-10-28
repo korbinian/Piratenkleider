@@ -103,7 +103,6 @@ jQuery(document).ready(function($){
         var button = $(this);
         var id = button.attr('id').replace('_button', '');
 
-	alert("blub: "+id);
         //If the uploader object has already been created, reopen the dialog
         if (custom_uploader) {
             custom_uploader.open();
