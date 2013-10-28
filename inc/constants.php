@@ -1803,6 +1803,23 @@ $setoptions = array(
                   'liste'   =>  $default_alternativestyles,
               ),
 
+              'aktiv-stylefile' => array(
+                  'type'    => 'file',
+                  'title'   => __( 'CSS-Datei', 'piratenkleider' ),
+                  'label'   => __( 'Einbinden und hochladen einer eigenen CSS-Datei.', 'piratenkleider' ),
+              ),
+               'stylefile-position' => array(
+                  'type'    => 'select',
+                  'title'   => __( 'Einbindung CSS-Datei', 'piratenkleider' ),
+                  'label'   => __( 'Definition wie der CSS-Datei eingebunden werden soll.', 'piratenkleider' ),
+                  'default' => '',
+                  'liste'   => array(
+                      1 => __('Vor Standard-CSS-Dateien des Theme-Designs', 'piratenkleider'),
+                      2 => __('Nach Standard-CSS-Dateien des Theme-Designs', 'piratenkleider'),
+                      3 => __('Exklusiv (kein Laden der Standard-CSS-Dateien)', 'piratenkleider'),
+                  ),
+              ),
+               
 	       
 	      'css-default-header-height' => array(
                   'type'    => 'number',
