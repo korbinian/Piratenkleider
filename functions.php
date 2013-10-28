@@ -1498,6 +1498,11 @@ function custom_login() {
 }
 add_action('login_head', 'custom_login');
 
+add_filter('upload_mimes', 'custom_upload_mimes');
+function custom_upload_mimes ( $existing_mimes=array() ) {
+    $existing_mimes['css'] = 'text/plain';
+    return $existing_mimes;
+}
 
 
 /* Circleplayer-Import

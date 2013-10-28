@@ -13,10 +13,10 @@ jQuery(document).ready(function($){
         var idtitle = button.attr('id').replace('image_url_button', 'title');
 	
         //If the uploader object has already been created, reopen the dialog
-        if (custom_uploader) {
-            custom_uploader.open();
-            return;
-        }
+    //    if (custom_uploader) {
+    //        custom_uploader.open();
+    //        return;
+    //    }
  
         //Extend the wp.media object
         custom_uploader = wp.media.frames.file_frame = wp.media({

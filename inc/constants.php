@@ -1806,7 +1806,11 @@ $setoptions = array(
               'aktiv-stylefile' => array(
                   'type'    => 'file',
                   'title'   => __( 'CSS-Datei', 'piratenkleider' ),
-                  'label'   => __( 'Einbinden und hochladen einer eigenen CSS-Datei.', 'piratenkleider' ),
+                  'label'   => __( 'Einbinden und hochladen einer eigenen CSS-Datei.', 'piratenkleider' ).
+                   __( '<p><em>Bitte an alle Designer: Wenn ihr hiermit Designs erstellt, teilt sie doch mit: ', 'piratenkleider' ). 
+                   __( 'Dann f&uuml;gen wir sie zur obiger Liste der Alternativdesigns hinzu, so dass auch viele andere etwas davon haben.', 'piratenkleider' ).
+                   __( '<br><br>Bitte meldet euch hierzu bei: <a href="mailto:piratenkleider@xwolf.de">piratenkleider@xwolf.de</a> - Vielen Dank!</em></p>', 'piratenkleider' ),
+
               ),
                'stylefile-position' => array(
                   'type'    => 'select',
