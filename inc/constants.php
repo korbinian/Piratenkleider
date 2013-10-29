@@ -430,10 +430,14 @@ $defaultbilder_liste = array(
 	'21' => array(
 		'src' =>	get_template_directory_uri().'/images/default-blau.jpg',
 		'label' => __( 'Blau SG Gestaltung BTW13', 'piratenkleider' )
-	), 
+	),
 	'22'=> array(
 		'src' =>	get_template_directory_uri().'/images/default-vorlage.jpg',
 		'label' => __( 'Default', 'piratenkleider' )
+	),
+	'23'=> array(
+		'src' =>	get_template_directory_uri().'/images/defaultbild-wikinger.jpg',
+		'label' => __( 'WIkinger', 'piratenkleider' )
 	),
 );
 
