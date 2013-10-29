@@ -95,7 +95,6 @@ if ((isset( $options['meta-author'] )) && ( strlen(trim($options['meta-author'])
                                         wp_nav_menu( array( 'container_class' => 'menu-header', 'theme_location' => 'top' ) );
                                     } else {
                                         global $default_toplink_liste;   
-
                                         if (is_array($default_toplink_liste)) {     ?>
                                             <div class="menu-header">
                                             <ul id="menu-topmenu" class="menu">
@@ -142,23 +141,23 @@ if ((isset( $options['meta-author'] )) && ( strlen(trim($options['meta-author'])
                                 
 			</div>
                         <nav role="navigation">
-			<div class="nav-main"  id="nav">
-				<h2 class="skip"><?php _e( 'Navigation', 'piratenkleider' ); ?></h2>
-				<?php 
-                                if ( has_nav_menu( 'primary' ) ) {
-                                    wp_nav_menu( array( 'container_class' => 'menu-header', 'theme_location' => 'primary', 'walker'  => new My_Walker_Nav_Menu()) );      
-                                } else { ?>
-                                    <div class="menu-header">
-                                        <ul id="menu-mainmenu" class="menu">      
-                                            <?php  wp_page_menu( array(
-                                        'sort_column' => 'menu_order, post_title',
-                                        'echo'        => 1,
-                                        'show_home'   => 1 ) ); ?>          
-                                        </ul>
-                                    </div>
-                                <?php  } ?>
-                                                                     
-			</div>
+			    <div class="nav-main"  id="nav">
+				    <h2 class="skip"><?php _e( 'Navigation', 'piratenkleider' ); ?></h2>
+				    <?php 
+				    if ( has_nav_menu( 'primary' ) ) {
+					wp_nav_menu( array( 'container_class' => 'menu-header', 'theme_location' => 'primary', 'walker'  => new My_Walker_Nav_Menu()) );      
+				    } else { ?>
+					<div class="menu-header">
+					    <ul id="menu-mainmenu" class="menu">      
+						<?php  wp_page_menu( array(
+					    'sort_column' => 'menu_order, post_title',
+					    'echo'        => 1,
+					    'show_home'   => 1 ) ); ?>          
+					    </ul>
+					</div>
+				    <?php  } ?>
+
+			    </div>
                         </nav>        
                     <?php if ( $options['defaultwerbesticker'] == "1" ){ ?>
          

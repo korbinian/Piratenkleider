@@ -138,7 +138,10 @@
         background: url("../images/links/piratenpad.png") center left no-repeat;
         padding-left: 18px;
     }
-
+    .content-primary a[href ^="mumble:"] {
+        background: url("../images/links/mumble.png") center left no-repeat;
+        padding-left: 18px;
+    }
     .content-primary a.nolinkicon {
             background: none;
             padding-right: 0;
