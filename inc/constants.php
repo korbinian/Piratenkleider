@@ -92,7 +92,7 @@ $defaultoptions = array(
     'zeige_sidebarpagemenu'                 => 1,
     'zeige_commentbubble_null'              => 0,
     'zeigerechtsvorschriften'               => 1,
-    'zeige_breadcrump_frontpages'           => 0,
+    
 
     'category-teaser'			    => 1,
     'category-num-article-fullwidth'	    => 10,
@@ -123,24 +123,24 @@ $defaultoptions = array(
     'src-teaser-thumbnail_default'	    => get_template_directory_uri() .'/images/default-teaserthumb.gif',
     'teaser-thumbnail_fallback'		    => 1,
     
-    'teaser-type'                   => 'big',    
-    'teaser-title-maxlength'        => 50,
-    'teaser-subtitle'               => __( 'Topthema', 'piratenkleider' ),
-    'teaser-title-words'            => 7,
+    'teaser-type'			    => 'big',    
+    'teaser-title-maxlength'		    => 50,
+    'teaser-subtitle'			    => __( 'Topthema', 'piratenkleider' ),
+    'teaser-title-words'		    => 7,
 
-    'teaser_maxlength'              => 500,
-    'teaser-titleup'		    => 1, /* Titles up */ 
-    'teaser-datebox'		    => 0,
-    'teaser-floating'		    => 0,
-    'teaser-dateline'		    => 0, /* 1 = show Date on line up of the text if no datebox */
-    'teaser-maxlength-halfwidth'   => 200,        
-    'teaser-titleup-halfwidth'	    => 1, /* Titles up */ 
-    'teaser-datebox-halfwidth'	    => 1, 
-    'teaser-floating-halfwidth'	    => 1,
-    'teaser-dateline-halfwidth'    => 0, /* 1 = show Date on line up of the text if no datebox */      
+    'teaser_maxlength'			    => 500,
+    'teaser-titleup'			    => 1, /* Titles up */ 
+    'teaser-datebox'			    => 0,
+    'teaser-floating'			    => 0,
+    'teaser-dateline'			    => 0, /* 1 = show Date on line up of the text if no datebox */
+    'teaser-maxlength-halfwidth'	    => 200,        
+    'teaser-titleup-halfwidth'		    => 1, /* Titles up */ 
+    'teaser-datebox-halfwidth'		    => 1, 
+    'teaser-floating-halfwidth'		    => 1,
+    'teaser-dateline-halfwidth'		    => 0, /* 1 = show Date on line up of the text if no datebox */      
     
     
-    'url-newsletteranmeldung'       => 'https://service.piratenpartei.de/subscribe/newsletter',
+    'url-newsletteranmeldung'		    => 'https://service.piratenpartei.de/subscribe/newsletter',
     'css-default-header-height'     => 225,
     'css-default-branding-padding-top'  => 40,
     'aktiv-mediaqueries-allparts'   => 0,
@@ -173,21 +173,24 @@ $defaultoptions = array(
     'stickerlink2-url'              => 'https://spenden.piratenpartei.de/',
     'stickerlink3-content'          => '',
     'stickerlink3-url'              => '',
-    'default_footerlink_key'        => 'International (mit Flaggen)',
-    'default_footerlink_show'       => 1,    
-    'circleplayer-require-mp3fallback'	=> 1,
+    'default_footerlink_key'		    => 'International (mit Flaggen)',
+    'default_footerlink_show'		    => 1,    
+    'circleplayer-require-mp3fallback'	    => 1,
 
-    'default_text_title_home_backlink' => __('Zur&uuml;ck zur Startseite','piratenkleider' ), 
-    'yt-alternativeembed'           => 1,
+    'default_text_title_home_backlink'	    => __('Zur&uuml;ck zur Startseite','piratenkleider' ), 
+    'yt-alternativeembed'		    => 1,
         /* YouTube Videos ueber eigenen Embedcode gestalten und an youtbe-nocookie lenken */
-    'yt-norel'			 => 1,
+    'yt-norel'				    => 1,
 	/* Keine weiteren Videos vorschlagen */
-    'aktiv-wombat'		    => 0,
-    'excerpt_allowtags'		    => '<p>,<br>,<br />,<em>,<i>,<b>,<strong>,<q>',        
-    'breadcrumb_delimiter'	    => ' / ',    
-    'breadcrumb_homelinktext'	    =>  __( 'Startseite', 'piratenkleider' ),
-    'breadcrumb_beforehtml'	    =>  '<span class="current">',
-    'breadcrumb_afterhtml'	    =>  '</span>',
+    'aktiv-wombat'			    => 0,
+    'excerpt_allowtags'			    => '<p>,<br>,<br />,<em>,<i>,<b>,<strong>,<q>',        
+    'zeige_breadcrump'			    => 1,
+    'breadcrumb_delimiter'		    => ' / ',    
+    'breadcrumb_homelinktext'		    =>  __( 'Startseite', 'piratenkleider' ),
+    'breadcrumb_beforehtml'		    =>  '<span class="current">',
+    'breadcrumb_afterhtml'		    =>  '</span>',
+    'zeige_breadcrump_frontpages'           => 0,
+    
     
     'aktiv-linktipps'			    => 0,
     'linktipp-thumbnail_width'		    => 310,
@@ -1780,12 +1783,17 @@ $setoptions = array(
            'tabtitle'   => __( 'Design (Kl&uuml;verbaum)', 'piratenkleider' ),
            'fields' => array(
             
+	       'style'  => array(
+                  'type'    => 'section',
+                  'title'   => __( 'Stylesheet', 'piratenkleider' ),
+              ),
 	       'aktiv-alternativestyle' => array(
                   'type'    => 'select',
                   'title'   => __( 'Grunddesign &auml;ndern', 'piratenkleider' ),
                   'label'   => __( 'Aktiviert ein alternatives Design f&uuml;r die gesamte Website.', 'piratenkleider' ),
                   'default' => 'style.css',
                   'liste'   =>  $default_alternativestyles,
+		  'parent'  => 'style', 
               ),
 
 	    'css-colorfile' => array(
@@ -1794,6 +1802,7 @@ $setoptions = array(
                   'label'   => __( 'Auswahl, welche l&auml;nderbezogene Farbvariante aktiviert werden soll.', 'piratenkleider' ),
                   'default' => '',
                   'liste'   => $default_colorstyles,
+			  'parent'  => 'style', 
               ),
 	      'css-fontfile' => array(
                   'type'    => 'select',
@@ -1801,22 +1810,23 @@ $setoptions = array(
                   'label'   => __( 'Auswahl, welcher Schriftstil f&uuml;r die Website verwendet werden soll.', 'piratenkleider' ),
                   'default' => $defaultoptions['default-fontset-file'],
                   'liste'   => $default_fontstyles,
+		  	  'parent'  => 'style', 
               ),
 	      'aktiv-mediaqueries-allparts' => array(
                   'type'    => 'bool',
                   'title'   => __( 'Small Screen Device Sichtbarkeit', 'piratenkleider' ),
                   'label'   => __( 'F&uuml;r kleine Bildschirmaufl&ouml;sungen auch optionale Teile (Sticker, Slider) anzeigen.', 'piratenkleider' ),
                   'default' => $defaultoptions['aktiv-mediaqueries-allparts'],
+		  	  'parent'  => 'style', 
               ),
 	      'aktiv-linkicons' => array(
                   'type'    => 'bool',
                   'title'   => __( 'Linkicons anzeigen', 'piratenkleider' ),
                   'label'   => __( 'Bei der Anzeige von Links in Artikeln und Seiten werden bekannte Adressen und Dateitypen mit Icons ergänzt.', 'piratenkleider' ),
-                  'default' => $defaultoptions['aktiv-linkicons'],                 
+                  'default' => $defaultoptions['aktiv-linkicons'],         
+		  	  'parent'  => 'style', 
               ),
-	        
-	       
-	      
+
               'aktiv-stylefile' => array(
                   'type'    => 'file',
                   'title'   => __( 'CSS-Datei', 'piratenkleider' ),
@@ -1824,7 +1834,7 @@ $setoptions = array(
                    __( '<p><em>Bitte an alle Designer: Wenn ihr hiermit Designs erstellt, teilt sie doch mit. ', 'piratenkleider' ). 
                    __( 'Dann f&uuml;gen wir sie zur obiger Liste der Alternativdesigns hinzu, so dass auch viele andere etwas davon haben.', 'piratenkleider' ).
                    __( '<br><br>Meldet euch hierzu bei: <a href="mailto:piratenkleider@xwolf.de">piratenkleider@xwolf.de</a> - Vielen Dank!</em></p>', 'piratenkleider' ),
-		    
+		  	  'parent'  => 'style',   
               ),
                'stylefile-position' => array(
                   'type'    => 'select',
@@ -1839,20 +1849,45 @@ $setoptions = array(
 		      4 => __('Exklusiv (kein Laden anderer CSS-Dateien)', 'piratenkleider'),
 
                   ),
+		   	  'parent'  => 'style', 
               ),
-               
+              'breadcrumb'  => array(
+                  'type'    => 'section',
+                  'title'   => __( 'Breadcrumb', 'piratenkleider' ),
+              ),
+	      'zeige_breadcrump'  => array(
+                  'type'    => 'bool',
+                  'title'   => __( 'Aktivieren', 'piratenkleider' ),
+                  'label'   => __( 'Breadcrumb aktivieren', 'piratenkleider' ),
+                  'default' => $defaultoptions['zeige_breadcrump'],
+		  'parent' => 'breadcrumb',
+              ),	       
+	       'zeige_breadcrump_frontpages'  => array(
+                  'type'    => 'bool',
+                  'title'   => __( 'Start- und Frontseiten', 'piratenkleider' ),
+                  'label'   => __( 'Breadcrumb auch bei Start- und Frontseiten anzeigen', 'piratenkleider' ),
+                  'default' => $defaultoptions['zeige_breadcrump_frontpages'],
+		   'parent' => 'breadcrumb',
+              ),
+	       
+	      'miscdesign'  => array(
+                  'type'    => 'section',
+                  'title'   => __( 'Weitere Designoptionen', 'piratenkleider' ),
+              ),
 	       
 	      'css-default-header-height' => array(
                   'type'    => 'number',
                   'title'   => __( 'H&ouml;he des Kopfbereiches ( .header )', 'piratenkleider' ),
                   'label'   => __( 'Hinweis: Die Verkleinerung der H&ouml;he des Kopfteils ist nicht ungef&auml;hrlich. Zu beachten ist, dass der Kopfteil auch bei einer Vergr&ouml;&szlig;erung des Textes auf 200% noch gen&uuml;gend Platz haben muss!', 'piratenkleider' ),
                   'default' => $defaultoptions['css-default-header-height'],
+		   'parent' => 'miscdesign',
               ), 
 	      'css-default-branding-padding-top' => array(
                   'type'    => 'number',
                   'title'   => __( 'Abstand des Brandingbereiches (=Logo) nach oben ( .header .branding )', 'piratenkleider' ),
                   'label'   => __( 'Das Logo hat einen Abstand nach oben. Diese kann &uuml;ber diese Angabe reduziert werden.', 'piratenkleider' ),
                   'default' => $defaultoptions['css-default-branding-padding-top'],
+		    'parent' => 'miscdesign',
               ), 
              
 	      'css-eigene-anweisungen' => array(
@@ -1860,6 +1895,7 @@ $setoptions = array(
                   'title'   => __( 'CSS-Anweisungen', 'piratenkleider' ),
                   'label'   => __( 'Eigene CSS-Anweisungen, die Inline im Kopfteil der Dokumente erg&auml;nzt werden', 'piratenkleider' ),
                   'default' => '',
+		    'parent' => 'miscdesign',
               ),
 	       'html-eigene-anweisungen' => array(
                   'type'    => 'textarea',
@@ -1867,6 +1903,7 @@ $setoptions = array(
                   'label'   => __( 'Eigene HTML-Anweisungen, die am Ende der Webseite, vor dem letzten &lt;/body&gt;&lt;/html&gt; plaziert werden', 'piratenkleider' ).
 		    __( '<br><b>Achtung:</b> Fehlerhafter HTML-, JavaScript oder CSS-Code an dieser Stelle kann zu einem Nicht-Funktionieren der gesamt Website f&uuml;hren!<br />Der hier eingegebene Code wird nicht gefiltert oder kontrolliert.', 'piratenkleider' ),
                   'default' => '',
+		     'parent' => 'miscdesign',
               ),
 	       
           )

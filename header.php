@@ -185,7 +185,7 @@ if ((isset( $options['meta-author'] )) && ( strlen(trim($options['meta-author'])
                     <?php   } ?>
 		</div>
 	</div>
-
+	<?php if ($options['zeige_breadcrump']==1) { ?>
 	<div class="section breadcrumbs">
 		<div class="row">
 			<div class="skin">
@@ -193,7 +193,7 @@ if ((isset( $options['meta-author'] )) && ( strlen(trim($options['meta-author'])
 			</div>
 		</div>
 	</div>
-
+	<?php } ?>
 
 	<div class="chrome-container">
 
