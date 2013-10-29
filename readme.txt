@@ -73,14 +73,6 @@ Dieses Theme basiert auf die Wordpress-Basisvorlage von Korbinian Polk.
 Das alte Original von @korbinian kann auf Github gefunden werden: 
  https://github.com/korbinian/Piratenkleider
 
-PIRATENKLEIDER-GP
-
-Martin Stoppler (http://www.stoppe-gp.de/) pflegt einen Branch von
-Piratenkleider 2.x mit eigenen weiteren Modifikationen. Wesentliche
-Funktionen seines Branches werden regelmässig mit diesen Zweig
-gemergt:
- https://github.com/PiratenGP/Piratenkleider-GP
-
 
 
 MENÜS
@@ -541,3 +533,12 @@ Administrative Hinweise für Wordpress Theme-Editoren:
     Für Artikel und Pages wurde eine neue Custom Field "piratenkleider_nosidebar"
     eingefuegt. Wenn dieses gesetzt ist, wird die Sidebar weggelassen und
     nicht nru ausgeblendet und nach unten verschoben.
+
+23. Ab der version 2.19.10 ist das Hochladen und Aktivieren eigenes CSS-Dateien
+    möglich; Somit kann man auch ohne Wechsel des Themes das komplette Design
+    ändern. 
+    Alle Designer die hiermit neue Piratenwebsites mit eigenen Designs
+    erstellen werden gebeten, die neuen CSS-Dateien bereitzustellen, so
+    dass sie hier in diesem Theme mit als ALternativdesigns aufgenommen
+    werden können.
+
