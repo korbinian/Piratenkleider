@@ -127,5 +127,12 @@ jQuery(document).ready(function($){
         //Open the uploader dialog
         custom_uploader.open(); 
     });
+    $('.file_clear_button').click(function() {  
+        $(this).parent().siblings('.file-upload-display-value').val('');  
+        $(this).parent().siblings('.file-upload-input-value').val('');  
+        return false;  
+    });  
+    
+    
 });
 

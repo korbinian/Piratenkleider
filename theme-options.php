@@ -152,16 +152,18 @@ function theme_options_do_page($tab = '') {
                                     echo "<label for=\"piratenkleider_theme_options[$name]\">$label</label>\n";    
                                 } elseif ($type=='file') {
                                     echo "\t\t\t";                                    
-                                    echo "<input type=\"text\" class=\"large-text\" id=\"file-upload-display-$name\" value=\"";
+                                    echo "<input type=\"text\" class=\"file-upload-display-value large-text\" id=\"file-upload-display-$name\" value=\"";
                                     if (isset($options[$name])) echo wp_get_attachment_url( esc_attr( $options[$name]) );
                                     echo "\">\n";
-                                    echo "<input type=\"hidden\" class=\"file-upload-val-$name\" id=\"piratenkleider_theme_options[$name]\"
+                                    echo "<input type=\"hidden\" class=\"file-upload-input-value file-upload-val-$name\" id=\"piratenkleider_theme_options[$name]\"
                                         name=\"piratenkleider_theme_options[$name]\" value=\"";
                                     if (isset($options[$name])) echo esc_attr( $options[$name] );
                                     echo "\"> ";
                                    echo '<input type="button" id="'.$name.'_button" 
                                        class="button file-upload" 
-                                       value="'.__( "Datei ausw&auml;hlen oder hochladen", 'piratenkleider' ).'" />';                                      
+                                       value="'.__( "Datei ausw&auml;hlen oder hochladen", 'piratenkleider' ).'" />';         
+				   
+				   echo ' <small><a href="#" class="file_clear_button">'.__( "Datei entfernen", 'piratenkleider' ).'</a></small>';
                                     echo "<br>\t\t\t";
                                     echo "<label for=\"piratenkleider_theme_options[$name]\">$label</label>\n";      
                                 } elseif ($type=='number') {

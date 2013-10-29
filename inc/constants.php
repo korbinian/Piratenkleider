@@ -197,6 +197,9 @@ $defaultoptions = array(
     'linktipps-titlepos'		    => 0, // 0 = ueber Bild/Text, 1 = unter Bild/Text
     'linktipps-linkpos'			    => 1, // 0 = Link auf dem Titel, 1 = Link auf Text/Bild, 2 = URL unter Bild/Text anzeigen&verlinken
     'linktipps-subtitlepos'		    => 0, // 0 = oben, vor Titel, 1 = oben nach titel, 2 = unten
+    
+    'stylefile-position'		    => 0,
+    'aktiv-stylefile'			    => 0,
 );
 
 
@@ -1757,7 +1760,10 @@ $setoptions = array(
                   'type'    => 'select',
                   'title'   => __( 'Position und Anzeige', 'piratenkleider' ),
                   'label'   => __( 'Die Auswahl werden die Social Media Buttons angezeigt. Dies kann entweder oben im Kopfteil oder links neben den Inhaltsbereich sein. <br>Hinweis: Es werden nur die Buttons gezeigt, bei denen in den folgenden Eingabefeldern Adressen definiert sind.', 'piratenkleider' ),
-                  'liste'   => array(0 => __( 'Keine Social Media Buttons', 'piratenkleider' ) ,  1 => __( 'Im Kopfteil', 'piratenkleider' ), 2 => __( 'Links anzeigen', 'piratenkleider' )),
+                  'liste'   => array(
+		      0 => __( 'Keine Social Media Buttons', 'piratenkleider' ) ,  
+		      1 => __( 'Im Kopfteil', 'piratenkleider' ), 
+		      2 => __( 'Links anzeigen', 'piratenkleider' )),
                   'default' => $defaultoptions['alle-socialmediabuttons'],
               ),  
 	      'sm-list'  => array(
@@ -1773,17 +1779,25 @@ $setoptions = array(
 	'design'   => array(
            'tabtitle'   => __( 'Design (Kl&uuml;verbaum)', 'piratenkleider' ),
            'fields' => array(
-              
+            
+	       'aktiv-alternativestyle' => array(
+                  'type'    => 'select',
+                  'title'   => __( 'Grunddesign &auml;ndern', 'piratenkleider' ),
+                  'label'   => __( 'Aktiviert ein alternatives Design f&uuml;r die gesamte Website.', 'piratenkleider' ),
+                  'default' => 'style.css',
+                  'liste'   =>  $default_alternativestyles,
+              ),
+
 	    'css-colorfile' => array(
                   'type'    => 'select',
-                  'title'   => __( 'L&auml;nderfarbe aktivieren', 'piratenkleider' ),
+                  'title'   => __( 'Farbkombination', 'piratenkleider' ),
                   'label'   => __( 'Auswahl, welche l&auml;nderbezogene Farbvariante aktiviert werden soll.', 'piratenkleider' ),
                   'default' => '',
                   'liste'   => $default_colorstyles,
               ),
 	      'css-fontfile' => array(
                   'type'    => 'select',
-                  'title'   => __( 'Stil der Schriftart &auml;ndern', 'piratenkleider' ),
+                  'title'   => __( 'Schriftarten', 'piratenkleider' ),
                   'label'   => __( 'Auswahl, welcher Schriftstil f&uuml;r die Website verwendet werden soll.', 'piratenkleider' ),
                   'default' => $defaultoptions['default-fontset-file'],
                   'liste'   => $default_fontstyles,
@@ -1794,33 +1808,36 @@ $setoptions = array(
                   'label'   => __( 'F&uuml;r kleine Bildschirmaufl&ouml;sungen auch optionale Teile (Sticker, Slider) anzeigen.', 'piratenkleider' ),
                   'default' => $defaultoptions['aktiv-mediaqueries-allparts'],
               ),
-	      'aktiv-alternativestyle' => array(
-                  'type'    => 'select',
-                  'title'   => __( 'Grunddesign &auml;ndern', 'piratenkleider' ),
-                  'label'   => __( 'Aktiviert ein alternatives Design f&uuml;r die gesamte Website.', 'piratenkleider' ).
-			       __( '<br><strong>ACHTUNG: ALPHA-Status! Designs sind noch nicht fertig</strong>.', 'piratenkleider' ),
-                  'default' => 'style.css',
-                  'liste'   =>  $default_alternativestyles,
+	      'aktiv-linkicons' => array(
+                  'type'    => 'bool',
+                  'title'   => __( 'Linkicons anzeigen', 'piratenkleider' ),
+                  'label'   => __( 'Bei der Anzeige von Links in Artikeln und Seiten werden bekannte Adressen und Dateitypen mit Icons ergänzt.', 'piratenkleider' ),
+                  'default' => $defaultoptions['aktiv-linkicons'],                 
               ),
-
+	        
+	       
+	      
               'aktiv-stylefile' => array(
                   'type'    => 'file',
                   'title'   => __( 'CSS-Datei', 'piratenkleider' ),
                   'label'   => __( 'Einbinden und hochladen einer eigenen CSS-Datei.', 'piratenkleider' ).
-                   __( '<p><em>Bitte an alle Designer: Wenn ihr hiermit Designs erstellt, teilt sie doch mit: ', 'piratenkleider' ). 
+                   __( '<p><em>Bitte an alle Designer: Wenn ihr hiermit Designs erstellt, teilt sie doch mit. ', 'piratenkleider' ). 
                    __( 'Dann f&uuml;gen wir sie zur obiger Liste der Alternativdesigns hinzu, so dass auch viele andere etwas davon haben.', 'piratenkleider' ).
-                   __( '<br><br>Bitte meldet euch hierzu bei: <a href="mailto:piratenkleider@xwolf.de">piratenkleider@xwolf.de</a> - Vielen Dank!</em></p>', 'piratenkleider' ),
-
+                   __( '<br><br>Meldet euch hierzu bei: <a href="mailto:piratenkleider@xwolf.de">piratenkleider@xwolf.de</a> - Vielen Dank!</em></p>', 'piratenkleider' ),
+		    
               ),
                'stylefile-position' => array(
                   'type'    => 'select',
                   'title'   => __( 'Einbindung CSS-Datei', 'piratenkleider' ),
-                  'label'   => __( 'Definition wie der CSS-Datei eingebunden werden soll.', 'piratenkleider' ),
-                  'default' => '',
+                  'label'   => __( 'Definition wie der CSS-Datei eingebunden werden soll in Kontext zum oben gew&auml;hlten Grunddesign.', 'piratenkleider' ),
+                  'default' => 0,
                   'liste'   => array(
-                      1 => __('Vor Standard-CSS-Dateien des Theme-Designs', 'piratenkleider'),
-                      2 => __('Nach Standard-CSS-Dateien des Theme-Designs', 'piratenkleider'),
-                      3 => __('Exklusiv (kein Laden der Standard-CSS-Dateien)', 'piratenkleider'),
+		      0 => __('Deaktiv (Nicht einbinden)', 'piratenkleider'),
+                      1 => __('Vor Standard-CSS-Dateien des Grunddesigns', 'piratenkleider'),
+                      2 => __('Nach Standard-CSS-Dateien des Grunddesigns', 'piratenkleider'),
+                      3 => __('Semi-Exklusiv (kein Laden des Grunddesign-CSS, jedoch optionale CSS (Farben, Schriften, Icons, ...)', 'piratenkleider'),
+		      4 => __('Exklusiv (kein Laden anderer CSS-Dateien)', 'piratenkleider'),
+
                   ),
               ),
                
@@ -1882,13 +1899,7 @@ $setoptions = array(
                   'default' => 1,
               ),
 
-              'aktiv-linkicons' => array(
-                  'type'    => 'bool',
-                  'title'   => __( 'Linkicons anzeigen', 'piratenkleider' ),
-                  'label'   => __( 'Bei der Anzeige von Links in Artikeln und Seiten werden bekannte Adressen und Dateitypen mit Icons ergänzt.', 'piratenkleider' ),
-                  'default' => $defaultoptions['aktiv-linkicons'],                 
-              ),
-	       
+             
 	       
               'url-newsletteranmeldung' => array(
                   'type'    => 'url',

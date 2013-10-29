@@ -217,110 +217,130 @@ function piratenkleider_scripts() {
     global $options;
     global $defaultoptions;
 
-     if ( !is_admin() ) { 
-	$theme  = wp_get_theme();
-	
-	
-	 if ((isset($options['aktiv-alternativestyle'])) && ($options['aktiv-alternativestyle'] != 'style.css')) {
-	     wp_enqueue_style( 'alternativestyle', get_template_directory_uri().'/css/'.$options['aktiv-alternativestyle'] );	     
-	} else {
-	    wp_register_style( 'piratenkleider', get_bloginfo( 'stylesheet_url' ), false, $theme['Version'] );
-	    wp_enqueue_style( 'piratenkleider' );
-	}     		
-    }    
-    if ((isset($options['css-colorfile'])) && (strlen(trim($options['css-colorfile']))>1)) { 
-	 wp_enqueue_style( 'color', get_template_directory_uri().'/css/'.$options['css-colorfile'] );	             
-    }        
-    
-    if (!isset($options['css-fontfile']))  {
-        $options['css-fontfile'] = $defaultoptions['default-fontset-file'];
-    }
-    
-    if ((isset($options['css-fontfile'])) && (strlen(trim($options['css-fontfile']))>1)) { 
-	wp_enqueue_style( 'font', get_template_directory_uri().'/css/'.$options['css-fontfile'],array(),false,'all and (min-width:500px)' );	             
-    }        	
-    
-    if (isset($options['aktiv-mediaqueries-allparts']) && ($options['aktiv-mediaqueries-allparts']==1)) {
-	wp_enqueue_style( 'basemod_mediaqueries_allparts', $defaultoptions['src-basemod_mediaqueries_allparts'] );
-    }
-	
-    if (isset($options['aktiv-mediaqueries-allparts']) && ($options['aktiv-mediaqueries-allparts']==1)) {
-	wp_enqueue_style( 'basemod_mediaqueries_allparts', $defaultoptions['src-basemod_mediaqueries_allparts'] );
-    }
-    if ((isset($options['aktiv-linkicons'])) && ($options['aktiv-linkicons']==1)) { 
-       wp_enqueue_style( 'basemod_linkicons', $defaultoptions['src-linkicons-css'] );
-    }    
-    
-     if ( is_singular() ) {
-	 if ($options['aktiv-circleplayer']==1)  {         
-	     wp_enqueue_style( 'circleplayer', $defaultoptions['src-circleplayer_css'] );
+    /*
+    'stylefile-position': 
+     0 => __('Deaktiv (Nicht einbinden)', 'piratenkleider'),
+                      1 => __('Vor Standard-CSS-Dateien des Grunddesigns', 'piratenkleider'),
+                      2 => __('Nach Standard-CSS-Dateien des Grunddesigns', 'piratenkleider'),
+                      3 => __('Semi-Exklusiv (kein Laden des Grunddesign-CSS, jedoch optionale CSS (Farben, Schriften, Icons, ...)', 'piratenkleider'),
+		      4 => __('Exklusiv (kein Laden anderer CSS-Dateien)', 'piratenkleider'),
+
+	     */
+     $userstyle = 0;
+     if ( !is_admin() ) {
+	$userstyle = 0;
+	if ((isset($options['aktiv-stylefile']) && ($options['aktiv-stylefile'] > 0) && (wp_get_attachment_url($options['aktiv-stylefile'])) )
+		&& (isset($options['stylefile-position'])) && ($options['stylefile-position']>0)) {
+	    $userstyle = 1;
+	}
+	 
+	if (($userstyle==1) && ($options['stylefile-position']==1)) {
+	    wp_enqueue_style( 'stylefile', wp_get_attachment_url($options['aktiv-stylefile']));	  
 	}
 	
-	 $nosidebar = get_post_meta( get_the_ID(), 'piratenkleider_nosidebar', true );
-	 $custom_fields = get_post_custom(); 
-	 if ( ( !empty( $nosidebar ) && $nosidebar==1) 
-	     || ((isset($custom_fields['fullsize'])) && ($custom_fields['fullsize'][0] == true)))  {
-	    wp_enqueue_style( 'basemod_sidebarbottom', $defaultoptions['src-basemod_sidebarbottom'] ); 
-	 }
-     } 
-    if ((isset($options['position_sidebarbottom'])) && ($options['position_sidebarbottom'] ==1)) {
-	    wp_enqueue_style( 'basemod_sidebarbottom', $defaultoptions['src-basemod_sidebarbottom'] ); 
-    }
-    
-       
-    
+	if (($userstyle==0) || (($userstyle==1) && ($options['stylefile-position']<3))) {
+	    if ((isset($options['aktiv-alternativestyle'])) && ($options['aktiv-alternativestyle'] != 'style.css')) {
+		 wp_enqueue_style( 'alternativestyle', get_template_directory_uri().'/css/'.$options['aktiv-alternativestyle'] );	     
+	    } else {
+		$theme  = wp_get_theme();
+		wp_register_style( 'piratenkleider', get_bloginfo( 'stylesheet_url' ), false, $theme['Version'] );
+		wp_enqueue_style( 'piratenkleider' );
+	    }     		
+	}
+	if (($userstyle==1) && ($options['stylefile-position'] > 1)) {
+	    wp_enqueue_style( 'stylefile', wp_get_attachment_url($options['aktiv-stylefile']));	  
+	}
+	
+	if (($userstyle==0) || (($userstyle==1) && ($options['stylefile-position']!=4))) {
+	    if ((isset($options['css-colorfile'])) && (strlen(trim($options['css-colorfile']))>1)) { 
+		 wp_enqueue_style( 'color', get_template_directory_uri().'/css/'.$options['css-colorfile'] );	             
+	    }        
 	    
+	    if (!isset($options['css-fontfile']))  {
+		$options['css-fontfile'] = $defaultoptions['default-fontset-file'];
+	    }
+	    if ((isset($options['css-fontfile'])) && (strlen(trim($options['css-fontfile']))>1)) { 
+		wp_enqueue_style( 'font', get_template_directory_uri().'/css/'.$options['css-fontfile'],array(),false,'all and (min-width:500px)' );	             
+	    }        	
 
-    wp_enqueue_script(
-		'layoutjs',
-		$defaultoptions['src-layoutjs'],
-		array('jquery'),
-                $defaultoptions['js-version']
-	);
- 
-    if (is_singular() && ($options['aktiv-commentreplylink']==1) && get_option( 'thread_comments' )) {        
-            wp_enqueue_script(
-		'comment-reply',
-		$defaultoptions['src-comment-reply'],
-		false,
-                $defaultoptions['js-version']
-	);  
-     }        
-   
+	    if (isset($options['aktiv-mediaqueries-allparts']) && ($options['aktiv-mediaqueries-allparts']==1)) {
+		wp_enqueue_style( 'basemod_mediaqueries_allparts', $defaultoptions['src-basemod_mediaqueries_allparts'] );
+	    }
 
-    if (is_singular() && ($options['aktiv-circleplayer']==1)) {
-	 wp_enqueue_script(
-		'jplayer',
-		$defaultoptions['src-jplayer'],
-		array('jquery'),
-                $defaultoptions['js-version']
-            );  
-	  wp_enqueue_script(
-		'transform2d',
-		$defaultoptions['src-transform2d'],
-		array('jplayer'),
-                $defaultoptions['js-version']
-            );  
-	  wp_enqueue_script(
-		'grab',
-		$defaultoptions['src-grab'],
-		array('jplayer'),
-                $defaultoptions['js-version']
-            );  
-	  wp_enqueue_script(
-		'csstransforms',
-		$defaultoptions['src-csstransforms'],
-		array('jplayer'),
-                $defaultoptions['js-version']
-            );  
-	  wp_enqueue_script(
-		'circleplayer',
-		$defaultoptions['src-circleplayer'],
-		array('jplayer'),
-                $defaultoptions['js-version']
-            );  
-    }       
+	    if ((isset($options['aktiv-linkicons'])) && ($options['aktiv-linkicons']==1)) { 
+	       wp_enqueue_style( 'basemod_linkicons', $defaultoptions['src-linkicons-css'] );
+	    }   
+	
+	    if ( is_singular() ) {
+		if ($options['aktiv-circleplayer']==1)  {         
+		    wp_enqueue_style( 'circleplayer', $defaultoptions['src-circleplayer_css'] );
+	       }
 
+		$nosidebar = get_post_meta( get_the_ID(), 'piratenkleider_nosidebar', true );
+		$custom_fields = get_post_custom(); 
+		if ( ( !empty( $nosidebar ) && $nosidebar==1) 
+		    || ((isset($custom_fields['fullsize'])) && ($custom_fields['fullsize'][0] == true)))  {
+		   wp_enqueue_style( 'basemod_sidebarbottom', $defaultoptions['src-basemod_sidebarbottom'] ); 
+		}
+	    } 
+	   if ((isset($options['position_sidebarbottom'])) && ($options['position_sidebarbottom'] ==1)) {
+		   wp_enqueue_style( 'basemod_sidebarbottom', $defaultoptions['src-basemod_sidebarbottom'] ); 
+	   }
+
+	}
+
+
+
+	wp_enqueue_script(
+		    'layoutjs',
+		    $defaultoptions['src-layoutjs'],
+		    array('jquery'),
+		    $defaultoptions['js-version']
+	    );
+
+	if (is_singular() && ($options['aktiv-commentreplylink']==1) && get_option( 'thread_comments' )) {        
+		wp_enqueue_script(
+		    'comment-reply',
+		    $defaultoptions['src-comment-reply'],
+		    false,
+		    $defaultoptions['js-version']
+	    );  
+	 }        
+
+
+	if (is_singular() && ($options['aktiv-circleplayer']==1)) {
+	     wp_enqueue_script(
+		    'jplayer',
+		    $defaultoptions['src-jplayer'],
+		    array('jquery'),
+		    $defaultoptions['js-version']
+		);  
+	      wp_enqueue_script(
+		    'transform2d',
+		    $defaultoptions['src-transform2d'],
+		    array('jplayer'),
+		    $defaultoptions['js-version']
+		);  
+	      wp_enqueue_script(
+		    'grab',
+		    $defaultoptions['src-grab'],
+		    array('jplayer'),
+		    $defaultoptions['js-version']
+		);  
+	      wp_enqueue_script(
+		    'csstransforms',
+		    $defaultoptions['src-csstransforms'],
+		    array('jplayer'),
+		    $defaultoptions['js-version']
+		);  
+	      wp_enqueue_script(
+		    'circleplayer',
+		    $defaultoptions['src-circleplayer'],
+		    array('jplayer'),
+		    $defaultoptions['js-version']
+		);  
+	}       
+     }
 }
 add_action('wp_enqueue_scripts', 'piratenkleider_scripts');
 
