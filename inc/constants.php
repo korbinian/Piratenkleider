@@ -437,7 +437,11 @@ $defaultbilder_liste = array(
 	),
 	'23'=> array(
 		'src' =>	get_template_directory_uri().'/images/defaultbild-wikinger.jpg',
-		'label' => __( 'WIkinger', 'piratenkleider' )
+		'label' => __( 'Wikinger', 'piratenkleider' )
+	),
+        '24'=> array(
+		'src' =>	get_template_directory_uri().'/images/defaultbild-aufregung.jpg',
+		'label' => __( 'Aufregung', 'piratenkleider' )
 	),
 );
 
@@ -448,7 +452,8 @@ $defaultbilder_liste = array(
  * Default color modifications for standard css style
  */
 $default_colorstyles = array(
-    ''  =>  __('Deutschland (Orange)', 'piratenkleider' ),
+    ''  =>  __('Default Stylesheet', 'piratenkleider' ),
+    'colors_de.css' => __('Deutschland (Orange)', 'piratenkleider' ),
     'colors_at.css' => __( '&Ouml;sterreich (Violett)', 'piratenkleider' ),
     'colors_lu.css' => __( 'Luxemburg (Violett)', 'piratenkleider' ),
     'colors_hu.css' => __( 'Ungarn (Violett)', 'piratenkleider' ),
