@@ -13,7 +13,6 @@
                     <p class="titelurl"><a href="<?php echo home_url('/'); ?>"><?php echo home_url('/'); ?></a></p>                                                            
                     <ul>
                         <li><?php wp_loginout() ?></li>
-                        <li><a href="http://creativecommons.org/licenses/by/3.0/de/">CC-BY-SA 3.0</a></li>
                         <li><a href="<?php bloginfo( 'rss_url' ); ?>">RSS-Feed</a></li>
                     </ul>                   
                 </div>

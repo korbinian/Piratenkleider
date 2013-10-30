@@ -475,7 +475,7 @@ $default_fontstyles = array(
 $default_alternativestyles = array(
     'style.css'	    => __( 'Default Piratenkleider', 'piratenkleider' ),
     'sample.css'    => __( 'Leeres Beispiel-CSS', 'piratenkleider' ),
-    'scapegoat.css' => __( 'Scapegoat-Adaption (ALPHA!!!)', 'piratenkleider' ),
+    'scapegoat.css' => __( 'Scapegoat-Adaption (BETA!!!)', 'piratenkleider' ),
  );
 
 /*
@@ -613,7 +613,7 @@ $default_alternativestyles = array(
              '<span class="flagicon-hu"></span> '.__('Ungarn', 'piratenkleider') => 'http://kalozpart.org/',             
              '<span class="flagicon-uy"></span> '.__('Uruguay', 'piratenkleider') => 'http://partidopirata.org.uy/',
              '<span class="flagicon-us"></span> '.__('USA', 'piratenkleider') => 'http://pirate-party.us/',             
-             '<span class="flagicon-uk"></span> '.__('Vereinigtes Königreich', 'piratenkleider') => 'http://pirateparty.org.uk/',              
+             '<span class="flagicon-uk"></span> '.__('Vereinigtes K&ouml;nigreich', 'piratenkleider') => 'http://pirateparty.org.uk/',              
              '<span class="flagicon-by"></span> '.__('Wei&szlig;russland', 'piratenkleider') => 'http://pirates.by/',
              '<span class="flagicon-cy"></span> '.__('Zypern', 'piratenkleider') => 'http://www.piratepartycyprus.com/',
 
@@ -1073,7 +1073,7 @@ $setoptions = array(
               'teaser-datebox' => array(
                   'type'    => 'select',
                   'title'   => __( 'Symbolbild/Datumsbox', 'piratenkleider' ),
-                  'label'   => __( 'Links des Textauszuges das Datum, das Artikelbild, ein Bild des Artikels oder ein verlinktes Video anzeigen; Abhängig vom Inhalt des Artikels.', 'piratenkleider' ),
+                  'label'   => __( 'Links des Textauszuges das Datum, das Artikelbild, ein Bild des Artikels oder ein verlinktes Video anzeigen; Abh&auml;ngig vom Inhalt des Artikels.', 'piratenkleider' ),
                   'default' => $defaultoptions['teaser-datebox'],
 		  'liste'   =>  array(
 				0 => __("Datumsbox anzeigen","piratenkleider"), 
@@ -1116,7 +1116,7 @@ $setoptions = array(
               'teaser-datebox-halfwidth' => array(
                   'type'    => 'select',
                   'title'   => __( 'Symbolbild/Datumsbox', 'piratenkleider' ),
-                  'label'   => __( 'Links des Textauszuges das Datum, das Artikelbild, ein Bild des Artikels oder ein verlinktes Video anzeigen; Abhängig vom Inhalt des Artikels. (Bei Beitr&auml;gen &uuml;ber halbe Breite)', 'piratenkleider' ),
+                  'label'   => __( 'Links des Textauszuges das Datum, das Artikelbild, ein Bild des Artikels oder ein verlinktes Video anzeigen; Abh&auml;ngig vom Inhalt des Artikels. (Bei Beitr&auml;gen &uuml;ber halbe Breite)', 'piratenkleider' ),
                   'default' => $defaultoptions['teaser-datebox-halfwidth'],
 		  'liste'   =>  array(
 				0 => __("Datumsbox anzeigen","piratenkleider"), 
@@ -1215,7 +1215,7 @@ $setoptions = array(
               'slider-defaultbildsrc' => array(
                   'type'    => 'bildlist',
                   'title'   => __( 'Defaultbild', 'piratenkleider' ),
-                  'label'   => __( 'Ersatz-Sliderbild für Seiten ohne eigenes Artikelbild.', 'piratenkleider' ),
+                  'label'   => __( 'Ersatz-Sliderbild f&uuml;r Seiten ohne eigenes Artikelbild.', 'piratenkleider' ),
                   'default' => $defaultoptions['slider-defaultbildsrc'],		                     
 		  'liste'   => $defaultbilder_liste,
 		  'parent'  => 'darstellungartikel'
@@ -1305,7 +1305,7 @@ $setoptions = array(
               'category-teaser-datebox' => array(
                   'type'    => 'select',
                   'title'   => __( 'Symbolbild/Datumsbox', 'piratenkleider' ),
-                  'label'   => __( 'Links des Textauszuges das Datum, das Artikelbild, ein Bild des Artikels oder ein verlinktes Video anzeigen; Abhängig vom Inhalt des Artikels.', 'piratenkleider' ),
+                  'label'   => __( 'Links des Textauszuges das Datum, das Artikelbild, ein Bild des Artikels oder ein verlinktes Video anzeigen; Abh&auml;ngig vom Inhalt des Artikels.', 'piratenkleider' ),
                   'default' => $defaultoptions['category-teaser-datebox'],
 		  'liste'   =>  array(
 				0 => __("Datumsbox anzeigen","piratenkleider"), 
@@ -1418,7 +1418,7 @@ $setoptions = array(
 	      'seiten-defaultbildsrc' => array(
                   'type'    => 'bildlist',
                   'title'   => __( 'Defaultbild', 'piratenkleider' ),
-                  'label'   => __( 'Ersatzbild für Seiten ohne eigenes Artikelbild.', 'piratenkleider' ),
+                  'label'   => __( 'Ersatzbild f&uuml;r Seiten ohne eigenes Artikelbild.', 'piratenkleider' ),
                   'default' => $defaultoptions['src-default-symbolbild'],		                     
 		  'liste'   => $defaultbilder_liste,
 		  'parent'  => 'darstellungseiten'
@@ -1453,7 +1453,7 @@ $setoptions = array(
 	      'artikelbild-src' => array(
                   'type'    => 'bildlist',
                   'title'   => __( 'Defaultbild', 'piratenkleider' ),
-                  'label'   => __( 'Ersatzbild für Seiten ohne eigenes Artikelbild.', 'piratenkleider' ),
+                  'label'   => __( 'Ersatzbild f&uuml;r Seiten ohne eigenes Artikelbild.', 'piratenkleider' ),
                   'default' => $defaultoptions['src-default-artikel-symbolbild'],		                     
 		  'liste'   => $defaultbilder_liste,
 		  'parent'  => 'darstellungartikel'
@@ -1488,49 +1488,49 @@ $setoptions = array(
 	      	       
 	     'src-default-symbolbild-404' => array(
                   'type'    => 'imgurl',
-                  'title'   => __( 'Symbolbild für 404 Seite', 'piratenkleider' ),
+                  'title'   => __( 'Symbolbild f&uuml;r 404 Seite', 'piratenkleider' ),
                   'label'   => __( 'URL f&uuml;r ein eigenes 404-Seitenbild.', 'piratenkleider' ),
                   'default' => $defaultoptions['src-default-symbolbild-404'],
                   'parent'  => 'darstellungindexseiten',
               ),
 	     'src-default-symbolbild-category' => array(
                   'type'    => 'imgurl',
-                  'title'   => __( 'Symbolbild für Kategorie Seite', 'piratenkleider' ),
+                  'title'   => __( 'Symbolbild f&uuml;r Kategorie Seite', 'piratenkleider' ),
                   'label'   => __( 'URL f&uuml;r ein eigenes Kategorien-Seitenbild.', 'piratenkleider' ),
                   'default' => $defaultoptions['src-default-symbolbild-category'],
                   'parent'  => 'darstellungindexseiten',
               ), 
 	      'src-default-symbolbild-tag' => array(
                   'type'    => 'imgurl',
-                  'title'   => __( 'Symbolbild für Tag Seite', 'piratenkleider' ),
+                  'title'   => __( 'Symbolbild f&uuml;r Tag Seite', 'piratenkleider' ),
                   'label'   => __( 'URL f&uuml;r ein eigenes Tag-Seitenbild.', 'piratenkleider' ),
                   'default' => $defaultoptions['src-default-symbolbild-tag'],
                   'parent'  => 'darstellungindexseiten',
               ), 
 	       'src-default-symbolbild-author' => array(
                   'type'    => 'imgurl',
-                  'title'   => __( 'Symbolbild für Autoren Seite', 'piratenkleider' ),
+                  'title'   => __( 'Symbolbild f&uuml;r Autoren Seite', 'piratenkleider' ),
                   'label'   => __( 'URL f&uuml;r ein eigenes Autoren-Seitenbild.', 'piratenkleider' ),
                   'default' => $defaultoptions['src-default-symbolbild-author'],
                   'parent'  => 'darstellungindexseiten',
               ), 
 	       'src-default-symbolbild-archive' => array(
                   'type'    => 'imgurl',
-                  'title'   => __( 'Symbolbild für Archiv Seite', 'piratenkleider' ),
+                  'title'   => __( 'Symbolbild f&uuml;r Archiv Seite', 'piratenkleider' ),
                   'label'   => __( 'URL f&uuml;r ein eigenes Archiv-Seitenbild.', 'piratenkleider' ),
                   'default' => $defaultoptions['src-default-symbolbild-archive'],
                   'parent'  => 'darstellungindexseiten',
               ), 
 	        'src-default-symbolbild-search' => array(
                   'type'    => 'imgurl',
-                  'title'   => __( 'Symbolbild für Suchergebnis-Seite', 'piratenkleider' ),
+                  'title'   => __( 'Symbolbild f&uuml;r Suchergebnis-Seite', 'piratenkleider' ),
                   'label'   => __( 'URL f&uuml;r ein eigenes Suchergebnis-Seitenbild.', 'piratenkleider' ),
                   'default' => $defaultoptions['src-default-symbolbild-search'],
                   'parent'  => 'darstellungindexseiten',
               ), 
 	      'src-default-symbolbild' => array(
                   'type'    => 'imgurl',
-                  'title'   => __( 'Symbolbild für Template-Seiten', 'piratenkleider' ),
+                  'title'   => __( 'Symbolbild f&uuml;r Template-Seiten', 'piratenkleider' ),
                   'label'   => __( 'URL f&uuml;r ein Template-Seitenbild.', 'piratenkleider' ),
                   'default' => $defaultoptions['src-default-symbolbild'],
                   'parent'  => 'darstellungindexseiten',
@@ -1582,9 +1582,9 @@ $setoptions = array(
               'seitenmenu_mode' => array(
                   'type'    => 'select',
                   'title'   => __( 'Gliederung', 'piratenkleider' ),
-                  'label'   => __( 'Das Menü kann nach Seiten-Hierarchie oder Menü-Hierarche gegliedert werden.', 'piratenkleider' ),
+                  'label'   => __( 'Das Men&uuml; kann nach Seiten-Hierarchie oder Menü-Hierarche gegliedert werden.', 'piratenkleider' ),
                   'default' => $defaultoptions['seitenmenu_mode'],
-				  'liste'   => array(0 => "Menüs", 1 => "Seiten"),
+				  'liste'   => array(0 => "Men&uuml;s", 1 => "Seiten"),
                   'parent'  => 'seitenmenu',
               ),
               'zeige_subpagesonly' => array(
@@ -1826,7 +1826,7 @@ $setoptions = array(
 	      'aktiv-linkicons' => array(
                   'type'    => 'bool',
                   'title'   => __( 'Linkicons anzeigen', 'piratenkleider' ),
-                  'label'   => __( 'Bei der Anzeige von Links in Artikeln und Seiten werden bekannte Adressen und Dateitypen mit Icons ergänzt.', 'piratenkleider' ),
+                  'label'   => __( 'Bei der Anzeige von Links in Artikeln und Seiten werden bekannte Adressen und Dateitypen mit Icons erg&auml;nzt.', 'piratenkleider' ),
                   'default' => $defaultoptions['aktiv-linkicons'],         
 		  	  'parent'  => 'style', 
               ),

@@ -4,9 +4,7 @@
  */
 
 
-function piratenkleider_custom_post_linktipps() {
-    global $defaultoptions;
-    
+function piratenkleider_custom_post_linktipps() {    
 	$labels = array(
 		'name'               => __( 'Linktipps', 'piratenkleider' ),
 		'singular_name'      => __( 'Linktipp', 'piratenkleider' ),
@@ -19,13 +17,11 @@ function piratenkleider_custom_post_linktipps() {
 	    'show_ui'		=> true,
 	    'menu_position'	=> 7,
 	    'supports'		=> array( 'title' ),
-	 //   'has_archive'	=> true,	
 	    'exclude_from_search' => true,
 	    'query_var'		=> true,
 	    'rewrite'		=> array( 'slug' => 'linktipps','with_front' => FALSE), 
 	    'capability_type'	=> 'post',
 	    'hierarchical'	=> false,
-	//    'taxonomies'	=> false,
 	    'menu_icon'		=> get_stylesheet_directory_uri() . '/images/icon-internet.png',
 	);
 	register_post_type( 'linktipps', $args );		
@@ -182,7 +178,6 @@ function linktipp_metabox_updated_messages( $messages ) {
 }
 add_filter( 'post_updated_messages', 'linktipp_metabox_updated_messages' );
 
-// [bartag foo="foo-value"]
 function linktipps_shortcode( $atts ) {
     global $options;
 	extract( shortcode_atts( array(

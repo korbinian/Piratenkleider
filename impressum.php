@@ -273,8 +273,6 @@ stehen s&auml;mtliche Werke dieses Angebots unter einer
     <p>
         Das Wordpress-Theme <a class="extern" href="http://www.piratenkleider.de">Piratenkleider</a> wurde entwickelt von:     
     </p>
-    
-   
     <ul>
         <li>Wolfgang Wiese</a> (Neuprogrammierung, Neudesign, CSS, Barrierefreiheit, Dokumentation, Features nach Version 1.1)</li>
         <li>Korbinian Polk, Simon Stützer, Bernd Schreiner (Erstes Grunddesign und Erstellung eines Childtheme von TwentyTen)</li>               
@@ -332,7 +330,7 @@ Browsers speichern und auswerten.
 <br>
 Bei der Einbindung von Inhalten, bei denen die Möglichkeit besteht,
 Tracking zu umgehen, wird dieses genutzt. Beispielsweise bei der Nutzung
-von youtube-nocookie.com anstelle von youtube.com für die
+von youtube-nocookie.com anstelle von youtube.com f&uuml;r die
 Einbindung von Videos.
 </p>
 
