@@ -1,9 +1,9 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: Piratenkleider v2.18.1\n"
+"Project-Id-Version: Piratenkleider v2.19.10\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-06-12 21:36+0100\n"
-"PO-Revision-Date: 2013-07-25 18:18:51+0000\n"
+"PO-Revision-Date: 2013-10-30 20:48:11+0000\n"
 "Last-Translator: Wolfgang Wiese <xwolf@xwolf.de>\n"
 "Language-Team: Fabian Müller, Wolfgang Wiese\n"
 "MIME-Version: 1.0\n"
@@ -27,24 +27,20 @@ msgstr ""
 msgid "Seite nicht gefunden"
 msgstr "Nothing found"
 
-#: 404.php:39
-#@ piratenkleider
-msgid "Es konnten keine Seiten oder Artikel gefunden werden, die zu eingegebene Adresse passte. Bitte versuchen Sie es nochmal mit einer Suche."
-msgstr "No pages or articles could be found. PLease try to search."
-
-#: 404.php:47
+#: 404.php:48
 #: archive.php:58
 #: author.php:115
-#: category.php:128
+#: category.php:129
 #: datenschutzerklaerung.php:212
 #: events/ecp-page-template.php:51
 #: events/ecp-single-template.php:60
-#: home.php:148
-#: impressum.php:353
-#: index.php:46
-#: page.php:68
+#: home.php:154
+#: impressum.php:351
+#: index.php:50
+#: page.php:75
 #: search.php:150
-#: single.php:139
+#: single-linktipps.php:148
+#: single.php:136
 #: spenden.php:161
 #: tag.php:112
 #@ piratenkleider
@@ -85,52 +81,52 @@ msgstr "Blog archive"
 msgid "%s"
 msgstr "%s"
 
-#: category.php:34
+#: category.php:35
 #: home.php:19
 #@ piratenkleider
 msgid "Aktuelle Artikel"
 msgstr "Current articles"
 
-#: category.php:109
-#: home.php:70
+#: category.php:110
+#: home.php:76
 #: loop-category.php:7
-#: loop.php:10
+#: loop.php:9
 #: search.php:112
 #@ piratenkleider
 msgid "Nichts gefunden"
 msgstr "Nothing found"
 
-#: category.php:111
-#: home.php:72
+#: category.php:112
+#: home.php:78
 #@ piratenkleider
 msgid "Es konnten keine Artikel gefunden werden. Bitte versuchen Sie es nochmal mit einer Suche."
 msgstr "No articles could be found"
 
-#: home.php:80
+#: home.php:86
 #@ piratenkleider
 msgid "Weitere Artikel"
 msgstr "Further articles"
 
-#: home.php:93
+#: home.php:99
 #@ piratenkleider
 msgid "&Auml;ltere Artikel"
 msgstr "Older articles"
 
-#: home.php:106
-#: inc/constants.php:911
+#: home.php:112
+#: inc/constants.php:996
 #@ piratenkleider
 msgid "Kategorien"
 msgstr "Categories"
 
-#: home.php:129
-#: inc/constants.php:917
+#: home.php:135
+#: inc/constants.php:1002
 #@ piratenkleider
 msgid "Schlagworte"
 msgstr "Tags"
 
-#: category.php:30
-#: category.php:35
-#: category.php:73
+#: category.php:31
+#: category.php:36
+#: category.php:74
 #, php-format
 #@ piratenkleider
 msgid "Kategorie %s"
@@ -142,7 +138,7 @@ msgid "Dieser Artikel ist Passwortgesch&uuml;tzt. Bitte gib das Passwort ein um 
 msgstr "This article is password protected. Please enter password to view comments."
 
 #: comments.php:10
-#: inc/constants.php:1446
+#: inc/constants.php:1542
 #@ piratenkleider
 msgid "Kommentare"
 msgstr "Comments"
@@ -166,7 +162,7 @@ msgstr "Commenting this article is not (or no longer) possible."
 
 #: comments.php:46
 #: comments.php:55
-#: inc/constants.php:1996
+#: inc/constants.php:2209
 #@ piratenkleider
 msgid "Name"
 msgstr "Name"
@@ -179,10 +175,11 @@ msgstr "Website"
 #: datenschutzerklaerung.php:60
 #: events/ecp-single-template.php:48
 #: impressum.php:58
-#: index.php:39
-#: loop.php:51
-#: page.php:60
-#: single.php:90
+#: index.php:43
+#: loop.php:50
+#: page.php:63
+#: single-linktipps.php:99
+#: single.php:83
 #: spenden.php:58
 #@ piratenkleider
 msgid "Bearbeiten"
@@ -201,40 +198,40 @@ msgid "Zum Beginn des Inhaltes springen."
 msgstr "Jump to content."
 
 #: footer.php:17
-#: header.php:109
+#: header.php:68
 #@ piratenkleider
 msgid "Zur Suche springen."
 msgstr "Jump to search."
 
-#: footer.php:59
+#: footer.php:95
 #@ piratenkleider
 msgid "Leiste ausblenden"
 msgstr "Switch off sidebar"
 
-#: footer.php:60
+#: footer.php:96
 #@ piratenkleider
 msgid "Leiste anzeigen"
 msgstr "Show sidebar"
 
-#: functions.php:157
+#: functions.php:162
 #, fuzzy
 #@ piratenkleider
 msgid "Hauptnavigation (Statische Seiten)"
 msgstr "Main navigation <br />&nbsp; (Static pages)"
 
-#: functions.php:158
+#: functions.php:163
 #, fuzzy
 #@ piratenkleider
 msgid "Linkmenu (Links zu Webportalen wie Wiki, Forum, etc)"
 msgstr "Link menu <br />&nbsp; (Links to web portals; e.g. wiki, forum, etc.)"
 
-#: functions.php:159
+#: functions.php:164
 #, fuzzy
 #@ piratenkleider
 msgid "Technische Navigation (Kontakt, Impressum, etc)"
 msgstr "Technical navigation <br />&nbsp; (Contact, Legal, and so forth)"
 
-#: functions.php:388
+#: functions.php:534
 #: search.php:28
 #: search.php:37
 #, php-format
@@ -242,151 +239,150 @@ msgstr "Technical navigation <br />&nbsp; (Contact, Legal, and so forth)"
 msgid "Suchergebnisse f&uuml;r %s"
 msgstr "Search results for %s"
 
-#: functions.php:391
-#: functions.php:408
+#: functions.php:536
+#: functions.php:548
 #, php-format
 #@ piratenkleider
 msgid "Seite %s"
 msgstr "Page %s"
 
-#: functions.php:424
+#: functions.php:563
 #@ piratenkleider
 msgid "Weiterlesen <span class=\"meta-nav\">&rarr;</span>"
 msgstr "Read more <span class=\"meta-nav\">&rarr;</span>"
 
-#: functions.php:478
+#: functions.php:617
 #, php-format
 #@ piratenkleider
 msgid "%s <span class=\"says\">meinte am</span>"
 msgstr "%s <span class=\"says\"> said on</span>"
 
-#: functions.php:482
+#: functions.php:621
 #@ piratenkleider
 msgid "Der Kommentar wartet auf die Freischaltung."
 msgstr "The comment awaits clearing."
 
 #. translators: 1: date, 2: time
-#: functions.php:489
+#: functions.php:628
 #, php-format
 #@ piratenkleider
 msgid "%1$s um %2$s"
 msgstr "%1$s at %2$s"
 
-#: functions.php:489
-#: functions.php:510
+#: functions.php:628
+#: functions.php:649
 #@ piratenkleider
 msgid "(Edit)"
 msgstr "(Edit)"
 
-#: functions.php:510
+#: functions.php:649
 #@ piratenkleider
 msgid "Pingback:"
 msgstr "Pingback:"
 
-#: functions.php:787
+#: functions.php:1021
 #, php-format
 #@ piratenkleider
 msgid "unter %1$s und tagged %2$s. <br>Hier der permanente <a href=\"%3$s\" title=\"Permalink to %4$s\" rel=\"bookmark\">Link</a> zu diesem Artikel."
 msgstr "in  %1$s,  tagged %2$s. <br>This is the <a href=\"%3$s\" title=\"Permalink to %4$s\" rel=\"bookmark\">link</a> for this article."
 
-#: functions.php:789
+#: functions.php:1023
 #, php-format
 #@ piratenkleider
 msgid "unter %1$s. <br><a href=\"%3$s\" title=\"Permalink to %4$s\" rel=\"bookmark\">Permanenter Link</a> zu diesem Artikel."
 msgstr "in  %1$s. <br><a href=\"%3$s\" title=\"Permalink to %4$s\" rel=\"bookmark\">Permanent link</a> to this article."
 
-#: functions.php:791
+#: functions.php:1025
 #, php-format
 #@ piratenkleider
 msgid "<a href=\"%3$s\" title=\"Permalink to %4$s\" rel=\"bookmark\">Permanenter Link</a> zu diesem Artikel."
 msgstr "<a href=\"%3$s\" title=\"Permalink to %4$s\" rel=\"bookmark\">Permalink</a> to this article."
 
-#: functions.php:1027
-#: functions.php:1041
+#: functions.php:1255
 #@ piratenkleider
 msgid "Kein Inhalt"
 msgstr "No content"
 
-#: functions.php:1204
-#: inc/constants.php:905
+#: inc/constants.php:189
+#: inc/constants.php:990
 #@ piratenkleider
 msgid "Startseite"
 msgstr "Home page"
 
-#: functions.php:1223
+#: functions.php:1433
 #@ piratenkleider
 msgid "Artikel der Kategorie "
 msgstr "Article by category"
 
-#: functions.php:1276
+#: functions.php:1475
 #, fuzzy
 #@ piratenkleider
 msgid "Suche nach "
 msgstr "Search for"
 
-#: functions.php:1279
+#: functions.php:1477
 #@ piratenkleider
 msgid "Artikel mit Schlagwort "
 msgstr "Archive by tags"
 
-#: functions.php:1284
+#: functions.php:1481
 #@ piratenkleider
 msgid "Artikel von "
 msgstr "Article by"
 
-#: functions.php:1407
+#: functions.php:1619
 #@ piratenkleider
 msgid "Diesen Beitrag anh&ouml;ren"
 msgstr "Audio output"
 
-#: functions.php:1461
+#: functions.php:1673
 #@ piratenkleider
 msgid "Download:"
 msgstr "Download:"
 
-#: header.php:106
+#: header.php:65
 #@ piratenkleider
 msgid "Zur Navigation springen."
 msgstr "Jump to navigation."
 
-#: header.php:107
+#: header.php:66
 #@ piratenkleider
 msgid "Zum Inhalt springen."
 msgstr "Jump to content."
 
-#: header.php:129
+#: header.php:88
 #@ piratenkleider
 msgid "Service-Navigation"
 msgstr "Service-Navigation"
 
-#: header.php:171
+#: header.php:145
 #@ piratenkleider
 msgid "Navigation"
 msgstr "Navigation"
 
-#: header.php:192
-#: inc/constants.php:825
+#: header.php:166
+#: inc/constants.php:899
 #@ piratenkleider
 msgid "Sticker"
 msgstr "Sticker"
 
-#: index.php:38
+#: index.php:42
 #: loop-category.php:18
-#: page.php:59
+#: page.php:62
 #@ piratenkleider
 msgid "Seiten:"
 msgstr "Pages:"
 
 #: loop-category.php:8
-#: loop.php:11
+#: loop.php:10
 #@ piratenkleider
 msgid "Vielleicht hilft eine Suche weiter?"
 msgstr "Perhaps a search might help?"
 
 #: author.php:99
-#: category.php:102
+#: category.php:103
 #: loop-category.php:26
-#: loop.php:67
+#: loop.php:66
 #: search.php:104
 #: tag.php:97
 #@ piratenkleider
@@ -394,37 +390,37 @@ msgid "&larr; &Auml;ltere Beitr&auml;ge"
 msgstr "&larr; Older entries"
 
 #: author.php:100
-#: category.php:103
+#: category.php:104
 #: loop-category.php:27
-#: loop.php:68
+#: loop.php:67
 #: search.php:105
 #: tag.php:98
 #@ piratenkleider
 msgid "Neuere Beitr&auml;ge &rarr;"
 msgstr "Newer entries &rarr;"
 
-#: loop.php:39
+#: loop.php:38
 #, php-format
 #@ piratenkleider
 msgid "Diese Galerie enth&auml;lt <a %1$s>%2$s photos</a>."
 msgstr "This gallery contains <a %1$s>%2$s photos</a>."
 
-#: loop.php:48
+#: loop.php:47
 #@ piratenkleider
 msgid "Mehr Bildergalerien"
 msgstr "More image galleries"
 
-#: loop.php:50
+#: loop.php:49
 #@ piratenkleider
 msgid "Hinterlasse einen Kommentar"
 msgstr "Leave a comment"
 
-#: loop.php:50
+#: loop.php:49
 #@ piratenkleider
 msgid "1 Comment"
 msgstr "1 Comment"
 
-#: loop.php:50
+#: loop.php:49
 #@ piratenkleider
 msgid "% kommentare"
 msgstr "% Comments"
@@ -455,27 +451,27 @@ msgstr "Archive by tags"
 msgid "&Uuml;bersicht aller Kategorien"
 msgstr "Category overview"
 
-#: header.php:158
+#: header.php:132
 #: searchform.php:2
 #@ piratenkleider
 msgid "Suche"
 msgstr "Search"
 
-#: header.php:160
+#: header.php:134
 #: searchform.php:5
 #@ piratenkleider
 msgid "Suche nach"
 msgstr "Search for"
 
-#: header.php:161
-#: header.php:162
+#: header.php:135
+#: header.php:136
 #: searchform.php:6
 #: searchform.php:7
 #@ piratenkleider
 msgid "Suchbegriff eingeben"
 msgstr "Enter search term"
 
-#: header.php:163
+#: header.php:137
 #: searchform.php:8
 #@ piratenkleider
 msgid "Suchen"
@@ -486,41 +482,41 @@ msgstr "Search"
 msgid "Aktuelle Themen"
 msgstr "Current topics"
 
-#: inc/constants.php:1511
-#: inc/constants.php:1788
-#: inc/widgets.php:225
+#: inc/constants.php:1607
+#: inc/constants.php:1947
+#: inc/widgets.php:199
 #: sidebar.php:9
 #@ piratenkleider
 msgid "Newsletter"
 msgstr "Newsletter"
 
-#: inc/widgets.php:180
+#: inc/widgets.php:164
 #: sidebar.php:11
 #@ piratenkleider
 msgid "Zum Newsletter anmelden"
 msgstr "Subscribe to our newsletter"
 
-#: inc/widgets.php:181
-#: inc/widgets.php:182
+#: inc/widgets.php:165
+#: inc/widgets.php:166
 #: sidebar.php:12
 #: sidebar.php:13
 #@ piratenkleider
 msgid "E-Mail-Adresse eingeben"
 msgstr "Enter e-mail address"
 
-#: inc/widgets.php:183
 #: sidebar.php:14
 #@ piratenkleider
 msgid "anmelden"
 msgstr "sign in"
 
-#: inc/widgets.php:184
+#: inc/widgets.php:173
 #: sidebar.php:15
 #@ piratenkleider
 msgid "Hinweis: Beim Aufruf wird der Webauftritt verlassen."
 msgstr "Notice: Leaves this web site."
 
-#: single.php:109
+#: single-linktipps.php:118
+#: single.php:101
 #@ piratenkleider
 msgid "Weitere Artikel in diesem Themenkreis:"
 msgstr "Further articles of this subject"
@@ -584,7 +580,7 @@ msgstr "Tag %s"
 msgid "Takelage einstellen"
 msgstr "Set rigs"
 
-#: inc/constants.php:1868
+#: inc/constants.php:2081
 #@ piratenkleider
 msgid "Captn & Crew"
 msgstr "Captn & Crew"
@@ -594,1750 +590,1675 @@ msgstr "Captn & Crew"
 msgid "Optionen wurden gespeichert."
 msgstr "Save options"
 
-#: theme-options.php:374
+#: theme-options.php:392
 #@ piratenkleider
 msgid "Optionen nicht definiert"
 msgstr "Options undefined"
 
-#: theme-options.php:383
+#: theme-options.php:401
 #@ piratenkleider
 msgid "Optionen speichern"
 msgstr "Save options"
 
-#: inc/constants.php:1872
+#: inc/constants.php:2085
 #@ piratenkleider
 msgid "Impressumsangaben"
 msgstr "Legal details"
 
-#: inc/constants.php:1876
+#: inc/constants.php:2089
 #@ piratenkleider
 msgid "Verantwortliche/r"
 msgstr "Responsible person"
 
-#: inc/constants.php:1877
+#: inc/constants.php:2090
 #@ piratenkleider
 msgid "Verantwortliche/r gem&auml;&szlig; &sect; 5 TMG. <br>Zum Beispiel: <code>Martin Mustermann</code>"
 msgstr "Responsible person according to &sect; 5 TMG. <br>For example: <code>A. N. Other</code>"
 
-#: inc/constants.php:1884
+#: inc/constants.php:2097
 #@ piratenkleider
 msgid "Textbezeichnung des Dienstanbieter des Webauftritts."
 msgstr "Denomination of the service provider of the web site."
 
-#: inc/constants.php:1923
+#: inc/constants.php:2136
 #@ piratenkleider
 msgid "Offizielle Postanschrift"
 msgstr "Official postal address"
 
-#: inc/constants.php:1928
-#: inc/constants.php:1961
+#: inc/constants.php:2141
+#: inc/constants.php:2174
 #@ piratenkleider
 msgid "Name oder Titel"
 msgstr "Name or title"
 
-#: inc/constants.php:1929
-#: inc/constants.php:1962
+#: inc/constants.php:2142
+#: inc/constants.php:2175
 #@ piratenkleider
 msgid "Anschrift: Titel (1. Zeile). <br>Zum Beispiel: <code>Piratenpartei</code>"
 msgstr "Adress: Title"
 
-#: inc/constants.php:1935
-#: inc/constants.php:1968
+#: inc/constants.php:2148
+#: inc/constants.php:2181
 #@ piratenkleider
 msgid "zu H&auml;nden"
 msgstr "for the attention of"
 
-#: inc/constants.php:1936
-#: inc/constants.php:1969
+#: inc/constants.php:2149
+#: inc/constants.php:2182
 #@ piratenkleider
 msgid "Anschrift: Optionale Personenangabe (\"zu H&auml;nden\") <br>Zum Beispiel: <code>Martin Mustermann</code>"
 msgstr "Address: Optional personal data (\"for the attention of\")."
 
-#: inc/constants.php:1942
-#: inc/constants.php:1975
+#: inc/constants.php:2155
+#: inc/constants.php:2188
 #@ piratenkleider
 msgid "Strasse oder Postfach"
 msgstr "Street or P.O. box"
 
-#: inc/constants.php:1943
-#: inc/constants.php:1976
+#: inc/constants.php:2156
+#: inc/constants.php:2189
 #@ piratenkleider
 msgid "Anschrift: Strassenname und Nummer oder Postfachangabe oder freilassen <br>Zum Beispiel: <code>Unbesonnenheitsweg 123b</code>"
 msgstr "Address: Street name and number or P.O. box or empty."
 
-#: inc/constants.php:1949
-#: inc/constants.php:1982
+#: inc/constants.php:2162
+#: inc/constants.php:2195
 #@ piratenkleider
 msgid "PLZ und Stadt"
 msgstr "Postal code and city"
 
-#: inc/constants.php:1950
-#: inc/constants.php:1983
+#: inc/constants.php:2163
+#: inc/constants.php:2196
 #@ piratenkleider
 msgid "Anschrift: Postleitzahl gefolgt von Stadt<br>Zum Beispiel: <code>12345  Ankh-Morpork</code>"
 msgstr "Address: Postal code and city"
 
-#: inc/constants.php:1957
+#: inc/constants.php:2170
 #@ piratenkleider
 msgid "Ladungsf&auml;hige Anschrift"
 msgstr "Address at or to which a summons may be served"
 
-#: inc/constants.php:1889
+#: inc/constants.php:2102
 #@ piratenkleider
 msgid "Offizielle E-Mailadresse"
 msgstr "Official e-mail address"
 
-#: inc/constants.php:1992
+#: inc/constants.php:2205
 #@ piratenkleider
 msgid "Datenschutzbeauftragter"
 msgstr "Data protection commissioner"
 
-#: inc/constants.php:1997
+#: inc/constants.php:2210
 #@ piratenkleider
 msgid "Name des DSB<br>Zum Beispiel: <code>Martin Mustermann</code>"
 msgstr "Name of the data security commissioner<br>For example: <code>A. N. Other</code>"
 
-#: inc/constants.php:2003
+#: inc/constants.php:2216
 #@ piratenkleider
 msgid "E-Mailadresse"
 msgstr "e-mail address"
 
-#: inc/constants.php:2004
+#: inc/constants.php:2217
 #@ piratenkleider
 msgid "Feste Mailadresse f&uuml;r offizielle Kontakte.<br>Zum Beispiel:  <code>bundesbeauftragter@piraten-dsb.de</code>"
 msgstr "Constant e-mail address for official contact.<br>For example: <code>data-security-commissioner@pirate-party.co.uk</code>"
 
-#: inc/constants.php:1916
+#: inc/constants.php:2129
 #@ piratenkleider
 msgid "Urheberrecht"
 msgstr "Copyright"
 
-#: inc/constants.php:1917
+#: inc/constants.php:2130
 #@ piratenkleider
 msgid "Zus&auml;tzliche Angaben f&uuml;r den Abschnitt \"Verwendete Werke und Lizenzen innerhalb dieses Webauftritts\""
 msgstr "Additional informations "
 
-#: inc/constants.php:1693
-#@ piratenkleider
-msgid "L&auml;nderfarbe aktivieren"
-msgstr "Activate country specific colour"
-
-#: inc/constants.php:380
+#: inc/constants.php:451
 #@ piratenkleider
 msgid "Deutschland (Orange)"
 msgstr "German (orange)"
 
-#: inc/constants.php:381
+#: inc/constants.php:452
 #@ piratenkleider
 msgid "&Ouml;sterreich (Violett)"
 msgstr "Austria"
 
-#: inc/constants.php:382
+#: inc/constants.php:453
 #@ piratenkleider
 msgid "Luxemburg (Violett)"
 msgstr "Luxembourg (purple)"
 
-#: inc/constants.php:383
+#: inc/constants.php:454
 #, fuzzy
 #@ piratenkleider
 msgid "Ungarn (Violett)"
 msgstr "Luxembourg (purple)"
 
-#: inc/constants.php:384
+#: inc/constants.php:455
 #@ piratenkleider
 msgid "T&uuml;rkei (Cyan)"
 msgstr "Turkey (Cyan)"
 
-#: inc/constants.php:385
+#: inc/constants.php:456
 #@ piratenkleider
 msgid "USA (Lila)"
 msgstr "USA (lila)"
 
-#: inc/constants.php:1694
+#: inc/constants.php:1806
 #@ piratenkleider
 msgid "Auswahl, welche l&auml;nderbezogene Farbvariante aktiviert werden soll."
 msgstr "Selection which country specific colour variant should be activated."
 
-#: inc/constants.php:1700
-#@ piratenkleider
-msgid "Stil der Schriftart &auml;ndern"
-msgstr "Chance font"
-
-#: inc/constants.php:393
+#: inc/constants.php:464
 #@ piratenkleider
 msgid "Bebas Neue"
 msgstr "Bebas Neue"
 
-#: inc/constants.php:394
+#: inc/constants.php:465
 #@ piratenkleider
 msgid "Droid Sans"
 msgstr "Droid Sans"
 
-#: inc/constants.php:397
+#: inc/constants.php:468
 #@ piratenkleider
 msgid "Helvetica, Arial, sans-serif"
 msgstr "Helvetica, Arial, sans-serif"
 
-#: inc/constants.php:1701
+#: inc/constants.php:1814
 #@ piratenkleider
 msgid "Auswahl, welcher Schriftstil f&uuml;r die Website verwendet werden soll."
 msgstr "Selection which country specific colour variant should be activated."
 
-#: inc/constants.php:1707
+#: inc/constants.php:1821
 #@ piratenkleider
 msgid "Small Screen Device Sichtbarkeit"
 msgstr "Small Screen Device Settings"
 
-#: inc/constants.php:1708
+#: inc/constants.php:1822
 #@ piratenkleider
 msgid "F&uuml;r kleine Bildschirmaufl&ouml;sungen auch optionale Teile (Sticker, Slider) anzeigen."
 msgstr "Activate optional parts also for small screen devices"
 
-#: inc/constants.php:1723
+#: inc/constants.php:1884
 #@ piratenkleider
 msgid "H&ouml;he des Kopfbereiches ( .header )"
 msgstr "Header height ( .header )"
 
-#: inc/constants.php:1729
+#: inc/constants.php:1891
 #@ piratenkleider
 msgid "Abstand des Brandingbereiches (=Logo) nach oben ( .header .branding )"
 msgstr "spacing between branding area (= logo) and top (.header .branding )"
 
-#: inc/constants.php:1737
+#: inc/constants.php:1900
 #@ piratenkleider
 msgid "Eigene CSS-Anweisungen, die Inline im Kopfteil der Dokumente erg&auml;nzt werden"
 msgstr "Own CSS code, which will be amended inline in the document header"
 
-#: inc/constants.php:121
+#: inc/constants.php:128
 #@ piratenkleider
 msgid "Topthema"
 msgstr "Top"
 
-#: inc/constants.php:143
+#: inc/constants.php:150
 #, fuzzy
 #@ piratenkleider
 msgid "Deine E-Mail-Adresse wird nicht ver&ouml;ffentlicht. Erforderliche Felder sind markiert <span class=\"required\">*</span>"
 msgstr "Your e-mail-adress wont be revealed public. Required fields are marked  <span class=\"required\">*</span>"
 
-#: inc/constants.php:148
+#: inc/constants.php:155
 #@ piratenkleider
 msgid "Informiere dich"
 msgstr "Inform yourself"
 
-#: inc/constants.php:149
+#: inc/constants.php:156
 #@ piratenkleider
 msgid "&uuml;ber unsere Themen &amp; Ziele!"
 msgstr "About our topics &amp; goals!"
 
-#: inc/constants.php:153
+#: inc/constants.php:160
 #@ piratenkleider
 msgid "Unterst&uuml;tze uns"
 msgstr "Support us"
 
-#: inc/constants.php:154
+#: inc/constants.php:161
 #@ piratenkleider
 msgid "mit deinem Engagement!"
 msgstr "with your commitment!"
 
-#: inc/constants.php:158
+#: inc/constants.php:165
 #@ piratenkleider
 msgid "Werde Pirat!"
 msgstr "Become a pirate!"
 
-#: inc/constants.php:159
+#: inc/constants.php:166
 #@ piratenkleider
 msgid "jetzt Mitglied werden!"
 msgstr "become a member!"
 
-#: inc/constants.php:272
+#: inc/constants.php:348
 #@ piratenkleider
 msgid "Plakat Grundgesetz"
 msgstr "Plakat Grundgesetz"
 
-#: inc/constants.php:276
+#: inc/constants.php:352
 #@ piratenkleider
 msgid "Medien"
 msgstr "Media"
 
-#: inc/constants.php:280
+#: inc/constants.php:356
 #@ piratenkleider
 msgid "Mitmachen"
 msgstr "Participate"
 
-#: inc/constants.php:284
+#: inc/constants.php:360
 #@ piratenkleider
 msgid "Piraten"
 msgstr "Pirates"
 
-#: inc/constants.php:288
+#: inc/constants.php:364
 #@ piratenkleider
 msgid "Plakate"
 msgstr "Posters"
 
-#: inc/constants.php:292
+#: inc/constants.php:368
 #@ piratenkleider
 msgid "Presse"
 msgstr "Press"
 
-#: inc/constants.php:296
+#: inc/constants.php:372
 #@ piratenkleider
 msgid "Protest"
 msgstr "Protest"
 
-#: inc/constants.php:300
+#: inc/constants.php:376
 #@ piratenkleider
 msgid "Datenschutz"
 msgstr "Data protection"
 
-#: inc/constants.php:304
+#: inc/constants.php:380
 #@ piratenkleider
 msgid "Aufzeichnung"
 msgstr "Video"
 
-#: inc/constants.php:308
+#: inc/constants.php:384
 #@ piratenkleider
 msgid "Kampagne"
 msgstr "Action"
 
-#: inc/constants.php:312
+#: inc/constants.php:388
 #@ piratenkleider
 msgid "Kirche"
 msgstr "Religion"
 
-#: inc/constants.php:316
+#: inc/constants.php:392
 #, fuzzy
 #@ piratenkleider
 msgid "Wiederstand"
 msgstr "Netherlands"
 
-#: inc/constants.php:320
+#: inc/constants.php:396
 #, fuzzy
 #@ piratenkleider
 msgid "Licht"
 msgstr "Direction"
 
-#: inc/constants.php:324
+#: inc/constants.php:400
 #@ piratenkleider
 msgid "Laptop"
 msgstr "Laptop"
 
-#: inc/constants.php:328
+#: inc/constants.php:404
 #@ piratenkleider
 msgid "Netzwerk / Server"
 msgstr "Network"
 
-#: inc/constants.php:332
+#: inc/constants.php:408
 #, fuzzy
 #@ piratenkleider
 msgid "Piraten 2"
 msgstr "Pirates"
 
-#: inc/constants.php:336
+#: inc/constants.php:412
 #, fuzzy
 #@ piratenkleider
 msgid "Piraten 3"
 msgstr "Pirates"
 
-#: inc/constants.php:340
+#: inc/constants.php:416
 #, fuzzy
 #@ piratenkleider
 msgid "Piratenfahne"
 msgstr "Pirates"
 
-#: inc/constants.php:344
+#: inc/constants.php:420
 #@ piratenkleider
 msgid "Server 1"
 msgstr "Server 1"
 
-#: inc/constants.php:348
+#: inc/constants.php:424
 #@ piratenkleider
 msgid "Server 2"
 msgstr "Server 2"
 
-#: inc/constants.php:360
+#: inc/constants.php:436
 #, fuzzy
 #@ piratenkleider
 msgid "Default"
 msgstr "Default:"
 
-#: inc/constants.php:369
+#: inc/constants.php:304
 #@ piratenkleider
 msgid "Wiki"
 msgstr "Wiki"
 
-#: inc/constants.php:370
+#: inc/constants.php:309
 #@ piratenkleider
 msgid "Liquid Feedback"
 msgstr "Liquid Feedback"
 
-#: inc/constants.php:371
+#: inc/constants.php:314
 #@ piratenkleider
 msgid "Forum"
 msgstr "Forum"
 
-#: inc/constants.php:372
+#: inc/constants.php:324
 #@ piratenkleider
 msgid "Flaschenpost"
 msgstr "Flaschenpost"
 
-#: inc/constants.php:415
-#: inc/constants.php:448
-#: inc/constants.php:505
+#: inc/constants.php:486
+#: inc/constants.php:519
+#: inc/constants.php:576
 #@ piratenkleider
 msgid "Deutschland"
 msgstr "Germany"
 
-#: inc/constants.php:416
+#: inc/constants.php:487
 #@ piratenkleider
 msgid "Piratenpartei Deutschland"
 msgstr "Pirate Party Germany"
 
-#: inc/constants.php:419
+#: inc/constants.php:490
 #@ piratenkleider
 msgid "Baden-W&uuml;rttemberg"
 msgstr "Baden-Wuerthemberg"
 
-#: inc/constants.php:420
+#: inc/constants.php:491
 #@ piratenkleider
 msgid "Bayern"
 msgstr "Bavaria"
 
-#: inc/constants.php:421
+#: inc/constants.php:492
 #@ piratenkleider
 msgid "Berlin"
 msgstr "Berlin"
 
-#: inc/constants.php:422
+#: inc/constants.php:493
 #@ piratenkleider
 msgid "Brandenburg"
 msgstr "Brandenburg"
 
-#: inc/constants.php:423
+#: inc/constants.php:494
 #@ piratenkleider
 msgid "Bremen"
 msgstr "Bremen"
 
-#: inc/constants.php:424
+#: inc/constants.php:495
 #@ piratenkleider
 msgid "Hamburg"
 msgstr "Hamburg"
 
-#: inc/constants.php:425
+#: inc/constants.php:496
 #@ piratenkleider
 msgid "Hessen"
 msgstr "Hessen"
 
-#: inc/constants.php:426
+#: inc/constants.php:497
 #@ piratenkleider
 msgid "Mecklenburg-Vorpommern"
 msgstr "Mecklenburg-Vorpommern"
 
-#: inc/constants.php:427
+#: inc/constants.php:498
 #@ piratenkleider
 msgid "Niedersachsen"
 msgstr "Niedersachen"
 
-#: inc/constants.php:428
+#: inc/constants.php:499
 #@ piratenkleider
 msgid "Nordrhein-Westfalen"
 msgstr "Nordrhein-Westfalen"
 
-#: inc/constants.php:429
+#: inc/constants.php:500
 #@ piratenkleider
 msgid "Rheinland-Pfalz"
 msgstr "Rheinland-Pfalz"
 
-#: inc/constants.php:430
+#: inc/constants.php:501
 #@ piratenkleider
 msgid "Saarland"
 msgstr "Saarland"
 
-#: inc/constants.php:431
+#: inc/constants.php:502
 #@ piratenkleider
 msgid "Sachsen"
 msgstr "Sachsen"
 
-#: inc/constants.php:432
+#: inc/constants.php:503
 #@ piratenkleider
 msgid "Sachsen-Anhalt"
 msgstr "Sachsen-Anhalt"
 
-#: inc/constants.php:433
+#: inc/constants.php:504
 #@ piratenkleider
 msgid "Schleswig-Holstein"
 msgstr "Schleswig-Holstein"
 
-#: inc/constants.php:434
+#: inc/constants.php:505
 #@ piratenkleider
 msgid "Th&uuml;ringen"
 msgstr "Thueringen"
 
-#: inc/constants.php:437
+#: inc/constants.php:508
 #@ piratenkleider
 msgid "International"
 msgstr "International"
 
-#: inc/constants.php:438
-#: inc/constants.php:495
+#: inc/constants.php:509
+#: inc/constants.php:566
 #@ piratenkleider
 msgid "Piratenparteien International"
 msgstr "Pirate Partys International"
 
-#: inc/constants.php:441
-#: inc/constants.php:498
+#: inc/constants.php:512
+#: inc/constants.php:569
 #@ piratenkleider
 msgid "Argentinien"
 msgstr "Argentinia"
 
-#: inc/constants.php:442
-#: inc/constants.php:499
+#: inc/constants.php:513
+#: inc/constants.php:570
 #@ piratenkleider
 msgid "Australien"
 msgstr "Australia"
 
-#: inc/constants.php:443
-#: inc/constants.php:500
+#: inc/constants.php:514
+#: inc/constants.php:571
 #@ piratenkleider
 msgid "Belgien"
 msgstr "Belgia"
 
-#: inc/constants.php:444
-#: inc/constants.php:501
+#: inc/constants.php:515
+#: inc/constants.php:572
 #@ piratenkleider
 msgid "Brasilien"
 msgstr "Brasilia"
 
-#: inc/constants.php:445
-#: inc/constants.php:502
+#: inc/constants.php:516
+#: inc/constants.php:573
 #@ piratenkleider
 msgid "Bulgarien"
 msgstr "Bulgaria"
 
-#: inc/constants.php:446
-#: inc/constants.php:503
+#: inc/constants.php:517
+#: inc/constants.php:574
 #@ piratenkleider
 msgid "Chile"
 msgstr "Chile"
 
-#: inc/constants.php:447
-#: inc/constants.php:504
+#: inc/constants.php:518
+#: inc/constants.php:575
 #@ piratenkleider
 msgid "D&auml;nemark"
 msgstr "Denmark"
 
-#: inc/constants.php:449
-#: inc/constants.php:506
+#: inc/constants.php:520
+#: inc/constants.php:577
 #, fuzzy
 #@ piratenkleider
 msgid "Estland"
 msgstr "Russia"
 
-#: inc/constants.php:450
-#: inc/constants.php:507
+#: inc/constants.php:521
+#: inc/constants.php:578
 #@ piratenkleider
 msgid "Finnland"
 msgstr "Finland"
 
-#: inc/constants.php:451
-#: inc/constants.php:508
+#: inc/constants.php:522
+#: inc/constants.php:579
 #@ piratenkleider
 msgid "Frankreich"
 msgstr "France"
 
-#: inc/constants.php:452
-#: inc/constants.php:509
+#: inc/constants.php:523
+#: inc/constants.php:580
 #@ piratenkleider
 msgid "Griechenland"
 msgstr "Greek"
 
-#: inc/constants.php:453
-#: inc/constants.php:510
+#: inc/constants.php:524
+#: inc/constants.php:581
 #@ piratenkleider
 msgid "Guatemala"
 msgstr "Guatemala"
 
-#: inc/constants.php:454
-#: inc/constants.php:511
+#: inc/constants.php:525
+#: inc/constants.php:582
 #, fuzzy
 #@ piratenkleider
 msgid "Island"
 msgstr "Russia"
 
-#: inc/constants.php:455
-#: inc/constants.php:512
+#: inc/constants.php:526
+#: inc/constants.php:583
 #@ piratenkleider
 msgid "Israel"
 msgstr "Israel"
 
-#: inc/constants.php:456
-#: inc/constants.php:513
+#: inc/constants.php:527
+#: inc/constants.php:584
 #@ piratenkleider
 msgid "Italien"
 msgstr "Italia"
 
-#: inc/constants.php:457
-#: inc/constants.php:514
+#: inc/constants.php:528
+#: inc/constants.php:585
 #@ piratenkleider
 msgid "Kanada"
 msgstr "Canada"
 
-#: inc/constants.php:458
-#: inc/constants.php:515
+#: inc/constants.php:529
+#: inc/constants.php:586
 #@ piratenkleider
 msgid "Kasachstan"
 msgstr "Kazakhstan"
 
-#: inc/constants.php:459
-#: inc/constants.php:516
+#: inc/constants.php:530
+#: inc/constants.php:587
 #@ piratenkleider
 msgid "Kolumbien"
 msgstr "Columbia"
 
-#: inc/constants.php:460
-#: inc/constants.php:517
+#: inc/constants.php:531
+#: inc/constants.php:588
 #, fuzzy
 #@ piratenkleider
 msgid "Kroatien"
 msgstr "Categories"
 
-#: inc/constants.php:461
-#: inc/constants.php:518
+#: inc/constants.php:532
+#: inc/constants.php:589
 #@ piratenkleider
 msgid "Lettland"
 msgstr "Latvia"
 
-#: inc/constants.php:462
-#: inc/constants.php:519
+#: inc/constants.php:533
+#: inc/constants.php:590
 #@ piratenkleider
 msgid "Litauen"
 msgstr "Lithuania"
 
-#: inc/constants.php:463
-#: inc/constants.php:520
+#: inc/constants.php:534
+#: inc/constants.php:591
 #@ piratenkleider
 msgid "Luxemburg"
 msgstr "Luxembourg (purple)"
 
-#: inc/constants.php:464
-#: inc/constants.php:521
+#: inc/constants.php:535
+#: inc/constants.php:592
 #@ piratenkleider
 msgid "Marokko"
 msgstr "Morocco"
 
-#: inc/constants.php:465
-#: inc/constants.php:522
+#: inc/constants.php:536
+#: inc/constants.php:593
 #@ piratenkleider
 msgid "Mexiko"
 msgstr "Mexico"
 
-#: inc/constants.php:466
-#: inc/constants.php:523
+#: inc/constants.php:537
+#: inc/constants.php:594
 #@ piratenkleider
 msgid "Neuseeland"
 msgstr "New Zealand"
 
-#: inc/constants.php:467
-#: inc/constants.php:524
+#: inc/constants.php:538
+#: inc/constants.php:595
 #@ piratenkleider
 msgid "Niederlande"
 msgstr "Netherlands"
 
-#: inc/constants.php:468
-#: inc/constants.php:525
+#: inc/constants.php:539
+#: inc/constants.php:596
 #, fuzzy
 #@ piratenkleider
 msgid "&Ouml;sterreich"
 msgstr "Austria"
 
-#: inc/constants.php:469
-#: inc/constants.php:526
+#: inc/constants.php:540
+#: inc/constants.php:597
 #@ piratenkleider
 msgid "Peru"
 msgstr "Peru"
 
-#: inc/constants.php:470
-#: inc/constants.php:527
+#: inc/constants.php:541
+#: inc/constants.php:598
 #@ piratenkleider
 msgid "Polen"
 msgstr "Poland"
 
-#: inc/constants.php:471
-#: inc/constants.php:528
+#: inc/constants.php:542
+#: inc/constants.php:599
 #@ piratenkleider
 msgid "Portugal"
 msgstr "Portugal"
 
-#: inc/constants.php:472
-#: inc/constants.php:529
+#: inc/constants.php:543
+#: inc/constants.php:600
 #@ piratenkleider
 msgid "Rum&auml;nien"
 msgstr "Romania"
 
-#: inc/constants.php:473
-#: inc/constants.php:530
+#: inc/constants.php:544
+#: inc/constants.php:601
 #@ piratenkleider
 msgid "Russland"
 msgstr "Russia"
 
-#: inc/constants.php:474
-#: inc/constants.php:531
+#: inc/constants.php:545
+#: inc/constants.php:602
 #@ piratenkleider
 msgid "Schweden"
 msgstr "Sweden"
 
-#: inc/constants.php:475
-#: inc/constants.php:532
+#: inc/constants.php:546
+#: inc/constants.php:603
 #@ piratenkleider
 msgid "Schweiz"
 msgstr "Swiss"
 
-#: inc/constants.php:476
-#: inc/constants.php:533
+#: inc/constants.php:547
+#: inc/constants.php:604
 #@ piratenkleider
 msgid "Serbien"
 msgstr "Serbia"
 
-#: inc/constants.php:477
-#: inc/constants.php:534
+#: inc/constants.php:548
+#: inc/constants.php:605
 #@ piratenkleider
 msgid "Slowakei"
 msgstr "Slovakia"
 
-#: inc/constants.php:478
-#: inc/constants.php:535
+#: inc/constants.php:549
+#: inc/constants.php:606
 #@ piratenkleider
 msgid "Slowenien"
 msgstr "Slovenia"
 
-#: inc/constants.php:479
-#: inc/constants.php:536
+#: inc/constants.php:550
+#: inc/constants.php:607
 #@ piratenkleider
 msgid "Spanien"
 msgstr "Espania"
 
-#: inc/constants.php:480
-#: inc/constants.php:537
+#: inc/constants.php:551
+#: inc/constants.php:608
 #@ piratenkleider
 msgid "S&uuml;dkorea"
 msgstr "South Corea"
 
-#: inc/constants.php:481
-#: inc/constants.php:538
+#: inc/constants.php:552
+#: inc/constants.php:609
 #@ piratenkleider
 msgid "Tschechien"
 msgstr "Czech Republic"
 
-#: inc/constants.php:482
-#: inc/constants.php:539
+#: inc/constants.php:553
+#: inc/constants.php:610
 #@ piratenkleider
 msgid "Tunesien"
 msgstr "Tunisia"
 
-#: inc/constants.php:483
-#: inc/constants.php:540
+#: inc/constants.php:554
+#: inc/constants.php:611
 #@ piratenkleider
 msgid "T&uuml;rkei"
 msgstr "Turkey (Cyan)"
 
-#: inc/constants.php:484
-#: inc/constants.php:541
+#: inc/constants.php:555
+#: inc/constants.php:612
 #@ piratenkleider
 msgid "Ukraine"
 msgstr "Ukraine"
 
-#: inc/constants.php:485
-#: inc/constants.php:542
+#: inc/constants.php:556
+#: inc/constants.php:613
 #, fuzzy
 #@ piratenkleider
 msgid "Ungarn"
 msgstr "United Kingdom"
 
-#: inc/constants.php:486
-#: inc/constants.php:543
+#: inc/constants.php:557
+#: inc/constants.php:614
 #@ piratenkleider
 msgid "Uruguay"
 msgstr "Uruguay"
 
-#: inc/constants.php:487
-#: inc/constants.php:544
+#: inc/constants.php:558
+#: inc/constants.php:615
 #@ piratenkleider
 msgid "USA"
 msgstr "USA"
 
-#: inc/constants.php:488
+#: inc/constants.php:559
+#: inc/constants.php:616
 #@ piratenkleider
 msgid "Vereinigtes K&ouml;nigreich"
 msgstr "United Kingdom"
 
-#: inc/constants.php:489
-#: inc/constants.php:546
+#: inc/constants.php:560
+#: inc/constants.php:617
 #@ piratenkleider
 msgid "Wei&szlig;russland"
 msgstr "Republic of Belarus"
 
-#: inc/constants.php:490
-#: inc/constants.php:547
+#: inc/constants.php:561
+#: inc/constants.php:618
 #@ piratenkleider
 msgid "Zypern"
 msgstr "Cyprus"
 
-#: inc/constants.php:494
+#: inc/constants.php:565
 #@ piratenkleider
 msgid "International (mit Flaggen)"
 msgstr "International (with flags)"
 
-#: inc/constants.php:545
-#@ piratenkleider
-msgid "Vereinigtes Königreich"
-msgstr "United Kingdom"
-
-#: inc/constants.php:800
+#: inc/constants.php:874
 #@ piratenkleider
 msgid "Eintr&auml;ge"
 msgstr "Recipient"
 
-#: inc/constants.php:809
+#: inc/constants.php:883
 #@ piratenkleider
 msgid "Kopfteil"
 msgstr "Header"
 
-#: inc/constants.php:813
+#: inc/constants.php:887
 #@ piratenkleider
 msgid "Linkmenu"
 msgstr "Link menu"
 
-#: inc/constants.php:814
+#: inc/constants.php:888
 #@ piratenkleider
 msgid "Linkmenu oben rechts, zwischen Social Media Icons und Suchmaske anzeigen"
 msgstr "Show link menu between social media icons and search form in the upper right"
 
-#: inc/constants.php:819
+#: inc/constants.php:893
 #@ piratenkleider
 msgid "Suchmaske"
 msgstr "Search form"
 
-#: inc/constants.php:820
+#: inc/constants.php:894
 #@ piratenkleider
 msgid "Eingabemaske f&uuml;r Suche oben rechts anzeigen"
 msgstr "Show search form in the upper right"
 
-#: inc/constants.php:826
+#: inc/constants.php:900
 #@ piratenkleider
 msgid "Sticker anzeigen (Hinweistexte oder Grafiken im Kopfteil)"
 msgstr "Activate Stickers"
 
-#: inc/constants.php:831
+#: inc/constants.php:905
 #@ piratenkleider
 msgid "Sticker 1"
 msgstr "Sticker 1"
 
-#: inc/constants.php:835
+#: inc/constants.php:909
 #@ piratenkleider
 msgid "Sticker 1 (Text)"
 msgstr "Sticker 1 (Text)"
 
-#: inc/constants.php:836
-#: inc/constants.php:854
-#: inc/constants.php:872
+#: inc/constants.php:910
+#: inc/constants.php:928
+#: inc/constants.php:946
 #@ piratenkleider
 msgid "Inhaltstext des Stickers (ggf. mit Inline-HTML)"
 msgstr "Text for Sticker (including HTML)"
 
-#: inc/constants.php:842
+#: inc/constants.php:916
 #@ piratenkleider
 msgid "Sticker 1 (Adresse)"
 msgstr "Sticker 1 (URL)"
 
-#: inc/constants.php:843
-#: inc/constants.php:861
-#: inc/constants.php:879
+#: inc/constants.php:917
+#: inc/constants.php:935
+#: inc/constants.php:953
 #@ piratenkleider
 msgid "URL zu der verlinkt werden soll"
 msgstr "URL"
 
-#: inc/constants.php:849
+#: inc/constants.php:923
 #@ piratenkleider
 msgid "Sticker 2"
 msgstr "Sticker 2"
 
-#: inc/constants.php:853
+#: inc/constants.php:927
 #@ piratenkleider
 msgid "Sticker 2 (Text)"
 msgstr "Sticker 2 (text)"
 
-#: inc/constants.php:860
+#: inc/constants.php:934
 #@ piratenkleider
 msgid "Sticker 2 (Adresse)"
 msgstr "Sticker 2 (URL)"
 
-#: inc/constants.php:867
+#: inc/constants.php:941
 #@ piratenkleider
 msgid "Sticker 3"
 msgstr "Sticker 3"
 
-#: inc/constants.php:871
+#: inc/constants.php:945
 #@ piratenkleider
 msgid "Sticker 3 (Text)"
 msgstr "Sticker 3 (Text)"
 
-#: inc/constants.php:878
+#: inc/constants.php:952
 #@ piratenkleider
 msgid "Sticker 3 (Adresse)"
 msgstr "Sticker 3 (URL)"
 
-#: inc/constants.php:887
+#: inc/constants.php:972
 #@ piratenkleider
 msgid "Fu&szlig;teil"
 msgstr "Footer"
 
-#: inc/constants.php:891
+#: inc/constants.php:976
 #@ piratenkleider
 msgid "Parteilinks"
 msgstr "Party Links"
 
-#: inc/constants.php:892
+#: inc/constants.php:977
 #@ piratenkleider
 msgid "Im Fu&szlig;teil eine Liste von Links zu Seiten der Piratenpartei anzeigen"
 msgstr "Activate default Pirate links in footer"
 
-#: inc/constants.php:897
+#: inc/constants.php:982
 #@ piratenkleider
 msgid "Bereich"
 msgstr "Section"
 
-#: inc/constants.php:898
-#: inc/widgets.php:353
+#: inc/constants.php:983
+#: inc/widgets.php:315
 #@ piratenkleider
 msgid "Bereich oder Gliederung ausw&auml;hlen."
 msgstr "Chose section"
 
-#: inc/constants.php:959
-#: inc/constants.php:1193
+#: inc/constants.php:1044
+#: inc/constants.php:1278
 #@ piratenkleider
 msgid "Beitr&auml;ge &uuml;ber ganze Breite"
 msgstr "Entries over whole width"
 
-#: inc/constants.php:960
-#: inc/constants.php:1194
+#: inc/constants.php:1045
+#: inc/constants.php:1279
 #@ piratenkleider
 msgid "Zahl der Beitr&auml;ge, die &uuml;ber die gesamte Inhaltsbreite gehen."
 msgstr "Number of articles filling the whole content width."
 
-#: inc/constants.php:966
-#: inc/constants.php:1200
+#: inc/constants.php:1051
+#: inc/constants.php:1285
 #@ piratenkleider
 msgid "Beitr&auml;ge &uuml;ber halbe Breite"
 msgstr "Entries over half width"
 
-#: inc/constants.php:967
-#: inc/constants.php:1201
+#: inc/constants.php:1052
+#: inc/constants.php:1286
 #@ piratenkleider
 msgid "Zahl der Beitr&auml;ge, die in Spalten mit je zwei Beitr&auml;gen nebeneinander, angezeigt werden."
 msgstr "Number of articles shown in two columns."
 
-#: inc/constants.php:912
+#: inc/constants.php:997
 #@ piratenkleider
 msgid "Liste der Kategorien anzeigen"
 msgstr "Article by category"
 
-#: inc/constants.php:918
+#: inc/constants.php:1003
 #@ piratenkleider
 msgid "Liste der Schlagworte (Tagcloud) anzeigen"
 msgstr "Activate Tagcloud"
 
-#: inc/constants.php:923
+#: inc/constants.php:1008
 #@ piratenkleider
 msgid "&auml;ltere Artikel"
 msgstr "Older articles"
 
-#: inc/constants.php:924
+#: inc/constants.php:1009
 #@ piratenkleider
 msgid "Liste mit &auml;lteren Artikeln anzeigen"
 msgstr "Older articles"
 
-#: inc/constants.php:929
+#: inc/constants.php:1014
 #@ piratenkleider
 msgid "Zahl &auml;ltere Artikel"
 msgstr "Number of older articles"
 
-#: inc/constants.php:930
+#: inc/constants.php:1015
 #@ piratenkleider
 msgid "Anzahl der zu verlinkenden &auml;lteren Artikel."
 msgstr "Number of older articles"
 
-#: inc/constants.php:936
+#: inc/constants.php:1021
 #@ piratenkleider
 msgid "Bezeichnender Titel f&uuml;r Teaser"
 msgstr "Labelling term for the teaser"
 
-#: inc/constants.php:937
+#: inc/constants.php:1022
 #@ piratenkleider
 msgid "Dieser Text wird oberhalb der Titel angezeigt."
 msgstr "This text is shown above the titles"
 
-#: inc/constants.php:942
+#: inc/constants.php:1027
 #@ piratenkleider
 msgid "Textl&auml;nge"
 msgstr "Textlength"
 
-#: inc/constants.php:943
+#: inc/constants.php:1028
 #@ piratenkleider
 msgid "Maximale Textl&auml;nge des Titels im Teaser."
 msgstr "Maximum title length in teaser"
 
-#: inc/constants.php:948
+#: inc/constants.php:1033
 #@ piratenkleider
 msgid "Wortzahl"
 msgstr "Word number"
 
-#: inc/constants.php:949
+#: inc/constants.php:1034
 #@ piratenkleider
 msgid "Zahl der Worte im Teaser; Die maximale Textl&auml;nge begrenzt diesen Wert jedoch."
 msgstr "Title word count in teaser; however, the maximum text length limits this value."
 
-#: inc/constants.php:976
-#: inc/constants.php:1208
+#: inc/constants.php:1061
+#: inc/constants.php:1293
 #@ piratenkleider
 msgid "L&auml;nge des Teasertextes (Artikelauszug)"
 msgstr "Length for teaser"
 
-#: inc/constants.php:977
+#: inc/constants.php:1062
 #@ piratenkleider
 msgid "Maximale Textl&auml;nge f&uuml;r Artikelausz&uuml;ge auf der Startseite."
 msgstr "Maximum title length in teaser"
 
-#: inc/constants.php:1066
+#: inc/constants.php:1151
 #@ piratenkleider
 msgid "Slider"
 msgstr "Slider"
 
-#: inc/constants.php:1070
+#: inc/constants.php:1155
+#: inc/constants.php:1864
+#: inc/constants.php:2040
 #@ piratenkleider
 msgid "Aktivieren"
 msgstr "Activate"
 
-#: inc/constants.php:1071
+#: inc/constants.php:1156
 #@ piratenkleider
 msgid "Slider im Teaserbereich auf der Startseite aktivieren. <br>Die Auswahl der Plakatbilder kann unter den Defaultbildern angepasst werden."
 msgstr "Poster slider (right sidebar) is shown"
 
-#: inc/constants.php:1078
+#: inc/constants.php:1163
 #@ piratenkleider
 msgid "Kategorie"
 msgstr "Category"
 
-#: inc/constants.php:1079
+#: inc/constants.php:1164
 #@ piratenkleider
 msgid "Aus welcher Artikelkategorie sollen die Slider genommen werden."
 msgstr "From which article category should the sliders be taken"
 
-#: inc/constants.php:1085
+#: inc/constants.php:1170
 #@ piratenkleider
 msgid "Maximale Anzahl der Artikel"
 msgstr "Maximum number of articles"
 
-#: inc/constants.php:1086
+#: inc/constants.php:1171
 #@ piratenkleider
 msgid "Wieviele Slides sollen maximal gezeigt werden."
 msgstr "How many slides are to be shown at most"
 
-#: inc/constants.php:1093
+#: inc/constants.php:1178
 #@ piratenkleider
 msgid "Animationstyp"
 msgstr "animation type"
 
-#: inc/constants.php:1094
+#: inc/constants.php:1179
 #@ piratenkleider
 msgid "Wie soll der Slidewechsel optisch aussehen."
 msgstr "What should the slider change look like"
 
-#: inc/constants.php:1102
+#: inc/constants.php:1187
 #@ piratenkleider
 msgid "Richtung"
 msgstr "Direction"
 
-#: inc/constants.php:1103
+#: inc/constants.php:1188
 #@ piratenkleider
 msgid "Von wo sollen Bilder erscheinen."
 msgstr "From where should the images be taken"
 
-#: inc/constants.php:1110
+#: inc/constants.php:1195
 #@ piratenkleider
 msgid "Dauer Bildwechsel"
 msgstr "Duration of image change"
 
-#: inc/constants.php:1111
+#: inc/constants.php:1196
 #@ piratenkleider
 msgid "Geschwindigkeit des Bildwechsels in Milisekunden."
 msgstr "image change speed in miliseconds"
 
-#: inc/constants.php:1117
+#: inc/constants.php:1202
 #@ piratenkleider
 msgid "Animationsdauer"
 msgstr "animation duration"
 
-#: inc/constants.php:1118
+#: inc/constants.php:1203
 #@ piratenkleider
 msgid "Geschwindigkeit der Animation/Fading beim Bild&uuml;bergang in Milisekunden."
 msgstr "Image change animation/fading speed in miliseconds"
 
-#: inc/constants.php:1124
+#: inc/constants.php:1209
 #@ piratenkleider
 msgid "Teaser-Darstellung"
 msgstr "Teaser-Type"
 
-#: inc/constants.php:1125
+#: inc/constants.php:1210
 #, fuzzy
 #@ piratenkleider
 msgid "Teaser mit gro&szlig;em Bild &uuml;ber gesamte Breite oder kleinem Thumbnail."
 msgstr "Teaser with big picture using the complete width."
 
-#: inc/constants.php:1132
-#: inc/constants.php:1323
-#: inc/constants.php:1358
+#: inc/constants.php:1217
+#: inc/constants.php:1420
+#: inc/constants.php:1455
 #, fuzzy
 #@ piratenkleider
 msgid "Defaultbild"
 msgstr "Default:"
 
-#: inc/constants.php:1133
-#@ piratenkleider
-msgid "Ersatz-Sliderbild für Seiten ohne eigenes Artikelbild."
-msgstr "Fallback slider picture for pages without thumbnail"
-
-#: inc/constants.php:1140
+#: inc/constants.php:1225
 #@ piratenkleider
 msgid "Externes Ersatzbild"
 msgstr "External fallback picture"
 
-#: inc/constants.php:1141
+#: inc/constants.php:1226
 #, fuzzy
 #@ piratenkleider
 msgid "URL f&uuml;r ein Ersatz-Sliderbild."
 msgstr "URL for a template page image."
 
-#: inc/constants.php:1151
+#: inc/constants.php:1236
 #, fuzzy
 #@ piratenkleider
 msgid "Seiten &amp; Artikel"
 msgstr "Further articles"
 
-#: inc/constants.php:1156
+#: inc/constants.php:1241
 #, fuzzy
 #@ piratenkleider
 msgid "Spezielle Eigenschaften"
 msgstr "Special pages"
 
-#: inc/constants.php:1161
+#: inc/constants.php:1246
 #@ piratenkleider
 msgid "Circle Player"
 msgstr "Circle Player"
 
-#: inc/constants.php:1162
+#: inc/constants.php:1247
 #@ piratenkleider
 msgid "Circle Player (HTML5 Player) f&uuml;r MP3/OGG-Dateien in einzelnen Beitr&auml;gen aktivieren."
 msgstr "Display CirclePlayer (HTML5 Player) for MP3/OGG-files "
 
-#: inc/constants.php:1170
+#: inc/constants.php:1255
 #@ piratenkleider
 msgid "Disclaimer f&uuml;r (Gast-)Artikel"
 msgstr "Disclaimer"
 
-#: inc/constants.php:1171
+#: inc/constants.php:1256
 #@ piratenkleider
 msgid "Definiere ein Text als Disclaimer der bei Artikeln gezeigt werden kann. Disclaimer wird mit Custom Field show-post-disclaimer (= 0, 1,2,3) aktiviert."
 msgstr "Disclaimertext. Disclaimer will be activated by custom field show-post-disclaimer in values 0,1,2,3"
 
-#: inc/constants.php:1303
+#: inc/constants.php:1400
 #, fuzzy
 #@ piratenkleider
 msgid "Seitenbilder"
 msgstr "Site menu"
 
-#: inc/constants.php:1308
+#: inc/constants.php:1405
 #@ piratenkleider
 msgid "Defaultbilder f&uuml;r Seiten"
 msgstr "Default images for pages"
 
-#: inc/constants.php:1309
+#: inc/constants.php:1406
 #@ piratenkleider
 msgid "Bilder f&uuml;r Seiten erzwingen, die von sich aus kein Artikelbild definiert haben. Wenn kein Artikelbild vorhanden ist, wird ein Defaultbild gezeigt."
 msgstr "Enforce images for pages without article image. If no article image is set, a default image is shown."
 
-#: inc/constants.php:1315
-#: inc/constants.php:1350
-#: inc/constants.php:1385
+#: inc/constants.php:1412
+#: inc/constants.php:1447
+#: inc/constants.php:1482
 #, fuzzy
 #@ piratenkleider
 msgid "Gr&ouml;&szlig;e"
 msgstr "Footer"
 
-#: inc/constants.php:1316
+#: inc/constants.php:1413
 #@ piratenkleider
 msgid "Das Seitenbild kann in einem schmalen (150px) oder gro&szlig;en (240px) Ausschnitt dargestellt werden. "
 msgstr "You can display the page-thumbnail in small (150px) or in big sized (240px) exctract."
 
-#: inc/constants.php:1324
-#: inc/constants.php:1359
-#@ piratenkleider
-msgid "Ersatzbild für Seiten ohne eigenes Artikelbild."
-msgstr "Fallback picture for pages without own thumbnail."
-
-#: inc/constants.php:1331
-#: inc/constants.php:1366
-#: inc/constants.php:1590
-#: inc/constants.php:1623
-#: inc/constants.php:1656
+#: inc/constants.php:1428
+#: inc/constants.php:1463
+#: inc/constants.php:1686
+#: inc/constants.php:1719
+#: inc/constants.php:1752
 #@ piratenkleider
 msgid "URL"
 msgstr "URL"
 
-#: inc/constants.php:1332
+#: inc/constants.php:1429
 #, fuzzy
 #@ piratenkleider
 msgid "Webadresse f&uuml;r ein alternatives Seitenbild."
 msgstr "URL for a template page image."
 
-#: inc/constants.php:1338
+#: inc/constants.php:1435
 #@ piratenkleider
 msgid "Artikelbilder"
 msgstr "Thumbnails"
 
-#: inc/constants.php:1343
+#: inc/constants.php:1440
 #, fuzzy
 #@ piratenkleider
 msgid "Defaultbilder f&uuml;r Artikel"
 msgstr "Default images for pages"
 
-#: inc/constants.php:1344
+#: inc/constants.php:1441
 #, fuzzy
 #@ piratenkleider
 msgid "Bilder f&uuml;r Artikel erzwingen, die von sich aus kein Artikelbild definiert haben. Wenn kein Artikelbild vorhanden ist, wird ein Defaultbild gezeigt."
 msgstr "Enforce images for pages without article image. If no article image is set, a default image is shown."
 
-#: inc/constants.php:1351
+#: inc/constants.php:1448
 #@ piratenkleider
 msgid "Das Artikelbild kann in einem schmalen (150px) oder gro&szlig;en (240px) Ausschnitt dargestellt werden. "
 msgstr "Display thumbnail in a small (150px) or big sized (240px) viewporti"
 
-#: inc/constants.php:1367
+#: inc/constants.php:1464
 #, fuzzy
 #@ piratenkleider
 msgid "Webadresse f&uuml;r ein alternatives Artikelbild."
 msgstr "URL for an archive page image."
 
-#: inc/constants.php:1374
+#: inc/constants.php:1471
 #: inc/widgets.php:128
 #, fuzzy
 #@ piratenkleider
 msgid "Indexseiten"
 msgstr "Tunisia"
 
-#: inc/constants.php:1378
+#: inc/constants.php:1475
 #@ piratenkleider
 msgid "Platzhalterbilder"
 msgstr "placeholder image"
 
-#: inc/constants.php:1379
+#: inc/constants.php:1476
 #@ piratenkleider
 msgid "Platzhalterbilder bei Indexseiten zu Kategorien, Tags, Suche und Archiv anzeigen."
 msgstr "Show placeholder images on index pages for categories, tags, search and archive"
 
-#: inc/constants.php:1386
+#: inc/constants.php:1483
 #@ piratenkleider
 msgid "Das Platzhalterbild kann in einem schmalen (150px) oder gro&szlig;en (240px) Ausschnitt dargestellt werden. "
 msgstr "Display thumbnail in a small (150px) or a big sized (240px) viewport. "
 
-#: inc/constants.php:1394
-#, fuzzy
-#@ piratenkleider
-msgid "Symbolbild für 404 Seite"
-msgstr "Symbolic image for 404 pages"
-
-#: inc/constants.php:1395
+#: inc/constants.php:1492
 #@ piratenkleider
 msgid "URL f&uuml;r ein eigenes 404-Seitenbild."
 msgstr "URL for a 404 page image."
 
-#: inc/constants.php:1401
-#, fuzzy
-#@ piratenkleider
-msgid "Symbolbild für Kategorie Seite"
-msgstr "Symbolic image for category pages"
-
-#: inc/constants.php:1402
+#: inc/constants.php:1499
 #@ piratenkleider
 msgid "URL f&uuml;r ein eigenes Kategorien-Seitenbild."
 msgstr "URL for a category page image."
 
-#: inc/constants.php:1408
-#, fuzzy
-#@ piratenkleider
-msgid "Symbolbild für Tag Seite"
-msgstr "Symbolic image for tag pages"
-
-#: inc/constants.php:1409
+#: inc/constants.php:1506
 #@ piratenkleider
 msgid "URL f&uuml;r ein eigenes Tag-Seitenbild."
 msgstr "URL for a tag page image."
 
-#: inc/constants.php:1415
-#, fuzzy
-#@ piratenkleider
-msgid "Symbolbild für Autoren Seite"
-msgstr "Symbolic image for author pages"
-
-#: inc/constants.php:1416
+#: inc/constants.php:1513
 #@ piratenkleider
 msgid "URL f&uuml;r ein eigenes Autoren-Seitenbild."
 msgstr "URL for an author page image."
 
-#: inc/constants.php:1422
-#, fuzzy
-#@ piratenkleider
-msgid "Symbolbild für Archiv Seite"
-msgstr "Symbolic image for archive pages"
-
-#: inc/constants.php:1423
+#: inc/constants.php:1520
 #@ piratenkleider
 msgid "URL f&uuml;r ein eigenes Archiv-Seitenbild."
 msgstr "URL for an archive page image."
 
-#: inc/constants.php:1429
-#, fuzzy
-#@ piratenkleider
-msgid "Symbolbild für Suchergebnis-Seite"
-msgstr "Symbolic image for search result pages"
-
-#: inc/constants.php:1430
+#: inc/constants.php:1527
 #@ piratenkleider
 msgid "URL f&uuml;r ein eigenes Suchergebnis-Seitenbild."
 msgstr "URL for a search result page image."
 
-#: inc/constants.php:1436
-#, fuzzy
-#@ piratenkleider
-msgid "Symbolbild für Template-Seiten"
-msgstr "Symbolic image for template pages"
-
-#: inc/constants.php:1437
+#: inc/constants.php:1534
 #@ piratenkleider
 msgid "URL f&uuml;r ein Template-Seitenbild."
 msgstr "URL for a template page image."
 
-#: inc/constants.php:1450
+#: inc/constants.php:1546
 #, fuzzy
 #@ piratenkleider
 msgid "Antwortlinks"
 msgstr "Reply links on comments"
 
-#: inc/constants.php:1451
+#: inc/constants.php:1547
 #@ piratenkleider
 msgid "Bei der Anzeige von Kommentaren, wird unter diesen ein eigener Kommentarlink eingebaut, der das Antworten auf den Kommentar erlaubt. Dies kann zu einer Nutzung des Kommentarbereiches wie bei einem Forum f&uuml;hren, bei dem es zuletzt aber nicht mehr um den eigentlichen Beitrag geht."
 msgstr "Show a reply link under each comment. This allows for the comment section to be used like a forum, including getting side-tracked."
 
-#: inc/constants.php:1464
+#: inc/constants.php:1560
 #, fuzzy
 #@ piratenkleider
 msgid "Disclaimer"
 msgstr "Comments"
 
-#: inc/constants.php:1465
+#: inc/constants.php:1561
 #@ piratenkleider
 msgid "Kurzer Hinweistext (ggf. Link) zu Regeln f&uuml;r Kommentare."
 msgstr "Short notice for comments. E.g. a link for rules."
 
-#: inc/constants.php:1470
+#: inc/constants.php:1566
 #@ piratenkleider
 msgid "Kommentarbubble"
 msgstr "Comment-Bubble"
 
-#: inc/constants.php:1471
+#: inc/constants.php:1567
 #@ piratenkleider
 msgid "Zeige den Kommentarbubble auch dann, wenn noch keine Kommentare abgegeben wurden"
 msgstr "Also show comment bubble if no comment is avaible."
 
-#: inc/constants.php:1480
+#: inc/constants.php:1576
 #@ piratenkleider
 msgid "Sidebar"
 msgstr "Sidebar"
 
-#: inc/constants.php:1484
+#: inc/constants.php:1580
 #@ piratenkleider
 msgid "Seitenmenu"
 msgstr "Site menu"
 
-#: inc/constants.php:1488
+#: inc/constants.php:1584
 #, fuzzy
 #@ piratenkleider
 msgid "Gliederung"
 msgstr "Slider"
 
-#: inc/constants.php:1489
-#@ piratenkleider
-msgid "Das Menü kann nach Seiten-Hierarchie oder Menü-Hierarche gegliedert werden."
-msgstr "Menu can be displayed in hierarchical or in structural order"
-
-#: inc/constants.php:1496
+#: inc/constants.php:1592
 #@ piratenkleider
 msgid "Hierachische Struktur"
 msgstr "Structure"
 
-#: inc/constants.php:1497
+#: inc/constants.php:1593
 #@ piratenkleider
 msgid "Bei der Anzeige von Seiten rechts in der Sidebar nur das aktuelle Submenu zeigen. Bei Deaktivierung wird das vollst&auml;ndige Men&uuml; gezeigt. Dies ist f&uuml;r Webauftritte mit vielen Seiten nicht geeignet."
 msgstr "Show only the current submenu in the right sidebar when displaying pages. If deactivated, the complete menu will be shown, which isn’t recommended for websites with many pages."
 
-#: inc/constants.php:1503
+#: inc/constants.php:1599
 #@ piratenkleider
 msgid "Offene Struktur"
 msgstr "Open Structure"
 
-#: inc/constants.php:1504
+#: inc/constants.php:1600
 #@ piratenkleider
 msgid "Men&uuml; mit allen Seiten in der Sidebar anzeigen, auch wenn diese nicht dem Hauptmenu zugeordnet und gegliedert sind"
 msgstr "Show all pages, even if they are not ordered within the menu."
 
-#: inc/constants.php:1512
+#: inc/constants.php:1608
 #@ piratenkleider
 msgid "Eingabemaske f&uuml;r den Eintrag in ein Newsletter (Mailingliste) anzeigen"
 msgstr "Show search form in the upper right"
 
-#: inc/constants.php:1517
+#: inc/constants.php:1613
 #, fuzzy
 #@ piratenkleider
 msgid "Werbeplakate"
 msgstr "Posters"
 
-#: inc/constants.php:1521
+#: inc/constants.php:1617
 #, fuzzy
 #@ piratenkleider
 msgid "Plakate aktivieren"
 msgstr "Activade poster slider"
 
-#: inc/constants.php:1522
+#: inc/constants.php:1618
 #@ piratenkleider
 msgid "Slider der Werbeplakate (rechte Sidebar-Spalte) werden angezeigt.<br>Die Auswahl der Plakatbilder kann unter den Defaultbildern angepasst werden"
 msgstr "Poster slider (right sidebar) is shown"
 
-#: inc/constants.php:1529
+#: inc/constants.php:1625
 #, fuzzy
 #@ piratenkleider
 msgid "Plakatauswahl"
 msgstr "Posters"
 
-#: inc/constants.php:1530
+#: inc/constants.php:1626
 #, fuzzy
 #@ piratenkleider
 msgid "Diese Bilder werden in der Sidebar rechts gezeigt, sofern dieses &uuml;ber die Optionen (vgl. Slider) auch eingeschaltet ist."
 msgstr "These pictures are shown in the right sidebar, if the sidebar is enabled in the options menu (compare to slider)."
 
-#: inc/constants.php:1537
+#: inc/constants.php:1633
 #@ piratenkleider
 msgid "Optionaler Ersatztitel"
 msgstr "Optional alternative title"
 
-#: inc/constants.php:1538
+#: inc/constants.php:1634
 #, fuzzy
 #@ piratenkleider
 msgid "Dieser Titel wird als Alternativ-Text verwendet."
 msgstr "This title is used as alternative text. "
 
-#: inc/constants.php:1544
+#: inc/constants.php:1640
 #@ piratenkleider
 msgid "Optionale URL"
 msgstr "Optional URL"
 
-#: inc/constants.php:1545
+#: inc/constants.php:1641
 #, fuzzy
 #@ piratenkleider
 msgid "Optionale Webadresse zur Verlinkung der Plakate mit einer Informationsseite."
 msgstr "Optional URL to link the posters to an information page"
 
-#: inc/constants.php:1551
+#: inc/constants.php:1647
 #, fuzzy
 #@ piratenkleider
 msgid "Eigene Plakatbilder"
 msgstr "Own poster images:"
 
-#: inc/constants.php:1552
+#: inc/constants.php:1648
 #, fuzzy
 #@ piratenkleider
 msgid "Adressen alternativer Plakatbilder.<br>"
 msgstr "Addresses of alternative poster images"
 
-#: inc/constants.php:1553
+#: inc/constants.php:1649
 #, fuzzy
 #@ piratenkleider
 msgid "Angabe der URLs inkl. http:// zum Bild. Wenn es mehrere sind, werden die einzelnen Adressen durch Zeilenumbruch getrennt."
 msgstr "URLs for images. If there is more than one, please devide by a line break."
 
-#: inc/constants.php:1554
+#: inc/constants.php:1650
 #@ piratenkleider
 msgid "Sollen die Bilder zus&auml;tzlich mit einem eigenen Titel und einer Webadresse versehen werden werden diese Angabe durch ein \"|\" zeichen in folgender Reihenfolge getrennt: <code>Bild URL|Titel|URL Webpage</code>"
 msgstr "Shall the images in addition be furnished with an own title and a link, you can enter them here and devide image URL, title and website URL with the \"|\" char like this: <code>image URL|title|URL website</code>"
 
-#: inc/constants.php:1555
+#: inc/constants.php:1651
 #, fuzzy
 #@ piratenkleider
 msgid "Beispiel:<br>"
 msgstr "Example:"
 
-#: inc/constants.php:1556
+#: inc/constants.php:1652
 #@ piratenkleider
 msgid "<pre>http://www.piratenpartei.de/wp-content/uploads/2012/05/UrheberplakatSH283.jpg|Rechte f&uuml;r Urheber und Nutzer|http://www.kein-programm.de</pre><br>"
 msgstr "<pre>http://www.piratenpartei.de/wp-content/uploads/2012/05/UrheberplakatSH283.jpg|Rechte f&uuml;r Urheber und Nutzer|http://www.kein-programm.de</pre><br>"
 
-#: inc/constants.php:1557
+#: inc/constants.php:1653
 #@ piratenkleider
 msgid "Wenn oben Defaultplakate angeklickt sind, erscheinen diese Bilder zus&auml;tzlich. Diese Bilder k&ouml;nnen auch vorher &uuml;ber den Mediendialog hochgeladen worden sein."
 msgstr "If default posters are activated above, these pictures appear in addition."
 
-#: inc/constants.php:1564
+#: inc/constants.php:1660
 #@ piratenkleider
 msgid "Teaserlink 1"
 msgstr "Teaser link 1"
 
-#: inc/constants.php:1568
-#: inc/constants.php:1601
-#: inc/constants.php:1634
+#: inc/constants.php:1664
+#: inc/constants.php:1697
+#: inc/constants.php:1730
 #@ piratenkleider
 msgid "Symbol"
 msgstr "Symbol"
 
-#: inc/constants.php:1576
-#: inc/constants.php:1609
-#: inc/constants.php:1642
+#: inc/constants.php:1672
+#: inc/constants.php:1705
+#: inc/constants.php:1738
 #@ piratenkleider
 msgid "Titel"
 msgstr "Title"
 
-#: inc/constants.php:1577
-#: inc/constants.php:1610
-#: inc/constants.php:1643
+#: inc/constants.php:1673
+#: inc/constants.php:1706
+#: inc/constants.php:1739
 #@ piratenkleider
 msgid "Titelzeile des Teaserlinks"
 msgstr "Titel for teaser"
 
-#: inc/constants.php:1583
-#: inc/constants.php:1616
-#: inc/constants.php:1649
+#: inc/constants.php:1679
+#: inc/constants.php:1712
+#: inc/constants.php:1745
+#: inc/constants.php:2057
 #@ piratenkleider
 msgid "Untertitel"
 msgstr "Subtitle"
 
-#: inc/constants.php:1584
-#: inc/constants.php:1617
-#: inc/constants.php:1650
+#: inc/constants.php:1680
+#: inc/constants.php:1713
+#: inc/constants.php:1746
 #@ piratenkleider
 msgid "Zweite Zeile des Teaserlinks"
 msgstr "Second teaserline"
 
-#: inc/constants.php:1591
-#: inc/constants.php:1624
-#: inc/constants.php:1657
+#: inc/constants.php:1687
+#: inc/constants.php:1720
+#: inc/constants.php:1753
 #@ piratenkleider
 msgid "Webadresse zu der verlinkt werden soll"
 msgstr "URL"
 
-#: inc/constants.php:1597
+#: inc/constants.php:1693
 #@ piratenkleider
 msgid "Teaserlink 2"
 msgstr "Teaser link 2"
 
-#: inc/constants.php:1630
+#: inc/constants.php:1726
 #@ piratenkleider
 msgid "Teaserlink 3"
 msgstr "Teaser link 3"
 
-#: inc/constants.php:1667
+#: inc/constants.php:1763
 #@ piratenkleider
 msgid "Social Media"
 msgstr "Social Media"
 
-#: inc/constants.php:1672
+#: inc/constants.php:1768
 #@ piratenkleider
 msgid "Position und Anzeige"
 msgstr "Position and Display option"
 
-#: inc/constants.php:1673
+#: inc/constants.php:1769
 #@ piratenkleider
 msgid "Die Auswahl werden die Social Media Buttons angezeigt. Dies kann entweder oben im Kopfteil oder links neben den Inhaltsbereich sein. <br>Hinweis: Es werden nur die Buttons gezeigt, bei denen in den folgenden Eingabefeldern Adressen definiert sind."
 msgstr "Show Buttons. <br>Notice: Only buttons with entries will be shown"
 
-#: inc/constants.php:1674
+#: inc/constants.php:1771
 #@ piratenkleider
 msgid "Keine Social Media Buttons"
 msgstr "Deactivate Social Media Buttons"
 
-#: inc/constants.php:1674
+#: inc/constants.php:1772
 #@ piratenkleider
 msgid "Im Kopfteil"
 msgstr "Header"
 
-#: inc/constants.php:1674
+#: inc/constants.php:1773
 #@ piratenkleider
 msgid "Links anzeigen"
 msgstr "Show links"
 
-#: inc/constants.php:1679
+#: inc/constants.php:1778
 #, fuzzy
 #@ piratenkleider
 msgid "Social Media Plattformen"
 msgstr "Deactivate Social Media Buttons"
 
-#: inc/constants.php:1755
+#: inc/constants.php:1920
 #@ piratenkleider
 msgid "Sonstiges"
 msgstr "Other"
 
-#: inc/constants.php:1759
+#: inc/constants.php:1924
 #@ piratenkleider
 msgid "Sidebar abblendbar"
 msgstr "Switch sidebar off"
 
-#: inc/constants.php:1760
+#: inc/constants.php:1925
 #, fuzzy
 #@ piratenkleider
 msgid "Benutzern via JavaScript die M&ouml;glichkeit geben, die Sidebar klein zu machen. <br>Hinweis: Der Status wird nicht gespeichert, um keine Cookies anzulegen; Die Funktion ist nicht sichtbar, wenn man kein JavaScript an hat. Desweiteren ist die Funktion nur aktiv, wenn die Bildschirmbreite gr&ouml;&szlig;er als 600 Pixel ist."
 msgstr "Allow user with javascript to switch off the sidebar."
 
-#: inc/constants.php:1765
+#: inc/constants.php:1930
 #, fuzzy
 #@ piratenkleider
 msgid "Position der Sidebar"
 msgstr "Position and Display option"
 
-#: inc/constants.php:1766
+#: inc/constants.php:1931
 #, fuzzy
 #@ piratenkleider
 msgid "Sidebar rechts neben den Inhalt oder darunter positionieren. Wenn die Sidebar unter dem Inhalt positioniert wird, wird der Inhaltsbereich &uuml;ber die gesamte Breite gehen. Alternativ kann ein Custom Field \"fullsize\" definiert werden. Hat dies den Value 1, wird der Inhaltsbereich auf volle Seitenbreite dargestellt und die Sidebar nach unten verschoben"
 msgstr "Activate sitebar to the right or below content."
 
-#: inc/constants.php:1767
+#: inc/constants.php:1932
 #@ piratenkleider
 msgid "Rechts (Standard)"
 msgstr "Right (Default)"
 
-#: inc/constants.php:1767
+#: inc/constants.php:1932
 #@ piratenkleider
 msgid "Unter dem Inhalt"
 msgstr "Below content"
 
-#: inc/constants.php:1772
+#: inc/constants.php:1937
 #@ piratenkleider
 msgid "Fehlermeldung bei Login"
 msgstr "Errormessage on login"
 
-#: inc/constants.php:1773
+#: inc/constants.php:1938
 #@ piratenkleider
 msgid "Option um die Fehlermeldung beim Login im Backend ein oder abzuschalten, mit der angezeigt wird, warum der Login fehlschlug."
 msgstr "Setting to active or deactive error messages on login for users."
 
-#: inc/constants.php:1774
+#: inc/constants.php:1939
 #, fuzzy
 #@ piratenkleider
 msgid "Fehlermeldung zeigen"
 msgstr "Show twitter date"
 
-#: inc/constants.php:1774
+#: inc/constants.php:1939
 #@ piratenkleider
 msgid "Keine Meldung"
 msgstr "No message"
 
-#: inc/constants.php:1780
+#: inc/constants.php:1828
 #, fuzzy
 #@ piratenkleider
 msgid "Linkicons anzeigen"
 msgstr "Show links"
 
-#: inc/constants.php:1781
-#, fuzzy
-#@ piratenkleider
-msgid "Bei der Anzeige von Links in Artikeln und Seiten werden bekannte Adressen und Dateitypen mit Icons ergänzt."
-msgstr "Show and link authors in articles."
-
-#: inc/constants.php:1789
+#: inc/constants.php:1948
 #@ piratenkleider
 msgid "URL, inkl. http://, zur Seite auf der man sich in Newsletter eingetragen werden kann."
 msgstr "URL (including http://) for newletter form."
 
-#: inc/constants.php:1797
+#: inc/constants.php:1969
 #@ piratenkleider
 msgid "Anonymit&auml;t &amp; Sicherheit"
 msgstr "Anonymity and Security options"
 
-#: inc/constants.php:1802
+#: inc/constants.php:1974
 #@ piratenkleider
 msgid "Autoren anzeigen"
 msgstr "Show authors"
 
-#: inc/constants.php:1803
+#: inc/constants.php:1975
 #@ piratenkleider
 msgid "Bei der Anzeige von Artikeln den Autoren anzeigen und verlinken."
 msgstr "Show and link authors in articles."
 
-#: inc/constants.php:1809
+#: inc/constants.php:1981
 #@ piratenkleider
 msgid "Kommentarbenutzer anonymisieren"
 msgstr "Anonymize comment user"
 
-#: inc/constants.php:1810
+#: inc/constants.php:1982
 #@ piratenkleider
 msgid "IP-Adresse und der User-Agent-String geleert, die Eingabe von E-Mail-Adressen wird verhindert.<br> Diese Option deaktiviert auch die Avatar-Anzeige und setzt die Kommentareinstellung unter Einstellungen-Diskussion so, dass Benutzer keinen Namen und E-Mail-Adressen mehr eingeben m&uuml;ssen."
 msgstr "Clear IP-Adress and user agent strict from log. <b>Attention:</b> This option also deactivates the display of avatars and will set comment form in a way, that users may leave name and e-mail blank."
 
-#: inc/constants.php:1816
+#: inc/constants.php:1988
 #@ piratenkleider
 msgid "Selbstidentifikation"
 msgstr "Own identification"
 
-#: inc/constants.php:1817
+#: inc/constants.php:1989
 #@ piratenkleider
 msgid "Angebotene Kommentarfelder zur freiwilligen Selbstidentifikation"
 msgstr "Offered optional comment fields"
 
-#: inc/constants.php:1824
+#: inc/constants.php:1996
 #@ piratenkleider
 msgid "Avatare anzeigen"
 msgstr "Show avatars"
 
-#: inc/constants.php:1825
+#: inc/constants.php:1997
 #@ piratenkleider
 msgid "Bei Kommentaren werden Avatar-Bilder mit Hilfe von Gravatar oder anderen Diensten abgerufen. Dies erm&ouml;glicht allerdings theoretisch ein Tracking durch diese Dienste."
 msgstr "Avatars for comments are retrieved by Gravatar or other services. However, this theoretically allows for tracking by these services"
 
-#: inc/constants.php:1832
+#: inc/constants.php:2004
 #@ piratenkleider
 msgid "Meta-Angaben"
 msgstr "Meta information"
 
-#: inc/constants.php:1836
+#: inc/constants.php:2008
 #@ piratenkleider
 msgid "Autor"
 msgstr "Author"
 
-#: inc/constants.php:1837
+#: inc/constants.php:2009
 #@ piratenkleider
 msgid "Optionale Autor-Angabe in dem Meta-Tag jeder Seite."
 msgstr "Optional author information in every page’s meta tag"
 
-#: inc/constants.php:1842
+#: inc/constants.php:2014
 #@ piratenkleider
 msgid "Beschreibung"
 msgstr "Description"
 
-#: inc/constants.php:1843
+#: inc/constants.php:2015
 #@ piratenkleider
 msgid "Optionale Beschreibungstext in dem Meta-Tag jeder Seite (f&uuml;r alle gleich). Sollte nicht mehr als 140 Zeichen lang sein, wenn gesetzt."
 msgstr "Optional description in every page’s meta tag. Should not exceed 140 characters."
 
-#: inc/constants.php:1848
+#: inc/constants.php:2020
 #@ piratenkleider
 msgid "Schl&uuml;sselworte"
 msgstr "Tags"
 
-#: inc/constants.php:1849
+#: inc/constants.php:2021
 #@ piratenkleider
 msgid "Optionale Schl&uuml;sselworte in dem Meta-Tag jeder Seite (f&uuml;r alle gleich). Durch Komma getrennt. Schl&uuml;sselworte sollten tats&auml;chlich vorkommen."
 msgstr "Optional keywords in every page’s meta tag. Separated by commas. Keywords should actually appear on the page."
@@ -2427,33 +2348,27 @@ msgid ""
 "                    die Blogadresse und dessen RSS-Feedadresse gezeigt"
 msgstr "Right footer"
 
-#: inc/widgets.php:152
+#: inc/widgets.php:148
 #@ piratenkleider
 msgid "Piraten Newsletter"
 msgstr "Newsletter"
 
-#: inc/widgets.php:153
+#: inc/widgets.php:149
 #@ piratenkleider
 msgid "Formular zur EIngabe einer Mailadresse zu einem Majordomolink angeben."
 msgstr "Activate form for subscribing to a majordomolist."
 
-#: inc/widgets.php:191
-#: inc/widgets.php:233
-#@ piratenkleider
-msgid "Fehler: Adresse des Newsletter-Dienstes ist nicht eingetragen. Bitte geben Sie diese Adresse zun&auml;chst bei den Theme-Optionen an."
-msgstr "Error: Please enter an address for the majordomo-list first."
-
-#: inc/widgets.php:237
+#: inc/widgets.php:211
 #@ piratenkleider
 msgid "Titel:"
 msgstr "Title"
 
-#: inc/widgets.php:260
+#: inc/widgets.php:241
 #@ piratenkleider
 msgid "Piraten Linkliste"
 msgstr "Pirate links"
 
-#: inc/widgets.php:261
+#: inc/widgets.php:242
 #@ piratenkleider
 msgid "Linkliste mit verschiedenen Gliederungen und Bereichen der Partei"
 msgstr "Links to different sections of the pirate party"
@@ -2466,332 +2381,316 @@ msgid_plural "%1$s Kommentare zu %2$s"
 msgstr[0] ""
 msgstr[1] ""
 
-#: functions.php:754
+#: functions.php:988
 #@ piratenkleider
 msgid "Ver&ouml;ffentlicht am"
 msgstr "Publiced at"
 
-#: functions.php:770
+#: functions.php:1004
 #, php-format
 #@ piratenkleider
 msgid " <span class=\"meta-prep-author\">von</span> %1$s "
 msgstr "<span class=\"meta-prep-author\">by </span> %1$s "
 
-#: functions.php:773
+#: functions.php:1007
 #, php-format
 #@ piratenkleider
 msgid "Artikel von %s"
 msgstr "article from %s"
 
-#: inc/constants.php:173
+#: inc/constants.php:180
 #@ piratenkleider
 msgid "Zur&uuml;ck zur Startseite"
 msgstr "Back to startpage"
 
-#: inc/constants.php:352
+#: inc/constants.php:428
 #@ piratenkleider
 msgid "Orange SG Gestaltung BTW13"
 msgstr "Orange Style SG Gestaltung BTW13"
 
-#: inc/constants.php:356
+#: inc/constants.php:432
 #@ piratenkleider
 msgid "Blau SG Gestaltung BTW13"
 msgstr "Blue Style SG Gestaltung BTW13"
 
-#: inc/constants.php:395
+#: inc/constants.php:466
 #@ piratenkleider
 msgid "Awesome"
 msgstr "Awesome"
 
-#: inc/constants.php:396
+#: inc/constants.php:467
 #@ piratenkleider
 msgid "Bebas &amp; Awesome"
 msgstr "Bebas &amp; Awesome"
 
-#: inc/constants.php:405
+#: inc/constants.php:476
 #@ piratenkleider
 msgid "Default Piratenkleider"
 msgstr "Default Piratenkleider"
 
-#: inc/constants.php:406
+#: inc/constants.php:477
 #@ piratenkleider
 msgid "Leeres Beispiel-CSS"
 msgstr "Empty sample css"
 
-#: inc/constants.php:407
-#@ piratenkleider
-msgid "Scapegoat-Adaption (ALPHA!!!)"
-msgstr "Scapegoat design (alpha version)"
-
-#: inc/constants.php:955
+#: inc/constants.php:1040
 #@ piratenkleider
 msgid "Gestaltung Textausz&uuml;ge"
 msgstr "Style for excerpts"
 
-#: inc/constants.php:983
-#: inc/constants.php:1026
-#: inc/constants.php:1215
-#: inc/constants.php:1260
+#: inc/constants.php:1068
+#: inc/constants.php:1111
+#: inc/constants.php:1300
+#: inc/constants.php:1345
 #@ piratenkleider
 msgid "Titel oben"
 msgstr "Titles on top"
 
-#: inc/constants.php:984
-#: inc/constants.php:1216
+#: inc/constants.php:1069
+#: inc/constants.php:1301
 #@ piratenkleider
 msgid "Titel &uuml;ber Logo/Datumsbox und Text"
 msgstr "Title above logo or datebox and text"
 
-#: inc/constants.php:990
-#: inc/constants.php:1033
-#: inc/constants.php:1222
-#: inc/constants.php:1267
+#: inc/constants.php:1075
+#: inc/constants.php:1118
+#: inc/constants.php:1307
+#: inc/constants.php:1352
 #@ piratenkleider
 msgid "Symbolbild/Datumsbox"
 msgstr "Thumbnail or datebox"
 
-#: inc/constants.php:991
-#: inc/constants.php:1223
-#@ piratenkleider
-msgid "Links des Textauszuges das Datum, das Artikelbild, ein Bild des Artikels oder ein verlinktes Video anzeigen; Abhängig vom Inhalt des Artikels."
-msgstr "Datebox, thumbnail or video is positioned left of the text content "
-
-#: inc/constants.php:994
-#: inc/constants.php:1037
-#: inc/constants.php:1226
-#: inc/constants.php:1271
+#: inc/constants.php:1079
+#: inc/constants.php:1122
+#: inc/constants.php:1311
+#: inc/constants.php:1356
 #@ piratenkleider
 msgid "Datumsbox anzeigen"
 msgstr "Show datebox"
 
-#: inc/constants.php:995
-#: inc/constants.php:1038
-#: inc/constants.php:1227
-#: inc/constants.php:1272
+#: inc/constants.php:1080
+#: inc/constants.php:1123
+#: inc/constants.php:1312
+#: inc/constants.php:1357
 #@ piratenkleider
 msgid "Reihenfolge: Artikelbild, erstes Bild, erstes Video oder Ersatzbild zeigen"
 msgstr "Order: Thumbnail, first picture in text, first linked youtube video or default picture"
 
-#: inc/constants.php:996
-#: inc/constants.php:1039
-#: inc/constants.php:1228
-#: inc/constants.php:1273
+#: inc/constants.php:1081
+#: inc/constants.php:1124
+#: inc/constants.php:1313
+#: inc/constants.php:1358
 #@ piratenkleider
 msgid "Reihenfolge: Erstes Bild, Artikelbild, erstes Video oder Ersatzbild zeigen"
 msgstr "Order: First picture in text, thumbnail, first youtube-video or default picture"
 
-#: inc/constants.php:997
-#: inc/constants.php:1040
-#: inc/constants.php:1229
-#: inc/constants.php:1274
+#: inc/constants.php:1082
+#: inc/constants.php:1125
+#: inc/constants.php:1314
+#: inc/constants.php:1359
 #@ piratenkleider
 msgid "Reihenfolge: Erstes Video, Artikelbild, erstes Bild oder Ersatzbild zeigen"
 msgstr "order: First youtube video, thumbnail, first picture in text or default picture"
 
-#: inc/constants.php:998
-#: inc/constants.php:1041
-#: inc/constants.php:1230
-#: inc/constants.php:1275
+#: inc/constants.php:1083
+#: inc/constants.php:1126
+#: inc/constants.php:1315
+#: inc/constants.php:1360
 #@ piratenkleider
 msgid "Reihenfolge: Erstes Video, erstes Bild, Artikelbild oder Ersatzbild zeigen"
 msgstr "Order: First youtube-video, first picture in text, thumbnail or default picture"
 
-#: inc/constants.php:999
-#: inc/constants.php:1042
-#: inc/constants.php:1231
-#: inc/constants.php:1276
+#: inc/constants.php:1084
+#: inc/constants.php:1127
+#: inc/constants.php:1316
+#: inc/constants.php:1361
 #@ piratenkleider
 msgid "Nichts anzeigen"
 msgstr "Show nothing"
 
-#: inc/constants.php:1004
-#: inc/constants.php:1048
-#: inc/constants.php:1237
-#: inc/constants.php:1282
+#: inc/constants.php:1089
+#: inc/constants.php:1133
+#: inc/constants.php:1322
+#: inc/constants.php:1367
 #@ piratenkleider
 msgid "Flie&szlig;ender Text"
 msgstr "Floating text"
 
-#: inc/constants.php:1005
-#: inc/constants.php:1238
+#: inc/constants.php:1090
+#: inc/constants.php:1323
 #@ piratenkleider
 msgid "Text umflie&szlig;t das Bild"
 msgstr "Text is floating to the picture"
 
-#: inc/constants.php:1011
-#: inc/constants.php:1056
-#: inc/constants.php:1245
-#: inc/constants.php:1289
+#: inc/constants.php:1096
+#: inc/constants.php:1141
+#: inc/constants.php:1330
+#: inc/constants.php:1374
 #@ piratenkleider
 msgid "Datumszeile"
 msgstr "Line for date"
 
-#: inc/constants.php:1012
-#: inc/constants.php:1246
+#: inc/constants.php:1097
+#: inc/constants.php:1331
 #@ piratenkleider
 msgid "Datumszeile vor dem Text, falls keine Datumsbox angezeigt wird"
 msgstr "Line for date before text. (only if no datebox is active)"
 
-#: inc/constants.php:1019
-#: inc/constants.php:1253
+#: inc/constants.php:1104
+#: inc/constants.php:1338
 #@ piratenkleider
 msgid "L&auml;nge des Teasertextes"
 msgstr "Length of text"
 
-#: inc/constants.php:1020
-#: inc/constants.php:1254
+#: inc/constants.php:1105
+#: inc/constants.php:1339
 #@ piratenkleider
 msgid "Maximale Textl&auml;nge f&uuml;r Artikelausz&uuml;ge (Bei Beitr&auml;gen &uuml;ber halbe Breite)."
 msgstr "Maximum length of text (at using half width extracts)"
 
-#: inc/constants.php:1027
-#: inc/constants.php:1261
+#: inc/constants.php:1112
+#: inc/constants.php:1346
 #@ piratenkleider
 msgid "Titel &uuml;ber Logo/Datumsbox und Text (Bei Beitr&auml;gen &uuml;ber halbe Breite)."
 msgstr "Title above logo or datebox and text (on extracts using half width)"
 
-#: inc/constants.php:1057
-#: inc/constants.php:1290
+#: inc/constants.php:1142
+#: inc/constants.php:1375
 #@ piratenkleider
 msgid "Datumszeile vor dem Text, falls keine Datumsbox angezeigt wird (Bei Beitr&auml;gen &uuml;ber halbe Breite)."
 msgstr "Datebox above text. (only if no datebox is active; on articels with half width)"
 
-#: inc/constants.php:1179
+#: inc/constants.php:1264
 #@ piratenkleider
 msgid "Indexseiten (Kategorien, Tags und andere)"
 msgstr "Index pages (categories, tags, search results and others)"
 
-#: inc/constants.php:1184
+#: inc/constants.php:1269
 #@ piratenkleider
 msgid "Slider aktivieren"
 msgstr "Activate slider"
 
-#: inc/constants.php:1185
+#: inc/constants.php:1270
 #@ piratenkleider
 msgid "Kategorieseiten mit Slider wie auf Startseite darstellen"
 msgstr "Show Indexpages with slider like start page"
 
-#: inc/constants.php:1209
+#: inc/constants.php:1294
 #@ piratenkleider
 msgid "Maximale Textl&auml;nge f&uuml;r Artikelausz&uuml;ge"
 msgstr "Maximum text length for extracts"
 
-#: inc/constants.php:1457
+#: inc/constants.php:1553
 #@ piratenkleider
 msgid "Seiten"
 msgstr "Pages"
 
-#: inc/constants.php:1458
+#: inc/constants.php:1554
 #@ piratenkleider
 msgid "Kommentare auch auf Seiten (und nicht nur Artikeln) zulassen."
 msgstr "Allow comments on pages."
 
-#: inc/constants.php:1688
+#: inc/constants.php:1787
 #@ piratenkleider
 msgid "Design (Kl&uuml;verbaum)"
 msgstr "Design Options"
 
-#: inc/constants.php:1713
+#: inc/constants.php:1796
 #@ piratenkleider
 msgid "Grunddesign &auml;ndern"
 msgstr "Chance base design options"
 
-#: inc/constants.php:1714
+#: inc/constants.php:1797
 #@ piratenkleider
 msgid "Aktiviert ein alternatives Design f&uuml;r die gesamte Website."
 msgstr "Activates an alternative CSS style"
 
-#: inc/constants.php:1715
-#@ piratenkleider
-msgid "<br><strong>ACHTUNG: ALPHA-Status! Designs sind noch nicht fertig</strong>."
-msgstr "<br><strong>Notice: This is for experimental use only!</strong>"
-
-#: inc/constants.php:1724
+#: inc/constants.php:1885
 #@ piratenkleider
 msgid "Hinweis: Die Verkleinerung der H&ouml;he des Kopfteils ist nicht ungef&auml;hrlich. Zu beachten ist, dass der Kopfteil auch bei einer Vergr&ouml;&szlig;erung des Textes auf 200% noch gen&uuml;gend Platz haben muss!"
 msgstr "Notice: On lowering the height of the header people with big sized text fonts may get problems. "
 
-#: inc/constants.php:1730
+#: inc/constants.php:1892
 #@ piratenkleider
 msgid "Das Logo hat einen Abstand nach oben. Diese kann &uuml;ber diese Angabe reduziert werden."
 msgstr "Here you can change the x-position of the logo."
 
-#: inc/constants.php:1736
+#: inc/constants.php:1899
 #@ piratenkleider
 msgid "CSS-Anweisungen"
 msgstr "CSS-Code"
 
-#: inc/constants.php:1742
+#: inc/constants.php:1906
 #@ piratenkleider
 msgid "HTML-Anweisungen"
 msgstr "HTML-Code"
 
-#: inc/constants.php:1743
+#: inc/constants.php:1907
 #@ piratenkleider
 msgid "Eigene HTML-Anweisungen, die am Ende der Webseite, vor dem letzten &lt;/body&gt;&lt;/html&gt; plaziert werden"
 msgstr "Here you can set own HTML-tags at the end of the page, just before the &lt;/body&gt;&lt;/html&gt; ."
 
-#: inc/constants.php:1744
+#: inc/constants.php:1908
 #@ piratenkleider
 msgid "<br><b>Achtung:</b> Fehlerhafter HTML-, JavaScript oder CSS-Code an dieser Stelle kann zu einem Nicht-Funktionieren der gesamt Website f&uuml;hren!<br />Der hier eingegebene Code wird nicht gefiltert oder kontrolliert."
 msgstr "<br><b>Notice: </b> bad code may harm the whole site. Be careful. "
 
-#: inc/constants.php:1855
+#: inc/constants.php:2027
 #@ piratenkleider
 msgid "Keywords aus Tags"
 msgstr "Keywords by tags"
 
-#: inc/constants.php:1856
+#: inc/constants.php:2028
 #@ piratenkleider
 msgid "Metatag mit Keywords wird automatisch aus der Tagcloud erstellt. Wenn oben Keywords eingegeben wurden, werden diese erg&auml;nzt."
 msgstr "Create meta tag by keywords out of the tagcloud. If you add manually keywords above, they will be shown too."
 
-#: inc/constants.php:1857
+#: inc/constants.php:2029
 #@ piratenkleider
 msgid "Hinweis: Google und andere Suchmaschinen nutzen diesen Metatag bereits seit 2009 nicht mehr."
 msgstr "Notice: Google and other modern search engine doesnt use meta tag keywords any longer."
 
-#: inc/constants.php:1858
+#: inc/constants.php:2030
 #@ piratenkleider
 msgid "Der Zweck dieser Funktion besteht darin, Pseudo-SEO-Experten ruhig zu halten :)"
 msgstr "(Use of this function is to get ride of annoying commnts of pseudo experts :) )"
 
-#: inc/constants.php:1883
+#: inc/constants.php:2096
 #@ piratenkleider
 msgid "Dienstanbieter"
 msgstr "Publicer"
 
-#: inc/constants.php:1890
+#: inc/constants.php:2103
 #@ piratenkleider
 msgid "Feste Mailadresse f&uuml;r offizielle Kontakte."
 msgstr "Mail address for official contacts"
 
-#: inc/constants.php:1895
+#: inc/constants.php:2108
 #@ piratenkleider
 msgid "Telefon"
 msgstr "Phone"
 
-#: inc/constants.php:1896
+#: inc/constants.php:2109
 #@ piratenkleider
 msgid "Telefonnummer mit Vorwahl."
 msgstr "Phone with country code."
 
-#: inc/constants.php:1902
+#: inc/constants.php:2115
 #@ piratenkleider
 msgid "Fax"
 msgstr "Fax"
 
-#: inc/constants.php:1903
+#: inc/constants.php:2116
 #@ piratenkleider
 msgid "Faxnummer mit Vorwahl"
 msgstr "Fax with country codes"
 
-#: inc/constants.php:1909
+#: inc/constants.php:2122
 #@ piratenkleider
 msgid "Rechtsvorschriften"
 msgstr "Laws "
 
-#: inc/constants.php:1910
+#: inc/constants.php:2123
 #@ piratenkleider
 msgid "Zeige Linkliste zu Rechtsvorschriften politischer Parteien"
 msgstr "Show links for laws about politican partys"
@@ -2829,21 +2728,21 @@ msgid "Widgetbereich unterhalb des Artikelindex einer Kategorie-, Autoren- oder 
 msgstr "Widget below of article index of a category, tag, author or search results page."
 
 #: loop-category.php:15
-#: loop.php:22
-#: loop.php:40
+#: loop.php:21
+#: loop.php:39
 #, php-format
 #@ piratenkleider
 msgid "Permalink to %s"
 msgstr "Permalink to %s"
 
-#: loop.php:20
-#: loop.php:48
+#: loop.php:19
+#: loop.php:47
 #@ piratenkleider
 msgctxt "gallery category slug"
 msgid "gallery"
 msgstr "gallery"
 
-#: loop.php:48
+#: loop.php:47
 #@ piratenkleider
 msgid "Zeige Artikel aus der Galerie"
 msgstr "Show articles of gallery"
@@ -2854,15 +2753,464 @@ msgstr "Show articles of gallery"
 msgid "Piratenkleider Optionen"
 msgstr "Piratenkleider Options"
 
-#: inc/constants.php:1034
-#: inc/constants.php:1268
+#: inc/constants.php:1353
 #@ piratenkleider
 msgid "Links des Textauszuges das Datum, das Artikelbild, ein Bild des Artikels oder ein verlinktes Video anzeigen; Abhängig vom Inhalt des Artikels. (Bei Beitr&auml;gen &uuml;ber halbe Breite)"
 msgstr "Show datebox, thumbnail or youtube video left of the text. (on articles in half width)"
 
-#: inc/constants.php:1049
-#: inc/constants.php:1283
+#: inc/constants.php:1134
+#: inc/constants.php:1368
 #@ piratenkleider
 msgid "Text umflie&szlig;t das Bild (Bei Beitr&auml;gen &uuml;ber halbe Breite)"
 msgstr "Textflow around picture (on entrys with half width)"
+
+#: 404.php:39
+#@ piratenkleider
+msgid "Es konnten keine Seiten oder Artikel gefunden werden, die zu der eingegebenen Adresse passte. Bitte versuchen Sie es nochmal mit einer Suche."
+msgstr "There are no entries for this URL. Please try a search."
+
+#: footer.php:55
+#: footer.php:76
+#@ piratenkleider
+msgid "Stop"
+msgstr "Stop"
+
+#: footer.php:56
+#: footer.php:77
+#@ piratenkleider
+msgid "Start"
+msgstr "Start"
+
+#: footer.php:74
+#@ piratenkleider
+msgid "Vor"
+msgstr "Previous"
+
+#: footer.php:75
+#@ piratenkleider
+msgid "Zur&uuml;ck"
+msgstr "Back"
+
+#: functions.php:1273
+#@ piratenkleider
+msgid "Kein textueller Inhalt"
+msgstr "No entry"
+
+#: inc/constants.php:319
+#@ piratenkleider
+msgid "Vorstand"
+msgstr "Directorate"
+
+#: inc/constants.php:329
+#@ piratenkleider
+msgid "Spenden"
+msgstr "Donation"
+
+#: inc/constants.php:334
+#@ piratenkleider
+msgid "Shop"
+msgstr "Shop"
+
+#: inc/constants.php:440
+#@ piratenkleider
+msgid "WIkinger"
+msgstr "Wiking"
+
+#: inc/constants.php:478
+#@ piratenkleider
+msgid "Scapegoat-Adaption (BETA!!!)"
+msgstr "Scapegoat-Design (Beta version)"
+
+#: inc/constants.php:959
+#@ piratenkleider
+msgid "Toplinks"
+msgstr "Toplinks"
+
+#: inc/constants.php:963
+#@ piratenkleider
+msgid "Portale"
+msgstr "Websites"
+
+#: inc/constants.php:966
+#@ piratenkleider
+msgid "Definition einer Linkliste zu Standardportalen. Diese Liste kann Alternativ durch die Definiton eines Men&uuml;s und Zuordnung dieses zu dem Men&uuml;bereich \"Linkmenu\" verwaltet werden. Ist kein eigenes Men&uuml; definiert, werden diese Werte als Alternative verwendet."
+msgstr "List of default websites. Instead use a menu entry, called \"Linkenu\"."
+
+#: inc/constants.php:1076
+#: inc/constants.php:1308
+#@ piratenkleider
+msgid "Links des Textauszuges das Datum, das Artikelbild, ein Bild des Artikels oder ein verlinktes Video anzeigen; Abh&auml;ngig vom Inhalt des Artikels."
+msgstr "Displays a date, a thumbnail, an image from the aritcle or an embedded video left from text."
+
+#: inc/constants.php:1119
+#@ piratenkleider
+msgid "Links des Textauszuges das Datum, das Artikelbild, ein Bild des Artikels oder ein verlinktes Video anzeigen; Abh&auml;ngig vom Inhalt des Artikels. (Bei Beitr&auml;gen &uuml;ber halbe Breite)"
+msgstr "Displays a date, a thumbnail, an image from the aritcle or an embedded video left from text."
+
+#: inc/constants.php:1218
+#@ piratenkleider
+msgid "Ersatz-Sliderbild f&uuml;r Seiten ohne eigenes Artikelbild."
+msgstr "Default image in slider fopr articles without thumbnail."
+
+#: inc/constants.php:1381
+#@ piratenkleider
+msgid "Weiterlesen-Link"
+msgstr "Link for Continue"
+
+#: inc/constants.php:1382
+#@ piratenkleider
+msgid "Anzeige des Links zum Weiterlesen immer anzeigen oder nur dann, wenn der Textauszug auf einer Indexseite gek&uuml;rzt werden muss."
+msgstr "Show \"Continue\" link only if text for excerpt is smaller as original text."
+
+#: inc/constants.php:1385
+#@ piratenkleider
+msgid "Nur wenn Artikel l&auml;nger ist als Textauszug"
+msgstr "Only if article is longer as excerpt"
+
+#: inc/constants.php:1386
+#@ piratenkleider
+msgid "Immer anzeigen"
+msgstr "Display always"
+
+#: inc/constants.php:1387
+#@ piratenkleider
+msgid "Nie anzeigen"
+msgstr "Never"
+
+#: inc/constants.php:1421
+#: inc/constants.php:1456
+#@ piratenkleider
+msgid "Ersatzbild f&uuml;r Seiten ohne eigenes Artikelbild."
+msgstr "Default image for article without thumbnail."
+
+#: inc/constants.php:1491
+#@ piratenkleider
+msgid "Symbolbild f&uuml;r 404 Seite"
+msgstr "Symbol image for 404 page"
+
+#: inc/constants.php:1498
+#@ piratenkleider
+msgid "Symbolbild f&uuml;r Kategorie Seite"
+msgstr "Symbol image for category page"
+
+#: inc/constants.php:1505
+#@ piratenkleider
+msgid "Symbolbild f&uuml;r Tag Seite"
+msgstr "Symbol image for tag page"
+
+#: inc/constants.php:1512
+#@ piratenkleider
+msgid "Symbolbild f&uuml;r Autoren Seite"
+msgstr "Symbol image for author page"
+
+#: inc/constants.php:1519
+#@ piratenkleider
+msgid "Symbolbild f&uuml;r Archiv Seite"
+msgstr "Symbol image for archive page"
+
+#: inc/constants.php:1526
+#@ piratenkleider
+msgid "Symbolbild f&uuml;r Suchergebnis-Seite"
+msgstr "Symbol image for search results page"
+
+#: inc/constants.php:1533
+#@ piratenkleider
+msgid "Symbolbild f&uuml;r Template-Seiten"
+msgstr "Symbol image for templates"
+
+#: inc/constants.php:1585
+#@ piratenkleider
+msgid "Das Men&uuml; kann nach Seiten-Hierarchie oder Menü-Hierarche gegliedert werden."
+msgstr "Type of menu: Use Page hierachy or menu hierarchy"
+
+#: inc/constants.php:1792
+#@ piratenkleider
+msgid "Stylesheet"
+msgstr "Stylesheet"
+
+#: inc/constants.php:1805
+#@ piratenkleider
+msgid "Farbkombination"
+msgstr "Colors"
+
+#: inc/constants.php:1813
+#@ piratenkleider
+msgid "Schriftarten"
+msgstr "Fonts"
+
+#: inc/constants.php:1829
+#@ piratenkleider
+msgid "Bei der Anzeige von Links in Artikeln und Seiten werden bekannte Adressen und Dateitypen mit Icons erg&auml;nzt."
+msgstr "Use symbol icons for known target types"
+
+#: inc/constants.php:1836
+#@ piratenkleider
+msgid "CSS-Datei"
+msgstr "CSS-File"
+
+#: inc/constants.php:1837
+#@ piratenkleider
+msgid "Einbinden und hochladen einer eigenen CSS-Datei."
+msgstr "Use and upload own CSS-Files"
+
+#: inc/constants.php:1838
+#@ piratenkleider
+msgid "<p><em>Bitte an alle Designer: Wenn ihr hiermit Designs erstellt, teilt sie doch mit. "
+msgstr "<p><em>Please share your work with others."
+
+#: inc/constants.php:1839
+#@ piratenkleider
+msgid "Dann f&uuml;gen wir sie zur obiger Liste der Alternativdesigns hinzu, so dass auch viele andere etwas davon haben."
+msgstr "We will add your style to the alternative styles; so that others might use them too."
+
+#: inc/constants.php:1840
+#@ piratenkleider
+msgid "<br><br>Meldet euch hierzu bei: <a href=\"mailto:piratenkleider@xwolf.de\">piratenkleider@xwolf.de</a> - Vielen Dank!</em></p>"
+msgstr "<br><br>Send your css files to the maintainer of this theme:  <a href=\"mailto:piratenkleider@xwolf.de\">piratenkleider@xwolf.de</a> - Thank you!</em></p>"
+
+#: inc/constants.php:1845
+#@ piratenkleider
+msgid "Einbindung CSS-Datei"
+msgstr "Embedds css file"
+
+#: inc/constants.php:1846
+#@ piratenkleider
+msgid "Definition wie der CSS-Datei eingebunden werden soll in Kontext zum oben gew&auml;hlten Grunddesign."
+msgstr "Define type of embedding for css file"
+
+#: inc/constants.php:1849
+#@ piratenkleider
+msgid "Deaktiv (Nicht einbinden)"
+msgstr "Inactive"
+
+#: inc/constants.php:1850
+#@ piratenkleider
+msgid "Vor Standard-CSS-Dateien des Grunddesigns"
+msgstr "As first entry, before base stylesheet"
+
+#: inc/constants.php:1851
+#@ piratenkleider
+msgid "Nach Standard-CSS-Dateien des Grunddesigns"
+msgstr "After base stylesheet"
+
+#: inc/constants.php:1852
+#@ piratenkleider
+msgid "Semi-Exklusiv (kein Laden des Grunddesign-CSS, jedoch optionale CSS (Farben, Schriften, Icons, ...)"
+msgstr "Semi exclusive (no base stylesheet, but colors, fonts and icon css)"
+
+#: inc/constants.php:1853
+#@ piratenkleider
+msgid "Exklusiv (kein Laden anderer CSS-Dateien)"
+msgstr "Exclusive (no other css files)"
+
+#: inc/constants.php:1860
+#@ piratenkleider
+msgid "Breadcrumb"
+msgstr "Breadcrumb"
+
+#: inc/constants.php:1865
+#@ piratenkleider
+msgid "Breadcrumb aktivieren"
+msgstr "Activate breadcrumb"
+
+#: inc/constants.php:1871
+#@ piratenkleider
+msgid "Start- und Frontseiten"
+msgstr "Start- and frontpages"
+
+#: inc/constants.php:1872
+#@ piratenkleider
+msgid "Breadcrumb auch bei Start- und Frontseiten anzeigen"
+msgstr "Displays breadcrumb even on start- and frontpages"
+
+#: inc/constants.php:1879
+#@ piratenkleider
+msgid "Weitere Designoptionen"
+msgstr "More design options"
+
+#: inc/constants.php:1955
+#@ piratenkleider
+msgid "YouTube-Links"
+msgstr "YouTube links"
+
+#: inc/constants.php:1956
+#@ piratenkleider
+msgid "YouTube-Links automatisch mit eigenem verlinkten iFrame-Embed anreichern, der die tracking-sichere Website youtube-nocookie.com nutzt."
+msgstr "Embedds YouTube links in iframe and resets them to youtube-nocookie.com."
+
+#: inc/constants.php:1962
+#@ piratenkleider
+msgid "Wombat"
+msgstr "Wombat"
+
+#: inc/constants.php:1963
+#@ piratenkleider
+msgid "Aktiviert die Anzeige des kleinen Wombats (CC by Nicole Britz)"
+msgstr "Displays a comic art wombat"
+
+#: inc/constants.php:2036
+#@ piratenkleider
+msgid "Leseempfehlungen"
+msgstr "Linktipp"
+
+#: inc/constants.php:2041
+#@ piratenkleider
+msgid "Verwaltung von Leseempfehlungen bzw. Linktipps aktivieren"
+msgstr "Organize linktipps"
+
+#: inc/constants.php:2042
+#@ piratenkleider
+msgid "Dies f&uuml;gt eine neue Verwaltung im Backend ein, mit denen spezielle Seiten, die nur einen kurzen Text und einen (externen) Link enthalten, als neue Beitrag auf den Indexseiten angezeigt werden k&ouml;nnen."
+msgstr "Activates use of linktipps."
+
+#: inc/constants.php:2049
+#@ piratenkleider
+msgid "&Uuml;berschrift"
+msgstr "Title"
+
+#: inc/constants.php:2050
+#@ piratenkleider
+msgid "Anzeigeposition der &Uuml;berschrift"
+msgstr "Title position"
+
+#: inc/constants.php:2058
+#@ piratenkleider
+msgid "Anzeigeposition des Untertitels"
+msgstr "Position for second title"
+
+#: inc/constants.php:2066
+#@ piratenkleider
+msgid "Link"
+msgstr "Link"
+
+#: inc/constants.php:2067
+#@ piratenkleider
+msgid "Verlinkung auf Bereich festlegen"
+msgstr "Defines link position"
+
+#: inc/custom-posts.php:9
+#@ piratenkleider
+msgid "Linktipps"
+msgstr "Linktipps"
+
+#: inc/custom-posts.php:10
+#@ piratenkleider
+msgid "Linktipp"
+msgstr "Linktipp"
+
+#: inc/custom-posts.php:15
+#@ piratenkleider
+msgid "Erstellen und Verwalten von Leseempfehlungen und Linktipps"
+msgstr "Management of linktipps"
+
+#: inc/custom-posts.php:46
+#@ piratenkleider
+msgid "Kurzbeschreibung und Zieladresse"
+msgstr "Excerpt and target link"
+
+#: inc/custom-posts.php:62
+#@ piratenkleider
+msgid "Geben Sie hier die Webadresse (URL) ein, zu der die Leseempfehlung verweisen soll"
+msgstr "Target (URL)"
+
+#: inc/custom-posts.php:68
+#@ piratenkleider
+msgid "Kurzbeschreibung (Optional; Mindestens Kurzbeschreibung oder Beitragsbild m&uuml;ssen vorhanden sein)"
+msgstr "Excerpt (optional)"
+
+#: inc/custom-posts.php:73
+#@ piratenkleider
+msgid "Beitrags- oder Symbolbild (URL)"
+msgstr "Image"
+
+#: inc/custom-posts.php:101
+#@ piratenkleider
+msgid "Bild ausw&auml;hlen oder hochladen"
+msgstr "Chose image"
+
+#: inc/custom-posts.php:106
+#@ piratenkleider
+msgid "Optionaler Untertitel"
+msgstr "Optional subtitle"
+
+#: inc/custom-posts.php:171
+#@ piratenkleider
+msgid "Die Leseempfehlung wurde aktualisiert. "
+msgstr "Linktipp saved."
+
+#: inc/custom-posts.php:172
+#@ piratenkleider
+msgid "Die Leseempfehlung wurde aktualisiert."
+msgstr "Entry updated."
+
+#: inc/custom-posts.php:173
+#@ piratenkleider
+msgid "Leseempfehlung wurde gel&ouml;scht."
+msgstr "Entry removed."
+
+#: inc/custom-posts.php:174
+#@ piratenkleider
+msgid "Leseempfehlung wurde ver&ouml;ffentlicht."
+msgstr "Linktipp is now online."
+
+#: inc/custom-posts.php:175
+#@ piratenkleider
+msgid "Leseempfehlung wurde gespeichert."
+msgstr "Linktipp saved."
+
+#: inc/custom-posts.php:317
+#@ piratenkleider
+msgid "Es konnten keine Leseempfehlungen gefunden werden."
+msgstr "No linktipp found."
+
+#: inc/widgets.php:167
+#@ piratenkleider
+msgid "Anmelden"
+msgstr "Logout"
+
+#: inc/widgets.php:217
+#@ piratenkleider
+msgid "CGI-URL zur Registrierung im Newsletter:"
+msgstr "CGI-URL for registering (mailman-cgi url)"
+
+#: inc/widgets.php:334
+#@ piratenkleider
+msgid "Banner/Logo Link"
+msgstr "Banner/Logo link"
+
+#: inc/widgets.php:335
+#@ piratenkleider
+msgid "Schalten von Link mit einem Logo oder Banner"
+msgstr "Activates a link with an image"
+
+#: inc/widgets.php:366
+#@ piratenkleider
+msgid "Bild-URL:"
+msgstr "Image url: "
+
+#: inc/widgets.php:376
+#@ piratenkleider
+msgid "Hochladen / Ausw&auml;hlen"
+msgstr "Upload"
+
+#: inc/widgets.php:378
+#@ piratenkleider
+msgid "Gebe eine URL zu einem Bild ein oder verwende die Mediathek um es hochzuladen oder um ein vorhandenes Bild auszuw&auml;hlen."
+msgstr "Chose image or enter an url."
+
+#: single-linktipps.php:134
+#: single.php:117
+#@ piratenkleider
+msgid "Keine Treffer"
+msgstr "No entry found"
+
+#: theme-options.php:164
+#@ piratenkleider
+msgid "Datei ausw&auml;hlen oder hochladen"
+msgstr "Chose file"
+
+#: theme-options.php:166
+#@ piratenkleider
+msgid "Datei entfernen"
+msgstr "Remove file "
 
