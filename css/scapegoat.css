@@ -3923,14 +3923,20 @@ background: linear-gradient(to right, rgba(0, 0, 0, 1) , #2d7dc5); /* Standard s
 /*-----------------------------------------------------------------------------------*/
 /* Media Queries
 /*-----------------------------------------------------------------------------------*/
-
+@media only screen and (max-width:1200px) {
+     .second-teaser-widget-area {
+            display: none;
+        }
+}
 
 	/* ------------------------------ Tablets */
 
+       
 @media only screen and (max-width: 860px) {
 	.inside {
 		width: auto;
 	}
+
 	#header-outside {}
 	#header-inside {}
 	#logo {}
