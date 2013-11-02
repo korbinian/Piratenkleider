@@ -467,6 +467,11 @@ h3 {
 	font-size: 1.5em;
 	line-height: 1em;
 }
+h3.subtitle {
+    font-size: 0.8em;
+    color: #999;
+    margin: 0.5em 0em;
+}
 h4 {
 	font-size: 1.2em;
 	line-height: 1em;
@@ -725,6 +730,8 @@ input[type="checkbox"] {
 	padding: 0.5em 1em 0.5em 0.25em;
 }
 
+
+
 	/* ------------------------------ Figures */
 
 .size-thumbnail {}
@@ -823,7 +830,10 @@ audio {
 .post-title a:visited {
 	color: #000;
 }
-
+.post-entry p img {
+    float: left;
+    margin: 1em 2em;
+}
 .post-image {
 	position: relative;
 	display: block;
