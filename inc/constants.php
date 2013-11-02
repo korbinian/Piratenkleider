@@ -5,7 +5,7 @@
  **/ 
 
 $defaultoptions = array(
-    'js-version'                    => '2.19',
+    'js-version'                    => '2.20',
     'content-width'                 => 665,
     'yt-content-width'              => 665,
     'yt-content-height'             => 500,
@@ -480,7 +480,7 @@ $default_fontstyles = array(
 $default_alternativestyles = array(
     'style.css'	    => __( 'Default Piratenkleider', 'piratenkleider' ),
     'sample.css'    => __( 'Leeres Beispiel-CSS', 'piratenkleider' ),
-    'scapegoat.css' => __( 'Scapegoat-Adaption (BETA)', 'piratenkleider' ),
+    'scapegoat.css' => __( 'Scapegoat-Adaption (1.0)', 'piratenkleider' ),
  );
 
 /*

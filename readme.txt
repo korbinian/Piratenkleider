@@ -2,7 +2,7 @@ Piratenkleider
 - Wordpress-Theme für Webauftritte der Piratenpartei 
 ====================================================
 
-Version 2.19.11 von Wolfgang Wiese (xwolf), 30. Oktober 2013
+Version 2.20 von Wolfgang Wiese (xwolf), 3. November 2013
 
 
 DOWNLOADS
@@ -542,3 +542,5 @@ Administrative Hinweise für Wordpress Theme-Editoren:
     dass sie hier in diesem Theme mit als ALternativdesigns aufgenommen
     werden können.
 
+24. Ab Version 2.20 ist dei Scapegoat-Designadaption in einem gebrauchsfähigen 
+    Format. Wichtig dabei: Farbkombis sind abzuschalten.
