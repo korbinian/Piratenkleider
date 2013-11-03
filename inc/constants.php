@@ -183,7 +183,7 @@ $defaultoptions = array(
     'yt-norel'				    => 1,
 	/* Keine weiteren Videos vorschlagen */
     'aktiv-wombat'			    => 0,
-    'excerpt_allowtags'			    => '<p>,<br>,<br />,<em>,<i>,<b>,<strong>,<q>',        
+    'excerpt_allowtags'			    => '<br>,<br />',        
     'zeige_breadcrump'			    => 1,
     'breadcrumb_delimiter'		    => ' / ',    
     'breadcrumb_homelinktext'		    =>  __( 'Startseite', 'piratenkleider' ),
