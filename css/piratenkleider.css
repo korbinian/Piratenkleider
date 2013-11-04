@@ -1576,6 +1576,7 @@ display: inline-block;
     height: auto;
     max-height: 220px;
     overflow: hidden;
+    margin-top: 10px;
   }
   .withvideo .post-info .infoimage {
     width: 320px;
