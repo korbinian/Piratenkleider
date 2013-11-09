@@ -1,0 +1,29 @@
+/* 
+    Document   : font-awesome
+    Created on : 14.06.2013
+    Author     : xwolf
+    Description:
+      Font-Face Definition: LinLiberine
+}
+*/
+
+@font-face {
+  font-family: 'FontPiratenkleiderHeadlines';
+  local: Libertine;
+  src: local ('Ø'),  url('../fonts/LinLibertine_R.woff') format('woff'); 
+  font-weight: normal;
+  font-style: normal;
+
+}
+@font-face {
+  font-family: 'FontPiratenkleiderDefault';
+  local: Libertine;
+  src: local ('Ø'),  url('../fonts/LinLibertine_R.woff') format('woff'); 
+  font-weight: normal;
+  font-style: normal; 
+}
+
+
+
+
+

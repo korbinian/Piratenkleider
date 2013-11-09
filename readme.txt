@@ -544,3 +544,7 @@ Administrative Hinweise für Wordpress Theme-Editoren:
 
 24. Ab Version 2.20 ist dei Scapegoat-Designadaption in einem gebrauchsfähigen 
     Format. Wichtig dabei: Farbkombis sind abzuschalten.
+
+25. Ab version 2.20.1 werden neue Schriften und ein alternativer Style fuer
+    Mediensites eingebracht.
+    Neue Schriften: Linux Libertine (Open Font Lizenz)
