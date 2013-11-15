@@ -116,8 +116,9 @@
     position: relative;
 } 
 
-
-
+.slide .caption h3 a:hover {
+background: #000000; 
+ } 
 
  .breadcrumbs .current {  
   color: #ffffff;
@@ -300,8 +301,11 @@
       background: transparent;
       background: rgba(0, 0, 0, 0.5);
       color: black;
+      top: +0.1em;
     }
-    
+
+
+
      .gallery img {
     border-color: #f1f1f1;
     }
@@ -408,6 +412,17 @@
   background: #aedee4;
   color: black;
 }
+
+.content-aside .widget li:hover,
+.content-aside .widget li:focus,
+#ics-calendar-widget li:hover,
+#ics-calendar-widget li:focus, 
+.content-aside .twitterwidget li:hover, 
+.content-aside .twitterwidget li:focus {
+background: #b7d8f6; 
+
+}
+
  .content-aside .widget li a.rsswidget {
     background: #FFFFFF;
     background: rgba(0, 0, 0, 0.2);
