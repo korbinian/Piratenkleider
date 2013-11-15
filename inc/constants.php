@@ -1789,7 +1789,7 @@ $setoptions = array(
           )
        ),
 	'design'   => array(
-           'tabtitle'   => __( 'Design (Kl&uuml;verbaum)', 'piratenkleider' ),
+           'tabtitle'   => __( 'Design', 'piratenkleider' ),
            'fields' => array(
             
 	       'style'  => array(
@@ -1955,6 +1955,13 @@ $setoptions = array(
                  
               ),  
               
+	      'favicon-file' => array(
+                  'type'    => 'file',
+                  'title'   => __( 'FavIcon-Datei', 'piratenkleider' ),
+                  'label'   => __( 'Einbinden und hochladen einer eigenen FavIcon-Datei. Bitte in den Aufl&ouml;sungen 16x16, 32x32 oder 64x64 Pixel.', 'piratenkleider' ),
+              ),
+	       
+	       
               'yt-alternativeembed' => array(
                   'type'    => 'bool',
                   'title'   => __( 'YouTube-Links', 'piratenkleider' ),
@@ -2020,13 +2027,19 @@ $setoptions = array(
                   'label'   => __( 'Optionale Beschreibungstext in dem Meta-Tag jeder Seite (f&uuml;r alle gleich). Sollte nicht mehr als 140 Zeichen lang sein, wenn gesetzt.', 'piratenkleider' ),
                   'parent'  => 'meta',
               ),  
-                'meta-keywords' => array(
+               'meta-keywords' => array(
                   'type'    => 'text',
                   'title'   => __( 'Schl&uuml;sselworte', 'piratenkleider' ),
                   'label'   => __( 'Optionale Schl&uuml;sselworte in dem Meta-Tag jeder Seite (f&uuml;r alle gleich). Durch Komma getrennt. Schl&uuml;sselworte sollten tats&auml;chlich vorkommen.', 'piratenkleider' ),
                   'parent'  => 'meta',                    
               ),   
-	       
+	       'meta-verify-v1' => array(
+                  'type'    => 'text',
+                  'title'   => __( 'Google Verify', 'piratenkleider' ),
+                  'label'   => __( 'Optionale Angabe zur Verifikation der Seite bei Google', 'piratenkleider' ),
+                  'parent'  => 'meta',
+              ),  
+
 	       'aktiv-autokeywords'  => array(
                   'type'    => 'bool',
                   'title'   => __( 'Keywords aus Tags', 'piratenkleider' ),

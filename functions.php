@@ -344,6 +344,65 @@ function piratenkleider_scripts() {
 }
 add_action('wp_enqueue_scripts', 'piratenkleider_scripts');
 
+
+function piratenkleider_addmetatags() {
+  global $defaultoptions;
+  global $options;
+
+    $output = "";
+    $output .= "\t".'<meta charset="'.get_bloginfo('charset').'">'."\n";
+    $output .= "\t".'<!--[if IE]> <meta http-equiv="X-UA-Compatible" content="IE=9"> <![endif]-->'."\n";
+    $output .= "\t".'<meta name="viewport" content="width=device-width, initial-scale=1.0">'."\n";
+    
+    if ((isset( $options['meta-description'] )) && ( strlen(trim($options['meta-description']))>1 )) {
+	 $output .= "\t".'<meta name="description" content="'.$options['meta-description'].'">'."\n";
+    }
+    if ((isset( $options['meta-author'] )) && ( strlen(trim($options['meta-author']))>1 )) {
+	$output .= "\t".'<meta name="author" content="'.$options['meta-author'].'">'."\n";
+     }
+    if ((isset( $options['meta-verify-v1'] )) && ( strlen(trim($options['meta-verify-v1']))>1 )) {
+	$output .= "\t".'<meta name="verify-v1" content="'.$options['meta-verify-v1'].'">'."\n";
+     }
+
+    $csv_tags = '';
+    $tags = '';
+    if ($options['aktiv-autokeywords']) {   
+	$posttags = get_tags(array('number'=> $maxwords, 'orderby' => 'count', 'order'=> 'DESC'));
+	$tags = '';
+	    if (isset($posttags)) {
+		foreach($posttags as $tag) {
+		    $csv_tags .= $tag->name . ',';
+		}	
+		$tags = substr( $csv_tags,0,-2);
+	    }
+	if ((isset($options['meta-keywords'])) && (strlen(trim($options['meta-keywords']))>1 )) {
+	    $tags = $options['meta-keywords'].', '.$tags;
+	}
+    } else {
+	if ((isset($options['meta-keywords'])) && (strlen(trim($options['meta-keywords']))>1 )) {
+	    $tags = $options['meta-keywords'];
+	}	
+    }
+    if ((isset($tags)) && (strlen(trim($tags))>2 )) {
+	if (strlen(trim($tags))>$maxlength) {
+	    $tags = substr($tags,0,strpos($tags,",",$maxlength));
+	}	
+	$output .= "\t".'<meta name="keywords" content="'.$tags.'">'."\n";
+    }
+    
+    if ((isset($options['favicon-file'])) && ($options['favicon-file']>0 )) {	 
+	$output .=  "\t".'<link rel="shortcut icon" href="'.wp_get_attachment_url($options['favicon-file']).'">'."\n";
+    } else {
+	$output .=  "\t".'<link rel="apple-touch-icon" href="'.get_template_directory_uri().'/apple-touch-icon.png">'."\n";
+	$output .=  "\t".'<link rel="shortcut icon" href="'.get_template_directory_uri().'/favicon.ico">'."\n";
+    }
+    echo $output;
+}
+
+add_action('wp_head', 'piratenkleider_addmetatags');
+
+    
+
 /* Anonymize IP */
 function getAnonymIp( $ip, $strongness = 2 ) {
     
@@ -941,42 +1000,6 @@ function piratenkleider_post_datumsbox() {
 }
 endif;
 
-if ( ! function_exists( 'piratenkleider_keywords' ) ) :
-/**
- * Fusszeile unter Artikeln: Ver&ouml;ffentlichungsdatum
- */
-function piratenkleider_keywords($maxlength = 140, $maxwords = 15 ) {
-    global $options;
-   
-    $csv_tags = '';
-    $tags = '';
-    if ($options['aktiv-autokeywords']) {   
-
-	$posttags = get_tags(array('number'=> $maxwords, 'orderby' => 'count', 'order'=> 'DESC'));
-	$tags = '';
-	    if (isset($posttags)) {
-		foreach($posttags as $tag) {
-		    $csv_tags .= $tag->name . ',';
-		}	
-		$tags = substr( $csv_tags,0,-2);
-	    }
-	if ((isset($options['meta-keywords'])) && (strlen(trim($options['meta-keywords']))>1 )) {
-	    $tags = $options['meta-keywords'].', '.$tags;
-	}
-    } else {
-	if ((isset($options['meta-keywords'])) && (strlen(trim($options['meta-keywords']))>1 )) {
-	    $tags = $options['meta-keywords'];
-	}	
-    }
-    if ((isset($tags)) && (strlen(trim($tags))>2 )) {
-	if (strlen(trim($tags))>$maxlength) {
-	    $tags = substr($tags,0,strpos($tags,",",$maxlength));
-	}	
-	echo '	<meta name="keywords" content="'.$tags.'">';
-    }
-   
-}
-endif;
 
 if ( ! function_exists( 'piratenkleider_post_pubdateinfo' ) ) :
 /**
@@ -1521,6 +1544,7 @@ add_action('login_head', 'custom_login');
 add_filter('upload_mimes', 'custom_upload_mimes');
 function custom_upload_mimes ( $existing_mimes=array() ) {
     $existing_mimes['css'] = 'text/plain';
+    $existing_mimes['ico'] = 'image/ico';
     return $existing_mimes;
 }
 

@@ -8,8 +8,20 @@
 <?php          
   global $defaultoptions;
   global $options;
+?>  
+    <title><?php wp_title( '|', true, 'right' ); ?></title> 
+    <link rel="profile" href="http://gmpg.org/xfn/11" />
+    <link rel="pingback" href="<?php bloginfo( 'pingback_url' ) ?>">    
+    <?php 
+     wp_head();    
+     ?>
 
-   
+
+<!--[if lte IE 7]>
+<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/yaml/core/iehacks.min.css" type="text/css"/>
+<![endif]-->
+
+<?php 
    $cssadd = '';
    if (isset($options['css-default-header-height'])
         && ($options['css-default-header-height'] > 0)    
@@ -27,36 +39,11 @@
        $cssadd .= $options['css-eigene-anweisungen'];
        $cssadd .= "\n";
     }
-?>  
-    <meta charset="<?php bloginfo( 'charset' ); ?>">
-    <!--[if IE]> <meta http-equiv="X-UA-Compatible" content="IE=9"> <![endif]-->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><?php wp_title( '|', true, 'right' ); ?></title>
-<?php
-if ((isset( $options['meta-description'] )) && ( strlen(trim($options['meta-description']))>1 )) { ?>
-    <meta name="description" content="<?php echo $options['meta-description'] ?>">
-<?php }
-if ((isset( $options['meta-author'] )) && ( strlen(trim($options['meta-author']))>1 )) { ?>
-    <meta name="author" content="<?php echo $options['meta-author'] ?>">
-<?php }
-    piratenkleider_keywords(); ?>    
-    <link rel="apple-touch-icon" href="<?php echo get_template_directory_uri(); ?>/apple-touch-icon.png">
-    <link rel="shortcut icon" href="<?php echo get_template_directory_uri(); ?>/favicon.ico">
-    <link rel="profile" href="http://gmpg.org/xfn/11" />
-<?php   
-   wp_head();     
-    echo '  <link rel="pingback" href="'.get_bloginfo( 'pingback_url' ).'">';    
-?>
-
-<!--[if lte IE 7]>
-<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/yaml/core/iehacks.min.css" type="text/css"/>
-<![endif]-->
-
-<?php if ((isset($cssadd)) && (strlen(trim($cssadd))>1)) {
-  echo "<style type=\"text/css\">\n";  
-  echo $cssadd;  
-  echo "</style>\n";  
-} ?>
+    if ((isset($cssadd)) && (strlen(trim($cssadd))>1)) {
+	echo "<style type=\"text/css\">\n";  
+	echo $cssadd;  
+	echo "</style>\n";  
+    } ?>
 </head>
                       
 <body <?php body_class(); ?>>
