@@ -2600,6 +2600,17 @@ ul.ts-fab-list li a {
     
 }  
 
+
+.liveblog-entry .liveblog-entry-text {
+    font-size: 1em;
+    line-height: 1em;
+}
+
+.liveblog-entry .liveblog-meta .liveblog-author-name {
+    color: #555555;
+}
+
+/* Tools innerhalb Piratenkleider */
 .content-primary .switchoff,
 .content-primary .switchon { 
     position: absolute;
