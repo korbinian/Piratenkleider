@@ -472,7 +472,7 @@ button, input[type="submit"],
 * @section content-generic-classes
 */
 .highlight {
-        color:#c30;
+        color:#000;
 }
 
 .dimmed {
@@ -2609,9 +2609,7 @@ ul.ts-fab-list li a {
 .liveblog-entry .liveblog-meta .liveblog-author-name {
     color: #555555;
 }
-.liveblog-entry .hightlight {
-    color: #000;
-}
+
 
 /* wp-liveticker */
 #ticker hr {
