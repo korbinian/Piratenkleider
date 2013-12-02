@@ -31,11 +31,7 @@ $defaultoptions = array(
     'src-flexslider'                => get_template_directory_uri(). "/js/jquery.flexslider-min.js",
     'src-layoutjs'                  => get_template_directory_uri(). "/js/layout.min.js",
     'src-comment-reply'             => get_template_directory_uri(). "/js/comment-reply.js",
-    'src-jplayer'		    => get_template_directory_uri(). "/js/jquery.jplayer.min.js",
-    'src-transform2d'		    => get_template_directory_uri(). "/js/jquery.transform2d.js",
-    'src-grab'			    => get_template_directory_uri(). "/js/jquery.grab.js",
-    'src-csstransforms'		    => get_template_directory_uri(). "/js/mod.csstransforms.min.js",
-    'src-circleplayer'		    => get_template_directory_uri(). "/js/circle.player.js",
+
     'src-default-symbolbild'        => get_template_directory_uri() .'/images/default-vorlage.jpg',
     'src-default-symbolbild-404'    => get_template_directory_uri() .'/images/default-404.jpg',
     'src-default-symbolbild-category'   => get_template_directory_uri() .'/images/default-vorlage.jpg',
@@ -48,7 +44,6 @@ $defaultoptions = array(
     
     'src-linkicons-css'		    => get_template_directory_uri() .'/css/basemod_linkicons.css',     
     'src-basemod_mediaqueries_allparts'	=> get_template_directory_uri() .'/css/basemod_mediaqueries_allparts.css', 
-    'src-circleplayer_css'	    => get_template_directory_uri() .'/css/circle.player.css', 
     'src-basemod_sidebarbottom'	    => get_template_directory_uri().'/css/basemod_sidebarbottom.css',
     'dir-default-plakate'	    => '/plakate',
     'login_errors'		    => 1,
@@ -76,7 +71,6 @@ $defaultoptions = array(
     'aktiv-autoren'                 => 1,
     'newsletter'                    => 0,
     'alle-socialmediabuttons'               => 1,
-    'aktiv-circleplayer'                    => 1,
     'aktiv-linkicons'			    => 1,
     'aktiv-linkmenu'                        => 1,
     'aktiv-startseite-kategorien'           => 1,
@@ -141,8 +135,6 @@ $defaultoptions = array(
     
     
     'url-newsletteranmeldung'		    => 'https://service.piratenpartei.de/subscribe/newsletter',
-    'css-default-header-height'     => 225,
-    'css-default-branding-padding-top'  => 40,
     'aktiv-mediaqueries-allparts'   => 0,
     'anonymize-user'                => 0,
     'anonymize-user-commententries' => 0,
@@ -175,8 +167,6 @@ $defaultoptions = array(
     'stickerlink3-url'              => '',
     'default_footerlink_key'		    => 'International (mit Flaggen)',
     'default_footerlink_show'		    => 1,    
-    'circleplayer-require-mp3fallback'	    => 1,
-
     'default_text_title_home_backlink'	    => __('Zur&uuml;ck zur Startseite','piratenkleider' ), 
     'yt-alternativeembed'		    => 1,
         /* YouTube Videos ueber eigenen Embedcode gestalten und an youtbe-nocookie lenken */
@@ -1246,13 +1236,7 @@ $setoptions = array(
                   'title'   => __( 'Spezielle Eigenschaften', 'piratenkleider' ),
               ),
 	       
-              'aktiv-circleplayer'   => array(
-                  'type'    => 'bool',
-                  'title'   => __( 'Circle Player', 'piratenkleider' ),
-                  'label'   => __( 'Circle Player (HTML5 Player) f&uuml;r MP3/OGG-Dateien in einzelnen Beitr&auml;gen aktivieren.', 'piratenkleider' ),
-                  'default' => $defaultoptions['aktiv-circleplayer'],
-		  'parent'  => 'spezial'
-              ),   
+             
                
               
               'post_disclaimer' => array(
@@ -1884,21 +1868,7 @@ $setoptions = array(
                   'title'   => __( 'Weitere Designoptionen', 'piratenkleider' ),
               ),
 	       
-	      'css-default-header-height' => array(
-                  'type'    => 'number',
-                  'title'   => __( 'H&ouml;he des Kopfbereiches ( .header )', 'piratenkleider' ),
-                  'label'   => __( 'Hinweis: Die Verkleinerung der H&ouml;he des Kopfteils ist nicht ungef&auml;hrlich. Zu beachten ist, dass der Kopfteil auch bei einer Vergr&ouml;&szlig;erung des Textes auf 200% noch gen&uuml;gend Platz haben muss!', 'piratenkleider' ),
-                  'default' => $defaultoptions['css-default-header-height'],
-		   'parent' => 'miscdesign',
-              ), 
-	      'css-default-branding-padding-top' => array(
-                  'type'    => 'number',
-                  'title'   => __( 'Abstand des Brandingbereiches (=Logo) nach oben ( .header .branding )', 'piratenkleider' ),
-                  'label'   => __( 'Das Logo hat einen Abstand nach oben. Diese kann &uuml;ber diese Angabe reduziert werden.', 'piratenkleider' ),
-                  'default' => $defaultoptions['css-default-branding-padding-top'],
-		    'parent' => 'miscdesign',
-              ), 
-             
+
 	      'css-eigene-anweisungen' => array(
                   'type'    => 'textarea',
                   'title'   => __( 'CSS-Anweisungen', 'piratenkleider' ),

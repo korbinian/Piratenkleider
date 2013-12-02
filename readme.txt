@@ -1,8 +1,8 @@
-Piratenkleider
+Piratenkleider 3
 - Wordpress-Theme für Webauftritte der Piratenpartei 
 ====================================================
 
-Version 2.20.2 von Wolfgang Wiese (xwolf), 18. November 2013
+Version 3.0 von Wolfgang Wiese (xwolf), 2. Dezember 2013
 
 
 DOWNLOADS
@@ -18,7 +18,7 @@ DOWNLOADS
 
 CREDITS & COPYRIGHT
 
- CC-BY-SA 3.0, http://creativecommons.org/licenses/by-sa/3.0/de/deed.de
+   GNU General Public License (GPL) Version 2 
 
 
 AUTOREN / ENTWICKLER
@@ -50,13 +50,11 @@ AUTOREN / ENTWICKLER
 
    Weitere verwendete Inhalte:
      - Social Media Icons: Paul Robert Lloyd, http://paulrobertlloyd.com/2009/06/social_media_icons      
-     - YAML CSS Framework (Lizensiert unter der Creative Commons Attribution 2.0 License).
      - JavaScript Framework jQuery (GNU General Public License (GPL) Version 2)
      - jQuery FlexSlider 2 (GPL v2)
      - Schrift Bebas Neue von Dharmatype (SIL Open Font License 1.1)
      - Schrift Droid Sans von Ascender (http://www.droidfonts.com/), Apache License 2.0 http://www.apache.org/licenses/LICENSE-2.0
      - Schrift Awesome http://fontawesome.io von Dave Gandy (SIL Open Font License 1.1)
-     - Circle Player, http://jplayer.org (GNU General Public License (GPL) Version 2)
 
 
 FEEDBACK & BUGS

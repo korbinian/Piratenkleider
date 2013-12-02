@@ -12,29 +12,16 @@
     <title><?php wp_title( '|', true, 'right' ); ?></title> 
     <link rel="profile" href="http://gmpg.org/xfn/11" />
     <link rel="pingback" href="<?php bloginfo( 'pingback_url' ) ?>">    
-    <?php 
-     wp_head();    
-     ?>
+    <?php  wp_head();  ?>
 
 
-<!--[if lte IE 7]>
-<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/yaml/core/iehacks.min.css" type="text/css"/>
-<![endif]-->
+    <!--[if lte IE 7]>
+    <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/iehacks.min.css" type="text/css"/>
+    <![endif]-->
 
 <?php 
    $cssadd = '';
-   if (isset($options['css-default-header-height'])
-        && ($options['css-default-header-height'] > 0)    
-        && ($options['css-default-header-height'] != $defaultoptions['css-default-header-height'])) {
-       $cssadd .= '.header { height: '.$options['css-default-header-height'].'px; }';
-       $cssadd .= "\n";
-    }
-    if (isset($options['css-default-branding-padding-top'])
-        && ($options['css-default-branding-padding-top'] > 0)    
-        && ($options['css-default-branding-padding-top'] != $defaultoptions['css-default-branding-padding-top'])) {
-       $cssadd .= '.header .branding { padding-top: '.$options['css-default-branding-padding-top'].'px; }';
-       $cssadd .= "\n";
-    }
+  
     if (isset($options['css-eigene-anweisungen'])) {
        $cssadd .= $options['css-eigene-anweisungen'];
        $cssadd .= "\n";
@@ -56,7 +43,6 @@
 		<?php } ?>
             </ul>
         </nav>
-
 	<div class="section header">
 		<div class="row">
 			<div class="branding">

@@ -48,10 +48,10 @@
  
         <section <?php post_class(); ?> id="post-<?php the_ID(); ?>">
 	    <?php 
-		if ( (isset($custom_fields['show-post-disclaimer']))
-                 && ($custom_fields['show-post-disclaimer'][0]<>'') 
+		if ( (isset($custom_fields['piratenkleider-show-post-disclaimer']))
+                 && ($custom_fields['piratenkleider-show-post-disclaimer'][0]<>'') 
                  && ($options['post_disclaimer']<>'') 
-                 && ( ($custom_fields['show-post-disclaimer'][0]==1) || ($custom_fields['show-post-disclaimer'][0]==3)) 
+                 && ( ($custom_fields['piratenkleider-show-post-disclaimer'][0]==1) || ($custom_fields['piratenkleider-show-post-disclaimer'][0]==3)) 
                 ) {
 		   echo '<div class="disclaimer">'.$options['post_disclaimer'].'</div>';
                 }				
@@ -61,10 +61,10 @@
 		<?php the_content(); ?>
 	      </article>
              <?php 
-            if ( (isset($custom_fields['show-post-disclaimer']))
-                 &&   ($custom_fields['show-post-disclaimer'][0]<>'') 
+            if ( (isset($custom_fields['piratenkleider-show-post-disclaimer']))
+                 &&   ($custom_fields['piratenkleider-show-post-disclaimer'][0]<>'') 
                  && ($options['post_disclaimer']<>'') 
-                 && ( ($custom_fields['show-post-disclaimer'][0]==2) || ($custom_fields['show-post-disclaimer'][0]==3)) 
+                 && ( ($custom_fields['piratenkleider-show-post-disclaimer'][0]==2) || ($custom_fields['piratenkleider-show-post-disclaimer'][0]==3)) 
                 ) {
                 echo '<div class="disclaimer">';
                 echo $options['post_disclaimer'];
@@ -137,27 +137,30 @@
 	       <?php
 
 		if (  
-			( isset($custom_fields['text']) && isset($custom_fields['image_url']) && 
-			   ($custom_fields['image_url'][0]<>'') && ($custom_fields['text'][0]<>''))
+			( isset($custom_fields['piratenkleider_sidebar-text']) 
+                        && isset($custom_fields['piratenkleider_sidebar-image_url']) && 
+			   ($custom_fields['piratenkleider_sidebar-image_url'][0]<>'') 
+                        && ($custom_fields['piratenkleider_sidebar-text'][0]<>''))
 			|| (
-				(isset($custom_fields['text']) && $custom_fields['text'][0]<>'') && (has_post_thumbnail())))             
+				(isset($custom_fields['piratenkleider_sidebar-text']) 
+                                && $custom_fields['piratenkleider_sidebar-text'][0]<>'') 
+                                && (has_post_thumbnail())))             
 		    {   ?>
 		    <div id="steckbrief">   
 			<?php
-			if (isset($custom_fields['image_url']) &&  $custom_fields['image_url'][0]<>'') {
-			    echo wp_get_attachment_image( $custom_fields['image_url'][0], array(300,300) ); 
+			if (isset($custom_fields['piratenkleider_sidebar-image_url']) &&  $custom_fields['piratenkleider_sidebar-image_url'][0]<>'') {
+			    echo wp_get_attachment_image( $custom_fields['piratenkleider_sidebar-image_url'][0], array(300,300) ); 
 			} else {
 			     the_post_thumbnail(array(300,300));
 			} ?>
 
 			<div class="text">
-			     <?php echo do_shortcode(get_post_meta($post->ID, 'text', $single = true)); ?>
+			     <?php echo do_shortcode(get_post_meta($post->ID, 'piratenkleider-sidebar-text', $single = true)); ?>
 			</div>
 		   </div>
 		   <?php 
 		}  
 
-		piratenkleider_echo_player();       
 		get_sidebar(); 
 		?>
 	      </div>

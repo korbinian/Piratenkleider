@@ -3,12 +3,9 @@ global $options;
 ?>
 <div class="section content" id="main-content">
   <div class="row">
-    <div class="content-primary">
-	
+    <div class="content-primary">	
 	<?php 
 
-
-	
 	if ( have_posts() ) while ( have_posts() ) : the_post();         
         $custom_fields = get_post_custom();
         ?>

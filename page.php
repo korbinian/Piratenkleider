@@ -77,18 +77,11 @@
             <?php
             
             get_piratenkleider_seitenmenu($options['zeige_sidebarpagemenu'],$options['zeige_subpagesonly'],$options['seitenmenu_mode']);
-        
-
-             if ( get_post_meta($post->ID, 'right_column', true) )
-             echo do_shortcode(get_post_meta($post->ID, 'right_column', $single = true));
+             if ( get_post_meta($post->ID, 'piratenkleider_sidebar-content', true) )
+             echo do_shortcode(get_post_meta($post->ID, 'piratenkleider_sidebar-content', $single = true));
              
-
-        if (!isset($options['aktiv-circleplayer'])) 
-            $options['aktiv-circleplayer'] = $defaultoptions['aktiv-circleplayer']; 
-        if ($options['aktiv-circleplayer']==1) {
-            piratenkleider_echo_player();
-        }
-         get_sidebar(); ?>
+         get_sidebar(); 
+             ?>
       </div>
     </div>
 	<?php } ?>
