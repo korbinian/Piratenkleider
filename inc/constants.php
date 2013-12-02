@@ -172,7 +172,6 @@ $defaultoptions = array(
         /* YouTube Videos ueber eigenen Embedcode gestalten und an youtbe-nocookie lenken */
     'yt-norel'				    => 1,
 	/* Keine weiteren Videos vorschlagen */
-    'aktiv-wombat'			    => 0,
     'excerpt_allowtags'			    => '<br>,<br />',        
     'zeige_breadcrump'			    => 1,
     'breadcrumb_delimiter'		    => ' / ',    
@@ -1939,12 +1938,7 @@ $setoptions = array(
                   'default' => $defaultoptions['yt-alternativeembed'],
               ),  
 	       
-	      'aktiv-wombat' => array(
-                  'type'    => 'bool',
-                  'title'   => __( 'Wombat', 'piratenkleider' ),
-                  'label'   => __( 'Aktiviert die Anzeige des kleinen Wombats (CC by Nicole Britz)', 'piratenkleider' ),
-                  'default' => $defaultoptions['aktiv-wombat'],
-              ),   
+	      
 	       
               'anonymitaet'  => array(
                   'type'    => 'section',

@@ -3756,12 +3756,3 @@ html[xmlns] .slides {
 
 .embed-youtube p img {margin: 0 5px 0 0;}
 
-#wombat {
-    position: absolute;
-    top: 110px;
-    right: 10px;
-}
-#wombat img {
-    margin: 0;
-    padding: 0;
-}
