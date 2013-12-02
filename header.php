@@ -12,14 +12,7 @@
     <title><?php wp_title( '|', true, 'right' ); ?></title> 
     <link rel="profile" href="http://gmpg.org/xfn/11" />
     <link rel="pingback" href="<?php bloginfo( 'pingback_url' ) ?>">    
-    <?php  wp_head();  ?>
-
-
-    <!--[if lte IE 7]>
-    <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/iehacks.min.css" type="text/css"/>
-    <![endif]-->
-
-<?php 
+    <?php  wp_head(); 
    $cssadd = '';
   
     if (isset($options['css-eigene-anweisungen'])) {
