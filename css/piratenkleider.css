@@ -1675,6 +1675,11 @@ display: inline-block;
     background: #d97300;
     text-decoration: underline;
 }      
+.sticky .infoimage > img {
+    background: none repeat scroll 0 0 white;
+    border: 1px solid #FF8800;
+    border-radius: 5px;
+}
 
 .post-comments #comments-title {
   margin-bottom: 20px; }

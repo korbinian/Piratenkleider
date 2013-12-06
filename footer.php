@@ -29,7 +29,7 @@
       $animationType = $options['slider-animationType']; 
 
        if  ( (($options['slider-aktiv']==1) && (is_home() || is_front_page()))
-          || (($options['slider-aktiv']==1) && is_category() && ($options['category-startpageview']==1))
+          || (is_category() && ($options['category-teaser']==1))
 	  || ($options['slider-defaultwerbeplakate']==1)  ) {
         if ($slideshowSpeed <1000) {$slideshowSpeed=8000;}
         if ($animationDuration <100) {$animationDuration=600;}
