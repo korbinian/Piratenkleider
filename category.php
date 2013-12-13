@@ -5,7 +5,7 @@
       $thisCat = $cat_obj->term_id;
       $thisCatName =  get_cat_name($thisCat);
        $image_url = '';	
-  if (($options['category-teaser']) || (($options['category-startpageview']) && ( $options['slider-aktiv'] == "1" ))) { 
+  if ($options['category-teaser']) { 
     echo '<div class="section teaser"><div class="row">';   
     get_sidebar( 'teaser' );
     echo '</div></div>';    
@@ -31,7 +31,7 @@
                <h1 class="post-title"><span><?php printf( __( 'Kategorie %s', 'piratenkleider' ), '' . single_cat_title( '', false ) . '' ); ?></span></h1>
                <div class="symbolbild"><img src="<?php echo $image_url ?>" alt=""></div>	 	
                <?php                  
-              if (($options['category-teaser']) || (($options['category-startpageview']) && ( $options['slider-aktiv'] == "1" ))) { 	  
+              if ($options['category-teaser'])  { 	  
                     echo '<h1 class="skip">'.__("Aktuelle Artikel", 'piratenkleider').' ';
                     printf( __( 'Kategorie %s', 'piratenkleider' ), '' . single_cat_title( '', false ) . '' );
                     echo '</h1>';	    	     
