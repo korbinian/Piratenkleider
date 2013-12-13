@@ -5,7 +5,7 @@
  **/ 
 
 $defaultoptions = array(
-    'js-version'                    => '2.20',
+    'js-version'                    => '3.0',
     'content-width'                 => 665,
     'yt-content-width'              => 665,
     'yt-content-height'             => 500,
@@ -460,8 +460,54 @@ $default_fontstyles = array(
     'font-awesome.css'	=> __( 'Awesome', 'piratenkleider' ),
     'font-bebas-awesome.css'	=> __( 'Bebas &amp; Awesome', 'piratenkleider' ),
     'font-standard.css'	=> __( 'Helvetica, Arial, sans-serif', 'piratenkleider' ),
-
  );
+
+$default_fonts = array(
+    'BebasNeue' => array(
+        'title' => __( 'Bebas Neue', 'piratenkleider' ),
+        'comments'  => '',
+        'webfont'   => 1,
+        'eot'   => '/fonts/BebasNeue-webfont.eot',
+        'svg'   => '/fonts/BebasNeue-webfont.svg',
+        'ttf'   => '/fonts/BebasNeue-webfont.ttf',
+        'woff'   => '/fonts/BebasNeue-webfont.woff',
+    ),
+    'Awesome' => array(
+        'title' => __( 'Awesome', 'piratenkleider' ),
+        'comments'  => '',
+        'webfont'   => 1,
+        'eot'   => '/fonts/fontawesome-webfont.eot',
+        'svg'   => '/fonts/fontawesome-webfont.svg',
+        'ttf'   => '/fonts/fontawesome-webfont.ttf',
+        'woff'   => '/fonts/fontawesome-webfont.woff',
+    ),
+    'DroidSans' => array(
+        'title' => __( 'Droid Sans', 'piratenkleider' ),
+        'comments'  => '',
+        'webfont'   => 1,
+        'eot'   => '/fonts/DroidSans.eot',
+        'ttf'   => '/fonts/DroidSans.ttf',
+    ),    
+    'LinLibertine' => array(
+        'title' => __( 'Libertine', 'piratenkleider' ),
+        'comments'  => '',        
+        'webfont'   => 1,
+        'woff'   => '/fonts/LinLibertine_R.woff',
+    ),    
+    'monospace' => array(
+        'title' => __( 'Courier, sans-serif', 'piratenkleider' ),
+        'family' => 'Courier, Monospace, sans-serif',
+    ),    
+    'serifdefault' => array(
+        'title' => __( 'Calibri, sans', 'piratenkleider' ),
+        'family' => 'Calibri, sans',
+    ),      
+    'default' => array(
+        'title' => __( 'Helvetica, Verdana, Arial, sans-serif', 'piratenkleider' ),
+        'family' => 'Helvetica, Verdana, Arial, sans-serif',
+        'comments'  =>  __( 'Standard serifenlose Schrift', 'piratenkleider' ),
+    ),    
+);
 
 /*
  * Default font modifications for standard css style
@@ -1804,6 +1850,30 @@ $setoptions = array(
                   'liste'   => $default_fontstyles,
 		  	  'parent'  => 'style', 
               ),
+              'fonts-headers' => array(
+                  'type'    => 'fontselect',
+                  'title'   => __( 'Schrift &Uuml;berschriften', 'piratenkleider' ),
+                  'label'   => __( 'Schriftart der &Uuml;berschriften.', 'piratenkleider' ),
+                  'default' => 'default',
+                  'liste'   => $default_fonts,
+		  	  'parent'  => 'style', 
+              ), 
+              'fonts-menu' => array(
+                  'type'    => 'fontselect',
+                  'title'   => __( 'Schrift Men&uuml;', 'piratenkleider' ),
+                  'label'   => __( 'Schriftart der Eintr&auml;ge im Hauptmen&uuml;.', 'piratenkleider' ),
+                  'default' => 'default',
+                  'liste'   => $default_fonts,
+		  	  'parent'  => 'style', 
+              ),                
+              'fonts-content' => array(
+                  'type'    => 'fontselect',
+                  'title'   => __( 'Schrift Text', 'piratenkleider' ),
+                  'label'   => __( 'Schriftart der normalen Texte.', 'piratenkleider' ),
+                  'default' => 'default',
+                  'liste'   => $default_fonts,
+		  	  'parent'  => 'style', 
+              ),               
 	      'aktiv-mediaqueries-allparts' => array(
                   'type'    => 'bool',
                   'title'   => __( 'Small Screen Device Sichtbarkeit', 'piratenkleider' ),

@@ -362,6 +362,46 @@ function theme_options_do_page($tab = '') {
                                     }  
                                         echo "\t\t\t</select><br>\n";                                   
                                         echo "\t\t\t<label for=\"piratenkleider_theme_options[$name]\">$label</label>\n"; 
+                               } elseif ($type=='fontselect') {
+                                    echo "\t\t\t";
+                                    /* 
+                                    echo "<style>\n";
+                                     foreach($liste as $i => $value) {
+                                         if (isset($value['webfont']) && $value['webfont']==1) {                                             
+                                              echo '@font-face { font-family: '.$i.'; local: '.$i.'; src: ';
+                                              if (isset($value['eot']))
+                                                  echo 'url('.get_template_directory_uri().$value['eot'].') format("embedded-opentype"), ';
+                                              if (isset($value['ttf']))
+                                                  echo 'url('.get_template_directory_uri().$value['ttf'].') format("truetype"), ';
+                                              if (isset($value['woff']))
+                                                  echo 'url('.get_template_directory_uri().$value['woff'].') format("woff"), ';
+                                              if (isset($value['svg']))
+                                                  echo 'url('.get_template_directory_uri().$value['svg'].') format("svg"), ';                                              
+                                            echo "; }\n"; 
+                                         }
+                                     }
+                                     echo "</style>\n";
+                                     */
+                                    echo "<select name=\"piratenkleider_theme_options[$name]\">\n";
+
+                                    foreach($liste as $i => $value) {   
+                                        echo "\t\t\t\t";
+                                        if ((isset($value['webfont']) && $value['webfont']==1)) {
+                                            echo '<option style="font-size: 2em; font-family: '.$i.';" value="'.$i.'"';
+                                        } else {
+                                            echo '<option style="font-size: 2em; font-family: '.$value['family'].';" value="'.$i.'"';                                            
+                                        }
+                                        if ( $i == $options[$name] ) {
+                                            echo ' selected="selected"';
+                                        }                                                                                                                                                                
+                                        echo '>';
+                                        echo $value['title'];
+                                        echo ' (ABCDEFGH 1234567890 ÖÜÄ äöü ß abcdefgh)';                 
+                                        echo '</option>';                                                                                                                                                              
+                                        echo "\n";                                            
+                                    }  
+                                        echo "\t\t\t</select><br>\n";                                   
+                                        echo "\t\t\t<label for=\"piratenkleider_theme_options[$name]\">$label</label>\n"; 
 
                                 }
 
