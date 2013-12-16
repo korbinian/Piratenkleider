@@ -19,19 +19,13 @@
 
 */
 
-@font-face {
-  font-family: 'BebasNeueRegular';
-  src: url("../fonts/BebasNeue-webfont.eot");
-  src: url("../fonts/BebasNeue-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/BebasNeue-webfont.woff") format("woff"), url("../fonts/BebasNeue-webfont.ttf") format("truetype"), url("../fonts/BebasNeue-webfont.svg#BebasNeueRegular") format("svg");
-  }
+
 
 @media screen, projection {
   body {
     background: #B127AF url("../images/int/bg-tags-us.png") -20% top fixed; 
     }
-    h1, h2, h3, .bebas, .cifont {
-      font-family: "BebasNeueRegular", Helvetica, Arial, sans-serif;
-    }
+
     a {     
       color: #06C;
       -webkit-tap-highlight-color: #2d7dc5; 
@@ -128,7 +122,6 @@
     }    
     
 .sticker ul li {  
-    font-family: "BebasNeueRegular",Helvetica,Arial,sans-serif; 
     border-color: transparent;     
   }
 
@@ -191,7 +184,6 @@
   }
     .second-teaser-widget-area li a div {
       color: black;
-      font-family: "BebasNeueRegular", Helvetica, Arial, sans-serif;
       text-shadow: 0 -1px 1px #552554;
 
     }
@@ -220,7 +212,6 @@
   }
  .teaserlinks ul li a {
      color: white;
-     font-family: "BebasNeueRegular", Helvetica, Arial, sans-serif;
      text-shadow: 0 -1px 1px #552554;
  }
   .teaserlinks ul li a:hover,
@@ -250,7 +241,6 @@
     .content .symbolbild .aaarh {
          background: transparent;
          color: black;
-         font-family: "BebasNeueRegular", Helvetica, Arial, sans-serif;
     }
     .content-header-big {
 	  background: url(../images/int/bg-tags-us.png);
@@ -262,9 +252,7 @@
     border-color: black; 
     background-color: beige;
   }
-   .content-primary .post-nav a {
-      font-family: "BebasNeueRegular", Helvetica, Arial, sans-serif;
-     }
+
       .content-primary .sprungmarken ol li a:hover {
           background: #B127AF;
           color: black;
@@ -285,9 +273,7 @@
     box-shadow: 1px 1px 2px #444444; 
   }
 
-    .post .post-info .cal-icon .day {
-        font-family: "BebasNeueRegular", Helvetica, Arial, sans-serif;
-    }
+
     .post .post-meta {
          color: #222;
     }
@@ -328,9 +314,7 @@
             color: #888;
     }
 
-    .first-startpage-widget-area li a {
-      font-family: "BebasNeueRegular", Helvetica, Arial, sans-serif;
-      }
+
      .first-startpage-widget-area a.all-articles {
         background: #2d7dc5;
         color: white;

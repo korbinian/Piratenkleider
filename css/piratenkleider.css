@@ -116,11 +116,9 @@ audio:not([controls]) {
 /* Typography -------------------------------------------------------------- */
 body {
     font-size: 0.8em;
-    font-family: "FontPiratenkleiderDefault", Helvetica, Arial, sans-serif;
     line-height: 1.5em;
 }
 select, input, textarea, button {
-  font-family: "FontPiratenkleiderDefault", Helvetica, Arial, sans-serif;
   font-size: 0.8em;
   line-height: 1.5em;
   color: black; 
@@ -133,8 +131,7 @@ h1, h2, h3, h4, h5, h6 {
   margin-bottom: 9px;
 }
 
-h1, h2, h3, .bebas, .cifont {
-  font-family: "FontPiratenkleiderHeadlines", Helvetica, Arial, sans-serif;
+h1, h2, h3, .cifont {
   letter-spacing: 1px; 
 }
 
@@ -556,7 +553,6 @@ button, input[type="submit"],
 }    
     
 .tagcloud {
-  font-family: "FontPiratenkleiderHeadlines", Helvetica, Arial, sans-serif;
   line-height: 1.8em;
   text-align: center;
   margin-top: 1em;      
@@ -722,7 +718,6 @@ div#searchform {
     float: left;
     text-align: center;
     font-size: 34px;
-    font-family: "FontPiratenkleiderHeadlines",Helvetica,Arial,sans-serif;
     letter-spacing: 1px;
     margin: 10px;
     line-height: 0.9em;     
@@ -958,7 +953,6 @@ display: inline-block;
   }
     .second-teaser-widget-area li a div {
       color: black;
-      font-family: "FontPiratenkleiderHeadlines",  Helvetica, Arial, sans-serif;
       letter-spacing: 1px;
       text-shadow: 0 -1px 1px #c36800;
       font-size: 19px; 
@@ -1022,7 +1016,6 @@ display: inline-block;
   }
  .teaserlinks ul li a {
     color: white;
-    font-family: "FontPiratenkleiderHeadlines", Helvetica, Arial, sans-serif;
     letter-spacing: 1px;
     text-shadow: 0 -1px 1px #c36800;
     font-size: 22px;     
@@ -1054,7 +1047,6 @@ display: inline-block;
     display: block;    
     color: black;
     text-shadow: 0 0 0; 
-    font-family: "FontPiratenkleiderDefault", Helvetica, Arial, sans-serif;
  
   }
 .teaserlinks ul li a:hover span,
@@ -1206,7 +1198,6 @@ display: inline-block;
     margin-left: 10px;
   }
     .content-primary .post-nav a {
-      font-family: "FontPiratenkleiderHeadlines", Helvetica, Arial, sans-serif;
       font-size: 20px; }
     .content-primary .post-nav ul li {
       list-style: none; }
@@ -1234,7 +1225,6 @@ display: inline-block;
 .content-primary ol.az dl {
     float: left; }
 .content-primary ol.az dl dt {
-    font-family: "FontPiratenkleiderHeadlines", Helvetica, Arial, sans-serif;
     font-size: 20px;
     font-weight: lighter;
     letter-spacing: 1px; }
@@ -1605,7 +1595,6 @@ display: inline-block;
   }
     .post .post-info .cal-icon .day {
       font-size: 24px;
-      font-family: "FontPiratenkleiderHeadlines", Helvetica, Arial, sans-serif;
       line-height: 18px; 
       white-space: nowrap; 
     }
@@ -1894,7 +1883,6 @@ img.wp-smiley {
       -webkit-transition: all 0.2s ease-in-out;
       transition: all 0.2s ease-in-out; }
 .first-startpage-widget-area li a {
-      font-family: "FontPiratenkleiderHeadlines", Helvetica, Arial, sans-serif;
       font-size: 20px; }
     
 .first-startpage-widget-area li:hover span.date,
@@ -3473,7 +3461,6 @@ html[xmlns] .slides {
       border-bottom-right-radius: 0;
       border-bottom-left-radius: 0;
       color: black;
-      font-family: "FontPiratenkleiderHeadlines", Helvetica, Arial, sans-serif;
       font-weight: lighter;
       font-size: 21.6px;
       letter-spacing: 1px;

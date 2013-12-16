@@ -387,16 +387,19 @@ function theme_options_do_page($tab = '') {
                                     foreach($liste as $i => $value) {   
                                         echo "\t\t\t\t";
                                         if ((isset($value['webfont']) && $value['webfont']==1)) {
-                                            echo '<option style="font-size: 2em; font-family: '.$i.';" value="'.$i.'"';
+                                            echo '<option style="font-size: 1.5em; font-family: '.$i.';" value="'.$i.'"';
+                                        } elseif ($i == 'none') {    
+                                            echo '<option style="font-size: 1.5em;" value="'.$i.'"';
                                         } else {
-                                            echo '<option style="font-size: 2em; font-family: '.$value['family'].';" value="'.$i.'"';                                            
+                                            echo '<option style="font-size: 1.5em; font-family: '.$value['family'].';" value="'.$i.'"';                                            
                                         }
                                         if ( $i == $options[$name] ) {
                                             echo ' selected="selected"';
                                         }                                                                                                                                                                
                                         echo '>';
                                         echo $value['title'];
-                                        echo ' (ABCDEFGH 1234567890 ÖÜÄ äöü ß abcdefgh)';                 
+                                        if ($i != 'none')
+                                            echo ' (ABCIJL abcijl 1234567890 ÄÖÜäöüß @<>?)';                 
                                         echo '</option>';                                                                                                                                                              
                                         echo "\n";                                            
                                     }  
@@ -495,7 +498,7 @@ function theme_options_validate( $input ) {
                             $output[$name]  =  wp_filter_nohtml_kses( $input[$name] ); 
                         } elseif ($type=='number') {
                             $output[$name]  =  wp_filter_nohtml_kses( $input[$name] ); 
-                        } elseif ($type=='select') {                        
+                        } elseif (($type=='select') || ($type=='fontselect')) {                        
                             $output[$name]  =  wp_filter_nohtml_kses( $input[$name] ); 
                         } elseif (($type=='bildchecklist') || ($type=='bilddirchecklist')) {                            
                             $output[$name]  = $input[$name];
@@ -520,7 +523,7 @@ function theme_options_validate( $input ) {
                             $output[$name] = 0;
                         } elseif ($type=='file') {
                             $output[$name] = '';    
-                        } elseif ($type=='select') {                        
+                        } elseif (($type=='select') || ($type=='fontselect')) {                        
                             $output[$name] = "";
                         }
                     }

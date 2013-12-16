@@ -192,6 +192,9 @@ $defaultoptions = array(
     
     'stylefile-position'		    => 0,
     'aktiv-stylefile'			    => 0,
+    'default-fonts-headers'                 => 'LinLibertine',
+    'default-fonts-menuheaders'             => 'BebasNeue',
+    'default-fonts-content'                 => 'LinLibertine',
 );
 
 
@@ -451,18 +454,22 @@ $default_colorstyles = array(
 
  );
           
-/*
- * Default font modifications for standard css style
- */
-$default_fontstyles = array(
-    'font-bebas.css'	=> __( 'Bebas Neue', 'piratenkleider' ),
-    'font-droid.css'	=> __( 'Droid Sans', 'piratenkleider' ),
-    'font-awesome.css'	=> __( 'Awesome', 'piratenkleider' ),
-    'font-bebas-awesome.css'	=> __( 'Bebas &amp; Awesome', 'piratenkleider' ),
-    'font-standard.css'	=> __( 'Helvetica, Arial, sans-serif', 'piratenkleider' ),
- );
+
 
 $default_fonts = array(
+    'none'=> array(
+        'title' => __( 'Keine Schriftart setzen (Browserdefault oder CSS-Settings nutzen)', 'piratenkleider' ),
+        'family' => '',
+    ),      
+    'serifdefault' => array(
+        'title' => __( 'Calibri, sans', 'piratenkleider' ),
+        'family' => 'Calibri, sans',
+    ),       
+    'sansserifdefault' => array(
+        'title' => __( 'Helvetica, Verdana, Arial, sans-serif', 'piratenkleider' ),
+        'family' => 'Helvetica, Verdana, Arial, sans-serif',
+        'comments'  =>  __( 'Standard serifenlose Schrift', 'piratenkleider' ),
+    ),  
     'BebasNeue' => array(
         'title' => __( 'Bebas Neue', 'piratenkleider' ),
         'comments'  => '',
@@ -498,15 +505,7 @@ $default_fonts = array(
         'title' => __( 'Courier, sans-serif', 'piratenkleider' ),
         'family' => 'Courier, Monospace, sans-serif',
     ),    
-    'serifdefault' => array(
-        'title' => __( 'Calibri, sans', 'piratenkleider' ),
-        'family' => 'Calibri, sans',
-    ),      
-    'default' => array(
-        'title' => __( 'Helvetica, Verdana, Arial, sans-serif', 'piratenkleider' ),
-        'family' => 'Helvetica, Verdana, Arial, sans-serif',
-        'comments'  =>  __( 'Standard serifenlose Schrift', 'piratenkleider' ),
-    ),    
+      
 );
 
 /*
@@ -1842,35 +1841,28 @@ $setoptions = array(
                   'liste'   => $default_colorstyles,
 			  'parent'  => 'style', 
               ),
-	      'css-fontfile' => array(
-                  'type'    => 'select',
-                  'title'   => __( 'Schriftarten', 'piratenkleider' ),
-                  'label'   => __( 'Auswahl, welcher Schriftstil f&uuml;r die Website verwendet werden soll.', 'piratenkleider' ),
-                  'default' => $defaultoptions['default-fontset-file'],
-                  'liste'   => $default_fontstyles,
-		  	  'parent'  => 'style', 
-              ),
+
               'fonts-headers' => array(
                   'type'    => 'fontselect',
                   'title'   => __( 'Schrift &Uuml;berschriften', 'piratenkleider' ),
-                  'label'   => __( 'Schriftart der &Uuml;berschriften.', 'piratenkleider' ),
-                  'default' => 'default',
+                  'label'   => __( 'Schriftart der &Uuml;berschriften. <br>Definiert die CSS font-family <code>FontPiratenkleiderHeadlines</code>', 'piratenkleider' ),
+                  'default' => $defaultoptions['default-fonts-headers'],
                   'liste'   => $default_fonts,
 		  	  'parent'  => 'style', 
               ), 
-              'fonts-menu' => array(
+              'fonts-menuheaders' => array(
                   'type'    => 'fontselect',
                   'title'   => __( 'Schrift Men&uuml;', 'piratenkleider' ),
-                  'label'   => __( 'Schriftart der Eintr&auml;ge im Hauptmen&uuml;.', 'piratenkleider' ),
-                  'default' => 'default',
+                  'label'   => __( 'Schriftart der Eintr&auml;ge im Hauptmen&uuml;. <br>Definiert die CSS font-family <code>FontPiratenkleiderMenuHeadlines</code>', 'piratenkleider' ),
+                  'default' => $defaultoptions['default-fonts-menuheaders'],
                   'liste'   => $default_fonts,
 		  	  'parent'  => 'style', 
               ),                
               'fonts-content' => array(
                   'type'    => 'fontselect',
                   'title'   => __( 'Schrift Text', 'piratenkleider' ),
-                  'label'   => __( 'Schriftart der normalen Texte.', 'piratenkleider' ),
-                  'default' => 'default',
+                  'label'   => __( 'Schriftart der normalen Texte. <br>Definiert die CSS font-family <code>FontPiratenkleiderDefault</code>', 'piratenkleider' ),
+                  'default' => $defaultoptions['default-fonts-content'],
                   'liste'   => $default_fonts,
 		  	  'parent'  => 'style', 
               ),               

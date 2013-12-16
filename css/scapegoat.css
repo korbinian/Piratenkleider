@@ -449,7 +449,6 @@ textarea {
 	/* ------------------------------ Headlines */
 
 h1, h2, h3, h4, h5, h6, h7 {
-	font-family: "FontPiratenkleiderDefault", 'Helvetica Neue', 'Arial', Sans-Serif;
 	font-weight: 400;
 	margin: 1em 0;
 	color: #181818;
@@ -1561,7 +1560,6 @@ body {
 
 #logo {
 	float: left;
-	font-family: "FontPiratenkleiderDefault", 'Helvetica Neue', 'Arial', Sans-Serif;
 	max-width: 75%;
 	max-height: 10em;
 
@@ -1741,7 +1739,6 @@ body {
     float: left;
     text-align: center;
     font-size: 34px;
-    font-family: "FontPiratenkleiderHeadlines",Helvetica,Arial,sans-serif;
     letter-spacing: 1px;
     margin: 10px;
     line-height: 0.9em;     
@@ -1963,7 +1960,6 @@ float: left;
 
   }
     .second-teaser-widget-area li a div {
-      font-family: "FontPiratenkleiderHeadlines",  Helvetica, Arial, sans-serif;
       letter-spacing: 1px;
       text-shadow: 0 -1px 1px #c36800;
       font-size: 19px; 
@@ -2024,7 +2020,6 @@ float: left;
   }
  .teaserlinks ul li a {
     color: white;
-    font-family: "FontPiratenkleiderHeadlines", Helvetica, Arial, sans-serif;
     letter-spacing: 1px;
     text-shadow: 0 -1px 1px #c36800;
     font-size: 22px;     
@@ -2056,7 +2051,6 @@ float: left;
     display: block;    
     color: black;
     text-shadow: 0 0 0; 
-    font-family: "FontPiratenkleiderDefault", Helvetica, Arial, sans-serif;
  
   }
 .teaserlinks ul li a:hover span,
@@ -2769,7 +2763,6 @@ float: left;
 }
 
 #front-page-slider .front-page-slide .slide-text .slide-text-title {
-	font-family: "FontPiratenkleiderDefault", 'Helvetica Neue', 'Arial', Sans-Serif;
 	font-size: 2em;
 	line-height: 1em;
 	color: #fff;
@@ -3566,7 +3559,6 @@ float: left;
 
 .tagcloud {
     /*
-  font-family: "FontPiratenkleiderHeadlines", Helvetica, Arial, sans-serif;
   line-height: 1.8em;
   text-align: center;
   margin-top: 1em;     */ 
@@ -3937,7 +3929,6 @@ background: linear-gradient(to right, rgba(0, 0, 0, 1) , #2d7dc5); /* Standard s
     display: inline-block;
     padding: 0 5px; 
     z-index: 99;
-    font-family: "FontPiratenkleiderHeadlines",Helvetica,Arial,sans-serif;
 }
 .first-teaser-widget-area .slide .bigslider  {
   /*  background: none repeat scroll 0 0 #111111; */

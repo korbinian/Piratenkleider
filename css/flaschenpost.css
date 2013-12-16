@@ -126,7 +126,6 @@ background: #000000;
 
     
 .sticker ul li {  
-    font-family: "FontPiratenkleiderHeadlines",Helvetica,Arial,sans-serif; 
     border-color: transparent;     
   }
   .sticker ul li a {    
@@ -184,7 +183,6 @@ background: #000000;
   }
     .second-teaser-widget-area li a div {
       color: black;
-      font-family: "FontPiratenkleiderHeadlines", Helvetica, Arial, sans-serif;
       text-shadow: 0 -1px 1px #aedee4;
     }
    
@@ -210,7 +208,6 @@ background: #000000;
   }
  .teaserlinks ul li a {
      color: black;
-     font-family: "FontPiratenkleiderHeadlines", Helvetica, Arial, sans-serif;
      text-shadow: none;
  }
   .teaserlinks ul li a:hover,
@@ -241,7 +238,6 @@ background: #000000;
     .content .symbolbild .aaarh {
          background: transparent;
          color: black;
-         font-family: "FontPiratenkleiderHeadlines", Helvetica, Arial, sans-serif;
     }
   .content-primary input[type=\"text\"]:hover, 
   .content-primary textarea:hover,
@@ -250,9 +246,7 @@ background: #000000;
     border-color: black; 
     background-color: beige;
   }
-   .content-primary .post-nav a {
-      font-family: "FontPiratenkleiderHeadlines", Helvetica, Arial, sans-serif;
-     }
+
       .content-primary .sprungmarken ol li a:hover {
           background: #FFFFFF;
           color: black;
@@ -271,9 +265,7 @@ background: #000000;
     -webkit-box-shadow: 1px 1px 2px #444444;
     box-shadow: 1px 1px 2px #444444; 
   }
-    .post .post-info .cal-icon .day {
-        font-family: "FontPiratenkleiderHeadlines", Helvetica, Arial, sans-serif;
-    }
+
     .post .post-meta {
          color: #222;
     }
@@ -315,9 +307,7 @@ background: #000000;
      .gallery-caption {
             color: #888;
     }
-    .first-startpage-widget-area li a {
-      font-family: "FontPiratenkleiderHeadlines", Helvetica, Arial, sans-serif;
-      }
+ 
      .first-startpage-widget-area a.all-articles {
         background: #2d7dc5;
         color: black;

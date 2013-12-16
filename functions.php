@@ -220,10 +220,10 @@ function piratenkleider_scripts() {
     /*
     'stylefile-position': 
      0 => __('Deaktiv (Nicht einbinden)', 'piratenkleider'),
-                      1 => __('Vor Standard-CSS-Dateien des Grunddesigns', 'piratenkleider'),
-                      2 => __('Nach Standard-CSS-Dateien des Grunddesigns', 'piratenkleider'),
-                      3 => __('Semi-Exklusiv (kein Laden des Grunddesign-CSS, jedoch optionale CSS (Farben, Schriften, Icons, ...)', 'piratenkleider'),
-		      4 => __('Exklusiv (kein Laden anderer CSS-Dateien)', 'piratenkleider'),
+      1 => __('Vor Standard-CSS-Dateien des Grunddesigns', 'piratenkleider'),
+      2 => __('Nach Standard-CSS-Dateien des Grunddesigns', 'piratenkleider'),
+      3 => __('Semi-Exklusiv (kein Laden des Grunddesign-CSS, jedoch optionale CSS (Farben, Schriften, Icons, ...)', 'piratenkleider'),
+      4 => __('Exklusiv (kein Laden anderer CSS-Dateien)', 'piratenkleider'),
 
 	     */
      $userstyle = 0;
@@ -256,12 +256,7 @@ function piratenkleider_scripts() {
 		 wp_enqueue_style( 'color', get_template_directory_uri().'/css/'.$options['css-colorfile'] );	             
 	    }        
 	    
-	    if (!isset($options['css-fontfile']))  {
-		$options['css-fontfile'] = $defaultoptions['default-fontset-file'];
-	    }
-	    if ((isset($options['css-fontfile'])) && (strlen(trim($options['css-fontfile']))>1)) { 
-		wp_enqueue_style( 'font', get_template_directory_uri().'/css/'.$options['css-fontfile'],array(),false,'all and (min-width:500px)' );	             
-	    }        	
+	  
 
 	    if (isset($options['aktiv-mediaqueries-allparts']) && ($options['aktiv-mediaqueries-allparts']==1)) {
 		wp_enqueue_style( 'basemod_mediaqueries_allparts', $defaultoptions['src-basemod_mediaqueries_allparts'] );
@@ -308,9 +303,123 @@ function piratenkleider_scripts() {
 }
 add_action('wp_enqueue_scripts', 'piratenkleider_scripts');
 
+function piratenkleider_addfonts() {
+  global $options;
+  global $default_fonts;  
+  $output = "";
+  $setfont = "";
+
+  if ((isset($options['fonts-content'])) && ($options['fonts-content'] != 'none')) {
+      $setfont = $options['fonts-content'];
+            $seturl=0;
+
+      if (isset($default_fonts[$setfont]['webfont'])
+              && ($default_fonts[$setfont]['webfont']==1)) {
+        $output .= '@font-face { font-family: FontPiratenkleiderDefault; local: '.$setfont.'; src: ';
+          if (isset($default_fonts[$setfont]['eot'])) {
+              $output .= 'url('.get_template_directory_uri().$default_fonts[$setfont]['eot'].') format("embedded-opentype")';
+              $seturl = 1;
+          }
+          if (isset($default_fonts[$setfont]['ttf'])) {
+              if ($seturl==1) $output .= ", ";
+              $output .= 'url('.get_template_directory_uri().$default_fonts[$setfont]['ttf'].') format("truetype")';
+              $seturl = 1;
+          }
+          if (isset($default_fonts[$setfont]['woff'])) {
+              if ($seturl==1) $output .= ", ";
+              $output .= 'url('.get_template_directory_uri().$default_fonts[$setfont]['woff'].') format("woff")';
+              $seturl = 1;
+          }
+          if (isset($default_fonts[$setfont]['svg'])) {
+              if ($seturl==1) $output .= ", ";
+              $output .= 'url('.get_template_directory_uri().$default_fonts[$setfont]['svg'].') format("svg")';                                              
+          }          $output .= ";}\n";    
+          $output .= "body,.teaserlinks ul li a span { font-family: FontPiratenkleiderDefault; }\n";
+  
+      } else {
+        $output .= 'body,.teaserlinks ul li a span { font-family: '.$default_fonts[$setfont]['family'].'; }';
+        $output .= "\n";  
+      }
+  }  
+  if ((isset($options['fonts-headers'])) && ($options['fonts-headers'] != 'none')) {
+      $setfont = $options['fonts-headers'];
+            $seturl=0;
+
+      if (isset($default_fonts[$setfont]['webfont'])
+              && ($default_fonts[$setfont]['webfont']==1)) {
+        $output .= '@font-face { font-family: FontPiratenkleiderHeadlines; local: '.$setfont.'; src: ';
+          if (isset($default_fonts[$setfont]['eot'])) {
+              $output .= 'url('.get_template_directory_uri().$default_fonts[$setfont]['eot'].') format("embedded-opentype")';
+              $seturl = 1;
+          }
+          if (isset($default_fonts[$setfont]['ttf'])) {
+              if ($seturl==1) $output .= ", ";
+              $output .= 'url('.get_template_directory_uri().$default_fonts[$setfont]['ttf'].') format("truetype")';
+              $seturl = 1;
+          }
+          if (isset($default_fonts[$setfont]['woff'])) {
+              if ($seturl==1) $output .= ", ";
+              $output .= 'url('.get_template_directory_uri().$default_fonts[$setfont]['woff'].') format("woff")';
+              $seturl = 1;
+          }
+          if (isset($default_fonts[$setfont]['svg'])) {
+              if ($seturl==1) $output .= ", ";
+              $output .= 'url('.get_template_directory_uri().$default_fonts[$setfont]['svg'].') format("svg")';                                              
+          }          $output .= ";}\n";    
+          $output .= "h1,h2,h3,h4,h5,h6,.tagcloud,.post-nav a,ol.az dl dt,.post .post-info .cal-icon .day,.first-startpage-widget-area li a { font-family: FontPiratenkleiderHeadlines; }\n";
+  
+      } else {
+        $output .= 'h1,h2,h3,h4,h5,h6,.tagcloud,.post-nav a,ol.az dl dt,.post .post-info .cal-icon .day,.first-startpage-widget-area li a { font-family: '.$default_fonts[$setfont]['family'].'; }';
+        $output .= "\n";  
+      }
+      
+  }
+  if ((isset($options['fonts-menuheaders'])) && ($options['fonts-menuheaders'] != 'none')) {
+      $setfont = $options['fonts-menuheaders'];
+      $seturl=0;
+      if (isset($default_fonts[$setfont]['webfont'])
+              && ($default_fonts[$setfont]['webfont']==1)) {
+        $output .= '@font-face { font-family: FontPiratenkleiderMenuHeadlines; local: '.$setfont.'; src: ';
+          if (isset($default_fonts[$setfont]['eot'])) {
+              $output .= 'url('.get_template_directory_uri().$default_fonts[$setfont]['eot'].') format("embedded-opentype")';
+              $seturl = 1;
+          }
+          if (isset($default_fonts[$setfont]['ttf'])) {
+              if ($seturl==1) $output .= ", ";
+              $output .= 'url('.get_template_directory_uri().$default_fonts[$setfont]['ttf'].') format("truetype")';
+              $seturl = 1;
+          }
+          if (isset($default_fonts[$setfont]['woff'])) {
+              if ($seturl==1) $output .= ", ";
+              $output .= 'url('.get_template_directory_uri().$default_fonts[$setfont]['woff'].') format("woff")';
+              $seturl = 1;
+          }
+          if (isset($default_fonts[$setfont]['svg'])) {
+              if ($seturl==1) $output .= ", ";
+              $output .= 'url('.get_template_directory_uri().$default_fonts[$setfont]['svg'].') format("svg")';                                              
+          }
+          $output .= ";}\n";    
+          $output .= ".nav-main ul.menu li a,.cifont,.sticker ul li,.teaserlinks ul li a { font-family: FontPiratenkleiderMenuHeadlines; }\n";
+  
+      } else {
+        $output .= '.nav-main ul.menu li a,.cifont,.sticker ul li,.teaserlinks ul li a { font-family: '.$default_fonts[$setfont]['family'].'; }';
+        $output .= "\n";  
+      }
+  }
+  
+
+  
+  if ((isset($output)) && (strlen($output)>1)) {
+      $out = "<style>";
+      $out .= $output;
+      $out .= "</style>";
+  }
+  echo $out;
+}
+add_action('wp_head', 'piratenkleider_addfonts');
+
 
 function piratenkleider_addmetatags() {
-  global $defaultoptions;
   global $options;
 
     $output = "";
