@@ -192,9 +192,9 @@ $defaultoptions = array(
     
     'stylefile-position'		    => 0,
     'aktiv-stylefile'			    => 0,
-    'default-fonts-headers'                 => 'LinLibertine',
-    'default-fonts-menuheaders'             => 'BebasNeue',
-    'default-fonts-content'                 => 'LinLibertine',
+    'fonts-headers'                         => 'LinLibertine',
+    'fonts-menuheaders'                     => 'BebasNeue',
+    'fonts-content'                         => 'LinLibertine',
 );
 
 
@@ -1846,7 +1846,7 @@ $setoptions = array(
                   'type'    => 'fontselect',
                   'title'   => __( 'Schrift &Uuml;berschriften', 'piratenkleider' ),
                   'label'   => __( 'Schriftart der &Uuml;berschriften. <br>Definiert die CSS font-family <code>FontPiratenkleiderHeadlines</code>', 'piratenkleider' ),
-                  'default' => $defaultoptions['default-fonts-headers'],
+                  'default' => $defaultoptions['fonts-headers'],
                   'liste'   => $default_fonts,
 		  	  'parent'  => 'style', 
               ), 
@@ -1854,7 +1854,7 @@ $setoptions = array(
                   'type'    => 'fontselect',
                   'title'   => __( 'Schrift Men&uuml;', 'piratenkleider' ),
                   'label'   => __( 'Schriftart der Eintr&auml;ge im Hauptmen&uuml;. <br>Definiert die CSS font-family <code>FontPiratenkleiderMenuHeadlines</code>', 'piratenkleider' ),
-                  'default' => $defaultoptions['default-fonts-menuheaders'],
+                  'default' => $defaultoptions['fonts-menuheaders'],
                   'liste'   => $default_fonts,
 		  	  'parent'  => 'style', 
               ),                
@@ -1862,7 +1862,7 @@ $setoptions = array(
                   'type'    => 'fontselect',
                   'title'   => __( 'Schrift Text', 'piratenkleider' ),
                   'label'   => __( 'Schriftart der normalen Texte. <br>Definiert die CSS font-family <code>FontPiratenkleiderDefault</code>', 'piratenkleider' ),
-                  'default' => $defaultoptions['default-fonts-content'],
+                  'default' => $defaultoptions['fonts-content'],
                   'liste'   => $default_fonts,
 		  	  'parent'  => 'style', 
               ),               
