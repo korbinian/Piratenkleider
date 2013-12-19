@@ -14,6 +14,9 @@
 
 		$image_url = '';
 		$image_alt = '';
+                $attribs = array(
+                    "credits" => $options['img-meta-credits'],
+                );
 		if (has_post_thumbnail()) { 
 		    $thumbid = get_post_thumbnail_id(get_the_ID());
 		     // array($options['bigslider-thumb-width'],$options['bigslider-thumb-height'])

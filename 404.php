@@ -23,7 +23,7 @@
 		   <h1 class="post-title"><span><?php _e("Seite nicht gefunden",'piratenkleider'); ?></span></h1>
 		   <div class="symbolbild"><img src="<?php echo $image_url ?>" alt="">		  
 		    <div class="caption">  
-		     <p style="font-size: 2em;" class="bebas">404</p>                  
+		     <p style="font-size: 2em;" class="cifont">404</p>                  
 		     </div> 		  
 		   </div>
 		</div>  	

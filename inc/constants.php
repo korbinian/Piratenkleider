@@ -122,7 +122,7 @@ $defaultoptions = array(
     'teaser-thumbnail_crop'		    => 1,
     'src-teaser-thumbnail_default'	    => get_template_directory_uri() .'/images/default-teaserthumb.gif',
     'teaser-thumbnail_fallback'		    => 1,
-    
+    'teaser-showcredits'                    => 1,
     'teaser-type'			    => 'big',    
     'teaser-title-maxlength'		    => 50,
     'teaser-subtitle'			    => __( 'Topthema', 'piratenkleider' ),
@@ -203,6 +203,8 @@ $defaultoptions = array(
     
     'stylefile-position'		    => 0,
     'aktiv-stylefile'			    => 0,
+    
+    'img-meta-credits'                     => '',  
 );
 
 
@@ -1223,16 +1225,22 @@ $setoptions = array(
                   'label'   => __( 'Ersatz-Sliderbild f&uuml;r Seiten ohne eigenes Artikelbild.', 'piratenkleider' ),
                   'default' => $defaultoptions['slider-defaultbildsrc'],		                     
 		  'liste'   => $defaultbilder_liste,
-		  'parent'  => 'darstellungartikel'
+		  'parent'  => 'sliderpars'
               ),
               'slider-alternativesrc' => array(
                   'type'    => 'imgurl',
                   'title'   => __( 'Externes Ersatzbild', 'piratenkleider' ),
                   'label'   => __( 'URL f&uuml;r ein Ersatz-Sliderbild.', 'piratenkleider' ),
                   'default' => $defaultoptions['slider-alternativesrc'],
-                  'parent'  => 'darstellungindexseiten',
+                  'parent'  => 'sliderpars',
               ),   
-
+            'teaser-showcredits' => array(
+                  'type'    => 'bool',
+                  'title'   => __( 'Bildbeschreibung/Credits', 'piratenkleider' ),
+                  'label'   => __( 'Innerhalb des Slider auch die Bildbeschreibung bzw. Copyrightinfos anzeigen, wenn vorhanden.', 'piratenkleider' ),
+                  'default' => $defaultoptions['teaser-showcredits'],
+                  'parent'  => 'sliderpars'
+              ),
                
                
           )

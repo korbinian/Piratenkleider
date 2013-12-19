@@ -579,12 +579,15 @@ function piratenkleider_compatibility ($oldoptions) {
     return $newoptions;
 }
 
+/**
+ * Get Image Attributes
+ */
 
 if ( ! function_exists( 'piratenkleider_get_image_attributs' ) ) :
     function piratenkleider_get_image_attributs($id=0) {
 	$precopyright = __('Bild: ','piratenkleider');
 	if ($id==0) return;
-	
+       
 	$meta = get_post_meta( $id );
 	if (!isset($meta)) {
 	    return;
@@ -599,7 +602,6 @@ if ( ! function_exists( 'piratenkleider_get_image_attributs' ) ) :
 	    }
 	}
 	$attachment = get_post($id);
-	
 	if (isset($attachment) ) {
 	    $result['beschriftung'] = trim(strip_tags( $attachment->post_excerpt )); 
 	    $result['beschreibung'] = trim(strip_tags( $attachment->post_content )); 
@@ -615,9 +617,6 @@ if ( ! function_exists( 'piratenkleider_get_image_attributs' ) ) :
 		 
     }
 endif;
-/**
- * Template for comments and pingbacks.
- */
 
 if ( ! function_exists( 'piratenkleider_filter_wp_title' ) ) :   
 /*
