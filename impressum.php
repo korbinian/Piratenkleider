@@ -255,7 +255,10 @@ stehen s&auml;mtliche Werke dieses Angebots unter einer
     ?>
     <li><a class="extern" href="<?php echo $theme_data['URI']; ?>">Wordpress Theme <?php echo $theme_data->Name; ?></a>, Version <?php echo $theme_data->Version; ?>
     (Lizenziert unter der Creative Commons Namensnennung 3.0 Deutschland Lizenz</a>)  </li>
-    <li><a class="extern" href="http://wiki.piratenpartei.de/Grafiken">Wallpaper und Bildmaterial der Piratenpartei Deutschland</a> (Lizenziert unter der Creative Commons Namensnennung 3.0 Deutschland Lizenz</a>)</li>    
+    <li>Fotos und Symbolbilder von Tboas M. Eckrich 
+	(Lizenziert unter der Creative Commons Namensnennung 3.0 Deutschland Lizenz</a>)</li> 
+    <li><a class="extern" href="http://wiki.piratenpartei.de/Grafiken">Wallpaper und Bildmaterial der Piratenpartei Deutschland</a> 
+	(Lizenziert unter der Creative Commons Namensnennung 3.0 Deutschland Lizenz</a>)</li>    
     <?php
 
 	$lizenzen = explode("\n", $options['lizenzen']);

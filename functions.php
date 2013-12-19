@@ -4,7 +4,7 @@
  *
  * @source http://github.com/xwolfde/Piratenkleider
  * @creator xwolf
- * @version 2.19.8
+ * @version 2.20.3
  * @licence CC-BY-SA 3.0 
  */
 
@@ -578,6 +578,46 @@ function piratenkleider_compatibility ($oldoptions) {
 
     return $newoptions;
 }
+
+
+if ( ! function_exists( 'piratenkleider_get_image_attributs' ) ) :
+    function piratenkleider_get_image_attributs($id=0) {
+	$precopyright = __('Bild: ','piratenkleider');
+	if ($id==0) return;
+	
+	$meta = get_post_meta( $id );
+	if (!isset($meta)) {
+	    return;
+	}
+	$result = array();
+	$result['alt'] = trim(strip_tags($meta['_wp_attachment_image_alt'][0]));
+		
+	if (isset($meta['_wp_attachment_metadata']) && is_array($meta['_wp_attachment_metadata'])) {	
+	    $data =  unserialize($meta['_wp_attachment_metadata'][0]);
+	    if (isset($data['image_meta']) && is_array($data['image_meta']) && isset($data['image_meta']['copyright'])) {
+		$result['copyright'] = trim(strip_tags($data['image_meta']['copyright']));
+	    }
+	}
+	$attachment = get_post($id);
+	
+	if (isset($attachment) ) {
+	    $result['beschriftung'] = trim(strip_tags( $attachment->post_excerpt )); 
+	    $result['beschreibung'] = trim(strip_tags( $attachment->post_content )); 
+	    $result['title'] = trim(strip_tags( $attachment->post_title )); // Finally, use the title
+	}
+	
+	$displayinfo = $result['beschriftung'];
+	if (empty($displayinfo)) $displayinfo = $result['beschreibung'];
+	if (empty($displayinfo) && !empty($result['copyright'])) $displayinfo = $precopyright.$result['copyright'];
+	if (empty($displayinfo)) $displayinfo = $result['alt'];
+	$result['credits'] = $displayinfo;
+	return $result;
+		 
+    }
+endif;
+/**
+ * Template for comments and pingbacks.
+ */
 
 if ( ! function_exists( 'piratenkleider_filter_wp_title' ) ) :   
 /*
