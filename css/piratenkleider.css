@@ -3697,6 +3697,9 @@ html[xmlns] .slides {
   display: none !important; 
 }
 /* IE 7 und aelter haben keine Submenus und muessen daher das Seitenmenu nutzen */
+
+
+
 /* 
        Buttons und Symbolzeichen aus UTF;
        Teilweise uebernommen aus YAML
@@ -3770,6 +3773,8 @@ html[xmlns] .slides {
 
 .embed-youtube p img {margin: 0 5px 0 0;}
 
+
+/* Optionale Wombat-Einblendung */
 #wombat {
     position: absolute;
     top: 110px;
@@ -3779,3 +3784,70 @@ html[xmlns] .slides {
     margin: 0;
     padding: 0;
 }
+
+/* Hinweisboxen */
+  .hinweis, .box {
+    border-radius: 0.3em;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #888;
+    border-color: rgba(0, 0, 0, 0.3);
+    -webkit-box-shadow: inset 1px 1px 3px rgba(0, 0, 0, 0.2);
+    box-shadow: inset 1px 1px 3px rgba(0, 0, 0, 0.2);
+    color: #444;
+    color: rgba(0, 0, 0, 0.8);
+    padding: 1.42857em;
+    margin: 0 0 1.5em 0;
+  }
+  .hinweis > *:last-child, 
+  .box > *:last-child {
+    margin-bottom: 0;
+  }
+    .info {
+    background: #f4f4f4;
+  }
+
+  .success {
+    background: #88cc88;
+  }
+
+  .warning {
+    background: #cccc88;
+  }
+
+  .error {
+    background: #cc8888;
+  }
+
+  .float-left {
+    float: left;
+    display: inline;
+    margin: 0 1em 1.5em 0;
+  }
+
+  .float-right {
+    float: right;
+    display: inline;
+    margin: 0 0 1.5em 1em;
+  }
+  .p33 {
+      width: 33.3333%;
+  }  
+  .p50 {
+      width: 50%;
+  }  
+   .p66 {
+      width: 66.6666%;
+  }  
+  .p40 {
+      width: 40%;
+  }  
+   .p60 {
+      width: 60%;
+  }
+  
+  .center {
+    display: block;
+    text-align: center;
+    margin: 0 auto 1.5em auto;
+  }
