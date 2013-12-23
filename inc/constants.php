@@ -5,7 +5,7 @@
  **/ 
 
 $defaultoptions = array(
-    'js-version'                    => '2.20',
+    'js-version'                    => '2.21',
     'content-width'                 => 665,
     'yt-content-width'              => 665,
     'yt-content-height'             => 500,
@@ -83,7 +83,7 @@ $defaultoptions = array(
     'aktiv-startseite-tags'                 => 1,
     'aktiv-startseite-alteartikel'          => 1,
     'aktiv-startseite-alteartikel-num'      => 5,
-    'aktiv-avatar'                          => 1,
+    'aktiv-avatar'                          => 0,
     'aktiv-dynamic-sidebar'                 => 0,
     'aktiv-autokeywords'		    => 0,
     'src-default-avatar'                    => get_template_directory_uri(). '/images/avataricon.gif',
@@ -148,6 +148,7 @@ $defaultoptions = array(
     'anonymize-user-commententries' => 0,
     'aktiv-commentreplylink'        => 0,
     'default_comment_notes_before'  => '<p class="comment-notes">'.__( 'Deine E-Mail-Adresse wird nicht ver&ouml;ffentlicht. Erforderliche Felder sind markiert <span class="required">*</span>', 'piratenkleider' ). '</p>',
+    'comments_disclaimer'           => __('Hinweis: Durch Bereitstellung der Kommentierungsfunktion macht sich die Piratenpartei nicht die in den Kommentaren geschriebenen Meinungen zu eigen. Bei Fragen oder Beschwerden zu Kommentaren wenden Sie sich bitte über das Kontaktformular an das Webteam.', 'piratenkleider' ), 
     'disclaimer_post'               => '',
     'feed_cache_lifetime'           => 14400,
     'use_wp_feed_defaults'          => 1,
@@ -1572,6 +1573,7 @@ $setoptions = array(
                   'type'    => 'html',
                   'title'   => __( 'Disclaimer', 'piratenkleider' ),
                   'label'   => __( 'Kurzer Hinweistext (ggf. Link) zu Regeln f&uuml;r Kommentare.', 'piratenkleider' ),
+                  'default' => $defaultoptions['comments_disclaimer'],
 		  'parent'   => 'kommentare'
               ),               
                'zeige_commentbubble_null' => array(
