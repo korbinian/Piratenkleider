@@ -2,7 +2,7 @@ Piratenkleider
 - Wordpress-Theme für Webauftritte der Piratenpartei 
 ====================================================
 
-Version 2.21 von Wolfgang Wiese (xwolf), 23. Dezember 2013
+Version 2.21 von Wolfgang Wiese (xwolf), 26. Dezember 2013
 
 
 DOWNLOADS
@@ -550,3 +550,4 @@ Administrative Hinweise für Wordpress Theme-Editoren:
     Neue Schriften: Linux Libertine (Open Font Lizenz).
     Zudem wurde das Layout zur Unterstützung der Plugins Liveblog und 
     WP Liveticker angepasst.
+    Plugin-CSS wurde in der neuen CSS-Datei css/pluginsupport.css ausgelagert.
