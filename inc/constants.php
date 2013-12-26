@@ -76,7 +76,7 @@ $defaultoptions = array(
     'aktiv-autoren'                 => 1,
     'newsletter'                    => 0,
     'alle-socialmediabuttons'               => 1,
-    'aktiv-circleplayer'                    => 1,
+    'aktiv-circleplayer'                    => 0,
     'aktiv-linkicons'			    => 1,
     'aktiv-linkmenu'                        => 1,
     'aktiv-startseite-kategorien'           => 1,
@@ -100,7 +100,7 @@ $defaultoptions = array(
     
     'category-teaser-maxlength'		    => 500,            
     'category-teaser-titleup'		    => 1, /* Titles up */ 
-    'category-teaser-datebox'		    => 0, 
+    'category-teaser-datebox'		    => 4, 
 	/* 0 = Datebox, 
 	 * 1 = Thumbnail (or: first picture, first video, fallback picture),
 	 * 2 = First picture (or: thumbnail, first video, fallback picture),
@@ -108,12 +108,12 @@ $defaultoptions = array(
 	 * 4 = First video (or: first picture, thumbnail, fallback picture),
 	 * 5 = Nothing */ 
     'category-teaser-floating'		    => 0,
-    'category-teaser-dateline'		    => 0, /* 1 = show Date on line up of the text if no datebox */
+    'category-teaser-dateline'		    => 1, /* 1 = show Date on line up of the text if no datebox */
     'category-teaser-maxlength-halfwidth'   => 200,        
     'category-teaser-titleup-halfwidth'	    => 1, /* Titles up */ 
-    'category-teaser-datebox-halfwidth'	    => 1, 
+    'category-teaser-datebox-halfwidth'	    => 4, 
     'category-teaser-floating-halfwidth'    => 1,
-    'category-teaser-dateline-halfwidth'    => 0, /* 1 = show Date on line up of the text if no datebox */    
+    'category-teaser-dateline-halfwidth'    => 1, /* 1 = show Date on line up of the text if no datebox */    
 
     'num-article-startpage-fullwidth'       => 1,
     'num-article-startpage-halfwidth'       => 4,
@@ -130,14 +130,14 @@ $defaultoptions = array(
 
     'teaser_maxlength'			    => 500,
     'teaser-titleup'			    => 1, /* Titles up */ 
-    'teaser-datebox'			    => 0,
+    'teaser-datebox'			    => 4,
     'teaser-floating'			    => 0,
-    'teaser-dateline'			    => 0, /* 1 = show Date on line up of the text if no datebox */
+    'teaser-dateline'			    => 1, /* 1 = show Date on line up of the text if no datebox */
     'teaser-maxlength-halfwidth'	    => 200,        
     'teaser-titleup-halfwidth'		    => 1, /* Titles up */ 
-    'teaser-datebox-halfwidth'		    => 1, 
+    'teaser-datebox-halfwidth'		    => 4, 
     'teaser-floating-halfwidth'		    => 1,
-    'teaser-dateline-halfwidth'		    => 0, /* 1 = show Date on line up of the text if no datebox */      
+    'teaser-dateline-halfwidth'		    => 1, /* 1 = show Date on line up of the text if no datebox */      
     
     
     'url-newsletteranmeldung'		    => 'https://service.piratenpartei.de/subscribe/newsletter',
@@ -203,8 +203,7 @@ $defaultoptions = array(
     'linktipps-subtitlepos'		    => 0, // 0 = oben, vor Titel, 1 = oben nach titel, 2 = unten
     
     'stylefile-position'		    => 0,
-    'aktiv-stylefile'			    => 0,
-    
+    'aktiv-stylefile'			    => 0,    
     'img-meta-credits'                     => '',  
 );
 
