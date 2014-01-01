@@ -34,9 +34,14 @@
         if ( have_posts() ) while ( have_posts() ) : the_post();
             echo "<li class='slide'>";
             if ($options['teaser-type'] == 'big') {
-                 echo '<div class="bigslider">';
-                if (has_post_thumbnail()) {           
-                 the_post_thumbnail(array($defaultoptions['bigslider-thumb-width'],$defaultoptions['bigslider-thumb-height']),array('alt'=> ''));
+                $attribs = array(
+                 "credits" => $options['img-meta-credits'],
+                );
+                echo '<div class="bigslider">';
+                if (has_post_thumbnail()) {      
+                    $thumbid = get_post_thumbnail_id(get_the_ID());
+                    $attribs = piratenkleider_get_image_attributs($thumbid);
+                    the_post_thumbnail(array($defaultoptions['bigslider-thumb-width'],$defaultoptions['bigslider-thumb-height']),array('alt'=> ''));
                 } else {
                     if ((isset($defaultbildsrc)) && (strlen(trim($defaultbildsrc))>2)) {  
                         echo '<img src="'.$defaultbildsrc.'" width="'.$defaultoptions['bigslider-thumb-width'].'" height="'.$defaultoptions['bigslider-thumb-height'].'" alt="">';                
@@ -45,7 +50,7 @@
                         echo '<img src="'.$defaultbilder_liste[$randombild[0]]['src'].'" width="'.$defaultoptions['bigslider-thumb-width'].'" height="'.$defaultoptions['bigslider-thumb-height'].'" alt="">'; 
                     }
                 }
-                echo '<div class="caption"><p class="bebas">'.$subtitle.'</p>';
+                echo '<div class="caption"><p class="cifont">'.$subtitle.'</p>';
                 echo "<h3><a href=";
                 the_permalink();
                 echo ">";

@@ -77,7 +77,7 @@ $defaultoptions = array(
     'aktiv-startseite-tags'                 => 1,
     'aktiv-startseite-alteartikel'          => 1,
     'aktiv-startseite-alteartikel-num'      => 5,
-    'aktiv-avatar'                          => 1,
+    'aktiv-avatar'                          => 0,
     'aktiv-dynamic-sidebar'                 => 0,
     'aktiv-autokeywords'		    => 0,
     'src-default-avatar'                    => get_template_directory_uri(). '/images/avataricon.gif',
@@ -94,7 +94,7 @@ $defaultoptions = array(
     
     'category-teaser-maxlength'		    => 500,            
     'category-teaser-titleup'		    => 1, /* Titles up */ 
-    'category-teaser-datebox'		    => 0, 
+    'category-teaser-datebox'		    => 4, 
 	/* 0 = Datebox, 
 	 * 1 = Thumbnail (or: first picture, first video, fallback picture),
 	 * 2 = First picture (or: thumbnail, first video, fallback picture),
@@ -102,12 +102,12 @@ $defaultoptions = array(
 	 * 4 = First video (or: first picture, thumbnail, fallback picture),
 	 * 5 = Nothing */ 
     'category-teaser-floating'		    => 0,
-    'category-teaser-dateline'		    => 0, /* 1 = show Date on line up of the text if no datebox */
+    'category-teaser-dateline'		    => 1, /* 1 = show Date on line up of the text if no datebox */
     'category-teaser-maxlength-halfwidth'   => 200,        
     'category-teaser-titleup-halfwidth'	    => 1, /* Titles up */ 
-    'category-teaser-datebox-halfwidth'	    => 1, 
+    'category-teaser-datebox-halfwidth'	    => 4, 
     'category-teaser-floating-halfwidth'    => 1,
-    'category-teaser-dateline-halfwidth'    => 0, /* 1 = show Date on line up of the text if no datebox */    
+    'category-teaser-dateline-halfwidth'    => 2, /* 1 = show Date on line up of the text if no datebox */    
 
     'num-article-startpage-fullwidth'       => 1,
     'num-article-startpage-halfwidth'       => 4,
@@ -123,15 +123,16 @@ $defaultoptions = array(
     'teaser-title-words'		    => 7,
 
     'teaser_maxlength'			    => 500,
+    'teaser-showcredits'                    => 1,
     'teaser-titleup'			    => 1, /* Titles up */ 
-    'teaser-datebox'			    => 0,
+    'teaser-datebox'			    => 4,
     'teaser-floating'			    => 0,
-    'teaser-dateline'			    => 0, /* 1 = show Date on line up of the text if no datebox */
+    'teaser-dateline'			    => 1, /* 1 = show Date on line up of the text if no datebox */
     'teaser-maxlength-halfwidth'	    => 200,        
     'teaser-titleup-halfwidth'		    => 1, /* Titles up */ 
-    'teaser-datebox-halfwidth'		    => 1, 
+    'teaser-datebox-halfwidth'		    => 4, 
     'teaser-floating-halfwidth'		    => 1,
-    'teaser-dateline-halfwidth'		    => 0, /* 1 = show Date on line up of the text if no datebox */      
+    'teaser-dateline-halfwidth'		    => 1, /* 1 = show Date on line up of the text if no datebox */      
     
     
     'url-newsletteranmeldung'		    => 'https://service.piratenpartei.de/subscribe/newsletter',
@@ -140,6 +141,7 @@ $defaultoptions = array(
     'anonymize-user-commententries' => 0,
     'aktiv-commentreplylink'        => 0,
     'default_comment_notes_before'  => '<p class="comment-notes">'.__( 'Deine E-Mail-Adresse wird nicht ver&ouml;ffentlicht. Erforderliche Felder sind markiert <span class="required">*</span>', 'piratenkleider' ). '</p>',
+    'comments_disclaimer'           => __('Hinweis: Durch Bereitstellung der Kommentierungsfunktion macht sich die Piratenpartei nicht die in den Kommentaren geschriebenen Meinungen zu eigen. Bei Fragen oder Beschwerden zu Kommentaren wenden Sie sich bitte über das Kontaktformular an das Webteam.', 'piratenkleider' ),
     'disclaimer_post'               => '',
     'feed_cache_lifetime'           => 14400,
     'use_wp_feed_defaults'          => 1,
@@ -187,7 +189,7 @@ $defaultoptions = array(
     'linktipp-thumbnail_crop'		    => 1,
     'src-linktipp-thumbnail_default'	    => get_template_directory_uri() .'/images/default-teaserthumb.gif',
     'linktipps-titlepos'		    => 0, // 0 = ueber Bild/Text, 1 = unter Bild/Text
-    'linktipps-linkpos'			    => 1, // 0 = Link auf dem Titel, 1 = Link auf Text/Bild, 2 = URL unter Bild/Text anzeigen&verlinken
+    'linktipps-linkpos'			    => 0, // 0 = Link auf dem Titel, 1 = Link auf Text/Bild, 2 = URL unter Bild/Text anzeigen&verlinken
     'linktipps-subtitlepos'		    => 0, // 0 = oben, vor Titel, 1 = oben nach titel, 2 = unten
     
     'stylefile-position'		    => 0,
@@ -195,6 +197,7 @@ $defaultoptions = array(
     'fonts-headers'                         => 'LinLibertine',
     'fonts-menuheaders'                     => 'BebasNeue',
     'fonts-content'                         => 'LinLibertine',
+    'img-meta-credits'                     => '',
 );
 
 
@@ -1251,20 +1254,28 @@ $setoptions = array(
                   'default' => $defaultoptions['teaser-type'],
                    'parent'  => 'sliderpars'
               ), 
+               'teaser-showcredits' => array(
+                  'type'    => 'bool',
+                  'title'   => __( 'Bildbeschreibung/Credits', 'piratenkleider' ),
+                  'label'   => __( 'Innerhalb des Slider auch die Bildbeschreibung bzw. Copyrightinfos anzeigen, wenn vorhanden.', 'piratenkleider' ),
+                  'default' => $defaultoptions['teaser-showcredits'],
+                  'parent'  => 'sliderpars'
+              ),
+
               'slider-defaultbildsrc' => array(
                   'type'    => 'bildlist',
                   'title'   => __( 'Defaultbild', 'piratenkleider' ),
                   'label'   => __( 'Ersatz-Sliderbild f&uuml;r Seiten ohne eigenes Artikelbild.', 'piratenkleider' ),
                   'default' => $defaultoptions['slider-defaultbildsrc'],		                     
 		  'liste'   => $defaultbilder_liste,
-		  'parent'  => 'darstellungartikel'
+		  'parent'  => 'sliderpars'
               ),
               'slider-alternativesrc' => array(
                   'type'    => 'imgurl',
                   'title'   => __( 'Externes Ersatzbild', 'piratenkleider' ),
                   'label'   => __( 'URL f&uuml;r ein Ersatz-Sliderbild.', 'piratenkleider' ),
                   'default' => $defaultoptions['slider-alternativesrc'],
-                  'parent'  => 'darstellungindexseiten',
+                  'parent'  => 'sliderpars',
               ),   
 
                
@@ -1592,6 +1603,7 @@ $setoptions = array(
                   'type'    => 'html',
                   'title'   => __( 'Disclaimer', 'piratenkleider' ),
                   'label'   => __( 'Kurzer Hinweistext (ggf. Link) zu Regeln f&uuml;r Kommentare.', 'piratenkleider' ),
+                  'default' => $defaultoptions['comments_disclaimer'],
 		  'parent'   => 'kommentare'
               ),               
                'zeige_commentbubble_null' => array(
