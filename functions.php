@@ -302,6 +302,10 @@ function piratenkleider_scripts() {
      }
 }
 add_action('wp_enqueue_scripts', 'piratenkleider_scripts');
+function piratenkleider_dequeue_fonts() {
+         wp_dequeue_style( 'twentytwelve-fonts' );
+      }
+add_action( 'wp_enqueue_scripts', 'piratenkleider_dequeue_fonts', 11 );
 
 function piratenkleider_addfonts() {
   global $options;
