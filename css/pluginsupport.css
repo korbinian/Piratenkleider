@@ -190,7 +190,7 @@ div.ics-calendar-holder .ics-calendar-event {
 * All in One Calendar 
 */    
 
-ai1ec_event .cal-icon {
+.ai1ec_event .cal-icon {
     display: none;
 } 
  ul.ts-fab-list li {
