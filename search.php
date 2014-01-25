@@ -37,40 +37,34 @@
 	    <h1 class="post-title"><span><?php printf( __( 'Suchergebnisse f&uuml;r %s', 'piratenkleider' ), '' .get_search_query() . '' ); ?></span></h1>
 	<?php }  
 	
-	
-	    if ( have_posts() ) : ?>
-                <?php
-                /* Run the loop for the search to output the results.
-                 * If you want to overload this in a child theme then include a file
-                 * called loop-search.php and that will be used instead.
-                 */
+	    if ( have_posts() ) : 
+                
 
+          $i = 0; 
+          $col = 0; 
 
-      $i = 0; 
-      $col = 0; 
-      
-      $numentries = $options['category-num-article-fullwidth'] + $options['category-num-article-halfwidth']; 
-      $col_count = 3; 
-      $cols = array();
-     
-      global $query_string;
-      query_posts( $query_string . '&cat=$thisCat' );
- 
-      while (have_posts() && $i<$numentries) : the_post();
-      $i++;
-      ob_start();      
-      if (( isset($options['category-num-article-fullwidth']))
-                && ($options['category-num-article-fullwidth']>=$i )) {
-		 piratenkleider_post_teaser($options['category-teaser-titleup'],$options['category-teaser-datebox'],$options['category-teaser-dateline'],$options['category-teaser-maxlength'],$options['teaser-thumbnail_fallback'],$options['category-teaser-floating']);
-      } else {
-		 piratenkleider_post_teaser($options['category-teaser-titleup-halfwidth'],$options['category-teaser-datebox-halfwidth'],$options['category-teaser-dateline-halfwidth'],$options['category-teaser-maxlength-halfwidth'],$options['teaser-thumbnail_fallback'],$options['category-teaser-floating-halfwidth']);  
-      }    
-      $output = ob_get_contents();
-      ob_end_clean();
-      if (isset($output)) {
-        $cols[$col++] = $output;
-      }
-      endwhile;
+          $numentries = $options['category-num-article-fullwidth'] + $options['category-num-article-halfwidth']; 
+          $col_count = 3; 
+          $cols = array();
+
+          global $query_string;
+          query_posts( $query_string . '&cat=$thisCat' );
+
+          while (have_posts() && $i<$numentries) : the_post();
+          $i++;
+          ob_start();      
+          if (( isset($options['category-num-article-fullwidth']))
+                    && ($options['category-num-article-fullwidth']>=$i )) {
+                     piratenkleider_post_teaser($options['category-teaser-titleup'],$options['category-teaser-datebox'],$options['category-teaser-dateline'],$options['category-teaser-maxlength'],$options['teaser-thumbnail_fallback'],$options['category-teaser-floating']);
+          } else {
+                     piratenkleider_post_teaser($options['category-teaser-titleup-halfwidth'],$options['category-teaser-datebox-halfwidth'],$options['category-teaser-dateline-halfwidth'],$options['category-teaser-maxlength-halfwidth'],$options['teaser-thumbnail_fallback'],$options['category-teaser-floating-halfwidth']);  
+          }    
+          $output = ob_get_contents();
+          ob_end_clean();
+          if (isset($output)) {
+            $cols[$col++] = $output;
+          }
+          endwhile;
       ?>
 	  
 	  
