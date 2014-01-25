@@ -46,7 +46,7 @@ AUTOREN / ENTWICKLER
      - Plakatbilder ab Version 2.17: SG Gestaltung, sowie Projekt Piratestarter
      - Weitere Bilder: Piratenwiki mit unterschiedlichen Autoren
      - Bildbearbeitung für Piratenkleider 3.x: Wolfgang Wiese
-     - Comicbild Wombat: CC BY CA, Nicole Britz
+
 
    Weitere verwendete Inhalte:
      - Social Media Icons: Paul Robert Lloyd, http://paulrobertlloyd.com/2009/06/social_media_icons      
@@ -54,6 +54,7 @@ AUTOREN / ENTWICKLER
      - Schrift Bebas Neue von Dharmatype (SIL Open Font License 1.1)
      - Schrift Droid Sans von Ascender (http://www.droidfonts.com/), Apache License 2.0 http://www.apache.org/licenses/LICENSE-2.0
      - Schrift Awesome http://fontawesome.io von Dave Gandy (SIL Open Font License 1.1)
+     - Schrift Politics Head von der SG Gestaltung (WTFPL Lizenz, http://de.wikipedia.org/wiki/WTFPL) 
 
 
 FEEDBACK & BUGS
