@@ -2,7 +2,7 @@ Piratenkleider 3
 - Wordpress-Theme für Webauftritte der Piratenpartei 
 ====================================================
 
-Version 3.0 von Wolfgang Wiese (xwolf), 2. Dezember 2013
+Version 3.0.2 von Wolfgang Wiese (xwolf), 25. Januar 2014
 
 
 DOWNLOADS
@@ -25,21 +25,7 @@ AUTOREN / ENTWICKLER
 
    Wolfgang Wiese (xwolf), http://www.xwolf.de 
 
-   Mit Hilfe und Unterstützung von:      
-     - Martin Stoppler, http://www.stoppe-gp.de/
-     - Matthias Kopp, http://piratenkleider.emkay,de 
-     - Kerstin Probiesch, http://www.barrierefreie-informationskultur.de
-     - Fabian Müller, http://www.feals.de
-     - Georg Sinn, http://zwitschi.net
-     - Andre Sendowski, http://www.iphone-notes.de/
-     - Heiko Philippski, http://www.phindie.de/
-     - Ralph Hinterleitner, rcs@deixis.at
-     - Jan Schejbal, http://janschejbal.wordpress.com/
-     - Marc Schieferdecker,  http://thegeek.de 
-     - Benjamin Stöcker, http://freiheitsworte.de     
-     - le Grand, http://www.lenz-online.org 
-     - Nicole Britz, http://twitter.com/dyfustic
-     - und vielen mehr!
+
 
    Quellen für Defaultbilder und CI-Materialen (CC-BY 3.0)
      - Defaultgrafiken für Slider/Seitenbilder: Tobias M. Eckrich
