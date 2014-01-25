@@ -508,8 +508,8 @@ $default_fonts = array(
         'eot'   => '/fonts/PoliticsHeadv1_9.ttf',
     ), 
     'monospace' => array(
-        'title' => __( 'Courier, sans-serif', 'piratenkleider' ),
-        'family' => 'Courier, Monospace, sans-serif',
+        'title' => __( '"Courier New", Courier, monospace', 'piratenkleider' ),
+        'family' => '"Courier New", Courier, monospace',
     ),    
       
 );
