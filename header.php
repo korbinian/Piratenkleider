@@ -22,8 +22,7 @@
 	echo $cssadd;  
 	echo "</style>\n";  
     } ?>
-</head>
-                      
+</head>                      
 <body <?php body_class(); ?>>
     <nav role="navigation">
             <ul id="top" class="nav skiplinks">		
@@ -45,50 +44,44 @@
                             <p class="description slogan"><?php bloginfo( 'description' ); ?></p>
                             <?php } ?>
 			</div>
-                      
 			<div class="nav-top" role="navigation">				                                                        
                             <h2 class="skip"><?php _e( 'Service-Navigation', 'piratenkleider' ); ?></h2>
+                            <?php  
+                             
+                            get_piratenkleider_socialmediaicons(1);  
 
-                                <?php  
-                                   get_piratenkleider_socialmediaicons(1);  
-
-                                if ( $options['aktiv-linkmenu'] == "1" ){
-                                    if ( has_nav_menu( 'top' ) ) {
-                                        wp_nav_menu( array( 'container_class' => 'menu-header', 'theme_location' => 'top' ) );
-                                    } else {
-                                        global $default_toplink_liste;   
-                                        if (is_array($default_toplink_liste)) {     ?>
-                                            <div class="menu-header">
-                                            <ul id="menu-topmenu" class="menu">
-                                            <?php  
-					    
-					    foreach ( $default_toplink_liste as $entry => $listdata ) {        
-
-						$value = '';
-						$active = 0;
-						if (isset($options['toplinkliste'][$entry]['content'])) {
-							$value = $options['toplinkliste'][$entry]['content'];
-						} else {
-							$value = $default_toplink_liste[$entry]['content'];
-						 }
-						 if (isset($options['toplinkliste'][$entry]['active'])) {
-							$active = $options['toplinkliste'][$entry]['active'];        
-						 }    
-
-
-						if (($active ==1) && ($value)) {
-						    echo '<li><a class="icon_'.$entry.'" href="'.$value.'">';
-						    echo $listdata['name'].'</a></li>';
-						}
-					    }					    					    
-                                            ?>
-                                            </ul>
+                            if ( $options['aktiv-linkmenu'] == "1" ){
+                                if ( has_nav_menu( 'top' ) ) {
+                                    wp_nav_menu( array( 'container_class' => 'menu-header', 'theme_location' => 'top' ) );
+                                } else {
+                                    global $default_toplink_liste;   
+                                    if (is_array($default_toplink_liste)) {     ?>
+                                        <div class="menu-header">
+                                        <ul id="menu-topmenu" class="menu">  <?php  
+                                        foreach ( $default_toplink_liste as $entry => $listdata ) {        
+                                            $value = '';
+                                            $active = 0;
+                                            if (isset($options['toplinkliste'][$entry]['content'])) {
+                                                    $value = $options['toplinkliste'][$entry]['content'];
+                                            } else {
+                                                    $value = $default_toplink_liste[$entry]['content'];
+                                             }
+                                             if (isset($options['toplinkliste'][$entry]['active'])) {
+                                                    $active = $options['toplinkliste'][$entry]['active'];        
+                                             }    
+                                            if (($active ==1) && ($value)) {
+                                                echo "\t\t\t";
+                                                echo '<li><a class="icon_'.$entry.'" href="'.$value.'">';
+                                                echo $listdata['name'].'</a></li>';
+                                                echo "\n";
+                                            }
+                                        }  ?>
+                                        </ul>
                                         </div> 
-                                        <?php    
-                                        }
+                                    <?php    
+                                    }
                                 } 
-
-                                } 
+                            } 
                             if ( $options['aktiv-suche'] == "1" ){ ?>
                                 <div id="searchform">
                                 <h2 class="skip"><?php _e("Suche", 'piratenkleider'); ?></h2>
