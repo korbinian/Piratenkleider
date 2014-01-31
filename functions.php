@@ -482,19 +482,33 @@ add_action('wp_head', 'piratenkleider_addmetatags');
 
 /* Anonymize IP */
 function getAnonymIp( $ip, $strongness = 2 ) {
-    
     if ($strongness==2) {
-	/* Strong BSI Norm: last two oktetts to 0 */
-	return preg_replace('/[0-9]+.[0-9]+\z/', '0.0', $ip);	
+        if( filter_var($ip, FILTER_VALIDATE_IP, FILTER_FLAG_IPV4) ){
+             /* IPv4 - Strong BSI Norm: last two oktetts to 0 */        
+            return preg_replace('/[0-9]+.[0-9]+\z/', '0.0', $ip);	
+        } else {
+            /* IPv6 */
+             return preg_replace('/[a-z0-9]*:[a-z0-9]*:[a-z0-9]*:[a-z0-9]*\z/', '0:0:0:0', $ip);	
+        }
     } elseif ($strongness==1) {
+         if( filter_var($ip, FILTER_VALIDATE_IP, FILTER_FLAG_IPV4) ){
 	/* Weak BSI Norm: last two oktetts to 0 */
-	return preg_replace('/[0-9]+\z/', '0', $ip);	
+            return preg_replace('/[0-9]+\z/', '0', $ip);	
+         } else {
+             /* IPv6 */
+             return preg_replace('/[a-z0-9]*:[a-z0-9]*:[a-z0-9]*\z/', '0:0:0', $ip); 
+         }
     } elseif ($strongness==0) {
 	/* No anonymizing */
 	return $ip;		
     } else {
-	/* Strong BSI Norm: last two oktetts to 0 */
-	return preg_replace('/[0-9]+.[0-9]+\z/', '0.0', $ip);	
+	if( filter_var($ip, FILTER_VALIDATE_IP, FILTER_FLAG_IPV4) ){
+             /* IPv4 - Strong BSI Norm: last two oktetts to 0 */        
+            return preg_replace('/[0-9]+.[0-9]+\z/', '0.0', $ip);	
+        } else {
+            /* IPv6 */
+             return preg_replace('/[a-z0-9]*:[a-z0-9]*:[a-z0-9]*:[a-z0-9]*\z/', '0:0:0:0', $ip);	
+        }
     }
     
 }     
