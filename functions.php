@@ -874,11 +874,11 @@ function piratenkleider_post_teaser($titleup = 1, $showdatebox = 1, $showdatelin
 	      && isset($linktipp_url)  && strlen(trim($linktipp_url))>1 
 	      && (isset($linktipp_imgid) || isset($linktipp_image) || isset($linktipp_text))) {  
 	  
-	    $sizeclass = 'ym-column post'; ?>
+	    $sizeclass = 'p3-column post'; ?>
 	   <section <?php post_class($sizeclass); ?> id="post-<?php the_ID(); ?>" >
 	    <?php 
 	     if ($options['linktipps-titlepos']!=1) { 
-		echo '<header class="post-title ym-cbox">';
+		echo '<header class="post-title p3-cbox">';
 		    if (mb_strlen(trim($linktipp_untertitel))>1) {
 			echo '<hgroup>';
 		    }
@@ -902,8 +902,8 @@ function piratenkleider_post_teaser($titleup = 1, $showdatebox = 1, $showdatelin
 		    }
 		echo '</header>';  
 	     } 
-	     echo '<div class="ym-column">';
-		 echo '<article class="post-entry ym-cbox"><p>';
+	     echo '<div class="p3-column">';
+		 echo '<article class="post-entry p3-cbox"><p>';
 		     if ($options['linktipps-linkpos']==1) {    
 			 echo '<a href="'.$linktipp_url.'">';
 		     }
@@ -925,7 +925,7 @@ function piratenkleider_post_teaser($titleup = 1, $showdatebox = 1, $showdatelin
 		 echo '</p></article>'; 
 
 		 if ($options['linktipps-titlepos']==1) { 
-		    echo '<header class="post-title ym-cbox">';
+		    echo '<header class="post-title p3-cbox">';
 		    if (str_len(trim($linktipp_untertitel))>1) {
 			echo '<hgroup>';
 		    }
@@ -960,11 +960,11 @@ function piratenkleider_post_teaser($titleup = 1, $showdatebox = 1, $showdatelin
  
   $leftbox = '';
   if (($showdatebox>0)  && ($showdatebox<5)) {
-       $sizeclass = 'ym-column withthumb';      
+       $sizeclass = 'p3-column withthumb';      
        // Generate Thumb/Pic or Video first to find out which class we need
 
 	    $leftbox .=  '<div class="infoimage">';	    
-	    $sizeclass = 'ym-column withthumb'; 
+	    $sizeclass = 'p3-column withthumb'; 
 	    $thumbnailcode = '';	
 	    $firstpic = '';
 	    $firstvideo = '';
@@ -978,23 +978,23 @@ function piratenkleider_post_teaser($titleup = 1, $showdatebox = 1, $showdatelin
 		if ($showdatebox==1) {
 		    if (!isset($output)) { $output = $thumbnailcode;}
 		    if (!isset($output)) { $output = $firstpic;}
-		    if ((!isset($output)) && (isset($firstvideo))) { $output = $firstvideo; $sizeclass = 'ym-column withvideo'; }		    
+		    if ((!isset($output)) && (isset($firstvideo))) { $output = $firstvideo; $sizeclass = 'p3-column withvideo'; }		    
 		    if (!isset($output)) { $output = $fallbackimg;}		    
 		    if ((isset($output)) && ( strlen(trim($output))<10 )) {$output = $fallbackimg;}		    
 		} elseif ($showdatebox==2) {
 		    if (!isset($output)) { $output = $firstpic;}
 		    if (!isset($output)) { $output = $thumbnailcode;}
-		    if ((!isset($output)) && (isset($firstvideo))) { $output = $firstvideo; $sizeclass = 'ym-column withvideo'; }		    
+		    if ((!isset($output)) && (isset($firstvideo))) { $output = $firstvideo; $sizeclass = 'p3-column withvideo'; }		    
 		    if (!isset($output)) { $output = $fallbackimg;}		    
 		    if ((isset($output)) && ( strlen(trim($output))<10 )) {$output = $fallbackimg;}			    		    
 		} elseif ($showdatebox==3) {
-		    if ((!isset($output)) && (isset($firstvideo))) { $output = $firstvideo; $sizeclass = 'ym-column withvideo'; }		     		    
+		    if ((!isset($output)) && (isset($firstvideo))) { $output = $firstvideo; $sizeclass = 'p3-column withvideo'; }		     		    
 		    if (!isset($output)) { $output = $thumbnailcode;}
 		    if (!isset($output)) { $output = $firstpic;}
 		    if (!isset($output)) { $output = $fallbackimg;}
 		    if ((isset($output)) && ( strlen(trim($output))<10 )) {$output = $fallbackimg;}		    		    
 		} elseif ($showdatebox==4) {
-		    if ((!isset($output)) && (isset($firstvideo))) { $output = $firstvideo; $sizeclass = 'ym-column withvideo'; }		    
+		    if ((!isset($output)) && (isset($firstvideo))) { $output = $firstvideo; $sizeclass = 'p3-column withvideo'; }		    
 		    if (!isset($output)) { $output = $firstpic;}
 		    if (!isset($output)) { $output = $thumbnailcode;}
 		    if (!isset($output)) { $output = $fallbackimg;}
@@ -1007,7 +1007,7 @@ function piratenkleider_post_teaser($titleup = 1, $showdatebox = 1, $showdatelin
 	    $leftbox .= $output;
 	    $leftbox .=  '</div>'; 
   } else {
-       $sizeclass = 'ym-column';
+       $sizeclass = 'p3-column';
   }
   if ($usefloating==1) {
       $sizeclass .= " usefloating";
@@ -1017,12 +1017,12 @@ function piratenkleider_post_teaser($titleup = 1, $showdatebox = 1, $showdatelin
     <?php 
         
      if ($titleup==1) { ?>
-        <header class="post-title ym-cbox"><h2>          
+        <header class="post-title p3-cbox"><h2>          
             <a href="<?php the_permalink(); ?>" rel="bookmark" title="<?php the_title(); ?>">
               <?php the_title(); ?>
             </a>
 	</h2></header>       
-       <div class="ym-column"> 
+       <div class="p3-column"> 
      <?php }	
    /* 0 = Datebox, 
 	 * 1 = Thumbnail (or: first picture, first video, fallback picture),
@@ -1032,7 +1032,7 @@ function piratenkleider_post_teaser($titleup = 1, $showdatebox = 1, $showdatelin
 	 * 5 = Nothing */
      
     if ($showdatebox<5) { 
-	echo '<div class="post-info ym-col1"><div class="ym-cbox">';
+	echo '<div class="post-info p3-col1"><div class="p3-cbox">';
 	if ($showdatebox==0) {		 
 	      $num_comments = get_comments_number();           
 	      if (($num_comments>0) || ( $options['zeige_commentbubble_null'])) { 
@@ -1060,12 +1060,12 @@ function piratenkleider_post_teaser($titleup = 1, $showdatebox = 1, $showdatelin
                 echo $leftbox;
             } 
             echo '</div></div>';
-            echo '<article class="post-entry ym-col3">';
-            echo '<div class="ym-cbox';
-            if ($usefloating==0) { echo ' ym-clearfix'; }
+            echo '<article class="post-entry p3-col3">';
+            echo '<div class="p3-cbox';
+            if ($usefloating==0) { echo ' p3-clearfix'; }
             echo '">';	
 	} else {
-	     echo '<article class="post-entry ym-cbox">';
+	     echo '<article class="post-entry p3-cbox">';
 	}
 	if ($titleup==0) { ?>       
 	    <header class="post-title"><h2>          
@@ -1082,7 +1082,7 @@ function piratenkleider_post_teaser($titleup = 1, $showdatebox = 1, $showdatelin
 	 echo get_piratenkleider_custom_excerpt($teaserlength); ?>     
 	 <?php if ($showdatebox<5) {	?>  
             </div>    	
-            <div class="ym-ie-clearing">&nbsp;</div>	
+            <div class="p3-ie-clearing">&nbsp;</div>	
 	<?php } ?>
 	</article>
         <?php if ($titleup==1) { echo '</div>'; }       

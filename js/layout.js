@@ -128,7 +128,7 @@ jQuery(document).ready(function($) {
  */  
 (function () {
 	var YAML_focusFix = {
-		skipClass : 'ym-skip',
+		skipClass : 'p3-skip',
 
 		init : function () {
 			var userAgent = navigator.userAgent.toLowerCase();

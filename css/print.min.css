@@ -14,5 +14,5 @@ abbr[title]:after,acronym[title]:after{content:'(' attr(title) ')';}
 .footer .row{background-image:none;background-color:#eee;}
 .first-footer-widget-area,.second-footer-widget-area{display:block;float:none;width:100%;}
 .footer a{color:#000;background:#eee;}
-nav,.ym-searchform,.teaser,.breadcrumbs,.newsletter,.nav-top,.nav-main,.flexslider,.sticker,.symbolbild,.startpage-widget-area,.switchon,.switchoff,.content-primary .post-nav,#socialmedia_iconbar,#respond,.post-comments ol li .reply{display:none;}
+nav,.p3-searchform,.teaser,.breadcrumbs,.newsletter,.nav-top,.nav-main,.flexslider,.sticker,.symbolbild,.startpage-widget-area,.switchon,.switchoff,.content-primary .post-nav,#socialmedia_iconbar,#respond,.post-comments ol li .reply{display:none;}
 }

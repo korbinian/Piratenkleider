@@ -2558,16 +2558,16 @@ float: left;
 */
 
 
-.ym-add:before { content: "\271A"; }
-.ym-delete:before { content: "\2718"; }
-.ym-edit:before { content: "\270E"; }
-.ym-email:before { content: "\2709"; }
-.ym-like:before { content: "\2764"; }
-.ym-next:before { content: "\279C"; }
-.ym-play:before { content: "\25B6"; }
-.ym-save:before { content: "\2714"; }
-.ym-spark:before { content: "\2737"; }
-.ym-star:before { content: "\2605"; }
+.p3-add:before { content: "\271A"; }
+.p3-delete:before { content: "\2718"; }
+.p3-edit:before { content: "\270E"; }
+.p3-email:before { content: "\2709"; }
+.p3-like:before { content: "\2764"; }
+.p3-next:before { content: "\279C"; }
+.p3-play:before { content: "\25B6"; }
+.p3-save:before { content: "\2714"; }
+.p3-spark:before { content: "\2737"; }
+.p3-star:before { content: "\2605"; }
 
 
 

@@ -11,7 +11,7 @@
 .content-primary .columns .column0,.content-primary .columns .column1,.content-primary .columns .column2{float:none;width:100%;display:block;clear:both;}
 .content-primary .columns .column2:before{content:"";display:block;border:0;margin-bottom:15px;margin-top:5px;background:url(../images/jolly.png) no-repeat center center;height:26px;padding:0;}
 .content-primary .columns .column2 .post{padding-left:0;}
-.withvideo .ym-col1,.withvideo .ym-col3{float:none;width:100%;margin:0;}
+.withvideo .p3-col1,.withvideo .p3-col3{float:none;width:100%;margin:0;}
 .flexslider,.flexslider img{overflow:hidden;}
 .slidersidebar{height:auto;margin-bottom:10px;}
 .logo{max-width:300px;top:0;}

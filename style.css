@@ -11,17 +11,13 @@ License: GPL
 License URI: 
 */
 
-/* import core styles | Basis-Stylesheets einbinden */
-@import url(css/base.min.css);
-
-/* import screen layout | Screen-Layout einbinden */
 /* @import url(css/piratenkleider.css); */
 @import url(css/piratenkleider.min.css);
+
 /*@import url(css/basemod_mediaqueries.css); */
 @import url(css/basemod_mediaqueries.min.css);
 
 /*@import url(css/pluginsupport.css); */
 @import url(css/pluginsupport.min.css);
 
-/* import print layout | Druck-Layout einbinden */
 @import url(css/print.min.css);

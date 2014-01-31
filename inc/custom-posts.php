@@ -223,10 +223,10 @@ function linktipps_shortcode( $atts ) {
 			      $linktipp_untertitel = '';
 			  } 
 			 
-			      $out .= '<section class="shortcode ym-column linktipps" id="post-'.$post_id.'" >';
+			      $out .= '<section class="shortcode p3-column linktipps" id="post-'.$post_id.'" >';
 			      $out .= "\n";
 				 if ($options['linktipps-titlepos']!=1) { 
-				    $out .=  '<header class="post-title ym-cbox">';
+				    $out .=  '<header class="post-title p3-cbox">';
 					if (mb_strlen(trim($linktipp_untertitel))>1) {
 					    $out .= '<hgroup>';
 					}
@@ -251,9 +251,9 @@ function linktipps_shortcode( $atts ) {
 				    $out .= '</header>';  
 				     $out .= "\n";
 				 } 
-				 $out .= '<div class="ym-column">';
+				 $out .= '<div class="p3-column">';
 				  $out .= "\n";
-				     $out .= '<article class="post-entry ym-cbox"><p>';
+				     $out .= '<article class="post-entry p3-cbox"><p>';
 				     $out .= "\n";
 					 if ($options['linktipps-linkpos']==1) {    
 					     $out .= '<a href="'.$linktipp_url.'">';
@@ -277,7 +277,7 @@ function linktipps_shortcode( $atts ) {
 				     $out .= "</article>\n"; 
 
 				     if ($options['linktipps-titlepos']==1) { 
-					$out .= '<header class="post-title ym-cbox">';
+					$out .= '<header class="post-title p3-cbox">';
 					if (str_len(trim($linktipp_untertitel))>1) {
 					    $out .= '<hgroup>';
 					}
