@@ -449,7 +449,6 @@ $defaultbilder_liste = array(
  */
 $default_colorstyles = array(
     ''  =>  __('Default Stylesheet', 'piratenkleider' ),
-    'colors_de.css' => __('Deutschland (Orange)', 'piratenkleider' ),
     'colors_at.css' => __( '&Ouml;sterreich (Violett)', 'piratenkleider' ),
     'colors_lu.css' => __( 'Luxemburg (Violett)', 'piratenkleider' ),
     'colors_hu.css' => __( 'Ungarn (Violett)', 'piratenkleider' ),
