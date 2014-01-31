@@ -416,13 +416,11 @@ function piratenkleider_addfonts() {
         $output .= "\n";  
       }
   }
-  
-
-  
+ 
   if ((isset($output)) && (strlen($output)>1)) {
       $out = "<style>";
       $out .= $output;
-      $out .= "</style>";
+      $out .= "</style>\n";
   }
   echo $out;
 }

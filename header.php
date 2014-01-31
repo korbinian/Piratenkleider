@@ -7,9 +7,9 @@
   global $defaultoptions;
   global $options;
 ?>  
-    <title><?php wp_title( '|', true, 'right' ); ?></title> 
-    <link rel="profile" href="http://gmpg.org/xfn/11" />
-    <link rel="pingback" href="<?php bloginfo( 'pingback_url' ) ?>">    
+<title><?php wp_title( '|', true, 'right' ); ?></title> 
+<link rel="profile" href="http://gmpg.org/xfn/11" />
+<link rel="pingback" href="<?php bloginfo( 'pingback_url' ) ?>">    
     <?php  wp_head(); 
    $cssadd = '';
   
