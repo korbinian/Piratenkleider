@@ -197,7 +197,8 @@ $defaultoptions = array(
     'fonts-headers'                         => 'LinLibertine',
     'fonts-menuheaders'                     => 'BebasNeue',
     'fonts-content'                         => 'LinLibertine',
-    'img-meta-credits'                     => '',
+    'img-meta-credits'                      => '',
+    'feed-overwriteauthorstring'            => '',
 );
 
 
@@ -1897,7 +1898,7 @@ $setoptions = array(
                   'label'   => __( 'Einbinden und hochladen einer eigenen CSS-Datei.', 'piratenkleider' ).
                    __( '<p><em>Bitte an alle Designer: Wenn ihr hiermit Designs erstellt, teilt sie doch mit. ', 'piratenkleider' ). 
                    __( 'Dann f&uuml;gen wir sie zur obiger Liste der Alternativdesigns hinzu, so dass auch viele andere etwas davon haben.', 'piratenkleider' ).
-                   __( '<br><br>Meldet euch hierzu bei: <a href="mailto:piratenkleider@xwolf.de">piratenkleider@xwolf.de</a> - Vielen Dank!</em></p>', 'piratenkleider' ),
+                   __( '<br><br>Meldet euch hierzu bei: <a href="mailto:info@piratenkleider.de">info@piratenkleider.de</a> - Vielen Dank!</em></p>', 'piratenkleider' ),
 		  	  'parent'  => 'style',   
               ),
                'stylefile-position' => array(
@@ -2046,6 +2047,12 @@ $setoptions = array(
                   'default' => $defaultoptions['aktiv-avatar'],
                   'parent'  => 'anonymitaet',
               ),               
+             'feed-overwriteauthorstring' => array(
+                  'type'    => 'text',
+                  'title'   => __( 'Feed-Autor', 'piratenkleider' ),
+                  'label'   => __( 'Angabe mit der im RSS-Feed der Autorname bei allen Artikel &uuml;berschrieben wird.', 'piratenkleider' ),
+                  'parent'  => 'anonymitaet',
+              ),  
                
               'meta'  => array(
                   'type'    => 'section',

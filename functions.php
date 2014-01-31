@@ -205,6 +205,16 @@ function piratenkleider_setup() {
 	if ($options['aktiv-linktipps']) {
 	    require( get_template_directory() . '/inc/custom-posts.php' );
 	}
+        if (isset($options['feed-overwriteauthorstring']) && (strlen(trim($options['feed-overwriteauthorstring']))>1 )) {
+             add_filter( 'the_author', 'feed_author' );
+              function feed_author($name) {
+                global $options;  
+                if( is_feed() && !is_admin()) {
+                return $options['feed-overwriteauthorstring'];  
+              }
+        }
+}
+        
 	
 
 }
@@ -474,7 +484,9 @@ function piratenkleider_addmetatags() {
 
 add_action('wp_head', 'piratenkleider_addmetatags');
 
-    
+
+
+
 
 /* Anonymize IP */
 function getAnonymIp( $ip, $strongness = 2 ) {
