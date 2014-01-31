@@ -27,11 +27,11 @@
 <body <?php body_class(); ?>>
         <nav role="navigation">
             <ul id="top" class="nav skiplinks">		
-		<li><a class="ym-skip" id="skiplink-nav" href="#nav"><?php _e( 'Zur Navigation springen.', 'piratenkleider' ); ?></a></li>
-		<li><a class="ym-skip" id="skiplink-content" href="#main-content"><?php _e( 'Zum Inhalt springen.', 'piratenkleider' ); ?></a></li>
-		<?php if ( $options['aktiv-suche'] == "1" ){ ?>
-                <li><a class="ym-skip" id="skiplink-search" href="#searchform"><?php _e( 'Zur Suche springen.', 'piratenkleider' ); ?></a></li>
-		<?php } ?>
+                <li><a id="skiplink-nav" href="#nav"><?php _e( 'Zur Navigation springen.', 'piratenkleider' ); ?></a></li>
+                <li><a id="skiplink-content" href="#main-content"><?php _e( 'Zum Inhalt springen.', 'piratenkleider' ); ?></a></li>
+                <?php if ( $options['aktiv-suche'] == "1" ){ ?>
+                <li><a id="skiplink-search" href="#searchform"><?php _e( 'Zur Suche springen.', 'piratenkleider' ); ?></a></li>
+                <?php } ?>
             </ul>
         </nav>
 	<div class="section header">

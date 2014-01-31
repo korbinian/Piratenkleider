@@ -254,9 +254,7 @@ function piratenkleider_scripts() {
 	if (($userstyle==0) || (($userstyle==1) && ($options['stylefile-position']!=4))) {
 	    if ((isset($options['css-colorfile'])) && (strlen(trim($options['css-colorfile']))>1)) { 
 		 wp_enqueue_style( 'color', get_template_directory_uri().'/css/'.$options['css-colorfile'] );	             
-	    }        
-	    
-	  
+	    }        	  
 
 	    if (isset($options['aktiv-mediaqueries-allparts']) && ($options['aktiv-mediaqueries-allparts']==1)) {
 		wp_enqueue_style( 'basemod_mediaqueries_allparts', $defaultoptions['src-basemod_mediaqueries_allparts'] );
@@ -267,7 +265,6 @@ function piratenkleider_scripts() {
 	    }   
 	
 	    if ( is_singular() ) {
-
 		$nosidebar = get_post_meta( get_the_ID(), 'piratenkleider_nosidebar', true );
 		$custom_fields = get_post_custom(); 
 		if ( ( !empty( $nosidebar ) && $nosidebar==1) 
@@ -338,10 +335,10 @@ function piratenkleider_addfonts() {
               if ($seturl==1) $output .= ", ";
               $output .= 'url('.get_template_directory_uri().$default_fonts[$setfont]['svg'].') format("svg")';                                              
           }          $output .= ";}\n";    
-          $output .= "body,.teaserlinks ul li a span { font-family: FontPiratenkleiderDefault; }\n";
+          $output .= "body,.defaultfont,.teaserlinks ul li a span { font-family: FontPiratenkleiderDefault; }\n";
   
       } else {
-        $output .= 'body,.teaserlinks ul li a span { font-family: '.$default_fonts[$setfont]['family'].'; }';
+        $output .= 'body,.defaultfont,.teaserlinks ul li a span { font-family: '.$default_fonts[$setfont]['family'].'; }';
         $output .= "\n";  
       }
   }  
@@ -370,10 +367,10 @@ function piratenkleider_addfonts() {
               if ($seturl==1) $output .= ", ";
               $output .= 'url('.get_template_directory_uri().$default_fonts[$setfont]['svg'].') format("svg")';                                              
           }          $output .= ";}\n";    
-          $output .= "h1,h2,h3,h4,h5,h6,.tagcloud,.post-nav a,ol.az dl dt,.post .post-info .cal-icon .day,.first-startpage-widget-area li a { font-family: FontPiratenkleiderHeadlines; }\n";
+          $output .= "h1,h2,h3,h4,h5,h6,.headlinefont,.tagcloud,.post-nav a,ol.az dl dt,.post .post-info .cal-icon .day,.first-startpage-widget-area li a { font-family: FontPiratenkleiderHeadlines; }\n";
   
       } else {
-        $output .= 'h1,h2,h3,h4,h5,h6,.tagcloud,.post-nav a,ol.az dl dt,.post .post-info .cal-icon .day,.first-startpage-widget-area li a { font-family: '.$default_fonts[$setfont]['family'].'; }';
+        $output .= 'h1,h2,h3,h4,h5,h6,.headlinefont,.tagcloud,.post-nav a,ol.az dl dt,.post .post-info .cal-icon .day,.first-startpage-widget-area li a { font-family: '.$default_fonts[$setfont]['family'].'; }';
         $output .= "\n";  
       }
       
@@ -403,10 +400,9 @@ function piratenkleider_addfonts() {
               $output .= 'url('.get_template_directory_uri().$default_fonts[$setfont]['svg'].') format("svg")';                                              
           }
           $output .= ";}\n";    
-          $output .= ".nav-main ul.menu li a,.cifont,.sticker ul li,.teaserlinks ul li a { font-family: FontPiratenkleiderMenuHeadlines; }\n";
-  
+          $output .= ".menufont, .nav-main ul.menu li a,.cifont,.sticker ul li,.teaserlinks ul li a { font-family: FontPiratenkleiderMenuHeadlines; }\n";  
       } else {
-        $output .= '.nav-main ul.menu li a,.cifont,.sticker ul li,.teaserlinks ul li a { font-family: '.$default_fonts[$setfont]['family'].'; }';
+        $output .= '.menufont,.nav-main ul.menu li a,.cifont,.sticker ul li,.teaserlinks ul li a { font-family: '.$default_fonts[$setfont]['family'].'; }';
         $output .= "\n";  
       }
   }
@@ -659,10 +655,7 @@ function piratenkleider_compatibility ($oldoptions) {
 	delete_option('piratenkleider_theme_kontaktinfos');
 	$doupdate = 1;
     }
-    
-    
-    
-    
+        
     if ($doupdate==1) {
 	update_option('piratenkleider_theme_options', $newoptions);
     }
