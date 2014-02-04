@@ -29,7 +29,7 @@ $defaultoptions = array(
     'default-fontset-file'          => 'font-bebas.css',
     'src-jquery'                    => get_template_directory_uri(). "/js/jquery.min.js",
     'src-flexslider'                => get_template_directory_uri(). "/js/jquery.flexslider-min.js",
-    'src-layoutjs'                  => get_template_directory_uri(). "/js/layout.min.js",
+    'src-layoutjs'                  => get_template_directory_uri(). "/js/layout.js",
     'src-comment-reply'             => get_template_directory_uri(). "/js/comment-reply.js",
 
     'src-default-symbolbild'        => get_template_directory_uri() .'/images/default-vorlage.jpg',

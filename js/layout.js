@@ -121,7 +121,41 @@ jQuery(document).ready(function($) {
     $.OnClickOnSwitchOn();
    }
     
+    
+
+
+//alert('test');
+
+    $(window).scroll(function () { 
+        if ( $(window).scrollTop() > 184 ) {
+     /*     if ( !$("body").hasClass("nav-fixed") ) $(".menu-item-home").animate({ left: "20px"}, 200, "linear", function() {
+                  $(".menu-item-home").animate({ left: "0px"}, 200);
+            });          
+            */
+          $("body").addClass("nav-fixed");
+      //    $("nav.main .menu-mlid-355 a").attr("title", "Zur Startseite");
+        };
+        if ( $(window).scrollTop() <= 184 ) {
+        /* if ( $("body").hasClass("nav-fixed") ) $(".menu-item-home").animate({ left: "0px"}, 200, function() {
+                  $("#nav-home-text").animate({ left: "20px"}, 200, "linear", function() {
+                  //  $(".menu-mlid-355 a").removeAttr("style");
+              });
+            });          
+          */ 
+          $("body").removeClass("nav-fixed");    
+      //    $("nav.main .menu-mlid-355 a").attr("title", "");       
+        };          
+    });
+
+    $("#nav-select").change(function(){
+    //alert('url = ' + this.value );
+    window.location.href = this.value;
+  });
+ 
+    
 });  
+
+
 
 /* 
  *  Workaround für IE8 und Webkit browser, um den Focus zu korrigieren, bei Verwendung von Skiplinks

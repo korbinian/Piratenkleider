@@ -2,7 +2,7 @@
     global $options;
     global $defaultoptions;
  ?>   
-</div>
+
 
 <div class="section footer">
     <div class="row">

@@ -1878,12 +1878,9 @@ display: inline-block;
 	/* ------------------------------ Wrapper */
 
 	
-	.chrome-container {
-	    margin: 3.2em auto;
-	    max-width: 1440px;
-	}
+
 	
-.chrome-container .teaser {
+ .teaser {
     margin-right: 0px;
         background: none repeat scroll 0 0 #FFFFFF;
     border-left: 1px solid #D1D1D1;
@@ -1893,6 +1890,7 @@ display: inline-block;
     border-bottom: 3px solid orange;
      height: 240px;
       margin-right: -2px;
+        max-width: 1440px;
 }
 #wrapper-inside {}
 

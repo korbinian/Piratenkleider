@@ -667,10 +667,6 @@ div#searchform {
 .searchform {
   padding: 10px 10px 5px 10px;
   font-size: 1.2em;
-  /* 
-     background: #f7f7f7;
-     background: rgba(255, 255, 255, 0.5);
-  */ 
   position: relative;
 }
 .searchform input#s {
@@ -881,7 +877,34 @@ display: inline-block;
       max-width: 15em;
  }
  
+ body.nav-fixed .header {
+     position: fixed;
+     top: 0;
+     height: 46px;
+     z-index: 99;
+     border-bottom: 6px solid black;
+ }
+ body.nav-fixed .header .branding, 
+ body.nav-fixed .header .nav-top, 
+ body.nav-fixed .header .sticker {
+     display: none;
+ }
+ body.nav-fixed .header .nav-main {
+     top: 0px;
+     z-index: 99;  
+ }
+ body.nav-fixed .header .nav-main ul {
+     background: transparent;
+ }
+ body.nav-fixed .teaser {
+    margin-top: 220px;
+    
+ }
 
+ 
+ 
+ /* Breadcrumb */
+ 
 .breadcrumbs {
   background: black;
   color: #eeeeee; 
@@ -902,6 +925,7 @@ display: inline-block;
 
 .teaser {
     height: 240px;
+    position: relative;
 }
   .teaser .row {
     background: #c96a00;
@@ -1060,8 +1084,7 @@ display: inline-block;
      word-break:  break-word;
     -webkit-hyphens: auto;
     -moz-hyphens: auto;
-        hyphens:  auto; 
-
+    hyphens: auto; 
 }
 
 .content p, .content form {
@@ -1178,9 +1201,11 @@ display: inline-block;
     background-color: beige;
   }
 
-  .content-primary .columns .column1, .content-primary .columns .column2 {
+  .content-primary .columns .column1, 
+  .content-primary .columns .column2 {
       margin-bottom: 20px; }
-  .content-primary .columns .column1 hr, .content-primary .columns .column2 hr {
+  .content-primary .columns .column1 hr, 
+  .content-primary .columns .column2 hr {
         display: none; 
   }
   .content-primary .columns .column1 {
@@ -1203,7 +1228,7 @@ display: inline-block;
         .content-primary .post-nav .related li img {
           display: none; }
   .content-primary ol.az {
-    margin: 0 !important;
+    margin: 0;
     overflow: hidden;
     width: 100%; }
 .content-primary ol.az h2 {
@@ -1774,12 +1799,6 @@ img.wp-smiley {
 .home .post-entry p {
   margin-bottom: 0px; }
 
-/*
-.single .post-title, 
-.content-primary .skin h1 {  
-  margin-bottom: 40px; 
-}
- */
 .single .post-entry p {
   margin-bottom: 20px; }
 
@@ -2950,7 +2969,7 @@ html[xmlns] .slides {
     text-align: center;
     padding: 1px;
     overflow: hidden;
-    z-index: 800;  
+    z-index: 80;  
 }
 
 
@@ -3120,7 +3139,7 @@ html[xmlns] .slides {
         padding-left: 25px;
         padding-right: 25px;
         text-indent: -999em;
-        background: url("../images/home.gif") no-repeat center 10px; 
+        background: url("../images/home-menu.gif") no-repeat 17px 10px; 
 }
 
 .nav-main ul.menu li.current-menu-item > a,
@@ -3128,9 +3147,6 @@ html[xmlns] .slides {
     background: none repeat scroll 0 0 black;
     color: white;
 }
-
-
-
 
 .nav-main ul.menu li.current-menu-item  > a,
 .nav-main ul.menu li.current-page-ancestor  > a,
@@ -3147,28 +3163,55 @@ html[xmlns] .slides {
     color: black;
 }
 
- 
-
-
  .nav-main ul.menu li a[title="Home"]:hover,
  .nav-main ul.menu li a[title="Home"].hover,
  .nav-main ul.menu li.menu-item-home a:hover,
  .nav-main ul.menu li.menu-item-home a.hover {
-      background: white url("../images/home.gif") no-repeat center 10px; 
+      background: white url("../images/home-menu.gif") no-repeat 17px 10px; 
  }
      
  .nav-main ul.menu li.current_page_item a[title="Home"],
  .nav-main ul.menu li.current-menu-item.menu-item-home a {
-    background: #111111 url("../images/home.gif") no-repeat center -107px;
+    background: #111111 url("../images/home-menu.gif") no-repeat 17px -107px;
  }
 
  .nav-main ul.menu li.current_page_item a[title="Home"]:hover,
  .nav-main ul.menu li.current_page_item a[title="Home"].hover,
  .nav-main ul.menu li.current-menu-item.menu-item-home a:hover,
  .nav-main ul.menu li.current-menu-item.menu-item-home a.hover {
-      background: #111111 url("../images/home.gif") no-repeat center 10px; 
+      background: #111111 url("../images/home-menu.gif") no-repeat 17px 10px; 
  }
      
+
+ 
+ body.nav-fixed .nav-main ul.menu li a[title="Home"],
+ body.nav-fixed .nav-main ul.menu li.menu-item-home a {
+        background: url("../images/home-menu.gif") no-repeat -57px 4px; 
+}
+
+ body.nav-fixed .nav-main ul.menu li a[title="Home"]:hover,
+ body.nav-fixed .nav-main ul.menu li a[title="Home"].hover,
+ body.nav-fixed .nav-main ul.menu li.menu-item-home a:hover,
+ body.nav-fixed .nav-main ul.menu li.menu-item-home a.hover {
+      background: white url("../images/home-menu.gif") no-repeat -57px 4px; 
+ }
+     
+ body.nav-fixed .nav-main ul.menu li.current_page_item a[title="Home"],
+ body.nav-fixed .nav-main ul.menu li.current-menu-item.menu-item-home a {
+    background: #111111 url("../images/home-menu.gif") no-repeat -57px -95px
+ }
+
+ body.nav-fixed .nav-main ul.menu li.current_page_item a[title="Home"]:hover,
+ body.nav-fixed .nav-main ul.menu li.current_page_item a[title="Home"].hover,
+ body.nav-fixed .nav-main ul.menu li.current-menu-item.menu-item-home a:hover,
+ body.nav-fixed .nav-main ul.menu li.current-menu-item.menu-item-home a.hover {
+      background: #111111 url("../images/home-menu.gif") no-repeat -57px 4px; 
+ }
+ 
+ 
+ 
+
+
 .nav-main ul.menu li ul {
     position: absolute;
     top: -999em; 
