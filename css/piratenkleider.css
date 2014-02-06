@@ -3193,7 +3193,7 @@ html[xmlns] .slides {
  body.nav-fixed .nav-main ul.menu li a[title="Home"].hover,
  body.nav-fixed .nav-main ul.menu li.menu-item-home a:hover,
  body.nav-fixed .nav-main ul.menu li.menu-item-home a.hover {
-      background: white url("../images/home-menu.gif") no-repeat -57px 4px; 
+      background: white url("../images/home-menu.gif") no-repeat -57px 8px; 
  }
      
  body.nav-fixed .nav-main ul.menu li.current_page_item a[title="Home"],
@@ -3205,7 +3205,7 @@ html[xmlns] .slides {
  body.nav-fixed .nav-main ul.menu li.current_page_item a[title="Home"].hover,
  body.nav-fixed .nav-main ul.menu li.current-menu-item.menu-item-home a:hover,
  body.nav-fixed .nav-main ul.menu li.current-menu-item.menu-item-home a.hover {
-      background: #111111 url("../images/home-menu.gif") no-repeat -57px 4px; 
+      background: #111111 url("../images/home-menu.gif") no-repeat -57px 8px; 
  }
  
  
