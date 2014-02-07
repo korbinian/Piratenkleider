@@ -178,13 +178,118 @@ function linktipp_metabox_updated_messages( $messages ) {
 }
 add_filter( 'post_updated_messages', 'linktipp_metabox_updated_messages' );
 
-function linktipps_shortcode( $atts ) {
+function linktipp_display ($linktipp) {
     global $options;
+    if (!isset($linktipp)) {
+	return;
+    }
+ 
+    $post_id = isset( $linktipp->ID ) ? $linktipp->ID : 0;
+    $title = get_the_title($linktipp); 
+    $linktipp_url = get_post_meta( $post_id, 'linktipp_url', true );
+    $linktipp_imgid = get_post_meta( $post_id, 'linktipp_imgid', true );
+    $linktipp_image = get_post_meta( $post_id, 'linktipp_image', true );
+    $linktipp_untertitel = get_post_meta( $post_id, 'linktipp_untertitel', true );
+    $linktipp_text = get_post_meta( $post_id, 'linktipp_text', true );
+    if (isset($linktipp_untertitel) && !isset($title)) {
+	$title = $linktipp_untertitel;
+	$linktipp_untertitel = '';
+    } 
+    $out = '';			 
+    $out .= '<section class="shortcode p3-column linktipps" id="post-'.$post_id.'" >';
+    $out .= "\n";
+       if ($options['linktipps-titlepos']!=1) { 
+	  $out .=  '<header class="post-title p3-cbox">';
+	      if (mb_strlen(trim($linktipp_untertitel))>1) {
+		  $out .= '<hgroup>';
+	      }
+	      if (($options['linktipps-subtitlepos']==0) && (mb_strlen(trim($linktipp_untertitel))>1)) {
+		  $out .= '<h3 class="subtitle">'.$linktipp_untertitel.'</h3>';
+	      }
+
+	     $out .= '<h2>';   
+	     if (($options['linktipps-linkpos']==0) || ($options['linktipps-linkpos']==3)) {	
+		  $out .= '<a href="'.$linktipp_url.'" rel="bookmark">';
+	      }    
+	      $out .=  $title;
+	      if (($options['linktipps-linkpos']==0) || ($options['linktipps-linkpos']==3)) { echo '</a>'; }
+	      $out .= '</h2>';
+	      if (($options['linktipps-subtitlepos']==1) && (mb_strlen(trim($linktipp_untertitel))>1)) { 
+		  $out .= '<h3 class="subtitle">'.$linktipp_untertitel.'</h3>';
+
+	      }
+	      if (mb_strlen(trim($linktipp_untertitel))>1) {
+		  $out .= '</hgroup>';
+	      }
+	  $out .= '</header>';  
+	   $out .= "\n";
+       } 
+       $out .= '<div class="p3-column">';
+	$out .= "\n";
+	   $out .= '<article class="post-entry p3-cbox"><p>';
+	   $out .= "\n";
+	       if ($options['linktipps-linkpos']==1) {    
+		   $out .= '<a href="'.$linktipp_url.'">';
+	       }
+
+	       if (isset($linktipp_imgid) && ($linktipp_imgid>0)) {
+		   $image_attributes = wp_get_attachment_image_src( $linktipp_imgid, 'linktipp-thumb' );
+		   if (is_array($image_attributes)) {
+		      $out .= '<img src="'.$image_attributes[0].'" width="'.$image_attributes[1].'" height="'.$image_attributes[2].'" alt="'.$linktipp_text.'">';
+		   }
+	       } elseif (isset($linktipp_image)) {
+		   $out .= '<img src="'.$linktipp_image.'" alt="">'; 
+	       }                 		
+	       if ($options['linktipps-linkpos']==1) {    
+		   $out .= '</a>';
+	       }
+	      if (isset($linktipp_text)) {
+		   $out .=  $linktipp_text;
+	      }     
+	   $out .= '</p>';
+	   $out .= "</article>\n"; 
+
+	   if ($options['linktipps-titlepos']==1) { 
+	      $out .= '<header class="post-title p3-cbox">';
+	      if (str_len(trim($linktipp_untertitel))>1) {
+		  $out .= '<hgroup>';
+	      }
+	      if (($options['linktipps-subtitlepos']==0) && (str_len(trim($linktipp_untertitel))>1)) {
+		  $out .= '<h3 class="subtitle">'.$linktipp_untertitel.'</h3>';
+	      }
+	      $out .= '<h2>';   
+	      if (($options['linktipps-linkpos']==0) || ($options['linktipps-linkpos']==3)) { 	
+		  $out .= '<a href="'.$linktipp_url.'" rel="bookmark">';
+	      }    
+	      $out .=  $title;
+	      if (($options['linktipps-linkpos']==0) || ($options['linktipps-linkpos']==3)) { echo '</a>'; }
+	      $out .= '</h2>';
+	      if (($options['linktipps-subtitlepos']==1) && (str_len(trim($linktipp_untertitel))>1)) {
+		  $out .= '<h3 class="subtitle">'.$linktipp_untertitel.'</h3>';
+	      }
+	      if (str_len(trim($linktipp_untertitel))>1) {
+		  $out .= '</hgroup>';
+	      }
+	      $out .= '</header>'; 
+	       $out .= "\n";
+	    }
+	    if (($options['linktipps-linkpos']==2) || ($options['linktipps-linkpos']==3)) { 
+		$out .= '<footer class="linktipp-url"><a href="'.$linktipp_url.'">'.$linktipp_url.'</a></footer>'; 
+
+	    }
+
+	$out .= "</div>\n"; 
+    $out .= "</section>\n";
+    return $out;
+    
+}
+
+function linktipps_shortcode( $atts ) {
 	extract( shortcode_atts( array(
 		'cat' => '',
 		'num' => 5,
 	), $atts ) );
-	
+	$num = sanitize_text_field($num);
 	$cat = sanitize_text_field($cat);
 	if ((isset($cat)) && ( strlen(trim($cat))>0)) {
 	    $args = array(
@@ -210,105 +315,8 @@ function linktipps_shortcode( $atts ) {
 		    while ($links->have_posts() && ($i<$num) ) {
 			$links->the_post();
 			$i++;
-	
-			    $post_id = $links->post->ID;
-			    $title = get_the_title(); 
-			    $linktipp_url = get_post_meta( $post_id, 'linktipp_url', true );
-			    $linktipp_imgid = get_post_meta( $post_id, 'linktipp_imgid', true );
-			    $linktipp_image = get_post_meta( $post_id, 'linktipp_image', true );
-			    $linktipp_untertitel = get_post_meta( $post_id, 'linktipp_untertitel', true );
-			    $linktipp_text = get_post_meta( $post_id, 'linktipp_text', true );
-			  if (isset($linktipp_untertitel) && !isset($title)) {
-			      $title = $linktipp_untertitel;
-			      $linktipp_untertitel = '';
-			  } 
-			 
-			      $out .= '<section class="shortcode p3-column linktipps" id="post-'.$post_id.'" >';
-			      $out .= "\n";
-				 if ($options['linktipps-titlepos']!=1) { 
-				    $out .=  '<header class="post-title p3-cbox">';
-					if (mb_strlen(trim($linktipp_untertitel))>1) {
-					    $out .= '<hgroup>';
-					}
-					if (($options['linktipps-subtitlepos']==0) && (mb_strlen(trim($linktipp_untertitel))>1)) {
-					    $out .= '<h3 class="subtitle">'.$linktipp_untertitel.'</h3>';
-					}
+			$out .= linktipp_display($links->post);
 
-				       $out .= '<h2>';   
-				       if (($options['linktipps-linkpos']==0) || ($options['linktipps-linkpos']==3)) {	
-					    $out .= '<a href="'.$linktipp_url.'" rel="bookmark">';
-					}    
-					$out .=  $title;
-					if (($options['linktipps-linkpos']==0) || ($options['linktipps-linkpos']==3)) { echo '</a>'; }
-					$out .= '</h2>';
-					if (($options['linktipps-subtitlepos']==1) && (mb_strlen(trim($linktipp_untertitel))>1)) { 
-					    $out .= '<h3 class="subtitle">'.$linktipp_untertitel.'</h3>';
-
-					}
-					if (mb_strlen(trim($linktipp_untertitel))>1) {
-					    $out .= '</hgroup>';
-					}
-				    $out .= '</header>';  
-				     $out .= "\n";
-				 } 
-				 $out .= '<div class="p3-column">';
-				  $out .= "\n";
-				     $out .= '<article class="post-entry p3-cbox"><p>';
-				     $out .= "\n";
-					 if ($options['linktipps-linkpos']==1) {    
-					     $out .= '<a href="'.$linktipp_url.'">';
-					 }
-
-					 if (isset($linktipp_imgid) && ($linktipp_imgid>0)) {
-					     $image_attributes = wp_get_attachment_image_src( $linktipp_imgid, 'linktipp-thumb' );
-					     if (is_array($image_attributes)) {
-						$out .= '<img src="'.$image_attributes[0].'" width="'.$image_attributes[1].'" height="'.$image_attributes[2].'" alt="'.$linktipp_text.'">';
-					     }
-					 } elseif (isset($linktipp_image)) {
-					     $out .= '<img src="'.$linktipp_image.'" alt="">'; 
-					 }                 		
-					 if ($options['linktipps-linkpos']==1) {    
-					     $out .= '</a>';
-					 }
-					if (isset($linktipp_text)) {
-					     $out .=  $linktipp_text;
-					}     
-				     $out .= '</p>';
-				     $out .= "</article>\n"; 
-
-				     if ($options['linktipps-titlepos']==1) { 
-					$out .= '<header class="post-title p3-cbox">';
-					if (str_len(trim($linktipp_untertitel))>1) {
-					    $out .= '<hgroup>';
-					}
-					if (($options['linktipps-subtitlepos']==0) && (str_len(trim($linktipp_untertitel))>1)) {
-					    $out .= '<h3 class="subtitle">'.$linktipp_untertitel.'</h3>';
-					}
-					$out .= '<h2>';   
-					if (($options['linktipps-linkpos']==0) || ($options['linktipps-linkpos']==3)) { 	
-					    $out .= '<a href="'.$linktipp_url.'" rel="bookmark">';
-					}    
-					$out .=  $title;
-					if (($options['linktipps-linkpos']==0) || ($options['linktipps-linkpos']==3)) { echo '</a>'; }
-					$out .= '</h2>';
-					if (($options['linktipps-subtitlepos']==1) && (str_len(trim($linktipp_untertitel))>1)) {
-					    $out .= '<h3 class="subtitle">'.$linktipp_untertitel.'</h3>';
-					}
-					if (str_len(trim($linktipp_untertitel))>1) {
-					    $out .= '</hgroup>';
-					}
-					$out .= '</header>'; 
-					 $out .= "\n";
-				      }
-				      if (($options['linktipps-linkpos']==2) || ($options['linktipps-linkpos']==3)) { 
-					  $out .= '<footer class="linktipp-url"><a href="'.$linktipp_url.'">'.$linktipp_url.'</a></footer>'; 
-
-				      }
-
-				  $out .= "</div>\n"; 
-			      $out .= "</section>\n";
-				
-	  
 		    }
 		    wp_reset_postdata();
 	

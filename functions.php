@@ -10,7 +10,6 @@
 
 require( get_template_directory() . '/inc/constants.php' );
 
-
 $options = get_option('piratenkleider_theme_options');
 $options = piratenkleider_compatibility($options);
     // adjusts variables for downwards comptability
@@ -32,7 +31,7 @@ if ($options['anonymize-user']==1) {
 
   
 
-require_once ( get_template_directory() . '/theme-options.php' );     
+require_once ( get_template_directory() . '/inc/theme-options.php' );     
 
 
 
@@ -574,104 +573,15 @@ function piratenkleider_compatibility ($oldoptions) {
     global $defaultoptions;
     $doupdate = 0;
     
-    $old_bilderarray =  get_option('piratenkleider_theme_defaultbilder');
-
-    if (!is_array($oldoptions)) {
-	$oldoptions = array();
-    }
-     
-    if (is_array($old_bilderarray))  {      
-	$newoptions = array_merge($defaultoptions,$old_bilderarray, $oldoptions);	  
-	delete_option('piratenkleider_theme_defaultbilder');
-	$doupdate = 1;
-    } else {
-	$newoptions = array_merge($defaultoptions,$oldoptions);	
-    }    
+    $newoptions = array_merge($defaultoptions,$oldoptions);	        
     
-
-    if ((isset($oldoptions['social_facebook'])) && (filter_var($oldoptions['social_facebook'], FILTER_VALIDATE_URL))) {
-        $newoptions['sm-list']['facebook']['content'] = $oldoptions['social_facebook'];
-        $newoptions['sm-list']['facebook']['active'] = 1;	
-    }
-    if ((isset($oldoptions['social_twitter'])) && (filter_var($oldoptions['social_twitter'], FILTER_VALIDATE_URL))) {
-        $newoptions['sm-list']['twitter']['content'] = $oldoptions['social_twitter'];
-        $newoptions['sm-list']['twitter']['active'] = 1;
-    }    
-    if ((isset($oldoptions['social_gplus'])) && (filter_var($oldoptions['social_gplus'], FILTER_VALIDATE_URL))) {
-        $newoptions['sm-list']['gplus']['content'] = $oldoptions['social_gplus'];
-        $newoptions['sm-list']['gplus']['active'] = 1;
-    }   
-    if ((isset($oldoptions['social_diaspora'])) && (filter_var($oldoptions['social_diaspora'], FILTER_VALIDATE_URL))) {
-        $newoptions['sm-list']['diaspora']['content'] = $oldoptions['social_diaspora'];
-        $newoptions['sm-list']['diaspora']['active'] = 1;
-    }   
-    if ((isset($oldoptions['social_identica'])) && (filter_var($oldoptions['social_identica'], FILTER_VALIDATE_URL))) {
-        $newoptions['sm-list']['identica']['content'] = $oldoptions['social_identica'];
-        $newoptions['sm-list']['identica']['active'] = 1;
-    } 
-    if ((isset($oldoptions['social_youtube'])) && (filter_var($oldoptions['social_youtube'], FILTER_VALIDATE_URL))) {
-        $newoptions['sm-list']['youtube']['content'] = $oldoptions['social_youtube'];
-        $newoptions['sm-list']['youtube']['active'] = 1;
-    } 
-    if ((isset($oldoptions['social_itunes'])) && (filter_var($oldoptions['social_itunes'], FILTER_VALIDATE_URL))) {
-        $newoptions['sm-list']['itunes']['content'] = $oldoptions['social_itunes'];
-        $newoptions['sm-list']['itunes']['active'] = 1;
-    } 
-    if ((isset($oldoptions['social_flickr'])) && (filter_var($oldoptions['social_flickr'], FILTER_VALIDATE_URL))) {
-        $newoptions['sm-list']['flickr']['content'] = $oldoptions['social_flickr'];
-        $newoptions['sm-list']['flickr']['active'] = 1;
-    }     
-    if ((isset($oldoptions['social_delicious'])) && (filter_var($oldoptions['social_delicious'], FILTER_VALIDATE_URL))) {
-        $newoptions['sm-list']['delicious']['content'] = $oldoptions['social_delicious'];
-        $newoptions['sm-list']['delicious']['active'] = 1;
-    }  
-    if ((isset($oldoptions['social_flattr'])) && (filter_var($oldoptions['social_flattr'], FILTER_VALIDATE_URL))) {
-        $newoptions['sm-list']['flattr']['content'] = $oldoptions['social_flattr'];
-        $newoptions['sm-list']['flattr']['active'] = 1;
-    } 
-    if ((isset($oldoptions['social_feed'])) && (filter_var($oldoptions['social_feed'], FILTER_VALIDATE_URL))) {
-        $newoptions['sm-list']['feed']['content'] = $oldoptions['social_feed'];
-        $newoptions['sm-list']['feed']['active'] = 1;
-    }              
-
-    if ((isset($oldoptions['category-startpageview'])) &&  $oldoptions['category-startpageview']==1) {
-	if ((!isset($oldoptions['category-num-article-fullwidth'])) && (isset($oldoptions['num-article-startpage-fullwidth']))) {
-	   $newoptions['category-num-article-fullwidth'] = $oldoptions['num-article-startpage-fullwidth'];
-	}
-	if ((!isset($oldoptions['category-num-article-halfwidth'])) && (isset($oldoptions['num-article-startpage-halfwidth']))) {
-	   $newoptions['category-num-article-halfwidth'] = $oldoptions['num-article-startpage-halfwidth'];
-	}
-        $newoptions['category-teaser'] = 1;
-        $newoptions['category-startpageview'] =0;
-        $doupdate = 1;
-    }
-
-    if (!isset($newoptions['toplinkliste']))  {     
-	global $default_toplink_liste;
-	$newoptions['toplinkliste'] =  $default_toplink_liste;
-	 $doupdate = 1;
-    }
- 
-    
-    $olddesignopt = get_option( 'piratenkleider_theme_designspecials' );
-    if ((is_array($olddesignopt)) && (count($olddesignopt)>0)) {
-	 $newoptions = array_merge($newoptions,$olddesignopt);
-	delete_option('piratenkleider_theme_designspecials');
-	$doupdate = 1;
-    }
-    $oldkontaktinfos = get_option( 'piratenkleider_theme_kontaktinfos' );
-    if ((is_array($oldkontaktinfos)) && (count($oldkontaktinfos)>0)) {
-	 $newoptions = array_merge($newoptions,$oldkontaktinfos);
-	delete_option('piratenkleider_theme_kontaktinfos');
-	$doupdate = 1;
-    }
-        
     if ($doupdate==1) {
 	update_option('piratenkleider_theme_options', $newoptions);
     }
 
     return $newoptions;
 }
+
 if ( ! function_exists( 'piratenkleider_get_image_attributs' ) ) :
     function piratenkleider_get_image_attributs($id=0) {
         $precopyright = __('Bild: ','piratenkleider');
@@ -857,110 +767,20 @@ if ( ! function_exists( 'piratenkleider_post_teaser' ) ) :
 function piratenkleider_post_teaser($titleup = 1, $showdatebox = 1, $showdateline = 0, $teaserlength = 200, $thumbfallback = 1, $usefloating = 0) {
   global $options;
   global $post;
-   $post_id = $post->ID;
+  
+  $post_id = $post->ID;
   $sizeclass='';
+  $out = '';
   if ('linktipps'== get_post_type()  ) {
-      $title = get_the_title(); 
-      $linktipp_url = get_post_meta( $post_id, 'linktipp_url', true );
-      $linktipp_imgid = get_post_meta( $post_id, 'linktipp_imgid', true );
-      $linktipp_image = get_post_meta( $post_id, 'linktipp_image', true );
-      $linktipp_untertitel = get_post_meta( $post_id, 'linktipp_untertitel', true );
-      $linktipp_text = get_post_meta( $post_id, 'linktipp_text', true );
-      if (isset($linktipp_untertitel) && !isset($title)) {
-	  $title = $linktipp_untertitel;
-	  $linktipp_untertitel = '';
-      } 
-      if (isset($title) && strlen(trim($title))>1  
-	      && isset($linktipp_url)  && strlen(trim($linktipp_url))>1 
-	      && (isset($linktipp_imgid) || isset($linktipp_image) || isset($linktipp_text))) {  
-	  
-	    $sizeclass = 'p3-column post'; ?>
-	   <section <?php post_class($sizeclass); ?> id="post-<?php the_ID(); ?>" >
-	    <?php 
-	     if ($options['linktipps-titlepos']!=1) { 
-		echo '<header class="post-title p3-cbox">';
-		    if (mb_strlen(trim($linktipp_untertitel))>1) {
-			echo '<hgroup>';
-		    }
-		    if (($options['linktipps-subtitlepos']==0) && (mb_strlen(trim($linktipp_untertitel))>1)) {
-			echo '<h3 class="subtitle">'.$linktipp_untertitel.'</h3>';
-		    }
-
-		   echo '<h2>';   
-		   if (($options['linktipps-linkpos']==0) || ($options['linktipps-linkpos']==3)) {	
-			echo '<a href="'.$linktipp_url.'" rel="bookmark">';
-		    }    
-		    echo trim($title);
-		    if (($options['linktipps-linkpos']==0) || ($options['linktipps-linkpos']==3)) { echo '</a>'; }
-		    echo '</h2>';
-		    if (($options['linktipps-subtitlepos']==1) && (mb_strlen(trim($linktipp_untertitel))>1)) { 
-			echo '<h3 class="subtitle">'.$linktipp_untertitel.'</h3>';
-			
-		    }
-		    if (mb_strlen(trim($linktipp_untertitel))>1) {
-			echo '</hgroup>';
-		    }
-		echo '</header>';  
-	     } 
-	     echo '<div class="p3-column">';
-		 echo '<article class="post-entry p3-cbox"><p>';
-		     if ($options['linktipps-linkpos']==1) {    
-			 echo '<a href="'.$linktipp_url.'">';
-		     }
-
-		     if (isset($linktipp_imgid) && ($linktipp_imgid>0)) {
-			 $image_attributes = wp_get_attachment_image_src( $linktipp_imgid, 'linktipp-thumb' );
-			 if (is_array($image_attributes)) {
-			    echo '<img src="'.$image_attributes[0].'" width="'.$image_attributes[1].'" height="'.$image_attributes[2].'" alt="'.$linktipp_text.'">';
-			 }
-		     } elseif (isset($linktipp_image)) {
-			 echo '<img src="'.$linktipp_image.'" alt="">'; 
-		     }                 		
-		     if ($options['linktipps-linkpos']==1) {    
-			 echo '</a>';
-		     }
-		    if (isset($linktipp_text)) {
-			 echo $linktipp_text;
-		    }     
-		 echo '</p></article>'; 
-
-		 if ($options['linktipps-titlepos']==1) { 
-		    echo '<header class="post-title p3-cbox">';
-		    if (str_len(trim($linktipp_untertitel))>1) {
-			echo '<hgroup>';
-		    }
-		    if (($options['linktipps-subtitlepos']==0) && (str_len(trim($linktipp_untertitel))>1)) {
-			echo '<h3 class="subtitle">'.$linktipp_untertitel.'</h3>';
-		    }
-		    echo '<h2>';   
-		    if (($options['linktipps-linkpos']==0) || ($options['linktipps-linkpos']==3)) { 	
-			echo '<a href="'.$linktipp_url.'" rel="bookmark">';
-		    }    
-		    echo $title;
-		    if (($options['linktipps-linkpos']==0) || ($options['linktipps-linkpos']==3)) { echo '</a>'; }
-		    echo '</h2>';
-		    if (($options['linktipps-subtitlepos']==1) && (str_len(trim($linktipp_untertitel))>1)) {
-			echo '<h3 class="subtitle">'.$linktipp_untertitel.'</h3>';
-		    }
-		    if (str_len(trim($linktipp_untertitel))>1) {
-			echo '</hgroup>';
-		    }
-		    echo '</header>'; 
-		  }
-		  if (($options['linktipps-linkpos']==2) || ($options['linktipps-linkpos']==3)) { 
-		      echo '<footer class="linktipp-url"><a href="'.$linktipp_url.'">'.$linktipp_url.'</a></footer>'; 
-
-		  }
-	      
-	      echo '</div>'; 
-	  echo '</section>';
-       }
-      return;
+      $out = linktipp_display($post);
+      echo $out;
+      return $out;
   }
  
   $leftbox = '';
+  $sizeclass = 'p3-column withthumb';   
   if (($showdatebox>0)  && ($showdatebox<5)) {
-       $sizeclass = 'p3-column withthumb';      
+          
        // Generate Thumb/Pic or Video first to find out which class we need
 
 	    $leftbox .=  '<div class="infoimage">';	    
@@ -1012,82 +832,69 @@ function piratenkleider_post_teaser($titleup = 1, $showdatebox = 1, $showdatelin
   if ($usefloating==1) {
       $sizeclass .= " usefloating";
   }
-  ?> 
-  <section <?php post_class($sizeclass); ?> id="post-<?php the_ID(); ?>" >
-    <?php 
+
+  $out .= '<section class="'. implode(' ',get_post_class($sizeclass)).'" id="post-'.$post->ID.'" >';
+  
         
-     if ($titleup==1) { ?>
-        <header class="post-title p3-cbox"><h2>          
-            <a href="<?php the_permalink(); ?>" rel="bookmark" title="<?php the_title(); ?>">
-              <?php the_title(); ?>
-            </a>
-	</h2></header>       
-       <div class="p3-column"> 
-     <?php }	
-   /* 0 = Datebox, 
-	 * 1 = Thumbnail (or: first picture, first video, fallback picture),
-	 * 2 = First picture (or: thumbnail, first video, fallback picture),
-	 * 3 = First video (or: thumbnail, first picture, fallback picture),
-	 * 4 = First video (or: first picture, thumbnail, fallback picture),
-	 * 5 = Nothing */
-     
+     if ($titleup==1) {
+        $out .= '<header class="post-title p3-cbox"><h2>';
+	$out .= '<a href="'.get_permalink().'" rel="bookmark">';
+	$out .= get_the_title();
+        $out .= '</a></h2></header>';
+	$out .= "\n";
+	$out .= '<div class="p3-column">'; 
+      }	
+
     if ($showdatebox<5) { 
-	echo '<div class="post-info p3-col1"><div class="p3-cbox">';
+	$out .= '<div class="post-info p3-col1"><div class="p3-cbox">';
 	if ($showdatebox==0) {		 
 	      $num_comments = get_comments_number();           
 	      if (($num_comments>0) || ( $options['zeige_commentbubble_null'])) { 
-		echo '<div class="commentbubble">'; 	
-		    if ($num_comments>0) {
-		       comments_popup_link( '0<span class="skip"> Kommentar</span>', '1<span class="skip"> Kommentar</span>', '%<span class="skip"> Kommentare</span>', 'comments-link', '%<span class="skip"> Kommentare</span>');           
-		    } else {
-			// Wenn der Zeitraum abgelaufen ist UND keine Kommentare gegeben waren, dann
-			// liefert die Funktion keinen Link, sondern nur den Text . Daher dieser
-			// Woraround:
-			$link = get_comments_link();
-			echo '<a href="'.$link.'">0<span class="skip"> Kommentar</span></a>';
-		  }
-		 echo '</div>'; 
-	       }
-	       ?>
-	       <div class="cal-icon">
-			<span class="day"><?php the_time('j.'); ?></span>
-			<span class="month"><?php the_time('m.'); ?></span>
-			<span class="year"><?php the_time('Y'); ?></span>
-		</div>
+		    $out .= '<div class="commentbubble">'; 	
+		    $out .= '<a href="'.get_comments_link().'">'.$num_comments.'<span class="skip"> Kommentar</span></a>';
+		    $out .= "</div>\n"; 
+	       }	
+		$out .= '<div class="cal-icon">';
+		$out .= '<span class="day">'.get_the_time('j.').'</span>';
+		$out .= '<span class="month">'.get_the_time('m.').'</span>';
+		$out .= '<span class="year">'.get_the_time('Y').'</span>';
+		$out .= "</div>\n";
 
-		<?php    
             } else {	
-                echo $leftbox;
+                $out .= $leftbox;
             } 
-            echo '</div></div>';
-            echo '<article class="post-entry p3-col3">';
-            echo '<div class="p3-cbox';
-            if ($usefloating==0) { echo ' p3-clearfix'; }
-            echo '">';	
+            $out .= '</div></div>';
+            $out .= '<article class="post-entry p3-col3">';
+            $out .= '<div class="p3-cbox';
+            if ($usefloating==0) { $out .= ' p3-clearfix'; }
+            $out .= '">';	
 	} else {
-	     echo '<article class="post-entry p3-cbox">';
+	     $out .= '<article class="post-entry p3-cbox">';
 	}
-	if ($titleup==0) { ?>       
-	    <header class="post-title"><h2>          
-	        <a href="<?php the_permalink(); ?>" rel="bookmark">
-	          <?php the_title(); ?>
-                </a>
-	    </h2></header>
-	 <?php }
+	if ($titleup==0) {  
+	    $out .= '<header class="post-title"><h2>';          
+	    $out .= '<a href="'.get_the_permalink().'" rel="bookmark">';
+	    $out .= get_the_title(); 
+            $out .= "</a></h2></header>\n";
+	 }
 	   
-	 if (($showdatebox!=0) && ($showdateline==1)) { ?>
-	    <p class="pubdateinfo"><?php piratenkleider_post_pubdateinfo(0); ?></p>	  	  
-	 <?php }
+	 if (($showdatebox!=0) && ($showdateline==1)) {  
+	    $out .= '<p class="pubdateinfo">';
+	    $out .=  piratenkleider_post_pubdateinfo(0); 
+	    $out .= "</p>\n";	  	  
+	 }
 	   
-	 echo get_piratenkleider_custom_excerpt($teaserlength); ?>     
-	 <?php if ($showdatebox<5) {	?>  
-            </div>    	
-            <div class="p3-ie-clearing">&nbsp;</div>	
-	<?php } ?>
-	</article>
-        <?php if ($titleup==1) { echo '</div>'; }       
-    echo '</section>'; 
-
+	 $out .= get_piratenkleider_custom_excerpt($teaserlength); 
+	 if ($showdatebox<5) {	 
+            $out .= "</div>\n";    	
+            $out .= '<div class="p3-ie-clearing">&nbsp;</div>';	
+	 } 
+	$out .= "</article>\n";
+        if ($titleup==1) { $out .= '</div>'; }       
+    $out .= "</section>\n"; 
+		
+    echo $out;
+    return $out;
 }
 endif;
 
@@ -1135,16 +942,16 @@ if ( ! function_exists( 'piratenkleider_post_pubdateinfo' ) ) :
  * Fusszeile unter Artikeln: Ver&ouml;ffentlichungsdatum
  */
 function piratenkleider_post_pubdateinfo($withtext = 1) {
+    $out = '';
     if ($withtext==1) {
-	echo '<span class="meta-prep">';
-        echo __('Ver&ouml;ffentlicht am', 'piratenkleider' );
-	echo '</span> ';
+	$out .= '<span class="meta-prep">';
+        $out .= __('Ver&ouml;ffentlicht am', 'piratenkleider' );
+	$out .= '</span> ';
     }
-    printf('%1$s',
-                sprintf( '<span class="entry-date">%1$s</span>',
-                        get_the_date()
-                )
-        );
+    $out .= '<span class="entry-date">';
+    $out .= get_the_date();
+    $out .= "</span>\n";
+    return $out;
 }
 endif;
 
