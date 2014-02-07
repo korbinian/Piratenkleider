@@ -3098,7 +3098,7 @@ html[xmlns] .slides {
         padding-left: 25px;
         padding-right: 25px;
         text-indent: -999em;
-        background: url("../images/home.gif") no-repeat center 10px; 
+        background: url("../images/home-signet.png") no-repeat 17px 10px; 
 }
 
 .nav-main ul.menu li.current-menu-item > a,
@@ -3127,25 +3127,51 @@ html[xmlns] .slides {
 
  
 
-
  .nav-main ul.menu li a[title="Home"]:hover,
  .nav-main ul.menu li a[title="Home"].hover,
  .nav-main ul.menu li.menu-item-home a:hover,
  .nav-main ul.menu li.menu-item-home a.hover {
-      background: white url("../images/home.gif") no-repeat center 10px; 
+      background: white url("../images/home-signet.png") no-repeat 17px 10px; 
  }
      
  .nav-main ul.menu li.current_page_item a[title="Home"],
  .nav-main ul.menu li.current-menu-item.menu-item-home a {
-    background: #111111 url("../images/home.gif") no-repeat center -107px;
+    background: #111111 url("../images/home-signet.png") no-repeat 17px -107px;
  }
 
  .nav-main ul.menu li.current_page_item a[title="Home"]:hover,
  .nav-main ul.menu li.current_page_item a[title="Home"].hover,
  .nav-main ul.menu li.current-menu-item.menu-item-home a:hover,
  .nav-main ul.menu li.current-menu-item.menu-item-home a.hover {
-      background: #111111 url("../images/home.gif") no-repeat center 10px; 
+      background: #111111 url("../images/home-signet.png") no-repeat 17px 10px; 
  }
+     
+
+ 
+ body.nav-fixed .nav-main ul.menu li a[title="Home"],
+ body.nav-fixed .nav-main ul.menu li.menu-item-home a {
+        background: url("../images/home-signet.png") no-repeat -57px 6px; 
+}
+
+ body.nav-fixed .nav-main ul.menu li a[title="Home"]:hover,
+ body.nav-fixed .nav-main ul.menu li a[title="Home"].hover,
+ body.nav-fixed .nav-main ul.menu li.menu-item-home a:hover,
+ body.nav-fixed .nav-main ul.menu li.menu-item-home a.hover {
+      background: white url("../images/home-signet.png") no-repeat -57px 6px; 
+ }
+     
+ body.nav-fixed .nav-main ul.menu li.current_page_item a[title="Home"],
+ body.nav-fixed .nav-main ul.menu li.current-menu-item.menu-item-home a {
+    background: #111111 url("../images/home-signet.png") no-repeat -57px -97px
+ }
+
+ body.nav-fixed .nav-main ul.menu li.current_page_item a[title="Home"]:hover,
+ body.nav-fixed .nav-main ul.menu li.current_page_item a[title="Home"].hover,
+ body.nav-fixed .nav-main ul.menu li.current-menu-item.menu-item-home a:hover,
+ body.nav-fixed .nav-main ul.menu li.current-menu-item.menu-item-home a.hover {
+      background: #111111 url("../images/home-signet.png") no-repeat -57px 6px; 
+ }
+ 
      
 .nav-main ul.menu li ul {
     position: absolute;
