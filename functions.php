@@ -14,7 +14,6 @@ $options = get_option('piratenkleider_theme_options');
 $options = piratenkleider_compatibility($options);
     // adjusts variables for downwards comptability
 
-// ** bw 2012-08-12 wordpress reverse proxy x-forwarded-for ip fix ** //
 if(isset($_SERVER['HTTP_X_FORWARDED_FOR'])) {
   $xffaddrs = explode(',',$_SERVER['HTTP_X_FORWARDED_FOR']);
   $_SERVER['REMOTE_ADDR'] = $xffaddrs[0];
@@ -286,8 +285,6 @@ function piratenkleider_scripts() {
 	   }
 
 	}
-
-
 
 	wp_enqueue_script(
 		    'layoutjs',
@@ -773,7 +770,6 @@ function piratenkleider_post_teaser($titleup = 1, $showdatebox = 1, $showdatelin
   $out = '';
   if ('linktipps'== get_post_type()  ) {
       $out = linktipp_display($post);
-      echo $out;
       return $out;
   }
  
@@ -850,9 +846,15 @@ function piratenkleider_post_teaser($titleup = 1, $showdatebox = 1, $showdatelin
 	if ($showdatebox==0) {		 
 	      $num_comments = get_comments_number();           
 	      if (($num_comments>0) || ( $options['zeige_commentbubble_null'])) { 
-		    $out .= '<div class="commentbubble">'; 	
-		    $out .= '<a href="'.get_comments_link().'">'.$num_comments.'<span class="skip"> Kommentar</span></a>';
-		    $out .= "</div>\n"; 
+                    $out .= '<div class="commentbubble">'; 
+                    $link = get_comments_link();
+                    $out .= '<a href="'.$link.'">'.$num_comments.'<span class="skip"> ';
+                    if ($num_comments>0) {
+                        $out .= __('Kommentare', 'piratenkleider' ).'</span></a>';
+                    } else {
+                        $out .= __('Kommentar', 'piratenkleider' ).'</span></a>';
+                    }
+                    $out .= "</div>\n"; 
 	       }	
 		$out .= '<div class="cal-icon">';
 		$out .= '<span class="day">'.get_the_time('j.').'</span>';
@@ -893,7 +895,6 @@ function piratenkleider_post_teaser($titleup = 1, $showdatebox = 1, $showdatelin
         if ($titleup==1) { $out .= '</div>'; }       
     $out .= "</section>\n"; 
 		
-    echo $out;
     return $out;
 }
 endif;
@@ -904,35 +905,29 @@ if ( ! function_exists( 'piratenkleider_post_datumsbox' ) ) :
  */
 function piratenkleider_post_datumsbox() {
     global $options;
-    echo '<div class="post-info">';
-          $num_comments = get_comments_number();           
-          if (($num_comments>0) || ( $options['zeige_commentbubble_null'])) { ?>
-         <div class="commentbubble"> 
-            <?php 
-                if ($num_comments>0) {
-                   comments_popup_link( '0<span class="skip"> Kommentar</span>', '1<span class="skip"> Kommentar</span>', '%<span class="skip"> Kommentare</span>', 'comments-link', '%<span class="skip"> Kommentare</span>');           
-                } else {
-                    // Wenn der Zeitraum abgelaufen ist UND keine Kommentare gegeben waren, dann
-                    // liefert die Funktion keinen Link, sondern nur den Text . Daher dieser
-                    // Woraround:
-                    $link = get_comments_link();
-                    echo '<a href="'.$link.'">0<span class="skip"> Kommentar</span></a>';
-              }
-            ?>
-          </div> 
-          <?php } ?>
 
-              <div class="cal-icon">
-                <span class="day"><?php the_time('j.'); ?></span>
-                <span class="month"><?php the_time('m.'); ?></span>
-                <span class="year"><?php the_time('Y'); ?></span>
-            </div>
-          <?php   
-     
-         
-    echo '</div>';
     
-    
+    $out = '<div class="post-info">';
+    $num_comments = get_comments_number();           
+     if (($num_comments>0) || ( $options['zeige_commentbubble_null'])) { 
+        $out .= '<div class="commentbubble">'; 
+        $link = get_comments_link();
+        $out .= '<a href="'.$link.'">'.$num_comments.'<span class="skip"> ';
+        if ($num_comments>0) {
+            $out .= __('Kommentare', 'piratenkleider' ).'</span></a>';
+        } else {
+            $out .= __('Kommentar', 'piratenkleider' ).'</span></a>';
+        }
+        $out .= "</div>\n"; 
+     } 
+    $out .= '<div class="cal-icon">';
+    $out .= '<span class="day">'.get_the_time('j.').'</span>';
+    $out .= '<span class="month">'.get_the_time('m.').'</span>';
+    $out .= '<span class="year">'.get_the_time('Y').'</span>';
+    $out .= "</div>\n";
+    $out .= '</div>';
+    return $out;
+
 }
 endif;
 

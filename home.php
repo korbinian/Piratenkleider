@@ -44,15 +44,13 @@
      }
       while (have_posts() && $i<$numentries) : the_post();
 	  $i++;
-	  ob_start();
+          $output = '';
 	  if (( isset($options['num-article-startpage-fullwidth']))
 		    && ($options['num-article-startpage-fullwidth']>=$i )) {
-		     piratenkleider_post_teaser($options['teaser-titleup'],$options['teaser-datebox'],$options['teaser-dateline'],$options['teaser_maxlength'],$options['teaser-thumbnail_fallback'],$options['teaser-floating']);
+		$output = piratenkleider_post_teaser($options['teaser-titleup'],$options['teaser-datebox'],$options['teaser-dateline'],$options['teaser_maxlength'],$options['teaser-thumbnail_fallback'],$options['teaser-floating']);
 	  } else {
-		     piratenkleider_post_teaser($options['teaser-titleup-halfwidth'],$options['teaser-datebox-halfwidth'],$options['teaser-dateline-halfwidth'],$options['teaser-maxlength-halfwidth'],$options['teaser-thumbnail_fallback'],$options['teaser-floating-halfwidth']);
+		$output =piratenkleider_post_teaser($options['teaser-titleup-halfwidth'],$options['teaser-datebox-halfwidth'],$options['teaser-dateline-halfwidth'],$options['teaser-maxlength-halfwidth'],$options['teaser-thumbnail_fallback'],$options['teaser-floating-halfwidth']);
 	  }
-	  $output = ob_get_contents();
-	  ob_end_clean();
 	  if (isset($output)) {
 	    $cols[$col++] = $output;
 	  }

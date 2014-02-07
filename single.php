@@ -57,8 +57,8 @@
                 ) {
 		   echo '<div class="disclaimer">'.$options['post_disclaimer'].'</div>';
                 }				
-		piratenkleider_post_datumsbox();  ?>  
-
+		echo piratenkleider_post_datumsbox();  
+                ?>  
 	      <article class="post-entry">
 		<?php the_content(); ?>
 	      </article>

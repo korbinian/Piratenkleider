@@ -4,10 +4,10 @@ Theme URI: http://piratenkleider.xwolf.de
 Description: Allgemeines Theme für Webauftritte der Piratenpartei
 Author: Wolfgang Wiese (xwolf)
 Author URI: http://www.xwolf.de 
-Version: 3.0
+Version: 3.0.7
 Tags: orange, two-columns, responsive, fluid-width
-License: CC-BY-SA 3.0 
-License URI: http://creativecommons.org/licenses/by-sa/3.0/de/deed.de
+License: GPL
+License URI: https://www.gnu.org/copyleft/gpl.html
 */
 
 html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary, time, mark, audio, video {
@@ -360,9 +360,7 @@ input[type="radio"] {
 input[type="checkbox"] {
   vertical-align: bottom; }
 
-.ie7 input[type="checkbox"] {
-  vertical-align: baseline; 
-}
+
 
 input[type="text"], input[type="password"], input[type="select"], 
 input[type="search"], input[type="file"], input[type="submit"],
@@ -372,9 +370,6 @@ input[type="reset"], input[type="button"] {
 input[type="text"] {
   padding: 5px; }
 
-.ie6 input {
-  vertical-align: text-bottom; 
-}
 
 label {
   position: relative;
@@ -897,10 +892,17 @@ display: inline-block;
      background: transparent;
  }
  body.nav-fixed .teaser {
-    margin-top: 220px;
-    
+    margin-top: 220px;    
  }
 
+ body.nav-fixed.logged-in .header {
+     height: 46px;
+     top: 32px;
+ }
+
+ body.nav-fixed.logged-in .teaser {
+    margin-top: 272px;    
+ }
  
  
  /* Breadcrumb */
@@ -2146,8 +2148,6 @@ img.wp-smiley {
  
  .content-aside .widget li:hover,
  .content-aside .widget li:focus,
-#ics-calendar-widget li:hover, 
-#ics-calendar-widget li:focus, 
  .content-aside .twitterwidget li:hover, 
  .content-aside .twitterwidget li:focus {
      background: #ff8800; 
@@ -2610,48 +2610,12 @@ ul.socialmedia {
 
 /* IE Anpassungen -----------------------------------------------------------*/
 
-.ie6 .nav-top .searchsubmit, 
-.ie7 .nav-top .searchsubmit {
-  margin-top: -1px; }
-
-.ie6 hr, .ie7 hr {
-  background: #fff;
-  height: 1px;
-  margin-bottom: 20px; }
 
 
-
-.ie6 .columns, 
-.ie7 .columns {
-  width: 99%; 
-}
-.ie6 .columns .column1, 
-.ie7 .columns .column1 {
-    width: 45%;
-    float: left; 
-}
-.ie6 .columns .column1 .post, 
-.ie7 .columns .column1 .post {
-      padding: 0 0 20px 0; 
-}
-.ie6 .columns .column2, 
-.ie7 .columns .column2 {
-    width: 45%;
-    float: right; 
-}
-.ie6 .columns .column2 .post, 
-.ie7 .columns .column2 .post {
-      padding: 0 0 20px; }
-.ie6 .single .post-info, 
-.ie7 .single .post-info {
-  display: none; 
-}
-
-.ie7 .nav-top ul, 
 .ie8 .nav-top ul {
   display: block; 
 }
-.ie7 .nav-top, 
+
 .ie8 .nav-top {
   position: absolute;
   top: 0;
@@ -2659,44 +2623,41 @@ ul.socialmedia {
   width: auto;
   height: 30px; 
 }
-.ie7 .nav-top a, 
+
 .ie8 .nav-top a {
     height: 30px;
     display: block; }
-.ie7 .nav-top ul.socialmedia, 
+
 .ie8 .nav-top ul.socialmedia {
     float: left; 
 }
-.ie7 .nav-top div.menu-header, 
+
 .ie8 .nav-top div.menu-header {
     float: left; }
 
-
-.ie7 .nav-top div.menu-header ul.menu, 
 .ie8 .nav-top div.menu-header ul.menu {
       overflow: hidden; }
-.ie7 .nav-top div.menu-header ul.menu li, 
+
 .ie8 .nav-top div.menu-header ul.menu li {
         float: left; }
-.ie7 .nav-top div.menu-header ul.menu li a, 
 .ie8 .nav-top div.menu-header ul.menu li a {
           line-height: 30px;
           padding: 0 10px;
           color: black; }
-.ie7 .nav-top div.menu-header ul.menu li a:hover,
+
 .ie8 .nav-top div.menu-header ul.menu li a:hover {
             color: #2d7dc5; }
-.ie7 .nav-top form.searchform, 
+
 .ie8 .nav-top form.searchform {
     float: left;
     width: 200px;
     height: 30px;
     padding: 3px 5px 0 5px; }
-.ie7 .nav-top form.searchform #s, 
+
 .ie8 .nav-top form.searchform #s {
       line-height: 18px;
      }
-.ie7 .nav-top form.searchform .searchsubmit, 
+
 .ie8 .nav-top form.searchform .searchsubmit {
       top: 3px;
       right: 3px;
@@ -2704,109 +2665,92 @@ ul.socialmedia {
       width: 24px;
       height: 24px; 
 }
-.ie7 .nav-top form.searchform input, 
+
 .ie8 .nav-top form.searchform input {
       padding: 2px; }
-.ie7 .sticker, 
+
 .ie8 .sticker {
   position: absolute;
   top: 50px;
   right: 8%; 
 }
-.ie7 .sticker .skin, 
+
 .ie8 .sticker .skin {
     padding: 10px; 
 }
-.ie7 .header .branding, 
+
 .ie8 .header .branding {
   padding-top: 40px;
   padding-bottom: 20px; 
 }
-.ie7 .header .newsletter, 
+
 .ie8 .header .newsletter {
   float: right;
   width: 33%;
   margin: 0; 
 }
-.ie7 .header .newsletter .skin,
+
 .ie8 .header .newsletter .skin {
     background: #f7f7f7; }
-.ie7 .header .newsletter .skin form, 
+
 .ie8 .header .newsletter .skin form {
       padding-bottom: 5px; }
-.ie7 .header .newsletter .skin form input[type="text"],
+
 .ie8 .header .newsletter .skin form input[type="text"] {
         float: left;
         width: 90%;
         margin-bottom: 0px; }
 
-
-.ie7 .teaser .first-teaser-widget-area, 
 .ie8 .teaser .first-teaser-widget-area {
   width: 67%; }
-.ie7 .teaser .second-teaser-widget-area, 
+
 .ie8 .teaser .second-teaser-widget-area {
   width: 33%; }
-.ie7 .content-primary, .ie8 .content-primary {
-  float: left;
-  width: 67%; }
-  .ie7 .content-primary .first-startpage-widget-area, 
+
+
   .ie8 .content-primary .first-startpage-widget-area {
     width: 50%;
     float: left;
     padding-top: 10px; }
-    .ie7 .content-primary .first-startpage-widget-area .skin,
+
     .ie8 .content-primary .first-startpage-widget-area .skin {
       padding-right: 10px; }
-  .ie7 .content-primary .second-startpage-widget-area, 
+
   .ie8 .content-primary .second-startpage-widget-area {
     width: 50%;
     float: right;
     padding-top: 10px; }
-    .ie7 .content-primary .second-startpage-widget-area .skin,
+
     .ie8 .content-primary .second-startpage-widget-area .skin {
       padding-left: 10px; }
-.ie7 .content-aside, .ie8 .content-aside {
-  float: right;
-  width: 33%; }
-.ie7 .columns .column1, .ie8 .columns .column1 {
-  width: 50%; }
-  .ie7 .columns .column1 .post, .ie8 .columns .column1 .post {
-    padding-right: 20px; }
-.ie7 .columns .column2, .ie8 .columns .column2 {
-  width: 50%; }
-  .ie7 .columns .column2 .post, .ie8 .columns .column2 .post {
-    padding-left: 20px; }
-    .ie7 .columns .column2 .post .cal-icon,
+
+
+
+
     .ie8 .columns .column2 .post .cal-icon {
       margin-left: 0; }
-.ie7 .first-subcontent-widget-area, 
+
 .ie8 .first-subcontent-widget-area {
   float: left;
   width: 33%; }
-.ie7 .second-subcontent-widget-area, 
+
 .ie8 .second-subcontent-widget-area {
   float: left;
   width: 33%; }
-.ie7 .third-subcontent-widget-area, 
+
 .ie8 .third-subcontent-widget-area {
   float: right;
   width: 33%; }
-.ie7 .first-footer-widget-area,
+
 .ie8 .first-footer-widget-area {
   float: left;
   width: 67%; }
-.ie7 .second-footer-widget-area,
+
 .ie8 .second-footer-widget-area {
   float: right;
   width: 33%;
 }
-.ie7 ul.socialmedia,
-.ie7 #socialmedia_iconbar,
-.ie7 .skiplinks,
-.ie7 p.slogan,
-.ie7 .flex-direction-nav,
-.ie7 .flex-control-nav {display:none;}
+
 
 
 /*
@@ -3065,17 +3009,7 @@ html[xmlns] .slides {
     padding: 0;
 }
 
-.ie7 .slidersidebar .flex-pauseplay {
-    position: absolute;
-    bottom: 10px;
-    left: 10px;
-    overflow: hidden;
-    z-index: 800;
-    background: white;
-    cursor: pointer;
-    color: black; 
-    padding: 0.2em;
-}
+
 
 /*
 * Navigation
@@ -3348,13 +3282,7 @@ html[xmlns] .slides {
       top: -999em; 
 }
 
-       
 
-.ie6 .nav-main ul.menu li ul,
-.ie7 .nav-main ul.menu li ul {
-  display: none !important; 
-}
-/* IE 7 und aelter haben keine Submenus und muessen daher das Seitenmenu nutzen */
 /* 
        Buttons und Symbolzeichen aus UTF;
        Teilweise uebernommen aus YAML
