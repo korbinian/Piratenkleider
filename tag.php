@@ -32,12 +32,7 @@
 	  
 	  <?php if (!(isset($image_url) && (strlen($image_url)>4))) { ?>
 	    <h1 class="post-title"><span><?php printf( __( 'Schlagwort %s', 'piratenkleider' ), '' . single_cat_title( '', false ) . '' ); ?></span></h1>	
-	
-
             <?php }
-	
-             
-
             
       $i = 0; 
       $col = 0; 
