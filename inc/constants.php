@@ -93,6 +93,7 @@ $defaultoptions = array(
     */
     'artikelstream-exclusive-catliste'	    => array(), 
     /* Ids der Categorien */
+    'artikelstream-maxnum-main'             =>  5,
     'artikelstream-maxnum-second'	    =>  1,
     'artikelstream-maxnum-linktipps'	    =>  1,
     'artikelstream-title-main'		    =>  __("Aktuelle Artikel", 'piratenkleider'),
@@ -103,9 +104,11 @@ $defaultoptions = array(
     'artikelstream-title-secondcontinuelist'=>  __("Weitere Meldungen", 'piratenkleider'),
     'artikelstream-show-second'		    => 1,
     'artikelstream-show-linktipps'	    => 1,
-    'artikelstream-nextnum-main'	    =>  5,
-    'artikelstream-nextnum-second'	    =>  5,
-    'artikelstream-nextnum-linktipps'	    =>  5,
+    'artikelstream-nextnum-main'	    => 5,
+    'artikelstream-nextnum-second'	    => 5,
+    'artikelstream-nextnum-linktipps'	    => 5,    
+    'artikelstream-numfullwidth-main'       => 1,
+    'artikelstream-numfullwidth-second'     => 1,
     
     
     'category-teaser'			    => 1,
@@ -129,8 +132,6 @@ $defaultoptions = array(
     'category-teaser-floating-halfwidth'    => 1,
     'category-teaser-dateline-halfwidth'    => 2, /* 1 = show Date on line up of the text if no datebox */    
 
-    'num-article-startpage-fullwidth'       => 1,
-    'num-article-startpage-halfwidth'       => 4,
     'teaser-thumbnail_width'		    => 120,
     'teaser-thumbnail_height'		    => 120,
     'teaser-thumbnail_crop'		    => 1,
@@ -359,105 +360,13 @@ $default_toplink_liste = array(
  * Liste der Defaultbilder fuer Seiten und Slider
  */
 $defaultbilder_liste = array(
-	'0' => array(
-		'src' =>	get_template_directory_uri().'/images/defaultbild-grundgesetz.jpg',
-		'label' => __( 'Plakat Grundgesetz', 'piratenkleider' )
-	),
-	'1' => array(
-		'src' =>	get_template_directory_uri().'/images/defaultbild-medien.jpg',
-		'label' => __( 'Medien', 'piratenkleider' )
-	),
-	'2' => array(
-		'src' =>	get_template_directory_uri().'/images/defaultbild-mitmachen.jpg',
-		'label' => __( 'Mitmachen', 'piratenkleider' )
-	),
-        '3' => array(
-		'src' =>	get_template_directory_uri().'/images/defaultbild-piraten.jpg',
-		'label' => __( 'Piraten', 'piratenkleider' )
-	),
-        '4' => array(
-		'src' =>	get_template_directory_uri().'/images/defaultbild-plakate.jpg',
-		'label' => __( 'Plakate', 'piratenkleider' )
-	),
-        '5' => array(
-		'src' =>	get_template_directory_uri().'/images/defaultbild-presse.jpg',
-		'label' => __( 'Presse', 'piratenkleider' )
-	),
-        '6' => array(
-		'src' =>	get_template_directory_uri().'/images/defaultbild-protest.jpg',
-		'label' => __( 'Protest', 'piratenkleider' )
-	),
-         '7' => array(
-		'src' =>	get_template_directory_uri().'/images/defaultbild-datenschutz.jpg',
-		'label' => __( 'Datenschutz', 'piratenkleider' )
-	),
-        '8' => array(
-		'src' =>	get_template_directory_uri().'/images/defaultbild-aufzeichnung.jpg',
-		'label' => __( 'Aufzeichnung', 'piratenkleider' )
-	),
-        '9' => array(
-		'src' =>	get_template_directory_uri().'/images/defaultbild-kampagne.jpg',
-		'label' => __( 'Kampagne', 'piratenkleider' )
-	),
-        '10' => array(
-		'src' =>	get_template_directory_uri().'/images/defaultbild-kirche.jpg',
-		'label' => __( 'Kirche', 'piratenkleider' )
-	),
-	'11' => array(
-		'src' =>	get_template_directory_uri().'/images/defaultbild-wiederstand.jpg',
-		'label' => __( 'Wiederstand', 'piratenkleider' )
-	), 
-        '12'=> array(
-		'src' =>	get_template_directory_uri().'/images/defaultbild-licht.jpg',
-		'label' => __( 'Licht', 'piratenkleider' )
-	),
-        '13'=> array(
-		'src' =>	get_template_directory_uri().'/images/defaultbild-laptop.jpg',
-		'label' => __( 'Laptop', 'piratenkleider' )
-	),
-        '14' => array(
-		'src' =>	get_template_directory_uri().'/images/defaultbild-netzwerk.jpg',
-		'label' => __( 'Netzwerk / Server', 'piratenkleider' )
-	), 
-	'15' => array(
-		'src' =>	get_template_directory_uri().'/images/defaultbild-piraten2.jpg',
-		'label' => __( 'Piraten 2', 'piratenkleider' )
-	), 
-	'16' => array(
-		'src' =>	get_template_directory_uri().'/images/defaultbild-piraten3.jpg',
-		'label' => __( 'Piraten 3', 'piratenkleider' )
-	), 
-	'17' => array(
-		'src' =>	get_template_directory_uri().'/images/defaultbild-fahne.jpg',
-		'label' => __( 'Piratenfahne', 'piratenkleider' )
-	), 
-	'18' => array(
-		'src' =>	get_template_directory_uri().'/images/defaultbild-server.jpg',
-		'label' => __( 'Server 1', 'piratenkleider' )
-	), 
-	'19' => array(
-		'src' =>	get_template_directory_uri().'/images/defaultbild-server2.jpg',
-		'label' => __( 'Server 2', 'piratenkleider' )
-	), 
-        '20' => array(
-		'src' =>	get_template_directory_uri().'/images/default-orange.jpg',
-		'label' => __( 'Orange SG Gestaltung BTW13', 'piratenkleider' )
-	), 
-	'21' => array(
-		'src' =>	get_template_directory_uri().'/images/default-blau.jpg',
-		'label' => __( 'Blau SG Gestaltung BTW13', 'piratenkleider' )
-	),
-	'22'=> array(
+	'0'=> array(
 		'src' =>	get_template_directory_uri().'/images/default-vorlage.jpg',
 		'label' => __( 'Default', 'piratenkleider' )
 	),
-	'23'=> array(
+	'1'=> array(
 		'src' =>	get_template_directory_uri().'/images/defaultbild-wikinger.jpg',
 		'label' => __( 'Wikinger', 'piratenkleider' )
-	),
-        '24'=> array(
-		'src' =>	get_template_directory_uri().'/images/defaultbild-aufregung.jpg',
-		'label' => __( 'Aufregung', 'piratenkleider' )
 	),
 );
 
@@ -1087,22 +996,17 @@ $setoptions = array(
             'auszuege'  => array(
                   'type'    => 'section',
                   'title'   => __( 'Gestaltung Textausz&uuml;ge', 'piratenkleider' ),                      
-              ),      
-                'num-article-startpage-fullwidth' => array(
+              ),     
+               
+               
+             'artikelstream-numfullwidth-main' => array(
                   'type'    => 'number',
                   'title'   => __( 'Beitr&auml;ge &uuml;ber ganze Breite', 'piratenkleider' ),
                   'label'   => __( 'Zahl der Beitr&auml;ge, die &uuml;ber die gesamte Inhaltsbreite gehen.', 'piratenkleider' ),
-                  'default' => $defaultoptions['num-article-startpage-fullwidth'],
+                  'default' => $defaultoptions['artikelstream-numfullwidth-main'],
                     'parent'  => 'auszuege'
               ),
-              'num-article-startpage-halfwidth' => array(
-                  'type'    => 'select',
-                  'title'   => __( 'Beitr&auml;ge &uuml;ber halbe Breite', 'piratenkleider' ),
-                  'label'   => __( 'Zahl der Beitr&auml;ge, die in Spalten mit je zwei Beitr&auml;gen nebeneinander, angezeigt werden.', 'piratenkleider' ),
-                  'liste'   => array(0 => 0, 2 => 2, 4 => 4, 6 => 6, 8 => 8),
-                  'default' => $defaultoptions['num-article-startpage-halfwidth'],
-                  'parent'  => 'auszuege'
-              ),               
+                            
                
                
              'teaser_maxlength' => array(
