@@ -75,8 +75,6 @@ $defaultoptions = array(
     'aktiv-linkmenu'                        => 1,
     'aktiv-startseite-kategorien'           => 1,
     'aktiv-startseite-tags'                 => 1,
-    'aktiv-startseite-alteartikel'          => 1,
-    'aktiv-startseite-alteartikel-num'      => 5,
     'aktiv-avatar'                          => 0,
     'aktiv-dynamic-sidebar'                 => 0,
     'aktiv-autokeywords'		    => 0,
@@ -88,6 +86,28 @@ $defaultoptions = array(
     'zeigerechtsvorschriften'               => 1,
     
 
+    'artikelstream-type'		    => 0,
+    /* 0: Default: Alle Artikel + Linktipps
+    * 1: Alle Artikel, ohne LInktipps
+    * 2: Alle Artikel aus Kategorien bis auf definierte Cats und ohne Linktipps
+    */
+    'artikelstream-exclusive-catliste'	    => array(), 
+    /* Ids der Categorien */
+    'artikelstream-maxnum-second'	    =>  1,
+    'artikelstream-maxnum-linktipps'	    =>  1,
+    'artikelstream-title-main'		    =>  __("Aktuelle Artikel", 'piratenkleider'),
+    'artikelstream-title-maincontinuelist'  =>  __("Weitere Artikel", 'piratenkleider'),
+    'artikelstream-title-linktipps'	    =>  __("Leseempfehlungen", 'piratenkleider'),
+    'artikelstream-title-linktippcontinuelist'=>  __("Weitere Leseempfehlungen", 'piratenkleider'),
+    'artikelstream-title-second'	    =>  __("Sonstige Meldungen", 'piratenkleider'),
+    'artikelstream-title-secondcontinuelist'=>  __("Weitere Meldungen", 'piratenkleider'),
+    'artikelstream-show-second'		    => 1,
+    'artikelstream-show-linktipps'	    => 1,
+    'artikelstream-nextnum-main'	    =>  5,
+    'artikelstream-nextnum-second'	    =>  5,
+    'artikelstream-nextnum-linktipps'	    =>  5,
+    
+    
     'category-teaser'			    => 1,
     'category-num-article-fullwidth'	    => 10,
     'category-num-article-halfwidth'	    => 0,
@@ -1043,18 +1063,7 @@ $setoptions = array(
                   'label'   => __( 'Liste der Schlagworte (Tagcloud) anzeigen', 'piratenkleider' ),
                   'default' => $defaultoptions['aktiv-startseite-tags'],
               ),
-              'aktiv-startseite-alteartikel' => array(
-                  'type'    => 'bool',
-                  'title'   => __( '&auml;ltere Artikel', 'piratenkleider' ),
-                  'label'   => __( 'Liste mit &auml;lteren Artikeln anzeigen', 'piratenkleider' ),
-                  'default' => $defaultoptions['aktiv-startseite-alteartikel'],
-              ),
-              'aktiv-startseite-alteartikel-num' => array(
-                  'type'    => 'number',
-                  'title'   => __( 'Zahl &auml;ltere Artikel', 'piratenkleider' ),
-                  'label'   => __( 'Anzahl der zu verlinkenden &auml;lteren Artikel.', 'piratenkleider' ),
-                  'default' => $defaultoptions['aktiv-startseite-alteartikel-num'],
-              ), 
+             
              
              'teaser-subtitle' => array(
                   'type'    => 'text',

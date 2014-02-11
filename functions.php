@@ -490,7 +490,7 @@ function getAnonymIp( $ip, $strongness = 2 ) {
             return preg_replace('/[0-9]+.[0-9]+\z/', '0.0', $ip);	
         } else {
             /* IPv6 */
-             return preg_replace('/[a-z0-9]*:[a-z0-9]*:[a-z0-9]*:[a-z0-9]*\z/', '0:0:0:0', $ip);	
+             return preg_replace('/[a-z0-9]*:[a-z0-9]*:[a-z0-9]*:[a-z0-9]*:[a-z0-9]*\z/', '0:0:0:0:0', $ip);	
         }
     } elseif ($strongness==1) {
          if( filter_var($ip, FILTER_VALIDATE_IP, FILTER_FLAG_IPV4) ){
@@ -498,7 +498,7 @@ function getAnonymIp( $ip, $strongness = 2 ) {
             return preg_replace('/[0-9]+\z/', '0', $ip);	
          } else {
              /* IPv6 */
-             return preg_replace('/[a-z0-9]*:[a-z0-9]*:[a-z0-9]*\z/', '0:0:0', $ip); 
+             return preg_replace('/[a-z0-9]*:[a-z0-9]*:[a-z0-9]*:[a-z0-9]*\z/', '0:0:0:0', $ip); 
          }
     } elseif ($strongness==0) {
 	/* No anonymizing */
@@ -509,7 +509,7 @@ function getAnonymIp( $ip, $strongness = 2 ) {
             return preg_replace('/[0-9]+.[0-9]+\z/', '0.0', $ip);	
         } else {
             /* IPv6 */
-             return preg_replace('/[a-z0-9]*:[a-z0-9]*:[a-z0-9]*:[a-z0-9]*\z/', '0:0:0:0', $ip);	
+             return preg_replace('/[a-z0-9]*:[a-z0-9]*:[a-z0-9]*:[a-z0-9]*:[a-z0-9]*\z/', '0:0:0:0:0', $ip);	
         }
     }
     
@@ -865,7 +865,7 @@ function piratenkleider_post_teaser($titleup = 1, $showdatebox = 1, $showdatelin
             } else {	
                 $out .= $leftbox;
             } 
-            $out .= '</div></div>';
+            $out .= "</div></div>\n";
             $out .= '<article class="post-entry p3-col3">';
             $out .= '<div class="p3-cbox';
             if ($usefloating==0) { $out .= ' p3-clearfix'; }

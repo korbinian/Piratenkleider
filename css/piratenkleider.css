@@ -259,6 +259,7 @@ hr {
   background: url("../images/jolly.png") no-repeat center center;
   height: 26px; }
 
+
 ::selection {
   background: #2d7dc5;
   color: white; }
@@ -1490,7 +1491,11 @@ display: inline-block;
 .post-title h2, .post-title h3 {
     margin-top: 0;
 }
-  
+
+.clear {
+    clear: both; 
+}
+
 .p3-clearfix:before {
         content:"";
         display:table;

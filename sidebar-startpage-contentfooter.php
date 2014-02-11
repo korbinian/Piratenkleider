@@ -1,36 +1,16 @@
 <?php           
   global $defaultoptions;
   global $options;
-  global $numentries;
     ?>
         
         
 
       <div class="startpage-widget-area">
-        <h2 class="skip"><?php _e("Weitere Artikel", 'piratenkleider'); ?></h2>
         <div class="first-startpage-widget-area">
           <div class="skin">
             <?php if ( is_active_sidebar( 'first-startpage-widget-area' ) ) { ?>
                 <?php dynamic_sidebar( 'first-startpage-widget-area' ); ?>
             <?php } else { 
-                
-                 $numold = $options['aktiv-startseite-alteartikel-num'];
-                 
-                 if ($options['aktiv-startseite-alteartikel']==1) {                  
-                    $postslist = get_posts("numberposts=$numold&order=DESC&offset=$numentries"); 
-                    if ((isset($postslist)) && (count($postslist)>0)) { ?>
-                        <div class="widget">
-                            <h3><?php _e("&Auml;ltere Artikel", 'piratenkleider'); ?></h3>
-                            <ul>
-                            <?php foreach ($postslist as $post) : setup_postdata($post); ?>
-                                <li><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
-                                <span class="date"><?php the_time('d.m.Y') ?></span></li>
-                            <?php endforeach; ?>
-                            </ul>
-                        </div>              
-                    <?php 
-                      }
-                  }
                   if ($options['aktiv-startseite-kategorien']==1) {  ?>
                     <div class="widget">
                     <h3><?php _e("Kategorien", 'piratenkleider'); ?></h3>

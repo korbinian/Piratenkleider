@@ -178,7 +178,7 @@ function linktipp_metabox_updated_messages( $messages ) {
 }
 add_filter( 'post_updated_messages', 'linktipp_metabox_updated_messages' );
 
-function linktipp_display ($linktipp) {
+function linktipp_display ($linktipp, $addclass = '') {
     global $options;
     if (!isset($linktipp)) {
 	return;
@@ -196,7 +196,7 @@ function linktipp_display ($linktipp) {
 	$linktipp_untertitel = '';
     } 
     $out = '';			 
-    $out .= '<section class="shortcode p3-column linktipps" id="post-'.$post_id.'" >';
+    $out .= '<section class="p3-column linktipps '.$addclass.'" id="post-'.$post_id.'" >';
     $out .= "\n";
        if ($options['linktipps-titlepos']!=1) { 
 	  $out .=  '<header class="post-title p3-cbox">';
@@ -222,7 +222,7 @@ function linktipp_display ($linktipp) {
 		  $out .= '</hgroup>';
 	      }
 	  $out .= '</header>';  
-	   $out .= "\n";
+	  $out .= "\n";
        } 
        $out .= '<div class="p3-column">';
 	$out .= "\n";
@@ -315,7 +315,7 @@ function linktipps_shortcode( $atts ) {
 		    while ($links->have_posts() && ($i<$num) ) {
 			$links->the_post();
 			$i++;
-			$out .= linktipp_display($links->post);
+			$out .= linktipp_display($links->post,'shortcode');
 
 		    }
 		    wp_reset_postdata();

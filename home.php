@@ -2,16 +2,11 @@
   global $options;  
 
   
-   $options['artikelstream-type'] = 2;
-    /* 0: Default: Alle Artikel + Linktipps
-     * 1: Alle Artikel, ohne LInktipps
-     * 2: Alle Artikel aus Kategorien bis auf definierte Cats und ohne Linktipps
-     */
-   $options['artikelstream-exclusive-catliste'] = array(125,118,122); // "-125,-118";
+
+   $options['artikelstream-exclusive-catliste'] = array(108); 
     /* Ids der Categorien */
    $options['artikelstream-maxnum-main'] = $options['num-article-startpage-fullwidth'] + $options['num-article-startpage-halfwidth']; 
-   $options['artikelstream-maxnum-rest'] = 2;
-   $options['artikelstream-maxnum-linktipps'] = 2;
+
    
   if ( $options['slider-aktiv'] == "1" ){ ?>  
     <div class="section teaser">
@@ -28,9 +23,10 @@
           <?php if ( is_active_sidebar( 'startpage-intro-area' ) ) { 
                  dynamic_sidebar( 'startpage-intro-area' );
            } ?>          
-          <h1 class="skip"><?php _e("Aktuelle Artikel", 'piratenkleider'); ?></h1>
+          
           
       <?php
+      $foundarticles=0;
       $i = 0; 
       $col = 0; 
       $col_count = 3; 
@@ -60,46 +56,49 @@
                 $args = $wp_query->query;
           }
       } else {
-        if ($options['aktiv-linktipps']) {	    
+        if ($options['aktiv-linktipps']==1) {	    
 	    $args = array_merge( $wp_query->query, array( 'post_type' => array('linktipps','post') ) );	    
         } else {
             $args =  $wp_query->query;
         }
       }
-
       query_posts( $args ); 
-      $numentries = $options['artikelstream-maxnum-main'];
-     
+      $numentries = $options['artikelstream-maxnum-main'] + $options['artikelstream-nextnum-main'];
+      $continuelinks = '';
       while (have_posts() && $i<$numentries) : the_post();
 	  $i++;
           $output = '';
-	  if (( isset($options['num-article-startpage-fullwidth']))
-		    && ($options['num-article-startpage-fullwidth']>=$i )) {
-		$output = piratenkleider_post_teaser($options['teaser-titleup'],$options['teaser-datebox'],$options['teaser-dateline'],$options['teaser_maxlength'],$options['teaser-thumbnail_fallback'],$options['teaser-floating']);
+	  if (($options['artikelstream-nextnum-main']>0) && ($i>=$options['artikelstream-maxnum-main'])) {	      
+	      $continuelinks .= '<li><a href="'.get_permalink().'">'.get_the_title().'</a></li>';
+	      $continuelinks .= "\n";
 	  } else {
-		$output =piratenkleider_post_teaser($options['teaser-titleup-halfwidth'],$options['teaser-datebox-halfwidth'],$options['teaser-dateline-halfwidth'],$options['teaser-maxlength-halfwidth'],$options['teaser-thumbnail_fallback'],$options['teaser-floating-halfwidth']);
-	  }
-	  if (isset($output)) {
-	    $cols[$col++] = $output;
+	    if (( isset($options['num-article-startpage-fullwidth']))
+		      && ($options['num-article-startpage-fullwidth']>=$i )) {
+		  $output = piratenkleider_post_teaser($options['teaser-titleup'],$options['teaser-datebox'],$options['teaser-dateline'],$options['teaser_maxlength'],$options['teaser-thumbnail_fallback'],$options['teaser-floating']);
+	    } else {
+		  $output =piratenkleider_post_teaser($options['teaser-titleup-halfwidth'],$options['teaser-datebox-halfwidth'],$options['teaser-dateline-halfwidth'],$options['teaser-maxlength-halfwidth'],$options['teaser-thumbnail_fallback'],$options['teaser-floating-halfwidth']);
+	    }
+	    if (isset($output)) {
+	      $cols[$col++] = $output;
+	    }
 	  }
       endwhile;
       // Reset Query
        wp_reset_query();
-              
-       if ( ! have_posts() ) {   ?>
-            <h2><?php _e("Nichts gefunden", 'piratenkleider'); ?></h2>
-            <p>
-            <?php _e("Es konnten keine Artikel gefunden werden. Bitte versuchen Sie es nochmal mit einer Suche.", 'piratenkleider'); ?>
-            </p>
-            <?php get_search_form(); ?>
-            <hr>
-       <?php }  else {
+       if (isset($continuelinks) && strlen($continuelinks)>1) {
+	   $linkliste = "<h2>".$options['artikelstream-title-maincontinuelist']."</h2>\n";
+	   $linkliste .= "<ul>\n".$continuelinks."</ul>\n";
+	    $cols[$col++] = $linkliste;
+       }       
+
            
            if ($options['artikelstream-type']==2) {
                 echo '<div class="main-stream">';
            }
-               
            
+	   echo '<h1 id="main-stream">'.$options['artikelstream-title-main'].'</h1>';
+	   echo "\n";
+        
             echo '<div class="columns">';
             $z=1;
             foreach($cols as $key => $col) {
@@ -116,62 +115,169 @@
                         $z++;
                         if ($z>2) {
                             $z=1;
-                            echo '<hr style="clear: both;">';
+                            echo '<hr class="clear">';
                         }
-                    }            
+                    }     
+		    $foundarticles =1;
             }
+  	    
+	    if ($z==2) {
+		echo '<hr class="clear">';
+	    }
             echo "</div>\n";
             
              if ($options['artikelstream-type']==2) {
                 echo '</div>';
            }
-        }
+        
 
         if ($options['artikelstream-type']>0) {
               /* Zuerst Linktipps */
-            
-             query_posts(  array( 'post_type' => array('linktipps') ) ); 
-             global $post;
-             $linktippout = '';
-             $i=0;
-             while (have_posts() && $i<$options['artikelstream-maxnum-linktipps']) : the_post();
-                 $i++;    
-                 $out = linktipp_display($post);
-                 $linktippout .= $out;
-             endwhile;
-             wp_reset_query();
-             if (isset($linktippout) && strlen($linktippout)>1) {
-                 echo '<div class="linktipp-stream">';
-                 echo $linktippout;
-                 echo "</div>\n";
-             }
-             
+             if  ($options['artikelstream-show-linktipps']==1) { 
+		 query_posts(  array( 'post_type' => array('linktipps') ) ); 
+		 global $post;
+		 $linktippout = '';
+		 $i=0;
+		 $continuelinks = '';
+		 $numentries = $options['artikelstream-maxnum-linktipps']+ $options['artikelstream-nextnum-linktipps'];
+		 $z=1;
+		 
+		 $linktippout .= '<div class="columns">';
+		 while (have_posts() && $i<$numentries) : the_post();
+		     $i++;    
+		     if ($i<=$options['artikelstream-maxnum-linktipps']) {
+			$out = linktipp_display($post);
+			
+			$linktippout .= '<div class="column'.$z.'">' . $out . '</div>';                            
+			$z++;
+			if ($z>2) {
+			    $z=1;
+			    $linktippout .=  '<hr class="clear">';
+			}
+			
+			
+		     } elseif ($options['artikelstream-nextnum-linktipps']>0) {
+			 $link = esc_attr( get_post_meta( $post->ID, 'linktipp_url', true ) ); 		 
+			 $continuelinks .= '<li><a href="'.$link.'">'.get_the_title().'</a></li>';
+			 $continuelinks .= "\n";
+		     }
+		 endwhile;
+		 
+		 if (isset($continuelinks) && strlen($continuelinks)>1) {
+		     
+		    $linkliste = '<div class="column'.$z.'">';
+		    $linkliste .= "<h2>".$options['artikelstream-title-linktippcontinuelist']."</h2>\n";
+		    $linkliste .= "<ul>\n".$continuelinks."</ul>\n";
+		    $linkliste .= "</div>\n";
+		    $z++;
+			if ($z>2) {
+			    $z=1;
+			    $linkliste .=  '<hr class="clear">';
+			}
+			$linktippout .= $linkliste;
+		 }  
+		 
+		 if ($z==2) {
+			$linktippout .= '<hr class="clear">';
+		  }		
+		  $linktippout .= "</div>\n";
+		 
+		 
+		 wp_reset_query();
+		 if (isset($linktippout) && strlen($linktippout)>1) {
+		     echo '<div class="linktipp-stream">';
+		     echo '<h1 id="linktipp-stream">'.$options['artikelstream-title-linktipps'].'</h1>';
+		     echo "\n";
+		     echo $linktippout;
+    
+		    echo "</div>\n";
+		     $foundarticles =1;
+		 }
+	     }
 
-             if ($options['artikelstream-type']==2) {
+             if (($options['artikelstream-type']==2) && ($options['artikelstream-show-second']==1)) {
                  /* Ausnahme-Cats */
                  
                   query_posts( 'cat='.$poscatliste ); 
-                    $numentries = $options['artikelstream-maxnum-rest'];
+                    $numentries = $options['artikelstream-maxnum-second'] + $options['artikelstream-nextnum-second'];
                     $i=0;
-                    $restlist = '';
+		    $cols = array();
+		    $col=0;
+		    $continuelinks = '';
                   while (have_posts() && $i<$numentries) : the_post();
-                      $i++;
-                      $output = '';
-                      $output = piratenkleider_post_teaser($options['teaser-titleup'],$options['teaser-datebox'],$options['teaser-dateline'],$options['teaser_maxlength'],$options['teaser-thumbnail_fallback'],$options['teaser-floating']);
-                      if (isset($output)) {
-                        $restlist .= $output;
-                      }
+                      $i++;			      
+		       if (($options['artikelstream-nextnum-second']>0) && ($i>$options['artikelstream-maxnum-second'])) {	      
+			    $continuelinks .= '<li><a href="'.get_permalink().'">'.get_the_title().'</a></li>';
+			    $continuelinks .= "\n";
+			} else {
+			   if (( isset($options['num-article-startpage-fullwidth']))
+				 && ($options['num-article-startpage-fullwidth']>=$i )) {
+				$output = piratenkleider_post_teaser($options['teaser-titleup'],$options['teaser-datebox'],$options['teaser-dateline'],$options['teaser_maxlength'],$options['teaser-thumbnail_fallback'],$options['teaser-floating']);
+			    } else {
+				$output =piratenkleider_post_teaser($options['teaser-titleup-halfwidth'],$options['teaser-datebox-halfwidth'],$options['teaser-dateline-halfwidth'],$options['teaser-maxlength-halfwidth'],$options['teaser-thumbnail_fallback'],$options['teaser-floating-halfwidth']);
+			    }
+
+			   if (isset($output)) {
+				$cols[$col++] = $output;
+			    }
+			}
                   endwhile;
-                    if (isset($restlist) && strlen($restlist)>1) {
+		  
+		  if (isset($continuelinks) && strlen($continuelinks)>1) {
+		    $linkliste = "<h2>".$options['artikelstream-title-secondcontinuelist']."</h2>\n";
+		    $linkliste .= "<ul>\n".$continuelinks."</ul>\n";
+			$cols[$col++] = $linkliste;
+		    }    
+		  
+                    if ($col>0) {
                         echo '<div class="second-stream">';
-                        echo $restlist;
+			echo '<h1 id="second-stream">'.$options['artikelstream-title-second'].'</h1>';
+			echo "\n";
+
+			
+			    echo '<div class="columns">';
+			    $z=1;
+			    foreach($cols as $key => $col) {
+				if (( isset($options['num-article-startpage-fullwidth']))
+				    && ($options['num-article-startpage-fullwidth']>$key )) {
+					echo $col;                                               
+				    } else {          
+					 if (( isset($options['num-article-startpage-fullwidth']))
+						&& ($options['num-article-startpage-fullwidth']==$key )
+						 && ($options['num-article-startpage-fullwidth']>0 )) {
+					     echo '<hr>';
+					    }                                              
+					echo '<div class="column'.$z.'">' . $col . '</div>';                            
+					$z++;
+					if ($z>2) {
+					    $z=1;
+					    echo '<hr class="clear">';
+					}
+				    }     
+				    $foundarticles =1;
+			    }
+			    if ($z==2) {
+				echo '<hr class="clear">';
+			    }		
+			    echo "</div>\n";			
+			
                         echo "</div>\n";
+			$foundarticles =1;
                     }
              }
             
         }
         
-        
+	if ($foundarticles==0) {
+	    ?>
+            <h2><?php _e("Nichts gefunden", 'piratenkleider'); ?></h2>
+            <p>
+            <?php _e("Es konnten keine Artikel gefunden werden. Bitte versuchen Sie es nochmal mit einer Suche.", 'piratenkleider'); ?>
+            </p>
+            <?php get_search_form(); 
+            echo "<hr>\n"; 
+
+	}
       get_sidebar( 'startpage-contentfooter' ); ?>
      
 
