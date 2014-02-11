@@ -2348,7 +2348,11 @@ img.wp-smiley {
     }
 
 
-
+#main-stream h1  {    
+    position: absolute;
+    left: -999em;
+    width: 1px;
+}
 
     
 .footer {

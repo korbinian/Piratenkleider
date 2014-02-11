@@ -34,11 +34,11 @@ function theme_options_do_page($tab = '') {
 
 	<div class="wrap">            
             <div class="piratenkleider-optionen">  <!-- begin: .piratenkleider-optionen -->    
-		<?php screen_icon(); echo "<h2>" . wp_get_theme().': ' . __( 'Takelage einstellen', 'piratenkleider' ) . "</h2>"; ?>
+            <?php screen_icon(); echo "<h2>" . wp_get_theme().': ' . __( 'Takelage einstellen', 'piratenkleider' ) . "</h2>"; ?>
 
-		<?php if ( false !== $_REQUEST['settings-updated'] ) : ?>
-		<div class="updated fade"><p><strong><?php _e( 'Optionen wurden gespeichert.', 'piratenkleider' ); ?></strong></p></div>
-		<?php endif; 
+            <?php if ( false !== $_REQUEST['settings-updated'] ) : ?>
+            <div class="updated fade"><p><strong><?php _e( 'Optionen wurden gespeichert.', 'piratenkleider' ); ?></strong></p></div>
+            <?php endif; 
 
         if (isset($_GET['tab'])) {
             $tab = $_GET['tab'];
@@ -60,10 +60,8 @@ function theme_options_do_page($tab = '') {
               }
               echo "\">$tabtitel</a>\n";
         }
-        echo "</h3>\n";
-        ?>
-       
-   
+        echo "</h3>\n";  ?>
+         
                       
         <form method="post" action="options.php">
             <?php settings_fields( 'piratenkleider_options' ); ?>
@@ -295,12 +293,8 @@ function theme_options_do_page($tab = '') {
 				       }
 					echo "<br style=\"clear: left;\">\n"; 
 				    }
-				   
-				   
-                                                                                                                            
                                    				    
-				} elseif ($type=='urlchecklist') {
-				    				    
+				} elseif ($type=='urlchecklist') {				    				    
 				   echo "\t\t\t";                      
                                     foreach ( $liste as $entry => $listdata ) {    
                                         $checked = '';
@@ -332,15 +326,12 @@ function theme_options_do_page($tab = '') {
                                             type="text" name="piratenkleider_theme_options[<?php echo $name?>][<?php echo $entry?>][content]" 
 					    size="80" value="<?php echo $value?>">
 					  </div>
-					 <?php    
-					    
+					 <?php    					    
 				    }
 				    if (isset($label)) {
 					echo "<p>".$label."</p>\n";
 				    }
-                                    echo "<br style=\"clear: left;\">\n";
-
-				    
+                                    echo "<br style=\"clear: left;\">\n";				    
                                 } elseif ($type=='select') {
                                     echo "\t\t\t";
                                     echo "<select name=\"piratenkleider_theme_options[$name]\">\n";
@@ -364,9 +355,7 @@ function theme_options_do_page($tab = '') {
                                         echo "\t\t\t<label for=\"piratenkleider_theme_options[$name]\">$label</label>\n"; 
                                } elseif ($type=='fontselect') {
                                     echo "\t\t\t";
-
                                     echo "<select name=\"piratenkleider_theme_options[$name]\">\n";
-
                                     foreach($liste as $i => $value) {   
                                         echo "\t\t\t\t";
                                         if ((isset($value['webfont']) && $value['webfont']==1)) {
@@ -390,9 +379,8 @@ function theme_options_do_page($tab = '') {
                                         echo "\t\t\t<label for=\"piratenkleider_theme_options[$name]\">$label</label>\n"; 
 
                                 }
-
-                                    echo "\t\t</td>\n";
-                                    echo "\t</tr>\n";
+                                echo "\t\t</td>\n";
+                                echo "\t</tr>\n";
                             }     
 
                             if ((isset($setsection)) && ($setsection!="") && ($type != 'section') && (!isset($parent))) {
@@ -471,7 +459,7 @@ function theme_options_validate( $input ) {
                              $output[$name]  =  wp_filter_nohtml_kses( $input[$name] );
 			} elseif ($type=='email') {
                              $output[$name]  =  sanitize_email( $input[$name] );	     
-                         } elseif ($type=='textarea') {
+                        } elseif ($type=='textarea') {
                              $output[$name]  =  $input[$name] ;     
                         } elseif ($type=='html') {;    
                             $output[$name] = $input[$name];
@@ -547,8 +535,6 @@ function theme_options_validate( $input ) {
          $input['seiten-defaultbildsrc'] = $input['seitenbild-url'];
     }
 
-  
-    
 	
    return $output;
 

@@ -5,7 +5,6 @@
 
    $options['artikelstream-exclusive-catliste'] = array(108); 
     /* Ids der Categorien */
-   $options['artikelstream-maxnum-main'] = $options['num-article-startpage-fullwidth'] + $options['num-article-startpage-halfwidth']; 
 
    
   if ( $options['slider-aktiv'] == "1" ){ ?>  
@@ -29,7 +28,6 @@
       $foundarticles=0;
       $i = 0; 
       $col = 0; 
-      $col_count = 3; 
       $cols = array();
      
       global $wp_query;
@@ -41,19 +39,19 @@
           /* 2: Alle Artikel aus Kategorien bis auf definierte Cats und ohne Linktipps */
           if (isset($options['artikelstream-exclusive-catliste']) 
                   && (is_array($options['artikelstream-exclusive-catliste']))) {  
-                  $catliste = '';
-                  $poscatliste  = '';
-                  foreach ($options['artikelstream-exclusive-catliste'] as $cat) {
-                      if (strlen($catliste)>1) {
-                          $catliste .= ",";
-                          $poscatliste .= ",";
-                      }
-                      $catliste.= '-'.$cat;
-                      $poscatliste .= $cat;
+              $catliste = '';
+              $poscatliste  = '';
+              foreach ($options['artikelstream-exclusive-catliste'] as $cat) {
+                  if (strlen($catliste)>1) {
+                      $catliste .= ",";
+                      $poscatliste .= ",";
                   }
-                $args = 'cat='.$catliste;      
+                  $catliste.= '-'.$cat;
+                  $poscatliste .= $cat;
+              }
+              $args = 'cat='.$catliste;      
           } else {
-                $args = $wp_query->query;
+              $args = $wp_query->query;
           }
       } else {
         if ($options['aktiv-linktipps']==1) {	    
@@ -68,12 +66,12 @@
       while (have_posts() && $i<$numentries) : the_post();
 	  $i++;
           $output = '';
-	  if (($options['artikelstream-nextnum-main']>0) && ($i>=$options['artikelstream-maxnum-main'])) {	      
+	  if (($options['artikelstream-nextnum-main']>0) && ($i>$options['artikelstream-maxnum-main'])) {	      
 	      $continuelinks .= '<li><a href="'.get_permalink().'">'.get_the_title().'</a></li>';
 	      $continuelinks .= "\n";
 	  } else {
-	    if (( isset($options['num-article-startpage-fullwidth']))
-		      && ($options['num-article-startpage-fullwidth']>=$i )) {
+	    if (( isset($options['artikelstream-numfullwidth-main']))
+		      && ($options['artikelstream-numfullwidth-main']>=$i )) {
 		  $output = piratenkleider_post_teaser($options['teaser-titleup'],$options['teaser-datebox'],$options['teaser-dateline'],$options['teaser_maxlength'],$options['teaser-thumbnail_fallback'],$options['teaser-floating']);
 	    } else {
 		  $output =piratenkleider_post_teaser($options['teaser-titleup-halfwidth'],$options['teaser-datebox-halfwidth'],$options['teaser-dateline-halfwidth'],$options['teaser-maxlength-halfwidth'],$options['teaser-thumbnail_fallback'],$options['teaser-floating-halfwidth']);
@@ -88,47 +86,44 @@
        if (isset($continuelinks) && strlen($continuelinks)>1) {
 	   $linkliste = "<h2>".$options['artikelstream-title-maincontinuelist']."</h2>\n";
 	   $linkliste .= "<ul>\n".$continuelinks."</ul>\n";
-	    $cols[$col++] = $linkliste;
+	   $cols[$col++] = $linkliste;
        }       
 
            
-           if ($options['artikelstream-type']==2) {
-                echo '<div class="main-stream">';
-           }
-           
-	   echo '<h1 id="main-stream">'.$options['artikelstream-title-main'].'</h1>';
-	   echo "\n";
-        
-            echo '<div class="columns">';
-            $z=1;
-            foreach($cols as $key => $col) {
-                if (( isset($options['num-article-startpage-fullwidth']))
-                    && ($options['num-article-startpage-fullwidth']>$key )) {
-                        echo $col;                                               
-                    } else {          
-                         if (( isset($options['num-article-startpage-fullwidth']))
-                                && ($options['num-article-startpage-fullwidth']==$key )
-                                 && ($options['num-article-startpage-fullwidth']>0 )) {
-                             echo '<hr>';
-                            }                                              
-                        echo '<div class="column'.$z.'">' . $col . '</div>';                            
-                        $z++;
-                        if ($z>2) {
-                            $z=1;
-                            echo '<hr class="clear">';
-                        }
-                    }     
-		    $foundarticles =1;
-            }
-  	    
-	    if ($z==2) {
-		echo '<hr class="clear">';
-	    }
-            echo "</div>\n";
-            
-             if ($options['artikelstream-type']==2) {
-                echo '</div>';
-           }
+       echo '<div id="main-stream">';
+      
+       if (isset($options['artikelstream-title-main']) && (strlen($options['artikelstream-title-main'])>1)) {
+            echo '<h1>'.$options['artikelstream-title-main'].'</h1>';       
+            echo "\n";
+       }
+        echo '<div class="columns">';
+        $z=1;
+        foreach($cols as $key => $col) {
+            if (( isset($options['artikelstream-numfullwidth-main']))
+                && ($options['artikelstream-numfullwidth-main']>$key )) {
+                    echo $col;                                               
+                } else {          
+                     if (( isset($options['artikelstream-numfullwidth-main']))
+                            && ($options['artikelstream-numfullwidth-main']==$key )
+                             && ($options['artikelstream-numfullwidth-main']>0 )) {
+                         echo '<hr>';
+                        }                                              
+                    echo '<div class="column'.$z.'">' . $col . '</div>';                            
+                    $z++;
+                    if ($z>2) {
+                        $z=1;
+                        echo '<hr class="clear">';
+                    }
+                }     
+                $foundarticles =1;
+        }
+
+        if ($z==2) {
+            echo '<hr class="clear">';
+        }
+        echo "</div>\n";
+        echo "</div>\n";
+       
         
 
         if ($options['artikelstream-type']>0) {
@@ -153,9 +148,7 @@
 			if ($z>2) {
 			    $z=1;
 			    $linktippout .=  '<hr class="clear">';
-			}
-			
-			
+			}	
 		     } elseif ($options['artikelstream-nextnum-linktipps']>0) {
 			 $link = esc_attr( get_post_meta( $post->ID, 'linktipp_url', true ) ); 		 
 			 $continuelinks .= '<li><a href="'.$link.'">'.get_the_title().'</a></li>';
@@ -163,8 +156,7 @@
 		     }
 		 endwhile;
 		 
-		 if (isset($continuelinks) && strlen($continuelinks)>1) {
-		     
+		 if (isset($continuelinks) && strlen($continuelinks)>1) {		     
 		    $linkliste = '<div class="column'.$z.'">';
 		    $linkliste .= "<h2>".$options['artikelstream-title-linktippcontinuelist']."</h2>\n";
 		    $linkliste .= "<ul>\n".$continuelinks."</ul>\n";
@@ -182,11 +174,12 @@
 		  }		
 		  $linktippout .= "</div>\n";
 		 
-		 
 		 wp_reset_query();
 		 if (isset($linktippout) && strlen($linktippout)>1) {
-		     echo '<div class="linktipp-stream">';
-		     echo '<h1 id="linktipp-stream">'.$options['artikelstream-title-linktipps'].'</h1>';
+		     echo '<div id="linktipp-stream">';
+                     if (isset($options['artikelstream-title-linktipps']) && (strlen($options['artikelstream-title-linktipps'])>1)) {
+                         echo '<h1>'.$options['artikelstream-title-linktipps'].'</h1>';
+                     }
 		     echo "\n";
 		     echo $linktippout;
     
@@ -210,8 +203,8 @@
 			    $continuelinks .= '<li><a href="'.get_permalink().'">'.get_the_title().'</a></li>';
 			    $continuelinks .= "\n";
 			} else {
-			   if (( isset($options['num-article-startpage-fullwidth']))
-				 && ($options['num-article-startpage-fullwidth']>=$i )) {
+			   if (( isset($options['artikelstream-numfullwidth-second']))
+				 && ($options['artikelstream-numfullwidth-second']>=$i )) {
 				$output = piratenkleider_post_teaser($options['teaser-titleup'],$options['teaser-datebox'],$options['teaser-dateline'],$options['teaser_maxlength'],$options['teaser-thumbnail_fallback'],$options['teaser-floating']);
 			    } else {
 				$output =piratenkleider_post_teaser($options['teaser-titleup-halfwidth'],$options['teaser-datebox-halfwidth'],$options['teaser-dateline-halfwidth'],$options['teaser-maxlength-halfwidth'],$options['teaser-thumbnail_fallback'],$options['teaser-floating-halfwidth']);
@@ -230,31 +223,31 @@
 		    }    
 		  
                     if ($col>0) {
-                        echo '<div class="second-stream">';
-			echo '<h1 id="second-stream">'.$options['artikelstream-title-second'].'</h1>';
-			echo "\n";
-
-			
-			    echo '<div class="columns">';
-			    $z=1;
-			    foreach($cols as $key => $col) {
-				if (( isset($options['num-article-startpage-fullwidth']))
-				    && ($options['num-article-startpage-fullwidth']>$key )) {
-					echo $col;                                               
-				    } else {          
-					 if (( isset($options['num-article-startpage-fullwidth']))
-						&& ($options['num-article-startpage-fullwidth']==$key )
-						 && ($options['num-article-startpage-fullwidth']>0 )) {
-					     echo '<hr>';
-					    }                                              
-					echo '<div class="column'.$z.'">' . $col . '</div>';                            
-					$z++;
-					if ($z>2) {
-					    $z=1;
-					    echo '<hr class="clear">';
-					}
-				    }     
-				    $foundarticles =1;
+                        echo '<div id="second-stream">';
+                        if (isset($options['artikelstream-title-second']) && (strlen($options['artikelstream-title-second'])>1)) {
+                            echo '<h1>'.$options['artikelstream-title-second'].'</h1>';
+                        }
+			echo "\n";	
+                        echo '<div class="columns">';
+                        $z=1;
+                        foreach($cols as $key => $col) {
+                            if (( isset($options['artikelstream-numfullwidth-second']))
+                                && ($options['artikelstream-numfullwidth-second']>$key )) {
+                                    echo $col;                                               
+                                } else {          
+                                     if (( isset($options['artikelstream-numfullwidth-second']))
+                                            && ($options['artikelstream-numfullwidth-second']==$key )
+                                             && ($options['artikelstream-numfullwidth-second']>0 )) {
+                                         echo '<hr>';
+                                        }                                              
+                                    echo '<div class="column'.$z.'">' . $col . '</div>';                            
+                                    $z++;
+                                    if ($z>2) {
+                                        $z=1;
+                                        echo '<hr class="clear">';
+                                    }
+                                }     
+                                $foundarticles =1;
 			    }
 			    if ($z==2) {
 				echo '<hr class="clear">';
@@ -268,8 +261,7 @@
             
         }
         
-	if ($foundarticles==0) {
-	    ?>
+	if ($foundarticles==0) { ?>
             <h2><?php _e("Nichts gefunden", 'piratenkleider'); ?></h2>
             <p>
             <?php _e("Es konnten keine Artikel gefunden werden. Bitte versuchen Sie es nochmal mit einer Suche.", 'piratenkleider'); ?>
@@ -278,13 +270,10 @@
             echo "<hr>\n"; 
 
 	}
-      get_sidebar( 'startpage-contentfooter' ); ?>
-     
-
+        get_sidebar( 'startpage-contentfooter' ); ?>
 
       </div>
     </div>
-
     <div class="content-aside">
       <div class="skin">
           <h1 class="skip"><?php _e( 'Weitere Informationen', 'piratenkleider' ); ?></h1>

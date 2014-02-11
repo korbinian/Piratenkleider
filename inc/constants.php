@@ -972,41 +972,164 @@ $setoptions = array(
                   'label'   => __( 'Liste der Schlagworte (Tagcloud) anzeigen', 'piratenkleider' ),
                   'default' => $defaultoptions['aktiv-startseite-tags'],
               ),
-             
-             
-             'teaser-subtitle' => array(
-                  'type'    => 'text',
-                  'title'   => __( 'Bezeichnender Titel f&uuml;r Teaser', 'piratenkleider' ),
-                  'label'   => __( 'Dieser Text wird oberhalb der Titel angezeigt.', 'piratenkleider' ),
-                  'default' => $defaultoptions['teaser-subtitle'],
-              ),  
-             'teaser-title-maxlength' => array(
-                  'type'    => 'number',
-                  'title'   => __( 'Textl&auml;nge', 'piratenkleider' ),
-                  'label'   => __( 'Maximale Textl&auml;nge des Titels im Teaser.', 'piratenkleider' ),
-                  'default' => $defaultoptions['teaser-title-maxlength'],
-              ),   
-             'teaser-title-words' => array(
-                  'type'    => 'number',
-                  'title'   => __( 'Wortzahl', 'piratenkleider' ),
-                  'label'   => __( 'Zahl der Worte im Teaser; Die maximale Textl&auml;nge begrenzt diesen Wert jedoch.', 'piratenkleider' ),
-                  'default' => $defaultoptions['teaser-title-words'],
-              ),
+            
+              'artikelstream'  => array(
+                  'type'    => 'section',
+                  'title'   => __( 'Artikelauswahl', 'piratenkleider' ),                      
+              ),     
                
+               'artikelstream-type' => array(
+                  'type'    => 'select',
+                  'title'   => __( 'Artikelstrom einstellen', 'piratenkleider' ),
+                  'label'   => __( 'Definiert die Auswahl der Artikel auf der Startseite ausgehend von Kategorien und Linktipps', 'piratenkleider' ),
+                  'default' => $defaultoptions['artikelstream-type'],
+		  'liste'   =>  array(
+				0 => __("Artikel aller Kategorien und Linktipps in einem Zusammenhang anzeigen","piratenkleider"), 
+				1 => __("Artikel aller Kategorien in einem Zusammenhang anzeigen.","piratenkleider"), 	    
+				2 => __("Nur Artikel die nicht zu Ausschlusskategorien gehören anzeigen","piratenkleider"), 
+                                ), 
+                  'parent'  => 'artikelstream'
+              ), 	
+               
+              'artikelstream-exclusive-catliste' => array(
+                  'type'    => 'select',
+                  'title'   => __( 'Ausschlusskategorien', 'piratenkleider' ),
+                  'label'   => __( 'Welche Kategorien sollen nicht im Hauptartikelstrom angezeigt werden.', 'piratenkleider' ),
+                  'liste'   => $currentcatliste,
+                  'default' => $defaultoptions['artikelstream-exclusive-catliste'],
+                  'parent'  => 'sliderpars'
+              ),  
+               'artikelstream-maxnum-main' => array(
+                  'type'    => 'number',
+                  'title'   => __( 'Anzahl der Beitr&auml;ge im Hauptstrom', 'piratenkleider' ),
+                  'label'   => __( 'Zahl der Beitr&auml;ge, welche insgesamt im ersten Artikelstrom gezeigt werden.', 'piratenkleider' ),
+                  'default' => $defaultoptions['artikelstream-maxnum-main'],
+                  'parent'  => 'artikelstream'
+              ), 
+               'artikelstream-nextnum-main' => array(
+                  'type'    => 'number',
+                  'title'   => __( 'Zahl weiterer Artikel', 'piratenkleider' ),
+                  'label'   => __( 'Zahl der Links von weiteren Artikeln des Hauptstroms in Form von einer Liste.', 'piratenkleider' ),
+                  'default' => $defaultoptions['artikelstream-nextnum-main'],
+                  'parent'  => 'artikelstream'
+              ), 
+               'artikelstream-numfullwidth-main' => array(
+                  'type'    => 'number',
+                  'title'   => __( 'Beitr&auml;ge &uuml;ber ganze Breite', 'piratenkleider' ),
+                  'label'   => __( 'Zahl der Beitr&auml;ge aus dem Hauptartikelstrom, die &uuml;ber die gesamte Inhaltsbreite gehen. Die restlichen Beiträge werden jeweils nur 50% des Platzes einnehmen.', 'piratenkleider' ),
+                  'default' => $defaultoptions['artikelstream-numfullwidth-main'],
+                  'parent'  => 'artikelstream'
+              ),
+             'artikelstream-title-main' => array(
+                  'type'    => 'text',
+                  'title'   => __( '&Uuml;berschrift Hauptartikelstrom', 'piratenkleider' ),
+                  'label'   => __( '&Uuml;berschrift über den Bereich mit den Hauptartikelstrom', 'piratenkleider' ),
+                  'default' => $defaultoptions['artikelstream-title-main'],
+                   'parent'  => 'artikelstream',
+              ), 
+              'artikelstream-title-maincontinuelist' => array(
+                  'type'    => 'text',
+                  'title'   => __( '&Uuml;berschrift weitere Artikel', 'piratenkleider' ),
+                  'label'   => __( 'Unter&uuml;berschrift f&uuml;r weitere Artikel (Liste)', 'piratenkleider' ),
+                  'default' => $defaultoptions['artikelstream-title-maincontinuelist'],
+                  'parent'  => 'artikelstream',
+              ),                
+               
+              'artikelstream-show-second' => array(
+                  'type'    => 'select',
+                  'title'   => __( 'Zeige zweiten Artikelstrom', 'piratenkleider' ),
+                  'label'   => __( 'Option, ob der zweite Artikelstrom mit den Artikel aus den Ausschlusskategorien angezeigt werden soll', 'piratenkleider' ),
+                  'liste'   => array("0" => "Nein", "1" => "Ja"),
+                  'default' => $defaultoptions['artikelstream-show-second'],
+                   'parent'  => 'artikelstream'
+              ), 
+               
+              'artikelstream-maxnum-second' => array(
+                  'type'    => 'number',
+                  'title'   => __( 'Anzahl der Beitr&auml;ge im zweiten Artikelstrom', 'piratenkleider' ),
+                  'label'   => __( 'Zahl der Beitr&auml;ge, welche insgesamt im zweiten Artikelstrom angezeigt werden. Hier werden die Artikel der Kategorien angezeigt, die im Hauptstrom ausgeschlossen wurden.', 'piratenkleider' ),
+                  'default' => $defaultoptions['artikelstream-maxnum-second'],
+                  'parent'  => 'artikelstream'
+              ), 
+             'artikelstream-nextnum-second' => array(
+                  'type'    => 'number',
+                  'title'   => __( 'Zahl weiterer Artikel', 'piratenkleider' ),
+                  'label'   => __( 'Zahl der Links von weiteren Artikeln des zweiten Artikelstroms in Form von einer Liste.', 'piratenkleider' ),
+                  'default' => $defaultoptions['artikelstream-nextnum-second'],
+                  'parent'  => 'artikelstream'
+              ), 
+                              
+               'artikelstream-numfullwidth-second' => array(
+                  'type'    => 'number',
+                  'title'   => __( 'Beitr&auml;ge &uuml;ber ganze Breite', 'piratenkleider' ),
+                  'label'   => __( 'Zahl der Beitr&auml;ge aus dem zweiten Artikelstrom, die &uuml;ber die gesamte Inhaltsbreite gehen. Die restlichen Beiträge werden jeweils nur 50% des Platzes einnehmen.', 'piratenkleider' ),
+                  'default' => $defaultoptions['artikelstream-numfullwidth-second'],
+                  'parent'  => 'artikelstream'
+              ), 
+            'artikelstream-title-second' => array(
+                  'type'    => 'text',
+                  'title'   => __( '&Uuml;berschrift zweiter Artikelstrom', 'piratenkleider' ),
+                  'label'   => __( '&Uuml;berschrift über den Bereich mit den zweiten Artikelstrom', 'piratenkleider' ),
+                  'default' => $defaultoptions['artikelstream-title-second'],
+                   'parent'  => 'artikelstream',
+              ), 
+              'artikelstream-title-secondcontinuelist' => array(
+                  'type'    => 'text',
+                  'title'   => __( '&Uuml;berschrift weitere Artikel ', 'piratenkleider' ),
+                  'label'   => __( 'Unter&uuml;berschrift f&uuml;r weitere Artikel des zweiten Artikelstroms (Liste)', 'piratenkleider' ),
+                  'default' => $defaultoptions['artikelstream-title-secondcontinuelist'],
+                  'parent'  => 'artikelstream',
+              ),                
+
+               
+               
+              'artikelstream-show-linktipps' => array(
+                  'type'    => 'select',
+                  'title'   => __( 'Zeige Linktipps', 'piratenkleider' ),
+                  'label'   => __( 'Option, ob Linktipps nach dem Hauptartikelstrom angezeigt werden sollen', 'piratenkleider' ),
+                  'liste'   => array("0" => "Nein", "1" => "Ja"),
+                  'default' => $defaultoptions['artikelstream-show-linktipps'],
+                   'parent'  => 'artikelstream'
+              ), 
+              'artikelstream-maxnum-linktipps' => array(
+                  'type'    => 'number',
+                  'title'   => __( 'Anzahl der Linktipps nach dem Hauptartikelstrom', 'piratenkleider' ),
+                  'label'   => __( 'Werden Linktipps nicht im Hauptartikelstrom gezeigt, kann hier angegeben werden, wieviele Linktipps danach gesondert angezeigt werden sollen.', 'piratenkleider' ),
+                  'default' => $defaultoptions['artikelstream-maxnum-linktipps'],
+                  'parent'  => 'artikelstream'
+              ), 
+             'artikelstream-nextnum-linktipps' => array(
+                  'type'    => 'number',
+                  'title'   => __( 'Zahl weiterer Linktipps', 'piratenkleider' ),
+                  'label'   => __( 'Zahl der Links von weiteren Linktipps in Form von einer Liste.', 'piratenkleider' ),
+                  'default' => $defaultoptions['artikelstream-nextnum-linktipps'],
+                  'parent'  => 'artikelstream'
+              ), 
+             'artikelstream-title-linktipps' => array(
+                  'type'    => 'text',
+                  'title'   => __( '&Uuml;berschrift Linktipps', 'piratenkleider' ),
+                  'label'   => __( '&Uuml;berschrift über den Bereich mit den Linktipps', 'piratenkleider' ),
+                  'default' => $defaultoptions['artikelstream-title-linktipps'],
+                   'parent'  => 'artikelstream',
+              ), 
+              'artikelstream-title-linktippcontinuelist' => array(
+                  'type'    => 'text',
+                  'title'   => __( '&Uuml;berschrift weitere Linktipps', 'piratenkleider' ),
+                  'label'   => __( 'Unter&uuml;berschrift f&uuml;r weitere Linktipps (Liste)', 'piratenkleider' ),
+                  'default' => $defaultoptions['artikelstream-title-linktippcontinuelist'],
+                  'parent'  => 'artikelstream',
+              ), 
+               
+
+ 
+            
             'auszuege'  => array(
                   'type'    => 'section',
                   'title'   => __( 'Gestaltung Textausz&uuml;ge', 'piratenkleider' ),                      
               ),     
                
                
-             'artikelstream-numfullwidth-main' => array(
-                  'type'    => 'number',
-                  'title'   => __( 'Beitr&auml;ge &uuml;ber ganze Breite', 'piratenkleider' ),
-                  'label'   => __( 'Zahl der Beitr&auml;ge, die &uuml;ber die gesamte Inhaltsbreite gehen.', 'piratenkleider' ),
-                  'default' => $defaultoptions['artikelstream-numfullwidth-main'],
-                    'parent'  => 'auszuege'
-              ),
-                            
+                
                
                
              'teaser_maxlength' => array(
@@ -1110,6 +1233,30 @@ $setoptions = array(
                   'default' => $defaultoptions['slider-aktiv'],
                   'parent'  => 'sliderpars'
               ),
+
+            'teaser-subtitle' => array(
+                  'type'    => 'text',
+                  'title'   => __( 'Bezeichnender Titel f&uuml;r Teaser', 'piratenkleider' ),
+                  'label'   => __( 'Dieser Text wird oberhalb der Titel angezeigt.', 'piratenkleider' ),
+                  'default' => $defaultoptions['teaser-subtitle'],
+                  'parent'  => 'sliderpars'
+              ),  
+             'teaser-title-maxlength' => array(
+                  'type'    => 'number',
+                  'title'   => __( 'Textl&auml;nge', 'piratenkleider' ),
+                  'label'   => __( 'Maximale Textl&auml;nge des Titels im Teaser.', 'piratenkleider' ),
+                  'default' => $defaultoptions['teaser-title-maxlength'],
+                   'parent'  => 'sliderpars'
+              ),   
+             'teaser-title-words' => array(
+                  'type'    => 'number',
+                  'title'   => __( 'Wortzahl', 'piratenkleider' ),
+                  'label'   => __( 'Zahl der Worte im Teaser; Die maximale Textl&auml;nge begrenzt diesen Wert jedoch.', 'piratenkleider' ),
+                  'default' => $defaultoptions['teaser-title-words'],
+                   'parent'  => 'sliderpars'
+              ),
+                              
+               
                
               'slider-catid' => array(
                   'type'    => 'select',

@@ -212,7 +212,7 @@ function linktipp_display ($linktipp, $addclass = '') {
 		  $out .= '<a href="'.$linktipp_url.'" rel="bookmark">';
 	      }    
 	      $out .=  $title;
-	      if (($options['linktipps-linkpos']==0) || ($options['linktipps-linkpos']==3)) { echo '</a>'; }
+	      if (($options['linktipps-linkpos']==0) || ($options['linktipps-linkpos']==3)) {  $out .= '</a>'; }
 	      $out .= '</h2>';
 	      if (($options['linktipps-subtitlepos']==1) && (mb_strlen(trim($linktipp_untertitel))>1)) { 
 		  $out .= '<h3 class="subtitle">'.$linktipp_untertitel.'</h3>';
@@ -262,7 +262,7 @@ function linktipp_display ($linktipp, $addclass = '') {
 		  $out .= '<a href="'.$linktipp_url.'" rel="bookmark">';
 	      }    
 	      $out .=  $title;
-	      if (($options['linktipps-linkpos']==0) || ($options['linktipps-linkpos']==3)) { echo '</a>'; }
+	      if (($options['linktipps-linkpos']==0) || ($options['linktipps-linkpos']==3)) {  $out .= '</a>'; }
 	      $out .= '</h2>';
 	      if (($options['linktipps-subtitlepos']==1) && (str_len(trim($linktipp_untertitel))>1)) {
 		  $out .= '<h3 class="subtitle">'.$linktipp_untertitel.'</h3>';

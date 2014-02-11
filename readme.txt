@@ -2,7 +2,7 @@ Piratenkleider 3
 - Wordpress-Theme für Webauftritte der Piratenpartei 
 ====================================================
 
-Version 3.0.4 von Wolfgang Wiese (xwolf), 31. Januar 2014
+Version 3.0.8 von Wolfgang Wiese (xwolf), 11. Februar 2014
 
 
 DOWNLOADS
@@ -28,8 +28,6 @@ AUTOREN / ENTWICKLER
 
 
    Quellen für Defaultbilder und CI-Materialen (CC-BY 3.0)
-     - Defaultgrafiken für Slider/Seitenbilder: Tobias M. Eckrich
-     - Plakatbilder ab Version 2.17: SG Gestaltung, sowie Projekt Piratestarter
      - Weitere Bilder: Piratenwiki mit unterschiedlichen Autoren
      - Bildbearbeitung für Piratenkleider 3.x: Wolfgang Wiese
 
