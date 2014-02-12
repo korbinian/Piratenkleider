@@ -575,7 +575,6 @@ function piratenkleider_compatibility ($oldoptions) {
     if ($doupdate==1) {
 	update_option('piratenkleider_theme_options', $newoptions);
     }
-
     return $newoptions;
 }
 

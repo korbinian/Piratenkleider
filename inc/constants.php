@@ -91,7 +91,7 @@ $defaultoptions = array(
     * 1: Alle Artikel, ohne LInktipps
     * 2: Alle Artikel aus Kategorien bis auf definierte Cats und ohne Linktipps
     */
-    'artikelstream-exclusive-catliste'	    => array(), 
+    'artikelstream-exclusive-catliste'	    => array(1, 5, 191), 
     /* Ids der Categorien */
     'artikelstream-maxnum-main'             =>  5,
     'artikelstream-maxnum-second'	    =>  1,
@@ -992,7 +992,7 @@ $setoptions = array(
               ), 	
                
               'artikelstream-exclusive-catliste' => array(
-                  'type'    => 'select',
+                  'type'    => 'multiselectlist',
                   'title'   => __( 'Ausschlusskategorien', 'piratenkleider' ),
                   'label'   => __( 'Welche Kategorien sollen nicht im Hauptartikelstrom angezeigt werden.', 'piratenkleider' ),
                   'liste'   => $currentcatliste,

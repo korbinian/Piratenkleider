@@ -351,9 +351,33 @@ function theme_options_do_page($tab = '') {
                                         echo '</option>';                                                                                                                                                              
                                         echo "\n";                                            
                                     }  
-                                        echo "\t\t\t</select><br>\n";                                   
-                                        echo "\t\t\t<label for=\"piratenkleider_theme_options[$name]\">$label</label>\n"; 
-                               } elseif ($type=='fontselect') {
+                                    echo "\t\t\t</select><br>\n";                                   
+                                    echo "\t\t\t<label for=\"piratenkleider_theme_options[$name]\">$label</label>\n"; 
+                                } elseif ($type=='multiselectlist') {
+                                     echo "\t\t\t";         
+                                    foreach ( $liste as $entry => $listdata ) {    
+                                        $checked = '';
+					$value = '';                                      
+                                         foreach ($options[$name] as $cur) {
+                                             if ($cur==$entry) {
+                                                $checked = "checked=\"checked\""; 
+                                               break;
+                                             }
+                                         }		
+                                         ?>       
+					    <label for="piratenkleider_theme_options[<?php echo $name?>][<?php echo $entry?>]" >                                                
+                                            <input type="checkbox" 
+						   id="piratenkleider_theme_options[<?php echo $name?>][<?php echo $entry?>]"
+						   name="piratenkleider_theme_options[<?php echo $name?>][<?php echo $entry?>]" 
+                                                   value="<?php echo $entry?>" <?php echo $checked; ?>>                                                                                               
+					    <?php echo $liste[$entry] ?>
+					    </label><br>
+					 <?php    					    
+				    }
+				    if (isset($label)) {
+					echo "<p>".$label."</p>\n";
+				    }
+                                 } elseif ($type=='fontselect') {
                                     echo "\t\t\t";
                                     echo "<select name=\"piratenkleider_theme_options[$name]\">\n";
                                     foreach($liste as $i => $value) {   
@@ -473,6 +497,8 @@ function theme_options_validate( $input ) {
                             $output[$name]  =  wp_filter_nohtml_kses( $input[$name] ); 
                         } elseif (($type=='bildchecklist') || ($type=='bilddirchecklist')) {                            
                             $output[$name]  = $input[$name];
+                        } elseif ($type=='multiselectlist') {   	    			   
+			    $output[$name]  = $input[$name];    
 			} elseif ($type=='urlchecklist') {   	    			   
 			    $output[$name]  = $input[$name];
                         } else {
@@ -496,6 +522,8 @@ function theme_options_validate( $input ) {
                             $output[$name] = '';    
                         } elseif (($type=='select') || ($type=='fontselect')) {                        
                             $output[$name] = "";
+                        } elseif ($type=='multiselectlist') {
+                             $output[$name] = array();
                         }
                     }
                 }

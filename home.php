@@ -1,10 +1,7 @@
 <?php get_header();    
   global $options;  
 
-  
 
-   $options['artikelstream-exclusive-catliste'] = array(108); 
-    /* Ids der Categorien */
 
    
   if ( $options['slider-aktiv'] == "1" ){ ?>  
@@ -31,7 +28,7 @@
       $cols = array();
      
       global $wp_query;
-     
+     $options['artikelstream-type'] = 2;
       if ($options['artikelstream-type']==1) {
            /* 1: Alle Artikel, ohne Linktipps */
            $args =  $wp_query->query;
@@ -41,6 +38,7 @@
                   && (is_array($options['artikelstream-exclusive-catliste']))) {  
               $catliste = '';
               $poscatliste  = '';
+             
               foreach ($options['artikelstream-exclusive-catliste'] as $cat) {
                   if (strlen($catliste)>1) {
                       $catliste .= ",";
