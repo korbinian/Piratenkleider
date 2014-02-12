@@ -2353,6 +2353,21 @@ img.wp-smiley {
     left: -999em;
     width: 1px;
 }
+   #linktipp-stream h1, 
+   #second-stream h1, 
+   #linktipp-stream h2, 
+   #second-stream h2, 
+   #main-stream h2 {
+       font-size: 1.1em;
+       color: #24639b;
+   }   
+
+   #linktipp-stream section h2, 
+   #second-stream section h2, 
+   #main-stream section h2 {
+      font-size: 22.8px;
+       color: #24639b;
+   }  
 
     
 .footer {

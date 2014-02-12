@@ -37,6 +37,7 @@
                 $attribs = array(
                  "credits" => $options['img-meta-credits'],
                 );
+                              
                 echo '<div class="bigslider">';
                 if (has_post_thumbnail()) {    
                     $thumbid = get_post_thumbnail_id(get_the_ID());
@@ -45,6 +46,9 @@
                     if (isset($out) && strlen($out)>0){
                         print $out;
                     } else {
+                        $attribs = array(
+                             "credits" => $options['img-meta-credits'],
+                        );
                         echo '<img src="'.$defaultbildsrc.'" width="'.$defaultoptions['bigslider-thumb-width'].'" height="'.$defaultoptions['bigslider-thumb-height'].'" alt="">';                
                     }       
                 } else {
@@ -60,7 +64,11 @@
                 the_permalink();
                 echo ">";
                 echo short_title('&hellip;', $options['teaser-title-words'], $options['teaser-title-maxlength']);
-                echo "</a></h3></div>";        
+                echo "</a></h3></div>";   
+                                
+                if (($options['teaser-showcredits']==1) && isset($attribs["credits"]) && (strlen($attribs["credits"])>1)) {
+                    echo '<div class="credits">'.$attribs["credits"].'</div>';
+                } 
                 echo "</div>";    
             } else {
                 echo '<div class="textslider">';

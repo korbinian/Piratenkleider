@@ -605,7 +605,6 @@ if ( ! function_exists( 'piratenkleider_get_image_attributs' ) ) :
         }
         
         $displayinfo = $result['beschriftung'];
-        if (empty($displayinfo)) $displayinfo = $result['beschreibung'];
         if (empty($displayinfo) && !empty($result['copyright'])) $displayinfo = $precopyright.$result['copyright'];
         if (empty($displayinfo)) $displayinfo = $result['alt'];
         $result['credits'] = $displayinfo;
