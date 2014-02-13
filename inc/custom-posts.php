@@ -274,7 +274,7 @@ function linktipp_display ($linktipp, $addclass = '') {
 	       $out .= "\n";
 	    }
 	    if (($options['linktipps-linkpos']==2) || ($options['linktipps-linkpos']==3)) { 
-		$out .= '<footer class="linktipp-url"><a href="'.$linktipp_url.'">'.$linktipp_url.'</a></footer>'; 
+		$out .= '<footer class="linktipp-url"><a class="extern" href="'.$linktipp_url.'">'.$linktipp_url.'</a></footer>'; 
 
 	    }
 

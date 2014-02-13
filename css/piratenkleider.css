@@ -1144,7 +1144,10 @@ display: inline-block;
 .content ul ol, .content ol ul {
     margin-bottom: 0; 
   }
-  
+
+  .content ul.extern li {
+     list-style: none;
+ }
 .content-primary h2 {
     margin-top: 1em;
   }

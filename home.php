@@ -90,7 +90,7 @@
            
        echo '<div id="main-stream">';
       
-       if (isset($options['artikelstream-title-main']) && (strlen($options['artikelstream-title-main'])>1)) {
+       if (isset($options['artikelstream-title-main']) && (strlen($options['artikelstream-title-main'])>0)) {
             echo '<h1>'.$options['artikelstream-title-main'].'</h1>';       
             echo "\n";
        }
@@ -149,15 +149,17 @@
 			}	
 		     } elseif ($options['artikelstream-nextnum-linktipps']>0) {
 			 $link = esc_attr( get_post_meta( $post->ID, 'linktipp_url', true ) ); 		 
-			 $continuelinks .= '<li><a href="'.$link.'">'.get_the_title().'</a></li>';
+			 $continuelinks .= '<li><a class="extern" href="'.$link.'">'.get_the_title().'</a></li>';
 			 $continuelinks .= "\n";
 		     }
 		 endwhile;
 		 
-		 if (isset($continuelinks) && strlen($continuelinks)>1) {		     
+		 if (isset($continuelinks) && strlen($continuelinks)>0) {		     
 		    $linkliste = '<div class="column'.$z.'">';
-		    $linkliste .= "<h2>".$options['artikelstream-title-linktippcontinuelist']."</h2>\n";
-		    $linkliste .= "<ul>\n".$continuelinks."</ul>\n";
+                    if (isset($options['artikelstream-title-linktippcontinuelist']) && (strlen($options['artikelstream-title-linktippcontinuelist'])>1)) {
+                        $linkliste .= "<h2>".$options['artikelstream-title-linktippcontinuelist']."</h2>\n";
+                    }
+		    $linkliste .= "<ul class=\"extern\">\n".$continuelinks."</ul>\n";
 		    $linkliste .= "</div>\n";
 		    $z++;
 			if ($z>2) {
