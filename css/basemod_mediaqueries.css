@@ -670,4 +670,17 @@
    .content .startpage-widget-area {
        clear: both;
    }
+   
+   
+   .content-header #page-title, .content-header h1, .content-header-big h1 {
+       right: 0;
+       left: 705px;
+       height: 240px;
+       background: none repeat scroll 0 0 #2D7DC5;
+       top: 0;
+       color: white;
+       padding: 15px;
+       
+   }
+   
 }
