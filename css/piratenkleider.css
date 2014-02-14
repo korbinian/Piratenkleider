@@ -2999,7 +2999,7 @@ html[xmlns] .slides {
     background: #2d7dc5;
     color: white;
     display: inline-block;
-    padding: 0 5px; 
+    padding: 2px 5px; 
     z-index: 99;
 }
 .first-teaser-widget-area .slide .bigslider  {
@@ -3146,7 +3146,7 @@ html[xmlns] .slides {
  .nav-main li a span {
      display: inline;
      position: absolute;
-     top: -7px;
+     top: -5px;
      right: -10px;
      color: #2D7DC5;
      font-size: 0.9em;

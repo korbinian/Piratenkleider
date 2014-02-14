@@ -427,18 +427,17 @@ function piratenkleider_addmetatags() {
   global $options;
 
     $output = "";
-    $output .= "\t".'<meta charset="'.get_bloginfo('charset').'">'."\n";
-    $output .= "\t".'<!--[if IE]> <meta http-equiv="X-UA-Compatible" content="IE=9"> <![endif]-->'."\n";
-    $output .= "\t".'<meta name="viewport" content="width=device-width, initial-scale=1.0">'."\n";
-    
+    $output .= '<meta charset="'.get_bloginfo('charset').'">'."\n";
+    $output .= '<!--[if IE]> <meta http-equiv="X-UA-Compatible" content="IE=9"> <![endif]-->'."\n";
+    $output .= '<meta name="viewport" content="width=device-width, initial-scale=1.0">'."\n";    
     if ((isset( $options['meta-description'] )) && ( strlen(trim($options['meta-description']))>1 )) {
-	 $output .= "\t".'<meta name="description" content="'.$options['meta-description'].'">'."\n";
+	 $output .= '<meta name="description" content="'.$options['meta-description'].'">'."\n";
     }
     if ((isset( $options['meta-author'] )) && ( strlen(trim($options['meta-author']))>1 )) {
-	$output .= "\t".'<meta name="author" content="'.$options['meta-author'].'">'."\n";
-     }
+	$output .= '<meta name="author" content="'.$options['meta-author'].'">'."\n";
+    }
     if ((isset( $options['meta-verify-v1'] )) && ( strlen(trim($options['meta-verify-v1']))>1 )) {
-	$output .= "\t".'<meta name="verify-v1" content="'.$options['meta-verify-v1'].'">'."\n";
+	$output .= '<meta name="verify-v1" content="'.$options['meta-verify-v1'].'">'."\n";
      }
 
     $csv_tags = '';
@@ -464,14 +463,14 @@ function piratenkleider_addmetatags() {
 	if (strlen(trim($tags))>$maxlength) {
 	    $tags = substr($tags,0,strpos($tags,",",$maxlength));
 	}	
-	$output .= "\t".'<meta name="keywords" content="'.$tags.'">'."\n";
+	$output .= '<meta name="keywords" content="'.$tags.'">'."\n";
     }
     
     if ((isset($options['favicon-file'])) && ($options['favicon-file']>0 )) {	 
-	$output .=  "\t".'<link rel="shortcut icon" href="'.wp_get_attachment_url($options['favicon-file']).'">'."\n";
+	$output .=  '<link rel="shortcut icon" href="'.wp_get_attachment_url($options['favicon-file']).'">'."\n";
     } else {
-	$output .=  "\t".'<link rel="apple-touch-icon" href="'.get_template_directory_uri().'/apple-touch-icon.png">'."\n";
-	$output .=  "\t".'<link rel="shortcut icon" href="'.get_template_directory_uri().'/favicon.ico">'."\n";
+	$output .=  '<link rel="apple-touch-icon" href="'.get_template_directory_uri().'/apple-touch-icon.png">'."\n";
+	$output .=  '<link rel="shortcut icon" href="'.get_template_directory_uri().'/favicon.ico">'."\n";
     }
     echo $output;
 }
@@ -730,7 +729,6 @@ function piratenkleider_comment( $comment, $args, $depth ) {
                 </div> <!-- .reply -->
                 <?php } ?>
 
-
         </div><!-- #comment-##  -->
 
         <?php
@@ -739,14 +737,12 @@ function piratenkleider_comment( $comment, $args, $depth ) {
                 case 'trackback' :
         ?>
         <li class="post pingback">
-                <p><?php _e( 'Pingback:', 'piratenkleider' ); ?> <?php comment_author_link(); ?><?php edit_comment_link( __('(Edit)', 'piratenkleider'), ' ' ); ?></p>
+                <p><?php _e( 'Pingback:', 'piratenkleider' ); ?> <?php comment_author_link(); edit_comment_link( __('(Edit)', 'piratenkleider'), ' ' ); ?></p>
         <?php
                         break;
         endswitch;
 }
 endif;
-
-
 
 
 function piratenkleider_remove_recent_comments_style() {
@@ -786,36 +782,36 @@ function piratenkleider_post_teaser($titleup = 1, $showdatebox = 1, $showdatelin
 		$thumbnailcode = get_the_post_thumbnail($post->ID, 'teaser-thumb');
 	    }
 		   
-		$firstpic = get_piratenkleider_firstpicture();
-		$firstvideo = get_piratenkleider_firstvideo();
-		$fallbackimg = '<img src="'.$options['src-teaser-thumbnail_default'].'" alt="">';
-		if ($showdatebox==1) {
-		    if (!isset($output)) { $output = $thumbnailcode;}
-		    if (!isset($output)) { $output = $firstpic;}
-		    if ((!isset($output)) && (isset($firstvideo))) { $output = $firstvideo; $sizeclass = 'p3-column withvideo'; }		    
-		    if (!isset($output)) { $output = $fallbackimg;}		    
-		    if ((isset($output)) && ( strlen(trim($output))<10 )) {$output = $fallbackimg;}		    
-		} elseif ($showdatebox==2) {
-		    if (!isset($output)) { $output = $firstpic;}
-		    if (!isset($output)) { $output = $thumbnailcode;}
-		    if ((!isset($output)) && (isset($firstvideo))) { $output = $firstvideo; $sizeclass = 'p3-column withvideo'; }		    
-		    if (!isset($output)) { $output = $fallbackimg;}		    
-		    if ((isset($output)) && ( strlen(trim($output))<10 )) {$output = $fallbackimg;}			    		    
-		} elseif ($showdatebox==3) {
-		    if ((!isset($output)) && (isset($firstvideo))) { $output = $firstvideo; $sizeclass = 'p3-column withvideo'; }		     		    
-		    if (!isset($output)) { $output = $thumbnailcode;}
-		    if (!isset($output)) { $output = $firstpic;}
-		    if (!isset($output)) { $output = $fallbackimg;}
-		    if ((isset($output)) && ( strlen(trim($output))<10 )) {$output = $fallbackimg;}		    		    
-		} elseif ($showdatebox==4) {
-		    if ((!isset($output)) && (isset($firstvideo))) { $output = $firstvideo; $sizeclass = 'p3-column withvideo'; }		    
-		    if (!isset($output)) { $output = $firstpic;}
-		    if (!isset($output)) { $output = $thumbnailcode;}
-		    if (!isset($output)) { $output = $fallbackimg;}
-		    if ((isset($output)) && ( strlen(trim($output))<10 )) {$output = $fallbackimg;}
-		} else {
-		    $output = $fallbackimg; 
-		}	
+            $firstpic = get_piratenkleider_firstpicture();
+            $firstvideo = get_piratenkleider_firstvideo();
+            $fallbackimg = '<img src="'.$options['src-teaser-thumbnail_default'].'" alt="">';
+            if ($showdatebox==1) {
+                if (!isset($output)) { $output = $thumbnailcode;}
+                if (!isset($output)) { $output = $firstpic;}
+                if ((!isset($output)) && (isset($firstvideo))) { $output = $firstvideo; $sizeclass = 'p3-column withvideo'; }		    
+                if (!isset($output)) { $output = $fallbackimg;}		    
+                if ((isset($output)) && ( strlen(trim($output))<10 )) {$output = $fallbackimg;}		    
+            } elseif ($showdatebox==2) {
+                if (!isset($output)) { $output = $firstpic;}
+                if (!isset($output)) { $output = $thumbnailcode;}
+                if ((!isset($output)) && (isset($firstvideo))) { $output = $firstvideo; $sizeclass = 'p3-column withvideo'; }		    
+                if (!isset($output)) { $output = $fallbackimg;}		    
+                if ((isset($output)) && ( strlen(trim($output))<10 )) {$output = $fallbackimg;}			    		    
+            } elseif ($showdatebox==3) {
+                if ((!isset($output)) && (isset($firstvideo))) { $output = $firstvideo; $sizeclass = 'p3-column withvideo'; }		     		    
+                if (!isset($output)) { $output = $thumbnailcode;}
+                if (!isset($output)) { $output = $firstpic;}
+                if (!isset($output)) { $output = $fallbackimg;}
+                if ((isset($output)) && ( strlen(trim($output))<10 )) {$output = $fallbackimg;}		    		    
+            } elseif ($showdatebox==4) {
+                if ((!isset($output)) && (isset($firstvideo))) { $output = $firstvideo; $sizeclass = 'p3-column withvideo'; }		    
+                if (!isset($output)) { $output = $firstpic;}
+                if (!isset($output)) { $output = $thumbnailcode;}
+                if (!isset($output)) { $output = $fallbackimg;}
+                if ((isset($output)) && ( strlen(trim($output))<10 )) {$output = $fallbackimg;}
+            } else {
+                $output = $fallbackimg; 
+            }	
 	   
     	    
 	    $leftbox .= $output;
@@ -1036,8 +1032,7 @@ class Piratenkleider_Menu_Walker extends Walker_Nav_Menu {
                  $item_output .= '<a'. $attributes .'>';
                  $item_output .= $args->link_before .apply_filters( 'the_title', $item->title, $item->ID );
                  $item_output .= $description;
-                 $item_output .= $args->link_after;
-                
+                 $item_output .= $args->link_after;                
                  $item_output .= '</a>';
                  $item_output .= $args->after;
            }

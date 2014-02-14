@@ -590,12 +590,29 @@
         max-width: 1343px;
         width: 1343px;
     }  
-    .teaser .second-teaser-widget-area {
-        width: 630px;
-    }
+
+    .teaser .first-teaser-widget-area, 
     .first-footer-widget-area {
          width: 1024px;
     }
+    .first-teaser-widget-area .slide .caption {       
+        line-height: 2;
+        padding: 50px 0 0 5px;
+        width: 319px;
+        background: url("../images/int/bg-tags.png") repeat scroll -20% top #FF8800;
+        height: 240px;
+    }
+    .first-teaser-widget-area .slide .caption p {
+        padding-right: 20px;
+    }
+    .first-teaser-widget-area .slide .caption h3 {
+        bottom: 0;
+        position: absolute;
+    }
+    .first-teaser-widget-area .slide .caption a {
+        padding: 20px;
+    }
+    
     .content-primary {
         float: left;
         width: 1024px;
@@ -645,8 +662,11 @@
    #second-stream .withthumb .p3-col3 {
        margin: 0;
    }
-  
- 
+   #linktipp-stream section.linktipps p { text-align: center; } 
+   .linktipps .post-entry p img {
+       float: none;
+       display: inline-block;
+   }
    .content .startpage-widget-area {
        clear: both;
    }
