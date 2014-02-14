@@ -1004,16 +1004,47 @@ add_filter('tiny_mce_before_init', 'piratenkleider_change_mce_options');
 
 
 
+class Piratenkleider_Menu_Walker extends Walker_Nav_Menu {
+      public function start_el(&$output, $item, $depth, $args)
+      {
+           if ( '-' === $item->title ) {
+                $item_output = '<li class="menu_separator"><hr>';
+           } else {     
+                global $wp_query;
+                $indent = ( $depth ) ? str_repeat( "\t", $depth ) : '';
 
-class My_Walker_Nav_Menu extends Walker_Nav_Menu {
-    public function start_el( &$output, $item, $depth = 0, $args = array(), $id = 0) {
-        if ( '-' === $item->title ) {
-            $output .= '<li class="menu_separator"><hr>';
-        } else{
-            parent::start_el( $output, $item, $depth, $args, $id);
-        }
-    }
-    public function display_element($el, &$children, $max_depth, $depth = 0, $args = array(), &$output){
+                $class_names = $value = '';
+
+                $classes = empty( $item->classes ) ? array() : (array) $item->classes;
+
+                $class_names = join( ' ', apply_filters( 'nav_menu_css_class', array_filter( $classes ), $item ) );
+                $class_names = ' class="'. esc_attr( $class_names ) . '"';
+
+                $output .= $indent . '<li id="menu-item-'. $item->ID . '"' . $value . $class_names .'>';
+
+                $attributes  = ! empty( $item->attr_title ) ? ' title="'  . esc_attr( $item->attr_title ) .'"' : '';
+                $attributes .= ! empty( $item->target )     ? ' target="' . esc_attr( $item->target     ) .'"' : '';
+                $attributes .= ! empty( $item->xfn )        ? ' rel="'    . esc_attr( $item->xfn        ) .'"' : '';
+                $attributes .= ! empty( $item->url )        ? ' href="'   . esc_attr( $item->url        ) .'"' : '';
+                $description  = ! empty( $item->description ) ? '<span>'.esc_attr( $item->description ).'</span>' : '';
+
+                if($depth != 0) {
+                          $description = "";
+                }
+
+                 $item_output = $args->before;
+                 $item_output .= '<a'. $attributes .'>';
+                 $item_output .= $args->link_before .apply_filters( 'the_title', $item->title, $item->ID );
+                 $item_output .= $description;
+                 $item_output .= $args->link_after;
+                
+                 $item_output .= '</a>';
+                 $item_output .= $args->after;
+           }
+           $output .= apply_filters( 'walker_nav_menu_start_el', $item_output, $item, $depth, $args );
+            
+       }
+        public function display_element($el, &$children, $max_depth, $depth = 0, $args = array(), &$output){
         $id = $this->db_fields['id'];
         if(isset($children[$el->$id]))
             $el->classes[] = 'has_children';
@@ -1021,6 +1052,7 @@ class My_Walker_Nav_Menu extends Walker_Nav_Menu {
         parent::display_element($el, $children, $max_depth, $depth, $args, $output);
     }
 }
+
 
 if ( ! function_exists( 'get_piratenkleider_socialmediaicons' ) ) :
 /**
@@ -1081,39 +1113,39 @@ function get_piratenkleider_seitenmenu( $zeige_sidebarpagemenu = 1 , $zeige_subp
   global $post;
   $sidelinks = '';
     if ($zeige_sidebarpagemenu==1) {   
-		if (($seitenmenu_mode == 1) || (!has_nav_menu( 'primary' ))) {
-			if ($zeige_subpagesonly==1) {
-				//if the post has a parent
+            if (($seitenmenu_mode == 1) || (!has_nav_menu( 'primary' ))) {
+                    if ($zeige_subpagesonly==1) {
+                            //if the post has a parent
 
-				if($post->post_parent){
-				   if($post->ancestors) {
-						$ancestors = end($post->ancestors);
-						$sidelinks = wp_list_pages("title_li=&child_of=".$ancestors."&echo=0");
-					} else {                
-						$sidelinks .= wp_list_pages("sort_column=menu_order&title_li=&echo=0&depth=5&child_of=".$post->post_parent);              
-					} 
-				}else{
-					// display only main level and children
-					$sidelinks .= wp_list_pages("sort_column=menu_order&title_li=&echo=0&depth=5&child_of=".$post->ID);
-				}
+                            if($post->post_parent){
+                               if($post->ancestors) {
+                                            $ancestors = end($post->ancestors);
+                                            $sidelinks = wp_list_pages("title_li=&child_of=".$ancestors."&echo=0");
+                                    } else {                
+                                            $sidelinks .= wp_list_pages("sort_column=menu_order&title_li=&echo=0&depth=5&child_of=".$post->post_parent);              
+                                    } 
+                            }else{
+                                    // display only main level and children
+                                    $sidelinks .= wp_list_pages("sort_column=menu_order&title_li=&echo=0&depth=5&child_of=".$post->ID);
+                            }
 
-				if ($sidelinks) { 
-					echo '<ul class="menu">';                   
-					echo $sidelinks; 
-					echo '</ul>';         
-				} 
+                            if ($sidelinks) { 
+                                    echo '<ul class="menu">';                   
+                                    echo $sidelinks; 
+                                    echo '</ul>';         
+                            } 
 
-			} else {
-				echo '<ul class="menu">';   
-					wp_page_menu( ); 
-				echo '</ul>';                        
-			} 
+                    } else {
+                            echo '<ul class="menu">';   
+                                    wp_page_menu( ); 
+                            echo '</ul>';                        
+                    } 
 		} else {
-				if ($zeige_subpagesonly==1) {
-					wp_nav_menu( array('depth' => 0, 'container_class' => 'menu-header subpagesonly', 'theme_location' => 'primary', 'walker'  => new My_Walker_Nav_Menu()) );      
-				} else { 
-					wp_nav_menu( array('depth' => 0, 'container_class' => 'menu-header', 'theme_location' => 'primary', 'walker'  => new My_Walker_Nav_Menu()) );      
-				}
+                    if ($zeige_subpagesonly==1) {
+                            wp_nav_menu( array('depth' => 0, 'container_class' => 'menu-header subpagesonly', 'theme_location' => 'primary', 'walker'  => new Piratenkleider_Menu_Walker()) );      
+                    } else { 
+                            wp_nav_menu( array('depth' => 0, 'container_class' => 'menu-header', 'theme_location' => 'primary', 'walker'  => new Piratenkleider_Menu_Walker()) );      
+                    }
 		}
     }
   

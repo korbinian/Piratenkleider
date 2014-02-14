@@ -48,7 +48,7 @@
                       <?php endif; ?></span></h1>
 	<?php } 
             rewind_posts(); 
-            get_template_part( 'loop', 'archive' ); 
+           get_template_part( 'loop', 'archive' );
             ?>
 	</div>
     </div>

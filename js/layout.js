@@ -113,7 +113,7 @@ jQuery(document).ready(function($) {
 
     
    var breite = $(window).width();
-   if (breite > 1000) {
+   if ((breite > 1000) && (breite < 1400)) {
     $.SetOnSwitch();
     $.SetOffSwitch();
     $(".switchon").toggle();
@@ -128,22 +128,10 @@ jQuery(document).ready(function($) {
 
     $(window).scroll(function () { 
         if (( $(window).scrollTop() > 184 ) && (breite > 800))  {
-     /*     if ( !$("body").hasClass("nav-fixed") ) $(".menu-item-home").animate({ left: "20px"}, 200, "linear", function() {
-                  $(".menu-item-home").animate({ left: "0px"}, 200);
-            });          
-            */
           $("body").addClass("nav-fixed");
-      //    $("nav.main .menu-mlid-355 a").attr("title", "Zur Startseite");
         };
         if (( $(window).scrollTop() <= 184 )&& (breite > 800)) {
-        /* if ( $("body").hasClass("nav-fixed") ) $(".menu-item-home").animate({ left: "0px"}, 200, function() {
-                  $("#nav-home-text").animate({ left: "20px"}, 200, "linear", function() {
-                  //  $(".menu-mlid-355 a").removeAttr("style");
-              });
-            });          
-          */ 
           $("body").removeClass("nav-fixed");    
-      //    $("nav.main .menu-mlid-355 a").attr("title", "");       
         };          
     });
 

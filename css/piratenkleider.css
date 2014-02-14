@@ -3143,7 +3143,15 @@ html[xmlns] .slides {
       background: #111111 url("../images/home-signet.png") no-repeat 17px 10px; 
  }
      
-
+ .nav-main li a span {
+     display: inline;
+     position: absolute;
+     top: -7px;
+     right: -10px;
+     color: #2D7DC5;
+     font-size: 0.9em;
+ }
+ 
  
  body.nav-fixed .nav-main ul.menu li a[title="Home"],
  body.nav-fixed .nav-main ul.menu li.menu-item-home a {
@@ -3351,6 +3359,7 @@ html[xmlns] .slides {
     -o-transition: all 0.2s ease-in-out;      
     transition: all 0.2s ease-in-out;    
 }
+
 
 .symbol-idee:before { content: "\0021"; }
 .symbol-person:before { content: "\263A"; }

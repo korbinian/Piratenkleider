@@ -61,15 +61,15 @@ $defaultoptions = array(
     'aktiv-suche'                   => 1,   
     'slider-defaultwerbeplakate'    => 1,
     'slider-numberarticle'          => 3,
-    'slider-animationType'          => 'slide',
+    'slider-animationType'          => 'fade',
     'slider-Direction'              => 'horizontal',
     'slider-slideshowSpeed'         => 8000,
     'slider-animationDuration'      => 600,
     'slider-alternativesrc'	    => '',
     
-    'defaultwerbesticker'           => 1,
-    'aktiv-autoren'                 => 1,
-    'newsletter'                    => 0,
+    'defaultwerbesticker'                   => 1,
+    'aktiv-autoren'                         => 1,
+    'newsletter'                            => 1,
     'alle-socialmediabuttons'               => 1,
     'aktiv-linkicons'			    => 1,
     'aktiv-linkmenu'                        => 1,
@@ -91,7 +91,7 @@ $defaultoptions = array(
     * 1: Alle Artikel, ohne LInktipps
     * 2: Alle Artikel aus Kategorien bis auf definierte Cats und ohne Linktipps
     */
-    'artikelstream-exclusive-catliste'	    => array(1, 5, 191), 
+    'artikelstream-exclusive-catliste'	    => array(), 
     /* Ids der Categorien */
     'artikelstream-maxnum-main'             =>  5,
     'artikelstream-maxnum-second'	    =>  1,
@@ -160,9 +160,9 @@ $defaultoptions = array(
     'aktiv-mediaqueries-allparts'   => 0,
     'anonymize-user'                => 0,
     'anonymize-user-commententries' => 0,
-    'aktiv-commentreplylink'        => 0,
+    'aktiv-commentreplylink'        => 1,
     'default_comment_notes_before'  => '<p class="comment-notes">'.__( 'Deine E-Mail-Adresse wird nicht ver&ouml;ffentlicht. Erforderliche Felder sind markiert <span class="required">*</span>', 'piratenkleider' ). '</p>',
-    'comments_disclaimer'           => __('Hinweis: Durch Bereitstellung der Kommentierungsfunktion macht sich die Piratenpartei nicht die in den Kommentaren geschriebenen Meinungen zu eigen. Bei Fragen oder Beschwerden zu Kommentaren wenden Sie sich bitte über das Kontaktformular an das Webteam.', 'piratenkleider' ),
+    'comments_disclaimer'           => __('Hinweis: Durch Bereitstellung der Kommentierungsfunktion macht sich die Piratenpartei nicht die in den Kommentaren geschriebenen Meinungen zu eigen. Bei Fragen oder Beschwerden zu Kommentaren wenden Sie sich bitte über das Kontaktformular an das Webteam. <a href="http://wiki.piratenpartei.de/Servicegruppen/Webseite/Moderation">Hinweise zur Moderation</a> von Kommentaren finden sich auf der Wikiseite der SG Webseite.', 'piratenkleider' ),
     'disclaimer_post'               => '',
     'feed_cache_lifetime'           => 14400,
     'use_wp_feed_defaults'          => 1,

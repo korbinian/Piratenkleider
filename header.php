@@ -100,7 +100,7 @@
                                 <h2 class="skip"><?php _e( 'Navigation', 'piratenkleider' ); ?></h2>
                                 <?php 
                                 if ( has_nav_menu( 'primary' ) ) {
-                                    wp_nav_menu( array( 'container_class' => 'menu-header', 'theme_location' => 'primary', 'walker'  => new My_Walker_Nav_Menu()) );      
+                                    wp_nav_menu( array( 'container_class' => 'menu-header', 'theme_location' => 'primary', 'walker'  => new Piratenkleider_Menu_Walker()) );      
                                 } else { ?>
                                     <div class="menu-header">
                                         <ul id="menu-mainmenu" class="menu">      
