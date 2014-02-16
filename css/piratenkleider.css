@@ -892,10 +892,16 @@ display: inline-block;
  body.nav-fixed .header .nav-main ul {
      background: transparent;
  }
+ 
+ 
+/*
  body.nav-fixed .teaser {
-    margin-top: 220px;    
+    height:  240px;  
+    margin-top: 254px;   
  }
+*/
 
+ 
  body.nav-fixed.logged-in .header {
      height: 46px;
      top: 32px;
@@ -904,7 +910,11 @@ display: inline-block;
  body.nav-fixed.logged-in .teaser {
     margin-top: 272px;    
  }
- 
+ body.nav-fixed #content-body {
+    margin-top: 225px;   
+ }
+
+
  
  /* Breadcrumb */
  

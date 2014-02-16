@@ -3,7 +3,7 @@
     global $defaultoptions;
  ?>   
 
-
+</div> <!-- #content-body --> 
 <div class="section footer">
     <div class="row">
         <?php get_sidebar( 'footer' ); ?>

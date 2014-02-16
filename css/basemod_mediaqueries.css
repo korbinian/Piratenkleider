@@ -627,6 +627,7 @@
         margin-left: 20px;
         padding: 10px;
         background: rgba(0,0,0,0.05);
+        float: left;
     }
     #linktipp-stream  .columns .column1,
     #linktipp-stream  .columns .column2 {
