@@ -108,7 +108,6 @@ jQuery(document).ready(function($) {
 	    $(".switchoff").toggle();
 	    $(".content-aside .skin").toggle();
             curwidth = $(window).width();
-              alert(curwidth);
             if (curwidth >1350) {              
                 $(".content-primary").css($cssPrimaryOnBigViewSidebar);
             } else {
