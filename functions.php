@@ -587,8 +587,11 @@ if ( ! function_exists( 'piratenkleider_get_image_attributs' ) ) :
          return;
         }
         $result = array();
-        $result['alt'] = trim(strip_tags($meta['_wp_attachment_image_alt'][0]));
-                
+	if (isset($meta['_wp_attachment_image_alt'][0])) {
+	    $result['alt'] = trim(strip_tags($meta['_wp_attachment_image_alt'][0]));
+	} else {
+	    $result['alt'] = "";
+	}       
         if (isset($meta['_wp_attachment_metadata']) && is_array($meta['_wp_attachment_metadata'])) {        
          $data = unserialize($meta['_wp_attachment_metadata'][0]);
          if (isset($data['image_meta']) && is_array($data['image_meta']) && isset($data['image_meta']['copyright'])) {
@@ -596,11 +599,17 @@ if ( ! function_exists( 'piratenkleider_get_image_attributs' ) ) :
          }
         }
         $attachment = get_post($id);
-        
+        $result['beschriftung'] = $result['beschreibung'] = $result['title'] = '';
         if (isset($attachment) ) {
-         $result['beschriftung'] = trim(strip_tags( $attachment->post_excerpt ));
-         $result['beschreibung'] = trim(strip_tags( $attachment->post_content ));
-         $result['title'] = trim(strip_tags( $attachment->post_title )); // Finally, use the title
+	    if (isset($attachment->post_excerpt)) {
+		$result['beschriftung'] = trim(strip_tags( $attachment->post_excerpt ));
+	    }
+	    if (isset($attachment->post_content)) {
+		$result['beschreibung'] = trim(strip_tags( $attachment->post_content ));
+	    }        
+	    if (isset($attachment->post_title)) {
+		 $result['title'] = trim(strip_tags( $attachment->post_title )); // Finally, use the title
+	    }   
         }
         
         $displayinfo = $result['beschriftung'];
@@ -1001,7 +1010,7 @@ add_filter('tiny_mce_before_init', 'piratenkleider_change_mce_options');
 
 
 class Piratenkleider_Menu_Walker extends Walker_Nav_Menu {
-      public function start_el(&$output, $item, $depth, $args)
+      public function start_el(&$output, $item, $depth = 0, $args = array(), $id = 0)
       {
            if ( '-' === $item->title ) {
                 $item_output = '<li class="menu_separator"><hr>';
@@ -1098,6 +1107,59 @@ function get_piratenkleider_socialmediaicons( $darstellung = 1 ){
     }
 }
 endif;
+
+if ( ! function_exists( 'get_piratenkleider_steckbrief' ) ) :
+    /*
+     * Anzeige der Steckbrief-Info zu einem Post
+     */
+    
+function get_piratenkleider_steckbrief(){
+  global $post;
+  global $options;
+  
+  $custom_fields = get_post_custom();
+  
+  if (isset($custom_fields['piratenkleider-sidebar-text'])) {
+    $text = $custom_fields['piratenkleider-sidebar-text'][0];
+  } elseif (isset($custom_fields['text'])) {
+      /* Look for variable as in V2 for downwards compatibility ... */
+      $text = $custom_fields['text'][0];
+  }
+  
+  if (isset($custom_fields['piratenkleider-sidebar-image_url'])) {
+    $image_url = $custom_fields['piratenkleider-sidebar-image_url'][0];
+  } elseif (isset($custom_fields['image_url'])) {
+      /* Look for variable as in V2 for downwards compatibility ... */
+      $image_url =  $custom_fields['image_url'][0];
+  } 
+  $out = '';	
+    if  (  ( isset($text) 
+	    && isset($image_url) && ($image_url<>'') 
+	    && (strlen(trim($text))>0))
+	|| (
+	    (isset($text) 
+	    && (strlen(trim($text))>0)) 
+	    && (has_post_thumbnail()))
+	    ) {   
+	$out .= '<div id="steckbrief">';   
+
+	if (isset($image_url) &&  $image_url<>'') {
+	    $out .= wp_get_attachment_image( $image_url, array($options['sidebar-steckbrief-maxwidth'],$options['sidebar-steckbrief-maxheight']) ); 
+	} else {
+	    $out .= get_the_post_thumbnail(array($options['sidebar-steckbrief-maxwidth'],$options['sidebar-steckbrief-maxheight']));
+	} 
+	$out .= "\n";  
+	$out .= ' <div class="text">';
+	$out .=  do_shortcode($text); 
+	$out .= "</div>\n";
+	$out .= "</div>\n";
+		
+    }  
+   return $out;
+  
+}
+endif;
+
 
 
 if ( ! function_exists( 'get_piratenkleider_seitenmenu' ) ) :

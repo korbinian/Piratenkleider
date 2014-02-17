@@ -138,31 +138,9 @@
 	       <h1 class="skip"><?php _e( 'Weitere Informationen', 'piratenkleider' ); ?></h1>
 	       <?php
 
-		if (  
-			( isset($custom_fields['piratenkleider_sidebar-text']) 
-                        && isset($custom_fields['piratenkleider_sidebar-image_url']) && 
-			   ($custom_fields['piratenkleider_sidebar-image_url'][0]<>'') 
-                        && ($custom_fields['piratenkleider_sidebar-text'][0]<>''))
-			|| (
-				(isset($custom_fields['piratenkleider_sidebar-text']) 
-                                && $custom_fields['piratenkleider_sidebar-text'][0]<>'') 
-                                && (has_post_thumbnail())))             
-		    {   ?>
-		    <div id="steckbrief">   
-			<?php
-			if (isset($custom_fields['piratenkleider_sidebar-image_url']) &&  $custom_fields['piratenkleider_sidebar-image_url'][0]<>'') {
-			    echo wp_get_attachment_image( $custom_fields['piratenkleider_sidebar-image_url'][0], array(300,300) ); 
-			} else {
-			     the_post_thumbnail(array(300,300));
-			} ?>
-
-			<div class="text">
-			     <?php echo do_shortcode(get_post_meta($post->ID, 'piratenkleider-sidebar-text', $single = true)); ?>
-			</div>
-		   </div>
-		   <?php 
-		}  
-
+		
+		echo get_piratenkleider_steckbrief();
+		
 		get_sidebar(); 
 		?>
 	      </div>

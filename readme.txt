@@ -2,7 +2,7 @@ Piratenkleider 3
 - Wordpress-Theme für Webauftritte der Piratenpartei 
 ====================================================
 
-Version 3.0.9 von Wolfgang Wiese (xwolf), 14. Februar 2014
+Version 3.0.10 von Wolfgang Wiese (xwolf), 17. Februar 2014
 
 
 DOWNLOADS
@@ -24,7 +24,6 @@ CREDITS & COPYRIGHT
 AUTOREN / ENTWICKLER
 
    Wolfgang Wiese (xwolf), http://www.xwolf.de , E-Mail: info@piratenkleider.de
-
 
 
    Quellen für Defaultbilder und CI-Materialen (CC-BY 3.0)
@@ -51,6 +50,6 @@ zur Verfügung.
 
 VORVERSION
 
-Dieses Theme basiert auf das  Wordpress-Theme Piratenkleider 2
+Dieses Theme basiert auf das Wordpress-Theme Piratenkleider 2
 
 
