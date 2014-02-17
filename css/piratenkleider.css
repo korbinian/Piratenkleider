@@ -892,28 +892,14 @@ display: inline-block;
  body.nav-fixed .header .nav-main ul {
      background: transparent;
  }
- 
- 
-/*
- body.nav-fixed .teaser {
-    height:  240px;  
-    margin-top: 254px;   
- }
-*/
 
- 
- body.nav-fixed.logged-in .header {
+  body.nav-fixed #content-body {
+    margin-top: 225px;   
+ }
+ body.logged-in.nav-fixed .header {
      height: 46px;
      top: 32px;
  }
-
- body.nav-fixed.logged-in .teaser {
-    margin-top: 272px;    
- }
- body.nav-fixed #content-body {
-    margin-top: 225px;   
- }
-
 
  
  /* Breadcrumb */
@@ -2948,7 +2934,6 @@ html[xmlns] .slides {
     right: 10px;
     width: 50px;
     text-align: center;
-    padding: 1px;
     overflow: hidden;
     z-index: 80;  
 }

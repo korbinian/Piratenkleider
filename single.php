@@ -18,10 +18,10 @@
 		$thumbid = get_post_thumbnail_id(get_the_ID());
 		$image_url_data = wp_get_attachment_image_src( $thumbid, 'full');
 		$image_url = $image_url_data[0];
-		$attribs = piratenkleider_get_image_attributs($thumbid);			
-	    } else {
+		$attribs = piratenkleider_get_image_attributs($thumbid);	
+	     } else {
 		if (($options['aktiv-artikelbild']==1) && (isset($options['artikelbild-src']))) {  
-		    $image_url = $options['artikelbild-src'];		    
+		    $image_url = $options['artikelbild-src'];
 		}
 	    }
 	    

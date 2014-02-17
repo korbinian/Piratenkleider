@@ -78,12 +78,26 @@
           <h1 class="skip"><?php _e( 'Weitere Informationen', 'piratenkleider' ); ?></h1>
           
             <?php
-            
-            get_piratenkleider_seitenmenu($options['zeige_sidebarpagemenu'],$options['zeige_subpagesonly'],$options['seitenmenu_mode']);
-             if ( get_post_meta($post->ID, 'piratenkleider_sidebar-content', true) )
-             echo do_shortcode(get_post_meta($post->ID, 'piratenkleider_sidebar-content', $single = true));
-             
-         get_sidebar(); 
+	    
+	      get_piratenkleider_seitenmenu($options['zeige_sidebarpagemenu'],$options['zeige_subpagesonly'],$options['seitenmenu_mode']);
+
+	    $custom_fields = get_post_custom();
+  
+	      if (isset($custom_fields['piratenkleider_sidebar-content'])) {
+		    $text = $custom_fields['piratenkleider_sidebar-content'][0];
+	      } elseif (isset($custom_fields['right_column'])) {
+		  /* Look for variable as in V2 for downwards compatibility ... */
+		    $text = $custom_fields['right_column'][0];
+	      }
+
+
+	    if  (isset($text) 
+			&& (strlen(trim($text))>0)) {
+		echo '<div class="">';
+		echo do_shortcode($text); 
+		echo "</div>\n";
+	    }
+	    get_sidebar(); 
              ?>
       </div>
     </div>

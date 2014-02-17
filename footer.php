@@ -86,10 +86,7 @@
    
         if ($options['aktiv-dynamic-sidebar']==1) { 
 	    $nosidebar = get_post_meta( get_the_ID(), 'piratenkleider_nosidebar', true );
-	    if( empty( $nosidebar ) || $nosidebar==0) {
-		
-	    
-            ?>
+	    if( empty( $nosidebar ) || $nosidebar==0) {  ?>
      <script type="text/javascript">
         /* <![CDATA[ */
          $htmlOnSwitch = '<div class="switchoff"><a href="#"><abbr title="<?php _e('Leiste ausblenden','piratenkleider'); ?>">&#9654;</abbr></a></div>';
