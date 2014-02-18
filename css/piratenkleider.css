@@ -926,16 +926,13 @@ display: inline-block;
     height: 240px;
     position: relative;
 }
-  .teaser .row {
+ .teaser .row {
     background: #c96a00;
     background: rgba(0, 0, 0, 0.3) -20% 0;    
-  }
-  
-   .first-teaser-widget-area .slide .textslider  {
+ } 
+ .first-teaser-widget-area .slide .textslider  {
     background: #ff8800;  
-  } 
-  
-
+ } 
   
 
 .second-teaser-widget-area .skin {
@@ -957,7 +954,6 @@ display: inline-block;
   box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); 
 }
 
-
   .second-teaser-widget-area li a {
     padding: 1em 10px 1em 20px;
     list-style: none outside none;
@@ -966,16 +962,13 @@ display: inline-block;
     font-size: 14px;     
     display: block;
     text-shadow: 0 0 0; 
-
   }
-    .second-teaser-widget-area li a div {
+  .second-teaser-widget-area li a div {
       color: black;
       letter-spacing: 1px;
       text-shadow: 0 -1px 1px #c36800;
       font-size: 19px; 
-    }
-   
-
+   }
   .second-teaser-widget-area li a:focus,  
   .second-teaser-widget-area li a:hover {    
         background: #c96a00;
@@ -1219,16 +1212,21 @@ display: inline-block;
     margin-left: 10px;
   }
     .content-primary .post-nav a {
-      font-size: 20px; }
+        font-size: 20px; 
+    }
     .content-primary .post-nav ul li {
-      list-style: none; }
+        list-style: none; 
+    }
 
     .content-primary .post-nav .related {
-      padding-left: 0; }
-      .content-primary .post-nav .related li {
-        list-style: none; }
-        .content-primary .post-nav .related li img {
-          display: none; }
+        padding-left: 0; 
+    }
+    .content-primary .post-nav .related li {
+        list-style: none; 
+    }
+    .content-primary .post-nav .related li img {
+        display: none; 
+    }
   .content-primary ol.az {
     margin: 0;
     overflow: hidden;
@@ -1319,123 +1317,33 @@ display: inline-block;
     line-height: 1.25em;
     max-width: 665px;
 }
-
-
-.content-aside p, 
-.content-aside table, 
-.content-aside blockquote, 
-.content-aside form {
-    margin-bottom: 20px; 
-}
-.content-aside ul, 
-.content-aside ol {
-    margin: 0 0 20px 0; }
-.content-aside ul li,
-.content-aside ol li {
-      list-style: none;
-}
-.content-aside a img {
-    margin: 0;
-    padding: 0; 
-}
-
-
-.content-aside #steckbrief {    
-    background-color: white;
-    cursor: pointer;
+.content-primary .categorybox {
     display: inline-block;
-    padding: 10px 10px 15px;
-    z-index: 1;
-    box-shadow: 2px 2px 8px #333;
-    margin: 0 0 20px;
-    -webkit-transform: rotate(2deg);
-    -moz-transform: rotate(2deg);
-    -ms-transform: rotate(2deg);
-    -o-transform: rotate(2deg);
-    transform: rotate(2deg);
-    -webkit-transition: all 406ms ease-out 0s;
-    -moz-transition: all 406ms ease-out 0s;
-    -ms-transition: all 406ms ease-out 0s;
-    -o-transition: all 406ms ease-out 0s;
-    transition: all 406ms ease-out 0s;            
-    max-width: 300px;
-}
-  .content-aside #steckbrief:hover,
-  .content-aside #steckbrief:focus,
-  .content-aside #steckbrief:active {
-    -webkit-transform: scale(1.1);
-    -moz-transform: scale(1.1);
-    -ms-transform: scale(1.1);
-    -o-transform: scale(1.1);
-    transform: scale(1.1);
-    z-index: 9;
-	}   
-  .content-aside #steckbrief img {
-    background-position: center center;
-    background-repeat: no-repeat;
-    border: 1px solid #EEEEEE; 
-    display: block;
-    margin: 0 auto;
-    max-width: 260px;
-  } 
-    
-   .content-aside #steckbrief .text {
-      background-color: white;
-      padding: 0.4em 0.8em 0.3em 0.8em;
-   } 
-  
- .content-aside .newsletter {     
-    background: none repeat scroll 0 0 #ffa500;
-    border-radius: 2px 2px 2px 2px;
-    box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
-    margin-bottom: 1px;     
-    -webkit-border-radius-topleft: 3px;
-    -webkit-border-radius-topright: 3px;
-    -webkit-border-radius-bottomright: 3px;
-    -webkit-border-radius-bottomleft: 3px;
-    -moz-border-radius-topleft: 3px;
-    -moz-border-radius-topright: 3px;
-    -moz-border-radius-bottomright: 3px;
-    -moz-border-radius-bottomleft: 3px;
-    -ms-border-radius-topleft: 3px;
-    -ms-border-radius-topright: 3px;
-    -ms-border-radius-bottomright: 3px;
-    -ms-border-radius-bottomleft: 3px;
-    -o-border-radius-topleft: 3px;
-    -o-border-radius-topright: 3px;
-    -o-border-radius-bottomright: 3px;
-    -o-border-radius-bottomleft: 3px;    
-    border-top-left-radius: 3px;
-    border-top-right-radius: 3px;
-    border-bottom-right-radius: 3px;
-    border-bottom-left-radius: 3px;     
-    padding: 10px;
-    margin-bottom: 20px;
- } 
-
-.content-aside .newsletter  form {
+    margin: 0;
+    padding: 0 10px;
+    width: 320px;
+    max-height: 720px;
     overflow: hidden;
-    position: relative; 
-    width: 100%;
-    margin: 0 5px 5px 5px;
+    vertical-align: top;
 }
-.content-aside .newsletter  form label {
-      font-weight: lighter; 
-      font-size:0.9em;
+.content-primary .categorybox h2 {
+    font-size: 1.3em;
 }
-.content-aside .newsletter form input[type="text"] {
-      width: 150px;
- }
- 
- .content-aside .newsletter p {
-    display: block;
-    height: auto;
-    font-size: 0.8em;
-    padding: 0;
-    margin-bottom: 0px;
- }  
- 
-
+.content-primary .categorybox section {
+    min-height: 240px;
+}
+.content-primary .categorybox .infoimage {
+    float: left;
+}
+.content-primary .categorybox ul.catliste {
+    font-size: 0.9em; 
+}
+.content-primary .categorybox:after {
+    clear:both; 
+}
+.content-primary .categorybox .pubdateinfo {
+    display: none;
+}
  
 .subnav {
   margin: 0;
@@ -1572,12 +1480,11 @@ display: inline-block;
     margin-top: 0px;
      margin-right: 10px;
 }  
-
-  .post .post-info .commentbubble {
+ .post .post-info .commentbubble {
     display: inline-block;
     position: absolute;
     top: 0px;
-    right: 2px; 
+    right: 0.7em;
   }
   .post .post-info .commentbubble a {
     background: #ff8800;
@@ -1800,14 +1707,18 @@ img.wp-smiley {
     text-align: right;
     float: right; 
 }
-.post-nav a:hover,.post-nav a:focus{color: #000;text-decoration:underline;}
+.post-nav a:hover,.post-nav a:focus{
+    color: #000;
+    text-decoration:underline;
+}
 
 .home .post-entry p {
-  margin-bottom: 0px; }
+  margin-bottom: 0px; 
+}
 
 .single .post-entry p {
-  margin-bottom: 20px; }
-
+  margin-bottom: 20px; 
+}
 
 .linktipps h3.subtitle {
     color: #444444;
@@ -1819,7 +1730,12 @@ img.wp-smiley {
     margin-right: 20px;
 }
 .linktipps .post-entry:after {
-    content: "."; display: block; clear: both; visibility: hidden; line-height: 0; height: 0;
+    content: "."; 
+    display: block; 
+    clear: both; 
+    visibility: hidden; 
+    line-height: 0; 
+    height: 0;
 } 
 .linktipps .linktipp-url {
     margin-left: 10px;
@@ -1915,7 +1831,8 @@ img.wp-smiley {
       -moz-transition: all 0.2s ease-in-out;
       -o-transition: all 0.2s ease-in-out;
       -webkit-transition: all 0.2s ease-in-out;
-      transition: all 0.2s ease-in-out; }
+      transition: all 0.2s ease-in-out; 
+}
 .first-startpage-widget-area li a {
       font-size: 20px; }
     
@@ -1928,7 +1845,7 @@ img.wp-smiley {
     overflow: visible;
     position: relative;
     background: #2d7dc5;
-    color: white !important;
+    color: white;
     margin: 0 2px 2px 0;
     border: 1px solid #2d7dc5;
     text-shadow: 0 -1px 1px rgba(0, 0, 0, 0.1);
@@ -1964,7 +1881,124 @@ img.wp-smiley {
   padding: 0 0 0 20px; }
 
 
+/* 
+* Sidebar
+*/ 
 
+.content-aside p, 
+.content-aside table, 
+.content-aside blockquote, 
+.content-aside form {
+    margin-bottom: 20px; 
+}
+.content-aside ul, 
+.content-aside ol {
+    margin: 0 0 20px 0; }
+.content-aside ul li,
+.content-aside ol li {
+      list-style: none;
+}
+.content-aside a img {
+    margin: 0;
+    padding: 0; 
+}
+
+
+.content-aside #steckbrief {    
+    background-color: white;
+    cursor: pointer;
+    display: inline-block;
+    padding: 10px 10px 15px;
+    z-index: 1;
+    box-shadow: 2px 2px 8px #333;
+    margin: 0 0 20px;
+    -webkit-transform: rotate(2deg);
+    -moz-transform: rotate(2deg);
+    -ms-transform: rotate(2deg);
+    -o-transform: rotate(2deg);
+    transform: rotate(2deg);
+    -webkit-transition: all 406ms ease-out 0s;
+    -moz-transition: all 406ms ease-out 0s;
+    -ms-transition: all 406ms ease-out 0s;
+    -o-transition: all 406ms ease-out 0s;
+    transition: all 406ms ease-out 0s;            
+    max-width: 300px;
+}
+  .content-aside #steckbrief:hover,
+  .content-aside #steckbrief:focus,
+  .content-aside #steckbrief:active {
+    -webkit-transform: scale(1.1);
+    -moz-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    -o-transform: scale(1.1);
+    transform: scale(1.1);
+    z-index: 9;
+	}   
+  .content-aside #steckbrief img {
+    background-position: center center;
+    background-repeat: no-repeat;
+    border: 1px solid #EEEEEE; 
+    display: block;
+    margin: 0 auto;
+    max-width: 260px;
+  } 
+    
+   .content-aside #steckbrief .text {
+      background-color: white;
+      padding: 0.4em 0.8em 0.3em 0.8em;
+   } 
+  
+ .content-aside .newsletter {     
+    background: none repeat scroll 0 0 #ffa500;
+    border-radius: 2px 2px 2px 2px;
+    box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    margin-bottom: 1px;     
+    -webkit-border-radius-topleft: 3px;
+    -webkit-border-radius-topright: 3px;
+    -webkit-border-radius-bottomright: 3px;
+    -webkit-border-radius-bottomleft: 3px;
+    -moz-border-radius-topleft: 3px;
+    -moz-border-radius-topright: 3px;
+    -moz-border-radius-bottomright: 3px;
+    -moz-border-radius-bottomleft: 3px;
+    -ms-border-radius-topleft: 3px;
+    -ms-border-radius-topright: 3px;
+    -ms-border-radius-bottomright: 3px;
+    -ms-border-radius-bottomleft: 3px;
+    -o-border-radius-topleft: 3px;
+    -o-border-radius-topright: 3px;
+    -o-border-radius-bottomright: 3px;
+    -o-border-radius-bottomleft: 3px;    
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+    border-bottom-left-radius: 3px;     
+    padding: 10px;
+    margin-bottom: 20px;
+ } 
+
+.content-aside .newsletter  form {
+    overflow: hidden;
+    position: relative; 
+    width: 100%;
+    margin: 0 5px 5px 5px;
+}
+.content-aside .newsletter  form label {
+      font-weight: lighter; 
+      font-size:0.9em;
+}
+.content-aside .newsletter form input[type="text"] {
+      width: 150px;
+ }
+ 
+ .content-aside .newsletter p {
+    display: block;
+    height: auto;
+    font-size: 0.8em;
+    padding: 0;
+    margin-bottom: 0px;
+ }  
+ 
 .content-aside {
     background: #ff8800 url("../images/int/bg-tags.png") -20% top; 
 }
@@ -2131,7 +2165,6 @@ img.wp-smiley {
 
  .content-aside .widget li, 
  .content-aside .twitterwidget li {
-  /*  color:#333333; */
     background: #c96a00;
     background: rgba(0, 0, 0, 0.1);
     list-style: none outside none;
@@ -2440,18 +2473,47 @@ img.wp-smiley {
 }
 
 
-/* Widgets --------------------------------------------------------------------*/
+/* 
+* Widgets 
+* --------------------------------------------------------------------
+*/
 
 .widget {
   margin-bottom: 10px;
-  overflow: hidden; }
+  overflow: hidden; 
+}
 .widget .widget-title {
     line-height: 25px; 
  }
 
+ table#wp-calendar {
+    margin: 10px auto;
+    padding: 5px;
+    width: 90%;
+    background: transparent;
+}
+ table#wp-calendar td,  
+ table#wp-calendar th {
+    border-top: none;
+    background: transparent;
+    text-align: right;
+}
+table#wp-calendar thead tr {
+    border-bottom: 1px solid black;
+}
+table#wp-calendar tfoot tr {
+    border-top: 1px solid black;
+}
+table#wp-calendar td a {
+    text-decoration: underline;
+
+}
 
 
-/* Tools innerhalb Piratenkleider */
+
+/* 
+* Tools innerhalb Piratenkleider 
+*/
 .content-primary .switchoff,
 .content-primary .switchon { 
     position: absolute;
@@ -3063,7 +3125,7 @@ html[xmlns] .slides {
 
 .nav-main ul.menu a:hover {
     background: white; 
-    z-index: 999;
+    z-index: 50;
 }
 .nav-main ul.menu li {
         float: left; 
@@ -3141,10 +3203,11 @@ html[xmlns] .slides {
  .nav-main li a span {
      display: inline;
      position: absolute;
-     top: -5px;
+     top: -3px;
      right: -10px;
      color: #2D7DC5;
      font-size: 0.9em;
+      z-index: 51;
  }
   .nav-main li.redspan a span {
       color: red;
@@ -3152,7 +3215,7 @@ html[xmlns] .slides {
   .nav-main li.orangespan a span {
       color: #ff8800;
   }
-    .nav-main li.greenspan a span {
+  .nav-main li.greenspan a span {
       color: green;
   }
  

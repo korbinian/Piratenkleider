@@ -902,6 +902,56 @@ function piratenkleider_post_teaser($titleup = 1, $showdatebox = 1, $showdatelin
 }
 endif;
 
+if ( ! function_exists( 'piratenkleider_category_teaser' ) ) :
+/**
+ * Erstellung eines Artikelteasers
+ */
+function piratenkleider_category_teaser() {
+  global $options;
+  global $post;
+
+    $out = $output = '';
+    $leftbox =  $thumbnailcode = $firstpic = $output = ''; 
+    $leftbox .=  '<div class="infoimage">';	    
+   
+
+    if (has_post_thumbnail()) {
+        $output = get_the_post_thumbnail($post->ID, 'teaser-thumb');
+        if (strlen($output)<1) {
+             $output = '<img src="'.$options['src-teaser-thumbnail_default'].'" alt="">';
+        }
+    } else {
+        $output = '<img src="'.$options['src-teaser-thumbnail_default'].'" alt="">';
+    }		   
+
+    $leftbox .= $output;
+    $leftbox .=  '</div>'; 
+
+    $out .= '<section>';
+    $out .= '<header><h3>';
+    $out .= '<a href="'.get_permalink().'" rel="bookmark">';
+    $out .= get_the_title();
+    $out .= '</a></h3></header>';
+    $out .= "\n";
+    $out .= '<div>'; 
+    $out .= $leftbox;          
+    $out .= '<article>';   
+    $out .= '<p class="pubdateinfo">';
+    $out .=  piratenkleider_post_pubdateinfo(0); 
+    $out .= "</p>\n";	  	  	 
+    $out .= get_piratenkleider_custom_excerpt($options['categoryindex-teaserlength']); 
+    $out .= '<div class="p3-ie-clearing">&nbsp;</div>';	
+    $out .= "</article>\n";
+    $out .= '</div>';     
+    $out .= "</section>\n"; 
+		
+    return $out;
+}
+endif;
+
+
+
+
 if ( ! function_exists( 'piratenkleider_post_datumsbox' ) ) :
 /**
  * Erstellung der Datumsbox
