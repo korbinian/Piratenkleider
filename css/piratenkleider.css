@@ -3146,7 +3146,15 @@ html[xmlns] .slides {
      color: #2D7DC5;
      font-size: 0.9em;
  }
- 
+  .nav-main li.redspan a span {
+      color: red;
+  }
+  .nav-main li.orangespan a span {
+      color: #ff8800;
+  }
+    .nav-main li.greenspan a span {
+      color: green;
+  }
  
  body.nav-fixed .nav-main ul.menu li a[title="Home"],
  body.nav-fixed .nav-main ul.menu li.menu-item-home a {
@@ -3171,9 +3179,6 @@ html[xmlns] .slides {
  body.nav-fixed .nav-main ul.menu li.current-menu-item.menu-item-home a.hover {
       background: #111111 url("../images/home-signet.png") no-repeat -57px 6px; 
  }
- 
- 
- 
 
 
 .nav-main ul.menu li ul {

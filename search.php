@@ -1,9 +1,6 @@
 <?php get_header();    
     global $options;  
   global $wp_query;
-      $cat_obj = $wp_query->get_queried_object();
-      $thisCat = $cat_obj->term_id;
-      $thisCatName =  get_cat_name($thisCat);    
 ?> 
 <div class="section content" id="main-content">
   <div class="row">
@@ -25,7 +22,7 @@
 		    echo '<div class="content-header">';
 		}
 		?>    		    		    		        
-		   <h1 class="post-title"><span><?php printf( __( 'Suchergebnisse f&uuml;r %s', 'piratenkleider' ), '' .get_search_query() . '' ); ?></span></h1>
+		   <h1 class="post-title"><span><?php printf( __( 'Suchergebnisse f&uuml;r "%s"', 'piratenkleider' ), '' .get_search_query() . '' ); ?></span></h1>
 		   <div class="symbolbild"><img src="<?php echo $image_url ?>" alt="">		  
 		   </div>
 		</div>  	
@@ -34,7 +31,7 @@
       <div class="skin">
 	  
 	  <?php if (!(isset($image_url) && (strlen($image_url)>4))) { ?>
-	    <h1 class="post-title"><span><?php printf( __( 'Suchergebnisse f&uuml;r %s', 'piratenkleider' ), '' .get_search_query() . '' ); ?></span></h1>
+	    <h1 class="post-title"><span><?php printf( __( 'Suchergebnisse f&uuml;r "%s"', 'piratenkleider' ), '' .get_search_query() . '' ); ?></span></h1>
 	<?php }  
 	
 	    if ( have_posts() ) : 
@@ -52,17 +49,14 @@
 
           while (have_posts() && $i<$numentries) : the_post();
           $i++;
-          ob_start();      
           if (( isset($options['category-num-article-fullwidth']))
                     && ($options['category-num-article-fullwidth']>=$i )) {
-                     piratenkleider_post_teaser($options['category-teaser-titleup'],$options['category-teaser-datebox'],$options['category-teaser-dateline'],$options['category-teaser-maxlength'],$options['teaser-thumbnail_fallback'],$options['category-teaser-floating']);
+                     $out = piratenkleider_post_teaser($options['category-teaser-titleup'],$options['category-teaser-datebox'],$options['category-teaser-dateline'],$options['category-teaser-maxlength'],$options['teaser-thumbnail_fallback'],$options['category-teaser-floating']);
           } else {
-                     piratenkleider_post_teaser($options['category-teaser-titleup-halfwidth'],$options['category-teaser-datebox-halfwidth'],$options['category-teaser-dateline-halfwidth'],$options['category-teaser-maxlength-halfwidth'],$options['teaser-thumbnail_fallback'],$options['category-teaser-floating-halfwidth']);  
+                     $out = piratenkleider_post_teaser($options['category-teaser-titleup-halfwidth'],$options['category-teaser-datebox-halfwidth'],$options['category-teaser-dateline-halfwidth'],$options['category-teaser-maxlength-halfwidth'],$options['teaser-thumbnail_fallback'],$options['category-teaser-floating-halfwidth']);  
           }    
-          $output = ob_get_contents();
-          ob_end_clean();
-          if (isset($output)) {
-            $cols[$col++] = $output;
+          if (isset($out)) {
+            $cols[$col++] = $out;
           }
           endwhile;
       ?>
