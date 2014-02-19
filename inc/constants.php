@@ -113,6 +113,8 @@ $defaultoptions = array(
     'artikelstream-numfullwidth-second'     => 1,
     
     'categoryindex-teaserlength'            => 170,
+    'categoryindex-numlinklist'		    => 5,
+    
     'category-teaser'			    => 1,
     'category-num-article-fullwidth'	    => 10,
     'category-num-article-halfwidth'	    => 0,

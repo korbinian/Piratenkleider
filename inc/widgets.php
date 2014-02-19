@@ -349,6 +349,8 @@ class Bannerlink_Widget extends WP_Widget {
 	    $url = $instance['url'];
 	    $image_url = $instance['image_url'];
 	    $image_id = $instance['image_id'];
+
+
 	    ?>
 		    <p>
 			<label for="<?php echo $this->get_field_id('title'); ?>"><?php echo 'Titel:'; ?></label>
@@ -373,11 +375,12 @@ class Bannerlink_Widget extends WP_Widget {
 
                         	<input type="hidden" id="<?php echo $this->get_field_id('image_id'); ?>" 
                                   class="image_id"  name="<?php echo $this->get_field_name('image_id'); ?>" />
-                                <input
-                                    id="<?php echo $this->get_field_id('image_url'); ?>_button"
-                                    class="upload_image_button" value="<?php _e('Hochladen / Ausw&auml;hlen', 'piratenkleider'); ?>" type="button" />
+		
+				<input class="button upload_image_button" name="upload_image_button" id="<?php echo $this->get_field_id('image_url'); ?>_button"  value="<?php _e('Hochladen / Ausw&auml;hlen', 'piratenkleider'); ?>" />
+				
 
 			    <br /><?php _e('Gebe eine URL zu einem Bild ein oder verwende die Mediathek um es hochzuladen oder um ein vorhandenes Bild auszuw&auml;hlen.', 'piratenkleider'); ?>
+			   
                         </label> 
 		    </p>
 		    <?php 

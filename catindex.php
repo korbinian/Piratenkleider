@@ -49,6 +49,8 @@
 		}
 	  endwhile;
 	}
+	
+	$num = $options['categoryindex-numlinklist'] + 1;
         wp_reset_query();
         $subcatquery = array(); 
 	if ($cat_array) {
@@ -59,7 +61,7 @@
                 $subcatquery =array(
                     'post_type' => 'post',
                     'post_status' => 'publish',
-                    'posts_per_page' => 6,
+                    'posts_per_page' => $num,
                     'cat' => $cat,
                     'ignore_sticky_posts'=> 1
                 );           
