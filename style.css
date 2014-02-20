@@ -5,18 +5,18 @@ Description: Allgemeines Theme für Webauftritte der Piratenpartei Deutschland. 
 Author: xwolf
 Author URI: http://www.xwolf.de 
 Author E-Mail: info@piratenkleider.de
-Version: 3.0.10
+Version: 3.0.11
 Tags: orange, two-columns, right-sidebar, flexible-width, custom-header, custom-menu, featured-image-header, featured-images, full-width-template, theme-options
 Piratenkleider is distributed under the terms of the GNU GPL
 License: GNU General Public License v2.0
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 */
 
-@import url(css/piratenkleider.css); 
-/* @import url(css/piratenkleider.min.css); */
+/* @import url(css/piratenkleider.css); */
+@import url(css/piratenkleider.min.css); 
 
-@import url(css/basemod_mediaqueries.css);
-/* @import url(css/basemod_mediaqueries.min.css); */
+/* @import url(css/basemod_mediaqueries.css);*/
+@import url(css/basemod_mediaqueries.min.css);  
 
 /*@import url(css/pluginsupport.css); */
 @import url(css/pluginsupport.min.css);

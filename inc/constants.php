@@ -354,8 +354,13 @@ $default_toplink_liste = array(
     'link7'  => array(
 	'name'	    => __('Shop', 'piratenkleider' ),
 	'content'  => 'https://pshop.piratenpartei.de',
+	'active'    => 0,
+    ),  
+     'link8'  => array(
+	'name'	    => __('Pirateninfo', 'piratenkleider' ),
+	'content'  => 'http://www.pirateninfo.de',
 	'active'    => 1,
-    ),   
+    ),  
      
     
 );
