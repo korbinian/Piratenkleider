@@ -19,9 +19,12 @@
       <div class="skin">
 
       
-          
-          
-      <?php
+       <?php if ( have_posts() ) while ( have_posts() ) : the_post();         
+            the_content(); 
+            edit_post_link( __( 'Bearbeiten', 'piratenkleider' ), '', '' );
+       endwhile; 
+       
+       
       $foundarticles=0;
       $i = 0; 
       $col = 0; 
