@@ -101,10 +101,6 @@
 	}
 	
 
-
-      
-    
-
         
 	if ($foundarticles==0) { ?>
             <h2><?php _e("Nichts gefunden", 'piratenkleider'); ?></h2>
