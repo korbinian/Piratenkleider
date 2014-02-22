@@ -49,8 +49,14 @@ function piratenkleider_setup() {
         add_theme_support( 'post-thumbnails' );
         // Add default posts and comments RSS feed links to head
         add_theme_support( 'automatic-feed-links' );
-               
-  
+        /* Categories also for Pages to make the pageindex over categories work */
+        add_action( 'init', 'enable_category_taxonomy_for_pages', 500 );
+
+        function enable_category_taxonomy_for_pages() {
+            register_taxonomy_for_object_type('category','page');
+        }
+
+
         $args = array(
             'width'         => 0,
             'height'        => 0,
@@ -208,12 +214,11 @@ function piratenkleider_setup() {
               function feed_author($name) {
                 global $options;  
                 if( is_feed() && !is_admin()) {
-                return $options['feed-overwriteauthorstring'];  
-              }
+                    return $options['feed-overwriteauthorstring'];  
+                }
+            }
+    
         }
-}
-        
-	
 
 }
 endif;

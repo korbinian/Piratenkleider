@@ -1,6 +1,6 @@
 <?php
 /* 
- Template Name: Kategorieindex
+ Template Name: Seitenindex
  */
 ?><?php get_header();    
   global $options;  
@@ -27,11 +27,8 @@
        
        
       $foundarticles=0;
-      $i = 0; 
+      $i = 0;     
 
-      global $wp_query;
-
-      
       $cat_array = array();
          $categories=get_categories(array('orderby' => 'name','order' => 'ASC'));
          foreach($categories as $category) {
@@ -40,7 +37,9 @@
              }
          }        
  
-         	
+	
+	$my_query = null;
+	
 	$num = $options['categoryindex-numlinklist'] + 1;
         wp_reset_query();
         $subcatquery = array(); 
@@ -50,7 +49,7 @@
                 $title = '<h2>' . $category->name.'</h2>';
                 
                 $subcatquery =array(
-                    'post_type' => 'post',
+                    'post_type' => 'page',
                     'post_status' => 'publish',
                     'posts_per_page' => $num,
                     'cat' => $cat,
@@ -110,7 +109,11 @@
 	if ($foundarticles==0) { ?>
             <h2><?php _e("Nichts gefunden", 'piratenkleider'); ?></h2>
             <p>
-            <?php _e("Es konnten keine Artikel gefunden werden. Bitte versuchen Sie es nochmal mit einer Suche.", 'piratenkleider'); ?>
+            <?php _e("Es konnten keine Seiten gefunden werden. Bitte versuchen Sie es nochmal mit einer Suche.", 'piratenkleider'); ?>
+                
+            </p>
+            <p>   
+            <?php _e("Hinweis an Admins: Es m&uml;ssen Seiten auch Kategorien zugeordnet werden, damit dies klappt.", 'piratenkleider'); ?>
             </p>
             <?php get_search_form(); 
             echo "<hr>\n"; 
