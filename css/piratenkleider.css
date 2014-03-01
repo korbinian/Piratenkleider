@@ -365,7 +365,7 @@ input[type="checkbox"] {
 
 input[type="text"], input[type="password"], input[type="select"], 
 input[type="search"], input[type="file"], input[type="submit"],
-input[type="reset"], input[type="button"] {
+input[type="reset"], input[type="button"], select  {
   margin: 0 5px 5px 0; }
 
 input[type="text"] {
@@ -686,12 +686,22 @@ div#searchform {
  
 .content .searchform .searchsubmit {
   right: auto;    
+  margin: 0 0 0 10px;
 }   
 
 .fullwidth .searchform input[type="text"] {
   width: 100%; 
 }
-
+.searchresults p.meta {
+    font-size: 0.9em;
+    font-style: italic;
+}
+.content .searchresults p {
+    margin-bottom: 0.3em; 
+}
+.search-hit {
+    color: #ff8800;
+}
 
 
 .sticker {
@@ -885,6 +895,7 @@ display: inline-block;
  body.nav-fixed .header .sticker {
      display: none;
  }
+
  body.nav-fixed .header .nav-main {
      top: 0px;
      z-index: 99;  
@@ -900,8 +911,16 @@ display: inline-block;
      height: 46px;
      top: 32px;
  }
-
  
+ body.nav-fixed .anchor {
+  display: block;
+  margin-top: 50px;
+  visibility: hidden;
+}
+ body.logged-in.nav-fixed .anchor {
+  margin-top: 65px;
+}
+
  /* Breadcrumb */
  
 .breadcrumbs {

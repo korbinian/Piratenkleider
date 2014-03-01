@@ -38,12 +38,14 @@
       $col = 0; 
       
       $numentries = $options['category-num-article-fullwidth'] + $options['category-num-article-halfwidth']; 
-      $col_count = 3; 
       $cols = array();
      
       global $query_string;
-      query_posts( $query_string . '&cat=$thisCat' );
- 
+      $args = $query_string;
+      $args .= '&posts_per_page='.$numentries;
+      query_posts( $args ); 
+      
+      
       while (have_posts() && $i<$numentries) : the_post();
       $i++;
       $output = '';     

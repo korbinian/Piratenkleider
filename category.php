@@ -1,10 +1,11 @@
 <?php get_header();    
   global $options;  
   global $wp_query;
-      $cat_obj = $wp_query->get_queried_object();
-      $thisCat = $cat_obj->term_id;
-      $thisCatName =  get_cat_name($thisCat);
-       $image_url = '';	
+  
+    $cat_obj = $wp_query->get_queried_object();
+    $thisCat = $cat_obj->term_id;
+    $thisCatName =  get_cat_name($thisCat); 
+    $image_url = '';	
   if ($options['category-teaser']) { 
     echo '<div class="section teaser"><div class="row">';   
     get_sidebar( 'teaser' );
@@ -47,9 +48,11 @@
       $numentries = $options['category-num-article-fullwidth'] + $options['category-num-article-halfwidth']; 
       $col_count = 3; 
       $cols = array();
-     
-      global $query_string;
-      query_posts( $query_string . '&cat=$thisCat' );
+
+      $thisquery =  '&cat='.$thisCat.'&posts_per_page='.$numentries;
+      query_posts( $thisquery  );
+
+      
       while (have_posts() && $i<$numentries) : the_post();
       $i++;
       $output = '';    

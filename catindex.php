@@ -19,10 +19,14 @@
       <div class="skin">
 
       
-       <?php if ( have_posts() ) while ( have_posts() ) : the_post();         
-            the_content(); 
-            edit_post_link( __( 'Bearbeiten', 'piratenkleider' ), '', '' );
-            echo '<hr class="clear">';
+       <?php 
+       if ( have_posts() ) while ( have_posts() ) : the_post();         
+            $content = trim(get_the_content());            
+            if (strlen($content)>0) {
+                echo $content;
+                edit_post_link( __( 'Bearbeiten', 'piratenkleider' ), '', '' );
+                echo '<hr class="clear">';
+            }                      
        endwhile; 
        
        

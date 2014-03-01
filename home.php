@@ -58,8 +58,10 @@
             $args =  $wp_query->query;
         }
       }
-      query_posts( $args ); 
       $numentries = $options['artikelstream-maxnum-main'] + $options['artikelstream-nextnum-main'];
+      $args .= '&posts_per_page='.$numentries;
+      query_posts( $args ); 
+      
       $continuelinks = '';
       while (have_posts() && $i<$numentries) : the_post();
 	  $i++;
