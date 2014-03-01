@@ -166,7 +166,7 @@ $defaultoptions = array(
     'anonymize-user-commententries' => 0,
     'aktiv-commentreplylink'        => 1,
     'default_comment_notes_before'  => '<p class="comment-notes">'.__( 'Deine E-Mail-Adresse wird nicht ver&ouml;ffentlicht. Erforderliche Felder sind markiert <span class="required">*</span>', 'piratenkleider' ). '</p>',
-    'comments_disclaimer'           => __('Hinweis: Durch Bereitstellung der Kommentierungsfunktion macht sich die Piratenpartei nicht die in den Kommentaren geschriebenen Meinungen zu eigen. Bei Fragen oder Beschwerden zu Kommentaren wenden Sie sich bitte über das Kontaktformular an das Webteam. <a href="http://wiki.piratenpartei.de/Servicegruppen/Webseite/Moderation">Hinweise zur Moderation</a> von Kommentaren finden sich auf der Wikiseite der SG Webseite.', 'piratenkleider' ),
+    'comments_disclaimer'           => __('Hinweis: Durch Bereitstellung der Kommentierungsfunktion macht sich die Piratenpartei nicht die in den Kommentaren geschriebenen Meinungen zu eigen. Bei Fragen oder Beschwerden zu Kommentaren wenden Sie sich bitte &uuml;ber das Kontaktformular an das Webteam. <a href="http://wiki.piratenpartei.de/Servicegruppen/Webseite/Moderation">Hinweise zur Moderation</a> von Kommentaren finden sich auf der Wikiseite der SG Webseite.', 'piratenkleider' ),
     'disclaimer_post'               => '',
     'feed_cache_lifetime'           => 14400,
     'use_wp_feed_defaults'          => 1,
@@ -998,7 +998,7 @@ $setoptions = array(
 		  'liste'   =>  array(
 				0 => __("Artikel aller Kategorien und Linktipps in einem Zusammenhang anzeigen","piratenkleider"), 
 				1 => __("Artikel aller Kategorien in einem Zusammenhang anzeigen.","piratenkleider"), 	    
-				2 => __("Nur Artikel die nicht zu Ausschlusskategorien gehören anzeigen","piratenkleider"), 
+				2 => __("Nur Artikel die nicht zu Ausschlusskategorien geh&ouml;ren anzeigen","piratenkleider"), 
                                 ), 
                   'parent'  => 'artikelstream'
               ), 	
@@ -1028,14 +1028,14 @@ $setoptions = array(
                'artikelstream-numfullwidth-main' => array(
                   'type'    => 'number',
                   'title'   => __( 'Beitr&auml;ge &uuml;ber ganze Breite', 'piratenkleider' ),
-                  'label'   => __( 'Zahl der Beitr&auml;ge aus dem Hauptartikelstrom, die &uuml;ber die gesamte Inhaltsbreite gehen. Die restlichen Beiträge werden jeweils nur 50% des Platzes einnehmen.', 'piratenkleider' ),
+                  'label'   => __( 'Zahl der Beitr&auml;ge aus dem Hauptartikelstrom, die &uuml;ber die gesamte Inhaltsbreite gehen. Die restlichen Beitr&auml;ge werden jeweils nur 50% des Platzes einnehmen.', 'piratenkleider' ),
                   'default' => $defaultoptions['artikelstream-numfullwidth-main'],
                   'parent'  => 'artikelstream'
               ),
              'artikelstream-title-main' => array(
                   'type'    => 'text',
                   'title'   => __( '&Uuml;berschrift Hauptartikelstrom', 'piratenkleider' ),
-                  'label'   => __( '&Uuml;berschrift über den Bereich mit den Hauptartikelstrom', 'piratenkleider' ),
+                  'label'   => __( '&Uuml;berschrift &uuml;ber den Bereich mit den Hauptartikelstrom', 'piratenkleider' ),
                   'default' => $defaultoptions['artikelstream-title-main'],
                    'parent'  => 'artikelstream',
               ), 
@@ -1074,14 +1074,14 @@ $setoptions = array(
                'artikelstream-numfullwidth-second' => array(
                   'type'    => 'number',
                   'title'   => __( 'Beitr&auml;ge &uuml;ber ganze Breite', 'piratenkleider' ),
-                  'label'   => __( 'Zahl der Beitr&auml;ge aus dem zweiten Artikelstrom, die &uuml;ber die gesamte Inhaltsbreite gehen. Die restlichen Beiträge werden jeweils nur 50% des Platzes einnehmen.', 'piratenkleider' ),
+                  'label'   => __( 'Zahl der Beitr&auml;ge aus dem zweiten Artikelstrom, die &uuml;ber die gesamte Inhaltsbreite gehen. Die restlichen Beitr&auml;ge werden jeweils nur 50% des Platzes einnehmen.', 'piratenkleider' ),
                   'default' => $defaultoptions['artikelstream-numfullwidth-second'],
                   'parent'  => 'artikelstream'
               ), 
             'artikelstream-title-second' => array(
                   'type'    => 'text',
                   'title'   => __( '&Uuml;berschrift zweiter Artikelstrom', 'piratenkleider' ),
-                  'label'   => __( '&Uuml;berschrift über den Bereich mit den zweiten Artikelstrom', 'piratenkleider' ),
+                  'label'   => __( '&Uuml;berschrift &uuml;ber den Bereich mit den zweiten Artikelstrom', 'piratenkleider' ),
                   'default' => $defaultoptions['artikelstream-title-second'],
                    'parent'  => 'artikelstream',
               ), 
@@ -1120,7 +1120,7 @@ $setoptions = array(
              'artikelstream-title-linktipps' => array(
                   'type'    => 'text',
                   'title'   => __( '&Uuml;berschrift Linktipps', 'piratenkleider' ),
-                  'label'   => __( '&Uuml;berschrift über den Bereich mit den Linktipps', 'piratenkleider' ),
+                  'label'   => __( '&Uuml;berschrift &uuml;ber den Bereich mit den Linktipps', 'piratenkleider' ),
                   'default' => $defaultoptions['artikelstream-title-linktipps'],
                    'parent'  => 'artikelstream',
               ), 
@@ -1464,7 +1464,7 @@ $setoptions = array(
               'category-teaser-datebox-halfwidth' => array(
                   'type'    => 'select',
                   'title'   => __( 'Symbolbild/Datumsbox', 'piratenkleider' ),
-                  'label'   => __( 'Links des Textauszuges das Datum, das Artikelbild, ein Bild des Artikels oder ein verlinktes Video anzeigen; Abhängig vom Inhalt des Artikels. (Bei Beitr&auml;gen &uuml;ber halbe Breite)', 'piratenkleider' ),
+                  'label'   => __( 'Links des Textauszuges das Datum, das Artikelbild, ein Bild des Artikels oder ein verlinktes Video anzeigen; Abh&auml;ngig vom Inhalt des Artikels. (Bei Beitr&auml;gen &uuml;ber halbe Breite)', 'piratenkleider' ),
                   'default' => $defaultoptions['category-teaser-datebox-halfwidth'],
 		  'liste'   =>  array(
 				0 => __("Datumsbox anzeigen","piratenkleider"), 
@@ -1697,7 +1697,7 @@ $setoptions = array(
               'seitenmenu_mode' => array(
                   'type'    => 'select',
                   'title'   => __( 'Gliederung', 'piratenkleider' ),
-                  'label'   => __( 'Das Men&uuml; kann nach Seiten-Hierarchie oder Menü-Hierarche gegliedert werden.', 'piratenkleider' ),
+                  'label'   => __( 'Das Men&uuml; kann nach Seiten-Hierarchie oder Men&uuml;-Hierarche gegliedert werden.', 'piratenkleider' ),
                   'default' => $defaultoptions['seitenmenu_mode'],
 				  'liste'   => array(0 => "Men&uuml;s", 1 => "Seiten"),
                   'parent'  => 'seitenmenu',

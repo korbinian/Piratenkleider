@@ -280,7 +280,7 @@ stehen s&auml;mtliche Werke dieses Angebots unter einer
     </p>
     <ul>
         <li>Wolfgang Wiese</a> (Neuprogrammierung, Neudesign, CSS, Barrierefreiheit, Dokumentation, Features nach Version 1.1)</li>
-        <li>Korbinian Polk, Simon Stützer, Bernd Schreiner (Erstes Grunddesign und Erstellung eines Childtheme von TwentyTen)</li>               
+        <li>Korbinian Polk, Simon St&uuml;tzer, Bernd Schreiner (Erstes Grunddesign und Erstellung eines Childtheme von TwentyTen)</li>               
     </ul>
         
 
@@ -309,7 +309,7 @@ verarbeitet. Dies erfolgt jedoch nur ohne personenbeziehbare Verbindungsdaten.
 <p>
 Die Nutzung von Kommentaren erfolgt auf freiwilliger Basis. Hier
 werden zur Wiedererkennung der verschiedenen Kommentatoren Name und E-Mailadresse
-abgefragt. Diese Daten werden nicht verifiziert. Es ist jedem Benutzer möglich, 
+abgefragt. Diese Daten werden nicht verifiziert. Es ist jedem Benutzer m&ouml;glich, 
 hier unzutreffende Daten einzugeben.
 </p>
 <p>Wir weisen darauf hin, dass die Daten&uuml;bertragung 
@@ -324,16 +324,16 @@ Es kann vorkommen, dass innerhalb dieses Webangebots Inhalte Dritter,
 wie zum Beispiel Videos von YouTube, Kartenmaterial von Google-Maps,
 RSS-Feeds oder Grafiken von anderen Webseiten eingebunden werden.
 <br>
-Wir bemühen uns nur solche Inhalte zu verwenden, die direkt auf diesem
+Wir bem&uuml;hen uns nur solche Inhalte zu verwenden, die direkt auf diesem
 Webauftritt liegen und somit keinem anderen Dienst ein Tracking
-ermöglichen.<br>
+erm&ouml;glichen.<br>
 Leider ist dies, insbesondere bei Videostreams und anderen Angeboten,
 die nur auf externen Plattformen bereit gestellt werden, oft
-nicht möglich. In diesen F&auml;llen haben wir keinen Einfluss darauf, falls
+nicht m&ouml;glich. In diesen F&auml;llen haben wir keinen Einfluss darauf, falls
 die Dritt-Anbieter die IP-Adresse oder Eigenschaften des verwendeten
 Browsers speichern und auswerten.
 <br>
-Bei der Einbindung von Inhalten, bei denen die Möglichkeit besteht,
+Bei der Einbindung von Inhalten, bei denen die M&ouml;glichkeit besteht,
 Tracking zu umgehen, wird dieses genutzt. Beispielsweise bei der Nutzung
 von youtube-nocookie.com anstelle von youtube.com f&uuml;r die
 Einbindung von Videos.
