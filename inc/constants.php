@@ -322,8 +322,7 @@ $default_socialmedia_liste = array(
 /* 
  * Default Links for Topmenu , can be overwritten bei widget  
  */
-$default_toplink_liste = array(
-    
+$default_toplink_liste = array(    
     'link1'  => array(
 	'name'	    => __('Wiki', 'piratenkleider' ),
 	'content'  => 'https://wiki.piratenpartei.de',
@@ -364,8 +363,27 @@ $default_toplink_liste = array(
 	'content'  => 'http://www.pirateninfo.de',
 	'active'    => 1,
     ),  
-     
-    
+);
+
+/* 
+ * Default Links for laws in imprint 
+ */
+$default_imprint_laws_list = array(    
+    'link1'  => array(
+	'name'	    => __('Gesetz &uuml;ber politische Parteien (Parteiengesetz)', 'piratenkleider' ),
+	'content'  => 'http://www.bundestag.de/bundestag/aufgaben/rechtsgrundlagen/pg_pdf.pdf',
+	'active'    => 1,
+    ),
+    'link2'  => array(
+	'name'	    => __('Satzung der Piratenpartei Deutschland', 'piratenkleider' ),
+	'content'  => 'http://wiki.piratenpartei.de/Satzung',
+	'active'    => 1,
+    ),
+    'link3'  => array(
+	'name'	    => __('Jeweilige Landessatzung  der Piratenpartei Deutschland', 'piratenkleider' ),
+	'content'  => 'http://wiki.piratenpartei.de/Satzungen',
+	'active'    => 1,
+    ), 
 );
 
 /**

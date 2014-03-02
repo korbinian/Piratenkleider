@@ -395,12 +395,12 @@ function theme_options_do_page($tab = '') {
                                         echo '>';
                                         echo $value['title'];
                                         if ($i != 'none')
-                                            echo ' (ABCIJL abcijl 1234567890 ÄÖÜäöüß @<>?)';                 
+                                            echo ' (ABCIJL abcijl 1234567890 &Auml;&Ouml;&Uuml;&auml;&ouml;&uuml;&szlig; @<>?)';                 
                                         echo '</option>';                                                                                                                                                              
                                         echo "\n";                                            
                                     }  
-                                        echo "\t\t\t</select><br>\n";                                   
-                                        echo "\t\t\t<label for=\"piratenkleider_theme_options[$name]\">$label</label>\n"; 
+                                    echo "\t\t\t</select><br>\n";                                   
+                                    echo "\t\t\t<label for=\"piratenkleider_theme_options[$name]\">$label</label>\n"; 
 
                                 }
                                 echo "\t\t</td>\n";
@@ -562,7 +562,6 @@ function theme_options_validate( $input ) {
     if (($input['seitenbild-url'] != '') && (strlen(trim($input['seitenbild-url']))>10)) {            
          $input['seiten-defaultbildsrc'] = $input['seitenbild-url'];
     }
-
 	
    return $output;
 

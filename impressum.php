@@ -144,16 +144,30 @@
          <?php } 
          
          
-         if ($options['zeigerechtsvorschriften']==1) { ?>
+         if ($options['zeigerechtsvorschriften']==1) { 
+            global $default_imprint_laws_list;
+            $out = '';
+            $out .= '<h2>'.__('Rechtsvorschriften','piratenkleider').'</h2>';
+            $liste = '';
+            foreach ( $default_imprint_laws_list as $entry => $listdata ) {        
+                $value = $default_imprint_laws_list[$entry]['content'];
+                $active = $default_imprint_laws_list[$entry]['active'];
+                if (($active ==1) && ($value)) {
+                     $liste .=  '<li><a href="'.$value.'">';
+                     $liste .=  $listdata['name'].'</a></li>';
+                     $liste .=  "\n";
+                }
+            }  
+            if (strlen($liste)>0) {
+                echo $out;
+                echo "\n<ul>\n";
+                echo $liste;
+                echo "\n</ul>\n";
+            }   
+         } ?>
+ 
             
-            <h2>Rechtsvorschriften</h2>
-    <ul>
-    <li><a href="http://www.bundestag.de/bundestag/aufgaben/rechtsgrundlagen/pg_pdf.pdf" >Gesetz &uuml;ber politische Parteien (Parteiengesetz)</a></li>
-    <li><a href="http://wiki.piratenpartei.de/Satzung" >Satzung der Piratenpartei Deutschland</a></li>
-    <li><a href="http://wiki.piratenpartei.de/Satzungen" >Jeweilige Landessatzung  der Piratenpartei Deutschland</a></li>
-    </ul>
-            
-            <?php } ?>
+           
             
 <h2>Haftung f&uuml;r Inhalte</h2>
 <p>
@@ -254,11 +268,11 @@ stehen s&auml;mtliche Werke dieses Angebots unter einer
     $theme_data = wp_get_theme();
     ?>
     <li><a class="extern" href="<?php echo $theme_data['URI']; ?>">Wordpress Theme <?php echo $theme_data->Name; ?></a>, Version <?php echo $theme_data->Version; ?>
-    (Lizenziert unter der Creative Commons Namensnennung 3.0 Deutschland Lizenz</a>)  </li>
+    (Lizenziert unter der <span lang="en">GNU General Public License (GPL)</span> Version 2)  </li>
     <li>Fotos und Symbolbilder von Tobias M. Eckrich 
-    (Lizenziert unter der Creative Commons Namensnennung 3.0 Deutschland Lizenz</a>)</li> 
+    (Lizenziert unter der Creative Commons Namensnennung 3.0 Deutschland Lizenz)</li> 
     <li><a class="extern" href="http://wiki.piratenpartei.de/Grafiken">Wallpaper und Bildmaterial der Piratenpartei Deutschland</a> 
-    (Lizenziert unter der Creative Commons Namensnennung 3.0 Deutschland Lizenz</a>)</li>    
+    (Lizenziert unter der Creative Commons Namensnennung 3.0 Deutschland Lizenz)</li>    
 
 
     <?php
@@ -353,14 +367,11 @@ der unverlangten Zusendung von Werbeinformationen, etwa durch Spam-Mails, vor.</
 
     <div class="content-aside">
       <div class="skin">
-        <h1 class="skip"><?php _e( 'Weitere Informationen', 'piratenkleider' ); ?></h1>   
-        
+        <h1 class="skip"><?php _e( 'Weitere Informationen', 'piratenkleider' ); ?></h1>           
          <?php  
-
             get_piratenkleider_seitenmenu($options['zeige_sidebarpagemenu'],$options['zeige_subpagesonly'],$options['seitenmenu_mode']);
-
-        
-         get_sidebar(); ?>
+            get_sidebar(); 
+          ?>
       </div>
     </div>
   </div>
