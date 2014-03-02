@@ -448,7 +448,7 @@ function piratenkleider_addmetatags() {
     $csv_tags = '';
     $tags = '';
     if ($options['aktiv-autokeywords']) {   
-	$posttags = get_tags(array('number'=> $maxwords, 'orderby' => 'count', 'order'=> 'DESC'));
+	$posttags = get_the_tags();
 	$tags = '';
 	    if (isset($posttags)) {
 		foreach($posttags as $tag) {
@@ -465,8 +465,8 @@ function piratenkleider_addmetatags() {
 	}	
     }
     if ((isset($tags)) && (strlen(trim($tags))>2 )) {
-	if (strlen(trim($tags))>$maxlength) {
-	    $tags = substr($tags,0,strpos($tags,",",$maxlength));
+	if (strlen(trim($tags))>$options['meta-maxlengthvalue']) {
+	    $tags = substr($tags,0,strpos($tags,",",$options['meta-maxlengthvalue']));
 	}	
 	$output .= '<meta name="keywords" content="'.$tags.'">'."\n";
     }

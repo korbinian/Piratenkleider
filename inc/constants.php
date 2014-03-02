@@ -227,6 +227,8 @@ $defaultoptions = array(
     
     'suche-treffer_pro_seite'               => 10,
     'suche-excerptlength'                   => 300,
+    
+    'meta-maxlengthvalue'                   => 140,
 );
 
 
