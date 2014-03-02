@@ -10,8 +10,7 @@
 
 require( get_template_directory() . '/inc/constants.php' );
 
-$options = get_option('piratenkleider_theme_options');
-$options = piratenkleider_compatibility($options);
+$options = piratenkleider_initoptions();
     // adjusts variables for downwards comptability
 
 if(isset($_SERVER['HTTP_X_FORWARDED_FOR'])) {
@@ -570,15 +569,19 @@ function get_piratenkleider_options( $field ){
 endif;
 
 
-function piratenkleider_compatibility ($oldoptions) {
+function piratenkleider_initoptions() {
     global $defaultoptions;
-    $doupdate = 0;
+    // $doupdate = 0;
     
-    $newoptions = array_merge($defaultoptions,$oldoptions);	        
-    
-    if ($doupdate==1) {
-	update_option('piratenkleider_theme_options', $newoptions);
-    }
+    $oldoptions = get_option('piratenkleider_theme_options');
+    if (isset($oldoptions)) {
+        $newoptions = array_merge($defaultoptions,$oldoptions);	        
+    } else {
+        $newoptions = $defaultoptions;
+    }    
+    // if ($doupdate==1) {
+	// update_option('piratenkleider_theme_options', $newoptions);
+    // }
     return $newoptions;
 }
 
