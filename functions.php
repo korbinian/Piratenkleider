@@ -1661,7 +1661,6 @@ function piratenkleider_breadcrumb() {
 
 function piratenkleider_header_style() {} 
 
-
 function piratenkleider_admin_style() {
     wp_register_style( 'themeadminstyle', get_template_directory_uri().'/css/admin.css' );	   
     wp_enqueue_style( 'themeadminstyle' );	
@@ -1684,3 +1683,41 @@ function custom_upload_mimes ( $existing_mimes=array() ) {
     return $existing_mimes;
 }
 
+/* 
+ * Paging Function by sergey Mueller, http://playground.ebiene.de/wordpress-pagebar-pluginlos/
+ */
+function piratenkleider_paging_bar($total = 1, $perpage =1) {
+  /* Init */
+    $range = 4;
+  $count = $total;
+  $page = (int)get_query_var('paged');
+  $current = $page*$perpage;
+  $maxpage = intval($total/$perpage);
+  /* Kein Paging? */
+  if ($count <= $perpage) {
+    return false;
+  }
+  
+  /* Erste Seite? */
+  if (!$page) {
+    $page = 1;
+  }
+  
+     $min = $page-2;
+     if ($min<=0) $min =1;
+     $max=  $page+2;
+     if ($max>$maxpage) $max = $maxpage;    
+
+  
+  /* Ausgabe der Links */ 
+  if (!empty($min) && !empty($max)) {
+    for($i = $min; $i <= $max; $i++){
+       echo sprintf(
+        '<a href="%s"%s>%d</a>',
+        get_pagenum_link($i),
+        ($i == $page ? ' class="active"' : ''),
+        $i
+      );
+     }
+  }
+}

@@ -4,7 +4,7 @@ Theme URI: http://piratenkleider.xwolf.de
 Description: Allgemeines Theme für Webauftritte der Piratenpartei
 Author: Wolfgang Wiese (xwolf)
 Author URI: http://www.xwolf.de 
-Version: 3.0.11
+Version: 3.0.14
 Tags: orange, two-columns, responsive, fluid-width
 License: GPL
 License URI: https://www.gnu.org/copyleft/gpl.html
@@ -702,6 +702,40 @@ div#searchform {
 .search-hit {
     color: #ff8800;
 }
+.archiv-nav {
+  width: 100%;
+  height: 30px;
+}
+.archiv-nav ul {
+    width: 100%;
+}
+.archiv-nav li {
+  float: left;
+  height: 30px;
+  text-align: center;
+   list-style: none; 
+}
+.archiv-nav li.prev,
+.archiv-nav li.next {
+  width: auto;
+}
+.archiv-nav  li.pages {
+  width: 50%;
+  margin: 0 20px;
+}
+.archiv-nav li.pages a {
+  margin: 0 5px;
+  padding: 5px;
+  display: inline-block;
+  background: #eee;
+}
+.archiv-nav li.pages a.active {
+  padding: 4px;
+  border: 1px solid #eee;
+  background: #fff;
+}
+
+
 
 
 .sticker {

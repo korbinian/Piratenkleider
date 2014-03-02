@@ -73,18 +73,35 @@ Template Name: Search Page
               echo "</p>\n";         
               echo '<ul class="searchresults">';
               echo $output;
-              echo "<ul>";
+              echo "</ul>";
           }  
      
+          
+          
+          
          if (  $wp_query->max_num_pages > 1 ) { ?>
-                <div class="archiv-nav"><p>
-                    <?php previous_posts_link( __( '&larr; Vorherige Treffer', 'piratenkleider' ) ); ?>
-                    <?php
-                    if ($total_results > $options['suche-treffer_pro_seite']) {
-                        next_posts_link( __( 'Weitere Treffer &rarr;', 'piratenkleider' ) ); 
+                <div class="archiv-nav">
+                    <ul>
+                        
+                    <?php 
+                    $page = (int)get_query_var('paged');
+                    if ($page>1) {
+                        echo '<li class="prev">';
+                        echo '<a href="'.get_pagenum_link(1).'">'.__( '&larr; Erste Seite', 'piratenkleider' ).'</a>';
+                        echo "</li>\n";
+                    }
+                    echo '<li class="pages">';
+                    piratenkleider_paging_bar($total_results,$options['suche-treffer_pro_seite']);
+                    echo "</li>\n";   
+                    $last = intval($total_results/$options['suche-treffer_pro_seite']);
+                    if ($page < $last) {
+                        
+                        echo '<li class="next">';
+                        echo '<a href="'.get_pagenum_link($last).'">'.__( 'Letzte Seite &rarr;', 'piratenkleider' ).'</a>';
+                        echo "</li>\n";
                     }
                     ?>                                
-                </p></div> 
+                </ul></div> 
          <?php 
          }                      
       } else { 
