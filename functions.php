@@ -1684,14 +1684,12 @@ function custom_upload_mimes ( $existing_mimes=array() ) {
 }
 
 /* 
- * Paging Function by sergey Mueller, http://playground.ebiene.de/wordpress-pagebar-pluginlos/
+ * Paging Function 
  */
 function piratenkleider_paging_bar($total = 1, $perpage =1) {
   /* Init */
-    $range = 4;
   $count = $total;
   $page = (int)get_query_var('paged');
-  $current = $page*$perpage;
   $maxpage = intval($total/$perpage);
   /* Kein Paging? */
   if ($count <= $perpage) {
@@ -1706,8 +1704,13 @@ function piratenkleider_paging_bar($total = 1, $perpage =1) {
      $min = $page-2;
      if ($min<=0) $min =1;
      $max=  $page+2;
-     if ($max>$maxpage) $max = $maxpage;    
-
+     
+     if ($page==1) { $max = 4;}
+     
+     if ($max>$maxpage) {
+         $max = $maxpage;    
+     }    
+                
   
   /* Ausgabe der Links */ 
   if (!empty($min) && !empty($max)) {
