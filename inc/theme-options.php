@@ -460,7 +460,7 @@ function theme_options_validate( $input ) {
        if ((isset($_GET['tab'])) && (!empty($_GET['tab']))) {
             $tab = $_GET['tab'];
        }
-       if ((empty($tab) && ($input['tab']))) {
+       if ((empty($tab) && (isset($input['tab'])))) {
             $tab = $input['tab'];
        }
 
@@ -472,8 +472,11 @@ function theme_options_validate( $input ) {
             foreach($setoptions['piratenkleider_theme_options'][$tab]['fields'] as $i => $value) {   
                 $name = $i;
 
-                $type = $value['type'];              
-                $default = $value['default'];
+                $type = $value['type'];  
+                $default = '';
+                if (isset($value['default'])) {
+                    $default = $value['default'];
+                }
                 if ($type != "section") {
                     if (isset($input[$name])) {
                         // Wert wurde uebergebnen

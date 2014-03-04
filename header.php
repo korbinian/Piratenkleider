@@ -61,14 +61,18 @@
                                 foreach ( $default_toplink_liste as $entry => $listdata ) {        
                                     $value = '';
                                     $active = 0;
-                                    if (isset($options['toplinkliste'][$entry]['content'])) {
+                                    if ((isset($options['toplinkliste'])) && 
+                                            (isset($options['toplinkliste'][$entry]['content']))) {
                                             $value = $options['toplinkliste'][$entry]['content'];
+                                            if (isset($options['toplinkliste'][$entry]['active'])) {
+                                                $active = $options['toplinkliste'][$entry]['active'];        
+                                            } 
                                     } else {
                                             $value = $default_toplink_liste[$entry]['content'];
+                                            $active = $default_toplink_liste[$entry]['active'];        
+                                            
                                      }
-                                     if (isset($options['toplinkliste'][$entry]['active'])) {
-                                            $active = $options['toplinkliste'][$entry]['active'];        
-                                     }    
+                                        
                                     if (($active ==1) && ($value)) {
                                         echo "\t\t\t";
                                         echo '<li><a class="icon_'.$entry.'" href="'.$value.'">';

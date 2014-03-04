@@ -4,10 +4,10 @@
    global $options;  
 ?>          
 <div class="first-teaser-widget-area">
-<?php if ( is_active_sidebar( 'first-teaser-widget-area' ) ) { ?>
-        <?php dynamic_sidebar( 'first-teaser-widget-area' ); ?>
-    <?php } else {        
-   
+<?php
+   if ( is_active_sidebar( 'first-teaser-widget-area' ) ) {
+        dynamic_sidebar( 'first-teaser-widget-area' ); 
+    } else {        
          $defaultbildsrc = $options['slider-defaultbildsrc'];                        
          $cat = $options['slider-catid'];
 	 global $thisCat;

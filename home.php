@@ -28,7 +28,6 @@
       $cols = array();
      
       global $wp_query;
-     $options['artikelstream-type'] = 2;
       if ($options['artikelstream-type']==1) {
            /* 1: Alle Artikel, ohne Linktipps */
            $args =  $wp_query->query;

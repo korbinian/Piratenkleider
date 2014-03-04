@@ -63,6 +63,38 @@ audio:not([controls]) {
   -webkit-box-sizing: border-box;
   box-sizing: border-box; }
 
+/*
+* Default Fonts  ------------------------------------------------------------
+*/ 
+@font-face { 
+    font-family: FontPiratenkleiderDefault; 
+    local: DroidSans; 
+    src: url(../fonts/DroidSans.eot) format("embedded-opentype"), url(../fonts/DroidSans.ttf) format("truetype");
+}
+@font-face { 
+    font-family: FontPiratenkleiderHeadlines; 
+    local: BebasNeue; 
+    src: url(../fonts/BebasNeue-webfont.ttf) format("truetype"), url(../fonts/BebasNeue-webfont.woff) format("woff");
+}
+@font-face { 
+    font-family: FontPiratenkleiderMenuHeadlines; 
+    local: BebasNeue; 
+    src: url(../fonts/BebasNeue-webfont.ttf) format("truetype"), url(../fonts/BebasNeue-webfont.woff) format("woff");
+}
+body,.defaultfont,.teaserlinks ul li a span { 
+    font-family: FontPiratenkleiderDefault; 
+}
+h1,h2,h3,h4,h5,h6,.headlinefont,.tagcloud,
+.post-nav a,ol.az dl dt,.post .post-info .cal-icon .day,
+.first-startpage-widget-area li a { 
+    font-family: FontPiratenkleiderHeadlines; 
+}
+.menufont, .nav-main ul.menu li a,.cifont,.sticker ul li,
+.teaserlinks ul li a { 
+    font-family: FontPiratenkleiderMenuHeadlines; 
+}
+
+
 /* Utility ----------------------------------------------------------------- */
 .skip {
     position: absolute;
@@ -684,9 +716,20 @@ div#searchform {
     background: #24639b url("../images/lupe.png") no-repeat center center;
 }
  
-.content .searchform .searchsubmit {
-  right: auto;    
+.content .searchform .searchsubmit {   
   margin: 0 0 0 10px;
+}   
+.content .searchform .searchsubmit,
+.content-aside .searchform .searchsubmit {
+   position: relative;
+   display: inline;
+   right: inherit;
+   width: auto;
+   overflow: inherit;
+   height: auto;
+   text-indent: initial;
+   top: inherit;
+   background-image: none;
 }   
 
 .fullwidth .searchform input[type="text"] {
@@ -1537,7 +1580,7 @@ display: inline-block;
     display: inline-block;
     position: absolute;
     top: 0px;
-    right: 0.7em;
+    right: 0.3em;
   }
   .post .post-info .commentbubble a {
     background: #ff8800;

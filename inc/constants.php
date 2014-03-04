@@ -45,7 +45,6 @@ $defaultoptions = array(
     'slider-defaultbildsrc'	    => get_template_directory_uri() .'/images/default-vorlage.jpg',  
     
     'src-linkicons-css'		    => get_template_directory_uri() .'/css/basemod_linkicons.css',     
-    'src-basemod_mediaqueries_allparts'	=> get_template_directory_uri() .'/css/basemod_mediaqueries_allparts.css', 
     'src-basemod_sidebarbottom'	    => get_template_directory_uri().'/css/basemod_sidebarbottom.css',
     'dir-default-plakate'	    => '/plakate',
     'login_errors'		    => 1,
@@ -68,7 +67,7 @@ $defaultoptions = array(
     'slider-slideshowSpeed'         => 8000,
     'slider-animationDuration'      => 600,
     'slider-alternativesrc'	    => '',
-    
+    'slider-catid'                  => 1,
     'defaultwerbesticker'                   => 1,
     'aktiv-autoren'                         => 1,
     'newsletter'                            => 1,
@@ -161,7 +160,6 @@ $defaultoptions = array(
     
     
     'url-newsletteranmeldung'		    => 'https://service.piratenpartei.de/subscribe/newsletter',
-    'aktiv-mediaqueries-allparts'   => 0,
     'anonymize-user'                => 0,
     'anonymize-user-commententries' => 0,
     'aktiv-commentreplylink'        => 1,
@@ -219,12 +217,12 @@ $defaultoptions = array(
     
     'stylefile-position'		    => 0,
     'aktiv-stylefile'			    => 0,
-    'fonts-headers'                         => 'LinLibertine',
+    'fonts-headers'                         => 'BebasNeue',
     'fonts-menuheaders'                     => 'BebasNeue',
-    'fonts-content'                         => 'LinLibertine',
+    'fonts-content'                         => 'DroidSans',
     'img-meta-credits'                      => '',
     'feed-overwriteauthorstring'            => '',
-    
+    'position_sidebarbottom'                => 0,
     'suche-treffer_pro_seite'               => 10,
     'suche-excerptlength'                   => 300,
     
@@ -409,7 +407,7 @@ $defaultbilder_liste = array(
  * Default color modifications for standard css style
  */
 $default_colorstyles = array(
-    ''  =>  __('Default Stylesheet', 'piratenkleider' ),
+    '-'  =>  __('Default Stylesheet', 'piratenkleider' ),
     'colors_at.css' => __( '&Ouml;sterreich (Violett)', 'piratenkleider' ),
     'colors_lu.css' => __( 'Luxemburg (Violett)', 'piratenkleider' ),
     'colors_hu.css' => __( 'Ungarn (Violett)', 'piratenkleider' ),
@@ -1295,6 +1293,7 @@ $setoptions = array(
                   'title'   => __( 'Kategorie', 'piratenkleider' ),
                   'label'   => __( 'Aus welcher Artikelkategorie sollen die Slider genommen werden.', 'piratenkleider' ),
                   'liste'   => $currentcatliste,
+                  'default' => $defaultoptions['slider-catid'],
                    'parent'  => 'sliderpars'
               ), 
               'slider-numberarticle' => array(
@@ -1939,9 +1938,9 @@ $setoptions = array(
                   'type'    => 'select',
                   'title'   => __( 'Farbkombination', 'piratenkleider' ),
                   'label'   => __( 'Auswahl, welche l&auml;nderbezogene Farbvariante aktiviert werden soll.', 'piratenkleider' ),
-                  'default' => '',
+                  'default' => '-',
                   'liste'   => $default_colorstyles,
-			  'parent'  => 'style', 
+		   'parent'  => 'style', 
               ),
 
               'fonts-headers' => array(
@@ -1968,13 +1967,7 @@ $setoptions = array(
                   'liste'   => $default_fonts,
 		  	  'parent'  => 'style', 
               ),               
-	      'aktiv-mediaqueries-allparts' => array(
-                  'type'    => 'bool',
-                  'title'   => __( 'Small Screen Device Sichtbarkeit', 'piratenkleider' ),
-                  'label'   => __( 'F&uuml;r kleine Bildschirmaufl&ouml;sungen auch optionale Teile (Sticker, Slider) anzeigen.', 'piratenkleider' ),
-                  'default' => $defaultoptions['aktiv-mediaqueries-allparts'],
-		  	  'parent'  => 'style', 
-              ),
+	     
 	      'aktiv-linkicons' => array(
                   'type'    => 'bool',
                   'title'   => __( 'Linkicons anzeigen', 'piratenkleider' ),
@@ -2068,7 +2061,7 @@ $setoptions = array(
                   'title'   => __( 'Position der Sidebar', 'piratenkleider' ),
                   'label'   => __( 'Sidebar rechts neben den Inhalt oder darunter positionieren. Wenn die Sidebar unter dem Inhalt positioniert wird, wird der Inhaltsbereich &uuml;ber die gesamte Breite gehen. Alternativ kann ein Custom Field "fullsize" definiert werden. Hat dies den Value 1, wird der Inhaltsbereich auf volle Seitenbreite dargestellt und die Sidebar nach unten verschoben', 'piratenkleider' ),
                   'liste'   => array(0 => __( 'Rechts (Standard)', 'piratenkleider' ), 1 => __( 'Unter dem Inhalt', 'piratenkleider' )),
-                  'default' => 0,
+                  'default' => $defaultoptions['position_sidebarbottom'],
               ),                                            
               'login_errors' => array(
                   'type'    => 'select',

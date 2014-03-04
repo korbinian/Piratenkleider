@@ -58,6 +58,7 @@ Template Name: Search Page
         
         
 	if ($search->have_posts() ) { 
+          $out = '';  
           while ($search->have_posts()) : $search->the_post();
               $out = piratenkleider_search_teaser($options['suche-excerptlength'],0,1,$s);        
               if (isset($out)) {

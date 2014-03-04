@@ -264,13 +264,10 @@ function piratenkleider_scripts() {
 	}
 	
 	if (($userstyle==0) || (($userstyle==1) && ($options['stylefile-position']!=4))) {
-	    if ((isset($options['css-colorfile'])) && (strlen(trim($options['css-colorfile']))>1)) { 
+	    if ((isset($options['css-colorfile'])) && (strlen(trim($options['css-colorfile']))>2)) { 
 		 wp_enqueue_style( 'color', get_template_directory_uri().'/css/'.$options['css-colorfile'] );	             
 	    }        	  
 
-	    if (isset($options['aktiv-mediaqueries-allparts']) && ($options['aktiv-mediaqueries-allparts']==1)) {
-		wp_enqueue_style( 'basemod_mediaqueries_allparts', $defaultoptions['src-basemod_mediaqueries_allparts'] );
-	    }
 
 	    if ((isset($options['aktiv-linkicons'])) && ($options['aktiv-linkicons']==1)) { 
 	       wp_enqueue_style( 'basemod_linkicons', $defaultoptions['src-linkicons-css'] );
@@ -574,7 +571,7 @@ function piratenkleider_initoptions() {
     // $doupdate = 0;
     
     $oldoptions = get_option('piratenkleider_theme_options');
-    if (isset($oldoptions)) {
+    if (isset($oldoptions) && (is_array($oldoptions))) {
         $newoptions = array_merge($defaultoptions,$oldoptions);	        
     } else {
         $newoptions = $defaultoptions;
@@ -1146,7 +1143,12 @@ class Piratenkleider_Menu_Walker extends Walker_Nav_Menu {
                 $class_names = ' class="'. esc_attr( $class_names ) . '"';
 
                 $output .= $indent . '<li id="menu-item-'. $item->ID . '"' . $value . $class_names .'>';
-
+                
+          //      if (($item->url == home_url("/")) && (empty( $item->attr_title ))) {
+            //        $item->attr_title = "Home";
+              //  }
+   
+                
                 $attributes  = ! empty( $item->attr_title ) ? ' title="'  . esc_attr( $item->attr_title ) .'"' : '';
                 $attributes .= ! empty( $item->target )     ? ' target="' . esc_attr( $item->target     ) .'"' : '';
                 $attributes .= ! empty( $item->xfn )        ? ' rel="'    . esc_attr( $item->xfn        ) .'"' : '';
@@ -1208,12 +1210,14 @@ function get_piratenkleider_socialmediaicons( $darstellung = 1 ){
         $active = 0;
         if (isset($options['sm-list'][$entry]['content'])) {
                 $value = $options['sm-list'][$entry]['content'];
+                if (isset($options['sm-list'][$entry]['active'])) {
+                    $active = $options['sm-list'][$entry]['active'];
+                } 
         } else {
                 $value = $default_socialmedia_liste[$entry]['content'];
+                $active = $default_socialmedia_liste[$entry]['active'];
          }
-         if (isset($options['sm-list'][$entry]['active'])) {
-                $active = $options['sm-list'][$entry]['active'];
-        }        
+             
         if (($active ==1) && ($value)) {
             echo '<li><a class="icon_'.$entry.'" href="'.$value.'">';
             echo $listdata['name'].'</a></li>';
