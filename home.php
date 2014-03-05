@@ -58,7 +58,12 @@
         }
       }
       $numentries = $options['artikelstream-maxnum-main'] + $options['artikelstream-nextnum-main'];
-      $args .= '&posts_per_page='.$numentries;
+      if (is_array($args)) {
+        $args = array_merge( $args, array( 'posts_per_page' => $numentries ) );
+      } else {
+          $args .= '&posts_per_page='.$numentries;
+      }  
+     
       query_posts( $args ); 
       
       $continuelinks = '';

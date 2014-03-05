@@ -74,6 +74,9 @@
 .home #socialmedia_iconbar{top:inherit;}
 #socialmedia_iconbar ul.socialmedia{list-style:none;display:inline-block;}
 #socialmedia_iconbar ul.socialmedia li{width:34px;}
+.nav-main li a span{display:inline;position:relative;top:inherit;right:inherit;font-size:.8em;z-index:51;}
+.nav-main li a span:before{content:" (";}
+.nav-main li a span:after{content:")";}
 .sticker,.teaser,#skiplink-nav,#skiplink-search,.nav-main ul li ul,.content-primary .switchoff,.content-primary .switchon,.post-comments ol li .reply{display:none;}
 .skiplinks li a:focus,.skiplinks li a:hover,.nav-main ul.menu li a:focus,.nav-main ul.menu li a:hover{background:#24639b;color:#000;}
 .footer .second-footer-widget-area,.footer .second-footer-widget-area .skin{padding-top:0;}

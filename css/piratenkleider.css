@@ -761,9 +761,11 @@ div#searchform {
 .archiv-nav li.prev,
 .archiv-nav li.next {
   width: auto;
+  margin: 0 20px;
+  padding: 5px;
 }
 .archiv-nav  li.pages {
-  width: 50%;
+  min-width: 10em;
   margin: 0 20px;
 }
 .archiv-nav li.pages a {

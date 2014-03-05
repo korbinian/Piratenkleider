@@ -58,7 +58,7 @@ Template Name: Search Page
         
         
 	if ($search->have_posts() ) { 
-          $out = '';  
+          $out = $output = '';  
           while ($search->have_posts()) : $search->the_post();
               $out = piratenkleider_search_teaser($options['suche-excerptlength'],0,1,$s);        
               if (isset($out)) {
@@ -70,7 +70,11 @@ Template Name: Search Page
               get_search_form();
 
               echo "<p>";
-              printf( __( 'Es wurden %s Treffer gefunden.', 'piratenkleider' ), $total_results );
+              if ($total_results>1) {
+                printf( __( 'Es wurden %s Treffer gefunden.', 'piratenkleider' ), $total_results );
+              } else {
+                  _e('Es wurde ein Treffer gefunden.','piratenkleider');
+              }
               echo "</p>\n";         
               echo '<ul class="searchresults">';
               echo $output;
@@ -123,13 +127,16 @@ Template Name: Search Page
                             <h3><?php _e("Archiv nach Monaten", 'piratenkleider'); ?></h3>                           
                             <?php wp_get_archives('type=monthly'); ?>               
                         </div>
-                                                                        
+                        <?php 
+                        $posttags = get_the_tags();
+                        if ($posttags) { ?>                          
                          <div  class="widget">
                             <h3><?php _e("Artikel nach Schlagworten", 'piratenkleider'); ?></h3>    
                             <div class="tagcloud">
                              <?php wp_tag_cloud(array('format'=> 'list','smallest'  => 12, 'largest'   => 28)); ?>
                              </div>
                         </div>
+                        <?php } ?>
                         <div class="widget">
                         <h3><?php _e("&Uuml;bersicht aller Kategorien", 'piratenkleider'); ?></h3>
                         <ul>                            

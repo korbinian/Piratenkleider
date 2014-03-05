@@ -546,7 +546,20 @@
     #socialmedia_iconbar ul.socialmedia li {
         width: 34px;
     }
-    
+   .nav-main li a span {
+     display: inline;
+     position: relative;
+     top: inherit;
+     right: inherit;
+     font-size: 0.8em;
+     z-index: 51;
+   }
+   .nav-main li a span:before {
+       content: " (";
+   }
+   .nav-main li a span:after {
+       content: ")";
+   }
 }
 @media only screen and (max-width: 479px) {  
   .symbolbild, 

@@ -446,7 +446,7 @@ function piratenkleider_addmetatags() {
     if ($options['aktiv-autokeywords']) {   
 	$posttags = get_the_tags();
 	$tags = '';
-	    if (isset($posttags)) {
+	    if ($posttags) {
 		foreach($posttags as $tag) {
 		    $csv_tags .= $tag->name . ',';
 		}	
