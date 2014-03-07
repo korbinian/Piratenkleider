@@ -425,53 +425,52 @@ add_action('wp_head', 'piratenkleider_addfonts');
 
 
 function piratenkleider_addmetatags() {
-  global $options;
+    global $options;
 
     $output = "";
     $output .= '<meta charset="'.get_bloginfo('charset').'">'."\n";
     $output .= '<!--[if IE]> <meta http-equiv="X-UA-Compatible" content="IE=9"> <![endif]-->'."\n";
     $output .= '<meta name="viewport" content="width=device-width, initial-scale=1.0">'."\n";    
     if ((isset( $options['meta-description'] )) && ( strlen(trim($options['meta-description']))>1 )) {
-	 $output .= '<meta name="description" content="'.$options['meta-description'].'">'."\n";
+        $output .= '<meta name="description" content="'.$options['meta-description'].'">'."\n";
     }
     if ((isset( $options['meta-author'] )) && ( strlen(trim($options['meta-author']))>1 )) {
-	$output .= '<meta name="author" content="'.$options['meta-author'].'">'."\n";
+        $output .= '<meta name="author" content="'.$options['meta-author'].'">'."\n";
     }
     if ((isset( $options['meta-verify-v1'] )) && ( strlen(trim($options['meta-verify-v1']))>1 )) {
-	$output .= '<meta name="verify-v1" content="'.$options['meta-verify-v1'].'">'."\n";
-     }
+        $output .= '<meta name="verify-v1" content="'.$options['meta-verify-v1'].'">'."\n";
+    }
 
-    $csv_tags = '';
     $tags = '';
     if ($options['aktiv-autokeywords']) {   
-	$posttags = get_the_tags();
-	$tags = '';
-	    if ($posttags) {
-		foreach($posttags as $tag) {
-		    $csv_tags .= $tag->name . ',';
-		}	
-		$tags = substr( $csv_tags,0,-2);
-	    }
-	if ((isset($options['meta-keywords'])) && (strlen(trim($options['meta-keywords']))>1 )) {
-	    $tags = $options['meta-keywords'].', '.$tags;
-	}
-    } else {
-	if ((isset($options['meta-keywords'])) && (strlen(trim($options['meta-keywords']))>1 )) {
-	    $tags = $options['meta-keywords'];
-	}	
+        $posttags = get_the_tags();
+        $csv_tags = '';
+        if ($posttags) {
+            foreach($posttags as $tag) {
+                $csv_tags .= $tag->name . ',';
+            }	
+            $tags = substr( $csv_tags,0,-1);
+        }
+    } 
+    if ((isset($options['meta-keywords'])) && (strlen(trim($options['meta-keywords']))>1 )) {
+        if (strlen($tags) > 0) {
+            $tags = $options['meta-keywords'].','.$tags;
+        } else {
+            $tags = $options['meta-keywords'];
+        }
     }
-    if ((isset($tags)) && (strlen(trim($tags))>2 )) {
-	if (strlen(trim($tags))>$options['meta-maxlengthvalue']) {
-	    $tags = substr($tags,0,strpos($tags,",",$options['meta-maxlengthvalue']));
-	}	
-	$output .= '<meta name="keywords" content="'.$tags.'">'."\n";
+    if ((strlen(trim($tags))>2 )) {
+        if (strlen(trim($tags))>$options['meta-maxlengthvalue']) {
+            $tags = substr($tags,0,strpos($tags,",",$options['meta-maxlengthvalue']));
+        }	
+        $output .= '<meta name="keywords" content="'.$tags.'">'."\n";
     }
     
     if ((isset($options['favicon-file'])) && ($options['favicon-file']>0 )) {	 
-	$output .=  '<link rel="shortcut icon" href="'.wp_get_attachment_url($options['favicon-file']).'">'."\n";
+        $output .=  '<link rel="shortcut icon" href="'.wp_get_attachment_url($options['favicon-file']).'">'."\n";
     } else {
-	$output .=  '<link rel="apple-touch-icon" href="'.get_template_directory_uri().'/apple-touch-icon.png">'."\n";
-	$output .=  '<link rel="shortcut icon" href="'.get_template_directory_uri().'/favicon.ico">'."\n";
+        $output .=  '<link rel="apple-touch-icon" href="'.get_template_directory_uri().'/apple-touch-icon.png">'."\n";
+        $output .=  '<link rel="shortcut icon" href="'.get_template_directory_uri().'/favicon.ico">'."\n";
     }
     echo $output;
 }
@@ -1075,7 +1074,7 @@ if ( ! function_exists( 'piratenkleider_post_autorinfo' ) ) :
  * Fusszeile unter Artikeln: Autorinfo
  */
 function piratenkleider_post_autorinfo() {
-    $out .= ' <span class="meta-prep-author">'.__('Autor','piratenkleider').':</span> ';
+    $out = ' <span class="meta-prep-author">'.__('Autor','piratenkleider').':</span> ';
     $out .= '<span class="author vcard"><a class="url fn n" href="';
     $out .= get_author_posts_url( get_the_author_meta( 'ID' ) );
     $out .= '">';
