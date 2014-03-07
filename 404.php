@@ -36,7 +36,7 @@
 	<?php } ?>
 	  
          <p>
-           <?php _e("Es konnten keine Seiten oder Artikel gefunden werden, die zu der eingegebenen Adresse passte. Bitte versuchen Sie es nochmal mit einer Suche.", 'piratenkleider'); ?>
+           <?php _e("Es konnten keine Seiten oder Artikel gefunden werden, die zu der eingegebenen Adresse passten. Bitte versuchen Sie es nochmal mit einer Suche.", 'piratenkleider'); ?>
          </p>              
 	 
          <?php get_search_form(); ?>

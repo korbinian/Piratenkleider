@@ -3,7 +3,7 @@ global $defaultoptions;
 global $options;
 
 if ( post_password_required() ) : ?>
-    <p><?php _e("Dieser Artikel ist Passwortgesch&uuml;tzt. Bitte gib das Passwort ein um die Kommentare zu sehen.", 'piratenkleider'); ?></p>
+    <p><?php _e("Dieser Artikel ist passwortgesch&uuml;tzt. Bitte gib das Passwort ein, um die Kommentare zu sehen.", 'piratenkleider'); ?></p>
     <?php return;
 endif; 
 if ( have_comments() ) : ?>
