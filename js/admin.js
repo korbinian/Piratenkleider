@@ -1,23 +1,20 @@
 /*
- * Image Upload for Widget
+ * Image Upload for Banner/Logo Link Widget
  */
-
 jQuery(document).ready(function($){
     var custom_uploader;
 
-    $('.upload_image_button').click(function(e) {
+     $('body').on('click','.upload_image_button',function(e) {
         e.preventDefault();
         var button = $(this);
         var id = button.attr('id').replace('_button', '');
         var idimgid = button.attr('id').replace('url_button', 'id'); 
         var idtitle = button.attr('id').replace('image_url_button', 'title');
 	
-        //If the uploader object has already been created, reopen the dialog
-    //    if (custom_uploader) {
-    //        custom_uploader.open();
-    //        return;
-    //    }
- 
+	if (custom_uploader) {
+            custom_uploader.open();
+            return;
+        }
         //Extend the wp.media object
         custom_uploader = wp.media.frames.file_frame = wp.media({
             title: 'Choose Image',

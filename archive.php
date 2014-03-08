@@ -27,7 +27,7 @@
                      <?php elseif ( is_year() ) : ?>
                         <?php printf( __( 'Jahresarchiv: %s', 'piratenkleider' ), get_the_date('Y') ); ?>
                      <?php else : ?>
-                         <?php _e( 'Blogarchiv', 'piratenkleider' ); ?>
+                         <?php _e( 'Archiv', 'piratenkleider' ); ?>
                       <?php endif; ?></span></h1>
 		   <div class="symbolbild"><img src="<?php echo $image_url ?>" alt="">		  		    		  
 		   </div>
@@ -44,11 +44,11 @@
                      <?php elseif ( is_year() ) : ?>
                         <?php printf( __( 'Jahresarchiv: %s', 'piratenkleider' ), get_the_date('Y') ); ?>
                      <?php else : ?>
-                         <?php _e( 'Blogarchiv', 'piratenkleider' ); ?>
+                         <?php _e( 'Archiv', 'piratenkleider' ); ?>
                       <?php endif; ?></span></h1>
 	<?php } 
             rewind_posts(); 
-            get_template_part( 'loop', 'archive' ); 
+           get_template_part( 'loop', 'archive' );
             ?>
 	</div>
     </div>

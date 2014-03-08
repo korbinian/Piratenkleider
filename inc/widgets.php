@@ -38,8 +38,8 @@ function piratenkleider_widgets_init() {
                 'name' => __( 'Startseite: Sliderbereich', 'piratenkleider' ),
                 'id' => 'first-teaser-widget-area',
                 'description' => __( 'Bereich oberhalb der 3 Artikelbilder.
-                    Wenn leer, erscheinen hier wechselnden Bilder 
-                    und Verlinkung mit Artikeln der Kategorie "Slider". 
+                    Wenn leer, erscheinen hier wechselnde Bilder 
+                    mit Verlinkung zu Artikeln der Kategorie "Slider". 
                     Angezeigt werden die Artikelbilder.', 'piratenkleider' ),
                 'before_widget' => '<div class="widget">',
                 'after_widget' => '</div>',
@@ -51,8 +51,8 @@ function piratenkleider_widgets_init() {
         register_sidebar( array(
                 'name' => __( 'Startseite: Rechter Aktionlinkbereich', 'piratenkleider' ),
                 'id' => 'second-teaser-widget-area',
-                'description' => __( 'Dieser Bereich ist rechts neben den Slider und dem Hauptcontent positioniert. Wenn leer, werden hier
-                    die Links zur Piratenwebsite gezeigt die unter Optionen definiert sind.', 'piratenkleider' ),
+                'description' => __( 'Dieser Bereich ist rechts neben dem Slider und dem Hauptcontent positioniert. Wenn leer, werden hier
+                    die Links zur Piratenwebsite gezeigt, die unter Optionen definiert sind.', 'piratenkleider' ),
                 'before_widget' => '<div class="widget">',
                 'after_widget' => '</div>',
                 'before_title' => '<h3 class="widget-title">',
@@ -64,7 +64,7 @@ function piratenkleider_widgets_init() {
         register_sidebar( array(
                 'name' => __( 'Startseite: Introbereich', 'piratenkleider' ),
                 'id' => 'startpage-intro-area',
-                'description' => __( 'Introbereich unterhalb des Sliders bzw. Teasers auf der Startseite. Hier lassen sich beispielsweise fest stehende Begr&uuml;ssungen oder andere Widgets setzen, die noch vor dem eigentlichen Artikeln kommen.', 'piratenkleider' ),
+                'description' => __( 'Introbereich unterhalb des Sliders bzw. Teasers auf der Startseite. Hier lassen sich beispielsweise fest stehende Begr&uuml;&szlig;ungen oder andere Widgets setzen, die noch vor dem eigentlichen Artikeln kommen.', 'piratenkleider' ),
                 'before_widget' => '<div class="widget">',
                 'after_widget' => '</div>',
                 'before_title' => '<h2 class="widget-title">',
@@ -116,7 +116,7 @@ function piratenkleider_widgets_init() {
                 'id' => 'second-footer-widget-area',
                 'description' => __( 'Rechte Spalte im Fu&szlig;bereich. Wenn leer, erscheint hier das
                     technische Menu (siehe Men&uuml;s). Wenn auch dieses nicht definiert ist, wird 
-                    die Blogadresse und dessen RSS-Feedadresse gezeigt', 'piratenkleider' ),
+                    die Blogadresse und die RSS-Feedadresse gezeigt', 'piratenkleider' ),
                 'before_widget' => '<div class="widget">',
                 'after_widget' => '</div>',
                 'before_title' => '<h2>',
@@ -145,8 +145,8 @@ class Newsletter_Widget extends WP_Widget {
 	public function __construct() {
 		parent::__construct(
 	 		'Newsletter_Widget', // Base ID
-			__( 'Piraten Newsletter', 'piratenkleider' ),
-			array( 'description' => __( 'Formular zur EIngabe einer Mailadresse zu einem Majordomolink angeben.', 'piratenkleider' ), ) // Args
+			__( 'Piraten-Newsletter', 'piratenkleider' ),
+			array( 'description' => __( 'Formular zur Eingabe einer E-Mail-Adresse anzeigen.', 'piratenkleider' ), ) // Args
 		);
 	}
 	
@@ -240,7 +240,7 @@ class ParteiLinkliste_Widget extends WP_Widget {
 	public function __construct() {
 		parent::__construct(
 	 		'ParteiLinkliste_Widget', // Base ID
-                        __( 'Piraten Linkliste', 'piratenkleider' ),
+                        __( 'Piraten-Linkliste', 'piratenkleider' ),
 			array( 'description' => __( 'Linkliste mit verschiedenen Gliederungen und Bereichen der Partei', 'piratenkleider' ), ) // Args
 		);
 	}
@@ -333,7 +333,7 @@ class Bannerlink_Widget extends WP_Widget {
 	public function __construct() {
 		parent::__construct(
 	 		'Bannerlink_Widget', // Base ID
-                        __( 'Banner/Logo Link', 'piratenkleider' ),
+                        __( 'Banner/Logo mit Link', 'piratenkleider' ),
 			array( 'description' => __( 'Schalten von Link mit einem Logo oder Banner', 'piratenkleider' ), ) // Args
 		);
 	}
@@ -349,6 +349,8 @@ class Bannerlink_Widget extends WP_Widget {
 	    $url = $instance['url'];
 	    $image_url = $instance['image_url'];
 	    $image_id = $instance['image_id'];
+
+
 	    ?>
 		    <p>
 			<label for="<?php echo $this->get_field_id('title'); ?>"><?php echo 'Titel:'; ?></label>
@@ -373,11 +375,12 @@ class Bannerlink_Widget extends WP_Widget {
 
                         	<input type="hidden" id="<?php echo $this->get_field_id('image_id'); ?>" 
                                   class="image_id"  name="<?php echo $this->get_field_name('image_id'); ?>" />
-                                <input
-                                    id="<?php echo $this->get_field_id('image_url'); ?>_button"
-                                    class="upload_image_button" value="<?php _e('Hochladen / Ausw&auml;hlen', 'piratenkleider'); ?>" type="button" />
+		
+				<input class="button upload_image_button" name="upload_image_button" id="<?php echo $this->get_field_id('image_url'); ?>_button"  value="<?php _e('Hochladen / Ausw&auml;hlen', 'piratenkleider'); ?>" />
+				
 
-			    <br /><?php _e('Gebe eine URL zu einem Bild ein oder verwende die Mediathek um es hochzuladen oder um ein vorhandenes Bild auszuw&auml;hlen.', 'piratenkleider'); ?>
+			    <br /><?php _e('Gib eine URL zu einem Bild ein oder verwende die Mediathek, um es hochzuladen oder um ein vorhandenes Bild auszuw&auml;hlen.', 'piratenkleider'); ?>
+			   
                         </label> 
 		    </p>
 		    <?php 

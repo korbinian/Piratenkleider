@@ -2,8 +2,8 @@
     global $options;
     global $defaultoptions;
  ?>   
-</div>
 
+</div> <!-- #content-body --> 
 <div class="section footer">
     <div class="row">
         <?php get_sidebar( 'footer' ); ?>
@@ -11,10 +11,10 @@
     </div>
     <nav role="navigation">
         <ul class="nav skiplinks">		
-		<li><a class="ym-skip" id="skiplink-top" href="#top"><?php _e( 'Nach oben springen.', 'piratenkleider' ); ?></a></li>
-		<li><a class="ym-skip" id="skiplink-content-bottom" href="#main-content"><?php _e( 'Zum Beginn des Inhaltes springen.', 'piratenkleider' ); ?></a></li>
+		<li><a class="p3-skip" id="skiplink-top" href="#top"><?php _e( 'Nach oben springen.', 'piratenkleider' ); ?></a></li>
+		<li><a class="p3-skip" id="skiplink-content-bottom" href="#main-content"><?php _e( 'Zum Beginn des Inhaltes springen.', 'piratenkleider' ); ?></a></li>
 		<?php if ( $options['aktiv-suche'] == "1" ){ ?>
-                <li><a class="ym-skip" id="skiplink-search-bottom" href="#searchform"><?php _e( 'Zur Suche springen.', 'piratenkleider' ); ?></a></li>
+                <li><a class="p3-skip" id="skiplink-search-bottom" href="#searchform"><?php _e( 'Zur Suche springen.', 'piratenkleider' ); ?></a></li>
 		<?php } ?>
 	</ul>
     </nav>
@@ -86,22 +86,14 @@
    
         if ($options['aktiv-dynamic-sidebar']==1) { 
 	    $nosidebar = get_post_meta( get_the_ID(), 'piratenkleider_nosidebar', true );
-	    if( empty( $nosidebar ) || $nosidebar==0) {
-		
-	    
-            ?>
+	    if( empty( $nosidebar ) || $nosidebar==0) {  ?>
      <script type="text/javascript">
         /* <![CDATA[ */
          $htmlOnSwitch = '<div class="switchoff"><a href="#"><abbr title="<?php _e('Leiste ausblenden','piratenkleider'); ?>">&#9654;</abbr></a></div>';
          $htmlOffSwitch = '<div class="switchon" ><a href="#"><abbr title="<?php _e('Leiste anzeigen','piratenkleider'); ?>">&#9664;</abbr></a></div>';
         /* ]]> */
     </script> 
-	<?php } }
-    if ((isset($options['aktiv-wombat'])) && ($options['aktiv-wombat']==1)) { ?>
-	<div id="wombat">
-	    <img src="<?php echo get_template_directory_uri() ?>/images/wombat-orange-klein.png" alt="">
-	</div>   
-   <?php }   
+	<?php } }  
     
    if (isset($options['html-eigene-anweisungen'])
         && strlen(trim($options['html-eigene-anweisungen'])) > 0) {

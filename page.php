@@ -11,12 +11,12 @@
 	<?php 
 	   if ( have_posts() ) while ( have_posts() ) : the_post();         
 		$custom_fields = get_post_custom();
-
-		$image_url = '';
-		$image_alt = '';
                 $attribs = array(
                     "credits" => $options['img-meta-credits'],
                 );
+     
+		$image_url = '';
+		$image_alt = '';
 		if (has_post_thumbnail()) { 
 		    $thumbid = get_post_thumbnail_id(get_the_ID());
 		     // array($options['bigslider-thumb-width'],$options['bigslider-thumb-height'])
@@ -41,9 +41,9 @@
 			    <h1 class="post-title"><span><?php the_title(); ?></span></h1>
 			</header>	    
 		       <div class="symbolbild"><img src="<?php echo $image_url ?>" alt="">
-		       <?php if (isset($attribs["credits"]) && (strlen($attribs["credits"])>1)) {
-			 echo '<div class="caption">'.$attribs["credits"].'</div>';  
-			 }  ?>
+                        <?php if (isset($attribs["credits"]) && (strlen($attribs["credits"])>1)) {
+                           echo '<div class="caption">'.$attribs["credits"].'</div>';  
+                        }  ?>
 		       </div>
 		    </div>  	
 		<?php } ?>
@@ -78,20 +78,27 @@
           <h1 class="skip"><?php _e( 'Weitere Informationen', 'piratenkleider' ); ?></h1>
           
             <?php
-            
-            get_piratenkleider_seitenmenu($options['zeige_sidebarpagemenu'],$options['zeige_subpagesonly'],$options['seitenmenu_mode']);
-        
+	    
+	      get_piratenkleider_seitenmenu($options['zeige_sidebarpagemenu'],$options['zeige_subpagesonly'],$options['seitenmenu_mode']);
 
-             if ( get_post_meta($post->ID, 'right_column', true) )
-             echo do_shortcode(get_post_meta($post->ID, 'right_column', $single = true));
-             
+	    $custom_fields = get_post_custom();
+  
+	      if (isset($custom_fields['piratenkleider_sidebar-content'])) {
+		    $text = $custom_fields['piratenkleider_sidebar-content'][0];
+	      } elseif (isset($custom_fields['right_column'])) {
+		  /* Look for variable as in V2 for downwards compatibility ... */
+		    $text = $custom_fields['right_column'][0];
+	      }
 
-        if (!isset($options['aktiv-circleplayer'])) 
-            $options['aktiv-circleplayer'] = $defaultoptions['aktiv-circleplayer']; 
-        if ($options['aktiv-circleplayer']==1) {
-            piratenkleider_echo_player();
-        }
-         get_sidebar(); ?>
+
+	    if  (isset($text) 
+			&& (strlen(trim($text))>0)) {
+		echo '<div class="">';
+		echo do_shortcode($text); 
+		echo "</div>\n";
+	    }
+	    get_sidebar(); 
+             ?>
       </div>
     </div>
 	<?php } ?>

@@ -32,34 +32,30 @@
 	  
 	  <?php if (!(isset($image_url) && (strlen($image_url)>4))) { ?>
 	    <h1 class="post-title"><span><?php printf( __( 'Schlagwort %s', 'piratenkleider' ), '' . single_cat_title( '', false ) . '' ); ?></span></h1>	
-	
-
             <?php }
-	
-             
-
             
       $i = 0; 
       $col = 0; 
       
       $numentries = $options['category-num-article-fullwidth'] + $options['category-num-article-halfwidth']; 
-      $col_count = 3; 
       $cols = array();
      
       global $query_string;
-      query_posts( $query_string . '&cat=$thisCat' );
- 
+      $args = $query_string;
+      $args .= '&posts_per_page='.$numentries;
+      query_posts( $args ); 
+      
+      
       while (have_posts() && $i<$numentries) : the_post();
       $i++;
-      ob_start();      
+      $output = '';     
       if (( isset($options['category-num-article-fullwidth']))
                 && ($options['category-num-article-fullwidth']>=$i )) {
-		 piratenkleider_post_teaser($options['category-teaser-titleup'],$options['category-teaser-datebox'],$options['category-teaser-dateline'],$options['category-teaser-maxlength'],$options['teaser-thumbnail_fallback'],$options['category-teaser-floating']);
+		$output =  piratenkleider_post_teaser($options['category-teaser-titleup'],$options['category-teaser-datebox'],$options['category-teaser-dateline'],$options['category-teaser-maxlength'],$options['teaser-thumbnail_fallback'],$options['category-teaser-floating']);
       } else {
-		 piratenkleider_post_teaser($options['category-teaser-titleup-halfwidth'],$options['category-teaser-datebox-halfwidth'],$options['category-teaser-dateline-halfwidth'],$options['category-teaser-maxlength-halfwidth'],$options['teaser-thumbnail_fallback'],$options['category-teaser-floating-halfwidth']);  
+		 $output = piratenkleider_post_teaser($options['category-teaser-titleup-halfwidth'],$options['category-teaser-datebox-halfwidth'],$options['category-teaser-dateline-halfwidth'],$options['category-teaser-maxlength-halfwidth'],$options['teaser-thumbnail_fallback'],$options['category-teaser-floating-halfwidth']);  
       }    
-      $output = ob_get_contents();
-      ob_end_clean();
+
       if (isset($output)) {
         $cols[$col++] = $output;
       }

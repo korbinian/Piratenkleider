@@ -19,9 +19,6 @@
 	<?php
 	    $image_url = '';
 	    $image_alt = '';
-            $attribs = array(
-                "credits" => $options['img-meta-credits'],
-            );
 	    if (has_post_thumbnail()) { 
 		$thumbid = get_post_thumbnail_id(get_the_ID());
 		 // array($options['bigslider-thumb-width'],$options['bigslider-thumb-height'])
@@ -44,9 +41,9 @@
 		?>    		    		    		        
 		   <h1 class="post-title"><span><?php the_title(); ?></span></h1>
 		   <div class="symbolbild"><img src="<?php echo $image_url ?>" alt="">
-		    <?php if (isset($attribs["credits"]) && (strlen($attribs["credits"])>1)) {
-		     echo '<div class="caption">'.$attribs["credits"].'</div>';  
-		   }  ?>
+		   <?php if (isset($attribs["credits"]) && (strlen($attribs["credits"])>1)) {
+                           echo '<div class="caption">'.$attribs["credits"].'</div>';  
+                    }  ?>
 		   </div>
 		</div>  	
 	    <?php } ?>
@@ -88,7 +85,7 @@ verarbeitet. Dies erfolgt jedoch nur ohne personenbeziehbare Verbindungsdaten.
 <p>
 Die Nutzung von Kommentaren erfolgt auf freiwilliger Basis. Hier
 werden zur Wiedererkennung der verschiedenen Kommentatoren Name und E-Mailadresse
-abgefragt. Diese Daten werden nicht verifiziert. Es ist jedem Benutzer möglich, 
+abgefragt. Diese Daten werden nicht verifiziert. Es ist jedem Benutzer m&ouml;glich, 
 hier unzutreffende Daten einzugeben.
 </p>
 <p>Wir weisen darauf hin, dass die Daten&uuml;bertragung 
@@ -109,9 +106,9 @@ m&ouml;glich.
 </ul>
 
 <p>
-   Auf den Server dieses Webangebotes werden von diesen Datensätzen jene die eine
-   Identifizierung ermöglichen, anonymisiert: Die IP-Adresse wird mit einer anderen
-   Adresse überschrieben; Daten zum Browsertyp und Version werden gelöscht.
+   Auf den Server dieses Webangebotes werden von diesen Datens&auml;tzen jene die eine
+   Identifizierung erm&ouml;glichen, anonymisiert: Die IP-Adresse wird mit einer anderen
+   Adresse &uuml;berschrieben; Daten zum Browsertyp und Version werden gel&ouml;scht.
 </p>
 
 
@@ -122,18 +119,18 @@ Es kann vorkommen, dass innerhalb dieses Webangebots Inhalte Dritter,
 wie zum Beispiel Videos von YouTube, Kartenmaterial von Google-Maps,
 RSS-Feeds oder Grafiken von anderen Webseiten eingebunden werden.
 <br>
-Wir bemühen uns nur solche Inhalte zu verwenden, die direkt auf diesem
+Wir bem&uuml;hen uns nur solche Inhalte zu verwenden, die direkt auf diesem
 Webauftritt liegen und somit keinem anderen Dienst ein Tracking
-ermöglichen.<br>
+erm&ouml;glichen.<br>
 Leider ist dies, insbesondere bei Videostreams und anderen Angeboten,
 die nur auf externen Plattformen bereit gestellt werden, oft
-nicht möglich. In diesen F&auml;llen haben wir keinen Einfluss darauf, falls
+nicht m&ouml;glich. In diesen F&auml;llen haben wir keinen Einfluss darauf, falls
 die Dritt-Anbieter die IP-Adresse oder Eigenschaften des verwendeten
 Browsers speichern und auswerten.
 <br>
-Bei der Einbindung von Inhalten, bei denen die Möglichkeit besteht,
+Bei der Einbindung von Inhalten, bei denen die M&ouml;glichkeit besteht,
 Tracking zu umgehen, wird dieses genutzt. Beispielsweise bei der Nutzung
-von youtube-nocookie.com anstelle von youtube.com für die
+von youtube-nocookie.com anstelle von youtube.com f&uuml;r die
 Einbindung von Videos.
 </p>
                

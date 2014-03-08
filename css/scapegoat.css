@@ -449,7 +449,6 @@ textarea {
 	/* ------------------------------ Headlines */
 
 h1, h2, h3, h4, h5, h6, h7 {
-	font-family: "FontPiratenkleiderDefault", 'Helvetica Neue', 'Arial', Sans-Serif;
 	font-weight: 400;
 	margin: 1em 0;
 	color: #181818;
@@ -1561,7 +1560,6 @@ body {
 
 #logo {
 	float: left;
-	font-family: "FontPiratenkleiderDefault", 'Helvetica Neue', 'Arial', Sans-Serif;
 	max-width: 75%;
 	max-height: 10em;
 
@@ -1741,7 +1739,6 @@ body {
     float: left;
     text-align: center;
     font-size: 34px;
-    font-family: "FontPiratenkleiderHeadlines",Helvetica,Arial,sans-serif;
     letter-spacing: 1px;
     margin: 10px;
     line-height: 0.9em;     
@@ -1881,12 +1878,9 @@ display: inline-block;
 	/* ------------------------------ Wrapper */
 
 	
-	.chrome-container {
-	    margin: 3.2em auto;
-	    max-width: 1440px;
-	}
+
 	
-.chrome-container .teaser {
+ .teaser {
     margin-right: 0px;
         background: none repeat scroll 0 0 #FFFFFF;
     border-left: 1px solid #D1D1D1;
@@ -1896,6 +1890,7 @@ display: inline-block;
     border-bottom: 3px solid orange;
      height: 240px;
       margin-right: -2px;
+        max-width: 1440px;
 }
 #wrapper-inside {}
 
@@ -1963,7 +1958,6 @@ float: left;
 
   }
     .second-teaser-widget-area li a div {
-      font-family: "FontPiratenkleiderHeadlines",  Helvetica, Arial, sans-serif;
       letter-spacing: 1px;
       text-shadow: 0 -1px 1px #c36800;
       font-size: 19px; 
@@ -2024,7 +2018,6 @@ float: left;
   }
  .teaserlinks ul li a {
     color: white;
-    font-family: "FontPiratenkleiderHeadlines", Helvetica, Arial, sans-serif;
     letter-spacing: 1px;
     text-shadow: 0 -1px 1px #c36800;
     font-size: 22px;     
@@ -2056,7 +2049,6 @@ float: left;
     display: block;    
     color: black;
     text-shadow: 0 0 0; 
-    font-family: "FontPiratenkleiderDefault", Helvetica, Arial, sans-serif;
  
   }
 .teaserlinks ul li a:hover span,
@@ -2564,16 +2556,16 @@ float: left;
 */
 
 
-.ym-add:before { content: "\271A"; }
-.ym-delete:before { content: "\2718"; }
-.ym-edit:before { content: "\270E"; }
-.ym-email:before { content: "\2709"; }
-.ym-like:before { content: "\2764"; }
-.ym-next:before { content: "\279C"; }
-.ym-play:before { content: "\25B6"; }
-.ym-save:before { content: "\2714"; }
-.ym-spark:before { content: "\2737"; }
-.ym-star:before { content: "\2605"; }
+.p3-add:before { content: "\271A"; }
+.p3-delete:before { content: "\2718"; }
+.p3-edit:before { content: "\270E"; }
+.p3-email:before { content: "\2709"; }
+.p3-like:before { content: "\2764"; }
+.p3-next:before { content: "\279C"; }
+.p3-play:before { content: "\25B6"; }
+.p3-save:before { content: "\2714"; }
+.p3-spark:before { content: "\2737"; }
+.p3-star:before { content: "\2605"; }
 
 
 
@@ -2769,7 +2761,6 @@ float: left;
 }
 
 #front-page-slider .front-page-slide .slide-text .slide-text-title {
-	font-family: "FontPiratenkleiderDefault", 'Helvetica Neue', 'Arial', Sans-Serif;
 	font-size: 2em;
 	line-height: 1em;
 	color: #fff;
@@ -3566,7 +3557,6 @@ float: left;
 
 .tagcloud {
     /*
-  font-family: "FontPiratenkleiderHeadlines", Helvetica, Arial, sans-serif;
   line-height: 1.8em;
   text-align: center;
   margin-top: 1em;     */ 
@@ -3937,7 +3927,6 @@ background: linear-gradient(to right, rgba(0, 0, 0, 1) , #2d7dc5); /* Standard s
     display: inline-block;
     padding: 0 5px; 
     z-index: 99;
-    font-family: "FontPiratenkleiderHeadlines",Helvetica,Arial,sans-serif;
 }
 .first-teaser-widget-area .slide .bigslider  {
   /*  background: none repeat scroll 0 0 #111111; */

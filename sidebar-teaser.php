@@ -4,10 +4,10 @@
    global $options;  
 ?>          
 <div class="first-teaser-widget-area">
-<?php if ( is_active_sidebar( 'first-teaser-widget-area' ) ) { ?>
-        <?php dynamic_sidebar( 'first-teaser-widget-area' ); ?>
-    <?php } else {        
-   
+<?php
+   if ( is_active_sidebar( 'first-teaser-widget-area' ) ) {
+        dynamic_sidebar( 'first-teaser-widget-area' ); 
+    } else {        
          $defaultbildsrc = $options['slider-defaultbildsrc'];                        
          $cat = $options['slider-catid'];
 	 global $thisCat;
@@ -35,13 +35,22 @@
             echo "<li class='slide'>";
             if ($options['teaser-type'] == 'big') {
                 $attribs = array(
-                  "credits" => $options['img-meta-credits'],
+                 "credits" => $options['img-meta-credits'],
                 );
+                              
                 echo '<div class="bigslider">';
-                if (has_post_thumbnail()) {      
+                if (has_post_thumbnail()) {    
                     $thumbid = get_post_thumbnail_id(get_the_ID());
                     $attribs = piratenkleider_get_image_attributs($thumbid);
-                    the_post_thumbnail(array($defaultoptions['bigslider-thumb-width'],$defaultoptions['bigslider-thumb-height']),array('alt'=> ''));
+                    $out = get_the_post_thumbnail(get_the_ID(),array($defaultoptions['bigslider-thumb-width'],$defaultoptions['bigslider-thumb-height']),array('alt'=> ''));
+                    if (isset($out) && strlen($out)>0){
+                        print $out;
+                    } else {
+                        $attribs = array(
+                             "credits" => $options['img-meta-credits'],
+                        );
+                        echo '<img src="'.$defaultbildsrc.'" width="'.$defaultoptions['bigslider-thumb-width'].'" height="'.$defaultoptions['bigslider-thumb-height'].'" alt="">';                
+                    }       
                 } else {
                     if ((isset($defaultbildsrc)) && (strlen(trim($defaultbildsrc))>2)) {  
                         echo '<img src="'.$defaultbildsrc.'" width="'.$defaultoptions['bigslider-thumb-width'].'" height="'.$defaultoptions['bigslider-thumb-height'].'" alt="">';                
@@ -55,11 +64,11 @@
                 the_permalink();
                 echo ">";
                 echo short_title('&hellip;', $options['teaser-title-words'], $options['teaser-title-maxlength']);
-                echo "</a></h3></div>";  
-                
+                echo "</a></h3></div>";   
+                                
                 if (($options['teaser-showcredits']==1) && isset($attribs["credits"]) && (strlen($attribs["credits"])>1)) {
-		     echo '<div class="credits">'.$attribs["credits"].'</div>';  
-		} 
+                    echo '<div class="credits">'.$attribs["credits"].'</div>';
+                } 
                 echo "</div>";    
             } else {
                 echo '<div class="textslider">';

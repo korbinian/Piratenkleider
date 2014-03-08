@@ -2,26 +2,10 @@
     Backend CSS
 */
 
-@font-face {
-  font-family: 'Droid';
-   src: url("../fonts/DroidSans.eot?#iefix") format("embedded-opentype"), url("../fonts/DroidSans.ttf") format("truetype");
-  font-weight: normal;
-  font-style: normal; 
-}
-
-@font-face {
-  font-family: 'Bebas';
-  src: url("../fonts/BebasNeue-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/BebasNeue-webfont.ttf") format("truetype");  
-  font-weight: normal;
-  font-style: normal; 
-}
-
-@font-face {
-  font-family: 'PoliticsHead';
-  src: url("../fonts/PoliticsHeadv1_9.eot") format("embedded-opentype"), url("../fonts/PoliticsHeadv1_9.ttf") format("truetype");   
-  font-weight: normal;
-  font-style: normal; 
-}
+@font-face { font-family: BebasNeue; local: BebasNeue; src: url(../fonts/BebasNeue-webfont.eot) format("embedded-opentype"), url(../fonts/BebasNeue-webfont.ttf) format("truetype"), url(../fonts/BebasNeue-webfont.woff) format("woff"), url(../fonts/BebasNeue-webfont.svg) format("svg") ; }
+@font-face { font-family: Awesome; local: Awesome; src: url(../fonts/fontawesome-webfont.eot) format("embedded-opentype"), url(../fonts/fontawesome-webfont.ttf) format("truetype"), url(../fonts/fontawesome-webfont.woff) format("woff"), url(../fonts/fontawesome-webfont.svg) format("svg") ; }
+@font-face { font-family: DroidSans; local: DroidSans; src: url(../fonts/DroidSans.eot) format("embedded-opentype"), url(../fonts/DroidSans.ttf) format("truetype"); }
+@font-face { font-family: LinLibertine; local: LinLibertine; src: url(../fonts/LinLibertine_R.woff) format("woff"); }
 
 
  #headimg {

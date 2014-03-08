@@ -6,6 +6,16 @@
         CSS styles for plugin support
 */
 
+
+/*
+* Contact Form 7
+*/
+.wpcf7-mail-sent-ok {
+  padding: 20px;
+  border: 1px solid #109e06;
+  font-weight: bold; }
+
+
  /* 
  * ICS Kalender 
  */
@@ -149,6 +159,13 @@ div.ics-calendar-holder .ics-calendar-event {
     -o-border-radius: 2px; 
     border-radius: 2px; 
 }
+
+#ics-calendar-widget li:hover, 
+#ics-calendar-widget li:focus {
+     background: #ff8800; 
+ }
+
+
 /* 
 * Social Share Privacy
 */

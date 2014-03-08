@@ -34,11 +34,11 @@ function theme_options_do_page($tab = '') {
 
 	<div class="wrap">            
             <div class="piratenkleider-optionen">  <!-- begin: .piratenkleider-optionen -->    
-		<?php screen_icon(); echo "<h2>" . wp_get_theme().': ' . __( 'Takelage einstellen', 'piratenkleider' ) . "</h2>"; ?>
+            <?php screen_icon(); echo "<h2>" . wp_get_theme().': ' . __( 'Takelage einstellen', 'piratenkleider' ) . "</h2>"; ?>
 
-		<?php if ( false !== $_REQUEST['settings-updated'] ) : ?>
-		<div class="updated fade"><p><strong><?php _e( 'Optionen wurden gespeichert.', 'piratenkleider' ); ?></strong></p></div>
-		<?php endif; 
+            <?php if ( false !== $_REQUEST['settings-updated'] ) : ?>
+            <div class="updated fade"><p><strong><?php _e( 'Optionen wurden gespeichert.', 'piratenkleider' ); ?></strong></p></div>
+            <?php endif; 
 
         if (isset($_GET['tab'])) {
             $tab = $_GET['tab'];
@@ -60,10 +60,8 @@ function theme_options_do_page($tab = '') {
               }
               echo "\">$tabtitel</a>\n";
         }
-        echo "</h3>\n";
-        ?>
-       
-   
+        echo "</h3>\n";  ?>
+         
                       
         <form method="post" action="options.php">
             <?php settings_fields( 'piratenkleider_options' ); ?>
@@ -295,12 +293,8 @@ function theme_options_do_page($tab = '') {
 				       }
 					echo "<br style=\"clear: left;\">\n"; 
 				    }
-				   
-				   
-                                                                                                                            
                                    				    
-				} elseif ($type=='urlchecklist') {
-				    				    
+				} elseif ($type=='urlchecklist') {				    				    
 				   echo "\t\t\t";                      
                                     foreach ( $liste as $entry => $listdata ) {    
                                         $checked = '';
@@ -332,15 +326,12 @@ function theme_options_do_page($tab = '') {
                                             type="text" name="piratenkleider_theme_options[<?php echo $name?>][<?php echo $entry?>][content]" 
 					    size="80" value="<?php echo $value?>">
 					  </div>
-					 <?php    
-					    
+					 <?php    					    
 				    }
 				    if (isset($label)) {
 					echo "<p>".$label."</p>\n";
 				    }
-                                    echo "<br style=\"clear: left;\">\n";
-
-				    
+                                    echo "<br style=\"clear: left;\">\n";				    
                                 } elseif ($type=='select') {
                                     echo "\t\t\t";
                                     echo "<select name=\"piratenkleider_theme_options[$name]\">\n";
@@ -360,13 +351,60 @@ function theme_options_do_page($tab = '') {
                                         echo '</option>';                                                                                                                                                              
                                         echo "\n";                                            
                                     }  
-                                        echo "\t\t\t</select><br>\n";                                   
-                                        echo "\t\t\t<label for=\"piratenkleider_theme_options[$name]\">$label</label>\n"; 
+                                    echo "\t\t\t</select><br>\n";                                   
+                                    echo "\t\t\t<label for=\"piratenkleider_theme_options[$name]\">$label</label>\n"; 
+                                } elseif ($type=='multiselectlist') {
+                                     echo "\t\t\t";         
+                                    foreach ( $liste as $entry => $listdata ) {    
+                                        $checked = '';
+					$value = '';                                      
+                                         foreach ($options[$name] as $cur) {
+                                             if ($cur==$entry) {
+                                                $checked = "checked=\"checked\""; 
+                                               break;
+                                             }
+                                         }		
+                                         ?>       
+					    <label for="piratenkleider_theme_options[<?php echo $name?>][<?php echo $entry?>]" >                                                
+                                            <input type="checkbox" 
+						   id="piratenkleider_theme_options[<?php echo $name?>][<?php echo $entry?>]"
+						   name="piratenkleider_theme_options[<?php echo $name?>][<?php echo $entry?>]" 
+                                                   value="<?php echo $entry?>" <?php echo $checked; ?>>                                                                                               
+					    <?php echo $liste[$entry] ?>
+					    </label><br>
+					 <?php    					    
+				    }
+				    if (isset($label)) {
+					echo "<p>".$label."</p>\n";
+				    }
+                                 } elseif ($type=='fontselect') {
+                                    echo "\t\t\t";
+                                    echo "<select name=\"piratenkleider_theme_options[$name]\">\n";
+                                    foreach($liste as $i => $value) {   
+                                        echo "\t\t\t\t";
+                                        if ((isset($value['webfont']) && $value['webfont']==1)) {
+                                            echo '<option style="font-size: 1.5em; font-family: '.$i.';" value="'.$i.'"';
+                                        } elseif ($i == 'none') {    
+                                            echo '<option style="font-size: 1.5em;" value="'.$i.'"';
+                                        } else {
+                                            echo '<option style="font-size: 1.5em; font-family: '.$value['family'].';" value="'.$i.'"';                                            
+                                        }
+                                        if ( $i == $options[$name] ) {
+                                            echo ' selected="selected"';
+                                        }                                                                                                                                                                
+                                        echo '>';
+                                        echo $value['title'];
+                                        if ($i != 'none')
+                                            echo ' (ABCIJL abcijl 1234567890 &Auml;&Ouml;&Uuml;&auml;&ouml;&uuml;&szlig; @<>?)';                 
+                                        echo '</option>';                                                                                                                                                              
+                                        echo "\n";                                            
+                                    }  
+                                    echo "\t\t\t</select><br>\n";                                   
+                                    echo "\t\t\t<label for=\"piratenkleider_theme_options[$name]\">$label</label>\n"; 
 
                                 }
-
-                                    echo "\t\t</td>\n";
-                                    echo "\t</tr>\n";
+                                echo "\t\t</td>\n";
+                                echo "\t</tr>\n";
                             }     
 
                             if ((isset($setsection)) && ($setsection!="") && ($type != 'section') && (!isset($parent))) {
@@ -422,7 +460,7 @@ function theme_options_validate( $input ) {
        if ((isset($_GET['tab'])) && (!empty($_GET['tab']))) {
             $tab = $_GET['tab'];
        }
-       if ((empty($tab) && ($input['tab']))) {
+       if ((empty($tab) && (isset($input['tab'])))) {
             $tab = $input['tab'];
        }
 
@@ -434,8 +472,11 @@ function theme_options_validate( $input ) {
             foreach($setoptions['piratenkleider_theme_options'][$tab]['fields'] as $i => $value) {   
                 $name = $i;
 
-                $type = $value['type'];              
-                $default = $value['default'];
+                $type = $value['type'];  
+                $default = '';
+                if (isset($value['default'])) {
+                    $default = $value['default'];
+                }
                 if ($type != "section") {
                     if (isset($input[$name])) {
                         // Wert wurde uebergebnen
@@ -445,7 +486,7 @@ function theme_options_validate( $input ) {
                              $output[$name]  =  wp_filter_nohtml_kses( $input[$name] );
 			} elseif ($type=='email') {
                              $output[$name]  =  sanitize_email( $input[$name] );	     
-                         } elseif ($type=='textarea') {
+                        } elseif ($type=='textarea') {
                              $output[$name]  =  $input[$name] ;     
                         } elseif ($type=='html') {;    
                             $output[$name] = $input[$name];
@@ -455,10 +496,12 @@ function theme_options_validate( $input ) {
                             $output[$name]  =  wp_filter_nohtml_kses( $input[$name] ); 
                         } elseif ($type=='number') {
                             $output[$name]  =  wp_filter_nohtml_kses( $input[$name] ); 
-                        } elseif ($type=='select') {                        
+                        } elseif (($type=='select') || ($type=='fontselect')) {                        
                             $output[$name]  =  wp_filter_nohtml_kses( $input[$name] ); 
                         } elseif (($type=='bildchecklist') || ($type=='bilddirchecklist')) {                            
                             $output[$name]  = $input[$name];
+                        } elseif ($type=='multiselectlist') {   	    			   
+			    $output[$name]  = $input[$name];    
 			} elseif ($type=='urlchecklist') {   	    			   
 			    $output[$name]  = $input[$name];
                         } else {
@@ -480,8 +523,10 @@ function theme_options_validate( $input ) {
                             $output[$name] = 0;
                         } elseif ($type=='file') {
                             $output[$name] = '';    
-                        } elseif ($type=='select') {                        
+                        } elseif (($type=='select') || ($type=='fontselect')) {                        
                             $output[$name] = "";
+                        } elseif ($type=='multiselectlist') {
+                             $output[$name] = array();
                         }
                     }
                 }
@@ -510,19 +555,18 @@ function theme_options_validate( $input ) {
     }  
 
    
-    if (($input['slider-alternativesrc'] != '') && (strlen(trim($input['slider-alternativesrc']))>10)) {            
+    if (isset($input['slider-alternativesrc']) && ($input['slider-alternativesrc'] != '') 
+            && (strlen(trim($input['slider-alternativesrc']))>10)) {            
          $input['slider-defaultbildsrc'] = $input['slider-alternativesrc'];
     }
-    if (($input['artikelbild-url'] != '') && (strlen(trim($input['artikelbild-url']))>10)) {          
+    if (isset($input['artikelbild-url']) && ($input['artikelbild-url'] != '') 
+            && (strlen(trim($input['artikelbild-url']))>10)) {          
          $input['artikelbild-src'] = $input['artikelbild-url'];
-    }
-    
-    if (($input['seitenbild-url'] != '') && (strlen(trim($input['seitenbild-url']))>10)) {            
+    }    
+    if (isset($input['seitenbild-url']) && ($input['seitenbild-url'] != '') 
+            && (strlen(trim($input['seitenbild-url']))>10)) {            
          $input['seiten-defaultbildsrc'] = $input['seitenbild-url'];
     }
-
-  
-    
 	
    return $output;
 

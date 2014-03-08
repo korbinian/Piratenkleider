@@ -1,9 +1,11 @@
+<?php
+/*
+Template Name: Search Page
+*/
+?>
 <?php get_header();    
-    global $options;  
+  global $options;  
   global $wp_query;
-      $cat_obj = $wp_query->get_queried_object();
-      $thisCat = $cat_obj->term_id;
-      $thisCatName =  get_cat_name($thisCat);    
 ?> 
 <div class="section content" id="main-content">
   <div class="row">
@@ -25,7 +27,7 @@
 		    echo '<div class="content-header">';
 		}
 		?>    		    		    		        
-		   <h1 class="post-title"><span><?php printf( __( 'Suchergebnisse f&uuml;r %s', 'piratenkleider' ), '' .get_search_query() . '' ); ?></span></h1>
+		   <h1 class="post-title"><span><?php printf( __( 'Suchergebnisse f&uuml;r "%s"', 'piratenkleider' ), '' .get_search_query() . '' ); ?></span></h1>
 		   <div class="symbolbild"><img src="<?php echo $image_url ?>" alt="">		  
 		   </div>
 		</div>  	
@@ -34,81 +36,81 @@
       <div class="skin">
 	  
 	  <?php if (!(isset($image_url) && (strlen($image_url)>4))) { ?>
-	    <h1 class="post-title"><span><?php printf( __( 'Suchergebnisse f&uuml;r %s', 'piratenkleider' ), '' .get_search_query() . '' ); ?></span></h1>
+	    <h1 class="post-title"><span><?php printf( __( 'Suchergebnisse f&uuml;r "%s"', 'piratenkleider' ), '' .get_search_query() . '' ); ?></span></h1>
 	<?php }  
 	
-	
-	    if ( have_posts() ) : ?>
-                <?php
-                /* Run the loop for the search to output the results.
-                 * If you want to overload this in a child theme then include a file
-                 * called loop-search.php and that will be used instead.
-                 */
+        $query_args = explode("&", $query_string);
+        $search_query = array(
+                   'post_status' => 'publish',
+                   'posts_per_page' => $options['suche-treffer_pro_seite'],
+                   'ignore_sticky_posts'=> 1
+            
+        );
 
+        foreach($query_args as $key => $string) {
+            $query_split = explode("=", $string);
+            $search_query[$query_split[0]] = urldecode($query_split[1]);
+        } // foreach
+        
 
-      $i = 0; 
-      $col = 0; 
-      
-      $numentries = $options['category-num-article-fullwidth'] + $options['category-num-article-halfwidth']; 
-      $col_count = 3; 
-      $cols = array();
+        $search = new WP_Query($search_query);
+        $total_results = $search->found_posts;
+        
+        
+	if ($search->have_posts() ) { 
+          $out = $output = '';  
+          while ($search->have_posts()) : $search->the_post();
+              $out = piratenkleider_search_teaser($options['suche-excerptlength'],0,1,$s);        
+              if (isset($out)) {
+                $output .= $out;
+              }
+          endwhile;
+
+          if (isset($output)) {   
+              get_search_form();
+
+              echo "<p>";
+              if ($total_results>1) {
+                printf( __( 'Es wurden %s Treffer gefunden.', 'piratenkleider' ), $total_results );
+              } else {
+                  _e('Es wurde ein Treffer gefunden.','piratenkleider');
+              }
+              echo "</p>\n";         
+              echo '<ul class="searchresults">';
+              echo $output;
+              echo "</ul>";
+          }  
      
-      global $query_string;
-      query_posts( $query_string . '&cat=$thisCat' );
- 
-      while (have_posts() && $i<$numentries) : the_post();
-      $i++;
-      ob_start();      
-      if (( isset($options['category-num-article-fullwidth']))
-                && ($options['category-num-article-fullwidth']>=$i )) {
-		 piratenkleider_post_teaser($options['category-teaser-titleup'],$options['category-teaser-datebox'],$options['category-teaser-dateline'],$options['category-teaser-maxlength'],$options['teaser-thumbnail_fallback'],$options['category-teaser-floating']);
-      } else {
-		 piratenkleider_post_teaser($options['category-teaser-titleup-halfwidth'],$options['category-teaser-datebox-halfwidth'],$options['category-teaser-dateline-halfwidth'],$options['category-teaser-maxlength-halfwidth'],$options['teaser-thumbnail_fallback'],$options['category-teaser-floating-halfwidth']);  
-      }    
-      $output = ob_get_contents();
-      ob_end_clean();
-      if (isset($output)) {
-        $cols[$col++] = $output;
-      }
-      endwhile;
-      ?>
-	  
-	  
-	  
-      <div class="columns">
-        <?php
-        $z=1;
-        foreach($cols as $key => $col) {
-            if (( isset($options['category-num-article-fullwidth']))
-                && ($options['category-num-article-fullwidth']>$key )) {
-                    echo $col;                              
-                } else {         
-                     if (( isset($options['category-num-article-fullwidth']))
-                            && ($options['category-num-article-fullwidth']==$key )
-                            && ($options['category-num-article-fullwidth']>0) ) {
-                         echo '<hr>';
-                        } 
-                    echo '<div class="column'.$z.'">' . $col . '</div>';                            
-                    $z++;
-                    if ($z>2) {
-                        $z=1;
-                        echo '<hr style="clear: both;">';
+          
+          
+          
+         if (  $wp_query->max_num_pages > 1 ) { ?>
+                <div class="archiv-nav">
+                    <ul>
+                        
+                    <?php 
+                    $page = (int)get_query_var('paged');
+                    if ($page>1) {
+                        echo '<li class="prev">';
+                        echo '<a href="'.get_pagenum_link(1).'">'.__( '&larr; Erste Seite', 'piratenkleider' ).'</a>';
+                        echo "</li>\n";
                     }
-                }            
-        }
-        ?>     
-      </div>
-
-                   <?php if (  $wp_query->max_num_pages > 1 ) : ?>
-                        <div class="archiv-nav"><p>
-                            <?php next_posts_link( __( '&larr; &Auml;ltere Beitr&auml;ge', 'piratenkleider' ) ); ?>
-                            <?php previous_posts_link( __( 'Neuere Beitr&auml;ge &rarr;', 'piratenkleider' ) ); ?>
-                        </p></div> 
-                <?php endif; ?>                      
-                
-                
-
-             <?php else : ?>
+                    echo '<li class="pages">';
+                    piratenkleider_paging_bar($total_results,$options['suche-treffer_pro_seite']);
+                    echo "</li>\n";   
+                    $last = intval($total_results/$options['suche-treffer_pro_seite']);
+                    if ($page < $last) {
+                        
+                        echo '<li class="next">';
+                        echo '<a href="'.get_pagenum_link($last).'">'.__( 'Letzte Seite &rarr;', 'piratenkleider' ).'</a>';
+                        echo "</li>\n";
+                    }
+                    ?>                                
+                </ul></div> 
+         <?php 
+         }                      
+      } else { 
+          ?>
                         <h2><?php _e("Nichts gefunden", 'piratenkleider'); ?></h2>
                         <p>
                             <?php _e("Es konnten keine Seiten oder Artikel gefunden werden, die zu der Sucheingabe passten. Bitte versuchen Sie es nochmal mit einer  anderen Suche.", 'piratenkleider'); ?>
@@ -125,13 +127,16 @@
                             <h3><?php _e("Archiv nach Monaten", 'piratenkleider'); ?></h3>                           
                             <?php wp_get_archives('type=monthly'); ?>               
                         </div>
-                                                                        
+                        <?php 
+                        $posttags = get_the_tags();
+                        if ($posttags) { ?>                          
                          <div  class="widget">
                             <h3><?php _e("Artikel nach Schlagworten", 'piratenkleider'); ?></h3>    
                             <div class="tagcloud">
                              <?php wp_tag_cloud(array('format'=> 'list','smallest'  => 12, 'largest'   => 28)); ?>
                              </div>
                         </div>
+                        <?php } ?>
                         <div class="widget">
                         <h3><?php _e("&Uuml;bersicht aller Kategorien", 'piratenkleider'); ?></h3>
                         <ul>                            
@@ -140,7 +145,7 @@
                          </div>
                         
                         
-             <?php endif; ?>
+            <?php } ?>
 
         </div>
     </div>

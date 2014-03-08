@@ -7,8 +7,6 @@
 */
 
 
-@media screen, projection {
-  
 
     .content-primary a[href ^="mailto:"] {
         background: url(../images/links/mail.gif) top right no-repeat;
@@ -43,7 +41,7 @@
     }
     .content-primary a[href $=".ogm"]:after, .content-primary a[href $=".OGM"]:after,
     .content-primary a[href $=".avi"]:after, .content-primary a[href $=".AVI"]:after,
-    .content-primary a[href $=".mpeg"]:after,.content-primary  a[href $=".MPEG"]:after,
+    .content-primary a[href $=".mpeg"]:after,.content-primary a[href $=".MPEG"]:after,
     .content-primary a[href $=".mpg"]:after, .content-primary a[href $=".MPG"]:after {
         content: " (Video) ";
     }
@@ -147,4 +145,3 @@
             padding-right: 0;
     }
 
-}

@@ -1,11 +1,12 @@
 <?php get_header();    
   global $options;  
   global $wp_query;
-      $cat_obj = $wp_query->get_queried_object();
-      $thisCat = $cat_obj->term_id;
-      $thisCatName =  get_cat_name($thisCat);
-       $image_url = '';	
-  if (($options['category-teaser']) || (($options['category-startpageview']) && ( $options['slider-aktiv'] == "1" ))) { 
+  
+    $cat_obj = $wp_query->get_queried_object();
+    $thisCat = $cat_obj->term_id;
+    $thisCatName =  get_cat_name($thisCat); 
+    $image_url = '';	
+  if ($options['category-teaser']) { 
     echo '<div class="section teaser"><div class="row">';   
     get_sidebar( 'teaser' );
     echo '</div></div>';    
@@ -31,7 +32,7 @@
                <h1 class="post-title"><span><?php printf( __( 'Kategorie %s', 'piratenkleider' ), '' . single_cat_title( '', false ) . '' ); ?></span></h1>
                <div class="symbolbild"><img src="<?php echo $image_url ?>" alt=""></div>	 	
                <?php                  
-              if (($options['category-teaser']) || (($options['category-startpageview']) && ( $options['slider-aktiv'] == "1" ))) { 	  
+              if ($options['category-teaser'])  { 	  
                     echo '<h1 class="skip">'.__("Aktuelle Artikel", 'piratenkleider').' ';
                     printf( __( 'Kategorie %s', 'piratenkleider' ), '' . single_cat_title( '', false ) . '' );
                     echo '</h1>';	    	     
@@ -47,20 +48,21 @@
       $numentries = $options['category-num-article-fullwidth'] + $options['category-num-article-halfwidth']; 
       $col_count = 3; 
       $cols = array();
-     
-      global $query_string;
-      query_posts( $query_string . '&cat=$thisCat' );
+
+      $thisquery =  '&cat='.$thisCat.'&posts_per_page='.$numentries;
+      query_posts( $thisquery  );
+
+      
       while (have_posts() && $i<$numentries) : the_post();
       $i++;
-      ob_start();      
+      $output = '';    
       if (( isset($options['category-num-article-fullwidth']))
                 && ($options['category-num-article-fullwidth']>=$i )) {
-		 piratenkleider_post_teaser($options['category-teaser-titleup'],$options['category-teaser-datebox'],$options['category-teaser-dateline'],$options['category-teaser-maxlength'],$options['teaser-thumbnail_fallback'],$options['category-teaser-floating']);
+		$output =  piratenkleider_post_teaser($options['category-teaser-titleup'],$options['category-teaser-datebox'],$options['category-teaser-dateline'],$options['category-teaser-maxlength'],$options['teaser-thumbnail_fallback'],$options['category-teaser-floating']);
       } else {
-		 piratenkleider_post_teaser($options['category-teaser-titleup-halfwidth'],$options['category-teaser-datebox-halfwidth'],$options['category-teaser-dateline-halfwidth'],$options['category-teaser-maxlength-halfwidth'],$options['teaser-thumbnail_fallback'],$options['category-teaser-floating-halfwidth']);  
+		$output =  piratenkleider_post_teaser($options['category-teaser-titleup-halfwidth'],$options['category-teaser-datebox-halfwidth'],$options['category-teaser-dateline-halfwidth'],$options['category-teaser-maxlength-halfwidth'],$options['teaser-thumbnail_fallback'],$options['category-teaser-floating-halfwidth']);  
       }    
-      $output = ob_get_contents();
-      ob_end_clean();
+
       if (isset($output)) {
         $cols[$col++] = $output;
       }

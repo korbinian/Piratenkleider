@@ -5,7 +5,7 @@
  **/ 
 
 $defaultoptions = array(
-    'js-version'                    => '2.21',
+    'js-version'                    => '3.0',
     'content-width'                 => 665,
     'yt-content-width'              => 665,
     'yt-content-height'             => 500,
@@ -26,16 +26,14 @@ $defaultoptions = array(
     'plakate-url'		    => 'http://www.piratenpartei.de',
     'plakate-altadressen'	    => '',
     'plakate-src'		    => array(),
+    'sidebar-steckbrief-maxwidth'   => 290,
+    'sidebar-steckbrief-maxheight'  => 290,
     'default-fontset-file'          => 'font-bebas.css',
     'src-jquery'                    => get_template_directory_uri(). "/js/jquery.min.js",
     'src-flexslider'                => get_template_directory_uri(). "/js/jquery.flexslider-min.js",
     'src-layoutjs'                  => get_template_directory_uri(). "/js/layout.min.js",
     'src-comment-reply'             => get_template_directory_uri(). "/js/comment-reply.js",
-    'src-jplayer'		    => get_template_directory_uri(). "/js/jquery.jplayer.min.js",
-    'src-transform2d'		    => get_template_directory_uri(). "/js/jquery.transform2d.js",
-    'src-grab'			    => get_template_directory_uri(). "/js/jquery.grab.js",
-    'src-csstransforms'		    => get_template_directory_uri(). "/js/mod.csstransforms.min.js",
-    'src-circleplayer'		    => get_template_directory_uri(). "/js/circle.player.js",
+
     'src-default-symbolbild'        => get_template_directory_uri() .'/images/default-vorlage.jpg',
     'src-default-symbolbild-404'    => get_template_directory_uri() .'/images/default-404.jpg',
     'src-default-symbolbild-category'   => get_template_directory_uri() .'/images/default-vorlage.jpg',
@@ -47,8 +45,6 @@ $defaultoptions = array(
     'slider-defaultbildsrc'	    => get_template_directory_uri() .'/images/default-vorlage.jpg',  
     
     'src-linkicons-css'		    => get_template_directory_uri() .'/css/basemod_linkicons.css',     
-    'src-basemod_mediaqueries_allparts'	=> get_template_directory_uri() .'/css/basemod_mediaqueries_allparts.css', 
-    'src-circleplayer_css'	    => get_template_directory_uri() .'/css/circle.player.css', 
     'src-basemod_sidebarbottom'	    => get_template_directory_uri().'/css/basemod_sidebarbottom.css',
     'dir-default-plakate'	    => '/plakate',
     'login_errors'		    => 1,
@@ -66,23 +62,20 @@ $defaultoptions = array(
     'aktiv-suche'                   => 1,   
     'slider-defaultwerbeplakate'    => 1,
     'slider-numberarticle'          => 3,
-    'slider-animationType'          => 'slide',
+    'slider-animationType'          => 'fade',
     'slider-Direction'              => 'horizontal',
     'slider-slideshowSpeed'         => 8000,
     'slider-animationDuration'      => 600,
     'slider-alternativesrc'	    => '',
-    
-    'defaultwerbesticker'           => 1,
-    'aktiv-autoren'                 => 1,
-    'newsletter'                    => 0,
+    'slider-catid'                  => 1,
+    'defaultwerbesticker'                   => 1,
+    'aktiv-autoren'                         => 1,
+    'newsletter'                            => 1,
     'alle-socialmediabuttons'               => 1,
-    'aktiv-circleplayer'                    => 0,
     'aktiv-linkicons'			    => 1,
     'aktiv-linkmenu'                        => 1,
     'aktiv-startseite-kategorien'           => 1,
     'aktiv-startseite-tags'                 => 1,
-    'aktiv-startseite-alteartikel'          => 1,
-    'aktiv-startseite-alteartikel-num'      => 5,
     'aktiv-avatar'                          => 0,
     'aktiv-dynamic-sidebar'                 => 0,
     'aktiv-autokeywords'		    => 0,
@@ -94,6 +87,33 @@ $defaultoptions = array(
     'zeigerechtsvorschriften'               => 1,
     
 
+    'artikelstream-type'		    => 0,
+    /* 0: Default: Alle Artikel + Linktipps
+    * 1: Alle Artikel, ohne LInktipps
+    * 2: Alle Artikel aus Kategorien bis auf definierte Cats und ohne Linktipps
+    */
+    'artikelstream-exclusive-catliste'	    => array(), 
+    /* Ids der Categorien */
+    'artikelstream-maxnum-main'             =>  5,
+    'artikelstream-maxnum-second'	    =>  1,
+    'artikelstream-maxnum-linktipps'	    =>  1,
+    'artikelstream-title-main'		    =>  __("Aktuelle Artikel", 'piratenkleider'),
+    'artikelstream-title-maincontinuelist'  =>  __("Weitere Artikel", 'piratenkleider'),
+    'artikelstream-title-linktipps'	    =>  __("Leseempfehlungen", 'piratenkleider'),
+    'artikelstream-title-linktippcontinuelist'=>  __("Weitere Leseempfehlungen", 'piratenkleider'),
+    'artikelstream-title-second'	    =>  __("Sonstige Meldungen", 'piratenkleider'),
+    'artikelstream-title-secondcontinuelist'=>  __("Weitere Meldungen", 'piratenkleider'),
+    'artikelstream-show-second'		    => 1,
+    'artikelstream-show-linktipps'	    => 1,
+    'artikelstream-nextnum-main'	    => 5,
+    'artikelstream-nextnum-second'	    => 5,
+    'artikelstream-nextnum-linktipps'	    => 5,    
+    'artikelstream-numfullwidth-main'       => 1,
+    'artikelstream-numfullwidth-second'     => 1,
+    
+    'categoryindex-teaserlength'            => 170,
+    'categoryindex-numlinklist'		    => 5,
+    
     'category-teaser'			    => 1,
     'category-num-article-fullwidth'	    => 10,
     'category-num-article-halfwidth'	    => 0,
@@ -113,22 +133,21 @@ $defaultoptions = array(
     'category-teaser-titleup-halfwidth'	    => 1, /* Titles up */ 
     'category-teaser-datebox-halfwidth'	    => 4, 
     'category-teaser-floating-halfwidth'    => 1,
-    'category-teaser-dateline-halfwidth'    => 1, /* 1 = show Date on line up of the text if no datebox */    
+    'category-teaser-dateline-halfwidth'    => 2, /* 1 = show Date on line up of the text if no datebox */    
 
-    'num-article-startpage-fullwidth'       => 1,
-    'num-article-startpage-halfwidth'       => 4,
     'teaser-thumbnail_width'		    => 120,
     'teaser-thumbnail_height'		    => 120,
     'teaser-thumbnail_crop'		    => 1,
     'src-teaser-thumbnail_default'	    => get_template_directory_uri() .'/images/default-teaserthumb.gif',
     'teaser-thumbnail_fallback'		    => 1,
-    'teaser-showcredits'                    => 1,
+    
     'teaser-type'			    => 'big',    
     'teaser-title-maxlength'		    => 50,
     'teaser-subtitle'			    => __( 'Topthema', 'piratenkleider' ),
     'teaser-title-words'		    => 7,
 
     'teaser_maxlength'			    => 500,
+    'teaser-showcredits'                    => 1,
     'teaser-titleup'			    => 1, /* Titles up */ 
     'teaser-datebox'			    => 4,
     'teaser-floating'			    => 0,
@@ -141,14 +160,11 @@ $defaultoptions = array(
     
     
     'url-newsletteranmeldung'		    => 'https://service.piratenpartei.de/subscribe/newsletter',
-    'css-default-header-height'     => 225,
-    'css-default-branding-padding-top'  => 40,
-    'aktiv-mediaqueries-allparts'   => 0,
     'anonymize-user'                => 0,
     'anonymize-user-commententries' => 0,
-    'aktiv-commentreplylink'        => 0,
+    'aktiv-commentreplylink'        => 1,
     'default_comment_notes_before'  => '<p class="comment-notes">'.__( 'Deine E-Mail-Adresse wird nicht ver&ouml;ffentlicht. Erforderliche Felder sind markiert <span class="required">*</span>', 'piratenkleider' ). '</p>',
-    'comments_disclaimer'           => __('Hinweis: Durch Bereitstellung der Kommentierungsfunktion macht sich die Piratenpartei nicht die in den Kommentaren geschriebenen Meinungen zu eigen. Bei Fragen oder Beschwerden zu Kommentaren wenden Sie sich bitte über das Kontaktformular an das Webteam.', 'piratenkleider' ), 
+    'comments_disclaimer'           => __('Hinweis: Durch Bereitstellung der Kommentierungsfunktion macht sich die Piratenpartei nicht die in den Kommentaren geschriebenen Meinungen zu eigen. Bei Fragen oder Beschwerden zu Kommentaren wenden Sie sich bitte &uuml;ber das Kontaktformular an das Webteam. <a href="http://wiki.piratenpartei.de/Servicegruppen/Webseite/Moderation">Hinweise zur Moderation</a> von Kommentaren finden sich auf der Wikiseite der SG Webseite.', 'piratenkleider' ),
     'disclaimer_post'               => '',
     'feed_cache_lifetime'           => 14400,
     'use_wp_feed_defaults'          => 1,
@@ -176,14 +192,11 @@ $defaultoptions = array(
     'stickerlink3-url'              => '',
     'default_footerlink_key'		    => 'International (mit Flaggen)',
     'default_footerlink_show'		    => 1,    
-    'circleplayer-require-mp3fallback'	    => 1,
-
     'default_text_title_home_backlink'	    => __('Zur&uuml;ck zur Startseite','piratenkleider' ), 
     'yt-alternativeembed'		    => 1,
         /* YouTube Videos ueber eigenen Embedcode gestalten und an youtbe-nocookie lenken */
     'yt-norel'				    => 1,
 	/* Keine weiteren Videos vorschlagen */
-    'aktiv-wombat'			    => 0,
     'excerpt_allowtags'			    => '<br>,<br />',        
     'zeige_breadcrump'			    => 1,
     'breadcrumb_delimiter'		    => ' / ',    
@@ -203,8 +216,17 @@ $defaultoptions = array(
     'linktipps-subtitlepos'		    => 0, // 0 = oben, vor Titel, 1 = oben nach titel, 2 = unten
     
     'stylefile-position'		    => 0,
-    'aktiv-stylefile'			    => 0,    
-    'img-meta-credits'                     => '',  
+    'aktiv-stylefile'			    => 0,
+    'fonts-headers'                         => 'BebasNeue',
+    'fonts-menuheaders'                     => 'BebasNeue',
+    'fonts-content'                         => 'DroidSans',
+    'img-meta-credits'                      => '',
+    'feed-overwriteauthorstring'            => '',
+    'position_sidebarbottom'                => 0,
+    'suche-treffer_pro_seite'               => 10,
+    'suche-excerptlength'                   => 300,
+    
+    'meta-maxlengthvalue'                   => 140,
 );
 
 
@@ -300,8 +322,7 @@ $default_socialmedia_liste = array(
 /* 
  * Default Links for Topmenu , can be overwritten bei widget  
  */
-$default_toplink_liste = array(
-    
+$default_toplink_liste = array(    
     'link1'  => array(
 	'name'	    => __('Wiki', 'piratenkleider' ),
 	'content'  => 'https://wiki.piratenpartei.de',
@@ -310,7 +331,7 @@ $default_toplink_liste = array(
     'link2'  => array(
 	'name'	    => __('Liquid Feedback', 'piratenkleider' ),
 	'content'  => 'https://lqfb.piratenpartei.de',
-	'active'    => 1,
+	'active'    => 0,
     ),
     'link3'  => array(
 	'name'	    => __('Forum', 'piratenkleider' ),
@@ -335,115 +356,47 @@ $default_toplink_liste = array(
     'link7'  => array(
 	'name'	    => __('Shop', 'piratenkleider' ),
 	'content'  => 'https://pshop.piratenpartei.de',
+	'active'    => 0,
+    ),  
+     'link8'  => array(
+	'name'	    => __('Pirateninfo', 'piratenkleider' ),
+	'content'  => 'http://www.pirateninfo.de',
 	'active'    => 1,
-    ),   
-     
-    
+    ),  
+);
+
+/* 
+ * Default Links for laws in imprint 
+ */
+$default_imprint_laws_list = array(    
+    'link1'  => array(
+	'name'	    => __('Gesetz &uuml;ber politische Parteien (Parteiengesetz)', 'piratenkleider' ),
+	'content'  => 'http://www.bundestag.de/bundestag/aufgaben/rechtsgrundlagen/pg_pdf.pdf',
+	'active'    => 1,
+    ),
+    'link2'  => array(
+	'name'	    => __('Satzung der Piratenpartei Deutschland', 'piratenkleider' ),
+	'content'  => 'http://wiki.piratenpartei.de/Satzung',
+	'active'    => 1,
+    ),
+    'link3'  => array(
+	'name'	    => __('Jeweilige Landessatzung  der Piratenpartei Deutschland', 'piratenkleider' ),
+	'content'  => 'http://wiki.piratenpartei.de/Satzungen',
+	'active'    => 1,
+    ), 
 );
 
 /**
  * Liste der Defaultbilder fuer Seiten und Slider
  */
 $defaultbilder_liste = array(
-	'0' => array(
-		'src' =>	get_template_directory_uri().'/images/defaultbild-grundgesetz.jpg',
-		'label' => __( 'Plakat Grundgesetz', 'piratenkleider' )
-	),
-	'1' => array(
-		'src' =>	get_template_directory_uri().'/images/defaultbild-medien.jpg',
-		'label' => __( 'Medien', 'piratenkleider' )
-	),
-	'2' => array(
-		'src' =>	get_template_directory_uri().'/images/defaultbild-mitmachen.jpg',
-		'label' => __( 'Mitmachen', 'piratenkleider' )
-	),
-        '3' => array(
-		'src' =>	get_template_directory_uri().'/images/defaultbild-piraten.jpg',
-		'label' => __( 'Piraten', 'piratenkleider' )
-	),
-        '4' => array(
-		'src' =>	get_template_directory_uri().'/images/defaultbild-plakate.jpg',
-		'label' => __( 'Plakate', 'piratenkleider' )
-	),
-        '5' => array(
-		'src' =>	get_template_directory_uri().'/images/defaultbild-presse.jpg',
-		'label' => __( 'Presse', 'piratenkleider' )
-	),
-        '6' => array(
-		'src' =>	get_template_directory_uri().'/images/defaultbild-protest.jpg',
-		'label' => __( 'Protest', 'piratenkleider' )
-	),
-         '7' => array(
-		'src' =>	get_template_directory_uri().'/images/defaultbild-datenschutz.jpg',
-		'label' => __( 'Datenschutz', 'piratenkleider' )
-	),
-        '8' => array(
-		'src' =>	get_template_directory_uri().'/images/defaultbild-aufzeichnung.jpg',
-		'label' => __( 'Aufzeichnung', 'piratenkleider' )
-	),
-        '9' => array(
-		'src' =>	get_template_directory_uri().'/images/defaultbild-kampagne.jpg',
-		'label' => __( 'Kampagne', 'piratenkleider' )
-	),
-        '10' => array(
-		'src' =>	get_template_directory_uri().'/images/defaultbild-kirche.jpg',
-		'label' => __( 'Kirche', 'piratenkleider' )
-	),
-	'11' => array(
-		'src' =>	get_template_directory_uri().'/images/defaultbild-wiederstand.jpg',
-		'label' => __( 'Wiederstand', 'piratenkleider' )
-	), 
-        '12'=> array(
-		'src' =>	get_template_directory_uri().'/images/defaultbild-licht.jpg',
-		'label' => __( 'Licht', 'piratenkleider' )
-	),
-        '13'=> array(
-		'src' =>	get_template_directory_uri().'/images/defaultbild-laptop.jpg',
-		'label' => __( 'Laptop', 'piratenkleider' )
-	),
-        '14' => array(
-		'src' =>	get_template_directory_uri().'/images/defaultbild-netzwerk.jpg',
-		'label' => __( 'Netzwerk / Server', 'piratenkleider' )
-	), 
-	'15' => array(
-		'src' =>	get_template_directory_uri().'/images/defaultbild-piraten2.jpg',
-		'label' => __( 'Piraten 2', 'piratenkleider' )
-	), 
-	'16' => array(
-		'src' =>	get_template_directory_uri().'/images/defaultbild-piraten3.jpg',
-		'label' => __( 'Piraten 3', 'piratenkleider' )
-	), 
-	'17' => array(
-		'src' =>	get_template_directory_uri().'/images/defaultbild-fahne.jpg',
-		'label' => __( 'Piratenfahne', 'piratenkleider' )
-	), 
-	'18' => array(
-		'src' =>	get_template_directory_uri().'/images/defaultbild-server.jpg',
-		'label' => __( 'Server 1', 'piratenkleider' )
-	), 
-	'19' => array(
-		'src' =>	get_template_directory_uri().'/images/defaultbild-server2.jpg',
-		'label' => __( 'Server 2', 'piratenkleider' )
-	), 
-        '20' => array(
-		'src' =>	get_template_directory_uri().'/images/default-orange.jpg',
-		'label' => __( 'Orange SG Gestaltung BTW13', 'piratenkleider' )
-	), 
-	'21' => array(
-		'src' =>	get_template_directory_uri().'/images/default-blau.jpg',
-		'label' => __( 'Blau SG Gestaltung BTW13', 'piratenkleider' )
-	),
-	'22'=> array(
+	'0'=> array(
 		'src' =>	get_template_directory_uri().'/images/default-vorlage.jpg',
 		'label' => __( 'Default', 'piratenkleider' )
 	),
-	'23'=> array(
+	'1'=> array(
 		'src' =>	get_template_directory_uri().'/images/defaultbild-wikinger.jpg',
 		'label' => __( 'Wikinger', 'piratenkleider' )
-	),
-        '24'=> array(
-		'src' =>	get_template_directory_uri().'/images/defaultbild-aufregung.jpg',
-		'label' => __( 'Aufregung', 'piratenkleider' )
 	),
 );
 
@@ -454,8 +407,7 @@ $defaultbilder_liste = array(
  * Default color modifications for standard css style
  */
 $default_colorstyles = array(
-    ''  =>  __('Default Stylesheet', 'piratenkleider' ),
-    'colors_de.css' => __('Deutschland (Orange)', 'piratenkleider' ),
+    '-'  =>  __('Default Stylesheet', 'piratenkleider' ),
     'colors_at.css' => __( '&Ouml;sterreich (Violett)', 'piratenkleider' ),
     'colors_lu.css' => __( 'Luxemburg (Violett)', 'piratenkleider' ),
     'colors_hu.css' => __( 'Ungarn (Violett)', 'piratenkleider' ),
@@ -464,17 +416,62 @@ $default_colorstyles = array(
 
  );
           
-/*
- * Default font modifications for standard css style
- */
-$default_fontstyles = array(
-    'font-bebas.css'	=> __( 'Bebas Neue', 'piratenkleider' ),
-    'font-droid.css'	=> __( 'Droid Sans', 'piratenkleider' ),
-    'font-awesome.css'	=> __( 'Awesome', 'piratenkleider' ),
-    'font-bebas-awesome.css'	=> __( 'Bebas &amp; Awesome', 'piratenkleider' ),
-    'font-standard.css'	=> __( 'Helvetica, Arial, sans-serif', 'piratenkleider' ),
 
- );
+
+$default_fonts = array(
+    'none'=> array(
+        'title' => __( 'Keine Schriftart setzen (Browserdefault oder CSS-Settings nutzen)', 'piratenkleider' ),
+        'family' => '',
+    ),      
+    'serifdefault' => array(
+        'title' => __( 'Georgia, Times, Calibri, serif', 'piratenkleider' ),
+        'family' => 'Georgia, Times, Calibri, serif',
+    ),       
+    'sansserifdefault' => array(
+        'title' => __( 'Helvetica, Verdana, Arial, sans-serif', 'piratenkleider' ),
+        'family' => 'Helvetica, Verdana, Arial, sans-serif',
+        'comments'  =>  __( 'Standard serifenlose Schrift', 'piratenkleider' ),
+    ),  
+    'BebasNeue' => array(
+        'title' => __( 'Bebas Neue', 'piratenkleider' ),
+        'comments'  => '',
+        'webfont'   => 1,
+        'ttf'   => '/fonts/BebasNeue-webfont.ttf',
+        'woff'   => '/fonts/BebasNeue-webfont.woff',
+    ),
+    'Awesome' => array(
+        'title' => __( 'Awesome', 'piratenkleider' ),
+        'comments'  => '',
+        'webfont'   => 1,
+        'ttf'   => '/fonts/fontawesome-webfont.ttf',
+        'woff'   => '/fonts/fontawesome-webfont.woff',
+    ),
+    'DroidSans' => array(
+        'title' => __( 'Droid Sans', 'piratenkleider' ),
+        'comments'  => '',
+        'webfont'   => 1,
+        'eot'   => '/fonts/DroidSans.eot',
+        'ttf'   => '/fonts/DroidSans.ttf',
+    ),    
+    'LinLibertine' => array(
+        'title' => __( 'Libertine', 'piratenkleider' ),
+        'comments'  => '',        
+        'webfont'   => 1,
+        'woff'   => '/fonts/LinLibertine_R.woff',
+    ), 
+    'PoliticsHead' => array(
+        'title' => __( 'PoliticsHead', 'piratenkleider' ),
+        'comments'  => '',        
+        'webfont'   => 1,
+        'woff'   => '/fonts/PoliticsHeadv1_9.woff',
+        'eot'   => '/fonts/PoliticsHeadv1_9.ttf',
+    ), 
+    'monospace' => array(
+        'title' => __( '"Courier New", Courier, monospace', 'piratenkleider' ),
+        'family' => '"Courier New", Courier, monospace',
+    ),    
+      
+);
 
 /*
  * Default font modifications for standard css style
@@ -483,6 +480,7 @@ $default_alternativestyles = array(
     'style.css'	    => __( 'Default Piratenkleider', 'piratenkleider' ),
     'sample.css'    => __( 'Leeres Beispiel-CSS', 'piratenkleider' ),
     'scapegoat.css' => __( 'Scapegoat-Adaption (1.0)', 'piratenkleider' ),
+    'flaschenpost.css' => __( 'Design Flaschenpost 2013', 'piratenkleider' ),
  );
 
 /*
@@ -520,7 +518,6 @@ $default_alternativestyles = array(
               __('Australien', 'piratenkleider' ) => 'http://pirateparty.org.au/',
               __('Belgien', 'piratenkleider' ) => 'http://pirateparty.be/',
               __('Brasilien', 'piratenkleider' ) => 'http://www.partidopirata.org/',
-              __('Bulgarien', 'piratenkleider' ) => 'http://piratskapartia.bg/',
               __('Chile', 'piratenkleider' ) => 'http://www.partidopirata.cl/',
               __('D&auml;nemark', 'piratenkleider' ) => 'http://piratpartiet.dk/',
               __('Deutschland', 'piratenkleider' ) => 'http://www.piratenpartei.de/', 
@@ -539,7 +536,6 @@ $default_alternativestyles = array(
               __('Lettland', 'piratenkleider' ) => 'http://piratupartija.lv/',
               __('Litauen', 'piratenkleider' ) => 'http://piratupartija.lt/',
               __('Luxemburg', 'piratenkleider' ) => 'http://www.piratepartei.lu/',
-              __('Marokko', 'piratenkleider' ) => 'http://partipirate.ma/',
               __('Mexiko', 'piratenkleider' ) => 'http://www.partidopiratamexicano.org/',
              __('Neuseeland', 'piratenkleider' ) => 'http://pirateparty.org.nz/',
              __('Niederlande', 'piratenkleider' ) => 'http://www.piratenpartij.nl/',
@@ -547,7 +543,7 @@ $default_alternativestyles = array(
              __('Peru', 'piratenkleider' ) => 'http://wiki.freeculture.org/Pirata',
              __('Polen', 'piratenkleider' ) => 'http://polskapartiapiratow.pl/',
              __('Portugal', 'piratenkleider' ) => 'http://www.partidopiratapt.eu/',
-             __('Rum&auml;nien', 'piratenkleider' ) => 'http://www.partidulpiratilor.ro/',
+             __('Rum&auml;nien', 'piratenkleider' ) => 'http://www.partidulpirat.ro/',
              __('Russland', 'piratenkleider' ) => 'http://pirate-party.ru/',
              __('Schweden', 'piratenkleider' ) => 'http://www.piratpartiet.se/',
              __('Schweiz', 'piratenkleider' ) => 'http://www.piratenpartei.ch/',
@@ -557,7 +553,6 @@ $default_alternativestyles = array(
              __('Spanien', 'piratenkleider' ) => 'http://www.partidopirata.es/',
              __('S&uuml;dkorea', 'piratenkleider' ) => 'http://pirateparty.kr/',
              __('Tschechien', 'piratenkleider' ) => 'http://www.ceskapiratskastrana.cz/',
-             __('Tunesien', 'piratenkleider' ) => 'http://partipirate-tn.org/',
              __('T&uuml;rkei', 'piratenkleider' ) => 'http://www.korsanpartisi.org/',             
              __('Ukraine', 'piratenkleider' ) => 'http://pp-ua.org/',                         
              __('Ungarn', 'piratenkleider' ) => 'http://kalozpart.org/', 
@@ -577,7 +572,6 @@ $default_alternativestyles = array(
              '<span class="flagicon-au"></span> '.__('Australien', 'piratenkleider') => 'http://pirateparty.org.au/',
              '<span class="flagicon-be"></span> '.__('Belgien', 'piratenkleider') => 'http://pirateparty.be/',
              '<span class="flagicon-br"></span> '.__('Brasilien', 'piratenkleider') => 'http://www.partidopirata.org/',
-              '<span class="flagicon-bg"></span> '.__('Bulgarien', 'piratenkleider') => 'http://piratskapartia.bg/',
               '<span class="flagicon-cl"></span> '.__('Chile', 'piratenkleider') => 'http://www.partidopirata.cl/',
               '<span class="flagicon-dk"></span> '.__('D&auml;nemark', 'piratenkleider') => 'http://piratpartiet.dk/',
               '<span class="flagicon-de"></span> '.__('Deutschland', 'piratenkleider') => 'http://piratenpartei.de/',   
@@ -596,7 +590,6 @@ $default_alternativestyles = array(
               '<span class="flagicon-lv"></span> '.__('Lettland', 'piratenkleider') => 'http://piratupartija.lv/',
               '<span class="flagicon-lt"></span> '.__('Litauen', 'piratenkleider') => 'http://piratupartija.lt/',
               '<span class="flagicon-lu"></span> '.__('Luxemburg', 'piratenkleider') => 'http://www.piratepartei.lu/',
-              '<span class="flagicon-ma"></span> '.__('Marokko', 'piratenkleider') => 'http://partipirate.ma/',
               '<span class="flagicon-mx"></span> '.__('Mexiko', 'piratenkleider') => 'http://www.partidopiratamexicano.org/',
              '<span class="flagicon-nz"></span>  '.__('Neuseeland', 'piratenkleider') => 'http://pirateparty.org.nz/',
              '<span class="flagicon-nl"></span> '.__('Niederlande', 'piratenkleider') => 'http://www.piratenpartij.nl/',
@@ -604,7 +597,7 @@ $default_alternativestyles = array(
              '<span class="flagicon-pe"></span> '.__('Peru', 'piratenkleider') => 'http://wiki.freeculture.org/Pirata',
              '<span class="flagicon-pl"></span> '.__('Polen', 'piratenkleider') => 'http://polskapartiapiratow.pl/',
              '<span class="flagicon-pt"></span> '.__('Portugal', 'piratenkleider') => 'http://www.partidopiratapt.eu/',
-             '<span class="flagicon-ro"></span> '.__('Rum&auml;nien', 'piratenkleider') => 'http://www.partidulpiratilor.ro/',
+             '<span class="flagicon-ro"></span> '.__('Rum&auml;nien', 'piratenkleider') => 'http://www.partidulpirat.ro/',
              '<span class="flagicon-ru"></span> '.__('Russland', 'piratenkleider') => 'http://pirate-party.ru/',
              '<span class="flagicon-se"></span> '.__('Schweden', 'piratenkleider') => 'http://www.piratpartiet.se/',
              '<span class="flagicon-ch"></span> '.__('Schweiz', 'piratenkleider') => 'http://www.piratenpartei.ch/',
@@ -614,7 +607,6 @@ $default_alternativestyles = array(
              '<span class="flagicon-es"></span> '.__('Spanien', 'piratenkleider') => 'http://www.partidopirata.es/',
              '<span class="flagicon-kr"></span> '.__('S&uuml;dkorea', 'piratenkleider') => 'http://pirateparty.kr/',
              '<span class="flagicon-cz"></span> '.__('Tschechien', 'piratenkleider') => 'http://www.ceskapiratskastrana.cz/',
-             '<span class="flagicon-tn"></span> '.__('Tunesien', 'piratenkleider') => 'http://partipirate-tn.org/',
              '<span class="flagicon-tr"></span> '.__('T&uuml;rkei', 'piratenkleider') => 'http://www.korsanpartisi.org/',
              '<span class="flagicon-ua"></span> '.__('Ukraine', 'piratenkleider') => 'http://pp-ua.org/',
              '<span class="flagicon-hu"></span> '.__('Ungarn', 'piratenkleider') => 'http://kalozpart.org/',             
@@ -970,7 +962,7 @@ $setoptions = array(
 		  'title'   => __( 'Portale', 'piratenkleider' ),
 		  'liste'   => $default_toplink_liste,
 		  'parent'  => 'toplinks',
-		  'label'   => __( 'Definition einer Linkliste zu Standardportalen. Diese Liste kann Alternativ durch die Definiton eines Men&uuml;s und Zuordnung dieses zu dem Men&uuml;bereich "Linkmenu" verwaltet werden. Ist kein eigenes Men&uuml; definiert, werden diese Werte als Alternative verwendet.', 'piratenkleider' ),
+		  'label'   => __( 'Definition einer Linkliste zu Standardportalen. Diese Liste kann alternativ durch die Definition eines Men&uuml;s und Zuordnung dieses zu dem Men&uuml;bereich "Linkmenu" verwaltet werden. Ist kein eigenes Men&uuml; definiert, werden diese Werte als Alternative verwendet.', 'piratenkleider' ),
 	      ), 
                
            )
@@ -1010,57 +1002,164 @@ $setoptions = array(
                   'label'   => __( 'Liste der Schlagworte (Tagcloud) anzeigen', 'piratenkleider' ),
                   'default' => $defaultoptions['aktiv-startseite-tags'],
               ),
-              'aktiv-startseite-alteartikel' => array(
-                  'type'    => 'bool',
-                  'title'   => __( '&auml;ltere Artikel', 'piratenkleider' ),
-                  'label'   => __( 'Liste mit &auml;lteren Artikeln anzeigen', 'piratenkleider' ),
-                  'default' => $defaultoptions['aktiv-startseite-alteartikel'],
-              ),
-              'aktiv-startseite-alteartikel-num' => array(
-                  'type'    => 'number',
-                  'title'   => __( 'Zahl &auml;ltere Artikel', 'piratenkleider' ),
-                  'label'   => __( 'Anzahl der zu verlinkenden &auml;lteren Artikel.', 'piratenkleider' ),
-                  'default' => $defaultoptions['aktiv-startseite-alteartikel-num'],
-              ), 
-             
-             'teaser-subtitle' => array(
-                  'type'    => 'text',
-                  'title'   => __( 'Bezeichnender Titel f&uuml;r Teaser', 'piratenkleider' ),
-                  'label'   => __( 'Dieser Text wird oberhalb der Titel angezeigt.', 'piratenkleider' ),
-                  'default' => $defaultoptions['teaser-subtitle'],
-              ),  
-             'teaser-title-maxlength' => array(
-                  'type'    => 'number',
-                  'title'   => __( 'Textl&auml;nge', 'piratenkleider' ),
-                  'label'   => __( 'Maximale Textl&auml;nge des Titels im Teaser.', 'piratenkleider' ),
-                  'default' => $defaultoptions['teaser-title-maxlength'],
-              ),   
-             'teaser-title-words' => array(
-                  'type'    => 'number',
-                  'title'   => __( 'Wortzahl', 'piratenkleider' ),
-                  'label'   => __( 'Zahl der Worte im Teaser; Die maximale Textl&auml;nge begrenzt diesen Wert jedoch.', 'piratenkleider' ),
-                  'default' => $defaultoptions['teaser-title-words'],
-              ),
+            
+              'artikelstream'  => array(
+                  'type'    => 'section',
+                  'title'   => __( 'Artikelauswahl', 'piratenkleider' ),                      
+              ),     
                
+               'artikelstream-type' => array(
+                  'type'    => 'select',
+                  'title'   => __( 'Artikelstrom einstellen', 'piratenkleider' ),
+                  'label'   => __( 'Definiert die Auswahl der Artikel auf der Startseite ausgehend von Kategorien und Linktipps', 'piratenkleider' ),
+                  'default' => $defaultoptions['artikelstream-type'],
+		  'liste'   =>  array(
+				0 => __("Artikel aller Kategorien und Linktipps in einem Zusammenhang anzeigen","piratenkleider"), 
+				1 => __("Artikel aller Kategorien in einem Zusammenhang anzeigen","piratenkleider"), 	    
+				2 => __("Nur Artikel, die nicht zu Ausschlusskategorien geh&ouml;ren, anzeigen","piratenkleider"), 
+                                ), 
+                  'parent'  => 'artikelstream'
+              ), 	
+               
+              'artikelstream-exclusive-catliste' => array(
+                  'type'    => 'multiselectlist',
+                  'title'   => __( 'Ausschlusskategorien', 'piratenkleider' ),
+                  'label'   => __( 'Welche Kategorien sollen nicht im Hauptartikelstrom angezeigt werden.', 'piratenkleider' ),
+                  'liste'   => $currentcatliste,
+                  'default' => $defaultoptions['artikelstream-exclusive-catliste'],
+                  'parent'  => 'sliderpars'
+              ),  
+               'artikelstream-maxnum-main' => array(
+                  'type'    => 'number',
+                  'title'   => __( 'Anzahl der Beitr&auml;ge im Hauptstrom', 'piratenkleider' ),
+                  'label'   => __( 'Zahl der Beitr&auml;ge, welche insgesamt im ersten Artikelstrom gezeigt werden.', 'piratenkleider' ),
+                  'default' => $defaultoptions['artikelstream-maxnum-main'],
+                  'parent'  => 'artikelstream'
+              ), 
+               'artikelstream-nextnum-main' => array(
+                  'type'    => 'number',
+                  'title'   => __( 'Zahl weiterer Artikel', 'piratenkleider' ),
+                  'label'   => __( 'Zahl der Links von weiteren Artikeln des Hauptstroms in Form von einer Liste.', 'piratenkleider' ),
+                  'default' => $defaultoptions['artikelstream-nextnum-main'],
+                  'parent'  => 'artikelstream'
+              ), 
+               'artikelstream-numfullwidth-main' => array(
+                  'type'    => 'number',
+                  'title'   => __( 'Beitr&auml;ge &uuml;ber ganze Breite', 'piratenkleider' ),
+                  'label'   => __( 'Zahl der Beitr&auml;ge aus dem Hauptartikelstrom, die &uuml;ber die gesamte Inhaltsbreite gehen. Die restlichen Beitr&auml;ge werden jeweils nur 50% des Platzes einnehmen.', 'piratenkleider' ),
+                  'default' => $defaultoptions['artikelstream-numfullwidth-main'],
+                  'parent'  => 'artikelstream'
+              ),
+             'artikelstream-title-main' => array(
+                  'type'    => 'text',
+                  'title'   => __( '&Uuml;berschrift Hauptartikelstrom', 'piratenkleider' ),
+                  'label'   => __( '&Uuml;berschrift &uuml;ber dem Bereich mit dem Hauptartikelstrom', 'piratenkleider' ),
+                  'default' => $defaultoptions['artikelstream-title-main'],
+                   'parent'  => 'artikelstream',
+              ), 
+              'artikelstream-title-maincontinuelist' => array(
+                  'type'    => 'text',
+                  'title'   => __( '&Uuml;berschrift weitere Artikel', 'piratenkleider' ),
+                  'label'   => __( 'Unter&uuml;berschrift f&uuml;r weitere Artikel (Liste)', 'piratenkleider' ),
+                  'default' => $defaultoptions['artikelstream-title-maincontinuelist'],
+                  'parent'  => 'artikelstream',
+              ),                
+               
+              'artikelstream-show-second' => array(
+                  'type'    => 'select',
+                  'title'   => __( 'Zeige zweiten Artikelstrom', 'piratenkleider' ),
+                  'label'   => __( 'Option, ob der zweite Artikelstrom mit den Artikeln aus den Ausschlusskategorien angezeigt werden soll', 'piratenkleider' ),
+                  'liste'   => array("0" => "Nein", "1" => "Ja"),
+                  'default' => $defaultoptions['artikelstream-show-second'],
+                   'parent'  => 'artikelstream'
+              ), 
+               
+              'artikelstream-maxnum-second' => array(
+                  'type'    => 'number',
+                  'title'   => __( 'Anzahl der Beitr&auml;ge im zweiten Artikelstrom', 'piratenkleider' ),
+                  'label'   => __( 'Zahl der Beitr&auml;ge, welche insgesamt im zweiten Artikelstrom angezeigt werden. Hier werden die Artikel der Kategorien angezeigt, die im Hauptstrom ausgeschlossen wurden.', 'piratenkleider' ),
+                  'default' => $defaultoptions['artikelstream-maxnum-second'],
+                  'parent'  => 'artikelstream'
+              ), 
+             'artikelstream-nextnum-second' => array(
+                  'type'    => 'number',
+                  'title'   => __( 'Zahl weiterer Artikel', 'piratenkleider' ),
+                  'label'   => __( 'Zahl der Links von weiteren Artikeln des zweiten Artikelstroms in Form von einer Liste.', 'piratenkleider' ),
+                  'default' => $defaultoptions['artikelstream-nextnum-second'],
+                  'parent'  => 'artikelstream'
+              ), 
+                              
+               'artikelstream-numfullwidth-second' => array(
+                  'type'    => 'number',
+                  'title'   => __( 'Beitr&auml;ge &uuml;ber ganze Breite', 'piratenkleider' ),
+                  'label'   => __( 'Zahl der Beitr&auml;ge aus dem zweiten Artikelstrom, die &uuml;ber die gesamte Inhaltsbreite gehen. Die restlichen Beitr&auml;ge werden jeweils nur 50% des Platzes einnehmen.', 'piratenkleider' ),
+                  'default' => $defaultoptions['artikelstream-numfullwidth-second'],
+                  'parent'  => 'artikelstream'
+              ), 
+            'artikelstream-title-second' => array(
+                  'type'    => 'text',
+                  'title'   => __( '&Uuml;berschrift zweiter Artikelstrom', 'piratenkleider' ),
+                  'label'   => __( '&Uuml;berschrift &uuml;ber den Bereich mit den zweiten Artikelstrom', 'piratenkleider' ),
+                  'default' => $defaultoptions['artikelstream-title-second'],
+                   'parent'  => 'artikelstream',
+              ), 
+              'artikelstream-title-secondcontinuelist' => array(
+                  'type'    => 'text',
+                  'title'   => __( '&Uuml;berschrift weitere Artikel ', 'piratenkleider' ),
+                  'label'   => __( 'Unter&uuml;berschrift f&uuml;r weitere Artikel des zweiten Artikelstroms (Liste)', 'piratenkleider' ),
+                  'default' => $defaultoptions['artikelstream-title-secondcontinuelist'],
+                  'parent'  => 'artikelstream',
+              ),                
+
+               
+               
+              'artikelstream-show-linktipps' => array(
+                  'type'    => 'select',
+                  'title'   => __( 'Zeige Linktipps', 'piratenkleider' ),
+                  'label'   => __( 'Option, ob Linktipps nach dem Hauptartikelstrom angezeigt werden sollen', 'piratenkleider' ),
+                  'liste'   => array("0" => "Nein", "1" => "Ja"),
+                  'default' => $defaultoptions['artikelstream-show-linktipps'],
+                   'parent'  => 'artikelstream'
+              ), 
+              'artikelstream-maxnum-linktipps' => array(
+                  'type'    => 'number',
+                  'title'   => __( 'Anzahl der Linktipps nach dem Hauptartikelstrom', 'piratenkleider' ),
+                  'label'   => __( 'Werden Linktipps nicht im Hauptartikelstrom gezeigt, kann hier angegeben werden, wie viele Linktipps danach gesondert angezeigt werden sollen.', 'piratenkleider' ),
+                  'default' => $defaultoptions['artikelstream-maxnum-linktipps'],
+                  'parent'  => 'artikelstream'
+              ), 
+             'artikelstream-nextnum-linktipps' => array(
+                  'type'    => 'number',
+                  'title'   => __( 'Zahl weiterer Linktipps', 'piratenkleider' ),
+                  'label'   => __( 'Zahl der Links von weiteren Linktipps in Form von einer Liste.', 'piratenkleider' ),
+                  'default' => $defaultoptions['artikelstream-nextnum-linktipps'],
+                  'parent'  => 'artikelstream'
+              ), 
+             'artikelstream-title-linktipps' => array(
+                  'type'    => 'text',
+                  'title'   => __( '&Uuml;berschrift Linktipps', 'piratenkleider' ),
+                  'label'   => __( '&Uuml;berschrift &uuml;ber den Bereich mit den Linktipps', 'piratenkleider' ),
+                  'default' => $defaultoptions['artikelstream-title-linktipps'],
+                   'parent'  => 'artikelstream',
+              ), 
+              'artikelstream-title-linktippcontinuelist' => array(
+                  'type'    => 'text',
+                  'title'   => __( '&Uuml;berschrift weitere Linktipps', 'piratenkleider' ),
+                  'label'   => __( 'Unter&uuml;berschrift f&uuml;r weitere Linktipps (Liste)', 'piratenkleider' ),
+                  'default' => $defaultoptions['artikelstream-title-linktippcontinuelist'],
+                  'parent'  => 'artikelstream',
+              ), 
+               
+
+ 
+            
             'auszuege'  => array(
                   'type'    => 'section',
                   'title'   => __( 'Gestaltung Textausz&uuml;ge', 'piratenkleider' ),                      
-              ),      
-                'num-article-startpage-fullwidth' => array(
-                  'type'    => 'number',
-                  'title'   => __( 'Beitr&auml;ge &uuml;ber ganze Breite', 'piratenkleider' ),
-                  'label'   => __( 'Zahl der Beitr&auml;ge, die &uuml;ber die gesamte Inhaltsbreite gehen.', 'piratenkleider' ),
-                  'default' => $defaultoptions['num-article-startpage-fullwidth'],
-                    'parent'  => 'auszuege'
-              ),
-              'num-article-startpage-halfwidth' => array(
-                  'type'    => 'select',
-                  'title'   => __( 'Beitr&auml;ge &uuml;ber halbe Breite', 'piratenkleider' ),
-                  'label'   => __( 'Zahl der Beitr&auml;ge, die in Spalten mit je zwei Beitr&auml;gen nebeneinander, angezeigt werden.', 'piratenkleider' ),
-                  'liste'   => array(0 => 0, 2 => 2, 4 => 4, 6 => 6, 8 => 8),
-                  'default' => $defaultoptions['num-article-startpage-halfwidth'],
-                  'parent'  => 'auszuege'
-              ),               
+              ),     
+               
+               
+                
                
                
              'teaser_maxlength' => array(
@@ -1080,7 +1179,7 @@ $setoptions = array(
               'teaser-datebox' => array(
                   'type'    => 'select',
                   'title'   => __( 'Symbolbild/Datumsbox', 'piratenkleider' ),
-                  'label'   => __( 'Links des Textauszuges das Datum, das Artikelbild, ein Bild des Artikels oder ein verlinktes Video anzeigen; Abh&auml;ngig vom Inhalt des Artikels.', 'piratenkleider' ),
+                  'label'   => __( 'Links des Textauszuges das Datum, das Artikelbild, ein Bild des Artikels oder ein verlinktes Video anzeigen; abh&auml;ngig vom Inhalt des Artikels.', 'piratenkleider' ),
                   'default' => $defaultoptions['teaser-datebox'],
 		  'liste'   =>  array(
 				0 => __("Datumsbox anzeigen","piratenkleider"), 
@@ -1123,7 +1222,7 @@ $setoptions = array(
               'teaser-datebox-halfwidth' => array(
                   'type'    => 'select',
                   'title'   => __( 'Symbolbild/Datumsbox', 'piratenkleider' ),
-                  'label'   => __( 'Links des Textauszuges das Datum, das Artikelbild, ein Bild des Artikels oder ein verlinktes Video anzeigen; Abh&auml;ngig vom Inhalt des Artikels. (Bei Beitr&auml;gen &uuml;ber halbe Breite)', 'piratenkleider' ),
+                  'label'   => __( 'Links des Textauszuges das Datum, das Artikelbild, ein Bild des Artikels oder ein verlinktes Video anzeigen; abh&auml;ngig vom Inhalt des Artikels. (Bei Beitr&auml;gen &uuml;ber halbe Breite)', 'piratenkleider' ),
                   'default' => $defaultoptions['teaser-datebox-halfwidth'],
 		  'liste'   =>  array(
 				0 => __("Datumsbox anzeigen","piratenkleider"), 
@@ -1164,18 +1263,43 @@ $setoptions = array(
                   'default' => $defaultoptions['slider-aktiv'],
                   'parent'  => 'sliderpars'
               ),
+
+            'teaser-subtitle' => array(
+                  'type'    => 'text',
+                  'title'   => __( 'Bezeichnender Titel f&uuml;r Teaser', 'piratenkleider' ),
+                  'label'   => __( 'Dieser Text wird oberhalb der Titel angezeigt.', 'piratenkleider' ),
+                  'default' => $defaultoptions['teaser-subtitle'],
+                  'parent'  => 'sliderpars'
+              ),  
+             'teaser-title-maxlength' => array(
+                  'type'    => 'number',
+                  'title'   => __( 'Textl&auml;nge', 'piratenkleider' ),
+                  'label'   => __( 'Maximale Textl&auml;nge des Titels im Teaser.', 'piratenkleider' ),
+                  'default' => $defaultoptions['teaser-title-maxlength'],
+                   'parent'  => 'sliderpars'
+              ),   
+             'teaser-title-words' => array(
+                  'type'    => 'number',
+                  'title'   => __( 'Wortzahl', 'piratenkleider' ),
+                  'label'   => __( 'Zahl der Worte im Teaser. Die maximale Textl&auml;nge begrenzt diesen Wert jedoch.', 'piratenkleider' ),
+                  'default' => $defaultoptions['teaser-title-words'],
+                   'parent'  => 'sliderpars'
+              ),
+                              
+               
                
               'slider-catid' => array(
                   'type'    => 'select',
                   'title'   => __( 'Kategorie', 'piratenkleider' ),
                   'label'   => __( 'Aus welcher Artikelkategorie sollen die Slider genommen werden.', 'piratenkleider' ),
                   'liste'   => $currentcatliste,
+                  'default' => $defaultoptions['slider-catid'],
                    'parent'  => 'sliderpars'
               ), 
               'slider-numberarticle' => array(
                   'type'    => 'select',
                   'title'   => __( 'Maximale Anzahl der Artikel', 'piratenkleider' ),
-                  'label'   => __( 'Wieviele Slides sollen maximal gezeigt werden.', 'piratenkleider' ),
+                  'label'   => __( 'Wie viele Slides sollen maximal gezeigt werden.', 'piratenkleider' ),
                   'liste'   => array(2 => 2,3 => 3, 4 => 4, 5 => 5, 6 => 6),
                   'default' => $defaultoptions['slider-numberarticle'],
                    'parent'  => 'sliderpars'
@@ -1219,6 +1343,14 @@ $setoptions = array(
                   'default' => $defaultoptions['teaser-type'],
                    'parent'  => 'sliderpars'
               ), 
+               'teaser-showcredits' => array(
+                  'type'    => 'bool',
+                  'title'   => __( 'Bildbeschreibung/Credits', 'piratenkleider' ),
+                  'label'   => __( 'Innerhalb des Sliders auch die Bildbeschreibung bzw. Copyrightinfos anzeigen, wenn vorhanden.', 'piratenkleider' ),
+                  'default' => $defaultoptions['teaser-showcredits'],
+                  'parent'  => 'sliderpars'
+              ),
+
               'slider-defaultbildsrc' => array(
                   'type'    => 'bildlist',
                   'title'   => __( 'Defaultbild', 'piratenkleider' ),
@@ -1234,13 +1366,7 @@ $setoptions = array(
                   'default' => $defaultoptions['slider-alternativesrc'],
                   'parent'  => 'sliderpars',
               ),   
-            'teaser-showcredits' => array(
-                  'type'    => 'bool',
-                  'title'   => __( 'Bildbeschreibung/Credits', 'piratenkleider' ),
-                  'label'   => __( 'Innerhalb des Slider auch die Bildbeschreibung bzw. Copyrightinfos anzeigen, wenn vorhanden.', 'piratenkleider' ),
-                  'default' => $defaultoptions['teaser-showcredits'],
-                  'parent'  => 'sliderpars'
-              ),
+
                
                
           )
@@ -1254,19 +1380,13 @@ $setoptions = array(
                   'title'   => __( 'Spezielle Eigenschaften', 'piratenkleider' ),
               ),
 	       
-              'aktiv-circleplayer'   => array(
-                  'type'    => 'bool',
-                  'title'   => __( 'Circle Player', 'piratenkleider' ),
-                  'label'   => __( 'Circle Player (HTML5 Player) f&uuml;r MP3/OGG-Dateien in einzelnen Beitr&auml;gen aktivieren.', 'piratenkleider' ),
-                  'default' => $defaultoptions['aktiv-circleplayer'],
-		  'parent'  => 'spezial'
-              ),   
+             
                
               
               'post_disclaimer' => array(
                   'type'    => 'textarea',
                   'title'   => __( 'Disclaimer f&uuml;r (Gast-)Artikel', 'piratenkleider' ),
-                  'label'   => __( 'Definiere ein Text als Disclaimer der bei Artikeln gezeigt werden kann. Disclaimer wird mit Custom Field show-post-disclaimer (= 0, 1,2,3) aktiviert.', 'piratenkleider' ),
+                  'label'   => __( 'Definiere ein Text als Disclaimer, der bei Artikeln gezeigt werden kann. Disclaimer wird mit Custom Field show-post-disclaimer (= 0, 1,2,3) aktiviert.', 'piratenkleider' ),
                   'default' => $defaultoptions['disclaimer_post'],
 		  'parent'  => 'spezial'
               ),    
@@ -1318,7 +1438,7 @@ $setoptions = array(
               'category-teaser-datebox' => array(
                   'type'    => 'select',
                   'title'   => __( 'Symbolbild/Datumsbox', 'piratenkleider' ),
-                  'label'   => __( 'Links des Textauszuges das Datum, das Artikelbild, ein Bild des Artikels oder ein verlinktes Video anzeigen; Abh&auml;ngig vom Inhalt des Artikels.', 'piratenkleider' ),
+                  'label'   => __( 'Links des Textauszuges das Datum, das Artikelbild, ein Bild des Artikels oder ein verlinktes Video anzeigen; abh&auml;ngig vom Inhalt des Artikels.', 'piratenkleider' ),
                   'default' => $defaultoptions['category-teaser-datebox'],
 		  'liste'   =>  array(
 				0 => __("Datumsbox anzeigen","piratenkleider"), 
@@ -1363,7 +1483,7 @@ $setoptions = array(
               'category-teaser-datebox-halfwidth' => array(
                   'type'    => 'select',
                   'title'   => __( 'Symbolbild/Datumsbox', 'piratenkleider' ),
-                  'label'   => __( 'Links des Textauszuges das Datum, das Artikelbild, ein Bild des Artikels oder ein verlinktes Video anzeigen; Abhängig vom Inhalt des Artikels. (Bei Beitr&auml;gen &uuml;ber halbe Breite)', 'piratenkleider' ),
+                  'label'   => __( 'Links des Textauszuges das Datum, das Artikelbild, ein Bild des Artikels oder ein verlinktes Video anzeigen; abh&auml;ngig vom Inhalt des Artikels. (Bei Beitr&auml;gen &uuml;ber halbe Breite)', 'piratenkleider' ),
                   'default' => $defaultoptions['category-teaser-datebox-halfwidth'],
 		  'liste'   =>  array(
 				0 => __("Datumsbox anzeigen","piratenkleider"), 
@@ -1501,35 +1621,35 @@ $setoptions = array(
 	      	       
 	     'src-default-symbolbild-404' => array(
                   'type'    => 'imgurl',
-                  'title'   => __( 'Symbolbild f&uuml;r 404 Seite', 'piratenkleider' ),
+                  'title'   => __( 'Symbolbild f&uuml;r 404-Seite', 'piratenkleider' ),
                   'label'   => __( 'URL f&uuml;r ein eigenes 404-Seitenbild.', 'piratenkleider' ),
                   'default' => $defaultoptions['src-default-symbolbild-404'],
                   'parent'  => 'darstellungindexseiten',
               ),
 	     'src-default-symbolbild-category' => array(
                   'type'    => 'imgurl',
-                  'title'   => __( 'Symbolbild f&uuml;r Kategorie Seite', 'piratenkleider' ),
+                  'title'   => __( 'Symbolbild f&uuml;r Kategorie-Seite', 'piratenkleider' ),
                   'label'   => __( 'URL f&uuml;r ein eigenes Kategorien-Seitenbild.', 'piratenkleider' ),
                   'default' => $defaultoptions['src-default-symbolbild-category'],
                   'parent'  => 'darstellungindexseiten',
               ), 
 	      'src-default-symbolbild-tag' => array(
                   'type'    => 'imgurl',
-                  'title'   => __( 'Symbolbild f&uuml;r Tag Seite', 'piratenkleider' ),
+                  'title'   => __( 'Symbolbild f&uuml;r Tag-Seite', 'piratenkleider' ),
                   'label'   => __( 'URL f&uuml;r ein eigenes Tag-Seitenbild.', 'piratenkleider' ),
                   'default' => $defaultoptions['src-default-symbolbild-tag'],
                   'parent'  => 'darstellungindexseiten',
               ), 
 	       'src-default-symbolbild-author' => array(
                   'type'    => 'imgurl',
-                  'title'   => __( 'Symbolbild f&uuml;r Autoren Seite', 'piratenkleider' ),
+                  'title'   => __( 'Symbolbild f&uuml;r Autoren-Seite', 'piratenkleider' ),
                   'label'   => __( 'URL f&uuml;r ein eigenes Autoren-Seitenbild.', 'piratenkleider' ),
                   'default' => $defaultoptions['src-default-symbolbild-author'],
                   'parent'  => 'darstellungindexseiten',
               ), 
 	       'src-default-symbolbild-archive' => array(
                   'type'    => 'imgurl',
-                  'title'   => __( 'Symbolbild f&uuml;r Archiv Seite', 'piratenkleider' ),
+                  'title'   => __( 'Symbolbild f&uuml;r Archiv-Seite', 'piratenkleider' ),
                   'label'   => __( 'URL f&uuml;r ein eigenes Archiv-Seitenbild.', 'piratenkleider' ),
                   'default' => $defaultoptions['src-default-symbolbild-archive'],
                   'parent'  => 'darstellungindexseiten',
@@ -1557,7 +1677,7 @@ $setoptions = array(
 	     'aktiv-commentreplylink' => array(
                   'type'    => 'bool',
                   'title'   => __( 'Antwortlinks', 'piratenkleider' ),
-                  'label'   => __( 'Bei der Anzeige von Kommentaren, wird unter diesen ein eigener Kommentarlink eingebaut, der das Antworten auf den Kommentar erlaubt. Dies kann zu einer Nutzung des Kommentarbereiches wie bei einem Forum f&uuml;hren, bei dem es zuletzt aber nicht mehr um den eigentlichen Beitrag geht.', 'piratenkleider' ),
+                  'label'   => __( 'Bei der Anzeige von Kommentaren wird unter diesen ein eigener Kommentarlink eingebaut, der das Antworten auf den Kommentar erlaubt. Dies kann zu einer Nutzung des Kommentarbereiches wie bei einem Forum f&uuml;hren, bei dem es zuletzt aber nicht mehr um den eigentlichen Beitrag geht.', 'piratenkleider' ),
                   'default' => $defaultoptions['aktiv-commentreplylink'],	
 		 'parent'   => 'kommentare'
               ),
@@ -1596,7 +1716,7 @@ $setoptions = array(
               'seitenmenu_mode' => array(
                   'type'    => 'select',
                   'title'   => __( 'Gliederung', 'piratenkleider' ),
-                  'label'   => __( 'Das Men&uuml; kann nach Seiten-Hierarchie oder Menü-Hierarche gegliedert werden.', 'piratenkleider' ),
+                  'label'   => __( 'Das Men&uuml; kann nach Seiten-Hierarchie oder Men&uuml;-Hierarchie gegliedert werden.', 'piratenkleider' ),
                   'default' => $defaultoptions['seitenmenu_mode'],
 				  'liste'   => array(0 => "Men&uuml;s", 1 => "Seiten"),
                   'parent'  => 'seitenmenu',
@@ -1619,7 +1739,7 @@ $setoptions = array(
               'newsletter' => array(
                   'type'    => 'bool',
                   'title'   => __( 'Newsletter', 'piratenkleider' ),
-                  'label'   => __( 'Eingabemaske f&uuml;r den Eintrag in ein Newsletter (Mailingliste) anzeigen', 'piratenkleider' ),
+                  'label'   => __( 'Eingabemaske f&uuml;r den Eintrag in einen Newsletter (Mailingliste) anzeigen', 'piratenkleider' ),
                   'default' => $defaultoptions['newsletter'],
               ),
               'plakate'  => array(
@@ -1661,7 +1781,7 @@ $setoptions = array(
                   'title'   => __( 'Eigene Plakatbilder', 'piratenkleider' ),
                   'label'   => __('Adressen alternativer Plakatbilder.<br>', 'piratenkleider').
                   __( 'Angabe der URLs inkl. http:// zum Bild. Wenn es mehrere sind, werden die einzelnen Adressen durch Zeilenumbruch getrennt.', 'piratenkleider' ).
-                  __('Sollen die Bilder zus&auml;tzlich mit einem eigenen Titel und einer Webadresse versehen werden werden diese Angabe durch ein "|" zeichen in folgender Reihenfolge getrennt: <code>Bild URL|Titel|URL Webpage</code>', 'piratenkleider' ).
+                  __('Sollen die Bilder zus&auml;tzlich mit einem eigenen Titel und einer Webadresse versehen werden, werden diese Angaben durch das Zeichen "|" in folgender Reihenfolge getrennt: <code>Bild-URL|Titel|Webadresse</code>', 'piratenkleider' ).
                   __( 'Beispiel:<br>', 'piratenkleider' ).
                   __( '<pre>http://www.piratenpartei.de/wp-content/uploads/2012/05/UrheberplakatSH283.jpg|Rechte f&uuml;r Urheber und Nutzer|http://www.kein-programm.de</pre><br>', 'piratenkleider' ).
                   __( 'Wenn oben Defaultplakate angeklickt sind, erscheinen diese Bilder zus&auml;tzlich. Diese Bilder k&ouml;nnen auch vorher &uuml;ber den Mediendialog hochgeladen worden sein.', 'piratenkleider' ),                                                      
@@ -1780,7 +1900,7 @@ $setoptions = array(
               'alle-socialmediabuttons' => array(
                   'type'    => 'select',
                   'title'   => __( 'Position und Anzeige', 'piratenkleider' ),
-                  'label'   => __( 'Die Auswahl werden die Social Media Buttons angezeigt. Dies kann entweder oben im Kopfteil oder links neben den Inhaltsbereich sein. <br>Hinweis: Es werden nur die Buttons gezeigt, bei denen in den folgenden Eingabefeldern Adressen definiert sind.', 'piratenkleider' ),
+                  'label'   => __( 'Es werden die ausgew&auml;hlten Social Media Buttons angezeigt. Dies kann entweder oben im Kopfteil oder links neben den Inhaltsbereich sein. <br>Hinweis: Es werden nur die Buttons gezeigt, bei denen in den dazugeh&ouml;rigen Eingabefeldern Adressen definiert sind.', 'piratenkleider' ),
                   'liste'   => array(
 		      0 => __( 'Keine Social Media Buttons', 'piratenkleider' ) ,  
 		      1 => __( 'Im Kopfteil', 'piratenkleider' ), 
@@ -1818,25 +1938,36 @@ $setoptions = array(
                   'type'    => 'select',
                   'title'   => __( 'Farbkombination', 'piratenkleider' ),
                   'label'   => __( 'Auswahl, welche l&auml;nderbezogene Farbvariante aktiviert werden soll.', 'piratenkleider' ),
-                  'default' => '',
+                  'default' => '-',
                   'liste'   => $default_colorstyles,
-			  'parent'  => 'style', 
+		   'parent'  => 'style', 
               ),
-	      'css-fontfile' => array(
-                  'type'    => 'select',
-                  'title'   => __( 'Schriftarten', 'piratenkleider' ),
-                  'label'   => __( 'Auswahl, welcher Schriftstil f&uuml;r die Website verwendet werden soll.', 'piratenkleider' ),
-                  'default' => $defaultoptions['default-fontset-file'],
-                  'liste'   => $default_fontstyles,
+
+              'fonts-headers' => array(
+                  'type'    => 'fontselect',
+                  'title'   => __( 'Schrift &Uuml;berschriften', 'piratenkleider' ),
+                  'label'   => __( 'Schriftart der &Uuml;berschriften. <br>Definiert die CSS font-family <code>FontPiratenkleiderHeadlines</code>', 'piratenkleider' ),
+                  'default' => $defaultoptions['fonts-headers'],
+                  'liste'   => $default_fonts,
 		  	  'parent'  => 'style', 
-              ),
-	      'aktiv-mediaqueries-allparts' => array(
-                  'type'    => 'bool',
-                  'title'   => __( 'Small Screen Device Sichtbarkeit', 'piratenkleider' ),
-                  'label'   => __( 'F&uuml;r kleine Bildschirmaufl&ouml;sungen auch optionale Teile (Sticker, Slider) anzeigen.', 'piratenkleider' ),
-                  'default' => $defaultoptions['aktiv-mediaqueries-allparts'],
+              ), 
+              'fonts-menuheaders' => array(
+                  'type'    => 'fontselect',
+                  'title'   => __( 'Schrift Men&uuml;', 'piratenkleider' ),
+                  'label'   => __( 'Schriftart der Eintr&auml;ge im Hauptmen&uuml;. <br>Definiert die CSS font-family <code>FontPiratenkleiderMenuHeadlines</code>', 'piratenkleider' ),
+                  'default' => $defaultoptions['fonts-menuheaders'],
+                  'liste'   => $default_fonts,
 		  	  'parent'  => 'style', 
-              ),
+              ),                
+              'fonts-content' => array(
+                  'type'    => 'fontselect',
+                  'title'   => __( 'Schrift Text', 'piratenkleider' ),
+                  'label'   => __( 'Schriftart der normalen Texte. <br>Definiert die CSS font-family <code>FontPiratenkleiderDefault</code>', 'piratenkleider' ),
+                  'default' => $defaultoptions['fonts-content'],
+                  'liste'   => $default_fonts,
+		  	  'parent'  => 'style', 
+              ),               
+	     
 	      'aktiv-linkicons' => array(
                   'type'    => 'bool',
                   'title'   => __( 'Linkicons anzeigen', 'piratenkleider' ),
@@ -1851,13 +1982,13 @@ $setoptions = array(
                   'label'   => __( 'Einbinden und hochladen einer eigenen CSS-Datei.', 'piratenkleider' ).
                    __( '<p><em>Bitte an alle Designer: Wenn ihr hiermit Designs erstellt, teilt sie doch mit. ', 'piratenkleider' ). 
                    __( 'Dann f&uuml;gen wir sie zur obiger Liste der Alternativdesigns hinzu, so dass auch viele andere etwas davon haben.', 'piratenkleider' ).
-                   __( '<br><br>Meldet euch hierzu bei: <a href="mailto:piratenkleider@xwolf.de">piratenkleider@xwolf.de</a> - Vielen Dank!</em></p>', 'piratenkleider' ),
+                   __( '<br><br>Meldet euch hierzu bei: <a href="mailto:info@piratenkleider.de">info@piratenkleider.de</a> - Vielen Dank!</em></p>', 'piratenkleider' ),
 		  	  'parent'  => 'style',   
               ),
                'stylefile-position' => array(
                   'type'    => 'select',
                   'title'   => __( 'Einbindung CSS-Datei', 'piratenkleider' ),
-                  'label'   => __( 'Definition wie der CSS-Datei eingebunden werden soll in Kontext zum oben gew&auml;hlten Grunddesign.', 'piratenkleider' ),
+                  'label'   => __( 'Definition, wie die CSS-Datei eingebunden werden soll in Kontext zum oben gew&auml;hlten Grunddesign.', 'piratenkleider' ),
                   'default' => 0,
                   'liste'   => array(
 		      0 => __('Deaktiv (Nicht einbinden)', 'piratenkleider'),
@@ -1893,21 +2024,7 @@ $setoptions = array(
                   'title'   => __( 'Weitere Designoptionen', 'piratenkleider' ),
               ),
 	       
-	      'css-default-header-height' => array(
-                  'type'    => 'number',
-                  'title'   => __( 'H&ouml;he des Kopfbereiches ( .header )', 'piratenkleider' ),
-                  'label'   => __( 'Hinweis: Die Verkleinerung der H&ouml;he des Kopfteils ist nicht ungef&auml;hrlich. Zu beachten ist, dass der Kopfteil auch bei einer Vergr&ouml;&szlig;erung des Textes auf 200% noch gen&uuml;gend Platz haben muss!', 'piratenkleider' ),
-                  'default' => $defaultoptions['css-default-header-height'],
-		   'parent' => 'miscdesign',
-              ), 
-	      'css-default-branding-padding-top' => array(
-                  'type'    => 'number',
-                  'title'   => __( 'Abstand des Brandingbereiches (=Logo) nach oben ( .header .branding )', 'piratenkleider' ),
-                  'label'   => __( 'Das Logo hat einen Abstand nach oben. Diese kann &uuml;ber diese Angabe reduziert werden.', 'piratenkleider' ),
-                  'default' => $defaultoptions['css-default-branding-padding-top'],
-		    'parent' => 'miscdesign',
-              ), 
-             
+
 	      'css-eigene-anweisungen' => array(
                   'type'    => 'textarea',
                   'title'   => __( 'CSS-Anweisungen', 'piratenkleider' ),
@@ -1919,7 +2036,7 @@ $setoptions = array(
                   'type'    => 'textarea',
                   'title'   => __( 'HTML-Anweisungen', 'piratenkleider' ),
                   'label'   => __( 'Eigene HTML-Anweisungen, die am Ende der Webseite, vor dem letzten &lt;/body&gt;&lt;/html&gt; plaziert werden', 'piratenkleider' ).
-		    __( '<br><b>Achtung:</b> Fehlerhafter HTML-, JavaScript oder CSS-Code an dieser Stelle kann zu einem Nicht-Funktionieren der gesamt Website f&uuml;hren!<br />Der hier eingegebene Code wird nicht gefiltert oder kontrolliert.', 'piratenkleider' ),
+		    __( '<br><b>Achtung:</b> Fehlerhafter HTML-, JavaScript- oder CSS-Code an dieser Stelle kann zu einem Nicht-Funktionieren der gesamten Website f&uuml;hren!<br />Der hier eingegebene Code wird nicht gefiltert oder kontrolliert.', 'piratenkleider' ),
                   'default' => '',
 		     'parent' => 'miscdesign',
               ),
@@ -1936,20 +2053,20 @@ $setoptions = array(
                'aktiv-dynamic-sidebar' => array(
                   'type'    => 'bool',
                   'title'   => __( 'Sidebar abblendbar', 'piratenkleider' ),
-                  'label'   => __( 'Benutzern via JavaScript die M&ouml;glichkeit geben, die Sidebar klein zu machen. <br>Hinweis: Der Status wird nicht gespeichert, um keine Cookies anzulegen; Die Funktion ist nicht sichtbar, wenn man kein JavaScript an hat. Desweiteren ist die Funktion nur aktiv, wenn die Bildschirmbreite gr&ouml;&szlig;er als 600 Pixel ist.', 'piratenkleider' ),
+                  'label'   => __( 'Benutzern via JavaScript die M&ouml;glichkeit geben, die Sidebar klein zu machen. <br>Hinweis: Der Status wird nicht gespeichert, um keine Cookies anzulegen. Die Funktion ist nicht sichtbar, wenn man kein JavaScript an hat. Des Weiteren ist die Funktion nur aktiv, wenn die Bildschirmbreite gr&ouml;&szlig;er als 600 Pixel ist.', 'piratenkleider' ),
                   'default' => $defaultoptions['aktiv-dynamic-sidebar'],
               ),         
               'position_sidebarbottom' => array(
                   'type'    => 'select',
                   'title'   => __( 'Position der Sidebar', 'piratenkleider' ),
-                  'label'   => __( 'Sidebar rechts neben den Inhalt oder darunter positionieren. Wenn die Sidebar unter dem Inhalt positioniert wird, wird der Inhaltsbereich &uuml;ber die gesamte Breite gehen. Alternativ kann ein Custom Field "fullsize" definiert werden. Hat dies den Value 1, wird der Inhaltsbereich auf volle Seitenbreite dargestellt und die Sidebar nach unten verschoben', 'piratenkleider' ),
+                  'label'   => __( 'Sidebar rechts neben dem Inhalt oder darunter positionieren. Wenn die Sidebar unter dem Inhalt positioniert wird, wird der Inhaltsbereich &uuml;ber die gesamte Breite gehen. Alternativ kann ein Custom Field "fullsize" definiert werden. Hat dies den Value 1, wird der Inhaltsbereich auf volle Seitenbreite dargestellt und die Sidebar nach unten verschoben', 'piratenkleider' ),
                   'liste'   => array(0 => __( 'Rechts (Standard)', 'piratenkleider' ), 1 => __( 'Unter dem Inhalt', 'piratenkleider' )),
-                  'default' => 0,
+                  'default' => $defaultoptions['position_sidebarbottom'],
               ),                                            
               'login_errors' => array(
                   'type'    => 'select',
                   'title'   => __( 'Fehlermeldung bei Login', 'piratenkleider' ),
-                  'label'   => __( 'Option um die Fehlermeldung beim Login im Backend ein oder abzuschalten, mit der angezeigt wird, warum der Login fehlschlug.', 'piratenkleider' ),
+                  'label'   => __( 'Ein- oder Abschalten der Fehlermeldung beim Login im Backend, mit der angezeigt wird, warum der Login fehlschlug.', 'piratenkleider' ),
                   'liste'   => array(1 => __( 'Fehlermeldung zeigen', 'piratenkleider' ), 0 => __( 'Keine Meldung', 'piratenkleider' )),
                   'default' => 1,
               ),
@@ -1959,7 +2076,7 @@ $setoptions = array(
               'url-newsletteranmeldung' => array(
                   'type'    => 'url',
                   'title'   => __( 'Newsletter', 'piratenkleider' ),
-                  'label'   => __( 'URL, inkl. http://, zur Seite auf der man sich in Newsletter eingetragen werden kann.', 'piratenkleider' ),
+                  'label'   => __( 'URL inkl. http:// zur Seite, auf der man sich in den Newsletter eintragen kann', 'piratenkleider' ),
                   'default' => $defaultoptions['url-newsletteranmeldung'],
                  
               ),  
@@ -1967,7 +2084,7 @@ $setoptions = array(
 	      'favicon-file' => array(
                   'type'    => 'file',
                   'title'   => __( 'FavIcon-Datei', 'piratenkleider' ),
-                  'label'   => __( 'Einbinden und hochladen einer eigenen FavIcon-Datei. Bitte in den Aufl&ouml;sungen 16x16, 32x32 oder 64x64 Pixel.', 'piratenkleider' ),
+                  'label'   => __( 'Einbinden und Hochladen einer eigenen Favicon-Datei. Bitte in den Aufl&ouml;sungen 16x16, 32x32 oder 64x64 Pixel.', 'piratenkleider' ),
               ),
 	       
 	       
@@ -1978,12 +2095,7 @@ $setoptions = array(
                   'default' => $defaultoptions['yt-alternativeembed'],
               ),  
 	       
-	      'aktiv-wombat' => array(
-                  'type'    => 'bool',
-                  'title'   => __( 'Wombat', 'piratenkleider' ),
-                  'label'   => __( 'Aktiviert die Anzeige des kleinen Wombats (CC by Nicole Britz)', 'piratenkleider' ),
-                  'default' => $defaultoptions['aktiv-wombat'],
-              ),   
+	      
 	       
               'anonymitaet'  => array(
                   'type'    => 'section',
@@ -2000,7 +2112,7 @@ $setoptions = array(
               'anonymize-user' => array(
                   'type'    => 'bool',
                   'title'   => __( 'Kommentarbenutzer anonymisieren', 'piratenkleider' ),
-                  'label'   => __( 'IP-Adresse und der User-Agent-String geleert, die Eingabe von E-Mail-Adressen wird verhindert.<br> Diese Option deaktiviert auch die Avatar-Anzeige und setzt die Kommentareinstellung unter Einstellungen-Diskussion so, dass Benutzer keinen Namen und E-Mail-Adressen mehr eingeben m&uuml;ssen.', 'piratenkleider' ),
+                  'label'   => __( 'IP-Adresse und der User-Agent-String wird geleert und die Eingabe von E-Mail-Adressen wird verhindert.<br> Diese Option deaktiviert auch die Avatar-Anzeige und setzt die Kommentareinstellung unter Einstellungen -&gt; Diskussion so, dass Benutzer keine Namen und E-Mail-Adressen mehr eingeben m&uuml;ssen.', 'piratenkleider' ),
                   'default' => $defaultoptions['anonymize-user'],
                   'parent'  => 'anonymitaet',
               ),
@@ -2019,6 +2131,12 @@ $setoptions = array(
                   'default' => $defaultoptions['aktiv-avatar'],
                   'parent'  => 'anonymitaet',
               ),               
+             'feed-overwriteauthorstring' => array(
+                  'type'    => 'text',
+                  'title'   => __( 'Feed-Autor', 'piratenkleider' ),
+                  'label'   => __( 'Angabe, mit der im RSS-Feed der Autorname bei allen Artikel &uuml;berschrieben wird.', 'piratenkleider' ),
+                  'parent'  => 'anonymitaet',
+              ),  
                
               'meta'  => array(
                   'type'    => 'section',
@@ -2033,7 +2151,7 @@ $setoptions = array(
                 'meta-description' => array(
                   'type'    => 'text',
                   'title'   => __( 'Beschreibung', 'piratenkleider' ),
-                  'label'   => __( 'Optionale Beschreibungstext in dem Meta-Tag jeder Seite (f&uuml;r alle gleich). Sollte nicht mehr als 140 Zeichen lang sein, wenn gesetzt.', 'piratenkleider' ),
+                  'label'   => __( 'Optionaler Beschreibungstext in dem Meta-Tag jeder Seite (f&uuml;r alle gleich). Sollte nicht mehr als 140 Zeichen lang sein, wenn gesetzt.', 'piratenkleider' ),
                   'parent'  => 'meta',
               ),  
                'meta-keywords' => array(
@@ -2051,9 +2169,9 @@ $setoptions = array(
 
 	       'aktiv-autokeywords'  => array(
                   'type'    => 'bool',
-                  'title'   => __( 'Keywords aus Tags', 'piratenkleider' ),
-                  'label'   => __( 'Metatag mit Keywords wird automatisch aus der Tagcloud erstellt. Wenn oben Keywords eingegeben wurden, werden diese erg&auml;nzt.', 'piratenkleider')
-		      .'<br>'. __('Hinweis: Google und andere Suchmaschinen nutzen diesen Metatag bereits seit 2009 nicht mehr.', 'piratenkleider' )		   
+                  'title'   => __( 'Schl&uuml;sselworte aus Tags', 'piratenkleider' ),
+                  'label'   => __( 'Meta-Tag mit Schl&uuml;sselworten wird automatisch aus der Tagcloud erstellt. Wenn oben Schl&uuml;sselworte eingegeben wurden, werden diese erg&auml;nzt.', 'piratenkleider')
+		      .'<br>'. __('Hinweis: Google und andere Suchmaschinen nutzen diesen Meta-Tag bereits seit 2009 nicht mehr.', 'piratenkleider' )		   
 		      .'<br>'. __('Der Zweck dieser Funktion besteht darin, Pseudo-SEO-Experten ruhig zu halten :)', 'piratenkleider' ),
                   'default' => $defaultoptions['aktiv-autokeywords'],
                   'parent'  => 'meta',
@@ -2066,7 +2184,7 @@ $setoptions = array(
                   'type'    => 'bool',
                   'title'   => __( 'Aktivieren', 'piratenkleider' ),
                   'label'   => __( 'Verwaltung von Leseempfehlungen bzw. Linktipps aktivieren', 'piratenkleider')
-		      .'<br>'. __('Dies f&uuml;gt eine neue Verwaltung im Backend ein, mit denen spezielle Seiten, die nur einen kurzen Text und einen (externen) Link enthalten, als neue Beitrag auf den Indexseiten angezeigt werden k&ouml;nnen.', 'piratenkleider' ),		   
+		      .'<br>'. __('Dies f&uuml;gt eine neue Verwaltung im Backend ein, mit der spezielle Seiten, die nur einen kurzen Text und einen (externen) Link enthalten, als neue Beitr&auml;ge auf den Indexseiten angezeigt werden k&ouml;nnen.', 'piratenkleider' ),		   
                   'default' => $defaultoptions['aktiv-linktipps'],
                   'parent'  => 'linktipps',
               ),
@@ -2121,13 +2239,13 @@ $setoptions = array(
                 'impressumdienstanbieter' => array(
                   'type'    => 'text',
                   'title'   => __( 'Dienstanbieter', 'piratenkleider' ),
-                  'label'   => __( 'Textbezeichnung des Dienstanbieter des Webauftritts.', 'piratenkleider' ),
+                  'label'   => __( 'Textbezeichnung des Dienstanbieters des Webauftritts.', 'piratenkleider' ),
                   'parent'  => 'impressum',		    
 		), 
 	       'kontaktemail' => array(
                   'type'    => 'email',
-                  'title'   => __( 'Offizielle E-Mailadresse', 'piratenkleider' ),
-                  'label'   => __( 'Feste Mailadresse f&uuml;r offizielle Kontakte.', 'piratenkleider' ),
+                  'title'   => __( 'Offizielle E-Mail-Adresse', 'piratenkleider' ),
+                  'label'   => __( 'Feste  E-Mail-Adresse f&uuml;r offizielle Kontakte.', 'piratenkleider' ),
                   'parent'  => 'impressum',		    
 		), 
                'kontakttelefon' => array(
@@ -2179,8 +2297,8 @@ $setoptions = array(
 		 ),   
 		'poststrasse' => array(
                   'type'    => 'text',
-                  'title'   => __( 'Strasse oder Postfach', 'piratenkleider' ),
-                  'label'   => __( 'Anschrift: Strassenname und Nummer oder Postfachangabe oder freilassen <br>Zum Beispiel: <code>Unbesonnenheitsweg 123b</code>', 'piratenkleider' ),
+                  'title'   => __( 'Stra&szlig;e oder Postfach', 'piratenkleider' ),
+                  'label'   => __( 'Anschrift: Stra&szlig;enname und Hausnummer oder Postfachangabe oder freilassen <br>Zum Beispiel: <code>Unbesonnenheitsweg 123b</code>', 'piratenkleider' ),
 		  'default'	=> '',
                   'parent'  => 'postanschrift',
 		), 
@@ -2212,8 +2330,8 @@ $setoptions = array(
 		 ),   
 		'ladungstrasse' => array(
                   'type'    => 'text',
-                  'title'   => __( 'Strasse oder Postfach', 'piratenkleider' ),
-                  'label'   => __( 'Anschrift: Strassenname und Nummer oder Postfachangabe oder freilassen <br>Zum Beispiel: <code>Unbesonnenheitsweg 123b</code>', 'piratenkleider' ),
+                  'title'   => __( 'Stra&szlig;e oder Postfach', 'piratenkleider' ),
+                  'label'   => __( 'Anschrift: Stra&szlig;enname und Hausnummer oder Postfachangabe oder freilassen <br>Zum Beispiel: <code>Unbesonnenheitsweg 123b</code>', 'piratenkleider' ),
 		  'default'	=> '',
                   'parent'  => 'ladung',
 		), 
@@ -2240,8 +2358,8 @@ $setoptions = array(
 		),  
                 'dsbemail' => array(
                   'type'    => 'email',
-                  'title'   => __( 'E-Mailadresse', 'piratenkleider' ),
-                  'label'   => __( 'Feste Mailadresse f&uuml;r offizielle Kontakte.<br>Zum Beispiel:  <code>bundesbeauftragter@piraten-dsb.de</code>', 'piratenkleider' ),
+                  'title'   => __( 'E-Mail-Adresse', 'piratenkleider' ),
+                  'label'   => __( 'Feste E-Mail-Adresse f&uuml;r offizielle Kontakte.<br>Zum Beispiel:  <code>bundesbeauftragter@piraten-dsb.de</code>', 'piratenkleider' ),
 		  'default'	=> '',
                   'parent'  => 'dsb',
 		 ),   
