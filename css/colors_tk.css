@@ -358,7 +358,9 @@
   background: rgba(0, 0, 0, 0.2);
  }
   
- 
+ .content-aside .newsletter {
+     background-color: #00B5B1;
+ }
  .content-aside ul.menu {
   background: #00B4B1;
   background: rgba(0, 0, 0, 0.2);

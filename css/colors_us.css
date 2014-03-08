@@ -353,7 +353,9 @@
   background: #993399;
   background: rgba(255, 255, 255, 0.2); 
  }
-  
+  .content-aside .newsletter {
+     background-color: #B127AF; 
+ }
  
  .content-aside ul.menu {
   background: #993399;
