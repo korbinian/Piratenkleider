@@ -166,6 +166,11 @@ h1, h2, h3, h4, h5, h6 {
 h1, h2, h3, .cifont {
   letter-spacing: 1px; 
 }
+.actionpage h1, 
+.actionpage h2, 
+.actionpage h3 {
+    text-align: center;
+}
 
 h1 {
   font-size: 26.4px;
@@ -1278,7 +1283,6 @@ display: inline-block;
 .content-primary {
   overflow: hidden;
   background: white; 
-
 }
   .content-primary input[type="text"], 
   .content-primary select, 
@@ -2338,7 +2342,9 @@ img.wp-smiley {
     background-repeat: repeat-x;
     background-position: left bottom;
   }
-
+  .header.actionpage {
+      height: auto;
+  } 
   .nav-top ul {
     display: block; 
   }
@@ -2454,8 +2460,7 @@ img.wp-smiley {
     font-size: 1em;
     position: relative; 
     line-height: 1.6em; 
-    display: block;
-   
+    display: block;   
   }
   .content-primary .skin {
       margin-left: 0px;
@@ -2477,6 +2482,9 @@ img.wp-smiley {
         padding-left: 10px; 
     }
 
+    .actionpage .content-primary {
+        width: 100%;
+    }
 
 #main-stream h1  {    
     position: absolute;

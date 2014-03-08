@@ -122,7 +122,11 @@ h1, h2, h3, h4, h5, h6 {
 h1, h2, h3, .cifont {
   letter-spacing: 1px; 
 }
-
+.actionpage h1, 
+.actionpage h2, 
+.actionpage h3 {
+    text-align: center;
+}
 h1 {
   font-size: 26.4px;
   line-height: 21.6px; }
@@ -2162,7 +2166,9 @@ img.wp-smiley {
     background-repeat: repeat-x;
     background-position: left bottom;
   }
-
+  .header.actionpage {
+      height: auto;
+  } 
   .nav-top ul {
     display: block; 
   }
@@ -2301,6 +2307,30 @@ img.wp-smiley {
         padding-left: 10px; 
     }
 
+.actionpage .content-primary {
+        width: 100%;
+    }
+
+#main-stream h1  {    
+    position: absolute;
+    left: -999em;
+    width: 1px;
+}
+   #linktipp-stream h1, 
+   #second-stream h1, 
+   #linktipp-stream h2, 
+   #second-stream h2, 
+   #main-stream h2 {
+       font-size: 1.1em;
+       color: #24639b;
+   }   
+
+   #linktipp-stream section h2, 
+   #second-stream section h2, 
+   #main-stream section h2 {
+      font-size: 22.8px;
+       color: #24639b;
+   }  
 
 
 
@@ -3146,7 +3176,24 @@ html[xmlns] .slides {
       background: #111111 url("../images/home-signet.png") no-repeat 17px 10px; 
  }
      
-
+ .nav-main li a span {
+     display: inline;
+     position: absolute;
+     top: -3px;
+     right: -10px;
+     color: #2D7DC5;
+     font-size: 0.8em;
+      z-index: 51;
+ }
+  .nav-main li.redspan a span {
+      color: red;
+  }
+  .nav-main li.orangespan a span {
+      color: #ff8800;
+  }
+  .nav-main li.greenspan a span {
+      color: green;
+  }
  
  body.nav-fixed .nav-main ul.menu li a[title="Home"],
  body.nav-fixed .nav-main ul.menu li.menu-item-home a {
@@ -4782,7 +4829,20 @@ div.ics-calendar-holder .ics-calendar-event {
       background: #24639b;
       color: black; 
  }        
-           
+      .nav-main li a span {
+     display: inline;
+     position: relative;
+     top: inherit;
+     right: inherit;
+     font-size: 0.8em;
+     z-index: 51;
+   }
+   .nav-main li a span:before {
+       content: " (";
+   }
+   .nav-main li a span:after {
+       content: ")";
+   }     
   .post-comments {
      background:#FFFFFF;
   }

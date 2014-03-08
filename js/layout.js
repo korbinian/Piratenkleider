@@ -13,26 +13,9 @@ jQuery(document).ready(function($) {
  * unsichtbar gemacht. Durch JS entfernen wir die Klasse und 
  * machen sie also erst dann aktiv, wenn JS an ist.
  */ 
-    $("div").removeClass('no-js')
+    $("div").removeClass('no-js');
 
-    /** @TODO modernizr einbinden und gegen das Original Modernizr.touch checken */
-    if (('ontouchstart' in window) || window.DocumentTouch && document instanceof DocumentTouch) {
-        var $links = $('a', '#nav');
-
-        $links.on('touchstart', function (ev) {
-
-            /** Hover vortäuschen damit die Submenus angezeigt/versteckt werden */
-            $('li.hover', '#nav').removeClass('hover');
-            $(this).parents('li').addClass('hover');
-
-            /** Verhindere den Aufruf des Links beim ersten Tap */
-            if (!$(this).hasClass('touched')) {
-                $links.removeClass('touched').filter(this).addClass('touched');
-                ev.preventDefault();
-            }
-        });
-    }
-
+ 
      /* Barrierefreie Hauptnavigation mit Tastatur 
      * Links, die via Tastatur einen Fikus bekommen, erhalten die Klasse
      * "hover". Diese Klasse wird auf das aktive Element, sowie die darübergehenden
