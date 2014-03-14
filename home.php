@@ -93,13 +93,14 @@
 	   $cols[$col++] = $linkliste;
        }       
 
-           
-       echo '<div id="main-stream">';
-      
-       if (isset($options['artikelstream-title-main']) && (strlen($options['artikelstream-title-main'])>0)) {
-            echo '<h1>'.$options['artikelstream-title-main'].'</h1>';       
-            echo "\n";
-       }
+        if (($options['artikelstream-type']==1) || ($options['artikelstream-type']==2)) {
+	   echo '<div id="main-stream">';
+
+	   if (isset($options['artikelstream-title-main']) && (strlen($options['artikelstream-title-main'])>0)) {
+		echo '<h1>'.$options['artikelstream-title-main'].'</h1>';       
+		echo "\n";
+	   }
+	}
         echo '<div class="columns">';
         $z=1;
         foreach($cols as $key => $col) {
@@ -264,7 +265,7 @@
 			$foundarticles =1;
                     }
              }
-            
+            echo "</div>\n";
         }
         
 	if ($foundarticles==0) { ?>
@@ -278,7 +279,7 @@
 	}
         get_sidebar( 'startpage-contentfooter' ); ?>
 
-      </div>
+      <
     </div>
     <div class="content-aside">
       <div class="skin">
