@@ -374,9 +374,9 @@ function piratenkleider_person_post_type() {
 		'menu_icon'           => '',
 		'can_export'          => true,
 		'has_archive'         => true,
-		'exclude_from_search' => false,
+		'exclude_from_search' => true,
 		'publicly_queryable'  => true,
-		'rewrite'		=> array( 'slug' => 'Person','with_front' => FALSE),
+		'rewrite'		=> array( 'slug' => 'person','with_front' => FALSE),
 		'capability_type'     => 'page',
 	);
 	register_post_type( 'person', $args );
@@ -386,16 +386,6 @@ function piratenkleider_person_post_type() {
 // Hook into the 'init' action
 add_action( 'init', 'piratenkleider_person_post_type', 0 );
 
-function piratenkleider_person_taxonomies() {
-	$labels = array();
-	$args = array(
-		'labels'	=> $labels,
-		'hierarchical'	=> true,
-		'rewrite'	=> false,
-	);
-	register_taxonomy( 'person_category', 'person', $args );
-}
-add_action( 'init', 'piratenkleider_person_taxonomies' );
 
 
 /*
@@ -560,8 +550,34 @@ function person_metabox_save( $post_id ) {
 	if (filter_var($url, FILTER_VALIDATE_URL)) {
 	    update_post_meta( $post_id, 'person_url', $url );
 	}
+	$email = $_POST['person_email'];
+	if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
+	    update_post_meta( $post_id, 'person_email', $email );
+	}
+	$url = $_POST['person_facebook'];
+	if (filter_var($url, FILTER_VALIDATE_URL)) {
+	    update_post_meta( $post_id, 'person_facebook', $url );
+	}
+	$url = $_POST['person_google'];
+	if (filter_var($url, FILTER_VALIDATE_URL)) {
+	    update_post_meta( $post_id, 'person_google', $url );
+	}
+	$url = $_POST['person_kalender'];
+	if (filter_var($url, FILTER_VALIDATE_URL)) {
+	    update_post_meta( $post_id, 'person_kalender', $url );
+	}
+	$url = $_POST['person_newsfeed'];
+	if (filter_var($url, FILTER_VALIDATE_URL)) {
+	    update_post_meta( $post_id, 'person_newsfeed', $url );
+	}
+	
 
-
+	if( isset( $_POST[ 'person_twitter' ] ) ) {
+	    update_post_meta( $post_id, 'person_twitter',  sanitize_text_field($_POST[ 'person_twitter' ]) );
+	}
+	if( isset( $_POST[ 'person_wiki' ] ) ) {
+	    update_post_meta( $post_id, 'person_wiki',  sanitize_text_field($_POST[ 'person_wiki' ] ));
+	}
 
 	if( isset( $_POST[ 'person_text' ] ) ) {
 	    update_post_meta( $post_id, 'person_text',  $_POST[ 'person_text' ]  );
