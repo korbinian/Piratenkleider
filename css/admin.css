@@ -6,6 +6,7 @@
 @font-face { font-family: Awesome; local: Awesome; src: url(../fonts/fontawesome-webfont.eot) format("embedded-opentype"), url(../fonts/fontawesome-webfont.ttf) format("truetype"), url(../fonts/fontawesome-webfont.woff) format("woff"), url(../fonts/fontawesome-webfont.svg) format("svg") ; }
 @font-face { font-family: DroidSans; local: DroidSans; src: url(../fonts/DroidSans.eot) format("embedded-opentype"), url(../fonts/DroidSans.ttf) format("truetype"); }
 @font-face { font-family: LinLibertine; local: LinLibertine; src: url(../fonts/LinLibertine_R.woff) format("woff"); }
+@font-face { font-family: PoliticsHead; local: PoliticsHead; src: url(../fonts/PoliticsHeadv1_9.woff) format("woff"), url(../fonts/PoliticsHeadv1_9.ttf) format("truetype"); }
 
 
  #headimg {
@@ -99,4 +100,11 @@ label.plakattile:hover {
 
 img.imgurl {
     display: block;
+}
+
+#adminmenu .menu-icon-person div.wp-menu-image:before {
+    content: "\f337";
+}
+#adminmenu .menu-icon-linktipps div.wp-menu-image:before {
+    content: "\f319";
 }

@@ -22,7 +22,7 @@ function piratenkleider_custom_post_linktipps() {
 	    'rewrite'		=> array( 'slug' => 'linktipps','with_front' => FALSE), 
 	    'capability_type'	=> 'post',
 	    'hierarchical'	=> false,
-	    'menu_icon'		=> get_stylesheet_directory_uri() . '/images/icon-internet.png',
+	    'menu_icon'		=> '',
 	);
 	register_post_type( 'linktipps', $args );		
 }
@@ -330,4 +330,462 @@ function linktipps_shortcode( $atts ) {
 }
 add_shortcode( 'linktipps', 'linktipps_shortcode' );
 
+
+
+/* Visitenkarten / Personeninfos */
+
+
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+
+// Register Custom Post Type
+function piratenkleider_person_post_type() {
+
+	$labels = array(
+		'name'                => _x( 'Personen', 'Informationen f&uuml;r Personenseiten und Visitenkarten', 'piratenkleider' ),
+		'singular_name'       => _x( 'Person', 'Personeninformationen', 'piratenkleider' ),
+		'menu_name'           => __( 'Personen', 'piratenkleider' ),
+		'parent_item_colon'   => __( 'Parent Item:', 'piratenkleider' ),
+		'all_items'           => __( 'Alle Personen', 'piratenkleider' ),
+		'view_item'           => __( 'Person ansehen', 'piratenkleider' ),
+		'add_new_item'        => __( 'Neue Person', 'piratenkleider' ),
+		'add_new'             => __( 'Neu', 'piratenkleider' ),
+		'edit_item'           => __( 'Bearbeiten', 'piratenkleider' ),
+		'update_item'         => __( 'Aktualisieren', 'piratenkleider' ),
+		'search_items'        => __( 'Person suchen', 'piratenkleider' ),
+		'not_found'           => __( 'Person nicht gefunden', 'piratenkleider' ),
+		'not_found_in_trash'  => __( 'Person nicht im Papierkorb gefunden', 'piratenkleider' ),
+	);
+	$args = array(
+		'label'               => __( 'Person', 'piratenkleider' ),
+		'description'	      => __( 'Erstellen und Verwalten von Personeninformationen', 'piratenkleider' ),
+		'labels'              => $labels,
+		'supports'            => array( 'title', 'thumbnail', ),
+		'hierarchical'        => false,
+		'public'              => false,
+		'show_ui'             => true,
+		'show_in_menu'        => true,
+		'show_in_nav_menus'   => true,
+		'show_in_admin_bar'   => true,
+		'menu_position'       => 5,
+		'menu_icon'           => '',
+		'can_export'          => true,
+		'has_archive'         => true,
+		'exclude_from_search' => false,
+		'publicly_queryable'  => true,
+		'rewrite'		=> array( 'slug' => 'Person','with_front' => FALSE),
+		'capability_type'     => 'page',
+	);
+	register_post_type( 'person', $args );
+
+}
+
+// Hook into the 'init' action
+add_action( 'init', 'piratenkleider_person_post_type', 0 );
+
+function piratenkleider_person_taxonomies() {
+	$labels = array();
+	$args = array(
+		'labels'	=> $labels,
+		'hierarchical'	=> true,
+		'rewrite'	=> false,
+	);
+	register_taxonomy( 'person_category', 'person', $args );
+}
+add_action( 'init', 'piratenkleider_person_taxonomies' );
+
+
+/*
+ * Metabox fuer weitere Personsinfo
+ */
+
+
+function piratenkleider_person_metabox() {
+    add_meta_box(
+        'person_metabox',
+        __( 'Beschreibung der Person', 'piratenkleider' ),
+        'person_metabox_content',
+        'person',
+        'normal',
+        'high'
+    );
+}
+function person_metabox_content( $post ) {
+    global $defaultoptions;
+    global $post;
+
+	wp_nonce_field( plugin_basename( __FILE__ ), 'person_metabox_content_nonce' );
+	?>
+
+	<p>
+		<label for="person_name"><?php _e( "Vorname Nachname", 'piratenkleider' ); ?>:</label>
+		<br />
+		<input class="widefat" type="text" name="person_name"
+		       id="person_name" value="<?php echo esc_attr( get_post_meta( $post->ID, 'person_name', true ) ); ?>" size="30" />
+	</p>
+	<p>
+		<label for="person_kurztext"><?php _e( "Kurzbeschreibung", 'piratenkleider' ); ?>:</label>
+		<br />
+		<input class="widefat" type="text" name="person_kurztext"
+		       id="person_kurztext" value="<?php echo esc_attr( get_post_meta( $post->ID, 'person_kurztext', true ) ); ?>" size="70" />
+	</p>
+	<p>
+	    <label for="person_bild"><?php _e( "Beitrags- oder Symbolbild (URL)", 'piratenkleider' ); ?>:</label>
+	    <br />
+	     
+	    
+		<?php
+		 $person_bildid = get_post_meta( $post->ID, 'person_bildid', true );
+		 $person_bild = get_post_meta( $post->ID, 'person_bild', true );
+		
+		 if (isset($person_bildid) && ($person_bildid>0)) {
+		     $image_attributes = wp_get_attachment_image_src( $person_bildid, 'linktipp-thumb' );
+		     if (is_array($image_attributes)) {
+			echo '<img id="person_bild-show" src="'.$image_attributes[0].'" width="'.$image_attributes[1].'" height="'.$image_attributes[2].'">';
+			$person_bild = $image_attributes[0];
+		     }
+		     
+		 } elseif (filter_var($person_bild, FILTER_VALIDATE_URL)) {
+			echo '<img id="person_bild-show" src="'.$person_bild.'" alt="" style="width: '.$defaultoptions['linktipp-thumbnail_width'].'px; height: auto;">';
+		 } else {
+			echo '<img id="person_bild-show" src="'.$defaultoptions['src-person_bild_default'].'" alt="" style="width: '.$defaultoptions['linktipp-thumbnail_width'].'px; height: auto;">';			
+		 }
+		 echo '<br /><span class="custom_default_image" style="display:none">'.$defaultoptions['src-person_bild_default'].'</span>';  
+		?>
+	     <input type="text" name="person_bild" size="50" id="lperson_bild" 
+		    value="<?php echo $person_bild; ?>" />
+	     <input type="hidden" name="person_bildid" id="person_bildid" 
+		    value="<?php echo $person_bildid; ?>" />	    
+	     
+	     
+	     <input type="button" id="person_bild-button" class="button" value="<?php _e( "Bild ausw&auml;hlen oder hochladen", 'piratenkleider' ); ?>" />
+	    <small> <a href="#" class="custom_clear_image_button">Bild entfernen</a></small> 
+	</p>
+	<p>
+		<label for="person_text"><?php _e( "Detaillierte Beschreibung", 'piratenkleider' ); ?>:</label>
+		<br />
+		<textarea class="widefat" name="person_text" cols="70" rows="6" id="person_text" /><?php echo esc_attr( get_post_meta( $post->ID, 'person_text', true ) ); ?></textarea>
+	</p>
+
+	<p>
+		<label for="person_email"><?php _e( "E-Mail-Adresse", 'piratenkleider' ); ?>:</label>
+		<br />
+		<input  type="text" name="person_email"
+			id="person_email" value="<?php echo esc_attr( get_post_meta( $post->ID, 'person_email', true ) ); ?>" size="30" />
+	</p>
+	<p>
+		<label for="person_url"><?php _e( "Homepage/Blog (URL)", 'piratenkleider' ); ?>:</label>
+		<br />
+		<input  type="text" name="person_url"
+			id="person_url" value="<?php echo esc_attr( get_post_meta( $post->ID, 'person_url', true ) ); ?>" size="30" />
+	</p>
+	
+	<p>
+		<label for="person_wiki"><?php _e( "Wiki Benutzerseite (Benutzername)", 'piratenkleider' ); ?>:</label>
+		<br />
+		<input  type="text" name="person_wiki"
+			id="person_wiki" value="<?php echo esc_attr( get_post_meta( $post->ID, 'person_wiki', true ) ); ?>" size="10" />
+	</p>
+	
+	<p>
+		<label for="person_twitter"><?php _e( "Twitter (Account)", 'piratenkleider' ); ?>:</label>
+		<br />
+		<input  type="text" name="person_twitter"
+			id="person_twitter" value="<?php echo esc_attr( get_post_meta( $post->ID, 'person_twitter', true ) ); ?>" size="10" />
+
+	</p>
+	<p>
+		<label for="person_facebook"><?php _e( "Facebook (URL)", 'piratenkleider' ); ?>:</label>
+		<br />
+		<input  type="text" name="person_facebook"
+			id="person_facebook" value="<?php echo esc_attr( get_post_meta( $post->ID, 'person_facebook', true ) ); ?>" size="30" />
+
+	</p>
+	<p>
+		<label for="person_google"><?php _e( "Google+ (URL)", 'piratenkleider' ); ?>:</label>
+		<br />
+		<input  type="text" name="person_google"
+			id="person_google" value="<?php echo esc_attr( get_post_meta( $post->ID, 'person_google', true ) ); ?>" size="30" />
+
+	</p>
+	<p>
+		<label for="person_kalender"><?php _e( "Kalender (URL)", 'piratenkleider' ); ?>:</label>
+		<br />
+		<input  type="text" name="person_kalender"
+			id="person_kalender" value="<?php echo esc_attr( get_post_meta( $post->ID, 'person_kalender', true ) ); ?>" size="30" />
+
+	</p>
+	<p>
+		<label for="person_newsfeed"><?php _e( "Newsfeed aus Blog oder CMS (RSS URL)", 'piratenkleider' ); ?>:</label>
+		<br />
+		<input  type="text" name="person_newsfeed"
+			id="person_newsfeed" value="<?php echo esc_attr( get_post_meta( $post->ID, 'person_newsfeed', true ) ); ?>" size="30" />
+	</p>
+
+
+
+
+
+	<?php
+
+}
+add_action( 'add_meta_boxes', 'piratenkleider_person_metabox' );
+
+
+function person_metabox_save( $post_id ) {
+    if (  'person'!= get_post_type()  ) {
+	return;
+    }
+
+
+	if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE )
+	return;
+
+	if ( !wp_verify_nonce( $_POST['person_metabox_content_nonce'], plugin_basename( __FILE__ ) ) )
+	return;
+
+	if ( 'page' == $_POST['post_type'] ) {
+		if ( !current_user_can( 'edit_page', $post_id ) )
+		return;
+	} else {
+		if ( !current_user_can( 'edit_post', $post_id ) )
+		return;
+	}
+
+
+	$url = $_POST['person_url'];
+	if (filter_var($url, FILTER_VALIDATE_URL)) {
+	    update_post_meta( $post_id, 'person_url', $url );
+	}
+
+
+
+	if( isset( $_POST[ 'person_text' ] ) ) {
+	    update_post_meta( $post_id, 'person_text',  $_POST[ 'person_text' ]  );
+	}
+	if( isset( $_POST[ 'person_kurztext' ] ) ) {
+	    update_post_meta( $post_id, 'person_kurztext',  $_POST[ 'person_kurztext' ] );
+	}
+	if( isset( $_POST[ 'person_name' ] ) ) {
+	    update_post_meta( $post_id, 'person_name', sanitize_text_field( $_POST[ 'person_name' ] ) );
+	}
+
+
+
+}
+add_action( 'save_post', 'person_metabox_save' );
+
+
+
+function person_metabox_updated_messages( $messages ) {
+	global $post, $post_ID;
+	$messages['person'] = array(
+		0 => '',
+		1 => __('Die Personeninformationen wurden aktualisiert. ', 'piratenkleider'),
+		2 => __('Die Personeninformationen wurden aktualisiert.', 'piratenkleider'),
+		3 => __('Personeninformationen wurden gel&ouml;scht.', 'piratenkleider'),
+		6 => __('Personeninformationen wurden ver&ouml;ffentlicht.', 'piratenkleider'),
+		7 => __('Personeninformationen wurden gespeichert.', 'piratenkleider'),
+			);
+	return $messages;
+}
+add_filter( 'post_updated_messages', 'person_metabox_updated_messages' );
+
+
+
+/* Shortcode Definition
+ *
+ */
+
+
+function person_shortcode( $atts ) {
+    global $options;
+
+	extract( shortcode_atts( array(
+		'cat' => '',
+		'num' => 30,
+		'id'	=> '',
+		'format'    => 'table',
+		'showautor' => 1
+	), $atts ) );
+	$single = 0;
+	$cat = sanitize_text_field($cat);
+	$format = sanitize_text_field($format);
+	$showautor = sanitize_text_field($showautor);
+	if ((isset($id)) && ( strlen(trim($id))>0)) {
+
+	    $args = array(
+			'post_type' => 'person',
+			'p' => $id
+		);
+	    $single = 1;
+	}elseif ((isset($cat)) && ( strlen(trim($cat))>0)) {
+	    $args = array(
+			'post_type' => 'person',
+			'tax_query' => array(
+				array(
+					'taxonomy' => 'person_category',
+					'field' => 'slug',
+					'terms' => $cat
+				    )
+			)
+		);
+
+	} else {
+	    $args = array(
+			'post_type' => 'person'
+	    );
+	}
+
+	$links = new WP_Query( $args );
+		if( $links->have_posts() ) {
+		    $i=0;
+		    $out = '';
+
+		    if (isset($format) && ($format=='table') && ($single==0)) {
+				$out .= '
+				    <table class="Personentabelle">
+				      <thead>
+				     <tr>
+				     <th scope="col" class="titel">Titel</th>
+					 <th scope="col" class="kurztext">Kurzbeschreibung</th>
+					 <th scope="col" class="referent">Name</th>
+				     </tr>
+				    </thead>
+				    <tbody>
+				';
+		    }
+
+
+		    while ($links->have_posts() && ($i<$num) ) {
+			$links->the_post();
+			$i++;
+
+			    $post_id = $links->post->ID;
+			    $title = get_the_title();
+
+
+
+			    $person_kurztext = get_post_meta( $post_id, 'person_kurztext', true );
+			    $person_text = get_post_meta( $post_id, 'person_text', true );
+			    $person_name = get_post_meta( $post_id, 'person_name', true );
+			    $person_url = get_post_meta( $post_id, 'person_url', true );
+
+
+			    
+
+		        if (isset($id) && isset($format) &&($format=='short')) {
+					$out .= ''
+						. '<span class="titel">'
+						.$title
+						. '</span><br /><span class="referent">(';
+					if (isset($person_url)&& (strlen(trim($person_url))>0)) {
+					    $out .= '<a href="'.$person_url.'" title="'.$person_name.'">';
+					}
+					$out .= $person_name;
+					if (isset($person_url)&& (strlen(trim($person_url))>0)) {
+					    $out .= '</a>';
+					}
+					$out .= ')</span>';
+				}
+
+				elseif (isset($format) && ($format=='table') && ($single==0)) {
+				$out .= "<tr class=\"Person\">\n";
+				$out .= '<th scope="row">'.$title.'</th>';
+				$out .= '<td>'.$person_kurztext.'</td>';
+				if (isset($person_name)) {
+					$out .= '<td>';
+					if (isset($person_url)&& (strlen(trim($person_url))>0)) {
+					    $out .= '<a href="'.$person_url.'" title="'.$person_name.'">';
+					}
+					$out .= $person_name;
+
+					if (isset($person_url)&& (strlen(trim($person_url))>0)) {
+					    $out .= '</a>';
+					}
+					$out .= '</td>';
+				    }
+				$out .= "</tr>\n";
+			    } else {
+
+
+			      $out .= '<section class="shortcode Person vevent" id="post-'.$post_id.'" >';
+			      $out .= "\n";
+				    $out .=  '<header class="titel">';
+
+				    $out .= '<h2 class="summary">'.$title.'</h2>';
+
+				    if ((isset($person_name)) && ($showautor==1)) {
+					$out .= '<p class="autor">';
+					if (isset($person_url)&& (strlen(trim($person_url))>0)) {
+					    $out .= '<a href="'.$person_url.'">';
+					}
+					$out .= $person_name;
+
+					if (isset($person_url)&& (strlen(trim($person_url))>0)) {
+					    $out .= '</a>';
+					}
+					$out .= '</p>';
+				    }
+
+				  
+
+				    $out .= '</header>';
+				    $out .= "\n";
+
+
+
+
+				 $out .= '<div class="person_daten">';
+				  $out .= "\n";
+				     $out .= '<article class="post-entry"><p>';
+				     $out .= "\n";
+
+				     if (isset($person_kurztext)) {
+					    $out .= '<p class="kurzbeschreibung">';
+					     $out .=  $person_kurztext;
+					     $out .= '</p>';
+					}
+
+					if (isset($person_text)) {
+
+					    $out .= '<p class="detailbeschreibung">';
+					     $out .=  $person_text;
+					     $out .= '</p>';
+					}
+
+				     $out .= "</article>\n";
+
+			
+
+
+
+				  $out .= "</div>\n";
+			      $out .= "</section>\n";
+			    }
+			    }
+			    if (isset($format) && ($format=='table') && ($single==0)) {
+				$out .= '</table>';
+			    }
+
+
+
+
+		    wp_reset_postdata();
+
+		} else {
+			$out = '<section class="shortcode Person"><p>';
+			$out .= __('Es konnten keine Personeninformationen gefunden werden.', 'piratenkleider');
+			$out .= "</p></section>\n";
+		}
+
+	return $out;
+}
+add_shortcode( 'person', 'person_shortcode' );
+
 ?>
+
+
