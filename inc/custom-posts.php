@@ -363,7 +363,7 @@ function piratenkleider_person_post_type() {
 		'label'               => __( 'Person', 'piratenkleider' ),
 		'description'	      => __( 'Erstellen und Verwalten von Personeninformationen', 'piratenkleider' ),
 		'labels'              => $labels,
-		'supports'            => array( 'title', 'thumbnail', ),
+		'supports'            => array( 'title'),
 		'hierarchical'        => false,
 		'public'              => false,
 		'show_ui'             => true,
