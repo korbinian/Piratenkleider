@@ -93,7 +93,7 @@
 @media only screen and (min-width: 1350px) {
 .row{max-width:1343px;width:1343px;}
 .teaser .first-teaser-widget-area,.first-footer-widget-area{width:1024px;}
-.first-teaser-widget-area .slide .caption{line-height:2;width:319px;background:#000;height:240px;padding:50px 0 0 5px;}
+.first-teaser-widget-area .slide .caption{line-height:2;width:319px;background:#ff8800;height:240px;padding:50px 0 0 5px;}
 .first-teaser-widget-area .slide .caption p{padding-right:20px;}
 .first-teaser-widget-area .slide .caption h3{bottom:0;position:absolute;line-height:1.3;background:none repeat scroll 0 0 #2D7DC5;width:319px;}
 .first-teaser-widget-area .slide .caption h3:hover{background:#f80;}
