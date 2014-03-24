@@ -690,14 +690,14 @@
    #linktipp-stream .clear, 
    #second-stream .clear, 
    #linktipp-stream hr,
-   #second-stream hr {
+   #second-stream hr { 
        clear: none;
        display: none;
    }
    
    #linktipp-stream .p3-column, 
    #second-stream .p3-column {
-       width: auto;
+       width: auto; 
        display: inline;
    }
    
@@ -705,7 +705,6 @@
    #second-stream .withthumb .p3-col3 {
        margin: 0;
    }
-   #linktipp-stream section.linktipps p { text-align: center; } 
    .linktipps .post-entry p img {
        float: none;
        display: inline-block;

@@ -363,7 +363,7 @@ function piratenkleider_person_post_type() {
 		'label'               => __( 'Person', 'piratenkleider' ),
 		'description'	      => __( 'Erstellen und Verwalten von Personeninformationen', 'piratenkleider' ),
 		'labels'              => $labels,
-		'supports'            => array( 'title'),
+		'supports'            => array( ''),
 		'hierarchical'        => false,
 		'public'              => false,
 		'show_ui'             => true,
@@ -410,13 +410,28 @@ function person_metabox_content( $post ) {
 	wp_nonce_field( plugin_basename( __FILE__ ), 'person_metabox_content_nonce' );
 	?>
 
-	<p>
-		<label for="person_name"><?php _e( "Vorname Nachname", 'piratenkleider' ); ?>:</label>
+        
+        <p>
+		<label for="person_name"><?php _e( "Vorname", 'piratenkleider' ); ?>:</label>
 		<br />
-		<input class="widefat" type="text" name="person_name"
-		       id="person_name" value="<?php echo esc_attr( get_post_meta( $post->ID, 'person_name', true ) ); ?>" size="30" />
+		<input class="widefat" type="text" name="person_vorname"
+		       id="person_vorname" value="<?php echo esc_attr( get_post_meta( $post->ID, 'person_vorname', true ) ); ?>" size="15" />
 	</p>
 	<p>
+		<label for="person_name"><?php _e( "Nachname", 'piratenkleider' ); ?>:</label>
+		<br />
+		<input class="widefat" type="text" name="person_name"
+		       id="person_name" value="<?php echo esc_attr( get_post_meta( $post->ID, 'person_name', true ) ); ?>" size="15" />
+	</p>
+        <p>
+		<label for="person_academic"><?php _e( "Akademischer Titel", 'piratenkleider' ); ?>:</label>
+		<br />
+		<input class="widefat" type="text" name="person_academic"
+		       id="person_academic" value="<?php echo esc_attr( get_post_meta( $post->ID, 'person_academic', true ) ); ?>" size="7" />
+	</p>	
+        
+        
+        <p>
 		<label for="person_kurztext"><?php _e( "Kurzbeschreibung", 'piratenkleider' ); ?>:</label>
 		<br />
 		<input class="widefat" type="text" name="person_kurztext"
@@ -588,7 +603,12 @@ function person_metabox_save( $post_id ) {
 	if( isset( $_POST[ 'person_name' ] ) ) {
 	    update_post_meta( $post_id, 'person_name', sanitize_text_field( $_POST[ 'person_name' ] ) );
 	}
-
+        if( isset( $_POST[ 'person_vorname' ] ) ) {
+	    update_post_meta( $post_id, 'person_vorname', sanitize_text_field( $_POST[ 'person_vorname' ] ) );
+	}
+        if( isset( $_POST[ 'person_academic' ] ) ) {
+	    update_post_meta( $post_id, 'person_academic', sanitize_text_field( $_POST[ 'person_academic' ] ) );
+	}
 
 
 }
@@ -632,7 +652,6 @@ function person_shortcode( $atts ) {
 	$format = sanitize_text_field($format);
 	$showautor = sanitize_text_field($showautor);
 	if ((isset($id)) && ( strlen(trim($id))>0)) {
-
 	    $args = array(
 			'post_type' => 'person',
 			'p' => $id
@@ -663,7 +682,7 @@ function person_shortcode( $atts ) {
 
 		    if (isset($format) && ($format=='table') && ($single==0)) {
 				$out .= '
-				    <table class="Personentabelle">
+				    <table class="person">
 				      <thead>
 				     <tr>
 				     <th scope="col" class="titel">Titel</th>
@@ -683,11 +702,12 @@ function person_shortcode( $atts ) {
 			    $post_id = $links->post->ID;
 			    $title = get_the_title();
 
-
-
 			    $person_kurztext = get_post_meta( $post_id, 'person_kurztext', true );
 			    $person_text = get_post_meta( $post_id, 'person_text', true );
 			    $person_name = get_post_meta( $post_id, 'person_name', true );
+                            $person_vorname = get_post_meta( $post_id, 'person_vorname', true );
+                            $person_academic = get_post_meta( $post_id, 'person_academic', true );
+                            $title = $person_academic.' '.$person_vorname.' '.$person_name;
 			    $person_url = get_post_meta( $post_id, 'person_url', true );
 
 
@@ -695,29 +715,27 @@ function person_shortcode( $atts ) {
 
 		        if (isset($id) && isset($format) &&($format=='short')) {
 					$out .= ''
-						. '<span class="titel">'
-						.$title
-						. '</span><br /><span class="referent">(';
+						. '<span class="person">';
 					if (isset($person_url)&& (strlen(trim($person_url))>0)) {
 					    $out .= '<a href="'.$person_url.'" title="'.$person_name.'">';
 					}
-					$out .= $person_name;
+					$out .= $title;
 					if (isset($person_url)&& (strlen(trim($person_url))>0)) {
 					    $out .= '</a>';
 					}
-					$out .= ')</span>';
+					$out .= '</span>';
 				}
 
 				elseif (isset($format) && ($format=='table') && ($single==0)) {
-				$out .= "<tr class=\"Person\">\n";
+				$out .= "<tr class=\"person\">\n";
 				$out .= '<th scope="row">'.$title.'</th>';
 				$out .= '<td>'.$person_kurztext.'</td>';
 				if (isset($person_name)) {
 					$out .= '<td>';
 					if (isset($person_url)&& (strlen(trim($person_url))>0)) {
-					    $out .= '<a href="'.$person_url.'" title="'.$person_name.'">';
+					    $out .= '<a href="'.$person_url.'">';
 					}
-					$out .= $person_name;
+					$out .= $title;
 
 					if (isset($person_url)&& (strlen(trim($person_url))>0)) {
 					    $out .= '</a>';
@@ -728,26 +746,23 @@ function person_shortcode( $atts ) {
 			    } else {
 
 
-			      $out .= '<section class="shortcode Person vevent" id="post-'.$post_id.'" >';
+			      $out .= '<section class="shortcode person" id="post-'.$post_id.'" >';
 			      $out .= "\n";
-				    $out .=  '<header class="titel">';
-
-				    $out .= '<h2 class="summary">'.$title.'</h2>';
+				    $out .=  '<header>';
+				    $out .= '<h2>'.$title.'</h2>';
 
 				    if ((isset($person_name)) && ($showautor==1)) {
 					$out .= '<p class="autor">';
 					if (isset($person_url)&& (strlen(trim($person_url))>0)) {
 					    $out .= '<a href="'.$person_url.'">';
 					}
-					$out .= $person_name;
+					$out .= $title;
 
 					if (isset($person_url)&& (strlen(trim($person_url))>0)) {
 					    $out .= '</a>';
 					}
 					$out .= '</p>';
-				    }
-
-				  
+				    } 
 
 				    $out .= '</header>';
 				    $out .= "\n";
@@ -793,7 +808,7 @@ function person_shortcode( $atts ) {
 		    wp_reset_postdata();
 
 		} else {
-			$out = '<section class="shortcode Person"><p>';
+			$out = '<section class="shortcode person"><p>';
 			$out .= __('Es konnten keine Personeninformationen gefunden werden.', 'piratenkleider');
 			$out .= "</p></section>\n";
 		}

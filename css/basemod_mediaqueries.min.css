@@ -110,8 +110,7 @@
 #linktipp-stream .clear,#second-stream .clear,#linktipp-stream hr,#second-stream hr{clear:none;display:none;}
 #linktipp-stream .p3-column,#second-stream .p3-column{width:auto;display:inline;}
 #linktipp-stream .withthumb .p3-col3,#second-stream .withthumb .p3-col3{margin:0;}
-#linktipp-stream section.linktipps p{text-align:center;}
-.linktipps .post-entry p img{float:none;display:inline-block;}
+.linktipps .post-entry p img{float:none;display:inline-block;} 
 .content .startpage-widget-area{clear:both;}
 .content-header #page-title,.content-header h1,.content-header-big h1{right:0;left:705px;height:240px;background:none repeat scroll 0 0 #f80;top:0;color:#FFF;padding:15px;}
 }
