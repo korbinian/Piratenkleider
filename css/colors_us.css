@@ -516,52 +516,59 @@ div.ics-calendar-holder .ics-calendar-event {
    
 }
  @media only screen and (max-width: 600px) {
-   .nav-top ul.menu li a {
-        background: #2d7dc5;
-        color: white;        
-        border-color: #993399;
-        text-shadow: 0 -1px 0 #993399;
-        background-color: #B127AF;     
-   }
+    .nav-top ul.menu li a {
+	background: #2d7dc5;
+	color: white;        
+	border-color: #993399;
+	text-shadow: 0 -1px 0 #993399;
+	background-color: #B127AF;     
+    }
     .nav-top ul.menu li a:hover {
       background: #24639b;
     }
-    
-    .nav-main ul.menu li a {
-        color: white;
-        border-color: #2d7dc5;
-        border-top-color: #4e96d7;
-        border-bottom-color: #1a4872;
-        background-color: #2d7dc5;
-        background-image: -moz-linear-gradient(top, #2d7dc5, #24639b);
-        background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #2d7dc5), color-stop(1, #24639b));
-        background-image: linear-gradient(top, #2d7dc5, #24639b);
-  }
 
-  .nav-main ul.menu li a:hover {
+    .nav-main ul.menu li a {
+	color: white;
+	border-color: #2d7dc5;
+	border-top-color: #4e96d7;
+	border-bottom-color: #1a4872;
+	background-color: #2d7dc5;
+	background-image: -moz-linear-gradient(top, #2d7dc5, #24639b);
+	background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #2d7dc5), color-stop(1, #24639b));
+	background-image: linear-gradient(top, #2d7dc5, #24639b);
+    }
+
+    .nav-main ul.menu li a:hover {
       background: #4e96d7;
     }
- .nav-main ul.menu li a:focus, 
- .nav-main ul.menu li a:hover {
+    .nav-main ul.menu li a:focus, 
+    .nav-main ul.menu li a:hover {
       background: #24639b;
       color: black; 
- }        
-           
-  .post-comments {
+    }        
+
+    .post-comments {
      background: url("../images/int/bg-tags-us.png") repeat fixed -20% top #B127AF;
-  }
-  .post-comments a {
+    }
+    .post-comments a {
       color: black;
-  }
-  .post-comments ol li {
+    }
+    .post-comments ol li {
       border-color: rgba(0, 0, 0, 0.2);
-  }
-   .post-comments ol li .comment-details {
-    color: #222222;
-    background: none repeat scroll 0 0 rgba(0, 0, 0, 0.2);
- }
- .post-comments ol li .comment-body {
-    background: white; 
- }
+    }
+    .post-comments ol li .comment-details {
+	color: #222222;
+	background: none repeat scroll 0 0 rgba(0, 0, 0, 0.2);
+    }
+    .post-comments ol li .comment-body {
+	background: white; 
+    }
     
  }
+ 
+  
+ @media only screen and (min-width: 1350px) {
+    .first-teaser-widget-area .slide .caption {       
+        background: #B127AF;
+    }
+}   

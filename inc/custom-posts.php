@@ -363,7 +363,7 @@ function piratenkleider_person_post_type() {
 		'label'               => __( 'Person', 'piratenkleider' ),
 		'description'	      => __( 'Erstellen und Verwalten von Personeninformationen', 'piratenkleider' ),
 		'labels'              => $labels,
-		'supports'            => array( ''),
+		'supports'            => array( 'title'),
 		'hierarchical'        => false,
 		'public'              => false,
 		'show_ui'             => true,
@@ -406,36 +406,55 @@ function piratenkleider_person_metabox() {
 function person_metabox_content( $post ) {
     global $defaultoptions;
     global $post;
-
+    $academictitle = array(
+	"Prof.", 
+	"Dr."
+    );
 	wp_nonce_field( plugin_basename( __FILE__ ), 'person_metabox_content_nonce' );
 	?>
 
         
         <p>
-		<label for="person_name"><?php _e( "Vorname", 'piratenkleider' ); ?>:</label>
+		<label for="person_first_name"><?php _e( "Vorname", 'piratenkleider' ); ?>:</label>
 		<br />
-		<input class="widefat" type="text" name="person_vorname"
-		       id="person_vorname" value="<?php echo esc_attr( get_post_meta( $post->ID, 'person_vorname', true ) ); ?>" size="15" />
+		<input class="widefat" type="text" name="person_first_name"
+		       id="person_first_name" value="<?php echo esc_attr( get_post_meta( $post->ID, 'person_first_name', true ) ); ?>" size="15" />
 	</p>
 	<p>
-		<label for="person_name"><?php _e( "Nachname", 'piratenkleider' ); ?>:</label>
+		<label for="person_last_name"><?php _e( "Nachname", 'piratenkleider' ); ?>:</label>
 		<br />
-		<input class="widefat" type="text" name="person_name"
-		       id="person_name" value="<?php echo esc_attr( get_post_meta( $post->ID, 'person_name', true ) ); ?>" size="15" />
+		<input class="widefat" type="text" name="person_last_name"
+		       id="person_last_name" value="<?php echo esc_attr( get_post_meta( $post->ID, 'person_last_name', true ) ); ?>" size="15" />
 	</p>
         <p>
 		<label for="person_academic"><?php _e( "Akademischer Titel", 'piratenkleider' ); ?>:</label>
 		<br />
-		<input class="widefat" type="text" name="person_academic"
-		       id="person_academic" value="<?php echo esc_attr( get_post_meta( $post->ID, 'person_academic', true ) ); ?>" size="7" />
+		<select name="person_academic" id="person_academic">
+		    <option value=""></option>
+		<?php
+		    $current = esc_attr( get_post_meta( $post->ID, 'person_academic', true ) );
+			 foreach($academictitle as $i) {   
+                                        echo "\t\t\t\t";
+                                        echo '<option value="'.$i.'"';
+                                        if ( $i == $current ) {
+                                            echo ' selected="selected"';
+                                        }                                                                                                                                                                
+                                        echo '>';
+					echo $i;
+                                        echo '</option>';                                                                                                                                                              
+                                        echo "\n";                                            
+                                    }  
+		    ?>
+		</select> 
+
 	</p>	
         
         
         <p>
-		<label for="person_kurztext"><?php _e( "Kurzbeschreibung", 'piratenkleider' ); ?>:</label>
+		<label for="person_shortdesc"><?php _e( "Kurzbeschreibung", 'piratenkleider' ); ?>:</label>
 		<br />
-		<input class="widefat" type="text" name="person_kurztext"
-		       id="person_kurztext" value="<?php echo esc_attr( get_post_meta( $post->ID, 'person_kurztext', true ) ); ?>" size="70" />
+		<input class="widefat" type="text" name="person_shortdesc"
+		       id="person_shortdesc" value="<?php echo esc_attr( get_post_meta( $post->ID, 'person_shortdesc', true ) ); ?>" size="70" />
 	</p>
 	<p>
 	    <label for="person_bild"><?php _e( "Beitrags- oder Symbolbild (URL)", 'piratenkleider' ); ?>:</label>
@@ -597,14 +616,14 @@ function person_metabox_save( $post_id ) {
 	if( isset( $_POST[ 'person_text' ] ) ) {
 	    update_post_meta( $post_id, 'person_text',  $_POST[ 'person_text' ]  );
 	}
-	if( isset( $_POST[ 'person_kurztext' ] ) ) {
-	    update_post_meta( $post_id, 'person_kurztext',  $_POST[ 'person_kurztext' ] );
+	if( isset( $_POST[ 'person_shortdesc' ] ) ) {
+	    update_post_meta( $post_id, 'person_shortdesc',  $_POST[ 'person_shortdesc' ] );
 	}
-	if( isset( $_POST[ 'person_name' ] ) ) {
-	    update_post_meta( $post_id, 'person_name', sanitize_text_field( $_POST[ 'person_name' ] ) );
+	if( isset( $_POST[ 'person_last_name' ] ) ) {
+	    update_post_meta( $post_id, 'person_last_name', sanitize_text_field( $_POST[ 'person_last_name' ] ) );
 	}
-        if( isset( $_POST[ 'person_vorname' ] ) ) {
-	    update_post_meta( $post_id, 'person_vorname', sanitize_text_field( $_POST[ 'person_vorname' ] ) );
+        if( isset( $_POST[ 'person_first_name' ] ) ) {
+	    update_post_meta( $post_id, 'person_first_name', sanitize_text_field( $_POST[ 'person_first_name' ] ) );
 	}
         if( isset( $_POST[ 'person_academic' ] ) ) {
 	    update_post_meta( $post_id, 'person_academic', sanitize_text_field( $_POST[ 'person_academic' ] ) );
@@ -613,7 +632,6 @@ function person_metabox_save( $post_id ) {
 
 }
 add_action( 'save_post', 'person_metabox_save' );
-
 
 
 function person_metabox_updated_messages( $messages ) {
@@ -702,10 +720,10 @@ function person_shortcode( $atts ) {
 			    $post_id = $links->post->ID;
 			    $title = get_the_title();
 
-			    $person_kurztext = get_post_meta( $post_id, 'person_kurztext', true );
+			    $person_kurztext = get_post_meta( $post_id, 'person_shortdesc', true );
 			    $person_text = get_post_meta( $post_id, 'person_text', true );
-			    $person_name = get_post_meta( $post_id, 'person_name', true );
-                            $person_vorname = get_post_meta( $post_id, 'person_vorname', true );
+			    $person_name = get_post_meta( $post_id, 'person_last_name', true );
+                            $person_vorname = get_post_meta( $post_id, 'person_first_name', true );
                             $person_academic = get_post_meta( $post_id, 'person_academic', true );
                             $title = $person_academic.' '.$person_vorname.' '.$person_name;
 			    $person_url = get_post_meta( $post_id, 'person_url', true );
