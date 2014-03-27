@@ -1853,17 +1853,16 @@ img.wp-smiley {
     margin: 0;
 }
 .wp-caption  p.wp-caption-text {
-  position: relative;
-  top: -2.4em;      
-  left: 0px;
-  line-height: 2em;
-  padding: 0.2em;
-  text-align: left;
-  display: block;
-  background: transparent;
-  background: rgba(0, 0, 0, 0.5);
-  color: white;
-  margin: 0;  
+    border-bottom: 1px solid #CCCCCC;
+    border-left: 1px solid #CCCCCC;
+    border-right: 1px solid #CCCCCC;
+    bottom: 0;
+    color: #000000;
+    display: block;
+    font-size: 0.8em;
+    left: 0;
+    margin: 0;
+    text-align: center;
 }
 
 .wp-caption  p.wp-caption-text a {
