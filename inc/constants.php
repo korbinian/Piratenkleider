@@ -798,13 +798,14 @@ $default_alternativestyles = array(
         'title' => 'Piratenpartei Landesverband Sachsen-Anhalt',
         'url'  => 'http://www.piraten-lsa.de',
         'sublist' => array(
-            '<abbr title="Regionalverband">RV</abbr> Altmark' => 'http://altmark-piraten.de/',
-            '<abbr title="Regionalverband">RV</abbr> Anhalt-Salzland' => 'http://www.piraten-anhalt.de/',
+            '<abbr title="Regionalverband">RV</abbr> Altmark' => 'http://www.piraten-altmark.de/',
             '<abbr title="Kreisverband">KV</abbr> B&ouml;rde' => 'http://www.piraten-boerde.de/',
-    //        '<abbr title="Kreisverband">KV</abbr> Magdeburg' => 'http://www.piraten-magdeburg.de/',
-            'Dessau' => 'http://www.piraten-dessau.de/',
-            'Halle (Saale)' => 'http://piraten-halle.de/',
+            'Burgenlandkreis / Saalekreis' => 'http://www.piraten-lsa.de/regionen/burgenlandkreis-saalekreis',
+            'Halle (Saale)' => 'http://www.piraten-halle.de/',
             'Harz' => 'http://piraten-harz.de/',
+            'Magdeburg' => 'http://www.piraten-magdeburg.de/',
+            'Mansfeld-S&uuml;dharz' => 'http://www.piraten-msh.de/',
+            'Wittenberg' => 'http://piratenpartei-wittenberg.de/',
         )
     ),
       'Thueringen' => array(
