@@ -29,7 +29,6 @@ $defaultoptions = array(
     'sidebar-steckbrief-maxwidth'   => 290,
     'sidebar-steckbrief-maxheight'  => 290,
     'default-fontset-file'          => 'font-bebas.css',
-    'src-jquery'                    => get_template_directory_uri(). "/js/jquery.min.js",
     'src-flexslider'                => get_template_directory_uri(). "/js/jquery.flexslider-min.js",
     'src-layoutjs'                  => get_template_directory_uri(). "/js/layout.min.js",
     'src-comment-reply'             => get_template_directory_uri(). "/js/comment-reply.js",
@@ -206,10 +205,14 @@ $defaultoptions = array(
     'zeige_breadcrump_frontpages'           => 0,
     
     
-    'aktiv-linktipps'			    => 0,
     'linktipp-thumbnail_width'		    => 310,
     'linktipp-thumbnail_height'		    => 210,
     'linktipp-thumbnail_crop'		    => 1,
+    
+    'person-thumbnail_width'		    => 200,
+    'person-thumbnail_height'		    => 300,
+    'person-thumbnail_crop'		    => 1,
+    
     'src-linktipp-thumbnail_default'	    => get_template_directory_uri() .'/images/default-teaserthumb.gif',
     'src-person_bild_default'		    => '',
     'linktipps-titlepos'		    => 0, // 0 = ueber Bild/Text, 1 = unter Bild/Text
@@ -228,6 +231,7 @@ $defaultoptions = array(
     'suche-excerptlength'                   => 300,
     
     'meta-maxlengthvalue'                   => 140,
+    'url-wiki'				    => 'https://wiki.piratenpartei.de',
 );
 
 
@@ -2182,14 +2186,7 @@ $setoptions = array(
                   'type'    => 'section',
                   'title'   => __('Leseempfehlungen', 'piratenkleider'),                   
               ),            
-	        'aktiv-linktipps'  => array(
-                  'type'    => 'bool',
-                  'title'   => __( 'Aktivieren', 'piratenkleider' ),
-                  'label'   => __( 'Verwaltung von Leseempfehlungen bzw. Linktipps aktivieren', 'piratenkleider')
-		      .'<br>'. __('Dies f&uuml;gt eine neue Verwaltung im Backend ein, mit der spezielle Seiten, die nur einen kurzen Text und einen (externen) Link enthalten, als neue Beitr&auml;ge auf den Indexseiten angezeigt werden k&ouml;nnen.', 'piratenkleider' ),		   
-                  'default' => $defaultoptions['aktiv-linktipps'],
-                  'parent'  => 'linktipps',
-              ),
+
                
               'linktipps-titlepos'  => array(
                   'type'    => 'select',

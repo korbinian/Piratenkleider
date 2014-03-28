@@ -28,8 +28,9 @@ if ($options['anonymize-user']==1) {
 }
 
   
-
 require_once ( get_template_directory() . '/inc/theme-options.php' );     
+require( get_template_directory() . '/inc/custom-posts.php' );
+
 
 
 
@@ -144,12 +145,10 @@ function piratenkleider_setup() {
 	}
 
 	if ( function_exists( 'add_image_size' ) ) { 
-	    add_image_size( 'teaser-thumb', $options['teaser-thumbnail_width'], $options['teaser-thumbnail_height'], $options['teaser-thumbnail_crop'] ); //300 pixels wide (and unlimited height)
-	    if ($options['aktiv-linktipps']) {
-		add_image_size( 'linktipp-thumb', $options['linktipp-thumbnail_width'], $options['linktipp-thumbnail_height'], $options['linktipp-thumbnail_crop'] ); //300 pixels wide (and unlimited height)
-		 
-	    }
-	}
+	    add_image_size( 'teaser-thumb', $options['teaser-thumbnail_width'], $options['teaser-thumbnail_height'], $options['teaser-thumbnail_crop'] ); 
+	    add_image_size( 'linktipp-thumb', $options['linktipp-thumbnail_width'], $options['linktipp-thumbnail_height'], $options['linktipp-thumbnail_crop'] ); 
+	    add_image_size( 'person-thumb', $options['person-thumbnail_width'], $options['person-thumbnail_height'], $options['person-thumbnail_crop'] ); 
+	 }
 	
         
         // Make theme available for translation
@@ -180,7 +179,6 @@ function piratenkleider_setup() {
         
         if ($options['yt-alternativeembed']) {
         /* Filter fuer YouTube Embed mit nocookie: */     
-    #    wp_oembed_remove_provider( '#https://(www\.)?youtube.com/watch.*#i' );
             wp_embed_register_handler( 'ytnocookie', '#https?://www\.youtube\-nocookie\.com/embed/([a-z0-9\-_]+)#i', 'wp_embed_handler_ytnocookie' );
             wp_embed_register_handler( 'ytnormal', '#https?://www\.youtube\.com/watch\?v=([a-z0-9\-_]+)#i', 'wp_embed_handler_ytnocookie' );
             wp_embed_register_handler( 'ytnormal2', '#https?://www\.youtube\.com/watch\?feature=player_embedded&v=([a-z0-9\-_]+)#i', 'wp_embed_handler_ytnocookie' );
@@ -205,9 +203,7 @@ function piratenkleider_setup() {
 
 	}
 	
-	if ($options['aktiv-linktipps']) {
-	    require( get_template_directory() . '/inc/custom-posts.php' );
-	}
+	
         if (isset($options['feed-overwriteauthorstring']) && (strlen(trim($options['feed-overwriteauthorstring']))>1 )) {
              add_filter( 'the_author', 'feed_author' );
               function feed_author($name) {
