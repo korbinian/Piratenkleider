@@ -279,7 +279,7 @@
 	}
         get_sidebar( 'startpage-contentfooter' ); ?>
 
-      <
+      
     </div>
     <div class="content-aside">
       <div class="skin">

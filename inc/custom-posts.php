@@ -300,21 +300,21 @@ function linktipps_shortcode( $atts ) {
 					'field' => 'slug',
 					'terms' => $cat
 				    )
-			)
+			),
+			'posts_per_page' => $num,
 		);
 	} else {
 	    $args = array(
-			'post_type' => 'linktipps'
+			'post_type' => 'linktipps',
+			'posts_per_page' => $num,
 	    );
 	}
 	
 	$links = new WP_Query( $args );
 		if( $links->have_posts() ) {
-		    $i=0;
 		    $out = '';
-		    while ($links->have_posts() && ($i<$num) ) {
+		    while ($links->have_posts() ) {
 			$links->the_post();
-			$i++;
 			$out .= linktipp_display($links->post,'shortcode');
 
 		    }
@@ -380,7 +380,9 @@ function piratenkleider_person_post_type() {
 add_action( 'init', 'piratenkleider_person_post_type', 0 );
 
 function piratenkleider_taxonomies_person() {
+	$labels = array();
 	$args = array(
+		'labels'	=> $labels,
 		'hierarchical' => true,
 	);
 	register_taxonomy( 'person_category', 'person', $args );
@@ -612,8 +614,7 @@ function person_metabox_save( $post_id ) {
 	$url = $_POST['person_wiki'];
 	if (filter_var($url, FILTER_VALIDATE_URL)) {
 	    update_post_meta( $post_id, 'person_wiki', $url );
-	} else {	  
-	    $url = $options['url-wiki'].'/User:'. sanitize_text_field($_POST[ 'person_wiki' ]);
+	} else {
 	    update_post_meta( $post_id, 'person_wiki',  $url );
 	}
 	
@@ -794,6 +795,18 @@ function piratenkleider_display_person ($post_id = 0, $format = 'full') {
 	     $out .= $kontaktdata;
 	     $out .= '<p>'.$person_shortdesc."</p>\n";
 	     $out .= "</td>";
+	     $out .= "</tr>";     
+	} elseif ($format== 'bigtable') {
+	     $out .= "<tr>";
+	     $out .= "<td>";
+	     $out .=  $bildfullwidth;
+	     $out .= "</td>";
+	     $out .= "<td>";
+	     $out .= '<h3>'.$fullname.'</h3>';
+	     $out .= $kontaktdata;
+	     $out .= '<p>'.$person_shortdesc."</p>\n";
+      	     $out .= $person_text;	    
+	     $out .= "</td>";
 	     $out .= "</tr>";
 	} else {
 	    $out .=  $bildsmallwidth;
@@ -817,13 +830,25 @@ function person_shortcode( $atts ) {
 
 	extract( shortcode_atts( array(
 		'cat' => '',
+	        'name' => '',
 		'num' => 30,
 		'id'	=> '',
 		'format'    => 'table',
-		'showautor' => 1
+		'order'	    => 'ASC',
+		'showautor' => 1,
+		'offset'	=> 0,
 	), $atts ) );
 	$single = 0;
 	$cat = sanitize_text_field($cat);
+	$name = sanitize_text_field($name);
+	$order =   strtolower(sanitize_text_field($order));
+	$offset = intval($offset);
+	
+	if ($order != 'desc') {
+		$order='ASC';
+	} else {
+	    $order='DESC';  
+	}
 	$format = sanitize_text_field($format);
 	$showautor = sanitize_text_field($showautor);
 	if ((isset($id)) && ( strlen(trim($id))>0)) {
@@ -832,7 +857,19 @@ function person_shortcode( $atts ) {
 			'p' => $id
 		);
 	    $single = 1;
-	}elseif ((isset($cat)) && ( strlen(trim($cat))>0)) {
+	} elseif ((isset($name)) && ( strlen(trim($name))>0)) {    
+	      $args = array(
+			'post_type' => 'person',
+			'meta_query' => array(
+			    array(
+				'key' => 'person_last_name',
+				'value' => $name,
+				'compare' => 'LIKE',
+			    )
+			)
+		);
+	    $single = 1;
+	} elseif ((isset($cat)) && ( strlen(trim($cat))>0)) {
 	    $args = array(
 			'post_type' => 'person',
 			'tax_query' => array(
@@ -840,37 +877,47 @@ function person_shortcode( $atts ) {
 					'taxonomy' => 'person_category',
 					'field' => 'slug',
 					'terms' => $cat
-				    )
-			)
+				)
+			),
+			'order' => $order,
+			'meta_key' => 'person_last_name',
+			'orderby' => 'meta_value',
+			'posts_per_page' => $num,
+			'offset'    => $offset
 		);
 
 	} else {
 	    $args = array(
-			'post_type' => 'person'
+		    'post_type' => 'person',
+		    'order' => $order,
+		    'meta_key' => 'person_last_name',
+		    'orderby' => 'meta_value',
+		    'posts_per_page' => $num,
+		    'offset'    => $offset
+			
 	    );
 	}
-
 	$person = new WP_Query( $args );
 		if( $person->have_posts() ) {
-		    $i=0;
 		    $out = '';
-
-		    if (isset($format) && ($format=='table') && ($single==0)) {
+		    if ((isset($format) && ($format=='table') && ($single==0)) 
+	  	       || (isset($format) && ($format=='bigtable') && ($single==0))) 
+			{
 			 $out .= ' <table class="person">';
 		    } else {
 			 $out .= ' <div class="person">';
 		    }
 
-
-		    while ($person->have_posts() && ($i<$num) ) {
-			$person->the_post();
-			$i++;
+		    while ($person->have_posts() ) {
+			    $person->the_post();	   
 			    $post_id = $person->post->ID;
 			    if (isset($id) && isset($format) &&($format=='short')) {
 				    $out .= piratenkleider_display_person($post_id, 'short');
 			    } elseif (isset($format) && ($format=='table') && ($single==0)) {
 				    $out .= piratenkleider_display_person($post_id, 'table');
-			    } else {
+			    } elseif (isset($format) && ($format=='bigtable') && ($single==0)) {
+				    $out .= piratenkleider_display_person($post_id, 'bigtable');
+		            } else {
 				     $out .= piratenkleider_display_person($post_id, 'full');
 			    }
 			}
