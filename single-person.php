@@ -20,9 +20,10 @@
 		$image_url = $image_url_data[0];
 		$attribs = piratenkleider_get_image_attributs($thumbid);	
 	     } else {
-		if (($options['aktiv-artikelbild']==1) && (isset($options['artikelbild-src']))) {  
-		    $image_url = $options['artikelbild-src'];
+		 if (($options['aktiv-platzhalterbilder-indexseiten']==1) && (isset($options['src-default-symbolbild-person']))) {  
+		    $image_url = $options['src-default-symbolbild-person'];		    
 		}
+		
 	    }
 	    
 	    if (isset($image_url) && (strlen($image_url)>4)) { 
@@ -51,7 +52,7 @@
         <section class="person">
 
 	    
-		<?php echo piratenkleider_display_person($post->ID, 'full'); ?>
+		<?php echo piratenkleider_display_person($post->ID, 'full',0); ?>
 	    
 	    
 		<div><?php edit_post_link( __( 'Bearbeiten', 'piratenkleider' ), '', '' ); ?></div>

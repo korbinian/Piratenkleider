@@ -41,8 +41,8 @@ $defaultoptions = array(
     'src-default-symbolbild-author' => get_template_directory_uri() .'/images/default-vorlage.jpg',
     'src-default-symbolbild-archive' => get_template_directory_uri() .'/images/default-vorlage.jpg',
     'src-default-artikel-symbolbild' => get_template_directory_uri() .'/images/default-vorlage.jpg',  
+    'src-default-symbolbild-person' => get_template_directory_uri() .'/images/default-vorlage.jpg',  
     'slider-defaultbildsrc'	    => get_template_directory_uri() .'/images/default-vorlage.jpg',  
-    
     'src-linkicons-css'		    => get_template_directory_uri() .'/css/basemod_linkicons.css',     
     'src-basemod_sidebarbottom'	    => get_template_directory_uri().'/css/basemod_sidebarbottom.css',
     'dir-default-plakate'	    => '/plakate',

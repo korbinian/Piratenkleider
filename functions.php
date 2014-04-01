@@ -30,6 +30,7 @@ if ($options['anonymize-user']==1) {
   
 require_once ( get_template_directory() . '/inc/theme-options.php' );     
 require( get_template_directory() . '/inc/custom-posts.php' );
+require( get_template_directory() . '/inc/visiting-cards.php' );
 
 
 
@@ -1226,59 +1227,6 @@ function get_piratenkleider_socialmediaicons( $darstellung = 1 ){
     }
 }
 endif;
-
-if ( ! function_exists( 'get_piratenkleider_steckbrief' ) ) :
-    /*
-     * Anzeige der Steckbrief-Info zu einem Post
-     */
-    
-function get_piratenkleider_steckbrief(){
-  global $post;
-  global $options;
-  
-  $custom_fields = get_post_custom();
-  
-  if (isset($custom_fields['piratenkleider-sidebar-text'])) {
-    $text = $custom_fields['piratenkleider-sidebar-text'][0];
-  } elseif (isset($custom_fields['text'])) {
-      /* Look for variable as in V2 for downwards compatibility ... */
-      $text = $custom_fields['text'][0];
-  }
-  
-  if (isset($custom_fields['piratenkleider-sidebar-image_url'])) {
-    $image_url = $custom_fields['piratenkleider-sidebar-image_url'][0];
-  } elseif (isset($custom_fields['image_url'])) {
-      /* Look for variable as in V2 for downwards compatibility ... */
-      $image_url =  $custom_fields['image_url'][0];
-  } 
-  $out = '';	
-    if  (  ( isset($text) 
-	    && isset($image_url) && ($image_url<>'') 
-	    && (strlen(trim($text))>0))
-	|| (
-	    (isset($text) 
-	    && (strlen(trim($text))>0)) 
-	    && (has_post_thumbnail()))
-	    ) {   
-	$out .= '<div id="steckbrief">';   
-
-	if (isset($image_url) &&  $image_url<>'') {
-	    $out .= wp_get_attachment_image( $image_url, array($options['sidebar-steckbrief-maxwidth'],$options['sidebar-steckbrief-maxheight']) ); 
-	} else {
-	    $out .= get_the_post_thumbnail(array($options['sidebar-steckbrief-maxwidth'],$options['sidebar-steckbrief-maxheight']));
-	} 
-	$out .= "\n";  
-	$out .= ' <div class="text">';
-	$out .=  do_shortcode($text); 
-	$out .= "</div>\n";
-	$out .= "</div>\n";
-		
-    }  
-   return $out;
-  
-}
-endif;
-
 
 
 if ( ! function_exists( 'get_piratenkleider_seitenmenu' ) ) :
