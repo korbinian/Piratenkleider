@@ -2417,7 +2417,6 @@ img.wp-smiley {
  
 .content-aside #steckbrief {    
     background-color: white;
-    cursor: pointer;
     display: inline-block;
     padding: 10px 10px 15px;
     z-index: 1;
@@ -2457,7 +2456,6 @@ img.wp-smiley {
    .content-aside #steckbrief .text {
       background-color: white;
       padding: 0.4em 0.8em 0.3em 0.8em;
-      text-align: center;
    } 
    
    .content-aside #steckbrief h3.contact, 
@@ -2470,6 +2468,7 @@ img.wp-smiley {
        list-style-type: none;
        width: 250px;
    }
+  
    .content-aside #steckbrief ul.contact li  {
 	float: left; 
 	margin: 0;
@@ -2512,7 +2511,10 @@ img.wp-smiley {
 .content-aside #steckbrief ul.contact li.email a:before    { margin-top: -544px;}
 .content-aside #steckbrief ul.contact li.wiki a:before     { margin-top: -576px;}
 
-
+.content-aside #steckbrief p {
+    clear: left;
+    margin-top: 0.5em;
+}
 
 
    

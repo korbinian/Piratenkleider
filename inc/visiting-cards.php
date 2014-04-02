@@ -456,16 +456,20 @@ function piratenkleider_display_person ($post_id = 0, $format = 'full', $profill
 	    $out .= $kontaktdata;
 	    $out .= "</div>\n";
 	} elseif ($format== 'sitebar') {
-	     $out .= '<div id="steckbrief">';   
+	     $out .= '<section id="steckbrief">';   
 	     $out .=  $personenbildsidebar;
 	     $out .= '<div class="text">';
+	     $out .= '<h3>';
 	     if ($profillink==1) $out .= '<a href="'.$person_link.'">';	   
 	     $out .= $fullname;
 	     if ($profillink==1) $out .= '</a>';
-	     $out .= "<br>\n";
+	     
+	     $out .= '</h3>';
 	     $out .= $kontaktdata;
+	     $out .= '<p>'.$person_shortdesc."</p>\n";
+
 	     $out .= "</div>\n";
-	     $out .= "</div>\n";
+	     $out .= "</section>\n";
 	} elseif ($format== 'table') {
 	     $out .= "<tr>";
 	     $out .= "<td>";
