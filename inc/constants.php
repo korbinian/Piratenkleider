@@ -26,8 +26,7 @@ $defaultoptions = array(
     'plakate-url'		    => 'http://www.piratenpartei.de',
     'plakate-altadressen'	    => '',
     'plakate-src'		    => array(),
-    'sidebar-steckbrief-maxwidth'   => 290,
-    'sidebar-steckbrief-maxheight'  => 290,
+
     'default-fontset-file'          => 'font-bebas.css',
     'src-flexslider'                => get_template_directory_uri(). "/js/jquery.flexslider-min.js",
     'src-layoutjs'                  => get_template_directory_uri(). "/js/layout.min.js",
@@ -137,6 +136,25 @@ $defaultoptions = array(
     'teaser-thumbnail_width'		    => 120,
     'teaser-thumbnail_height'		    => 120,
     'teaser-thumbnail_crop'		    => 1,
+    
+    'linktipp-thumbnail_width'		    => 310,
+    'linktipp-thumbnail_height'		    => 210,
+    'linktipp-thumbnail_crop'		    => 1,
+    
+    'person-thumbnail_width'		    => 200,
+    'person-thumbnail_height'		    => 300,
+    'person-thumbnail_crop'		    => 1,
+
+    
+    'sidebar-thumbnail_width'		    => 270,
+    'sidebar-thumbnail_height'		    => 360,
+    'sidebar-thumbnail_crop'		    => 1,
+    'sidebar-thumbnail_name'		    => 'sidebar-thumb',
+    
+    'sidebar-steckbrief-maxwidth'	    => 270,
+    'sidebar-steckbrief-maxheight'	    => 360,
+    
+    
     'src-teaser-thumbnail_default'	    => get_template_directory_uri() .'/images/default-teaserthumb.gif',
     'teaser-thumbnail_fallback'		    => 1,
     
@@ -205,13 +223,7 @@ $defaultoptions = array(
     'zeige_breadcrump_frontpages'           => 0,
     
     
-    'linktipp-thumbnail_width'		    => 310,
-    'linktipp-thumbnail_height'		    => 210,
-    'linktipp-thumbnail_crop'		    => 1,
-    
-    'person-thumbnail_width'		    => 200,
-    'person-thumbnail_height'		    => 300,
-    'person-thumbnail_crop'		    => 1,
+
     
     'src-linktipp-thumbnail_default'	    => get_template_directory_uri() .'/images/default-teaserthumb.gif',
     'src-person_bild_default'		    => '',

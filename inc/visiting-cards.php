@@ -345,16 +345,15 @@ function piratenkleider_display_person ($post_id = 0, $format = 'full', $profill
     
     $person_imgid = get_post_meta( $post_id, 'person_bildid', true );
     $person_image = get_post_meta( $post_id, 'person_bild', true );
-    $bildfullwidth = '';
-    $bildsmallwidth = '';
+    $bildfullwidth =  $bildsmallwidth = $personenbildfull = $personenbildsmall = $personenbildsidebar = '';
+    
     if ((isset($person_imgid) && ($person_imgid>0)) || (isset($person_image) && (strlen($person_image)))) {
-	$personenbildfull = '';
-	$personenbildsmall = '';
 	$alttext = $fullname;
 	$coprightcap = '';
 	if (isset($person_imgid) && ($person_imgid>0)) {
 	   $image_attributes = wp_get_attachment_image_src( $person_imgid, 'person-thumb' );
 	   $image_attributessmall = wp_get_attachment_image_src( $person_imgid, 'post-thumbnails' );
+	   $image_attributessidebar = wp_get_attachment_image_src( $person_imgid, $options['sidebar-thumbnail_name'] );
 
 	   if (isset($image_attributes["credits"]) && (strlen($image_attributes["credits"])>1)) {
 	       $alttext .= "\n".' ('.$image_attributes["credits"].')';  
@@ -363,11 +362,14 @@ function piratenkleider_display_person ($post_id = 0, $format = 'full', $profill
 	   if (is_array($image_attributes)) {
 	      $personenbildfull = '<img src="'.$image_attributes[0].'" width="'.$image_attributes[1].'" height="'.$image_attributes[2].'" alt="'.$alttext.'" class="size-full">';
 	      $personenbildsmall = '<img src="'.$image_attributessmall[0].'" width="'.$image_attributessmall[1].'" height="'.$image_attributessmall[2].'" alt="'.$alttext.'" class="size-full">';
-	   }
-
+	      $personenbildsidebar = '<img src="'.$image_attributessidebar[0].'" width="'.$image_attributessidebar[1].'" height="'.$image_attributessidebar[2].'" alt="'.$alttext.'">';
+	    }
+        
 	} elseif (isset($person_image)) {
 	    $personenbildfull = '<img src="'.$person_image.'" alt="'.$alttext.'" class="size-full" height="'.$options['person-thumbnail_height'].'" style="width: auto;">'; 
 	    $personenbildsmall = '<img src="'.$person_image.'" alt="'.$alttext.'" class="size-full" height="150" style="width: auto;">'; 
+	    $personenbildsidebar = '<img src="'.$person_image.'" alt="'.$alttext.'" width="'.$options['sidebar-thumbnail_width'].'" style="height: auto;">'; 
+
 	}          
 
 	$bildfullwidth = '<div style="width: 210px" class="wp-caption alignright">';
@@ -402,7 +404,7 @@ function piratenkleider_display_person ($post_id = 0, $format = 'full', $profill
 		$kontaktdata .= "<li class=\"email\"><span>E-Mail: </span><a href=\"mailto:".$person_email."\">".$person_email."</a></li>\n";
 	    }
 	    if (isset($person_url) && strlen($person_url)>1) {
-		$kontaktdata .= "<li class=\"homepage\"><span>Web: </span><a href=\"".$person_url."\">".$person_url."</a></li>\n";
+		$kontaktdata .= "<li class=\"website\"><span>Web: </span><a href=\"".$person_url."\">".$person_url."</a></li>\n";
 	    }
 	    if (isset($person_twitter) && strlen($person_twitter)>1) {		
 		if (filter_var($person_twitter, FILTER_VALIDATE_URL)) {
@@ -455,8 +457,12 @@ function piratenkleider_display_person ($post_id = 0, $format = 'full', $profill
 	    $out .= "</div>\n";
 	} elseif ($format== 'sitebar') {
 	     $out .= '<div id="steckbrief">';   
-	     $out .=  $bildsmallwidth;
+	     $out .=  $personenbildsidebar;
 	     $out .= '<div class="text">';
+	     if ($profillink==1) $out .= '<a href="'.$person_link.'">';	   
+	     $out .= $fullname;
+	     if ($profillink==1) $out .= '</a>';
+	     $out .= "<br>\n";
 	     $out .= $kontaktdata;
 	     $out .= "</div>\n";
 	     $out .= "</div>\n";
