@@ -12,9 +12,7 @@ function piratenkleider_person_post_type() {
 		'name'                => _x( 'Personen', 'Informationen f&uuml;r Personenseiten und Visitenkarten', 'piratenkleider' ),
 		'singular_name'       => _x( 'Person', 'Personeninformationen', 'piratenkleider' ),
 		'menu_name'           => __( 'Personen', 'piratenkleider' ),
-		'parent_item_colon'   => __( 'Parent Item:', 'piratenkleider' ),
-
-		
+		'parent_item_colon'   => __( 'Parent Item:', 'piratenkleider' ),		
 		'search_items'        => __( 'Person suchen', 'piratenkleider' ),
 		'not_found'           => __( 'Person nicht gefunden', 'piratenkleider' ),
 		'not_found_in_trash'  => __( 'Person nicht im Papierkorb gefunden', 'piratenkleider' ),
@@ -426,7 +424,11 @@ function piratenkleider_display_person ($post_id = 0, $format = 'full', $profill
 		} else {
 		    $url = $options['url-wiki'].'/User:'.$person_wiki; 
 		}
-		$kontaktdata .= "<li class=\"wiki\"><span>Wiki: </span><a href=\"".$url."\">".$person_wiki."</a></li>\n";
+		$wikiclass = 'piratewiki';
+		if (preg_match("/wikipedia\.org/i",$url)) {
+		    $wikiclass = 'wiki';
+		}
+		$kontaktdata .= "<li class=\"".$wikiclass."\"><span>Wiki: </span><a href=\"".$url."\">".$person_wiki."</a></li>\n";
 	    } 
 	    $kontaktdata .= "</ul>\n";
 	   
@@ -435,7 +437,7 @@ function piratenkleider_display_person ($post_id = 0, $format = 'full', $profill
 	if ($format== 'full') {
 	    $out .= $bildfullwidth."\n";
 	    $out .= "<div class=\"textinfo\">\n";
-	    $out .= '<h3 class="about">'.__('Über','piratenkleider').' ';
+	    $out .= '<h3 class="about">'.__('&Uuml;ber','piratenkleider').' ';
 	    if ($profillink==1) $out .= '<a href="'.$person_link.'">';	   
 	    $out .= $fullname;
 	    if ($profillink==1) $out .= '</a>';
@@ -677,7 +679,7 @@ function piratenkleider_post_class_metabox_person( $object, $box ) {
 	<p>
 		<label for="piratenkleider-personalcard-id"><?php _e( "Select someone you want to show with a personal card along the article.", 'piratenkleider' ); ?></label>
 		<br />
-		<select name="piratenkleider-personalcard-id">
+		<select name="piratenkleider-personalcard-id" id="piratenkleider-personalcard-id">
 		    <option value=""><?php _e( "Do not display any personal card", 'piratenkleider' ); ?></option>
 		    <?php
 		    
@@ -722,7 +724,7 @@ function piratenkleider_post_class_metabox_person( $object, $box ) {
 		   }
 		?>
 	</p>
-	<div class="manually">
+	<div class="visiting-card-manual">
 	<p>
 	    <?php _e( "Alternativly define manually a short text and an image:", 'piratenkleider' ); ?>
 	</p>
@@ -773,7 +775,7 @@ function piratenkleider_post_class_metabox_person( $object, $box ) {
 	     
 	     
 	     <input type="button" id="person_bild-button" class="button" value="<?php _e( "Chose or upload picture", 'piratenkleider' ); ?>" />
-	    <small> <a href="#" class="custom_clear_image_button">Bild entfernen</a></small> 
+	    <small> &nbsp;  <a href="#" class="custom_clear_image_button"><?php _e( "Remove picture", 'piratenkleider' ); ?></a></small> 
 	</p>
 	</div>
 

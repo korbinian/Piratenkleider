@@ -185,3 +185,19 @@ jQuery(document).ready(function($){
     
 });
 
+
+jQuery(document).ready(function($){
+  var startval =  $("#piratenkleider-personalcard-id :selected").val();
+  if (startval != '') {
+      $(".visiting-card-manual").hide();
+  }
+  $("#piratenkleider-personalcard-id").change(function(){
+    var thisval =  $("#piratenkleider-personalcard-id :selected").val();
+    if (thisval != '') {	
+	 $(".visiting-card-manual").hide();
+    } else {
+	$(".visiting-card-manual").show();
+    }
+  }); 
+});
+
