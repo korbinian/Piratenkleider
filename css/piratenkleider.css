@@ -2485,7 +2485,7 @@ img.wp-smiley {
    }
   .content-aside #steckbrief ul.contact li a:before {
 	display: inline-block;
-	content: url('../images/social-media/socialmedia-sprite.png');
+	content: url('../images/socialmedia.png');
 	margin-left: -40px;
   }
 
@@ -2510,6 +2510,8 @@ img.wp-smiley {
 .content-aside #steckbrief ul.contact li.website a:before    { margin-top: -512px;}
 .content-aside #steckbrief ul.contact li.email a:before    { margin-top: -544px;}
 .content-aside #steckbrief ul.contact li.wiki a:before     { margin-top: -576px;}
+.content-aside #steckbrief ul.contact li.piratewiki a:before   {  margin-top: -608px;}
+
 
 .content-aside #steckbrief p {
     clear: left;
@@ -2831,7 +2833,7 @@ ul.socialmedia {
 }
 .socialmedia  a:before {
 	display: inline-block;
-	content: url('../images/social-media/socialmedia-sprite.png');
+	content: url('../images/socialmedia.png');
 	margin-left: -32px;
 }
 

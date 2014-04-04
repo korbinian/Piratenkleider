@@ -112,36 +112,47 @@
         padding-left: 10px;
     }
 
+    .content-primary a[href *= "pirateninfo.de"] {
+        background: url('../images/linkicons.png') no-repeat 0 -466px;
+        padding-left: 18px;
+    }
     .content-primary a[href *= "lqfb.piratenpartei.de"] {
-        background: url("../images/links/lqfb.png") center left no-repeat;
+        background: url('../images/linkicons.png') no-repeat 0 -480px;
         padding-left: 18px;
     }
     .content-primary a[href *= "wiki.piratenpartei.de"] {
-        background: url("../images/links/piratenwiki.png") center left no-repeat;
+        background: url('../images/linkicons.png') no-repeat 0 -382px;
         padding-left: 18px;
     }
     .content-primary a[href *= "news.piratenpartei.de"] {
-        background: url("../images/links/syncforum.png") center left no-repeat;
+        background: url('../images/linkicons.png') no-repeat 0 -398px;
         padding-left: 18px;
     }
     .content-primary a[href *= "feedback.piratenpartei-bayern.de"] {
-        background: url("../images/links/piratefeedback.png") center left no-repeat;
+        background: url('../images/linkicons.png') no-repeat 0 -432px;
         padding-left: 18px;
     }
     .content-primary a[href *= "de.wikipedia.org"] {
-        background: url("../images/links/wikipedia.png") center left no-repeat;
+        background: url('../images/linkicons.png') no-repeat 0 -288px;
         padding-left: 18px;
     }
     .content-primary a[href *= "piratenpad.de"] {
-        background: url("../images/links/piratenpad.png") center left no-repeat;
+        background: url('../images/linkicons.png') no-repeat 0 -416px;
         padding-left: 18px;
     }
     .content-primary a[href ^="mumble:"] {
-        background: url("../images/links/mumble.png") center left no-repeat;
+        background: url('../images/linkicons.png') no-repeat 0 -368px;
         padding-left: 18px;
     }
-    .content-primary a.nolinkicon {
+   
+    .content-primary a[href $=".txt"], .content-primary a[href $=".TXT"] {
+       background: url('../images/linkicons.png') no-repeat 0 -240px;
+       padding-left: 18px;
+    }
+   
+
+       
+     .content-primary a.nolinkicon {
             background: none;
             padding-right: 0;
     }
-
