@@ -2554,7 +2554,7 @@ ul.socialmedia {
 }
 .socialmedia  a:before {
 	display: inline-block;
-	content: url('../images/social-media/socialmedia-sprite.png');
+	content: url('../images/socialmedia.png');
 	margin-left: -32px;
 }
 
