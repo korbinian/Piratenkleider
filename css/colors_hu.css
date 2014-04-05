@@ -248,6 +248,8 @@
 	  background: url(../images/int/bg-tags-hu.png);
     }
     
+
+    
   .content-primary input[type="text"]:hover, 
   .content-primary textarea:hover,
   .content-primary input[type="text"]:focus, 
@@ -592,7 +594,8 @@ div.ics-calendar-holder .ics-calendar-event {
  
 
 @media only screen and (min-width: 1350px) {
-    .first-teaser-widget-area .slide .caption {       
-        background: #4e96d7;
+    .first-teaser-widget-area .slide .caption , 
+    .content-header #page-title, .content-header h1, .content-header-big h1 {
+        background: #4c2582;
     }
 }    
