@@ -17,8 +17,8 @@
 	10		Navigation
 	11		Media Queries
 
-	 ▲
-	▲ ▲
+	 â–²
+	â–² â–²
 
 
 	Grey:	#f4f4f4
@@ -1447,6 +1447,7 @@ body {
   }
    .header .nav-top ul.socialmedia {
       float: left; 
+      display: none;
   }
    .header .nav-top .menu-header {
      float: left;
@@ -2947,7 +2948,7 @@ float: left;
 	padding: 0 1.6em 0 1em;
 }
 .nav-main ul li.has-children > a:after {
-	content: '›';
+	content: 'â€º';
 	color: #0077b3;
 	font-size: 1em;
 	font-weight: 700;
