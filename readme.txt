@@ -10,7 +10,7 @@ DOWNLOADS
     GITHub-Repo:
         https://github.com/xwolfde/Piratenkleider	
     
-    Projekt-Website (Releases):
+    Project-Website (Releases):
         http://www.piratenkleider.de
     
 
@@ -25,7 +25,7 @@ CREDITS & COPYRIGHT
 
 
    Sources:
-     - Pictures "Wikings" and "Sailing Ship": Wolfgang Wiese puibliced unter GPL
+     - Pictures "Wikings" and "Sailing Ship": Wolfgang Wiese publiced unter GPL
      - Social Media Icons: Paul Robert Lloyd, http://paulrobertlloyd.com/2009/06/social_media_icons      
      - jQuery FlexSlider 2 (GPL v2)
      - Font Bebas Neue by Dharmatype (SIL Open Font License 1.1)
@@ -48,5 +48,5 @@ or send an email to
 
 PRERELEASES
 
-This theme bases on Piratenkleider 2 by Wolfgang Wiese and 
+This theme bases on Piratenkleider 2 
 
