@@ -26,29 +26,35 @@
                         <?php printf( __( 'Monatsarchiv: %s', 'piratenkleider' ), get_the_date('F Y') ); ?>
                      <?php elseif ( is_year() ) : ?>
                         <?php printf( __( 'Jahresarchiv: %s', 'piratenkleider' ), get_the_date('Y') ); ?>
-                     <?php else : ?>
-                         <?php _e( 'Archiv', 'piratenkleider' ); ?>
-                      <?php endif; ?></span></h1>
+                     <?php else : 
+                         if ( 'person'== get_post_type()  ) {
+                             _e( 'Personen-Steckbriefe', 'piratenkleider' ); 
+                         } else {
+                            _e( 'Archiv', 'piratenkleider' ); 
+                         } 
+                        endif; ?></span></h1>
 		   <div class="symbolbild"><img src="<?php echo $image_url ?>" alt="">		  		    		  
 		   </div>
-		</div>  	
-	    <?php } ?>
-	
-      <div class="skin">
-	  
-	  <?php if (!(isset($image_url) && (strlen($image_url)>4))) { ?>
-	    <h1 class="post-title"><span><?php if ( is_day() ) : ?>
+		</div>  
+                <div class="skin">
+	    <?php } else { ?>
+                <div class="skin">
+                 <h1 class="post-title"><span><?php if ( is_day() ) : ?>
                         <?php printf( __( 'Tagesarchiv: %s', 'piratenkleider' ), get_the_date() ); ?>
                      <?php elseif ( is_month() ) : ?>
                         <?php printf( __( 'Monatsarchiv: %s', 'piratenkleider' ), get_the_date('F Y') ); ?>
                      <?php elseif ( is_year() ) : ?>
                         <?php printf( __( 'Jahresarchiv: %s', 'piratenkleider' ), get_the_date('Y') ); ?>
-                     <?php else : ?>
-                         <?php _e( 'Archiv', 'piratenkleider' ); ?>
-                      <?php endif; ?></span></h1>
-	<?php } 
+                     <?php else : 
+                         if ( 'person'== get_post_type()  ) {
+                             _e( 'Personen-Steckbriefe', 'piratenkleider' ); 
+                         } else {
+                            _e( 'Archiv', 'piratenkleider' ); 
+                         } 
+                         endif; ?></span></h1>
+            <?php }
             rewind_posts(); 
-           get_template_part( 'loop', 'archive' );
+            get_template_part( 'loop', 'archive' );
             ?>
 	</div>
     </div>

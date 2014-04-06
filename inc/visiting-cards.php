@@ -438,7 +438,7 @@ function piratenkleider_display_person ($post_id = 0, $format = 'full', $profill
 		$kontaktdata .= "<li class=\"".$wikiclass."\"><span>Wiki: </span><a href=\"".$url."\">".piratenkleider_display_url($url)."</a></li>\n";
 	    } 
              if (isset($person_newsfeed) && strlen($person_newsfeed)>1) {
-		$kontaktdata .= "<li class=\"feed\"><span>Feed: </span><a href=\"".$person_newsfeed."\">".$person_newsfeed."</a></li>\n";
+		$kontaktdata .= "<li class=\"feed\"><span>Feed: </span><a href=\"".$person_newsfeed."\">".piratenkleider_display_url($person_newsfeed)."</a></li>\n";
 	    } 
 	    $kontaktdata .= "</ul>\n";
 	   
