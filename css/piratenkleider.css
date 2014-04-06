@@ -2736,7 +2736,7 @@ table#wp-calendar td a {
   width: 16px;
   height: 11px;
   display: inline-block;
-  background: url('../images/flags/flagicon.png') no-repeat;
+  background: url('../images/flagicon.png') no-repeat;
 }
 
 .flagicon-ar {  background-position: 0 -234px;}
