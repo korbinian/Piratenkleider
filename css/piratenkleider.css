@@ -2560,7 +2560,7 @@ img.wp-smiley {
     .actionpage .content-primary {
         width: 100%;
     }
-
+.content-primary .person ul.contact li span, 
 #main-stream h1  {    
     position: absolute;
     left: -999em;
@@ -2582,6 +2582,10 @@ img.wp-smiley {
        color: #24639b;
    }  
 
+   .content-primary .person ul.contact li {
+       list-style-type: none;
+   } 
+   
 /*
 * Footer -------------------------------------------------------------------
 */

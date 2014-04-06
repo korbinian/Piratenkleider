@@ -187,7 +187,13 @@
      .content-primary a[href *= "youtube-nocookie.com"]:before {
         background: url('../images/socialmedia.png') no-repeat -40px -360px;
         width: 18px;
-    }   
+    }
+    .content-primary a[href $="rss2"]:before,
+    .content-primary a[href $="rss"]:before, 
+    .content-primary a[href *= "/feed/"]:before {
+        background: url('../images/socialmedia.png') no-repeat -40px -102px;
+        width: 18px;
+    }  
     
     .content-primary a.nolinkicon:before {
             background: none;

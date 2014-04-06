@@ -7,7 +7,6 @@
 
 // Register Custom Post Type
 function piratenkleider_person_post_type() {
-
 	$labels = array(
 		'name'                => _x( 'Personen', 'Informationen f&uuml;r Personenseiten und Visitenkarten', 'piratenkleider' ),
 		'singular_name'       => _x( 'Person', 'Personeninformationen', 'piratenkleider' ),
@@ -16,6 +15,8 @@ function piratenkleider_person_post_type() {
 		'search_items'        => __( 'Person suchen', 'piratenkleider' ),
 		'not_found'           => __( 'Person nicht gefunden', 'piratenkleider' ),
 		'not_found_in_trash'  => __( 'Person nicht im Papierkorb gefunden', 'piratenkleider' ),
+		'add_new_item'       => __('Neue Personen-Visitenkarte anlegen', 'piratenkleider' ),
+            
 	);
 	$args = array(
 		'label'               => __( 'Person', 'piratenkleider' ),
@@ -31,7 +32,6 @@ function piratenkleider_person_post_type() {
 		'exclude_from_search' => true,
 	);
 	register_post_type( 'person', $args );
-
 }
 
 // Hook into the 'init' action
@@ -54,15 +54,15 @@ add_action( 'init', 'piratenkleider_taxonomies_person', 0 );
 
 function piratenkleider_person_metabox() {
     add_meta_box(
-        'person_metabox',
+        'piratenkleider_person_metabox',
         __( 'Beschreibung der Person', 'piratenkleider' ),
-        'person_metabox_content',
+        'piratenkleider_person_metabox_content',
         'person',
         'normal',
         'high'
     );
 }
-function person_metabox_content( $post ) {
+function piratenkleider_person_metabox_content( $post ) {
     global $defaultoptions;
     global $post;
     $academictitle = array(
@@ -189,21 +189,14 @@ function person_metabox_content( $post ) {
 			id="person_google" value="<?php echo esc_attr( get_post_meta( $post->ID, 'person_google', true ) ); ?>" size="30" />
 
 	</p>
-	<!--
-	<p>
-		<label for="person_kalender"><?php _e( "Kalender (URL)", 'piratenkleider' ); ?>:</label>
-		<br />
-		<input  type="text" name="person_kalender"
-			id="person_kalender" value="<?php echo esc_attr( get_post_meta( $post->ID, 'person_kalender', true ) ); ?>" size="30" />
-
-	</p>
+	
 	<p>
 		<label for="person_newsfeed"><?php _e( "Newsfeed aus Blog oder CMS (RSS URL)", 'piratenkleider' ); ?>:</label>
 		<br />
 		<input  type="text" name="person_newsfeed"
 			id="person_newsfeed" value="<?php echo esc_attr( get_post_meta( $post->ID, 'person_newsfeed', true ) ); ?>" size="30" />
 	</p>
-        -->
+      
 
 	<?php
 
@@ -211,7 +204,7 @@ function person_metabox_content( $post ) {
 add_action( 'add_meta_boxes', 'piratenkleider_person_metabox' );
 
 
-function person_metabox_save( $post_id ) {
+function piratenkleider_person_metabox_save( $post_id ) {
     global $options;
     if (  'person'!= get_post_type()  ) {
 	return;
@@ -243,12 +236,26 @@ function person_metabox_save( $post_id ) {
 	    }
 	}
 	
-		     
+        $url = '';
+        if ((isset( $_POST['person_url'] ) && (filter_var($_POST['person_url'], FILTER_VALIDATE_URL)))) {
+	    $url = $_POST['person_url'];
+	} else {
+            if ((isset( $_POST['person_url'])) && (preg_match("/^www/i",$_POST['person_url']))) { 
+               $tryurl = 'http://'.$_POST['person_url'];
+               if (filter_var($tryurl, FILTER_VALIDATE_URL)) {
+                   $url = $tryurl;
+               }
+            }
+	}	
+	$oldurl = get_post_meta( $post_id, 'person_url', true );
+	if ( $url && '' == $oldurl )
+		add_post_meta( $post_id, 'person_url', $url, true );
+	elseif ( $url && $url != $oldurl )
+		update_post_meta( $post_id, 'person_url', $url );
+	elseif ( '' == $url && $oldurl )
+		delete_post_meta( $post_id, 'person_url', $oldurl );		     
 			     
-	$url = $_POST['person_url'];
-	if (filter_var($url, FILTER_VALIDATE_URL)) {
-	    update_post_meta( $post_id, 'person_url', $url );
-	}
+	
 	$email = $_POST['person_email'];
 	if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
 	    update_post_meta( $post_id, 'person_email', $email );
@@ -261,10 +268,7 @@ function person_metabox_save( $post_id ) {
 	if (filter_var($url, FILTER_VALIDATE_URL)) {
 	    update_post_meta( $post_id, 'person_google', $url );
 	}
-	$url = $_POST['person_kalender'];
-	if (filter_var($url, FILTER_VALIDATE_URL)) {
-	    update_post_meta( $post_id, 'person_kalender', $url );
-	}
+	
 	$url = $_POST['person_newsfeed'];
 	if (filter_var($url, FILTER_VALIDATE_URL)) {
 	    update_post_meta( $post_id, 'person_newsfeed', $url );
@@ -297,10 +301,10 @@ function person_metabox_save( $post_id ) {
 
 
 }
-add_action( 'save_post', 'person_metabox_save' );
+add_action( 'save_post', 'piratenkleider_person_metabox_save' );
 
 
-function person_metabox_updated_messages( $messages ) {
+function piratenkleider_person_metabox_updated_messages( $messages ) {
 	global $post, $post_ID;
 	$messages['person'] = array(
 		0 => '',
@@ -312,7 +316,7 @@ function person_metabox_updated_messages( $messages ) {
 			);
 	return $messages;
 }
-add_filter( 'post_updated_messages', 'person_metabox_updated_messages' );
+add_filter( 'post_updated_messages', 'piratenkleider_person_metabox_updated_messages' );
 
 
 
@@ -330,15 +334,18 @@ function piratenkleider_display_person ($post_id = 0, $format = 'full', $profill
     $person_last_name = get_post_meta( $post_id, 'person_last_name', true );
     $person_first_name = get_post_meta( $post_id, 'person_first_name', true );
     $person_academic = get_post_meta( $post_id, 'person_academic', true );
-    $fullname = $person_academic.' '.$person_first_name.' '.$person_last_name;
+    $fullname = '';
+    if (isset($person_academic) && strlen($person_academic)>1) {
+        $fullname = $person_academic.' ';
+    }
+    $fullname .= $person_first_name.' '.$person_last_name;
     $person_url = get_post_meta( $post_id, 'person_url', true );
     $person_email = get_post_meta( $post_id, 'person_email', true );
     $person_facebook = get_post_meta( $post_id, 'person_facebook', true );
     $person_twitter = get_post_meta( $post_id, 'person_twitter', true );
     $person_wiki = get_post_meta( $post_id, 'person_wiki', true );
     $person_google = get_post_meta( $post_id, 'person_google', true );
-   // $person_kalender = get_post_meta( $post_id, 'person_kalender', true );
-  //  $person_newsfeed = get_post_meta( $post_id, 'person_newsfeed', true );
+    $person_newsfeed = get_post_meta( $post_id, 'person_newsfeed', true );
     
     
     $person_imgid = get_post_meta( $post_id, 'person_bildid', true );
@@ -402,7 +409,7 @@ function piratenkleider_display_person ($post_id = 0, $format = 'full', $profill
 		$kontaktdata .= "<li class=\"email\"><span>E-Mail: </span><a href=\"mailto:".$person_email."\">".$person_email."</a></li>\n";
 	    }
 	    if (isset($person_url) && strlen($person_url)>1) {
-		$kontaktdata .= "<li class=\"website\"><span>Web: </span><a href=\"".$person_url."\">".$person_url."</a></li>\n";
+		$kontaktdata .= "<li class=\"website\"><span>Web: </span><a class=\"extern\" href=\"".$person_url."\">".piratenkleider_display_url($person_url)."</a></li>\n";
 	    }
 	    if (isset($person_twitter) && strlen($person_twitter)>1) {		
 		if (filter_var($person_twitter, FILTER_VALIDATE_URL)) {
@@ -410,13 +417,13 @@ function piratenkleider_display_person ($post_id = 0, $format = 'full', $profill
 		} else {
 		    $url = 'https://twitter.com/'.$person_twitter; 
 		}		
-		$kontaktdata .= "<li class=\"twitter\"><span>Twitter: </span><a href=\"".$url."\">".$person_twitter."</a></li>\n";
+		$kontaktdata .= "<li class=\"twitter\"><span>Twitter: </span><a href=\"".$url."\">".piratenkleider_display_url($url)."</a></li>\n";
 	    }
 	     if (isset($person_facebook) && strlen($person_facebook)>1) {
-		$kontaktdata .= "<li class=\"facebook\"><span>Facebook: </span><a href=\"".$person_facebook."\">".$person_facebook."</a></li>\n";
+		$kontaktdata .= "<li class=\"facebook\"><span>Facebook: </span><a href=\"".$person_facebook."\">".piratenkleider_display_url($person_facebook)."</a></li>\n";
 	    }
 	    if (isset($person_google) && strlen($person_google)>1) {
-		$kontaktdata .= "<li class=\"google\"><span>Google: </span><a href=\"".$person_google."\">".$person_google."</a></li>\n";
+		$kontaktdata .= "<li class=\"google\"><span>Google: </span><a href=\"".$person_google."\">".piratenkleider_display_url($person_google)."</a></li>\n";
 	    } 
 	    if (isset($person_wiki) && strlen($person_wiki)>1) {
 		if (filter_var($person_wiki, FILTER_VALIDATE_URL)) {
@@ -428,7 +435,10 @@ function piratenkleider_display_person ($post_id = 0, $format = 'full', $profill
 		if (preg_match("/wikipedia\.org/i",$url)) {
 		    $wikiclass = 'wiki';
 		}
-		$kontaktdata .= "<li class=\"".$wikiclass."\"><span>Wiki: </span><a href=\"".$url."\">".$person_wiki."</a></li>\n";
+		$kontaktdata .= "<li class=\"".$wikiclass."\"><span>Wiki: </span><a href=\"".$url."\">".piratenkleider_display_url($url)."</a></li>\n";
+	    } 
+             if (isset($person_newsfeed) && strlen($person_newsfeed)>1) {
+		$kontaktdata .= "<li class=\"feed\"><span>Feed: </span><a href=\"".$person_newsfeed."\">".$person_newsfeed."</a></li>\n";
 	    } 
 	    $kontaktdata .= "</ul>\n";
 	   
@@ -446,6 +456,33 @@ function piratenkleider_display_person ($post_id = 0, $format = 'full', $profill
 	    $out .= $kontaktdata;
 	    $out .= $person_text;
 	    $out .= "</div>\n";
+            
+           if ($options['vcard-showfeed']==1 && isset($person_newsfeed) && strlen($person_newsfeed)>1) {
+                if(function_exists('fetch_feed')) {
+                    include_once(ABSPATH.WPINC.'/feed.php');
+                    $feed = fetch_feed($person_newsfeed);
+                    $limit = $feed->get_item_quantity($options['vcard-feed-maxnum']); // specify number of items
+                    $items = $feed->get_items(0, $limit); // create an array of items
+                }
+                if ($limit == 0) {
+                    $out .= '<div class="personfeed skip">The feed is either empty or unavailable.</div>';
+                } else {
+                     $out .= '<div class="personfeed">';
+                     $out .= "<h3>".__('Letzte Artikel', 'piratenkleider')."</h3>\n";
+                     $out .= "<ul>";
+                        foreach ($items as $item) {     
+                            $out .= '<li><a href="'.$item->get_permalink().'">';
+                            $out .= $item->get_title();
+                            $out .= '</a>';
+                            $out .= ' ('.$item->get_date('j. F Y').')';
+                            $out .= '</li>';
+                        }              
+                     $out .= "</ul>";
+                     $out .= "</div>\n"; 
+                }     
+            }
+            
+            
 	} elseif ($format== 'small') {
 	    $out .=  $bildsmallwidth;
 	    $out .= "<div class=\"textinfo\">\n";
@@ -918,4 +955,9 @@ function get_piratenkleider_steckbrief(){
 }
 endif;
 
+function piratenkleider_display_url($url = '') {
+
+    $outurl = preg_replace('/^(https?:\/\/)/','',$url); 
+    return $outurl;
+}
 ?>

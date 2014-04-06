@@ -244,6 +244,8 @@ $defaultoptions = array(
     
     'meta-maxlengthvalue'                   => 140,
     'url-wiki'				    => 'https://wiki.piratenpartei.de',
+    'vcard-showfeed'                        => 1,
+    'vcard-feed-maxnum'                     => 7,
 );
 
 
