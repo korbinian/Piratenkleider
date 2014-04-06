@@ -404,7 +404,9 @@
     background: #2d7dc5 url("../images/plus-left.gif") center left no-repeat;
     color: white;
 }
-
+.content-aside p {
+    color: black;
+}
 
 .subcontent {
   background: black url("../images/int/bg-tags_gray.jpg") -20% top fixed;
