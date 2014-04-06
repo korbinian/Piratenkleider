@@ -31,6 +31,7 @@ if ($options['anonymize-user']==1) {
 require_once ( get_template_directory() . '/inc/theme-options.php' );     
 require( get_template_directory() . '/inc/custom-posts.php' );
 require( get_template_directory() . '/inc/visiting-cards.php' );
+require( get_template_directory() . '/inc/custom-fields.php' );
 
 
 

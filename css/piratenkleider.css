@@ -1605,6 +1605,9 @@ display: inline-block;
     -o-border-radius: 14px; 
     border-radius: 14px; 
   }
+  .post .post-info .commentbubble a:before {
+      display: none;
+  }
   .post-info .infoimage {
     width: 120px;
     height: auto;

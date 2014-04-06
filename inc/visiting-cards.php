@@ -688,10 +688,8 @@ add_action( 'load-post-new.php', 'piratenkleider_post_metabox_person_setup' );
 
 /* Meta box setup function. */
 function piratenkleider_post_metabox_person_setup() {
-
 	/* Add meta boxes on the 'add_meta_boxes' hook. */
-	add_action( 'add_meta_boxes', 'piratenkleider_add_post_metabox_person' );
-	
+	add_action( 'add_meta_boxes', 'piratenkleider_add_post_metabox_person' );	
 		/* Save post meta on the 'save_post' hook. */
 	add_action( 'save_post', 'piratenkleider_save_post_class_meta', 10, 2 );
 }
@@ -889,10 +887,7 @@ function piratenkleider_save_post_class_meta( $post_id, $post ) {
 	$oldertext = get_post_meta( $post_id, 'text', true );
 	if (isset($oldertext)) {
 	    delete_post_meta( $post_id, 'text', $oldertext );	
-	}
-	
-	
-	
+	}		
 }
 
 
