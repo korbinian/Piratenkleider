@@ -32,7 +32,7 @@
             <ul class="slides">
         <?php 
         if ( have_posts() ) while ( have_posts() ) : the_post();
-            echo "<li class='slide'>";
+            echo "<li class=\"slide\">";
             if ($options['teaser-type'] == 'big') {
                 $attribs = array(
                  "credits" => $options['img-meta-credits'],
@@ -41,22 +41,26 @@
                 echo '<div class="bigslider">';
                 if (has_post_thumbnail()) {    
                     $thumbid = get_post_thumbnail_id(get_the_ID());
+                    $image_url_data = wp_get_attachment_image_src( $thumbid, 'full');
+                    $image_url = $image_url_data[0];
                     $attribs = piratenkleider_get_image_attributs($thumbid);
-                    $out = get_the_post_thumbnail(get_the_ID(),array($defaultoptions['bigslider-thumb-width'],$defaultoptions['bigslider-thumb-height']),array('alt'=> ''));
-                    if (isset($out) && strlen($out)>0){
-                        print $out;
+  
+                    if (isset($image_url) && strlen($image_url)>0){                        
+                        echo '<img src="'.$image_url.'" alt="">';
                     } else {
                         $attribs = array(
                              "credits" => $options['img-meta-credits'],
                         );
-                        echo '<img src="'.$defaultbildsrc.'" width="'.$defaultoptions['bigslider-thumb-width'].'" height="'.$defaultoptions['bigslider-thumb-height'].'" alt="">';                
+                        echo '<img src="'.$defaultbildsrc.'" width="'.$options['bigslider-thumb-width'].'" height="'.$options['bigslider-thumb-height'].'" alt="">';                
                     }       
                 } else {
+                    echo "<!-- NO THUMB-->";
                     if ((isset($defaultbildsrc)) && (strlen(trim($defaultbildsrc))>2)) {  
-                        echo '<img src="'.$defaultbildsrc.'" width="'.$defaultoptions['bigslider-thumb-width'].'" height="'.$defaultoptions['bigslider-thumb-height'].'" alt="">';                
+                        echo '<img src="'.$defaultbildsrc.'" width="'.$options['bigslider-thumb-width'].'" height="'.$options['bigslider-thumb-height'].'" alt="">';                
                     } else {
+                        echo "<!-- try randombild -->";
                         $randombild = array_rand($defaultbilder_liste,2);
-                        echo '<img src="'.$defaultbilder_liste[$randombild[0]]['src'].'" width="'.$defaultoptions['bigslider-thumb-width'].'" height="'.$defaultoptions['bigslider-thumb-height'].'" alt="">'; 
+                        echo '<img src="'.$defaultbilder_liste[$randombild[0]]['src'].'" width="'.$options['bigslider-thumb-width'].'" height="'.$options['bigslider-thumb-height'].'" alt="">'; 
                     }
                 }
                 echo '<div class="caption"><p class="cifont">'.$subtitle.'</p>';
@@ -91,7 +95,7 @@
                 echo "</div></div>";          
             }
             
-            echo "</li>";
+            echo "</li>\n";
         endwhile;
         echo "</ul>";
         echo "</div>";

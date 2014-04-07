@@ -88,9 +88,15 @@
       // Reset Query
        wp_reset_query();
        if (isset($continuelinks) && strlen($continuelinks)>1) {
-	   $linkliste = "<h2>".$options['artikelstream-title-maincontinuelist']."</h2>\n";
-	   $linkliste .= "<ul>\n".$continuelinks."</ul>\n";
-	   $cols[$col++] = $linkliste;
+            $linkliste = "<section class=\"type-post\">\n";
+            $linkliste .= '<header>';
+	    $linkliste .= "<h2>".$options['artikelstream-title-maincontinuelist']."</h2>\n";
+            $linkliste .= '</header>';
+            $linkliste .= '<div class="p3-column">';
+	    $linkliste .= "<ul>\n".$continuelinks."</ul>\n";
+            $linkliste .= '</div>'; 
+            $linkliste .= "<section>\n";
+	    $cols[$col++] = $linkliste;
        }       
 
         if (($options['artikelstream-type']==1) || ($options['artikelstream-type']==2)) {
@@ -162,12 +168,15 @@
 		 endwhile;
 		 
 		 if (isset($continuelinks) && strlen($continuelinks)>0) {		     
-		    $linkliste = '<div class="column'.$z.'">';
+		    $linkliste = '<div class="column'.$z.'"><section class="linktipps">';
                     if (isset($options['artikelstream-title-linktippcontinuelist']) && (strlen($options['artikelstream-title-linktippcontinuelist'])>1)) {
-                        $linkliste .= "<h2>".$options['artikelstream-title-linktippcontinuelist']."</h2>\n";
+
+                        $linkliste .= "<header><h2>".$options['artikelstream-title-linktippcontinuelist']."</h2></header>\n";
                     }
+                    $linkliste .=  '<div class="p3-column">';
 		    $linkliste .= "<ul class=\"extern\">\n".$continuelinks."</ul>\n";
-		    $linkliste .= "</div>\n";
+                    $linkliste .=  '</div>';
+		    $linkliste .= "</section></div>\n";
 		    $z++;
 			if ($z>2) {
 			    $z=1;
@@ -224,8 +233,16 @@
                   endwhile;
 		  
 		  if (isset($continuelinks) && strlen($continuelinks)>1) {
-		    $linkliste = "<h2>".$options['artikelstream-title-secondcontinuelist']."</h2>\n";
-		    $linkliste .= "<ul>\n".$continuelinks."</ul>\n";
+                      
+                        $linkliste = "<section class=\"type-post\">\n";
+                        $linkliste .= '<header>';
+                        $linkliste .= "<h2>".$options['artikelstream-title-secondcontinuelist']."</h2>\n";
+                        $linkliste .= '</header>';
+                        $linkliste .= '<div class="p3-column">';
+                        $linkliste .= "<ul>\n".$continuelinks."</ul>\n";
+                        $linkliste .= '</div>'; 
+                        $linkliste .= "<section>\n";
+           
 			$cols[$col++] = $linkliste;
 		    }    
 		  
