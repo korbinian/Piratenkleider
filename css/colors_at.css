@@ -595,10 +595,3 @@ div.ics-calendar-holder .ics-calendar-event {
     
  }
  
-
-@media only screen and (min-width: 1350px) {
-    .first-teaser-widget-area .slide .caption, 
-    .content-header #page-title, .content-header h1, .content-header-big h1 {       
-        background: #4e96d7;
-    }
-}    

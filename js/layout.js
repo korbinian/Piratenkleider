@@ -124,10 +124,18 @@ jQuery(document).ready(function($) {
     window.location.href = this.value;
   });
  
+
     
 });  
 
-
+jQuery(document).ready(function($) {
+		$(".accordion h2:gt(0)").addClass("closed");
+		$(".accordion div:gt(0)").hide();
+		$(".accordion h2").click(function(){
+			$(this).next("div").slideToggle("slow");
+			$(this).toggleClass("closed");
+			});
+	});
 
 /* 
  *  Workaround für IE8 und Webkit browser, um den Focus zu korrigieren, bei Verwendung von Skiplinks

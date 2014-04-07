@@ -1218,13 +1218,19 @@ display: inline-block;
 .content ol li ol li {
       list-style: lower-alpha;
 }
+.content .startpage-widget-area {
+    margin: 0 20px;
+}
+
 .content .startpage-widget-area ul li, 
 .content .startpage-widget-area ol li {
     list-style: none;
-    margin-bottom: 0; }
+    margin-bottom: 0; 
+}
 .content .startpage-widget-area, 
 .first-startpage-widget-area ul li {
-    margin-bottom: 5px; }
+    margin-bottom: 5px; 
+}
 .content .startpage-widget-area ul.children {
     margin: 0 0 0 5px ; 
 }
@@ -2731,6 +2737,46 @@ table#wp-calendar td a {
   border: none;
   text-shadow: 1px 1px 1px #333;
 }
+
+/* Accordion ---------------------------------------------------------------- */
+
+ .accordion h2 {
+	cursor:pointer;
+	padding: 3px 0;
+	color:#fff;
+	text-shadow:  0 0 2px rgba(0, 0, 0, 0.4);
+	padding: 3px 5px;
+	letter-spacing: .12em;
+	font-size: 1.05em;
+	background-color: #2D7DC5;
+	border-bottom: 2px solid #1559a6;
+}
+
+.accordion h2:before {
+		content: "\25BE";
+		width: 20px;
+		display: inline-block;
+}
+.accordion h2.closed:before {
+		content: "\25B8";
+}
+.accordion h2.orange {
+	background-color: #ff8800;
+	border-bottom: 2px solid #FEC43F;
+}
+.accordion h2.blue {
+	background-color: #1559a6;
+	border-bottom: 2px solid #07376C;
+}
+.accordion h2.green {
+	background-color: #66b32d;
+	border-bottom: 2px solid #6A7E10;
+}
+.accordion h2.gray {
+	background-color: #aaa;
+	border-bottom: 2px solid #666;
+}
+
 
 /* Flag Icons     -----------------------------------------------------------*/
 .flagicon-sprite, .flagicon-ar, .flagicon-at, .flagicon-au, .flagicon-be, .flagicon-bg, .flagicon-br, .flagicon-by, 

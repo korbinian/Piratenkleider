@@ -29,7 +29,7 @@ $defaultoptions = array(
 
     'default-fontset-file'          => 'font-bebas.css',
     'src-flexslider'                => get_template_directory_uri(). "/js/jquery.flexslider-min.js",
-    'src-layoutjs'                  => get_template_directory_uri(). "/js/layout.min.js",
+    'src-layoutjs'                  => get_template_directory_uri(). "/js/layout.js",
     'src-comment-reply'             => get_template_directory_uri(). "/js/comment-reply.js",
 
     'src-default-symbolbild'        => get_template_directory_uri() .'/images/default-vorlage.jpg',
@@ -159,7 +159,7 @@ $defaultoptions = array(
     'teaser-thumbnail_fallback'		    => 1,
     
     'teaser-type'			    => 'big',    
-    'teaser-title-maxlength'		    => 50,
+    'teaser-title-maxlength'		    => 120,
     'teaser-subtitle'			    => __( 'Topthema', 'piratenkleider' ),
     'teaser-title-words'		    => 7,
 
@@ -500,7 +500,8 @@ $default_alternativestyles = array(
     'sample.css'    => __( 'Leeres Beispiel-CSS', 'piratenkleider' ),
     'scapegoat.css' => __( 'Scapegoat-Adaption (1.0)', 'piratenkleider' ),
     'flaschenpost.css' => __( 'Design Flaschenpost 2013', 'piratenkleider' ),
- );
+    'piratenkleider2.css' => __( 'Design Piratenkleider 2', 'piratenkleider' ),
+);
 
 /*
  * default links for pirate party worldwide and in germany

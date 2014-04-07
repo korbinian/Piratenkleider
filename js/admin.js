@@ -199,5 +199,69 @@ jQuery(document).ready(function($){
 	$(".visiting-card-manual").show();
     }
   }); 
+
 });
 
+jQuery(document).ready(function($){
+  var startval =  $("#artikelstream-type :selected").val();
+  if (startval == 0) {
+      $(".option-artikelstream-exclusive-catliste").hide();
+       $(".option-artikelstream-maxnum-main").hide();
+       $(".option-artikelstream-nextnum-main").hide();
+       $(".option-artikelstream-numfullwidth-main").hide();
+       $(".option-artikelstream-title-main").hide();
+       $(".option-artikelstream-title-maincontinuelist").hide();
+       $(".option-artikelstream-show-second").hide();
+       $(".option-artikelstream-maxnum-second").hide();
+       $(".option-artikelstream-nextnum-second").hide();
+       $(".option-artikelstream-numfullwidth-second").hide();
+       $(".option-artikelstream-title-second").hide();
+       $(".option-artikelstream-title-secondcontinuelist").hide();
+       $(".option-artikelstream-show-linktipps").hide();
+       $(".option-artikelstream-maxnum-linktipps").hide();
+       $(".option-artikelstream-nextnum-linktipps").hide();
+       $(".option-artikelstream-title-linktipps").hide();
+       $(".option-artikelstream-title-linktippcontinuelist").hide();
+  }
+  $("#artikelstream-type").change(function(){
+    var thisval =  $("#artikelstream-type :selected").val();
+    if (thisval == 0) {	
+	 $(".option-artikelstream-exclusive-catliste").hide();
+       $(".option-artikelstream-maxnum-main").hide();
+       $(".option-artikelstream-nextnum-main").hide();
+       $(".option-artikelstream-numfullwidth-main").hide();
+       $(".option-artikelstream-title-main").hide();
+       $(".option-artikelstream-title-maincontinuelist").hide();
+       $(".option-artikelstream-show-second").hide();
+       $(".option-artikelstream-maxnum-second").hide();
+       $(".option-artikelstream-nextnum-second").hide();
+       $(".option-artikelstream-numfullwidth-second").hide();
+       $(".option-artikelstream-title-second").hide();
+       $(".option-artikelstream-title-secondcontinuelist").hide();
+       $(".option-artikelstream-show-linktipps").hide();
+       $(".option-artikelstream-maxnum-linktipps").hide();
+       $(".option-artikelstream-nextnum-linktipps").hide();
+       $(".option-artikelstream-title-linktipps").hide();
+       $(".option-artikelstream-title-linktippcontinuelist").hide();	 
+    } else {
+	$(".option-artikelstream-exclusive-catliste").show();
+	$(".option-artikelstream-maxnum-main").show();
+       $(".option-artikelstream-nextnum-main").show();
+       $(".option-artikelstream-numfullwidth-main").show();
+       $(".option-artikelstream-title-main").show();
+       $(".option-artikelstream-title-maincontinuelist").show();
+       $(".option-artikelstream-show-second").show();
+       $(".option-artikelstream-maxnum-second").show();
+       $(".option-artikelstream-nextnum-second").show();
+       $(".option-artikelstream-numfullwidth-second").show();
+       $(".option-artikelstream-title-second").show();
+       $(".option-artikelstream-title-secondcontinuelist").show();
+       $(".option-artikelstream-show-linktipps").show();
+       $(".option-artikelstream-maxnum-linktipps").show();
+       $(".option-artikelstream-nextnum-linktipps").show();
+       $(".option-artikelstream-title-linktipps").show();
+       $(".option-artikelstream-title-linktippcontinuelist").show();
+    }
+  }); 
+
+});

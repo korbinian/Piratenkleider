@@ -6,9 +6,7 @@
         Automatische Linkicons über CSS
 */
 
-
-
-    
+ 
      .content-primary a:before {
 	display: inline-block;
         content: ' ';

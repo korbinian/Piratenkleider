@@ -93,7 +93,7 @@ function theme_options_do_page($tab = '') {
                                 $setsection = $name;
                             } else {
 
-                               echo "\t<tr valign=\"top\">\n\t\t<th scope=\"row\">";
+                               echo "\t<tr valign=\"top\" class=\"option-".$name."\">\n\t\t<th scope=\"row\">";
                                echo $title;
                                echo "</th>\n\t\t<td>";
 
@@ -334,7 +334,7 @@ function theme_options_do_page($tab = '') {
                                     echo "<br style=\"clear: left;\">\n";				    
                                 } elseif ($type=='select') {
                                     echo "\t\t\t";
-                                    echo "<select name=\"piratenkleider_theme_options[$name]\">\n";
+                                    echo "<select id=\"$name\" name=\"piratenkleider_theme_options[$name]\">\n";
 
                                     foreach($liste as $i => $value) {   
                                         echo "\t\t\t\t";
