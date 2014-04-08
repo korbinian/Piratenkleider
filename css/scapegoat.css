@@ -1,7 +1,7 @@
 /* 
     Adaption des Scapegoat-Designs von  Peter Amende, http://www.zutrinken.com
 
-    Scapegoat.css Version 1.0, 3.11.2013 xwolf
+    Scapegoat.css Version 1.1, 8.4.2014 xwolf
 
 	##		Index
 
@@ -17,8 +17,6 @@
 	10		Navigation
 	11		Media Queries
 
-	 â–²
-	â–² â–²
 
 
 	Grey:	#f4f4f4
@@ -581,78 +579,43 @@ pre code {
 
 	/* ------------------------------ Forms */
 
-input,
-textarea {
-	background: #fff;
-	padding: 0.5em;
-	margin: 0;
-	border: 0.125em solid #e3e3e3;
-
-	-webkit-appearance: none;
-
-	-webkit-box-sizing: border-box;
-	-moz-box-sizing: border-box;
-	box-sizing: border-box;
-
-	-webkit-transition: all 0.1s ease-out;
-	-moz-transition: all 0.1s ease-out;
-	transition: all 0.1s ease-out;
-	
-	-webkit-border-radius: 0.125em;
-	-moz-border-radius: 0.125em;
-	border-radius: 0.125em;
+input, textarea {
+    -moz-box-sizing: border-box;
+    background: none repeat scroll 0 0 #FFFFFF;
+    border: 0.125em solid #E3E3E3;
+    border-radius: 0.125em;
+    margin: 0;
+    padding: 0.5em;
+    transition: all 0.1s ease-out 0s;
 }
-input:hover,
-textarea:hover {
-	border: 0.125em solid #bfbfbf;
+input:hover, textarea:hover {
+    border: 0.125em solid #BFBFBF;
 }
-input:focus,
-textarea:focus {
-	color: #404040;
-	border: 0.125em solid #0077b3;
-	
-	-webkit-box-shadow: 0 0.0625em 0.5em rgba(0,119,179,0.25) inset;
-	-moz-box-shadow: 0 0.0625em 0.5em rgba(0,119,179,0.25) inset;
-	box-shadow: 0 0.0625em 0.5em rgba(0,119,179,0.25) inset;
+input:focus, textarea:focus {
+    border: 0.125em solid #0077B3;
+    box-shadow: 0 0.0625em 0.5em rgba(0, 119, 179, 0.25) inset;
+    color: #404040;
 }
-
-input[type="submit"],
-input[type="button"],
-input[type="reset"] {
-	color: #fff;
-	padding: 0.5em 1em;
-	background: #1984BB;
-	border: 0.125em solid rgba(0,119,179,0.25);
-	cursor: pointer;
-
-	-webkit-box-shadow: none;
-	-moz-box-shadow: none;
-	box-shadow: none;
+input[type="submit"], input[type="button"], input[type="reset"] {
+    background: none repeat scroll 0 0 #FF8800;
+    border: 0.125em solid #F56A00;
+    box-shadow: none;
+    color: #FFFFFF;
+    cursor: pointer;
+    padding: 0.75em 1.5em;
 }
-input[type="submit"]:hover,
-input[type="button"]:hover,
-input[type="reset"]:hover {
-	border: 0.125em solid #f55200;
-	background: #ff6f00;
+input[type="submit"]:hover, input[type="button"]:hover, input[type="reset"]:hover {
+    background: none repeat scroll 0 0 #FF6F00;
+    border: 0.125em solid #F55200;
 }
-input[type="submit"]:focus,
-input[type="button"]:focus,
-input[type="reset"]:focus {
-	border: 0.125em solid #f53900;
-	background: #f50;
+input[type="submit"]:focus, input[type="button"]:focus, input[type="reset"]:focus {
+    background: none repeat scroll 0 0 #FF5500;
+    border: 0.125em solid #F53900;
 }
-input[type="radio"],
-input[type="checkbox"] {
-	background: transparent;
-	padding: 0;
-	border: 0;
-	border: 0.125em solid #e3e3e3;
-}
-input[type="radio"] {
-	-webkit-appearance: radio;
-}
-input[type="checkbox"] {
-	-webkit-appearance: checkbox;
+input[type="radio"], input[type="checkbox"] {
+    background: none repeat scroll 0 0 transparent;
+    border: 0.125em solid #E3E3E3;
+    padding: 0;
 }
 
 	/* ------------------------------ Lists */
@@ -1424,101 +1387,99 @@ nav ul#top {
     background-position: left bottom;
     background-repeat: repeat-x;
     margin: 0 auto;
-    max-height: 155px;
     max-width: 1200px;
     position: relative;
   }
-  .header .row {
-      height: 180px;
-      width: 100%;
-      
-  }
-  .header .nav-top ul {
-    display: block; 
-  }
 
-   .header .nav-top {
+
+
+  .nav-top {
     position: absolute;
     top: 0;
     right: 0;
     width: auto;
     height: 32px; 
   }
-  
-  .header  .nav-top a {      
+
+    .nav-top ul {
+    display: block; 
+  }
+   .nav-top a {      
       display: inline; 
   }
-   .header .nav-top ul.socialmedia {
-      float: left; 
-      display: none;
+   .nav-top ul.socialmedia {
+        position: absolute;
+    right: 0;
+    top: 7em;
+    
   }
-   .header .nav-top .menu-header {
+   .nav-top .menu-header {
      float: left;
   }
 
-   .header .nav-top div.menu-header ul.menu li {
+   .nav-top div.menu-header ul.menu li {
           display: inline;
 	  list-style-type: none;
   }
-  .header .nav-top div.menu-header ul.menu li a {
+  .nav-top div.menu-header ul.menu li a {
         line-height: 30px;
         padding: 0 10px;
         color: black; 
   }
 
-  .header  .nav-top div.menu-header ul.menu li a:hover,
-  .header .nav-top div.menu-header ul.menu li a:focus {
+   .nav-top div.menu-header ul.menu li a:hover,
+  .nav-top div.menu-header ul.menu li a:focus {
         color: #2d7dc5; 
   }        
      
 
-  .header .sticker {
-    position: absolute;
-    top: 30px;
-    right: 25em; 
+  .sticker {
     display: none;
     
   }
-  .header .sticker .skin {
-      padding: 10px; 
-  }
 
-  .header .branding {
-      position: absolute;
-      top: 0;
-      left: 5em;
-      max-width: 400px;
+  .branding {
+      position: relative;
+      display: block;
   }
-
-  .header .branding  p.slogan {
+  .branding h1 {
+      margin: 0;
+      padding: 1em 0 0.5em 0;
+  }
+ .branding  p.slogan {
      display: none;
   }
   
   	/* ------------------------------ Searchform */
-   .header #searchform {
+.header #searchform {
 	position: absolute;
-	top: 4em;
-	right: 20%; 
-	font-size: 0.8em;
-        width: 22em;
+	top: 3em;
+	right: 0; 
 }
 .searchform input#s {
 	height: 3em;
-	width: 15em;
+	font-size: 1em;
 }
-
-.searchform .searchinput:hover,
-.searchform .searchinput:focus {}
-
 .searchform .searchsubmit {
-	border: 0 none;
+  background: none repeat scroll 0 0 rgba(0, 119, 179, 0.9);
+    border-color: #0066CC;
+    box-shadow: none;
+    color: white;
+    display: inline;
+    font-size: 0.9em;
+    height: 3em;
+    margin: 3px;
+    padding: 2px 4px;
 }
-.searchform .searchsubmit:hover,
-.searchform .searchsubmit:focus {
-	color: #005580;
+.searchform .searchsubmit:hover, .searchform .searchsubmit:focus {
+    background-color: #005580;
+    border-color: #0066CC;
 }
-
-  
+/* 
+.searchform .searchsubmit:before {
+    content: "\1f50d";  
+}  
+*/
   
   
   
@@ -1593,7 +1554,7 @@ nav ul#top {
 
 #nav {
 	z-index: 9999;
-	max-width: 1440px;
+	max-width: 1200px;
 	margin: 0 auto;
 
 	border-top: 1px solid #d1d1d1;
@@ -1603,10 +1564,9 @@ nav ul#top {
 	-webkit-box-shadow: 0 -1px 3px rgba(0,0,0,0.1);
 	-moz-box-shadow: 0 -1px 3px rgba(0,0,0,0.1);
 	box-shadow: 0 -1px 3px rgba(0,0,0,0.1);
-	position: absolute;
-	top: 155px;
 	width: 100%;
-	
+	position: relative;
+	display: block;
 }
 #nav  .menu-header {
      margin: 0 auto;
@@ -1746,7 +1706,7 @@ nav ul#top {
     border-top: 1px solid #D1D1D1;
     box-shadow: 0 -1px 3px rgba(0, 0, 0, 0.1);
     border-bottom: 3px solid orange;
-    margin: 3.2em auto 0;
+    margin: 0 auto;
     max-width: 1200px;
 }
 
@@ -3394,9 +3354,7 @@ ul.wp-tag-cloud li:before {
 
 /* teaser --- */
 
-  .teaser .row {
-    margin: 0 auto;
-  }
+
   
    .first-teaser-widget-area .slide .textslider  {
     background: #ff8800;  
