@@ -161,13 +161,13 @@ class Newsletter_Widget extends WP_Widget {
                  ?> 
                  
                         <form method="post" action="<?php echo $url; ?>">						
-                                <label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e("Zum Newsletter anmelden", 'piratenkleider'); ?>
+                                <label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e("Zum Newsletter anmelden", 'piratenkleider'); ?></label>
                                 <input type="text" id="<?php echo $this->get_field_id( 'title' ); ?>" name="email" value="<?php _e("E-Mail-Adresse eingeben", 'piratenkleider'); ?>" 
 				       placeholder="<?php _e("E-Mail-Adresse eingeben", 'piratenkleider'); ?>"
                                        onfocus="if(this.value=='<?php _e("E-Mail-Adresse eingeben", 'piratenkleider'); ?>')this.value='';" 
 				       onblur="if(this.value=='')this.value='<?php _e("E-Mail-Adresse eingeben", 'piratenkleider'); ?>';">
                                 <input type="submit" name="email-button" value="<?php _e("Anmelden", 'piratenkleider'); ?>" id="newslettersubmit">
-				</label>
+				
 		    <?php 	    
 		    $site_link = home_url();
 		    if ((isset($url))&& (strpos($url, $site_link) !== false)) {  

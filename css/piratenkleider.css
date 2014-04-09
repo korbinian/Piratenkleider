@@ -3435,26 +3435,38 @@ html[xmlns] .slides {
  .nav-main ul.menu li.current-menu-item.menu-item-home a.hover {
       background: #111111 url("../images/home-signet.png") no-repeat 17px 10px; 
  }
-     
+
  .nav-main li a span {
      display: inline;
      position: absolute;
-     top: -3px;
+     top: -8px;
      right: -10px;
-     color: #2D7DC5;
      font-size: 0.8em;
       z-index: 51;
+      border-radius: 10px;
+      padding: 2px;
+      background-color: #2D7DC5;
+      color: white;
+      line-height: 1em;     
+ }
+ 
+ .nav-main ul > li.menu-item-home > a span {
+     text-indent: initial;
  }
   .nav-main li.redspan a span {
-      color: red;
+      background-color: red;
   }
   .nav-main li.orangespan a span {
-      color: #ff8800;
+      background-color: #ff8800;
   }
   .nav-main li.greenspan a span {
-      color: green;
+      background-color: green;
   }
- 
+  
+  
+  
+  
+  
  body.nav-fixed .nav-main ul.menu li a[title="Home"],
  body.nav-fixed .nav-main ul.menu li.menu-item-home a {
         background: url("../images/home-signet.png") no-repeat -57px 6px; 

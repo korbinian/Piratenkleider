@@ -145,8 +145,11 @@
             </div>
         </header>    
     </div>
-    <div id="content-body">
-	<?php if ($options['zeige_breadcrump']==1) { ?>
+   
+    
+   
+    <?php if ($options['zeige_breadcrump']==1) { ?>
+     <div id="content-body" class="with-breadcrumb">
 	<div class="section breadcrumbs">
 		<div class="row">
 			<div class="skin">
@@ -154,6 +157,9 @@
 			</div>
 		</div>
 	</div>
+	<?php } else { ?>
+     <div id="content-body">
 	<?php } ?>
+
 
     

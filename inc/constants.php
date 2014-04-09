@@ -498,7 +498,7 @@ $default_fonts = array(
 $default_alternativestyles = array(
     'style.css'	    => __( 'Default Piratenkleider', 'piratenkleider' ),
     'sample.css'    => __( 'Leeres Beispiel-CSS', 'piratenkleider' ),
-    'scapegoat.css' => __( 'Scapegoat-Adaption (1.0)', 'piratenkleider' ),
+    'scapegoat.css' => __( 'Scapegoat-Adaption (1.1)', 'piratenkleider' ),
     'flaschenpost.css' => __( 'Design Flaschenpost 2013', 'piratenkleider' ),
     'piratenkleider2.css' => __( 'Design Piratenkleider 2', 'piratenkleider' ),
 );

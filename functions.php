@@ -375,10 +375,10 @@ function piratenkleider_addfonts() {
               if ($seturl==1) $output .= ", ";
               $output .= 'url('.get_template_directory_uri().$default_fonts[$setfont]['svg'].') format("svg")';                                              
           }          $output .= ";}\n";    
-          $output .= "h1,h2,h3,h4,h5,h6,.headlinefont,.tagcloud,.post-nav a,ol.az dl dt,.post .post-info .cal-icon .day,.first-startpage-widget-area li a { font-family: FontPiratenkleiderHeadlines; }\n";
+          $output .= "h1,h2,h3,h4,h5,h6,.headlinefont,.tagcloud,.post-nav a,.first-startpage-widget-area li a { font-family: FontPiratenkleiderHeadlines; }\n";
   
       } else {
-        $output .= 'h1,h2,h3,h4,h5,h6,.headlinefont,.tagcloud,.post-nav a,ol.az dl dt,.post .post-info .cal-icon .day,.first-startpage-widget-area li a { font-family: '.$default_fonts[$setfont]['family'].'; }';
+        $output .= 'h1,h2,h3,h4,h5,h6,.headlinefont,.tagcloud,.post-nav a,.first-startpage-widget-area li a { font-family: '.$default_fonts[$setfont]['family'].'; }';
         $output .= "\n";  
       }
       
