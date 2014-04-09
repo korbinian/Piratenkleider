@@ -82,7 +82,7 @@ ol { list-style-type: decimal; }
 nav ul, nav li { margin: 0; list-style:none; list-style-image: none; }
 small { font-size: 85%; }
 strong, th { font-weight: bold; }
-td { vertical-align: top; }
+td { vertical-align: top; padding: 0 0.5em; }
 
 sub, sup { font-size: 75%; line-height: 0; position: relative; }
 sup { top: -0.5em; }
@@ -617,7 +617,37 @@ input[type="radio"], input[type="checkbox"] {
     border: 0.125em solid #E3E3E3;
     padding: 0;
 }
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  margin-bottom: 18px; }
 
+caption {
+  margin-bottom: 9px; }
+
+caption, th, thead, legend {
+  font-weight: normal; }
+
+tr:hover {
+  background: rgba(0, 0, 0, 0.02);
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -ms-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out; 
+  transition: all 0.2s ease-in-out; }
+
+th, td {
+  text-align: left;
+  line-height: inherit;
+  padding: 5px;
+  border-top: solid 1px #eeeeee; 
+}
+
+td {
+  vertical-align: top; }
+
+th {
+  font-weight: bold; }
 	/* ------------------------------ Lists */
 
 .article ul,
@@ -745,7 +775,7 @@ audio {
 .edit-link a:focus {
 	background: #005580;
 }
-
+.person,
 .linktipps,
 .type-post,
 .type-page,
@@ -1727,7 +1757,7 @@ nav ul#top {
     list-style-position: inside;
 }
 
-
+.person .content-primary .skin,
 .search .content-primary .skin,
 .post .content-primary .skin,
 .page .content-primary .skin {
@@ -1738,6 +1768,37 @@ nav ul#top {
     padding: 3em;
     position: relative;
 }
+
+.content-primary .categorybox {
+    display: inline-block;
+    margin: 0;
+    padding: 0 10px;
+    width: 320px;
+    max-height: 720px;
+    overflow: hidden;
+    vertical-align: top;
+}
+.content-primary .categorybox h2 {
+    font-size: 1.3em;
+}
+.content-primary .categorybox section {
+    min-height: 240px;
+}
+.content-primary .categorybox .infoimage {
+    float: left;
+    margin: 0.5em;
+}
+.content-primary .categorybox ul.catliste {
+    font-size: 0.9em; 
+}
+.content-primary .categorybox:after {
+    clear:both; 
+}
+.content-primary .categorybox .pubdateinfo {
+    display: none;
+}
+ 
+
 	/* ------------------------------ Social Icons */
 
 #socialmedia_iconbar {
@@ -1945,7 +2006,10 @@ nav ul#top {
 
 .embed-youtube p img {margin: 0 5px 0 0;}
 
-
+.page-template-page-actionpage-php .breadcrumbs,
+.page-template-pageindex-php .breadcrumbs,
+.page-template-catindex-php .breadcrumbs,
+.home .breadcrumbs,
 .with-breadcrumb h1.post-title,
 .skip {
     position: absolute;
