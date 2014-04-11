@@ -10,8 +10,6 @@ add_action( 'load-post-new.php', 'piratenkleider_metabox_cf_setup' );
 
 
 
-
-
 /* Meta box setup function. */
 function piratenkleider_metabox_cf_setup() {
 	/* Display Display options. */
@@ -237,4 +235,3 @@ function piratenkleider_save_metabox_pagesidecontent( $post_id, $post ) {
 	
 }
 ?>
-
