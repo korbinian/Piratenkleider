@@ -5,7 +5,6 @@
 ?><?php get_header();    
   global $options;  
 
-  
   if ( $options['slider-aktiv'] == "1" ){ ?>  
     <div class="section teaser">
         <div class="row">
