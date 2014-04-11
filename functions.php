@@ -1033,7 +1033,7 @@ function piratenkleider_post_datumsbox() {
         $out .= '<div class="commentbubble">'; 
         $link = get_comments_link();
         $out .= '<a href="'.$link.'">'.$num_comments.'<span class="skip"> ';
-        if ($num_comments>0) {
+        if ($num_comments>1) {
             $out .= __('Kommentare', 'piratenkleider' ).'</span></a>';
         } else {
             $out .= __('Kommentar', 'piratenkleider' ).'</span></a>';

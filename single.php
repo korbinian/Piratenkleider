@@ -50,9 +50,8 @@
  
         <section <?php post_class(); ?> id="post-<?php the_ID(); ?>">
 	    <?php 
-	    $show_disclaimer = get_post_meta( $object->ID, 'piratenkleider-show-post-disclaimer', true );
-		if ( (isset($show_disclaimer))
-                 && ($options['post_disclaimer']<>'') 
+	    $show_disclaimer = get_post_meta( get_the_ID(), 'piratenkleider-show-post-disclaimer', true );
+		if ( (isset($show_disclaimer))  && ($options['post_disclaimer']<>'') 
                  && ( ($show_disclaimer==1) || ($show_disclaimer==3)) 
                 ) {
 		   echo '<div class="disclaimer">'.$options['post_disclaimer'].'</div>';
@@ -63,8 +62,7 @@
 		<?php the_content(); ?>
 	      </article>
              <?php 
-            if ( (isset($show_disclaimer))
-                 && ($options['post_disclaimer']<>'') 
+            if ( (isset($show_disclaimer)) && ($options['post_disclaimer']<>'') 
                  && ( ($show_disclaimer==2) || ($show_disclaimer==3)) 
                 ) {
                 echo '<div class="disclaimer">';

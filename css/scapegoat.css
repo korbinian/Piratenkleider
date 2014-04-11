@@ -896,7 +896,7 @@ audio {
 	border-bottom: 1px solid #bfbfbf;
 }
 
-.cal-icon,
+
 .author,
 .post-comments,
 .post-categories,
@@ -908,10 +908,19 @@ audio {
 	margin: 0;
 }
 
+.post-info { margin-top: -20px; float: right;}
+.cal-icon {
+    padding: 0;
+    min-height: inherit;
+    line-height: inherit;
+    margin: 0;
+}
 
-.commentbubble {
-   float: right;
-}  
+.commentbubble .skip {
+    position: relative;
+    left: inherit;
+    width: auto;
+}
 
 
 
