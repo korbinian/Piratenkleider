@@ -1407,7 +1407,7 @@ $setoptions = array(
               'post_disclaimer' => array(
                   'type'    => 'textarea',
                   'title'   => __( 'Disclaimer f&uuml;r (Gast-)Artikel', 'piratenkleider' ),
-                  'label'   => __( 'Definiere ein Text als Disclaimer, der bei Artikeln gezeigt werden kann. Disclaimer wird mit Custom Field show-post-disclaimer (= 0, 1,2,3) aktiviert.', 'piratenkleider' ),
+                  'label'   => __( 'Definiere ein Text als Disclaimer, der bei Artikeln gezeigt werden kann. ', 'piratenkleider' ),
                   'default' => $defaultoptions['disclaimer_post'],
 		  'parent'  => 'spezial'
               ),    

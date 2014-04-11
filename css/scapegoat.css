@@ -908,13 +908,7 @@ audio {
 	margin: 0;
 }
 
-.cal-icon:before {
-    content: "Veröffentlicht am: "
-}
 
-.commentbubble:after {
-    content: " Kommentare";
-}
 .commentbubble {
    float: right;
 }  

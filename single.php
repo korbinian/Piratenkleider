@@ -50,10 +50,10 @@
  
         <section <?php post_class(); ?> id="post-<?php the_ID(); ?>">
 	    <?php 
-		if ( (isset($custom_fields['piratenkleider-show-post-disclaimer']))
-                 && ($custom_fields['piratenkleider-show-post-disclaimer'][0]<>'') 
+	    $show_disclaimer = get_post_meta( $object->ID, 'piratenkleider-show-post-disclaimer', true );
+		if ( (isset($show_disclaimer))
                  && ($options['post_disclaimer']<>'') 
-                 && ( ($custom_fields['piratenkleider-show-post-disclaimer'][0]==1) || ($custom_fields['piratenkleider-show-post-disclaimer'][0]==3)) 
+                 && ( ($show_disclaimer==1) || ($show_disclaimer==3)) 
                 ) {
 		   echo '<div class="disclaimer">'.$options['post_disclaimer'].'</div>';
                 }				
@@ -63,10 +63,9 @@
 		<?php the_content(); ?>
 	      </article>
              <?php 
-            if ( (isset($custom_fields['piratenkleider-show-post-disclaimer']))
-                 &&   ($custom_fields['piratenkleider-show-post-disclaimer'][0]<>'') 
+            if ( (isset($show_disclaimer))
                  && ($options['post_disclaimer']<>'') 
-                 && ( ($custom_fields['piratenkleider-show-post-disclaimer'][0]==2) || ($custom_fields['piratenkleider-show-post-disclaimer'][0]==3)) 
+                 && ( ($show_disclaimer==2) || ($show_disclaimer==3)) 
                 ) {
                 echo '<div class="disclaimer">';
                 echo $options['post_disclaimer'];
