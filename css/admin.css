@@ -42,7 +42,6 @@ p.submit {
 #einstellungen table tr:focus {
     background-color: #eeeeee;
     -webkit-transition: all 0.1s ease-in-out;
-  -moz-transition: all 0.1s ease-in-out;
   -ms-transition: all 0.1s ease-in-out;
   -o-transition: all 0.1s ease-in-out; 
   transition: all 0.1s ease-in-out;
@@ -54,7 +53,14 @@ p.submit {
 #einstellungen table td {
     padding-bottom: 5px;
 }
-
+#einstellungen tr.mark-option {
+    background-color: #f50;
+    color: white;
+}
+#einstellungen tr.mark-option:focus, 
+#einstellungen tr.mark-option:hover {
+    background-color: #a62911;
+}
 #einstellungen table td table th {
     min-width: 50px;
 }
@@ -84,7 +90,9 @@ label.tile img {
     margin: 0;
     padding: 0;
 }
-label.checked, label.tile:hover, label.tile:focus { border-color: orange; background: orange;} 
+label.checked, 
+label.tile:hover, 
+label.tile:focus { border-color: orange; background: orange;} 
 
 label.plakattile {
     width: 160px;

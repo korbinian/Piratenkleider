@@ -2071,6 +2071,13 @@ $setoptions = array(
        'sonstiges'   => array(
            'tabtitle'   => __('Sonstiges', 'piratenkleider'),
            'fields' => array(
+	       'reset_options' => array(
+                  'type'    => 'bool',
+                  'title'   => __( 'Reset aller Optionen', 'piratenkleider' ),
+                  'label'   => __( 'Alle Theme-Optionen auf die Defaults zur&uuml;cksetzen.', 'piratenkleider' ),
+                  'default' => 0,
+		  'mark_option' => 1,
+              ),    
                'aktiv-dynamic-sidebar' => array(
                   'type'    => 'bool',
                   'title'   => __( 'Sidebar abblendbar', 'piratenkleider' ),

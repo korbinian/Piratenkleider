@@ -74,11 +74,14 @@ function theme_options_do_page($tab = '') {
                     if (isset($setoptions['piratenkleider_theme_options'][$tab]['fields'])) {
                         foreach($setoptions['piratenkleider_theme_options'][$tab]['fields'] as $i => $value) {   
                             $name = $i;
+			    $mark_option =0;
                             if (isset($value['title'])) $title = $value['title'];
                             if (isset($value['type'])) $type = $value['type'];
                             if (isset($value['label'])) $label = $value['label'];
                             if (isset($value['parent'])) $parent = $value['parent'];
                             if (isset($value['liste'])) $liste = $value['liste']; 
+			    if (isset($value['mark_option']) && $value['mark_option']==1) $mark_option =1; 
+			     
 
                             if ($type == 'section') {
                                 if ((isset($setsection)) && ($setsection != "")) {
@@ -93,17 +96,25 @@ function theme_options_do_page($tab = '') {
                                 $setsection = $name;
                             } else {
 
-                               echo "\t<tr valign=\"top\" class=\"option-".$name."\">\n\t\t<th scope=\"row\">";
+                               echo "\t<tr valign=\"top\" class=\"option-".$name;
+			       if ($mark_option==1) {
+				   echo " mark-option";
+			       }
+			       echo "\">\n\t\t<th scope=\"row\">";
                                echo $title;
                                echo "</th>\n\t\t<td>";
 
                                 if ((!isset($options[$name])) && (isset($value['default'])) && (!empty($value['default']))) {                                       
                                         $options[$name] = $value['default'];                                                                               
                                 }
+				
                                 if ($type =='bool') {
                                     echo "\t\t\t";
                                     echo "<input id=\"piratenkleider_theme_options[$name]\" name=\"piratenkleider_theme_options[$name]\" 
-                                            type=\"checkbox\" value=\"1\" ".checked( $options[$name],1,false ).">\n";
+                                            type=\"checkbox\" value=\"1\" ";
+				    
+				    if (isset($options[$name])) echo checked( $options[$name],1,false );
+				    echo ">\n";
                                     echo "\t\t\t";
                                     echo "<label for=\"piratenkleider_theme_options[$name]\">$label</label>\n";                                     
                                 } elseif (($type=='text') || ($type=='email')) {
@@ -567,7 +578,11 @@ function theme_options_validate( $input ) {
             && (strlen(trim($input['seitenbild-url']))>10)) {            
          $input['seiten-defaultbildsrc'] = $input['seitenbild-url'];
     }
+
+    if  (isset($input['reset_options']) && ($input['reset_options'] == 1)) {
+	delete_option('piratenkleider_theme_options');
 	
+    } 
    return $output;
 
 }

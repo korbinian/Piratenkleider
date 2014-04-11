@@ -51,11 +51,8 @@
               $args = $wp_query->query;
           }
       } else {
-        if ($options['aktiv-linktipps']==1) {	    
 	    $args = array_merge( $wp_query->query, array( 'post_type' => array('linktipps','post') ) );	    
-        } else {
-            $args =  $wp_query->query;
-        }
+       
       }
       $numentries = $options['artikelstream-maxnum-main'] + $options['artikelstream-nextnum-main'];
       if (is_array($args)) {
