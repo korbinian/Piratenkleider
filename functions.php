@@ -566,6 +566,7 @@ endif;
 
 function piratenkleider_initoptions() {
     global $defaultoptions;
+    global $default_toplink_liste;
     // $doupdate = 0;
     
     $oldoptions = get_option('piratenkleider_theme_options');

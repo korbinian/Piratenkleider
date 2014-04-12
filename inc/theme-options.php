@@ -568,15 +568,15 @@ function theme_options_validate( $input ) {
    
     if (isset($input['slider-alternativesrc']) && ($input['slider-alternativesrc'] != '') 
             && (strlen(trim($input['slider-alternativesrc']))>10)) {            
-         $input['slider-defaultbildsrc'] = $input['slider-alternativesrc'];
+         $output['slider-defaultbildsrc'] = $input['slider-alternativesrc'];
     }
     if (isset($input['artikelbild-url']) && ($input['artikelbild-url'] != '') 
             && (strlen(trim($input['artikelbild-url']))>10)) {          
-         $input['artikelbild-src'] = $input['artikelbild-url'];
+         $output['artikelbild-src'] = $input['artikelbild-url'];
     }    
     if (isset($input['seitenbild-url']) && ($input['seitenbild-url'] != '') 
             && (strlen(trim($input['seitenbild-url']))>10)) {            
-         $input['seiten-defaultbildsrc'] = $input['seitenbild-url'];
+         $output['seiten-defaultbildsrc'] = $input['seitenbild-url'];
     }
 
     if  (isset($input['reset_options']) && ($input['reset_options'] == 1)) {
