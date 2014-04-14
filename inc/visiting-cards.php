@@ -233,7 +233,9 @@ function piratenkleider_person_metabox_save( $post_id ) {
 	    $urlimg = $_POST['person_bild'];
 	    if (filter_var($urlimg, FILTER_VALIDATE_URL)) {
 		update_post_meta( $post_id, 'person_bild', $urlimg );
-	    }
+	    } else {
+                delete_post_meta( $post_id, 'person_bild' );
+            }
 	}
 	
         $url = '';
@@ -256,30 +258,80 @@ function piratenkleider_person_metabox_save( $post_id ) {
 		delete_post_meta( $post_id, 'person_url', $oldurl );		     
 			     
 	
-	$email = $_POST['person_email'];
-	if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
-	    update_post_meta( $post_id, 'person_email', $email );
-	}
-	$url = $_POST['person_facebook'];
-	if (filter_var($url, FILTER_VALIDATE_URL)) {
-	    update_post_meta( $post_id, 'person_facebook', $url );
-	}
-	$url = $_POST['person_google'];
-	if (filter_var($url, FILTER_VALIDATE_URL)) {
-	    update_post_meta( $post_id, 'person_google', $url );
-	}
+        $newid = ( isset( $_POST['person_email'] ) ? sanitize_key( $_POST['person_email'] ) : '' );
+        if ((isset($newid)) && (filter_var($newid, FILTER_VALIDATE_EMAIL))) {
+           /* URL ok */ 
+        } else {
+            $newid = '';
+        }
+	$oldid = get_post_meta( $post_id, 'person_email', true );
+
+	if ( $newid && '' == $oldid )
+		add_post_meta( $post_id, 'person_email', $newid, true );
+	elseif ( $newid && $newid != $oldid )
+		update_post_meta( $post_id, 'person_email', $newid );
+	elseif ( '' == $newid && $oldid )
+		delete_post_meta( $post_id, 'person_email', $oldid );
 	
-	$url = $_POST['person_newsfeed'];
-	if (filter_var($url, FILTER_VALIDATE_URL)) {
-	    update_post_meta( $post_id, 'person_newsfeed', $url );
-	}
-	$url = $_POST['person_wiki'];
-	if (filter_var($url, FILTER_VALIDATE_URL)) {
-	    update_post_meta( $post_id, 'person_wiki', $url );
-	} else {
-	    update_post_meta( $post_id, 'person_wiki',  $url );
-	}
-	
+        $newid = ( isset( $_POST['person_facebook'] ) ? sanitize_key( $_POST['person_facebook'] ) : '' );
+        if ((isset($newid)) && (filter_var($newid, FILTER_VALIDATE_URL))) {
+           /* URL ok */ 
+        } else {
+            $newid = '';
+        }
+	$oldid = get_post_meta( $post_id, 'person_facebook', true );
+
+	if ( $newid && '' == $oldid )
+		add_post_meta( $post_id, 'person_facebook', $newid, true );
+	elseif ( $newid && $newid != $oldid )
+		update_post_meta( $post_id, 'person_facebook', $newid );
+	elseif ( '' == $newid && $oldid )
+		delete_post_meta( $post_id, 'person_facebook', $oldid );
+        
+ 	$newid = ( isset( $_POST['person_google'] ) ? sanitize_key( $_POST['person_google'] ) : '' );
+        if ((isset($newid)) && (filter_var($newid, FILTER_VALIDATE_URL))) {
+           /* URL ok */ 
+        } else {
+            $newid = '';
+        }
+	$oldid = get_post_meta( $post_id, 'person_google', true );
+
+	if ( $newid && '' == $oldid )
+		add_post_meta( $post_id, 'person_google', $newid, true );
+	elseif ( $newid && $newid != $oldid )
+		update_post_meta( $post_id, 'person_google', $newid );
+	elseif ( '' == $newid && $oldid )
+		delete_post_meta( $post_id, 'person_google', $oldid );
+        
+        
+       
+ 	$newid = ( isset( $_POST['person_newsfeed'] ) ? sanitize_key( $_POST['person_newsfeed'] ) : '' );
+        if ((isset($newid)) && (filter_var($newid, FILTER_VALIDATE_URL))) {
+           /* URL ok */ 
+        } else {
+            $newid = '';
+        }
+	$oldid = get_post_meta( $post_id, 'person_newsfeed', true );
+
+	if ( $newid && '' == $oldid )
+		add_post_meta( $post_id, 'person_newsfeed', $newid, true );
+	elseif ( $newid && $newid != $oldid )
+		update_post_meta( $post_id, 'person_newsfeed', $newid );
+	elseif ( '' == $newid && $oldid )
+		delete_post_meta( $post_id, 'person_newsfeed', $oldid );	
+	       
+        
+        
+        $newid = ( isset( $_POST['person_wiki'] ) ? sanitize_key( $_POST['person_wiki'] ) : '' );       
+	$oldid = get_post_meta( $post_id, 'person_wiki', true );
+
+	if ( $newid && '' == $oldid )
+		add_post_meta( $post_id, 'person_wiki', $newid, true );
+	elseif ( $newid && $newid != $oldid )
+		update_post_meta( $post_id, 'person_wiki', $newid );
+	elseif ( '' == $newid && $oldid )
+		delete_post_meta( $post_id, 'person_wiki', $oldid );	
+	       
 
 	if( isset( $_POST[ 'person_twitter' ] ) ) {
 	    update_post_meta( $post_id, 'person_twitter',  sanitize_text_field($_POST[ 'person_twitter' ]) );
