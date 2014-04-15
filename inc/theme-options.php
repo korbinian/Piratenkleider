@@ -175,6 +175,49 @@ function theme_options_do_page($tab = '') {
 				   echo ' <small><a href="#" class="file_clear_button">'.__( "Datei entfernen", 'piratenkleider' ).'</a></small>';
                                     echo "<br>\t\t\t";
                                     echo "<label for=\"piratenkleider_theme_options[$name]\">$label</label>\n";      
+				} elseif ($type=='imageurl') {
+                                    echo "\t\t\t"; 
+				    echo '<div class="uploader">';
+				    echo '<div class="previewimage showimg_'.$name.'">';				   
+				     if ((isset($options[$name])) && esc_url( $options[$name])) { 
+					  echo '<img src="'.esc_url( $options[$name]).'" class="image_show_'.$name.'" />';
+				    } else {
+					   _e('No Image selected', 'piratenkleider');
+				     }				   
+				    ?>
+				    
+				    </div>
+				      <input type="hidden" name="piratenkleider_theme_options[<?php echo $name; ?>_id]" id="image_<?php echo $name; ?>_id" 
+					     value="<?php if ( isset( $options[$name."_id"] ) ) echo sanitize_key( $options[$name."_id"] ) ; ?>" />
+			
+				      <input type="text" name="piratenkleider_theme_options[<?php echo $name; ?>]" id="image_<?php echo $name; ?>" value="<?php if ( isset( $options[$name] ) ) echo esc_attr( $options[$name] ) ; ?>" />
+				      <input class="button" name="image_button_<?php echo $name; ?>" id="image_button_<?php echo $name; ?>" value="<?php _e('Add Image', 'piratenkleider'); ?>" />
+				      <small><a href="#" class="image_reset_<?php echo $name; ?>"><?php _e( "Remove image", 'piratenkleider' );?></a></small>
+				      <br><label for="piratenkleider_theme_options[<?php echo $name; ?>]"><?php echo $label; ?></label>
+				      </div><script>
+				    jQuery(document).ready(function() {
+					jQuery('#image_button_<?php echo $name; ?>').click(function()  {
+					    wp.media.editor.send.attachment = function(props, attachment) {
+						jQuery('#image_<?php echo $name; ?>').val(attachment.url);
+						jQuery('#image_<?php echo $name; ?>_id').val(attachment.id);
+						htmlshow = "<img src=\""+attachment.url + "\">";  					   
+						jQuery('.showimg_<?php echo $name; ?>').html(htmlshow);
+
+					    }
+					    wp.media.editor.open(this);
+					    return false;
+					});
+				    });
+				    jQuery(document).ready(function() {
+					jQuery('.image_reset_<?php echo $name; ?>').click(function()   {
+						jQuery('#image_<?php echo $name; ?>').val('');
+						jQuery('#image_<?php echo $name; ?>_id').val('');
+						jQuery('.showimg_<?php echo $name; ?>').html('<?php _e('No Image selected', 'piratenkleider'); ?>');
+						return false;
+					});
+				    });
+				    </script>  <?php 		    
+                                           
                                 } elseif ($type=='number') {
                                     echo "\t\t\t";
                                     echo "<input class=\"number\" size=\"5\" id=\"piratenkleider_theme_options[$name]\" 
@@ -501,6 +544,9 @@ function theme_options_validate( $input ) {
                              $output[$name]  =  $input[$name] ;     
                         } elseif ($type=='html') {;    
                             $output[$name] = $input[$name];
+			} elseif ($type=='imageurl') {
+                             $output[$name]  =  esc_url( $input[$name] );
+			     $output[$name."_id"]  =  sanitize_key( $input[$name."_id"] );
                         } elseif (($type=='url') || ($type=='imgurl')) {
                              $output[$name]  =  esc_url( $input[$name] ); 
                         } elseif ($type=='file') {
@@ -528,7 +574,10 @@ function theme_options_validate( $input ) {
                             $output[$name] = "";     
                         } elseif ($type=='html') {
                             $output[$name] = "";    
-                        } elseif ($type=='url') {
+			} elseif ($type=='imageurl') {
+                            $output[$name] = "";    
+			    $output[$name."_id"] = 0;    
+                        } elseif (($type=='url') || ($type=='imgurl')) {
                             $output[$name] = "";
                         } elseif ($type=='number') {
                             $output[$name] = 0;
@@ -570,14 +619,7 @@ function theme_options_validate( $input ) {
             && (strlen(trim($input['slider-alternativesrc']))>10)) {            
          $output['slider-defaultbildsrc'] = $input['slider-alternativesrc'];
     }
-    if (isset($input['artikelbild-url']) && ($input['artikelbild-url'] != '') 
-            && (strlen(trim($input['artikelbild-url']))>10)) {          
-         $output['artikelbild-src'] = $input['artikelbild-url'];
-    }    
-    if (isset($input['seitenbild-url']) && ($input['seitenbild-url'] != '') 
-            && (strlen(trim($input['seitenbild-url']))>10)) {            
-         $output['seiten-defaultbildsrc'] = $input['seitenbild-url'];
-    }
+  
 
     if  (isset($input['reset_options']) && ($input['reset_options'] == 1)) {
 	delete_option('piratenkleider_theme_options');

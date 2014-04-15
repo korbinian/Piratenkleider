@@ -109,7 +109,10 @@ label.plakattile:hover {
 img.imgurl {
     display: block;
 }
-
+.previewimage img {
+    max-width: 900px;
+    height: auto;
+}
 #adminmenu .menu-icon-person div.wp-menu-image:before {
     content: "\f337";
 }

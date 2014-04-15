@@ -31,8 +31,7 @@ $defaultoptions = array(
     'src-flexslider'                => get_template_directory_uri(). "/js/jquery.flexslider-min.js",
     'src-layoutjs'                  => get_template_directory_uri(). "/js/layout.js",
     'src-comment-reply'             => get_template_directory_uri(). "/js/comment-reply.js",
-
-    'src-default-symbolbild'        => get_template_directory_uri() .'/images/default-vorlage.jpg',
+    'src-default-symbolbild'        => get_template_directory_uri() .'/images/defaultbild-wikinger.jpg',
     'src-default-symbolbild-404'    => get_template_directory_uri() .'/images/default-404.jpg',
     'src-default-symbolbild-category'   => get_template_directory_uri() .'/images/default-vorlage.jpg',
     'src-default-symbolbild-search' => get_template_directory_uri() .'/images/default-vorlage.jpg',
@@ -1400,9 +1399,7 @@ $setoptions = array(
                   'type'    => 'section',
                   'title'   => __( 'Spezielle Eigenschaften', 'piratenkleider' ),
               ),
-	       
-             
-               
+
               
               'post_disclaimer' => array(
                   'type'    => 'textarea',
@@ -1570,20 +1567,14 @@ $setoptions = array(
 		  'parent'  => 'darstellungseiten'
               ),	
 	      'seiten-defaultbildsrc' => array(
-                  'type'    => 'bildlist',
+                  'type'    => 'imageurl',
                   'title'   => __( 'Defaultbild', 'piratenkleider' ),
                   'label'   => __( 'Ersatzbild f&uuml;r Seiten ohne eigenes Artikelbild.', 'piratenkleider' ),
                   'default' => $defaultoptions['src-default-symbolbild'],		                     
-		  'liste'   => $defaultbilder_liste,
 		  'parent'  => 'darstellungseiten'
               ),	
-	      'seitenbild-url' => array(
-                  'type'    => 'url',
-                  'title'   => __( 'URL', 'piratenkleider' ),
-                  'label'   => __( 'Webadresse f&uuml;r ein alternatives Seitenbild.', 'piratenkleider' ),
-                  'default' => $defaultoptions['seitenbild-url'],
-                  'parent'  => 'darstellungseiten',
-              ),
+	
+	
 	      'darstellungartikel'  => array(
                   'type'    => 'section',
                   'title'   => __( 'Artikelbilder', 'piratenkleider' ),
@@ -1604,21 +1595,15 @@ $setoptions = array(
 		  'liste'   => array(0 => "klein (150px)", 1 => "gro&szlig; (240px)"),
 		  'parent'  => 'darstellungartikel'
               ),	
-	      'artikelbild-src' => array(
-                  'type'    => 'bildlist',
-                  'title'   => __( 'Defaultbild', 'piratenkleider' ),
-                  'label'   => __( 'Ersatzbild f&uuml;r Seiten ohne eigenes Artikelbild.', 'piratenkleider' ),
-                  'default' => $defaultoptions['src-default-artikel-symbolbild'],		                     
-		  'liste'   => $defaultbilder_liste,
-		  'parent'  => 'darstellungartikel'
-              ),	
-	      'artikelbild-url' => array(
-                  'type'    => 'url',
-                  'title'   => __( 'URL', 'piratenkleider' ),
-                  'label'   => __( 'Webadresse f&uuml;r ein alternatives Artikelbild.', 'piratenkleider' ),
-                  'default' => $defaultoptions['artikelbild-url'],
+
+	       'artikelbild-src'  => array(
+                  'type'    => 'imageurl',
+                  'title'   => __( 'Bild', 'piratenkleider' ),
+                  'label'   => __( 'Ersatzbild f&uuml;r Artikel ohne eigenes Bild.', 'piratenkleider' ),
+                  'default' =>  $defaultoptions['src-default-artikel-symbolbild'],
                   'parent'  => 'darstellungartikel',
               ),
+	       
 	       
 	       'darstellungindexseiten'  => array(
                   'type'    => 'section',
@@ -1641,49 +1626,49 @@ $setoptions = array(
               ),
 	      	       
 	     'src-default-symbolbild-404' => array(
-                  'type'    => 'imgurl',
+                  'type'    => 'imageurl',
                   'title'   => __( 'Symbolbild f&uuml;r 404-Seite', 'piratenkleider' ),
                   'label'   => __( 'URL f&uuml;r ein eigenes 404-Seitenbild.', 'piratenkleider' ),
                   'default' => $defaultoptions['src-default-symbolbild-404'],
                   'parent'  => 'darstellungindexseiten',
               ),
 	     'src-default-symbolbild-category' => array(
-                  'type'    => 'imgurl',
+                  'type'    => 'imageurl',
                   'title'   => __( 'Symbolbild f&uuml;r Kategorie-Seite', 'piratenkleider' ),
                   'label'   => __( 'URL f&uuml;r ein eigenes Kategorien-Seitenbild.', 'piratenkleider' ),
                   'default' => $defaultoptions['src-default-symbolbild-category'],
                   'parent'  => 'darstellungindexseiten',
               ), 
 	      'src-default-symbolbild-tag' => array(
-                  'type'    => 'imgurl',
+                  'type'    => 'imageurl',
                   'title'   => __( 'Symbolbild f&uuml;r Tag-Seite', 'piratenkleider' ),
                   'label'   => __( 'URL f&uuml;r ein eigenes Tag-Seitenbild.', 'piratenkleider' ),
                   'default' => $defaultoptions['src-default-symbolbild-tag'],
                   'parent'  => 'darstellungindexseiten',
               ), 
 	       'src-default-symbolbild-author' => array(
-                  'type'    => 'imgurl',
+                  'type'    => 'imageurl',
                   'title'   => __( 'Symbolbild f&uuml;r Autoren-Seite', 'piratenkleider' ),
                   'label'   => __( 'URL f&uuml;r ein eigenes Autoren-Seitenbild.', 'piratenkleider' ),
                   'default' => $defaultoptions['src-default-symbolbild-author'],
                   'parent'  => 'darstellungindexseiten',
               ), 
 	       'src-default-symbolbild-archive' => array(
-                  'type'    => 'imgurl',
+                  'type'    => 'imageurl',
                   'title'   => __( 'Symbolbild f&uuml;r Archiv-Seite', 'piratenkleider' ),
                   'label'   => __( 'URL f&uuml;r ein eigenes Archiv-Seitenbild.', 'piratenkleider' ),
                   'default' => $defaultoptions['src-default-symbolbild-archive'],
                   'parent'  => 'darstellungindexseiten',
               ), 
 	        'src-default-symbolbild-search' => array(
-                  'type'    => 'imgurl',
+                  'type'    => 'imageurl',
                   'title'   => __( 'Symbolbild f&uuml;r Suchergebnis-Seite', 'piratenkleider' ),
                   'label'   => __( 'URL f&uuml;r ein eigenes Suchergebnis-Seitenbild.', 'piratenkleider' ),
                   'default' => $defaultoptions['src-default-symbolbild-search'],
                   'parent'  => 'darstellungindexseiten',
               ), 
 	      'src-default-symbolbild' => array(
-                  'type'    => 'imgurl',
+                  'type'    => 'imageurl',
                   'title'   => __( 'Symbolbild f&uuml;r Template-Seiten', 'piratenkleider' ),
                   'label'   => __( 'URL f&uuml;r ein Template-Seitenbild.', 'piratenkleider' ),
                   'default' => $defaultoptions['src-default-symbolbild'],
