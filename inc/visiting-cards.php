@@ -548,13 +548,12 @@ function piratenkleider_display_person ($post_id = 0, $format = 'full', $profill
 	    $out .= "</div>\n";
 	} elseif ($format== 'sitebar') {
 	     $out .= '<section id="steckbrief">';   
-	     $out .=  $personenbildsidebar;
-	     $out .= '<div class="text">';
-	     $out .= '<h3>';
 	     if ($profillink==1) $out .= '<a href="'.$person_link.'">';	   
-	     $out .= $fullname;
-	     if ($profillink==1) $out .= '</a>';
-	     
+             $out .=  $personenbildsidebar;
+              if ($profillink==1) $out .= '</a>';
+	     $out .= '<div class="text">';
+	     $out .= '<h3>';     
+	     $out .= $fullname;          
 	     $out .= '</h3>';
 	     $out .= $kontaktdata;
 	     $out .= '<p>'.$person_shortdesc."</p>\n";
@@ -960,21 +959,10 @@ function get_piratenkleider_steckbrief(){
   if ((isset($personid)) && ($personid>0)) {      
       return piratenkleider_display_person($personid,'sitebar'); 
   }  
-  $custom_fields = get_post_custom();
   
-  if (isset($custom_fields['piratenkleider-sidebar-text'])) {
-    $text = $custom_fields['piratenkleider-sidebar-text'][0];
-  } elseif (isset($custom_fields['text'])) {
-      /* Look for variable as in V2 for downwards compatibility ... */
-      $text = $custom_fields['text'][0];
-  }
+  $text = get_post_meta(  $post->ID, 'piratenkleider-sidebar-text', true );
+  $image_url = get_post_meta( $post->ID, 'piratenkleider-sidebar-image_url', true );
   
-  if (isset($custom_fields['piratenkleider-sidebar-image_url'])) {
-    $image_url = $custom_fields['piratenkleider-sidebar-image_url'][0];
-  } elseif (isset($custom_fields['image_url'])) {
-      /* Look for variable as in V2 for downwards compatibility ... */
-      $image_url =  $custom_fields['image_url'][0];
-  } 
   $out = '';	
     if  (  ( isset($text) 
 	    && isset($image_url) && ($image_url<>'') 

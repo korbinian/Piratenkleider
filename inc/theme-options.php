@@ -615,10 +615,7 @@ function theme_options_validate( $input ) {
     }  
 
    
-    if (isset($input['slider-alternativesrc']) && ($input['slider-alternativesrc'] != '') 
-            && (strlen(trim($input['slider-alternativesrc']))>10)) {            
-         $output['slider-defaultbildsrc'] = $input['slider-alternativesrc'];
-    }
+
   
 
     if  (isset($input['reset_options']) && ($input['reset_options'] == 1)) {

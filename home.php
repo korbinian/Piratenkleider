@@ -92,7 +92,7 @@
             $linkliste .= '<div class="p3-column">';
 	    $linkliste .= "<ul>\n".$continuelinks."</ul>\n";
             $linkliste .= '</div>'; 
-            $linkliste .= "<section>\n";
+            $linkliste .= "</section>\n";
 	    $cols[$col++] = $linkliste;
        }       
 
@@ -238,7 +238,7 @@
                         $linkliste .= '<div class="p3-column">';
                         $linkliste .= "<ul>\n".$continuelinks."</ul>\n";
                         $linkliste .= '</div>'; 
-                        $linkliste .= "<section>\n";
+                        $linkliste .= "</section>\n";
            
 			$cols[$col++] = $linkliste;
 		    }    

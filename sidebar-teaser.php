@@ -1,6 +1,5 @@
 <?php
    global $defaultoptions;
-   global $defaultbilder_liste;
    global $options;  
 ?>          
 <div class="first-teaser-widget-area">
@@ -54,14 +53,8 @@
                         echo '<img src="'.$defaultbildsrc.'" width="'.$options['bigslider-thumb-width'].'" height="'.$options['bigslider-thumb-height'].'" alt="">';                
                     }       
                 } else {
-                    echo "<!-- NO THUMB-->";
-                    if ((isset($defaultbildsrc)) && (strlen(trim($defaultbildsrc))>2)) {  
-                        echo '<img src="'.$defaultbildsrc.'" width="'.$options['bigslider-thumb-width'].'" height="'.$options['bigslider-thumb-height'].'" alt="">';                
-                    } else {
-                        echo "<!-- try randombild -->";
-                        $randombild = array_rand($defaultbilder_liste,2);
-                        echo '<img src="'.$defaultbilder_liste[$randombild[0]]['src'].'" width="'.$options['bigslider-thumb-width'].'" height="'.$options['bigslider-thumb-height'].'" alt="">'; 
-                    }
+                     echo '<img src="'.$defaultbildsrc.'" width="'.$options['bigslider-thumb-width'].'" height="'.$options['bigslider-thumb-height'].'" alt="">';                
+                  
                 }
                 echo '<div class="caption"><p class="cifont">'.$subtitle.'</p>';
                 echo "<h3><a href=";
@@ -79,12 +72,7 @@
                 if (has_post_thumbnail()) {           
                     the_post_thumbnail(array($defaultoptions['smallslider-thumb-width'],$defaultoptions['smallslider-thumb-height']),array('alt'=> ''));                
                } else {
-                    if ((isset($defaultbildsrc)) && (strlen(trim($defaultbildsrc))>2)) {
-                        echo '<img src="'.$defaultbildsrc.'" width="'.$defaultoptions['smallslider-thumb-width'].'" height="'.$defaultoptions['smallslider-thumb-height'].'" alt="">';                
-                    } else {
-                        $randombild = array_rand($defaultbilder_liste,2);
-                        echo '<img src="'.$defaultbilder_liste[$randombild[0]]['src'].'" width="'.$defaultoptions['smallslider-thumb-width'].'" height="'.$defaultoptions['smallslider-thumb-height'].'" alt="">'; 
-                    }
+                    echo '<img src="'.$defaultbildsrc.'" width="'.$defaultoptions['smallslider-thumb-width'].'" height="'.$defaultoptions['smallslider-thumb-height'].'" alt="">';                                   
                 }              
                 echo "<h3><a href=";
                 the_permalink();

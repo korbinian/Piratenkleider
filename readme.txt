@@ -2,7 +2,7 @@ Piratenkleider
 - Wordpress-Theme für Webauftritte der Piratenpartei 
 ====================================================
 
-Version 3.1.2 by Wolfgang Wiese (xwolf), 14.04.2014
+Version 3.1.3 by Wolfgang Wiese (xwolf), 15.04.2014
 
 
 

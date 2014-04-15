@@ -98,13 +98,12 @@
 .content .symbolbild img,.content .bigslider img,.flexslider .bigslider img{width:1024px;max-width:1024px;height:auto;}
 .content-primary{float:left;width:1024px;}
 #main-stream{float:left;width:670px;}
-#linktipp-stream,#second-stream{display:inline-block;width:290px;margin-left:20px;background:rgba(0,0,0,0.05);float:left;padding:10px;}
-#linktipp-stream .columns .column1,#linktipp-stream .columns .column2{float:none;width:100%;margin:0;}
+#linktipp-stream,#second-stream{display:inline-block;width:270px;background:rgba(0,0,0,0.05);float:left;margin:0 0 0 20px;padding:10px;}
+#linktipp-stream .columns .column1,#linktipp-stream .columns .column2,#second-stream .columns .column1,#second-stream .columns .column2{float:none;width:100%;display:block;margin:10px 0;}
 #second-stream .columns{display:inline;}
-#second-stream .columns .column1,#second-stream .columns .column2{float:left;width:280px;display:inline;margin:0;}
 #linktipp-stream .clear,#second-stream .clear,#linktipp-stream hr,#second-stream hr{clear:none;display:none;}
 #linktipp-stream .p3-column,#second-stream .p3-column{width:auto;display:inline;}
 #linktipp-stream .withthumb .p3-col3,#second-stream .withthumb .p3-col3{margin:0;}
-.linktipps .post-entry p img{float:none;display:inline-block;}
+.linktipps .post-entry p img{float:none;display:block;margin:10px auto;}
 .content .startpage-widget-area{clear:both;margin:0 30px;}
 }

@@ -632,28 +632,26 @@
     }
     #linktipp-stream,  #second-stream  {
         display: inline-block;
-        width: 290px;
-        margin-left: 20px;
+        width: 270px;
+        margin: 0px 0px 0px 20px;
         padding: 10px;
         background: rgba(0,0,0,0.05);
         float: left;
     }
     #linktipp-stream  .columns .column1,
-    #linktipp-stream  .columns .column2 {
+    #linktipp-stream  .columns .column2, 
+    #second-stream  .columns .column1,
+    #second-stream  .columns .column2 {
         float: none;
         width: 100%;
-        margin: 0;
+        margin: 10px 0;
+        display: block;
     }
     #second-stream  .columns {
         display: inline;
     }
-    #second-stream  .columns .column1,
-    #second-stream  .columns .column2 {
-        float: left;
-        width: 280px;
-        margin: 0;
-         display: inline;
-    }    
+    
+
    #linktipp-stream .clear, 
    #second-stream .clear, 
    #linktipp-stream hr,
@@ -674,7 +672,8 @@
    }
    .linktipps .post-entry p img {
        float: none;
-       display: inline-block;
+       display: block;
+        margin: 10px auto;
    }
    .content .startpage-widget-area {
        clear: both;

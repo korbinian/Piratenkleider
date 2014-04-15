@@ -10,6 +10,7 @@
      .content-primary a:before {
 	display: inline-block;
         content: ' ';
+        width: 0;
         overflow: hidden;
         height: 18px;
         margin: 0 4px 0 0;

@@ -51,7 +51,6 @@ $defaultoptions = array(
     'seitenbild-url'		    => '',
     'aktiv-artikelbild'		    => 1,
     'artikelbild-size'		    => 1,    
-    'artikelbild-url'		    => '',
     'aktiv-commentsonpages'	    => 0,
     'aktiv-platzhalterbilder-indexseiten'   => 0,
     'indexseitenbild-size'	    => 1,
@@ -63,7 +62,6 @@ $defaultoptions = array(
     'slider-Direction'              => 'horizontal',
     'slider-slideshowSpeed'         => 8000,
     'slider-animationDuration'      => 600,
-    'slider-alternativesrc'	    => '',
     'slider-catid'                  => 1,
     'defaultwerbesticker'                   => 1,
     'aktiv-autoren'                         => 1,
@@ -1372,20 +1370,12 @@ $setoptions = array(
               ),
 
               'slider-defaultbildsrc' => array(
-                  'type'    => 'bildlist',
+                  'type'    => 'imageurl',
                   'title'   => __( 'Defaultbild', 'piratenkleider' ),
                   'label'   => __( 'Ersatz-Sliderbild f&uuml;r Seiten ohne eigenes Artikelbild.', 'piratenkleider' ),
                   'default' => $defaultoptions['slider-defaultbildsrc'],		                     
-		  'liste'   => $defaultbilder_liste,
 		  'parent'  => 'sliderpars'
               ),
-              'slider-alternativesrc' => array(
-                  'type'    => 'imgurl',
-                  'title'   => __( 'Externes Ersatzbild', 'piratenkleider' ),
-                  'label'   => __( 'URL f&uuml;r ein Ersatz-Sliderbild.', 'piratenkleider' ),
-                  'default' => $defaultoptions['slider-alternativesrc'],
-                  'parent'  => 'sliderpars',
-              ),   
 
                
                
