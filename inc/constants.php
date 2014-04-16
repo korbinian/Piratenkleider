@@ -1561,7 +1561,9 @@ $setoptions = array(
                   'title'   => __( 'Defaultbild', 'piratenkleider' ),
                   'label'   => __( 'Ersatzbild f&uuml;r Seiten ohne eigenes Artikelbild.', 'piratenkleider' ),
                   'default' => $defaultoptions['src-default-symbolbild'],		                     
-		  'parent'  => 'darstellungseiten'
+		  'parent'  => 'darstellungseiten',
+		   'maxwidth' => 705,
+		    'maxheight' => 240,
               ),	
 	
 	
@@ -1592,6 +1594,8 @@ $setoptions = array(
                   'label'   => __( 'Ersatzbild f&uuml;r Artikel ohne eigenes Bild.', 'piratenkleider' ),
                   'default' =>  $defaultoptions['src-default-artikel-symbolbild'],
                   'parent'  => 'darstellungartikel',
+		    'maxwidth' => 705,
+		    'maxheight' => 240,
               ),
 	       
 	       
@@ -1616,11 +1620,13 @@ $setoptions = array(
               ),
 	      	       
 	     'src-default-symbolbild-404' => array(
-                  'type'    => 'imageurl',
-                  'title'   => __( 'Symbolbild f&uuml;r 404-Seite', 'piratenkleider' ),
-                  'label'   => __( 'URL f&uuml;r ein eigenes 404-Seitenbild.', 'piratenkleider' ),
-                  'default' => $defaultoptions['src-default-symbolbild-404'],
-                  'parent'  => 'darstellungindexseiten',
+		    'type'    => 'imageurl',
+		    'title'   => __( 'Symbolbild f&uuml;r 404-Seite', 'piratenkleider' ),
+		    'label'   => __( 'URL f&uuml;r ein eigenes 404-Seitenbild.', 'piratenkleider' ),
+		    'default' => $defaultoptions['src-default-symbolbild-404'],
+		    'parent'  => 'darstellungindexseiten',
+		    'maxwidth' => 705,
+		    'maxheight' => 240,
               ),
 	     'src-default-symbolbild-category' => array(
                   'type'    => 'imageurl',
@@ -1628,6 +1634,8 @@ $setoptions = array(
                   'label'   => __( 'URL f&uuml;r ein eigenes Kategorien-Seitenbild.', 'piratenkleider' ),
                   'default' => $defaultoptions['src-default-symbolbild-category'],
                   'parent'  => 'darstellungindexseiten',
+		  'maxwidth' => 705,
+		    'maxheight' => 240,
               ), 
 	      'src-default-symbolbild-tag' => array(
                   'type'    => 'imageurl',
@@ -1635,6 +1643,8 @@ $setoptions = array(
                   'label'   => __( 'URL f&uuml;r ein eigenes Tag-Seitenbild.', 'piratenkleider' ),
                   'default' => $defaultoptions['src-default-symbolbild-tag'],
                   'parent'  => 'darstellungindexseiten',
+		   'maxwidth' => 705,
+		    'maxheight' => 240,
               ), 
 	       'src-default-symbolbild-author' => array(
                   'type'    => 'imageurl',
@@ -1642,6 +1652,8 @@ $setoptions = array(
                   'label'   => __( 'URL f&uuml;r ein eigenes Autoren-Seitenbild.', 'piratenkleider' ),
                   'default' => $defaultoptions['src-default-symbolbild-author'],
                   'parent'  => 'darstellungindexseiten',
+		    'maxwidth' => 705,
+		    'maxheight' => 240,
               ), 
 	       'src-default-symbolbild-archive' => array(
                   'type'    => 'imageurl',
@@ -1649,6 +1661,8 @@ $setoptions = array(
                   'label'   => __( 'URL f&uuml;r ein eigenes Archiv-Seitenbild.', 'piratenkleider' ),
                   'default' => $defaultoptions['src-default-symbolbild-archive'],
                   'parent'  => 'darstellungindexseiten',
+		    'maxwidth' => 705,
+		    'maxheight' => 240,
               ), 
 	        'src-default-symbolbild-search' => array(
                   'type'    => 'imageurl',
@@ -1656,13 +1670,28 @@ $setoptions = array(
                   'label'   => __( 'URL f&uuml;r ein eigenes Suchergebnis-Seitenbild.', 'piratenkleider' ),
                   'default' => $defaultoptions['src-default-symbolbild-search'],
                   'parent'  => 'darstellungindexseiten',
+		     'maxwidth' => 705,
+		    'maxheight' => 240,
               ), 
+	       'src-default-symbolbild-person' => array(
+                  'type'    => 'imageurl',
+                  'title'   => __( 'Symbolbild f&uuml;r Personen-Seite', 'piratenkleider' ),
+                  'label'   => __( 'URL f&uuml;r ein eigenes Personen-Seitenbild.', 'piratenkleider' ),
+                  'default' => $defaultoptions['src-default-symbolbild-person'],
+                  'parent'  => 'darstellungindexseiten',
+		     'maxwidth' => 705,
+		    'maxheight' => 240,
+              ), 
+	       
+	       
 	      'src-default-symbolbild' => array(
                   'type'    => 'imageurl',
                   'title'   => __( 'Symbolbild f&uuml;r Template-Seiten', 'piratenkleider' ),
                   'label'   => __( 'URL f&uuml;r ein Template-Seitenbild.', 'piratenkleider' ),
                   'default' => $defaultoptions['src-default-symbolbild'],
                   'parent'  => 'darstellungindexseiten',
+		   'maxwidth' => 705,
+		    'maxheight' => 240,
               ),  
 
 	       
@@ -2020,7 +2049,16 @@ $setoptions = array(
                   'title'   => __( 'Weitere Designoptionen', 'piratenkleider' ),
               ),
 	       
-
+	     'favicon-file' => array(
+                  'type'    => 'image',
+                  'title'   => __( 'FavIcon-Datei', 'piratenkleider' ),
+                  'label'   => __( 'Einbinden und Hochladen einer eigenen Favicon-Datei. Bitte in den Aufl&ouml;sungen 16x16, 32x32 oder 64x64 Pixel.', 'piratenkleider' ),
+		  'parent' => 'miscdesign',
+		  'maxwidth' =>  64,
+		  'maxheight'=>  64,
+              ),
+	       
+	       
 	      'css-eigene-anweisungen' => array(
                   'type'    => 'textarea',
                   'title'   => __( 'CSS-Anweisungen', 'piratenkleider' ),
@@ -2084,13 +2122,7 @@ $setoptions = array(
                  
               ),  
               
-	      'favicon-file' => array(
-                  'type'    => 'file',
-                  'title'   => __( 'FavIcon-Datei', 'piratenkleider' ),
-                  'label'   => __( 'Einbinden und Hochladen einer eigenen Favicon-Datei. Bitte in den Aufl&ouml;sungen 16x16, 32x32 oder 64x64 Pixel.', 'piratenkleider' ),
-              ),
-	       
-	       
+	     
               'yt-alternativeembed' => array(
                   'type'    => 'bool',
                   'title'   => __( 'YouTube-Links', 'piratenkleider' ),
@@ -2373,6 +2405,3 @@ $setoptions = array(
    )
 );
 
-
-
-?>

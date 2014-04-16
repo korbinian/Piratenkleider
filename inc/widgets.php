@@ -447,4 +447,3 @@ class Bannerlink_Widget extends WP_Widget {
 // register widget
 add_action( 'widgets_init', create_function( '', 'register_widget( "Bannerlink_Widget" );' ) );
 
-?>

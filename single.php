@@ -19,9 +19,16 @@
 		$image_url_data = wp_get_attachment_image_src( $thumbid, 'full');
 		$image_url = $image_url_data[0];
 		$attribs = piratenkleider_get_image_attributs($thumbid);	
-	     } else {
+	    } 
+	    if (!(isset($image_url) && (strlen($image_url)>4))) { 	
 		if (($options['aktiv-artikelbild']==1) && (isset($options['artikelbild-src']))) {  
-		    $image_url = $options['artikelbild-src'];
+		    if (isset($options['artikelbild-src_id']) && ($options['artikelbild-src_id']>0)) {
+			$image_url_data = wp_get_attachment_image_src( $options['artikelbild-src_id'], 'full');
+			$image_url = $image_url_data[0];
+			$attribs = piratenkleider_get_image_attributs($options['artikelbild-src_id']);
+		    } else {
+			$image_url = $options['artikelbild-src'];
+		    }
 		}
 	    }
 	    

@@ -47,13 +47,27 @@
                     if (isset($image_url) && strlen($image_url)>0){                        
                         echo '<img src="'.$image_url.'" alt="">';
                     } else {
-                        $attribs = array(
-                             "credits" => $options['img-meta-credits'],
-                        );
-                        echo '<img src="'.$defaultbildsrc.'" width="'.$options['bigslider-thumb-width'].'" height="'.$options['bigslider-thumb-height'].'" alt="">';                
+			if (isset($options['slider-defaultbildsrc_id'])) {
+			    $image_url_data = wp_get_attachment_image_src( $options['slider-defaultbildsrc_id'], 'full');
+			    $image_url = $image_url_data[0];
+			    $attribs = piratenkleider_get_image_attributs($options['slider-defaultbildsrc_id']);
+			} else {
+			    $image_url = $options['slider-defaultbildsrc'];
+			    $attribs = array("credits" => $options['img-meta-credits'] );
+			}
+                       
+                        echo '<img src="'.$image_url.'" width="'.$options['bigslider-thumb-width'].'" height="'.$options['bigslider-thumb-height'].'" alt="">';                
                     }       
                 } else {
-                     echo '<img src="'.$defaultbildsrc.'" width="'.$options['bigslider-thumb-width'].'" height="'.$options['bigslider-thumb-height'].'" alt="">';                
+		    if (isset($options['slider-defaultbildsrc_id'])) {
+			    $image_url_data = wp_get_attachment_image_src( $options['slider-defaultbildsrc_id'], 'full');
+			    $image_url = $image_url_data[0];
+			    $attribs = piratenkleider_get_image_attributs($options['slider-defaultbildsrc_id']);
+		    } else {
+			    $image_url = $options['slider-defaultbildsrc'];
+			    $attribs = array("credits" => $options['img-meta-credits'] );
+		    }
+                     echo '<img src="'.$image_url.'" width="'.$options['bigslider-thumb-width'].'" height="'.$options['bigslider-thumb-height'].'" alt="">';                
                   
                 }
                 echo '<div class="caption"><p class="cifont">'.$subtitle.'</p>';
@@ -72,7 +86,15 @@
                 if (has_post_thumbnail()) {           
                     the_post_thumbnail(array($defaultoptions['smallslider-thumb-width'],$defaultoptions['smallslider-thumb-height']),array('alt'=> ''));                
                } else {
-                    echo '<img src="'.$defaultbildsrc.'" width="'.$defaultoptions['smallslider-thumb-width'].'" height="'.$defaultoptions['smallslider-thumb-height'].'" alt="">';                                   
+		   if (isset($options['slider-defaultbildsrc_id']) && ($options['slider-defaultbildsrc_id']>0)) {
+			    $image_url_data = wp_get_attachment_image_src( $options['slider-defaultbildsrc_id'], 'full');
+			    $image_url = $image_url_data[0];
+			    $attribs = piratenkleider_get_image_attributs($options['slider-defaultbildsrc_id']);
+		    } else {
+			    $image_url = $options['slider-defaultbildsrc'];
+			    $attribs = array("credits" => $options['img-meta-credits'] );
+		    }
+                     echo '<img src="'.$image_url.'" width="'.$options['smallslider-thumb-width'].'" height="'.$options['smallslider-thumb-height'].'" alt="">';                
                 }              
                 echo "<h3><a href=";
                 the_permalink();

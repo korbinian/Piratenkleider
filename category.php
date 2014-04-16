@@ -6,14 +6,21 @@
     $thisCat = $cat_obj->term_id;
     $thisCatName =  get_cat_name($thisCat); 
     $image_url = '';	
+     $attribs = array("credits" => $options['img-meta-credits'] );
   if ($options['category-teaser']) { 
     echo '<div class="section teaser"><div class="row">';   
     get_sidebar( 'teaser' );
     echo '</div></div>';    
-  } else {
-        if (($options['aktiv-platzhalterbilder-indexseiten']==1) && (isset($options['src-default-symbolbild-category']))) {  
-            $image_url = $options['src-default-symbolbild-category'];		    
-        }	
+  } else { 
+       if (($options['aktiv-platzhalterbilder-indexseiten']==1) && (isset($options['src-default-symbolbild-category']))) {  
+		 if (isset($options['src-default-symbolbild-category_id']) && ($options['src-default-symbolbild-category_id']>0)) {
+			$image_url_data = wp_get_attachment_image_src( $options['src-default-symbolbild-category_id'], 'full');
+			$image_url = $image_url_data[0];
+			$attribs = piratenkleider_get_image_attributs($options['src-default-symbolbild-category_id']);
+		    } else {
+			$image_url = $options['src-default-symbolbild-category'];
+		    }
+	    }	   
   }
   ?>
   <div class="section content" id="main-content">
@@ -30,7 +37,10 @@
             }
             ?>    		    		    		        
                <h1 class="post-title"><span><?php printf( __( 'Kategorie %s', 'piratenkleider' ), '' . single_cat_title( '', false ) . '' ); ?></span></h1>
-               <div class="symbolbild"><img src="<?php echo $image_url ?>" alt=""></div>	 	
+               <div class="symbolbild"><img src="<?php echo $image_url ?>" alt="">
+		   <?php if (($options['category-teaser']==0) && isset($attribs["credits"]) && (strlen($attribs["credits"])>1)) {
+                           echo '<div class="caption">'.$attribs["credits"].'</div>';  
+                        }  ?></div>	 	
                <?php                  
               if ($options['category-teaser'])  { 	  
                     echo '<h1 class="skip">'.__("Aktuelle Artikel", 'piratenkleider').' ';

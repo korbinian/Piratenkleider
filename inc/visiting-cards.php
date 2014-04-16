@@ -995,4 +995,3 @@ function piratenkleider_display_url($url = '') {
     $outurl = preg_replace('/^(https?:\/\/)/','',$url); 
     return $outurl;
 }
-?>

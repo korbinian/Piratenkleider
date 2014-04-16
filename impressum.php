@@ -19,15 +19,24 @@
 	<?php
 	    $image_url = '';
 	    $image_alt = '';
+	    $attribs = array(
+                 "credits" => $options['img-meta-credits'],
+                );
 	    if (has_post_thumbnail()) { 
 		$thumbid = get_post_thumbnail_id(get_the_ID());
 		$image_url_data = wp_get_attachment_image_src( $thumbid, 'full');
 		$image_url = $image_url_data[0];
-		$attribs = piratenkleider_get_image_attributs($thumbid);
-			
-	    } else {
+		$attribs = piratenkleider_get_image_attributs($thumbid);	
+	    } 
+	    if (!(isset($image_url) && (strlen($image_url)>4))) { 	
 		if (($options['aktiv-platzhalterbilder-indexseiten']==1) && (isset($options['src-default-symbolbild']))) {  
-		    $image_url = $options['src-default-symbolbild'];		    
+		    if (isset($options['src-default-symbolbild_id']) && ($options['src-default-symbolbild_id'] >0)) {
+			$image_url_data = wp_get_attachment_image_src( $options['src-default-symbolbild_id'], 'full');
+			$image_url = $image_url_data[0];
+			$attribs = piratenkleider_get_image_attributs($options['src-default-symbolbild_id']);
+		    } else {
+			$image_url = $options['src-default-symbolbild'];
+		    }		    
 		}
 	    }
 	    

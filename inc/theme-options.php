@@ -160,41 +160,73 @@ function theme_options_do_page($tab = '') {
                                     echo "\t\t\t";
                                     echo "<label for=\"piratenkleider_theme_options[$name]\">$label</label>\n";    
                                 } elseif ($type=='file') {
-                                    echo "\t\t\t";                                    
-                                    echo "<input type=\"text\" class=\"file-upload-display-value large-text\" id=\"file-upload-display-$name\" value=\"";
-                                    if (isset($options[$name])) echo wp_get_attachment_url( esc_attr( $options[$name]) );
-                                    echo "\">\n";
-                                    echo "<input type=\"hidden\" class=\"file-upload-input-value file-upload-val-$name\" id=\"piratenkleider_theme_options[$name]\"
-                                        name=\"piratenkleider_theme_options[$name]\" value=\"";
-                                    if (isset($options[$name])) echo esc_attr( $options[$name] );
-                                    echo "\"> ";
-                                   echo '<input type="button" id="'.$name.'_button" 
-                                       class="button file-upload" 
-                                       value="'.__( "Datei ausw&auml;hlen oder hochladen", 'piratenkleider' ).'" />';         
-				   
-				   echo ' <small><a href="#" class="file_clear_button">'.__( "Datei entfernen", 'piratenkleider' ).'</a></small>';
-                                    echo "<br>\t\t\t";
-                                    echo "<label for=\"piratenkleider_theme_options[$name]\">$label</label>\n";      
-				} elseif ($type=='imageurl') {
+                                    echo "\t\t\t";        
+				    echo '<div class="uploader">';				  		   
+				    ?>
+				    
+				    <input type="hidden" name="piratenkleider_theme_options[<?php echo $name; ?>]" id="file_<?php echo $name; ?>" 
+					     value="<?php if (isset($options[$name])) echo sanitize_key( $options[$name]); ?>" />
+				    
+				    <input type="text" name="piratenkleider_theme_options[<?php echo $name; ?>_url]" id="file_<?php echo $name; ?>_url" 
+					   value="<?php if (isset($options[$name])) echo wp_get_attachment_url( esc_attr( $options[$name]) ); ?>" />
+				    <input class="button" name="file_button_<?php echo $name; ?>" id="file_button_<?php echo $name; ?>" value="<?php _e('Add file', 'piratenkleider'); ?>" />
+				    <small><a href="#" class="file_remove_<?php echo $name; ?>"><?php _e( "Remove file", 'piratenkleider' );?></a></small>
+				    <br><label for="piratenkleider_theme_options[<?php echo $name; ?>]"><?php echo $label; ?></label>
+				    </div><script>
+				    jQuery(document).ready(function() {
+					jQuery('#file_button_<?php echo $name; ?>').click(function()  {
+					    wp.media.editor.send.attachment = function(props, attachment) {
+						jQuery('#file_<?php echo $name; ?>_url').val(attachment.url);
+						jQuery('#file_<?php echo $name; ?>').val(attachment.id);						
+					    }
+					    wp.media.editor.open(this);
+					    return false;
+					});
+				    });
+				    jQuery(document).ready(function() {
+					jQuery('.file_remove_<?php echo $name; ?>').click(function()   {
+						jQuery('#file_<?php echo $name; ?>').val('');
+						jQuery('#file_<?php echo $name; ?>_url').val('');						
+						return false;
+					});
+				    });		
+				    </script>  <?php 	
+    
+				} elseif (($type=='imageurl') || ($type=='image')) {
                                     echo "\t\t\t"; 
 				    echo '<div class="uploader">';
-				    echo '<div class="previewimage showimg_'.$name.'">';				   
+				    echo '<div class="previewimage showimg_'.$name.'">';
+				    $addstyle = '';
+				    if (isset($value['maxwidth'])) {
+					$addstyle .= 'max-width: '.$value['maxwidth'].'px;';
+				    }
+				    if (isset($value['maxheight'])) {
+					$addstyle .= 'max-height: '.$value['maxheight'].'px;';
+				    }
+				   		   
 				     if ((isset($options[$name])) && esc_url( $options[$name])) { 
-					  echo '<img src="'.esc_url( $options[$name]).'" class="image_show_'.$name.'" />';
+					  echo '<img src="'.esc_url( $options[$name]).'" class="image_show_'.$name.'"';
+					  if (isset($addstyle) && strlen($addstyle)>1) {
+					      echo ' style="'.$addstyle.'"';
+				           }				   	
+					  echo '/>';
 				    } else {
 					   _e('No Image selected', 'piratenkleider');
 				     }				   
-				    ?>
-				    
+				    ?>		
 				    </div>
-				      <input type="hidden" name="piratenkleider_theme_options[<?php echo $name; ?>_id]" id="image_<?php echo $name; ?>_id" 
+				    <input type="hidden" name="piratenkleider_theme_options[<?php echo $name; ?>_id]" id="image_<?php echo $name; ?>_id" 
 					     value="<?php if ( isset( $options[$name."_id"] ) ) echo sanitize_key( $options[$name."_id"] ) ; ?>" />
-			
-				      <input type="text" name="piratenkleider_theme_options[<?php echo $name; ?>]" id="image_<?php echo $name; ?>" value="<?php if ( isset( $options[$name] ) ) echo esc_attr( $options[$name] ) ; ?>" />
-				      <input class="button" name="image_button_<?php echo $name; ?>" id="image_button_<?php echo $name; ?>" value="<?php _e('Add Image', 'piratenkleider'); ?>" />
-				      <small><a href="#" class="image_reset_<?php echo $name; ?>"><?php _e( "Remove image", 'piratenkleider' );?></a></small>
-				      <br><label for="piratenkleider_theme_options[<?php echo $name; ?>]"><?php echo $label; ?></label>
-				      </div><script>
+				    
+				    <input type="text" name="piratenkleider_theme_options[<?php echo $name; ?>]" id="image_<?php echo $name; ?>" value="<?php if ( isset( $options[$name] ) ) echo esc_attr( $options[$name] ) ; ?>" />
+				    <input class="button" name="image_button_<?php echo $name; ?>" id="image_button_<?php echo $name; ?>" value="<?php _e('Add Image', 'piratenkleider'); ?>" />
+				    <small><a href="#" class="image_remove_<?php echo $name; ?>"><?php _e( "Remove image", 'piratenkleider' );?></a></small>
+				    <?php if (isset($value['default']) && (filter_var($value['default'], FILTER_VALIDATE_URL))) { ?>
+					<small><a href="#" class="image_reset_<?php echo $name; ?>"><?php _e( "Reset to default", 'piratenkleider' );?></a></small>
+				    <?php } ?>
+    				    
+				    <br><label for="piratenkleider_theme_options[<?php echo $name; ?>]"><?php echo $label; ?></label>
+				    </div><script>
 				    jQuery(document).ready(function() {
 					jQuery('#image_button_<?php echo $name; ?>').click(function()  {
 					    wp.media.editor.send.attachment = function(props, attachment) {
@@ -209,13 +241,24 @@ function theme_options_do_page($tab = '') {
 					});
 				    });
 				    jQuery(document).ready(function() {
-					jQuery('.image_reset_<?php echo $name; ?>').click(function()   {
+					jQuery('.image_remove_<?php echo $name; ?>').click(function()   {
 						jQuery('#image_<?php echo $name; ?>').val('');
 						jQuery('#image_<?php echo $name; ?>_id').val('');
 						jQuery('.showimg_<?php echo $name; ?>').html('<?php _e('No Image selected', 'piratenkleider'); ?>');
 						return false;
 					});
 				    });
+				    <?php if (isset($value['default']) && (filter_var($value['default'], FILTER_VALIDATE_URL))) { ?>
+				    jQuery(document).ready(function() {
+					jQuery('.image_reset_<?php echo $name; ?>').click(function()   {
+						jQuery('#image_<?php echo $name; ?>').val("<?php echo $value['default']; ?>");
+						jQuery('#image_<?php echo $name; ?>_id').val(0);
+						htmlshow = "<img src=\"<?php echo $value['default']; ?>\">";  					   
+						jQuery('.showimg_<?php echo $name; ?>').html(htmlshow);
+						return false;
+					});
+				    });
+				    <?php } ?>
 				    </script>  <?php 		    
                                            
                                 } elseif ($type=='number') {
@@ -544,13 +587,14 @@ function theme_options_validate( $input ) {
                              $output[$name]  =  $input[$name] ;     
                         } elseif ($type=='html') {;    
                             $output[$name] = $input[$name];
-			} elseif ($type=='imageurl') {
+			} elseif (($type=='imageurl') || ($type=='image')) {
                              $output[$name]  =  esc_url( $input[$name] );
 			     $output[$name."_id"]  =  sanitize_key( $input[$name."_id"] );
                         } elseif (($type=='url') || ($type=='imgurl')) {
                              $output[$name]  =  esc_url( $input[$name] ); 
                         } elseif ($type=='file') {
-                            $output[$name]  =  wp_filter_nohtml_kses( $input[$name] ); 
+			    $output[$name."_url"]  = wp_filter_nohtml_kses( $input[$name] ); 
+                            $output[$name]  =   sanitize_key( $input[$name."_id"] );
                         } elseif ($type=='number') {
                             $output[$name]  =  wp_filter_nohtml_kses( $input[$name] ); 
                         } elseif (($type=='select') || ($type=='fontselect')) {                        
@@ -574,7 +618,7 @@ function theme_options_validate( $input ) {
                             $output[$name] = "";     
                         } elseif ($type=='html') {
                             $output[$name] = "";    
-			} elseif ($type=='imageurl') {
+			} elseif (($type=='imageurl') || ($type=='image')) {
                             $output[$name] = "";    
 			    $output[$name."_id"] = 0;    
                         } elseif (($type=='url') || ($type=='imgurl')) {
@@ -583,7 +627,8 @@ function theme_options_validate( $input ) {
                             $output[$name] = 0;
                         } elseif ($type=='file') {
                             $output[$name] = '';    
-                        } elseif (($type=='select') || ($type=='fontselect')) {                        
+			    $output[$name."_url"] = '';    
+			} elseif (($type=='select') || ($type=='fontselect')) {                        
                             $output[$name] = "";
                         } elseif ($type=='multiselectlist') {
                              $output[$name] = array();

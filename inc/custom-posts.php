@@ -330,4 +330,4 @@ function linktipps_shortcode( $atts ) {
 }
 add_shortcode( 'linktipps', 'linktipps_shortcode' );
 
-?>
+

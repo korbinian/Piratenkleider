@@ -465,8 +465,8 @@ function piratenkleider_addmetatags() {
         $output .= '<meta name="keywords" content="'.$tags.'">'."\n";
     }
     
-    if ((isset($options['favicon-file'])) && ($options['favicon-file']>0 )) {	 
-        $output .=  '<link rel="shortcut icon" href="'.wp_get_attachment_url($options['favicon-file']).'">'."\n";
+    if ((isset($options['favicon-file'])) && ($options['favicon-file_id']>0 )) {	 
+        $output .=  '<link rel="shortcut icon" href="'.$options['favicon-file'].'">'."\n";
     } else {
         $output .=  '<link rel="apple-touch-icon" href="'.get_template_directory_uri().'/apple-touch-icon.png">'."\n";
         $output .=  '<link rel="shortcut icon" href="'.get_template_directory_uri().'/favicon.ico">'."\n";

@@ -2259,6 +2259,7 @@ img.wp-smiley {
 .content-aside ul.menu ul.sub-menu {
     margin: 0 0 0 5px; 
 }
+.content-aside ul.menu li a span { display: none;}
 
 .content-aside .subpagesonly ul li{
 	display: none;

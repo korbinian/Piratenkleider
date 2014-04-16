@@ -8,10 +8,17 @@
 	
 	
 	<?php
-	    $image_url = '';	  
+	    $image_url = '';
+	    $attribs = array("credits" => $options['img-meta-credits'] );
 	    if (($options['aktiv-platzhalterbilder-indexseiten']==1) && (isset($options['src-default-symbolbild-archive']))) {  
-		    $image_url = $options['src-default-symbolbild-archive'];		    
-	    }	    
+		     if (isset($options['src-default-symbolbild-archive_id']) && ($options['src-default-symbolbild-archive_id']>0)) {
+			$image_url_data = wp_get_attachment_image_src( $options['src-default-symbolbild-archive_id'], 'full');
+			$image_url = $image_url_data[0];
+			$attribs = piratenkleider_get_image_attributs($options['src-default-symbolbild-archive_id']);
+		    } else {
+			$image_url = $options['src-default-symbolbild-archive'];
+		    }
+	    }
 	    
 	    if (isset($image_url) && (strlen($image_url)>4)) { 
 		if ($options['indexseitenbild-size']==1) {
@@ -33,7 +40,10 @@
                             _e( 'Archiv', 'piratenkleider' ); 
                          } 
                         endif; ?></span></h1>
-		   <div class="symbolbild"><img src="<?php echo $image_url ?>" alt="">		  		    		  
+		   <div class="symbolbild"><img src="<?php echo $image_url ?>" alt="">
+			<?php if (isset($attribs["credits"]) && (strlen($attribs["credits"])>1)) {
+                           echo '<div class="caption">'.$attribs["credits"].'</div>';  
+                        }  ?>		       
 		   </div>
 		</div>  
                 <div class="skin">

@@ -234,4 +234,4 @@ function piratenkleider_save_metabox_pagesidecontent( $post_id, $post ) {
 	}
 	
 }
-?>
+

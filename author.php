@@ -10,10 +10,17 @@
     <div class="content-primary">
 	<?php if ( have_posts() ) the_post(); ?>
 	<?php
-	    $image_url = '';	  
+	    $image_url = '';
+	    $attribs = array("credits" => $options['img-meta-credits'] );
 	    if (($options['aktiv-platzhalterbilder-indexseiten']==1) && (isset($options['src-default-symbolbild-author']))) {  
-		    $image_url = $options['src-default-symbolbild-author'];		    
-	    }	    
+		     if (isset($options['src-default-symbolbild-author_id']) && ($options['src-default-symbolbild-author_id']>0)) {
+			$image_url_data = wp_get_attachment_image_src( $options['src-default-symbolbild-author_id'], 'full');
+			$image_url = $image_url_data[0];
+			$attribs = piratenkleider_get_image_attributs($options['src-default-symbolbild-author_id']);
+		    } else {
+			$image_url = $options['src-default-symbolbild-author'];
+		    }
+	    }
 	    
 	    if (isset($image_url) && (strlen($image_url)>4)) { 
 		if ($options['indexseitenbild-size']==1) {
@@ -23,7 +30,10 @@
 		}
 		?>    		    		    		        
 		   <h1 class="post-title"><span><?php printf( __( '%s', 'piratenkleider' ), get_the_author() ); ?></span></h1>
-		   <div class="symbolbild"><img src="<?php echo $image_url ?>" alt="">		  
+		   <div class="symbolbild"><img src="<?php echo $image_url ?>" alt="">	
+		    <?php if (isset($attribs["credits"]) && (strlen($attribs["credits"])>1)) {
+                           echo '<div class="caption">'.$attribs["credits"].'</div>';  
+                        }  ?>		       
 		   </div>
 		</div>  	
 	    <?php } ?>

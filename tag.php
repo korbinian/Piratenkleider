@@ -11,8 +11,15 @@
 	
 	<?php
 	    $image_url = '';	  
+	    $attribs = array(  "credits" => $options['img-meta-credits'] );
 	    if (($options['aktiv-platzhalterbilder-indexseiten']==1) && (isset($options['src-default-symbolbild-tag']))) {  
-		    $image_url = $options['src-default-symbolbild-tag'];		    
+		 if (isset($options['src-default-symbolbild-tag_id']) && ($options['src-default-symbolbild-tag_id']>0)) {
+			$image_url_data = wp_get_attachment_image_src( $options['src-default-symbolbild-tag_id'], 'full');
+			$image_url = $image_url_data[0];
+			$attribs = piratenkleider_get_image_attributs($options['src-default-symbolbild-tag_id']);
+		    } else {
+			$image_url = $options['src-default-symbolbild-tag'];
+		    }
 	    }	    
 	    
 	    if (isset($image_url) && (strlen($image_url)>4)) { 
@@ -23,7 +30,10 @@
 		}
 		?>    		    		    		        
 		   <h1 class="post-title"><span><?php printf( __( 'Schlagwort %s', 'piratenkleider' ), '' . single_cat_title( '', false ) . '' ); ?></span></h1>
-		   <div class="symbolbild"><img src="<?php echo $image_url ?>" alt="">		  		    		  
+		   <div class="symbolbild"><img src="<?php echo $image_url ?>" alt="">	
+		    <?php if (isset($attribs["credits"]) && (strlen($attribs["credits"])>1)) {
+                           echo '<div class="caption">'.$attribs["credits"].'</div>';  
+                        }  ?>		       
 		   </div>
 		</div>  	
 	    <?php } ?>

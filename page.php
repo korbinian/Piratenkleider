@@ -23,13 +23,18 @@
 		    $image_url_data = wp_get_attachment_image_src( $thumbid, 'full');
 		    $image_url = $image_url_data[0];
 		    $attribs = piratenkleider_get_image_attributs($thumbid);
-
-		} else {
+		} 
+		if (!(isset($image_url) && (strlen($image_url)>4))) { 		
 		    if (($options['aktiv-defaultseitenbild']==1) && (isset($options['seiten-defaultbildsrc']))) {  
-			$image_url = $options['seiten-defaultbildsrc'];		    
+			 if (isset($options['seiten-defaultbildsrc_id']) && ($options['seiten-defaultbildsrc_id']>0)) {
+				$image_url_data = wp_get_attachment_image_src( $options['seiten-defaultbildsrc_id'], 'full');
+				$image_url = $image_url_data[0];
+				$attribs = piratenkleider_get_image_attributs($options['seiten-defaultbildsrc_id']);
+			  } else {
+				$image_url = $options['seiten-defaultbildsrc'];
+			  }				    
 		    }
 		}
-
 		if (isset($image_url) && (strlen($image_url)>4)) { 
 		    if ($options['seitenbild-size']==1) {
 			echo '<div class="content-header-big">';
