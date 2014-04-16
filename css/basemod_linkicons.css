@@ -10,7 +10,7 @@
      .content-primary a:before {
 	display: inline-block;
         content: ' ';
-        width: 0;
+        width: 0px;
         overflow: hidden;
         height: 18px;
         margin: 0 4px 0 0;
@@ -123,8 +123,8 @@
     }  
 
     .content-primary a.extern:before {
-       background-position: -220px 3px;
-       width: 14px;
+       background-position: -224px 3px;
+       width: 10px;
     }
 
     /* Pirate Websites */

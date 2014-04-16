@@ -1959,7 +1959,8 @@ img.wp-smiley {
     background-position: left bottom;
   }
   .header.actionpage {
-      height: auto;
+      padding: 0;
+      height: 180px;
   } 
   .nav-top ul {
     display: block; 
@@ -2487,6 +2488,9 @@ img.wp-smiley {
   .content-primary .skin {
       margin-left: 0px;
   }    
+  .actionpage .content-primary .skin {
+      padding: 40px;
+  }
   .content-primary .first-startpage-widget-area {
       width: 50%;
       float: left;
