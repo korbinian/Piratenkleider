@@ -3422,7 +3422,7 @@ html[xmlns] .slides {
  body.nav-fixed .nav-main ul.menu li.current-menu-item.menu-item-home a.hover {
       background: #111111 url("../images/home-signet.png") no-repeat -57px 6px; 
  }
-
+body.nav-fixed .header { width: 100%;}
 
 .nav-main ul.menu li ul {
     position: absolute;
