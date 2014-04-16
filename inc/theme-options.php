@@ -110,13 +110,13 @@ function theme_options_do_page($tab = '') {
 				
                                 if ($type =='bool') {
                                     echo "\t\t\t";
-                                    echo "<input id=\"piratenkleider_theme_options[$name]\" name=\"piratenkleider_theme_options[$name]\" 
+                                    echo "<input id=\"$name\" name=\"piratenkleider_theme_options[$name]\" 
                                             type=\"checkbox\" value=\"1\" ";
 				    
 				    if (isset($options[$name])) echo checked( $options[$name],1,false );
 				    echo ">\n";
                                     echo "\t\t\t";
-                                    echo "<label for=\"piratenkleider_theme_options[$name]\">$label</label>\n";                                     
+                                    echo "<label for=\"$name\">$label</label>\n";                                     
                                 } elseif (($type=='text') || ($type=='email')) {
                                     echo "\t\t\t";
                                     echo "<input class=\"regular-text\" id=\"piratenkleider_theme_options[$name]\" 
