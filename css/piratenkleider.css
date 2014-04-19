@@ -947,7 +947,7 @@ display: inline-block;
  body.nav-fixed .header {
      position: fixed;
      top: 0;
-     height: 46px;
+     height: 41px;
      z-index: 99;
      border-bottom: 6px solid black;
  }
@@ -969,7 +969,7 @@ display: inline-block;
     margin-top: 225px;   
  }
  body.logged-in.nav-fixed .header {
-     height: 46px;
+     height: 41px;
      top: 32px;
  }
  
@@ -1497,7 +1497,7 @@ display: inline-block;
 }
 .p3-col1 {  /* content */
   float: left;
-  width: 70px;
+  width: 80px;
 }
 
 .withthumb .p3-col1 {
@@ -1507,7 +1507,7 @@ display: inline-block;
     width: 320px;
 }
 .p3-col3 { /* sidebar */
-  margin: 0 0 0 70px;
+  margin: 0 0 0 80px;
 }
 .withthumb .p3-col3 {
    margin: 0 0 0 140px;
@@ -1556,7 +1556,7 @@ display: inline-block;
     display: inline-block;
     position: absolute;
     top: 0px;
-    right: 0.3em;
+    right: 5px;
   }
   .post .post-info .commentbubble a {
     background: #ff8800;
@@ -1600,7 +1600,6 @@ display: inline-block;
     -ms-box-shadow: 1px 1px 2px #444444;
     -o-box-shadow: 1px 1px 2px #444444;
     box-shadow: 1px 1px 2px #444444; 
-    width: 50px;
   }
   .post .post-info .cal-icon span {
       display: block;
