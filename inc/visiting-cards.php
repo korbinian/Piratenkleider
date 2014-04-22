@@ -895,7 +895,9 @@ function piratenkleider_save_post_class_meta( $post_id, $post ) {
 
 	$newid = ( isset( $_POST['person_bildid'] ) ? sanitize_key( $_POST['person_bildid'] ) : '' );
 	$oldid = get_post_meta( $post_id, 'piratenkleider-sidebar-image_id', true );
-
+	if (empty($oldid))  {
+	    $oldid =get_post_meta( $post_id, 'image_url', true );
+	}
 	if ( $newid && '' == $oldid )
 		add_post_meta( $post_id, 'piratenkleider-sidebar-image_id', $newid, true );
 	elseif ( $newid && $newid != $oldid )
@@ -926,7 +928,9 @@ function piratenkleider_save_post_class_meta( $post_id, $post ) {
 	
 	$new_text = ( isset( $_POST['piratenkleider-sidebar-text'] ) ? sanitize_text_field( $_POST['piratenkleider-sidebar-text'] ) : '' );
 	$oldtext = get_post_meta( $post_id, 'piratenkleider-sidebar-text', true );
-	
+	if (empty($oldtext)) {
+	    $oldtext = get_post_meta( $post_id, 'text', true );
+	}
 	if ( $new_text && '' == $oldtext )
 		add_post_meta( $post_id, 'piratenkleider-sidebar-text', $new_text, true );
 	elseif ( $new_text && $new_text != $oldtext )
@@ -960,12 +964,23 @@ function get_piratenkleider_steckbrief(){
       return piratenkleider_display_person($personid,'sitebar'); 
   }  
   
-  $text = get_post_meta(  $post->ID, 'piratenkleider-sidebar-text', true );
-  $image_url = get_post_meta( $post->ID, 'piratenkleider-sidebar-image_url', true );
+  $text = esc_attr( get_post_meta( $post->ID, 'piratenkleider-sidebar-text', true ) );
+   if (empty($text)) {
+       /* Downwards compatibility */
+	$text = esc_attr( get_post_meta( $post->ID, 'text', true ) );			
+    }
+   $image_url = get_post_meta( $post->ID, 'piratenkleider-sidebar-image_url', true );
+   $image_id = 0;
+    if (empty($image_url))  {
+	/* Downwards compatibility */
+	$image_url = get_post_meta( $post->ID, 'image_url', true );
+    } else {
+	$image_id = get_post_meta( $post->ID, 'piratenkleider-sidebar-image_id', true );
+    }
   
-  $out = '';	
+    $out = '';	
     if  (  ( isset($text) 
-	    && isset($image_url) && ($image_url<>'') 
+	    && isset($image_url)
 	    && (strlen(trim($text))>0))
 	|| (
 	    (isset($text) 
@@ -973,10 +988,12 @@ function get_piratenkleider_steckbrief(){
 	    && (has_post_thumbnail()))
 	    ) {   
 	$out .= '<div id="steckbrief">';   
-	if (isset($image_url) &&  $image_url<>'') {
-	    $out .= wp_get_attachment_image( $image_url, array($options['sidebar-steckbrief-maxwidth'],$options['sidebar-steckbrief-maxheight']) ); 
-	} else {
-	    $out .= get_the_post_thumbnail(array($options['sidebar-steckbrief-maxwidth'],$options['sidebar-steckbrief-maxheight']));
+	if (isset($image_url) ) {
+	    if ($image_id >0) {
+		$out .= wp_get_attachment_image( $image_id, array($options['sidebar-steckbrief-maxwidth'],$options['sidebar-steckbrief-maxheight']) );		
+	    } else {
+		$out .= wp_get_attachment_image( $image_url, array($options['sidebar-steckbrief-maxwidth'],$options['sidebar-steckbrief-maxheight']) );
+	    }
 	} 
 	$out .= "\n";  
 	$out .= ' <div class="text">';
@@ -991,7 +1008,6 @@ function get_piratenkleider_steckbrief(){
 endif;
 
 function piratenkleider_display_url($url = '') {
-
     $outurl = preg_replace('/^(https?:\/\/)/','',$url); 
     return $outurl;
 }
