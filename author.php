@@ -1,9 +1,9 @@
 <?php get_header();    
   global $options;  
-    global $wp_query;
-      $cat_obj = $wp_query->get_queried_object();
-      $thisCat = $cat_obj->term_id;
-      $thisCatName =  get_cat_name($thisCat);
+  global $wp_query;
+  $cat_obj = $wp_query->get_queried_object();
+  $thisCat = $cat_obj->term_id;
+  $thisCatName =  get_cat_name($thisCat);
 ?> 
 <div class="section content" id="main-content">
   <div class="row">
@@ -106,8 +106,8 @@
 
                    <?php if (  $wp_query->max_num_pages > 1 ) : ?>
                     <div class="archiv-nav"><p>
-                            <?php next_posts_link( __( '&larr; &Auml;ltere Beitr&auml;ge', 'piratenkleider' ) ); ?>
-                            <?php previous_posts_link( __( 'Neuere Beitr&auml;ge &rarr;', 'piratenkleider' ) ); ?>
+                            <?php next_posts_link( __( '&larr; Older entries', 'piratenkleider' ) ); ?>
+                            <?php previous_posts_link( __( 'Newer entries &rarr;', 'piratenkleider' ) ); ?>
                         </p></div>       
                 <?php endif; 
 
@@ -122,7 +122,7 @@
 
     <div class="content-aside">
       <div class="skin">      
-          <h1 class="skip"><?php _e( 'Weitere Informationen', 'piratenkleider' ); ?></h1>
+          <h1 class="skip"><?php _e( 'More informationens', 'piratenkleider' ); ?></h1>
          <?php get_sidebar(); ?>
       </div>
     </div>

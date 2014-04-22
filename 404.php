@@ -28,7 +28,7 @@
 		    echo '<div class="content-header">';
 		}
 		?>    		    		    		        
-		   <h1 class="post-title"><span><?php _e("Seite nicht gefunden",'piratenkleider'); ?></span></h1>
+		   <h1 class="post-title"><span><?php _e("Page not found",'piratenkleider'); ?></span></h1>
 		   <div class="symbolbild"><img src="<?php echo $image_url ?>" alt="">
 		       <?php if (isset($attribs["credits"]) && (strlen($attribs["credits"])>1)) {
                            echo '<div class="caption">'.$attribs["credits"].'</div>';  
@@ -44,11 +44,11 @@
       <div class="skin">
 	  
 	  <?php if (!(isset($image_url) && (strlen($image_url)>4))) { ?>
-	    <h1 class="post-title"><span><?php _e("Seite nicht gefunden",'piratenkleider'); ?></span></h1>
+	    <h1 class="post-title"><span><?php _e("Page not found",'piratenkleider'); ?></span></h1>
 	<?php } ?>
 	  
          <p>
-           <?php _e("Es konnten keine Seiten oder Artikel gefunden werden, die zu der eingegebenen Adresse passten. Bitte versuchen Sie es nochmal mit einer Suche.", 'piratenkleider'); ?>
+            <?php _e("No matching pages or entries found. Please try to search with another term.", 'piratenkleider'); ?>
          </p>              
 	 
          <?php get_search_form(); ?>
@@ -57,7 +57,7 @@
 
     <div class="content-aside">
       <div class="skin">
-        <h1 class="skip"><?php _e( 'Weitere Informationen', 'piratenkleider' ); ?></h1>
+        <h1 class="skip"><?php _e( 'More informationens', 'piratenkleider' ); ?></h1>
          <?php get_sidebar(); ?>
       </div>
     </div>

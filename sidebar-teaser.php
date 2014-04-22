@@ -27,7 +27,7 @@
         query_posts( array( 'cat' => "$cat", 'posts_per_page' => $numberarticle) );
         ?>
         <div class="flexslider">
-            <h2 class="skip"><?php _e( 'Aktuelle Themen', 'piratenkleider' ); ?></h2>
+            <h2 class="skip"><?php _e( 'Information slides', 'piratenkleider' ); ?></h2>
             <ul class="slides">
         <?php 
         if ( have_posts() ) while ( have_posts() ) : the_post();

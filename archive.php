@@ -28,16 +28,16 @@
 		}
 		?>    		    		    		        
 		   <h1 class="post-title"><span><?php if ( is_day() ) : ?>
-                        <?php printf( __( 'Tagesarchiv: %s', 'piratenkleider' ), get_the_date() ); ?>
+                        <?php printf( __( 'Archive by day: %s', 'piratenkleider' ), get_the_date() ); ?>
                      <?php elseif ( is_month() ) : ?>
-                        <?php printf( __( 'Monatsarchiv: %s', 'piratenkleider' ), get_the_date('F Y') ); ?>
+                        <?php printf( __( 'Archive by month: %s', 'piratenkleider' ), get_the_date('F Y') ); ?>
                      <?php elseif ( is_year() ) : ?>
-                        <?php printf( __( 'Jahresarchiv: %s', 'piratenkleider' ), get_the_date('Y') ); ?>
+                        <?php printf( __( 'Archive by year: %s', 'piratenkleider' ), get_the_date('Y') ); ?>
                      <?php else : 
                          if ( 'person'== get_post_type()  ) {
-                             _e( 'Personen-Steckbriefe', 'piratenkleider' ); 
+                             _e( 'Person page', 'piratenkleider' ); 
                          } else {
-                            _e( 'Archiv', 'piratenkleider' ); 
+                            _e( 'Archive', 'piratenkleider' ); 
                          } 
                         endif; ?></span></h1>
 		   <div class="symbolbild"><img src="<?php echo $image_url ?>" alt="">
@@ -50,16 +50,16 @@
 	    <?php } else { ?>
                 <div class="skin">
                  <h1 class="post-title"><span><?php if ( is_day() ) : ?>
-                        <?php printf( __( 'Tagesarchiv: %s', 'piratenkleider' ), get_the_date() ); ?>
+                        <?php printf( __( 'Archive by day: %s', 'piratenkleider' ), get_the_date() ); ?>
                      <?php elseif ( is_month() ) : ?>
-                        <?php printf( __( 'Monatsarchiv: %s', 'piratenkleider' ), get_the_date('F Y') ); ?>
+                        <?php printf( __( 'Archive by month: %s', 'piratenkleider' ), get_the_date('F Y') ); ?>
                      <?php elseif ( is_year() ) : ?>
-                        <?php printf( __( 'Jahresarchiv: %s', 'piratenkleider' ), get_the_date('Y') ); ?>
+                        <?php printf( __( 'Archive by year: %s', 'piratenkleider' ), get_the_date('Y') ); ?>
                      <?php else : 
                          if ( 'person'== get_post_type()  ) {
-                             _e( 'Personen-Steckbriefe', 'piratenkleider' ); 
+                             _e( 'Person page', 'piratenkleider' ); 
                          } else {
-                            _e( 'Archiv', 'piratenkleider' ); 
+                            _e( 'Archive', 'piratenkleider' ); 
                          } 
                          endif; ?></span></h1>
             <?php }
@@ -71,7 +71,7 @@
 
     <div class="content-aside">
       <div class="skin">         
-          <h1 class="skip"><?php _e( 'Weitere Informationen', 'piratenkleider' ); ?></h1>
+          <h1 class="skip"><?php _e( 'More informationens', 'piratenkleider' ); ?></h1>
          <?php get_sidebar(); ?>
       </div>
     </div>

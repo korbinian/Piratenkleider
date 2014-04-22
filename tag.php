@@ -29,7 +29,7 @@
 		    echo '<div class="content-header">';
 		}
 		?>    		    		    		        
-		   <h1 class="post-title"><span><?php printf( __( 'Schlagwort %s', 'piratenkleider' ), '' . single_cat_title( '', false ) . '' ); ?></span></h1>
+		   <h1 class="post-title"><span><?php printf( __( 'Tag %s', 'piratenkleider' ), '' . single_cat_title( '', false ) . '' ); ?></span></h1>
 		   <div class="symbolbild"><img src="<?php echo $image_url ?>" alt="">	
 		    <?php if (isset($attribs["credits"]) && (strlen($attribs["credits"])>1)) {
                            echo '<div class="caption">'.$attribs["credits"].'</div>';  
@@ -41,7 +41,7 @@
       <div class="skin">
 	  
 	  <?php if (!(isset($image_url) && (strlen($image_url)>4))) { ?>
-	    <h1 class="post-title"><span><?php printf( __( 'Schlagwort %s', 'piratenkleider' ), '' . single_cat_title( '', false ) . '' ); ?></span></h1>	
+	    <h1 class="post-title"><span><?php printf( __( 'Tag %s', 'piratenkleider' ), '' . single_cat_title( '', false ) . '' ); ?></span></h1>	
             <?php }
             
       $i = 0; 
@@ -61,9 +61,9 @@
       $output = '';     
       if (( isset($options['category-num-article-fullwidth']))
                 && ($options['category-num-article-fullwidth']>=$i )) {
-		$output =  piratenkleider_post_teaser($options['category-teaser-titleup'],$options['category-teaser-datebox'],$options['category-teaser-dateline'],$options['category-teaser-maxlength'],$options['teaser-thumbnail_fallback'],$options['category-teaser-floating']);
+	 $output =  piratenkleider_post_teaser($options['category-teaser-titleup'],$options['category-teaser-datebox'],$options['category-teaser-dateline'],$options['category-teaser-maxlength'],$options['teaser-thumbnail_fallback'],$options['category-teaser-floating']);
       } else {
-		 $output = piratenkleider_post_teaser($options['category-teaser-titleup-halfwidth'],$options['category-teaser-datebox-halfwidth'],$options['category-teaser-dateline-halfwidth'],$options['category-teaser-maxlength-halfwidth'],$options['teaser-thumbnail_fallback'],$options['category-teaser-floating-halfwidth']);  
+	 $output = piratenkleider_post_teaser($options['category-teaser-titleup-halfwidth'],$options['category-teaser-datebox-halfwidth'],$options['category-teaser-dateline-halfwidth'],$options['category-teaser-maxlength-halfwidth'],$options['teaser-thumbnail_fallback'],$options['category-teaser-floating-halfwidth']);  
       }    
 
       if (isset($output)) {
@@ -100,8 +100,8 @@
             
                    <?php if (  $wp_query->max_num_pages > 1 ) : ?>
                         <div class="archiv-nav"><p>
-                            <?php next_posts_link( __( '&larr; &Auml;ltere Beitr&auml;ge', 'piratenkleider' ) ); ?>
-                            <?php previous_posts_link( __( 'Neuere Beitr&auml;ge &rarr;', 'piratenkleider' ) ); ?>
+                            <?php next_posts_link( __( '&larr; Older Entries', 'piratenkleider' ) ); ?>
+                            <?php previous_posts_link( __( 'Newer Entries &rarr;', 'piratenkleider' ) ); ?>
                           </p></div>       
                 <?php endif;  
 		
@@ -115,7 +115,7 @@
 
     <div class="content-aside">
       <div class="skin">       
-          <h1 class="skip"><?php _e( 'Weitere Informationen', 'piratenkleider' ); ?></h1>
+          <h1 class="skip"><?php _e( 'More informations', 'piratenkleider' ); ?></h1>
          <?php get_sidebar(); ?>
       </div>
     </div>

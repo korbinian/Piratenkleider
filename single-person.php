@@ -56,12 +56,10 @@
 	<?php } ?>
  
         <section class="person">
-
-	    
+    
 		<?php echo piratenkleider_display_person($post->ID, 'full',0); ?>
-	    
-	    
-		<div><?php edit_post_link( __( 'Bearbeiten', 'piratenkleider' ), '', '' ); ?></div>
+
+		<div><?php edit_post_link( __( 'Edit', 'piratenkleider' ), '', '' ); ?></div>
         </section>
        
         
@@ -73,7 +71,7 @@
 
     <div class="content-aside">
       <div class="skin">
-       <h1 class="skip"><?php _e( 'Weitere Informationen', 'piratenkleider' ); ?></h1>
+       <h1 class="skip"><?php _e( 'More informationens', 'piratenkleider' ); ?></h1>
        <?php		
 	get_sidebar(); 
 	?>

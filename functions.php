@@ -164,9 +164,9 @@ function piratenkleider_setup() {
 
         // This theme uses wp_nav_menu() in one location.
         register_nav_menus( array(
-                'primary' => __( 'Hauptnavigation (Statische Seiten)', 'piratenkleider' ),
-                'top' => __( 'Linkmenu (Links zu Webportalen wie Wiki, Forum, etc)', 'piratenkleider' ),
-                'sub' => __( 'Technische Navigation (Kontakt, Impressum, etc)', 'piratenkleider' ),
+                'primary' => __( 'Main navigation', 'piratenkleider' ),
+                'top' => __( 'Second navigation at top (like external portals)', 'piratenkleider' ),
+                'sub' => __( 'Tecnical navigation (use for imprint, contact and so on)', 'piratenkleider' ),
         ) );
 
 
@@ -639,7 +639,7 @@ function piratenkleider_filter_wp_title( $title, $separator ) {
         if ( is_search() ) {
                 $title = sprintf( __( 'Suchergebnisse f&uuml;r %s', 'piratenkleider' ), '"' . get_search_query() . '"' );
                 if ( $paged >= 2 )
-                        $title .= " $separator " . sprintf( __( 'Seite %s', 'piratenkleider' ), $paged );
+                        $title .= " $separator " . sprintf( __( 'Page %s', 'piratenkleider' ), $paged );
                 $title .= " $separator " . get_bloginfo( 'name', 'display' );
                 return $title;
         }
@@ -651,7 +651,7 @@ function piratenkleider_filter_wp_title( $title, $separator ) {
                 $title .= " $separator " . $site_description;
 
         if ( $paged >= 2 || $page >= 2 )
-                $title .= " $separator " . sprintf( __( 'Seite %s', 'piratenkleider' ), max( $paged, $page ) );
+                $title .= " $separator " . sprintf( __( 'Page %s', 'piratenkleider' ), max( $paged, $page ) );
 
         return $title;
 }
@@ -666,7 +666,7 @@ function piratenkleider_excerpt_length( $length ) {
 add_filter( 'excerpt_length', 'piratenkleider_excerpt_length' );
 
 function piratenkleider_continue_reading_link() {
-        return ' <a class="nobr" title="'.strip_tags(get_the_title()).'" href="'. get_permalink() . '">' . __( 'Weiterlesen <span class="meta-nav">&rarr;</span>', 'piratenkleider' ) . '</a>';
+        return ' <a class="nobr" title="'.strip_tags(get_the_title()).'" href="'. get_permalink() . '">' . __( 'Continue reading <span class="meta-nav">&rarr;</span>', 'piratenkleider' ) . '</a>';
 }
 
 function piratenkleider_auto_excerpt_more( $more ) {
@@ -720,18 +720,18 @@ function piratenkleider_comment( $comment, $args, $depth ) {
                         echo get_avatar( $comment, 48, $defaultoptions['src-default-avatar']); 
                         echo '</div>';   
                     } 
-                    printf( __( '%s <span class="says">meinte am</span>', 'piratenkleider' ), sprintf( '<cite class="fn">%s</cite>', get_comment_author_link() ) ); 
+                    printf( __( '%s <span class="says">commented at</span>', 'piratenkleider' ), sprintf( '<cite class="fn">%s</cite>', get_comment_author_link() ) ); 
                     ?>
                 </div><!-- .comment-author .vcard -->
                 <?php if ( $comment->comment_approved == '0' ) : ?>
-                        <em><?php _e( 'Der Kommentar wartet auf die Freischaltung.', 'piratenkleider' ); ?></em>
+                        <em><?php _e( 'Comment waits for approval.', 'piratenkleider' ); ?></em>
                         <br />
                 <?php endif; ?>
 
                 <div class="comment-meta commentmetadata"><a href="<?php echo esc_url( get_comment_link( $comment->comment_ID ) ); ?>">
                    <?php
                           /* translators: 1: date, 2: time */
-                       printf( __( '%1$s um %2$s', 'piratenkleider' ), get_comment_date(),  get_comment_time() ); ?></a> Folgendes:<?php edit_comment_link( __( '(Edit)', 'piratenkleider' ), ' ' );
+                       printf( __( '%1$s at %2$s', 'piratenkleider' ), get_comment_date(),  get_comment_time() ); ?></a> Folgendes:<?php edit_comment_link( __( '(Edit)', 'piratenkleider' ), ' ' );
                     ?>
                 </div><!-- .comment-meta .commentmetadata -->
                 </div>
@@ -751,7 +751,7 @@ function piratenkleider_comment( $comment, $args, $depth ) {
                 case 'trackback' :
         ?>
         <li class="post pingback">
-                <p><?php _e( 'Pingback:', 'piratenkleider' ); ?> <?php comment_author_link(); edit_comment_link( __('(Edit)', 'piratenkleider'), ' ' ); ?></p>
+                <p><?php _e( 'Pingback:', 'piratenkleider' ); ?> <?php comment_author_link(); edit_comment_link( __('Edit', 'piratenkleider'), ' ' ); ?></p>
         <?php
                         break;
         endswitch;
@@ -1060,7 +1060,7 @@ function piratenkleider_post_pubdateinfo($withtext = 1) {
     $out = '';
     if ($withtext==1) {
 	$out .= '<span class="meta-prep">';
-        $out .= __('Ver&ouml;ffentlicht am', 'piratenkleider' );
+        $out .= __('Publiced at', 'piratenkleider' );
 	$out .= '</span> ';
     }
     $out .= '<span class="entry-date">';
@@ -1075,7 +1075,7 @@ if ( ! function_exists( 'piratenkleider_post_autorinfo' ) ) :
  * Fusszeile unter Artikeln: Autorinfo
  */
 function piratenkleider_post_autorinfo() {
-    $out = ' <span class="meta-prep-author">'.__('Autor','piratenkleider').':</span> ';
+    $out = ' <span class="meta-prep-author">'.__('Author','piratenkleider').':</span> ';
     $out .= '<span class="author vcard"><a class="url fn n" href="';
     $out .= get_author_posts_url( get_the_author_meta( 'ID' ) );
     $out .= '">';
@@ -1092,11 +1092,11 @@ if ( ! function_exists( 'piratenkleider_post_taxonominfo' ) ) :
 function piratenkleider_post_taxonominfo() {
          $tag_list = get_the_tag_list( '', ', ' );
         if ( $tag_list ) {
-                $posted_in = __( 'Thema: %1$s. Schlagworte: %2$s. <br>Hier der permanente <a href="%3$s" title="%4$s" rel="bookmark">Link</a> zu diesem Artikel.', 'piratenkleider' );
+                $posted_in = __( 'Category: %1$s. Tags: %2$s. <br><a href="%3$s" title="%4$s" rel="bookmark">Permalink</a> for this entry.', 'piratenkleider' );
         } elseif ( is_object_in_taxonomy( get_post_type(), 'category' ) ) {
-                $posted_in = __( 'Thema: %1$s. <br><a href="%3$s" title="%4$s" rel="bookmark">Permanenter Link</a> zu diesem Artikel.', 'piratenkleider' );
+                $posted_in = __( 'Category: %1$s. <br><a href="%3$s" title="%4$s" rel="bookmark">Permalink</a> for this entry.', 'piratenkleider' );
         } else {
-                $posted_in = __( '<a href="%3$s" title="%4$s" rel="bookmark">Permanenter Link</a> zu diesem Artikel.', 'piratenkleider' );
+                $posted_in = __( '<a href="%3$s" title="%4$s" rel="bookmark">Permalink</a> for this entry.', 'piratenkleider' );
         }
         // Prints the string, replacing the placeholders.
         printf(
@@ -1144,10 +1144,6 @@ class Piratenkleider_Menu_Walker extends Walker_Nav_Menu {
 
                 $output .= $indent . '<li id="menu-item-'. $item->ID . '"' . $value . $class_names .'>';
                 
-          //      if (($item->url == home_url("/")) && (empty( $item->attr_title ))) {
-            //        $item->attr_title = "Home";
-              //  }
-   
                 
                 $attributes  = ! empty( $item->attr_title ) ? ' title="'  . esc_attr( $item->attr_title ) .'"' : '';
                 $attributes .= ! empty( $item->target )     ? ' target="' . esc_attr( $item->target     ) .'"' : '';
@@ -1190,11 +1186,9 @@ function get_piratenkleider_socialmediaicons( $darstellung = 1 ){
     $zeigeoption = $options['alle-socialmediabuttons'];
     
     if ($darstellung ==0) {
-        /* Keine Links */
         return; 
     } 
     if ($darstellung!=$zeigeoption) {
-        /* Nichts anzeigen, da wir im falschen Modus sind */
         return;
     }
  
@@ -1226,7 +1220,6 @@ function get_piratenkleider_socialmediaicons( $darstellung = 1 ){
     echo '</ul>';
        
     if ($zeigeoption ==2) {    
-           /* Links an der Seite */
             echo '</div>';
     }
 }
@@ -1326,10 +1319,8 @@ function get_piratenkleider_firstvideo($width = 300, $height = 169, $nocookie =1
             return $htmlout;    
         }
     }
-    // Schau noch nach YouTube-URLs die Plain im text sind. Hilfreich fuer
-    // Installationen auf Multisite ohne iFrame-Unterstützung
+
     if ($searchplain==1) {
-       
        preg_match('/\b(https?:\/\/www\.youtube[\-a-z]*\.com\/(watch|embed)[\/a-z0-9\.\-&;\?_=]+)/i', $post->post_content, $matches);
         if ((is_array($matches)) && (isset($matches[1]))) {
             $entry = $matches[1];
@@ -1364,7 +1355,7 @@ function get_piratenkleider_custom_excerpt($length = 0, $continuenextline = 1, $
   } else {
       $excerpt = get_the_content();
        if (!isset($excerpt)) {
-          $excerpt = __( 'Kein Inhalt', 'piratenkleider' );
+          $excerpt = __( 'No content', 'piratenkleider' );
         }
   }
   if ($length==0) {
@@ -1382,7 +1373,7 @@ function get_piratenkleider_custom_excerpt($length = 0, $continuenextline = 1, $
   
   
   if (mb_strlen($excerpt)<5) {
-      $excerpt = '<!-- '.__( 'Kein textueller Inhalt', 'piratenkleider' ).' -->';
+      $excerpt = '<!-- '.__( 'No entry for this post', 'piratenkleider' ).' -->';
   }
 
   $needcontinue =0;
@@ -1540,7 +1531,7 @@ function piratenkleider_breadcrumb() {
 	$parentCat = get_category($thisCat->parent);
 	if ($thisCat->parent != 0) 
 	    echo(get_category_parents($parentCat, TRUE, $delimiter ));
-	echo $before . __( 'Artikel der Kategorie ', 'piratenkleider' ). '"' . single_cat_title('', false) . '"' . $after;
+	echo $before . __( 'Entry of category ', 'piratenkleider' ). '"' . single_cat_title('', false) . '"' . $after;
  
     } elseif ( is_day() ) {
 	echo '<a href="' . get_year_link(get_the_time('Y')) . '">' . get_the_time('Y') . '</a>' .$delimiter;
@@ -1582,13 +1573,13 @@ function piratenkleider_breadcrumb() {
 	foreach ($breadcrumbs as $crumb) echo $crumb . $delimiter;
 	echo $before . get_the_title() . $after; 
     } elseif ( is_search() ) {
-	echo $before . __( 'Suche nach ', 'piratenkleider' ).'"' . get_search_query() . '"' . $after; 
+	echo $before . __( 'Search for ', 'piratenkleider' ).'"' . get_search_query() . '"' . $after; 
     } elseif ( is_tag() ) {
-	echo $before . __( 'Artikel mit Schlagwort ', 'piratenkleider' ). '"' . single_tag_title('', false) . '"' . $after; 
+	echo $before . __( 'Entries with tag ', 'piratenkleider' ). '"' . single_tag_title('', false) . '"' . $after; 
     } elseif ( is_author() ) {
 	global $author;
 	$userdata = get_userdata($author);
-	echo $before . __( 'Artikel von ', 'piratenkleider' ). $userdata->display_name . $after;
+	echo $before . __( 'Entry by ', 'piratenkleider' ). $userdata->display_name . $after;
     } elseif ( is_404() ) {
 	echo $before . '404' . $after;
     }

@@ -1,8 +1,6 @@
 <?php get_header();    
   global $options;  
 
-
-
    
   if ( $options['slider-aktiv'] == "1" ){ ?>  
     <div class="section teaser">
@@ -283,9 +281,9 @@
         }
         
 	if ($foundarticles==0) { ?>
-            <h2><?php _e("Nichts gefunden", 'piratenkleider'); ?></h2>
+            <h2><?php _e("Nothing found", 'piratenkleider'); ?></h2>
             <p>
-            <?php _e("Es konnten keine Artikel gefunden werden. Bitte versuchen Sie es nochmal mit einer Suche.", 'piratenkleider'); ?>
+            <?php _e("Did not found any article. Please try to search:", 'piratenkleider'); ?>
             </p>
             <?php get_search_form(); 
             echo "<hr>\n"; 
@@ -297,7 +295,7 @@
     </div>
     <div class="content-aside">
       <div class="skin">
-          <h1 class="skip"><?php _e( 'Weitere Informationen', 'piratenkleider' ); ?></h1>
+          <h1 class="skip"><?php _e( 'More informations', 'piratenkleider' ); ?></h1>
             <?php get_sidebar(); ?>
       </div>
     </div>

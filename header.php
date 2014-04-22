@@ -25,9 +25,9 @@
 <body <?php body_class(); ?>>
     <nav role="navigation">
             <ul id="top" class="nav skiplinks">		
-                <li><a id="skiplink-nav" href="#nav"><?php _e( 'Zur Navigation springen.', 'piratenkleider' ); ?></a></li>
-                <li><a id="skiplink-content" href="#main-content"><?php _e( 'Zum Inhalt springen.', 'piratenkleider' ); ?></a></li>
-                <?php if ( $options['aktiv-suche'] == "1" ){ ?><li><a id="skiplink-search" href="#searchform"><?php _e( 'Zur Suche springen.', 'piratenkleider' ); ?></a></li><?php } ?>
+                <li><a id="skiplink-nav" href="#nav"><?php _e( 'Jump to navigation.', 'piratenkleider' ); ?></a></li>
+                <li><a id="skiplink-content" href="#main-content"><?php _e( 'Jump to content.', 'piratenkleider' ); ?></a></li>
+                <?php if ( $options['aktiv-suche'] == "1" ){ ?><li><a id="skiplink-search" href="#searchform"><?php _e( 'Jump to search form.', 'piratenkleider' ); ?></a></li><?php } ?>
             </ul>
     </nav>
     <div class="section header">
@@ -88,12 +88,12 @@
                     } 
                     if ( $options['aktiv-suche'] == "1" ){ ?>
                         <div id="searchform">
-                        <h2 class="skip"><?php _e("Suche", 'piratenkleider'); ?></h2>
+                        <h2 class="skip"><?php _e("Search", 'piratenkleider'); ?></h2>
                         <form method="get" class="searchform" action="<?php echo home_url('','relative'); ?>/">
-                                <label class="visuallyhidden" for="s"><?php _e("Suche nach", 'piratenkleider'); ?>:</label>
-                                <input type="text" value="<?php the_search_query(); ?>" name="s" id="s" placeholder="<?php _e("Suchbegriff eingeben", 'piratenkleider'); ?>"  
-                                    onfocus="if(this.value=='<?php _e("Suchbegriff eingeben", 'piratenkleider'); ?>')this.value='';" onblur="if(this.value=='')this.value='<?php _e("Suchbegriff eingeben", 'piratenkleider'); ?>';" />
-                                <input type="submit" class="searchsubmit" value="<?php _e("Suchen", 'piratenkleider'); ?>" />
+                                <label class="visuallyhidden" for="s"><?php _e("Searching for", 'piratenkleider'); ?>:</label>
+                                <input type="text" value="<?php the_search_query(); ?>" name="s" id="s" placeholder="<?php _e("Enter search term", 'piratenkleider'); ?>"  
+                                    onfocus="if(this.value=='<?php _e("Enter search term", 'piratenkleider'); ?>')this.value='';" onblur="if(this.value=='')this.value='<?php _e("Enter search term", 'piratenkleider'); ?>';" />
+                                <input type="submit" class="searchsubmit" value="<?php _e("Search", 'piratenkleider'); ?>" />
                         </form>
                         </div>
                      <?php } ?>

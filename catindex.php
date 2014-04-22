@@ -24,7 +24,7 @@
             $content = trim(get_the_content());            
             if (strlen($content)>0) {
                 echo $content;
-                edit_post_link( __( 'Bearbeiten', 'piratenkleider' ), '', '' );
+                edit_post_link( __( 'Edit', 'piratenkleider' ), '', '' );
                 echo '<hr class="clear">';
             }                      
        endwhile; 
@@ -91,8 +91,8 @@
                         echo $liste;
                         echo "</ul>\n";
                         echo '<p><a href="' . esc_attr(get_term_link($category, 'category'))
-                        . '" title="' . sprintf( __( "Nachrichten der Kategorie %s zeigen" , 'piratenkleider'), $category->name ) 
-                        . '" ' . '>'.__('Weitere Meldungen...','piratenkleider').'</a>'.'</p>';
+                        . '" title="' . sprintf( __( "Entries of category %s" , 'piratenkleider'), $category->name ) 
+                        . '" ' . '>'.__('More entries...','piratenkleider').'</a>'.'</p>';
 
                       }                      
                       echo "</div>\n";
@@ -112,9 +112,9 @@
 
         
 	if ($foundarticles==0) { ?>
-            <h2><?php _e("Nichts gefunden", 'piratenkleider'); ?></h2>
+            <h2><?php _e("Nothing found", 'piratenkleider'); ?></h2>
             <p>
-            <?php _e("Es konnten keine Artikel gefunden werden. Bitte versuchen Sie es nochmal mit einer Suche.", 'piratenkleider'); ?>
+            <?php _e("No matching pages or entries found. Please try to search with another term.", 'piratenkleider'); ?>
             </p>
             <?php get_search_form(); 
             echo "<hr>\n"; 
@@ -126,7 +126,7 @@
     </div>
     <div class="content-aside">
       <div class="skin">
-          <h1 class="skip"><?php _e( 'Weitere Informationen', 'piratenkleider' ); ?></h1>
+          <h1 class="skip"><?php _e( 'More informations', 'piratenkleider' ); ?></h1>
             <?php get_sidebar(); ?>
       </div>
     </div>

@@ -25,9 +25,8 @@
 <body <?php body_class(); ?>>
     <nav role="navigation">
             <ul id="top" class="nav skiplinks">		
-                <li><a id="skiplink-nav" href="#nav"><?php _e( 'Zur Navigation springen.', 'piratenkleider' ); ?></a></li>
-                <li><a id="skiplink-content" href="#main-content"><?php _e( 'Zum Inhalt springen.', 'piratenkleider' ); ?></a></li>
-                <?php if ( $options['aktiv-suche'] == "1" ){ ?><li><a id="skiplink-search" href="#searchform"><?php _e( 'Zur Suche springen.', 'piratenkleider' ); ?></a></li><?php } ?>
+                <li><a id="skiplink-nav" href="#nav"><?php _e( 'Jump to navigation.', 'piratenkleider' ); ?></a></li>
+                <li><a id="skiplink-content" href="#main-content"><?php _e( 'Jump to content.', 'piratenkleider' ); ?></a></li>
             </ul>
     </nav>
     <div class="section header actionpage">

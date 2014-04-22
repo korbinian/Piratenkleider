@@ -11,10 +11,10 @@
     </div>
     <nav role="navigation">
         <ul class="nav skiplinks">		
-		<li><a class="p3-skip" id="skiplink-top" href="#top"><?php _e( 'Nach oben springen.', 'piratenkleider' ); ?></a></li>
-		<li><a class="p3-skip" id="skiplink-content-bottom" href="#main-content"><?php _e( 'Zum Beginn des Inhaltes springen.', 'piratenkleider' ); ?></a></li>
+		<li><a class="p3-skip" id="skiplink-top" href="#top"><?php _e( 'Bback to top.', 'piratenkleider' ); ?></a></li>
+		<li><a class="p3-skip" id="skiplink-content-bottom" href="#main-content"><?php _e( 'Back to start of content.', 'piratenkleider' ); ?></a></li>
 		<?php if ( $options['aktiv-suche'] == "1" ){ ?>
-                <li><a class="p3-skip" id="skiplink-search-bottom" href="#searchform"><?php _e( 'Zur Suche springen.', 'piratenkleider' ); ?></a></li>
+                <li><a class="p3-skip" id="skiplink-search-bottom" href="#searchform"><?php _e( 'Back to search form.', 'piratenkleider' ); ?></a></li>
 		<?php } ?>
 	</ul>
     </nav>
@@ -72,8 +72,8 @@
                 smoothHeight: true, 
                 directionNav: true,
                 controlNav: false,
-                nextText: "<?php _e('Vor','piratenkleider'); ?>",
-                prevText: "<?php _e('Zur&uuml;ck','piratenkleider'); ?>",
+                nextText: "<?php _e('Next','piratenkleider'); ?>",
+                prevText: "<?php _e('Back','piratenkleider'); ?>",
                 pauseText: "<?php _e('Stop','piratenkleider'); ?>",
                 playText: "<?php _e('Start','piratenkleider'); ?>",
                });
@@ -90,8 +90,8 @@
 	    if( empty( $nosidebar ) || $nosidebar==0) {  ?>
      <script type="text/javascript">
         /* <![CDATA[ */
-         $htmlOnSwitch = '<div class="switchoff"><a href="#"><abbr title="<?php _e('Leiste ausblenden','piratenkleider'); ?>">&#9654;</abbr></a></div>';
-         $htmlOffSwitch = '<div class="switchon" ><a href="#"><abbr title="<?php _e('Leiste anzeigen','piratenkleider'); ?>">&#9664;</abbr></a></div>';
+         $htmlOnSwitch = '<div class="switchoff"><a href="#"><abbr title="<?php _e('Hide sidebar','piratenkleider'); ?>">&#9654;</abbr></a></div>';
+         $htmlOffSwitch = '<div class="switchon" ><a href="#"><abbr title="<?php _e('Show sidebar','piratenkleider'); ?>">&#9664;</abbr></a></div>';
         /* ]]> */
     </script> 
 	<?php } }  
