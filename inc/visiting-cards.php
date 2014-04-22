@@ -258,7 +258,7 @@ function piratenkleider_person_metabox_save( $post_id ) {
 		delete_post_meta( $post_id, 'person_url', $oldurl );		     
 			     
 	
-        $newid = ( isset( $_POST['person_email'] ) ? sanitize_key( $_POST['person_email'] ) : '' );
+        $newid = ( isset( $_POST['person_email'] ) ? sanitize_text_field( $_POST['person_email'] ) : '' );
         if ((isset($newid)) && (filter_var($newid, FILTER_VALIDATE_EMAIL))) {
            /* URL ok */ 
         } else {
@@ -273,7 +273,7 @@ function piratenkleider_person_metabox_save( $post_id ) {
 	elseif ( '' == $newid && $oldid )
 		delete_post_meta( $post_id, 'person_email', $oldid );
 	
-        $newid = ( isset( $_POST['person_facebook'] ) ? sanitize_key( $_POST['person_facebook'] ) : '' );
+        $newid = ( isset( $_POST['person_facebook'] ) ? sanitize_text_field( $_POST['person_facebook'] ) : '' );
         if ((isset($newid)) && (filter_var($newid, FILTER_VALIDATE_URL))) {
            /* URL ok */ 
         } else {
@@ -288,7 +288,7 @@ function piratenkleider_person_metabox_save( $post_id ) {
 	elseif ( '' == $newid && $oldid )
 		delete_post_meta( $post_id, 'person_facebook', $oldid );
         
- 	$newid = ( isset( $_POST['person_google'] ) ? sanitize_key( $_POST['person_google'] ) : '' );
+ 	$newid = ( isset( $_POST['person_google'] ) ? sanitize_text_field( $_POST['person_google'] ) : '' );
         if ((isset($newid)) && (filter_var($newid, FILTER_VALIDATE_URL))) {
            /* URL ok */ 
         } else {
@@ -305,7 +305,7 @@ function piratenkleider_person_metabox_save( $post_id ) {
         
         
        
- 	$newid = ( isset( $_POST['person_newsfeed'] ) ? sanitize_key( $_POST['person_newsfeed'] ) : '' );
+ 	$newid = ( isset( $_POST['person_newsfeed'] ) ? sanitize_text_field( $_POST['person_newsfeed'] ) : '' );
         if ((isset($newid)) && (filter_var($newid, FILTER_VALIDATE_URL))) {
            /* URL ok */ 
         } else {
@@ -322,7 +322,7 @@ function piratenkleider_person_metabox_save( $post_id ) {
 	       
         
         
-        $newid = ( isset( $_POST['person_wiki'] ) ? sanitize_key( $_POST['person_wiki'] ) : '' );       
+        $newid = ( isset( $_POST['person_wiki'] ) ? sanitize_text_field( $_POST['person_wiki'] ) : '' );       
 	$oldid = get_post_meta( $post_id, 'person_wiki', true );
 
 	if ( $newid && '' == $oldid )
