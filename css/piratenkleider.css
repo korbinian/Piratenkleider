@@ -100,15 +100,6 @@ h1,h2,h3,h4,h5,h6,.headlinefont,.tagcloud,
     left: -999em;
     width: 1px;
 }
-.visuallyhidden {
-  border: 0;
-  clip: rect(0 0 0 0);
-  height: 1px;
-  margin: -1px;
-  overflow: hidden;
-  padding: 0;
-  position: absolute;
-  width: 1px; }
 
 .aligncenter {
   display: block;

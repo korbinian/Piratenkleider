@@ -90,7 +90,7 @@
                         <div id="searchform">
                         <h2 class="skip"><?php _e("Search", 'piratenkleider'); ?></h2>
                         <form method="get" class="searchform" action="<?php echo home_url('','relative'); ?>/">
-                                <label class="visuallyhidden" for="s"><?php _e("Searching for", 'piratenkleider'); ?>:</label>
+                                <label class="skip" for="s"><?php _e("Searching for", 'piratenkleider'); ?>:</label>
                                 <input type="text" value="<?php the_search_query(); ?>" name="s" id="s" placeholder="<?php _e("Enter search term", 'piratenkleider'); ?>"  
                                     onfocus="if(this.value=='<?php _e("Enter search term", 'piratenkleider'); ?>')this.value='';" onblur="if(this.value=='')this.value='<?php _e("Enter search term", 'piratenkleider'); ?>';" />
                                 <input type="submit" class="searchsubmit" value="<?php _e("Search", 'piratenkleider'); ?>" />
