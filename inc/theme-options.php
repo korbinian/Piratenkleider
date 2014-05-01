@@ -7,16 +7,20 @@ add_action( 'admin_menu', 'theme_options_add_page' );
  * Init plugin options to white list our options
  */
 function theme_options_init(){
-	register_setting( 'piratenkleider_options', 'piratenkleider_theme_options', 'theme_options_validate' );
+	register_setting( 'piratenkleider_options',
+                'piratenkleider_theme_options', 
+                'theme_options_validate' );
 }
 
 /**
  * Load up the menu page
  */
 function theme_options_add_page() {
-	add_theme_page( __( 'Piratenkleider Optionen', 'piratenkleider' ),
-                        __( 'Piratenkleider Optionen', 'piratenkleider' ), 
-                       'edit_theme_options', 'theme_options', 'theme_options_do_page' );
+	add_theme_page( __( 'Options', 'piratenkleider' ),
+                        __( 'Options', 'piratenkleider' ), 
+                       'edit_theme_options', 
+                        'theme_options', 
+                        'theme_options_do_page' );
                           
 }
 
@@ -34,10 +38,10 @@ function theme_options_do_page($tab = '') {
 
 	<div class="wrap">            
             <div class="piratenkleider-optionen">  <!-- begin: .piratenkleider-optionen -->    
-            <?php screen_icon(); echo "<h2>" . wp_get_theme().': ' . __( 'Takelage einstellen', 'piratenkleider' ) . "</h2>"; ?>
+            <?php screen_icon(); echo "<h2>" . wp_get_theme().': ' . __( 'Change theme options', 'piratenkleider' ) . "</h2>"; ?>
 
             <?php if ( false !== $_REQUEST['settings-updated'] ) : ?>
-            <div class="updated fade"><p><strong><?php _e( 'Optionen wurden gespeichert.', 'piratenkleider' ); ?></strong></p></div>
+            <div class="updated fade"><p><strong><?php _e( 'Options saved.', 'piratenkleider' ); ?></strong></p></div>
             <?php endif; 
 
         if (isset($_GET['tab'])) {
@@ -533,7 +537,7 @@ function theme_options_do_page($tab = '') {
         </div>                                        
                     
         <p class="submit">
-                <input type="submit" class="button-primary" value="<?php _e( 'Optionen speichern', 'piratenkleider' ); ?>" />
+                <input type="submit" class="button-primary" value="<?php _e( 'Update', 'piratenkleider' ); ?>" />
         </p>
 </form>               
 </div>

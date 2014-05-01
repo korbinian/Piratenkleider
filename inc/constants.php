@@ -92,12 +92,12 @@ $defaultoptions = array(
     'artikelstream-maxnum-main'             =>  5,
     'artikelstream-maxnum-second'	    =>  1,
     'artikelstream-maxnum-linktipps'	    =>  1,
-    'artikelstream-title-main'		    =>  __("Aktuelle Artikel", 'piratenkleider'),
-    'artikelstream-title-maincontinuelist'  =>  __("Weitere Artikel", 'piratenkleider'),
-    'artikelstream-title-linktipps'	    =>  __("Leseempfehlungen", 'piratenkleider'),
-    'artikelstream-title-linktippcontinuelist'=>  __("Weitere Leseempfehlungen", 'piratenkleider'),
-    'artikelstream-title-second'	    =>  __("Sonstige Meldungen", 'piratenkleider'),
-    'artikelstream-title-secondcontinuelist'=>  __("Weitere Meldungen", 'piratenkleider'),
+    'artikelstream-title-main'		    =>  __("Current entries", 'piratenkleider'),
+    'artikelstream-title-maincontinuelist'  =>  __("More entries", 'piratenkleider'),
+    'artikelstream-title-linktipps'	    =>  __("Bookmarks", 'piratenkleider'),
+    'artikelstream-title-linktippcontinuelist'=>  __("More bookmarks", 'piratenkleider'),
+    'artikelstream-title-second'	    =>  __("Other entries", 'piratenkleider'),
+    'artikelstream-title-secondcontinuelist'=>  __("More entries", 'piratenkleider'),
     'artikelstream-show-second'		    => 1,
     'artikelstream-show-linktipps'	    => 1,
     'artikelstream-nextnum-main'	    => 5,
@@ -123,13 +123,15 @@ $defaultoptions = array(
 	 * 4 = First video (or: first picture, thumbnail, fallback picture),
 	 * 5 = Nothing */ 
     'category-teaser-floating'		    => 0,
-    'category-teaser-dateline'		    => 1, /* 1 = show Date on line up of the text if no datebox */
+    'category-teaser-dateline'		    => 1,
+        /* 1 = show Date on line up of the text if no datebox */
     'category-teaser-maxlength-halfwidth'   => 200,        
-    'category-teaser-titleup-halfwidth'	    => 1, /* Titles up */ 
+    'category-teaser-titleup-halfwidth'	    => 1, 
+        /* 1= Titles up */ 
     'category-teaser-datebox-halfwidth'	    => 4, 
     'category-teaser-floating-halfwidth'    => 1,
-    'category-teaser-dateline-halfwidth'    => 2, /* 1 = show Date on line up of the text if no datebox */    
-
+    'category-teaser-dateline-halfwidth'    => 2, 
+        /* 1 = show Date on line up of the text if no datebox */    
     'teaser-thumbnail_width'		    => 120,
     'teaser-thumbnail_height'		    => 120,
     'teaser-thumbnail_crop'		    => 1,
@@ -157,56 +159,59 @@ $defaultoptions = array(
     
     'teaser-type'			    => 'big',    
     'teaser-title-maxlength'		    => 120,
-    'teaser-subtitle'			    => __( 'Topthema', 'piratenkleider' ),
+    'teaser-subtitle'			    => __( 'Trending Topics', 'piratenkleider' ),
     'teaser-title-words'		    => 7,
 
     'teaser_maxlength'			    => 500,
     'teaser-showcredits'                    => 1,
-    'teaser-titleup'			    => 1, /* Titles up */ 
+    'teaser-titleup'			    => 1, 
+        /* Titles up */ 
     'teaser-datebox'			    => 4,
     'teaser-floating'			    => 0,
-    'teaser-dateline'			    => 1, /* 1 = show Date on line up of the text if no datebox */
+    'teaser-dateline'			    => 1, 
+        /* 1 = show Date on line up of the text if no datebox */
     'teaser-maxlength-halfwidth'	    => 200,        
-    'teaser-titleup-halfwidth'		    => 1, /* Titles up */ 
+    'teaser-titleup-halfwidth'		    => 1, 
+        /* Titles up */ 
     'teaser-datebox-halfwidth'		    => 4, 
     'teaser-floating-halfwidth'		    => 1,
-    'teaser-dateline-halfwidth'		    => 1, /* 1 = show Date on line up of the text if no datebox */      
-    
-    
+    'teaser-dateline-halfwidth'		    => 1, 
+        /* 1 = show Date on line up of the text if no datebox */      
+     
     'url-newsletteranmeldung'		    => 'https://service.piratenpartei.de/subscribe/newsletter',
     'anonymize-user'                => 0,
     'anonymize-user-commententries' => 0,
     'aktiv-commentreplylink'        => 1,
-    'default_comment_notes_before'  => '<p class="comment-notes">'.__( 'Deine E-Mail-Adresse wird nicht ver&ouml;ffentlicht. Erforderliche Felder sind markiert <span class="required">*</span>', 'piratenkleider' ). '</p>',
-    'comments_disclaimer'           => __('Hinweis: Durch Bereitstellung der Kommentierungsfunktion macht sich die Piratenpartei nicht die in den Kommentaren geschriebenen Meinungen zu eigen. Bei Fragen oder Beschwerden zu Kommentaren wenden Sie sich bitte &uuml;ber das Kontaktformular an das Webteam. <a href="http://wiki.piratenpartei.de/Servicegruppen/Webseite/Moderation">Hinweise zur Moderation</a> von Kommentaren finden sich auf der Wikiseite der SG Webseite.', 'piratenkleider' ),
+    'default_comment_notes_before'  => '<p class="comment-notes">'.__( 'Your email address wont be displayed. Required fields are marked with this sign: <span class="required">*</span>', 'piratenkleider' ). '</p>',
+    'comments_disclaimer'           => __('Notice: Comments reflect the opionions of those who did wrote theme. Allowing people comment here, doenst mean, that we also agree with them.  ', 'piratenkleider' ),
     'disclaimer_post'               => '',
     'feed_cache_lifetime'           => 14400,
     'use_wp_feed_defaults'          => 1,
     'dir_feed_cache'                => '',
-    'teaserlink1-title'             => __( 'Informiere dich', 'piratenkleider' ),
-    'teaserlink1-untertitel'        => __( '&uuml;ber unsere Themen &amp; Ziele!', 'piratenkleider' ),            
+    'teaserlink1-title'             => __( 'Read', 'piratenkleider' ),
+    'teaserlink1-untertitel'        => __( 'about our topics and visions!', 'piratenkleider' ),            
     'teaserlink1-url'               => 'https://www.piratenpartei.de/politik/themen/', 
     'teaserlink1-symbol'            => 'idee',
     
-    'teaserlink2-title'             => __( 'Unterst&uuml;tze uns', 'piratenkleider' ),
-    'teaserlink2-untertitel'        => __( 'mit deinem Engagement!', 'piratenkleider' ),            
+    'teaserlink2-title'             => __( 'Support us', 'piratenkleider' ),
+    'teaserlink2-untertitel'        => __( 'with your engagement!', 'piratenkleider' ),            
     'teaserlink2-url'               => 'https://www.piratenpartei.de/unterstutze-uns/', 
     'teaserlink2-symbol'            => 'herz',
     
-    'teaserlink3-title'             => __( 'Werde Pirat!', 'piratenkleider' ),
-    'teaserlink3-untertitel'        => __( 'jetzt Mitglied werden!', 'piratenkleider' ),            
+    'teaserlink3-title'             => __( 'Become a Pirat!', 'piratenkleider' ),
+    'teaserlink3-untertitel'        => __( 'Subscribe to the pirate party', 'piratenkleider' ),            
     'teaserlink3-url'               => 'https://www.piratenpartei.de/mitmachen/mitglied-werden', 
     'teaserlink3-symbol'            => 'steuerrad',
     
-    'stickerlink1-content'          => '<span class="gedreht">Werde<br><span class="cicolor">Pirat!</span></span>',
+    'stickerlink1-content'          => '<span class="gedreht">Become<br><span class="cicolor">Pirat!</span></span>',
     'stickerlink1-url'              => 'https://www.piratenpartei.de/mitmachen/mitglied-werden/',
-    'stickerlink2-content'          => '<span class="gedreht"><span class="cicolor">Spende</span><br><span class="small">und hilf mit </span> </span>',
+    'stickerlink2-content'          => '<span class="gedreht"><span class="cicolor">Support</span><br><span class="small">and help us</span> </span>',
     'stickerlink2-url'              => 'https://spenden.piratenpartei.de/',
     'stickerlink3-content'          => '',
     'stickerlink3-url'              => '',
-    'default_footerlink_key'		    => 'International (mit Flaggen)',
+    'default_footerlink_key'		    => 'International (with flags)',
     'default_footerlink_show'		    => 1,    
-    'default_text_title_home_backlink'	    => __('Zur&uuml;ck zur Startseite','piratenkleider' ), 
+    'default_text_title_home_backlink'	    => __('Back to start page','piratenkleider' ), 
     'yt-alternativeembed'		    => 1,
         /* YouTube Videos ueber eigenen Embedcode gestalten und an youtbe-nocookie lenken */
     'yt-norel'				    => 1,
@@ -214,7 +219,7 @@ $defaultoptions = array(
     'excerpt_allowtags'			    => '<br>,<br />',        
     'zeige_breadcrump'			    => 1,
     'breadcrumb_delimiter'		    => ' / ',    
-    'breadcrumb_homelinktext'		    =>  __( 'Startseite', 'piratenkleider' ),
+    'breadcrumb_homelinktext'		    =>  __( 'Start page', 'piratenkleider' ),
     'breadcrumb_beforehtml'		    =>  '<span class="current">',
     'breadcrumb_afterhtml'		    =>  '</span>',
     'zeige_breadcrump_frontpages'           => 0,
@@ -424,11 +429,11 @@ $defaultbilder_liste = array(
  */
 $default_colorstyles = array(
     '-'  =>  __('Default Stylesheet', 'piratenkleider' ),
-    'colors_at.css' => __( '&Ouml;sterreich (Violett)', 'piratenkleider' ),
-    'colors_lu.css' => __( 'Luxemburg (Violett)', 'piratenkleider' ),
-    'colors_hu.css' => __( 'Ungarn (Violett)', 'piratenkleider' ),
-    'colors_tk.css' => __( 'T&uuml;rkei (Cyan)', 'piratenkleider' ),
-    'colors_us.css' => __( 'USA (Lila)', 'piratenkleider' ),
+    'colors_at.css' => __( 'Austria (Violet)', 'piratenkleider' ),
+    'colors_lu.css' => __( 'Luxemburgh (Violet)', 'piratenkleider' ),
+    'colors_hu.css' => __( 'Hungary (Violet)', 'piratenkleider' ),
+    'colors_tk.css' => __( 'Turkey (Cyan)', 'piratenkleider' ),
+    'colors_us.css' => __( 'USA (Violet)', 'piratenkleider' ),
 
  );
           

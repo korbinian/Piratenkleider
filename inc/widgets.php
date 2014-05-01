@@ -1,138 +1,111 @@
 <?php
 /*
  * Piratenkleider Widgets
- * Proudly made with a lot of coffee since version 2.11
+ * Proudly made with a lot of coffee 
  */
 
 
 function piratenkleider_widgets_init() {
 
-       // Sidebar
-        register_sidebar( array(
-                'name' => __( 'Sidebar (Rechte Spalte)', 'piratenkleider' ),
-                'id' => 'sidebar-widget-area',
-                'description' => __( 'Dieser Bereich befindet sich rechts vom Inhaltsbereich. 
-                    Er ist geeignet f&uuml;r Werbeplakate, Hinweise und &auml;hnliches.
-                    Wenn leer, werden als Alternative einige der allgemeinen Standardplakate 
-                    gezeigt.', 'piratenkleider' ),
-                'before_widget' => '<div class="widget">',
-                'after_widget' => '</div>',
-                'before_title' => '<h2>',
-                'after_title' => '</h2>',
-        ) );
-       // Sidebar2
-        register_sidebar( array(
-                'name' => __( 'Sidebar 2 (Rechts unter Plakaten)', 'piratenkleider' ),
-                'id' => 'sidebar-widget-area-afterplakate',
-                'description' => __( 'Dieser Bereich befindet sich rechts vom Inhaltsbereich.
-                    Er ist nach den Werbeplakaten positioniert, die &uuml;ber die 
-                    Optionen ein- oder abgeschaltet werden k&ouml;nnen.', 'piratenkleider' ),
-                'before_widget' => '<div class="widget">',
-                'after_widget' => '</div>',
-                'before_title' => '<h2>',
-                'after_title' => '</h2>',
-        ) );
+   // Sidebar
+    register_sidebar( array(
+            'name' => __( 'Sitebar 1 (Upper)', 'piratenkleider' ),
+            'id' => 'sidebar-widget-area',
+            'description' => __( 'Sitebar right; This region is above of optional poster slider.', 'piratenkleider' ),
+            'before_widget' => '<div class="widget">',
+            'after_widget' => '</div>',
+            'before_title' => '<h2>',
+            'after_title' => '</h2>',
+    ) );
+   // Sidebar2
+    register_sidebar( array(
+            'name' => __( 'Sidebar 2 (Lower)', 'piratenkleider' ),
+            'id' => 'sidebar-widget-area-afterplakate',
+            'description' => __( 'Sitebar right; This region is below of optional poster slider.', 'piratenkleider' ),
+            'before_widget' => '<div class="widget">',
+            'after_widget' => '</div>',
+            'before_title' => '<h2>',
+            'after_title' => '</h2>',
+    ) );
 
-        // Sliderbereich
-        register_sidebar( array(
-                'name' => __( 'Startseite: Sliderbereich', 'piratenkleider' ),
-                'id' => 'first-teaser-widget-area',
-                'description' => __( 'Bereich oberhalb der 3 Artikelbilder.
-                    Wenn leer, erscheinen hier wechselnde Bilder 
-                    mit Verlinkung zu Artikeln der Kategorie "Slider". 
-                    Angezeigt werden die Artikelbilder.', 'piratenkleider' ),
-                'before_widget' => '<div class="widget">',
-                'after_widget' => '</div>',
-                'before_title' => '<h3 class="widget-title">',
-                'after_title' => '</h3>',
-        ) );
+    // Rechter Aktionlinkbereich, neben Slider
+    register_sidebar( array(
+            'name' => __( 'Start page: Teaser', 'piratenkleider' ),
+            'id' => 'second-teaser-widget-area',
+            'description' => __( 'Optional widget area for region right of content slider. Notice: If empty, teaser links will be used which are defined at theme options.', 'piratenkleider' ),
+            'before_widget' => '<div class="widget">',
+            'after_widget' => '</div>',
+            'before_title' => '<h3 class="widget-title">',
+            'after_title' => '</h3>',
+    ) );
 
-        // Rechter Aktionlinkbereich, neben Slider
-        register_sidebar( array(
-                'name' => __( 'Startseite: Rechter Aktionlinkbereich', 'piratenkleider' ),
-                'id' => 'second-teaser-widget-area',
-                'description' => __( 'Dieser Bereich ist rechts neben dem Slider und dem Hauptcontent positioniert. Wenn leer, werden hier
-                    die Links zur Piratenwebsite gezeigt, die unter Optionen definiert sind.', 'piratenkleider' ),
-                'before_widget' => '<div class="widget">',
-                'after_widget' => '</div>',
-                'before_title' => '<h3 class="widget-title">',
-                'after_title' => '</h3>',
-        ) );
-        
 
-        // Widgets for indexpages (categories, tags, authorpage)
-        register_sidebar( array(
-                'name' => __( 'Startseite: Introbereich', 'piratenkleider' ),
-                'id' => 'startpage-intro-area',
-                'description' => __( 'Introbereich unterhalb des Sliders bzw. Teasers auf der Startseite. Hier lassen sich beispielsweise fest stehende Begr&uuml;&szlig;ungen oder andere Widgets setzen, die noch vor dem eigentlichen Artikeln kommen.', 'piratenkleider' ),
-                'before_widget' => '<div class="widget">',
-                'after_widget' => '</div>',
-                'before_title' => '<h2 class="widget-title">',
-                'after_title' => '</h2>',
-        ) );
-        
-        // Startseite: Links unterhalb der 3 Artikel, per default Anzeige
-        // der weiteren Artikel 
-        register_sidebar( array(
-                'name' => __( 'Startseite: Links unten', 'piratenkleider' ),
-                'id' => 'first-startpage-widget-area',
-                'description' => __( 'Bereich links unterhalb der Artikel. Wenn leer, werden hier weitere Artikel gezeigt. ', 'piratenkleider' ),
-                'before_widget' => '<div class="widget">',
-                'after_widget' => '</div>',
-                'before_title' => '<h3>',
-                'after_title' => '</h3>',
-        ) );
-        // Startseite: Rechts  unterhalb der 3 Artikel, per default Anzeige
-        //  der Schlagwortliste
-        register_sidebar( array(
-                'name' => __( 'Startseite: Rechts unten', 'piratenkleider' ),
-                'id' => 'second-startpage-widget-area',
-                'description' => __( 'Bereich rechts unterhalb der Artikel der Startseite. Wenn leer, wird hier eine Schlagwortliste gezeigt.', 'piratenkleider' ),
-                'before_widget' => '<div class="widget">',
-                'after_widget' => '</div>',
-                'before_title' => '<h3 class="widget-title">',
-                'after_title' => '</h3>',
-        ) );
+    // Widgets for indexpages (categories, tags, authorpage)
+    register_sidebar( array(
+            'name' => __( 'Start page: Intro', 'piratenkleider' ),
+            'id' => 'startpage-intro-area',
+            'description' => __( 'Region below slider on start page.', 'piratenkleider' ),
+            'before_widget' => '<div class="widget">',
+            'after_widget' => '</div>',
+            'before_title' => '<h2 class="widget-title">',
+            'after_title' => '</h2>',
+    ) );
 
-        // Linke Seite der Fu&szlig;zeile
-        register_sidebar( array(
-                'name' => __( 'Fu&szlig;bereich: Linke Seite', 'piratenkleider' ),
-                'id' => 'first-footer-widget-area',
-                'description' => __( 'Bereich im Fu&szlig;teil unter dem Haupttextbereich.
-                   Dieser Bereich eignet sich insbesondere f&uuml;r externe Links zu
-                   anderen Piratenwebsites auf regionaler oder &uuml;beregionaler Ebene.
-                   Diese werden dann als Menu mit externen Links definiert und
-                   dann als Widget dieser Sidebar zugeordnet.
-                   Wenn leer, wird hier nichts angezeigt.', 'piratenkleider' ),
-                'before_widget' => '<div class="widget">',
-                'after_widget' => '</div>',
-                'before_title' => '<h2>',
-                'after_title' => '</h2>',
-        ) );
+    // Startseite: Links unterhalb der 3 Artikel, per default Anzeige
+    // der weiteren Artikel 
+    register_sidebar( array(
+            'name' => __( 'Start page: Left footer (content)', 'piratenkleider' ),
+            'id' => 'first-startpage-widget-area',
+            'description' => __( 'On start page: Content footer, left side.', 'piratenkleider' ),
+            'before_widget' => '<div class="widget">',
+            'after_widget' => '</div>',
+            'before_title' => '<h3>',
+            'after_title' => '</h3>',
+    ) );
+    // Startseite: Rechts  unterhalb der 3 Artikel, per default Anzeige
+    //  der Schlagwortliste
+    register_sidebar( array(
+            'name' => __( 'Start page: Right footer (content)', 'piratenkleider' ),
+            'id' => 'second-startpage-widget-area',
+            'description' => __( 'On start page: Content footer, right side.', 'piratenkleider' ),
+            'before_widget' => '<div class="widget">',
+            'after_widget' => '</div>',
+            'before_title' => '<h3 class="widget-title">',
+            'after_title' => '</h3>',
+    ) );
 
-        // Rechte Seite der Fu&szlig;zeile
-        register_sidebar( array(
-                'name' => __( 'Fu&szlig;bereich: Rechte Spalte', 'piratenkleider' ),
-                'id' => 'second-footer-widget-area',
-                'description' => __( 'Rechte Spalte im Fu&szlig;bereich. Wenn leer, erscheint hier das
-                    technische Menu (siehe Men&uuml;s). Wenn auch dieses nicht definiert ist, wird 
-                    die Blogadresse und die RSS-Feedadresse gezeigt', 'piratenkleider' ),
-                'before_widget' => '<div class="widget">',
-                'after_widget' => '</div>',
-                'before_title' => '<h2>',
-                'after_title' => '</h2>',
-        ) );
-	
-	// Widgets for indexpages (categories, tags, authorpage)
-        register_sidebar( array(
-                'name' => __( 'Indexseiten', 'piratenkleider' ),
-                'id' => 'indexpages-widget-area',
-                'description' => __( 'Widgetbereich unterhalb des Artikelindex einer Kategorie-, Autoren- oder Tagseite', 'piratenkleider' ),
-                'before_widget' => '<div class="widget">',
-                'after_widget' => '</div>',
-                'before_title' => '<h3 class="widget-title">',
-                'after_title' => '</h3>',
-        ) );
+    // Linke Seite der Fu&szlig;zeile
+    register_sidebar( array(
+            'name' => __( 'Page footer: Left', 'piratenkleider' ),
+            'id' => 'first-footer-widget-area',
+            'description' => __( 'Region below main content, left site.', 'piratenkleider' ),
+            'before_widget' => '<div class="widget">',
+            'after_widget' => '</div>',
+            'before_title' => '<h2>',
+            'after_title' => '</h2>',
+    ) );
+
+    // Rechte Seite der Fu&szlig;zeile
+    register_sidebar( array(
+            'name' => __( 'Page footer: Right', 'piratenkleider' ),
+            'id' => 'second-footer-widget-area',
+            'description' => __( 'Region below main content, right site.', 'piratenkleider' ),
+            'before_widget' => '<div class="widget">',
+            'after_widget' => '</div>',
+            'before_title' => '<h2>',
+            'after_title' => '</h2>',
+    ) );
+
+    // Widgets for indexpages (categories, tags, authorpage)
+    register_sidebar( array(
+            'name' => __( 'Index pages: Content footer', 'piratenkleider' ),
+            'id' => 'indexpages-widget-area',
+            'description' => __( 'Content footer for index pages (e.g. categoryindex, archive, ...)', 'piratenkleider' ),
+            'before_widget' => '<div class="widget">',
+            'after_widget' => '</div>',
+            'before_title' => '<h3 class="widget-title">',
+            'after_title' => '</h3>',
+    ) );
 
 }
 add_action( 'widgets_init', 'piratenkleider_widgets_init' );
@@ -145,8 +118,8 @@ class Newsletter_Widget extends WP_Widget {
 	public function __construct() {
 		parent::__construct(
 	 		'Newsletter_Widget', // Base ID
-			__( 'Piraten-Newsletter', 'piratenkleider' ),
-			array( 'description' => __( 'Formular zur Eingabe einer E-Mail-Adresse anzeigen.', 'piratenkleider' ), ) // Args
+			__( 'Subscribe to newsletter', 'piratenkleider' ),
+			array( 'description' => __( 'Displays a form to subscribe to a mailing list.', 'piratenkleider' ), ) // Args
 		);
 	}
 	
@@ -157,33 +130,32 @@ class Newsletter_Widget extends WP_Widget {
 				
 		echo $before_widget;				                    
                 echo '<div class="newsletter">';
-                echo $before_title . $title . $after_title;
-                 ?> 
+                echo $before_title . $title . $after_title;  ?> 
                  
-                        <form method="post" action="<?php echo $url; ?>">						
-                                <label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e("Zum Newsletter anmelden", 'piratenkleider'); ?></label>
-                                <input type="text" id="<?php echo $this->get_field_id( 'title' ); ?>" name="email" value="<?php _e("E-Mail-Adresse eingeben", 'piratenkleider'); ?>" 
-				       placeholder="<?php _e("E-Mail-Adresse eingeben", 'piratenkleider'); ?>"
-                                       onfocus="if(this.value=='<?php _e("E-Mail-Adresse eingeben", 'piratenkleider'); ?>')this.value='';" 
-				       onblur="if(this.value=='')this.value='<?php _e("E-Mail-Adresse eingeben", 'piratenkleider'); ?>';">
-                                <input type="submit" name="email-button" value="<?php _e("Anmelden", 'piratenkleider'); ?>" id="newslettersubmit">
-				
-		    <?php 	    
-		    $site_link = home_url();
-		    if ((isset($url))&& (strpos($url, $site_link) !== false)) {  
-			echo "<p>";
-			_e("Hinweis: Beim Aufruf wird der Webauftritt verlassen.", 'piratenkleider');
-			echo "</p>";
-		    }	?>		    
-                        </form>           
-                </div>
-                <?php 
- 
-               echo $after_widget;
-                
-                
+                <form method="post" action="<?php echo $url; ?>">						
+                    <label for="<?php echo $this->get_field_id( 'title' ); ?>">
+                        <?php _e("Subscribe to newsletter", 'piratenkleider'); ?>
+                    </label>
+                    <input type="text" id="<?php echo $this->get_field_id( 'title' ); ?>" 
+                           name="email" 
+                           value="<?php _e("Enter email address", 'piratenkleider'); ?>" 
+                           placeholder="<?php _e("Enter email address", 'piratenkleider'); ?>"
+                           onfocus="if(this.value=='<?php _e("Enter email address", 'piratenkleider'); ?>')this.value='';" 
+                           onblur="if(this.value=='')this.value='<?php _e("Enter email address", 'piratenkleider'); ?>';">
+                    <input type="submit" name="email-button" 
+                           value="<?php _e("Subscribe", 'piratenkleider'); ?>" id="newslettersubmit">
+            <?php 	    
+                $site_link = home_url();
+                if ((isset($url))&& (strpos($url, $site_link) !== false)) {  
+                    echo "<p>";
+                    _e("Notice: You will leave this website for further steps.", 'piratenkleider');
+                    echo "</p>";
+                } ?>		    
+                </form>           
+            </div>
+             <?php 
+               echo $after_widget;    
 	}
-
 	
 	public function update( $new_instance, $old_instance ) {
 		$instance = array();
@@ -191,36 +163,30 @@ class Newsletter_Widget extends WP_Widget {
 		$instance['url'] = esc_url($new_instance['newsletter_url']);	    
 		return $instance;
 	}
-
 	
 	public function form( $instance ) {
 	    global $defaultoptions;
-	   
-	    
+	   	    
 	    $defaults = array(
-		'title'		    => __( 'Newsletter', 'piratenkleider' ),
+		'title'		    => __( 'Newsletter / Mailing list', 'piratenkleider' ),
 		'newsletter_url'    => $defaultoptions['url-newsletteranmeldung'],
 	    );
 	    $instance = wp_parse_args((array)$instance, $defaults);
 	    $title = $instance['title'];
-	    $url = $instance['newsletter_url'];
-	    
+	    $url = $instance['newsletter_url'];	    
 	    ?> 
-		
-		    
-		
-		 <p>
-                    <label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e( 'Titel:', 'piratenkleider' ); ?>
-                    <input class="widefat" id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" type="text" value="<?php echo esc_attr( $title ); ?>" />
-		    </label> 
-                </p>
-             
-		 <p>
-		    <label for="<?php echo $this->get_field_id( 'newsletter_url' ); ?>"><?php _e( 'CGI-URL zur Registrierung im Newsletter:', 'piratenkleider' ); ?>
-		    <input class="widefat" id="<?php echo $this->get_field_id( 'newsletter_url' ); ?>" name="<?php echo $this->get_field_name( 'newsletter_url' ); ?>" type="text" value="<?php echo esc_attr( $url ); ?>" />
-		    </label> 
-		</p>
-                 <?php
+             <p>
+                <label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e( 'Title:', 'piratenkleider' ); ?>
+                <input class="widefat" id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" type="text" value="<?php echo esc_attr( $title ); ?>" />
+                </label> 
+            </p>
+
+             <p>
+                <label for="<?php echo $this->get_field_id( 'newsletter_url' ); ?>"><?php _e( 'URL for subscribing form (with email attribute)', 'piratenkleider' ); ?>
+                <input class="widefat" id="<?php echo $this->get_field_id( 'newsletter_url' ); ?>" name="<?php echo $this->get_field_name( 'newsletter_url' ); ?>" type="text" value="<?php echo esc_attr( $url ); ?>" />
+                </label> 
+            </p>
+             <?php
                 
 	}
 
@@ -233,15 +199,14 @@ add_action( 'widgets_init', create_function( '', 'register_widget( "Newsletter_W
  * Adds Newsletter_Widget widget.
  */
 class ParteiLinkliste_Widget extends WP_Widget {
-
 	/**
 	 * Register widget with WordPress.
 	 */
 	public function __construct() {
 		parent::__construct(
 	 		'ParteiLinkliste_Widget', // Base ID
-                        __( 'Piraten-Linkliste', 'piratenkleider' ),
-			array( 'description' => __( 'Linkliste mit verschiedenen Gliederungen und Bereichen der Partei', 'piratenkleider' ), ) // Args
+                        __( 'Pirate Links', 'piratenkleider' ),
+			array( 'description' => __( 'List for several pirate party sections worldwide and in some countries', 'piratenkleider' ), ) // Args
 		);
 	}
 
@@ -253,29 +218,27 @@ class ParteiLinkliste_Widget extends WP_Widget {
             if ((!isset($bereich)) || (empty($bereich))) {
                 $bereich = $defaultoptions['default_footerlink_key'];
             }
-		echo $before_widget;
-                global $default_footerlink_liste; 
-                
-                $title =   $default_footerlink_liste[$bereich]['title'];
-                $url =   $default_footerlink_liste[$bereich]['url'];
-  
-                  if ((isset($url)) && (strlen($url)>5)) {
-                        echo $before_title.'<a href="'.$url.'">'.$title.'</a>'.$after_title;
-                  } else {
-                        echo $before_title.$title.$after_title;
-                  }
-                  echo '<ul>';
-                  
-                  foreach($default_footerlink_liste[$bereich]['sublist'] as $i => $value) {
-                       echo '<li><a href="'.$value.'">';                                                                                                        
-                       echo $i.'</a></li>';
-                       echo "\n";
-                 }            
-                 echo '</ul>';     
-               
-               echo $after_widget;
-                
-                
+            echo $before_widget;
+            global $default_footerlink_liste; 
+
+            $title =   $default_footerlink_liste[$bereich]['title'];
+            $url =   $default_footerlink_liste[$bereich]['url'];
+
+              if ((isset($url)) && (strlen($url)>5)) {
+                    echo $before_title.'<a href="'.$url.'">'.$title.'</a>'.$after_title;
+              } else {
+                    echo $before_title.$title.$after_title;
+              }
+              echo '<ul>';
+
+              foreach($default_footerlink_liste[$bereich]['sublist'] as $i => $value) {
+                   echo '<li><a href="'.$value.'">';                                                                                                        
+                   echo $i.'</a></li>';
+                   echo "\n";
+             }            
+             echo '</ul>';     
+
+           echo $after_widget;            
 	}
 
 	
@@ -314,8 +277,7 @@ class ParteiLinkliste_Widget extends WP_Widget {
                 }  
                 echo "</select><br>\n";                                   
                 echo "\t\t\t";
-                echo "<label for=\"".$this->get_field_name( 'bereich' )."\">".__( 'Bereich oder Gliederung ausw&auml;hlen.', 'piratenkleider' )."</label>\n"; 
-      
+                echo "<label for=\"".$this->get_field_name( 'bereich' )."\">".__( 'Chose section.', 'piratenkleider' )."</label>\n";   
 	}
 
 } // class Partei Linkliste Widget
@@ -327,14 +289,12 @@ add_action( 'widgets_init', create_function( '', 'register_widget( "ParteiLinkli
 /**
  * Adds Bannerlink_Widget widget.
  */
-class Bannerlink_Widget extends WP_Widget {
-
-	
+class Bannerlink_Widget extends WP_Widget {	
 	public function __construct() {
 		parent::__construct(
 	 		'Bannerlink_Widget', // Base ID
-                        __( 'Banner/Logo mit Link', 'piratenkleider' ),
-			array( 'description' => __( 'Schalten von Link mit einem Logo oder Banner', 'piratenkleider' ), ) // Args
+                        __( 'Image Link', 'piratenkleider' ),
+			array( 'description' => __( 'Sets an image link for media library', 'piratenkleider' ), ) // Args
 		);
 	}
 	public function form($instance) {
@@ -349,41 +309,37 @@ class Bannerlink_Widget extends WP_Widget {
 	    $url = $instance['url'];
 	    $image_url = $instance['image_url'];
 	    $image_id = $instance['image_id'];
-
-
 	    ?>
-		    <p>
-			<label for="<?php echo $this->get_field_id('title'); ?>"><?php echo 'Titel:'; ?></label>
-			<input class="widefat" id="<?php echo $this->get_field_id('title'); ?>" 
-			       name="<?php echo $this->get_field_name('title'); ?>" 
-			       type="text" value="<?php echo esc_attr($title); ?>" />
-	  
-		    </p>
-		    <p>
-			<label for="<?php echo $this->get_field_id('url'); ?>"><?php echo 'Ziel-URL:'; ?></label>
-			<input class="widefat" id="<?php echo $this->get_field_id('url'); ?>" 
-			       name="<?php echo $this->get_field_name('url'); ?>" 
-			       type="text" value="<?php echo esc_attr($url); ?>" />
-	  
-		    </p>
-		     <p>
-			<label for="<?php echo $this->get_field_id('image_url'); ?>"><?php _e('Bild-URL:','piratenkleider'); ?>
-                        	<input 	class="image_url widefat" id="<?php echo $this->get_field_id('image_url'); ?>" 
-			       name="<?php echo $this->get_field_name('image_url'); ?>" 
-			       type="text" value="<?php echo esc_attr($image_url); ?>" />
-                  
+            <p>
+                <label for="<?php echo $this->get_field_id('title'); ?>"><?php echo 'Title:'; ?></label>
+                <input class="widefat" id="<?php echo $this->get_field_id('title'); ?>" 
+                       name="<?php echo $this->get_field_name('title'); ?>" 
+                       type="text" value="<?php echo esc_attr($title); ?>" />
 
-                        	<input type="hidden" id="<?php echo $this->get_field_id('image_id'); ?>" 
-                                  class="image_id"  name="<?php echo $this->get_field_name('image_id'); ?>" />
-		
-				<input class="button upload_image_button" name="upload_image_button" id="<?php echo $this->get_field_id('image_url'); ?>_button"  value="<?php _e('Hochladen / Ausw&auml;hlen', 'piratenkleider'); ?>" />
-				
+            </p>
+            <p>
+                <label for="<?php echo $this->get_field_id('url'); ?>"><?php echo 'Target-URL:'; ?></label>
+                <input class="widefat" id="<?php echo $this->get_field_id('url'); ?>" 
+                       name="<?php echo $this->get_field_name('url'); ?>" 
+                       type="text" value="<?php echo esc_attr($url); ?>" /> 
+            </p>
+             <p>
+                <label for="<?php echo $this->get_field_id('image_url'); ?>"><?php _e('Image:','piratenkleider'); ?>
+                        <input 	class="image_url widefat" id="<?php echo $this->get_field_id('image_url'); ?>" 
+                       name="<?php echo $this->get_field_name('image_url'); ?>" 
+                       type="text" value="<?php echo esc_attr($image_url); ?>" />
 
-			    <br /><?php _e('Gib eine URL zu einem Bild ein oder verwende die Mediathek, um es hochzuladen oder um ein vorhandenes Bild auszuw&auml;hlen.', 'piratenkleider'); ?>
-			   
-                        </label> 
-		    </p>
-		    <?php 
+                        <input type="hidden" id="<?php echo $this->get_field_id('image_id'); ?>" 
+                          class="image_id"  name="<?php echo $this->get_field_name('image_id'); ?>" />
+
+                        <input class="button upload_image_button" name="upload_image_button" id="<?php echo $this->get_field_id('image_url'); ?>_button"  value="<?php _e('Hochladen / Ausw&auml;hlen', 'piratenkleider'); ?>" />
+
+
+                    <br /><?php _e('Chose image from media library or enter an URL.', 'piratenkleider'); ?>
+
+                </label> 
+            </p>
+            <?php 
 	}
 	
 	public function update($new_instance, $old_instance) {

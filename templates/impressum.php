@@ -1,6 +1,6 @@
 <?php
 /* 
- Template Name: Impressum
+ Template Name: Imprint
  */
 ?>
 <?php get_header();

@@ -6,13 +6,13 @@
 
 function piratenkleider_custom_post_linktipps() {    
 	$labels = array(
-		'name'               => __( 'Linktipps', 'piratenkleider' ),
-		'singular_name'      => __( 'Linktipp', 'piratenkleider' ),
+		'name'               => __( 'Bookmarks', 'piratenkleider' ),
+		'singular_name'      => __( 'Bookmark', 'piratenkleider' ),
 		
 	);
 	$args = array(
 	    'labels'		=> $labels,
-	    'description'	=> __( 'Erstellen und Verwalten von Leseempfehlungen und Linktipps', 'piratenkleider' ),
+	    'description'	=> __( 'Add or manage bookmar entries', 'piratenkleider' ),
 	    'public'		=> false,
 	    'show_ui'		=> true,
 	    'menu_position'	=> 8,
@@ -43,7 +43,7 @@ add_action( 'init', 'piratenkleider_taxonomies_linktipps' );
 function piratenkleider_linktipp_metabox() {
     add_meta_box( 
         'linktipp_metabox',
-        __( 'Kurzbeschreibung und Zieladresse', 'piratenkleider' ),
+        __( 'Description and target URL', 'piratenkleider' ),
         'linktipp_metabox_content',
         'linktipps',
         'normal',
@@ -59,18 +59,18 @@ function linktipp_metabox_content( $post ) {
 	
 	
 	<p>
-		<label for="linktipp_url"><?php _e( "Geben Sie hier die Webadresse (URL) ein, zu der die Leseempfehlung verweisen soll", 'piratenkleider' ); ?>:</label>
+		<label for="linktipp_url"><?php _e( "Enter target URL", 'piratenkleider' ); ?>:</label>
 		<br />
 		<input class="widefat" type="text" name="linktipp_url"
 		       id="linktipp_url" value="<?php echo esc_attr( get_post_meta( $post->ID, 'linktipp_url', true ) ); ?>" size="30" />
 	</p>
 	<p>
-		<label for="linktipp_text"><?php _e( "Kurzbeschreibung (Optional; Mindestens Kurzbeschreibung oder Beitragsbild m&uuml;ssen vorhanden sein)", 'piratenkleider' ); ?>:</label>
+		<label for="linktipp_text"><?php _e( "Enter an optional and short target description", 'piratenkleider' ); ?>:</label>
 		<br />
 		<textarea class="widefat" name="linktipp_text" cols="70" rows="5" id="linktipp_text" /><?php echo esc_attr( get_post_meta( $post->ID, 'linktipp_text', true ) ); ?></textarea>
 	</p>
 	<p>
-	    <label for="linktipp_image"><?php _e( "Beitrags- oder Symbolbild (URL)", 'piratenkleider' ); ?>:</label>
+	    <label for="linktipp_image"><?php _e( "Image for bookmark (either by media library or external URL)", 'piratenkleider' ); ?>:</label>
 	    <br />
 	     
 	    
@@ -98,12 +98,12 @@ function linktipp_metabox_content( $post ) {
 		    value="<?php echo $linktipp_imgid; ?>" />	    
 	     
 	     
-	     <input type="button" id="linktipp_image-button" class="button" value="<?php _e( "Bild ausw&auml;hlen oder hochladen", 'piratenkleider' ); ?>" />
-	    <small> <a href="#" class="custom_clear_image_button">Bild entfernen</a></small> 
+	     <input type="button" id="linktipp_image-button" class="button" value="<?php _e( "Chose image", 'piratenkleider' ); ?>" />
+	    <small> <a href="#" class="custom_clear_image_button"><?php _e( "Remove image", 'piratenkleider' ); ?></a></small> 
 	</p>
 	
 	<p>
-		<label for="linktipp_untertitel"><?php _e( "Optionaler Untertitel", 'piratenkleider' ); ?>:</label>
+		<label for="linktipp_untertitel"><?php _e( "Optional pretitle", 'piratenkleider' ); ?>:</label>
 		<br />
 		<input class="widefat" type="text" name="linktipp_untertitel"
 		       id="linktipp_untertitel" value="<?php echo esc_attr( get_post_meta( $post->ID, 'linktipp_untertitel', true ) ); ?>" size="30" />
@@ -163,20 +163,6 @@ function linktipp_metabox_save( $post_id ) {
 add_action( 'save_post', 'linktipp_metabox_save' );
 
 
-
-function linktipp_metabox_updated_messages( $messages ) {
-	global $post, $post_ID;
-	$messages['linktipps'] = array(
-		0 => '',
-		1 => __('Die Leseempfehlung wurde aktualisiert. ', 'piratenkleider'),
-		2 => __('Die Leseempfehlung wurde aktualisiert.', 'piratenkleider'),
-		3 => __('Leseempfehlung wurde gel&ouml;scht.', 'piratenkleider'),
-		6 => __('Leseempfehlung wurde ver&ouml;ffentlicht.', 'piratenkleider'), 
-		7 => __('Leseempfehlung wurde gespeichert.', 'piratenkleider'),
-			);
-	return $messages;
-}
-add_filter( 'post_updated_messages', 'linktipp_metabox_updated_messages' );
 
 function linktipp_display ($linktipp, $addclass = '') {
     global $options;
@@ -322,7 +308,7 @@ function linktipps_shortcode( $atts ) {
 	
 		} else {
 			$out = '<section class="shortcode linktipps"><p>';
-			$out .= __('Es konnten keine Leseempfehlungen gefunden werden.', 'piratenkleider');
+			$out .= __('No bookmarks found.', 'piratenkleider');
 			$out .= "</p></section>\n";
 		}
 	

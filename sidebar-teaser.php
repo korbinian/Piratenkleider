@@ -4,9 +4,7 @@
 ?>          
 <div class="first-teaser-widget-area">
 <?php
-   if ( is_active_sidebar( 'first-teaser-widget-area' ) ) {
-        dynamic_sidebar( 'first-teaser-widget-area' ); 
-    } else {        
+     
          $defaultbildsrc = $options['slider-defaultbildsrc'];                        
          $cat = $options['slider-catid'];
 	 global $thisCat;
@@ -110,14 +108,13 @@
         echo "</ul>";
         echo "</div>";
         wp_reset_query(); 
-    } ?>
+     ?>
 </div>
 <div class="second-teaser-widget-area">
 <div class="skin">
     <?php if ( is_active_sidebar( 'second-teaser-widget-area' ) ) { ?>
         <?php dynamic_sidebar( 'second-teaser-widget-area' ); ?>
-    <?php } else {  ?>
-    
+    <?php } else {  ?>    
         <div class="teaserlinks">
             <ul>
                 <li><a class="symbol symbol-<?php echo $options['teaserlink1-symbol'] ?>" href="<?php echo $options['teaserlink1-url'] ?>"><?php echo $options['teaserlink1-title'] ?> <span><?php echo $options['teaserlink1-untertitel'] ?></span></a></li>

@@ -796,7 +796,7 @@ function piratenkleider_post_class_metabox_person( $object, $box ) {
 				    $out .= '">'.$fullname.'</option>'."\n";
 				}
 			    } else {
-				$notice = __('No person card defined yet.');
+				$notice = __('No person card defined yet.', 'piratenkleider');
 			    }
 			    wp_reset_query();
 			    if (isset($out)) {
@@ -816,7 +816,7 @@ function piratenkleider_post_class_metabox_person( $object, $box ) {
 	</p>
 	
 	<p>
-		<label for="piratenkleider-sidebar-text"><?php _e( "Short text for sidebar", 'example' ); ?></label>
+		<label for="piratenkleider-sidebar-text"><?php _e( "Short text for sidebar", 'piratenkleider' ); ?></label>
 		<br />
 		<?php 
 		    // Downwards comtability:  Version 2 used "text" as meta key, Version 3 "piratenkleider-sidebar-text"

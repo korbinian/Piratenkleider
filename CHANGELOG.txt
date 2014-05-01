@@ -1,0 +1,23 @@
+Theme Piratenkleider 
+
+Changelog 
+(since version 3.2; Former changes look at github.com/Piratenkleider/)
+
+Version 3.2.0:
+* Moved templates into a new directory templates
+  OPEN/TODO: For downwards compatibiliy you have to add a test for
+    former template locations for pages:
+    impressum.php -> templates/imprint.php
+    datenschutzerklaerung.php -> templates/data-protection.php
+    catindex.php -> templates/category-index.php
+    pageindex.php -> templates/page-index.php
+    page-actionpage.php -> templates/actionpage.php
+
+* Changed language in PHP files to english and added german language files;
+* Notice: Former called "linktipps" will be renamed in "bookmarks" for english
+  texts
+* Bugfix: custom-fields.php: fixed entries with wrong language domain 
+* Removed 'first-teaser-widget-area' (widget instead of slider on start page)
+* Removed Bulgarian language files, cause they dont match anymore to new
+  base language in theme.
+ 

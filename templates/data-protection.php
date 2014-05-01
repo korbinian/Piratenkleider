@@ -1,6 +1,6 @@
 <?php
 /* 
- Template Name: Datenschutzerklaerung
+ Template Name: Declaration Data Protection
  */
 ?>
 <?php 

@@ -77,12 +77,12 @@ function piratenkleider_do_metabox_displayoption( $object, $box ) {
 	?>
 	<p>
 		<label for="piratenkleider_displayoption">
-                    <?php _e( "Darstellung des Inhalts ändern:", 'piratenkleider' ); ?>
+                    <?php _e( "Content display option:", 'piratenkleider' ); ?>
                 </label>
 		<br />
 		<select name="piratenkleider_displayoption" id="piratenkleider_displayoption">
-		    <option value="0" <?php selected( $nosidebaraktiv, 0 ); ?>><?php _e( "Normale Anzeige", 'piratenkleider' ); ?></option>
-		    <option value="1" <?php selected( $nosidebaraktiv, 1 ); ?>><?php _e( "Artikel auf die gesamte Breite ausdehnen; Sidebar nach unten verschieben.", 'piratenkleider' ); ?></option>		   
+		    <option value="0" <?php selected( $nosidebaraktiv, 0 ); ?>><?php _e( "Default", 'piratenkleider' ); ?></option>
+		    <option value="1" <?php selected( $nosidebaraktiv, 1 ); ?>><?php _e( "Display content in 100%; Move sitebar below content.", 'piratenkleider' ); ?></option>		   
 		</select>			
 	</p>
 	<?php 
