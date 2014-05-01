@@ -5,7 +5,7 @@
  **/ 
 
 $defaultoptions = array(
-    'js-version'                    => '3.1',
+    'js-version'                    => '3.2',
     'content-width'                 => 665,
     'yt-content-width'              => 665,
     'yt-content-height'             => 500,
@@ -253,7 +253,7 @@ $defaultoptions = array(
 
 
 /*
- * Liste Social Media 
+ * Social Media 
  */
 $default_socialmedia_liste = array(
     'delicious' => array(
@@ -897,133 +897,132 @@ $setoptions = array(
    'piratenkleider_theme_options'   => array(
        
        'kopfteil'   => array(
-           'tabtitle'   => __('Kopfteil', 'piratenkleider'),
+           'tabtitle'   => __('Header', 'piratenkleider'),
            'fields' => array(
               'aktiv-linkmenu' => array(
                   'type'    => 'bool',
-                  'title'   => __( 'Linkmenu', 'piratenkleider' ),
-                  'label'   => __( 'Linkmenu oben rechts, zwischen Social Media Icons und Suchmaske anzeigen', 'piratenkleider' ),
+                  'title'   => __( 'Website Menu', 'piratenkleider' ),
+                  'label'   => __( 'Display List of several websites belonging to the pirate party.', 'piratenkleider' ),
                   'default' => $defaultoptions['aktiv-linkmenu'],
               ),
               'aktiv-suche' => array(
                   'type'    => 'bool',
-                  'title'   => __( 'Suchmaske', 'piratenkleider' ),
-                  'label'   => __( 'Eingabemaske f&uuml;r Suche oben rechts anzeigen', 'piratenkleider' ),
+                  'title'   => __( 'Search Form', 'piratenkleider' ),
+                  'label'   => __( 'Display search form.', 'piratenkleider' ),
                   'default' => $defaultoptions['aktiv-suche'],
               ),
               'defaultwerbesticker' => array(
                   'type'    => 'bool',
-                  'title'   => __( 'Sticker', 'piratenkleider' ),
-                  'label'   => __( 'Sticker anzeigen (Hinweistexte oder Grafiken im Kopfteil)', 'piratenkleider' ),
+                  'title'   => __( 'Stamps', 'piratenkleider' ),
+                  'label'   => __( 'Display stamps with short text or image in header', 'piratenkleider' ),
                   'default' => $defaultoptions['defaultwerbesticker'],
               ),
               'stickerlink1'  => array(
                   'type'    => 'section',
-                  'title'   => __( 'Sticker 1', 'piratenkleider' ),
+                  'title'   => __( 'Stamp 1', 'piratenkleider' ),
               ),
               'stickerlink1-content' => array(
                   'type'    => 'html',
-                  'title'   => __( 'Sticker 1 (Text)', 'piratenkleider' ),
-                  'label'   => __( 'Inhaltstext des Stickers (ggf. mit Inline-HTML)', 'piratenkleider' ),
+                  'title'   => __( 'Content', 'piratenkleider' ),
+                  'label'   => __( 'Text (Inline-HTML-Tags allowed)', 'piratenkleider' ),
                   'default' => $defaultoptions['stickerlink1-content'],
                   'parent'  => 'stickerlink1',
               ),
               'stickerlink1-url' => array(
                   'type'    => 'url',
-                  'title'   => __( 'Sticker 1 (Adresse)', 'piratenkleider' ),
-                  'label'   => __( 'URL zu der verlinkt werden soll', 'piratenkleider' ),
+                  'title'   => __( 'URL', 'piratenkleider' ),
+                  'label'   => __( 'Target URL for stamp', 'piratenkleider' ),
                   'default' => $defaultoptions['stickerlink1-url'],
                   'parent'  => 'stickerlink1',
               ),
               'stickerlink2'  => array(
                   'type'    => 'section',
-                  'title'   => __( 'Sticker 2', 'piratenkleider' ),
+                  'title'   => __( 'Stamp 2', 'piratenkleider' ),
               ),
                'stickerlink2-content' => array(
                   'type'    => 'html',
-                  'title'   => __( 'Sticker 2 (Text)', 'piratenkleider' ),
-                  'label'   => __( 'Inhaltstext des Stickers (ggf. mit Inline-HTML)', 'piratenkleider' ),
+                  'title'   => __( 'Content', 'piratenkleider' ),
+                  'label'   => __( 'Text (Inline-HTML-Tags allowed)', 'piratenkleider' ),
                   'default' => $defaultoptions['stickerlink2-content'],
                    'parent'  => 'stickerlink2',
               ),
               'stickerlink2-url' => array(
                   'type'    => 'url',
-                  'title'   => __( 'Sticker 2 (Adresse)', 'piratenkleider' ),
-                  'label'   => __( 'URL zu der verlinkt werden soll', 'piratenkleider' ),
+                  'title'   => __( 'URL', 'piratenkleider' ),
+                  'label'   => __( 'Target URL for stamp', 'piratenkleider' ),
                   'default' => $defaultoptions['stickerlink2-url'],
                   'parent'  => 'stickerlink2',
               ),
               'stickerlink3'  => array(
                   'type'    => 'section',
-                  'title'   => __( 'Sticker 3', 'piratenkleider' ),
+                  'title'   => __( 'Stamp 3', 'piratenkleider' ),
               ),
                'stickerlink3-content' => array(
                   'type'    => 'html',
-                  'title'   => __( 'Sticker 3 (Text)', 'piratenkleider' ),
-                  'label'   => __( 'Inhaltstext des Stickers (ggf. mit Inline-HTML)', 'piratenkleider' ),
+                  'title'   => __( 'Content', 'piratenkleider' ),
+                  'label'   => __( 'Text (Inline-HTML-Tags allowed)', 'piratenkleider' ),
                   'default' => $defaultoptions['stickerlink3-content'],
                    'parent'  => 'stickerlink3',
               ),
               'stickerlink3-url' => array(
                   'type'    => 'url',
-                  'title'   => __( 'Sticker 3 (Adresse)', 'piratenkleider' ),
-                  'label'   => __( 'URL zu der verlinkt werden soll', 'piratenkleider' ),
+                  'title'   => __( 'URL', 'piratenkleider' ),
+                  'label'   => __( 'Target URL for stamp', 'piratenkleider' ),
                   'default' => $defaultoptions['stickerlink3-url'],
                   'parent'  => 'stickerlink3',
               ),
 	      'toplinks'  => array(
                   'type'    => 'section',
-                  'title'   => __( 'Toplinks', 'piratenkleider' ),
+                  'title'   => __( 'Website Menu', 'piratenkleider' ),
               ),
 	      'toplinkliste'  => array(
 		  'type'    => 'urlchecklist',
-		  'title'   => __( 'Portale', 'piratenkleider' ),
+		  'title'   => __( 'Websites', 'piratenkleider' ),
 		  'liste'   => $default_toplink_liste,
 		  'parent'  => 'toplinks',
-		  'label'   => __( 'Definition einer Linkliste zu Standardportalen. Diese Liste kann alternativ durch die Definition eines Men&uuml;s und Zuordnung dieses zu dem Men&uuml;bereich "Linkmenu" verwaltet werden. Ist kein eigenes Men&uuml; definiert, werden diese Werte als Alternative verwendet.', 'piratenkleider' ),
+		  'label'   => __( 'Default Links for Websites as Menu in Header. Can be replaced by defining a menu in section "Website Menu"', 'piratenkleider' ),
 	      ), 
                
            )
        ),
        'fussteil'   => array(
-           'tabtitle'   => __('Fu&szlig;teil', 'piratenkleider'),
+           'tabtitle'   => __('Footer', 'piratenkleider'),
            'fields' => array(
               'default_footerlink_show' => array(
                   'type'    => 'bool',
-                  'title'   => __( 'Parteilinks', 'piratenkleider' ),
-                  'label'   => __( 'Im Fu&szlig;teil eine Liste von Links zu Seiten der Piratenpartei anzeigen', 'piratenkleider' ),
+                  'title'   => __( 'Pirate Party Links', 'piratenkleider' ),
+                  'label'   => __( 'Display a list for several Pirate Party sections worldwide or be some countries.', 'piratenkleider' ),
                   'default' => $defaultoptions['default_footerlink_show'],
               ),
               'default_footerlink_key' => array(
                   'type'    => 'select',
-                  'title'   => __( 'Bereich', 'piratenkleider' ),
-                  'label'   => __( 'Bereich oder Gliederung ausw&auml;hlen.', 'piratenkleider' ),
+                  'title'   => __( 'Section', 'piratenkleider' ),
+                  'label'   => __( 'Chose section for display', 'piratenkleider' ),
                   'default' => $defaultoptions['default_footerlink_key'],
                   'liste'   => $default_footerlink_liste,
               ),
           )
        ),
       'startseite'   => array(
-           'tabtitle'   => __('Startseite', 'piratenkleider'),
+           'tabtitle'   => __('Start page', 'piratenkleider'),
            'fields' => array(
-             
-               
+                            
               'aktiv-startseite-kategorien' => array(
                   'type'    => 'bool',
-                  'title'   => __( 'Kategorien', 'piratenkleider' ),
-                  'label'   => __( 'Liste der Kategorien anzeigen', 'piratenkleider' ),
+                  'title'   => __( 'Categories', 'piratenkleider' ),
+                  'label'   => __( 'Display categories.', 'piratenkleider' ),
                   'default' => $defaultoptions['aktiv-startseite-kategorien'],
               ),
               'aktiv-startseite-tags' => array(
                   'type'    => 'bool',
-                  'title'   => __( 'Schlagworte', 'piratenkleider' ),
-                  'label'   => __( 'Liste der Schlagworte (Tagcloud) anzeigen', 'piratenkleider' ),
+                  'title'   => __( 'Tags', 'piratenkleider' ),
+                  'label'   => __( 'Display tagcloud.', 'piratenkleider' ),
                   'default' => $defaultoptions['aktiv-startseite-tags'],
               ),
             
               'artikelstream'  => array(
                   'type'    => 'section',
-                  'title'   => __( 'Artikelauswahl', 'piratenkleider' ),                      
+                  'title'   => __( 'Entry filter', 'piratenkleider' ),                      
               ),     
                
                'artikelstream-type' => array(
@@ -1032,10 +1031,10 @@ $setoptions = array(
                   'label'   => __( 'Definiert die Auswahl der Artikel auf der Startseite ausgehend von Kategorien und Linktipps', 'piratenkleider' ),
                   'default' => $defaultoptions['artikelstream-type'],
 		  'liste'   =>  array(
-				0 => __("Artikel aller Kategorien und Linktipps in einem Zusammenhang anzeigen","piratenkleider"), 
-				1 => __("Artikel aller Kategorien in einem Zusammenhang anzeigen","piratenkleider"), 	    
-				2 => __("Nur Artikel, die nicht zu Ausschlusskategorien geh&ouml;ren, anzeigen","piratenkleider"), 
-                                ), 
+                    0 => __("Artikel aller Kategorien und Linktipps in einem Zusammenhang anzeigen","piratenkleider"), 
+                    1 => __("Artikel aller Kategorien in einem Zusammenhang anzeigen","piratenkleider"), 	    
+                    2 => __("Nur Artikel, die nicht zu Ausschlusskategorien geh&ouml;ren, anzeigen","piratenkleider"), 
+                    ), 
                   'parent'  => 'artikelstream'
               ), 	
                
@@ -1175,11 +1174,7 @@ $setoptions = array(
                   'type'    => 'section',
                   'title'   => __( 'Gestaltung Textausz&uuml;ge', 'piratenkleider' ),                      
               ),     
-               
-               
-                
-               
-               
+                              
              'teaser_maxlength' => array(
                   'type'    => 'number',
                   'title'   => __( 'L&auml;nge des Teasertextes (Artikelauszug)', 'piratenkleider' ),
@@ -2021,9 +2016,8 @@ $setoptions = array(
                       2 => __('Nach Standard-CSS-Dateien des Grunddesigns', 'piratenkleider'),
                       3 => __('Semi-Exklusiv (kein Laden des Grunddesign-CSS, jedoch optionale CSS (Farben, Schriften, Icons, ...)', 'piratenkleider'),
 		      4 => __('Exklusiv (kein Laden anderer CSS-Dateien)', 'piratenkleider'),
-
                   ),
-		   	  'parent'  => 'style', 
+		  'parent'  => 'style', 
               ),
               'breadcrumb'  => array(
                   'type'    => 'section',
@@ -2077,8 +2071,6 @@ $setoptions = array(
 	       
           )
        ),
-
-     
        
        
        'sonstiges'   => array(
@@ -2386,19 +2378,13 @@ $setoptions = array(
 		),  
                 'dsbemail' => array(
                   'type'    => 'email',
-                  'title'   => __( 'E-Mail-Adresse', 'piratenkleider' ),
+                  'title'   => __( 'EMail', 'piratenkleider' ),
                   'label'   => __( 'Feste E-Mail-Adresse f&uuml;r offizielle Kontakte.<br>Zum Beispiel:  <code>bundesbeauftragter@piraten-dsb.de</code>', 'piratenkleider' ),
 		  'default'	=> '',
                   'parent'  => 'dsb',
 		 ),   
 		
-	       
-		    
-        
 
-	       
-	       
-	       
 	  
 	),   
       ),

@@ -4,7 +4,7 @@
  *
  * @source http://github.com/xwolfde/Piratenkleider
  * @creator xwolf
- * @version 3.0
+ * @version 3.2
  * @licence GPL 2.0 
  */
 
@@ -165,8 +165,8 @@ function piratenkleider_setup() {
         // This theme uses wp_nav_menu() in one location.
         register_nav_menus( array(
                 'primary' => __( 'Main navigation', 'piratenkleider' ),
-                'top' => __( 'Second navigation at top (like external portals)', 'piratenkleider' ),
-                'sub' => __( 'Tecnical navigation (use for imprint, contact and so on)', 'piratenkleider' ),
+                'top' => __( 'Website Menu', 'piratenkleider' ),
+                'sub' => __( 'Tecnical navigation', 'piratenkleider' ),
         ) );
 
 
