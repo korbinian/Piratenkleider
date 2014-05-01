@@ -48,7 +48,7 @@ function theme_options_do_page($tab = '') {
             $tab = $_GET['tab'];
         }
         if ((!isset($tab)) || (empty($tab))) {
-            $tab = "kopfteil";
+            $tab = $options['optionpage-tab-default'];
         }
         if (!isset($setoptions['piratenkleider_theme_options'][$tab])) {
             echo "Invalid Tab-Option or undefined Option-Field $tab";            

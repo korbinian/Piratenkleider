@@ -248,6 +248,7 @@ $defaultoptions = array(
     'url-wiki'				    => 'https://wiki.piratenpartei.de',
     'vcard-showfeed'                        => 1,
     'vcard-feed-maxnum'                     => 7,
+    'optionpage-tab-default'                => 'kopfteil'
 );
 
 
@@ -441,7 +442,7 @@ $default_colorstyles = array(
 
 $default_fonts = array(
     'none'=> array(
-        'title' => __( 'Keine Schriftart setzen (Browserdefault oder CSS-Settings nutzen)', 'piratenkleider' ),
+        'title' => __( 'Use default font settings', 'piratenkleider' ),
         'family' => '',
     ),      
     'serifdefault' => array(
@@ -451,7 +452,7 @@ $default_fonts = array(
     'sansserifdefault' => array(
         'title' => __( 'Helvetica, Verdana, Arial, sans-serif', 'piratenkleider' ),
         'family' => 'Helvetica, Verdana, Arial, sans-serif',
-        'comments'  =>  __( 'Standard serifenlose Schrift', 'piratenkleider' ),
+        'comments'  =>  __( 'Use default sans serif font', 'piratenkleider' ),
     ),  
     'BebasNeue' => array(
         'title' => __( 'Bebas Neue', 'piratenkleider' ),
@@ -498,11 +499,11 @@ $default_fonts = array(
  * Default font modifications for standard css style
  */
 $default_alternativestyles = array(
-    'style.css'	    => __( 'Default Piratenkleider', 'piratenkleider' ),
-    'sample.css'    => __( 'Leeres Beispiel-CSS', 'piratenkleider' ),
+    'style.css'	    => __( 'Default Style', 'piratenkleider' ),
+    'sample.css'    => __( 'Empty CSS', 'piratenkleider' ),
     'scapegoat.css' => __( 'Scapegoat-Adaption (1.1)', 'piratenkleider' ),
-    'flaschenpost.css' => __( 'Design Flaschenpost 2013', 'piratenkleider' ),
-    'piratenkleider2.css' => __( 'Design Piratenkleider 2', 'piratenkleider' ),
+    'flaschenpost.css' => __( 'Flaschenpost 2013', 'piratenkleider' ),
+    'piratenkleider2.css' => __( 'Piratenkleider 2', 'piratenkleider' ),
 );
 
 /*
@@ -510,8 +511,8 @@ $default_alternativestyles = array(
  */
 
  $default_footerlink_liste = array(
-     __( 'Deutschland', 'piratenkleider' )  => array(
-        'title' => __( 'Piratenpartei Deutschland', 'piratenkleider' ),
+     __( 'Germany', 'piratenkleider' )  => array(
+        'title' => __( 'Pirate Party Germany', 'piratenkleider' ),
         'url'   => 'https://www.piratenpartei.de',
         'sublist'   => array(
             __('Baden-W&uuml;rttemberg', 'piratenkleider' ) => 'https://piratenpartei-bw.de/',
@@ -533,7 +534,7 @@ $default_alternativestyles = array(
         )
      ),
      __('International', 'piratenkleider' ) => array(
-         'title' => __('Piratenparteien International', 'piratenkleider' ),
+         'title' => __('Pirate Party International', 'piratenkleider' ),
          'url'  => 'http://www.pp-international.net/',
          'sublist' => array(
              __('Argentinien', 'piratenkleider' ) => 'http://www.partidopirata.com.ar/',
@@ -586,8 +587,8 @@ $default_alternativestyles = array(
 
          )
      ), 
-      __('International (mit Flaggen)', 'piratenkleider' ) => array(
-         'title' => __('Piratenparteien International', 'piratenkleider' ),
+      __('International (with flags)', 'piratenkleider' ) => array(
+         'title' => __('Pirate Party International', 'piratenkleider' ),
          'url'  => 'http://www.pp-international.net/',
          'sublist' => array(
              '<span class="flagicon-ar"></span> '.__('Argentinien', 'piratenkleider') => 'http://www.partidopirata.com.ar/',
@@ -846,7 +847,7 @@ $default_alternativestyles = array(
 );
 
 /* 
- * Auswahlliste fuer Textsymbole fuer den Teaser
+ * Teaser symbols
  */
 $defaultplakate_textsymbolliste = array(
     'idee'  => "0021",
@@ -880,12 +881,6 @@ $defaultplakate_textsymbolliste = array(
 );
 
 
-                  
-
-
-/*
- * Definition welche Konstanten als Optionen im Backend geaendert werden koennen
- */
 
  foreach($defaultplakate_textsymbolliste as $i => $value) {
      $defaultplakate_textsymbolliste_entity[$i] = '&#x'.$value.';';
