@@ -1027,36 +1027,36 @@ $setoptions = array(
                
                'artikelstream-type' => array(
                   'type'    => 'select',
-                  'title'   => __( 'Artikelstrom einstellen', 'piratenkleider' ),
-                  'label'   => __( 'Definiert die Auswahl der Artikel auf der Startseite ausgehend von Kategorien und Linktipps', 'piratenkleider' ),
+                  'title'   => __( 'Set main entry list', 'piratenkleider' ),
+                  'label'   => __( 'Chose which entries are displayed on the start page.', 'piratenkleider' ),
                   'default' => $defaultoptions['artikelstream-type'],
 		  'liste'   =>  array(
-                    0 => __("Artikel aller Kategorien und Linktipps in einem Zusammenhang anzeigen","piratenkleider"), 
-                    1 => __("Artikel aller Kategorien in einem Zusammenhang anzeigen","piratenkleider"), 	    
-                    2 => __("Nur Artikel, die nicht zu Ausschlusskategorien geh&ouml;ren, anzeigen","piratenkleider"), 
+                    0 => __("All entries (from every category) and bookmarks together","piratenkleider"), 
+                    1 => __("Only entries (from every category)","piratenkleider"), 	    
+                    2 => __("Entries, except those from defined categories","piratenkleider"), 
                     ), 
                   'parent'  => 'artikelstream'
               ), 	
                
               'artikelstream-exclusive-catliste' => array(
                   'type'    => 'multiselectlist',
-                  'title'   => __( 'Ausschlusskategorien', 'piratenkleider' ),
-                  'label'   => __( 'Welche Kategorien sollen nicht im Hauptartikelstrom angezeigt werden.', 'piratenkleider' ),
+                  'title'   => __( 'Categories', 'piratenkleider' ),
+                  'label'   => __( 'Chose categories, which entries should not appear in main entry list on start page.', 'piratenkleider' ),
                   'liste'   => $currentcatliste,
                   'default' => $defaultoptions['artikelstream-exclusive-catliste'],
-                  'parent'  => 'sliderpars'
+                  'parent'  => 'artikelstream'
               ),  
                'artikelstream-maxnum-main' => array(
                   'type'    => 'number',
-                  'title'   => __( 'Anzahl der Beitr&auml;ge im Hauptstrom', 'piratenkleider' ),
-                  'label'   => __( 'Zahl der Beitr&auml;ge, welche insgesamt im ersten Artikelstrom gezeigt werden.', 'piratenkleider' ),
+                  'title'   => __( 'Number Entries', 'piratenkleider' ),
+                  'label'   => __( 'Number of entries in main entry list.', 'piratenkleider' ),
                   'default' => $defaultoptions['artikelstream-maxnum-main'],
                   'parent'  => 'artikelstream'
               ), 
                'artikelstream-nextnum-main' => array(
                   'type'    => 'number',
-                  'title'   => __( 'Zahl weiterer Artikel', 'piratenkleider' ),
-                  'label'   => __( 'Zahl der Links von weiteren Artikeln des Hauptstroms in Form von einer Liste.', 'piratenkleider' ),
+                  'title'   => __( 'Number elements for entries list', 'piratenkleider' ),
+                  'label'   => __( 'Number of link elements for a list for further entries.', 'piratenkleider' ),
                   'default' => $defaultoptions['artikelstream-nextnum-main'],
                   'parent'  => 'artikelstream'
               ), 
@@ -2040,13 +2040,13 @@ $setoptions = array(
 	       
 	      'miscdesign'  => array(
                   'type'    => 'section',
-                  'title'   => __( 'Weitere Designoptionen', 'piratenkleider' ),
+                  'title'   => __( 'Other options', 'piratenkleider' ),
               ),
 	       
 	     'favicon-file' => array(
                   'type'    => 'image',
-                  'title'   => __( 'FavIcon-Datei', 'piratenkleider' ),
-                  'label'   => __( 'Einbinden und Hochladen einer eigenen Favicon-Datei. Bitte in den Aufl&ouml;sungen 16x16, 32x32 oder 64x64 Pixel.', 'piratenkleider' ),
+                  'title'   => __( 'FavIcon', 'piratenkleider' ),
+                  'label'   => __( 'Set an own favicon file for your website.', 'piratenkleider' ),
 		  'parent' => 'miscdesign',
 		  'maxwidth' =>  64,
 		  'maxheight'=>  64,
@@ -2055,18 +2055,16 @@ $setoptions = array(
 	       
 	      'css-eigene-anweisungen' => array(
                   'type'    => 'textarea',
-                  'title'   => __( 'CSS-Anweisungen', 'piratenkleider' ),
-                  'label'   => __( 'Eigene CSS-Anweisungen, die Inline im Kopfteil der Dokumente erg&auml;nzt werden', 'piratenkleider' ),
+                  'title'   => __( 'CSS', 'piratenkleider' ),
+                  'label'   => __( 'Adds own CSS commands to the website.', 'piratenkleider' ),
                   'default' => '',
 		    'parent' => 'miscdesign',
               ),
 	       'html-eigene-anweisungen' => array(
                   'type'    => 'textarea',
-                  'title'   => __( 'HTML-Anweisungen', 'piratenkleider' ),
-                  'label'   => __( 'Eigene HTML-Anweisungen, die am Ende der Webseite, vor dem letzten &lt;/body&gt;&lt;/html&gt; plaziert werden', 'piratenkleider' ).
-		    __( '<br><b>Achtung:</b> Fehlerhafter HTML-, JavaScript- oder CSS-Code an dieser Stelle kann zu einem Nicht-Funktionieren der gesamten Website f&uuml;hren!<br />Der hier eingegebene Code wird nicht gefiltert oder kontrolliert.', 'piratenkleider' ),
-                  'default' => '',
-		     'parent' => 'miscdesign',
+                  'title'   => __( 'HTML', 'piratenkleider' ),
+                  'label'   => __( 'Adds own HTML commands at the end of the page (after footer, just before &lt;/body&gt;&lt;/html&gt;).', 'piratenkleider' ),                  'default' => '',
+		  'parent' => 'miscdesign',
               ),
 	       
           )
@@ -2074,51 +2072,53 @@ $setoptions = array(
        
        
        'sonstiges'   => array(
-           'tabtitle'   => __('Sonstiges', 'piratenkleider'),
+           'tabtitle'   => __('Misc', 'piratenkleider'),
            'fields' => array(
 	       'reset_options' => array(
                   'type'    => 'bool',
-                  'title'   => __( 'Reset aller Optionen', 'piratenkleider' ),
-                  'label'   => __( 'Alle Theme-Optionen auf die Defaults zur&uuml;cksetzen.', 'piratenkleider' ),
+                  'title'   => __( 'Reset', 'piratenkleider' ),
+                  'label'   => __( 'Resets all options to default.', 'piratenkleider' ),
                   'default' => 0,
 		  'mark_option' => 1,
               ),    
                'aktiv-dynamic-sidebar' => array(
                   'type'    => 'bool',
-                  'title'   => __( 'Sidebar abblendbar', 'piratenkleider' ),
-                  'label'   => __( 'Benutzern via JavaScript die M&ouml;glichkeit geben, die Sidebar klein zu machen. <br>Hinweis: Der Status wird nicht gespeichert, um keine Cookies anzulegen. Die Funktion ist nicht sichtbar, wenn man kein JavaScript an hat. Des Weiteren ist die Funktion nur aktiv, wenn die Bildschirmbreite gr&ouml;&szlig;er als 600 Pixel ist.', 'piratenkleider' ),
+                  'title'   => __( 'Sitebar switch', 'piratenkleider' ),
+                  'label'   => __( 'Allows users to hide the sidebar on screen resolutions above 600px.', 'piratenkleider' ),
                   'default' => $defaultoptions['aktiv-dynamic-sidebar'],
               ),         
               'position_sidebarbottom' => array(
                   'type'    => 'select',
-                  'title'   => __( 'Position der Sidebar', 'piratenkleider' ),
-                  'label'   => __( 'Sidebar rechts neben dem Inhalt oder darunter positionieren. Wenn die Sidebar unter dem Inhalt positioniert wird, wird der Inhaltsbereich &uuml;ber die gesamte Breite gehen. Alternativ kann ein Custom Field "fullsize" definiert werden. Hat dies den Value 1, wird der Inhaltsbereich auf volle Seitenbreite dargestellt und die Sidebar nach unten verschoben', 'piratenkleider' ),
-                  'liste'   => array(0 => __( 'Rechts (Standard)', 'piratenkleider' ), 1 => __( 'Unter dem Inhalt', 'piratenkleider' )),
+                  'title'   => __( 'Sidebar position', 'piratenkleider' ),
+                  'label'   => __( 'Chose where to show the sitebar', 'piratenkleider' ),
+                  'liste'   => array(
+                      0 => __( 'Right (Default)', 'piratenkleider' ),
+                      1 => __( 'Below of the content', 'piratenkleider' )),
                   'default' => $defaultoptions['position_sidebarbottom'],
               ),                                            
               'login_errors' => array(
                   'type'    => 'select',
-                  'title'   => __( 'Fehlermeldung bei Login', 'piratenkleider' ),
-                  'label'   => __( 'Ein- oder Abschalten der Fehlermeldung beim Login im Backend, mit der angezeigt wird, warum der Login fehlschlug.', 'piratenkleider' ),
-                  'liste'   => array(1 => __( 'Fehlermeldung zeigen', 'piratenkleider' ), 0 => __( 'Keine Meldung', 'piratenkleider' )),
+                  'title'   => __( 'Error message on login', 'piratenkleider' ),
+                  'label'   => __( 'Chose if error messages will b e displayed on login screen, if someone fails with username and password.', 'piratenkleider' ),
+                  'liste'   => array(
+                      1 => __( 'Display error message', 'piratenkleider' ), 
+                      0 => __( 'Do not display anything', 'piratenkleider' )),
                   'default' => 1,
               ),
 
-             
-	       
+             	       
               'url-newsletteranmeldung' => array(
                   'type'    => 'url',
-                  'title'   => __( 'Newsletter', 'piratenkleider' ),
-                  'label'   => __( 'URL inkl. http:// zur Seite, auf der man sich in den Newsletter eintragen kann', 'piratenkleider' ),
+                  'title'   => __( 'Newsletter / Mailing list', 'piratenkleider' ),
+                  'label'   => __( 'Default URL for a subscribition for for a mailing list', 'piratenkleider' ),
                   'default' => $defaultoptions['url-newsletteranmeldung'],
-                 
               ),  
               
 	     
               'yt-alternativeembed' => array(
                   'type'    => 'bool',
-                  'title'   => __( 'YouTube-Links', 'piratenkleider' ),
-                  'label'   => __( 'YouTube-Links automatisch mit eigenem verlinkten iFrame-Embed anreichern, der die tracking-sichere Website youtube-nocookie.com nutzt.', 'piratenkleider' ),
+                  'title'   => __( 'YouTube', 'piratenkleider' ),
+                  'label'   => __( 'Embedded YouTube-Links as an inline video-frame from youtube-nocookie.com', 'piratenkleider' ),
                   'default' => $defaultoptions['yt-alternativeembed'],
               ),  
 	       
@@ -2126,7 +2126,7 @@ $setoptions = array(
 	       
               'anonymitaet'  => array(
                   'type'    => 'section',
-                  'title'   => __('Anonymit&auml;t &amp; Sicherheit', 'piratenkleider'),         
+                  'title'   => __('Security', 'piratenkleider'),         
               ),  
                
               'aktiv-autoren' => array(
