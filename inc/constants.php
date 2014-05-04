@@ -1123,7 +1123,7 @@ $setoptions = array(
               'artikelstream-title-secondcontinuelist' => array(
                   'type'    => 'text',
                   'title'   => __( 'Title more entries', 'piratenkleider' ),
-                  'label'   => __( 'Sets a title for an additional entry list.', 'piratenkleider' ),
+                  'label'   => __( 'Subtitle for an additional entry list.', 'piratenkleider' ),
                   'default' => $defaultoptions['artikelstream-title-secondcontinuelist'],
                   'parent'  => 'artikelstream',
               ),                
@@ -1154,7 +1154,7 @@ $setoptions = array(
              'artikelstream-title-linktipps' => array(
                   'type'    => 'text',
                   'title'   => __( 'Title bookmark section', 'piratenkleider' ),
-                  'label'   => __( 'Sets a title for bookmark section.', 'piratenkleider' ),
+                  'label'   => __( 'Subtitle for bookmark section.', 'piratenkleider' ),
                   'default' => $defaultoptions['artikelstream-title-linktipps'],
                    'parent'  => 'artikelstream',
               ), 
@@ -1190,110 +1190,132 @@ $setoptions = array(
               ), 
               'teaser-datebox' => array(
                   'type'    => 'select',
-                  'title'   => __( 'Symbolbild/Datumsbox', 'piratenkleider' ),
-                  'label'   => __( 'Links des Textauszuges das Datum, das Artikelbild, ein Bild des Artikels oder ein verlinktes Video anzeigen; abh&auml;ngig vom Inhalt des Artikels.', 'piratenkleider' ),
+                  'title'   => __( 'Layout entry info', 'piratenkleider' ),
+                  'label'   => __( 'Sets a thumbnail, image, datebox, youtube-video or default image in front of excerpt.', 'piratenkleider' ),
                   'default' => $defaultoptions['teaser-datebox'],
 		  'liste'   =>  array(
-				0 => __("Datumsbox anzeigen","piratenkleider"), 
-				1 => __("Reihenfolge: Artikelbild, erstes Bild, erstes Video oder Ersatzbild zeigen","piratenkleider"), 	    
-				2 => __("Reihenfolge: Erstes Bild, Artikelbild, erstes Video oder Ersatzbild zeigen","piratenkleider"), 
-				3 => __("Reihenfolge: Erstes Video, Artikelbild, erstes Bild oder Ersatzbild zeigen","piratenkleider"), 
-				4 => __("Reihenfolge: Erstes Video, erstes Bild, Artikelbild oder Ersatzbild zeigen","piratenkleider"), 
-				5 => __("Nichts anzeigen","piratenkleider")), 
+				0 => __("Display datebox","piratenkleider"), 
+				1 => __("Display in order: "
+                                        . "Thumbnail, first image in content if exist, "
+                                        . "YouTube-Embed by first existing YouTube-Link in content "
+                                        . "or default image","piratenkleider"),
+                                2 => __("Display in order: "
+                                        . "First image in content if exist, thumbnail, "
+                                        . "YouTube-Embed by first existing YouTube-Link in content "
+                                        . "or default image","piratenkleider"), 
+                                3 => __("Display in order: "
+                                        . "YouTube-Embed by first existing YouTube-Link in content "
+                                        . " thumbnail, first image in content if exist, "
+                                        . "or default image","piratenkleider"), 
+                                4 => __("Display in order: "
+                                        . "YouTube-Embed by first existing YouTube-Link in content "
+                                        . " first image in content if exist, thumbnail, "
+                                        . "or default image","piratenkleider"),
+				5 => __("Hide entry info","piratenkleider")), 
                   'parent'  => 'auszuege'
               ), 	              
 	      'teaser-floating' => array(
                   'type'    => 'bool',
-                  'title'   => __( 'Flie&szlig;ender Text', 'piratenkleider' ),
-                  'label'   => __( 'Text umflie&szlig;t das Bild', 'piratenkleider' ),
+                  'title'   => __( 'Floating excerpt', 'piratenkleider' ),
+                  'label'   => __( 'Excerpt text will float around entry info.', 'piratenkleider' ),
                   'default' => $defaultoptions['teaser-floating'],
                   'parent'  => 'auszuege'
               ),  
                'teaser-dateline' => array(
                   'type'    => 'bool',
-                  'title'   => __( 'Datumszeile', 'piratenkleider' ),
-                  'label'   => __( 'Datumszeile vor dem Text, falls keine Datumsbox angezeigt wird', 'piratenkleider' ),
+                  'title'   => __( 'Date', 'piratenkleider' ),
+                  'label'   => __( 'Show date as first line after title.', 'piratenkleider' ),
                   'default' => $defaultoptions['teaser-dateline'],
                   'parent'  => 'auszuege'
               ), 
                
                 'teaser-maxlength-halfwidth' => array(
                   'type'    => 'number',
-                  'title'   => __( 'L&auml;nge des Teasertextes', 'piratenkleider' ),
-                  'label'   => __( 'Maximale Textl&auml;nge f&uuml;r Artikelausz&uuml;ge (Bei Beitr&auml;gen &uuml;ber halbe Breite).', 'piratenkleider' ),
+                  'title'   => __( 'Length', 'piratenkleider' ),
+                  'label'   => __( 'Maximum numbers of chars in excerpt. (Small entry teaser in 50% content-width).', 'piratenkleider' ),
                   'default' => $defaultoptions['teaser-maxlength-halfwidth'],
 		'parent'  => 'auszuege'
               ),                 
              'teaser-titleup-halfwidth' => array(
                   'type'    => 'bool',
-                  'title'   => __( 'Titel oben', 'piratenkleider' ),
-                  'label'   => __( 'Titel &uuml;ber Logo/Datumsbox und Text (Bei Beitr&auml;gen &uuml;ber halbe Breite).', 'piratenkleider' ),
+                  'title'   => __( 'Title up', 'piratenkleider' ),
+                  'label'   => __( 'Title above thumbnail, date and text. (Small entry teaser in 50% content-width).', 'piratenkleider' ),
                   'default' => $defaultoptions['teaser-titleup-halfwidth'],
                   'parent'  => 'auszuege'
               ), 
               'teaser-datebox-halfwidth' => array(
                   'type'    => 'select',
-                  'title'   => __( 'Symbolbild/Datumsbox', 'piratenkleider' ),
-                  'label'   => __( 'Links des Textauszuges das Datum, das Artikelbild, ein Bild des Artikels oder ein verlinktes Video anzeigen; abh&auml;ngig vom Inhalt des Artikels. (Bei Beitr&auml;gen &uuml;ber halbe Breite)', 'piratenkleider' ),
-                  'default' => $defaultoptions['teaser-datebox-halfwidth'],
+                  'title'   => __( 'Layout entry info', 'piratenkleider' ),
+                  'label'   => __( 'Sets a thumbnail, image, datebox, youtube-video or default image in front of excerpt. (Small entry teaser in 50% content-width).', 'piratenkleider' ),
+                  'default' => $defaultoptions['teaser-datebox'],
 		  'liste'   =>  array(
-				0 => __("Datumsbox anzeigen","piratenkleider"), 
-				1 => __("Reihenfolge: Artikelbild, erstes Bild, erstes Video oder Ersatzbild zeigen","piratenkleider"), 	    
-				2 => __("Reihenfolge: Erstes Bild, Artikelbild, erstes Video oder Ersatzbild zeigen","piratenkleider"), 
-				3 => __("Reihenfolge: Erstes Video, Artikelbild, erstes Bild oder Ersatzbild zeigen","piratenkleider"), 
-				4 => __("Reihenfolge: Erstes Video, erstes Bild, Artikelbild oder Ersatzbild zeigen","piratenkleider"), 
-				5 => __("Nichts anzeigen","piratenkleider")), 
+				0 => __("Display datebox","piratenkleider"), 
+				1 => __("Display in order: "
+                                        . "Thumbnail, first image in content if exist, "
+                                        . "YouTube-Embed by first existing YouTube-Link in content "
+                                        . "or default image","piratenkleider"),
+                                2 => __("Display in order: "
+                                        . "First image in content if exist, thumbnail, "
+                                        . "YouTube-Embed by first existing YouTube-Link in content "
+                                        . "or default image","piratenkleider"), 
+                                3 => __("Display in order: "
+                                        . "YouTube-Embed by first existing YouTube-Link in content "
+                                        . " thumbnail, first image in content if exist, "
+                                        . "or default image","piratenkleider"), 
+                                4 => __("Display in order: "
+                                        . "YouTube-Embed by first existing YouTube-Link in content "
+                                        . " first image in content if exist, thumbnail, "
+                                        . "or default image","piratenkleider"),
+				5 => __("Hide entry info","piratenkleider")), 
 
                   'parent'  => 'auszuege'		  
               ), 
 	      'teaser-floating-halfwidth' => array(
                   'type'    => 'bool',
-                  'title'   => __( 'Flie&szlig;ender Text', 'piratenkleider' ),
-                  'label'   => __( 'Text umflie&szlig;t das Bild (Bei Beitr&auml;gen &uuml;ber halbe Breite)', 'piratenkleider' ),
+                  'title'   => __( 'Floating excerpt', 'piratenkleider' ),
+                  'label'   => __( 'Excerpt text will float around entry info. (Small entry teaser in 50% content-width).', 'piratenkleider' ),
                   'default' => $defaultoptions['teaser-floating-halfwidth'],
                   'parent'  => 'auszuege'
               ), 	       
 	       
                'teaser-dateline-halfwidth' => array(
                   'type'    => 'bool',
-                  'title'   => __( 'Datumszeile', 'piratenkleider' ),
-                  'label'   => __( 'Datumszeile vor dem Text, falls keine Datumsbox angezeigt wird (Bei Beitr&auml;gen &uuml;ber halbe Breite).', 'piratenkleider' ),
+                  'title'   => __( 'Date', 'piratenkleider' ),
+                  'label'   => __( 'Show date as first line after title. (Small entry teaser in 50% content-width).', 'piratenkleider' ),
                   'default' => $defaultoptions['teaser-dateline-halfwidth'],
                   'parent'  => 'auszuege'
               ), 
-               
-                           
-               
+                          
               'sliderpars'  => array(
                   'type'    => 'section',
                   'title'   => __( 'Slider', 'piratenkleider' ),                      
               ),
               'slider-aktiv' => array(
                   'type'    => 'bool',
-                  'title'   => __( 'Aktivieren', 'piratenkleider' ),
-                  'label'   => __( 'Slider im Teaserbereich auf der Startseite aktivieren. <br>Die Auswahl der Plakatbilder kann unter den Defaultbildern angepasst werden.', 'piratenkleider' ),
+                  'title'   => __( 'Aktivate', 'piratenkleider' ),
+                  'label'   => __( 'Activates slider for start pages.', 'piratenkleider' ),
                   'default' => $defaultoptions['slider-aktiv'],
                   'parent'  => 'sliderpars'
               ),
 
             'teaser-subtitle' => array(
                   'type'    => 'text',
-                  'title'   => __( 'Bezeichnender Titel f&uuml;r Teaser', 'piratenkleider' ),
-                  'label'   => __( 'Dieser Text wird oberhalb der Titel angezeigt.', 'piratenkleider' ),
+                  'title'   => __( 'Subtitle', 'piratenkleider' ),
+                  'label'   => __( 'Text in front of every slider excerpt.', 'piratenkleider' ),
                   'default' => $defaultoptions['teaser-subtitle'],
                   'parent'  => 'sliderpars'
               ),  
              'teaser-title-maxlength' => array(
                   'type'    => 'number',
-                  'title'   => __( 'Textl&auml;nge', 'piratenkleider' ),
-                  'label'   => __( 'Maximale Textl&auml;nge des Titels im Teaser.', 'piratenkleider' ),
+                  'title'   => __( 'Title length', 'piratenkleider' ),
+                  'label'   => __( 'Maximum number of chars for title in slider.', 'piratenkleider' ),
                   'default' => $defaultoptions['teaser-title-maxlength'],
                    'parent'  => 'sliderpars'
               ),   
              'teaser-title-words' => array(
                   'type'    => 'number',
-                  'title'   => __( 'Wortzahl', 'piratenkleider' ),
-                  'label'   => __( 'Zahl der Worte im Teaser. Die maximale Textl&auml;nge begrenzt diesen Wert jedoch.', 'piratenkleider' ),
+                  'title'   => __( 'Number of words', 'piratenkleider' ),
+                  'label'   => __( 'Maximum number of words in title. (Cannot have more chars as maximum title length).', 'piratenkleider' ),
                   'default' => $defaultoptions['teaser-title-words'],
                    'parent'  => 'sliderpars'
               ),
@@ -1302,24 +1324,24 @@ $setoptions = array(
                
               'slider-catid' => array(
                   'type'    => 'select',
-                  'title'   => __( 'Kategorie', 'piratenkleider' ),
-                  'label'   => __( 'Aus welcher Artikelkategorie sollen die Slider genommen werden.', 'piratenkleider' ),
+                  'title'   => __( 'Category', 'piratenkleider' ),
+                  'label'   => __( 'Chose category for slider entries.', 'piratenkleider' ),
                   'liste'   => $currentcatliste,
                   'default' => $defaultoptions['slider-catid'],
                    'parent'  => 'sliderpars'
               ), 
               'slider-numberarticle' => array(
                   'type'    => 'select',
-                  'title'   => __( 'Maximale Anzahl der Artikel', 'piratenkleider' ),
-                  'label'   => __( 'Wie viele Slides sollen maximal gezeigt werden.', 'piratenkleider' ),
-                  'liste'   => array(2 => 2,3 => 3, 4 => 4, 5 => 5, 6 => 6),
+                  'title'   => __( 'Number slides', 'piratenkleider' ),
+                  'label'   => __( 'Maximum number for slides to show.', 'piratenkleider' ),
+                  'liste'   => array(2 => 2,3 => 3, 4 => 4, 5 => 5, 6 => 6, 7 => 7),
                   'default' => $defaultoptions['slider-numberarticle'],
                    'parent'  => 'sliderpars'
               ), 
               'slider-animationType' => array(
                   'type'    => 'select',
-                  'title'   => __( 'Animationstyp', 'piratenkleider' ),
-                  'label'   => __( 'Wie soll der Slidewechsel optisch aussehen.', 'piratenkleider' ),
+                  'title'   => __( 'Animation', 'piratenkleider' ),
+                  'label'   => __( 'Type of animation', 'piratenkleider' ),
                   'liste'   => array("fade" => "fade", "slide" => "slide"),
                   'default' => $defaultoptions['slider-animationType'],
                    'parent'  => 'sliderpars'
@@ -1327,46 +1349,46 @@ $setoptions = array(
                  
               'slider-Direction' => array(
                   'type'    => 'select',
-                  'title'   => __( 'Richtung', 'piratenkleider' ),
-                  'label'   => __( 'Von wo sollen Bilder erscheinen.', 'piratenkleider' ),
+                  'title'   => __( 'Direction', 'piratenkleider' ),
+                  'label'   => __( 'On animation type slide, chose direction.', 'piratenkleider' ),
                   'liste'   => array("horizontal" => "horizontal" , "vertical" => "vertical"),
                   'default' => $defaultoptions['slider-Direction'],
                    'parent'  => 'sliderpars'
               ), 
               'slider-slideshowSpeed' => array(
                   'type'    => 'number',
-                  'title'   => __( 'Dauer Bildwechsel', 'piratenkleider' ),
-                  'label'   => __( 'Geschwindigkeit des Bildwechsels in Milisekunden.', 'piratenkleider' ),
+                  'title'   => __( 'Show Duration', 'piratenkleider' ),
+                  'label'   => __( 'Duration for presenting a slide in miliseconds.', 'piratenkleider' ),
                   'default' => $defaultoptions['slider-slideshowSpeed'],
                    'parent'  => 'sliderpars'
               ), 
               'slider-animationDuration' => array(
                   'type'    => 'number',
-                  'title'   => __( 'Animationsdauer', 'piratenkleider' ),
-                  'label'   => __( 'Geschwindigkeit der Animation/Fading beim Bild&uuml;bergang in Milisekunden.', 'piratenkleider' ),
+                  'title'   => __( 'Animation duration', 'piratenkleider' ),
+                  'label'   => __( 'Duration for sliding effect in miliseconds.', 'piratenkleider' ),
                   'default' => $defaultoptions['slider-animationDuration'],
                    'parent'  => 'sliderpars'
               ),  
              'teaser-type' => array(
                   'type'    => 'select',
-                  'title'   => __( 'Teaser-Darstellung', 'piratenkleider' ),
-                  'label'   => __( 'Teaser mit gro&szlig;em Bild &uuml;ber gesamte Breite oder kleinem Thumbnail.', 'piratenkleider' ),
-                  'liste'   => array("big" => "big", "small" => "small"),
+                  'title'   => __( 'Slide Size', 'piratenkleider' ),
+                  'label'   => __( 'Show slide as big thumbnail or small thumbnail with excerpt text.', 'piratenkleider' ),
+                  'liste'   => array("big" => "Big thumbnail", "small" => "Small thumbnail"),
                   'default' => $defaultoptions['teaser-type'],
                    'parent'  => 'sliderpars'
               ), 
                'teaser-showcredits' => array(
                   'type'    => 'bool',
-                  'title'   => __( 'Bildbeschreibung/Credits', 'piratenkleider' ),
-                  'label'   => __( 'Innerhalb des Sliders auch die Bildbeschreibung bzw. Copyrightinfos anzeigen, wenn vorhanden.', 'piratenkleider' ),
+                  'title'   => __( 'Show credits', 'piratenkleider' ),
+                  'label'   => __( 'Display a line with credits/copyright info from thumbnail.', 'piratenkleider' ),
                   'default' => $defaultoptions['teaser-showcredits'],
                   'parent'  => 'sliderpars'
               ),
 
               'slider-defaultbildsrc' => array(
                   'type'    => 'imageurl',
-                  'title'   => __( 'Defaultbild', 'piratenkleider' ),
-                  'label'   => __( 'Ersatz-Sliderbild f&uuml;r Seiten ohne eigenes Artikelbild.', 'piratenkleider' ),
+                  'title'   => __( 'Default slider image', 'piratenkleider' ),
+                  'label'   => __( 'Sets a default slider image in case no thumbnail is present in entry.', 'piratenkleider' ),
                   'default' => $defaultoptions['slider-defaultbildsrc'],		                     
 		  'parent'  => 'sliderpars'
               ),
@@ -1376,227 +1398,236 @@ $setoptions = array(
           )
        ), 
        'contentbereich'   => array(
-           'tabtitle'   => __('Seiten &amp; Artikel', 'piratenkleider'),
+           'tabtitle'   => __('Entries and pages', 'piratenkleider'),
            'fields' => array(
-	          
-              'spezial'  => array(
-                  'type'    => 'section',
-                  'title'   => __( 'Spezielle Eigenschaften', 'piratenkleider' ),
-              ),
-
-              
+	                    
               'post_disclaimer' => array(
                   'type'    => 'textarea',
-                  'title'   => __( 'Disclaimer f&uuml;r (Gast-)Artikel', 'piratenkleider' ),
-                  'label'   => __( 'Definiere ein Text als Disclaimer, der bei Artikeln gezeigt werden kann. ', 'piratenkleider' ),
+                  'title'   => __( 'Disclaimer', 'piratenkleider' ),
+                  'label'   => __( 'Default disclaimer text.', 'piratenkleider' ),
                   'default' => $defaultoptions['disclaimer_post'],
-		  'parent'  => 'spezial'
-              ),    
-	       
+              ),    	       
 	       
 	      'category'  => array(
                   'type'    => 'section',
-                  'title'   => __( 'Indexseiten (Kategorien, Tags und andere)', 'piratenkleider' ),
+                  'title'   => __( 'Index pages', 'piratenkleider' ),
               ),
 	       
 	      'category-teaser'   => array(
                   'type'    => 'bool',
-                  'title'   => __( 'Slider aktivieren', 'piratenkleider' ),
-                  'label'   => __( 'Kategorieseiten mit Slider wie auf Startseite darstellen', 'piratenkleider' ),
+                  'title'   => __( 'Slider', 'piratenkleider' ),
+                  'label'   => __( 'Activate slider like on start page.', 'piratenkleider' ),
                   'default' => $defaultoptions['category-teaser'],
 		  'parent'  => 'category'
-              ),   
-	       
+              ),   	       
 	       
 	    'category-num-article-fullwidth' => array(
                   'type'    => 'number',
-                  'title'   => __( 'Beitr&auml;ge &uuml;ber ganze Breite', 'piratenkleider' ),
-                  'label'   => __( 'Zahl der Beitr&auml;ge, die &uuml;ber die gesamte Inhaltsbreite gehen.', 'piratenkleider' ),
+                  'title'   => __( 'Number Entries in big sized view', 'piratenkleider' ),
+                  'label'   => __( 'How many entries will be displayed in 100% width of content size.', 'piratenkleider' ),
                   'default' => $defaultoptions['category-num-article-fullwidth'],
 		'parent'  => 'category'
               ),
               'category-num-article-halfwidth' => array(
                   'type'    => 'select',
-                  'title'   => __( 'Beitr&auml;ge &uuml;ber halbe Breite', 'piratenkleider' ),
-                  'label'   => __( 'Zahl der Beitr&auml;ge, die in Spalten mit je zwei Beitr&auml;gen nebeneinander, angezeigt werden.', 'piratenkleider' ),
+                  'title'   => __( 'Number Entries in half sized view', 'piratenkleider' ),
+                  'label'   => __( 'How many entries will be displayed in 50% width of content size.', 'piratenkleider' ),
                   'liste'   => array(0 => 0, 2 => 2, 4 => 4, 6 => 6, 8 => 8, 10=>10, 12=>12, 14=>14, 16=>16),
                   'default' => $defaultoptions['category-num-article-halfwidth'],
 		  'parent'  => 'category'
               ),    
 	    'category-teaser-maxlength' => array(
                   'type'    => 'number',
-                  'title'   => __( 'L&auml;nge des Teasertextes (Artikelauszug)', 'piratenkleider' ),
-                  'label'   => __( 'Maximale Textl&auml;nge f&uuml;r Artikelausz&uuml;ge', 'piratenkleider' ),
+                  'title'   => __( 'Length Excerpt', 'piratenkleider' ),
+                  'label'   => __( 'Maximum numbers of chars in excerpt.', 'piratenkleider' ),
                   'default' => $defaultoptions['category-teaser-maxlength'],
 		'parent'  => 'category'
               ),                 
              'category-teaser-titleup' => array(
                   'type'    => 'bool',
-                  'title'   => __( 'Titel oben', 'piratenkleider' ),
-                  'label'   => __( 'Titel &uuml;ber Logo/Datumsbox und Text', 'piratenkleider' ),
+                  'title'   => __( 'Title up', 'piratenkleider' ),
+                  'label'   => __( 'Title above thumbnail, date and text.', 'piratenkleider' ),
                   'default' => $defaultoptions['category-teaser-titleup'],
                   'parent'  => 'category'
               ), 
               'category-teaser-datebox' => array(
                   'type'    => 'select',
-                  'title'   => __( 'Symbolbild/Datumsbox', 'piratenkleider' ),
-                  'label'   => __( 'Links des Textauszuges das Datum, das Artikelbild, ein Bild des Artikels oder ein verlinktes Video anzeigen; abh&auml;ngig vom Inhalt des Artikels.', 'piratenkleider' ),
+                  'title'   => __( 'Layout entry info', 'piratenkleider' ),
+                  'label'   => __( 'Sets a thumbnail, image, datebox, youtube-video or default image in front of excerpt. (Small entry teaser in 50% content-width).', 'piratenkleider' ),
                   'default' => $defaultoptions['category-teaser-datebox'],
 		  'liste'   =>  array(
-				0 => __("Datumsbox anzeigen","piratenkleider"), 
-				1 => __("Reihenfolge: Artikelbild, erstes Bild, erstes Video oder Ersatzbild zeigen","piratenkleider"), 	    
-				2 => __("Reihenfolge: Erstes Bild, Artikelbild, erstes Video oder Ersatzbild zeigen","piratenkleider"), 
-				3 => __("Reihenfolge: Erstes Video, Artikelbild, erstes Bild oder Ersatzbild zeigen","piratenkleider"), 
-				4 => __("Reihenfolge: Erstes Video, erstes Bild, Artikelbild oder Ersatzbild zeigen","piratenkleider"), 
-				5 => __("Nichts anzeigen","piratenkleider")), 
+				0 => __("Display datebox","piratenkleider"), 
+				1 => __("Display in order: "
+                                        . "Thumbnail, first image in content if exist, "
+                                        . "YouTube-Embed by first existing YouTube-Link in content "
+                                        . "or default image","piratenkleider"),
+                                2 => __("Display in order: "
+                                        . "First image in content if exist, thumbnail, "
+                                        . "YouTube-Embed by first existing YouTube-Link in content "
+                                        . "or default image","piratenkleider"), 
+                                3 => __("Display in order: "
+                                        . "YouTube-Embed by first existing YouTube-Link in content "
+                                        . " thumbnail, first image in content if exist, "
+                                        . "or default image","piratenkleider"), 
+                                4 => __("Display in order: "
+                                        . "YouTube-Embed by first existing YouTube-Link in content "
+                                        . " first image in content if exist, thumbnail, "
+                                        . "or default image","piratenkleider"),
+				5 => __("Hide entry info","piratenkleider")),
 
                   'parent'  => 'category'
               ), 
-	      'category-teaser-floating' => array(
-                  'type'    => 'bool',
-                  'title'   => __( 'Flie&szlig;ender Text', 'piratenkleider' ),
-                  'label'   => __( 'Text umflie&szlig;t das Bild', 'piratenkleider' ),
-                  'default' => $defaultoptions['category-teaser-floating'],
-                  'parent'  => 'category'
-              ), 
+	    'category-teaser-floating' => array(
+                'type'    => 'bool',
+                'title'   => __( 'Floating excerpt', 'piratenkleider' ),
+                'label'   => __( 'Excerpt text will float around entry info.', 'piratenkleider' ),
+                'default' => $defaultoptions['category-teaser-floating'],
+                'parent'  => 'category'
+            ), 
 	       
-               'category-teaser-dateline' => array(
-                  'type'    => 'bool',
-                  'title'   => __( 'Datumszeile', 'piratenkleider' ),
-                  'label'   => __( 'Datumszeile vor dem Text, falls keine Datumsbox angezeigt wird', 'piratenkleider' ),
-                  'default' => $defaultoptions['category-teaser-dateline'],
-                  'parent'  => 'category'
-              ), 
+            'category-teaser-dateline' => array(
+                'type'    => 'bool',
+                'title'   => __( 'Date', 'piratenkleider' ),
+                'label'   => __( 'Show date as first line after title.', 'piratenkleider' ),
+                'default' => $defaultoptions['category-teaser-dateline'],
+                'parent'  => 'category'
+            ), 
                
-                'category-teaser-maxlength-halfwidth' => array(
-                  'type'    => 'number',
-                  'title'   => __( 'L&auml;nge des Teasertextes', 'piratenkleider' ),
-                  'label'   => __( 'Maximale Textl&auml;nge f&uuml;r Artikelausz&uuml;ge (Bei Beitr&auml;gen &uuml;ber halbe Breite).', 'piratenkleider' ),
-                  'default' => $defaultoptions['category-teaser-maxlength-halfwidth'],
+            'category-teaser-maxlength-halfwidth' => array(
+                'type'    => 'number',
+                'title'   => __( 'Length Excerpt', 'piratenkleider' ),
+                'label'   => __( 'Maximum numbers of chars in excerpt.', 'piratenkleider' ),
+                'default' => $defaultoptions['category-teaser-maxlength-halfwidth'],
 		'parent'  => 'category'
-              ),                 
-             'category-teaser-titleup-halfwidth' => array(
-                  'type'    => 'bool',
-                  'title'   => __( 'Titel oben', 'piratenkleider' ),
-                  'label'   => __( 'Titel &uuml;ber Logo/Datumsbox und Text (Bei Beitr&auml;gen &uuml;ber halbe Breite).', 'piratenkleider' ),
-                  'default' => $defaultoptions['category-teaser-titleup-halfwidth'],
-                  'parent'  => 'category'
-              ), 
-              'category-teaser-datebox-halfwidth' => array(
-                  'type'    => 'select',
-                  'title'   => __( 'Symbolbild/Datumsbox', 'piratenkleider' ),
-                  'label'   => __( 'Links des Textauszuges das Datum, das Artikelbild, ein Bild des Artikels oder ein verlinktes Video anzeigen; abh&auml;ngig vom Inhalt des Artikels. (Bei Beitr&auml;gen &uuml;ber halbe Breite)', 'piratenkleider' ),
-                  'default' => $defaultoptions['category-teaser-datebox-halfwidth'],
-		  'liste'   =>  array(
-				0 => __("Datumsbox anzeigen","piratenkleider"), 
-				1 => __("Reihenfolge: Artikelbild, erstes Bild, erstes Video oder Ersatzbild zeigen","piratenkleider"), 	    
-				2 => __("Reihenfolge: Erstes Bild, Artikelbild, erstes Video oder Ersatzbild zeigen","piratenkleider"), 
-				3 => __("Reihenfolge: Erstes Video, Artikelbild, erstes Bild oder Ersatzbild zeigen","piratenkleider"), 
-				4 => __("Reihenfolge: Erstes Video, erstes Bild, Artikelbild oder Ersatzbild zeigen","piratenkleider"), 
-				5 => __("Nichts anzeigen","piratenkleider")), 
+            ),                 
+            'category-teaser-titleup-halfwidth' => array(
+                'type'    => 'bool',
+                'title'   => __( 'Title up', 'piratenkleider' ),
+                'label'   => __( 'Title above thumbnail, date and text.', 'piratenkleider' ),
+                'default' => $defaultoptions['category-teaser-titleup-halfwidth'],
+                'parent'  => 'category'
+            ), 
+            'category-teaser-datebox-halfwidth' => array(
+                'type'    => 'select',
+                'title'   => __( 'Layout entry info', 'piratenkleider' ),
+                'label'   => __( 'Sets a thumbnail, image, datebox, youtube-video or default image in front of excerpt. (Small entry teaser in 50% content-width).', 'piratenkleider' ),
+                'default' => $defaultoptions['category-teaser-datebox-halfwidth'],
+		'liste'   =>  array(
+				0 => __("Display datebox","piratenkleider"), 
+				1 => __("Display in order: "
+                                        . "Thumbnail, first image in content if exist, "
+                                        . "YouTube-Embed by first existing YouTube-Link in content "
+                                        . "or default image","piratenkleider"),
+                                2 => __("Display in order: "
+                                        . "First image in content if exist, thumbnail, "
+                                        . "YouTube-Embed by first existing YouTube-Link in content "
+                                        . "or default image","piratenkleider"), 
+                                3 => __("Display in order: "
+                                        . "YouTube-Embed by first existing YouTube-Link in content "
+                                        . " thumbnail, first image in content if exist, "
+                                        . "or default image","piratenkleider"), 
+                                4 => __("Display in order: "
+                                        . "YouTube-Embed by first existing YouTube-Link in content "
+                                        . " first image in content if exist, thumbnail, "
+                                        . "or default image","piratenkleider"),
+				5 => __("Hide entry info","piratenkleider")), 
 
-                  'parent'  => 'category'
-              ), 
-	       'category-teaser-floating-halfwidth' => array(
-                  'type'    => 'bool',
-                  'title'   => __( 'Flie&szlig;ender Text', 'piratenkleider' ),
-                  'label'   => __( 'Text umflie&szlig;t das Bild (Bei Beitr&auml;gen &uuml;ber halbe Breite)', 'piratenkleider' ),
-                  'default' => $defaultoptions['category-teaser-floating-halfwidth'],
-                  'parent'  => 'category'
-              ), 
-               'category-teaser-dateline-halfwidth' => array(
-                  'type'    => 'bool',
-                  'title'   => __( 'Datumszeile', 'piratenkleider' ),
-                  'label'   => __( 'Datumszeile vor dem Text, falls keine Datumsbox angezeigt wird (Bei Beitr&auml;gen &uuml;ber halbe Breite).', 'piratenkleider' ),
-                  'default' => $defaultoptions['category-teaser-dateline-halfwidth'],
-                  'parent'  => 'category'
-              ), 
-	      'continuelink'   => array(
-                  'type'    => 'select',
-                  'title'   => __( 'Weiterlesen-Link', 'piratenkleider' ),
-                  'label'   => __( 'Anzeige des Links zum Weiterlesen immer anzeigen oder nur dann, wenn der Textauszug auf einer Indexseite gek&uuml;rzt werden muss.', 'piratenkleider' ),
-                  'default' => $defaultoptions['category-teaser-datebox-halfwidth'],
-		  'liste'   =>  array(
-				0 => __("Nur wenn Artikel l&auml;nger ist als Textauszug","piratenkleider"), 
-				1 => __("Immer anzeigen","piratenkleider"), 	    
-			        2 => __("Nie anzeigen","piratenkleider"), 	    
+                'parent'  => 'category'
+            ), 
+	    'category-teaser-floating-halfwidth' => array(
+                'type'    => 'bool',
+                'title'   => __( 'Floating excerpt', 'piratenkleider' ),
+                'label'   => __( 'Excerpt text will float around entry info. (Small entry teaser in 50% content-width).', 'piratenkleider' ),
+                'default' => $defaultoptions['category-teaser-floating-halfwidth'],
+                'parent'  => 'category'
+            ), 
+            'category-teaser-dateline-halfwidth' => array(
+                'type'    => 'bool',
+                'title'   => __( 'Date', 'piratenkleider' ),
+                'label'   => __( 'Show date as first line after title.', 'piratenkleider' ),
+                'default' => $defaultoptions['category-teaser-dateline-halfwidth'],
+                'parent'  => 'category'
+            ), 
+	    'continuelink'   => array(
+                'type'    => 'select',
+                'title'   => __( 'Show Continue', 'piratenkleider' ),
+                'label'   => __( 'Whether to display a continue reading link.', 'piratenkleider' ),
+                'default' => $defaultoptions['category-teaser-datebox-halfwidth'],
+		'liste'   =>  array(
+				0 => __("Only if entry text ist longer as excerpt","piratenkleider"), 
+				1 => __("Always","piratenkleider"), 	    
+			        2 => __("Never","piratenkleider"), 	    
 				), 
-                  'parent'  => 'category'
-		),  
+                'parent'  => 'category'
+            ),  
                
-
-               
-               
-               
-	       
-	       
-	      'darstellungseiten'  => array(
+    
+	    'darstellungseiten'  => array(
                   'type'    => 'section',
-                  'title'   => __( 'Thumbnails and default images', 'piratenkleider' ),
-              ),
+                  'title'   => __( 'Pages', 'piratenkleider' ),
+            ),
 	       
-	      'aktiv-defaultseitenbild' => array(
-                  'type'    => 'bool',
-                  'title'   => __( 'Defaultbilder f&uuml;r Seiten', 'piratenkleider' ),
-                  'label'   => __( 'Bilder f&uuml;r Seiten erzwingen, die von sich aus kein Artikelbild definiert haben. Wenn kein Artikelbild vorhanden ist, wird ein Defaultbild gezeigt.', 'piratenkleider' ),
-                  'default' => $defaultoptions['aktiv-defaultseitenbild'],
-		  'parent'  => 'darstellungseiten'
-              ),	      
-	      'seitenbild-size' => array(
-                  'type'    => 'select',
-                  'title'   => __( 'Gr&ouml;&szlig;e', 'piratenkleider' ),
-                  'label'   => __( 'Das Seitenbild kann in einem schmalen (150px) oder gro&szlig;en (240px) Ausschnitt dargestellt werden. ', 'piratenkleider' ),
-                  'default' => $defaultoptions['seitenbild-size'],		                     
-		  'liste'   => array(0 => "klein (150px)", 1 => "gro&szlig; (240px)"),
-		  'parent'  => 'darstellungseiten'
-              ),	
-	      'seiten-defaultbildsrc' => array(
-                  'type'    => 'imageurl',
-                  'title'   => __( 'Defaultbild', 'piratenkleider' ),
-                  'label'   => __( 'Ersatzbild f&uuml;r Seiten ohne eigenes Artikelbild.', 'piratenkleider' ),
-                  'default' => $defaultoptions['src-default-symbolbild'],		                     
-		  'parent'  => 'darstellungseiten',
-		   'maxwidth' => 705,
-		    'maxheight' => 240,
-              ),	
+	    'aktiv-defaultseitenbild' => array(
+                'type'    => 'bool',
+                'title'   => __( 'Default image for pages', 'piratenkleider' ),
+                'label'   => __( 'Display default image for pages without own thumbnail.', 'piratenkleider' ),
+                'default' => $defaultoptions['aktiv-defaultseitenbild'],
+		'parent'  => 'darstellungseiten'
+            ),	      
+	    'seitenbild-size' => array(
+                'type'    => 'select',
+                'title'   => __( 'Size', 'piratenkleider' ),
+                'label'   => __( 'Sets maximum height for page image', 'piratenkleider' ),
+                'default' => $defaultoptions['seitenbild-size'],		                     
+		'liste'   => array(0 => "small (150px)", 1 => "big (240px)"),
+		'parent'  => 'darstellungseiten'
+            ),	
+	    'seiten-defaultbildsrc' => array(
+                'type'    => 'imageurl',
+                'title'   => __( 'Default image', 'piratenkleider' ),
+                'label'   => __( 'Sets a default image.', 'piratenkleider' ),
+                'default' => $defaultoptions['src-default-symbolbild'],		                     
+		'parent'  => 'darstellungseiten',
+		'maxwidth' => 705,
+		'maxheight' => 240,
+            ),	
 	
 	
-	      'darstellungartikel'  => array(
-                  'type'    => 'section',
-                  'title'   => __( 'Artikelbilder', 'piratenkleider' ),
-              ),
+	    'darstellungartikel'  => array(
+                'type'    => 'section',
+                'title'   => __( 'Entries', 'piratenkleider' ),
+            ),
 	       
-	      'aktiv-artikelbild' => array(
-                  'type'    => 'bool',
-                  'title'   => __( 'Defaultbilder f&uuml;r Artikel', 'piratenkleider' ),
-                  'label'   => __( 'Bilder f&uuml;r Artikel erzwingen, die von sich aus kein Artikelbild definiert haben. Wenn kein Artikelbild vorhanden ist, wird ein Defaultbild gezeigt.', 'piratenkleider' ),		  
-                  'default' => $defaultoptions['aktiv-artikelbild'],
-		  'parent'  => 'darstellungartikel'
-              ),
-	      'artikelbild-size' => array(
-                  'type'    => 'select',
-                  'title'   => __( 'Gr&ouml;&szlig;e', 'piratenkleider' ),
-                  'label'   => __( 'Das Artikelbild kann in einem schmalen (150px) oder gro&szlig;en (240px) Ausschnitt dargestellt werden. ', 'piratenkleider' ),
-                  'default' => $defaultoptions['artikelbild-size'],		                     
-		  'liste'   => array(0 => "small (150px)", 1 => "big (240px)"),
-		  'parent'  => 'darstellungartikel'
-              ),	
+	    'aktiv-artikelbild' => array(
+                'type'    => 'bool',
+                'title'   => __( 'Default image for entries', 'piratenkleider' ),
+                'label'   => __( 'Display default image for entries without own thumbnail.', 'piratenkleider' ),		  
+                'default' => $defaultoptions['aktiv-artikelbild'],
+		'parent'  => 'darstellungartikel'
+            ),
+	    'artikelbild-size' => array(
+                'type'    => 'select',
+                'title'   => __( 'Size', 'piratenkleider' ),
+                'label'   => __( 'Sets maximum height for page image.', 'piratenkleider' ),
+                'default' => $defaultoptions['artikelbild-size'],		                     
+                'liste'   => array(0 => "small (150px)", 1 => "big (240px)"),
+		'parent'  => 'darstellungartikel'
+            ),	
 
-	       'artikelbild-src'  => array(
-                  'type'    => 'imageurl',
-                  'title'   => __( 'Bild', 'piratenkleider' ),
-                  'label'   => __( 'Ersatzbild f&uuml;r Artikel ohne eigenes Bild.', 'piratenkleider' ),
-                  'default' =>  $defaultoptions['src-default-artikel-symbolbild'],
-                  'parent'  => 'darstellungartikel',
-		    'maxwidth' => 705,
-		    'maxheight' => 240,
-              ),
-	       
-	       
-	       'darstellungindexseiten'  => array(
-                  'type'    => 'section',
-                  'title'   => __( 'Indexseiten', 'piratenkleider' ),
-              ),
+	    'artikelbild-src'  => array(
+                'type'    => 'imageurl',
+                'title'   => __( 'Default image', 'piratenkleider' ),
+                'label'   => __( 'Sets a default image.', 'piratenkleider' ),
+                'default' =>  $defaultoptions['src-default-artikel-symbolbild'],
+                'parent'  => 'darstellungartikel',
+		'maxwidth' => 705,
+		'maxheight' => 240,
+            ),
+	       	       
+	    'darstellungindexseiten'  => array(
+                'type'    => 'section',
+                'title'   => __( 'Index pages', 'piratenkleider' ),
+            ),
               'aktiv-platzhalterbilder-indexseiten' => array(
                   'type'    => 'bool',
                   'title'   => __( 'Platzhalterbilder', 'piratenkleider' ),
