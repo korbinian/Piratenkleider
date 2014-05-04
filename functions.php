@@ -1666,3 +1666,30 @@ function piratenkleider_paging_bar($total = 1, $perpage =1) {
      }
   }
 }
+
+/* Compatibility for old templates, former Version 3.2 */
+add_filter('page_template', 'piratenkleider_page_template');
+function piratenkleider_page_template($t) {
+    $compatlist = array(
+        'impressum.php' => 'templates/imprint.php',
+        'datenschutzerklaerung.php' => 'templates/privacy-policy.php',
+        'catindex.php'  => 'templates/category-index.php',
+        'pageindex.php' => 'templates/page-index.php',
+        'page-actionpage.php'   => 'templates/actionpage.php'
+    );
+    $page_id = get_queried_object_id();
+    $template = get_post_meta($page_id, '_wp_page_template', true);
+    
+    if($template && 'default'!= $template) {
+        foreach ( $compatlist as $key => $value ) { 
+            if ($key == $template) {
+                 if(file_exists(trailingslashit(STYLESHEETPATH) . $value)){
+                    $t = trailingslashit(STYLESHEETPATH) . $value;
+                } elseif(file_exists(trailingslashit(TEMPLATEPATH) . $value)) {
+                    $t = trailingslashit(TEMPLATEPATH) . $value;
+                }
+            }
+        } 
+    }
+    return $t;
+}
