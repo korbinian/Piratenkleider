@@ -361,7 +361,7 @@ $default_toplink_liste = array(
 	'active'    => 1,
     ),
     'link4'  => array(
-	'name'	    => __('Vorstand', 'piratenkleider' ),
+	'name'	    => __('Chair', 'piratenkleider' ),
 	'content'  => 'https://vorstand.piratenpartei.de',
 	'active'    => 0,
     ),  
@@ -371,7 +371,7 @@ $default_toplink_liste = array(
 	'active'    => 1,
     ),
     'link6'  => array(
-	'name'	    => __('Spenden', 'piratenkleider' ),
+	'name'	    => __('Donate', 'piratenkleider' ),
 	'content'  => 'https://spenden.piratenpartei.de',
 	'active'    => 1,
     ),
@@ -387,26 +387,6 @@ $default_toplink_liste = array(
     ),  
 );
 
-/* 
- * Default Links for laws in imprint 
- */
-$default_imprint_laws_list = array(    
-    'link1'  => array(
-	'name'	    => __('Gesetz &uuml;ber politische Parteien (Parteiengesetz)', 'piratenkleider' ),
-	'content'  => 'https://www.bundestag.de/bundestag/aufgaben/rechtsgrundlagen/pg_pdf.pdf',
-	'active'    => 1,
-    ),
-    'link2'  => array(
-	'name'	    => __('Satzung der Piratenpartei Deutschland', 'piratenkleider' ),
-	'content'  => 'https://wiki.piratenpartei.de/Satzung',
-	'active'    => 1,
-    ),
-    'link3'  => array(
-	'name'	    => __('Jeweilige Landessatzung  der Piratenpartei Deutschland', 'piratenkleider' ),
-	'content'  => 'https://wiki.piratenpartei.de/Satzungen',
-	'active'    => 1,
-    ), 
-);
 
 /**
  * Liste der Defaultbilder fuer Seiten und Slider
@@ -2289,7 +2269,7 @@ $setoptions = array(
 		), 
 	       'kontaktemail' => array(
                   'type'    => 'email',
-                  'title'   => __( 'Contect email', 'piratenkleider' ),
+                  'title'   => __( 'Contact email', 'piratenkleider' ),
                   'label'   => __( 'Public email address for contacting website owner.', 'piratenkleider' ),
                   'parent'  => 'impressum',		    
 		), 
@@ -2307,13 +2287,7 @@ $setoptions = array(
 		  'default'	=> '',
                   'parent'  => 'impressum',
 		), 
-                'zeigerechtsvorschriften' => array(
-                  'type'    => 'bool',
-                  'title'   => __( 'Display Related laws', 'piratenkleider' ),
-                  'label'   => __( 'Display a list for related laws', 'piratenkleider' ),
-		  'default'	=> $defaultoptions['zeigerechtsvorschriften'],
-                  'parent'  => 'impressum',
-		), 
+       
 	       'lizenzen' => array(
                   'type'    => 'textarea',
                   'title'   => __( 'Copyright informations', 'piratenkleider' ),

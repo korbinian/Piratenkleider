@@ -150,30 +150,10 @@
                       ?>
             </address>              
                <?php } ?>
-         <?php } 
+         <?php } ?> 
          
          
-         if ($options['zeigerechtsvorschriften']==1) { 
-            global $default_imprint_laws_list;
-            $out = '';
-            $out .= '<h2>'.__('Rechtsvorschriften','piratenkleider').'</h2>';
-            $liste = '';
-            foreach ( $default_imprint_laws_list as $entry => $listdata ) {        
-                $value = $default_imprint_laws_list[$entry]['content'];
-                $active = $default_imprint_laws_list[$entry]['active'];
-                if (($active ==1) && ($value)) {
-                     $liste .=  '<li><a href="'.$value.'">';
-                     $liste .=  $listdata['name'].'</a></li>';
-                     $liste .=  "\n";
-                }
-            }  
-            if (strlen($liste)>0) {
-                echo $out;
-                echo "\n<ul>\n";
-                echo $liste;
-                echo "\n</ul>\n";
-            }   
-         } ?>
+       
  
             
            

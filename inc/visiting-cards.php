@@ -8,19 +8,13 @@
 // Register Custom Post Type
 function piratenkleider_person_post_type() {
 	$labels = array(
-		'name'                => _x( 'Personen', 'Informationen f&uuml;r Personenseiten und Visitenkarten', 'piratenkleider' ),
-		'singular_name'       => _x( 'Person', 'Personeninformationen', 'piratenkleider' ),
-		'menu_name'           => __( 'Personen', 'piratenkleider' ),
-		'parent_item_colon'   => __( 'Parent Item:', 'piratenkleider' ),		
-		'search_items'        => __( 'Person suchen', 'piratenkleider' ),
-		'not_found'           => __( 'Person nicht gefunden', 'piratenkleider' ),
-		'not_found_in_trash'  => __( 'Person nicht im Papierkorb gefunden', 'piratenkleider' ),
-		'add_new_item'       => __('Neue Personen-Visitenkarte anlegen', 'piratenkleider' ),
-            
+		'name'                => _x( 'Personal', 'Informations about people', 'piratenkleider' ),
+		'singular_name'       => _x( 'Person', 'Informations about person', 'piratenkleider' ),
+		'menu_name'           => __( 'Person', 'piratenkleider' ),            
 	);
 	$args = array(
 		'label'               => __( 'Person', 'piratenkleider' ),
-		'description'	      => __( 'Erstellen und verwalten von Personeninformationen', 'piratenkleider' ),
+		'description'	      => __( 'Manage people for visiting card function', 'piratenkleider' ),
 		'labels'              => $labels,
 		'supports'            => array( 'title', 'thumbnail', 'editor'),
 		'hierarchical'        => false,
@@ -55,7 +49,7 @@ add_action( 'init', 'piratenkleider_taxonomies_person', 0 );
 function piratenkleider_person_metabox() {
     add_meta_box(
         'piratenkleider_person_metabox',
-        __( 'Beschreibung der Person', 'piratenkleider' ),
+        __( 'Personal description', 'piratenkleider' ),
         'piratenkleider_person_metabox_content',
         'person',
         'normal',
@@ -66,27 +60,28 @@ function piratenkleider_person_metabox_content( $post ) {
     global $defaultoptions;
     global $post;
     $academictitle = array(
-	"Prof.", 
-	"Dr."
+	__("Prof.", 'piratenkleider'), 
+	__("Doc.", 'piratenkleider'),
+        __("PD", 'piratenkleider')
     );
 	wp_nonce_field( plugin_basename( __FILE__ ), 'person_metabox_content_nonce' );
 	?>
 
         
         <p>
-		<label for="person_first_name"><?php _e( "Vorname", 'piratenkleider' ); ?>:</label>
+		<label for="person_first_name"><?php _e( "Pre name", 'piratenkleider' ); ?>:</label>
 		<br />
 		<input class="widefat" type="text" name="person_first_name"
 		       id="person_first_name" value="<?php echo esc_attr( get_post_meta( $post->ID, 'person_first_name', true ) ); ?>" size="15" />
 	</p>
 	<p>
-		<label for="person_last_name"><?php _e( "Nachname", 'piratenkleider' ); ?>:</label>
+		<label for="person_last_name"><?php _e( "Last name", 'piratenkleider' ); ?>:</label>
 		<br />
 		<input class="widefat" type="text" name="person_last_name"
 		       id="person_last_name" value="<?php echo esc_attr( get_post_meta( $post->ID, 'person_last_name', true ) ); ?>" size="15" />
 	</p>
         <p>
-		<label for="person_academic"><?php _e( "Akademischer Titel", 'piratenkleider' ); ?>:</label>
+		<label for="person_academic"><?php _e( "Academic title", 'piratenkleider' ); ?>:</label>
 		<br />
 		<select name="person_academic" id="person_academic">
 		    <option value=""></option>
@@ -110,13 +105,13 @@ function piratenkleider_person_metabox_content( $post ) {
         
         
         <p>
-		<label for="person_shortdesc"><?php _e( "Kurzbeschreibung", 'piratenkleider' ); ?>:</label>
+		<label for="person_shortdesc"><?php _e( "Short description", 'piratenkleider' ); ?>:</label>
 		<br />
 		<input class="widefat" type="text" name="person_shortdesc"
 		       id="person_shortdesc" value="<?php echo esc_attr( get_post_meta( $post->ID, 'person_shortdesc', true ) ); ?>" size="70" />
 	</p>
 	<p>
-	    <label for="person_bild"><?php _e( "Beitrags- oder Symbolbild (URL)", 'piratenkleider' ); ?>:</label>
+	    <label for="person_bild"><?php _e( "Personal image", 'piratenkleider' ); ?>:</label>
 	    <br />
 	     
 	    
@@ -144,32 +139,32 @@ function piratenkleider_person_metabox_content( $post ) {
 		    value="<?php echo $person_bildid; ?>" />	    
 	     
 	     
-	     <input type="button" id="person_bild-button" class="button" value="<?php _e( "Bild ausw&auml;hlen oder hochladen", 'piratenkleider' ); ?>" />
-	    <small> <a href="#" class="custom_clear_image_button">Bild entfernen</a></small> 
+	     <input type="button" id="person_bild-button" class="button" value="<?php _e( "Upload and chose image", 'piratenkleider' ); ?>" />
+	    <small> <a href="#" class="custom_clear_image_button"><?php _e("Remove image",'Piratenkleider'); ?></a></small> 
 	</p>
 	
 	<p>
-		<label for="person_email"><?php _e( "E-Mail-Adresse", 'piratenkleider' ); ?>:</label>
+		<label for="person_email"><?php _e( "Email", 'piratenkleider' ); ?>:</label>
 		<br />
 		<input  type="text" name="person_email"
 			id="person_email" value="<?php echo esc_attr( get_post_meta( $post->ID, 'person_email', true ) ); ?>" size="30" />
 	</p>
 	<p>
-		<label for="person_url"><?php _e( "Homepage/Blog (URL)", 'piratenkleider' ); ?>:</label>
+		<label for="person_url"><?php _e( "Homepage (URL)", 'piratenkleider' ); ?>:</label>
 		<br />
 		<input  type="text" name="person_url"
 			id="person_url" value="<?php echo esc_attr( get_post_meta( $post->ID, 'person_url', true ) ); ?>" size="30" />
 	</p>
 	
 	<p>
-		<label for="person_wiki"><?php _e( "Wiki Benutzerseite (Benutzername)", 'piratenkleider' ); ?>:</label>
+		<label for="person_wiki"><?php _e( "Wiki Page (Username)", 'piratenkleider' ); ?>:</label>
 		<br />
 		<input  type="text" name="person_wiki"
 			id="person_wiki" value="<?php echo esc_attr( get_post_meta( $post->ID, 'person_wiki', true ) ); ?>" size="10" />
 	</p>
 	
 	<p>
-		<label for="person_twitter"><?php _e( "Twitter (Account)", 'piratenkleider' ); ?>:</label>
+		<label for="person_twitter"><?php _e( "Twitter (Accountname)", 'piratenkleider' ); ?>:</label>
 		<br />
 		<input  type="text" name="person_twitter"
 			id="person_twitter" value="<?php echo esc_attr( get_post_meta( $post->ID, 'person_twitter', true ) ); ?>" size="10" />
@@ -191,7 +186,7 @@ function piratenkleider_person_metabox_content( $post ) {
 	</p>
 	
 	<p>
-		<label for="person_newsfeed"><?php _e( "Newsfeed aus Blog oder CMS (RSS URL)", 'piratenkleider' ); ?>:</label>
+		<label for="person_newsfeed"><?php _e( "Personal Newsfeed (URL)", 'piratenkleider' ); ?>:</label>
 		<br />
 		<input  type="text" name="person_newsfeed"
 			id="person_newsfeed" value="<?php echo esc_attr( get_post_meta( $post->ID, 'person_newsfeed', true ) ); ?>" size="30" />
@@ -360,11 +355,11 @@ function piratenkleider_person_metabox_updated_messages( $messages ) {
 	global $post, $post_ID;
 	$messages['person'] = array(
 		0 => '',
-		1 => __('Die Personeninformationen wurden aktualisiert. ', 'piratenkleider'),
-		2 => __('Die Personeninformationen wurden aktualisiert.', 'piratenkleider'),
-		3 => __('Personeninformationen wurden gel&ouml;scht.', 'piratenkleider'),
-		6 => __('Personeninformationen wurden ver&ouml;ffentlicht.', 'piratenkleider'),
-		7 => __('Personeninformationen wurden gespeichert.', 'piratenkleider'),
+		1 => __('Personal informations updated.', 'piratenkleider'),
+		2 => __('Personal informations updated.', 'piratenkleider'),
+		3 => __('Personal informations removed.', 'piratenkleider'),
+		6 => __('Personal informations publiced.', 'piratenkleider'),
+		7 => __('Personal informations saved.', 'piratenkleider'),
 			);
 	return $messages;
 }
@@ -455,7 +450,7 @@ function piratenkleider_display_person ($post_id = 0, $format = 'full', $profill
 	if (isset($person_url) || isset($person_email) 
 		|| isset($person_facebook) || isset($person_twitter)
 		|| isset($person_wiki) || isset($person_google)) {
-	    $kontaktdata .= '<h3 class="contact">'.__('Kontakt','piratenkleider').'</h3>';
+	    $kontaktdata .= '<h3 class="contact">'.__('Contact','piratenkleider').'</h3>';
 	    $kontaktdata .= "<ul class=\"contact\">\n";
 	    if (isset($person_email) && strlen($person_email)>1) {
 		$kontaktdata .= "<li class=\"email\"><span>E-Mail: </span><a href=\"mailto:".$person_email."\">".$person_email."</a></li>\n";
@@ -499,7 +494,7 @@ function piratenkleider_display_person ($post_id = 0, $format = 'full', $profill
 	if ($format== 'full') {
 	    $out .= $bildfullwidth."\n";
 	    $out .= "<div class=\"textinfo\">\n";
-	    $out .= '<h3 class="about">'.__('&Uuml;ber','piratenkleider').' ';
+	    $out .= '<h3 class="about">'.__('About','piratenkleider').' ';
 	    if ($profillink==1) $out .= '<a href="'.$person_link.'">';	   
 	    $out .= $fullname;
 	    if ($profillink==1) $out .= '</a>';
@@ -517,10 +512,10 @@ function piratenkleider_display_person ($post_id = 0, $format = 'full', $profill
                     $items = $feed->get_items(0, $limit); // create an array of items
                 }
                 if ($limit == 0) {
-                    $out .= '<div class="personfeed skip">The feed is either empty or unavailable.</div>';
+                    $out .= '<div class="personfeed skip">'.__("The feed is either empty or unavailable.",'piratenkleider').'</div>';
                 } else {
                      $out .= '<div class="personfeed">';
-                     $out .= "<h3>".__('Letzte Artikel', 'piratenkleider')."</h3>\n";
+                     $out .= "<h3>".__('Last posts', 'piratenkleider')."</h3>\n";
                      $out .= "<ul>";
                         foreach ($items as $item) {     
                             $out .= '<li><a href="'.$item->get_permalink().'">';
@@ -722,7 +717,7 @@ function piratenkleider_person_shortcode( $atts ) {
 
 		} else {
 			$out = '<section class="shortcode person"><p>';
-			$out .= __('Es konnten keine Personeninformationen gefunden werden.', 'piratenkleider');
+			$out .= __('No person found.', 'piratenkleider');
 			$out .= "</p></section>\n";
 		}
 	 wp_reset_query();
@@ -944,9 +939,6 @@ function piratenkleider_save_post_class_meta( $post_id, $post ) {
 	    delete_post_meta( $post_id, 'text', $oldertext );	
 	}		
 }
-
-
-
 
 
 if ( ! function_exists( 'get_piratenkleider_steckbrief' ) ) :

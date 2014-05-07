@@ -584,7 +584,7 @@ function piratenkleider_initoptions() {
 
 if ( ! function_exists( 'piratenkleider_get_image_attributs' ) ) :
     function piratenkleider_get_image_attributs($id=0) {
-        $precopyright = __('Bild: ','piratenkleider');
+        $precopyright = __('Image:','piratenkleider').' ';
         if ($id==0) return;
         
         $meta = get_post_meta( $id );
