@@ -140,7 +140,7 @@ function piratenkleider_person_metabox_content( $post ) {
 	     
 	     
 	     <input type="button" id="person_bild-button" class="button" value="<?php _e( "Upload and chose image", 'piratenkleider' ); ?>" />
-	    <small> <a href="#" class="custom_clear_image_button"><?php _e("Remove image",'Piratenkleider'); ?></a></small> 
+	    <small> <a href="#" class="custom_clear_image_button"><?php _e("Remove image",'piratenkleider'); ?></a></small> 
 	</p>
 	
 	<p>

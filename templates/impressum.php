@@ -64,7 +64,7 @@
 	
 	
         <?php the_content(); ?>
-        <?php edit_post_link( __( 'Bearbeiten', 'piratenkleider' ), '', '' ); ?>
+        <?php edit_post_link( __( 'Edit', 'piratenkleider' ), '', '' ); ?>
         <?php endwhile; ?>
           
           <?php if ((isset($options['impressumdienstanbieter'])) && (strlen(trim($options['impressumdienstanbieter']))>4)) { ?>
@@ -356,7 +356,7 @@ der unverlangten Zusendung von Werbeinformationen, etwa durch Spam-Mails, vor.</
 
     <div class="content-aside">
       <div class="skin">
-        <h1 class="skip"><?php _e( 'Weitere Informationen', 'piratenkleider' ); ?></h1>           
+        <h1 class="skip"><?php _e( 'More informations', 'piratenkleider' ); ?></h1>           
          <?php  
             get_piratenkleider_seitenmenu($options['zeige_sidebarpagemenu'],$options['zeige_subpagesonly'],$options['seitenmenu_mode']);
             get_sidebar(); 

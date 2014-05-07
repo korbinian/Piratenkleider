@@ -332,7 +332,7 @@ class Bannerlink_Widget extends WP_Widget {
                         <input type="hidden" id="<?php echo $this->get_field_id('image_id'); ?>" 
                           class="image_id"  name="<?php echo $this->get_field_name('image_id'); ?>" />
 
-                        <input class="button upload_image_button" name="upload_image_button" id="<?php echo $this->get_field_id('image_url'); ?>_button"  value="<?php _e('Hochladen / Ausw&auml;hlen', 'piratenkleider'); ?>" />
+                        <input class="button upload_image_button" name="upload_image_button" id="<?php echo $this->get_field_id('image_url'); ?>_button"  value="<?php _e('Upload', 'piratenkleider'); ?>" />
 
 
                     <br /><?php _e('Chose image from media library or enter an URL.', 'piratenkleider'); ?>

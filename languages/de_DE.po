@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Piratenkleider v3.2.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2014-05-07 15:15:40+0000\n"
+"PO-Revision-Date: 2014-05-07 16:25:03+0000\n"
 "Last-Translator: xwolf <xwolf@xwolf.de>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -24,7 +24,7 @@ msgstr ""
 #: 404.php:47
 #@ piratenkleider
 msgid "Page not found"
-msgstr ""
+msgstr "Seite nicht gefunden"
 
 #: 404.php:51
 #: category.php:124
@@ -32,7 +32,7 @@ msgstr ""
 #: templates/pageindex.php:108
 #@ piratenkleider
 msgid "No matching pages or entries found. Please try to search with another term."
-msgstr ""
+msgstr "Es konnte keine passende Seite oder Artikel gefunden werden. Bitte versuchen Sie es mit einem anderen Suchbegriff."
 
 #: 404.php:60
 #: archive.php:74
@@ -41,79 +41,79 @@ msgstr ""
 #: single.php:143
 #@ piratenkleider
 msgid "More informationens"
-msgstr ""
+msgstr "Weitere Informationen"
 
 #: archive.php:31
 #: archive.php:53
 #, php-format
 #@ piratenkleider
 msgid "Archive by day: %s"
-msgstr ""
+msgstr "Archiv vom Tag: %s"
 
 #: archive.php:33
 #: archive.php:55
 #, php-format
 #@ piratenkleider
 msgid "Archive by month: %s"
-msgstr ""
+msgstr "Archiv vom Monat: %s"
 
 #: archive.php:35
 #: archive.php:57
 #, php-format
 #@ piratenkleider
 msgid "Archive by year: %s"
-msgstr ""
+msgstr "Archiv vom Jahr: %s"
 
 #: archive.php:38
 #: archive.php:60
 #@ piratenkleider
 msgid "Person page"
-msgstr ""
+msgstr "Personenseite"
 
 #: archive.php:40
 #: archive.php:62
 #@ piratenkleider
 msgid "Archive"
-msgstr ""
+msgstr "Archiv"
 
 #: author.php:32
 #: author.php:44
 #, php-format
 #@ piratenkleider
 msgid "%s"
-msgstr ""
+msgstr "%s"
 
 #: author.php:109
 #: category.php:115
 #: loop.php:86
 #@ piratenkleider
 msgid "&larr; Older entries"
-msgstr ""
+msgstr "&larr; Ältere Einträge"
 
 #: author.php:110
 #: category.php:116
 #: loop.php:87
 #@ piratenkleider
 msgid "Newer entries &rarr;"
-msgstr ""
+msgstr "Neuere Einträge &rarr;"
 
 #: category.php:39
 #, php-format
 #@ piratenkleider
 msgid "Kategorie %s"
-msgstr ""
+msgstr "Kategorie %s"
 
 #: category.php:46
 #@ piratenkleider
 msgid "Current entry"
-msgstr ""
+msgstr "Aktueller Artikel"
 
 #: category.php:47
 #: category.php:86
 #, php-format
 #@ piratenkleider
 msgid "Category %s"
-msgstr ""
+msgstr "Kategorie %s"
 
 #: category.php:122
 #: home.php:284
@@ -123,20 +123,25 @@ msgstr ""
 #: templates/pageindex.php:106
 #@ piratenkleider
 msgid "Nothing found"
-msgstr ""
+msgstr "Nichts gefunden"
 
 #: category.php:141
+#: events/ecp-page-template.php:70
+#: events/ecp-single-template.php:77
 #: home.php:298
 #: index.php:59
 #: page.php:82
 #: search.php:162
 #: tag.php:118
 #: templates/category-index.php:129
+#: templates/impressum.php:359
 #: templates/pageindex.php:124
+#: templates/privacy-policy.php:220
 #@ piratenkleider
 msgid "More informations"
-msgstr ""
+msgstr "Weitere Informationen"
 
+#: events/ecp-single-template.php:67
 #: functions.php:754
 #: index.php:52
 #: loop.php:78
@@ -145,59 +150,59 @@ msgstr ""
 #: single.php:90
 #: templates/actionpage.php:22
 #: templates/category-index.php:27
+#: templates/impressum.php:67
 #: templates/pageindex.php:25
+#: templates/privacy-policy.php:68
 #@ piratenkleider
 msgid "Edit"
-msgstr ""
+msgstr "Bearbeiten"
 
 #: templates/category-index.php:94
 #, php-format
 #@ piratenkleider
 msgid "Entries of category %s"
-msgstr ""
+msgstr "Einträge zum Thema %s"
 
 #: templates/category-index.php:95
 #: templates/pageindex.php:91
 #@ piratenkleider
 msgid "More entries..."
-msgstr ""
+msgstr "Weitere Artikel..."
 
 #: comments.php:6
 #@ piratenkleider
 msgid "This entry is protected by password. Please enter the password to see comments."
-msgstr ""
+msgstr "Dieser Artikel ist mit einem Passwort geschützt. Bitte geben Sie das Passwort ein um den Artikel und die Kommentare zu sehen."
 
 #: comments.php:10
-#: functions.php:861
-#: functions.php:1037
 #@ piratenkleider
 msgid "Kommentare"
-msgstr ""
+msgstr "Kommentare"
 
 #: comments.php:12
 #, php-format
 #@ piratenkleider
 msgid "One comment for %2$s"
 msgid_plural "%1$s comments for %2$s"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Ein Kommentar zu %2$s"
+msgstr[1] "%1$s Kommentare zu %2$s"
 
 #: comments.php:16
 #: comments.php:25
 #@ piratenkleider
 msgid "&larr; Older comments"
-msgstr ""
+msgstr "&larr; Ältere Kommentare"
 
 #: comments.php:17
 #: comments.php:26
 #@ piratenkleider
 msgid "Newer comments &rarr;"
-msgstr ""
+msgstr "Neuere Kommentare &rarr;"
 
 #: comments.php:29
 #@ piratenkleider
 msgid "Its not possible to make comments anymore."
-msgstr ""
+msgstr "Es können keine neuen Kommentare mehr eingegeben werden."
 
 #: comments.php:46
 #: comments.php:55
@@ -206,49 +211,30 @@ msgstr ""
 #: inc/constants.php:2373
 #@ piratenkleider
 msgid "Name"
-msgstr ""
+msgstr "Name"
 
 #: comments.php:57
 #@ piratenkleider
 msgid "Website"
-msgstr ""
-
-#: events/ecp-single-template.php:67
-#: templates/impressum.php:67
-#: templates/privacy-policy.php:68
-#@ piratenkleider
-msgid "Bearbeiten"
-msgstr ""
-
-#: events/ecp-page-template.php:70
-#: events/ecp-single-template.php:78
-#: templates/impressum.php:359
-#: templates/privacy-policy.php:220
-#@ piratenkleider
-msgid "Weitere Informationen"
-msgstr ""
+msgstr "Webauftritt"
 
 #: footer-actionpage.php:9
+#: footer.php:14
 #@ piratenkleider
 msgid "Back to top."
-msgstr ""
+msgstr "Zurück nach oben."
 
 #: footer-actionpage.php:10
 #: footer.php:15
 #@ piratenkleider
 msgid "Back to start of content."
-msgstr ""
+msgstr "Zurück zum Anfang des Textes."
 
 #: footer-actionpage.php:12
 #: footer.php:17
 #@ piratenkleider
 msgid "Back to search form."
-msgstr ""
-
-#: footer.php:14
-#@ piratenkleider
-msgid "Bback to top."
-msgstr ""
+msgstr "Zurück zur Sucheingabe."
 
 #: footer.php:56
 #: footer.php:77
@@ -265,170 +251,118 @@ msgstr ""
 #: footer.php:75
 #@ piratenkleider
 msgid "Next"
-msgstr ""
+msgstr "Weiter"
 
 #: footer.php:76
 #@ piratenkleider
 msgid "Back"
-msgstr ""
+msgstr "Zurück"
 
 #: footer.php:93
 #@ piratenkleider
 msgid "Hide sidebar"
-msgstr ""
+msgstr "Sidebar ausblenden"
 
 #: footer.php:94
 #@ piratenkleider
 msgid "Show sidebar"
-msgstr ""
+msgstr "Sidebar anzeigen"
 
 #: functions.php:167
 #@ piratenkleider
 msgid "Main navigation"
-msgstr ""
-
-#: functions.php:587
-#@ piratenkleider
-msgid "Bild: "
-msgstr ""
-
-#: functions.php:640
-#, php-format
-#@ piratenkleider
-msgid "Suchergebnisse f&uuml;r %s"
-msgstr ""
+msgstr "Hauptnavigation"
 
 #: functions.php:642
 #: functions.php:654
 #, php-format
 #@ piratenkleider
 msgid "Page %s"
-msgstr ""
+msgstr "Seite %s"
 
 #: functions.php:669
 #@ piratenkleider
 msgid "Continue reading <span class=\"meta-nav\">&rarr;</span>"
-msgstr ""
+msgstr "Weiterlesen <span class=\"meta-nav\">&rarr;</span>"
 
 #: functions.php:723
 #, php-format
 #@ piratenkleider
 msgid "%s <span class=\"says\">commented at</span>"
-msgstr ""
+msgstr "%s <span class=\"says\">schrieb am</span>"
 
 #: functions.php:727
 #@ piratenkleider
 msgid "Comment waits for approval."
-msgstr ""
+msgstr "Der Kommentar wartet auf die Moderation."
 
 #. translators: 1: date, 2: time
 #: functions.php:734
 #, php-format
 #@ piratenkleider
 msgid "%1$s at %2$s"
-msgstr ""
+msgstr "%1$s bei %2$s"
 
 #: functions.php:734
 #@ piratenkleider
 msgid "(Edit)"
-msgstr ""
+msgstr "(Bearbeiten)"
 
 #: functions.php:754
 #@ piratenkleider
 msgid "Pingback:"
-msgstr ""
-
-#: functions.php:863
-#: functions.php:1039
-#@ piratenkleider
-msgid "Kommentar"
-msgstr ""
-
-#: functions.php:1002
-#@ piratenkleider
-msgid "Erstellt am: "
-msgstr ""
-
-#: functions.php:1005
-#@ piratenkleider
-msgid "Typ: Artikel"
-msgstr ""
-
-#: functions.php:1007
-#@ piratenkleider
-msgid "Typ: Seite"
-msgstr ""
+msgstr "Pingback:"
 
 #: functions.php:1063
 #@ piratenkleider
 msgid "Publiced at"
-msgstr ""
+msgstr "Veröffentlicht am"
 
 #: functions.php:1078
 #: inc/constants.php:2177
 #@ piratenkleider
 msgid "Author"
-msgstr ""
+msgstr "Autor"
 
 #: functions.php:1095
 #, php-format
 #@ piratenkleider
 msgid "Category: %1$s. Tags: %2$s. <br><a href=\"%3$s\" title=\"%4$s\" rel=\"bookmark\">Permalink</a> for this entry."
-msgstr ""
+msgstr "Thema: %1$s. Tags: %2$s. <br><a href=\"%3$s\" title=\"%4$s\" rel=\"bookmark\">Permalink</a> zum Artikel."
 
 #: functions.php:1097
 #, php-format
 #@ piratenkleider
 msgid "Category: %1$s. <br><a href=\"%3$s\" title=\"%4$s\" rel=\"bookmark\">Permalink</a> for this entry."
-msgstr ""
+msgstr "Thema: %1$s. <br><a href=\"%3$s\" title=\"%4$s\" rel=\"bookmark\">Permalink</a> für diesen Artikel."
 
 #: functions.php:1099
 #, php-format
 #@ piratenkleider
 msgid "<a href=\"%3$s\" title=\"%4$s\" rel=\"bookmark\">Permalink</a> for this entry."
-msgstr ""
+msgstr "<a href=\"%3$s\" title=\"%4$s\" rel=\"bookmark\">Permalink</a> für diesen Artikel."
 
 #: functions.php:1358
 #@ piratenkleider
 msgid "No content"
-msgstr ""
+msgstr "Kein Inhalt."
 
 #: functions.php:1376
 #@ piratenkleider
 msgid "No entry for this post"
-msgstr ""
-
-#: functions.php:1534
-#@ piratenkleider
-msgid "Entry of category "
-msgstr ""
-
-#: functions.php:1576
-#@ piratenkleider
-msgid "Search for "
-msgstr "Suche nach"
-
-#: functions.php:1578
-#@ piratenkleider
-msgid "Entries with tag "
-msgstr ""
-
-#: functions.php:1582
-#@ piratenkleider
-msgid "Entry by "
-msgstr ""
+msgstr "Kein Inhalt zu diesem Artikel gefunden."
 
 #: header-actionpage.php:28
 #: header.php:28
 #@ piratenkleider
 msgid "Jump to navigation."
-msgstr ""
+msgstr "Springe zur Navigation."
 
 #: header-actionpage.php:29
 #: header.php:29
 #@ piratenkleider
 msgid "Jump to content."
-msgstr ""
+msgstr "Springe zum Inhalt."
 
 #: header-actionpage.php:47
 #: header.php:48
@@ -439,7 +373,7 @@ msgstr ""
 #: header.php:30
 #@ piratenkleider
 msgid "Jump to search form."
-msgstr ""
+msgstr "Spring zur Suche."
 
 #: header.php:91
 #: header.php:96
@@ -452,7 +386,7 @@ msgstr "Suche"
 #: header.php:93
 #@ piratenkleider
 msgid "Searching for"
-msgstr ""
+msgstr "Suche nach"
 
 #: header.php:94
 #: header.php:95
@@ -475,7 +409,7 @@ msgstr ""
 #: home.php:286
 #@ piratenkleider
 msgid "Did not found any article. Please try to search:"
-msgstr ""
+msgstr "Es konnte kein Artikel gefunden werden. Bitte versuchen Sie es mit einer Suche:"
 
 #: inc/constants.php:349
 #@ piratenkleider
@@ -1014,16 +948,11 @@ msgstr ""
 msgid "Fax"
 msgstr ""
 
-#: inc/visiting-cards.php:152
-#@ piratenkleider
-msgid "E-Mail-Adresse"
-msgstr ""
-
 #: inc/custom-fields.php:31
 #: inc/custom-fields.php:37
 #@ piratenkleider
 msgid "Display Option"
-msgstr ""
+msgstr "Anzeigeoption"
 
 #: inc/custom-fields.php:45
 #@ piratenkleider
@@ -1033,307 +962,157 @@ msgstr ""
 #: inc/custom-fields.php:99
 #@ piratenkleider
 msgid "Show disclaimer"
-msgstr ""
+msgstr "Zeige Disclaimer"
 
 #: inc/custom-fields.php:103
 #@ piratenkleider
 msgid "Do not show any disclaimer"
-msgstr ""
+msgstr "Zeige keinen Disclaimer"
 
 #: inc/custom-fields.php:104
 #@ piratenkleider
 msgid "Display disclaimer before article"
-msgstr ""
+msgstr "Zeige Disclaimer vor dem Artikel"
 
 #: inc/custom-fields.php:105
 #@ piratenkleider
 msgid "Display disclaimer after article."
-msgstr ""
+msgstr "Zeige Disclaimer nach dem Artikel."
 
 #: inc/custom-fields.php:106
 #@ piratenkleider
 msgid "Display disclaimer before and after article."
-msgstr ""
+msgstr "Zeige Disclaimer sowohl vor, wie nach dem Artikel."
 
 #: inc/custom-fields.php:111
 #@ piratenkleider
 msgid "Disclaimer Text"
-msgstr ""
+msgstr "Disclaimer Text"
 
 #: inc/custom-fields.php:116
 #@ piratenkleider
 msgid "Notice: No disclaimer text defined. Please define a disclaimer in theme options."
-msgstr ""
+msgstr "Hinweis: Es wurde noch kein Disclaimer definiert. Bitte setzen Sie einen entsprechenden Text in den Theme Optionen."
 
 #: inc/custom-fields.php:197
 #@ piratenkleider
 msgid "Optional text for sidebar"
-msgstr ""
-
-#: inc/visiting-cards.php:119
-#@ piratenkleider
-msgid "Beitrags- oder Symbolbild (URL)"
-msgstr ""
-
-#: inc/visiting-cards.php:147
-#@ piratenkleider
-msgid "Bild ausw&auml;hlen oder hochladen"
-msgstr ""
+msgstr "Optionaler Text für die Sidebar"
 
 #: inc/theme-options.php:176
 #@ piratenkleider
 msgid "Add file"
-msgstr ""
+msgstr "Datei hinzufügen"
 
 #: inc/theme-options.php:177
 #@ piratenkleider
 msgid "Remove file"
-msgstr ""
+msgstr "Datei entfernen"
 
 #: inc/theme-options.php:218
 #: inc/theme-options.php:251
 #@ piratenkleider
 msgid "No Image selected"
-msgstr ""
+msgstr "Kein Bild ausgewählt"
 
 #: inc/theme-options.php:226
 #@ piratenkleider
 msgid "Add Image"
-msgstr ""
+msgstr "Bild hinzufügen"
 
 #: inc/custom-posts.php:102
 #: inc/theme-options.php:227
+#: inc/visiting-cards.php:143
 #@ piratenkleider
 msgid "Remove image"
-msgstr ""
+msgstr "Bild entfernen"
 
 #: inc/theme-options.php:229
 #@ piratenkleider
 msgid "Reset to default"
-msgstr ""
+msgstr "Alle Einstellung zurücksetzen und Voreinstellungen aktivieren."
 
 #: inc/theme-options.php:531
 #@ piratenkleider
 msgid "Optionen nicht definiert"
 msgstr ""
 
-#: inc/visiting-cards.php:11
-#@ piratenkleider
-msgctxt "Informationen f&uuml;r Personenseiten und Visitenkarten"
-msgid "Personen"
-msgstr ""
-
-#: inc/visiting-cards.php:12
-#@ piratenkleider
-msgctxt "Personeninformationen"
-msgid "Person"
-msgstr ""
-
 #: inc/visiting-cards.php:13
-#@ piratenkleider
-msgid "Personen"
-msgstr ""
-
-#: inc/visiting-cards.php:14
-#@ piratenkleider
-msgid "Parent Item:"
-msgstr ""
-
-#: inc/visiting-cards.php:15
-#@ piratenkleider
-msgid "Person suchen"
-msgstr ""
-
 #: inc/visiting-cards.php:16
 #@ piratenkleider
-msgid "Person nicht gefunden"
-msgstr ""
-
-#: inc/visiting-cards.php:17
-#@ piratenkleider
-msgid "Person nicht im Papierkorb gefunden"
-msgstr ""
-
-#: inc/visiting-cards.php:18
-#@ piratenkleider
-msgid "Neue Personen-Visitenkarte anlegen"
-msgstr ""
-
-#: inc/visiting-cards.php:22
-#@ piratenkleider
 msgid "Person"
 msgstr ""
 
-#: inc/visiting-cards.php:23
-#@ piratenkleider
-msgid "Erstellen und verwalten von Personeninformationen"
-msgstr ""
-
-#: inc/visiting-cards.php:58
-#@ piratenkleider
-msgid "Beschreibung der Person"
-msgstr ""
-
-#: inc/visiting-cards.php:77
-#@ piratenkleider
-msgid "Vorname"
-msgstr ""
-
-#: inc/visiting-cards.php:83
-#@ piratenkleider
-msgid "Nachname"
-msgstr ""
-
-#: inc/visiting-cards.php:89
-#@ piratenkleider
-msgid "Akademischer Titel"
-msgstr ""
-
-#: inc/visiting-cards.php:113
-#@ piratenkleider
-msgid "Kurzbeschreibung"
-msgstr ""
-
-#: inc/visiting-cards.php:158
-#@ piratenkleider
-msgid "Homepage/Blog (URL)"
-msgstr ""
-
-#: inc/visiting-cards.php:165
-#@ piratenkleider
-msgid "Wiki Benutzerseite (Benutzername)"
-msgstr ""
-
-#: inc/visiting-cards.php:172
-#@ piratenkleider
-msgid "Twitter (Account)"
-msgstr ""
-
-#: inc/visiting-cards.php:179
+#: inc/visiting-cards.php:174
 #@ piratenkleider
 msgid "Facebook (URL)"
 msgstr ""
 
-#: inc/visiting-cards.php:186
+#: inc/visiting-cards.php:181
 #@ piratenkleider
 msgid "Google+ (URL)"
 msgstr ""
 
-#: inc/visiting-cards.php:194
-#@ piratenkleider
-msgid "Newsfeed aus Blog oder CMS (RSS URL)"
-msgstr ""
-
-#: inc/visiting-cards.php:363
-#@ piratenkleider
-msgid "Die Personeninformationen wurden aktualisiert. "
-msgstr ""
-
-#: inc/visiting-cards.php:364
-#@ piratenkleider
-msgid "Die Personeninformationen wurden aktualisiert."
-msgstr ""
-
-#: inc/visiting-cards.php:365
-#@ piratenkleider
-msgid "Personeninformationen wurden gel&ouml;scht."
-msgstr ""
-
-#: inc/visiting-cards.php:366
-#@ piratenkleider
-msgid "Personeninformationen wurden ver&ouml;ffentlicht."
-msgstr ""
-
-#: inc/visiting-cards.php:367
-#@ piratenkleider
-msgid "Personeninformationen wurden gespeichert."
-msgstr ""
-
-#: inc/visiting-cards.php:458
-#@ piratenkleider
-msgid "Kontakt"
-msgstr ""
-
-#: inc/visiting-cards.php:502
-#@ piratenkleider
-msgid "&Uuml;ber"
-msgstr ""
-
-#: inc/visiting-cards.php:523
-#@ piratenkleider
-msgid "Letzte Artikel"
-msgstr ""
-
-#: inc/visiting-cards.php:725
-#@ piratenkleider
-msgid "Es konnten keine Personeninformationen gefunden werden."
-msgstr ""
-
-#: inc/visiting-cards.php:752
+#: inc/visiting-cards.php:747
 #@ piratenkleider
 msgid "Personal card"
-msgstr ""
+msgstr "Visitenkarte"
 
-#: inc/visiting-cards.php:766
+#: inc/visiting-cards.php:761
 #@ piratenkleider
 msgid "Select someone you want to show with a personal card along the article."
-msgstr ""
+msgstr "Wählen Sie eine Person aus, wenn Sie den Artikel mit einer Visitenkarte verknüpfen wollen."
 
-#: inc/visiting-cards.php:769
+#: inc/visiting-cards.php:764
 #@ piratenkleider
 msgid "Do not display any personal card"
-msgstr ""
+msgstr "Zeige keine Visitenkarte"
 
-#: inc/visiting-cards.php:799
+#: inc/visiting-cards.php:794
 #@ piratenkleider
 msgid "No person card defined yet."
-msgstr ""
+msgstr "Es stehen derzeit noch keine Visitenkarten vomn Personen zur Verfügung."
 
-#: inc/visiting-cards.php:815
+#: inc/visiting-cards.php:810
 #@ piratenkleider
 msgid "Alternativly define manually a short text and an image:"
-msgstr ""
+msgstr "Alternativ kann ein text und ein Bild manuell hinzugefügt werden:"
 
-#: inc/visiting-cards.php:819
+#: inc/visiting-cards.php:814
 #@ piratenkleider
 msgid "Short text for sidebar"
-msgstr ""
+msgstr "Kurzer Text"
 
-#: inc/visiting-cards.php:833
+#: inc/visiting-cards.php:828
 #@ piratenkleider
 msgid "Picture"
-msgstr ""
+msgstr "Bild"
 
-#: inc/visiting-cards.php:863
+#: inc/visiting-cards.php:858
 #@ piratenkleider
 msgid "Chose or upload picture"
-msgstr ""
+msgstr "Bild auswählen oder hochladen"
 
-#: inc/visiting-cards.php:864
+#: inc/visiting-cards.php:859
 #@ piratenkleider
 msgid "Remove picture"
-msgstr ""
-
-#: inc/widgets.php:335
-#@ piratenkleider
-msgid "Hochladen / Ausw&auml;hlen"
-msgstr ""
+msgstr "Bild entfernen"
 
 #: index.php:51
 #: page.php:69
 #@ piratenkleider
 msgid "Pages:"
-msgstr ""
+msgstr "Seiten"
 
 #: loop.php:10
 #@ piratenkleider
 msgid "Please try to search:"
-msgstr ""
+msgstr "Bitte versuchen Sie es mit einer Suche:"
 
 #: loop.php:37
 #@ piratenkleider
 msgid "No personal information found."
-msgstr ""
+msgstr "Es konnte keine Personen Visitenkarte gefunden werden."
 
 #: loop.php:46
 #: loop.php:75
@@ -1347,62 +1126,52 @@ msgstr ""
 #, php-format
 #@ piratenkleider
 msgid "Permalink to %s"
-msgstr ""
+msgstr "Permalink zu %s"
 
 #: loop.php:66
 #, php-format
 #@ piratenkleider
 msgid "This gallery contains <a %1$s>%2$s photos</a>."
-msgstr ""
-
-#: loop.php:75
-#@ piratenkleider
-msgid "Zeige Artikel aus der Galerie"
-msgstr ""
-
-#: loop.php:75
-#@ piratenkleider
-msgid "Mehr Bildergalerien"
-msgstr ""
+msgstr "Diese Gallerie enthält <a %1$s>%2$s Bilder</a>."
 
 #: loop.php:77
 #@ piratenkleider
 msgid "Post a comment"
-msgstr ""
+msgstr "Schreibe ein Kommentar"
 
 #: loop.php:77
 #@ piratenkleider
 msgid "1 Comment"
-msgstr ""
+msgstr "Ein Kommentar"
 
 #: loop.php:77
 #@ piratenkleider
 msgid "% kommentare"
-msgstr ""
+msgstr "% Kommentare"
 
 #: templates/pageindex.php:90
 #, php-format
 #@ piratenkleider
 msgid "Entries by category %s"
-msgstr ""
+msgstr "Einträge zum Thema %s"
 
 #: templates/pageindex.php:112
 #@ piratenkleider
 msgid "Notice for authors and blog-admins: Top make pages show in this index, article-authors have to set categories on them."
-msgstr ""
+msgstr "Hinweis für Autoren und Admins: Um Seiten in diesem Index erscheinen zu lassen, ist es notwendig auch die Seiten Kategorien zuzuordnen."
 
 #: search.php:34
 #: search.php:46
 #, php-format
 #@ piratenkleider
 msgid "Search entries for \"%s\""
-msgstr ""
+msgstr "Suchergebnisse für \"%s\""
 
 #: search.php:81
 #, php-format
 #@ piratenkleider
 msgid "Found %s matching hits."
-msgstr ""
+msgstr "Es wurden %s  Treffen gefunden."
 
 #: search.php:83
 #@ piratenkleider
@@ -1447,6 +1216,7 @@ msgstr ""
 msgid "Categories"
 msgstr ""
 
+#: functions.php:1576
 #: searchform.php:5
 #@ piratenkleider
 msgid "Search for"
@@ -1544,11 +1314,6 @@ msgstr ""
 #: inc/constants.php:185
 #@ piratenkleider
 msgid "Your email address wont be displayed. Required fields are marked with this sign: <span class=\"required\">*</span>"
-msgstr ""
-
-#: inc/constants.php:186
-#@ piratenkleider
-msgid "Notice: Comments reflect the opionions of those who did wrote theme. Allowing people comment here, doenst mean, that we also agree with them.  "
 msgstr ""
 
 #: inc/constants.php:191
@@ -2457,6 +2222,8 @@ msgstr ""
 msgid "Sets a default image for template pages."
 msgstr ""
 
+#: functions.php:861
+#: functions.php:1037
 #: inc/constants.php:1705
 #@ piratenkleider
 msgid "Comments"
@@ -3446,6 +3213,7 @@ msgstr ""
 msgid "Sets an image link for media library"
 msgstr ""
 
+#: functions.php:587
 #: inc/widgets.php:327
 #@ piratenkleider
 msgid "Image:"
@@ -3469,5 +3237,200 @@ msgstr ""
 #: inc/constants.php:2272
 #@ piratenkleider
 msgid "Contact email"
+msgstr ""
+
+#: functions.php:1002
+#@ piratenkleider
+msgid "Created at:"
+msgstr ""
+
+#: inc/visiting-cards.php:11
+#@ piratenkleider
+msgctxt "Informations about people"
+msgid "Personal"
+msgstr ""
+
+#: inc/visiting-cards.php:12
+#@ piratenkleider
+msgctxt "Informations about person"
+msgid "Person"
+msgstr ""
+
+#: inc/visiting-cards.php:17
+#@ piratenkleider
+msgid "Manage people for visiting card function"
+msgstr ""
+
+#: inc/visiting-cards.php:52
+#@ piratenkleider
+msgid "Personal description"
+msgstr ""
+
+#: inc/visiting-cards.php:63
+#@ piratenkleider
+msgid "Prof."
+msgstr ""
+
+#: inc/visiting-cards.php:64
+#@ piratenkleider
+msgid "Doc."
+msgstr ""
+
+#: inc/visiting-cards.php:65
+#@ piratenkleider
+msgid "PD"
+msgstr ""
+
+#: inc/visiting-cards.php:72
+#@ piratenkleider
+msgid "Pre name"
+msgstr ""
+
+#: inc/visiting-cards.php:78
+#@ piratenkleider
+msgid "Last name"
+msgstr ""
+
+#: inc/visiting-cards.php:84
+#@ piratenkleider
+msgid "Academic title"
+msgstr ""
+
+#: inc/visiting-cards.php:108
+#@ piratenkleider
+msgid "Short description"
+msgstr ""
+
+#: inc/visiting-cards.php:114
+#@ piratenkleider
+msgid "Personal image"
+msgstr ""
+
+#: inc/visiting-cards.php:142
+#@ piratenkleider
+msgid "Upload and chose image"
+msgstr ""
+
+#: inc/visiting-cards.php:147
+#@ piratenkleider
+msgid "Email"
+msgstr ""
+
+#: inc/visiting-cards.php:153
+#@ piratenkleider
+msgid "Homepage (URL)"
+msgstr ""
+
+#: inc/visiting-cards.php:160
+#@ piratenkleider
+msgid "Wiki Page (Username)"
+msgstr ""
+
+#: inc/visiting-cards.php:167
+#@ piratenkleider
+msgid "Twitter (Accountname)"
+msgstr ""
+
+#: inc/visiting-cards.php:189
+#@ piratenkleider
+msgid "Personal Newsfeed (URL)"
+msgstr ""
+
+#: inc/visiting-cards.php:358
+#: inc/visiting-cards.php:359
+#@ piratenkleider
+msgid "Personal informations updated."
+msgstr ""
+
+#: inc/visiting-cards.php:360
+#@ piratenkleider
+msgid "Personal informations removed."
+msgstr ""
+
+#: inc/visiting-cards.php:361
+#@ piratenkleider
+msgid "Personal informations publiced."
+msgstr ""
+
+#: inc/visiting-cards.php:362
+#@ piratenkleider
+msgid "Personal informations saved."
+msgstr ""
+
+#: inc/visiting-cards.php:453
+#@ piratenkleider
+msgid "Contact"
+msgstr ""
+
+#: inc/visiting-cards.php:497
+#@ piratenkleider
+msgid "About"
+msgstr ""
+
+#: inc/visiting-cards.php:515
+#@ piratenkleider
+msgid "The feed is either empty or unavailable."
+msgstr ""
+
+#: inc/visiting-cards.php:518
+#@ piratenkleider
+msgid "Last posts"
+msgstr ""
+
+#: inc/visiting-cards.php:720
+#@ piratenkleider
+msgid "No person found."
+msgstr ""
+
+#: functions.php:1534
+#@ piratenkleider
+msgid "Entry of category"
+msgstr ""
+
+#: functions.php:1578
+#@ piratenkleider
+msgid "Entries with tag"
+msgstr ""
+
+#: functions.php:1582
+#@ piratenkleider
+msgid "Entry by"
+msgstr ""
+
+#: inc/constants.php:186
+#@ piratenkleider
+msgid "Notice: Comments reflect the opionions of those who did wrote theme. Allowing people comment here, doenst mean, that we also agree with them."
+msgstr ""
+
+#: functions.php:640
+#, php-format
+#@ piratenkleider
+msgid "Search results for %s"
+msgstr ""
+
+#: functions.php:863
+#: functions.php:1039
+#@ piratenkleider
+msgid "Comment"
+msgstr ""
+
+#: functions.php:1005
+#@ piratenkleider
+msgid "Type: Entry"
+msgstr ""
+
+#: functions.php:1007
+#@ piratenkleider
+msgid "Type: Page"
+msgstr ""
+
+#: inc/widgets.php:335
+#@ piratenkleider
+msgid "Upload"
+msgstr ""
+
+#: loop.php:75
+#@ piratenkleider
+msgid "More images"
 msgstr ""
 

@@ -11,7 +11,7 @@
     </div>
     <nav role="navigation">
         <ul class="nav skiplinks">		
-		<li><a class="p3-skip" id="skiplink-top" href="#top"><?php _e( 'Bback to top.', 'piratenkleider' ); ?></a></li>
+		<li><a class="p3-skip" id="skiplink-top" href="#top"><?php _e( 'Back to top.', 'piratenkleider' ); ?></a></li>
 		<li><a class="p3-skip" id="skiplink-content-bottom" href="#main-content"><?php _e( 'Back to start of content.', 'piratenkleider' ); ?></a></li>
 		<?php if ( $options['aktiv-suche'] == "1" ){ ?>
                 <li><a class="p3-skip" id="skiplink-search-bottom" href="#searchform"><?php _e( 'Back to search form.', 'piratenkleider' ); ?></a></li>

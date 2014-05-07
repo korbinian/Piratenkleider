@@ -72,7 +72,7 @@
                                <?php the_excerpt();
                          }
                          ?>
-                         <a href="<?php echo get_term_link( _x('gallery', 'gallery category slug', 'piratenkleider'), 'category' ); ?>" title="<?php esc_attr_e( 'Zeige Artikel aus der Galerie', 'piratenkleider' ); ?>"><?php _e( 'Mehr Bildergalerien', 'piratenkleider' ); ?></a>
+                         <a href="<?php echo get_term_link( _x('gallery', 'gallery category slug', 'piratenkleider'), 'category' ); ?>"><?php _e( 'More images', 'piratenkleider' ); ?></a>
                          | <?php
                            comments_popup_link( __( 'Post a comment', 'piratenkleider' ), __( '1 Comment', 'piratenkleider' ), __( '% kommentare', 'piratenkleider' ) ); 
                            edit_post_link( __( 'Edit', 'piratenkleider' ), '|', '' ); 

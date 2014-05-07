@@ -65,7 +65,7 @@
 
 
         <?php the_content(); ?>
-        <?php edit_post_link( __( 'Bearbeiten', 'piratenkleider' ), '', '' ); ?>
+        <?php edit_post_link( __( 'Edit', 'piratenkleider' ), '', '' ); ?>
         <?php endwhile; ?>
           
           
@@ -217,7 +217,7 @@ In ihren Browsereinstellungen k&ouml;nnen sie die Annahme von Cookies unterbinde
     <div class="content-aside">
       <div class="skin">
 
-        <h1 class="skip"><?php _e( 'Weitere Informationen', 'piratenkleider' ); ?></h1>   
+        <h1 class="skip"><?php _e( 'More informations', 'piratenkleider' ); ?></h1>   
             <?php
 
             get_piratenkleider_seitenmenu($options['zeige_sidebarpagemenu'],$options['zeige_subpagesonly'],$options['seitenmenu_mode']);       

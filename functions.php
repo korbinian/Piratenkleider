@@ -637,7 +637,7 @@ function piratenkleider_filter_wp_title( $title, $separator ) {
         global $paged, $page;
 
         if ( is_search() ) {
-                $title = sprintf( __( 'Suchergebnisse f&uuml;r %s', 'piratenkleider' ), '"' . get_search_query() . '"' );
+                $title = sprintf( __( 'Search results for %s', 'piratenkleider' ), '"' . get_search_query() . '"' );
                 if ( $paged >= 2 )
                         $title .= " $separator " . sprintf( __( 'Page %s', 'piratenkleider' ), $paged );
                 $title .= " $separator " . get_bloginfo( 'name', 'display' );
@@ -858,9 +858,9 @@ function piratenkleider_post_teaser($titleup = 1, $showdatebox = 1, $showdatelin
                     $link = get_comments_link();
                     $out .= '<a href="'.$link.'">'.$num_comments.'<span class="skip"> ';
                     if ($num_comments>0) {
-                        $out .= __('Kommentare', 'piratenkleider' ).'</span></a>';
+                        $out .= __('Comments', 'piratenkleider' ).'</span></a>';
                     } else {
-                        $out .= __('Kommentar', 'piratenkleider' ).'</span></a>';
+                        $out .= __('Comment', 'piratenkleider' ).'</span></a>';
                     }
                     $out .= "</div>\n"; 
 	       }	
@@ -999,12 +999,12 @@ function piratenkleider_search_teaser($teaserlength = 250, $withthumb = 1, $asli
     }
     $out .= $excerpt;     
     $out .= '<p class="meta">';    
-    $out .= '<span class="date">'.__('Erstellt am: ','piratenkleider').piratenkleider_post_pubdateinfo(0).'.</span> '; 
+    $out .= '<span class="date">'.__('Created at:','piratenkleider').' '.piratenkleider_post_pubdateinfo(0).'.</span> '; 
     $typ =get_post_type();
     if ($typ == 'post') {
-         $out .= '<span class="type">'.__('Typ: Artikel','piratenkleider').'.</span> '; 
+         $out .= '<span class="type">'.__('Type: Entry','piratenkleider').'.</span> '; 
     } elseif ($typ=='page') {
-         $out .= '<span class="type">'.__('Typ: Seite','piratenkleider').'.</span> '; 
+         $out .= '<span class="type">'.__('Type: Page','piratenkleider').'.</span> '; 
     } 
     $out .= "</p>\n";    
     $out .= '</div>';     
@@ -1034,9 +1034,9 @@ function piratenkleider_post_datumsbox() {
         $link = get_comments_link();
         $out .= '<a href="'.$link.'">'.$num_comments.'<span class="skip"> ';
         if ($num_comments>1) {
-            $out .= __('Kommentare', 'piratenkleider' ).'</span></a>';
+            $out .= __('Comments', 'piratenkleider' ).'</span></a>';
         } else {
-            $out .= __('Kommentar', 'piratenkleider' ).'</span></a>';
+            $out .= __('Comment', 'piratenkleider' ).'</span></a>';
         }
         $out .= "</div>\n"; 
      } 
@@ -1531,7 +1531,7 @@ function piratenkleider_breadcrumb() {
 	$parentCat = get_category($thisCat->parent);
 	if ($thisCat->parent != 0) 
 	    echo(get_category_parents($parentCat, TRUE, $delimiter ));
-	echo $before . __( 'Entry of category ', 'piratenkleider' ). '"' . single_cat_title('', false) . '"' . $after;
+	echo $before . __( 'Entry of category', 'piratenkleider' ). ' "' . single_cat_title('', false) . '"' . $after;
  
     } elseif ( is_day() ) {
 	echo '<a href="' . get_year_link(get_the_time('Y')) . '">' . get_the_time('Y') . '</a>' .$delimiter;
@@ -1573,13 +1573,13 @@ function piratenkleider_breadcrumb() {
 	foreach ($breadcrumbs as $crumb) echo $crumb . $delimiter;
 	echo $before . get_the_title() . $after; 
     } elseif ( is_search() ) {
-	echo $before . __( 'Search for ', 'piratenkleider' ).'"' . get_search_query() . '"' . $after; 
+	echo $before . __( 'Search for', 'piratenkleider' ).' "' . get_search_query() . '"' . $after; 
     } elseif ( is_tag() ) {
-	echo $before . __( 'Entries with tag ', 'piratenkleider' ). '"' . single_tag_title('', false) . '"' . $after; 
+	echo $before . __( 'Entries with tag', 'piratenkleider' ). ' "' . single_tag_title('', false) . '"' . $after; 
     } elseif ( is_author() ) {
 	global $author;
 	$userdata = get_userdata($author);
-	echo $before . __( 'Entry by ', 'piratenkleider' ). $userdata->display_name . $after;
+	echo $before . __( 'Entry by', 'piratenkleider' ).' '.$userdata->display_name . $after;
     } elseif ( is_404() ) {
 	echo $before . '404' . $after;
     }

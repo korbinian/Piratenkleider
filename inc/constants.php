@@ -183,7 +183,7 @@ $defaultoptions = array(
     'anonymize-user-commententries' => 0,
     'aktiv-commentreplylink'        => 1,
     'default_comment_notes_before'  => '<p class="comment-notes">'.__( 'Your email address wont be displayed. Required fields are marked with this sign: <span class="required">*</span>', 'piratenkleider' ). '</p>',
-    'comments_disclaimer'           => __('Notice: Comments reflect the opionions of those who did wrote theme. Allowing people comment here, doenst mean, that we also agree with them.  ', 'piratenkleider' ),
+    'comments_disclaimer'           => __('Notice: Comments reflect the opionions of those who did wrote theme. Allowing people comment here, doenst mean, that we also agree with them.', 'piratenkleider' ),
     'disclaimer_post'               => '',
     'feed_cache_lifetime'           => 14400,
     'use_wp_feed_defaults'          => 1,
@@ -868,7 +868,7 @@ $defaultplakate_textsymbolliste = array(
  $categories=get_categories(array('orderby' => 'name','order' => 'ASC'));
  foreach($categories as $category) {
      if (!is_wp_error( $category )) {
-	$currentcatliste[$category->cat_ID] = $category->name.' ('.$category->count.' '.__('Eintr&auml;ge','piratenkleider').')';
+	$currentcatliste[$category->cat_ID] = $category->name.' ('.$category->count.' '.__('Entries','piratenkleider').')';
      }
  }        
 
