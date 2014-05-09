@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Piratenkleider v3.2.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2014-05-07 16:25:03+0000\n"
+"PO-Revision-Date: 2014-05-09 16:13:34+0000\n"
 "Last-Translator: xwolf <xwolf@xwolf.de>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -28,6 +28,8 @@ msgstr "Seite nicht gefunden"
 
 #: 404.php:51
 #: category.php:124
+#: catindex.php:117
+#: pageindex.php:108
 #: templates/category-index.php:117
 #: templates/pageindex.php:108
 #@ piratenkleider
@@ -35,7 +37,6 @@ msgid "No matching pages or entries found. Please try to search with another ter
 msgstr "Es konnte keine passende Seite oder Artikel gefunden werden. Bitte versuchen Sie es mit einem anderen Suchbegriff."
 
 #: 404.php:60
-#: archive.php:74
 #: author.php:125
 #: single-person.php:74
 #: single.php:143
@@ -116,8 +117,10 @@ msgid "Category %s"
 msgstr "Kategorie %s"
 
 #: category.php:122
+#: catindex.php:115
 #: home.php:284
 #: loop.php:9
+#: pageindex.php:106
 #: search.php:121
 #: templates/category-index.php:115
 #: templates/pageindex.php:106
@@ -125,44 +128,53 @@ msgstr "Kategorie %s"
 msgid "Nothing found"
 msgstr "Nichts gefunden"
 
+#: archive.php:74
 #: category.php:141
+#: catindex.php:129
 #: events/ecp-page-template.php:70
 #: events/ecp-single-template.php:77
 #: home.php:298
 #: index.php:59
 #: page.php:82
+#: pageindex.php:124
 #: search.php:162
 #: tag.php:118
 #: templates/category-index.php:129
-#: templates/impressum.php:359
+#: templates/imprint.php:359
 #: templates/pageindex.php:124
 #: templates/privacy-policy.php:220
 #@ piratenkleider
 msgid "More informations"
 msgstr "Weitere Informationen"
 
+#: catindex.php:27
 #: events/ecp-single-template.php:67
 #: functions.php:754
 #: index.php:52
 #: loop.php:78
+#: page-actionpage.php:22
 #: page.php:70
+#: pageindex.php:25
 #: single-person.php:62
 #: single.php:90
 #: templates/actionpage.php:22
 #: templates/category-index.php:27
-#: templates/impressum.php:67
+#: templates/imprint.php:67
 #: templates/pageindex.php:25
 #: templates/privacy-policy.php:68
 #@ piratenkleider
 msgid "Edit"
 msgstr "Bearbeiten"
 
+#: catindex.php:94
 #: templates/category-index.php:94
 #, php-format
 #@ piratenkleider
 msgid "Entries of category %s"
 msgstr "Einträge zum Thema %s"
 
+#: catindex.php:95
+#: pageindex.php:91
 #: templates/category-index.php:95
 #: templates/pageindex.php:91
 #@ piratenkleider
@@ -869,11 +881,6 @@ msgstr ""
 msgid "Zypern"
 msgstr ""
 
-#: inc/constants.php:871
-#@ piratenkleider
-msgid "Eintr&auml;ge"
-msgstr ""
-
 #: inc/constants.php:1271
 #: inc/constants.php:1398
 #@ piratenkleider
@@ -1032,11 +1039,6 @@ msgstr "Bild entfernen"
 msgid "Reset to default"
 msgstr "Alle Einstellung zurücksetzen und Voreinstellungen aktivieren."
 
-#: inc/theme-options.php:531
-#@ piratenkleider
-msgid "Optionen nicht definiert"
-msgstr ""
-
 #: inc/visiting-cards.php:13
 #: inc/visiting-cards.php:16
 #@ piratenkleider
@@ -1149,12 +1151,14 @@ msgstr "Ein Kommentar"
 msgid "% kommentare"
 msgstr "% Kommentare"
 
+#: pageindex.php:90
 #: templates/pageindex.php:90
 #, php-format
 #@ piratenkleider
 msgid "Entries by category %s"
 msgstr "Einträge zum Thema %s"
 
+#: pageindex.php:112
 #: templates/pageindex.php:112
 #@ piratenkleider
 msgid "Notice for authors and blog-admins: Top make pages show in this index, article-authors have to set categories on them."
@@ -1176,37 +1180,37 @@ msgstr "Es wurden %s  Treffen gefunden."
 #: search.php:83
 #@ piratenkleider
 msgid "Found one matching hit."
-msgstr ""
+msgstr "Es wurde ein Treffer gefunden."
 
 #: search.php:102
 #@ piratenkleider
 msgid "&larr; First page"
-msgstr ""
+msgstr "&larr; Erste Seite"
 
 #: search.php:112
 #@ piratenkleider
 msgid "Last page &rarr;"
-msgstr ""
+msgstr "Letzte Seite &rarr;"
 
 #: search.php:123
 #@ piratenkleider
 msgid "No matching pages or entries found. Please try with another term."
-msgstr ""
+msgstr "Es konnte kein Eintrag gefunden werden. Bitte versuchen Sie es mit einem anderen Suchbegriff."
 
 #: search.php:129
 #@ piratenkleider
 msgid "Alternativly try the following links:"
-msgstr ""
+msgstr "Alternativ versuchen Sie es mit einem der folgenden Links:"
 
 #: search.php:134
 #@ piratenkleider
 msgid "Archive by month"
-msgstr ""
+msgstr "Archiv vom Monat "
 
 #: search.php:141
 #@ piratenkleider
 msgid "Entries by tags"
-msgstr ""
+msgstr "Beiträge nach Schlüsselworten"
 
 #: inc/constants.php:992
 #: inc/constants.php:1023
@@ -1214,79 +1218,79 @@ msgstr ""
 #: sidebar-startpage-contentfooter.php:15
 #@ piratenkleider
 msgid "Categories"
-msgstr ""
+msgstr "Kategorien"
 
 #: functions.php:1576
 #: searchform.php:5
 #@ piratenkleider
 msgid "Search for"
-msgstr ""
+msgstr "Suche nach"
 
 #: searchform.php:9
 #@ piratenkleider
 msgid "All categories"
-msgstr ""
+msgstr "Alle Kategorien"
 
 #: inc/constants.php:998
 #: sidebar-startpage-contentfooter.php:35
 #@ piratenkleider
 msgid "Tags"
-msgstr ""
+msgstr "Schlüsselworte (Tags)"
 
 #: sidebar-teaser.php:28
 #@ piratenkleider
 msgid "Information slides"
-msgstr ""
+msgstr "Slides"
 
 #: single.php:108
 #@ piratenkleider
 msgid "More entries:"
-msgstr ""
+msgstr "Weitere Beiträge:"
 
 #: single.php:124
 #@ piratenkleider
 msgid "No more entries in this category found."
-msgstr ""
+msgstr "Es konnten keine weiteren Beiträge zu der Kategorie gefunden werden."
 
 #: tag.php:32
 #: tag.php:44
 #, php-format
 #@ piratenkleider
 msgid "Tag %s"
-msgstr ""
+msgstr "Tag %s"
 
 #: tag.php:103
 #@ piratenkleider
 msgid "&larr; Older Entries"
-msgstr ""
+msgstr "&larr; Ältere Einträge"
 
 #: tag.php:104
 #@ piratenkleider
 msgid "Newer Entries &rarr;"
-msgstr ""
+msgstr "Neuere Einträge &rarr;"
 
 #: functions.php:168
 #: inc/constants.php:884
 #: inc/constants.php:956
 #@ piratenkleider
 msgid "Website Menu"
-msgstr ""
+msgstr "Website Menu"
 
 #: functions.php:169
 #@ piratenkleider
 msgid "Tecnical navigation"
-msgstr ""
+msgstr "Technische Navigation"
 
 #: inc/constants.php:95
 #@ piratenkleider
 msgid "Current entries"
-msgstr ""
+msgstr "Aktuelle Einträge"
 
 #: inc/constants.php:96
 #: inc/constants.php:100
 #@ piratenkleider
 msgid "More entries"
-msgstr ""
+msgstr "Weitere Einträge"
 
 #: inc/constants.php:97
 #: inc/constants.php:1114
@@ -1294,276 +1298,276 @@ msgstr ""
 #: inc/custom-posts.php:9
 #@ piratenkleider
 msgid "Bookmarks"
-msgstr ""
+msgstr "Leseempfehlungen"
 
 #: inc/constants.php:98
 #@ piratenkleider
 msgid "More bookmarks"
-msgstr ""
+msgstr "Weitere Leseempfehlungen"
 
 #: inc/constants.php:99
 #@ piratenkleider
 msgid "Other entries"
-msgstr ""
+msgstr "Weitere Einträge"
 
 #: inc/constants.php:162
 #@ piratenkleider
 msgid "Trending Topics"
-msgstr ""
+msgstr "Aktuelle Themen"
 
 #: inc/constants.php:185
 #@ piratenkleider
 msgid "Your email address wont be displayed. Required fields are marked with this sign: <span class=\"required\">*</span>"
-msgstr ""
+msgstr "Ihre E-Mail-Adresse wird nicht öffentlich angezeigt. Verbindlich einzugebende Felder werden mit diesem Zeichen kenntlich gemacht: <span class=\"required\">*</span>"
 
 #: inc/constants.php:191
 #@ piratenkleider
 msgid "Read"
-msgstr ""
+msgstr "Lese"
 
 #: inc/constants.php:192
 #@ piratenkleider
 msgid "about our topics and visions!"
-msgstr ""
+msgstr "über unsere Themen & Ziele"
 
 #: inc/constants.php:196
 #@ piratenkleider
 msgid "Support us"
-msgstr ""
+msgstr "Unterstütze uns"
 
 #: inc/constants.php:197
 #@ piratenkleider
 msgid "with your engagement!"
-msgstr ""
+msgstr "mit deinem Engagement!"
 
 #: inc/constants.php:201
 #@ piratenkleider
 msgid "Become a Pirat!"
-msgstr ""
+msgstr "Werde Pirat!"
 
 #: inc/constants.php:202
 #@ piratenkleider
 msgid "Subscribe to the pirate party"
-msgstr ""
+msgstr "Jetzt Mitglied werden"
 
 #: inc/constants.php:214
 #@ piratenkleider
 msgid "Back to start page"
-msgstr ""
+msgstr "Zurück zur Startseite"
 
 #: inc/constants.php:222
 #: inc/constants.php:987
 #@ piratenkleider
 msgid "Start page"
-msgstr ""
+msgstr "Startseite"
 
 #: inc/constants.php:413
 #@ piratenkleider
 msgid "Austria (Violet)"
-msgstr ""
+msgstr "Österreich (Violett)"
 
 #: inc/constants.php:414
 #@ piratenkleider
 msgid "Luxemburgh (Violet)"
-msgstr ""
+msgstr "Luxemburg  (Violett)"
 
 #: inc/constants.php:415
 #@ piratenkleider
 msgid "Hungary (Violet)"
-msgstr ""
+msgstr "Ungarn  (Violett)"
 
 #: inc/constants.php:416
 #@ piratenkleider
 msgid "Turkey (Cyan)"
-msgstr ""
+msgstr "Türkei (Violett)"
 
 #: inc/constants.php:417
 #@ piratenkleider
 msgid "USA (Violet)"
-msgstr ""
+msgstr "USA (Violett)"
 
 #: inc/constants.php:425
 #@ piratenkleider
 msgid "Use default font settings"
-msgstr ""
+msgstr "Aktiviere Voreinstellungen"
 
 #: inc/constants.php:435
 #@ piratenkleider
 msgid "Use default sans serif font"
-msgstr ""
+msgstr "Serifenlose Schrift verwenden (Sans Serif)"
 
 #: inc/constants.php:482
 #@ piratenkleider
 msgid "Default Style"
-msgstr ""
+msgstr "Voreingestelltes Design"
 
 #: inc/constants.php:483
 #@ piratenkleider
 msgid "Empty CSS"
-msgstr ""
+msgstr "Leeres CSS"
 
 #: inc/constants.php:485
 #@ piratenkleider
 msgid "Flaschenpost 2013"
-msgstr ""
+msgstr "Flaschenpost 2013"
 
 #: inc/constants.php:486
 #@ piratenkleider
 msgid "Piratenkleider 2"
-msgstr ""
+msgstr "Piratenkleider 2"
 
 #: inc/constants.php:494
 #@ piratenkleider
 msgid "Germany"
-msgstr ""
+msgstr "Deutschland"
 
 #: inc/constants.php:495
 #@ piratenkleider
 msgid "Pirate Party Germany"
-msgstr ""
+msgstr "Piratenpartei Deutschland"
 
 #: inc/constants.php:517
 #: inc/constants.php:571
 #@ piratenkleider
 msgid "Pirate Party International"
-msgstr ""
+msgstr "Pirate Party International"
 
 #: inc/constants.php:570
 #@ piratenkleider
 msgid "International (with flags)"
-msgstr ""
+msgstr "International (mit Flaggen)"
 
 #: inc/constants.php:880
 #: inc/constants.php:1939
 #@ piratenkleider
 msgid "Header"
-msgstr ""
+msgstr "Kopfteil"
 
 #: inc/constants.php:885
 #@ piratenkleider
 msgid "Display List of several websites belonging to the pirate party."
-msgstr ""
+msgstr "Zeige eine Liste verschiedener Webportale der Piratenpartei."
 
 #: inc/constants.php:890
 #@ piratenkleider
 msgid "Search Form"
-msgstr ""
+msgstr "Suchmaske"
 
 #: inc/constants.php:891
 #@ piratenkleider
 msgid "Display search form."
-msgstr ""
+msgstr "Zeige Suchmaske"
 
 #: inc/constants.php:896
 #@ piratenkleider
 msgid "Stamps"
-msgstr ""
+msgstr "Sticker"
 
 #: inc/constants.php:897
 #@ piratenkleider
 msgid "Display stamps with short text or image in header"
-msgstr ""
+msgstr "Zeige Sticker aus einem kurzem Text oder Bild im Kopfteil"
 
 #: inc/constants.php:902
 #@ piratenkleider
 msgid "Stamp 1"
-msgstr ""
+msgstr "Sticker 1"
 
 #: inc/constants.php:906
 #: inc/constants.php:924
 #: inc/constants.php:942
 #@ piratenkleider
 msgid "Content"
-msgstr ""
+msgstr "Inhalt"
 
 #: inc/constants.php:907
 #: inc/constants.php:925
 #: inc/constants.php:943
 #@ piratenkleider
 msgid "Text (Inline-HTML-Tags allowed)"
-msgstr ""
+msgstr "Text (Inline-HTML-Tags erlaubt)"
 
 #: inc/constants.php:914
 #: inc/constants.php:932
 #: inc/constants.php:950
 #@ piratenkleider
 msgid "Target URL for stamp"
-msgstr ""
+msgstr "Ziel (Webadresse)"
 
 #: inc/constants.php:920
 #@ piratenkleider
 msgid "Stamp 2"
-msgstr ""
+msgstr "Sticker 2"
 
 #: inc/constants.php:938
 #@ piratenkleider
 msgid "Stamp 3"
-msgstr ""
+msgstr "Sticker 3"
 
 #: inc/constants.php:960
 #@ piratenkleider
 msgid "Websites"
-msgstr ""
+msgstr "Webauftritte"
 
 #: inc/constants.php:963
 #@ piratenkleider
 msgid "Default Links for Websites as Menu in Header. Can be replaced by defining a menu in section \"Website Menu\""
-msgstr ""
+msgstr "Voreingestellte Links für Webportale im Kopfteil. Diese können durch Erstellen eines Menüs in dem Bereich \"Website Menu\" ersetzt werden."
 
 #: inc/constants.php:969
 #@ piratenkleider
 msgid "Footer"
-msgstr ""
+msgstr "Fußteil"
 
 #: inc/constants.php:973
 #@ piratenkleider
 msgid "Pirate Party Links"
-msgstr ""
+msgstr "Linkliste zur Piratenpartei"
 
 #: inc/constants.php:974
 #@ piratenkleider
 msgid "Display a list for several Pirate Party sections worldwide or be some countries."
-msgstr ""
+msgstr "Zeige eine Linkliste verschiedener Piratenparteien weltweit oder Gliederungen auf Landesebene."
 
 #: inc/constants.php:979
 #@ piratenkleider
 msgid "Section"
-msgstr ""
+msgstr "Bereich"
 
 #: inc/constants.php:980
 #@ piratenkleider
 msgid "Chose section for display"
-msgstr ""
+msgstr "Wähle einen Bereich"
 
 #: inc/constants.php:993
 #@ piratenkleider
 msgid "Display categories."
-msgstr ""
+msgstr "Zeige Kategorien"
 
 #: inc/constants.php:999
 #@ piratenkleider
 msgid "Display tagcloud."
-msgstr ""
+msgstr "Zeige Tagcloud"
 
 #: inc/constants.php:1005
 #@ piratenkleider
 msgid "Entry filter"
-msgstr ""
+msgstr "Beitragsfilter"
 
 #: inc/constants.php:1010
 #@ piratenkleider
 msgid "Set main entry list"
-msgstr ""
+msgstr "Definiere einen Hauptartikelstrom"
 
 #: inc/constants.php:1011
 #@ piratenkleider
 msgid "Chose which entries are displayed on the start page."
-msgstr ""
+msgstr "Auswahl welche Artikel auf der Startseite erscheinen sollen."
 
 #: inc/constants.php:1014
 #@ piratenkleider
 msgid "All entries (from every category) and bookmarks together"
-msgstr ""
+msgstr "Alle Einträge und Leseempfehlungen"
 
 #: inc/constants.php:1015
 #@ piratenkleider
@@ -1876,11 +1880,6 @@ msgstr ""
 msgid "Show date as first line after title. (Small entry teaser in 50% content-width)."
 msgstr ""
 
-#: inc/constants.php:1275
-#@ piratenkleider
-msgid "Aktivate"
-msgstr ""
-
 #: inc/constants.php:1276
 #@ piratenkleider
 msgid "Activates slider for start pages."
@@ -2111,6 +2110,7 @@ msgstr ""
 msgid "Sets a default image."
 msgstr ""
 
+#: inc/constants.php:871
 #: inc/constants.php:1578
 #@ piratenkleider
 msgid "Entries"
@@ -2554,6 +2554,7 @@ msgstr ""
 msgid "Only (do not use any other css files)"
 msgstr ""
 
+#: inc/constants.php:1275
 #: inc/constants.php:2036
 #@ piratenkleider
 msgid "Activate"
@@ -3432,5 +3433,10 @@ msgstr ""
 #: loop.php:75
 #@ piratenkleider
 msgid "More images"
+msgstr ""
+
+#: inc/theme-options.php:531
+#@ piratenkleider
+msgid "Optionen not defined"
 msgstr ""
 

@@ -528,7 +528,7 @@ function theme_options_do_page($tab = '') {
                                     $setsection = "";
                             }    
                     } else {
-                        _e( 'Optionen nicht definiert', 'piratenkleider' );
+                        _e( 'Optionen not defined', 'piratenkleider' );
                     }
                 ?>
                      

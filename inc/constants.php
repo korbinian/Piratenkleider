@@ -1272,7 +1272,7 @@ $setoptions = array(
               ),
               'slider-aktiv' => array(
                   'type'    => 'bool',
-                  'title'   => __( 'Aktivate', 'piratenkleider' ),
+                  'title'   => __( 'Activate', 'piratenkleider' ),
                   'label'   => __( 'Activates slider for start pages.', 'piratenkleider' ),
                   'default' => $defaultoptions['slider-aktiv'],
                   'parent'  => 'sliderpars'
