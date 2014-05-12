@@ -1126,7 +1126,7 @@ $setoptions = array(
               ), 
              'artikelstream-nextnum-linktipps' => array(
                   'type'    => 'number',
-                  'title'   => __( 'Number bookmark list', 'piratenkleider' ),
+                  'title'   => __( 'Additional bookmarks', 'piratenkleider' ),
                   'label'   => __( 'Number for additional bookmarks as a list.', 'piratenkleider' ),
                   'default' => $defaultoptions['artikelstream-nextnum-linktipps'],
                   'parent'  => 'artikelstream'
@@ -2252,7 +2252,7 @@ $setoptions = array(
            'fields' => array(
 	        'impressum'  => array(
                   'type'    => 'section',
-                  'title'   => __('Informations for imprint', 'piratenkleider'),                   
+                  'title'   => __('Imprint', 'piratenkleider'),                   
 		),               
                'impressumperson' => array(
                   'type'    => 'text',

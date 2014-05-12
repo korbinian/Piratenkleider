@@ -8,13 +8,13 @@
 // Register Custom Post Type
 function piratenkleider_person_post_type() {
 	$labels = array(
-		'name'                => _x( 'Personal', 'Informations about people', 'piratenkleider' ),
-		'singular_name'       => _x( 'Person', 'Informations about person', 'piratenkleider' ),
-		'menu_name'           => __( 'Person', 'piratenkleider' ),            
+		'name'                => _x( 'Business Card', 'Personal information', 'piratenkleider' ),
+		'singular_name'       => _x( 'Business Card', 'Personal information', 'piratenkleider' ),
+		'menu_name'           => __( 'Business Card', 'piratenkleider' ),            
 	);
 	$args = array(
-		'label'               => __( 'Person', 'piratenkleider' ),
-		'description'	      => __( 'Manage people for visiting card function', 'piratenkleider' ),
+		'label'               => __( 'Business Card', 'piratenkleider' ),
+		'description'	      => __( 'Manage personal information', 'piratenkleider' ),
 		'labels'              => $labels,
 		'supports'            => array( 'title', 'thumbnail', 'editor'),
 		'hierarchical'        => false,
@@ -49,7 +49,7 @@ add_action( 'init', 'piratenkleider_taxonomies_person', 0 );
 function piratenkleider_person_metabox() {
     add_meta_box(
         'piratenkleider_person_metabox',
-        __( 'Personal description', 'piratenkleider' ),
+        __( 'Personal information', 'piratenkleider' ),
         'piratenkleider_person_metabox_content',
         'person',
         'normal',
