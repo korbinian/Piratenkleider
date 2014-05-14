@@ -1,6 +1,6 @@
 <?php
 /* 
- Template Name: Data privacy statement
+ Template Name: Privacy policy
  */
 ?>
 <?php 
