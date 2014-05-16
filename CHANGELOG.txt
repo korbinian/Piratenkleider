@@ -3,13 +3,20 @@ Theme Piratenkleider
 Changelog 
 (since version 3.2; Former changes look at github.com/Piratenkleider/)
 
+Version 3.2.1:
+* Changed margins and sizes for headlines in content.
+* Changed sidebar background: Uses main background
+* Sticky-Class uses now standard class of Infoboxes
+
 Version 3.2.0:
-* Moved templates into a new directory templates
+* Moved templates into a new directory templates.
 * Changed language in PHP files to english and added german language files;
+  Removed former american-english translation file.
 * Notice: Former called "linktipps" will be renamed in "bookmarks" for english
-  texts
-* Bugfix: custom-fields.php: fixed entries with wrong language domain 
-* Removed 'first-teaser-widget-area' (widget instead of slider on start page)
+  texts.
+* Bugfix: custom-fields.php: fixed entries with wrong language domain. 
+* Removed 'first-teaser-widget-area' (widget instead of slider on start page).
+* Removed Teaser widget (widget instead of teaserlinks on start page).
 * Removed Bulgarian language files, cause they dont match anymore to new
   base language in theme.
- 
+

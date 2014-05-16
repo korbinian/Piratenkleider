@@ -11,7 +11,7 @@ function piratenkleider_widgets_init() {
     register_sidebar( array(
             'name' => __( 'Sitebar 1 (Upper)', 'piratenkleider' ),
             'id' => 'sidebar-widget-area',
-            'description' => __( 'Sitebar right; This region is above of optional poster slider.', 'piratenkleider' ),
+            'description' => __( 'This region is above of optional poster slider.', 'piratenkleider' ),
             'before_widget' => '<div class="widget">',
             'after_widget' => '</div>',
             'before_title' => '<h2>',
@@ -21,14 +21,17 @@ function piratenkleider_widgets_init() {
     register_sidebar( array(
             'name' => __( 'Sidebar 2 (Lower)', 'piratenkleider' ),
             'id' => 'sidebar-widget-area-afterplakate',
-            'description' => __( 'Sitebar right; This region is below of optional poster slider.', 'piratenkleider' ),
+            'description' => __( 'This region is below of optional poster slider.', 'piratenkleider' ),
             'before_widget' => '<div class="widget">',
             'after_widget' => '</div>',
             'before_title' => '<h2>',
             'after_title' => '</h2>',
     ) );
 
-    // Rechter Aktionlinkbereich, neben Slider
+    /* 
+     * 
+     * Rechter Aktionlinkbereich, neben Slider
+     * Deaktiviert ab 3.2.1  
     register_sidebar( array(
             'name' => __( 'Start page: Teaser', 'piratenkleider' ),
             'id' => 'second-teaser-widget-area',
@@ -38,7 +41,7 @@ function piratenkleider_widgets_init() {
             'before_title' => '<h3 class="widget-title">',
             'after_title' => '</h3>',
     ) );
-
+    */
 
     // Widgets for indexpages (categories, tags, authorpage)
     register_sidebar( array(

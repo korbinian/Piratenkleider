@@ -355,11 +355,11 @@ function piratenkleider_person_metabox_updated_messages( $messages ) {
 	global $post, $post_ID;
 	$messages['person'] = array(
 		0 => '',
-		1 => __('Personal informations updated.', 'piratenkleider'),
-		2 => __('Personal informations updated.', 'piratenkleider'),
-		3 => __('Personal informations removed.', 'piratenkleider'),
-		6 => __('Personal informations publiced.', 'piratenkleider'),
-		7 => __('Personal informations saved.', 'piratenkleider'),
+		1 => __('Business card updated.', 'piratenkleider'),
+		2 => __('Business card updated.', 'piratenkleider'),
+		3 => __('Business card removed.', 'piratenkleider'),
+		6 => __('Business card publiced.', 'piratenkleider'),
+		7 => __('Business card saved.', 'piratenkleider'),
 			);
 	return $messages;
 }

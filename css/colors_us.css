@@ -80,27 +80,7 @@
         background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #2d7dc5), color-stop(1, #1a4872));
         background-image: linear-gradient(top, #2d7dc5, #1a4872);
       }
-      .sticky {
-        border-color: #888;
-        border-color: rgba(0,0,0,.3);
-        -webkit-box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2) inset;
-        -moz-box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2) inset;
-        -ms-box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2) inset;
-        box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2) inset;
-        color: #444;
-        color: rgba(0,0,0,.8);
-        background: url("../images/int/bg-tags-us.png") repeat fixed -20% top #B127AF;
-     }
-     .sticky a {
-         color: black;
-         background: #993399;
 
-     }      
-     .sticky a:hover,
-     .sticky a:focus {    
-        color: #000;
-        background: #d97300;
-     }   
     
      .skiplinks li a:focus, 
      .skiplinks li a:active {

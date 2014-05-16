@@ -371,7 +371,7 @@ $default_toplink_liste = array(
 	'active'    => 1,
     ),
     'link6'  => array(
-	'name'	    => __('Donate', 'piratenkleider' ),
+	'name'	    => __('Donating', 'piratenkleider' ),
 	'content'  => 'https://spenden.piratenpartei.de',
 	'active'    => 1,
     ),
@@ -624,9 +624,9 @@ $default_alternativestyles = array(
          'title' => __('Pirate Party Country Association','piratenkleider').' Baden-W&uuml;rttemberg',
          'url'  => 'http://www.piratenpartei-bw.de/',
          'sublist' => array(
-             __('<abbr title="Country Chapter">CC</abbr>','piratenkleider').' Freiburg' => 'https://bzv-fr.piratenpartei-bw.de/',      
-             __('<abbr title="Country Chapter">CC</abbr>','piratenkleider').' Stuttgart' => 'http://www.piraten-bzv-stuttgart.de/',
-             __('<abbr title="Country Chapter">CC</abbr>','piratenkleider').' T&uuml;bingen' => 'https://bzv.piratenpartei-tuebingen.de/',          
+             __('<abbr title="District Chapter">DC</abbr>','piratenkleider').' Freiburg' => 'https://bzv-fr.piratenpartei-bw.de/',      
+             __('<abbr title="District Chapter">DC</abbr>','piratenkleider').' Stuttgart' => 'http://www.piraten-bzv-stuttgart.de/',
+             __('<abbr title="District Chapter">DC</abbr>','piratenkleider').' T&uuml;bingen' => 'https://bzv.piratenpartei-tuebingen.de/',          
              __('<abbr title="District Chapter">DC</abbr>','piratenkleider').' B&ouml;blingen' => 'https://wiki.piratenpartei.de/BW:Landkreis_B%C3%B6blingen/District Chapter',
              __('<abbr title="District Chapter">DC</abbr>','piratenkleider').' Calw-Freudenstadt' => 'https://wiki.piratenpartei.de/BW:District Chapter_Calw-Freudenstadt',
              __('<abbr title="District Chapter">DC</abbr>','piratenkleider').' Heidenheim' => 'http://www.piraten-heidenheim.de',
@@ -648,20 +648,20 @@ $default_alternativestyles = array(
          'title' => __('Pirate Party Country Association','piratenkleider').'Bayern',
          'url'  => 'http://www.piratenpartei-bayern.de/',
          'sublist' => array(
-             __('<abbr title="Country Chapter">CC</abbr>','piratenkleider').' Mittelfranken' => 'http://piraten-mfr.de/',
-             __('<abbr title="Country Chapter">CC</abbr>','piratenkleider').' Niederbayern' => 'http://niederbayern.piratenpartei-bayern.de/',
-             __('<abbr title="Country Chapter">CC</abbr>','piratenkleider').' Oberbayern' => 'http://oberbayern.piratenpartei.de/',
-             __('<abbr title="Country Chapter">CC</abbr>','piratenkleider').' Oberfranken' => 'http://piraten-oberfranken.de/',
-             __('<abbr title="Country Chapter">CC</abbr>','piratenkleider').' Oberpfalz' => 'http://oberpfalz.piratenpartei.de/',
-             __('<abbr title="Country Chapter">CC</abbr>','piratenkleider').' Schwaben' => 'http://www.piraten-schwaben.de/',
-             __('<abbr title="Country Chapter">CC</abbr>','piratenkleider').' Unterfranken' => 'https://piraten-ufr.de/',
+             __('<abbr title="District Chapter">DC</abbr>','piratenkleider').' Mittelfranken' => 'http://piraten-mfr.de/',
+             __('<abbr title="District Chapter">DC</abbr>','piratenkleider').' Niederbayern' => 'http://niederbayern.piratenpartei-bayern.de/',
+             __('<abbr title="District Chapter">DC</abbr>','piratenkleider').' Oberbayern' => 'http://oberbayern.piratenpartei.de/',
+             __('<abbr title="District Chapter">DC</abbr>','piratenkleider').' Oberfranken' => 'http://piraten-oberfranken.de/',
+             __('<abbr title="District Chapter">DC</abbr>','piratenkleider').' Oberpfalz' => 'http://oberpfalz.piratenpartei.de/',
+             __('<abbr title="District Chapter">DC</abbr>','piratenkleider').' Schwaben' => 'http://www.piraten-schwaben.de/',
+             __('<abbr title="District Chapter">DC</abbr>','piratenkleider').' Unterfranken' => 'https://piraten-ufr.de/',
          ) 
      ), 
     'Brandenburg' => array(
         'title' => __('Pirate Party Country Association','piratenkleider').' Brandenburg',
         'url'  => 'http://www.piratenbrandenburg.de/',
         'sublist' => array(
-            __('<abbr title="Town Chapter">SV</abbr>','piratenkleider').' Potsdam' => 'https://potsdam.piratenbrandenburg.de/',
+            __('<abbr title="Town Chapter">TC</abbr>','piratenkleider').' Potsdam' => 'https://potsdam.piratenbrandenburg.de/',
             __('<abbr title="District Chapter">DC</abbr>','piratenkleider').' Brandenburg an der Havel' => 'https://brb.piratenbrandenburg.de/',
             __('<abbr title="District Chapter">DC</abbr>','piratenkleider').' Havelland' => 'https://hvl.piratenbrandenburg.de/',
             __('<abbr title="District Chapter">DC</abbr>','piratenkleider').' M&auml;rkisch-Oderland' => 'https://mol.piratenbrandenburg.de/',
@@ -680,9 +680,9 @@ $default_alternativestyles = array(
         'title' => __('Pirate Party Country Association','piratenkleider').' Hamburg',
         'url'  => 'http://www.piratenpartei-hamburg.de/',
         'sublist' => array(
-            __('<abbr title="Country Chapter">CC</abbr>','piratenkleider').' Bergedorf' => 'http://www.piratenpartei-bergedorf.de/',
-            __('<abbr title="Country Chapter">CC</abbr>','piratenkleider').' Harburg' => 'http://www.piraten-harburg.de/',
-            __('<abbr title="Country Chapter">CC</abbr>','piratenkleider').' Hamburg-Nord' => 'https://wiki.piratenpartei.de/HH:Country Chapter_Nord',
+            __('<abbr title="District Chapter">DC</abbr>','piratenkleider').' Bergedorf' => 'http://www.piratenpartei-bergedorf.de/',
+            __('<abbr title="District Chapter">DC</abbr>','piratenkleider').' Harburg' => 'http://www.piraten-harburg.de/',
+            __('<abbr title="District Chapter">DC</abbr>','piratenkleider').' Hamburg-Nord' => 'https://wiki.piratenpartei.de/HH:Country Chapter_Nord',
             'Eimb&uuml;tteler Piraten' => 'https://wiki.piratenpartei.de/HH:Eimsb%C3%BCtteler_Piraten',
         )
     ),
@@ -725,9 +725,9 @@ $default_alternativestyles = array(
         'title' => __('Pirate Party Country Association','piratenkleider').' Niedersachsen',
         'url' => 'http://www.piraten-nds.de/',
         'sublist' => array(
-            __('<abbr title="Town Chapter">SV</abbr>','piratenkleider').' Braunschweig' => 'http://www.piratenpartei-braunschweig.de/',
+            __('<abbr title="Town Chapter">TC</abbr>','piratenkleider').' Braunschweig' => 'http://www.piratenpartei-braunschweig.de/',
             __('<abbr title="District Chapter">DC</abbr>','piratenkleider').' Celle' => 'http://www.piraten-celle.de/',    
-            __('<abbr title="Town Chapter">SV</abbr>','piratenkleider').' Delmenhorst' => 'http://www.piratenpartei-delmenhorst.de/',    
+            __('<abbr title="Town Chapter">TC</abbr>','piratenkleider').' Delmenhorst' => 'http://www.piratenpartei-delmenhorst.de/',    
             __('<abbr title="District Chapter">DC</abbr>','piratenkleider').' Diepholz' => 'http://www.piratenpartei-diepholz.de/',    
             __('<abbr title="District Chapter">DC</abbr>','piratenkleider').' Goslar' => 'http://www.piraten-goslar.de/',    
             __('<abbr title="District Chapter">DC</abbr>','piratenkleider').' G&ouml;ttingen' => 'http://www.piratenpartei-goettingen.de/',    
@@ -740,7 +740,7 @@ $default_alternativestyles = array(
             __('<abbr title="District Chapter">DC</abbr>','piratenkleider').' Nienburg/Weser' => 'http://www.piraten-nienburg.de/',   
             __('<abbr title="District Chapter">DC</abbr>','piratenkleider').' Northeim' => 'http://www.piratenpartei-northeim.de/',   
             __('<abbr title="District Chapter">DC</abbr>','piratenkleider').' Osnabr&uuml;ck' => 'https://www.piraten-osnabrueck.de',   
-            __('<abbr title="Town Chapter">SV</abbr>','piratenkleider').' Oldenburg' => 'https://www.piratenpartei-oldenburg.de/',   
+            __('<abbr title="Town Chapter">TC</abbr>','piratenkleider').' Oldenburg' => 'https://www.piratenpartei-oldenburg.de/',   
             __('<abbr title="District Chapter">DC</abbr>','piratenkleider').' Oldenburg Land' => 'http://www.piratenpartei-landkreis-oldenburg.de/',   
             __('<abbr title="District Chapter">DC</abbr>','piratenkleider').' Osterholz' => 'http://www.piraten-ohz.de/', 	    
             __('<abbr title="District Chapter">DC</abbr>','piratenkleider').' Osterode' => 'http://www.piratenpartei-osterode.de/',   
@@ -749,7 +749,7 @@ $default_alternativestyles = array(
             __('<abbr title="District Chapter">DC</abbr>','piratenkleider').' Schaumburg' => 'http://www.piraten-schaumburg.de/',            
             __('<abbr title="District Chapter">DC</abbr>','piratenkleider').' Wilhelmshaven' => 'http://www.piraten-whv.de/',   
             __('<abbr title="District Chapter">DC</abbr>','piratenkleider').' Wolfenb&uuml;ttel-Salzgitter' => 'http://www.piratenpartei-wolfenbuettel.de/',   
-            __('<abbr title="Town Chapter">SV</abbr>','piratenkleider').' Wolfsburg' => 'http://wolfsburg.piratenpartei-nds.de/',   
+            __('<abbr title="Town Chapter">TC</abbr>','piratenkleider').' Wolfsburg' => 'http://wolfsburg.piratenpartei-nds.de/',   
       
         )
     ),    
@@ -1678,8 +1678,8 @@ $setoptions = array(
               ), 
 	       'src-default-symbolbild-person' => array(
                   'type'    => 'imageurl',
-                  'title'   => __( 'Personal page default image', 'piratenkleider' ),
-                  'label'   => __( 'Sets a default image for personal pages.', 'piratenkleider' ),
+                  'title'   => __( 'Business card default image', 'piratenkleider' ),
+                  'label'   => __( 'Sets a default image for business card pages.', 'piratenkleider' ),
                   'default' => $defaultoptions['src-default-symbolbild-person'],
                   'parent'  => 'darstellungindexseiten',
 		     'maxwidth' => 705,
@@ -1775,7 +1775,7 @@ $setoptions = array(
               'url-newsletteranmeldung' => array(
                   'type'    => 'url',
                   'title'   => __( 'Newsletter / Mailing list', 'piratenkleider' ),
-                  'label'   => __( 'Default URL for a subscribition for for a mailing list', 'piratenkleider' ),
+                  'label'   => __( 'Default URL for a subscribition for a mailing list', 'piratenkleider' ),
                   'default' => $defaultoptions['url-newsletteranmeldung'],
               ), 
               'plakate'  => array(
@@ -1931,7 +1931,7 @@ $setoptions = array(
               'alle-socialmediabuttons' => array(
                   'type'    => 'select',
                   'title'   => __( 'Position', 'piratenkleider' ),
-                  'label'   => __( 'Where to display the social meida buttons (depending on design).', 'piratenkleider' ),
+                  'label'   => __( 'Where to display the social media buttons (depending on design).', 'piratenkleider' ),
                   'liste'   => array(
 		      0 => __( 'Do not display social media buttons', 'piratenkleider' ) ,  
 		      1 => __( 'Header', 'piratenkleider' ), 
@@ -2105,7 +2105,7 @@ $setoptions = array(
               'login_errors' => array(
                   'type'    => 'select',
                   'title'   => __( 'Error message on login', 'piratenkleider' ),
-                  'label'   => __( 'Chose if error messages will b e displayed on login screen, if someone fails with username and password.', 'piratenkleider' ),
+                  'label'   => __( 'Chose if error messages will be displayed on login screen, if someone fails with username and password.', 'piratenkleider' ),
                   'liste'   => array(
                       1 => __( 'Display error message', 'piratenkleider' ), 
                       0 => __( 'Do not display anything', 'piratenkleider' )),
@@ -2354,7 +2354,7 @@ $setoptions = array(
 		), 
 		'ladungstadt' => array(
                   'type'    => 'text',
-                  'title'   => __( 'Postacl code and town', 'piratenkleider' ),
+                  'title'   => __( 'Postal code and town', 'piratenkleider' ),
                   'label'   => __( 'Sets postal code and town for contact information.', 'piratenkleider' ),
 		  'default'	=> '',
                   'parent'  => 'ladung',

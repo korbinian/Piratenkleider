@@ -12,7 +12,7 @@ function piratenkleider_custom_post_linktipps() {
 	);
 	$args = array(
 	    'labels'		=> $labels,
-	    'description'	=> __( 'Add or manage bookmar entries', 'piratenkleider' ),
+	    'description'	=> __( 'Add or manage bookmark entries', 'piratenkleider' ),
 	    'public'		=> false,
 	    'show_ui'		=> true,
 	    'menu_position'	=> 8,

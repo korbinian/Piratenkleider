@@ -8,8 +8,16 @@
  * @licence GPL 2.0 
  */
 
-require( get_template_directory() . '/inc/constants.php' );
+// Make theme available for translation
+// Translations can be filed in the /languages/ directory
+load_theme_textdomain('piratenkleider', get_template_directory() . '/languages');
+$locale = get_locale();
+$locale_file = get_template_directory() . "/languages/$locale.php";
+if ( is_readable( $locale_file ) )
+        require_once( $locale_file );
 
+
+require( get_template_directory() . '/inc/constants.php' );
 $options = piratenkleider_initoptions();
     // adjusts variables for downwards comptability
 
@@ -153,14 +161,7 @@ function piratenkleider_setup() {
 	    add_image_size( $options['sidebar-thumbnail_name'], $options['sidebar-thumbnail_width'], $options['sidebar-thumbnail_height'], $options['sidebar-thumbnail_crop'] );     
 	 }
 	
-        
-        // Make theme available for translation
-        // Translations can be filed in the /languages/ directory
-        load_theme_textdomain('piratenkleider', get_template_directory() . '/languages');
-        $locale = get_locale();
-        $locale_file = get_template_directory() . "/languages/$locale.php";
-        if ( is_readable( $locale_file ) )
-                require_once( $locale_file );
+       
 
         // This theme uses wp_nav_menu() in one location.
         register_nav_menus( array(

@@ -474,7 +474,7 @@ button, input[type="submit"],
 
 
 /* Hinweisboxen */
-  .hinweis, .box {
+  .hinweis, .box, .sticky {
     border-radius: 0.3em;
     border-width: 1px;
     border-style: solid;
@@ -488,6 +488,7 @@ button, input[type="submit"],
     margin: 0 0 1.5em 0;
   }
   .hinweis > *:last-child,
+  .sticky  > *:last-child,
   .box > *:last-child {
     margin-bottom: 0;
   }
@@ -1597,8 +1598,7 @@ display: inline-block;
      font-size: 0.9em;
   }
 
-.post .disclaimer, 
-.sticky {
+.post .disclaimer {
     border-radius: 0.3em;
     border-width: 1px;
     border-style: solid;
@@ -1619,34 +1619,21 @@ display: inline-block;
 .post .disclaimer {
     clear: both;
 }
-.sticky {
-    padding: 5px 5px 20px 5px;
-    margin: 10px;
-}
-.post .disclaimer a, 
-.sticky a {
+
+.post .disclaimer a {
     color: black;
     background: #f38100;
     padding: 0 2px;
 }      
-.sticky p {
-    margin-bottom: 0;
-}
+
 
 .post .disclaimer a:hover, 
-.post .disclaimer a:focus,
-.sticky a:visited,
-.sticky a:hover,
-.sticky a:focus {    
+.post .disclaimer a:focus {    
     color: #000;
     background: #d97300;
     text-decoration: underline;
 }      
-.sticky .infoimage > img {
-    background: none repeat scroll 0 0 white;
-    border: 1px solid #FF8800;
-    border-radius: 5px;
-}
+
 
 .post-comments #comments-title {
   margin-bottom: 20px; }

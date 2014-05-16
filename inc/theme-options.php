@@ -16,8 +16,8 @@ function theme_options_init(){
  * Load up the menu page
  */
 function theme_options_add_page() {
-	add_theme_page( __( 'Options', 'piratenkleider' ),
-                        __( 'Options', 'piratenkleider' ), 
+	add_theme_page( __( 'Theme Options', 'piratenkleider' ),
+                        __( 'Theme Options', 'piratenkleider' ), 
                        'edit_theme_options', 
                         'theme_options', 
                         'theme_options_do_page' );
@@ -528,7 +528,7 @@ function theme_options_do_page($tab = '') {
                                     $setsection = "";
                             }    
                     } else {
-                        _e( 'Optionen not defined', 'piratenkleider' );
+                        _e( 'Option not defined', 'piratenkleider' );
                     }
                 ?>
                      
