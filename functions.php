@@ -422,7 +422,16 @@ function piratenkleider_addfonts() {
   echo $out;
 }
 add_action('wp_head', 'piratenkleider_addfonts');
-
+function piratenkleider_addaltbodybackground() {
+  global $options;
+  if ((isset($options['alt-body-background'])) && (isset($options['alt-body-background_id'])) && $options['alt-body-background_id']>0) {
+       $out = "<style>";
+      $out .= 'body { background-image: url("'.$options['alt-body-background'].'");}';
+      $out .= "</style>\n";
+      echo $out;
+  }
+}
+add_action('wp_head', 'piratenkleider_addaltbodybackground');
 
 function piratenkleider_addmetatags() {
     global $options;

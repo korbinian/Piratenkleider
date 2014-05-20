@@ -1133,7 +1133,7 @@ display: inline-block;
  } 
 
 .content .row {
-    background: #ff8800;
+   background: #ff8800; 
     background: rgba(255, 136, 0, 0.7);
     -ms-word-break:break-word;
     -webkit-word-break:  break-word;
@@ -2504,11 +2504,12 @@ img.wp-smiley {
 * Footer -------------------------------------------------------------------
 */
 .footer {
-  background: black url("../images/int/bg-tags_gray.jpg") -20% top fixed;
+/*  background: black url("../images/int/bg-tags_gray.jpg") -20% top fixed; */
+   background: rgba(0, 0, 0, 0.8);
   overflow: hidden; 
 }
 .footer .row {
-    background: rgba(0, 0, 0, 0.2);
+/*    background: rgba(0, 0, 0, 0.2); */
     color: #eeeeee;
 }
 

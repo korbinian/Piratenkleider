@@ -1957,7 +1957,7 @@ $setoptions = array(
                   'type'    => 'section',
                   'title'   => __( 'Stylesheet', 'piratenkleider' ),
               ),
-	       'aktiv-alternativestyle' => array(
+	      'aktiv-alternativestyle' => array(
                   'type'    => 'select',
                   'title'   => __( 'Change base design', 'piratenkleider' ),
                   'label'   => __( 'Switches stylesheet to one of the following subdesigns.', 'piratenkleider' ),
@@ -1975,6 +1975,13 @@ $setoptions = array(
 		   'parent'  => 'style', 
               ),
 
+            'alt-body-background' => array(
+                  'type'    => 'imageurl',
+                  'title'   => __( 'Alternative body background', 'piratenkleider' ),
+                  'label'   => __( 'Sets another background image for body; overwrites setting of CSS file.', 'piratenkleider' ),
+                  'default' => '',
+                  'parent'  => 'style',
+              ),   
               'fonts-headers' => array(
                   'type'    => 'fontselect',
                   'title'   => __( 'Title fonts', 'piratenkleider' ),
