@@ -618,10 +618,12 @@ function piratenkleider_person_shortcode( $atts ) {
 		'format'    => 'table',
 		'order'	    => 'ASC',
 		'showautor' => 1,
+                'listorder' => '',
 		'offset'	=> 0,
 	), $atts ) );
 	$single = 0;
 	$cat = sanitize_text_field($cat);
+        $listorder= sanitize_text_field($listorder);
 	$name = sanitize_text_field($name);
 	$order =   strtolower(sanitize_text_field($order));
 	$offset = intval($offset);
@@ -668,7 +670,23 @@ function piratenkleider_person_shortcode( $atts ) {
 			'posts_per_page' => $num,
 			'offset'    => $offset
 		);
-
+        } elseif ((isset($listorder)) && ( strlen(trim($listorder))>0)) {   
+            $post_list = explode(",",$listorder);
+            $list = array();
+            $i=0;
+            foreach( $post_list as $post_id ) {               
+                if (intval(trim($post_id))) {
+                    $list[$i] = intval(trim($post_id));
+                    $i= $i +1;
+                }
+            }
+            $args = array(
+			'post_type' => 'person',
+			'post__in'      => $list,
+			'order' => $order,
+			'orderby' => 'post__in',    
+                        'posts_per_page' => $i,
+		);
 	} else {
 	    $args = array(
 		    'post_type' => 'person',
