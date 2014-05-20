@@ -1064,7 +1064,9 @@ $setoptions = array(
                   'type'    => 'select',
                   'title'   => __( 'Display second entry list', 'piratenkleider' ),
                   'label'   => __( 'Activates a second entry list, made by those article categories which are not part of the main article list.', 'piratenkleider' ),
-                  'liste'   => array("0" => "Hide", "1" => "Show"),
+                  'liste'   => array(
+                      "0" => __("Hide", 'piratenkleider'), 
+                      "1" => __("Show",'piratenkleider')),
                   'default' => $defaultoptions['artikelstream-show-second'],
                    'parent'  => 'artikelstream'
               ), 
@@ -1111,7 +1113,8 @@ $setoptions = array(
                   'type'    => 'select',
                   'title'   => __( 'Bookmarks', 'piratenkleider' ),
                   'label'   => __( 'Display a bookmark section after main entry list, forming an own entry list. This list is positioned before the second entry list.', 'piratenkleider' ),
-                  'liste'   => array("0" => "Hide", "1" => "Show"),
+                  'liste'   => array("0" => __("Hide", 'piratenkleider'), 
+                      "1" => __("Show",'piratenkleider')),
                   'default' => $defaultoptions['artikelstream-show-linktipps'],
                    'parent'  => 'artikelstream'
               ), 
