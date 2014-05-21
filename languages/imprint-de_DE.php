@@ -102,7 +102,7 @@ stehen s&auml;mtliche Werke dieses Angebots unter einer
     <li><a class="extern bebas" href="http://dharmatype.com/dharma-type/bebas-neue.html">Schrift Bebas Neue von Dharmatype</a> (<span lang="en">SIL Open Font License</span> 1.1)</li>
     <li><a class="extern" href="https://www.google.com/fonts/specimen/Droid+Sans">Schrift DroidSans</a> (<span lang="en">Apache License</span> 2.0)</li>
     <li><a class="extern" href="http://de.wikipedia.org/wiki/Linux_Libertinel">Schrift LinLibertine</a> (<span lang="en">SIL Open Font License</span> 1.1)</li>
-    <li><a class="extern" href="http://wiki.piratenpartei.de/Pirate_Design/Aktuell#Schriften">Schrift PoliticsHead</a> (<span lang="en">SIL Open Font License</span> 1.1)</li>
+    <li><a class="extern" href="http://wiki.piratenpartei.de/Pirate_Design/Aktuell#Schriften">Schrift PoliticsHead</a> (<span lang="en">WTFPL License</span> 1.1)</li>
     <li><a class="extern" href="http://fortawesome.github.io/Font-Awesome/">Schrift Awesome</a> (<span lang="en">SIL Open Font License</span> 1.1)</li>
 
     

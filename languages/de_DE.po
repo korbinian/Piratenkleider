@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Piratenkleider v3.2.2\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2014-05-21 19:47:06+0000\n"
+"PO-Revision-Date: 2014-05-21 21:16:44+0000\n"
 "Last-Translator: xwolf <xwolf@xwolf.de>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -134,15 +134,15 @@ msgstr "Nichts gefunden"
 #: search.php:162
 #: tag.php:118
 #: templates/category-index.php:129
-#: templates/imprint.php:359
+#: templates/imprint.php:291
 #: templates/pageindex.php:124
-#: templates/privacy-policy.php:220
+#: templates/privacy-policy.php:169
 #@ piratenkleider
 msgid "More informations"
 msgstr "Weitere Informationen"
 
 #: events/ecp-single-template.php:67
-#: functions.php:784
+#: functions.php:786
 #: index.php:52
 #: loop.php:78
 #: page.php:70
@@ -150,9 +150,9 @@ msgstr "Weitere Informationen"
 #: single.php:90
 #: templates/actionpage.php:22
 #: templates/category-index.php:27
-#: templates/imprint.php:67
+#: templates/imprint.php:152
 #: templates/pageindex.php:25
-#: templates/privacy-policy.php:68
+#: templates/privacy-policy.php:155
 #@ piratenkleider
 msgid "Edit"
 msgstr "Bearbeiten"
@@ -273,81 +273,81 @@ msgstr "Sidebar anzeigen"
 msgid "Main navigation"
 msgstr "Hauptnavigation"
 
-#: functions.php:672
-#: functions.php:684
+#: functions.php:674
+#: functions.php:686
 #, php-format
 #@ piratenkleider
 msgid "Page %s"
 msgstr "Seite %s"
 
-#: functions.php:699
+#: functions.php:701
 #@ piratenkleider
 msgid "Continue reading <span class=\"meta-nav\">&rarr;</span>"
 msgstr "Weiterlesen <span class=\"meta-nav\">&rarr;</span>"
 
-#: functions.php:753
+#: functions.php:755
 #, php-format
 #@ piratenkleider
 msgid "%s <span class=\"says\">commented at</span>"
 msgstr "%s <span class=\"says\">schrieb am</span>"
 
-#: functions.php:757
+#: functions.php:759
 #@ piratenkleider
 msgid "Comment waits for approval."
 msgstr "Der Kommentar wartet auf die Moderation."
 
 #. translators: 1: date, 2: time
-#: functions.php:764
+#: functions.php:766
 #, php-format
 #@ piratenkleider
 msgid "%1$s at %2$s"
 msgstr "%1$s bei %2$s"
 
-#: functions.php:764
+#: functions.php:766
 #@ piratenkleider
 msgid "(Edit)"
 msgstr "(Bearbeiten)"
 
-#: functions.php:784
+#: functions.php:786
 #@ piratenkleider
 msgid "Pingback:"
 msgstr "Pingback:"
 
-#: functions.php:1093
+#: functions.php:1095
 #@ piratenkleider
 msgid "Publiced at"
 msgstr "Veröffentlicht am"
 
-#: functions.php:1108
+#: functions.php:1110
 #: inc/constants.php:2231
 #@ piratenkleider
 msgid "Author"
 msgstr "Autor"
 
-#: functions.php:1125
+#: functions.php:1127
 #, php-format
 #@ piratenkleider
 msgid "Category: %1$s. Tags: %2$s. <br><a href=\"%3$s\" title=\"%4$s\" rel=\"bookmark\">Permalink</a> for this entry."
 msgstr "Thema: %1$s. Tags: %2$s. <br><a href=\"%3$s\" title=\"%4$s\" rel=\"bookmark\">Permalink</a> zum Artikel."
 
-#: functions.php:1127
+#: functions.php:1129
 #, php-format
 #@ piratenkleider
 msgid "Category: %1$s. <br><a href=\"%3$s\" title=\"%4$s\" rel=\"bookmark\">Permalink</a> for this entry."
 msgstr "Thema: %1$s. <br><a href=\"%3$s\" title=\"%4$s\" rel=\"bookmark\">Permalink</a> für diesen Artikel."
 
-#: functions.php:1129
+#: functions.php:1131
 #, php-format
 #@ piratenkleider
 msgid "<a href=\"%3$s\" title=\"%4$s\" rel=\"bookmark\">Permalink</a> for this entry."
 msgstr "<a href=\"%3$s\" title=\"%4$s\" rel=\"bookmark\">Permalink</a> für diesen Artikel."
 
-#: functions.php:1388
+#: functions.php:1390
 #@ piratenkleider
 msgid "No content"
 msgstr "Kein Inhalt."
 
-#: functions.php:1406
+#: functions.php:1408
 #@ piratenkleider
 msgid "No entry for this post"
 msgstr "Kein Inhalt zu diesem Artikel gefunden."
@@ -960,7 +960,7 @@ msgstr "Beiträge nach Schlüsselworten"
 msgid "Categories"
 msgstr "Kategorien"
 
-#: functions.php:1606
+#: functions.php:1608
 #: searchform.php:5
 #@ piratenkleider
 msgid "Search for"
@@ -1959,8 +1959,8 @@ msgstr "Platzhalterbild für Vorlagen"
 msgid "Sets a default image for template pages."
 msgstr "Definiert ein Bild für Seiten aus Vorlagen."
 
-#: functions.php:891
-#: functions.php:1067
+#: functions.php:893
+#: functions.php:1069
 #: inc/constants.php:1706
 #@ piratenkleider
 msgid "Comments"
@@ -2633,6 +2633,7 @@ msgid "Addition field for copyright informations."
 msgstr "Zusätzliches Eingabefeld für optionale Copyright Informationen."
 
 #: inc/constants.php:2354
+#: templates/imprint.php:87
 #@ piratenkleider
 msgid "Postal address"
 msgstr "Postadresse"
@@ -2916,7 +2917,7 @@ msgstr "Bild URL"
 msgid "Sets an image link for media library"
 msgstr "Wähle ein Bild aus der Medienbibliothek oder gebe eine Bild-URL an."
 
-#: functions.php:617
+#: functions.php:619
 #: inc/widgets.php:330
 #@ piratenkleider
 msgid "Image:"
@@ -2942,7 +2943,7 @@ msgstr "Spenden"
 msgid "Contact email"
 msgstr "Kontakt E-Mail"
 
-#: functions.php:1032
+#: functions.php:1034
 #@ piratenkleider
 msgid "Created at:"
 msgstr "Erstellt am:"
@@ -3063,17 +3064,17 @@ msgstr "Letzte Artikel"
 msgid "No person found."
 msgstr "Es konnte keine Personenvisitenkarten gefunden werden."
 
-#: functions.php:1564
+#: functions.php:1566
 #@ piratenkleider
 msgid "Entry of category"
 msgstr "Einträge der Kategorie"
 
-#: functions.php:1608
+#: functions.php:1610
 #@ piratenkleider
 msgid "Entries with tag"
 msgstr "Einträge nach dem Schlüsselwort"
 
-#: functions.php:1612
+#: functions.php:1614
 #@ piratenkleider
 msgid "Entry by"
 msgstr "Eintrag von"
@@ -3083,24 +3084,24 @@ msgstr "Eintrag von"
 msgid "Notice: Comments reflect the opionions of those who did wrote theme. Allowing people comment here, doenst mean, that we also agree with them."
 msgstr "Hinweis: Kommentare geben nur die persönliche Meinung desjenigen wieder, der sie schrieb. Durch die Bereitstellung der Kommentarfunktion machen sich die Betreiber dieser Website die Kommentare nicht zu eigen und müssen daher nicht derselben Meinung sein."
 
-#: functions.php:670
+#: functions.php:672
 #, php-format
 #@ piratenkleider
 msgid "Search results for %s"
 msgstr "Suchergebnisse für %s"
 
-#: functions.php:893
-#: functions.php:1069
+#: functions.php:895
+#: functions.php:1071
 #@ piratenkleider
 msgid "Comment"
 msgstr "Kommentar"
 
-#: functions.php:1035
+#: functions.php:1037
 #@ piratenkleider
 msgid "Type: Entry"
 msgstr "Type: Eintrag (Artikel)"
 
-#: functions.php:1037
+#: functions.php:1039
 #@ piratenkleider
 msgid "Type: Page"
 msgstr "Typ: Seite"
@@ -3656,4 +3657,25 @@ msgstr "Keine Wiederholung"
 #@ piratenkleider
 msgid "Fonts"
 msgstr "Schriften"
+
+#: templates/imprint.php:66
+#@ piratenkleider
+msgid "This website is brought to you by:"
+msgstr "Dieser Webauftritt wird bereitgestellt von:"
+
+#: templates/imprint.php:78
+#@ piratenkleider
+msgid "Responsible for this website:"
+msgstr "Verantwortlicher im Sinne des Presserechts:"
+
+#: templates/imprint.php:99
+#@ piratenkleider
+msgid "Digital contact"
+msgstr "Digitale Kontaktaufnahme"
+
+#: templates/imprint.php:119
+#: templates/imprint.php:135
+#@ piratenkleider
+msgid "Postal address for matters in law"
+msgstr "Ladungsfähige Anschrift"
 

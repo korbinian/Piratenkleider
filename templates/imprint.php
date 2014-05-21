@@ -173,7 +173,7 @@ if ( is_readable( $locale_file ) ) {
     <li><a class="extern bebas" href="http://dharmatype.com/dharma-type/bebas-neue.html">Font Bebas Neue von Dharmatype</a> (<span lang="en">SIL Open Font License</span> 1.1)</li>
     <li><a class="extern" href="https://www.google.com/fonts/specimen/Droid+Sans">Font DroidSans</a> (<span lang="en">Apache License</span> 2.0)</li>
     <li><a class="extern" href="http://de.wikipedia.org/wiki/Linux_Libertinel">Font LinLibertine</a> (<span lang="en">SIL Open Font License</span> 1.1)</li>
-    <li><a class="extern" href="http://wiki.piratenpartei.de/Pirate_Design/Aktuell#Schriften">Font PoliticsHead</a> (<span lang="en">SIL Open Font License</span> 1.1)</li>
+    <li><a class="extern" href="http://wiki.piratenpartei.de/Pirate_Design/Aktuell#Schriften">Font PoliticsHead</a> (<span lang="en">WTFPL Licence</span>)</li>
     <li><a class="extern" href="http://fortawesome.github.io/Font-Awesome/">Font Awesome</a> (<span lang="en">SIL Open Font License</span> 1.1)</li>
 
     
