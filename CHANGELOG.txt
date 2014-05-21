@@ -7,7 +7,10 @@ Version 3.2.2:
 * Business cards can be printed out by a given order and by ids, like
   this: [person listorder="4,7,2"]
 * Bugfix: German translation for show/hide
-
+* Bugfix: Sanitizing values on business cards
+* Feature: Symbol icon for wikis on url wiki.piratenbrandenburg.de
+* Feature: Body background changeable independend by current design; 
+  position and repeat configurable.
 
 Version 3.2.1:
 * Changed margins and sizes for headlines in content.

@@ -249,7 +249,5 @@ jQuery(document).ready(function($){
 	 $(".option-plakate-altadressen").hide();
     }
    });  
-   
-   
-   
+ 
 });

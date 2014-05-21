@@ -1974,47 +1974,6 @@ $setoptions = array(
                   'liste'   => $default_colorstyles,
 		   'parent'  => 'style', 
               ),
-
-            'alt-body-background' => array(
-                  'type'    => 'imageurl',
-                  'title'   => __( 'Alternative body background', 'piratenkleider' ),
-                  'label'   => __( 'Sets another background image for body; overwrites setting of CSS file.', 'piratenkleider' ),
-                  'default' => '',
-                  'parent'  => 'style',
-              ),   
-              'fonts-headers' => array(
-                  'type'    => 'fontselect',
-                  'title'   => __( 'Title fonts', 'piratenkleider' ),
-                  'label'   => __( 'Changes font at titles.', 'piratenkleider' ),
-                  'default' => $defaultoptions['fonts-headers'],
-                  'liste'   => $default_fonts,
-		  'parent'  => 'style', 
-              ), 
-              'fonts-menuheaders' => array(
-                  'type'    => 'fontselect',
-                  'title'   => __( 'Menu fonts', 'piratenkleider' ),
-                  'label'   => __( 'Changes font at menu items.', 'piratenkleider' ),
-                  'default' => $defaultoptions['fonts-menuheaders'],
-                  'liste'   => $default_fonts,
-		  	  'parent'  => 'style', 
-              ),                
-              'fonts-content' => array(
-                  'type'    => 'fontselect',
-                  'title'   => __( 'Text font', 'piratenkleider' ),
-                  'label'   => __( 'Changes font for text content.', 'piratenkleider' ),
-                  'default' => $defaultoptions['fonts-content'],
-                  'liste'   => $default_fonts,
-		  	  'parent'  => 'style', 
-              ),               
-	     
-	      'aktiv-linkicons' => array(
-                  'type'    => 'bool',
-                  'title'   => __( 'Activate link icons', 'piratenkleider' ),
-                  'label'   => __( 'Displays link icons at known target URLs and document types.', 'piratenkleider' ),
-                  'default' => $defaultoptions['aktiv-linkicons'],         
-		  	  'parent'  => 'style', 
-              ),
-
               'aktiv-stylefile' => array(
                   'type'    => 'file',
                   'title'   => __( 'CSS file', 'piratenkleider' ),
@@ -2034,7 +1993,94 @@ $setoptions = array(
 		      4 => __('Only (do not use any other css files)', 'piratenkleider'),
                   ),
 		  'parent'  => 'style', 
+              ),  
+               
+            'background'  => array(
+                  'type'    => 'section',
+                  'title'   => __( 'Body Background', 'piratenkleider' ),
               ),
+            'alt-body-background' => array(
+                  'type'    => 'imageurl',
+                  'title'   => __( 'Alternative body background', 'piratenkleider' ),
+                  'label'   => __( 'Sets another background image for body; overwrites setting of CSS file.', 'piratenkleider' ),
+                  'default' => '',
+                  'parent'  => 'background',
+              ),   
+             'alt-body-background-orix' => array(
+                  'type'    => 'select',
+                  'title'   => __( 'Horizontal Orientation', 'piratenkleider' ),
+                  'label'   => __( 'Defines the orientation at x-axis', 'piratenkleider' ),
+                  'default' =>  'left',
+                  'liste'   => array(
+                      'left'=> __('left','piratenkleider'),
+                      'center' => __('center','piratenkleider'),
+                      'right' => __('right','piratenkleider'),
+                      ),
+                  'parent'  => 'background',
+              ),     
+              'alt-body-background-oriy' => array(
+                  'type'    => 'select',
+                  'title'   => __( 'Vertical Orientation', 'piratenkleider' ),
+                  'label'   => __( 'Defines the orientation at y-axis', 'piratenkleider' ),
+                  'default' => 'top',
+                  'liste'   => array(
+                     'top'=> __('top','piratenkleider'),
+                      'center' => __('center','piratenkleider'),
+                      'bottom' => __('bottom','piratenkleider'),
+                      ),
+                  'parent'  => 'background',
+              ), 
+               'alt-body-background-repeat' => array(
+                  'type'    => 'select',
+                  'title'   => __( 'Repeat', 'piratenkleider' ),
+                  'label'   => __( 'Repeats the background image or not', 'piratenkleider' ),
+                  'default' => 'repeat',
+                  'liste'   => array(
+                      'repeat' => __('repeat','piratenkleider'),
+                      'repeat-x' => __('repeat-x','piratenkleider'),
+                      'repeat-y' => __('repeat-y','piratenkleider'),
+                      'no-repeat' => __('no-repeat','piratenkleider'),
+                      ),
+                  'parent'  => 'background',
+              ), 
+               'fonts'  => array(
+                  'type'    => 'section',
+                  'title'   => __( 'Fonts', 'piratenkleider' ),
+              ), 
+              'fonts-headers' => array(
+                  'type'    => 'fontselect',
+                  'title'   => __( 'Title fonts', 'piratenkleider' ),
+                  'label'   => __( 'Changes font at titles.', 'piratenkleider' ),
+                  'default' => $defaultoptions['fonts-headers'],
+                  'liste'   => $default_fonts,
+		  'parent'  => 'fonts', 
+              ), 
+              'fonts-menuheaders' => array(
+                  'type'    => 'fontselect',
+                  'title'   => __( 'Menu fonts', 'piratenkleider' ),
+                  'label'   => __( 'Changes font at menu items.', 'piratenkleider' ),
+                  'default' => $defaultoptions['fonts-menuheaders'],
+                  'liste'   => $default_fonts,
+		  	  'parent'  => 'fonts', 
+              ),                
+              'fonts-content' => array(
+                  'type'    => 'fontselect',
+                  'title'   => __( 'Text font', 'piratenkleider' ),
+                  'label'   => __( 'Changes font for text content.', 'piratenkleider' ),
+                  'default' => $defaultoptions['fonts-content'],
+                  'liste'   => $default_fonts,
+		  	  'parent'  => 'fonts', 
+              ),               
+	     
+	      'aktiv-linkicons' => array(
+                  'type'    => 'bool',
+                  'title'   => __( 'Activate link icons', 'piratenkleider' ),
+                  'label'   => __( 'Displays link icons at known target URLs and document types.', 'piratenkleider' ),
+                  'default' => $defaultoptions['aktiv-linkicons'],         
+		  	  'parent'  => 'fonts', 
+              ),
+
+             
               'breadcrumb'  => array(
                   'type'    => 'section',
                   'title'   => __( 'Breadcrumb', 'piratenkleider' ),
