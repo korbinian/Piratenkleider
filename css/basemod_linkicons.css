@@ -138,6 +138,7 @@
         background-position: -142px 0;
        width: 18px;
     }
+    .content-primary a[href *= "wiki.piratenbrandenburg.de"]:before, 
     .content-primary a[href *= "wiki.piratenpartei.de"]:before {
         background-position: -62px 0;
        width: 18px;
