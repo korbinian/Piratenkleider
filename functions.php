@@ -214,6 +214,8 @@ function piratenkleider_setup() {
                 global $options;  
                 if( is_feed() && !is_admin()) {
                     return $options['feed-overwriteauthorstring'];  
+                } else {
+                    return $name;
                 }
             }
     
@@ -422,11 +424,31 @@ function piratenkleider_addfonts() {
   echo $out;
 }
 add_action('wp_head', 'piratenkleider_addfonts');
+
+
 function piratenkleider_addaltbodybackground() {
   global $options;
   if ((isset($options['alt-body-background'])) && (isset($options['alt-body-background_id'])) && $options['alt-body-background_id']>0) {
-       $out = "<style>";
-      $out .= 'body { background-image: url("'.$options['alt-body-background'].'");}';
+      
+      if (isset($options['alt-body-background-orix'])) {
+          $orix = $options['alt-body-background-orix'];
+      }
+      if (isset($options['alt-body-background-oriy'])) {
+          $oriy = $options['alt-body-background-oriy'];
+      }
+       if (isset($options['alt-body-background-repeat'])) {
+          $repeat = $options['alt-body-background-repeat'];
+      }
+  
+      $out = "<style>";
+      $out .= 'body { background-image: url("'.$options['alt-body-background'].'");';
+      if (isset($repeat)) {
+          $out.= 'background-repeat:'.$repeat.';';
+      }
+      if ((isset($orix)) &&(isset($oriy))) {
+          $out.= 'background-position:'.$orix.' '.$oriy.';';
+      }
+      $out .= ' }';
       $out .= "</style>\n";
       echo $out;
   }
