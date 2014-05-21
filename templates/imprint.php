@@ -10,11 +10,6 @@
 <div class="section content" id="main-content">
   <div class="row">
     <div class="content-primary">
-	
-	
-	<?php if ( have_posts() ) while ( have_posts() ) : the_post();         
-        $custom_fields = get_post_custom();
-        ?>
 
 	<?php
 	    $image_url = '';
@@ -63,13 +58,12 @@
 	
 	
 	
-        <?php the_content(); ?>
-        <?php edit_post_link( __( 'Edit', 'piratenkleider' ), '', '' ); ?>
-        <?php endwhile; ?>
+        
+ 
           
           <?php if ((isset($options['impressumdienstanbieter'])) && (strlen(trim($options['impressumdienstanbieter']))>4)) { ?>
           <p>
-              Dienstanbieter dieser Seite ist   
+             <?php _e('This website is brought to you by:','piratenkleider'); ?>
                <?php echo $options['impressumdienstanbieter']; ?>.               
           </p>   
            <?php } else { ?>
@@ -81,7 +75,7 @@
           
           <?php } ?>
            <?php if ((isset($options['impressumperson']))&& (strlen(trim($options['impressumperson']))>1)) { ?>
-          <p>Verantwortlicher gem&auml;&szlig; &sect;5 TMG ist 
+          <p><?php _e('Responsible for this website:','piratenkleider'); ?> 
                 <?php echo $options['impressumperson']; ?>.
           </p>
            <?php } ?>
@@ -90,7 +84,7 @@
                   && (isset($options['poststrasse']))&& (strlen(trim($options['poststrasse']))>1)
                   && (isset($options['poststadt'])) && (strlen(trim($options['poststadt']))>1)) { ?>
                 
-            <h2>Postanschrift</h2>
+            <h2><?php _e('Postal address','piratenkleider'); ?></h2>
             <address>
                 <?php echo $options['posttitel']?><br> 
                 <?php  if ((isset($options['postperson'])) && (strlen(trim($options['postperson']))>4)) { 
@@ -102,7 +96,7 @@
             </address>                  
            <?php } ?>
           
-            <h2>Digitale Kontaktaufnahme</h2>   
+            <h2><?php _e('Digital contact','piratenkleider'); ?></h2>   
             <ul>
            <?php if ((isset($options['kontaktemail'])) && (strlen(trim($options['kontaktemail']))>4)) { ?>  
                 <li>E-Mail: <a href="mailto:<?php echo $options['kontaktemail']?>"><?php echo $options['kontaktemail']?></a></li>
@@ -122,7 +116,7 @@
            <?php if ((isset($options['ladungtitel'])) && (strlen(trim($options['ladungtitel']))>1)
                   && (isset($options['ladungstrasse']))&& (strlen(trim($options['ladungstrasse']))>1)
                   && (isset($options['ladungstadt'])) && (strlen(trim($options['ladungstadt']))>1)) { ?>  
-            <h2>Ladungsf&auml;hige Anschrift</h2>
+            <h2><?php _e('Postal address for matters in law','piratenkleider'); ?></h2>
              <address>
                  <?php 
                 echo $options['ladungtitel']."<br>";
@@ -138,7 +132,7 @@
                if ((isset($options['posttitel']))  && (strlen(trim($options['posttitel']))>1) 
                   && (isset($options['poststrasse']))  && (strlen(trim($options['poststrasse']))>1)
                   && (isset($options['poststadt'])) && (strlen(trim($options['poststadt']))>1) ) { ?>
-            <h2>Ladungsf&auml;hige Anschrift</h2>
+            <h2><?php _e('Postal address for matters in law','piratenkleider'); ?></h2>
              <address>
                 <?php 
                 echo $options['posttitel']."<br>";
@@ -149,119 +143,46 @@
                   echo $options['poststadt']."<br>";
                       ?>
             </address>              
-               <?php } ?>
-         <?php } ?> 
+           <?php } 
+               
+         } 
          
          
-       
+       the_content(); 
+       edit_post_link( __( 'Edit', 'piratenkleider' ), '', '' ); 
+        
+ global $locale;
  
+ $locale_file = get_template_directory() . "/languages/imprint-$locale.php";
+if ( is_readable( $locale_file ) ) {
+        require_once( $locale_file );
+} else { ?>
+    
+    
             
-           
-            
-<h2>Haftung f&uuml;r Inhalte</h2>
+ 
+<h2>Copyright Informations</h2>    
 <p>
-    Der Betreiber hat alle in seinem Bereich bereitgestellten Informationen nach 
-    bestem Wissen und Gewissen erarbeitet und gepr&uuml;ft. Es wird jedoch keine 
-    Gew&auml;hr f&uuml;r die Aktualit&auml;t, Richtigkeit, Vollst&auml;ndigkeit oder Qualit&auml;t und 
-    jederzeitige Verf&uuml;gbarkeit der bereitgestellten Informationen &uuml;bernommen.
-</p><p>
-F&uuml;r etwaige Sch&auml;den, die beim Aufrufen oder Herunterladen von Daten durch 
-Computerviren oder der Installation oder Nutzung von Software verursacht 
-werden, wird nicht gehaftet.
-</p><p>
-Namentlich gekennzeichnete Internetseiten und Kommentare geben die Auffassungen 
-und Erkenntnisse der abfassenden Personen wieder.
-Der Betreiber beh&auml;lt es sich ausdr&uuml;cklich vor, einzelne Webseiten, Kommentare
-oder das gesamte Angebot ohne gesonderte Ank&uuml;ndigung zu ver&auml;ndern, 
-zu erg&auml;nzen, zu l&ouml;schen oder die Ver&ouml;ffentlichung zeitweise oder endg&uuml;ltig 
-einzustellen. </p>
-
-<h2>Links und Verweise</h2>
-<p>
-Der Betreiber  ist nur f&uuml;r die "eigenen Inhalte", die er zur Nutzung 
-bereith&auml;lt, nach den einschl&auml;gigen Gesetzen 
-verantwortlich.<br />		
-Von diesen eigenen Inhalten sind Querverweise ("Links") auf die Webseiten 
-anderer Anbieter zu unterscheiden. 
+   This site was built and is provided using open source software.
+   It wouldn't be here without the work of millions of volunteers who contribute
+   to these projects. We use  open source tools to do what we do.
 </p>
-<p>
-Durch den Querverweis vermittelt der Betreiber  lediglich den Zugang zur Nutzung 
-dieser Inhalte. 
-F&uuml;r diese "fremden" Inhalte ist er nicht verantwortlich, da er die 
-&Uuml;bermittlung der Information nicht veranlasst, den Adressaten der 
-&uuml;bermittelten Informationen nicht ausw&auml;hlt und die &uuml;bermittelten 
-Informationen auch nicht ausgew&auml;hlt oder ver&auml;ndert hat. Auch eine 
-automatische kurzzeitige Zwischenspeicherung dieser "fremden Informationen" 
-erfolgt wegen der gew&auml;hlten Aufruf- und Verlinkungsmethodik nicht, so 
-dass sich auch dadurch keine Verantwortlichkeit des Betreibers f&uuml;r diese 
-fremden Inhalte ergibt. 
-</p>
-
-<p>
-Bei der erstmaligen Verkn&uuml;pfung mit diesen Internetangeboten haben die 
-Autoren der jeweiligen Webseiten oder die Redaktion des Betreibers  den 
-fremden Inhalt jedoch daraufhin &uuml;berpr&uuml;ft, ob durch ihn eine 
-m&ouml;gliche zivilrechtliche oder strafrechtliche Verantwortlichkeit 
-ausgel&ouml;st wird. Sobald der Betreiber  jedoch feststellt oder von anderen 
-darauf hingewiesen wird, dass ein konkretes Angebot, zu dem es einen Link 
-bereitgestellt hat, eine zivil- oder strafrechtliche Verantwortlichkeit 
-ausl&ouml;st, wird es den Verweis auf dieses Angebot unverz&uuml;glich 
-aufheben, soweit es technisch m&ouml;glich und zumutbar ist.
-</p>
-
-<p>
-F&uuml;r illegale, fehlerhafte oder unvollst&auml;ndige Inhalte und insbesondere f&uuml;r
-Sch&auml;den, die aus der Nutzung oder Nichtnutzung von Informationen Dritter entstehen,
-haftet allein der jeweilige Anbieter der Seite, auf welche verwiesen wurde.
-</p>
-
-      
-<h2>Urheberrecht</h2>
-
-<h3>Lizenz</h3>
-<p>
-Die durch die Seitenbetreiber erstellten Inhalte und Werke auf diesen Seiten 
-unterliegen dem deutschen Urheberrecht. 
-Soweit nicht anders gekennzeichnet, 
-stehen s&auml;mtliche Werke dieses Angebots unter einer 
-<a class="extern" href="http://creativecommons.org/licenses/by/3.0/de/" rel="license">    
-    Creative Commons Namensnennung 3.0 Deutschland Lizenz</a>.
-</p>
-<p style="float:right; display: inline; margin: 1em;"><img src="<?php echo get_template_directory_uri(); ?>/images/cc-88x31.png" alt="" /></p>
-<p>
-    Sie d&uuml;rfen somit
-</p>
-<ul>
-    <li>das Werk bzw. den Inhalt vervielf&auml;ltigen, verbreiten und &ouml;ffentlich 
-        zug&auml;nglich machen</li>
-    <li>Abwandlungen und Bearbeitungen des Werkes bzw. Inhaltes anfertigen</li>
-    <li>das Werk kommerziell nutzen </li>               
-</ul>
-<p>Zu den folgenden Bedingungen:</p>
-<ul><li><b>Namensnennung</b> - Sie m&uuml;ssen den Namen des Autors/Rechteinhabers 
-        in der von ihm festgelegten Weise nennen. </li></ul>
-    
-    
-<h3>Verwendete Werke und Lizenzen innerhalb dieses Webauftritts</h3>    
-<p>
-    Dieses Webangebot verwendet folgende Werke von Dritten:
-</p>
-<ul>
-    <li><a class="extern" href="http://www.yaml.de">YAML CSS Framework</a> (Lizenziert unter der
-        <span lang="en">Creative Commons Attribution 2.0 License</span>).</li>
-    
+<ul>   
     <li><a class="extern" href="http://www.jquery.com">JavaScript Framework jQuery</a> (<span lang="en">GNU General Public License (GPL)</span> Version 2)</li>
     <li><a class="extern" href="http://flex.madebymufffin.com">jQuery FlexSlider</a> (<span lang="en">MIT License</span>)</li>
-    <li><a class="extern bebas" href="http://dharmatype.com/dharma-type/bebas-neue.html">Schrift Bebas Neue von Dharmatype</a> (<span lang="en">SIL Open Font License</span> 1.1)</li>
+    <li><a class="extern bebas" href="http://dharmatype.com/dharma-type/bebas-neue.html">Font Bebas Neue von Dharmatype</a> (<span lang="en">SIL Open Font License</span> 1.1)</li>
+    <li><a class="extern" href="https://www.google.com/fonts/specimen/Droid+Sans">Font DroidSans</a> (<span lang="en">Apache License</span> 2.0)</li>
+    <li><a class="extern" href="http://de.wikipedia.org/wiki/Linux_Libertinel">Font LinLibertine</a> (<span lang="en">SIL Open Font License</span> 1.1)</li>
+    <li><a class="extern" href="http://wiki.piratenpartei.de/Pirate_Design/Aktuell#Schriften">Font PoliticsHead</a> (<span lang="en">SIL Open Font License</span> 1.1)</li>
+    <li><a class="extern" href="http://fortawesome.github.io/Font-Awesome/">Font Awesome</a> (<span lang="en">SIL Open Font License</span> 1.1)</li>
+
+    
     <?php 
     $theme_data = wp_get_theme();
     ?>
     <li><a class="extern" href="<?php echo $theme_data['URI']; ?>">Wordpress Theme <?php echo $theme_data->Name; ?></a>, Version <?php echo $theme_data->Version; ?>
-    (Lizenziert unter der <span lang="en">GNU General Public License (GPL)</span> Version 2)  </li>
-    <li>Fotos und Symbolbilder von Tobias M. Eckrich 
-    (Lizenziert unter der Creative Commons Namensnennung 3.0 Deutschland Lizenz)</li> 
-    <li><a class="extern" href="http://wiki.piratenpartei.de/Grafiken">Wallpaper und Bildmaterial der Piratenpartei Deutschland</a> 
-    (Lizenziert unter der Creative Commons Namensnennung 3.0 Deutschland Lizenz)</li>    
+    (<span lang="en">GNU General Public License (GPL)</span> Version 2)  </li>
+    <li><a class="extern" href="http://wiki.piratenpartei.de/Grafiken">Wallpaper and Images by Pirte Party Germany</a></li>    
 
 
     <?php
@@ -275,81 +196,92 @@ stehen s&auml;mtliche Werke dieses Angebots unter einer
 		}
 	}
     ?>
+</ul>            
+            
+            
+            <h2>Privacy Policy</h2>
+            
+            <h3>Information You Give Us Directly</h3>
+<p>
+In order to run this website, we need to collect, and in some cases process, 
+some information about you. This includes information that you've given to us, 
+such as details you've entered on forms during the signup / membership
+process or entered as part of commenting on the forums or blog. We may also
+need to collect details of any communications that you've sent to us.
+</p>
+
+<h3>Information You Give Us Indirectly</h3>
+<p>
+We may gather and process information about your visits to the site that we get 
+from you or your browser, such as which pages you go to, information and the 
+resources that you've used.
+<br>
+We also obtain limited information on your usage through the Piwik analysis service 
+hosted on our own servers, unless you block it using third-party addons to your 
+browser. These data are then aggregated for statistical analysis about our 
+website in order for us to provide a better service and experience and are
+not used to identify individual habits.
+</p><p>
+Any indirect information we get will not identify who you are, but will be 
+numerical data about our visitors and what you do on publicly accessible areas 
+of the site. This information will not contain or process any personal details.
+</p><p>
+We might use Cookies to store some of this non-identifiable information.
+Cookies are small text files that are automatically downloaded to and stored on
+your computer. If you don't wish to allow Cookies to be used on your computer, 
+you should be able to disable them through your browser:</p>
+<ul>
+    <li>In Firefox go to the Privacy tab in the Options panel, then select 
+        "Never remember history" from the dropdown menu.</li>
+
+   <li> In Internet Explorer 9 by going to Privacy tab in the Internet Options
+       menu, then move the slider up to the top.</li>
+
+   <li> In Chrome going to Options > Under the Hood > Privacy > Content Settings.</li>
 </ul>
-
-<h3>Credits</h3>
-    <p>
-        Das Wordpress-Theme <a class="extern" href="http://www.piratenkleider.de">Piratenkleider</a> wurde entwickelt von:     
-    </p>
-    <ul>
-        <li>Wolfgang Wiese</a> (Neuprogrammierung, Neudesign, CSS, Barrierefreiheit, Dokumentation, Features nach Version 1.1)</li>
-        <li>Korbinian Polk, Simon St&uuml;tzer, Bernd Schreiner (Erstes Grunddesign und Erstellung eines Childtheme von TwentyTen)</li>               
-    </ul>
-        
-
-
-<p>Soweit die Inhalte auf dieser Seite nicht vom Betreiber erstellt wurden, 
-    werden die Urheberrechte Dritter beachtet. Insbesondere werden Inhalte 
-    Dritter als solche gekennzeichnet. Sollten Sie trotzdem auf eine
-    Urheberrechtsverletzung aufmerksam werden, bitten wir um einen entsprechenden 
-    Hinweis. Bei Bekanntwerden von Rechtsverletzungen werden wir derartige 
-    Inhalte umgehend entfernen.</p>
-
-
-
-
-<h2>Datenschutz</h2>
 <p>
-Die Nutzung des Webangebots ist ohne Angabe personenbezogener Daten m&ouml;glich. 
-Eine Speicherung von Verbindungsdaten (beispielsweise die aktuell genutzte 
-IP-Adresse in Kombination mit Zeitpunkt und einer Browseridentifikation) erfolgt 
-nicht.  
-Im System eintreffende IP-Adressen werden noch vor jeglicher Weiterverarbeitung
-anonymisiert.<br>
-Zu statistischen Zwecken werden Zugriffe auf Seiten des Webangebotes 
-verarbeitet. Dies erfolgt jedoch nur ohne personenbeziehbare Verbindungsdaten.
+Do note that some functions on our website need Cookies to work, so you may have 
+problems using our website with them disabled. If you have any problems with
+Cookies (or disabling them), let us know and we will try to help.
+What We Do with Your Information
 </p>
 <p>
-Die Nutzung von Kommentaren erfolgt auf freiwilliger Basis. Hier
-werden zur Wiedererkennung der verschiedenen Kommentatoren Name und E-Mailadresse
-abgefragt. Diese Daten werden nicht verifiziert. Es ist jedem Benutzer m&ouml;glich, 
-hier unzutreffende Daten einzugeben.
+We will never give your information to a third party without your explicit
+permission, unless compelled to do so by law.
 </p>
-<p>Wir weisen darauf hin, dass die Daten&uuml;bertragung 
-im Internet allgemein (z.B. bei der Kommunikation per E-Mail) Sicherheitsl&uuml;cken aufweisen 
-kann. Ein l&uuml;ckenloser Schutz der Daten vor dem Zugriff durch Dritte ist nicht 
-m&ouml;glich. 
-</p>
-
-<h3>Einbindung von Diensten und Inhalten Dritter</h3>
+Any personal information about you that we do collect and store about you is 
+for the explicit purpose of helping us to provide you a better service.
+Much of this information is voluntary, and we limit the information we require
+from our users to the minimum required by Law (in terms of Membership of the Party) 
+and to the minimum required to provide a service (in terms of website account
+for use of the Forums).
+      </p><p>
+We may use any contact details you provide to give you information about our 
+campaigns, services, and ongoing development unless you opt out. You are able
+to opt out of these messages at any time via your profile page.
+      </p><p>
+We may use any information we collect to fulfil any commitments we've made
+to you, if the information is needed to do so.
+      </p>
+      
+      <h3>Storing Your Information</h3>
 <p>
-Es kann vorkommen, dass innerhalb dieses Webangebots Inhalte Dritter,
-wie zum Beispiel Videos von YouTube, Kartenmaterial von Google-Maps,
-RSS-Feeds oder Grafiken von anderen Webseiten eingebunden werden.
-<br>
-Wir bem&uuml;hen uns nur solche Inhalte zu verwenden, die direkt auf diesem
-Webauftritt liegen und somit keinem anderen Dienst ein Tracking
-erm&ouml;glichen.<br>
-Leider ist dies, insbesondere bei Videostreams und anderen Angeboten,
-die nur auf externen Plattformen bereit gestellt werden, oft
-nicht m&ouml;glich. In diesen F&auml;llen haben wir keinen Einfluss darauf, falls
-die Dritt-Anbieter die IP-Adresse oder Eigenschaften des verwendeten
-Browsers speichern und auswerten.
-<br>
-Bei der Einbindung von Inhalten, bei denen die M&ouml;glichkeit besteht,
-Tracking zu umgehen, wird dieses genutzt. Beispielsweise bei der Nutzung
-von youtube-nocookie.com anstelle von youtube.com f&uuml;r die
-Einbindung von Videos.
+All information about you that we store will be kept on our secure servers, 
+and any transfer of data will be encrypted to protect your privacy.  
+Sadly, even our IT systems may not be secure 100% all the time, and
+sending data over the Internet carries some risks, but we guarantee that
+we will do the best we can to take care of your data. Whenever it is
+moved we will encrypt it, and we will limit who has access to it within the 
+party to the smallest number of people we need to do the job.
 </p>
 
+ 
+   
+<?php } ?>     
+ 
+ 
+            
 
-<h2>Sonstiges</h2>
-<p>
-Der Nutzung von im Rahmen der Impressumspflicht ver&ouml;ffentlichten 
-Kontaktdaten durch Dritte zur &Uuml;bersendung von nicht ausdr&uuml;cklich angeforderter 
-Werbung und Informationsmaterialien wird hiermit ausdr&uuml;cklich widersprochen. 
-Die Betreiber der Seiten behalten sich ausdr&uuml;cklich rechtliche Schritte im Falle 
-der unverlangten Zusendung von Werbeinformationen, etwa durch Spam-Mails, vor.</p>
 
       </div>
     </div>
