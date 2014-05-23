@@ -3,6 +3,15 @@ Theme Piratenkleider
 Changelog 
 (since version 3.2; Former changes look at github.com/Piratenkleider/)
 
+Version 3.2.3:
+* Workaround for Safaris bug on floating excerpts
+* Improved fixed header on scrolled text
+* Feature: Search form for scrolled text fixed
+* Feature: Added wp_editor() for textinput on bookmarks and allowed HTML
+* Constants: Default value for displaying tags and categories on startpage set 
+  to 0
+
+
 Version 3.2.2:
 * Business cards can be printed out by a given order and by ids, like
   this: [person listorder="4,7,2"]
