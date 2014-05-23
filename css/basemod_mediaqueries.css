@@ -641,7 +641,9 @@
     #linktipp-stream  .columns .column1,
     #linktipp-stream  .columns .column2, 
     #second-stream  .columns .column1,
-    #second-stream  .columns .column2 {
+    #second-stream  .columns .column2, 
+    #second-stream .p3-col1, 
+    #second-stream .p3-col3 {
         float: none;
         width: 100%;
         margin: 10px 0;
@@ -672,6 +674,7 @@
    }
    #linktipp-stream .columns .column1 .post,
    #second-stream .columns .column1 .post { padding-right: 0;}
+   
    .linktipps .post-entry p img {
        float: none;
        display: block;
@@ -681,7 +684,7 @@
        clear: both;
        margin: 0 30px;
    }
-   
+
    
    
 }
