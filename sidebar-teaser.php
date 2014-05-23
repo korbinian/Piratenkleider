@@ -29,7 +29,7 @@
             <ul class="slides">
         <?php 
         if ( have_posts() ) while ( have_posts() ) : the_post();
-            echo "<li class=\"slide\">";
+            echo '<li class="slide">';
             if ($options['teaser-type'] == 'big') {
                 $attribs = array(
                  "credits" => $options['img-meta-credits'],
@@ -41,7 +41,6 @@
                     $image_url_data = wp_get_attachment_image_src( $thumbid, 'full');
                     $image_url = $image_url_data[0];
                     $attribs = piratenkleider_get_image_attributs($thumbid);
-  
                     if (isset($image_url) && strlen($image_url)>0){                        
                         echo '<img src="'.$image_url.'" alt="">';
                     } else {
@@ -60,8 +59,9 @@
 		    if (isset($options['slider-defaultbildsrc_id'])) {
 			    $image_url_data = wp_get_attachment_image_src( $options['slider-defaultbildsrc_id'], 'full');
 			    $image_url = $image_url_data[0];
-			    $attribs = piratenkleider_get_image_attributs($options['slider-defaultbildsrc_id']);
-		    } else {
+			    $attribs = piratenkleider_get_image_attributs($options['slider-defaultbildsrc_id']);			    
+		    } 
+		    if (!isset($image_url)) {
 			    $image_url = $options['slider-defaultbildsrc'];
 			    $attribs = array("credits" => $options['img-meta-credits'] );
 		    }

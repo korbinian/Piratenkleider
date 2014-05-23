@@ -34,15 +34,11 @@
     <header>
             <div class="row">
                 <div class="branding">
-                    <?php if ( ! is_home() ) { ?>
-                    <a href="<?php echo home_url( '/' ); ?>" title="<?php echo $defaultoptions['default_text_title_home_backlink']; ?>" rel="home" class="logo">
-                    <?php } ?>                                                             
-                        <h1><img src="<?php header_image(); ?>" alt="<?php bloginfo( 'name' ); ?>"></h1>
+                    <?php if ( ! is_home() ) { ?><a href="<?php echo home_url( '/' ); ?>" title="<?php echo $defaultoptions['default_text_title_home_backlink']; ?>" rel="home" class="logo"><?php } ?>                                                             
+                    <h1><img src="<?php header_image(); ?>" alt="<?php bloginfo( 'name' ); ?>"></h1>
                     <?php                                
-                      if ( ! is_home() ) { ?> </a>  <?php } 
-                      if (strlen(trim(get_bloginfo( 'description' )))>1) { ?> 
-                    <p class="description slogan"><?php bloginfo( 'description' ); ?></p>
-                    <?php } ?>
+                      if ( ! is_home() ) { ?></a><?php } 
+                      if (strlen(trim(get_bloginfo( 'description' )))>1) { ?><p class="description slogan"><?php bloginfo( 'description' ); ?></p><?php } ?>
                 </div>
                 <div class="nav-top" role="navigation">				                                                        
                     <h2 class="skip"><?php _e( 'Service-Navigation', 'piratenkleider' ); ?></h2>
@@ -55,9 +51,10 @@
                             wp_nav_menu( array( 'container_class' => 'menu-header', 'theme_location' => 'top' ) );
                         } else {
                             global $default_toplink_liste;   
-                            if (is_array($default_toplink_liste)) {     ?>
+                            if (is_array($default_toplink_liste)) {  ?>
                                 <div class="menu-header">
-                                <ul id="menu-topmenu" class="menu">  <?php  
+                                <ul id="menu-topmenu" class="menu"><?php  
+				echo "\n";
                                 foreach ( $default_toplink_liste as $entry => $listdata ) {        
                                     $value = '';
                                     $active = 0;
@@ -69,19 +66,19 @@
                                             } 
                                     } else {
                                             $value = $default_toplink_liste[$entry]['content'];
-                                            $active = $default_toplink_liste[$entry]['active'];        
-                                            
+                                            $active = $default_toplink_liste[$entry]['active'];                                                    
                                      }
                                         
                                     if (($active ==1) && ($value)) {
-                                        echo "\t\t\t";
+                                        echo "\t\t\t\t\t\t";
                                         echo '<li><a class="icon_'.$entry.'" href="'.$value.'">';
                                         echo $listdata['name'].'</a></li>';
                                         echo "\n";
                                     }
-                                }  ?>
-                                </ul>
-                                </div> 
+                                }  
+				?>
+				</ul>
+                            </div> 
                             <?php    
                             }
                         } 
@@ -148,18 +145,18 @@
    
     
    
-    <?php if ($options['zeige_breadcrump']==1) { ?>
-     <div id="content-body" class="with-breadcrumb">
+<?php if ($options['zeige_breadcrump']==1) { ?>
+
+<div id="content-body" class="with-breadcrumb">
 	<div class="section breadcrumbs">
-		<div class="row">
-			<div class="skin">
-				<?php if (function_exists('piratenkleider_breadcrumb')) piratenkleider_breadcrumb(); ?>
-			</div>
-		</div>
+	    <div class="row"><div class="skin">
+		<?php if (function_exists('piratenkleider_breadcrumb')) piratenkleider_breadcrumb(); 
+	    ?>
+	    </div></div>
 	</div>
-	<?php } else { ?>
-     <div id="content-body">
-	<?php } ?>
+<?php } else { ?>
+<div id="content-body">
+<?php } ?>
 
 
     
