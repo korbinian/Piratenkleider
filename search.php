@@ -116,8 +116,7 @@ Template Name: Search Page
                 </ul></div> 
          <?php 
          }                      
-      } else { 
-          ?>
+      } else {  ?>
                         <h2><?php _e("Nothing found", 'piratenkleider'); ?></h2>
                         <p>
                             <?php _e("No matching pages or entries found. Please try with another term.", 'piratenkleider'); ?>
@@ -134,16 +133,7 @@ Template Name: Search Page
                             <h3><?php _e("Archive by month", 'piratenkleider'); ?></h3>                           
                             <?php wp_get_archives('type=monthly'); ?>               
                         </div>
-                        <?php 
-                        $posttags = get_the_tags();
-                        if ($posttags) { ?>                          
-                         <div  class="widget">
-                            <h3><?php _e("Entries by tags", 'piratenkleider'); ?></h3>    
-                            <div class="tagcloud">
-                             <?php wp_tag_cloud(array('format'=> 'list','smallest'  => 12, 'largest'   => 28)); ?>
-                             </div>
-                        </div>
-                        <?php } ?>
+                        
                         <div class="widget">
                         <h3><?php _e("Categories", 'piratenkleider'); ?></h3>
                         <ul>                            
