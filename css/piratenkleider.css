@@ -936,11 +936,12 @@ display: inline-block;
  }
  
  body.nav-fixed .header {
-     position: fixed;
-     top: 0;
-     height: 41px;
-     z-index: 99;
-     border-bottom: 6px solid black;
+    position: fixed;
+    top: 0;    
+    z-index: 99;
+    height: 41px;
+    width: 100%;
+    border-bottom: 7px solid black;
  }
  body.nav-fixed .header .branding, 
  body.nav-fixed .header .socialmedia,
@@ -949,19 +950,19 @@ display: inline-block;
      display: none;
  }
  body.nav-fixed .header #searchform {
-    top: 0px;
-    display: inline-block;
-    max-width: 200px;
-    z-index: 99;  
+    background-color: #eee;
+    height: auto;
+    padding: 5px;
+    position: fixed;
+    right: 0px;
+    top: 41px;
+    z-index: 99;
  }
+
  body.nav-fixed .header .nav-main {
     top: 0px;
     z-index: 99;  
-    margin-right: 200px;
-    display: inline-block;
- }
- body.nav-fixed .header .nav-main ul {
-     background: transparent;
+    width: 100%;
  }
 
   body.nav-fixed #content-body {
@@ -971,7 +972,9 @@ display: inline-block;
      height: 41px;
      top: 32px;
  }
- 
+  body.logged-in.nav-fixed #searchform {
+     top: 73px;
+ }
  body.nav-fixed .anchor {
   display: block;
   margin-top: 50px;
