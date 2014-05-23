@@ -30,7 +30,7 @@
 
        if  ( (($options['slider-aktiv']==1) && (is_home() || is_front_page()))
           || (is_category() && ($options['category-teaser']==1))
-          || ( get_page_template_slug( get_the_ID() ) )     
+          || ( get_page_template_slug( ) )     
 	  || ($options['slider-defaultwerbeplakate']==1)  ) {
         if ($slideshowSpeed <1000) {$slideshowSpeed=8000;}
         if ($animationDuration <100) {$animationDuration=600;}
