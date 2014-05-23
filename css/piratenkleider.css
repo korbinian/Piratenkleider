@@ -163,12 +163,13 @@ h1, h2, h3, .cifont {
 }
 
 h1 {
-  font-size: 26.4px;
-  line-height: 21.6px; }
+  font-size: 2em;
+  line-height: 1.5em; 
+}
 
 h2 {
   font-size:  1.8em;
-  line-height: 2em;
+  line-height: 1.2em;
 }
 h3 {
   font-size: 1.6em; 
@@ -1502,15 +1503,18 @@ display: inline-block;
 .p3-col3 { /* sidebar */
   margin: 0 0 0 80px;
 }
+.usefloating .p3-col3 {
+    margin: 0;   
+}
+.usefloating .withthumb .p3-col3,
 .withthumb .p3-col3 {
    margin: 0 0 0 140px;
 }
 .withvideo .p3-col3 {
    margin: 0 0 0 320px;
 }
-.usefloating .p3-col3 {
-    margin: 0;
-}
+
+
 .column1 .withvideo .p3-col1, 
 .column2 .withvideo .p3-col1, 
 .column1 .withvideo .p3-col3, 
