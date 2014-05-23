@@ -1510,6 +1510,7 @@ display: inline-block;
 .withthumb .p3-col3 {
    margin: 0 0 0 140px;
 }
+.usefloating .withvideo .p3-col3, 
 .withvideo .p3-col3 {
    margin: 0 0 0 320px;
 }
