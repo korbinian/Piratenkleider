@@ -943,14 +943,22 @@ display: inline-block;
      border-bottom: 6px solid black;
  }
  body.nav-fixed .header .branding, 
- body.nav-fixed .header .nav-top, 
+ body.nav-fixed .header .socialmedia,
+ body.nav-fixed .header .menu-header,
  body.nav-fixed .header .sticker {
      display: none;
  }
-
+ body.nav-fixed .header #searchform {
+    top: 0px;
+    display: inline-block;
+    max-width: 200px;
+    z-index: 99;  
+ }
  body.nav-fixed .header .nav-main {
-     top: 0px;
-     z-index: 99;  
+    top: 0px;
+    z-index: 99;  
+    margin-right: 200px;
+    display: inline-block;
  }
  body.nav-fixed .header .nav-main ul {
      background: transparent;
@@ -1506,15 +1514,16 @@ display: inline-block;
 .usefloating .p3-col3 {
     margin: 0;   
 }
-.usefloating .withthumb .p3-col3,
 .withthumb .p3-col3 {
    margin: 0 0 0 140px;
 }
-.usefloating .withvideo .p3-col3, 
+
 .withvideo .p3-col3 {
    margin: 0 0 0 320px;
 }
-
+.usefloating .p3-col3 {
+    margin-left: 0;
+}
 
 .column1 .withvideo .p3-col1, 
 .column2 .withvideo .p3-col1, 
@@ -1621,7 +1630,6 @@ display: inline-block;
  .post-meta, .pubdateinfo {
   overflow: hidden;
   color: #666;
-  width: 100%; 
 }
 .post  .post-meta, .post  .pubdateinfo {
   font-size: 0.9em;
@@ -1775,6 +1783,10 @@ img.wp-smiley {
 .linktipps .post-entry p img {
     float: left;
     margin-right: 20px;
+}
+.linktipps.shortcode .post-entry p img {
+    float: none;
+    margin: 0;
 }
 .linktipps .post-entry:after {
     content: "."; 

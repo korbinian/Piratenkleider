@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!--[if IE 8 ]>    <html <?php language_attributes(); ?> class="ie8"> <![endif]-->
+<!--[if IE 8 ]>  <html <?php language_attributes(); ?> class="ie8"> <![endif]-->
 <!--[if (gt IE 9)|!(IE)]><!--> <html <?php language_attributes(); ?>> <!--<![endif]-->
 <head>
 <?php          
@@ -104,7 +104,7 @@
                             <h2 class="skip"><?php _e( 'Navigation', 'piratenkleider' ); ?></h2>
                             <?php 
                             if ( has_nav_menu( 'primary' ) ) {
-                                wp_nav_menu( array( 'container_class' => 'menu-header', 'theme_location' => 'primary', 'walker'  => new Piratenkleider_Menu_Walker()) );      
+                                wp_nav_menu( array(  'theme_location' => 'primary', 'walker'  => new Piratenkleider_Menu_Walker()) );      
                             } else { ?>
                                 <div class="menu-header">
                                     <ul id="menu-mainmenu" class="menu">      

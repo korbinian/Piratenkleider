@@ -67,8 +67,11 @@ function linktipp_metabox_content( $post ) {
 	<p>
 		<label for="linktipp_text"><?php _e( "Enter an optional and short target description", 'piratenkleider' ); ?>:</label>
 		<br />
-		<textarea class="widefat" name="linktipp_text" cols="70" rows="5" id="linktipp_text" /><?php echo esc_attr( get_post_meta( $post->ID, 'linktipp_text', true ) ); ?></textarea>
-	</p>
+		<?php wp_editor( get_post_meta( $post->ID, 'linktipp_text', true  ), 
+			'linktipp_text', 
+			array('media_buttons'=>false)); ?>
+
+  </p>
 	<p>
 	    <label for="linktipp_image"><?php _e( "Image for bookmark (either by media library or external URL)", 'piratenkleider' ); ?>:</label>
 	    <br />
@@ -152,7 +155,7 @@ function linktipp_metabox_save( $post_id ) {
 	}
 
 	if( isset( $_POST[ 'linktipp_text' ] ) ) {
-	    update_post_meta( $post_id, 'linktipp_text', sanitize_text_field( $_POST[ 'linktipp_text' ] ) );
+	    update_post_meta( $post_id, 'linktipp_text',  $_POST[ 'linktipp_text' ]  );
 	}
 	if( isset( $_POST[ 'linktipp_untertitel' ] ) ) {
 	    update_post_meta( $post_id, 'linktipp_untertitel', sanitize_text_field( $_POST[ 'linktipp_untertitel' ] ) );
