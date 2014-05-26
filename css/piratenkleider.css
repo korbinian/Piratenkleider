@@ -1778,6 +1778,10 @@ img.wp-smiley {
   margin-bottom: 20px; 
 }
 
+/* 
+ *   Linktipps / Bookmarks 
+ */
+
 .linktipps h3.subtitle {
     color: #444444;
     font-size: 1.2em;
@@ -1802,6 +1806,33 @@ img.wp-smiley {
 .linktipps .linktipp-url {
     margin-left: 10px;
 }
+
+.linktipps.shortcode {
+    width: 310px;
+    padding: 0 5px;
+    float: left;
+}
+.linktipps.shortcode p {
+    margin: 0;
+    padding: 0;
+}
+.linktipps.shortcode p img {
+    margin: 0px;
+}
+.linktipps.shortcode:before {
+        content:"";
+        display:table;
+}
+.linktipps.shortcode:after {
+        clear:both;
+        content:".";
+        display:block;
+        font-size:0;
+        height:0;
+        visibility:hidden;
+}
+
+
 
 .wp-caption {
   text-align: center;
