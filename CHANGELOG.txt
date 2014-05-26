@@ -3,6 +3,12 @@ Theme Piratenkleider
 Changelog 
 (since version 3.2; Former changes look at github.com/Piratenkleider/)
 
+Version 3.2.4:
+* Enhancement: CSS for shortcode bookmarks improved
+* Enhancement: CSS for Flaschenpost design: position of submenus improved for
+  old browser support (chrome 35.*)
+
+
 Version 3.2.3:
 * Workaround for Safaris bug on floating excerpts
 * Improved fixed header on scrolled text
