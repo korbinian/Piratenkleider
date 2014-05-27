@@ -1,9 +1,9 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: Piratenkleider v3.2.2\n"
+"Project-Id-Version: Piratenkleider v3.2.5\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2014-05-21 21:16:44+0000\n"
+"PO-Revision-Date: 2014-05-27 18:05:31+0000\n"
 "Last-Translator: xwolf <xwolf@xwolf.de>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -27,7 +27,7 @@ msgid "Page not found"
 msgstr "Seite nicht gefunden"
 
 #: 404.php:51
-#: category.php:124
+#: category.php:122
 #: templates/category-index.php:117
 #: templates/pageindex.php:108
 #@ piratenkleider
@@ -83,14 +83,14 @@ msgid "%s"
 msgstr "%s"
 
 #: author.php:109
-#: category.php:115
+#: category.php:113
 #: loop.php:86
 #@ piratenkleider
 msgid "&larr; Older entries"
 msgstr "&larr; Ältere Einträge"
 
 #: author.php:110
-#: category.php:116
+#: category.php:114
 #: loop.php:87
 #@ piratenkleider
 msgid "Newer entries &rarr;"
@@ -108,16 +108,16 @@ msgid "Current entry"
 msgstr "Aktueller Artikel"
 
 #: category.php:47
-#: category.php:86
+#: category.php:84
 #, php-format
 #@ piratenkleider
 msgid "Category %s"
 msgstr "Kategorie %s"
 
-#: category.php:122
+#: category.php:120
 #: home.php:284
 #: loop.php:9
-#: search.php:121
+#: search.php:120
 #: templates/category-index.php:115
 #: templates/pageindex.php:106
 #@ piratenkleider
@@ -125,13 +125,13 @@ msgid "Nothing found"
 msgstr "Nichts gefunden"
 
 #: archive.php:74
-#: category.php:141
+#: category.php:139
 #: events/ecp-page-template.php:70
 #: events/ecp-single-template.php:77
 #: home.php:298
 #: index.php:59
 #: page.php:82
-#: search.php:162
+#: search.php:161
 #: tag.php:118
 #: templates/category-index.php:129
 #: templates/imprint.php:291
@@ -342,12 +342,12 @@ msgstr "Thema: %1$s. <br><a href=\"%3$s\" title=\"%4$s\" rel=\"bookmark\">Permal
 msgid "<a href=\"%3$s\" title=\"%4$s\" rel=\"bookmark\">Permalink</a> for this entry."
 msgstr "<a href=\"%3$s\" title=\"%4$s\" rel=\"bookmark\">Permalink</a> für diesen Artikel."
 
-#: functions.php:1390
+#: functions.php:1392
 #@ piratenkleider
 msgid "No content"
 msgstr "Kein Inhalt."
 
-#: functions.php:1408
+#: functions.php:1410
 #@ piratenkleider
 msgid "No entry for this post"
 msgstr "Kein Inhalt zu diesem Artikel gefunden."
@@ -365,7 +365,7 @@ msgid "Jump to content."
 msgstr "Springe zum Inhalt."
 
 #: header-actionpage.php:47
-#: header.php:48
+#: header.php:44
 #@ piratenkleider
 msgid "Service-Navigation"
 msgstr "Service-Navigation"
@@ -375,33 +375,33 @@ msgstr "Service-Navigation"
 msgid "Jump to search form."
 msgstr "Spring zur Suche."
 
-#: header.php:91
-#: header.php:96
+#: header.php:88
+#: header.php:93
 #: searchform.php:2
 #: searchform.php:10
 #@ piratenkleider
 msgid "Search"
 msgstr "Suche"
 
-#: header.php:93
+#: header.php:90
 #@ piratenkleider
 msgid "Searching for"
 msgstr "Suche nach"
 
-#: header.php:94
-#: header.php:95
+#: header.php:91
+#: header.php:92
 #: searchform.php:6
 #: searchform.php:7
 #@ piratenkleider
 msgid "Enter search term"
 msgstr "Suchbegriff eingeben"
 
-#: header.php:104
+#: header.php:101
 #@ piratenkleider
 msgid "Navigation"
 msgstr "Navigation"
 
-#: header.php:125
+#: header.php:122
 #@ piratenkleider
 msgid "Sticker"
 msgstr "Sticker"
@@ -496,11 +496,6 @@ msgstr "PoliticsHead"
 #@ piratenkleider
 msgid "\"Courier New\", Courier, monospace"
 msgstr "\"Courier New\", Courier, monospace"
-
-#: inc/constants.php:484
-#@ piratenkleider
-msgid "Scapegoat-Adaption (1.1)"
-msgstr "Scapegoat-Adaption (1.1)"
 
 #: inc/constants.php:498
 #@ piratenkleider
@@ -776,7 +771,7 @@ msgid "Add Image"
 msgstr "Bild hinzufügen"
 
 #: inc/business-cards.php:143
-#: inc/custom-posts.php:102
+#: inc/custom-posts.php:105
 #: inc/theme-options.php:227
 #@ piratenkleider
 msgid "Remove image"
@@ -932,35 +927,35 @@ msgstr "&larr; Erste Seite"
 msgid "Last page &rarr;"
 msgstr "Letzte Seite &rarr;"
 
-#: search.php:123
+#: search.php:122
 #@ piratenkleider
 msgid "No matching pages or entries found. Please try with another term."
 msgstr "Es konnte kein Eintrag gefunden werden. Bitte versuchen Sie es mit einem anderen Suchbegriff."
 
-#: search.php:129
+#: search.php:128
 #@ piratenkleider
 msgid "Alternativly try the following links:"
 msgstr "Alternativ versuchen Sie es mit einem der folgenden Links:"
 
-#: search.php:134
+#: search.php:133
 #@ piratenkleider
 msgid "Archive by month"
 msgstr "Archiv vom Monat "
 
-#: search.php:141
+#: search.php:140
 #@ piratenkleider
 msgid "Entries by tags"
 msgstr "Beiträge nach Schlüsselworten"
 
 #: inc/constants.php:990
 #: inc/constants.php:1021
-#: search.php:148
+#: search.php:147
 #: sidebar-startpage-contentfooter.php:15
 #@ piratenkleider
 msgid "Categories"
 msgstr "Kategorien"
 
-#: functions.php:1608
+#: functions.php:1610
 #: searchform.php:5
 #@ piratenkleider
 msgid "Search for"
@@ -1059,11 +1054,6 @@ msgstr "Aktuelle Themen"
 #@ piratenkleider
 msgid "Your email address wont be displayed. Required fields are marked with this sign: <span class=\"required\">*</span>"
 msgstr "Ihre E-Mail-Adresse wird nicht öffentlich angezeigt. Verbindlich einzugebende Felder werden mit diesem Zeichen kenntlich gemacht: <span class=\"required\">*</span>"
-
-#: inc/constants.php:191
-#@ piratenkleider
-msgid "Read"
-msgstr "Lese"
 
 #: inc/constants.php:192
 #@ piratenkleider
@@ -2738,22 +2728,22 @@ msgstr "Zieladresse (URL)"
 msgid "Enter an optional and short target description"
 msgstr "Optionale Beschreibung des Linktipps"
 
-#: inc/custom-posts.php:73
+#: inc/custom-posts.php:76
 #@ piratenkleider
 msgid "Image for bookmark (either by media library or external URL)"
 msgstr "Bild oder Symbolgrafik zum Linktipp"
 
-#: inc/custom-posts.php:101
+#: inc/custom-posts.php:104
 #@ piratenkleider
 msgid "Chose image"
 msgstr "Wähle Bild"
 
-#: inc/custom-posts.php:106
+#: inc/custom-posts.php:109
 #@ piratenkleider
 msgid "Optional pretitle"
 msgstr "Optionaler Untertitel"
 
-#: inc/custom-posts.php:311
+#: inc/custom-posts.php:314
 #@ piratenkleider
 msgid "No bookmarks found."
 msgstr "Keine Linktipps gefunden."
@@ -3064,17 +3054,17 @@ msgstr "Letzte Artikel"
 msgid "No person found."
 msgstr "Es konnte keine Personenvisitenkarten gefunden werden."
 
-#: functions.php:1566
+#: functions.php:1568
 #@ piratenkleider
 msgid "Entry of category"
 msgstr "Einträge der Kategorie"
 
-#: functions.php:1610
+#: functions.php:1612
 #@ piratenkleider
 msgid "Entries with tag"
 msgstr "Einträge nach dem Schlüsselwort"
 
-#: functions.php:1614
+#: functions.php:1616
 #@ piratenkleider
 msgid "Entry by"
 msgstr "Eintrag von"
@@ -3678,4 +3668,14 @@ msgstr "Digitale Kontaktaufnahme"
 #@ piratenkleider
 msgid "Postal address for matters in law"
 msgstr "Ladungsfähige Anschrift"
+
+#: inc/constants.php:484
+#@ piratenkleider
+msgid "Scapegoat-Adaption (1.2)"
+msgstr "Scapegoat-Adaption (1.2)"
+
+#: inc/constants.php:191
+#@ piratenkleider
+msgid "Get Informed"
+msgstr "Informiere dich"
 

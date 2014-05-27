@@ -1,51 +1,51 @@
 /* 
     Document   : custom-login
-    Created on : 08.05.2012, 17:41:55
     Author     : xwolf
     Description:
-        Piratiger  Loginscreen
+        Pirate Login
  
 */
-
-
-
-  
-
-
 body.login  {
-    border-top-color:#dff4fc;
-    background: orange url(../images/int/bg-tags.png) 0 0;
     padding-top: 20px;
- 
-}	/* Top bar background color */
+    color: #888;
+    background: #dddddd; /* Old browsers */
+    background: -moz-linear-gradient(top,  #dddddd 23%, #0e0e0e 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(23%,#dddddd), color-stop(100%,#0e0e0e)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  #dddddd 23%,#0e0e0e 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  #dddddd 23%,#0e0e0e 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  #dddddd 23%,#0e0e0e 100%); /* IE10+ */
+    background: linear-gradient(to bottom,  #dddddd 23%,#0e0e0e 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#dddddd', endColorstr='#0e0e0e',GradientType=0 ); /* IE6-9 */
 
+}	
 #login {
    width: 500px;
    background: black url(../images/login-wallpaper.jpg) no-repeat;
    padding-top: 20px;
-   
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3);
+   -moz-box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3);
+    -webkit-box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3);
 }
-.login h1 {	/* Title image (The "WordPress Logo"). Remember to update the height and width your image's dimensions */
+.login h1 {	
     display: none;
 } 
 .login h1 a {
     background: transparent;
 }
- 
 .login form {
-   background: rgba(0, 0, 0, 0.3);
-   margin: auto;   
-   margin-top: 370px;
-   width: 260px;
-   border: none;
-   border-radius: 0;
-  -moz-box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-  -webkit-box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
-  box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); 
+    background: rgba(0, 0, 0, 0.3);
+    margin: auto;   
+    margin-top: 370px;
+    width: 260px;
+    border: none;
+    border-radius: 0;
+    -moz-box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    -webkit-box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); 
     
 }
 .login label {
-        color: white;
+    color: white;
 }
 .login p#backtoblog,
 .login p#nav {
