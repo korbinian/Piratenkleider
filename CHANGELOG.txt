@@ -9,6 +9,8 @@ Version 3.2.5:
 * Bugfix: Color codes for business cards
 * Enhancement: Business Cards now show also local entries which contain the
   fullname of the person.
+* Enhancement: New login screen
+* Removed old unused images
 
 Version 3.2.4:
 * Enhancement: CSS for shortcode bookmarks improved
