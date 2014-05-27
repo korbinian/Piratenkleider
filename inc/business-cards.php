@@ -528,6 +528,27 @@ function piratenkleider_display_person ($post_id = 0, $format = 'full', $profill
                      $out .= "</div>\n"; 
                 }     
             }
+            if ($options['vcard-showlocalentries']==1) {
+                $searchterm = $fullname;
+                $query_args = array( 's' => $searchterm );
+                $personposts = new WP_Query( $query_args );
+                if ($personposts->have_posts() ) { 
+                    $ppout = $ppoutput = '';  
+                    while ($personposts->have_posts()) : $personposts->the_post();
+                        $ppout = piratenkleider_post_teaser(1,1,1,200, 1,1,4);        
+                         if (isset($ppout)) {
+                            $ppoutput .= $ppout;
+                         }
+                     endwhile;
+                }     
+                wp_reset_query();
+                if (isset($ppoutput)) {
+                    $out .= '<div class="businesscard-entries">';
+                    $out .=  "<h3>".__('Last entries from this site about', 'piratenkleider')." $fullname</h3>\n";
+                    $out .= $ppoutput;
+                    $out .= "</div>\n"; 
+                }
+            }
             
             
 	} elseif ($format== 'small') {

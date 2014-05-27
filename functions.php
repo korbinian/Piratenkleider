@@ -801,7 +801,7 @@ if ( ! function_exists( 'piratenkleider_post_teaser' ) ) :
 /**
  * Erstellung eines Artikelteasers
  */
-function piratenkleider_post_teaser($titleup = 1, $showdatebox = 1, $showdateline = 0, $teaserlength = 200, $thumbfallback = 1, $usefloating = 0) {
+function piratenkleider_post_teaser($titleup = 1, $showdatebox = 1, $showdateline = 0, $teaserlength = 200, $thumbfallback = 1, $usefloating = 0, $titlenum = 2) {
   global $options;
   global $post;
   
@@ -870,13 +870,18 @@ function piratenkleider_post_teaser($titleup = 1, $showdatebox = 1, $showdatelin
   }
 
   $out .= '<section class="'. implode(' ',get_post_class($sizeclass)).'" id="post-'.$post->ID.'" >';
+  $titlenum = (int) $titlenum;
+  if (($titlenum<1) || ($titlenum>6)) {
+      $titlenum = 2;
+  }
+  $htmltitlestart = '<h'.$titlenum.'>';
+  $htmltitleend = '</h'.$titlenum.'>';
   
-        
      if ($titleup==1) {
-        $out .= '<header class="post-title p3-cbox"><h2>';
+        $out .= '<header class="post-title p3-cbox">'.$htmltitlestart;
 	$out .= '<a href="'.get_permalink().'" rel="bookmark">';
 	$out .= get_the_title();
-        $out .= '</a></h2></header>';
+        $out .= '</a>'.$htmltitleend.'</header>';
 	$out .= "\n";
 	$out .= '<div class="p3-column">'; 
       }	
@@ -914,10 +919,10 @@ function piratenkleider_post_teaser($titleup = 1, $showdatebox = 1, $showdatelin
 	     $out .= '<article class="post-entry p3-cbox">';
 	}
 	if ($titleup==0) {  
-	    $out .= '<header class="post-title"><h2>';          
+	    $out .= '<header class="post-title">'.$htmltitlestart;          
 	    $out .= '<a href="'.get_permalink().'" rel="bookmark">';
 	    $out .= get_the_title(); 
-            $out .= "</a></h2></header>\n";
+            $out .= "</a>'.$htmltitleend.'</header>\n";
 	 }
 	   
 	 if (($showdatebox!=0) && ($showdateline==1)) {  

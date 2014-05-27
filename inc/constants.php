@@ -248,6 +248,7 @@ $defaultoptions = array(
     'url-wiki'				    => 'https://wiki.piratenpartei.de',
     'vcard-showfeed'                        => 1,
     'vcard-feed-maxnum'                     => 7,
+    'vcard-showlocalentries'                => 1,
     'optionpage-tab-default'                => 'kopfteil'
 );
 
