@@ -1227,6 +1227,8 @@ function get_piratenkleider_socialmediaicons( $darstellung = 1 ){
     if ($zeigeoption ==2) {    
            /* Links an der Seite */
             echo '<div id="socialmedia_iconbar">';
+    } else {
+	/* echo '<div id="socialmedia_iconlist">';*/
     }
    
     echo '<ul class="socialmedia">';       
@@ -1250,10 +1252,10 @@ function get_piratenkleider_socialmediaicons( $darstellung = 1 ){
         }
     }
     echo '</ul>';
-       
-    if ($zeigeoption ==2) {    
-            echo '</div>';
-    }
+     if ($zeigeoption ==2) {    
+    echo '</div>';
+     }
+  
 }
 endif;
 
@@ -1353,7 +1355,7 @@ function get_piratenkleider_firstvideo($width = 300, $height = 169, $nocookie =1
     }
 
     if ($searchplain==1) {
-       preg_match('/\b(https?:\/\/www\.youtube[\-a-z]*\.com\/(watch|embed)[\/a-z0-9\.\-&;\?_=]+)/i', $post->post_content, $matches);
+       preg_match('/\s(https?:\/\/www\.youtube[\-a-z]*\.com\/(watch|embed)[\/a-z0-9\.\-&;\?_=]+)/i', $post->post_content, $matches);
         if ((is_array($matches)) && (isset($matches[1]))) {
             $entry = $matches[1];
             if (!empty($entry)){

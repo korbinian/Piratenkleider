@@ -29,10 +29,11 @@
 .header .branding h1{margin-bottom:0;}
 .logo{margin:0 auto;}
 .logo img{display:block;width:100%;height:auto;}
-.nav-top{display:block;position:relative;width:auto;min-width:320px;clear:both;text-align:center;height:auto;margin:0;padding:0;}
+nav ul#top,.nav-top,.header #searchform{position:relative;top:inherit;right:inherit;left:inherit;text-align:center;display:block;width:100%;clear:both;float:none;margin:0 auto;}
 .nav-top form.searchform{clear:both;display:block;width:320px;background:transparent;position:relative;float:none;font-size:1.2em;margin:5px auto 15px;}
 .nav-top form.searchform input{padding:5px;}
 .searchform input#s{width:220px;}
+.nav-top ul.socialmedia{clear:both;display:inline-block;position:relative;top:inherit;right:inherit;width:auto;float:none;}
 .nav-top form.searchform .searchsubmit{position:relative;width:auto;float:right;text-indent:0;background:#2D7DC5;line-height:1em;overflow:none;height:auto;top:0;margin-top:2px;left:-15px;padding:5px;}
 .nav-top form.searchform .searchsubmit:after{content:"a";clear:both;}
 .nav-top div.menu-header{float:none;display:inline-block;position:relative;text-align:center;}
@@ -41,7 +42,6 @@
 .nav-main ul.menu{float:none;}
 .nav-main ul.menu li.current_page_item a[title=Home],.nav-main ul.menu li.current-menu-item.menu-item-home a,.nav-main ul.menu li a[title=Home],.nav-main ul.menu li.menu-item-home a{background:#000;text-indent:0;}
 .nav-main ul.menu li.current_page_item a[title=Home]:hover,.nav-main ul.menu li.current-menu-item.menu-item-home a:hover,.nav-main ul.menu li a[title=Home]:hover,.nav-main ul.menu li.menu-item-home a:hover{background:#000;color:#24639b;text-indent:0;}
-.nav-top ul.socialmedia{display:inline-block;text-align:center;float:none;clear:both;}
 .skiplinks li{list-style:none;width:100%;}
 .skiplinks li a{position:static;width:100%;display:block;outline:0;text-align:center;margin-bottom:2px;font-size:1.4em;background:#2d7dc5;color:#FFF;border:1px solid #2d7dc5;border-top:1px solid #4e96d7;border-bottom:1px solid #1a4872;-moz-box-shadow:0 1px 3px rgba(0,0,0,0.5);-webkit-box-shadow:0 1px 3px rgba(0,0,0,0.5);box-shadow:0 1px 3px rgba(0,0,0,0.5);border-radius:2px;-moz-border-radius:2px;-webkit-border-radius:2px;text-shadow:0 -1px 0 #112e48;background-color:#2d7dc5;background-image:linear-gradient(top,#2d7dc5,#24639b);padding:5px 18px;}
 .footer ul.skiplinks{height:auto;}
@@ -102,9 +102,9 @@
 #linktipp-stream .columns .column1,#linktipp-stream .columns .column2,#second-stream .columns .column1,#second-stream .columns .column2,#second-stream .p3-col1,#second-stream .p3-col3{float:none;width:100%;display:block;margin:10px 0;}
 #second-stream .columns{display:inline;}
 #linktipp-stream .clear,#second-stream .clear,#linktipp-stream hr,#second-stream hr{clear:none;display:none;}
-#linktipp-stream .columns .column1 .post, #second-stream .columns .column1 .post { padding-right: 0;}
 #linktipp-stream .p3-column,#second-stream .p3-column{width:auto;display:inline;}
 #linktipp-stream .withthumb .p3-col3,#second-stream .withthumb .p3-col3{margin:0;}
+#linktipp-stream .columns .column1 .post,#second-stream .columns .column1 .post{padding-right:0;}
 .linktipps .post-entry p img{float:none;display:block;margin:10px auto;}
 .content .startpage-widget-area{clear:both;margin:0 30px;}
 }

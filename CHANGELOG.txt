@@ -3,6 +3,11 @@ Theme Piratenkleider
 Changelog 
 (since version 3.2; Former changes look at github.com/Piratenkleider/)
 
+Version 3.2.5:
+* Bugfix: Small Screen Layout on Scapegoat Adaption
+* Bugfix: Video Embeds only on free spaced content links, not on real links
+* Bugfix: Color codes for business cards
+
 Version 3.2.4:
 * Enhancement: CSS for shortcode bookmarks improved
 * Enhancement: CSS for Flaschenpost design: position of submenus improved for

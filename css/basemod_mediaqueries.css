@@ -158,18 +158,21 @@
     .teaser {
         display: none;
     }      
-
-    .nav-top {        
-        display: block;
-         position: relative;
-         margin: 0;
-         padding: 0;
-         width: auto;
-         min-width: 320px;
-         clear: both;
-         text-align: center;
-        height: auto; 
-    }
+nav ul#top, 
+	.nav-top, 
+	.header #searchform {
+	    position: relative;
+	    top: inherit;
+	    right: inherit;
+	    left:inherit;
+	    display: block;	
+	    text-align: center;
+	    display: block;
+	    margin: 0 auto;
+	    width: 100%;
+	    clear: both;
+	    float: none;
+	}
     
     .nav-top form.searchform {
         clear: both;
@@ -188,6 +191,15 @@
    .searchform input#s {
        width: 220px;  
    } 
+    .nav-top ul.socialmedia {
+	    clear: both;
+	    display: inline-block;
+	    position: relative;
+	    top: inherit;
+	    right: inherit;
+	    width: auto;
+	    float: none;
+	}
    .nav-top form.searchform .searchsubmit {
         position: relative;       
         width: auto;
@@ -253,13 +265,7 @@
       text-indent: 0;
   }
     
-    
-    .nav-top ul.socialmedia {
-        display: inline-block;
-        text-align: center;
-        float: none;
-        clear: both;
-    }
+   
  .skiplinks li {
     list-style: none;
     width: 100%; 

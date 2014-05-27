@@ -1,7 +1,7 @@
 /* 
     Adaption des Scapegoat-Designs von  Peter Amende, http://www.zutrinken.com
 
-    Scapegoat.css Version 1.1, 8.4.2014 xwolf
+    Scapegoat.css Version 1.2, 27.5.2014 xwolf
 
 	##		Index
 
@@ -806,8 +806,8 @@ audio {
 	font-size: 2em;
 	line-height: 1em;
 	padding: 0;
-	margin: 0;
 	overflow: hidden;
+	margin-bottom: 0 0 10px 0;
 }
 .post-title h2 {
     font-size: 100%;
@@ -4004,7 +4004,8 @@ html[xmlns] .slides {
 	}
 	
 	
-	
+	.content-primary .columns .column1, 
+	.content-primary .columns .column2,
 	.two-columns-one,
 	.three-columns-one,
 	.three-columns-two,
@@ -4017,7 +4018,10 @@ html[xmlns] .slides {
 	}
 	
 	
-	
+	.nav-main li a span {
+	    top: 0px;
+	    right: 0px;
+	}
 	
 	
 	
@@ -4029,7 +4033,6 @@ html[xmlns] .slides {
 	.alignright {
 		float: none;
 	}
-	figure.alignleft,
 	img.alignleft,
 	img[align="left"],
 	figure.alignright,
@@ -4039,6 +4042,115 @@ html[xmlns] .slides {
 		display: block;
 		margin: 1em auto 1.5em;
 	}
+	.branding {
+	    width: 100%;
+	    text-align: center;
+	    margin: 0 auto;
+	}
+	.nav-top {
+	    height: auto;
+	}
+	nav ul#top, 
+	.nav-top, 
+	.header #searchform {
+	    position: relative;
+	    top: inherit;
+	    right: inherit;
+	    left:inherit;
+	    display: block;	
+	    text-align: center;
+	    display: block;
+	    margin: 0 auto;
+	    width: 100%;
+	    clear: both;
+	    float: none;
+	}
+	
+	 
+	.nav-top ul.socialmedia {
+	    clear: both;
+	    display: inline-block;
+	    position: relative;
+	    top: inherit;
+	    right: inherit;
+	    width: auto;
+	}
+	.nav-top .menu-header {
+	    float: none;
+	}
+	.header .searchform .searchsubmit {
+	    position: relative;
+	    top: inherit;
+	    right: inherit;
+	    margin-left: 10px;
+	    
+	}
+    .nav-main ul li ul {
+	  display: none;
+      }    
+     .skiplinks li {
+	list-style: none;
+	width: 100%; 
+     }
+     .skiplinks li a {
+	position: absolute;
+	display: block;
+	position: static;
+	width: 100%;
+	display: block;
+	border: 0px solid;
+	background: #2d7dc5;
+	color: white;
+	outline: 0px;
+	text-align: center;
+	padding: 5px 18px;
+	margin-bottom: 2px;
+	font-size: 1.4em;
+	background: #2d7dc5; 
+	color: white;
+	border: 1px solid #2d7dc5;
+	text-shadow: 0 -1px 1px rgba(0, 0, 0, 0.1);
+	border-top: 1px solid #4e96d7;
+	border-bottom: 1px solid #1a4872;
+	-moz-box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.5);
+	-webkit-box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.5);
+	box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.5);
+	border-radius: 2px;
+	-moz-border-radius: 2px;
+	-webkit-border-radius: 2px;
+	text-shadow: 0 -1px 0 #112e48;
+	background-color: #2d7dc5;
+	background-image: -moz-linear-gradient(top, #2d7dc5, #24639b);
+	background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #2d7dc5), color-stop(1, #24639b));
+	background-image: linear-gradient(top, #2d7dc5, #24639b);     
+     }
+     .skiplinks li a:focus, 
+     .skiplinks li a:hover {
+	  background: #24639b;
+	    color: black; }
+     #skiplink-nav, 
+     #skiplink-search {
+	 display: none;
+     }   
+      .footer ul.skiplinks {
+	 height: auto;
+    }
+    #main-content {
+	padding: 0;
+    }
+   section,
+    .content-primary,
+    .content-primary .columns .column1, 
+    .content-primary .columns .column2 {
+	margin-bottom: 0px;
+	margin-top: 0px; 
+    }
+    .skin,
+    .person, .linktipps, .type-post, 
+    .type-page, .type-attachment {
+	margin: 5px;
+    }
+    hr {display: none; }	
 }
 
 @media only screen and (min-width: 641px)  {

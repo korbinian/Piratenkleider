@@ -323,7 +323,12 @@
     color: white;
     background: rgba(255, 255, 255, 0.2); 
   }
-  
+  .content-aside #steckbrief a {
+  background: transparent;
+}
+.content-aside #steckbrief a:hover {
+    background: transparent;
+  }
   .content-aside table td,
   .content-aside table th {
     border-top-color: #B127AF; 

@@ -49,8 +49,6 @@
               }
                echo '</div>';  
         } 
-       
-
 
       $i = 0; 
       $col = 0; 
@@ -58,8 +56,8 @@
       $numentries = $options['category-num-article-fullwidth'] + $options['category-num-article-halfwidth']; 
       $col_count = 3; 
       $cols = array();
-
-      $thisquery =  '&cat='.$thisCat.'&posts_per_page='.$numentries;
+      $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
+      $thisquery =  '&cat='.$thisCat.'&posts_per_page='.$numentries.'&paged=' . $paged;
       query_posts( $thisquery  );
 
       
