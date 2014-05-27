@@ -7,6 +7,8 @@ Version 3.2.5:
 * Bugfix: Small Screen Layout on Scapegoat Adaption
 * Bugfix: Video Embeds only on free spaced content links, not on real links
 * Bugfix: Color codes for business cards
+* Enhancement: Business Cards now show also local entries which contain the
+  fullname of the person.
 
 Version 3.2.4:
 * Enhancement: CSS for shortcode bookmarks improved
