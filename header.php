@@ -103,9 +103,10 @@
                             if ( has_nav_menu( 'primary' ) ) {
                                 wp_nav_menu( array(  'theme_location' => 'primary', 'walker'  => new Piratenkleider_Menu_Walker()) );      
                             } else { ?>
-                                <div class="menu-header">
+                                <div class="menu-hauptmenu-container">
                                     <ul id="menu-mainmenu" class="menu">      
                                         <?php  wp_page_menu( array(
+                                            'menu_class'  => '',
                                     'sort_column' => 'menu_order, post_title',
                                     'echo'        => 1,
                                     'show_home'   => 1 ) ); ?>          

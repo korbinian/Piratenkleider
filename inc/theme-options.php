@@ -580,7 +580,6 @@ function theme_options_validate( $input ) {
                 }
                 if ($type != "section") {
                     if (isset($input[$name])) {
-                        // Wert wurde uebergebnen
                         if ($type=='bool') {
                             $output[$name]  = ( $input[$name] == 1 ? 1 : 0 );    
                         } elseif ($type=='text') {
@@ -617,7 +616,6 @@ function theme_options_validate( $input ) {
                             $output[$name]  =  wp_filter_nohtml_kses( $input[$name] );
                         }
                     } else {                        
-                        // Wurde leer gemacht oder leer uebergeben#
                         if ($type=='bool') {
                             $output[$name] =0;
                         } elseif ($type=='text') {
@@ -662,14 +660,10 @@ function theme_options_validate( $input ) {
         if (!isset($options['anonymize-user'])) 
             $options['anonymize-user'] = $defaultoptions['anonymize-user'];
         if (($input['anonymize-user']==0) && ($options['anonymize-user']==1)) {
-                // Zuruecksetzen der Sicherheitsoption
             update_option('require_name_email',1);
         }
     }  
 
-   
-
-  
 
     if  (isset($input['reset_options']) && ($input['reset_options'] == 1)) {
 	delete_option('piratenkleider_theme_options');

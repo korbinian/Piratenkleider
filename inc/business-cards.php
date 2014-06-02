@@ -317,7 +317,7 @@ function piratenkleider_person_metabox_save( $post_id ) {
 	       
         
         
-        $newid = ( isset( $_POST['person_wiki'] ) ?  sanitize_text_field( $_POST['person_wiki'] ) : '' );       
+        $newid = ( isset( $_POST['person_wiki'] ) ?   $_POST['person_wiki'] : '' );       
 	$oldid = get_post_meta( $post_id, 'person_wiki', true );
 
 	if ( $newid && '' == $oldid )
