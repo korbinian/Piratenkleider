@@ -593,12 +593,16 @@ function theme_options_validate( $input ) {
                             $output[$name] = $input[$name];
 			} elseif (($type=='imageurl') || ($type=='image')) {
                              $output[$name]  =  esc_url( $input[$name] );
-			     $output[$name."_id"]  =  sanitize_key( $input[$name."_id"] );
+                             if (isset($input[$name."_id"])) {
+                                $output[$name."_id"]  =  sanitize_key( $input[$name."_id"] );
+                             }
                         } elseif (($type=='url') || ($type=='imgurl')) {
                              $output[$name]  =  esc_url( $input[$name] ); 
                         } elseif ($type=='file') {
 			    $output[$name."_url"]  = wp_filter_nohtml_kses( $input[$name] ); 
-                            $output[$name]  =   sanitize_key( $input[$name."_id"] );
+                            if (isset($input[$name."_id"])) {
+                                $output[$name]  =   sanitize_key( $input[$name."_id"] );
+                            }
                         } elseif ($type=='number') {
                             $output[$name]  =  wp_filter_nohtml_kses( $input[$name] ); 
                         } elseif (($type=='select') || ($type=='fontselect')) {                        
