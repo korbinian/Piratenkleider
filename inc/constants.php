@@ -625,9 +625,9 @@ $default_alternativestyles = array(
          'title' => __('Pirate Party Country Association','piratenkleider').' Baden-W&uuml;rttemberg',
          'url'  => 'http://www.piratenpartei-bw.de/',
          'sublist' => array(
-             __('<abbr title="District Chapter">DC</abbr>','piratenkleider').' Freiburg' => 'https://bzv-fr.piratenpartei-bw.de/',      
-             __('<abbr title="District Chapter">DC</abbr>','piratenkleider').' Stuttgart' => 'http://www.piraten-bzv-stuttgart.de/',
-             __('<abbr title="District Chapter">DC</abbr>','piratenkleider').' T&uuml;bingen' => 'https://bzv.piratenpartei-tuebingen.de/',          
+             __('<abbr title="District Association">DA</abbr>','piratenkleider').' Freiburg' => 'https://bzv-fr.piratenpartei-bw.de/',      
+             __('<abbr title="District Association">DA</abbr>','piratenkleider').' Stuttgart' => 'http://www.piraten-bzv-stuttgart.de/',
+             __('<abbr title="District Association">DA</abbr>','piratenkleider').' T&uuml;bingen' => 'https://bzv.piratenpartei-tuebingen.de/',          
              __('<abbr title="District Chapter">DC</abbr>','piratenkleider').' B&ouml;blingen' => 'https://wiki.piratenpartei.de/BW:Landkreis_B%C3%B6blingen/District Chapter',
              __('<abbr title="District Chapter">DC</abbr>','piratenkleider').' Calw-Freudenstadt' => 'https://wiki.piratenpartei.de/BW:District Chapter_Calw-Freudenstadt',
              __('<abbr title="District Chapter">DC</abbr>','piratenkleider').' Heidenheim' => 'http://www.piraten-heidenheim.de',
@@ -649,13 +649,13 @@ $default_alternativestyles = array(
          'title' => __('Pirate Party Country Association','piratenkleider').'Bayern',
          'url'  => 'http://www.piratenpartei-bayern.de/',
          'sublist' => array(
-             __('<abbr title="District Chapter">DC</abbr>','piratenkleider').' Mittelfranken' => 'http://piraten-mfr.de/',
-             __('<abbr title="District Chapter">DC</abbr>','piratenkleider').' Niederbayern' => 'http://niederbayern.piratenpartei-bayern.de/',
-             __('<abbr title="District Chapter">DC</abbr>','piratenkleider').' Oberbayern' => 'http://oberbayern.piratenpartei.de/',
-             __('<abbr title="District Chapter">DC</abbr>','piratenkleider').' Oberfranken' => 'http://piraten-oberfranken.de/',
-             __('<abbr title="District Chapter">DC</abbr>','piratenkleider').' Oberpfalz' => 'http://oberpfalz.piratenpartei.de/',
-             __('<abbr title="District Chapter">DC</abbr>','piratenkleider').' Schwaben' => 'http://www.piraten-schwaben.de/',
-             __('<abbr title="District Chapter">DC</abbr>','piratenkleider').' Unterfranken' => 'https://piraten-ufr.de/',
+             __('<abbr title="District Association">DA</abbr>','piratenkleider').' Mittelfranken' => 'http://piraten-mfr.de/',
+             __('<abbr title="District Association">DA</abbr>','piratenkleider').' Niederbayern' => 'http://niederbayern.piratenpartei-bayern.de/',
+             __('<abbr title="District Association">DA</abbr>','piratenkleider').' Oberbayern' => 'http://oberbayern.piratenpartei.de/',
+             __('<abbr title="District Association">DA</abbr>','piratenkleider').' Oberfranken' => 'http://piraten-oberfranken.de/',
+             __('<abbr title="District Association">DA</abbr>','piratenkleider').' Oberpfalz' => 'http://oberpfalz.piratenpartei.de/',
+             __('<abbr title="District Association">DA</abbr>','piratenkleider').' Schwaben' => 'http://www.piraten-schwaben.de/',
+             __('<abbr title="District Association">DA</abbr>','piratenkleider').' Unterfranken' => 'https://piraten-ufr.de/',
          ) 
      ), 
     'Brandenburg' => array(
@@ -681,9 +681,9 @@ $default_alternativestyles = array(
         'title' => __('Pirate Party Country Association','piratenkleider').' Hamburg',
         'url'  => 'http://www.piratenpartei-hamburg.de/',
         'sublist' => array(
-            __('<abbr title="District Chapter">DC</abbr>','piratenkleider').' Bergedorf' => 'http://www.piratenpartei-bergedorf.de/',
-            __('<abbr title="District Chapter">DC</abbr>','piratenkleider').' Harburg' => 'http://www.piraten-harburg.de/',
-            __('<abbr title="District Chapter">DC</abbr>','piratenkleider').' Hamburg-Nord' => 'https://wiki.piratenpartei.de/HH:Country Chapter_Nord',
+            __('<abbr title="District Association">DA</abbr>','piratenkleider').' Bergedorf' => 'http://www.piratenpartei-bergedorf.de/',
+            __('<abbr title="District Association">DA</abbr>','piratenkleider').' Harburg' => 'http://www.piraten-harburg.de/',
+            __('<abbr title="District Association">DA</abbr>','piratenkleider').' Hamburg-Nord' => 'https://wiki.piratenpartei.de/HH:Country Chapter_Nord',
             'Eimb&uuml;tteler Piraten' => 'https://wiki.piratenpartei.de/HH:Eimsb%C3%BCtteler_Piraten',
         )
     ),
