@@ -83,11 +83,10 @@ function piratenkleider_setup() {
        add_theme_support( 'custom-header', $args );
                
        $args = array(
-	    'default-color' => $defaultoptions['background-header-color'],
-	    'default-image' => $defaultoptions['background-header-image'],
-	    'background_repeat'	=> 'repeat-x',
-	    'background_position_x'  => 'left',
-	    'background_position_y'  => 'bottom',
+	    'default-color'	    => $defaultoptions['background-header-color'],
+	    'default-image'	    => $defaultoptions['background-header-image'],
+	    'background_repeat'	    => 'repeat-x',
+	    'default-position-x'    => 'left',
 	    'wp-head-callback'       => 'piratenkleider_custom_background_cb',	
 	);
        
@@ -107,8 +106,7 @@ function piratenkleider_setup() {
 	
 	        if ( ! $background && ! $color )
 	                return;
-                       
-		
+                       		
 	        $style = $color ? "background-color: #$color;" : '';
 	
 	        if ( $background ) {
@@ -125,9 +123,9 @@ function piratenkleider_setup() {
 			    $positionx = get_theme_mod( 'background_position_x', 'left' );
 			    if ( ! in_array( $positionx, array( 'center', 'right', 'left' ) ) )
 				    $positionx = 'left';
-			    $positiony = get_theme_mod( 'background_position_y', 'bottom' );
+			    $positiony = get_theme_mod( 'background_position_y', 'top' );
 			    if ( ! in_array( $positiony, array( 'top', 'bottom' ) ) )
-				    $positiony = 'bottom';
+				    $positiony = 'top';
 
 			    $position = " background-position: $positionx $positiony;";
 
@@ -138,9 +136,7 @@ function piratenkleider_setup() {
 
 			    $style .= $image . $repeat . $position . $attachment;
 		      }
-		       
 	        } 
-		
 	    
 	    echo '<style type="text/css" id="custom-background-css">';
 	    echo '.header { '.trim( $style ).' } ';

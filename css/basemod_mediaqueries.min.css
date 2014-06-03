@@ -89,13 +89,14 @@ nav ul#top,.nav-top,.header #searchform{position:relative;top:inherit;right:inhe
 .content .startpage-widget-area{clear:both;margin:0;}
 }
 @media screen,projection and (min-width: 1021px) {
-.content .row,.teaser .row{-webkit-box-shadow:5px 0 10px rgba(0,0,0,0.3);-moz-box-shadow:5px 0 10px rgba(0,0,0,0.3);-ms-box-shadow:5px 0 10px rgba(0,0,0,0.3);-o-box-shadow:5px 0 10px rgba(0,0,0,0.3);box-shadow:5px 0 10px rgba(0,0,0,0.3);}
+.content .row,.teaser .row{-webkit-box-shadow:0px 0px 10px black;-ms-box-shadow:0px 0px 10px black;-o-box-shadow:0px 0px 10px black;box-shadow:0px 0px 10px black;}
 }
 @media only screen and (min-width: 1350px) {
 .row{max-width:1343px;width:1343px;}
 .teaser .first-teaser-widget-area,.first-footer-widget-area{width:1024px;}
 .content .symbolbild{max-width:1024px;}
-.content .symbolbild img,.content .bigslider img,.flexslider .bigslider img{width:1024px;max-width:1024px;height:auto;}
+.content .symbolbild img,.content .bigslider img,.flexslider .bigslider img{width:1024px;max-width:1024px;height:auto;margin-top:-74px;}
+.content-aside .slide .caption, .first-teaser-widget-area .slide .caption {bottom: -74px;}
 .content-primary{float:left;width:1024px;}
 #main-stream{float:left;width:670px;}
 #linktipp-stream,#second-stream{display:inline-block;width:270px;background:rgba(0,0,0,0.05);float:left;margin:0 0 0 20px;padding:10px;}

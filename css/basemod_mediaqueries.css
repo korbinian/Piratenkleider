@@ -599,11 +599,10 @@ nav ul#top,
 @media screen, projection and (min-width: 1021px) {
     .content .row, 
     .teaser .row {
-   	-webkit-box-shadow: 5px 0 10px rgba(0,0,0,0.3);
-        -moz-box-shadow: 5px 0 10px rgba(0,0,0,0.3);
-        -ms-box-shadow: 5px 0 10px rgba(0,0,0,0.3);
-        -o-box-shadow: 5px 0 10px rgba(0,0,0,0.3);
-	box-shadow: 5px 0 10px rgba(0,0,0,0.3);   
+   	-webkit-box-shadow:0px 0px 10px black;
+        -ms-box-shadow: 0px 0px 10px black;
+        -o-box-shadow: 0px 0px 10px black;
+	box-shadow: 0px 0px 10px black;   
     }	
 }  
 
@@ -626,8 +625,13 @@ nav ul#top,
 	width: 1024px;
 	max-width: 1024px;
 	height: auto;
+	margin-top: -74px;
     }
-    
+    .content-aside .slide .caption, 
+    .first-teaser-widget-area .slide .caption {
+	bottom: -74px;
+    }
+
     .content-primary {
         float: left;
         width: 1024px;

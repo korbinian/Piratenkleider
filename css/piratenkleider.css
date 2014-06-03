@@ -20,7 +20,7 @@ html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pr
   background: transparent; }
 
 body {
-	background: #ff8800 url("../images/int/bg-tags.png") -20% top fixed;
+	background: #ff8800 url("../images/int/bg-tags.png") -20% top fixed; 
 }
   
 blockquote, q {
@@ -565,7 +565,8 @@ button, input[type="submit"],
 */ 
   
 .section {
-  padding: 0 10px 0 36px; }
+  padding: 0; 
+}
 
 .skin {
   padding: 20px; 
@@ -1978,9 +1979,7 @@ img.wp-smiley {
 
   .header {
     height: 225px; 
-    background-color: #eeeeee;
-    background-repeat: repeat-x;
-    background-position: left bottom;
+    background: none repeat scroll 0 0 transparent;
   }
   .header.actionpage {
       padding: 0;
@@ -1990,7 +1989,7 @@ img.wp-smiley {
     display: block; 
   }
 
-  .nav-top {
+ .header .nav-top {
     position: absolute;
     top: 0;
     right: 0;
