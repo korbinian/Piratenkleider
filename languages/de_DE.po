@@ -1,9 +1,9 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: Piratenkleider v3.2.5\n"
+"Project-Id-Version: Piratenkleider v3.2.7\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2014-05-27 19:53:06+0000\n"
+"PO-Revision-Date: 2014-06-03 15:16:19+0000\n"
 "Last-Translator: xwolf <xwolf@xwolf.de>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -142,7 +142,7 @@ msgid "More informations"
 msgstr "Weitere Informationen"
 
 #: events/ecp-single-template.php:67
-#: functions.php:786
+#: functions.php:782
 #: index.php:52
 #: loop.php:78
 #: page.php:70
@@ -268,86 +268,86 @@ msgstr "Sidebar ausblenden"
 msgid "Show sidebar"
 msgstr "Sidebar anzeigen"
 
-#: functions.php:168
+#: functions.php:164
 #@ piratenkleider
 msgid "Main navigation"
 msgstr "Hauptnavigation"
 
-#: functions.php:674
-#: functions.php:686
+#: functions.php:670
+#: functions.php:682
 #, php-format
 #@ piratenkleider
 msgid "Page %s"
 msgstr "Seite %s"
 
-#: functions.php:701
+#: functions.php:697
 #@ piratenkleider
 msgid "Continue reading <span class=\"meta-nav\">&rarr;</span>"
 msgstr "Weiterlesen <span class=\"meta-nav\">&rarr;</span>"
 
-#: functions.php:755
+#: functions.php:751
 #, php-format
 #@ piratenkleider
 msgid "%s <span class=\"says\">commented at</span>"
 msgstr "%s <span class=\"says\">schrieb am</span>"
 
-#: functions.php:759
+#: functions.php:755
 #@ piratenkleider
 msgid "Comment waits for approval."
 msgstr "Der Kommentar wartet auf die Moderation."
 
 #. translators: 1: date, 2: time
-#: functions.php:766
+#: functions.php:762
 #, php-format
 #@ piratenkleider
 msgid "%1$s at %2$s"
 msgstr "%1$s bei %2$s"
 
-#: functions.php:766
+#: functions.php:762
 #@ piratenkleider
 msgid "(Edit)"
 msgstr "(Bearbeiten)"
 
-#: functions.php:786
+#: functions.php:782
 #@ piratenkleider
 msgid "Pingback:"
 msgstr "Pingback:"
 
-#: functions.php:1100
+#: functions.php:1096
 #@ piratenkleider
 msgid "Publiced at"
 msgstr "Veröffentlicht am"
 
-#: functions.php:1115
+#: functions.php:1111
 #: inc/constants.php:2232
 #@ piratenkleider
 msgid "Author"
 msgstr "Autor"
 
-#: functions.php:1132
+#: functions.php:1128
 #, php-format
 #@ piratenkleider
 msgid "Category: %1$s. Tags: %2$s. <br><a href=\"%3$s\" title=\"%4$s\" rel=\"bookmark\">Permalink</a> for this entry."
 msgstr "Thema: %1$s. Tags: %2$s. <br><a href=\"%3$s\" title=\"%4$s\" rel=\"bookmark\">Permalink</a> zum Artikel."
 
-#: functions.php:1134
+#: functions.php:1130
 #, php-format
 #@ piratenkleider
 msgid "Category: %1$s. <br><a href=\"%3$s\" title=\"%4$s\" rel=\"bookmark\">Permalink</a> for this entry."
 msgstr "Thema: %1$s. <br><a href=\"%3$s\" title=\"%4$s\" rel=\"bookmark\">Permalink</a> für diesen Artikel."
 
-#: functions.php:1136
+#: functions.php:1132
 #, php-format
 #@ piratenkleider
 msgid "<a href=\"%3$s\" title=\"%4$s\" rel=\"bookmark\">Permalink</a> for this entry."
 msgstr "<a href=\"%3$s\" title=\"%4$s\" rel=\"bookmark\">Permalink</a> für diesen Artikel."
 
-#: functions.php:1397
+#: functions.php:1393
 #@ piratenkleider
 msgid "No content"
 msgstr "Kein Inhalt."
 
-#: functions.php:1415
+#: functions.php:1411
 #@ piratenkleider
 msgid "No entry for this post"
 msgstr "Kein Inhalt zu diesem Artikel gefunden."
@@ -792,47 +792,47 @@ msgstr "Facebook (URL)"
 msgid "Google+ (URL)"
 msgstr "Google+ (URL)"
 
-#: inc/business-cards.php:786
+#: inc/business-cards.php:765
 #@ piratenkleider
 msgid "Personal card"
 msgstr "Visitenkarte"
 
-#: inc/business-cards.php:800
+#: inc/business-cards.php:779
 #@ piratenkleider
 msgid "Select someone you want to show with a personal card along the article."
 msgstr "Wählen Sie eine Person aus, wenn Sie den Artikel mit einer Visitenkarte verknüpfen wollen."
 
-#: inc/business-cards.php:803
+#: inc/business-cards.php:782
 #@ piratenkleider
 msgid "Do not display any personal card"
 msgstr "Zeige keine Visitenkarte"
 
-#: inc/business-cards.php:833
+#: inc/business-cards.php:812
 #@ piratenkleider
 msgid "No person card defined yet."
 msgstr "Es stehen derzeit noch keine Visitenkarten vomn Personen zur Verfügung."
 
-#: inc/business-cards.php:849
+#: inc/business-cards.php:828
 #@ piratenkleider
 msgid "Alternativly define manually a short text and an image:"
 msgstr "Alternativ kann ein text und ein Bild manuell hinzugefügt werden:"
 
-#: inc/business-cards.php:853
+#: inc/business-cards.php:832
 #@ piratenkleider
 msgid "Short text for sidebar"
 msgstr "Kurzer Text"
 
-#: inc/business-cards.php:867
+#: inc/business-cards.php:846
 #@ piratenkleider
 msgid "Picture"
 msgstr "Bild"
 
-#: inc/business-cards.php:897
+#: inc/business-cards.php:876
 #@ piratenkleider
 msgid "Chose or upload picture"
 msgstr "Bild auswählen oder hochladen"
 
-#: inc/business-cards.php:898
+#: inc/business-cards.php:877
 #@ piratenkleider
 msgid "Remove picture"
 msgstr "Bild entfernen"
@@ -955,7 +955,7 @@ msgstr "Beiträge nach Schlüsselworten"
 msgid "Categories"
 msgstr "Kategorien"
 
-#: functions.php:1615
+#: functions.php:1611
 #: searchform.php:5
 #@ piratenkleider
 msgid "Search for"
@@ -1004,14 +1004,14 @@ msgstr "&larr; Ältere Einträge"
 msgid "Newer Entries &rarr;"
 msgstr "Neuere Einträge &rarr;"
 
-#: functions.php:169
+#: functions.php:165
 #: inc/constants.php:883
 #: inc/constants.php:955
 #@ piratenkleider
 msgid "Website Menu"
 msgstr "Website Menu"
 
-#: functions.php:170
+#: functions.php:166
 #@ piratenkleider
 msgid "Tecnical navigation"
 msgstr "Technische Navigation"
@@ -1949,8 +1949,8 @@ msgstr "Platzhalterbild für Vorlagen"
 msgid "Sets a default image for template pages."
 msgstr "Definiert ein Bild für Seiten aus Vorlagen."
 
-#: functions.php:898
-#: functions.php:1074
+#: functions.php:894
+#: functions.php:1070
 #: inc/constants.php:1707
 #@ piratenkleider
 msgid "Comments"
@@ -2907,7 +2907,7 @@ msgstr "Bild URL"
 msgid "Sets an image link for media library"
 msgstr "Wähle ein Bild aus der Medienbibliothek oder gebe eine Bild-URL an."
 
-#: functions.php:619
+#: functions.php:615
 #: inc/widgets.php:330
 #@ piratenkleider
 msgid "Image:"
@@ -2933,7 +2933,7 @@ msgstr "Spenden"
 msgid "Contact email"
 msgstr "Kontakt E-Mail"
 
-#: functions.php:1039
+#: functions.php:1035
 #@ piratenkleider
 msgid "Created at:"
 msgstr "Erstellt am:"
@@ -3049,22 +3049,22 @@ msgstr "Der Feed ist entweder leer oder nicht erreichbar."
 msgid "Last posts"
 msgstr "Letzte Artikel"
 
-#: inc/business-cards.php:759
+#: inc/business-cards.php:738
 #@ piratenkleider
 msgid "No person found."
 msgstr "Es konnte keine Personenvisitenkarten gefunden werden."
 
-#: functions.php:1573
+#: functions.php:1569
 #@ piratenkleider
 msgid "Entry of category"
 msgstr "Einträge der Kategorie"
 
-#: functions.php:1617
+#: functions.php:1613
 #@ piratenkleider
 msgid "Entries with tag"
 msgstr "Einträge nach dem Schlüsselwort"
 
-#: functions.php:1621
+#: functions.php:1617
 #@ piratenkleider
 msgid "Entry by"
 msgstr "Eintrag von"
@@ -3074,24 +3074,24 @@ msgstr "Eintrag von"
 msgid "Notice: Comments reflect the opionions of those who did wrote theme. Allowing people comment here, doenst mean, that we also agree with them."
 msgstr "Hinweis: Kommentare geben nur die persönliche Meinung desjenigen wieder, der sie schrieb. Durch die Bereitstellung der Kommentarfunktion machen sich die Betreiber dieser Website die Kommentare nicht zu eigen und müssen daher nicht derselben Meinung sein."
 
-#: functions.php:672
+#: functions.php:668
 #, php-format
 #@ piratenkleider
 msgid "Search results for %s"
 msgstr "Suchergebnisse für %s"
 
-#: functions.php:900
-#: functions.php:1076
+#: functions.php:896
+#: functions.php:1072
 #@ piratenkleider
 msgid "Comment"
 msgstr "Kommentar"
 
-#: functions.php:1042
+#: functions.php:1038
 #@ piratenkleider
 msgid "Type: Entry"
 msgstr "Type: Eintrag (Artikel)"
 
-#: functions.php:1044
+#: functions.php:1040
 #@ piratenkleider
 msgid "Type: Page"
 msgstr "Typ: Seite"
@@ -3155,9 +3155,6 @@ msgstr "Australien"
 msgid "Pirate Party Country Association"
 msgstr "Piratenpartei <abbr title=\"Landesverband\">LV</abbr>"
 
-#: inc/constants.php:628
-#: inc/constants.php:629
-#: inc/constants.php:630
 #: inc/constants.php:631
 #: inc/constants.php:632
 #: inc/constants.php:633
@@ -3173,22 +3170,12 @@ msgstr "Piratenpartei <abbr title=\"Landesverband\">LV</abbr>"
 #: inc/constants.php:643
 #: inc/constants.php:644
 #: inc/constants.php:645
-#: inc/constants.php:652
-#: inc/constants.php:653
-#: inc/constants.php:654
-#: inc/constants.php:655
-#: inc/constants.php:656
-#: inc/constants.php:657
-#: inc/constants.php:658
 #: inc/constants.php:666
 #: inc/constants.php:667
 #: inc/constants.php:668
 #: inc/constants.php:669
 #: inc/constants.php:670
 #: inc/constants.php:671
-#: inc/constants.php:684
-#: inc/constants.php:685
-#: inc/constants.php:686
 #: inc/constants.php:694
 #: inc/constants.php:695
 #: inc/constants.php:696
@@ -3669,18 +3656,30 @@ msgstr "Digitale Kontaktaufnahme"
 msgid "Postal address for matters in law"
 msgstr "Ladungsfähige Anschrift"
 
-#: inc/constants.php:485
-#@ piratenkleider
-msgid "Scapegoat-Adaption (1.2)"
-msgstr "Scapegoat-Adaption (1.2)"
-
 #: inc/constants.php:191
 #@ piratenkleider
 msgid "Get Informed"
 msgstr "Informiere dich"
 
-#: inc/business-cards.php:547
+#: inc/constants.php:485
 #@ piratenkleider
-msgid "Last entries from this site about"
-msgstr "Letzte Artikel auf diesem Webauftritt über"
+msgid "Scapegoat-Adaption (1.2)"
+msgstr "Scapegoat-Adaption (1.2)"
+
+#: inc/constants.php:628
+#: inc/constants.php:629
+#: inc/constants.php:630
+#: inc/constants.php:652
+#: inc/constants.php:653
+#: inc/constants.php:654
+#: inc/constants.php:655
+#: inc/constants.php:656
+#: inc/constants.php:657
+#: inc/constants.php:658
+#: inc/constants.php:684
+#: inc/constants.php:685
+#: inc/constants.php:686
+#@ piratenkleider
+msgid "<abbr title=\"District Association\">DA</abbr>"
+msgstr "<abbr title=\"Bezirksverband\">BzV</abbr>"
 
