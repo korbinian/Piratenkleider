@@ -1,33 +1,56 @@
 /*
-* CSS Definitionen für Mediaqueries
-* 
-* @Theme Name: Piratenkleider
-* @Theme URI: https://github.com/xwolfde/Piratenkleider
-* @Description: Allgemeines Wordpress Theme für Webauftritte der Piratenpartei
-* @Author: Wolfgang Wiese (xwolf)
-* @Author URI: http://www.xwolf.de 
+* CSS Mediaqueries
 */
 
 
 @media only screen and (max-width: 1024px) {
-    .section {
-        padding: 0 6px;
+ .row {
+     width: 100%;
     }
-     .content .startpage-widget-area, 
-     .first-startpage-widget-area ul li {
-         padding: 0 12px;
-     }
-    .content-aside .skin {
-        padding: 20px 1px;
+    .branding, 
+    .sticker {
+	padding: 15px;
+    }  
+    .nav-main {
+	padding: 0 15px 0 15px;
+    } 
+  .content-primary,  
+  .teaser .first-teaser-widget-area, 
+  .first-footer-widget-area {   
+    float: none;
+    width: 100%;
+    display: block;
+  }
+      .content-primary,  
+  .teaser .first-teaser-widget-area, 
+  .first-footer-widget-area {   
+    float: none;
+    width: 100%;
+    display: block;
+  }
+  
+  .content-aside, 
+  .teaser .second-teaser-widget-area, 
+  .second-footer-widget-area {
+   float: none;
+    width: 100%;
+     display: block;
+  }
+   .teaser .first-teaser-widget-area, 
+    .first-footer-widget-area {
+         width: 100%;
     }
-    .second-teaser-widget-area .skin, 
-    .sticker .skin, .ie7 .sticker .skin, 
-    .ie8 .sticker .skin {
-        padding: 10px 1px;
+    .content .symbolbild {
+	max-width: 1024px;
     }
-    .content-aside .slidersidebar {
-        margin: 10px 1px;
+    .content .symbolbild img, 
+    .content .bigslider img, 
+    .flexslider .bigslider img {
+	width: 100%;
+	max-width: 1024px;
+	height: auto;
     }
+
 } 
 @media only screen and (max-width: 767px) {
 .row {
@@ -73,7 +96,8 @@
   .content-primary .columns .column2 .post {
     padding-left: 0px;
   }
-    
+  
+ 
  .withvideo .p3-col1, 
  .withvideo .p3-col3 {
     float: none;
@@ -98,13 +122,7 @@
       margin: 0 auto;
       display: block;
     }
-   .sticker {
-        display: none;
-    }  
-    .nav-top {
-        width: 200px;
-        right: 0px;        
-    }
+
  .symbolbild {
         height: 240px;  
         overflow: hidden;
@@ -126,24 +144,19 @@
 
 
 @media only screen and (max-width: 600px) {
-  
-    .header {
-        display: block;
-        height: auto;
-        padding: 0;
-        width: 100%;
-        position: relative;
+    .header, 
+    .nav-top {
+	height: auto;
     }
-    .header .branding {
+     .branding {
         display: block;
         width: 100%;    
         margin: 0 auto;
-        position: relative;
         height: auto;        
         padding: 10px;
         text-align: center; 
     }
-    .header .branding h1 {
+    .branding h1 {
         margin-bottom: 0px;
     }
   .logo {
@@ -157,8 +170,8 @@
     .sticker,
     .teaser {
         display: none;
-    }      
-nav ul#top, 
+    } 
+    
 	.nav-top, 
 	.header #searchform {
 	    position: relative;
@@ -446,7 +459,7 @@ nav ul#top,
 
    
    .content-primary .skin {
-       padding: 10px 5px 5px 5px;
+       padding: 10px;
    }
    .content-header,
    .content-header-big {
@@ -479,15 +492,18 @@ nav ul#top,
        max-width: 100%;
    }
   .post-comments {
-     background: url("../images/int/bg-tags.png") repeat -20% top #FF8800;
+  /*   background: url("../images/int/bg-tags.png") repeat -20% top #FF8800; */
      padding: 3px;
      margin: 2px 5px 5px 5px;
   }
   .post-comments a {
       color: black;
   }
+  .post-comments ol {
+      margin: 0;
+  }
   .post-comments ol li {
-      border: 2px solid rgba(0, 0, 0, 0.2);
+      background: rgba(0, 0, 0, 0.1);
   }
    .post-comments ol li .comment-details {
     color: #222222;
@@ -499,7 +515,6 @@ nav ul#top,
     text-align: left;
     max-width: none;
     min-height: 50px;
-    background: none repeat scroll 0 0 rgba(255, 255, 255, 0.4);
  }
  .post-comments ol li .comment-body {
     float: none;
@@ -595,16 +610,6 @@ nav ul#top,
    }
 }
 
-   
-@media screen, projection and (min-width: 1021px) {
-    .content .row, 
-    .teaser .row {
-   	-webkit-box-shadow:0px 0px 10px black;
-        -ms-box-shadow: 0px 0px 10px black;
-        -o-box-shadow: 0px 0px 10px black;
-	box-shadow: 0px 0px 10px black;   
-    }	
-}  
 
 @media only screen and (min-width: 1350px) {
     .row {
@@ -636,15 +641,22 @@ nav ul#top,
         float: left;
         width: 1024px;
     }
+    .home .content-primary .skin,
+    .blog .content-primary .skin {
+	padding: 0;
+	margin: 0;
+    }
     #main-stream {
         float: left;
-        width: 670px;
+        width: 67%;
+	margin: 0;
+	padding: 10px 10px 10px 20px;
     }
     #linktipp-stream,  #second-stream  {
         display: inline-block;
-        width: 270px;
-        margin: 0px 0px 0px 20px;
-        padding: 10px;
+        width: 33%;
+        margin: 0p;
+        padding: 10px 10px 10px 20px;
         background: rgba(0,0,0,0.05);
         float: left;
     }

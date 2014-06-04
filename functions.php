@@ -1227,9 +1227,9 @@ function get_piratenkleider_socialmediaicons( $darstellung = 1 ){
  
     if ($zeigeoption ==2) {    
            /* Links an der Seite */
-            echo '<div id="socialmedia_iconbar">';
+            echo '<nav id="socialmedia_iconbar" aria-label="'.__('Social Media','piratenkleider').'">';
     } else {
-	/* echo '<div id="socialmedia_iconlist">';*/
+	    echo '<nav id="socialmedia_top" aria-label="'.__('Social Media','piratenkleider').'">';
     }
    
     echo '<ul class="socialmedia">';       
@@ -1253,9 +1253,8 @@ function get_piratenkleider_socialmediaicons( $darstellung = 1 ){
         }
     }
     echo '</ul>';
-     if ($zeigeoption ==2) {    
-    echo '</div>';
-     }
+    echo '</nav>';
+     
   
 }
 endif;

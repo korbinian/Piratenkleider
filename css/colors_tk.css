@@ -108,9 +108,6 @@
     border-color: transparent;     
   }
 
-  .sticker ul li a {    
-        color: #666;       
-  }
   .sticker ul li a:hover,
   .sticker ul li a:focus {
     color: #1a4872; 

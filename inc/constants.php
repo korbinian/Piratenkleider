@@ -416,6 +416,7 @@ $default_colorstyles = array(
     'colors_hu.css' => __( 'Hungary (Violet)', 'piratenkleider' ),
     'colors_tk.css' => __( 'Turkey (Cyan)', 'piratenkleider' ),
     'colors_us.css' => __( 'USA (Violet)', 'piratenkleider' ),
+    'colors_flaschenpost.css' => __( 'Flaschenpost (Light Blue)', 'piratenkleider' ),
 
  );
           
@@ -483,8 +484,6 @@ $default_alternativestyles = array(
     'style.css'	    => __( 'Default Style', 'piratenkleider' ),
     'sample.css'    => __( 'Empty CSS', 'piratenkleider' ),
     'scapegoat.css' => __( 'Scapegoat-Adaption (1.2)', 'piratenkleider' ),
-    'flaschenpost.css' => __( 'Flaschenpost 2013', 'piratenkleider' ),
-    'piratenkleider2.css' => __( 'Piratenkleider 2', 'piratenkleider' ),
 );
 
 /*

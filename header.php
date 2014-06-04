@@ -23,29 +23,20 @@
     } ?>
 </head>                      
 <body <?php body_class(); ?>>
-    <nav role="navigation">
-            <ul id="top" class="nav skiplinks">		
-                <li><a id="skiplink-nav" href="#nav"><?php _e( 'Jump to navigation.', 'piratenkleider' ); ?></a></li>
-                <li><a id="skiplink-content" href="#main-content"><?php _e( 'Jump to content.', 'piratenkleider' ); ?></a></li>
-                <?php if ( $options['aktiv-suche'] == "1" ){ ?><li><a id="skiplink-search" href="#searchform"><?php _e( 'Jump to search form.', 'piratenkleider' ); ?></a></li><?php } ?>
-            </ul>
+    <nav aria-label="Skiplinks">
+	<ul id="top" class="nav skiplinks">		
+	    <li><a id="skiplink-nav" href="#nav"><?php _e( 'Jump to navigation.', 'piratenkleider' ); ?></a></li>
+	    <li><a id="skiplink-content" href="#main-content"><?php _e( 'Jump to content.', 'piratenkleider' ); ?></a></li>
+	    <?php if ( $options['aktiv-suche'] == "1" ){ ?><li><a id="skiplink-search" href="#searchform"><?php _e( 'Jump to search form.', 'piratenkleider' ); ?></a></li><?php } ?>
+	</ul>
     </nav>
-    <div class="section header">
-    <header>
-            <div class="row">
-                <div class="branding">
-                    <?php if ( ! is_home() ) { ?><a href="<?php echo home_url( '/' ); ?>" title="<?php echo $defaultoptions['default_text_title_home_backlink']; ?>" rel="home" class="logo"><?php } ?>                                                             
-                    <h1><img src="<?php header_image(); ?>" alt="<?php bloginfo( 'name' ); ?>"></h1>
-                    <?php                                
-                      if ( ! is_home() ) { ?></a><?php } 
-                      if (strlen(trim(get_bloginfo( 'description' )))>1) { ?><p class="description slogan"><?php bloginfo( 'description' ); ?></p><?php } ?>
-                </div>
+    <header class="section header">
+        <div class="row">
+                
                 <div class="nav-top" role="navigation">				                                                        
                     <h2 class="skip"><?php _e( 'Service-Navigation', 'piratenkleider' ); ?></h2>
                     <?php  
-
                     get_piratenkleider_socialmediaicons(1);  
-
                     if ( $options['aktiv-linkmenu'] == "1" ){
                         if ( has_nav_menu( 'top' ) ) {
                             wp_nav_menu( array( 'container_class' => 'menu-header', 'theme_location' => 'top' ) );
@@ -84,41 +75,26 @@
                         } 
                     } 
                     if ( $options['aktiv-suche'] == "1" ){ ?>
-                        <div id="searchform">
-                        <h2 class="skip"><?php _e("Search", 'piratenkleider'); ?></h2>
-                        <form method="get" class="searchform" action="<?php echo home_url('','relative'); ?>/">
-                                <label class="skip" for="s"><?php _e("Searching for", 'piratenkleider'); ?>:</label>
-                                <input type="text" value="<?php the_search_query(); ?>" name="s" id="s" placeholder="<?php _e("Enter search term", 'piratenkleider'); ?>"  
-                                    onfocus="if(this.value=='<?php _e("Enter search term", 'piratenkleider'); ?>')this.value='';" onblur="if(this.value=='')this.value='<?php _e("Enter search term", 'piratenkleider'); ?>';" />
-                                <input type="submit" class="searchsubmit" value="<?php _e("Search", 'piratenkleider'); ?>" />
-                        </form>
+                        <div class="search-top">
+			    <h2 class="skip"><?php _e("Search", 'piratenkleider'); ?></h2>
+			    <form method="get" class="searchform" action="<?php echo home_url('','relative'); ?>/" role="search">
+				    <label class="skip" for="s"><?php _e("Searching for", 'piratenkleider'); ?>:</label>
+				    <input type="text" value="<?php the_search_query(); ?>" name="s" id="s" placeholder="<?php _e("Enter search term", 'piratenkleider'); ?>"  
+					onfocus="if(this.value=='<?php _e("Enter search term", 'piratenkleider'); ?>')this.value='';" onblur="if(this.value=='')this.value='<?php _e("Enter search term", 'piratenkleider'); ?>';" />
+				    <input type="submit" class="searchsubmit" value="<?php _e("Search", 'piratenkleider'); ?>" />
+			    </form>
                         </div>
                      <?php } ?>
-
                 </div>
-                <nav role="navigation">
-                    <div class="nav-main"  id="nav">
-                            <h2 class="skip"><?php _e( 'Navigation', 'piratenkleider' ); ?></h2>
-                            <?php 
-                            if ( has_nav_menu( 'primary' ) ) {
-                                wp_nav_menu( array(  'theme_location' => 'primary', 'walker'  => new Piratenkleider_Menu_Walker()) );      
-                            } else { ?>
-                                <div class="menu-hauptmenu-container">
-                                    <ul id="menu-mainmenu" class="menu">      
-                                        <?php  wp_page_menu( array(
-                                            'menu_class'  => '',
-                                    'sort_column' => 'menu_order, post_title',
-                                    'echo'        => 1,
-                                    'show_home'   => 1 ) ); ?>          
-                                    </ul>
-                                </div>
-                            <?php  } ?>
-
-                    </div>
-                </nav>        
-                <?php if ( $options['defaultwerbesticker'] == "1" ){ ?>
-
-                    <div class="sticker">
+		<div class="branding" role="banner">
+                    <?php if ( ! is_home() ) { ?><a href="<?php echo home_url( '/' ); ?>" title="<?php echo $defaultoptions['default_text_title_home_backlink']; ?>" rel="home" class="logo"><?php } ?>                                                             
+                    <h1><img src="<?php header_image(); ?>" alt="<?php bloginfo( 'name' ); ?>"></h1>
+                    <?php                                
+                      if ( ! is_home() ) { ?></a><?php } 
+                      if (strlen(trim(get_bloginfo( 'description' )))>1) { ?><p class="description slogan"><?php bloginfo( 'description' ); ?></p><?php } ?>
+                </div>
+	        <?php if ( $options['defaultwerbesticker'] == "1" ){ ?>
+                    <div class="sticker" aria-hidden="true">
                         <div class="skin">   
                            <h2 class="skip"><?php _e( 'Sticker', 'piratenkleider' ); ?></h2>                             
                            <ul>
@@ -138,16 +114,29 @@
                            </ul>                      
                         </div>                                                                                            
                     </div>
-
                 <?php   } ?>
-            </div>
-        </header>    
-    </div>
-   
-    
-   
-<?php if ($options['zeige_breadcrump']==1) { ?>
+                <nav aria-label="<?php _e( 'Navigation', 'piratenkleider' ); ?>" class="nav-main" id="nav">
+                            <h2 class="skip"><?php _e( 'Navigation', 'piratenkleider' ); ?></h2>
+                            <?php 
+                            if ( has_nav_menu( 'primary' ) ) {
+                                wp_nav_menu( array(  'theme_location' => 'primary', 'walker'  => new Piratenkleider_Menu_Walker()) );      
+                            } else { ?>
+                                <div class="menu-hauptmenu-container">
+                                    <ul id="menu-mainmenu" class="menu">      
+                                        <?php  wp_page_menu( array(
+                                            'menu_class'  => '',
+                                    'sort_column' => 'menu_order, post_title',
+                                    'echo'        => 1,
+                                    'show_home'   => 1 ) ); ?>          
+                                    </ul>
+                                </div>
+                            <?php  } ?>
+                </nav>        
+               
+        </div>
+    </header>    
 
+<?php if ($options['zeige_breadcrump']==1) { ?>
 <div id="content-body" class="with-breadcrumb">
 	<div class="section breadcrumbs">
 	    <div class="row"><div class="skin">

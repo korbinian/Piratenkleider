@@ -16,8 +16,8 @@ Text Domain: piratenkleider
 @import url(css/piratenkleider.css);
 /* @import url(css/piratenkleider.min.css); */
 
-/* @import url(css/basemod_mediaqueries.css); */
-@import url(css/basemod_mediaqueries.min.css); 
+@import url(css/basemod_mediaqueries.css); 
+/* @import url(css/basemod_mediaqueries.min.css);*/ 
 
 /* @import url(css/pluginsupport.css); */
 @import url(css/pluginsupport.min.css);

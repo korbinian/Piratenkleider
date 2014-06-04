@@ -11,7 +11,7 @@
 <?php } ?>
 <div class="section content" id="main-content">
   <div class="row">
-    <div class="content-primary">
+    <div class="content-primary" role="main">
       <div class="skin">
 
           <?php if ( is_active_sidebar( 'startpage-intro-area' ) ) { 
@@ -257,19 +257,19 @@
                                      if (( isset($options['artikelstream-numfullwidth-second']))
                                             && ($options['artikelstream-numfullwidth-second']==$key )
                                              && ($options['artikelstream-numfullwidth-second']>0 )) {
-                                         echo '<hr>';
+                                         echo '<hr role="separator">';
                                         }                                              
                                     echo '<div class="column'.$z.'">' . $col . '</div>';                            
                                     $z++;
                                     if ($z>2) {
                                         $z=1;
-                                        echo '<hr class="clear">';
+                                        echo '<hr class="clear" role="separator">';
                                     }
                                 }     
                                 $foundarticles =1;
 			    }
 			    if ($z==2) {
-				echo '<hr class="clear">';
+				echo '<hr class="clear" role="separator">';
 			    }		
 			    echo "</div>\n";			
 			
