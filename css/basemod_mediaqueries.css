@@ -641,16 +641,15 @@
         float: left;
         width: 1024px;
     }
-    .home .content-primary .skin,
-    .blog .content-primary .skin {
-	padding: 0;
-	margin: 0;
+
+    .sticky {
+        margin: 1em;
     }
     #main-stream {
         float: left;
         width: 67%;
-	margin: 0;
-	padding: 10px 10px 10px 20px;
+	margin: 0;	
+        padding: 10px 10px 10px 20px;
     }
     #linktipp-stream,  #second-stream  {
         display: inline-block;
@@ -674,7 +673,6 @@
     #second-stream  .columns {
         display: inline;
     }
-    
 
    #linktipp-stream .clear, 
    #second-stream .clear, 
@@ -694,8 +692,7 @@
    #second-stream .withthumb .p3-col3 {
        margin: 0;
    }
-   #linktipp-stream .columns .column1 .post,
-   #second-stream .columns .column1 .post { padding-right: 0;}
+
    
    .linktipps .post-entry p img {
        float: none;

@@ -7,7 +7,9 @@ Version 3.2.7:
 * Bugfix: Translation of german district associations (Bug #152)
 * Feature: set header background position to top, like standard themes; Will
   now match to body background.
-
+* Feature: Improved CSS and HTML orientation in header to make them relative
+  positioned; Changed color files and scapegoat to match this.
+* Removed Flaschenpost Design and moved it into color file.
 
 Version 3.2.6:
 * Bugfix: Allow special chars in wiki username (Bug #148)

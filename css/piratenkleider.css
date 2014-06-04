@@ -2473,6 +2473,8 @@ img.wp-smiley {
    #main-stream h2 {
        font-size: 1.1em;
        color: #24639b;
+       margin-bottom: 0;
+       margin-top: 0;
    }   
 
    #linktipp-stream section h2, 
