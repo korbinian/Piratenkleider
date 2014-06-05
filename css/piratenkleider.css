@@ -1125,7 +1125,7 @@ body.nav-fixed .nav-main li a span {
 }
  .teaser .row {
     background: #c96a00;
-    background: rgba(0, 0, 0, 0.3) -20% 0;       
+    background: rgba(255, 136, 0, 0.7);       
  } 
  .first-teaser-widget-area .slide .textslider  {
     background: #ff8800;  
@@ -2433,6 +2433,7 @@ img.wp-smiley {
     line-height: 1.7em; 
     display: block;   
     background: white;
+    background: rgba(255,255,255,0.9);
   }
   .content-primary .skin {
       margin-left: 0px;
