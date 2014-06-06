@@ -83,12 +83,8 @@ $defaultoptions = array(
     
 
     'artikelstream-type'		    => 0,
-    /* 0: Default: Alle Artikel + Linktipps
-    * 1: Alle Artikel, ohne LInktipps
-    * 2: Alle Artikel aus Kategorien bis auf definierte Cats und ohne Linktipps
-    */
     'artikelstream-exclusive-catliste'	    => array(), 
-    /* Ids der Categorien */
+    /* Ids of categories */
     'artikelstream-maxnum-main'             =>  5,
     'artikelstream-maxnum-second'	    =>  1,
     'artikelstream-maxnum-linktipps'	    =>  1,
@@ -105,7 +101,7 @@ $defaultoptions = array(
     'artikelstream-nextnum-linktipps'	    => 5,    
     'artikelstream-numfullwidth-main'       => 1,
     'artikelstream-numfullwidth-second'     => 1,
-    
+    'artikelstream-show-widget'		    => 0,
     'categoryindex-teaserlength'            => 170,
     'categoryindex-numlinklist'		    => 5,
     
@@ -235,9 +231,9 @@ $defaultoptions = array(
     
     'stylefile-position'		    => 0,
     'aktiv-stylefile'			    => 0,
-    'fonts-headers'                         => 'BebasNeue',
-    'fonts-menuheaders'                     => 'BebasNeue',
-    'fonts-content'                         => 'DroidSans',
+    'fonts-headers'                         => 'none',
+    'fonts-menuheaders'                     => 'none',
+    'fonts-content'                         => 'none',
     'img-meta-credits'                      => '',
     'feed-overwriteauthorstring'            => '',
     'position_sidebarbottom'                => 0,
@@ -417,6 +413,7 @@ $default_colorstyles = array(
     'colors_tk.css' => __( 'Turkey (Cyan)', 'piratenkleider' ),
     'colors_us.css' => __( 'USA (Violet)', 'piratenkleider' ),
     'colors_flaschenpost.css' => __( 'Flaschenpost (Light Blue)', 'piratenkleider' ),
+    'colors_white.css' => __( 'White/Transparent', 'piratenkleider' ),
 
  );
           
@@ -1146,7 +1143,15 @@ $setoptions = array(
                   'default' => $defaultoptions['artikelstream-title-linktippcontinuelist'],
                   'parent'  => 'artikelstream',
               ), 
-               
+            'artikelstream-show-widget' => array(
+                  'type'    => 'select',
+                  'title'   => __( 'Widget', 'piratenkleider' ),
+                  'label'   => __( 'Display a widget section after main entry list. This widget can be used to display text or even feeds of external sources.', 'piratenkleider' ),
+                  'liste'   => array("0" => __("Hide", 'piratenkleider'), 
+                      "1" => __("Show",'piratenkleider')),
+                  'default' => $defaultoptions['artikelstream-show-widget'],
+                   'parent'  => 'artikelstream'
+              ), 
 
  
             

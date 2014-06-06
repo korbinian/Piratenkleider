@@ -162,7 +162,7 @@ jQuery(document).ready(function($){
 jQuery(document).ready(function($){
     /* backend option switches */
   var startval =  $("#artikelstream-type :selected").val();
-  if (startval == 0) {
+  if (startval < 2) {
       $(".option-artikelstream-exclusive-catliste").hide();
        $(".option-artikelstream-maxnum-main").hide();
        $(".option-artikelstream-nextnum-main").hide();
@@ -183,7 +183,7 @@ jQuery(document).ready(function($){
   }
   $("#artikelstream-type").change(function(){
     var thisval =  $("#artikelstream-type :selected").val();
-    if (thisval == 0) {	
+    if (thisval <2) {	
 	 $(".option-artikelstream-exclusive-catliste").hide();
        $(".option-artikelstream-maxnum-main").hide();
        $(".option-artikelstream-nextnum-main").hide();
@@ -221,6 +221,57 @@ jQuery(document).ready(function($){
        $(".option-artikelstream-title-linktippcontinuelist").show();
     }
   }); 
+  
+  
+  var startval =  $("#artikelstream-show-second :selected").val();
+  if (startval == 0) {
+       $(".option-artikelstream-maxnum-second").hide();
+       $(".option-artikelstream-nextnum-second").hide();
+       $(".option-artikelstream-numfullwidth-second").hide();
+       $(".option-artikelstream-title-second").hide();
+       $(".option-artikelstream-title-secondcontinuelist").hide();
+  }
+  $("#artikelstream-show-second").change(function(){
+    var thisval =  $("#artikelstream-show-second :selected").val();
+    var streammain =  $("#artikelstream-type :selected").val();
+    if (thisval ==0) {	
+	$(".option-artikelstream-maxnum-second").hide();
+	$(".option-artikelstream-nextnum-second").hide();
+	$(".option-artikelstream-numfullwidth-second").hide();
+	$(".option-artikelstream-title-second").hide();
+	$(".option-artikelstream-title-secondcontinuelist").hide();
+    } else if (streammain>1) {
+	$(".option-artikelstream-maxnum-second").show();
+	$(".option-artikelstream-nextnum-second").show();
+	$(".option-artikelstream-numfullwidth-second").show();
+	$(".option-artikelstream-title-second").show();
+	$(".option-artikelstream-title-secondcontinuelist").show();
+    }
+  }); 
+  
+  var startval =  $("#artikelstream-show-linktipps :selected").val();
+  if (startval == 0) {
+       $(".option-artikelstream-maxnum-linktipps").hide();
+       $(".option-artikelstream-nextnum-linktipps").hide();
+       $(".option-artikelstream-title-linktipps").hide();
+       $(".option-artikelstream-title-linktippcontinuelist").hide();
+  }
+  $("#artikelstream-show-linktipps").change(function(){
+    var thisval =  $("#artikelstream-show-linktipps :selected").val();
+    var streammain =  $("#artikelstream-type :selected").val();
+    if (thisval ==0) {	
+       $(".option-artikelstream-maxnum-linktipps").hide();
+       $(".option-artikelstream-nextnum-linktipps").hide();
+       $(".option-artikelstream-title-linktipps").hide();
+       $(".option-artikelstream-title-linktippcontinuelist").hide();
+    } else if (streammain>1) {
+       $(".option-artikelstream-maxnum-linktipps").show();
+       $(".option-artikelstream-nextnum-linktipps").show();
+       $(".option-artikelstream-title-linktipps").show();
+       $(".option-artikelstream-title-linktippcontinuelist").show();
+    }
+  }); 
+  
 
   
   var sidebar_plakatslider = $("#slider-defaultwerbeplakate:checked").val();

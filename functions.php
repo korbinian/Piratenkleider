@@ -411,7 +411,7 @@ function piratenkleider_addfonts() {
         $output .= "\n";  
       }
   }
- 
+  $out = '';
   if ((isset($output)) && (strlen($output)>1)) {
       $out = "<style>";
       $out .= $output;
@@ -444,7 +444,7 @@ function piratenkleider_addaltbodybackground() {
       if ((isset($orix)) &&(isset($oriy))) {
           $out.= 'background-position:'.$orix.' '.$oriy.';';
       }
-      $out .= ' }';
+      $out .= 'background-attachment:fixed; }';
       $out .= "</style>\n";
       echo $out;
   }

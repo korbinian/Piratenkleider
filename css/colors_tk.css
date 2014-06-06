@@ -494,14 +494,6 @@ div.ics-calendar-holder .ics-calendar-event {
         color: #2d7dc5; 
   }        
 
-  .content-aside {
-      background: #00B5B1 url("../images/int/bg-tags-tk.png") -20% top fixed; 
-   }
-
-  .content-aside .skin {
-           background: #00B5B1;
-           background: rgba(0, 181, 177, 0.7); 
-    }
    
 }
  @media only screen and (max-width: 600px) {

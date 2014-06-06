@@ -6,7 +6,7 @@
 
 
 function piratenkleider_widgets_init() {
-
+    global $options;
    // Sidebar
     register_sidebar( array(
             'name' => __( 'Sitebar 1 (Upper)', 'piratenkleider' ),
@@ -28,20 +28,7 @@ function piratenkleider_widgets_init() {
             'after_title' => '</h2>',
     ) );
 
-    /* 
-     * 
-     * Rechter Aktionlinkbereich, neben Slider
-     * Deaktiviert ab 3.2.1  
-    register_sidebar( array(
-            'name' => __( 'Start page: Teaser', 'piratenkleider' ),
-            'id' => 'second-teaser-widget-area',
-            'description' => __( 'Optional widget area for region right of content slider. Notice: If empty, teaser links will be used which are defined at theme options.', 'piratenkleider' ),
-            'before_widget' => '<div class="widget">',
-            'after_widget' => '</div>',
-            'before_title' => '<h3 class="widget-title">',
-            'after_title' => '</h3>',
-    ) );
-    */
+   
 
     // Widgets for indexpages (categories, tags, authorpage)
     register_sidebar( array(
@@ -54,8 +41,7 @@ function piratenkleider_widgets_init() {
             'after_title' => '</h2>',
     ) );
 
-    // Startseite: Links unterhalb der 3 Artikel, per default Anzeige
-    // der weiteren Artikel 
+
     register_sidebar( array(
             'name' => __( 'Start page: Left footer (content)', 'piratenkleider' ),
             'id' => 'first-startpage-widget-area',
@@ -65,8 +51,7 @@ function piratenkleider_widgets_init() {
             'before_title' => '<h3>',
             'after_title' => '</h3>',
     ) );
-    // Startseite: Rechts  unterhalb der 3 Artikel, per default Anzeige
-    //  der Schlagwortliste
+
     register_sidebar( array(
             'name' => __( 'Start page: Right footer (content)', 'piratenkleider' ),
             'id' => 'second-startpage-widget-area',
@@ -109,6 +94,18 @@ function piratenkleider_widgets_init() {
             'before_title' => '<h3 class="widget-title">',
             'after_title' => '</h3>',
     ) );
+    if ($options['artikelstream-show-widget']==1) {
+	 // Widgets for indexpages (categories, tags, authorpage)
+    register_sidebar( array(
+            'name' => __( 'Start page: Optional content widget', 'piratenkleider' ),
+            'id' => 'artikelstream-widget',
+            'description' => __( 'Optional widget for content area; positioned after article stream and can be used to add external feeds in content area.', 'piratenkleider' ),
+            'before_widget' => '<div id="widget-stream">',
+            'after_widget' => '</div>',
+            'before_title' => '<h1>',
+            'after_title' => '</h1>',
+    ) );
+    }
 
 }
 add_action( 'widgets_init', 'piratenkleider_widgets_init' );

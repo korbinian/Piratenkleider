@@ -3,6 +3,11 @@ Theme Piratenkleider
 Changelog 
 (since version 3.2; Former changes look at github.com/Piratenkleider/)
 
+Version 3.2.8:
+* New optional color combination: white/transparent 
+* Enhancement: CSS for start page and action page improved 
+* Feature: Allow optional widget as article stream for start page
+
 Version 3.2.7:
 * Bugfix: Translation of german district associations (Bug #152)
 * Feature: set header background position to top, like standard themes; Will

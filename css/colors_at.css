@@ -22,7 +22,8 @@
 
 @media screen, projection {
     body {
-        background: #4c2582 url("../images/int/bg-tags-at.png") -20% top fixed; 
+        background-image: url("../images/int/bg-tags-at.png"); 
+	background-color: #4c2582;
     }
     a {     
       color: #06C;
@@ -192,7 +193,7 @@
  
   }
   .teaserlinks .symbol:before {
-    text-shadow: 0 -1px 1px rgba(0,0,0,0.2) !important; 
+    text-shadow: 0 -1px 1px rgba(0,0,0,0.2); 
   } 
  .teaserlinks ul li a {
      color: #EEE;
@@ -214,11 +215,9 @@
 
 
     .content .row {
-        background: #4c2582;
         background: rgba(76, 37, 130, 0.2); 
     }
     .content .symbolbild .caption {
-      background: transparent;
       background: rgba(0, 0, 0, 0.5);
       color: white;
 
@@ -516,15 +515,6 @@ div.ics-calendar-holder .ics-calendar-event {
         color: #2d7dc5; 
   }        
 
-  .content-aside {
-      background: #4c2582 url("../images/int/bg-tags-at.png") -20% top fixed;
-	  color:#eee;
-   }
-
-  .content-aside .skin {
-           background: #4c2582;
-           background: rgba(76, 37, 130, 0.2);
-    }
    
 }
  @media only screen and (max-width: 600px) {

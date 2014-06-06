@@ -207,7 +207,6 @@
 
     .content .row {
         background: #A5DFF9;
-        background: rgba(153, 51, 153, 0.2); 
     }
     .content .symbolbild .caption {
       background: transparent;
@@ -484,13 +483,7 @@ div.ics-calendar-holder .ics-calendar-event {
         color: #2d7dc5; 
   }        
 
-  .content-aside {
-   }
 
-  .content-aside .skin {
-           background: #A5DFF9;
-           background: rgba(255, 255, 255, 0.2);
-    }
    
 }
  @media only screen and (max-width: 600px) {

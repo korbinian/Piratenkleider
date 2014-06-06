@@ -515,16 +515,7 @@ div.ics-calendar-holder .ics-calendar-event {
         color: #2d7dc5; 
   }        
 
-  .content-aside {
-      background: #4c2582 url("../images/int/bg-tags-hu.png") -20% top fixed;
-	  color:#eee;
-   }
 
-  .content-aside .skin {
-           background: #4c2582;
-           background: rgba(76, 37, 130, 0.2);
-    }
-   
 }
  @media only screen and (max-width: 600px) {
    .nav-top ul.menu li a {

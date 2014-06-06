@@ -44,7 +44,7 @@
                   $catliste.= '-'.$cat;
                   $poscatliste .= $cat;
               }
-              $args = 'cat='.$catliste;      
+              $args = 'cat='.$catliste;   	    
           } else {
               $args = $wp_query->query;
           }
@@ -54,9 +54,9 @@
       }
       $numentries = $options['artikelstream-maxnum-main'] + $options['artikelstream-nextnum-main'];
       if (is_array($args)) {
-        $args = array_merge( $args, array( 'posts_per_page' => $numentries ) );
+	    $args = array_merge( $args, array( 'posts_per_page' => $numentries ) );	  
       } else {
-          $args .= '&posts_per_page='.$numentries;
+	  $args .= '&posts_per_page='.$numentries;	 
       }  
      
       query_posts( $args ); 
@@ -94,13 +94,18 @@
 	    $cols[$col++] = $linkliste;
        }       
 
-        if (($options['artikelstream-type']==1) || ($options['artikelstream-type']==2)) {
+        if (($options['artikelstream-type']==1) || 
+		  (($options['artikelstream-type']==2) && 
+		        ( ($options['artikelstream-show-linktipps']==1) || ($options['artikelstream-show-second']==1) || ($options['artikelstream-show-widget']==1) ))   
+	    ) {
 	   echo '<div id="main-stream">';
 
 	   if (isset($options['artikelstream-title-main']) && (strlen($options['artikelstream-title-main'])>0)) {
 		echo '<h1>'.$options['artikelstream-title-main'].'</h1>';       
 		echo "\n";
 	   }
+	} else {
+	    echo '<div id="default-stream">';
 	}
         echo '<div class="columns">';
         $z=1;
@@ -135,13 +140,17 @@
         if ($options['artikelstream-type']>0) {
               /* Zuerst Linktipps */
              if  ($options['artikelstream-show-linktipps']==1) { 
-		 query_posts(  array( 'post_type' => array('linktipps') ) ); 
-		 global $post;
+		
 		 $linktippout = '';
 		 $i=0;
 		 $continuelinks = '';
 		 $numentries = $options['artikelstream-maxnum-linktipps']+ $options['artikelstream-nextnum-linktipps'];
 		 $z=1;
+		 query_posts(  array( 'post_type' => array('linktipps'), 'posts_per_page' => $numentries ) ); 
+		 global $post;
+		 
+		 $numentries = $options['artikelstream-maxnum-main'] + $options['artikelstream-nextnum-main'];
+  
 		 
 		 $linktippout .= '<div class="columns">';
 		 while (have_posts() && $i<$numentries) : the_post();
@@ -202,9 +211,10 @@
              if (($options['artikelstream-type']==2) && ($options['artikelstream-show-second']==1)) {
                  /* Ausnahme-Cats */
                  
-                  query_posts( 'cat='.$poscatliste ); 
+                 
                     $numentries = $options['artikelstream-maxnum-second'] + $options['artikelstream-nextnum-second'];
-                    $i=0;
+                    query_posts( 'cat='.$poscatliste.'&posts_per_page='.$numentries ); 
+		    $i=0;
 		    $cols = array();
 		    $col=0;
 		    $continuelinks = '';
@@ -277,9 +287,16 @@
 			$foundarticles =1;
                     }
              }
-            echo "</div>\n";
+	     if (($options['artikelstream-type']==2) && ($options['artikelstream-show-widget']==1)) {
+		if ( is_active_sidebar( 'artikelstream-widget' ) ) { 
+		     dynamic_sidebar(  'artikelstream-widget' );
+		}
+	     }
+	     
+	     
         }
-        
+        echo "</div>\n";
+	
 	if ($foundarticles==0) { ?>
             <h2><?php _e("Nothing found", 'piratenkleider'); ?></h2>
             <p>

@@ -645,13 +645,31 @@
     .sticky {
         margin: 1em;
     }
+    
+    #default-stream .columns .column1, 
+    #default-stream .columns .column2,
+    #default-stream .content-primary .columns .column2 {
+	width: 33%;
+	float: none;
+	display: inline-block; 
+	padding: 0.5em;
+	vertical-align: top;
+    }
+    #default-stream  hr {display: none; }
+    #default-stream  .columns:after {
+	clear: both;
+    }
+    
+    
     #main-stream {
         float: left;
         width: 67%;
 	margin: 0;	
         padding: 10px 10px 10px 20px;
     }
-    #linktipp-stream,  #second-stream  {
+    #widget-stream, 
+    #linktipp-stream,  
+    #second-stream  {
         display: inline-block;
         width: 33%;
         margin: 0p;
@@ -659,10 +677,15 @@
         background: rgba(0,0,0,0.05);
         float: left;
     }
-    #linktipp-stream  .columns .column1,
-    #linktipp-stream  .columns .column2, 
-    #second-stream  .columns .column1,
-    #second-stream  .columns .column2, 
+    #main-stream  .columns .column1,
+    #main-stream  .columns .column2 {
+	padding: 0 20px 0 0;
+    }
+
+    #linktipp-stream .columns .column1,
+    #linktipp-stream .columns .column2, 
+    #second-stream .columns .column1,
+    #second-stream .columns .column2, 
     #second-stream .p3-col1, 
     #second-stream .p3-col3 {
         float: none;
@@ -694,7 +717,7 @@
    }
 
    
-   .linktipps .post-entry p img {
+    #linktipp-stream  .linktipps .post-entry p img {
        float: none;
        display: block;
         margin: 10px auto;
