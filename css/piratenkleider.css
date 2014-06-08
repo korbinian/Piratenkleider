@@ -3198,6 +3198,7 @@ html[xmlns] .slides {
   /*  background: none repeat scroll 0 0 #111111; */
   position: relative;
   height: 240px;
+  overflow: hidden;
 }
  
 .first-teaser-widget-area .slide .textslider  {

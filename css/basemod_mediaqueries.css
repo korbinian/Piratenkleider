@@ -695,8 +695,10 @@
     }
     #second-stream  .columns {
         display: inline;
+    }   
+    #second-stream .post-info .infoimage { 
+    display: none; 
     }
-
    #linktipp-stream .clear, 
    #second-stream .clear, 
    #linktipp-stream hr,
