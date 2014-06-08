@@ -3,6 +3,9 @@ Theme Piratenkleider
 Changelog 
 (since version 3.2; Former changes look at github.com/Piratenkleider/)
 
+Version 3.2.9:
+* Bugfix on default background color CSS
+
 Version 3.2.8:
 * New optional color combination: white/transparent 
 * Enhancement: CSS for start page and action page improved 

@@ -738,9 +738,9 @@ ul.wp-tag-cloud li {
  */
 
 .header {
-  position: relative;
-   height: 225px; 
-    background: none repeat scroll 0 0 transparent;
+    position: relative;
+    height: 225px; 
+    background: none repeat scroll 0 0 #eee;
   }
   .header.actionpage {
       padding: 0;
@@ -1813,9 +1813,11 @@ img.wp-smiley {
 
 .content-primary h1,
 .content-primary h2, 
-.content-primary h3, 
-.content-primary hgroup {
+.content-primary h3 {
     margin: 1em 0 0.5em 0;
+}
+.content-primary hgroup {
+    margin: 0 0 0.5em 0;
 }
 .content-primary hgroup h1,
 .content-primary hgroup h2, 
