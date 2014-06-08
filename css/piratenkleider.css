@@ -1458,8 +1458,11 @@ body.nav-fixed .nav-main li a span {
     }
     p.pubdateinfo, .archiv-nav {
 	margin-bottom: 5px;
-        font-weight: bold;
+       
     }
+    .archiv-nav {
+        font-weight: bold;
+    }    
  .post-meta, .pubdateinfo {
   overflow: hidden;
   color: #666;
