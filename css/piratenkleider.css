@@ -1626,7 +1626,8 @@ img.wp-smiley {
 }
 .linktipps.shortcode .post-entry p img {
     float: none;
-    margin: 0;
+    margin: 0 auto;
+    display: block;
 }
 .linktipps .post-entry:after {
     content: "."; 

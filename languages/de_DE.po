@@ -1,9 +1,9 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: Piratenkleider v3.2.8\n"
+"Project-Id-Version: Piratenkleider v3.2.9\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2014-06-06 15:10:29+0000\n"
+"PO-Revision-Date: 2014-06-11 21:43:21+0000\n"
 "Last-Translator: xwolf <xwolf@xwolf.de>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -1417,7 +1417,7 @@ msgstr "Zeigte einen Bereich aus vorhandenen Linktipps. Dieser Bereich wird vor 
 #: inc/constants.php:1120
 #@ piratenkleider
 msgid "Number bookmarks"
-msgstr "Anzahl Leinktipps"
+msgstr "Anzahl Linktipps"
 
 #: inc/constants.php:1121
 #@ piratenkleider
@@ -3703,13 +3703,13 @@ msgstr "Widget"
 msgid "Display a widget section after main entry list. This widget can be used to display text or even feeds of external sources."
 msgstr "Zeige ein Widget nach dem Hauptartikelstrom. Dieses Widget kann u.a. dazu benutzt werden, Feeds von fremden Webauftritten einzubinden."
 
-#: inc/widgets.php:100
-#@ piratenkleider
-msgid "Start page: Optional content widget"
-msgstr "Startseite: Optionaler Widget nach dem Hauptartikelstrom"
-
 #: inc/widgets.php:102
 #@ piratenkleider
 msgid "Optional widget for content area; positioned after article stream and can be used to add external feeds in content area."
 msgstr "Optionaler Widget für den Inhaltsbereich. Dieser wird nach dem Hauptartikelstrom positioniert und kann beispielsweise externe Feeds oder andere Inhalte zeigen."
+
+#: inc/widgets.php:100
+#@ piratenkleider
+msgid "Start page: Optional content"
+msgstr "Startseite: Optionaler Inhalt"
 

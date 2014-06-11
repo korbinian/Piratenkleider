@@ -97,7 +97,7 @@ function piratenkleider_widgets_init() {
     if ($options['artikelstream-show-widget']==1) {
 	 // Widgets for indexpages (categories, tags, authorpage)
     register_sidebar( array(
-            'name' => __( 'Start page: Optional content widget', 'piratenkleider' ),
+            'name' => __( 'Start page: Optional content', 'piratenkleider' ),
             'id' => 'artikelstream-widget',
             'description' => __( 'Optional widget for content area; positioned after article stream and can be used to add external feeds in content area.', 'piratenkleider' ),
             'before_widget' => '<div id="widget-stream">',

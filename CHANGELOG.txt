@@ -3,6 +3,10 @@ Theme Piratenkleider
 Changelog 
 (since version 3.2; Former changes look at github.com/Piratenkleider/)
 
+Version 3.2.10:
+* Bugfix in german translation
+* Enhancement: CSS for bookmark shortcode
+
 Version 3.2.9:
 * Bugfix on default background color CSS
 
