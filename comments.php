@@ -3,18 +3,18 @@ global $defaultoptions;
 global $options;
 
 if ( post_password_required() ) : ?>
-    <p><?php _e("Dieser Artikel ist passwortgesch&uuml;tzt. Bitte gib das Passwort ein, um die Kommentare zu sehen.", 'piratenkleider'); ?></p>
+    <p><?php _e("This entry is protected by password. Please enter the password to see comments.", 'piratenkleider'); ?></p>
     <?php return;
 endif; 
 if ( have_comments() ) : ?>
     <h2 id="comments-title"><?php _e("Kommentare", 'piratenkleider'); ?></h2>
      <p>   
-    <?php printf( _n( 'Ein Kommentar zu %2$s', '%1$s Kommentare zu %2$s', get_comments_number(), 'piratenkleider' ), number_format_i18n( get_comments_number() ), '' . get_the_title() . '' ); ?>
+    <?php printf( _n( 'One comment for %2$s', '%1$s comments for %2$s', get_comments_number(), 'piratenkleider' ), number_format_i18n( get_comments_number() ), '' . get_the_title() . '' ); ?>
     </p>
     <?php 
     if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) :  
-           previous_comments_link( __( '&larr; &Auml;ltere Kommentare', 'piratenkleider' ) ); 
-           next_comments_link( __( 'Neuere Kommentare &rarr;', 'piratenkleider' ) ); 
+           previous_comments_link( __( '&larr; Older comments', 'piratenkleider' ) ); 
+           next_comments_link( __( 'Newer comments &rarr;', 'piratenkleider' ) ); 
     endif; ?>
     <ol>
             <?php wp_list_comments( array( 'callback' => 'piratenkleider_comment' ) ); ?>
@@ -22,11 +22,11 @@ if ( have_comments() ) : ?>
 
     <?php 
      if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : 
-             previous_comments_link( __( '&larr; &Auml;ltere Kommentare', 'piratenkleider' ) ); 
-             next_comments_link( __( 'Neuere Kommentare &rarr;', 'piratenkleider' ) ); 
+             previous_comments_link( __( '&larr; Older comments', 'piratenkleider' ) ); 
+             next_comments_link( __( 'Newer comments &rarr;', 'piratenkleider' ) ); 
      endif; 
      if ( ! comments_open() && ! is_page() && post_type_supports( get_post_type(), 'comments' )  ) : ?>
-	<p><?php _e("Das Kommentieren dieses Artikels ist nicht (mehr) m&ouml;glich.", 'piratenkleider'); ?></p>
+	<p><?php _e("Its not possible to make comments anymore.", 'piratenkleider'); ?></p>
 <?php
     endif; 
  endif; 
@@ -41,7 +41,7 @@ if ($options['anonymize-user']==1) {
     // Emailadresse kann/soll weggelassen werden
     
     if ($options['anonymize-user-commententries']==1) {
-        // Nur Autorname        
+        // Autorname        
          $comments_args = array( 'fields' => array(
         'author' => '<p class="comment-form-author">' . '<label for="author">' . __( 'Name', 'piratenkleider' ) . '</label> ' . ( $req ? '<span class="required">*</span>' : '' ) .
 	            '<input id="author" name="author" type="text" value="' . esc_attr( $commenter['comment_author'] ) . '" size="30"' . $aria_req . ' /></p>'

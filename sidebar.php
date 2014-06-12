@@ -21,7 +21,6 @@
 			 if ((isset($options['plakate-url'])) && (strlen(trim($options['plakate-url']))>2)) {
 			     echo '<a href="'.$options['plakate-url'].'">';
 			     echo '<img src="'.$current.'" style="max-width: '.$defaultoptions['plakate-width'].';" alt="';                                                      
-                             // width="'.$defaultoptions['plakate-width'].'" height="'.$defaultoptions['plakate-height'].'" 
 			     if ((isset($options['plakate-title'])) && (strlen(trim($options['plakate-title']))>2)) {   
 				   echo $options['plakate-title'];     
 			     }
@@ -29,7 +28,6 @@
 			     echo '</a>';   
 			 } else {
 			      echo '<img src="'.$current.'" style="max-width: '.$defaultoptions['plakate-width'].';" alt="">';                                                      
-                              // width="'.$defaultoptions['plakate-width'].'" height="'.$defaultoptions['plakate-height'].'"
 			 }
 			     
 			                           
@@ -51,7 +49,6 @@
                                             echo '<a href="'.$thisweb.'">';
                                     }					
                                     echo '<img src="'.$thisurl.'" style="max-width: '.$defaultoptions['plakate-width'].';" alt="';
-                                    // width="'.$defaultoptions['plakate-width'].'" height="'.$defaultoptions['plakate-height'].'"
 				     if ((isset($thistitel)) && (strlen(trim($thistitel))>2)) {  
 					 echo wp_filter_nohtml_kses($thistitel);     
 				     }

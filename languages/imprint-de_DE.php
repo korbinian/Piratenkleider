@@ -1,181 +1,11 @@
 <?php
-/* 
- Template Name: Impressum
+
+/*
+ * To change this template, choose Tools | Templates
+ * and open the template in the editor.
  */
 ?>
-<?php get_header();
-    global $options;  
- ?>
 
-<div class="section content" id="main-content">
-  <div class="row">
-    <div class="content-primary">
-	
-	
-	<?php if ( have_posts() ) while ( have_posts() ) : the_post();         
-        $custom_fields = get_post_custom();
-        ?>
-
-	<?php
-	    $image_url = '';
-	    $image_alt = '';
-	    $attribs = array(
-                 "credits" => $options['img-meta-credits'],
-                );
-	    if (has_post_thumbnail()) { 
-		$thumbid = get_post_thumbnail_id(get_the_ID());
-		$image_url_data = wp_get_attachment_image_src( $thumbid, 'full');
-		$image_url = $image_url_data[0];
-		$attribs = piratenkleider_get_image_attributs($thumbid);	
-	    } 
-	    if (!(isset($image_url) && (strlen($image_url)>4))) { 	
-		if (($options['aktiv-platzhalterbilder-indexseiten']==1) && (isset($options['src-default-symbolbild']))) {  
-		    if (isset($options['src-default-symbolbild_id']) && ($options['src-default-symbolbild_id'] >0)) {
-			$image_url_data = wp_get_attachment_image_src( $options['src-default-symbolbild_id'], 'full');
-			$image_url = $image_url_data[0];
-			$attribs = piratenkleider_get_image_attributs($options['src-default-symbolbild_id']);
-		    } else {
-			$image_url = $options['src-default-symbolbild'];
-		    }		    
-		}
-	    }
-	    
-	    if (isset($image_url) && (strlen($image_url)>4)) { 
-		if ($options['indexseitenbild-size']==1) {
-		    echo '<div class="content-header-big">';
-		} else {
-		    echo '<div class="content-header">';
-		}
-		?>    		    		    		        
-		   <h1 class="post-title"><span><?php the_title(); ?></span></h1>
-		   <div class="symbolbild"><img src="<?php echo $image_url ?>" alt="">
-		    <?php if (isset($attribs["credits"]) && (strlen($attribs["credits"])>1)) {
-                           echo '<div class="caption">'.$attribs["credits"].'</div>';  
-                        }  ?>
-		   </div>
-		</div>  	
-	    <?php } ?>
-
-      <div class="skin">
-        <?php if (!(isset($image_url) && (strlen($image_url)>4))) { ?>
-	    <h1 class="post-title"><span><?php the_title(); ?></span></h1>
-	<?php } ?>
-	
-	
-	
-        <?php the_content(); ?>
-        <?php edit_post_link( __( 'Bearbeiten', 'piratenkleider' ), '', '' ); ?>
-        <?php endwhile; ?>
-          
-          <?php if ((isset($options['impressumdienstanbieter'])) && (strlen(trim($options['impressumdienstanbieter']))>4)) { ?>
-          <p>
-              Dienstanbieter dieser Seite ist   
-               <?php echo $options['impressumdienstanbieter']; ?>.               
-          </p>   
-           <?php } else { ?>
-          <h2><?php echo  get_bloginfo( 'name' ) ?></h2>  
-                
-          <p>
-                <?php echo  get_bloginfo( 'description' ) ?>
-          </p>
-          
-          <?php } ?>
-           <?php if ((isset($options['impressumperson']))&& (strlen(trim($options['impressumperson']))>1)) { ?>
-          <p>Verantwortlicher gem&auml;&szlig; &sect;5 TMG ist 
-                <?php echo $options['impressumperson']; ?>.
-          </p>
-           <?php } ?>
-          
-            <?php if ((isset($options['posttitel'])) && (strlen(trim($options['posttitel']))>1)
-                  && (isset($options['poststrasse']))&& (strlen(trim($options['poststrasse']))>1)
-                  && (isset($options['poststadt'])) && (strlen(trim($options['poststadt']))>1)) { ?>
-                
-            <h2>Postanschrift</h2>
-            <address>
-                <?php echo $options['posttitel']?><br> 
-                <?php  if ((isset($options['postperson'])) && (strlen(trim($options['postperson']))>4)) { 
-                    echo $options['postperson']. "<br>"; 
-                  }  
-                  echo $options['poststrasse']."<br>";
-                  echo $options['poststadt']."<br>";  
-                ?>  
-            </address>                  
-           <?php } ?>
-          
-            <h2>Digitale Kontaktaufnahme</h2>   
-            <ul>
-           <?php if ((isset($options['kontaktemail'])) && (strlen(trim($options['kontaktemail']))>4)) { ?>  
-                <li>E-Mail: <a href="mailto:<?php echo $options['kontaktemail']?>"><?php echo $options['kontaktemail']?></a></li>
-          <?php } else { ?>
-                <li>E-Mail: <a href="mailto:<?php echo get_bloginfo( 'admin_email' )?>"><?php echo get_bloginfo( 'admin_email' )?></a></li>
-           <?php } 
-             if ((isset($options['kontakttelefon'])) && (strlen(trim($options['kontakttelefon']))>4)) { ?>      
-             <li>Telefon: <?php echo $options['kontakttelefon']?></li>
-            <?php } 
-             if ((isset($options['kontaktfax'])) && (strlen(trim($options['kontaktfax']))>4)) { ?>      
-             <li>Fax: <?php echo $options['kontaktfax']?></li>
-            <?php } ?>
-          
-            </ul>
-          
-            
-           <?php if ((isset($options['ladungtitel'])) && (strlen(trim($options['ladungtitel']))>1)
-                  && (isset($options['ladungstrasse']))&& (strlen(trim($options['ladungstrasse']))>1)
-                  && (isset($options['ladungstadt'])) && (strlen(trim($options['ladungstadt']))>1)) { ?>  
-            <h2>Ladungsf&auml;hige Anschrift</h2>
-             <address>
-                 <?php 
-                echo $options['ladungtitel']."<br>";
-                if ((isset($options['ladungperson'])) && (strlen(trim($options['ladungperson']))>4)) { 
-                echo $options['ladungperson']."<br>";
-                }
-                echo $options['ladungstrasse']."<br>"; 
-                echo $options['ladungstadt']."<br>";             
-                ?>
-            </address>  
-            
-          <?php } else { 
-               if ((isset($options['posttitel']))  && (strlen(trim($options['posttitel']))>1) 
-                  && (isset($options['poststrasse']))  && (strlen(trim($options['poststrasse']))>1)
-                  && (isset($options['poststadt'])) && (strlen(trim($options['poststadt']))>1) ) { ?>
-            <h2>Ladungsf&auml;hige Anschrift</h2>
-             <address>
-                <?php 
-                echo $options['posttitel']."<br>";
-                 if ((isset($options['postperson'])) && (strlen(trim($options['postperson']))>1)) { 
-                 echo $options['postperson']."<br>";
-                }
-                 echo $options['poststrasse']."<br>"; 
-                  echo $options['poststadt']."<br>";
-                      ?>
-            </address>              
-               <?php } ?>
-         <?php } 
-         
-         
-         if ($options['zeigerechtsvorschriften']==1) { 
-            global $default_imprint_laws_list;
-            $out = '';
-            $out .= '<h2>'.__('Rechtsvorschriften','piratenkleider').'</h2>';
-            $liste = '';
-            foreach ( $default_imprint_laws_list as $entry => $listdata ) {        
-                $value = $default_imprint_laws_list[$entry]['content'];
-                $active = $default_imprint_laws_list[$entry]['active'];
-                if (($active ==1) && ($value)) {
-                     $liste .=  '<li><a href="'.$value.'">';
-                     $liste .=  $listdata['name'].'</a></li>';
-                     $liste .=  "\n";
-                }
-            }  
-            if (strlen($liste)>0) {
-                echo $out;
-                echo "\n<ul>\n";
-                echo $liste;
-                echo "\n</ul>\n";
-            }   
-         } ?>
- 
-            
            
             
 <h2>Haftung f&uuml;r Inhalte</h2>
@@ -266,20 +96,21 @@ stehen s&auml;mtliche Werke dieses Angebots unter einer
 <p>
     Dieses Webangebot verwendet folgende Werke von Dritten:
 </p>
-<ul>
-    <li><a class="extern" href="http://www.yaml.de">YAML CSS Framework</a> (Lizenziert unter der
-        <span lang="en">Creative Commons Attribution 2.0 License</span>).</li>
-    
+<ul>   
     <li><a class="extern" href="http://www.jquery.com">JavaScript Framework jQuery</a> (<span lang="en">GNU General Public License (GPL)</span> Version 2)</li>
     <li><a class="extern" href="http://flex.madebymufffin.com">jQuery FlexSlider</a> (<span lang="en">MIT License</span>)</li>
     <li><a class="extern bebas" href="http://dharmatype.com/dharma-type/bebas-neue.html">Schrift Bebas Neue von Dharmatype</a> (<span lang="en">SIL Open Font License</span> 1.1)</li>
+    <li><a class="extern" href="https://www.google.com/fonts/specimen/Droid+Sans">Schrift DroidSans</a> (<span lang="en">Apache License</span> 2.0)</li>
+    <li><a class="extern" href="http://de.wikipedia.org/wiki/Linux_Libertinel">Schrift LinLibertine</a> (<span lang="en">SIL Open Font License</span> 1.1)</li>
+    <li><a class="extern" href="http://wiki.piratenpartei.de/Pirate_Design/Aktuell#Schriften">Schrift PoliticsHead</a> (<span lang="en">WTFPL License</span> 1.1)</li>
+    <li><a class="extern" href="http://fortawesome.github.io/Font-Awesome/">Schrift Awesome</a> (<span lang="en">SIL Open Font License</span> 1.1)</li>
+
+    
     <?php 
     $theme_data = wp_get_theme();
     ?>
     <li><a class="extern" href="<?php echo $theme_data['URI']; ?>">Wordpress Theme <?php echo $theme_data->Name; ?></a>, Version <?php echo $theme_data->Version; ?>
     (Lizenziert unter der <span lang="en">GNU General Public License (GPL)</span> Version 2)  </li>
-    <li>Fotos und Symbolbilder von Tobias M. Eckrich 
-    (Lizenziert unter der Creative Commons Namensnennung 3.0 Deutschland Lizenz)</li> 
     <li><a class="extern" href="http://wiki.piratenpartei.de/Grafiken">Wallpaper und Bildmaterial der Piratenpartei Deutschland</a> 
     (Lizenziert unter der Creative Commons Namensnennung 3.0 Deutschland Lizenz)</li>    
 
@@ -371,20 +202,3 @@ Werbung und Informationsmaterialien wird hiermit ausdr&uuml;cklich widersprochen
 Die Betreiber der Seiten behalten sich ausdr&uuml;cklich rechtliche Schritte im Falle 
 der unverlangten Zusendung von Werbeinformationen, etwa durch Spam-Mails, vor.</p>
 
-      </div>
-    </div>
-
-    <div class="content-aside">
-      <div class="skin">
-        <h1 class="skip"><?php _e( 'Weitere Informationen', 'piratenkleider' ); ?></h1>           
-         <?php  
-            get_piratenkleider_seitenmenu($options['zeige_sidebarpagemenu'],$options['zeige_subpagesonly'],$options['seitenmenu_mode']);
-            get_sidebar(); 
-          ?>
-      </div>
-    </div>
-  </div>
- <?php get_piratenkleider_socialmediaicons(2); ?>
-</div>
-
-<?php get_footer(); ?>

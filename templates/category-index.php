@@ -1,10 +1,11 @@
 <?php
 /* 
- Template Name: Seitenindex
+ Template Name: Category Index
  */
 ?><?php get_header();    
   global $options;  
 
+  
   if ( $options['slider-aktiv'] == "1" ){ ?>  
     <div class="section teaser">
         <div class="row">
@@ -17,19 +18,24 @@
     <div class="content-primary">
       <div class="skin">
 
-      <?php 
+      
+       <?php 
        if ( have_posts() ) while ( have_posts() ) : the_post();         
             $content = trim(get_the_content());            
             if (strlen($content)>0) {
                 echo $content;
-                edit_post_link( __( 'Bearbeiten', 'piratenkleider' ), '', '' );
+                edit_post_link( __( 'Edit', 'piratenkleider' ), '', '' );
                 echo '<hr class="clear">';
             }                      
-       endwhile;  
+       endwhile; 
+       
        
       $foundarticles=0;
-      $i = 0;     
+      $i = 0; 
 
+      global $wp_query;
+
+      
       $cat_array = array();
          $categories=get_categories(array('orderby' => 'name','order' => 'ASC'));
          foreach($categories as $category) {
@@ -38,9 +44,7 @@
              }
          }        
  
-	
-	$my_query = null;
-	
+         	
 	$num = $options['categoryindex-numlinklist'] + 1;
         wp_reset_query();
         $subcatquery = array(); 
@@ -50,7 +54,7 @@
                 $title = '<h2>' . $category->name.'</h2>';
                 
                 $subcatquery =array(
-                    'post_type' => 'page',
+                    'post_type' => 'post',
                     'post_status' => 'publish',
                     'posts_per_page' => $num,
                     'cat' => $cat,
@@ -87,8 +91,8 @@
                         echo $liste;
                         echo "</ul>\n";
                         echo '<p><a href="' . esc_attr(get_term_link($category, 'category'))
-                        . '" title="' . sprintf( __( "Nachrichten der Kategorie %s zeigen" , 'piratenkleider'), $category->name ) 
-                        . '" ' . '>'.__('Weitere Meldungen...','piratenkleider').'</a>'.'</p>';
+                        . '" title="' . sprintf( __( "Entries of category %s" , 'piratenkleider'), $category->name ) 
+                        . '" ' . '>'.__('More entries...','piratenkleider').'</a>'.'</p>';
 
                       }                      
                       echo "</div>\n";
@@ -102,15 +106,15 @@
 	}
 	
 
+
+      
+    
+
         
 	if ($foundarticles==0) { ?>
-            <h2><?php _e("Nichts gefunden", 'piratenkleider'); ?></h2>
+            <h2><?php _e("Nothing found", 'piratenkleider'); ?></h2>
             <p>
-            <?php _e("Es konnten keine Seiten gefunden werden. Bitte versuchen Sie es nochmal mit einer Suche.", 'piratenkleider'); ?>
-                
-            </p>
-            <p>   
-            <?php _e("Hinweis an Admins: Es m&uml;ssen Seiten auch Kategorien zugeordnet werden, damit dies klappt.", 'piratenkleider'); ?>
+            <?php _e("No matching pages or entries found. Please try to search with another term.", 'piratenkleider'); ?>
             </p>
             <?php get_search_form(); 
             echo "<hr>\n"; 
@@ -122,7 +126,7 @@
     </div>
     <div class="content-aside">
       <div class="skin">
-          <h1 class="skip"><?php _e( 'Weitere Informationen', 'piratenkleider' ); ?></h1>
+          <h1 class="skip"><?php _e( 'More informations', 'piratenkleider' ); ?></h1>
             <?php get_sidebar(); ?>
       </div>
     </div>

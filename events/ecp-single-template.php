@@ -64,7 +64,7 @@ if ( !defined('ABSPATH') ) { die('-1'); }
 		<div id="post-<?php the_ID() ?>" <?php post_class() ?>>
 			<h2 class="entry-title"><?php the_title() ?></h2>
 			<?php echo tribe_get_current_template(); ?>
-			<?php edit_post_link(__('Bearbeiten','piratenkleider'), '<span class="edit-link">', '</span>'); ?>
+			<?php edit_post_link(__('Edit','piratenkleider'), '<span class="edit-link">', '</span>'); ?>
 		</div><!-- post -->
 		<?php if(tribe_get_option('showComments','no') == 'yes'){ comments_template();} ?>
 	</div>
@@ -74,8 +74,7 @@ if ( !defined('ABSPATH') ) { die('-1'); }
 
     <div class="content-aside">
       <div class="skin">
-
-        <h1 class="skip"><?php _e( 'Weitere Informationen', 'piratenkleider' ); ?></h1>   
+          <h1 class="skip"><?php _e( 'More informations', 'piratenkleider' ); ?></h1>
             <?php
 
             get_piratenkleider_seitenmenu($options['zeige_sidebarpagemenu'],$options['zeige_subpagesonly'],$options['seitenmenu_mode']);       

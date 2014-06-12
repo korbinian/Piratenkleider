@@ -87,7 +87,7 @@
 			?>                  
 		      </p>
 		</div>
-		<div><?php edit_post_link( __( 'Bearbeiten', 'piratenkleider' ), '', '' ); ?></div>
+		<div><?php edit_post_link( __( 'Edit', 'piratenkleider' ), '', '' ); ?></div>
         </section>
 	<div class="post-nav">
 		<ul>
@@ -105,7 +105,7 @@
         
         <?php if (has_filter( 'related_posts_by_category')) { ?>  
 	    <div class="post-nav">
-	      <h3><?php _e("Weitere Artikel in diesem Themenkreis:", 'piratenkleider'); ?></h3>
+	      <h3><?php _e("More entries:", 'piratenkleider'); ?></h3>
 	      <ul class="related">
 		<?php do_action(
 		'related_posts_by_category',
@@ -121,7 +121,7 @@
 		'rel' => 'follow',
 		'type' => 'post',
 		'image' => array(1, 1),
-		'message' => __('Keine Treffer','piratenkleider')
+		'message' => __('No more entries in this category found.','piratenkleider')
 		)
 		) ?>
           </ul>
@@ -140,7 +140,7 @@
 	?>
 	    <div class="content-aside">
 	      <div class="skin">
-	       <h1 class="skip"><?php _e( 'Weitere Informationen', 'piratenkleider' ); ?></h1>
+	       <h1 class="skip"><?php _e( 'More informationens', 'piratenkleider' ); ?></h1>
 	       <?php
 
 		

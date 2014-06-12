@@ -25,25 +25,13 @@
 <body <?php body_class(); ?>>
     <nav role="navigation">
             <ul id="top" class="nav skiplinks">		
-                <li><a id="skiplink-nav" href="#nav"><?php _e( 'Zur Navigation springen.', 'piratenkleider' ); ?></a></li>
-                <li><a id="skiplink-content" href="#main-content"><?php _e( 'Zum Inhalt springen.', 'piratenkleider' ); ?></a></li>
-                <?php if ( $options['aktiv-suche'] == "1" ){ ?><li><a id="skiplink-search" href="#searchform"><?php _e( 'Zur Suche springen.', 'piratenkleider' ); ?></a></li><?php } ?>
+                <li><a id="skiplink-nav" href="#nav"><?php _e( 'Jump to navigation.', 'piratenkleider' ); ?></a></li>
+                <li><a id="skiplink-content" href="#main-content"><?php _e( 'Jump to content.', 'piratenkleider' ); ?></a></li>
             </ul>
     </nav>
-    <div class="section header actionpage">
-    <header>
+    <header class="section header actionpage" role="banner">
             <div class="row">
-                <div class="branding">
-                    <?php if ( ! is_home() ) { ?>
-                    <a href="<?php echo home_url( '/' ); ?>" title="<?php echo $defaultoptions['default_text_title_home_backlink']; ?>" rel="home" class="logo">
-                    <?php } ?>                                                             
-                        <h1><img src="<?php header_image(); ?>" alt="<?php bloginfo( 'name' ); ?>"></h1>
-                    <?php                                
-                      if ( ! is_home() ) { ?> </a>  <?php } 
-                      if (strlen(trim(get_bloginfo( 'description' )))>1) { ?> 
-                    <p class="description slogan"><?php bloginfo( 'description' ); ?></p>
-                    <?php } ?>
-                </div>
+
                 <div class="nav-top" role="navigation">				                                                        
                     <h2 class="skip"><?php _e( 'Service-Navigation', 'piratenkleider' ); ?></h2>
                     <?php  
@@ -85,10 +73,19 @@
                    
 
                 </div>       
-             
+		<div class="branding">
+                    <?php if ( ! is_home() ) { ?>
+                    <a href="<?php echo home_url( '/' ); ?>" title="<?php echo $defaultoptions['default_text_title_home_backlink']; ?>" rel="home" class="logo">
+                    <?php } ?>                                                             
+                        <h1><img src="<?php header_image(); ?>" alt="<?php bloginfo( 'name' ); ?>"></h1>
+                    <?php                                
+                      if ( ! is_home() ) { ?> </a>  <?php } 
+                      if (strlen(trim(get_bloginfo( 'description' )))>1) { ?> 
+                    <p class="description slogan"><?php bloginfo( 'description' ); ?></p>
+                    <?php } ?>
+                </div>
             </div>
-        </header>    
-    </div>
+    </header>    
     <div id="content-body">
 
 

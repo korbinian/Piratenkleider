@@ -1,0 +1,81 @@
+Theme Piratenkleider 
+
+Changelog 
+(since version 3.2; Former changes look at github.com/Piratenkleider/)
+
+Version 3.2.10:
+* Bugfix in german translation
+* Enhancement: CSS for bookmark shortcode
+* Enhancement:Added chapters of country party Sachsen
+
+Version 3.2.9:
+* Bugfix on default background color CSS
+
+Version 3.2.8:
+* New optional color combination: white/transparent 
+* Enhancement: CSS for start page and action page improved 
+* Feature: Allow optional widget as article stream for start page
+
+Version 3.2.7:
+* Bugfix: Translation of german district associations (Bug #152)
+* Feature: set header background position to top, like standard themes; Will
+  now match to body background.
+* Feature: Improved CSS and HTML orientation in header to make them relative
+  positioned; Changed color files and scapegoat to match this.
+* Removed Flaschenpost Design and moved it into color file.
+
+Version 3.2.6:
+* Bugfix: Allow special chars in wiki username (Bug #148)
+* Bugfix: Undefined index (Bug #147)
+* Bugfix: fixed header for page menu (Bug #146)
+
+Version 3.2.5:
+* Bugfix: Small Screen Layout on Scapegoat Adaption
+* Bugfix: Video Embeds only on free spaced content links, not on real links
+* Bugfix: Color codes for business cards
+* Enhancement: Business Cards now show also local entries which contain the
+  fullname of the person.
+* Enhancement: New login screen
+* Removed old unused images
+
+Version 3.2.4:
+* Enhancement: CSS for shortcode bookmarks improved
+* Enhancement: CSS for Flaschenpost design: position of submenus improved for
+  old browser support (chrome 35.*)
+
+
+Version 3.2.3:
+* Workaround for Safaris bug on floating excerpts
+* Improved fixed header on scrolled text
+* Feature: Search form for scrolled text fixed
+* Feature: Added wp_editor() for textinput on bookmarks and allowed HTML
+* Constants: Default value for displaying tags and categories on startpage set 
+  to 0
+
+
+Version 3.2.2:
+* Business cards can be printed out by a given order and by ids, like
+  this: [person listorder="4,7,2"]
+* Bugfix: German translation for show/hide
+* Bugfix: Sanitizing values on business cards
+* Feature: Symbol icon for wikis on url wiki.piratenbrandenburg.de
+* Feature: Body background changeable independend by current design; 
+  position and repeat configurable.
+
+Version 3.2.1:
+* Changed margins and sizes for headlines in content.
+* Changed sidebar background: Uses main background
+* Sticky-Class uses now standard class of Infoboxes
+
+Version 3.2.0:
+* Moved templates into a new directory templates.
+* Changed language in PHP files to english and added german language files;
+  Removed former american-english translation file.
+* Notice: Former called "linktipps" will be renamed in "bookmarks" for english
+  texts.
+* Bugfix: custom-fields.php: fixed entries with wrong language domain. 
+* Removed 'first-teaser-widget-area' (widget instead of slider on start page).
+* Removed Teaser widget (widget instead of teaserlinks on start page).
+* Removed Bulgarian language files, cause they dont match anymore to new
+  base language in theme.
+

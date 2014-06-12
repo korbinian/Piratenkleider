@@ -10,10 +10,7 @@ Template Name: Search Page
 <div class="section content" id="main-content">
   <div class="row">
     <div class="content-primary">
-	
-	
-	
-	
+
 	<?php
 	    $image_url = '';
 	    $attribs = array("credits" => $options['img-meta-credits'] );
@@ -34,7 +31,7 @@ Template Name: Search Page
 		    echo '<div class="content-header">';
 		}
 		?>    		    		    		        
-		   <h1 class="post-title"><span><?php printf( __( 'Suchergebnisse f&uuml;r "%s"', 'piratenkleider' ), '' .get_search_query() . '' ); ?></span></h1>
+		   <h1 class="post-title"><span><?php printf( __( 'Search entries for "%s"', 'piratenkleider' ), '' .get_search_query() . '' ); ?></span></h1>
 		   <div class="symbolbild"><img src="<?php echo $image_url ?>" alt="">	
 		    <?php if (isset($attribs["credits"]) && (strlen($attribs["credits"])>1)) {
                            echo '<div class="caption">'.$attribs["credits"].'</div>';  
@@ -46,7 +43,7 @@ Template Name: Search Page
       <div class="skin">
 	  
 	  <?php if (!(isset($image_url) && (strlen($image_url)>4))) { ?>
-	    <h1 class="post-title"><span><?php printf( __( 'Suchergebnisse f&uuml;r "%s"', 'piratenkleider' ), '' .get_search_query() . '' ); ?></span></h1>
+	    <h1 class="post-title"><span><?php printf( __( 'Search entries for "%s"', 'piratenkleider' ), '' .get_search_query() . '' ); ?></span></h1>
 	<?php }  
 	
         $query_args = explode("&", $query_string);
@@ -81,9 +78,9 @@ Template Name: Search Page
 
               echo "<p>";
               if ($total_results>1) {
-                printf( __( 'Es wurden %s Treffer gefunden.', 'piratenkleider' ), $total_results );
+                printf( __( 'Found %s matching hits.', 'piratenkleider' ), $total_results );
               } else {
-                  _e('Es wurde ein Treffer gefunden.','piratenkleider');
+                  _e('Found one matching hit.','piratenkleider');
               }
               echo "</p>\n";         
               echo '<ul class="searchresults">';
@@ -102,7 +99,7 @@ Template Name: Search Page
                     $page = (int)get_query_var('paged');
                     if ($page>1) {
                         echo '<li class="prev">';
-                        echo '<a href="'.get_pagenum_link(1).'">'.__( '&larr; Erste Seite', 'piratenkleider' ).'</a>';
+                        echo '<a href="'.get_pagenum_link(1).'">'.__( '&larr; First page', 'piratenkleider' ).'</a>';
                         echo "</li>\n";
                     }
                     echo '<li class="pages">';
@@ -112,43 +109,42 @@ Template Name: Search Page
                     if ($page < $last) {
                         
                         echo '<li class="next">';
-                        echo '<a href="'.get_pagenum_link($last).'">'.__( 'Letzte Seite &rarr;', 'piratenkleider' ).'</a>';
+                        echo '<a href="'.get_pagenum_link($last).'">'.__( 'Last page &rarr;', 'piratenkleider' ).'</a>';
                         echo "</li>\n";
                     }
                     ?>                                
                 </ul></div> 
          <?php 
          }                      
-      } else { 
-          ?>
-                        <h2><?php _e("Nichts gefunden", 'piratenkleider'); ?></h2>
+      } else {  ?>
+                        <h2><?php _e("Nothing found", 'piratenkleider'); ?></h2>
                         <p>
-                            <?php _e("Es konnten keine Seiten oder Artikel gefunden werden, die zu der Sucheingabe passten. Bitte versuchen Sie es nochmal mit einer  anderen Suche.", 'piratenkleider'); ?>
+                            <?php _e("No matching pages or entries found. Please try with another term.", 'piratenkleider'); ?>
                             
                         </p>
                         <?php get_search_form(); ?>
                         
                         <p>
-                            <?php _e("Alternativ verwenden Sie einen der folgenden Links.", 'piratenkleider'); ?>
+                            <?php _e("Alternativly try the following links:", 'piratenkleider'); ?>
                                       
                         </p>
                         
                         <div class="widget">
-                            <h3><?php _e("Archiv nach Monaten", 'piratenkleider'); ?></h3>                           
+                            <h3><?php _e("Archive by month", 'piratenkleider'); ?></h3>                           
                             <?php wp_get_archives('type=monthly'); ?>               
                         </div>
                         <?php 
                         $posttags = get_the_tags();
                         if ($posttags) { ?>                          
                          <div  class="widget">
-                            <h3><?php _e("Artikel nach Schlagworten", 'piratenkleider'); ?></h3>    
+                            <h3><?php _e("Entries by tags", 'piratenkleider'); ?></h3>    
                             <div class="tagcloud">
                              <?php wp_tag_cloud(array('format'=> 'list','smallest'  => 12, 'largest'   => 28)); ?>
                              </div>
                         </div>
                         <?php } ?>
                         <div class="widget">
-                        <h3><?php _e("&Uuml;bersicht aller Kategorien", 'piratenkleider'); ?></h3>
+                        <h3><?php _e("Categories", 'piratenkleider'); ?></h3>
                         <ul>                            
                           <?php wp_list_categories('title_li='); ?>                               
                         </ul>
@@ -162,7 +158,7 @@ Template Name: Search Page
 
     <div class="content-aside">
       <div class="skin">        
-          <h1 class="skip"><?php _e( 'Weitere Informationen', 'piratenkleider' ); ?></h1>
+          <h1 class="skip"><?php _e( 'More informations', 'piratenkleider' ); ?></h1>
          <?php get_sidebar(); ?>
       </div>
     </div>

@@ -1,73 +1,11 @@
 <?php
-/* 
- Template Name: Datenschutzerklaerung
+
+/*
+ * To change this template, choose Tools | Templates
+ * and open the template in the editor.
  */
 ?>
-<?php 
-    get_header();
-    global $options;  
-     ?>
 
-<div class="section content" id="main-content">
-  <div class="row">
-    <div class="content-primary">
-	
-	<?php if ( have_posts() ) while ( have_posts() ) : the_post();         
-        $custom_fields = get_post_custom();
-        ?>
-
-	<?php
-	    $image_url = '';
-	    $image_alt = '';
-	    $attribs = array(
-                 "credits" => $options['img-meta-credits'],
-                );
-	    if (has_post_thumbnail()) { 
-		$thumbid = get_post_thumbnail_id(get_the_ID());
-		$image_url_data = wp_get_attachment_image_src( $thumbid, 'full');
-		$image_url = $image_url_data[0];
-		$attribs = piratenkleider_get_image_attributs($thumbid);	
-	    } 
-	    if (!(isset($image_url) && (strlen($image_url)>4))) { 	
-		if (($options['aktiv-platzhalterbilder-indexseiten']==1) && (isset($options['src-default-symbolbild']))) {  
-		    if (isset($options['src-default-symbolbild_id']) && ($options['src-default-symbolbild_id'] >0)) {
-			$image_url_data = wp_get_attachment_image_src( $options['src-default-symbolbild_id'], 'full');
-			$image_url = $image_url_data[0];
-			$attribs = piratenkleider_get_image_attributs($options['src-default-symbolbild_id']);
-		    } else {
-			$image_url = $options['src-default-symbolbild'];
-		    }		    
-		}
-	    }
-	    
-	    if (isset($image_url) && (strlen($image_url)>4)) { 
-		if ($options['indexseitenbild-size']==1) {
-		    echo '<div class="content-header-big">';
-		} else {
-		    echo '<div class="content-header">';
-		}
-		?>    		    		    		        
-		   <h1 class="post-title"><span><?php the_title(); ?></span></h1>
-		   <div class="symbolbild"><img src="<?php echo $image_url ?>" alt="">
-		   <?php if (isset($attribs["credits"]) && (strlen($attribs["credits"])>1)) {
-                           echo '<div class="caption">'.$attribs["credits"].'</div>';  
-                    }  ?>
-		   </div>
-		</div>  	
-	    <?php } ?>
-
-      <div class="skin">
-        <?php if (!(isset($image_url) && (strlen($image_url)>4))) { ?>
-	    <h1 class="post-title"><span><?php the_title(); ?></span></h1>
-	<?php } ?>
-	
-	
-
-
-        <?php the_content(); ?>
-        <?php edit_post_link( __( 'Bearbeiten', 'piratenkleider' ), '', '' ); ?>
-        <?php endwhile; ?>
-          
           
           <p>Die Piratenpartei Deutschland fordert nicht nur strengeren Datenschutz, sie setzt ihn auch selber praktisch um. 
               Personenbezogene Daten werden auf dieser Webseite nur im technisch unbedingt notwendigen Umfang erhoben.
@@ -209,23 +147,3 @@ In ihren Browsereinstellungen k&ouml;nnen sie die Annahme von Cookies unterbinde
     }
     ?> 
     stellen.</p>
-                   
-          
-      </div>
-    </div>
-
-    <div class="content-aside">
-      <div class="skin">
-
-        <h1 class="skip"><?php _e( 'Weitere Informationen', 'piratenkleider' ); ?></h1>   
-            <?php
-
-            get_piratenkleider_seitenmenu($options['zeige_sidebarpagemenu'],$options['zeige_subpagesonly'],$options['seitenmenu_mode']);       
-            get_sidebar(); ?>
-      </div>
-    </div>
-  </div>
-   <?php get_piratenkleider_socialmediaicons(2); ?>
-</div>
-
-<?php get_footer(); ?>

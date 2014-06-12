@@ -4,9 +4,7 @@
 ?>          
 <div class="first-teaser-widget-area">
 <?php
-   if ( is_active_sidebar( 'first-teaser-widget-area' ) ) {
-        dynamic_sidebar( 'first-teaser-widget-area' ); 
-    } else {        
+     
          $defaultbildsrc = $options['slider-defaultbildsrc'];                        
          $cat = $options['slider-catid'];
 	 global $thisCat;
@@ -27,11 +25,11 @@
         query_posts( array( 'cat' => "$cat", 'posts_per_page' => $numberarticle) );
         ?>
         <div class="flexslider">
-            <h2 class="skip"><?php _e( 'Aktuelle Themen', 'piratenkleider' ); ?></h2>
+            <h2 class="skip"><?php _e( 'Information slides', 'piratenkleider' ); ?></h2>
             <ul class="slides">
         <?php 
         if ( have_posts() ) while ( have_posts() ) : the_post();
-            echo "<li class=\"slide\">";
+            echo '<li class="slide">';
             if ($options['teaser-type'] == 'big') {
                 $attribs = array(
                  "credits" => $options['img-meta-credits'],
@@ -43,7 +41,6 @@
                     $image_url_data = wp_get_attachment_image_src( $thumbid, 'full');
                     $image_url = $image_url_data[0];
                     $attribs = piratenkleider_get_image_attributs($thumbid);
-  
                     if (isset($image_url) && strlen($image_url)>0){                        
                         echo '<img src="'.$image_url.'" alt="">';
                     } else {
@@ -62,8 +59,9 @@
 		    if (isset($options['slider-defaultbildsrc_id'])) {
 			    $image_url_data = wp_get_attachment_image_src( $options['slider-defaultbildsrc_id'], 'full');
 			    $image_url = $image_url_data[0];
-			    $attribs = piratenkleider_get_image_attributs($options['slider-defaultbildsrc_id']);
-		    } else {
+			    $attribs = piratenkleider_get_image_attributs($options['slider-defaultbildsrc_id']);			    
+		    } 
+		    if (!isset($image_url)) {
 			    $image_url = $options['slider-defaultbildsrc'];
 			    $attribs = array("credits" => $options['img-meta-credits'] );
 		    }
@@ -110,14 +108,13 @@
         echo "</ul>";
         echo "</div>";
         wp_reset_query(); 
-    } ?>
+     ?>
 </div>
 <div class="second-teaser-widget-area">
 <div class="skin">
     <?php if ( is_active_sidebar( 'second-teaser-widget-area' ) ) { ?>
         <?php dynamic_sidebar( 'second-teaser-widget-area' ); ?>
-    <?php } else {  ?>
-    
+    <?php } else {  ?>    
         <div class="teaserlinks">
             <ul>
                 <li><a class="symbol symbol-<?php echo $options['teaserlink1-symbol'] ?>" href="<?php echo $options['teaserlink1-url'] ?>"><?php echo $options['teaserlink1-title'] ?> <span><?php echo $options['teaserlink1-untertitel'] ?></span></a></li>

@@ -13,7 +13,7 @@
                     <p class="titelurl"><a href="<?php echo home_url('/'); ?>"><?php echo home_url('/'); ?></a></p>                                                            
                     <ul>
                         <li><?php wp_loginout() ?></li>
-                        <li><a href="<?php bloginfo( 'rss_url' ); ?>">RSS-Feed</a></li>
+                        <li><a href="<?php bloginfo( 'rss_url' ); ?>">Feed</a></li>
                     </ul>                   
                 </div>
             <?php } } ?>

@@ -43,14 +43,12 @@
                         }  ?></div>	 	
                <?php                  
               if ($options['category-teaser'])  { 	  
-                    echo '<h1 class="skip">'.__("Aktuelle Artikel", 'piratenkleider').' ';
-                    printf( __( 'Kategorie %s', 'piratenkleider' ), '' . single_cat_title( '', false ) . '' );
+                    echo '<h1 class="skip">'.__("Current entry", 'piratenkleider').' ';
+                    printf( __( 'Category %s', 'piratenkleider' ), '' . single_cat_title( '', false ) . '' );
                     echo '</h1>';	    	     
               }
                echo '</div>';  
         } 
-       
-
 
       $i = 0; 
       $col = 0; 
@@ -58,8 +56,8 @@
       $numentries = $options['category-num-article-fullwidth'] + $options['category-num-article-halfwidth']; 
       $col_count = 3; 
       $cols = array();
-
-      $thisquery =  '&cat='.$thisCat.'&posts_per_page='.$numentries;
+      $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
+      $thisquery =  '&cat='.$thisCat.'&posts_per_page='.$numentries.'&paged=' . $paged;
       query_posts( $thisquery  );
 
       
@@ -83,7 +81,7 @@
          <?php    
 	 if (!(isset($image_url) && (strlen($image_url)>4)) && (!($options['category-teaser']))) {
 		echo '<h1 class="post-title"><span>';
-		printf( __( 'Kategorie %s', 'piratenkleider' ), '' . single_cat_title( '', false ) . '' );
+		printf( __( 'Category %s', 'piratenkleider' ), '' . single_cat_title( '', false ) . '' );
 		echo '</span></h1>';
 	      }
         ?>      
@@ -112,16 +110,16 @@
       </div>
     <?php if (  $wp_query->max_num_pages > 1 ) : ?>
      <div class="archiv-nav"><p>
-                <?php next_posts_link( __( '&larr; &Auml;ltere Beitr&auml;ge', 'piratenkleider' ) ); ?>
-                <?php previous_posts_link( __( 'Neuere Beitr&auml;ge &rarr;', 'piratenkleider' ) ); ?>
+                <?php next_posts_link( __( '&larr; Older entries', 'piratenkleider' ) ); ?>
+                <?php previous_posts_link( __( 'Newer entries &rarr;', 'piratenkleider' ) ); ?>
          </p></div>
     <?php endif; ?>             
                 
                 
     <?php if ( ! have_posts() ) : ?>
-       <h2><?php _e("Nichts gefunden", 'piratenkleider'); ?></h2>
+       <h2><?php _e("Nothing found", 'piratenkleider'); ?></h2>
         <p>
-            <?php _e("Es konnten keine Artikel gefunden werden. Bitte versuchen Sie es nochmal mit einer Suche.", 'piratenkleider'); ?>
+            <?php _e("No matching pages or entries found. Please try to search with another term.", 'piratenkleider'); ?>
         </p>
         <?php get_search_form(); ?>
         <hr>
@@ -138,7 +136,7 @@
 	    
     <div class="content-aside">
       <div class="skin">  
-          <h1 class="skip"><?php _e( 'Weitere Informationen', 'piratenkleider' ); ?></h1>
+          <h1 class="skip"><?php _e( 'More informations', 'piratenkleider' ); ?></h1>
          <?php get_sidebar(); ?>
       </div>
     </div>

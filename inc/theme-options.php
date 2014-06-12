@@ -7,16 +7,20 @@ add_action( 'admin_menu', 'theme_options_add_page' );
  * Init plugin options to white list our options
  */
 function theme_options_init(){
-	register_setting( 'piratenkleider_options', 'piratenkleider_theme_options', 'theme_options_validate' );
+	register_setting( 'piratenkleider_options',
+                'piratenkleider_theme_options', 
+                'theme_options_validate' );
 }
 
 /**
  * Load up the menu page
  */
 function theme_options_add_page() {
-	add_theme_page( __( 'Piratenkleider Optionen', 'piratenkleider' ),
-                        __( 'Piratenkleider Optionen', 'piratenkleider' ), 
-                       'edit_theme_options', 'theme_options', 'theme_options_do_page' );
+	add_theme_page( __( 'Theme Options', 'piratenkleider' ),
+                        __( 'Theme Options', 'piratenkleider' ), 
+                       'edit_theme_options', 
+                        'theme_options', 
+                        'theme_options_do_page' );
                           
 }
 
@@ -34,17 +38,17 @@ function theme_options_do_page($tab = '') {
 
 	<div class="wrap">            
             <div class="piratenkleider-optionen">  <!-- begin: .piratenkleider-optionen -->    
-            <?php screen_icon(); echo "<h2>" . wp_get_theme().': ' . __( 'Takelage einstellen', 'piratenkleider' ) . "</h2>"; ?>
+            <?php screen_icon(); echo "<h2>" . wp_get_theme().': ' . __( 'Change theme options', 'piratenkleider' ) . "</h2>"; ?>
 
             <?php if ( false !== $_REQUEST['settings-updated'] ) : ?>
-            <div class="updated fade"><p><strong><?php _e( 'Optionen wurden gespeichert.', 'piratenkleider' ); ?></strong></p></div>
+            <div class="updated fade"><p><strong><?php _e( 'Options saved.', 'piratenkleider' ); ?></strong></p></div>
             <?php endif; 
 
         if (isset($_GET['tab'])) {
             $tab = $_GET['tab'];
         }
         if ((!isset($tab)) || (empty($tab))) {
-            $tab = "kopfteil";
+            $tab = $options['optionpage-tab-default'];
         }
         if (!isset($setoptions['piratenkleider_theme_options'][$tab])) {
             echo "Invalid Tab-Option or undefined Option-Field $tab";            
@@ -524,7 +528,7 @@ function theme_options_do_page($tab = '') {
                                     $setsection = "";
                             }    
                     } else {
-                        _e( 'Optionen nicht definiert', 'piratenkleider' );
+                        _e( 'Option not defined', 'piratenkleider' );
                     }
                 ?>
                      
@@ -533,7 +537,7 @@ function theme_options_do_page($tab = '') {
         </div>                                        
                     
         <p class="submit">
-                <input type="submit" class="button-primary" value="<?php _e( 'Optionen speichern', 'piratenkleider' ); ?>" />
+                <input type="submit" class="button-primary" value="<?php _e( 'Update', 'piratenkleider' ); ?>" />
         </p>
 </form>               
 </div>
@@ -576,7 +580,6 @@ function theme_options_validate( $input ) {
                 }
                 if ($type != "section") {
                     if (isset($input[$name])) {
-                        // Wert wurde uebergebnen
                         if ($type=='bool') {
                             $output[$name]  = ( $input[$name] == 1 ? 1 : 0 );    
                         } elseif ($type=='text') {
@@ -589,12 +592,16 @@ function theme_options_validate( $input ) {
                             $output[$name] = $input[$name];
 			} elseif (($type=='imageurl') || ($type=='image')) {
                              $output[$name]  =  esc_url( $input[$name] );
-			     $output[$name."_id"]  =  sanitize_key( $input[$name."_id"] );
+                             if (isset($input[$name."_id"])) {
+                                $output[$name."_id"]  =  sanitize_key( $input[$name."_id"] );
+                             }
                         } elseif (($type=='url') || ($type=='imgurl')) {
                              $output[$name]  =  esc_url( $input[$name] ); 
                         } elseif ($type=='file') {
 			    $output[$name."_url"]  = wp_filter_nohtml_kses( $input[$name] ); 
-                            $output[$name]  =   sanitize_key( $input[$name."_id"] );
+                            if (isset($input[$name."_id"])) {
+                                $output[$name]  =   sanitize_key( $input[$name."_id"] );
+                            }
                         } elseif ($type=='number') {
                             $output[$name]  =  wp_filter_nohtml_kses( $input[$name] ); 
                         } elseif (($type=='select') || ($type=='fontselect')) {                        
@@ -609,7 +616,6 @@ function theme_options_validate( $input ) {
                             $output[$name]  =  wp_filter_nohtml_kses( $input[$name] );
                         }
                     } else {                        
-                        // Wurde leer gemacht oder leer uebergeben#
                         if ($type=='bool') {
                             $output[$name] =0;
                         } elseif ($type=='text') {
@@ -654,14 +660,10 @@ function theme_options_validate( $input ) {
         if (!isset($options['anonymize-user'])) 
             $options['anonymize-user'] = $defaultoptions['anonymize-user'];
         if (($input['anonymize-user']==0) && ($options['anonymize-user']==1)) {
-                // Zuruecksetzen der Sicherheitsoption
             update_option('require_name_email',1);
         }
     }  
 
-   
-
-  
 
     if  (isset($input['reset_options']) && ($input['reset_options'] == 1)) {
 	delete_option('piratenkleider_theme_options');

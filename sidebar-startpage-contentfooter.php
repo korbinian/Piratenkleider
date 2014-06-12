@@ -1,5 +1,4 @@
 <?php           
-  global $defaultoptions;
   global $options;
     ?>
         
@@ -13,7 +12,7 @@
             <?php } else { 
                   if ($options['aktiv-startseite-kategorien']==1) {  ?>
                     <div class="widget">
-                    <h3><?php _e("Kategorien", 'piratenkleider'); ?></h3>
+                    <h3><?php _e("Categories", 'piratenkleider'); ?></h3>
                     <ul>
                         <?php wp_list_categories('title_li='); ?>
                     </ul>
@@ -33,7 +32,7 @@
                     <?php 
                      $tags = get_tags();
                      if ((isset($tags)) && (count($tags)>0)) { ?>
-                            <h3><?php _e("Schlagworte", 'piratenkleider'); ?></h3>
+                            <h3><?php _e("Tags", 'piratenkleider'); ?></h3>
 
                             <div class="tagcloud">            
                                 <?php wp_tag_cloud(array('format' => 'list', 'smallest'  => 14, 'largest'   => 28)); ?>

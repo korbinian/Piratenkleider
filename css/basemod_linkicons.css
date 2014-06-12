@@ -126,7 +126,11 @@
        background-position: -224px 3px;
        width: 10px;
     }
-
+     .website a.extern:before {
+	background-image: url('../images/socialmedia.png');
+	background-position: -40px -518px;
+       width: 18px;
+    }
     /* Pirate Websites */
     
    
@@ -138,6 +142,8 @@
         background-position: -142px 0;
        width: 18px;
     }
+    .content-primary a[href *= "wiki.piraten-thueringen.de"]:before, 
+    .content-primary a[href *= "wiki.piratenbrandenburg.de"]:before, 
     .content-primary a[href *= "wiki.piratenpartei.de"]:before {
         background-position: -62px 0;
        width: 18px;

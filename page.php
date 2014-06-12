@@ -5,7 +5,7 @@
 
 <div class="section content" id="main-content">
   <div class="row">
-    <div class="content-primary">     
+    <div class="content-primary" role="main">     
 	
 	
 	<?php 
@@ -19,7 +19,6 @@
 		$image_alt = '';
 		if (has_post_thumbnail()) { 
 		    $thumbid = get_post_thumbnail_id(get_the_ID());
-		     // array($options['bigslider-thumb-width'],$options['bigslider-thumb-height'])
 		    $image_url_data = wp_get_attachment_image_src( $thumbid, 'full');
 		    $image_url = $image_url_data[0];
 		    $attribs = piratenkleider_get_image_attributs($thumbid);
@@ -67,8 +66,8 @@
 	    }    
 
 
-	    wp_link_pages( array( 'before' => '' . __( 'Seiten:', 'piratenkleider' ), 'after' => '' ) );                   
-	    edit_post_link( __( 'Bearbeiten', 'piratenkleider' ), '', '' );
+	    wp_link_pages( array( 'before' => '' . __( 'Pages:', 'piratenkleider' ), 'after' => '' ) );                   
+	    edit_post_link( __( 'Edit', 'piratenkleider' ), '', '' );
         endwhile; 
 	?>
       </div>
@@ -80,7 +79,7 @@
 	} else { ?>
     <div class="content-aside">
       <div class="skin">                
-          <h1 class="skip"><?php _e( 'Weitere Informationen', 'piratenkleider' ); ?></h1>
+          <h1 class="skip"><?php _e( 'More informations', 'piratenkleider' ); ?></h1>
           
             <?php
 	    

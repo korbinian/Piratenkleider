@@ -9,8 +9,7 @@
 
 <div class="section content actionpage" id="main-content">
   <div class="row">
-    <div class="content-primary">     
-	
+    <div class="content-primary">     	
 	<div class="skin">
 	<?php 
 	   if ( have_posts() ) while ( have_posts() ) : the_post(); ?>         	     
@@ -20,7 +19,7 @@
 		   the_content(); 
 		echo '</article>';
                 
-              edit_post_link( __( 'Bearbeiten', 'piratenkleider' ), '', '' );    
+              edit_post_link( __( 'Edit', 'piratenkleider' ), '', '' );    
               
 	    if ($options['aktiv-commentsonpages']==1) {
 		echo '<div class="post-comments" id="comments">';
@@ -33,7 +32,6 @@
 
         </div>
     </div>
-
   </div>
  <?php get_piratenkleider_socialmediaicons(2); ?>
 </div>

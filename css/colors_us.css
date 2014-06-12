@@ -80,27 +80,7 @@
         background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #2d7dc5), color-stop(1, #1a4872));
         background-image: linear-gradient(top, #2d7dc5, #1a4872);
       }
-      .sticky {
-        border-color: #888;
-        border-color: rgba(0,0,0,.3);
-        -webkit-box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2) inset;
-        -moz-box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2) inset;
-        -ms-box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2) inset;
-        box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2) inset;
-        color: #444;
-        color: rgba(0,0,0,.8);
-        background: url("../images/int/bg-tags-us.png") repeat fixed -20% top #B127AF;
-     }
-     .sticky a {
-         color: black;
-         background: #993399;
 
-     }      
-     .sticky a:hover,
-     .sticky a:focus {    
-        color: #000;
-        background: #d97300;
-     }   
     
      .skiplinks li a:focus, 
      .skiplinks li a:active {
@@ -125,9 +105,7 @@
     border-color: transparent;     
   }
 
-  .sticker ul li a {    
-        color: #666;       
-  }
+
   .sticker ul li a:hover,
   .sticker ul li a:focus {
     color: #1a4872; 
@@ -343,7 +321,12 @@
     color: white;
     background: rgba(255, 255, 255, 0.2); 
   }
-  
+  .content-aside #steckbrief a {
+  background: transparent;
+}
+.content-aside #steckbrief a:hover {
+    background: transparent;
+  }
   .content-aside table td,
   .content-aside table th {
     border-top-color: #B127AF; 
@@ -507,14 +490,7 @@ div.ics-calendar-holder .ics-calendar-event {
         color: #2d7dc5; 
   }        
 
-  .content-aside {
-      background: #B127AF url("../images/int/bg-tags-us.png") -20% top fixed; 
-   }
 
-  .content-aside .skin {
-           background: #B127AF;
-           background: rgba(153, 51, 153, 0.2);
-    }
    
 }
  @media only screen and (max-width: 600px) {
