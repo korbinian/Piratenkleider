@@ -791,6 +791,24 @@ $default_alternativestyles = array(
 	    __('<abbr title="District Chapter">DC</abbr>','piratenkleider').' Worms' => 'http://www.piraten-worms.de',
         )
     ),
+      'Sachsen' => array(
+        'title' => __('Pirate Party Country Association','piratenkleider').' Sachsen',
+        'url'  => 'http://piraten-sachsen.de/',
+        'sublist' => array(
+            __('<abbr title="Town Chapter">TC</abbr>','piratenkleider').' Dresden Neustadt' => 'http://www.neustadtpiraten.de/',          
+            __('<abbr title="District Chapter">DC</abbr>','piratenkleider').' Bautzen' => 'http://www.piraten-bautzen.de/',
+            __('<abbr title="District Chapter">DC</abbr>','piratenkleider').' Chemnitz' => 'http://www.piraten-chemnitz.de/',
+            __('<abbr title="District Chapter">DC</abbr>','piratenkleider').' Dresden' => 'http://www.piraten-dresden.de/',
+            __('<abbr title="District Chapter">DC</abbr>','piratenkleider').' Erzgebirge' => 'http://www.piraten-erzgebirge.de/',
+            __('<abbr title="District Chapter">DC</abbr>','piratenkleider').' G&ouml;rlitz' => 'http://www.piraten-goerlitz.de/',
+            __('<abbr title="District Chapter">DC</abbr>','piratenkleider').' Leipzig' => 'http://www.piraten-leipzig.de',
+            __('<abbr title="District Chapter">DC</abbr>','piratenkleider').' Mei&szlig;en' => 'http://piraten-meissen.de/',
+            __('<abbr title="District Chapter">DC</abbr>','piratenkleider').' Mittelsachsen' => 'http://www.piraten-mittelsachsen.de/',
+            __('<abbr title="District Chapter">DC</abbr>','piratenkleider').' SOE' => 'http://www.piraten-soe.de/',
+            __('<abbr title="District Chapter">DC</abbr>','piratenkleider').' Vogtland' => 'http://www.piratenpartei-vogtland.de/',         
+            __('<abbr title="Regional Chapter">RC</abbr>','piratenkleider').' Leipziger Umland' => 'http://www.piralum.de/',    
+        )
+    ),
       'Sachsen-Anhalt' => array(
         'title' => __('Pirate Party Country Association','piratenkleider').' Sachsen-Anhalt',
         'url'  => 'http://www.piraten-lsa.de',

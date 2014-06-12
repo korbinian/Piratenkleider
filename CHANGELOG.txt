@@ -6,6 +6,7 @@ Changelog
 Version 3.2.10:
 * Bugfix in german translation
 * Enhancement: CSS for bookmark shortcode
+* Enhancement:Added chapters of country party Sachsen
 
 Version 3.2.9:
 * Bugfix on default background color CSS
