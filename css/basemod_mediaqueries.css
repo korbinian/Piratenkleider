@@ -634,7 +634,7 @@
     }
     .content-aside .slide .caption, 
     .first-teaser-widget-area .slide .caption {
-	bottom: -74px;
+/*	bottom: -74px; */
     }
 
     .content-primary {

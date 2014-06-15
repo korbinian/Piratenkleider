@@ -24,7 +24,7 @@
   body {
     background: white; 
     }
-
+ 
     a {     
       color: #06C;
       -webkit-tap-highlight-color: #2d7dc5; 
@@ -32,8 +32,12 @@
     a:visited {
         color: #2d7dc5;
       }
+      
+    .content-aside .widget li:hover, .content-aside .twitterwidget li:hover,  
+    .content-aside li:hover,  
     a:hover {
         color: #111;
+        background: rgba(0,0,0,0.2);
       }
     ins, mark {
         background-color: #A5DFF9;
@@ -139,7 +143,7 @@
       background: rgba(255, 255, 255, 0.5);
     }
 
-
+  .content .row,
   .teaser .row {
     background: #A5DFF9;
     background: rgba(0, 0, 0, 0.3) -20% 0 fixed; 
@@ -205,9 +209,6 @@
            color: black;
      }    
 
-    .content .row {
-        background: #A5DFF9;
-    }
     .content .symbolbild .caption {
       background: transparent;
       background: rgba(0, 0, 0, 0.5);
