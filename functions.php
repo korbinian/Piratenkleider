@@ -918,7 +918,7 @@ function piratenkleider_post_teaser($titleup = 1, $showdatebox = 1, $showdatelin
 	    $out .= '<header class="post-title">'.$htmltitlestart;          
 	    $out .= '<a href="'.get_permalink().'" rel="bookmark">';
 	    $out .= get_the_title(); 
-            $out .= "</a>'.$htmltitleend.'</header>\n";
+            $out .= "</a>".$htmltitleend."</header>\n";
 	 }
 	   
 	 if (($showdatebox!=0) && ($showdateline==1)) {  
