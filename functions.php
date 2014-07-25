@@ -1548,7 +1548,9 @@ function piratenkleider_breadcrumb() {
   $home		= $defaultoptions['breadcrumb_homelinktext']; // __( 'Startseite', 'piratenkleider' ); // text for the 'Home' link
   $before	= $defaultoptions['breadcrumb_beforehtml']; // '<span class="current">'; // tag before the current crumb
   $after	= $defaultoptions['breadcrumb_afterhtml']; // '</span>'; // tag after the current crumb
- 
+  $pretitletextstart   = '<span>';
+  $pretitletextend     = '</span>';
+  
   echo '<div id="crumbs">'; 
   if ( !is_home() && !is_front_page() || is_paged() ) { 
     
@@ -1565,7 +1567,7 @@ function piratenkleider_breadcrumb() {
 	$parentCat = get_category($thisCat->parent);
 	if ($thisCat->parent != 0) 
 	    echo(get_category_parents($parentCat, TRUE, $delimiter ));
-	echo $before . __( 'Entry of category', 'piratenkleider' ). ' "' . single_cat_title('', false) . '"' . $after;
+	echo $before . $pretitletextstart. __( 'Entry of category', 'piratenkleider' ).$pretitletextend. ' "' . single_cat_title('', false) . '"' . $after;
  
     } elseif ( is_day() ) {
 	echo '<a href="' . get_year_link(get_the_time('Y')) . '">' . get_the_time('Y') . '</a>' .$delimiter;
@@ -1607,13 +1609,13 @@ function piratenkleider_breadcrumb() {
 	foreach ($breadcrumbs as $crumb) echo $crumb . $delimiter;
 	echo $before . get_the_title() . $after; 
     } elseif ( is_search() ) {
-	echo $before . __( 'Search for', 'piratenkleider' ).' "' . get_search_query() . '"' . $after; 
+	echo $before .$pretitletextstart. __( 'Search for', 'piratenkleider' ).$pretitletextend.' "' . get_search_query() . '"' . $after; 
     } elseif ( is_tag() ) {
-	echo $before . __( 'Entries with tag', 'piratenkleider' ). ' "' . single_tag_title('', false) . '"' . $after; 
+	echo $before .$pretitletextstart. __( 'Entries with tag', 'piratenkleider' ).$pretitletextend. ' "' . single_tag_title('', false) . '"' . $after; 
     } elseif ( is_author() ) {
 	global $author;
 	$userdata = get_userdata($author);
-	echo $before . __( 'Entry by', 'piratenkleider' ).' '.$userdata->display_name . $after;
+	echo $before .$pretitletextstart. __( 'Entry by', 'piratenkleider' ).$pretitletextend.' '.$userdata->display_name . $after;
     } elseif ( is_404() ) {
 	echo $before . '404' . $after;
     }

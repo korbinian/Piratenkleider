@@ -744,7 +744,6 @@ $default_alternativestyles = array(
             __('<abbr title="District Chapter">DC</abbr>','piratenkleider').' Peine' => 'http://wiki.piratenpartei.de/NDS:District Chapter_Peine',   
             __('<abbr title="District Chapter">DC</abbr>','piratenkleider').' Stade' => 'http://www.piraten-stade.de/',   
             __('<abbr title="District Chapter">DC</abbr>','piratenkleider').' Schaumburg' => 'http://www.piraten-schaumburg.de/',            
-            __('<abbr title="District Chapter">DC</abbr>','piratenkleider').' Wilhelmshaven' => 'http://www.piraten-whv.de/',   
             __('<abbr title="District Chapter">DC</abbr>','piratenkleider').' Wolfenb&uuml;ttel-Salzgitter' => 'http://www.piratenpartei-wolfenbuettel.de/',   
             __('<abbr title="Town Chapter">TC</abbr>','piratenkleider').' Wolfsburg' => 'http://wolfsburg.piratenpartei-nds.de/',   
       
@@ -2136,7 +2135,14 @@ $setoptions = array(
 		  'maxwidth' =>  64,
 		  'maxheight'=>  64,
               ),
-	       
+	       'src-teaser-thumbnail_default'=> array(
+                  'type'    => 'image',
+                  'title'   => __( 'Fallback Thumbnail', 'piratenkleider' ),
+                  'label'   => __( 'Defines an image as default thumbnail for entries on index pages.', 'piratenkleider' ),
+		  'parent' => 'miscdesign',
+		  'maxwidth' =>  64,
+		  'maxheight'=>  64,
+              ),
 	       
 	      'css-eigene-anweisungen' => array(
                   'type'    => 'textarea',
