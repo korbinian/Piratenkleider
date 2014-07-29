@@ -100,7 +100,7 @@ function piratenkleider_widgets_init() {
             'name' => __( 'Start page: Optional content', 'piratenkleider' ),
             'id' => 'artikelstream-widget',
             'description' => __( 'Optional widget for content area; positioned after article stream and can be used to add external feeds in content area.', 'piratenkleider' ),
-            'before_widget' => '<div id="widget-stream">',
+            'before_widget' => '<div id="%1$s" class="widget-stream">',
             'after_widget' => '</div>',
             'before_title' => '<h1>',
             'after_title' => '</h1>',

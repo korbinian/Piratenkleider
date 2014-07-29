@@ -3,6 +3,10 @@ Theme Piratenkleider
 Changelog 
 (since version 3.2; Former changes look at github.com/Piratenkleider/)
 
+Version 3.2.14:
+* Bugfix: ids corrected on widget on startpage option
+* Updated posters
+
 Version 3.2.13:
 * Bugfix: Input[type="email"] made by Contact Form 7 didnt show a nice CSS;
 * New posters for election in Thueringen

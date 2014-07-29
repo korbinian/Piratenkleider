@@ -100,9 +100,9 @@
 #default-stream hr{display:none;}
 #default-stream .columns:after{clear:both;}
 #main-stream{float:left;width:67%;margin:0;padding:10px 10px 10px 20px;}
-#widget-stream,#linktipp-stream,#second-stream{display:inline-block;width:33%;float:left;margin:0;padding:10px 10px 10px 20px;}
+.widget-stream,#linktipp-stream,#second-stream{display:inline-block;width:33%;float:left;margin:0;padding:10px 10px 10px 20px;}
 #linktipp-stream,#second-stream{background:rgba(0,0,0,0.05);}
-#widget-stream { margin-left: 2px;  }
+.widget-stream { margin-left: 2px;  }
 #main-stream .columns .column1,#main-stream .columns .column2{padding:0 20px 0 0;}
 #second-stream .post-info .infoimage { display: none; }
 #linktipp-stream .columns .column1,#linktipp-stream .columns .column2,#second-stream .columns .column1,#second-stream .columns .column2,#second-stream .p3-col1,#second-stream .p3-col3{float:none;width:100%;display:block;margin:10px 0;}
