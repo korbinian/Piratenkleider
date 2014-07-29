@@ -384,12 +384,12 @@ input[type="checkbox"] {
 
 
 
-input[type="text"], input[type="password"], input[type="select"], 
+input[type="text"], input[type="email"], input[type="password"], input[type="select"], 
 input[type="search"], input[type="file"], input[type="submit"],
 input[type="reset"], input[type="button"], select  {
   margin: 0 5px 5px 0; }
 
-input[type="text"] {
+input[type="text"], input[type="email"] {
   padding: 5px; }
 
 
@@ -1871,14 +1871,17 @@ img.wp-smiley {
   overflow: hidden;
 }
   .content-primary input[type="text"], 
+  .content-primary input[type="email"], 
   .content-primary select, 
   .content-primary textarea {
     border: 1px solid silver; 
     font-size: 1em;
   }
-  .content-primary input[type="text"]:hover, 
+  .content-primary input[type="text"]:hover,
+  .content-primary input[type="email"]:hover,
   .content-primary textarea:hover,
   .content-primary input[type="text"]:focus, 
+  .content-primary input[type="email"]:focus,
   .content-primary textarea:focus {
     border: 1px solid black; 
     background-color: beige;

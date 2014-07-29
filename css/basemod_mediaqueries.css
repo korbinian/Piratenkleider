@@ -667,16 +667,13 @@
 	margin: 0;	
         padding: 10px 10px 10px 20px;
     }
-    #widget-stream, 
-    #linktipp-stream,  
-    #second-stream  {
-        display: inline-block;
-        width: 33%;
-        margin: 0p;
-        padding: 10px 10px 10px 20px;
-        background: rgba(0,0,0,0.05);
-        float: left;
-    }
+    #widget-stream,
+    #linktipp-stream,
+    #second-stream{display:inline-block;width:33%;float:left;margin:0;padding:10px 10px 10px 20px;}    
+    #linktipp-stream,
+    #second-stream{background:rgba(0,0,0,0.05);}
+    #widget-stream { margin-left: 2px;  }
+
     #main-stream  .columns .column1,
     #main-stream  .columns .column2 {
 	padding: 0 20px 0 0;

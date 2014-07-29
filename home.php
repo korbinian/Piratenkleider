@@ -134,9 +134,8 @@
         }
         echo "</div>\n";
         echo "</div>\n";
-       
-        
 
+        
         if ($options['artikelstream-type']>0) {
               /* Zuerst Linktipps */
              if  ($options['artikelstream-show-linktipps']==1) { 
@@ -236,7 +235,7 @@
 			    }
 			}
                   endwhile;
-		  
+		  wp_reset_query();
 		  if (isset($continuelinks) && strlen($continuelinks)>1) {
                       
                         $linkliste = "<section class=\"type-post\">\n";
@@ -287,14 +286,13 @@
 			$foundarticles =1;
                     }
              }
-	     if (($options['artikelstream-type']==2) && ($options['artikelstream-show-widget']==1)) {
+	       	    
+        }
+        if ($options['artikelstream-show-widget']==1) {
 		if ( is_active_sidebar( 'artikelstream-widget' ) ) { 
 		     dynamic_sidebar(  'artikelstream-widget' );
 		}
-	     }
-	     
-	     
-        }
+	}
         echo "</div>\n";
 	
 	if ($foundarticles==0) { ?>

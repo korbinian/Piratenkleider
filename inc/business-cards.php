@@ -149,6 +149,12 @@ function piratenkleider_person_metabox_content( $post ) {
 		<input  type="text" name="person_email"
 			id="person_email" value="<?php echo esc_attr( get_post_meta( $post->ID, 'person_email', true ) ); ?>" size="30" />
 	</p>
+        <p>
+		<label for="person_pgp_fingerprint"><?php _e( "PGP Fingerprint", 'piratenkleider' ); ?>:</label>
+		<br />
+		<input  type="text" name="person_pgp_fingerprint"
+			id="person_pgp_fingerprint" value="<?php echo esc_attr( get_post_meta( $post->ID, 'person_pgp_fingerprint', true ) ); ?>" size="49" />
+	</p>
 	<p>
 		<label for="person_url"><?php _e( "Homepage (URL)", 'piratenkleider' ); ?>:</label>
 		<br />
@@ -332,9 +338,11 @@ function piratenkleider_person_metabox_save( $post_id ) {
 	    update_post_meta( $post_id, 'person_twitter',  sanitize_text_field($_POST[ 'person_twitter' ]) );
 	}
 
-	
 	if( isset( $_POST[ 'person_shortdesc' ] ) ) {
 	    update_post_meta( $post_id, 'person_shortdesc',  $_POST[ 'person_shortdesc' ] );
+	}
+	if( isset( $_POST[ 'person_pgp_fingerprint' ] ) ) {
+	    update_post_meta( $post_id, 'person_pgp_fingerprint', sanitize_text_field( $_POST[ 'person_pgp_fingerprint' ]) );
 	}
 	if( isset( $_POST[ 'person_last_name' ] ) ) {
 	    update_post_meta( $post_id, 'person_last_name', sanitize_text_field( $_POST[ 'person_last_name' ] ) );
@@ -388,6 +396,9 @@ function piratenkleider_display_person ($post_id = 0, $format = 'full', $profill
     $fullname .= $person_first_name.' '.$person_last_name;
     $person_url = get_post_meta( $post_id, 'person_url', true );
     $person_email = get_post_meta( $post_id, 'person_email', true );
+    $person_pgp_fingerprint = get_post_meta( $post_id, 'person_pgp_fingerprint', true );
+    
+    
     $person_facebook = get_post_meta( $post_id, 'person_facebook', true );
     $person_twitter = get_post_meta( $post_id, 'person_twitter', true );
     $person_wiki = get_post_meta( $post_id, 'person_wiki', true );
@@ -453,8 +464,12 @@ function piratenkleider_display_person ($post_id = 0, $format = 'full', $profill
 	    $kontaktdata .= '<h3 class="contact">'.__('Contact','piratenkleider').'</h3>';
 	    $kontaktdata .= "<ul class=\"contact\">\n";
 	    if (isset($person_email) && strlen($person_email)>1) {
-		$kontaktdata .= "<li class=\"email\"><span>E-Mail: </span><a href=\"mailto:".$person_email."\">".$person_email."</a></li>\n";
+		$kontaktdata .= "<li class=\"email\"><span>E-Mail: </span><a href=\"mailto:".$person_email."\">".$person_email."</a>";                  
+                $kontaktdata .= "</li>\n";
 	    }
+            if (isset($person_pgp_fingerprint) && strlen($person_pgp_fingerprint)>1) {
+                $kontaktdata .= "<li class=\"pgp\"><span>Fingerprint: </span><code>".$person_pgp_fingerprint."</code></li>";
+            }  
 	    if (isset($person_url) && strlen($person_url)>1) {
 		$kontaktdata .= "<li class=\"website\"><span>Web: </span><a class=\"extern\" href=\"".$person_url."\">".piratenkleider_display_url($person_url)."</a></li>\n";
 	    }
