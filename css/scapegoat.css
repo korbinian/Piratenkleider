@@ -450,15 +450,15 @@ h1, h2, h3, h4, h5, h6, h7 {
 
 h1 {
 	font-size: 2.4em;
-	line-height: 1em;
+	line-height: 1.3em;
 }
 h2 {
 	font-size: 1.9em;
-	line-height: 1em;
+	line-height: 1.3em;
 }
 h3 {
 	font-size: 1.5em;
-	line-height: 1em;
+	line-height: 1.1em;
 }
 h3.subtitle {
     font-size: 0.8em;
@@ -775,7 +775,7 @@ audio {
 .type-attachment  {
 	/* position: relative; */
 	margin: 1em;
-	padding: 1em 2.5em;
+	padding: 0;
 	background: #fff;
 	border: 1px solid #d1d1d1;
 	-webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.1);
@@ -797,25 +797,30 @@ audio {
 	height: 2em;
 }
 */
-.post-title {
+
+section header {
 	color: #000;
-	font-size: 2em;
+	font-size: 1.5em;
 	line-height: 1em;
-	padding: 0;
-	overflow: hidden;
+	padding: 20px 15px 5px;
+	word-wrap: break-word;
 	margin-bottom: 0 0 10px 0;
 }
-.post-title h2 {
+section header h2 {
     font-size: 100%;
-    margin: 0;
-   
+    margin: 0 0 0.5em; 
 }
-.post-title a,
-.post-title a:active,
-.post-title a:visited {
+section header a,
+section header a:active,
+section header a:visited {
 	color: #000;
 }
-.post-entry p img {
+section header a:focus,
+section header a:hover {
+	color: orange;
+}
+
+section header p img {
     float: left;
     margin: 1em 2em;
 }
@@ -887,7 +892,6 @@ audio {
 .post-meta, 
 .post-info {
 	color: #808080;
-	padding: 1em 0;
 	overflow: auto;
 }
 .post-meta > *, 
@@ -931,7 +935,6 @@ audio {
 	margin: 0;
 }
 
-.post-info { margin-top: -20px; float: right;}
 .cal-icon {
     padding: 0;
     min-height: inherit;
@@ -1724,13 +1727,14 @@ display: inline-block;
     max-width: 1200px;
  }
 .content-primary {
-	width: 70%;
+	width: 68%;
+	max-width: 890px;
 	float: left;
 	margin-top: 2em;
 }
 
-.content-aside {
-	width: 25%;
+.content-aside {	
+	width: 300px;
 	float: right;
 	padding: 0;
 	margin: 2em 0 4em;
@@ -1757,28 +1761,39 @@ display: inline-block;
   display: block;
   overflow: hidden;
 }
-.p3-col1 {  /* content */
-  float: left;
-  width: 70px;
-}
 
 .withthumb .p3-col1 {
-    width: 140px;
+    display: block;
+    margin: 0;
+    padding: 0;
+    max-height: 120px;
+    overflow: hidden;
+    width: 100%;
+    
 }
-.withvideo .p3-col1 {
-    width: 320px;
-}
-.p3-col3 { /* sidebar */
-  margin: 0 0 0 70px;
-}
-.withthumb .p3-col3 {
-   margin: 0 0 0 140px;
-}
-.withvideo .p3-col3 {
-   margin: 0 0 0 320px;
-}
+
+
 .usefloating .p3-col3 {
     margin: 0;
+}
+
+.columns .linktipps .post-entry img,
+.infoimage img {
+    width: 100%;
+    height: auto;
+    margin: 0 auto;
+    display: block;
+}
+.withvideo .infoimage {
+     margin: 0 auto;
+     text-align: center;
+     display: block;
+     width: 100%;
+}
+.withvideo .infoimage iframe {
+    width: 100%;
+    height: auto;
+    min-height:250px;
 }
 
  .content-primary .columns .column1, 
@@ -1794,32 +1809,25 @@ display: inline-block;
   .content-primary .columns .column2 {
       float: right; }
   
-.column1 .withvideo .p3-col1, 
-.column2 .withvideo .p3-col1, 
-.column1 .withvideo .p3-col3, 
-.column2 .withvideo .p3-col3 {
-    float: none;
-    width: 100%;
-    margin: 0;
-}
 
-.columns .column1 {
-    width: 50%; 
-}
-.columns .column1 .post {
-    padding-right: 20px; 
-}
+.columns .column1, 
 .columns .column2 {
     width: 50%; 
 }
-.columns .column2 .post {
-    padding-left: 20px; 
-}
+
+
 .columns .column2 .post .cal-icon {
     margin-left: 0; 
 }
 
- 
+.post-entry {
+    padding: 0 15px;
+}
+.columns section .p3-column ul {
+    padding: 0 30px 10px;
+}
+
+
 .actionpage .content-primary {
         width: 100%;
 }
@@ -1862,7 +1870,10 @@ display: inline-block;
     height: 240px;
 }
   
-  
+.content-primary .columns p {
+    margin: 10px 0;
+}
+ 
 .content .symbolbild img {
    display: block;
   margin: 0 auto;  
@@ -2845,6 +2856,9 @@ display: inline-block;
 	padding: 0.5em 0 0.5em 1.5em;
 	margin: 0;
 }
+.widget .tagcloud ul li {
+    padding: 0;
+}
 .widget ul li:before {
         color: #808080;
 	display: block;
@@ -3053,6 +3067,7 @@ display: inline-block;
 ul.wp-tag-cloud {
     list-style-type: none;
     margin: 0;
+    text-align: center;
 }
 .content-aside .widget ul.wp-tag-cloud li,
 ul.wp-tag-cloud li, 
@@ -3614,6 +3629,7 @@ html[xmlns] .slides {
 /*-----------------------------------------------------------------------------------*/
 /* Media Queries
 /*-----------------------------------------------------------------------------------*/
+
 @media only screen and (max-width:1024px) {
      .teaser {
             display: none;
@@ -3623,7 +3639,7 @@ html[xmlns] .slides {
 /* ------------------------------ Tablets */
 
        
-@media only screen and (max-width: 860px) {
+@media only screen and (max-width:1024px) {
          .teaser, 
          .sticker {
             display: none;
@@ -3636,9 +3652,10 @@ html[xmlns] .slides {
 	.inside {
 		width: auto;
 	}
-       .content-primary, .content-aside {
+       .content-primary, 
+       .content-aside {
             width: 100%;
-            float: next;
+            float: none;
             display: block;
         }
         .header .sticker {

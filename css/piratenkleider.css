@@ -2314,6 +2314,7 @@ img.wp-smiley {
  .content-aside .widget li a.rsswidget:focus {    
        background: #ff8800;
  }
+ 
  .content-aside .widget li .rssSummary {
     color:#333333;
     list-style: none outside none;

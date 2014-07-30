@@ -199,7 +199,8 @@
         background: url('../images/socialmedia.png') no-repeat -40px -102px;
         width: 18px;
     }  
-    
+    .content-primary a.rsswidget:before,
+    a.rsswidget:before,
     .content-primary a.nolinkicon:before {
             background: none;
             width: 0;
