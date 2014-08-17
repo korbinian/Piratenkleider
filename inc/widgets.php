@@ -363,7 +363,7 @@ class Bannerlink_Widget extends WP_Widget {
 	    $image_height =0;
 	    if ($image_id >0) {
 		// Get Thumbnail instead of original 
-		$image_attributes = wp_get_attachment_image_src( $image_id, array($defaultoptions['bannerlink-width'],$defaultoptions['bannerlink-height']) ); 
+		$image_attributes = wp_get_attachment_image_src( $image_id, $options['bannerlink_name'] ); 
 		$image_url = $image_attributes[0];
 		$image_width = $image_attributes[1];
 		$image_height = $image_attributes[2];

@@ -1453,13 +1453,16 @@ body {
 .branding, 
 .sticker {
     height: 152px;    
-    width: 50%;
     display: inline-block;
     padding: 0; 
     margin: 0;
 }
 .branding {
     float: left;
+    width: 40%;
+}
+.sticker {
+    width: 60%;
 }
 
 .sticker:after {

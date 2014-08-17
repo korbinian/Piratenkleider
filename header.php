@@ -93,9 +93,11 @@
                       if ( ! is_home() ) { ?></a><?php } 
                       if (strlen(trim(get_bloginfo( 'description' )))>1) { ?><p class="description slogan"><?php bloginfo( 'description' ); ?></p><?php } ?>
                 </div>
-	        <?php if ( $options['defaultwerbesticker'] == "1" ){ ?>
-                    <div class="sticker" aria-hidden="true">
+	       
+                <div class="sticker" aria-hidden="true">
+                        <?php if ( $options['defaultwerbesticker'] == "1" ){ ?> 
                         <div class="skin">   
+                            
                            <h2 class="skip"><?php _e( 'Sticker', 'piratenkleider' ); ?></h2>                             
                            <ul>
                                <?php if (isset($options['stickerlink1-content']) && (strlen($options['stickerlink1-content']) > 1)
@@ -111,10 +113,12 @@
                                    echo '<li><a href="'.$options['stickerlink3-url'].'">'.$options['stickerlink3-content'].'</a></li>';
                                } ?>                                                                                                                         
 
-                           </ul>                      
-                        </div>                                                                                            
-                    </div>
-                <?php   } ?>
+                           </ul>  
+                          
+                        </div>    
+                         <?php   } ?>
+                </div>
+                
                 <nav aria-label="<?php _e( 'Navigation', 'piratenkleider' ); ?>" class="nav-main" id="nav">
                             <h2 class="skip"><?php _e( 'Navigation', 'piratenkleider' ); ?></h2>
                             <?php 

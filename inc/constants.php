@@ -18,9 +18,8 @@ $defaultoptions = array(
     'smallslider-thumb-height'      => 185,
     'bigslider-thumb-width'         => 705,
     'bigslider-thumb-height'        => 240,
-    'bannerlink-width'		    => 296,
-    'bannerlink-height'		    => 300,
-    'plakate-width'                 => 296,
+
+    'plakate-width'                 => 300,
     'plakate-height'                => 416,
     'plakate-title'		    => '',
     'plakate-url'		    => 'https://www.piratenpartei.de',
@@ -145,6 +144,11 @@ $defaultoptions = array(
     'sidebar-thumbnail_height'		    => 360,
     'sidebar-thumbnail_crop'		    => 1,
     'sidebar-thumbnail_name'		    => 'sidebar-thumb',
+
+    'bannerlink-width'		    => 300,
+    'bannerlink-height'		    => 300,    
+    'bannerlink_crop'		    => 1,
+    'bannerlink_name'		    => 'bannerlink-thumb',
     
     'sidebar-steckbrief-maxwidth'	    => 270,
     'sidebar-steckbrief-maxheight'	    => 360,
