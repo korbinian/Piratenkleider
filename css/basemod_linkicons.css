@@ -1,7 +1,5 @@
 /* 
     Document   : basemod_linkicons
-    Created on : 25.04.2012, 16:46:37
-    Author     : xwolf
     Description:
         Automatische Linkicons über CSS
 */
@@ -199,9 +197,11 @@
         background: url('../images/socialmedia.png') no-repeat -40px -102px;
         width: 18px;
     }  
+    .content-primary #ai1ec-container a:before,
     .content-primary a.rsswidget:before,
     a.rsswidget:before,
     .content-primary a.nolinkicon:before {
             background: none;
             width: 0;
+            content: inherit;
     }
