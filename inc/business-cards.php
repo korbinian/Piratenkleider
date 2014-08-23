@@ -423,14 +423,14 @@ function piratenkleider_display_person ($post_id = 0, $format = 'full', $profill
 	       $coprightcap .= '('.$image_attributes["credits"].')';  
 	   } 
 	   if (is_array($image_attributes)) {
-	      $personenbildfull = '<img src="'.$image_attributes[0].'" width="'.$image_attributes[1].'" height="'.$image_attributes[2].'" alt="'.$alttext.'" class="size-full">';
-	      $personenbildsmall = '<img src="'.$image_attributessmall[0].'" width="'.$image_attributessmall[1].'" height="'.$image_attributessmall[2].'" alt="'.$alttext.'" class="size-full">';
+	      $personenbildfull = '<img itemprop="image" src="'.$image_attributes[0].'" width="'.$image_attributes[1].'" height="'.$image_attributes[2].'" alt="'.$alttext.'" class="size-full">';
+	      $personenbildsmall = '<img itemprop="image" src="'.$image_attributessmall[0].'" width="'.$image_attributessmall[1].'" height="'.$image_attributessmall[2].'" alt="'.$alttext.'" class="size-full">';
 	      $personenbildsidebar = '<img src="'.$image_attributessidebar[0].'" width="'.$image_attributessidebar[1].'" height="'.$image_attributessidebar[2].'" alt="'.$alttext.'">';
 	    }
         
 	} elseif (isset($person_image)) {
-	    $personenbildfull = '<img src="'.$person_image.'" alt="'.$alttext.'" class="size-full" height="'.$options['person-thumbnail_height'].'" style="width: auto;">'; 
-	    $personenbildsmall = '<img src="'.$person_image.'" alt="'.$alttext.'" class="size-full" height="150" style="width: auto;">'; 
+	    $personenbildfull = '<img itemprop="image" src="'.$person_image.'" alt="'.$alttext.'" class="size-full" height="'.$options['person-thumbnail_height'].'" style="width: auto;">'; 
+	    $personenbildsmall = '<img itemprop="image" src="'.$person_image.'" alt="'.$alttext.'" class="size-full" height="150" style="width: auto;">'; 
 	    $personenbildsidebar = '<img src="'.$person_image.'" alt="'.$alttext.'" width="'.$options['sidebar-thumbnail_width'].'" style="height: auto;">'; 
 
 	}          
@@ -464,14 +464,14 @@ function piratenkleider_display_person ($post_id = 0, $format = 'full', $profill
 	    $kontaktdata .= '<h3 class="contact">'.__('Contact','piratenkleider').'</h3>';
 	    $kontaktdata .= "<ul class=\"contact\">\n";
 	    if (isset($person_email) && strlen($person_email)>1) {
-		$kontaktdata .= "<li class=\"email\"><span>E-Mail: </span><a href=\"mailto:".$person_email."\">".$person_email."</a>";                  
+		$kontaktdata .= "<li class=\"email\"><span>E-Mail: </span><a itemprop=\"email\" href=\"mailto:".$person_email."\">".$person_email."</a>";                  
                 $kontaktdata .= "</li>\n";
 	    }
             if (isset($person_pgp_fingerprint) && strlen($person_pgp_fingerprint)>1) {
                 $kontaktdata .= "<li class=\"pgp\"><span>Fingerprint: </span><code>".$person_pgp_fingerprint."</code></li>";
             }  
 	    if (isset($person_url) && strlen($person_url)>1) {
-		$kontaktdata .= "<li class=\"website\"><span>Web: </span><a class=\"extern\" href=\"".$person_url."\">".piratenkleider_display_url($person_url)."</a></li>\n";
+		$kontaktdata .= "<li class=\"website\"><span>Web: </span><a class=\"extern\" itemprop=\"url\" href=\"".$person_url."\">".piratenkleider_display_url($person_url)."</a></li>\n";
 	    }
 	    if (isset($person_twitter) && strlen($person_twitter)>1) {		
 		if (filter_var($person_twitter, FILTER_VALIDATE_URL)) {
@@ -511,10 +511,10 @@ function piratenkleider_display_person ($post_id = 0, $format = 'full', $profill
 	    $out .= "<div class=\"textinfo\">\n";
 	    $out .= '<h3 class="about">'.__('About','piratenkleider').' ';
 	    if ($profillink==1) $out .= '<a href="'.$person_link.'">';	   
-	    $out .= $fullname;
+	    $out .= '<span itemprop="name">' . $fullname . '</span>';
 	    if ($profillink==1) $out .= '</a>';
 	    $out .= '</h3>';
-	    $out .= '<p>'.$person_shortdesc."</p>\n";
+	    $out .= '<p itemprop="description">'.$person_shortdesc."</p>\n";
 	    $out .= $kontaktdata;
 	    $out .= $person_text;
 	    $out .= "</div>\n";

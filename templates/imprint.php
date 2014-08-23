@@ -161,11 +161,11 @@ if ( is_readable( $locale_file ) ) {
     
             
  
-<h2>Copyright Informations</h2>    
+<h2>Copyright Information</h2>    
 <p>
    This site was built and is provided using open source software.
    It wouldn't be here without the work of millions of volunteers who contribute
-   to these projects. We use  open source tools to do what we do.
+   to these projects. We use open source tools to do what we do.
 </p>
 <ul>   
     <li><a class="extern" href="http://www.jquery.com">JavaScript Framework jQuery</a> (<span lang="en">GNU General Public License (GPL)</span> Version 2)</li>
@@ -182,7 +182,7 @@ if ( is_readable( $locale_file ) ) {
     ?>
     <li><a class="extern" href="<?php echo $theme_data['URI']; ?>">Wordpress Theme <?php echo $theme_data->Name; ?></a>, Version <?php echo $theme_data->Version; ?>
     (<span lang="en">GNU General Public License (GPL)</span> Version 2)  </li>
-    <li><a class="extern" href="http://wiki.piratenpartei.de/Grafiken">Wallpaper and Images by Pirte Party Germany</a></li>    
+    <li><a class="extern" href="http://wiki.piratenpartei.de/Grafiken">Wallpaper and Images by Pirate Party Germany</a></li>    
 
 
     <?php

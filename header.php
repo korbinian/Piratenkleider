@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <!--[if IE 8 ]>  <html <?php language_attributes(); ?> class="ie8"> <![endif]-->
-<!--[if (gt IE 9)|!(IE)]><!--> <html <?php language_attributes(); ?>> <!--<![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--> <html <?php piratenkleider_html_tag_schema(); ?> <?php language_attributes(); ?>> <!--<![endif]-->
 <head>
 <?php          
   global $defaultoptions;
@@ -143,13 +143,13 @@
 <?php if ($options['zeige_breadcrump']==1) { ?>
 <div id="content-body" class="with-breadcrumb">
 	<div class="section breadcrumbs">
-	    <div class="row"><div class="skin">
+	    <div class="row"><div class="skin" itemprop="breadcrumb">
 		<?php if (function_exists('piratenkleider_breadcrumb')) piratenkleider_breadcrumb(); 
 	    ?>
 	    </div></div>
 	</div>
 <?php } else { ?>
-<div id="content-body">
+<div id="content-body" itemprop="mainContentOfPage">
 <?php } ?>
 
 

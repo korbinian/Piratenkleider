@@ -1066,7 +1066,7 @@ function piratenkleider_post_datumsbox() {
      if (($num_comments>0) || ( $options['zeige_commentbubble_null'])) { 
         $out .= '<div class="commentbubble">'; 
         $link = get_comments_link();
-        $out .= '<a href="'.$link.'">'.$num_comments.'<span class="skip"> ';
+        $out .= '<meta itemprop="interactionCount" content="UserComments:'.$num_comments.'"/><a href="'.$link.'">'.$num_comments.'<span class="skip">';
         if ($num_comments>1) {
             $out .= __('Comments', 'piratenkleider' ).'</span></a>';
         } else {
@@ -1702,6 +1702,59 @@ function piratenkleider_paging_bar($total = 1, $perpage =1) {
       );
      }
   }
+}
+
+// select the right object type for the page
+
+function piratenkleider_html_tag_schema()
+{
+    $schema = 'http://schema.org/';
+
+    if (is_single() || is_page()) {
+      if (is_page()) 
+      { 
+          // Is page
+          $type = 'WebPage'; 
+
+          // Is person
+      } elseif (is_singular('person')) {
+
+          $type = 'Person';
+/*
+                // Is event
+      } elseif (is_singular('event')) {
+
+          $type = 'Event';    
+*/
+      } else {
+
+          // Is single post
+          $type = "Article";
+
+      }  
+
+    } 
+
+/*
+    // Contact form page ID - could be defined via theme options
+    elseif(is_page(1))
+    {
+        $type = 'ContactPage';
+    }
+*/    
+    
+    // Is search results page
+    elseif(is_search())
+    {
+        $type = 'SearchResultsPage';
+    }
+    
+    else
+    {
+        $type = 'WebPage';
+    }
+
+    echo 'itemscope itemtype="' . $schema . $type . '"';
 }
 
 /* Compatibility for old templates, former Version 3.2 */
