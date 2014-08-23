@@ -636,6 +636,8 @@ function theme_options_validate( $input ) {
 			    $output[$name."_url"] = '';    
 			} elseif (($type=='select') || ($type=='fontselect')) {                        
                             $output[$name] = "";
+                        } elseif (($type=='bildchecklist') || ($type=='bilddirchecklist')) {   
+                             $output[$name] = '';   
                         } elseif ($type=='multiselectlist') {
                              $output[$name] = array();
                         }
