@@ -3,6 +3,12 @@ Theme Piratenkleider
 Changelog 
 (since version 3.2; Former changes look at github.com/Piratenkleider/)
 
+Version 3.2.17:
+* Bugfix/Enhancement: New plakat sliders for brandenburg (#180)
+* Typofix: Corrected spelling of ppi (#179)
+* Scapegoat-Adaption: max-height instead of  height at thumbnail;
+  text-align right for date.
+
 Version 3.2.16:
 * Bugfix: Color of headers h2/h3 in footer at subdesign Scapegoat
 * Bugfix: Bannerlink Image as new thumbnail size defined with cropping
