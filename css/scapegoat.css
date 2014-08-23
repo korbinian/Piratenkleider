@@ -893,6 +893,8 @@ section header p img {
 .post-info {
 	color: #808080;
 	overflow: auto;
+        margin: 0.5em;
+        text-align: right;
 }
 .post-meta > *, 
 .post-info > * {
@@ -1870,7 +1872,7 @@ display: inline-block;
     margin: 0 1em;
     padding: 0;
     position: relative;
-    height: 240px;
+    max-height: 240px;
 }
   
 .content-primary .columns p {
