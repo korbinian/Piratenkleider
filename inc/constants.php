@@ -138,8 +138,6 @@ $defaultoptions = array(
     'person-thumbnail_width'		    => 200,
     'person-thumbnail_height'		    => 300,
     'person-thumbnail_crop'		    => 1,
-
-    
     'sidebar-thumbnail_width'		    => 270,
     'sidebar-thumbnail_height'		    => 360,
     'sidebar-thumbnail_crop'		    => 1,
@@ -515,7 +513,7 @@ $default_alternativestyles = array(
         )
      ),
      __('International', 'piratenkleider' ) => array(
-         'title' => __('Pirate Party International', 'piratenkleider' ),
+         'title' => __('Pirate Parties International', 'piratenkleider' ),
          'url'  => 'http://www.pp-international.net/',
          'sublist' => array(
              __('Australia', 'piratenkleider' ) => 'http://pirateparty.org.au/',
@@ -569,7 +567,7 @@ $default_alternativestyles = array(
          )
      ), 
       __('International (with flags)', 'piratenkleider' ) => array(
-         'title' => __('Pirate Party International', 'piratenkleider' ),
+         'title' => __('Pirate Parties International', 'piratenkleider' ),
          'url'  => 'http://www.pp-international.net/',
          'sublist' => array(
             '<span class="flagicon-au"></span> '. __('Australia', 'piratenkleider' ) => 'http://pirateparty.org.au/',
