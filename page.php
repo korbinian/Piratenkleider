@@ -3,7 +3,7 @@
     global $options;
 ?>
 
-<div class="section content" id="main-content" itemprop="mainContentOfPage">
+<div class="section content" id="main-content">
   <div class="row">
     <div class="content-primary" role="main">     
 	

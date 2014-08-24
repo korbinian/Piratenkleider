@@ -1,0 +1,16 @@
++ fixed typos in templates/imprint.php
++ added theme option under tab Social Media for the federated social network Friendica in inc/constants.php
++ added function piratenkleider_html_tag_schema to inc/functions.php
++ added following microdata object types in html tag:
+	- WebPage
+	- Article
+	- AboutPage
+	- ContactPage
+	- Person
++ added theme option under tab Misc to assign object types AboutPage and ContactPage to pages determined by the admin
++ added type Video for embedded videos, property: embedUrl
++ added microdata properties for object type Article: name, articleBody, articleSection, creator, keywords, url
++ added microdata properties for object type Person: mainContentOfPage, name, description, email, url
++ added microdata properties for object type WebPage/AboutPage/ContactPage: mainContentOfPage
++ added mircrodata for comments meta: comment, interactionCount: content=Usercomments, discussionUrl
++ other microdata added: breadcrumb, datePublished, image
