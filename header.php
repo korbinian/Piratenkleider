@@ -119,7 +119,7 @@
                          <?php   } ?>
                 </div>
                 
-                <nav aria-label="<?php _e( 'Navigation', 'piratenkleider' ); ?>" class="nav-main" id="nav">
+                <nav aria-label="<?php _e( 'Navigation', 'piratenkleider' ); ?>" class="nav-main" id="nav" role="navigation" role="navigation" itemscope itemtype="http://schema.org/SiteNavigationElement">
                             <h2 class="skip"><?php _e( 'Navigation', 'piratenkleider' ); ?></h2>
                             <?php 
                             if ( has_nav_menu( 'primary' ) ) {

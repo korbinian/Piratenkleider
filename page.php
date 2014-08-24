@@ -3,7 +3,7 @@
     global $options;
 ?>
 
-<div class="section content" id="main-content">
+<div class="section content" id="main-content" itemprop="mainContentOfPage">
   <div class="row">
     <div class="content-primary" role="main">     
 	
@@ -56,7 +56,7 @@
 	    <?php if (!(isset($image_url) && (strlen($image_url)>4))) { ?>
 		<header><h1 class="post-title"><span itemprop="name"><?php the_title(); ?></span></h1></header>
 	    <?php } 
-		echo '<article itemprop="mainContentOfPage">';
+		echo '<article itemprop="text">';
 		   the_content(); 
 		echo '</article>';
 	    if ($options['aktiv-commentsonpages']==1) {

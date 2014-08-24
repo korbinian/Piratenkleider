@@ -39,9 +39,9 @@
 	    <?php } ?>
 	
       <div class="skin" itemprop="mainContentOfPage">
-	  
+
 	  <?php if (!(isset($image_url) && (strlen($image_url)>4))) { ?>
-	    <h1 class="post-title"><span><?php printf( __( '%s', 'piratenkleider' ), get_the_author() ); ?></span></h1>
+	    <h1 class="post-title"><span itemprop="name"><?php printf( __( '%s', 'piratenkleider' ), get_the_author() ); ?></span></h1>
 	<?php }  
 	
 	if ( get_the_author_meta( 'description' ) ) : ?>   

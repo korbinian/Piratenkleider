@@ -740,39 +740,42 @@ function piratenkleider_comment( $comment, $args, $depth ) {
                 case '' :
         ?>
         <li <?php comment_class(); ?> id="li-comment-<?php comment_ID(); ?>">
-                <div id="comment-<?php comment_ID(); ?>">
+          <div id="comment-<?php comment_ID(); ?>">
+            <article itemprop="comment" itemscope itemtype="http://schema.org/UserComments">
+              <header>  
                 <div class="comment-details">
                     
-                <div class="comment-author vcard">
+                <div class="comment-author vcard" itemprop="creator" itemscope itemtype="http://schema.org/Person">
                     <?php if ($options['aktiv-avatar']==1) {
-                        echo '<div class="avatar">';
+                        echo '<div class="avatar" itemprop="image">';
                         echo get_avatar( $comment, 48, $defaultoptions['src-default-avatar']); 
                         echo '</div>';   
                     } 
-                    printf( __( '%s <span class="says">commented at</span>', 'piratenkleider' ), sprintf( '<cite class="fn">%s</cite>', get_comment_author_link() ) ); 
+                    printf( __( '%s <span class="says">commented at</span>', 'piratenkleider' ), sprintf( '<cite class="fn" itemprop="name">%s</cite>', get_comment_author_link() ) ); 
                     ?>
                 </div><!-- .comment-author .vcard -->
                 <?php if ( $comment->comment_approved == '0' ) : ?>
                         <em><?php _e( 'Comment waits for approval.', 'piratenkleider' ); ?></em>
                         <br />
                 <?php endif; ?>
-
-                <div class="comment-meta commentmetadata"><a href="<?php echo esc_url( get_comment_link( $comment->comment_ID ) ); ?>">
-                   <?php
+                <meta itemprop="commentTime" datetime="<?php echo get_comment_date('Y-m-d') ?>T<?php comment_time('H:i:s'); ?>" /> 
+                <div class="comment-meta commentmetadata"><a itemprop="url" href="<?php echo esc_url( get_comment_link( $comment->comment_ID ) ); ?>">
+                    <?php
                           /* translators: 1: date, 2: time */
                        printf( __( '%1$s at %2$s', 'piratenkleider' ), get_comment_date(),  get_comment_time() ); ?></a> Folgendes:<?php edit_comment_link( __( '(Edit)', 'piratenkleider' ), ' ' );
                     ?>
+                  
                 </div><!-- .comment-meta .commentmetadata -->
                 </div>
-
-                <div class="comment-body"><?php comment_text(); ?></div>
+              </header>
+                <div class="comment-body" itemprop="commentText"><?php comment_text(); ?></div>
                 <?php if ($options['aktiv-commentreplylink']) { ?>
                 <div class="reply">
                         <?php comment_reply_link( array_merge( $args, array( 'depth' => $depth, 'max_depth' => $args['max_depth'] ) ) ); ?>                       
                 </div> <!-- .reply -->
                 <?php } ?>
-
-        </div><!-- #comment-##  -->
+            </article>
+          </div><!-- #comment-##  -->
 
         <?php
                         break;
@@ -1075,7 +1078,7 @@ function piratenkleider_post_datumsbox() {
         $out .= "</div>\n"; 
      } 
     $out .= '<div class="cal-icon">';
-    $out .= '<meta datetime="'.get_the_time('Y-m-j').'" itemprop="datePublished" />';
+    $out .= '<meta datetime="'.get_the_time('Y-m-j').'T'.get_the_time('H:i:s').'" itemprop="datePublished" />';
     $out .= '<span class="day">'.get_the_time('j.').'</span>';
     $out .= '<span class="month">'.get_the_time('m.').'</span>';
     $out .= '<span class="year">'.get_the_time('Y').'</span>';

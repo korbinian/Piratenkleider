@@ -99,7 +99,7 @@
 	  </div>        
         <hr>
 
-        <div class="post-comments" id="comments" itemprop="comment" itemscope itemtype="http://schema.org/Comment">
+        <div class="post-comments" id="comments">
           <?php comments_template( '', true ); ?>
         </div>
         
