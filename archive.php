@@ -46,9 +46,9 @@
                         }  ?>		       
 		   </div>
 		</div>  
-                <div class="skin">
+                <div class="skin" itemprop="mainContentOfPage">
 	    <?php } else { ?>
-                <div class="skin">
+                <div class="skin" itemprop="mainContentOfPage">
                  <h1 class="post-title"><span><?php if ( is_day() ) : ?>
                         <?php printf( __( 'Archive by day: %s', 'piratenkleider' ), get_the_date() ); ?>
                      <?php elseif ( is_month() ) : ?>

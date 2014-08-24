@@ -1,7 +1,7 @@
 <?php get_header();    
   global $options;    
 ?> 
-<div class="section content" id="main-content" itemprop="mainContentOfPage">
+<div class="section content" id="main-content">
   <div class="row">
     <div class="content-primary">
 	
@@ -50,7 +50,7 @@
 		</div>  	
 	    <?php } ?>
       
-      <div class="skin">
+      <div class="skin" itemprop="mainContentOfPage">
        <?php if (!(isset($image_url) && (strlen($image_url)>4))) { ?>
 	    <h1 class="post-title"><span><?php the_title(); ?></span></h1>
 	<?php } ?>

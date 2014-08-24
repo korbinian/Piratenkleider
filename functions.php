@@ -192,7 +192,7 @@ function piratenkleider_setup() {
 		$relvideo = '?rel=0';
 	    }
 		$embed = sprintf(                                
-				'<div class="embed-youtube"><p>YouTube-Video: <a href="https://www.youtube.com/watch?v=%2$s">https://www.youtube.com/watch?v=%2$s</a></p><iframe src="https://www.youtube-nocookie.com/embed/%2$s%5$s" width="%3$spx" height="%4$spx" frameborder="0" scrolling="no" marginwidth="0" marginheight="0"></iframe></div>',
+				'<div class="embed-youtube" itemprop="video" itemscope itemtype="http://schema.org/VideoObject"><p>YouTube-Video: <a href="https://www.youtube.com/watch?v=%2$s">https://www.youtube.com/watch?v=%2$s</a></p><iframe itemprop="embedUrl" src="https://www.youtube-nocookie.com/embed/%2$s%5$s" width="%3$spx" height="%4$spx" frameborder="0" scrolling="no" marginwidth="0" marginheight="0"></iframe></div>',
 				get_template_directory_uri(),
 				esc_attr($matches[1]),
 				$defaultoptions['yt-content-width'],
@@ -1066,7 +1066,7 @@ function piratenkleider_post_datumsbox() {
      if (($num_comments>0) || ( $options['zeige_commentbubble_null'])) { 
         $out .= '<div class="commentbubble">'; 
         $link = get_comments_link();
-        $out .= '<meta itemprop="interactionCount" content="UserComments:'.$num_comments.'"/><a href="'.$link.'">'.$num_comments.'<span class="skip">';
+        $out .= '<meta itemprop="interactionCount" content="UserComments:'.$num_comments.'"/><a itemprop="discussionUrl" href="'.$link.'">'.$num_comments.'<span class="skip">';
         if ($num_comments>1) {
             $out .= __('Comments', 'piratenkleider' ).'</span></a>';
         } else {
@@ -1075,6 +1075,7 @@ function piratenkleider_post_datumsbox() {
         $out .= "</div>\n"; 
      } 
     $out .= '<div class="cal-icon">';
+    $out .= '<meta datetime="'.get_the_time('Y-m-j').'" itemprop="datePublished" />';
     $out .= '<span class="day">'.get_the_time('j.').'</span>';
     $out .= '<span class="month">'.get_the_time('m.').'</span>';
     $out .= '<span class="year">'.get_the_time('Y').'</span>';
@@ -1110,7 +1111,7 @@ if ( ! function_exists( 'piratenkleider_post_autorinfo' ) ) :
  */
 function piratenkleider_post_autorinfo() {
     $out = ' <span class="meta-prep-author">'.__('Author','piratenkleider').':</span> ';
-    $out .= '<span class="author vcard"><a class="url fn n" href="';
+    $out .= '<span class="author vcard" itemprop="creator"><a rel="author" class="url fn n" href="';
     $out .= get_author_posts_url( get_the_author_meta( 'ID' ) );
     $out .= '">';
     $out .= get_the_author_meta('display_name');
@@ -1126,11 +1127,11 @@ if ( ! function_exists( 'piratenkleider_post_taxonominfo' ) ) :
 function piratenkleider_post_taxonominfo() {
          $tag_list = get_the_tag_list( '', ', ' );
         if ( $tag_list ) {
-                $posted_in = __( 'Category: %1$s. Tags: %2$s. <br><a href="%3$s" title="%4$s" rel="bookmark">Permalink</a> for this entry.', 'piratenkleider' );
+                $posted_in = __( 'Category: <span itemprop="articleSection">%1$s</span>. Tags: <span itemprop="keywords">%2$s</span>. <br><a href="%3$s" title="%4$s" rel="bookmark" itemprop="url">Permalink</a> for this entry.', 'piratenkleider' );
         } elseif ( is_object_in_taxonomy( get_post_type(), 'category' ) ) {
-                $posted_in = __( 'Category: %1$s. <br><a href="%3$s" title="%4$s" rel="bookmark">Permalink</a> for this entry.', 'piratenkleider' );
+                $posted_in = __( 'Category: <span itemprop="articleSection">%1$s</span>. <br><a href="%3$s" title="%4$s" rel="bookmark" itemprop="url">Permalink</a> for this entry.', 'piratenkleider' );
         } else {
-                $posted_in = __( '<a href="%3$s" title="%4$s" rel="bookmark">Permalink</a> for this entry.', 'piratenkleider' );
+                $posted_in = __( '<a href="%3$s" title="%4$s" rel="bookmark" itemprop="url">Permalink</a> for this entry.', 'piratenkleider' );
         }
         // Prints the string, replacing the placeholders.
         printf(
@@ -1552,7 +1553,7 @@ function piratenkleider_breadcrumb() {
   $pretitletextstart   = '<span>';
   $pretitletextend     = '</span>';
   
-  echo '<div id="crumbs">'; 
+  echo '<div id="crumbs" itemprop="breadcrumb">'; 
   if ( !is_home() && !is_front_page() || is_paged() ) { 
     
     global $post;
@@ -1706,52 +1707,55 @@ function piratenkleider_paging_bar($total = 1, $perpage =1) {
 
 // select the right object type for the page
 
-function piratenkleider_html_tag_schema()
-{
-    $schema = 'http://schema.org/';
+function piratenkleider_html_tag_schema() {
+
+    global $options;
+
+    $schema = 'http://schema.org/';        
+
 
     if (is_single() || is_page()) {
-      if (is_page()) 
-      { 
-          // Is page
-          $type = 'WebPage'; 
 
-          // Is person
+      isset($options['meta-itemprop-aboutpage']) && !empty($options['meta-itemprop-aboutpage']) 
+        ? $abtpage = trim($options['meta-itemprop-aboutpage']) : $abtpage = false;
+
+      isset($options['meta-itemprop-contactpage']) && !empty($options['meta-itemprop-contactpage']) 
+        ? $ctcpage = trim($options['meta-itemprop-contactpage']) : $ctcpage = false;
+
+        // Is about page
+      if (is_page($abtpage) && $abtpage) {
+        $type = 'AboutPage';
+
+        // Is contact page
+      } elseif (is_page($ctcpage) && $ctcpage) {
+        $type = 'ContactPage';
+
+        // Is person
       } elseif (is_singular('person')) {
+        $type = 'Person';
 
-          $type = 'Person';
+        // Is some other page
+      } elseif (is_page()) {
+        $type = 'WebPage';
+
+      } else {
+
 /*
-                // Is event
+          // Is event
       } elseif (is_singular('event')) {
 
           $type = 'Event';    
 */
-      } else {
-
           // Is single post
-          $type = "Article";
+       $type = "Article";
 
-      }  
+     }
 
-    } 
+    } else {
 
-/*
-    // Contact form page ID - could be defined via theme options
-    elseif(is_page(1))
-    {
-        $type = 'ContactPage';
-    }
-*/    
-    
-    // Is search results page
-    elseif(is_search())
-    {
-        $type = 'SearchResultsPage';
-    }
-    
-    else
-    {
-        $type = 'WebPage';
+        // Is search results page or other
+      is_search() ? $type = 'SearchResultsPage' : $type = 'WebPage';
+
     }
 
     echo 'itemscope itemtype="' . $schema . $type . '"';

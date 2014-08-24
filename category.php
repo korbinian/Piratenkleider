@@ -77,7 +77,7 @@
       endwhile;
       ?>
 	  
-	<div class="skin">    
+	<div class="skin" itemprop="mainContentOfPage">    
          <?php    
 	 if (!(isset($image_url) && (strlen($image_url)>4)) && (!($options['category-teaser']))) {
 		echo '<h1 class="post-title"><span>';

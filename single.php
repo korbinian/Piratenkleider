@@ -1,7 +1,7 @@
 <?php get_header();    
   global $options;    
 ?> 
-<div class="section content" id="main-content" itemprop="mainContentOfPage">
+<div class="section content" id="main-content">
   <div class="row">
     <div class="content-primary">
 	
@@ -65,7 +65,7 @@
                 }				
 		echo piratenkleider_post_datumsbox();  
                 ?>  
-	      <article class="post-entry">
+	      <article class="post-entry" itemprop="articleBody">
 		<?php the_content(); ?>
 	      </article>
              <?php 
@@ -99,7 +99,7 @@
 	  </div>        
         <hr>
 
-        <div class="post-comments" id="comments">
+        <div class="post-comments" id="comments" itemprop="comment" itemscope itemtype="http://schema.org/Comment">
           <?php comments_template( '', true ); ?>
         </div>
         

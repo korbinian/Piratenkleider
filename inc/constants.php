@@ -339,6 +339,11 @@ $default_socialmedia_liste = array(
 	'content'  => get_bloginfo( 'rss2_url' ),
 	'active' => 1,
     ),
+    'friendica' => array(
+    'name' => 'Friendica',
+    'content'  => '',
+    'active' => 0,
+    ),
 ); 
 
 
@@ -2289,6 +2294,18 @@ $setoptions = array(
                   'title'   => __( 'Use tags for keywords', 'piratenkleider' ),
                   'label'   => __( 'Generates keywords using known tags.', 'piratenkleider'),
                   'default' => $defaultoptions['aktiv-autokeywords'],
+                  'parent'  => 'meta',
+              ),           
+            'meta-itemprop-aboutpage' => array(
+                  'type'    => 'text',
+                  'title'   => __( 'Itemprop AboutPage', 'piratenkleider' ),
+                  'label'   => __( 'Enter ID or title to set the object type of this page to "AboutPage".', 'piratenkleider' ),
+                  'parent'  => 'meta',
+              ),
+            'meta-itemprop-contactpage' => array(
+                  'type'    => 'text',
+                  'title'   => __( 'Itemprop ContactPage', 'piratenkleider' ),
+                  'label'   => __( 'Enter ID or title to set the object type of this page to "ContactPage".', 'piratenkleider' ),
                   'parent'  => 'meta',
               ),
 	       'linktipps'  => array(

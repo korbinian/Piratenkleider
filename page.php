@@ -56,11 +56,11 @@
 	    <?php if (!(isset($image_url) && (strlen($image_url)>4))) { ?>
 		<header><h1 class="post-title"><span itemprop="name"><?php the_title(); ?></span></h1></header>
 	    <?php } 
-		echo '<article>';
+		echo '<article itemprop="mainContentOfPage">';
 		   the_content(); 
 		echo '</article>';
 	    if ($options['aktiv-commentsonpages']==1) {
-		echo '<div class="post-comments" id="comments">';
+		echo '<div class="post-comments" id="comments" itemprop="comment" itemscope itemtype="http://schema.org/Comment">';
 		 comments_template( '', true );
 		echo '</div>';  
 	    }    

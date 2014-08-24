@@ -143,13 +143,13 @@
 <?php if ($options['zeige_breadcrump']==1) { ?>
 <div id="content-body" class="with-breadcrumb">
 	<div class="section breadcrumbs">
-	    <div class="row"><div class="skin" itemprop="breadcrumb">
+	    <div class="row"><div class="skin">
 		<?php if (function_exists('piratenkleider_breadcrumb')) piratenkleider_breadcrumb(); 
 	    ?>
 	    </div></div>
 	</div>
 <?php } else { ?>
-<div id="content-body" itemprop="mainContentOfPage">
+<div id="content-body">
 <?php } ?>
 
 

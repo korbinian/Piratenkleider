@@ -38,7 +38,7 @@
 		</div>  	
 	    <?php } ?>
 	
-      <div class="skin">
+      <div class="skin" itemprop="mainContentOfPage">
 	  
 	  <?php if (!(isset($image_url) && (strlen($image_url)>4))) { ?>
 	    <h1 class="post-title"><span><?php printf( __( 'Tag %s', 'piratenkleider' ), '' . single_cat_title( '', false ) . '' ); ?></span></h1>	
