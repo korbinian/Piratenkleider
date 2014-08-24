@@ -15,5 +15,5 @@
 + added microdata for comments meta: comment, interactionCount: content=Usercomments, discussionUrl
 + added microdata for comments: commentText, name, commentTime, url, image
 + added HTML5 article and header-tags to comments
-+ other microdata added: breadcrumb, datePublished, image
++ other microdata added: breadcrumb, datePublished, image, SiteNavigationElement
 + added role="navigation" to main navigation in header.php
