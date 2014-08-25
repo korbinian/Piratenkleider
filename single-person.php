@@ -50,7 +50,7 @@
 		</div>  	
 	    <?php } ?>
       
-      <div class="skin" itemprop="mainContentOfPage">
+      <div class="skin">
        <?php if (!(isset($image_url) && (strlen($image_url)>4))) { ?>
 	    <h1 class="post-title"><span><?php the_title(); ?></span></h1>
 	<?php } ?>
