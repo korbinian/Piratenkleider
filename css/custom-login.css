@@ -1,0 +1,62 @@
+/* 
+    Document   : custom-login
+    Author     : xwolf
+    Description:
+        Pirate Login
+ 
+*/
+body.login  {
+    padding-top: 20px;
+    color: #888;
+    background: #dddddd; /* Old browsers */
+    background: -moz-linear-gradient(top,  #dddddd 23%, #0e0e0e 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(23%,#dddddd), color-stop(100%,#0e0e0e)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  #dddddd 23%,#0e0e0e 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  #dddddd 23%,#0e0e0e 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  #dddddd 23%,#0e0e0e 100%); /* IE10+ */
+    background: linear-gradient(to bottom,  #dddddd 23%,#0e0e0e 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#dddddd', endColorstr='#0e0e0e',GradientType=0 ); /* IE6-9 */
+
+}	
+#login {
+   width: 500px;
+   background: black url(../images/login-wallpaper.jpg) no-repeat;
+   padding-top: 20px;
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3);
+   -moz-box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3);
+    -webkit-box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3);
+}
+.login h1 {	
+    display: none;
+} 
+.login h1 a {
+    background: transparent;
+}
+.login form {
+    background: rgba(0, 0, 0, 0.3);
+    margin: auto;   
+    margin-top: 370px;
+    width: 260px;
+    border: none;
+    border-radius: 0;
+    -moz-box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    -webkit-box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); 
+    
+}
+.login label {
+    color: white;
+}
+.login p#backtoblog,
+.login p#nav {
+    background: none repeat fixed -20% 0 rgba(0, 0, 0, 0.1); 
+    width: auto;
+    text-shadow: none;
+    margin: 0 auto;
+    padding-bottom: 1em;
+    text-align: center;
+}
+
+.login #nav a, .login #backtoblog a {
+    color: white !important;
+}

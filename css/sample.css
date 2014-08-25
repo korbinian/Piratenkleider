@@ -1,0 +1,22 @@
+/* 
+    Document   : sample
+    Created on : 13.06.2013, 16:46:30
+    Author     : unrz59
+    Description:
+        Alternative css design. Sample file to be filled. 
+*/
+
+@media only screen and (max-width: 430px) {
+    
+
+}
+@media only screen and (min-width: 431px)  {
+    
+
+}
+@media screen, projection and (min-width: 601px) {
+    
+}    
+@media screen, projection and (min-width: 1021px) {
+    
+}  

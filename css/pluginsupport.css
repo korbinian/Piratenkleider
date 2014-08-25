@@ -1,0 +1,276 @@
+/* 
+    Document   : pluginsupport
+    Created on : 26.12.2013, 18:32:44
+    Author     : xwolf
+    Description:
+        CSS styles for plugin support
+*/
+
+
+/*
+* Contact Form 7
+*/
+.wpcf7-mail-sent-ok {
+  padding: 20px;
+  border: 1px solid #109e06;
+  font-weight: bold; }
+
+
+ /* 
+ * ICS Kalender 
+ */
+  
+#ics-calendar-widget {
+  overflow: hidden;
+  margin-bottom: 5px; }
+#ics-calendar-widget li {
+    color: black;
+    background: #c96a00;
+    background: rgba(0, 0, 0, 0.1);
+    margin-bottom: 1px;
+    padding: 1px 5px;
+    list-style: none; }
+#ics-calendar-widget li strong {
+      margin-right: 4px;
+      display: block;
+      height: 100%;
+      float: left; 
+}
+#ics-calendar-widget-next, 
+#ics-calendar-widget-prev {
+  padding: 5px 10px;
+  overflow: visible;
+  position: relative;
+  background: #2d7dc5;
+  color: white !important;
+  margin: 0 2px 2px 0;
+  border: 1px solid #2d7dc5;
+  text-shadow: 0 -1px 1px rgba(0, 0, 0, 0.1);
+  border-top: 1px solid #4e96d7;
+  border-bottom: 1px solid #1a4872;
+  display: inline-block;  
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  -ms-border-radius: 2px;
+  -o-border-radius: 2px;
+  border-radius: 2px;
+  text-shadow: 0 -1px 0 #112e48;
+  background-color: #2d7dc5;
+  background-image: -moz-linear-gradient(top, #2d7dc5, #24639b);
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #2d7dc5), color-stop(1, #24639b));
+  background-image: linear-gradient(top, #2d7dc5, #24639b); }
+#ics-calendar-widget-next:hover, 
+#ics-calendar-widget-prev:hover {
+    background-color: #2d7dc5;
+    background-image: -moz-linear-gradient(top, #2d7dc5, #1a4872);
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #2d7dc5), color-stop(1, #1a4872));
+    background-image: linear-gradient(top, #2d7dc5, #1a4872);
+    -webkit-transition: all 0.2s ease-in-out;
+    -moz-transition: all 0.2s ease-in-out;
+    -ms-transition: all 0.2s ease-in-out;
+    -o-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out; }
+
+#ics-calendar-widget-next:active, 
+#ics-calendar-widget-prev:active {
+    top: 1px; }
+
+#ics-calendar-widget-next {
+  float: right; }
+
+#ics-calendar-widget-prev {
+  float: left; }
+
+.ics-calendar-header {
+  padding: 0 0 20px 0;
+  text-align: left; }
+ .ics-calendar-header a {
+    padding: 5px 10px;
+    overflow: visible;
+    position: relative;
+    background: #2d7dc5;
+    color: white;
+    margin: 0 2px 2px 0;
+    border: 1px solid #2d7dc5;
+    text-shadow: 0 -1px 1px rgba(0, 0, 0, 0.1);
+    border-top: 1px solid #4e96d7;
+    border-bottom: 1px solid #1a4872;
+    display: inline-block;   
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    -ms-border-radius: 2px;
+    -o-border-radius: 2px;
+    border-radius: 2px;
+    text-shadow: 0 -1px 0 #112e48;
+    background-color: #2d7dc5;
+    background-image: -moz-linear-gradient(top, #2d7dc5, #24639b);
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #2d7dc5), color-stop(1, #24639b));
+    background-image: linear-gradient(top, #2d7dc5, #24639b); }
+  .ics-calendar-header a:hover {
+      background-color: #2d7dc5;
+      background-image: -moz-linear-gradient(top, #2d7dc5, #1a4872);
+      background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #2d7dc5), color-stop(1, #1a4872));
+      background-image: linear-gradient(top, #2d7dc5, #1a4872);
+      -webkit-transition: all 0.2s ease-in-out;
+      -moz-transition: all 0.2s ease-in-out;
+      -ms-transition: all 0.2s ease-in-out;
+      -o-transition: all 0.2s ease-in-out;
+      transition: all 0.2s ease-in-out; }
+    .ics-calendar-header a:active {
+      top: 1px; }
+
+div.ics-calendar-holder tr.ics-calendar-days td {
+  background: #eeeeee;
+  font-weight: bold;
+  border-bottom: 1px solid gray; }
+div.ics-calendar-holder .ics-calendar-table td {
+  height: auto !important;
+  text-align: left !important; }
+div.ics-calendar-holder .ics-calendar-table td .date-holder, div.ics-calendar-holder .ics-calendar-table td .old-date-holder, div.ics-calendar-holder .ics-calendar-table td .date-holder p {
+  text-align: left;
+  height: auto !important; }
+div.ics-calendar-holder .ics-calendar-table td .date-holder {
+  background: white; }
+div.ics-calendar-holder .ics-calendar-table td .old-date-holder {
+  background: white;
+  color: #999999; }
+div.ics-calendar-holder .ics-calendar-table td .ics-calendar-today {
+  background-color: #ff8800;
+  color: black;
+  padding: 0 2px;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  -ms-border-radius: 2px;
+  -o-border-radius: 2px;
+   border-radius: 2px;
+}
+div.ics-calendar-holder .ics-calendar-event {
+    cursor: pointer;
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    font-size: 10px;
+    background: #2d7dc5;
+    padding: 0 2px;
+    color: white;  
+    -webkit-border-radius: 2px; 
+    -moz-border-radius: 2px;
+    -ms-border-radius: 2px; 
+    -o-border-radius: 2px; 
+    border-radius: 2px; 
+}
+
+#ics-calendar-widget li:hover, 
+#ics-calendar-widget li:focus {
+     background: #ff8800; 
+ }
+
+
+/* 
+* Social Share Privacy
+*/
+.single .social_share_privacy ul {
+     margin: 0; }
+ .single .social_share_privacy ul li {
+    list-style: none;
+    height: auto; }
+ .single .social_share_privacy ul li .dummy_btn {
+    margin-left: 0; }
+ .single .social_share_privacy ul li .switch {
+    background: white;
+    width: 0; }
+ .single .social_share_privacy ul li.facebook, .single .social_share_privacy ul li.twitter {
+    width: 120px; }
+ .single .social_share_privacy ul .help_info.icon {
+    background: #2d7dc5 url("../images/info.png") no-repeat center center scroll;
+    border: 2px solid;
+    width: 0;
+    height: 0;
+    padding: 6px 10px 8px 4px;
+    margin-top: 2px; 
+    }
+ ul.social_share_privacy_area {
+    list-style: none outside none;
+    
+}      
+/*
+* All in One Calendar 
+*/    
+
+.ai1ec_event .cal-icon {
+    display: none;
+} 
+ ul.ts-fab-list li {
+    margin-bottom: 0px;
+    display: inline-block;
+}
+ul.ts-fab-list li a { 
+    height: auto; 
+}
+.content-primary .ts-fab-tabs a.extern,
+.content .ts-fab-tabs a.extern {
+    background: none;
+    padding-left: 0px;
+}
+
+
+
+/* 
+* Liveblog
+*/
+.liveblog-entry .liveblog-entry-text {
+    font-size: 1em;
+    line-height: 1em;
+}
+
+.liveblog-entry .liveblog-meta .liveblog-author-name {
+    color: #555555;
+}
+
+
+/* wp-liveticker */
+#ticker hr {    border-top: none; }
+
+/* Kalender-Widget */
+.content-aside ul li.calendar-widget { padding:0; }
+.content-aside ul li.calendar-widget .datetime { height: 36px; width:48px; float: left; background-color: #EEE; color: #333;	box-shadow: 1px 1px 2px #444444; padding-top: 6px; padding-bottom: 6px;	}
+.content-aside ul li.calendar-widget .date { font-size: 20px; font-family: FontPiratenkleiderHeadlines, Helvetica, Arial, sans-serif; line-height: 12px; display: block; text-align: center; }
+.content-aside ul li.calendar-widget .time { font-size: 10px; line-height: 18px; display: block; text-align: center; }
+.content-aside ul li.calendar-widget .event { padding-left: 55px; }
+.content-aside ul li.calendar-widget b { font-size:14px; line-height:14px; font-weight:lighter; letter-spacing:-1px; }
+.content-aside ul li.calendar-widget i  { color: #DDD; font-size:13px; font-style:normal; }
+.content-aside ul li.calendar-widget a { background:transparent; margin:0; padding:0; text-decoration:underline; }
+.content-aside ul li.calendar-widget a:hover { color:#fff; }
+
+/* Wiki Embed */
+.wiki-embed th, td { text-align:inherit; border-top:inherit; }
+.wiki-embed .vertical-navbox p br { display:inline-block; }
+.wiki-embed .noprint { display:none; }
+.wiki-embed .wikiembed-fragment p span { display:inline; margin-top:0.5em; }
+.wiki-embed .wikiembed-fragment p span:before { content:\"a\"; white-space:pre; }
+
+/* Kraehennest Player */
+.post-entry .kraehennestplayer {
+    float: right;
+    width: 185px;
+    padding: 0px 5px;
+  overflow: visible;
+  position: relative;
+background: none repeat scroll 0 0 #EEEEEE;
+    box-shadow: 1px 1px 2px #444444;
+    margin-bottom: 5px;
+}
+.post-entry .kraehennestplayer p,
+.kraehennestplayer p {
+    margin-bottom: 0px;
+}
+.post-entry p.kraehennestplayerTitle {
+  background: url(../images/kraehennest-50.png) 5px 5px no-repeat;
+  padding-left: 60px;
+  min-height: 65px;
+}
+ 
+.kraehennestplayer object {
+    margin: 0 auto;
+}
+
