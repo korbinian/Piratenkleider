@@ -1745,11 +1745,11 @@ function piratenkleider_html_tag_schema() {
         
         // Is custom type 1
       } elseif (is_singular($cstptype1) && $cstptype1){  
-        $type = ''. trim($options['meta-itemtype-cstobject1']) .'';
+        $type = ''. trim($options['meta-itemtype-cst1']) .'';
 
         // Is custom type 2
       } elseif (is_singular($cstptype2) && $cstptype2){  
-        $type = ''. trim($options['meta-itemtype-cstobject2']) .'';
+        $type = ''. trim($options['meta-itemtype-cst2']) .'';
         
         // Is some other page
       } elseif (is_single()) {

@@ -2299,13 +2299,13 @@ $setoptions = array(
             'meta-itemprop-aboutpage' => array(
                   'type'    => 'text',
                   'title'   => __( 'Itemprop AboutPage', 'piratenkleider' ),
-                  'label'   => __( 'Enter ID or title to set the object type of this page to "AboutPage".', 'piratenkleider' ),
+                  'label'   => __( 'Enter ID or title to set the item type of this page to "AboutPage".', 'piratenkleider' ),
                   'parent'  => 'meta',
               ),
             'meta-itemprop-contactpage' => array(
                   'type'    => 'text',
                   'title'   => __( 'Itemprop ContactPage', 'piratenkleider' ),
-                  'label'   => __( 'Enter ID or title to set the object type of this page to "ContactPage".', 'piratenkleider' ),
+                  'label'   => __( 'Enter ID or title to set the item type of this page to "ContactPage".', 'piratenkleider' ),
                   'parent'  => 'meta',
               ),
             'meta-itemtype-cstptype1' => array(
@@ -2314,10 +2314,10 @@ $setoptions = array(
                   'label'   => __( 'Enter a custom post type.', 'piratenkleider' ),
                   'parent'  => 'meta',
               ),
-            'meta-itemtype-cstobject1' => array(
+            'meta-itemtype-cst1' => array(
                   'type'    => 'text',
-                  'title'   => __( 'Custom Object Type 1', 'piratenkleider' ),
-                  'label'   => __( 'Enter a custom schema.org microdata object type.', 'piratenkleider' ),
+                  'title'   => __( 'Custom Item Type 1', 'piratenkleider' ),
+                  'label'   => __( 'Enter a custom schema.org microdata item type.', 'piratenkleider' ),
                   'parent'  => 'meta',
               ),
             'meta-itemtype-cstptype2' => array(
@@ -2326,10 +2326,10 @@ $setoptions = array(
                   'label'   => __( 'Enter a custom post type.', 'piratenkleider' ),
                   'parent'  => 'meta',
               ),
-            'meta-itemtype-cstobject2' => array(
+            'meta-itemtype-cst2' => array(
                   'type'    => 'text',
-                  'title'   => __( 'Custom Object Type 2', 'piratenkleider' ),
-                  'label'   => __( 'Enter a custom schema.org microdata object type.', 'piratenkleider' ),
+                  'title'   => __( 'Custom Item Type 2', 'piratenkleider' ),
+                  'label'   => __( 'Enter a custom schema.org microdata item type.', 'piratenkleider' ),
                   'parent'  => 'meta',
               ),
 	       'linktipps'  => array(
