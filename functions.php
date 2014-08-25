@@ -1725,6 +1725,12 @@ function piratenkleider_html_tag_schema() {
       isset($options['meta-itemprop-contactpage']) && !empty($options['meta-itemprop-contactpage']) 
         ? $ctcpage = trim($options['meta-itemprop-contactpage']) : $ctcpage = false;
 
+      isset($options['meta-itemtype-cstptype1']) && !empty($options['meta-itemtype-cstptype1']) 
+        ? $cstptype1 = trim($options['meta-itemtype-cstptype1']) : $cstptype1 = false;
+
+      isset($options['meta-itemtype-cstptype2']) && !empty($options['meta-itemtype-cstptype2']) 
+        ? $cstptype2 = trim($options['meta-itemtype-cstptype2']) : $cstptype2 = false;  
+
         // Is about page
       if (is_page($abtpage) && $abtpage) {
         $type = 'AboutPage';
@@ -1736,21 +1742,22 @@ function piratenkleider_html_tag_schema() {
         // Is person
       } elseif (is_singular('person')) {
         $type = 'Person';
+        
+        // Is custom type 1
+      } elseif (is_singular($cstptype1) && $cstptype1){  
+        $type = ''. trim($options['meta-itemtype-cstobject1']) .'';
 
+        // Is custom type 2
+      } elseif (is_singular($cstptype2) && $cstptype2){  
+        $type = ''. trim($options['meta-itemtype-cstobject2']) .'';
+        
         // Is some other page
-      } elseif (is_page()) {
-        $type = 'WebPage';
+      } elseif (is_single()) {
+        $type = 'Article';
 
       } else {
-
-/*
-          // Is event
-      } elseif (is_singular('event')) {
-
-          $type = 'Event';    
-*/
-          // Is single post
-       $type = "Article";
+        // Is single post
+       $type = "WebPage";
 
      }
 

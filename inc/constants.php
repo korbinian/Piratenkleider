@@ -2308,6 +2308,30 @@ $setoptions = array(
                   'label'   => __( 'Enter ID or title to set the object type of this page to "ContactPage".', 'piratenkleider' ),
                   'parent'  => 'meta',
               ),
+            'meta-itemtype-cstptype1' => array(
+                  'type'    => 'text',
+                  'title'   => __( 'Custom Post Type 1', 'piratenkleider' ),
+                  'label'   => __( 'Enter a custom post type.', 'piratenkleider' ),
+                  'parent'  => 'meta',
+              ),
+            'meta-itemtype-cstobject1' => array(
+                  'type'    => 'text',
+                  'title'   => __( 'Custom Object Type 1', 'piratenkleider' ),
+                  'label'   => __( 'Enter a custom schema.org microdata object type.', 'piratenkleider' ),
+                  'parent'  => 'meta',
+              ),
+            'meta-itemtype-cstptype2' => array(
+                  'type'    => 'text',
+                  'title'   => __( 'Custom Post Type 2', 'piratenkleider' ),
+                  'label'   => __( 'Enter a custom post type.', 'piratenkleider' ),
+                  'parent'  => 'meta',
+              ),
+            'meta-itemtype-cstobject2' => array(
+                  'type'    => 'text',
+                  'title'   => __( 'Custom Object Type 2', 'piratenkleider' ),
+                  'label'   => __( 'Enter a custom schema.org microdata object type.', 'piratenkleider' ),
+                  'parent'  => 'meta',
+              ),
 	       'linktipps'  => array(
                   'type'    => 'section',
                   'title'   => __('Bookmarks', 'piratenkleider'),                   
