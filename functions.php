@@ -1719,17 +1719,17 @@ function piratenkleider_html_tag_schema() {
 
     if (is_single() || is_page()) {
 
-      isset($options['meta-itemprop-aboutpage']) && !empty($options['meta-itemprop-aboutpage']) 
-        ? $abtpage = trim($options['meta-itemprop-aboutpage']) : $abtpage = false;
+      isset($options['meta-itemtype-aboutpage']) && !empty($options['meta-itemtype-aboutpage']) 
+        ? $abtpage = trim($options['meta-itemtype-aboutpage']) : $abtpage = false;
 
-      isset($options['meta-itemprop-contactpage']) && !empty($options['meta-itemprop-contactpage']) 
-        ? $ctcpage = trim($options['meta-itemprop-contactpage']) : $ctcpage = false;
+      isset($options['meta-itemtype-contactpage']) && !empty($options['meta-itemtype-contactpage']) 
+        ? $ctcpage = trim($options['meta-itemtype-contactpage']) : $ctcpage = false;
 
-      isset($options['meta-itemtype-cstptype1']) && !empty($options['meta-itemtype-cstptype1']) 
-        ? $cstptype1 = trim($options['meta-itemtype-cstptype1']) : $cstptype1 = false;
+      isset($options['meta-itemtype-ptype1']) && !empty($options['meta-itemtype-ptype1']) 
+        ? $cstptype1 = trim($options['meta-itemtype-ptype1']) : $cstptype1 = false;
 
-      isset($options['meta-itemtype-cstptype2']) && !empty($options['meta-itemtype-cstptype2']) 
-        ? $cstptype2 = trim($options['meta-itemtype-cstptype2']) : $cstptype2 = false;  
+      isset($options['meta-itemtype-ptype2']) && !empty($options['meta-itemtype-ptype2']) 
+        ? $cstptype2 = trim($options['meta-itemtype-ptype2']) : $cstptype2 = false;  
 
         // Is about page
       if (is_page($abtpage) && $abtpage) {
