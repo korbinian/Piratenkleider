@@ -456,7 +456,7 @@ function piratenkleider_addmetatags() {
     global $options;
 
     $output = "";
-    $output .= '<meta charset="'.get_bloginfo('charset').'">'."\n";
+    $output .= '<meta http-equiv="Content-Type" content="text/html; charset='.get_bloginfo('charset').'" />'."\n";
     $output .= '<!--[if IE]> <meta http-equiv="X-UA-Compatible" content="IE=9"> <![endif]-->'."\n";
     $output .= '<meta name="viewport" content="width=device-width, initial-scale=1.0">'."\n";    
     if ((isset( $options['meta-description'] )) && ( strlen(trim($options['meta-description']))>1 )) {
@@ -468,7 +468,7 @@ function piratenkleider_addmetatags() {
     if ((isset( $options['meta-verify-v1'] )) && ( strlen(trim($options['meta-verify-v1']))>1 )) {
         $output .= '<meta name="verify-v1" content="'.$options['meta-verify-v1'].'">'."\n";
     }
-
+		
     $tags = '';
     if ($options['aktiv-autokeywords']) {   
         $posttags = get_the_tags();
@@ -503,7 +503,7 @@ function piratenkleider_addmetatags() {
     echo $output;
 }
 
-add_action('wp_head', 'piratenkleider_addmetatags');
+add_action('wp_head', 'piratenkleider_addmetatags',1);
 
 
 
@@ -1070,18 +1070,19 @@ function piratenkleider_post_datumsbox() {
         $out .= '<div class="commentbubble">'; 
         $link = get_comments_link();
         $out .= '<meta itemprop="interactionCount" content="UserComments:'.$num_comments.'"/><a itemprop="discussionUrl" href="'.$link.'">'.$num_comments.'<span class="skip">';
-        if ($num_comments>1) {
-            $out .= __('Comments', 'piratenkleider' ).'</span></a>';
+        if ($num_comments==1) {
+            $out .= ' '.__('Comment', 'piratenkleider' ).'</span></a>';
         } else {
-            $out .= __('Comment', 'piratenkleider' ).'</span></a>';
+            $out .= ' '.__('Comments', 'piratenkleider' ).'</span></a>';
         }
         $out .= "</div>\n"; 
      } 
     $out .= '<div class="cal-icon">';
-    $out .= '<meta datetime="'.get_the_time('Y-m-j').'T'.get_the_time('H:i:s').'" itemprop="datePublished" />';
+    $out .= '<time datetime="'. esc_attr( get_the_modified_date('c') ).'" itemprop="datePublished">';
     $out .= '<span class="day">'.get_the_time('j.').'</span>';
     $out .= '<span class="month">'.get_the_time('m.').'</span>';
     $out .= '<span class="year">'.get_the_time('Y').'</span>';
+    $out .= '</time>';
     $out .= "</div>\n";
     $out .= '</div>';
     return $out;

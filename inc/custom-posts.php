@@ -190,7 +190,7 @@ function linktipp_display ($linktipp, $addclass = '') {
        if ($options['linktipps-titlepos']!=1) { 
 	  $out .=  '<header class="post-title p3-cbox">';
 	      if (mb_strlen(trim($linktipp_untertitel))>1) {
-		  $out .= '<hgroup>';
+		  $out .= '<div class="hgroup">';
 	      }
 	      if (($options['linktipps-subtitlepos']==0) && (mb_strlen(trim($linktipp_untertitel))>1)) {
 		  $out .= '<h3 class="subtitle">'.$linktipp_untertitel.'</h3>';
@@ -208,7 +208,7 @@ function linktipp_display ($linktipp, $addclass = '') {
 
 	      }
 	      if (mb_strlen(trim($linktipp_untertitel))>1) {
-		  $out .= '</hgroup>';
+		  $out .= '</div>';
 	      }
 	  $out .= '</header>';  
 	  $out .= "\n";
@@ -241,7 +241,7 @@ function linktipp_display ($linktipp, $addclass = '') {
 	   if ($options['linktipps-titlepos']==1) { 
 	      $out .= '<header class="post-title p3-cbox">';
 	      if (str_len(trim($linktipp_untertitel))>1) {
-		  $out .= '<hgroup>';
+		  $out .= '<div class="hgroup">';
 	      }
 	      if (($options['linktipps-subtitlepos']==0) && (str_len(trim($linktipp_untertitel))>1)) {
 		  $out .= '<h3 class="subtitle">'.$linktipp_untertitel.'</h3>';
@@ -257,7 +257,7 @@ function linktipp_display ($linktipp, $addclass = '') {
 		  $out .= '<h3 class="subtitle">'.$linktipp_untertitel.'</h3>';
 	      }
 	      if (str_len(trim($linktipp_untertitel))>1) {
-		  $out .= '</hgroup>';
+		  $out .= '</div>';
 	      }
 	      $out .= '</header>'; 
 	       $out .= "\n";

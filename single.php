@@ -118,9 +118,7 @@
 		'inside' => '',
 		'outside' => '',
 		'after' => '</li>',
-		'rel' => 'follow',
 		'type' => 'post',
-		'image' => array(1, 1),
 		'message' => __('No more entries in this category found.','piratenkleider')
 		)
 		) ?>
