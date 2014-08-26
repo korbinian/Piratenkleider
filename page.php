@@ -3,7 +3,7 @@
     global $options;
 ?>
 
-<div class="section content" id="main-content">
+<div class="section content" id="main-content" itemprop="mainContentOfPage">
   <div class="row">
     <div class="content-primary" role="main">     
 	
@@ -42,9 +42,9 @@
 		    }
 		    ?>
 			<header>
-			    <h1 class="post-title"><span><?php the_title(); ?></span></h1>
+			    <h1 class="post-title"><span itemprop="name"><?php the_title(); ?></span></h1>
 			</header>	    
-		       <div class="symbolbild"><img src="<?php echo $image_url ?>" alt="">
+		       <div class="symbolbild"><img src="<?php echo $image_url ?>" alt="" itemprop="image">
                         <?php if (isset($attribs["credits"]) && (strlen($attribs["credits"])>1)) {
                            echo '<div class="caption">'.$attribs["credits"].'</div>';  
                         }  ?>
@@ -54,13 +54,13 @@
 
 	     <div class="skin">
 	    <?php if (!(isset($image_url) && (strlen($image_url)>4))) { ?>
-		<header><h1 class="post-title"><span><?php the_title(); ?></span></h1></header>
+		<header><h1 class="post-title"><span itemprop="name"><?php the_title(); ?></span></h1></header>
 	    <?php } 
-		echo '<article>';
+		echo '<article itemprop="text">';
 		   the_content(); 
 		echo '</article>';
 	    if ($options['aktiv-commentsonpages']==1) {
-		echo '<div class="post-comments" id="comments">';
+		echo '<div class="post-comments" id="comments" itemprop="comment" itemscope itemtype="http://schema.org/Comment">';
 		 comments_template( '', true );
 		echo '</div>';  
 	    }    

@@ -192,7 +192,7 @@ function piratenkleider_setup() {
 		$relvideo = '?rel=0';
 	    }
 		$embed = sprintf(                                
-				'<div class="embed-youtube"><p>YouTube-Video: <a href="https://www.youtube.com/watch?v=%2$s">https://www.youtube.com/watch?v=%2$s</a></p><iframe src="https://www.youtube-nocookie.com/embed/%2$s%5$s" width="%3$spx" height="%4$spx" frameborder="0" scrolling="no" marginwidth="0" marginheight="0"></iframe></div>',
+				'<div class="embed-youtube" itemprop="video" itemscope itemtype="http://schema.org/VideoObject"><p>YouTube-Video: <a href="https://www.youtube.com/watch?v=%2$s">https://www.youtube.com/watch?v=%2$s</a></p><iframe itemprop="embedUrl" src="https://www.youtube-nocookie.com/embed/%2$s%5$s" width="%3$spx" height="%4$spx" frameborder="0" scrolling="no" marginwidth="0" marginheight="0"></iframe></div>',
 				get_template_directory_uri(),
 				esc_attr($matches[1]),
 				$defaultoptions['yt-content-width'],
@@ -740,39 +740,42 @@ function piratenkleider_comment( $comment, $args, $depth ) {
                 case '' :
         ?>
         <li <?php comment_class(); ?> id="li-comment-<?php comment_ID(); ?>">
-                <div id="comment-<?php comment_ID(); ?>">
+          <div id="comment-<?php comment_ID(); ?>">
+            <article itemprop="comment" itemscope itemtype="http://schema.org/UserComments">
+              <header>  
                 <div class="comment-details">
                     
-                <div class="comment-author vcard">
+                <div class="comment-author vcard" itemprop="creator" itemscope itemtype="http://schema.org/Person">
                     <?php if ($options['aktiv-avatar']==1) {
-                        echo '<div class="avatar">';
+                        echo '<div class="avatar" itemprop="image">';
                         echo get_avatar( $comment, 48, $defaultoptions['src-default-avatar']); 
                         echo '</div>';   
                     } 
-                    printf( __( '%s <span class="says">commented at</span>', 'piratenkleider' ), sprintf( '<cite class="fn">%s</cite>', get_comment_author_link() ) ); 
+                    printf( __( '%s <span class="says">commented at</span>', 'piratenkleider' ), sprintf( '<cite class="fn" itemprop="name">%s</cite>', get_comment_author_link() ) ); 
                     ?>
                 </div><!-- .comment-author .vcard -->
                 <?php if ( $comment->comment_approved == '0' ) : ?>
                         <em><?php _e( 'Comment waits for approval.', 'piratenkleider' ); ?></em>
                         <br />
                 <?php endif; ?>
-
-                <div class="comment-meta commentmetadata"><a href="<?php echo esc_url( get_comment_link( $comment->comment_ID ) ); ?>">
-                   <?php
+                <meta itemprop="commentTime" datetime="<?php echo get_comment_date('Y-m-d') ?>T<?php comment_time('H:i:s'); ?>" /> 
+                <div class="comment-meta commentmetadata"><a itemprop="url" href="<?php echo esc_url( get_comment_link( $comment->comment_ID ) ); ?>">
+                    <?php
                           /* translators: 1: date, 2: time */
                        printf( __( '%1$s at %2$s', 'piratenkleider' ), get_comment_date(),  get_comment_time() ); ?></a> Folgendes:<?php edit_comment_link( __( '(Edit)', 'piratenkleider' ), ' ' );
                     ?>
+                  
                 </div><!-- .comment-meta .commentmetadata -->
                 </div>
-
-                <div class="comment-body"><?php comment_text(); ?></div>
+              </header>
+                <div class="comment-body" itemprop="commentText"><?php comment_text(); ?></div>
                 <?php if ($options['aktiv-commentreplylink']) { ?>
                 <div class="reply">
                         <?php comment_reply_link( array_merge( $args, array( 'depth' => $depth, 'max_depth' => $args['max_depth'] ) ) ); ?>                       
                 </div> <!-- .reply -->
                 <?php } ?>
-
-        </div><!-- #comment-##  -->
+            </article>
+          </div><!-- #comment-##  -->
 
         <?php
                         break;
@@ -1066,7 +1069,7 @@ function piratenkleider_post_datumsbox() {
      if (($num_comments>0) || ( $options['zeige_commentbubble_null'])) { 
         $out .= '<div class="commentbubble">'; 
         $link = get_comments_link();
-        $out .= '<a href="'.$link.'">'.$num_comments.'<span class="skip"> ';
+        $out .= '<meta itemprop="interactionCount" content="UserComments:'.$num_comments.'"/><a itemprop="discussionUrl" href="'.$link.'">'.$num_comments.'<span class="skip">';
         if ($num_comments>1) {
             $out .= __('Comments', 'piratenkleider' ).'</span></a>';
         } else {
@@ -1075,6 +1078,7 @@ function piratenkleider_post_datumsbox() {
         $out .= "</div>\n"; 
      } 
     $out .= '<div class="cal-icon">';
+    $out .= '<meta datetime="'.get_the_time('Y-m-j').'T'.get_the_time('H:i:s').'" itemprop="datePublished" />';
     $out .= '<span class="day">'.get_the_time('j.').'</span>';
     $out .= '<span class="month">'.get_the_time('m.').'</span>';
     $out .= '<span class="year">'.get_the_time('Y').'</span>';
@@ -1110,7 +1114,7 @@ if ( ! function_exists( 'piratenkleider_post_autorinfo' ) ) :
  */
 function piratenkleider_post_autorinfo() {
     $out = ' <span class="meta-prep-author">'.__('Author','piratenkleider').':</span> ';
-    $out .= '<span class="author vcard"><a class="url fn n" href="';
+    $out .= '<span class="author vcard" itemprop="creator"><a rel="author" class="url fn n" href="';
     $out .= get_author_posts_url( get_the_author_meta( 'ID' ) );
     $out .= '">';
     $out .= get_the_author_meta('display_name');
@@ -1126,11 +1130,11 @@ if ( ! function_exists( 'piratenkleider_post_taxonominfo' ) ) :
 function piratenkleider_post_taxonominfo() {
          $tag_list = get_the_tag_list( '', ', ' );
         if ( $tag_list ) {
-                $posted_in = __( 'Category: %1$s. Tags: %2$s. <br><a href="%3$s" title="%4$s" rel="bookmark">Permalink</a> for this entry.', 'piratenkleider' );
+                $posted_in = __( 'Category: <span itemprop="articleSection">%1$s</span>. Tags: <span itemprop="keywords">%2$s</span>. <br><a href="%3$s" title="%4$s" rel="bookmark" itemprop="url">Permalink</a> for this entry.', 'piratenkleider' );
         } elseif ( is_object_in_taxonomy( get_post_type(), 'category' ) ) {
-                $posted_in = __( 'Category: %1$s. <br><a href="%3$s" title="%4$s" rel="bookmark">Permalink</a> for this entry.', 'piratenkleider' );
+                $posted_in = __( 'Category: <span itemprop="articleSection">%1$s</span>. <br><a href="%3$s" title="%4$s" rel="bookmark" itemprop="url">Permalink</a> for this entry.', 'piratenkleider' );
         } else {
-                $posted_in = __( '<a href="%3$s" title="%4$s" rel="bookmark">Permalink</a> for this entry.', 'piratenkleider' );
+                $posted_in = __( '<a href="%3$s" title="%4$s" rel="bookmark" itemprop="url">Permalink</a> for this entry.', 'piratenkleider' );
         }
         // Prints the string, replacing the placeholders.
         printf(
@@ -1552,7 +1556,7 @@ function piratenkleider_breadcrumb() {
   $pretitletextstart   = '<span>';
   $pretitletextend     = '</span>';
   
-  echo '<div id="crumbs">'; 
+  echo '<div id="crumbs" itemprop="breadcrumb">'; 
   if ( !is_home() && !is_front_page() || is_paged() ) { 
     
     global $post;
@@ -1702,6 +1706,69 @@ function piratenkleider_paging_bar($total = 1, $perpage =1) {
       );
      }
   }
+}
+
+// select the right object type for the page
+
+function piratenkleider_html_tag_schema() {
+
+    global $options;
+
+    $schema = 'http://schema.org/';        
+
+
+    if (is_single() || is_page()) {
+
+      isset($options['meta-itemprop-aboutpage']) && !empty($options['meta-itemprop-aboutpage']) 
+        ? $abtpage = trim($options['meta-itemprop-aboutpage']) : $abtpage = false;
+
+      isset($options['meta-itemprop-contactpage']) && !empty($options['meta-itemprop-contactpage']) 
+        ? $ctcpage = trim($options['meta-itemprop-contactpage']) : $ctcpage = false;
+
+      isset($options['meta-itemtype-cstptype1']) && !empty($options['meta-itemtype-cstptype1']) 
+        ? $cstptype1 = trim($options['meta-itemtype-cstptype1']) : $cstptype1 = false;
+
+      isset($options['meta-itemtype-cstptype2']) && !empty($options['meta-itemtype-cstptype2']) 
+        ? $cstptype2 = trim($options['meta-itemtype-cstptype2']) : $cstptype2 = false;  
+
+        // Is about page
+      if (is_page($abtpage) && $abtpage) {
+        $type = 'AboutPage';
+
+        // Is contact page
+      } elseif (is_page($ctcpage) && $ctcpage) {
+        $type = 'ContactPage';
+
+        // Is person
+      } elseif (is_singular('person')) {
+        $type = 'Person';
+        
+        // Is custom type 1
+      } elseif (is_singular($cstptype1) && $cstptype1){  
+        $type = ''. trim($options['meta-itemtype-cst1']) .'';
+
+        // Is custom type 2
+      } elseif (is_singular($cstptype2) && $cstptype2){  
+        $type = ''. trim($options['meta-itemtype-cst2']) .'';
+        
+        // Is some other page
+      } elseif (is_single()) {
+        $type = 'Article';
+
+      } else {
+        // Is single post
+       $type = "WebPage";
+
+     }
+
+    } else {
+
+        // Is search results page or other
+      is_search() ? $type = 'SearchResultsPage' : $type = 'WebPage';
+
+    }
+
+    echo 'itemscope itemtype="' . $schema . $type . '"';
 }
 
 /* Compatibility for old templates, former Version 3.2 */

@@ -37,7 +37,7 @@
             }
             ?>    		    		    		        
                <h1 class="post-title"><span><?php printf( __( 'Kategorie %s', 'piratenkleider' ), '' . single_cat_title( '', false ) . '' ); ?></span></h1>
-               <div class="symbolbild"><img src="<?php echo $image_url ?>" alt="">
+               <div class="symbolbild"><img src="<?php echo $image_url ?>" alt="" itemprop="image">
 		   <?php if (($options['category-teaser']==0) && isset($attribs["credits"]) && (strlen($attribs["credits"])>1)) {
                            echo '<div class="caption">'.$attribs["credits"].'</div>';  
                         }  ?></div>	 	
@@ -77,7 +77,8 @@
       endwhile;
       ?>
 	  
-	<div class="skin">    
+	<div class="skin" itemprop="mainContentOfPage">  
+    <meta itemprop="name" content="<?php printf( __( 'Category %s', 'piratenkleider' ), '' . single_cat_title( '', false ) . '' );?>" />
          <?php    
 	 if (!(isset($image_url) && (strlen($image_url)>4)) && (!($options['category-teaser']))) {
 		echo '<h1 class="post-title"><span>';

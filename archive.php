@@ -27,7 +27,7 @@
 		    echo '<div class="content-header">';
 		}
 		?>    		    		    		        
-		   <h1 class="post-title"><span><?php if ( is_day() ) : ?>
+		   <h1 class="post-title"><span itemprop="name"><?php if ( is_day() ) : ?>
                         <?php printf( __( 'Archive by day: %s', 'piratenkleider' ), get_the_date() ); ?>
                      <?php elseif ( is_month() ) : ?>
                         <?php printf( __( 'Archive by month: %s', 'piratenkleider' ), get_the_date('F Y') ); ?>
@@ -40,16 +40,16 @@
                             _e( 'Archive', 'piratenkleider' ); 
                          } 
                         endif; ?></span></h1>
-		   <div class="symbolbild"><img src="<?php echo $image_url ?>" alt="">
+		   <div class="symbolbild"><img src="<?php echo $image_url ?>" alt="" itemprop="image">
 			<?php if (isset($attribs["credits"]) && (strlen($attribs["credits"])>1)) {
                            echo '<div class="caption">'.$attribs["credits"].'</div>';  
                         }  ?>		       
 		   </div>
 		</div>  
-                <div class="skin">
+                <div class="skin" itemprop="mainContentOfPage">
 	    <?php } else { ?>
-                <div class="skin">
-                 <h1 class="post-title"><span><?php if ( is_day() ) : ?>
+                <div class="skin" itemprop="mainContentOfPage">
+                 <h1 class="post-title"><span itemprop="name"><?php if ( is_day() ) : ?>
                         <?php printf( __( 'Archive by day: %s', 'piratenkleider' ), get_the_date() ); ?>
                      <?php elseif ( is_month() ) : ?>
                         <?php printf( __( 'Archive by month: %s', 'piratenkleider' ), get_the_date('F Y') ); ?>

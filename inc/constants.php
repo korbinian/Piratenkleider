@@ -138,6 +138,8 @@ $defaultoptions = array(
     'person-thumbnail_width'		    => 200,
     'person-thumbnail_height'		    => 300,
     'person-thumbnail_crop'		    => 1,
+
+    
     'sidebar-thumbnail_width'		    => 270,
     'sidebar-thumbnail_height'		    => 360,
     'sidebar-thumbnail_crop'		    => 1,
@@ -337,6 +339,11 @@ $default_socialmedia_liste = array(
 	'content'  => get_bloginfo( 'rss2_url' ),
 	'active' => 1,
     ),
+    'friendica' => array(
+    'name' => 'Friendica',
+    'content'  => '',
+    'active' => 0,
+    ),
 ); 
 
 
@@ -513,7 +520,7 @@ $default_alternativestyles = array(
         )
      ),
      __('International', 'piratenkleider' ) => array(
-         'title' => __('Pirate Parties International', 'piratenkleider' ),
+         'title' => __('Pirate Party International', 'piratenkleider' ),
          'url'  => 'http://www.pp-international.net/',
          'sublist' => array(
              __('Australia', 'piratenkleider' ) => 'http://pirateparty.org.au/',
@@ -567,7 +574,7 @@ $default_alternativestyles = array(
          )
      ), 
       __('International (with flags)', 'piratenkleider' ) => array(
-         'title' => __('Pirate Parties International', 'piratenkleider' ),
+         'title' => __('Pirate Party International', 'piratenkleider' ),
          'url'  => 'http://www.pp-international.net/',
          'sublist' => array(
             '<span class="flagicon-au"></span> '. __('Australia', 'piratenkleider' ) => 'http://pirateparty.org.au/',
@@ -2287,6 +2294,42 @@ $setoptions = array(
                   'title'   => __( 'Use tags for keywords', 'piratenkleider' ),
                   'label'   => __( 'Generates keywords using known tags.', 'piratenkleider'),
                   'default' => $defaultoptions['aktiv-autokeywords'],
+                  'parent'  => 'meta',
+              ),           
+            'meta-itemprop-aboutpage' => array(
+                  'type'    => 'text',
+                  'title'   => __( 'Itemprop AboutPage', 'piratenkleider' ),
+                  'label'   => __( 'Enter ID or title to set the item type of this page to "AboutPage".', 'piratenkleider' ),
+                  'parent'  => 'meta',
+              ),
+            'meta-itemprop-contactpage' => array(
+                  'type'    => 'text',
+                  'title'   => __( 'Itemprop ContactPage', 'piratenkleider' ),
+                  'label'   => __( 'Enter ID or title to set the item type of this page to "ContactPage".', 'piratenkleider' ),
+                  'parent'  => 'meta',
+              ),
+            'meta-itemtype-cstptype1' => array(
+                  'type'    => 'text',
+                  'title'   => __( 'Custom Post Type 1', 'piratenkleider' ),
+                  'label'   => __( 'Enter a custom post type.', 'piratenkleider' ),
+                  'parent'  => 'meta',
+              ),
+            'meta-itemtype-cst1' => array(
+                  'type'    => 'text',
+                  'title'   => __( 'Custom Item Type 1', 'piratenkleider' ),
+                  'label'   => __( 'Enter a custom schema.org microdata item type.', 'piratenkleider' ),
+                  'parent'  => 'meta',
+              ),
+            'meta-itemtype-cstptype2' => array(
+                  'type'    => 'text',
+                  'title'   => __( 'Custom Post Type 2', 'piratenkleider' ),
+                  'label'   => __( 'Enter a custom post type.', 'piratenkleider' ),
+                  'parent'  => 'meta',
+              ),
+            'meta-itemtype-cst2' => array(
+                  'type'    => 'text',
+                  'title'   => __( 'Custom Item Type 2', 'piratenkleider' ),
+                  'label'   => __( 'Enter a custom schema.org microdata item type.', 'piratenkleider' ),
                   'parent'  => 'meta',
               ),
 	       'linktipps'  => array(

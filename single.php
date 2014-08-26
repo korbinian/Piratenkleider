@@ -40,9 +40,9 @@
 		}
 		?>  
 		    <header>
-			<h1 class="post-title"><span><?php the_title(); ?></span></h1>
+			<h1 class="post-title"><span itemprop="name"><?php the_title(); ?></span></h1>
 		    </header>    
-		   <div class="symbolbild"><img src="<?php echo $image_url ?>" alt="">
+		   <div class="symbolbild"><img src="<?php echo $image_url ?>" alt="" itemprop="image">
                     <?php if (isset($attribs["credits"]) && (strlen($attribs["credits"])>1)) {
                            echo '<div class="caption">'.$attribs["credits"].'</div>';  
                         }  ?>
@@ -52,7 +52,7 @@
       
       <div class="skin">
        <?php if (!(isset($image_url) && (strlen($image_url)>4))) { ?>
-	    <h1 class="post-title"><span><?php the_title(); ?></span></h1>
+	    <h1 class="post-title"><span itemprop="name"><?php the_title(); ?></span></h1>
 	<?php } ?>
  
         <section <?php post_class(); ?> id="post-<?php the_ID(); ?>">
@@ -65,7 +65,7 @@
                 }				
 		echo piratenkleider_post_datumsbox();  
                 ?>  
-	      <article class="post-entry">
+	      <article class="post-entry" itemprop="articleBody">
 		<?php the_content(); ?>
 	      </article>
              <?php 

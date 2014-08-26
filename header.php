@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <!--[if IE 8 ]>  <html <?php language_attributes(); ?> class="ie8"> <![endif]-->
-<!--[if (gt IE 9)|!(IE)]><!--> <html <?php language_attributes(); ?>> <!--<![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--> <html <?php piratenkleider_html_tag_schema(); ?> <?php language_attributes(); ?>> <!--<![endif]-->
 <head>
 <?php          
   global $defaultoptions;
@@ -119,7 +119,7 @@
                          <?php   } ?>
                 </div>
                 
-                <nav aria-label="<?php _e( 'Navigation', 'piratenkleider' ); ?>" class="nav-main" id="nav">
+                <nav aria-label="<?php _e( 'Navigation', 'piratenkleider' ); ?>" class="nav-main" id="nav" role="navigation" itemscope itemtype="http://schema.org/SiteNavigationElement">
                             <h2 class="skip"><?php _e( 'Navigation', 'piratenkleider' ); ?></h2>
                             <?php 
                             if ( has_nav_menu( 'primary' ) ) {
