@@ -4,6 +4,7 @@ Changelog
 (since version 3.2; Former changes look at github.com/Piratenkleider/)
 
 Version 3.2.19:
+* Bugfix: #178: enforce relative urls for images and make heigh relative; no cropping for images anymore.
 * Bugfix: #181 content in templates
 * Bugfix: #183 Delicious-Icon
 * Enhancement: more css validation; removed IE7 hacks

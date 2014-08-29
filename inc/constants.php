@@ -146,10 +146,8 @@ $defaultoptions = array(
     'sidebar-thumbnail_crop'		    => 1,
     'sidebar-thumbnail_name'		    => 'sidebar-thumb',
 
-    'bannerlink-width'		    => 300,
-    'bannerlink-height'		    => 300,    
-    'bannerlink_crop'		    => 1,
-    'bannerlink_name'		    => 'bannerlink-thumb',
+    'bannerlink-width'			    => 300,
+    'bannerlink_name'			    => 'bannerlink-thumb',
     
     'sidebar-steckbrief-maxwidth'	    => 270,
     'sidebar-steckbrief-maxheight'	    => 360,
