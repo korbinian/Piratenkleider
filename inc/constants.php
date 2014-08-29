@@ -654,7 +654,6 @@ $default_alternativestyles = array(
          'url'  => 'http://www.piratenpartei-bayern.de/',
          'sublist' => array(
              __('<abbr title="District Association">DA</abbr>','piratenkleider').' Mittelfranken' => 'http://piraten-mfr.de/',
-             __('<abbr title="District Association">DA</abbr>','piratenkleider').' Niederbayern' => 'http://niederbayern.piratenpartei-bayern.de/',
              __('<abbr title="District Association">DA</abbr>','piratenkleider').' Oberbayern' => 'http://oberbayern.piratenpartei.de/',
              __('<abbr title="District Association">DA</abbr>','piratenkleider').' Oberfranken' => 'http://piraten-oberfranken.de/',
              __('<abbr title="District Association">DA</abbr>','piratenkleider').' Oberpfalz' => 'http://oberpfalz.piratenpartei.de/',
