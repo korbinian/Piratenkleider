@@ -101,6 +101,7 @@ $defaultoptions = array(
     'artikelstream-numfullwidth-main'       => 1,
     'artikelstream-numfullwidth-second'     => 1,
     'artikelstream-show-widget'		    => 0,
+    'artikelstream-content-allow3column'    => 0, 
     'categoryindex-teaserlength'            => 170,
     'categoryindex-numlinklist'		    => 5,
     
@@ -489,7 +490,7 @@ $default_fonts = array(
 $default_alternativestyles = array(
     'style.css'	    => __( 'Default Style', 'piratenkleider' ),
     'sample.css'    => __( 'Empty CSS', 'piratenkleider' ),
-    'scapegoat.css' => __( 'Scapegoat-Adaption (1.4)', 'piratenkleider' ),
+    'scapegoat.css' => __( 'Scapegoat-Adaption (1.5)', 'piratenkleider' ),
 );
 
 /*
@@ -520,7 +521,7 @@ $default_alternativestyles = array(
         )
      ),
      __('International', 'piratenkleider' ) => array(
-         'title' => __('Pirate Party International', 'piratenkleider' ),
+         'title' => __('Pirate Parties International', 'piratenkleider' ),
          'url'  => 'http://www.pp-international.net/',
          'sublist' => array(
              __('Australia', 'piratenkleider' ) => 'http://pirateparty.org.au/',
@@ -574,7 +575,7 @@ $default_alternativestyles = array(
          )
      ), 
       __('International (with flags)', 'piratenkleider' ) => array(
-         'title' => __('Pirate Party International', 'piratenkleider' ),
+         'title' => __('Pirate Parties International', 'piratenkleider' ),
          'url'  => 'http://www.pp-international.net/',
          'sublist' => array(
             '<span class="flagicon-au"></span> '. __('Australia', 'piratenkleider' ) => 'http://pirateparty.org.au/',
@@ -1297,7 +1298,16 @@ $setoptions = array(
                   'default' => $defaultoptions['teaser-dateline-halfwidth'],
                   'parent'  => 'auszuege'
               ), 
-                          
+                    
+	      'artikelstream-content-allow3column' => array(
+                  'type'    => 'bool',
+                  'title'   => __( 'Two/Three column view', 'piratenkleider' ),
+                  'label'   => __( 'On big sized screen view (above 1350px resolution) use three column excerpts.', 'piratenkleider' ),
+                  'default' => $defaultoptions['artikelstream-content-allow3column'],
+                  'parent'  => 'auszuege'
+              ), 	       
+	       
+	       
               'sliderpars'  => array(
                   'type'    => 'section',
                   'title'   => __( 'Slider', 'piratenkleider' ),                      

@@ -58,13 +58,13 @@
   background-color: #2d7dc5;
   background-image: -moz-linear-gradient(top, #2d7dc5, #24639b);
   background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #2d7dc5), color-stop(1, #24639b));
-  background-image: linear-gradient(top, #2d7dc5, #24639b); }
+  background-image: linear-gradient(#2d7dc5, #24639b); }
 #ics-calendar-widget-next:hover, 
 #ics-calendar-widget-prev:hover {
     background-color: #2d7dc5;
     background-image: -moz-linear-gradient(top, #2d7dc5, #1a4872);
     background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #2d7dc5), color-stop(1, #1a4872));
-    background-image: linear-gradient(top, #2d7dc5, #1a4872);
+    background-image: linear-gradient( #2d7dc5, #1a4872);
     -webkit-transition: all 0.2s ease-in-out;
     -moz-transition: all 0.2s ease-in-out;
     -ms-transition: all 0.2s ease-in-out;
@@ -105,12 +105,12 @@
     background-color: #2d7dc5;
     background-image: -moz-linear-gradient(top, #2d7dc5, #24639b);
     background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #2d7dc5), color-stop(1, #24639b));
-    background-image: linear-gradient(top, #2d7dc5, #24639b); }
+    background-image: linear-gradient(#2d7dc5, #24639b); }
   .ics-calendar-header a:hover {
       background-color: #2d7dc5;
       background-image: -moz-linear-gradient(top, #2d7dc5, #1a4872);
       background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #2d7dc5), color-stop(1, #1a4872));
-      background-image: linear-gradient(top, #2d7dc5, #1a4872);
+      background-image: linear-gradient(#2d7dc5, #1a4872);
       -webkit-transition: all 0.2s ease-in-out;
       -moz-transition: all 0.2s ease-in-out;
       -ms-transition: all 0.2s ease-in-out;

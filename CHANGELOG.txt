@@ -3,6 +3,14 @@ Theme Piratenkleider
 Changelog 
 (since version 3.2; Former changes look at github.com/Piratenkleider/)
 
+Version 3.2.19:
+* Bugfix: #181 content in templates
+* Bugfix: #183 Delicious-Icon
+* Enhancement: more css validation; removed IE7 hacks
+* Enhancement: #172 - PoliticsHead Font as default in Scapegoat
+* Enhancement: Switch for setting three/two columns for startpage on big sized
+  screen on default stream
+
 Version 3.2.18:
 * bugfix: invalid html5 tags/properties
 * bugfix: invalid css properties in scapegoat css
