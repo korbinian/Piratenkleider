@@ -13,8 +13,8 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: piratenkleider
 */
 
-/* @import url(css/piratenkleider.css); */
-@import url(css/piratenkleider.min.css);
+ @import url(css/piratenkleider.css); 
+/* @import url(css/piratenkleider.min.css); */
 
 /* @import url(css/basemod_mediaqueries.css); */
 @import url(css/basemod_mediaqueries.min.css);

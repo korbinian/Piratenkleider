@@ -151,7 +151,9 @@ party to the smallest number of people we need to do the job.
 </p>
 
 <?php }
-         the_content(); 
+          if ( have_posts() ) while ( have_posts() ) : the_post(); 
+	  the_content(); 
+        endwhile;  
         edit_post_link( __( 'Edit', 'piratenkleider' ), '', '' ); 
    
  ?>     
