@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <!--[if IE 8 ]>  <html <?php language_attributes(); ?> class="ie8"> <![endif]-->
-<!--[if (gt IE 9)|!(IE)]><!--> <html <?php piratenkleider_html_tag_schema(); ?> <?php language_attributes(); ?>> <!--<![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--> <html <?php echo piratenkleider_html_tag_schema(); ?> <?php language_attributes(); ?>> <!--<![endif]-->
 <head>
 <?php          
   global $defaultoptions;
@@ -86,13 +86,18 @@
                         </div>
                      <?php } ?>
                 </div>
-		<div class="branding" role="banner">
-                    <?php if ( ! is_home() ) { ?><a href="<?php echo home_url( '/' ); ?>" title="<?php echo $defaultoptions['default_text_title_home_backlink']; ?>" rel="home" class="logo"><?php } ?>                                                             
-                    <h1><img src="<?php header_image(); ?>" alt="<?php bloginfo( 'name' ); ?>"></h1>
-                    <?php                                
-                      if ( ! is_home() ) { ?></a><?php } 
-                      if (strlen(trim(get_bloginfo( 'description' )))>1) { ?><p class="description slogan"><?php bloginfo( 'description' ); ?></p><?php } ?>
-                </div>
+		<div class="branding" role="banner" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+        <?php if ( ! is_home() ) { ?>
+                  <a itemprop="url" href="<?php echo home_url( '/' ); ?>" title="<?php echo $defaultoptions['default_text_title_home_backlink']; ?>" rel="home" class="logo">
+              <?php } ?>                                                             
+              <h1><img itemprop="logo" src="<?php header_image(); ?>" alt="<?php bloginfo( 'name' ); ?>"></h1>
+              <meta itemprop="name" content="<?php echo esc_attr(piratenkleider_tag_schema_org_name()); ?>" />              
+              <?php if ( ! is_home() ) { ?>
+                  </a>
+              <?php } if (strlen(trim(get_bloginfo( 'description' )))>1) { ?>
+                  <p class="description slogan" itemprop="description"><?php echo esc_attr(piratenkleider_tag_schema_org_desc()); ?></p>
+              <?php } ?>
+    </div>
 	       
                 <div class="sticker" aria-hidden="true">
                         <?php if ( $options['defaultwerbesticker'] == "1" ){ ?> 

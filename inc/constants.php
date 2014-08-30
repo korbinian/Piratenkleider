@@ -2303,19 +2303,19 @@ $setoptions = array(
                   'default' => $defaultoptions['aktiv-autokeywords'],
                   'parent'  => 'meta',
               ),           
-            'meta-itemprop-aboutpage' => array(
+            'meta-itemtype-aboutpage' => array(
                   'type'    => 'text',
-                  'title'   => __( 'Itemprop AboutPage', 'piratenkleider' ),
+                  'title'   => __( 'Itemtype AboutPage', 'piratenkleider' ),
                   'label'   => __( 'Enter ID or title to set the item type of this page to "AboutPage".', 'piratenkleider' ),
                   'parent'  => 'meta',
               ),
-            'meta-itemprop-contactpage' => array(
+            'meta-itemtype-contactpage' => array(
                   'type'    => 'text',
-                  'title'   => __( 'Itemprop ContactPage', 'piratenkleider' ),
+                  'title'   => __( 'Itemtype ContactPage', 'piratenkleider' ),
                   'label'   => __( 'Enter ID or title to set the item type of this page to "ContactPage".', 'piratenkleider' ),
                   'parent'  => 'meta',
               ),
-            'meta-itemtype-cstptype1' => array(
+            'meta-itemtype-ptype1' => array(
                   'type'    => 'text',
                   'title'   => __( 'Custom Post Type 1', 'piratenkleider' ),
                   'label'   => __( 'Enter a custom post type.', 'piratenkleider' ),
@@ -2327,7 +2327,7 @@ $setoptions = array(
                   'label'   => __( 'Enter a custom schema.org microdata item type.', 'piratenkleider' ),
                   'parent'  => 'meta',
               ),
-            'meta-itemtype-cstptype2' => array(
+            'meta-itemtype-ptype2' => array(
                   'type'    => 'text',
                   'title'   => __( 'Custom Post Type 2', 'piratenkleider' ),
                   'label'   => __( 'Enter a custom post type.', 'piratenkleider' ),
@@ -2337,6 +2337,18 @@ $setoptions = array(
                   'type'    => 'text',
                   'title'   => __( 'Custom Item Type 2', 'piratenkleider' ),
                   'label'   => __( 'Enter a custom schema.org microdata item type.', 'piratenkleider' ),
+                  'parent'  => 'meta',
+              ),
+            'meta-itemtype-org-name' => array(
+                  'type'    => 'text',
+                  'title'   => __( 'Custom Name', 'piratenkleider' ),
+                  'label'   => __( 'Enter a custom name for your organization. If left empty the name of your blog will be used.', 'piratenkleider' ),
+                  'parent'  => 'meta',
+              ),
+            'meta-itemtype-org-desc' => array(
+                  'type'    => 'text',
+                  'title'   => __( 'Custom Description', 'piratenkleider' ),
+                  'label'   => __( 'Enter a custom description of your organization. If left empty blog description will be used.', 'piratenkleider' ),
                   'parent'  => 'meta',
               ),
 	       'linktipps'  => array(

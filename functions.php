@@ -758,11 +758,11 @@ function piratenkleider_comment( $comment, $args, $depth ) {
                         <em><?php _e( 'Comment waits for approval.', 'piratenkleider' ); ?></em>
                         <br />
                 <?php endif; ?>
-                <meta itemprop="commentTime" datetime="<?php echo get_comment_date('Y-m-d') ?>T<?php comment_time('H:i:s'); ?>" /> 
-                <div class="comment-meta commentmetadata"><a itemprop="url" href="<?php echo esc_url( get_comment_link( $comment->comment_ID ) ); ?>">
+
+                <div class="comment-meta commentmetadata"><a itemprop="url" href="<?php echo esc_url( get_comment_link( $comment->comment_ID ) ); ?>"><time itemprop="commentTime" datetime="<?php comment_time('c'); ?>">
                     <?php
                           /* translators: 1: date, 2: time */
-                       printf( __( '%1$s at %2$s', 'piratenkleider' ), get_comment_date(),  get_comment_time() ); ?></a> Folgendes:<?php edit_comment_link( __( '(Edit)', 'piratenkleider' ), ' ' );
+                       printf( __( '%1$s at %2$s', 'piratenkleider' ), get_comment_date(),  get_comment_time() ); ?></time></a> Folgendes:<?php edit_comment_link( __( '(Edit)', 'piratenkleider' ), ' ' );
                     ?>
                   
                 </div><!-- .comment-meta .commentmetadata -->
@@ -1709,8 +1709,7 @@ function piratenkleider_paging_bar($total = 1, $perpage =1) {
   }
 }
 
-// select the right object type for the page
-
+// select the right item type for the page
 function piratenkleider_html_tag_schema() {
 
     global $options;
@@ -1720,17 +1719,17 @@ function piratenkleider_html_tag_schema() {
 
     if (is_single() || is_page()) {
 
-      isset($options['meta-itemprop-aboutpage']) && !empty($options['meta-itemprop-aboutpage']) 
-        ? $abtpage = trim($options['meta-itemprop-aboutpage']) : $abtpage = false;
+      isset($options['meta-itemtype-aboutpage']) && !empty($options['meta-itemtype-aboutpage']) 
+        ? $abtpage = trim($options['meta-itemtype-aboutpage']) : $abtpage = false;
 
-      isset($options['meta-itemprop-contactpage']) && !empty($options['meta-itemprop-contactpage']) 
-        ? $ctcpage = trim($options['meta-itemprop-contactpage']) : $ctcpage = false;
+      isset($options['meta-itemtype-contactpage']) && !empty($options['meta-itemtype-contactpage']) 
+        ? $ctcpage = trim($options['meta-itemtype-contactpage']) : $ctcpage = false;
 
-      isset($options['meta-itemtype-cstptype1']) && !empty($options['meta-itemtype-cstptype1']) 
-        ? $cstptype1 = trim($options['meta-itemtype-cstptype1']) : $cstptype1 = false;
+      isset($options['meta-itemtype-ptype1']) && !empty($options['meta-itemtype-ptype1']) 
+        ? $cstptype1 = trim($options['meta-itemtype-ptype1']) : $cstptype1 = false;
 
-      isset($options['meta-itemtype-cstptype2']) && !empty($options['meta-itemtype-cstptype2']) 
-        ? $cstptype2 = trim($options['meta-itemtype-cstptype2']) : $cstptype2 = false;  
+      isset($options['meta-itemtype-ptype2']) && !empty($options['meta-itemtype-ptype2']) 
+        ? $cstptype2 = trim($options['meta-itemtype-ptype2']) : $cstptype2 = false;  
 
         // Is about page
       if (is_page($abtpage) && $abtpage) {
@@ -1769,7 +1768,29 @@ function piratenkleider_html_tag_schema() {
 
     }
 
-    echo 'itemscope itemtype="' . $schema . $type . '"';
+    $tag = 'itemscope itemtype="' . $schema . $type . '"';
+    
+    return $tag;
+}
+
+//set organization name: either custom value or blog settings
+function piratenkleider_tag_schema_org_name() {
+    global $options;
+    
+    isset($options['meta-itemtype-org-name']) && !empty($options['meta-itemtype-org-name']) 
+        ? $name = trim($options['meta-itemtype-org-name']) : $name = bloginfo('name');
+
+      return $name;
+}
+
+//set organization description: either custom value or blog settings
+function piratenkleider_tag_schema_org_desc() {
+    global $options;
+
+    isset($options['meta-itemtype-org-desc']) && !empty($options['meta-itemtype-org-desc']) 
+        ? $desc = trim($options['meta-itemtype-org-desc']) : $desc = bloginfo( 'description' );
+
+      return $desc;
 }
 
 /* Compatibility for old templates, former Version 3.2 */
