@@ -759,7 +759,7 @@ function piratenkleider_comment( $comment, $args, $depth ) {
                         <br />
                 <?php endif; ?>
 
-                <div class="comment-meta commentmetadata"><a itemprop="url" href="<?php echo esc_url( get_comment_link( $comment->comment_ID ) ); ?>"><time itemprop="commentTime" datetime="<?php echo get_comment_date('Y-m-d') ?>T<?php comment_time('H:i:s'); ?>">
+                <div class="comment-meta commentmetadata"><a itemprop="url" href="<?php echo esc_url( get_comment_link( $comment->comment_ID ) ); ?>"><time itemprop="commentTime" datetime="<?php comment_time('c'); ?>">
                     <?php
                           /* translators: 1: date, 2: time */
                        printf( __( '%1$s at %2$s', 'piratenkleider' ), get_comment_date(),  get_comment_time() ); ?></time></a> Folgendes:<?php edit_comment_link( __( '(Edit)', 'piratenkleider' ), ' ' );
