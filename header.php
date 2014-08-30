@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <!--[if IE 8 ]>  <html <?php language_attributes(); ?> class="ie8"> <![endif]-->
-<!--[if (gt IE 9)|!(IE)]><!--> <html <?php piratenkleider_html_tag_schema(); ?> <?php language_attributes(); ?>> <!--<![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--> <html <?php echo piratenkleider_html_tag_schema(); ?> <?php language_attributes(); ?>> <!--<![endif]-->
 <head>
 <?php          
   global $defaultoptions;
@@ -91,11 +91,11 @@
                   <a itemprop="url" href="<?php echo home_url( '/' ); ?>" title="<?php echo $defaultoptions['default_text_title_home_backlink']; ?>" rel="home" class="logo">
               <?php } ?>                                                             
               <h1><img itemprop="logo" src="<?php header_image(); ?>" alt="<?php bloginfo( 'name' ); ?>"></h1>
-              <meta itemprop="name" content="<?php bloginfo('name'); ?>" />              
+              <meta itemprop="name" content="<?php echo esc_attr(piratenkleider_tag_schema_org_name()); ?>" />              
               <?php if ( ! is_home() ) { ?>
                   </a>
               <?php } if (strlen(trim(get_bloginfo( 'description' )))>1) { ?>
-                  <p class="description slogan" itemprop="description"><?php bloginfo( 'description' ); ?></p>
+                  <p class="description slogan" itemprop="description"><?php echo esc_attr(piratenkleider_tag_schema_org_desc()); ?></p>
               <?php } ?>
     </div>
 	       

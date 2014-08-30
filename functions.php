@@ -1709,8 +1709,7 @@ function piratenkleider_paging_bar($total = 1, $perpage =1) {
   }
 }
 
-// select the right object type for the page
-
+// select the right item type for the page
 function piratenkleider_html_tag_schema() {
 
     global $options;
@@ -1769,7 +1768,29 @@ function piratenkleider_html_tag_schema() {
 
     }
 
-    echo 'itemscope itemtype="' . $schema . $type . '"';
+    $tag = 'itemscope itemtype="' . $schema . $type . '"';
+    
+    return $tag;
+}
+
+//set organization name: either custom value or blog settings
+function piratenkleider_tag_schema_org_name() {
+    global $options;
+    
+    isset($options['meta-itemtype-org-name']) && !empty($options['meta-itemtype-org-name']) 
+        ? $name = trim($options['meta-itemtype-org-name']) : $name = bloginfo('name');
+
+      return $name;
+}
+
+//set organization description: either custom value or blog settings
+function piratenkleider_tag_schema_org_desc() {
+    global $options;
+
+    isset($options['meta-itemtype-org-desc']) && !empty($options['meta-itemtype-org-desc']) 
+        ? $desc = trim($options['meta-itemtype-org-desc']) : $desc = bloginfo( 'description' );
+
+      return $desc;
 }
 
 /* Compatibility for old templates, former Version 3.2 */

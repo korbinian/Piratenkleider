@@ -2339,6 +2339,18 @@ $setoptions = array(
                   'label'   => __( 'Enter a custom schema.org microdata item type.', 'piratenkleider' ),
                   'parent'  => 'meta',
               ),
+            'meta-itemtype-org-name' => array(
+                  'type'    => 'text',
+                  'title'   => __( 'Custom Name', 'piratenkleider' ),
+                  'label'   => __( 'Enter a custom name for your organization. If left empty the name of your blog will be used.', 'piratenkleider' ),
+                  'parent'  => 'meta',
+              ),
+            'meta-itemtype-org-desc' => array(
+                  'type'    => 'text',
+                  'title'   => __( 'Custom Description', 'piratenkleider' ),
+                  'label'   => __( 'Enter a custom description of your organization. If left empty blog description will be used.', 'piratenkleider' ),
+                  'parent'  => 'meta',
+              ),
 	       'linktipps'  => array(
                   'type'    => 'section',
                   'title'   => __('Bookmarks', 'piratenkleider'),                   
