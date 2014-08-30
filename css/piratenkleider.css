@@ -10,7 +10,7 @@ License: GPL
 License URI: https://www.gnu.org/copyleft/gpl.html
 */
 
-html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary, time, mark, audio, video {
+html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, figcaption, figure, footer, header, menu, nav, section, summary, time, mark, audio, video {
   margin: 0;
   padding: 0;
   border: 0;
@@ -47,13 +47,12 @@ img {
 .ie8 img {
     max-width: none; 
 } 
-article, aside, details, figcaption, figure, footer, header, hgroup, nav, section, summary {
+article, aside, details, figcaption, figure, footer, header, nav, section, summary {
   display: block; }
 
 audio, canvas, video {
   display: inline-block;
-  *display: inline;
-  *zoom: 1; }
+ }
 
 audio:not([controls]) {
   display: none; }
@@ -66,19 +65,22 @@ audio:not([controls]) {
 * Default Fonts  ------------------------------------------------------------
 */ 
 @font-face { 
-    font-family: FontPiratenkleiderDefault; 
-    local: DroidSans; 
-    src: url(../fonts/DroidSans.eot) format("embedded-opentype"), url(../fonts/DroidSans.ttf) format("truetype");
+    font-family: FontPiratenkleiderDefault;     
+    src: local(DroidSans), 
+	url(../fonts/DroidSans.eot) format("embedded-opentype"), 
+	url(../fonts/DroidSans.ttf) format("truetype");
 }
 @font-face { 
     font-family: FontPiratenkleiderHeadlines; 
-    local: BebasNeue; 
-    src: url(../fonts/BebasNeue-webfont.ttf) format("truetype"), url(../fonts/BebasNeue-webfont.woff) format("woff");
+    src: local(BeBasNeue),
+	url(../fonts/BebasNeue-webfont.ttf) format("truetype"), 
+	url(../fonts/BebasNeue-webfont.woff) format("woff");
 }
 @font-face { 
     font-family: FontPiratenkleiderMenuHeadlines; 
-    local: BebasNeue; 
-    src: url(../fonts/BebasNeue-webfont.ttf) format("truetype"), url(../fonts/BebasNeue-webfont.woff) format("woff");
+    src: local(BeBasNeue),
+	url(../fonts/BebasNeue-webfont.ttf) format("truetype"), 
+	url(../fonts/BebasNeue-webfont.woff) format("woff");
 }
 body,.defaultfont,.teaserlinks ul li a span { 
     font-family: FontPiratenkleiderDefault; 
@@ -288,14 +290,6 @@ hr {
   height: 26px; }
 
 
-::selection {
-  background: #2d7dc5;
-  color: white; }
-
-
-
-img::selection {
-  background: transparent; }
 
 ul, ol {
   margin: 0;
@@ -359,13 +353,13 @@ legend {
   padding: 0 5px;
   margin-left: -5px;
   margin-top: -3px;
-  font-weight: bold; }
+  font-weight: bold; 
+}
 
 
 label, input[type="button"], input[type="submit"], input[type="image"], select, button {
   cursor: pointer;
-  *overflow: visible; }
-
+}
  input[type="email"] {
   margin: 0 5px 5px 0;
   padding: 5px;
@@ -373,8 +367,7 @@ label, input[type="button"], input[type="submit"], input[type="image"], select, 
 }
 input[type="radio"], input[type="checkbox"] {
   margin: 5px;
-  *height: 13px;
-  *width: 13px; }
+}
 
 input[type="radio"] {
   vertical-align: text-bottom; }
@@ -422,7 +415,7 @@ input, select, textarea {
 button, input, select, textarea {
   margin: 0;
   vertical-align: baseline;
-  *vertical-align: middle; }
+}
 
 input:focus, input:active, 
 select:focus, select:active, 
@@ -450,14 +443,14 @@ button, input[type="submit"],
   text-shadow: 0 -1px 0 #112e48;
   background-color: #2d7dc5;
   background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #2d7dc5), color-stop(1, #24639b));
-  background-image: linear-gradient(top, #2d7dc5, #24639b); }
+  background-image: linear-gradient(#2d7dc5, #24639b); }
 
   button:hover, 
   input[type="submit"]:hover, 
   .post-edit-link:hover {
     background-color: #2d7dc5;
     background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #2d7dc5), color-stop(1, #1a4872));
-    background-image: linear-gradient(top, #2d7dc5, #1a4872);
+    background-image: linear-gradient(#2d7dc5, #1a4872);
     -webkit-transition: all 0.2s ease-in-out;
     -ms-transition: all 0.2s ease-in-out;
     -o-transition: all 0.2s ease-in-out;    
@@ -1105,12 +1098,12 @@ body.nav-fixed .nav-main li a span {
     text-shadow: 0 -1px 0 #112e48;
     background-color: #2d7dc5;
     background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #2d7dc5), color-stop(1, #24639b));
-    background-image: linear-gradient(top, #2d7dc5, #24639b); }
+    background-image: linear-gradient(#2d7dc5, #24639b); }
 
   .first-startpage-widget-area a.all-articles:hover {
       background-color: #2d7dc5;
       background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #2d7dc5), color-stop(1, #1a4872));
-      background-image: linear-gradient(top, #2d7dc5, #1a4872);
+      background-image: linear-gradient(#2d7dc5, #1a4872);
       -webkit-transition: all 0.2s ease-in-out;
       -ms-transition: all 0.2s ease-in-out;
       -o-transition: all 0.2s ease-in-out;
@@ -1562,12 +1555,12 @@ body.nav-fixed .nav-main li a span {
     text-shadow: 0 -1px 0 #112e48;
     background-color: #2d7dc5;
     background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #2d7dc5), color-stop(1, #24639b));
-    background-image: linear-gradient(top, #2d7dc5, #24639b); 
+    background-image: linear-gradient(#2d7dc5, #24639b); 
     }
 .post-comments ol li .reply a:hover {
         background-color: #2d7dc5;
         background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #2d7dc5), color-stop(1, #1a4872));
-        background-image: linear-gradient(top, #2d7dc5, #1a4872);
+        background-image: linear-gradient(#2d7dc5, #1a4872);
         -webkit-transition: all 0.2s ease-in-out;
         -ms-transition: all 0.2s ease-in-out;
         -o-transition: all 0.2s ease-in-out;
@@ -1701,7 +1694,6 @@ img.wp-smiley {
 .wp-caption  p.wp-caption-text a:focus,
 .wp-caption  p.wp-caption-text a:hover {
     color: white;
-    text-transform: underline;
     outline: 1px dotted white;    
 }
 
@@ -1749,7 +1741,8 @@ img.wp-smiley {
  } 
 
 .content .row {
-  background: transparent repeat scroll 0 0 rgba(255, 136, 0, 0.7);
+  background: transparent repeat scroll 0 0;
+  background: rgba(255, 136, 0, 0.7);
     -ms-word-break:break-word;
     -webkit-word-break:  break-word;
      word-break:  break-word;
@@ -1823,12 +1816,12 @@ img.wp-smiley {
 .content-primary h3 {
     margin: 1em 0 0.5em 0;
 }
-.content-primary hgroup {
+.content-primary .hgroup {
     margin: 0 0 0.5em 0;
 }
-.content-primary hgroup h1,
-.content-primary hgroup h2, 
-.content-primary hgroup h3 {
+.content-primary .hgroup h1,
+.content-primary .hgroup h2, 
+.content-primary .hgroup h3 {
     margin: 0;
 }
 /*
@@ -2411,6 +2404,7 @@ img.wp-smiley {
 .content-aside #steckbrief ul.contact li.flattr a:before    { margin-top: -128px;}
 .content-aside #steckbrief ul.contact li.flickr a:before    { margin-top: -160px;}
 .content-aside #steckbrief ul.contact li.gplus a:before     { margin-top: -192px;}
+.content-aside #steckbrief ul.contact li.google a:before     { margin-top: -192px;}
 .content-aside #steckbrief ul.contact li.identica a:before  { margin-top: -224px;}
 .content-aside #steckbrief ul.contact li.itunes a:before    { margin-top: -256px;}
 .content-aside #steckbrief ul.contact li.skype a:before     { margin-top: -288px;}
@@ -2520,8 +2514,8 @@ img.wp-smiley {
 }
 .footer ul li {
    margin-bottom: 0; 
-   text-wrap: none;
-   text-height: 1em;
+   text-wrap:  avoid ;
+   line-height: 1em;
    display: inline-block;
  }
  

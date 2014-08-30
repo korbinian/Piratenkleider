@@ -164,11 +164,6 @@ jQuery(document).ready(function($){
   var startval =  $("#artikelstream-type :selected").val();
   if (startval < 2) {
       $(".option-artikelstream-exclusive-catliste").hide();
-       $(".option-artikelstream-maxnum-main").hide();
-       $(".option-artikelstream-nextnum-main").hide();
-       $(".option-artikelstream-numfullwidth-main").hide();
-       $(".option-artikelstream-title-main").hide();
-       $(".option-artikelstream-title-maincontinuelist").hide();
        $(".option-artikelstream-show-second").hide();
        $(".option-artikelstream-maxnum-second").hide();
        $(".option-artikelstream-nextnum-second").hide();
@@ -185,11 +180,6 @@ jQuery(document).ready(function($){
     var thisval =  $("#artikelstream-type :selected").val();
     if (thisval <2) {	
 	 $(".option-artikelstream-exclusive-catliste").hide();
-       $(".option-artikelstream-maxnum-main").hide();
-       $(".option-artikelstream-nextnum-main").hide();
-       $(".option-artikelstream-numfullwidth-main").hide();
-       $(".option-artikelstream-title-main").hide();
-       $(".option-artikelstream-title-maincontinuelist").hide();
        $(".option-artikelstream-show-second").hide();
        $(".option-artikelstream-maxnum-second").hide();
        $(".option-artikelstream-nextnum-second").hide();
@@ -203,11 +193,6 @@ jQuery(document).ready(function($){
        $(".option-artikelstream-title-linktippcontinuelist").hide();	 
     } else {
 	$(".option-artikelstream-exclusive-catliste").show();
-	$(".option-artikelstream-maxnum-main").show();
-       $(".option-artikelstream-nextnum-main").show();
-       $(".option-artikelstream-numfullwidth-main").show();
-       $(".option-artikelstream-title-main").show();
-       $(".option-artikelstream-title-maincontinuelist").show();
        $(".option-artikelstream-show-second").show();
        $(".option-artikelstream-maxnum-second").show();
        $(".option-artikelstream-nextnum-second").show();

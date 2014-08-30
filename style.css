@@ -5,8 +5,8 @@ Description: Theme for websites of the Pirate Party; It contains several sub-des
 Author: xwolf
 Author URI: http://www.xwolf.de 
 Author E-Mail: info@piratenkleider.de
-Version: 3.2.17
-Tags: two-columns, right-sidebar, fluid-layout, custom-header, custom-menu, featured-image-header, featured-images, full-width-template, theme-options
+Version: 3.2.19
+Tags: fluid-layout, custom-header, custom-menu, featured-image-header, featured-images, full-width-template, theme-options
 Piratenkleider is distributed under the terms of the GNU GPL
 License: GNU General Public License v2.0
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -14,10 +14,10 @@ Text Domain: piratenkleider
 */
 
 /* @import url(css/piratenkleider.css); */
-@import url(css/piratenkleider.min.css);
+ @import url(css/piratenkleider.min.css); 
 
-/* @import url(css/basemod_mediaqueries.css); */
-@import url(css/basemod_mediaqueries.min.css);
+/*@import url(css/basemod_mediaqueries.css); */
+ @import url(css/basemod_mediaqueries.min.css);
 
 /* @import url(css/pluginsupport.css); */
 @import url(css/pluginsupport.min.css);

@@ -101,6 +101,7 @@ $defaultoptions = array(
     'artikelstream-numfullwidth-main'       => 1,
     'artikelstream-numfullwidth-second'     => 1,
     'artikelstream-show-widget'		    => 0,
+    'artikelstream-content-allow3column'    => 0, 
     'categoryindex-teaserlength'            => 170,
     'categoryindex-numlinklist'		    => 5,
     
@@ -145,10 +146,8 @@ $defaultoptions = array(
     'sidebar-thumbnail_crop'		    => 1,
     'sidebar-thumbnail_name'		    => 'sidebar-thumb',
 
-    'bannerlink-width'		    => 300,
-    'bannerlink-height'		    => 300,    
-    'bannerlink_crop'		    => 1,
-    'bannerlink_name'		    => 'bannerlink-thumb',
+    'bannerlink-width'			    => 300,
+    'bannerlink_name'			    => 'bannerlink-thumb',
     
     'sidebar-steckbrief-maxwidth'	    => 270,
     'sidebar-steckbrief-maxheight'	    => 360,
@@ -489,7 +488,7 @@ $default_fonts = array(
 $default_alternativestyles = array(
     'style.css'	    => __( 'Default Style', 'piratenkleider' ),
     'sample.css'    => __( 'Empty CSS', 'piratenkleider' ),
-    'scapegoat.css' => __( 'Scapegoat-Adaption (1.4)', 'piratenkleider' ),
+    'scapegoat.css' => __( 'Scapegoat-Adaption (1.5)', 'piratenkleider' ),
 );
 
 /*
@@ -520,7 +519,7 @@ $default_alternativestyles = array(
         )
      ),
      __('International', 'piratenkleider' ) => array(
-         'title' => __('Pirate Party International', 'piratenkleider' ),
+         'title' => __('Pirate Parties International', 'piratenkleider' ),
          'url'  => 'http://www.pp-international.net/',
          'sublist' => array(
              __('Australia', 'piratenkleider' ) => 'http://pirateparty.org.au/',
@@ -574,7 +573,7 @@ $default_alternativestyles = array(
          )
      ), 
       __('International (with flags)', 'piratenkleider' ) => array(
-         'title' => __('Pirate Party International', 'piratenkleider' ),
+         'title' => __('Pirate Parties International', 'piratenkleider' ),
          'url'  => 'http://www.pp-international.net/',
          'sublist' => array(
             '<span class="flagicon-au"></span> '. __('Australia', 'piratenkleider' ) => 'http://pirateparty.org.au/',
@@ -655,7 +654,6 @@ $default_alternativestyles = array(
          'url'  => 'http://www.piratenpartei-bayern.de/',
          'sublist' => array(
              __('<abbr title="District Association">DA</abbr>','piratenkleider').' Mittelfranken' => 'http://piraten-mfr.de/',
-             __('<abbr title="District Association">DA</abbr>','piratenkleider').' Niederbayern' => 'http://niederbayern.piratenpartei-bayern.de/',
              __('<abbr title="District Association">DA</abbr>','piratenkleider').' Oberbayern' => 'http://oberbayern.piratenpartei.de/',
              __('<abbr title="District Association">DA</abbr>','piratenkleider').' Oberfranken' => 'http://piraten-oberfranken.de/',
              __('<abbr title="District Association">DA</abbr>','piratenkleider').' Oberpfalz' => 'http://oberpfalz.piratenpartei.de/',
@@ -1297,7 +1295,16 @@ $setoptions = array(
                   'default' => $defaultoptions['teaser-dateline-halfwidth'],
                   'parent'  => 'auszuege'
               ), 
-                          
+                    
+	      'artikelstream-content-allow3column' => array(
+                  'type'    => 'bool',
+                  'title'   => __( 'Two/Three column view', 'piratenkleider' ),
+                  'label'   => __( 'On big sized screen view (above 1350px resolution) use three column excerpts.', 'piratenkleider' ),
+                  'default' => $defaultoptions['artikelstream-content-allow3column'],
+                  'parent'  => 'auszuege'
+              ), 	       
+	       
+	       
               'sliderpars'  => array(
                   'type'    => 'section',
                   'title'   => __( 'Slider', 'piratenkleider' ),                      

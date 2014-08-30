@@ -646,17 +646,17 @@
         margin: 1em;
     }
     
-    #default-stream .columns .column1, 
-    #default-stream .columns .column2,
-    #default-stream .content-primary .columns .column2 {
+    #default-stream.threecolumn .columns .column1, 
+    #default-stream.threecolumn .columns .column2,
+    #default-stream.threecolumn .content-primary .columns .column2 {
 	width: 33%;
 	float: none;
 	display: inline-block; 
 	padding: 0.5em;
 	vertical-align: top;
     }
-    #default-stream  hr {display: none; }
-    #default-stream  .columns:after {
+    #default-stream.threecolumn  hr {display: none; }
+    #default-stream.threecolumn  .columns:after {
 	clear: both;
     }
     

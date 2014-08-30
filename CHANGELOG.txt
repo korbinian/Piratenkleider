@@ -3,6 +3,39 @@ Theme Piratenkleider
 Changelog 
 (since version 3.2; Former changes look at github.com/Piratenkleider/)
 
+Version 3.2.19:
+* Bugfix: #178: enforce relative urls for images and make heigh relative; no cropping for images anymore.
+* Bugfix: #181 content in templates
+* Bugfix: #183 Delicious-Icon
+* Enhancement: more css validation; removed IE7 hacks
+* Enhancement: #172 - PoliticsHead Font as default in Scapegoat
+* Enhancement: Switch for setting three/two columns for startpage on big sized
+  screen on default stream
+
+Version 3.2.18:
+* bugfix: invalid html5 tags/properties
+* bugfix: invalid css properties in scapegoat css
++ fixed typos in templates/imprint.php
++ added theme option under tab Social Media for the federated social network Friendica in inc/constants.php
++ added function piratenkleider_html_tag_schema to inc/functions.php
++ added following microdata object types in html tag:
+	- WebPage
+	- Article
+	- AboutPage
+	- ContactPage
+	- Person
++ added theme option under tab Misc to assign object types AboutPage and ContactPage to pages determined by the admin
++ added type Video for embedded videos, property: embedUrl
++ added microdata properties for object type Article: name, articleBody, articleSection, creator, keywords, url
++ added microdata properties for object type Person: mainContentOfPage, name, description, email, url
++ added microdata properties for object type WebPage/AboutPage/ContactPage: mainContentOfPage, name, image, text
++ added microdata for comments meta: comment, interactionCount: content=Usercomments, discussionUrl
++ added microdata for comments: commentText, name, commentTime, url, image
++ added HTML5 article and header-tags to comments
++ other microdata added: breadcrumb, datePublished, image, SiteNavigationElement
++ added role="navigation" to main navigation in header.php
+
+
 Version 3.2.17:
 * Bugfix/Enhancement: New plakat sliders for brandenburg (#180)
 * Typofix: Corrected spelling of ppi (#179)

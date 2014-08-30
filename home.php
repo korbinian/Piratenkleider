@@ -105,7 +105,12 @@
 		echo "\n";
 	   }
 	} else {
-	    echo '<div id="default-stream">';
+	    if ($options['artikelstream-content-allow3column']==1) {
+		echo '<div id="default-stream" class="threecolumn">';
+	    } else {
+		echo '<div id="default-stream">';
+	    }
+	   
 	}
         echo '<div class="columns">';
         $z=1;
