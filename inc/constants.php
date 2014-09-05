@@ -248,6 +248,7 @@ $defaultoptions = array(
     'vcard-showfeed'                        => 1,
     'vcard-feed-maxnum'                     => 7,
     'vcard-showlocalentries'                => 1,
+    'vcard-maxnum-selectlist'		    => 7,
     'optionpage-tab-default'                => 'kopfteil'
 );
 

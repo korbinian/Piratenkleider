@@ -831,18 +831,71 @@ function piratenkleider_post_class_metabox_person( $object, $box ) {
 	    
 			    $out = '';
 			    $personlist = new WP_Query( $args );
-			    if( $personlist->have_posts() ) {
-				while ($personlist->have_posts() ) {
-				    $personlist->the_post();	   
-				    $listid = $personlist->post->ID;
-				    $person_last_name = get_post_meta( $listid, 'person_last_name', true );
-				    $person_first_name = get_post_meta( $listid, 'person_first_name', true );
-				    $fullname = $person_first_name.' '.$person_last_name;
-				    $out .= '<option value="'.$listid.'"';
-				    if ($oldid && $oldid==$listid) {
-					$out .= ' selected="selected';
+			    if( $personlist->have_posts() ) {		
+				
+				if ($personlist->post_count > $defaultoptions['vcard-maxnum-selectlist']) {
+				    $catsortlist = array();	    
+				    while ($personlist->have_posts() ) {
+					$thisissel = 0;
+					$catout = '';
+					$personlist->the_post();
+					$listid = $personlist->post->ID;
+					$person_last_name = get_post_meta( $listid, 'person_last_name', true );
+					$person_first_name = get_post_meta( $listid, 'person_first_name', true );
+					$fullname = $person_first_name.' '.$person_last_name;
+					$firstsel = 0;
+					$catout .= '<option value="'.$listid.'"';
+					
+					if ($oldid && $oldid==$listid) {
+					    $catout .= ' selected="selected"';
+					    $thisissel = 1;
+					}
+					$catout .= '>'.$fullname.'</option>'."\n";
+					$catout2 =  '<option value="'.$listid.'">'.$fullname.'</option>'."\n";
+					
+					
+					$post_categories = wp_get_object_terms( $listid, 'person_category' );
+					if (empty($post_categories) ) {
+					    $catsortlist['_default'][] = $catout;
+					} else {
+					    foreach($post_categories as $key => $val){
+						$thiscatname = $val->name;
+						if (($thisissel==1) && ($firstsel==0)) {
+						    $catsortlist["$thiscatname"][] = $catout;
+						    $firstsel =1;
+						} else {
+						    $catsortlist["$thiscatname"][] = $catout2;
+						}
+					    }
+					}
 				    }
-				    $out .= '">'.$fullname.'</option>'."\n";
+				   
+				    foreach($catsortlist as $name => $val){
+					if ($name == '_default') {
+					    foreach($val as $entry){
+						$out .= $entry;
+					    }
+					} else {
+					    $out .= '<optgroup label="'.$name.'">';
+					    foreach($val as $entry){
+						$out .= $entry;
+					    }
+					    $out .= '</optgroup>';
+					}
+				    }
+				} else {
+				    while ($personlist->have_posts() ) {
+					$personlist->the_post();	   
+					$listid = $personlist->post->ID;
+					$person_last_name = get_post_meta( $listid, 'person_last_name', true );
+					$person_first_name = get_post_meta( $listid, 'person_first_name', true );
+					$fullname = $person_first_name.' '.$person_last_name;
+					$out .= '<option value="'.$listid.'"';
+					if ($oldid && $oldid==$listid) {
+					    $out .= ' selected="selected"';
+					}
+					$out .= '>'.$fullname.'</option>'."\n";
+				    }
 				}
 			    } else {
 				$notice = __('No person card defined yet.', 'piratenkleider');
