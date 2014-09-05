@@ -1,0 +1,140 @@
+/*
+ * Optional Hamburger Menu for small screen displays
+*/
+
+@media only screen and (max-width: 768px) {
+ .skiplinks li a {
+    position: absolute;
+    display: block;
+    top: -100px; 
+ }
+    /* Header Navigation Menu Icon properties */
+#header-menu-icon {
+border-bottom: 1px solid #ddd;
+border-top: 1px solid #ddd;
+cursor: pointer;
+display: block;
+padding: 5px;
+padding: 0.5rem;
+text-align: center;
+    text-shadow: 0 -1px 0 #112e48;
+    background-color: #2d7dc5;
+    background-image: -moz-linear-gradient(top, #2d7dc5, #24639b);
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #2d7dc5), color-stop(1, #24639b));
+    background-image: linear-gradient(top, #2d7dc5, #24639b); 
+}
+#header-menu-icon img {
+}
+#header-menu-icon::after {
+    color: white;
+    content: 'π';
+    font-weight: bold;
+    letter-spacing: 1px;
+    font-size: 1.5em;
+    right: 10px;
+    position: absolute;
+}
+#header-menu-icon:hover::after,
+#header-menu-icon:active::after {
+    color: #ccc;
+}
+/* Hide Header Navigation Menu until it's toggled via script */
+.header {
+display: none;
+}
+/* Header Navigation Menu misc properties */
+.nav-main {
+clear: both;
+color: #999;
+font-family: sans-serif;
+line-height: 1.5;
+width: 100%;
+z-index: 9999;
+}
+ 
+.nav-main .menu-item {
+display: block;
+text-align: left;
+}
+ 
+.nav-main a {
+background-color: #f0f0f0;
+border-bottom: 1px solid #ccc;
+color: #222;
+display: block;
+padding: 20px 24px;
+padding: 2rem 2.4rem;
+position: relative;
+}
+.nav-main .current-menu-item .sub-menu {
+    display: inline-block;
+    top: inherit;
+    position: relative;
+}
+.nav-main a:hover,
+.nav-main .current-menu-item > a,
+.nav-main .sub-menu .current-menu-item > a:hover {
+background-color: #ddd;
+color: #222;
+}
+ 
+.nav-main .sub-menu .current-menu-item > a {
+color: #999;
+}
+ 
+.nav-main > .menu-item > a {
+text-transform: uppercase;
+}
+ 
+.nav-main .sub-menu {
+left: 0px;
+opacity: 1;
+position: relative;
+-webkit-transition: opacity .4s ease-in-out;
+-moz-transition: opacity .4s ease-in-out;
+-ms-transition: opacity .4s ease-in-out;
+-o-transition: opacity .4s ease-in-out;
+transition: opacity .4s ease-in-out;
+width: 100%;
+z-index: 99;
+}
+ 
+.nav-main .sub-menu a {
+background-color: #fff;
+border-bottom: 1px solid #ccc;
+font-size: 14px;
+font-size: 1.4rem;
+padding: 18px 30px;
+padding: 1.8rem 3rem;
+position: relative;
+width: 100%;
+}
+ 
+.nav-main .sub-menu a::before {
+content: "- ";
+font-size: 14px;
+font-size: 1.4rem;
+}
+.nav-main .sub-menu a:hover {
+background-color: #f7f7f7;
+}
+.nav-main .sub-menu li li a {
+padding: 18px 40px;
+padding: 1.8rem 4rem;
+}
+.nav-main .sub-menu .sub-menu {
+margin: 0;
+}
+ 
+.nav-main .menu-item:hover {
+position: static;
+}
+ 
+.nav-main .menu-item:hover > .sub-menu {
+left: 0;
+opacity: 1;
+}
+    
+
+    
+}

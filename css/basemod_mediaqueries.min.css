@@ -6,7 +6,7 @@
 .row,.teaser .first-teaser-widget-area,.first-footer-widget-area{width:100%;}
 .content-primary,.teaser .first-teaser-widget-area,.first-footer-widget-area,.content-aside,.teaser .second-teaser-widget-area,.second-footer-widget-area{float:none;width:100%;display:block;}
 }
-@media only screen and (max-width: 767px) {
+@media only screen and (max-width: 768px) {
 .row{width:100%;}
 .content-primary .columns{float:none;clear:both;}
 .content-primary .columns .column0,.content-primary .columns .column1,.content-primary .columns .column2{float:none;width:100%;display:block;clear:both;}
@@ -22,8 +22,7 @@
 .teaserlinks ul li a{padding-left:10px;}
 .nav-main ul.menu li a{padding:12px 5px 10px;}
 .content-primary,.teaser .first-teaser-widget-area,.first-footer-widget-area,.content-aside,.teaser .second-teaser-widget-area,.second-footer-widget-area{float:none;width:100%;display:block;}
-}
-@media only screen and (max-width: 600px) {
+ 
 .branding{display:block;width:100%;height:auto;text-align:center;margin:0 auto;padding:10px;}
 .branding h1{margin-bottom:0;}
 .logo{margin:0 auto;}

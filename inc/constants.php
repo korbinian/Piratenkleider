@@ -26,7 +26,6 @@ $defaultoptions = array(
     'plakate-altadressen'	    => '',
     'plakate-src'		    => array(),
 
-    'default-fontset-file'          => 'font-bebas.css',
     'src-flexslider'                => get_template_directory_uri(). "/js/jquery.flexslider-min.js",
     'src-layoutjs'                  => get_template_directory_uri(). "/js/layout.js",
     'src-comment-reply'             => get_template_directory_uri(). "/js/comment-reply.js",
@@ -42,6 +41,10 @@ $defaultoptions = array(
     'slider-defaultbildsrc'	    => get_template_directory_uri() .'/images/default-vorlage.jpg',  
     'src-linkicons-css'		    => get_template_directory_uri() .'/css/basemod_linkicons.css',     
     'src-basemod_sidebarbottom'	    => get_template_directory_uri().'/css/basemod_sidebarbottom.css',
+    
+    'src-hamburger-css'		    => get_template_directory_uri() .'/css/hamburger.css',     
+    'src-hamburger-js'		    => get_template_directory_uri() .'/js/hamburger.js',    
+    
     'dir-default-plakate'	    => '/plakate',
     'login_errors'		    => 1,
     'slider-aktiv'                  => 1,    
@@ -73,6 +76,7 @@ $defaultoptions = array(
     'aktiv-avatar'                          => 0,
     'aktiv-dynamic-sidebar'                 => 0,
     'aktiv-autokeywords'		    => 0,
+    'aktiv-hamburger'			    => 0,
     'src-default-avatar'                    => get_template_directory_uri(). '/images/avataricon.gif',
     'seitenmenu_mode'			    => 0,
     'zeige_subpagesonly'                    => 1,
@@ -149,9 +153,7 @@ $defaultoptions = array(
     'bannerlink-width'			    => 300,
     'bannerlink_name'			    => 'bannerlink-thumb',
     
-    'sidebar-steckbrief-maxwidth'	    => 270,
-    'sidebar-steckbrief-maxheight'	    => 360,
-    
+
     
     'src-teaser-thumbnail_default'	    => get_template_directory_uri() .'/images/default-teaserthumb.gif',
     'teaser-thumbnail_fallback'		    => 1,
@@ -249,6 +251,9 @@ $defaultoptions = array(
     'vcard-feed-maxnum'                     => 7,
     'vcard-showlocalentries'                => 1,
     'vcard-maxnum-selectlist'		    => 7,
+    'sidebar-steckbrief-maxwidth'	    => 270,
+    'sidebar-steckbrief-maxheight'	    => 360,
+        
     'optionpage-tab-default'                => 'kopfteil'
 );
 
@@ -2033,7 +2038,14 @@ $setoptions = array(
                   ),
 		  'parent'  => 'style', 
               ),  
-               
+              'aktiv-hamburger'  => array(
+                  'type'    => 'bool',
+                  'title'   => __( 'Hamburger Menu', 'piratenkleider' ),
+                  'label'   => __( 'Activates hamburger menu on small screen sizes.', 'piratenkleider' ),
+                  'default' => $defaultoptions['aktiv-hamburger'],
+		  'parent' => 'style',
+              ),	       
+	       
             'background'  => array(
                   'type'    => 'section',
                   'title'   => __( 'Body Background', 'piratenkleider' ),
@@ -2138,6 +2150,10 @@ $setoptions = array(
                   'default' => $defaultoptions['zeige_breadcrump_frontpages'],
 		   'parent' => 'breadcrumb',
               ),
+	     
+	       
+
+	       
 	       
 	      'miscdesign'  => array(
                   'type'    => 'section',

@@ -228,15 +228,7 @@ function piratenkleider_scripts() {
     global $options;
     global $defaultoptions;
 
-    /*
-    'stylefile-position': 
-     0 => __('Deaktiv (Nicht einbinden)', 'piratenkleider'),
-      1 => __('Vor Standard-CSS-Dateien des Grunddesigns', 'piratenkleider'),
-      2 => __('Nach Standard-CSS-Dateien des Grunddesigns', 'piratenkleider'),
-      3 => __('Semi-Exklusiv (kein Laden des Grunddesign-CSS, jedoch optionale CSS (Farben, Schriften, Icons, ...)', 'piratenkleider'),
-      4 => __('Exklusiv (kein Laden anderer CSS-Dateien)', 'piratenkleider'),
 
-	     */
      $userstyle = 0;
      if ( !is_admin() ) {
 	$userstyle = 0;
@@ -285,13 +277,12 @@ function piratenkleider_scripts() {
 	   }
 
 	}
-
-	wp_enqueue_script(
-		    'layoutjs',
-		    $defaultoptions['src-layoutjs'],
-		    array('jquery'),
-		    $defaultoptions['js-version']
-	    );
+	if ((isset($options['aktiv-hamburger'])) && ($options['aktiv-hamburger']==1)) { 
+	     wp_enqueue_style( 'hamburger', $defaultoptions['src-hamburger-css'] );
+	     wp_enqueue_script( 'hamburger', $defaultoptions['src-hamburger-js'], array('jquery', 'jquery-ui-core'), $defaultoptions['js-version'] );
+	}
+	
+	wp_enqueue_script( 'layoutjs', $defaultoptions['src-layoutjs'],  array('jquery'),  $defaultoptions['js-version'] );
 
 	if (is_singular() && ($options['aktiv-commentreplylink']==1) && get_option( 'thread_comments' )) {        
 		wp_enqueue_script(
