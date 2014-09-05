@@ -4,7 +4,7 @@ Changelog
 (since version 3.2; Former changes look at github.com/Piratenkleider/)
 
 Version 3.2.20:
-* Enhancement: Optional Hamburger menu (#123) (BETA)
+* Enhancement: Optional Hamburger menu (#123) 
 * Enhancement: Sort business cards in categories once there are more as 7 elements and categories (#163)
 
 

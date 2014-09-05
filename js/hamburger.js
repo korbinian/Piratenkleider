@@ -22,16 +22,18 @@ jQuery(document).ready(function($) {
 	    $(".header .branding h1").show();
 	    $("#header-menu-icon").detach();
 	     lastsize = window.innerWidth;
+             cloneimg=0;
 	}
-	if ((window.innerWidth < 769) && (lastsize > 768)) {
+	if ((window.innerWidth <= 769) && (lastsize > 768)) {
 	    lastsize = window.innerWidth;
 	     
 	    $(".header").before('<div id="header-menu-icon"></div>');
 	    if (cloneimg==0) {
 	      $( ".branding h1 img" ).clone().appendTo( "#header-menu-icon" );
+              cloneimg=1;
 	    }
 	    $("#header-menu-icon").click(function() {
-		$(".header").slideToggle();
+	    $(".header").slideToggle();
 		if (cloneimg==1) {
 		    $(".header .branding h1").hide();
 		 }
