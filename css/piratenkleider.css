@@ -2686,7 +2686,7 @@ table#wp-calendar td a {
 .flagicon-kz, .flagicon-lt, .flagicon-lu, .flagicon-lv, .flagicon-ma, .flagicon-mx, .flagicon-nl, .flagicon-nz, 
 .flagicon-pe, .flagicon-pl, .flagicon-pt, .flagicon-ro, .flagicon-rs, .flagicon-ru, .flagicon-se, .flagicon-si, 
 .flagicon-sk, .flagicon-tn, .flagicon-tr, .flagicon-ua, .flagicon-uk, .flagicon-us, .flagicon-uy, .flagicon-hr,
-.flagicon-il, .flagicon-hu, .flagicon-ee  { 
+.flagicon-il, .flagicon-hu, .flagicon-ee, .flagicon-jp { 
   width: 16px;
   height: 11px;
   display: inline-block;
@@ -2719,6 +2719,7 @@ table#wp-calendar td a {
 .flagicon-is {  background-position: 0 -585px;}
 .flagicon-il {  background-position: 0 -610px;}
 .flagicon-it {  background-position: 0 -507px;}
+.flagicon-jp {  background-position: 0 -652px;}
 .flagicon-kr {  background-position: 0 -91px;}
 .flagicon-kz {  background-position: 0 -52px;}
 .flagicon-lt {  background-position: 0 -221px;}
