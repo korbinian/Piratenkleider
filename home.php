@@ -152,8 +152,6 @@
 		 $z=1;
 		 query_posts(  array( 'post_type' => array('linktipps'), 'posts_per_page' => $numentries ) ); 
 		 global $post;
-		 
-		 $numentries = $options['artikelstream-maxnum-main'] + $options['artikelstream-nextnum-main'];
   
 		 
 		 $linktippout .= '<div class="columns">';

@@ -457,7 +457,7 @@ function piratenkleider_addmetatags() {
         $output .= '<meta name="author" content="'.$options['meta-author'].'">'."\n";
     }
     if ((isset( $options['meta-verify-v1'] )) && ( strlen(trim($options['meta-verify-v1']))>1 )) {
-        $output .= '<meta name="verify-v1" content="'.$options['meta-verify-v1'].'">'."\n";
+        $output .= '<meta name="google-site-verification" content="'.$options['meta-verify-v1'].'">'."\n";
     }
 		
     $tags = '';
