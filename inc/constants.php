@@ -365,8 +365,8 @@ $default_toplink_liste = array(
 	'active'    => 1,
     ),
     'link2'  => array(
-	'name'	    => __('Liquid Feedback', 'piratenkleider' ),
-	'content'  => 'https://lqfb.piratenpartei.de',
+	'name'	    => __('BEO', 'piratenkleider' ),
+	'content'  => 'https://beo.piratenpartei.de',
 	'active'    => 0,
     ),
     'link3'  => array(
