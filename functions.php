@@ -1069,7 +1069,7 @@ function piratenkleider_post_datumsbox() {
         $out .= "</div>\n"; 
      } 
     $out .= '<div class="cal-icon">';
-    $out .= '<time datetime="'. esc_attr( get_the_modified_date('c') ).'" itemprop="datePublished">';
+    $out .= '<time datetime="'. esc_attr( get_the_date('c') ).'" itemprop="datePublished">';
     $out .= '<span class="day">'.get_the_time('j.').'</span>';
     $out .= '<span class="month">'.get_the_time('m.').'</span>';
     $out .= '<span class="year">'.get_the_time('Y').'</span>';
