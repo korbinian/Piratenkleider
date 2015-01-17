@@ -367,7 +367,7 @@ $default_toplink_liste = array(
     'link2'  => array(
 	'name'	    => __('BEO', 'piratenkleider' ),
 	'content'  => 'https://beo.piratenpartei.de',
-	'active'    => 0,
+	'active'    => 1,
     ),
     'link3'  => array(
 	'name'	    => __('Forum', 'piratenkleider' ),
