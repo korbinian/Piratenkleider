@@ -3,6 +3,13 @@ Theme Piratenkleider
 Changelog 
 (since version 3.2; Former changes look at github.com/Piratenkleider/)
 
+Version 3.3
+* Added japan pirate party
+* Typofix Luxemburg
+* Update: Google Site Verification
+* Update posters 
+* CSS/JS mimified now with new tool (netbeans plugin); added serveral min files.
+
 Version 3.2.20:
 * Enhancement: Optional Hamburger menu (#123) 
 * Enhancement: Sort business cards in categories once there are more as 7 elements and categories (#163)
