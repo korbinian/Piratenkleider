@@ -1638,18 +1638,18 @@ function piratenkleider_header_style() {}
 
 function piratenkleider_admin_style() {
     global $defaultoptions;
-    wp_register_style( 'themeadminstyle', get_template_directory_uri().$defaultoptions['src-admincss']);	   
-    wp_enqueue_style( 'themeadminstyle' );	
+    wp_register_style( 'themeadminstyle', $defaultoptions['src-admincss']);
+    wp_enqueue_style( 'themeadminstyle' );
     wp_enqueue_media();
-    wp_register_script('themeadminscripts', get_template_directory_uri().$defaultoptions['src-adminjs'], array('jquery'));    
-    wp_enqueue_script('themeadminscripts');	   
+    wp_register_script('themeadminscripts', $defaultoptions['src-adminjs'], array('jquery'));
+    wp_enqueue_script('themeadminscripts');
 }
 add_action( 'admin_enqueue_scripts', 'piratenkleider_admin_style' );
 
 
 function custom_login() { 
     global $defaultoptions;
-    echo '<link rel="stylesheet" type="text/css" href="'.get_template_directory_uri().$defaultoptions['src-customlogincss'].'" />'; 
+    echo '<link rel="stylesheet" type="text/css" href="'.$defaultoptions['src-customlogincss'].'" />';
 }
 add_action('login_head', 'custom_login');
 
