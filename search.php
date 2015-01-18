@@ -56,7 +56,9 @@ Template Name: Search Page
 
         foreach($query_args as $key => $string) {
             $query_split = explode("=", $string);
-            $search_query[$query_split[0]] = urldecode($query_split[1]);
+            if (count($query_split) > 1) {
+                $search_query[$query_split[0]] = urldecode($query_split[1]);
+            }
         } // foreach
         
 
