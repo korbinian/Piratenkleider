@@ -3,7 +3,13 @@ Theme Piratenkleider
 Changelog 
 (since version 3.2; Former changes look at github.com/Piratenkleider/)
 
-Version 3.3
+Version 3.3.1:
+* Miscellaneous fixes, mostly for translation
+* Fix css and js paths
+* Fixes for bookmarks and business cards
+* Fix errors when searching for an empty string or strings containing spaces
+
+Version 3.3:
 * Added japan pirate party
 * Typofix Luxemburg
 * Update: Google Site Verification
