@@ -226,22 +226,22 @@ function piratenkleider_person_metabox_save( $post_id ) {
 		return;
 	}
 
-	
 	$imgid = intval($_POST['person_bildid']);
 	if ($imgid) {
-	    update_post_meta( $post_id, 'person_bildid', $imgid );
+		update_post_meta( $post_id, 'person_bildid', $imgid );
 	} else {
-	    $urlimg = $_POST['person_bild'];
-	    if (filter_var($urlimg, FILTER_VALIDATE_URL)) {
-		update_post_meta( $post_id, 'person_bild', $urlimg );
-	    } else {
-                delete_post_meta( $post_id, 'person_bild' );
-            }
+		$urlimg = $_POST['person_bild'];
+		if (filter_var($urlimg, FILTER_VALIDATE_URL)) {
+			update_post_meta( $post_id, 'person_bild', $urlimg );
+		} else {
+			delete_post_meta( $post_id, 'person_bild' );
+		}
+		delete_post_meta( $post_id, 'person_bildid' );
 	}
-	
-        $url = '';
-        if ((isset( $_POST['person_url'] ) && (filter_var($_POST['person_url'], FILTER_VALIDATE_URL)))) {
-	    $url = $_POST['person_url'];
+
+	$url = '';
+	if ((isset( $_POST['person_url'] ) && (filter_var($_POST['person_url'], FILTER_VALIDATE_URL)))) {
+		$url = $_POST['person_url'];
 	} else {
             if ((isset( $_POST['person_url'])) && (preg_match("/^www/i",$_POST['person_url']))) { 
                $tryurl = 'http://'.$_POST['person_url'];
