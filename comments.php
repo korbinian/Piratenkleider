@@ -26,7 +26,7 @@ if ( have_comments() ) : ?>
              next_comments_link( __( 'Newer comments &rarr;', 'piratenkleider' ) ); 
      endif; 
      if ( ! comments_open() && ! is_page() && post_type_supports( get_post_type(), 'comments' )  ) : ?>
-	<p><?php _e("Its not possible to make comments anymore.", 'piratenkleider'); ?></p>
+	<p><?php _e("It's not possible to make comments anymore.", 'piratenkleider'); ?></p>
 <?php
     endif; 
  endif; 

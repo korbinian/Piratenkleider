@@ -186,8 +186,8 @@ $defaultoptions = array(
     'anonymize-user'                => 0,
     'anonymize-user-commententries' => 0,
     'aktiv-commentreplylink'        => 1,
-    'default_comment_notes_before'  => '<p class="comment-notes">'.__( 'Your email address wont be displayed. Required fields are marked with this sign: <span class="required">*</span>', 'piratenkleider' ). '</p>',
-    'comments_disclaimer'           => __('Notice: Comments reflect the opionions of those who did wrote theme. Allowing people comment here, doenst mean, that we also agree with them.', 'piratenkleider' ),
+    'default_comment_notes_before'  => '<p class="comment-notes">'.__( 'Your email address won\'t be displayed. Required fields are marked with this sign: <span class="required">*</span>', 'piratenkleider' ). '</p>',
+    'comments_disclaimer'           => __('Notice: Comments reflect the opinions of those who wrote them. Allowing people to comment here does not mean that we also agree with them.', 'piratenkleider' ),
     'disclaimer_post'               => '',
     'feed_cache_lifetime'           => 14400,
     'use_wp_feed_defaults'          => 1,
@@ -644,7 +644,7 @@ $default_alternativestyles = array(
              __('<abbr title="District Association">DA</abbr>','piratenkleider').' Stuttgart' => 'http://www.piraten-bzv-stuttgart.de/',
              __('<abbr title="District Association">DA</abbr>','piratenkleider').' T&uuml;bingen' => 'https://bzv.piratenpartei-tuebingen.de/',          
              __('<abbr title="District Chapter">DC</abbr>','piratenkleider').' B&ouml;blingen' => 'https://wiki.piratenpartei.de/BW:Landkreis_B%C3%B6blingen/District Chapter',
-             __('<abbr title="District Chapter">DC</abbr>','piratenkleider').' Calw-Freudenstadt' => 'https://wiki.piratenpartei.de/BW:District Chapter_Calw-Freudenstadt',
+             __('<abbr title="District Chapter">DC</abbr>','piratenkleider').' Calw-Freudenstadt' => 'https://wiki.piratenpartei.de/BW:Kreisverband_Calw-Freudenstadt',
              __('<abbr title="District Chapter">DC</abbr>','piratenkleider').' Heidenheim' => 'http://www.piraten-heidenheim.de',
              __('<abbr title="District Chapter">DC</abbr>','piratenkleider').' Heilbronn' => 'http://www.piratenpartei-heilbronn.de',
              __('<abbr title="District Chapter">DC</abbr>','piratenkleider').' Karlsruhe Land' => 'http://piraten-ka-land.de',
@@ -759,7 +759,7 @@ $default_alternativestyles = array(
             __('<abbr title="District Chapter">DC</abbr>','piratenkleider').' Oldenburg Land' => 'http://www.piratenpartei-landkreis-oldenburg.de/',   
             __('<abbr title="District Chapter">DC</abbr>','piratenkleider').' Osterholz' => 'http://www.piraten-ohz.de/', 	    
             __('<abbr title="District Chapter">DC</abbr>','piratenkleider').' Osterode' => 'http://www.piratenpartei-osterode.de/',   
-            __('<abbr title="District Chapter">DC</abbr>','piratenkleider').' Peine' => 'http://wiki.piratenpartei.de/NDS:District Chapter_Peine',   
+            __('<abbr title="District Chapter">DC</abbr>','piratenkleider').' Peine' => 'http://wiki.piratenpartei.de/NDS:Kreisverband_Peine',   
             __('<abbr title="District Chapter">DC</abbr>','piratenkleider').' Stade' => 'http://www.piraten-stade.de/',   
             __('<abbr title="District Chapter">DC</abbr>','piratenkleider').' Schaumburg' => 'http://www.piraten-schaumburg.de/',            
             __('<abbr title="District Chapter">DC</abbr>','piratenkleider').' Wolfenb&uuml;ttel-Salzgitter' => 'http://www.piratenpartei-wolfenbuettel.de/',   
@@ -797,15 +797,15 @@ $default_alternativestyles = array(
         'title' => __('Pirate Party Country Association','piratenkleider').' Rheinland-Pfalz',
         'url'  => 'http://www.piraten-rlp.de',
         'sublist' => array(
-            __('<abbr title="District Chapter">DC</abbr>','piratenkleider').' Altenkirchen' => 'https://wiki.piratenpartei.de/RP:District Chapter_Altenkirchen',
-            __('<abbr title="District Chapter">DC</abbr>','piratenkleider').' Koblenz' => 'https://wiki.piratenpartei.de/RP:District Chapter_Koblenz',	    
-            __('<abbr title="District Chapter">DC</abbr>','piratenkleider').' Bad Kreuznach' => 'https://wiki.piratenpartei.de/District Chapter_Bad_Kreuznach',
+            __('<abbr title="District Chapter">DC</abbr>','piratenkleider').' Ahrweiler' => 'http://wiki.piratenpartei.de/RP:Kreisverband_Ahrweiler',
+            __('<abbr title="District Chapter">DC</abbr>','piratenkleider').' Altenkirchen' => 'https://wiki.piratenpartei.de/RP:Kreisverband_Altenkirchen',
+            __('<abbr title="District Chapter">DC</abbr>','piratenkleider').' Koblenz' => 'http://www.piratenpartei-koblenz.de',
             __('<abbr title="District Chapter">DC</abbr>','piratenkleider').' Mittelhaardt' => 'http://www.piratenpartei-mittelhaardt.de',
-            __('<abbr title="District Chapter">DC</abbr>','piratenkleider').' Rhein-Pfalz' => 'https://wiki.piratenpartei.de/RP:District Chapter_Rhein-Pfalz',
-            __('<abbr title="District Chapter">DC</abbr>','piratenkleider').' Rheinhessen' => 'https://wiki.piratenpartei.de/RP:District Chapter_Rheinhessen',
-            __('<abbr title="District Chapter">DC</abbr>','piratenkleider').' S&uuml;dpfalz' => 'https://wiki.piratenpartei.de/RP:District Chapter_S%C3%BCdpfalz',
-	    __('<abbr title="District Chapter">DC</abbr>','piratenkleider').' Trier/Trier-Saarburg' => 'http://piraten-trier.de',
-	    __('<abbr title="District Chapter">DC</abbr>','piratenkleider').' Worms' => 'http://www.piraten-worms.de',
+            __('<abbr title="District Chapter">DC</abbr>','piratenkleider').' Rhein-Pfalz' => 'http://www.piraten-rp.de',
+            __('<abbr title="District Chapter">DC</abbr>','piratenkleider').' Rheinhessen' => 'http://www.piraten-rheinhessen.de',
+            __('<abbr title="District Chapter">DC</abbr>','piratenkleider').' S&uuml;dpfalz' => 'https://wiki.piratenpartei.de/RP:Kreisverband_S%C3%BCdpfalz',
+            __('<abbr title="District Chapter">DC</abbr>','piratenkleider').' Trier/Trier-Saarburg' => 'http://piraten-trier.de',
+            __('<abbr title="District Chapter">DC</abbr>','piratenkleider').' Worms' => 'http://www.piraten-worms.de',
         )
     ),
       'Sachsen' => array(
@@ -912,7 +912,7 @@ $setoptions = array(
               'aktiv-linkmenu' => array(
                   'type'    => 'bool',
                   'title'   => __( 'Website Menu', 'piratenkleider' ),
-                  'label'   => __( 'Display List of several websites belonging to the pirate party.', 'piratenkleider' ),
+                  'label'   => __( 'Display list of several websites belonging to the Pirate Party.', 'piratenkleider' ),
                   'default' => $defaultoptions['aktiv-linkmenu'],
               ),
               'aktiv-suche' => array(
@@ -990,7 +990,7 @@ $setoptions = array(
 		  'title'   => __( 'Websites', 'piratenkleider' ),
 		  'liste'   => $default_toplink_liste,
 		  'parent'  => 'toplinks',
-		  'label'   => __( 'Default Links for Websites as Menu in Header. Can be replaced by defining a menu in section "Website Menu"', 'piratenkleider' ),
+		  'label'   => __( 'Default links for websites as menu in header. Can be replaced by defining a menu in section "Website Menu"', 'piratenkleider' ),
 	      ), 
                
            )
@@ -1043,7 +1043,7 @@ $setoptions = array(
 		  'liste'   =>  array(
                     0 => __("All entries (from every category) and bookmarks together","piratenkleider"), 
                     1 => __("Only entries (from every category)","piratenkleider"), 	    
-                    2 => __("Entries, except those from defined categories","piratenkleider"), 
+                    2 => __("All entries, except those from defined categories","piratenkleider"), 
                     ), 
                   'parent'  => 'artikelstream'
               ), 	
@@ -1058,35 +1058,35 @@ $setoptions = array(
               ),  
                'artikelstream-maxnum-main' => array(
                   'type'    => 'number',
-                  'title'   => __( 'Number Entries', 'piratenkleider' ),
+                  'title'   => __( 'Number of entries', 'piratenkleider' ),
                   'label'   => __( 'Number of entries in main entry list.', 'piratenkleider' ),
                   'default' => $defaultoptions['artikelstream-maxnum-main'],
                   'parent'  => 'artikelstream'
               ), 
                'artikelstream-nextnum-main' => array(
                   'type'    => 'number',
-                  'title'   => __( 'Number elements for entries list', 'piratenkleider' ),
+                  'title'   => __( 'Number of elements for entries list', 'piratenkleider' ),
                   'label'   => __( 'Number of link elements for a list for further entries.', 'piratenkleider' ),
                   'default' => $defaultoptions['artikelstream-nextnum-main'],
                   'parent'  => 'artikelstream'
               ), 
                'artikelstream-numfullwidth-main' => array(
                   'type'    => 'number',
-                  'title'   => __( 'Number Entries in big sized view', 'piratenkleider' ),
+                  'title'   => __( 'Number of entries in big sized view', 'piratenkleider' ),
                   'label'   => __( 'How many entries will be displayed in 100% width of content size.', 'piratenkleider' ),
                   'default' => $defaultoptions['artikelstream-numfullwidth-main'],
                   'parent'  => 'artikelstream'
               ),
              'artikelstream-title-main' => array(
                   'type'    => 'text',
-                  'title'   => __( 'Title main entry list', 'piratenkleider' ),
+                  'title'   => __( 'Title for main entry list', 'piratenkleider' ),
                   'label'   => __( 'Sets a title above the main entry list.', 'piratenkleider' ),
                   'default' => $defaultoptions['artikelstream-title-main'],
                    'parent'  => 'artikelstream',
               ), 
               'artikelstream-title-maincontinuelist' => array(
                   'type'    => 'text',
-                  'title'   => __( 'Title more entries', 'piratenkleider' ),
+                  'title'   => __( 'Title for more entries', 'piratenkleider' ),
                   'label'   => __( 'Sets a title for an additional entry list.', 'piratenkleider' ),
                   'default' => $defaultoptions['artikelstream-title-maincontinuelist'],
                   'parent'  => 'artikelstream',
@@ -1120,7 +1120,7 @@ $setoptions = array(
                               
                'artikelstream-numfullwidth-second' => array(
                   'type'    => 'number',
-                  'title'   => __( 'Number Entries in big sized view', 'piratenkleider' ),
+                  'title'   => __( 'Number of entries in big sized view', 'piratenkleider' ),
                   'label'   => __( 'How many entries will be displayed in 100% width of content size. (Notice: Depends on design!)', 'piratenkleider' ),
                   'default' => $defaultoptions['artikelstream-numfullwidth-second'],
                   'parent'  => 'artikelstream'
@@ -1134,7 +1134,7 @@ $setoptions = array(
               ), 
               'artikelstream-title-secondcontinuelist' => array(
                   'type'    => 'text',
-                  'title'   => __( 'Title more entries', 'piratenkleider' ),
+                  'title'   => __( 'Title for more entries', 'piratenkleider' ),
                   'label'   => __( 'Subtitle for an additional entry list.', 'piratenkleider' ),
                   'default' => $defaultoptions['artikelstream-title-secondcontinuelist'],
                   'parent'  => 'artikelstream',
@@ -1152,7 +1152,7 @@ $setoptions = array(
               ), 
               'artikelstream-maxnum-linktipps' => array(
                   'type'    => 'number',
-                  'title'   => __( 'Number bookmarks', 'piratenkleider' ),
+                  'title'   => __( 'Number of bookmarks', 'piratenkleider' ),
                   'label'   => __( 'Number of bookmarks to display.', 'piratenkleider' ),
                   'default' => $defaultoptions['artikelstream-maxnum-linktipps'],
                   'parent'  => 'artikelstream'
@@ -1160,13 +1160,13 @@ $setoptions = array(
              'artikelstream-nextnum-linktipps' => array(
                   'type'    => 'number',
                   'title'   => __( 'Additional bookmarks', 'piratenkleider' ),
-                  'label'   => __( 'Number for additional bookmarks as a list.', 'piratenkleider' ),
+                  'label'   => __( 'Number of additional bookmarks as a list.', 'piratenkleider' ),
                   'default' => $defaultoptions['artikelstream-nextnum-linktipps'],
                   'parent'  => 'artikelstream'
               ), 
              'artikelstream-title-linktipps' => array(
                   'type'    => 'text',
-                  'title'   => __( 'Title bookmark section', 'piratenkleider' ),
+                  'title'   => __( 'Title for bookmark section', 'piratenkleider' ),
                   'label'   => __( 'Subtitle for bookmark section.', 'piratenkleider' ),
                   'default' => $defaultoptions['artikelstream-title-linktipps'],
                    'parent'  => 'artikelstream',
@@ -1212,25 +1212,25 @@ $setoptions = array(
               'teaser-datebox' => array(
                   'type'    => 'select',
                   'title'   => __( 'Layout entry info', 'piratenkleider' ),
-                  'label'   => __( 'Sets a thumbnail, image, datebox, youtube-video or default image in front of excerpt.', 'piratenkleider' ),
+                  'label'   => __( 'Sets a thumbnail, image, datebox, YouTube video or default image in front of excerpt.', 'piratenkleider' ),
                   'default' => $defaultoptions['teaser-datebox'],
 		  'liste'   =>  array(
 				0 => __("Display datebox","piratenkleider"), 
 				1 => __("Display in order: "
-                                        . "Thumbnail, first image in content if exist, "
-                                        . "YouTube-Embed by first existing YouTube-Link in content "
+                                        . "thumbnail, first image in content if exist, "
+                                        . "embedded YouTube video (first existing YouTube link in content) "
                                         . "or default image","piratenkleider"),
                                 2 => __("Display in order: "
-                                        . "First image in content if exist, thumbnail, "
-                                        . "YouTube-Embed by first existing YouTube-Link in content "
+                                        . "first image in content if exist, thumbnail, "
+                                        . "embedded YouTube video (first existing YouTube link in content) "
                                         . "or default image","piratenkleider"), 
                                 3 => __("Display in order: "
-                                        . "YouTube-Embed by first existing YouTube-Link in content "
-                                        . " thumbnail, first image in content if exist, "
+                                        . "embedded YouTube video (first existing YouTube link in content), "
+                                        . "thumbnail, first image in content if exist, "
                                         . "or default image","piratenkleider"), 
                                 4 => __("Display in order: "
-                                        . "YouTube-Embed by first existing YouTube-Link in content "
-                                        . " first image in content if exist, thumbnail, "
+                                        . "embedded YouTube video (first existing YouTube link in content), "
+                                        . "first image in content if exist, thumbnail, "
                                         . "or default image","piratenkleider"),
 				5 => __("Hide entry info","piratenkleider")), 
                   'parent'  => 'auszuege'
@@ -1253,39 +1253,39 @@ $setoptions = array(
                 'teaser-maxlength-halfwidth' => array(
                   'type'    => 'number',
                   'title'   => __( 'Length', 'piratenkleider' ),
-                  'label'   => __( 'Maximum numbers of chars in excerpt. (Small entry teaser in 50% content-width).', 'piratenkleider' ),
+                  'label'   => __( 'Maximum numbers of chars in excerpt. (Small entry teaser in half content width).', 'piratenkleider' ),
                   'default' => $defaultoptions['teaser-maxlength-halfwidth'],
 		'parent'  => 'auszuege'
               ),                 
              'teaser-titleup-halfwidth' => array(
                   'type'    => 'bool',
                   'title'   => __( 'Title up', 'piratenkleider' ),
-                  'label'   => __( 'Title above thumbnail, date and text. (Small entry teaser in 50% content-width).', 'piratenkleider' ),
+                  'label'   => __( 'Title above thumbnail, date and text. (Small entry teaser in half content width).', 'piratenkleider' ),
                   'default' => $defaultoptions['teaser-titleup-halfwidth'],
                   'parent'  => 'auszuege'
               ), 
               'teaser-datebox-halfwidth' => array(
                   'type'    => 'select',
                   'title'   => __( 'Layout entry info', 'piratenkleider' ),
-                  'label'   => __( 'Sets a thumbnail, image, datebox, youtube-video or default image in front of excerpt. (Small entry teaser in 50% content-width).', 'piratenkleider' ),
+                  'label'   => __( 'Sets a thumbnail, image, datebox, YouTube video or default image in front of excerpt. (Small entry teaser in half content width).', 'piratenkleider' ),
                   'default' => $defaultoptions['teaser-datebox'],
 		  'liste'   =>  array(
 				0 => __("Display datebox","piratenkleider"), 
 				1 => __("Display in order: "
-                                        . "Thumbnail, first image in content if exist, "
-                                        . "YouTube-Embed by first existing YouTube-Link in content "
+                                        . "thumbnail, first image in content if exist, "
+                                        . "embedded YouTube video (first existing YouTube link in content) "
                                         . "or default image","piratenkleider"),
                                 2 => __("Display in order: "
-                                        . "First image in content if exist, thumbnail, "
-                                        . "YouTube-Embed by first existing YouTube-Link in content "
+                                        . "first image in content if exist, thumbnail, "
+                                        . "embedded YouTube video (first existing YouTube link in content) "
                                         . "or default image","piratenkleider"), 
                                 3 => __("Display in order: "
-                                        . "YouTube-Embed by first existing YouTube-Link in content "
-                                        . " thumbnail, first image in content if exist, "
+                                        . "embedded YouTube video (first existing YouTube link in content), "
+                                        . "thumbnail, first image in content if exist, "
                                         . "or default image","piratenkleider"), 
                                 4 => __("Display in order: "
-                                        . "YouTube-Embed by first existing YouTube-Link in content "
-                                        . " first image in content if exist, thumbnail, "
+                                        . "embedded YouTube video (first existing YouTube link in content), "
+                                        . "first image in content if exist, thumbnail, "
                                         . "or default image","piratenkleider"),
 				5 => __("Hide entry info","piratenkleider")), 
 
@@ -1294,7 +1294,7 @@ $setoptions = array(
 	      'teaser-floating-halfwidth' => array(
                   'type'    => 'bool',
                   'title'   => __( 'Floating excerpt', 'piratenkleider' ),
-                  'label'   => __( 'Excerpt text will float around entry info. (Small entry teaser in 50% content-width).', 'piratenkleider' ),
+                  'label'   => __( 'Excerpt text will float around entry info. (Small entry teaser in half content width).', 'piratenkleider' ),
                   'default' => $defaultoptions['teaser-floating-halfwidth'],
                   'parent'  => 'auszuege'
               ), 	       
@@ -1302,7 +1302,7 @@ $setoptions = array(
                'teaser-dateline-halfwidth' => array(
                   'type'    => 'bool',
                   'title'   => __( 'Date', 'piratenkleider' ),
-                  'label'   => __( 'Show date as first line after title. (Small entry teaser in 50% content-width).', 'piratenkleider' ),
+                  'label'   => __( 'Show date as first line after title. (Small entry teaser in half content width).', 'piratenkleider' ),
                   'default' => $defaultoptions['teaser-dateline-halfwidth'],
                   'parent'  => 'auszuege'
               ), 
@@ -1388,14 +1388,14 @@ $setoptions = array(
               'slider-slideshowSpeed' => array(
                   'type'    => 'number',
                   'title'   => __( 'Show Duration', 'piratenkleider' ),
-                  'label'   => __( 'Duration for presenting a slide in miliseconds.', 'piratenkleider' ),
+                  'label'   => __( 'Duration for presenting a slide in milliseconds.', 'piratenkleider' ),
                   'default' => $defaultoptions['slider-slideshowSpeed'],
                    'parent'  => 'sliderpars'
               ), 
               'slider-animationDuration' => array(
                   'type'    => 'number',
                   'title'   => __( 'Animation duration', 'piratenkleider' ),
-                  'label'   => __( 'Duration for sliding effect in miliseconds.', 'piratenkleider' ),
+                  'label'   => __( 'Duration for sliding effect in milliseconds.', 'piratenkleider' ),
                   'default' => $defaultoptions['slider-animationDuration'],
                    'parent'  => 'sliderpars'
               ),  
@@ -1453,22 +1453,22 @@ $setoptions = array(
 	       
 	    'category-num-article-fullwidth' => array(
                   'type'    => 'number',
-                  'title'   => __( 'Number Entries in big sized view', 'piratenkleider' ),
+                  'title'   => __( 'Number of entries in big sized view', 'piratenkleider' ),
                   'label'   => __( 'How many entries will be displayed in 100% width of content size.', 'piratenkleider' ),
                   'default' => $defaultoptions['category-num-article-fullwidth'],
 		'parent'  => 'category'
               ),
               'category-num-article-halfwidth' => array(
                   'type'    => 'select',
-                  'title'   => __( 'Number Entries in half sized view', 'piratenkleider' ),
-                  'label'   => __( 'How many entries will be displayed in 50% width of content size.', 'piratenkleider' ),
+                  'title'   => __( 'Number of entries in half sized view', 'piratenkleider' ),
+                  'label'   => __( 'How many entries will be displayed in half width of content size.', 'piratenkleider' ),
                   'liste'   => array(0 => 0, 2 => 2, 4 => 4, 6 => 6, 8 => 8, 10=>10, 12=>12, 14=>14, 16=>16),
                   'default' => $defaultoptions['category-num-article-halfwidth'],
 		  'parent'  => 'category'
               ),    
 	    'category-teaser-maxlength' => array(
                   'type'    => 'number',
-                  'title'   => __( 'Length Excerpt', 'piratenkleider' ),
+                  'title'   => __( 'Length of excerpt', 'piratenkleider' ),
                   'label'   => __( 'Maximum numbers of chars in excerpt.', 'piratenkleider' ),
                   'default' => $defaultoptions['category-teaser-maxlength'],
 		'parent'  => 'category'
@@ -1483,25 +1483,25 @@ $setoptions = array(
               'category-teaser-datebox' => array(
                   'type'    => 'select',
                   'title'   => __( 'Layout entry info', 'piratenkleider' ),
-                  'label'   => __( 'Sets a thumbnail, image, datebox, youtube-video or default image in front of excerpt. (Small entry teaser in 50% content-width).', 'piratenkleider' ),
+                  'label'   => __( 'Sets a thumbnail, image, datebox, youtube-video or default image in front of excerpt. (Small entry teaser in half content width).', 'piratenkleider' ),
                   'default' => $defaultoptions['category-teaser-datebox'],
 		  'liste'   =>  array(
 				0 => __("Display datebox","piratenkleider"), 
 				1 => __("Display in order: "
-                                        . "Thumbnail, first image in content if exist, "
-                                        . "YouTube-Embed by first existing YouTube-Link in content "
+                                        . "thumbnail, first image in content if exist, "
+                                        . "embedded YouTube video (first existing YouTube link in content) "
                                         . "or default image","piratenkleider"),
                                 2 => __("Display in order: "
-                                        . "First image in content if exist, thumbnail, "
-                                        . "YouTube-Embed by first existing YouTube-Link in content "
+                                        . "first image in content if exist, thumbnail, "
+                                        . "embedded YouTube video (first existing YouTube link in content) "
                                         . "or default image","piratenkleider"), 
                                 3 => __("Display in order: "
-                                        . "YouTube-Embed by first existing YouTube-Link in content "
-                                        . " thumbnail, first image in content if exist, "
+                                        . "embedded YouTube video (first existing YouTube link in content), "
+                                        . "thumbnail, first image in content if exist, "
                                         . "or default image","piratenkleider"), 
                                 4 => __("Display in order: "
-                                        . "YouTube-Embed by first existing YouTube-Link in content "
-                                        . " first image in content if exist, thumbnail, "
+                                        . "embedded YouTube video (first existing YouTube link in content), "
+                                        . "first image in content if exist, thumbnail, "
                                         . "or default image","piratenkleider"),
 				5 => __("Hide entry info","piratenkleider")),
 
@@ -1525,7 +1525,7 @@ $setoptions = array(
                
             'category-teaser-maxlength-halfwidth' => array(
                 'type'    => 'number',
-                'title'   => __( 'Length Excerpt', 'piratenkleider' ),
+                'title'   => __( 'Length of excerpt', 'piratenkleider' ),
                 'label'   => __( 'Maximum numbers of chars in excerpt.', 'piratenkleider' ),
                 'default' => $defaultoptions['category-teaser-maxlength-halfwidth'],
 		'parent'  => 'category'
@@ -1540,25 +1540,25 @@ $setoptions = array(
             'category-teaser-datebox-halfwidth' => array(
                 'type'    => 'select',
                 'title'   => __( 'Layout entry info', 'piratenkleider' ),
-                'label'   => __( 'Sets a thumbnail, image, datebox, youtube-video or default image in front of excerpt. (Small entry teaser in 50% content-width).', 'piratenkleider' ),
+                'label'   => __( 'Sets a thumbnail, image, datebox, youtube-video or default image in front of excerpt. (Small entry teaser in half content width).', 'piratenkleider' ),
                 'default' => $defaultoptions['category-teaser-datebox-halfwidth'],
 		'liste'   =>  array(
 				0 => __("Display datebox","piratenkleider"), 
 				1 => __("Display in order: "
-                                        . "Thumbnail, first image in content if exist, "
-                                        . "YouTube-Embed by first existing YouTube-Link in content "
+                                        . "thumbnail, first image in content if exist, "
+                                        . "embedded YouTube video (first existing YouTube link in content) "
                                         . "or default image","piratenkleider"),
                                 2 => __("Display in order: "
-                                        . "First image in content if exist, thumbnail, "
-                                        . "YouTube-Embed by first existing YouTube-Link in content "
+                                        . "first image in content if exist, thumbnail, "
+                                        . "embedded YouTube video (first existing YouTube link in content) "
                                         . "or default image","piratenkleider"), 
                                 3 => __("Display in order: "
-                                        . "YouTube-Embed by first existing YouTube-Link in content "
-                                        . " thumbnail, first image in content if exist, "
+                                        . "embedded YouTube video (first existing YouTube link in content), "
+                                        . "thumbnail, first image in content if exist, "
                                         . "or default image","piratenkleider"), 
                                 4 => __("Display in order: "
-                                        . "YouTube-Embed by first existing YouTube-Link in content "
-                                        . " first image in content if exist, thumbnail, "
+                                        . "embedded YouTube video (first existing YouTube link in content), "
+                                        . "first image in content if exist, thumbnail, "
                                         . "or default image","piratenkleider"),
 				5 => __("Hide entry info","piratenkleider")), 
 
@@ -1567,7 +1567,7 @@ $setoptions = array(
 	    'category-teaser-floating-halfwidth' => array(
                 'type'    => 'bool',
                 'title'   => __( 'Floating excerpt', 'piratenkleider' ),
-                'label'   => __( 'Excerpt text will float around entry info. (Small entry teaser in 50% content-width).', 'piratenkleider' ),
+                'label'   => __( 'Excerpt text will float around entry info. (Small entry teaser in half content width).', 'piratenkleider' ),
                 'default' => $defaultoptions['category-teaser-floating-halfwidth'],
                 'parent'  => 'category'
             ), 
@@ -1800,7 +1800,7 @@ $setoptions = array(
                     'default' => $defaultoptions['seitenmenu_mode'],
                     'liste'   => array(
                         0 => __("Use menu", 'piratenkleider'), 
-                        1 => __("Use page hierachy", 'piratenkleider')),
+                        1 => __("Use page hierarchy", 'piratenkleider')),
                     'parent'  => 'seitenmenu',
               ),
               'zeige_subpagesonly' => array(
@@ -1827,7 +1827,7 @@ $setoptions = array(
               'url-newsletteranmeldung' => array(
                   'type'    => 'url',
                   'title'   => __( 'Newsletter / Mailing list', 'piratenkleider' ),
-                  'label'   => __( 'Default URL for a subscribition for a mailing list', 'piratenkleider' ),
+                  'label'   => __( 'Default URL for a subscription for a mailing list', 'piratenkleider' ),
                   'default' => $defaultoptions['url-newsletteranmeldung'],
               ), 
               'plakate'  => array(
@@ -1853,7 +1853,7 @@ $setoptions = array(
               'plakate-title' => array(
                   'type'    => 'text',
                   'title'   => __( 'Optional alternative text', 'piratenkleider' ),
-                  'label'   => __( 'Sets a text as alternative text on all slider poster.', 'piratenkleider' ),
+                  'label'   => __( 'Sets a text as alternative text on all poster slides.', 'piratenkleider' ),
                   'default' => $defaultoptions['plakate-title'],
                   'parent'  => 'plakate',
               ),   
@@ -1987,7 +1987,7 @@ $setoptions = array(
                   'liste'   => array(
 		      0 => __( 'Do not display social media buttons', 'piratenkleider' ) ,  
 		      1 => __( 'Header', 'piratenkleider' ), 
-		      2 => __( 'Aside of Content', 'piratenkleider' )),
+		      2 => __( 'Aside of content', 'piratenkleider' )),
                   'default' => $defaultoptions['alle-socialmediabuttons'],
               ),  
 	      'sm-list'  => array(
@@ -2053,7 +2053,7 @@ $setoptions = array(
 	       
             'background'  => array(
                   'type'    => 'section',
-                  'title'   => __( 'Body Background', 'piratenkleider' ),
+                  'title'   => __( 'Body background', 'piratenkleider' ),
               ),
             'alt-body-background' => array(
                   'type'    => 'imageurl',
@@ -2064,7 +2064,7 @@ $setoptions = array(
               ),   
              'alt-body-background-orix' => array(
                   'type'    => 'select',
-                  'title'   => __( 'Horizontal Orientation', 'piratenkleider' ),
+                  'title'   => __( 'Horizontal orientation', 'piratenkleider' ),
                   'label'   => __( 'Defines the orientation at x-axis', 'piratenkleider' ),
                   'default' =>  'left',
                   'liste'   => array(
@@ -2076,7 +2076,7 @@ $setoptions = array(
               ),     
               'alt-body-background-oriy' => array(
                   'type'    => 'select',
-                  'title'   => __( 'Vertical Orientation', 'piratenkleider' ),
+                  'title'   => __( 'Vertical orientation', 'piratenkleider' ),
                   'label'   => __( 'Defines the orientation at y-axis', 'piratenkleider' ),
                   'default' => 'top',
                   'liste'   => array(
@@ -2114,7 +2114,7 @@ $setoptions = array(
               'fonts-menuheaders' => array(
                   'type'    => 'fontselect',
                   'title'   => __( 'Menu fonts', 'piratenkleider' ),
-                  'label'   => __( 'Changes font at menu items.', 'piratenkleider' ),
+                  'label'   => __( 'Changes font for menu items.', 'piratenkleider' ),
                   'default' => $defaultoptions['fonts-menuheaders'],
                   'liste'   => $default_fonts,
 		  	  'parent'  => 'fonts', 
@@ -2167,7 +2167,7 @@ $setoptions = array(
 	       
 	     'favicon-file' => array(
                   'type'    => 'image',
-                  'title'   => __( 'FavIcon', 'piratenkleider' ),
+                  'title'   => __( 'Favicon', 'piratenkleider' ),
                   'label'   => __( 'Set an own favicon file for your website.', 'piratenkleider' ),
 		  'parent' => 'miscdesign',
 		  'maxwidth' =>  64,
@@ -2175,7 +2175,7 @@ $setoptions = array(
               ),
 	       'src-teaser-thumbnail_default'=> array(
                   'type'    => 'image',
-                  'title'   => __( 'Fallback Thumbnail', 'piratenkleider' ),
+                  'title'   => __( 'Fallback thumbnail', 'piratenkleider' ),
                   'label'   => __( 'Defines an image as default thumbnail for entries on index pages.', 'piratenkleider' ),
 		  'parent' => 'miscdesign',
 		  'maxwidth' =>  64,
@@ -2228,7 +2228,7 @@ $setoptions = array(
               'login_errors' => array(
                   'type'    => 'select',
                   'title'   => __( 'Error message on login', 'piratenkleider' ),
-                  'label'   => __( 'Chose if error messages will be displayed on login screen, if someone fails with username and password.', 'piratenkleider' ),
+                  'label'   => __( 'Chose whether error messages will be displayed on login screen, if someone fails with username and password.', 'piratenkleider' ),
                   'liste'   => array(
                       1 => __( 'Display error message', 'piratenkleider' ), 
                       0 => __( 'Do not display anything', 'piratenkleider' )),
@@ -2270,7 +2270,7 @@ $setoptions = array(
               'anonymize-user-commententries' => array(
                   'type'    => 'select',
                   'title'   => __( 'Identification', 'piratenkleider' ),
-                  'label'   => __( 'Form fields for comment user, allowing them to identify themself', 'piratenkleider' ),
+                  'label'   => __( 'Form fields for comment user, allowing them to identify themselves', 'piratenkleider' ),
                   'liste'   => array( 0 => "Name, URL,  E-Mail (Wordpress-Default)", 1=> "Name", 2 => "Name, URL"),
                   'default' => $defaultoptions['anonymize-user-commententries'],
                   'parent'  => 'anonymitaet',
