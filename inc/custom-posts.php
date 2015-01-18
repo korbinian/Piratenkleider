@@ -143,17 +143,19 @@ function linktipp_metabox_save( $post_id ) {
 	    update_post_meta( $post_id, 'linktipp_url', $url );
 	}
 	
-	
 	$imgid = intval($_POST['linktipp_imgid']);
 	if ($imgid) {
 	    update_post_meta( $post_id, 'linktipp_imgid', $imgid );
 	} else {
 	    $urlimg = $_POST['linktipp_image'];
 	    if (filter_var($urlimg, FILTER_VALIDATE_URL)) {
-		update_post_meta( $post_id, 'linktipp_image', $urlimg );
+			update_post_meta( $post_id, 'linktipp_image', $urlimg );
+	    } else {
+	    	delete_post_meta( $post_id, 'linktipp_image' );
 	    }
+		delete_post_meta( $post_id, 'linktipp_imgid' );
 	}
-
+	
 	if( isset( $_POST[ 'linktipp_text' ] ) ) {
 	    update_post_meta( $post_id, 'linktipp_text',  $_POST[ 'linktipp_text' ]  );
 	}
@@ -215,7 +217,7 @@ function linktipp_display ($linktipp, $addclass = '') {
        } 
        $out .= '<div class="p3-column">';
 	$out .= "\n";
-	   $out .= '<article class="post-entry p3-cbox"><p>';
+	   $out .= '<article class="post-entry p3-cbox">';
 	   $out .= "\n";
 	       if ($options['linktipps-linkpos']==1) {    
 		   $out .= '<a href="'.$linktipp_url.'">';
@@ -224,7 +226,7 @@ function linktipp_display ($linktipp, $addclass = '') {
 	       if (isset($linktipp_imgid) && ($linktipp_imgid>0)) {
 		   $image_attributes = wp_get_attachment_image_src( $linktipp_imgid, 'linktipp-thumb' );
 		   if (is_array($image_attributes)) {
-		      $out .= '<img src="'.$image_attributes[0].'" width="'.$image_attributes[1].'" height="'.$image_attributes[2].'" alt="'.$linktipp_text.'">';
+		      $out .= '<img src="'.$image_attributes[0].'" width="'.$image_attributes[1].'" height="'.$image_attributes[2].'" alt="'.trim(strip_tags($linktipp_text)).'">';
 		   }
 	       } elseif (isset($linktipp_image)) {
 		   $out .= '<img src="'.$linktipp_image.'" alt="">'; 
@@ -233,9 +235,8 @@ function linktipp_display ($linktipp, $addclass = '') {
 		   $out .= '</a>';
 	       }
 	      if (isset($linktipp_text)) {
-		   $out .=  $linktipp_text;
-	      }     
-	   $out .= '</p>';
+		   $out .=  apply_filters('the_content', $linktipp_text);
+	      }
 	   $out .= "</article>\n"; 
 
 	   if ($options['linktipps-titlepos']==1) { 
