@@ -1018,10 +1018,10 @@ function piratenkleider_search_teaser($teaserlength = 250, $withthumb = 1, $asli
     $out .= "\n";
     $out .= '<div>'; 
     $out .= $leftbox;  
-    $excerpt = get_piratenkleider_custom_excerpt($teaserlength, 1, 1, 2);     
-    if (isset($search)) {
-        $keys= explode(" ",$search);
-	$excerpt 	= preg_replace('/('.implode('|', $keys) .')/iu',
+    $excerpt = get_piratenkleider_custom_excerpt($teaserlength, 1, 1, 2);  
+    if (trim($search) !== '') {
+        $keys = array_diff(explode(" ", $search), array(''));
+	 	$excerpt = preg_replace('/('.implode('|', $keys) .')/iu',
 		'<strong class="search-hit">\0</strong>',
 		$excerpt);
     }
