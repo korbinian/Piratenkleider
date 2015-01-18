@@ -289,7 +289,7 @@ party to the smallest number of people we need to do the job.
 
     <div class="content-aside">
       <div class="skin">
-        <h1 class="skip"><?php _e( 'More informations', 'piratenkleider' ); ?></h1>           
+        <h1 class="skip"><?php _e( 'More information', 'piratenkleider' ); ?></h1>           
          <?php  
             get_piratenkleider_seitenmenu($options['zeige_sidebarpagemenu'],$options['zeige_subpagesonly'],$options['seitenmenu_mode']);
             get_sidebar(); 

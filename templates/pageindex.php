@@ -121,7 +121,7 @@
     </div>
     <div class="content-aside">
       <div class="skin">
-          <h1 class="skip"><?php _e( 'More informations', 'piratenkleider' ); ?></h1>
+          <h1 class="skip"><?php _e( 'More information', 'piratenkleider' ); ?></h1>
             <?php get_sidebar(); ?>
       </div>
     </div>

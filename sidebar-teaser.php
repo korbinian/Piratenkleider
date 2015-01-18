@@ -69,9 +69,9 @@
                   
                 }
                 echo '<div class="caption"><p class="cifont">'.$subtitle.'</p>';
-                echo "<h3><a href=";
+                echo '<h3><a href="';
                 the_permalink();
-                echo ">";
+                echo '">';
                 echo short_title('&hellip;', $options['teaser-title-words'], $options['teaser-title-maxlength']);
                 echo "</a></h3></div>";   
                                 
@@ -94,9 +94,9 @@
 		    }
                      echo '<img src="'.$image_url.'" width="'.$options['smallslider-thumb-width'].'" height="'.$options['smallslider-thumb-height'].'" alt="">';                
                 }              
-                echo "<h3><a href=";
+                echo '<h3><a href="';
                 the_permalink();
-                echo ">";
+                echo '">';
                 the_title();
                 echo '</a></h3><div class="teaser-excerpt">';
                 echo get_piratenkleider_custom_excerpt();
