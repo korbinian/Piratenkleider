@@ -578,7 +578,7 @@ $default_alternativestyles = array(
              __('Ukraine', 'piratenkleider' ) => 'http://pp-ua.org/',
 //             __('Uruguay', 'piratenkleider' ) => 'http://partidopirata.org.uy/',
              __('United Kingdom', 'piratenkleider') => 'https://pirateparty.org.uk/',
-             __('United States', 'piratenkleider' ) => 'http://pirate-party.us/',
+             __('United States', 'piratenkleider' ) => 'http://uspirates.org/',
 
          )
      ), 
@@ -633,7 +633,7 @@ $default_alternativestyles = array(
             '<span class="flagicon-ua"></span> '. __('Ukraine', 'piratenkleider' ) => 'http://pp-ua.org/',
     //        '<span class="flagicon-uy"></span> '. __('Uruguay', 'piratenkleider' ) => 'http://partidopirata.org.uy/',
             '<span class="flagicon-uk"></span> '. __('United Kingdom', 'piratenkleider') => 'https://pirateparty.org.uk/',
-            '<span class="flagicon-us"></span> '. __('United States', 'piratenkleider' ) => 'http://pirate-party.us/',             
+            '<span class="flagicon-us"></span> '. __('United States', 'piratenkleider' ) => 'http://uspirates.org/',             
          )
      ), 
      'Baden-Wuerttemberg' => array(
