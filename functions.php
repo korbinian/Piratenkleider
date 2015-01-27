@@ -731,8 +731,12 @@ function piratenkleider_comment( $comment, $args, $depth ) {
                 case '' :
         ?>
         <li <?php comment_class(); ?> id="li-comment-<?php comment_ID(); ?>">
-          <div id="comment-<?php comment_ID(); ?>">
-            <article itemprop="comment" itemscope itemtype="http://schema.org/UserComments">
+            <?php 
+            $addclass='';
+            if ( $comment->user_id > 0 && $user = get_userdata($comment->user_id) ) {
+                $addclass= 'class="byuser"';              
+            } ?>
+            <article <?php echo $addclass;?> itemprop="comment" itemscope itemtype="http://schema.org/UserComments">
               <header>  
                 <div class="comment-details">
                     
@@ -755,9 +759,8 @@ function piratenkleider_comment( $comment, $args, $depth ) {
                           /* translators: 1: date, 2: time */
                        printf( __( '%1$s at %2$s', 'piratenkleider' ), get_comment_date(),  get_comment_time() ); ?></time></a> Folgendes:<?php edit_comment_link( __( '(Edit)', 'piratenkleider' ), ' ' );
                     ?>
-                  
                 </div><!-- .comment-meta .commentmetadata -->
-                </div>
+                </div><!-- .comment-details -->
               </header>
                 <div class="comment-body" itemprop="commentText"><?php comment_text(); ?></div>
                 <?php if ($options['aktiv-commentreplylink']) { ?>
@@ -766,7 +769,6 @@ function piratenkleider_comment( $comment, $args, $depth ) {
                 </div> <!-- .reply -->
                 <?php } ?>
             </article>
-          </div><!-- #comment-##  -->
 
         <?php
                         break;

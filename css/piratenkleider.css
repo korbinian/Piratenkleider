@@ -1572,6 +1572,13 @@ body.nav-fixed .nav-main li a span {
   display: inline-block;
   margin: -5px 0 0 -10px;
   position: absolute; }
+
+.post-comments article.byuser {
+    color: blue;
+}
+
+
+
 #respond{
     clear:both;
 }
