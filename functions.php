@@ -1310,7 +1310,7 @@ if ( ! function_exists( 'get_piratenkleider_firstpicture' ) ) :
 /*
  * Erstes Bild aus einem Artikel auslesen, wenn dies vorhanden ist
  */
-function get_piratenkleider_firstpicture(){
+function get_piratenkleider_firstpicture($relative = true){
     global $post;
     $first_img = '';
     ob_start();
@@ -1320,8 +1320,10 @@ function get_piratenkleider_firstpicture(){
    if ((is_array($matches)) && (isset($matches[1]))) {
         $first_img = $matches[1];
         if (!empty($first_img)){
-            $site_link =  home_url();  
-            $first_img = preg_replace("%$site_link%i",'', $first_img); 
+            if ($relative) {
+                $site_link =  home_url();  
+                $first_img = preg_replace("%$site_link%i",'', $first_img); 
+            }
             $imagehtml = '<img src="'.$first_img.'" alt="" >';
             return $imagehtml;    
         }
@@ -1527,6 +1529,18 @@ function wpi_linkexternclass_callback($matches) {
 add_filter('the_content', 'wpi_linkexternclass');
 
 
+ function piratenkleider_relativeimgurl($content){
+        return preg_replace_callback('/<img[^>]+/', 'piratenkleider_relativeimgurl_callback', $content);
+}
+function piratenkleider_relativeimgurl_callback($matches) {
+        $link = $matches[0];
+        $site_link =  wp_make_link_relative(home_url());  
+        $link = preg_replace("%src=\"$site_link%i", 'src="', $link);                 
+        return $link;
+    }
+ add_filter('the_content', 'piratenkleider_relativeimgurl');
+
+
  function wpi_relativeurl($content){
         return preg_replace_callback('/<a[^>]+/', 'wpi_relativeurl_callback', $content);
     }
@@ -1540,6 +1554,71 @@ function wpi_relativeurl_callback($matches) {
  add_filter('the_content', 'wpi_relativeurl');
    
 
+ /*
+  * Replaces esc_url, but also makes URL relative
+  */
+ function piratenkleider_esc_url( $url) {
+     if (!isset($url)) {
+	 $url = home_url("/");
+     }
+     return wp_make_link_relative(esc_url($url));
+ }
+ 
+ function get_piratenkleider_template_uri () {
+     return wp_make_link_relative(get_template_directory_uri());
+ }
+ 
+
+add_action('template_redirect', 'rw_relative_urls');
+function rw_relative_urls() {
+    // Don't do anything if:
+    // - In feed
+    // - In sitemap by WordPress SEO plugin
+    if (is_admin() || is_feed() || get_query_var('sitemap')) {
+        return;
+    }
+    $filters = array(
+        'post_link',
+        'post_type_link',
+        'page_link',
+        'attachment_link',
+        'get_shortlink',
+        'post_type_archive_link',
+        'get_pagenum_link',
+        'get_comments_pagenum_link',
+        'term_link',
+        'search_link',
+        'day_link',
+        'month_link',
+        'year_link',
+        'script_loader_src',
+        'style_loader_src',
+    );
+    foreach ($filters as $filter) {
+        add_filter($filter, 'piratenkleider_make_link_relative');
+    }
+}
+
+function piratenkleider_make_link_relative($url) {
+    $current_site_url = get_site_url();   
+	if (!empty($GLOBALS['_wp_switched_stack'])) {
+        $switched_stack = $GLOBALS['_wp_switched_stack'];
+        $blog_id = end($switched_stack);
+        if ($GLOBALS['blog_id'] != $blog_id) {
+            $current_site_url = get_site_url($blog_id);
+        }
+    }
+    $current_host = parse_url($current_site_url, PHP_URL_HOST);
+    $host = parse_url($url, PHP_URL_HOST);
+    if($current_host == $host) {
+        $url = wp_make_link_relative($url);
+    }
+    return $url; 
+}
+
+ 
+ 
+ 
 function piratenkleider_breadcrumb() {
   global $defaultoptions;
   
@@ -1814,3 +1893,36 @@ function piratenkleider_page_template($t) {
     }
     return $t;
 }
+
+
+//Funktion um Beitragsbilder im RSS-Feed anzuzeigen
+function featured_image_in_rss($content) {
+    global $post;
+    global $options;
+    // Überprüfen, ob Artikel ein Beitragsbild hat
+    if(is_feed()) {  
+        $leftbox =  '<div class="rss_bild" style="float: left;">';	    
+
+        $firstpic = get_piratenkleider_firstpicture(false);
+        if (( strlen(trim($firstpic))>10 )) {
+            $output = $firstpic;        
+        } else {
+            if (has_post_thumbnail($post->ID)) {
+                $output = get_the_post_thumbnail($post->ID, 'thumb',array('style' => 'margin-bottom:10px;'));
+            } else {
+                $output = '<img src="'.$options['src-teaser-thumbnail_default'].'" alt="">';
+            }
+        }
+
+        $leftbox .= $output;
+        $leftbox .= '</div>'; 
+
+        $content = $leftbox . $content;
+    }
+    return $content;
+}
+//Filter für RSS-Auszug
+add_filter('the_excerpt_rss', 'featured_image_in_rss');
+//Filter für RSS-Content
+add_filter('the_content_feed', 'featured_image_in_rss'); 
+add_filter('the_content','featured_image_in_rss');

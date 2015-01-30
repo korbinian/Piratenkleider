@@ -1902,9 +1902,13 @@ img.wp-smiley {
         display: none; 
   }
   .content-primary .columns .column1 {
-      float: left; }
+      float: left; 
+      padding-right: 5px;
+  }
   .content-primary .columns .column2 {
-      float: right; }
+      float: right; 
+      padding-left: 5px;
+  }
   .content-primary .post-nav {
     margin-bottom: 20px;
     margin-left: 10px;

@@ -3,6 +3,15 @@ Theme Piratenkleider
 Changelog 
 (since version 3.2; Former changes look at github.com/Piratenkleider/)
 
+Version 3.3.3:
+* Added function for relative URLs for several parts of content
+* Added thumbnails in feed
+* Added padding to left/right of columns on startpage
+
+Version 3.3.2:
+* "Blue posts" for registered users in comments
+* Changed us-pirates url
+
 Version 3.3.1:
 * Miscellaneous fixes, mostly for translation
 * Fix css and js paths
