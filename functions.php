@@ -488,8 +488,8 @@ function piratenkleider_addmetatags() {
     if ((isset($options['favicon-file'])) && ($options['favicon-file_id']>0 )) {	 
         $output .=  '<link rel="shortcut icon" href="'.$options['favicon-file'].'">'."\n";
     } else {
-        $output .=  '<link rel="apple-touch-icon" href="'.get_template_directory_uri().'/apple-touch-icon.png">'."\n";
-        $output .=  '<link rel="shortcut icon" href="'.get_template_directory_uri().'/favicon.ico">'."\n";
+        $output .=  '<link rel="apple-touch-icon" href="'.get_piratenkleider_template_uri().'/apple-touch-icon.png">'."\n";
+        $output .=  '<link rel="shortcut icon" href="'.get_piratenkleider_template_uri().'/favicon.ico">'."\n";
     }
     echo $output;
 }
@@ -1578,9 +1578,10 @@ function rw_relative_urls() {
         return;
     }
     $filters = array(
-        'post_link',
+   //     'post_link',
         'post_type_link',
         'page_link',
+        'author_link',
         'attachment_link',
         'get_shortlink',
         'post_type_archive_link',

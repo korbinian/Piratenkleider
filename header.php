@@ -90,7 +90,7 @@
         <?php if ( ! is_home() ) { ?>
                   <a itemprop="url" href="<?php echo home_url( '/' ); ?>" title="<?php echo $defaultoptions['default_text_title_home_backlink']; ?>" rel="home" class="logo">
               <?php } ?>                                                             
-              <h1><img itemprop="logo" src="<?php header_image(); ?>" alt="<?php bloginfo( 'name' ); ?>"></h1>
+              <h1><img itemprop="logo" src="<?php echo wp_make_link_relative(get_header_image()); ?>" alt="<?php bloginfo( 'name' ); ?>"></h1>
               <meta itemprop="name" content="<?php echo esc_attr(piratenkleider_tag_schema_org_name()); ?>" />              
               <?php if ( ! is_home() ) { ?>
                   </a>
