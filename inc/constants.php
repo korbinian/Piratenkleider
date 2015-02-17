@@ -244,6 +244,11 @@ $defaultoptions = array(
     'fonts-content'                         => 'none',
     'img-meta-credits'                      => '',
     'feed-overwriteauthorstring'            => '',
+    'feed-addthumbnail'                     => true,
+    'feed-thumb-sizename'                   => 'feedthumb',
+    'feed-thumb-width'                      => 600,
+    'feed-thumb-height'                     => 315,
+    'feed-thumb-crop'                       => false,
     'position_sidebarbottom'                => 0,
     'suche-treffer_pro_seite'               => 10,
     'suche-excerptlength'                   => 300,
@@ -2326,7 +2331,53 @@ $setoptions = array(
                   'default' => $defaultoptions['aktiv-autokeywords'],
                   'parent'  => 'meta',
               ),           
-            'meta-itemtype-aboutpage' => array(
+          	       'linktipps'  => array(
+                  'type'    => 'section',
+                  'title'   => __('Bookmarks', 'piratenkleider'),                   
+              ),            
+
+               
+              'linktipps-titlepos'  => array(
+                  'type'    => 'select',
+                  'title'   => __( 'Title', 'piratenkleider' ),
+                  'label'   => __( 'Sets the position of bookmark title', 'piratenkleider'),		   
+                  'default' => $defaultoptions['linktipps-titlepos'],
+                  'liste'   => array( 
+                        0   => __("On top of text or/and image", 'piratenkleider'), 
+                        1   => __("Below of text or/and image", 'piratenkleider')),
+                  'parent'  => 'linktipps',
+              ),
+                'linktipps-subtitlepos'  => array(
+                  'type'    => 'select',
+                  'title'   => __( 'Subtitle', 'piratenkleider' ),
+                  'label'   => __( 'Sets the position of subtitle', 'piratenkleider'),		   
+                  'default' => $defaultoptions['linktipps-subtitlepos'],
+                  'liste'   => array( 
+                       0 => __("Top", 'piratenkleider'),
+                        1 => __("Bottom", 'piratenkleider')),
+                  'parent'  => 'linktipps',
+              ),
+              'linktipps-linkpos'  => array(
+                  'type'    => 'select',
+                  'title'   => __( 'Link', 'piratenkleider' ),
+                  'label'   => __( 'Wether to set the target link.', 'piratenkleider'),		   
+                  'default' => $defaultoptions['linktipps-linkpos'],
+                  'liste'   => array( 
+                      0 => __( 'Link on title', 'piratenkleider' ),
+                      1 => __( 'Link on text and/or image', 'piratenkleider' ),
+                      2 => __( 'Show URL below of text and/or image', 'piratenkleider' ),
+                      3 => __( 'Link on title and on URL below of text and/or image', 'piratenkleider' )),
+                  'parent'  => 'linktipps',
+              ),
+             
+	      
+               
+          ),
+	),          
+       'opengraph' => array(
+           'tabtitle'   => __('OpenGraph / Schema', 'piratenkleider'),
+           'fields' => array(
+                 'meta-itemtype-aboutpage' => array(
                   'type'    => 'text',
                   'title'   => __( 'Itemtype AboutPage', 'piratenkleider' ),
                   'label'   => __( 'Enter ID or title to set the item type of this page to "AboutPage".', 'piratenkleider' ),
@@ -2374,49 +2425,9 @@ $setoptions = array(
                   'label'   => __( 'Enter a custom description of your organization. If left empty blog description will be used.', 'piratenkleider' ),
                   'parent'  => 'meta',
               ),
-	       'linktipps'  => array(
-                  'type'    => 'section',
-                  'title'   => __('Bookmarks', 'piratenkleider'),                   
-              ),            
 
-               
-              'linktipps-titlepos'  => array(
-                  'type'    => 'select',
-                  'title'   => __( 'Title', 'piratenkleider' ),
-                  'label'   => __( 'Sets the position of bookmark title', 'piratenkleider'),		   
-                  'default' => $defaultoptions['linktipps-titlepos'],
-                  'liste'   => array( 
-                        0   => __("On top of text or/and image", 'piratenkleider'), 
-                        1   => __("Below of text or/and image", 'piratenkleider')),
-                  'parent'  => 'linktipps',
-              ),
-                'linktipps-subtitlepos'  => array(
-                  'type'    => 'select',
-                  'title'   => __( 'Subtitle', 'piratenkleider' ),
-                  'label'   => __( 'Sets the position of subtitle', 'piratenkleider'),		   
-                  'default' => $defaultoptions['linktipps-subtitlepos'],
-                  'liste'   => array( 
-                       0 => __("Top", 'piratenkleider'),
-                        1 => __("Bottom", 'piratenkleider')),
-                  'parent'  => 'linktipps',
-              ),
-              'linktipps-linkpos'  => array(
-                  'type'    => 'select',
-                  'title'   => __( 'Link', 'piratenkleider' ),
-                  'label'   => __( 'Wether to set the target link.', 'piratenkleider'),		   
-                  'default' => $defaultoptions['linktipps-linkpos'],
-                  'liste'   => array( 
-                      0 => __( 'Link on title', 'piratenkleider' ),
-                      1 => __( 'Link on text and/or image', 'piratenkleider' ),
-                      2 => __( 'Show URL below of text and/or image', 'piratenkleider' ),
-                      3 => __( 'Link on title and on URL below of text and/or image', 'piratenkleider' )),
-                  'parent'  => 'linktipps',
-              ),
-             
-	      
-               
-          ),
-	),          
+           )
+       ),
        'crew'   => array(
            'tabtitle'   => __( 'Contact informations', 'piratenkleider' ),
            'fields' => array(

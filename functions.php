@@ -155,7 +155,10 @@ function piratenkleider_setup() {
 	    add_image_size( 'linktipp-thumb', $options['linktipp-thumbnail_width'], $options['linktipp-thumbnail_height'], $options['linktipp-thumbnail_crop'] ); 
 	    add_image_size( 'person-thumb', $options['person-thumbnail_width'], $options['person-thumbnail_height'], $options['person-thumbnail_crop'] ); 
 	    add_image_size( $options['sidebar-thumbnail_name'], $options['sidebar-thumbnail_width'], $options['sidebar-thumbnail_height'], $options['sidebar-thumbnail_crop'] );     
-            add_image_size( $options['bannerlink_name'], $options['bannerlink-width'] );     
+            add_image_size( $options['bannerlink_name'], $options['bannerlink-width'] );    
+            if ($options['feed-addthumbnail']) {
+                add_image_size( $options['feed-thumb-sizename'], $options['feed-thumb-width'], $options['feed-thumb-height'], $options['feed-thumb-crop'] );    
+            }
         }
 	
        
@@ -823,7 +826,7 @@ function piratenkleider_post_teaser($titleup = 1, $showdatebox = 1, $showdatelin
 		   
             $firstpic = get_piratenkleider_firstpicture();
             $firstvideo = get_piratenkleider_firstvideo();
-            $fallbackimg = '<img src="'.$options['src-teaser-thumbnail_default'].'" alt="">';
+            $fallbackimg = '<img itemprop="image" src="'.$options['src-teaser-thumbnail_default'].'" alt="">';
             if ($showdatebox==1) {
                 if (!isset($output)) { $output = $thumbnailcode;}
                 if (!isset($output)) { $output = $firstpic;}
@@ -862,7 +865,7 @@ function piratenkleider_post_teaser($titleup = 1, $showdatebox = 1, $showdatelin
       $sizeclass .= " usefloating";
   }
 
-  $out .= '<section class="'. implode(' ',get_post_class($sizeclass)).'" id="post-'.$post->ID.'" >';
+  $out .= '<section itemscope itemtype="http://schema.org/Article" class="'. implode(' ',get_post_class($sizeclass)).'" id="post-'.$post->ID.'" >';
   $titlenum = (int) $titlenum;
   if (($titlenum<1) || ($titlenum>6)) {
       $titlenum = 2;
@@ -871,8 +874,8 @@ function piratenkleider_post_teaser($titleup = 1, $showdatebox = 1, $showdatelin
   $htmltitleend = '</h'.$titlenum.'>';
   
      if ($titleup==1) {
-        $out .= '<header class="post-title p3-cbox">'.$htmltitlestart;
-	$out .= '<a href="'.get_permalink().'" rel="bookmark">';
+        $out .= '<header itemprop="name" class="post-title p3-cbox">'.$htmltitlestart;
+	$out .= '<a itemprop="url" href="'.get_permalink().'" rel="bookmark">';
 	$out .= get_the_title();
         $out .= '</a>'.$htmltitleend.'</header>';
 	$out .= "\n";
@@ -894,7 +897,7 @@ function piratenkleider_post_teaser($titleup = 1, $showdatebox = 1, $showdatelin
                     }
                     $out .= "</div>\n"; 
 	       }	
-		$out .= '<div class="cal-icon">';
+		$out .= '<div class="cal-icon" itemprop="datePublished" content="'.get_the_date('Y-m-d').'">';
 		$out .= '<span class="day">'.get_the_time('j.').'</span>';
 		$out .= '<span class="month">'.get_the_time('m.').'</span>';
 		$out .= '<span class="year">'.get_the_time('Y').'</span>';
@@ -912,14 +915,14 @@ function piratenkleider_post_teaser($titleup = 1, $showdatebox = 1, $showdatelin
 	     $out .= '<article class="post-entry p3-cbox">';
 	}
 	if ($titleup==0) {  
-	    $out .= '<header class="post-title">'.$htmltitlestart;          
+	    $out .= '<header itemprop="name" class="post-title">'.$htmltitlestart;          
 	    $out .= '<a href="'.get_permalink().'" rel="bookmark">';
 	    $out .= get_the_title(); 
             $out .= "</a>".$htmltitleend."</header>\n";
 	 }
 	   
 	 if (($showdatebox!=0) && ($showdateline==1)) {  
-	    $out .= '<p class="pubdateinfo">';
+	    $out .= '<p class="pubdateinfo" itemprop="datePublished" content="'.get_the_date('Y-m-d').'">';
 	    $out .=  piratenkleider_post_pubdateinfo(0); 
 	    $out .= "</p>\n";	  	  
 	 }
@@ -953,25 +956,25 @@ function piratenkleider_category_teaser() {
     if (has_post_thumbnail()) {
         $output = get_the_post_thumbnail($post->ID, 'teaser-thumb');
         if (strlen($output)<1) {
-             $output = '<img src="'.$options['src-teaser-thumbnail_default'].'" alt="">';
+             $output = '<img itemprop="image" src="'.$options['src-teaser-thumbnail_default'].'" alt="">';
         }
     } else {
-        $output = '<img src="'.$options['src-teaser-thumbnail_default'].'" alt="">';
+        $output = '<img itemprop="image" src="'.$options['src-teaser-thumbnail_default'].'" alt="">';
     }		   
 
     $leftbox .= $output;
     $leftbox .=  '</div>'; 
 
-    $out .= '<section>';
-    $out .= '<header><h3>';
-    $out .= '<a href="'.get_permalink().'" rel="bookmark">';
+    $out .= '<section itemtype="http://schema.org/Article">';
+    $out .= '<header><h3 itemprop="name">';
+    $out .= '<a itemprop="url" href="'.get_permalink().'" rel="bookmark">';
     $out .= get_the_title();
     $out .= '</a></h3></header>';
     $out .= "\n";
     $out .= '<div>'; 
     $out .= $leftbox;          
     $out .= '<article>';   
-    $out .= '<p class="pubdateinfo">';
+    $out .= '<p class="pubdateinfo" itemprop="datePublished" content="'.get_the_date('Y-m-d').'">';
     $out .=  piratenkleider_post_pubdateinfo(0); 
     $out .= "</p>\n";	  	  	 
     $out .= get_piratenkleider_custom_excerpt($options['categoryindex-teaserlength'],1,1,$options['continuelink']); 
@@ -1000,10 +1003,10 @@ function piratenkleider_search_teaser($teaserlength = 250, $withthumb = 1, $asli
         if (has_post_thumbnail()) {
             $output = get_the_post_thumbnail($post->ID, 'teaser-thumb');
             if (strlen($output)<1) {
-                 $output = '<img src="'.$options['src-teaser-thumbnail_default'].'" alt="">';
+                 $output = '<img itemprop="image" src="'.$options['src-teaser-thumbnail_default'].'" alt="">';
             }
         } else {
-            $output = '<img src="'.$options['src-teaser-thumbnail_default'].'" alt="">';
+            $output = '<img itemprop="image" src="'.$options['src-teaser-thumbnail_default'].'" alt="">';
         }		   
         $leftbox .= $output;
         $leftbox .=  '</div>'; 
@@ -1630,7 +1633,7 @@ function piratenkleider_breadcrumb() {
   $pretitletextstart   = '<span>';
   $pretitletextend     = '</span>';
   
-  echo '<div id="crumbs" itemprop="breadcrumb">'; 
+  echo '<div id="crumbs">'; 
   if ( !is_home() && !is_front_page() || is_paged() ) { 
     
     global $post;
@@ -1901,29 +1904,36 @@ function featured_image_in_rss($content) {
     global $post;
     global $options;
     // Überprüfen, ob Artikel ein Beitragsbild hat
-    if(is_feed()) {  
-        $leftbox =  '<div class="rss_bild" style="float: left;">';	    
+    
+    if(is_feed() && $options['feed-addthumbnail']) {  
+        if (!isHTML($content)) {
+            $leftbox =  '<div class="rss_bild" style="float: left;">';	    
 
-        $firstpic = get_piratenkleider_firstpicture(false);
-        if (( strlen(trim($firstpic))>10 )) {
-            $output = $firstpic;        
-        } else {
-            if (has_post_thumbnail($post->ID)) {
-                $output = get_the_post_thumbnail($post->ID, 'thumb',array('style' => 'margin-bottom:10px;'));
-            } else {
-                $output = '<img src="'.$options['src-teaser-thumbnail_default'].'" alt="">';
-            }
+            $firstpic = get_piratenkleider_firstpicture(false);
+
+                if (has_post_thumbnail($post->ID)) {
+                    $output = get_the_post_thumbnail($post->ID, 'feedthumb',array('style' => 'margin-bottom:10px;'));
+                } else {
+                    $output = '<img src="'.$options['src-teaser-thumbnail_default'].'" alt="">';
+                }
+           
+
+            $leftbox .= $output;
+            $leftbox .= '</div>'; 
+
+            $content = $leftbox . $content;
         }
-
-        $leftbox .= $output;
-        $leftbox .= '</div>'; 
-
-        $content = $leftbox . $content;
     }
     return $content;
 }
-//Filter für RSS-Auszug
-add_filter('the_excerpt_rss', 'featured_image_in_rss');
+
 //Filter für RSS-Content
 add_filter('the_content_feed', 'featured_image_in_rss'); 
-add_filter('the_content','featured_image_in_rss');
+add_filter('the_excerpt_rss', 'featured_image_in_rss');
+
+function isHTML($text){
+    return false;
+   $processed = htmlentities($text);
+   if($processed == $text) return false;
+   return true; 
+}

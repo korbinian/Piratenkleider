@@ -567,23 +567,25 @@ function piratenkleider_display_person ($post_id = 0, $format = 'full', $profill
             
             
 	} elseif ($format== 'small') {
+             $out .= '<div itemscope itemtype="http://schema.org/Person">';
 	    $out .=  $bildsmallwidth;
 	    $out .= "<div class=\"textinfo\">\n";
 	    $out .= '<h3 class="about">';
-	    if ($profillink==1) $out .= '<a href="'.$person_link.'">';	   
+	    if ($profillink==1) $out .= '<a itemprop="url" href="'.$person_link.'">';	   
 	    $out .= $fullname;
 	    if ($profillink==1) $out .= '</a>';
 	    $out .= '</h3>';
 	    $out .= '<p>'.$person_shortdesc."</p>\n";
 	    $out .= $kontaktdata;
 	    $out .= "</div>\n";
+             $out .= "</div>\n";
 	} elseif ($format== 'sitebar') {
-	     $out .= '<section id="steckbrief">';   
-	     if ($profillink==1) $out .= '<a href="'.$person_link.'">';	   
+	     $out .= '<section id="steckbrief" itemscope itemtype="http://schema.org/Person">';   
+	     if ($profillink==1) $out .= '<a itemprop="url" href="'.$person_link.'">';	   
              $out .=  $personenbildsidebar;
               if ($profillink==1) $out .= '</a>';
 	     $out .= '<div class="text">';
-	     $out .= '<h3>';     
+	     $out .= '<h3 itemprop="name">';     
 	     $out .= $fullname;          
 	     $out .= '</h3>';
 	     $out .= $kontaktdata;
@@ -592,13 +594,13 @@ function piratenkleider_display_person ($post_id = 0, $format = 'full', $profill
 	     $out .= "</div>\n";
 	     $out .= "</section>\n";
 	} elseif ($format== 'table') {
-	     $out .= "<tr>";
+	     $out .= '<tr itemscope itemtype="http://schema.org/Person">';
 	     $out .= "<td>";
 	     $out .=  $bildsmallwidth;
 	     $out .= "</td>";
 	     $out .= "<td>";
-	     $out .= '<h3 class="about">';
-	     if ($profillink==1) $out .= '<a href="'.$person_link.'">';	   
+	     $out .= '<h3 class="about" itemprop="name">';
+	     if ($profillink==1) $out .= '<a itemprop="url" href="'.$person_link.'">';	   
 	    $out .= $fullname;
 	    if ($profillink==1) $out .= '</a>';
 	     $out .= '</h3>';
@@ -607,13 +609,13 @@ function piratenkleider_display_person ($post_id = 0, $format = 'full', $profill
 	     $out .= "</td>";
 	     $out .= "</tr>";     
 	} elseif ($format== 'bigtable') {
-	     $out .= "<tr>";
+	     $out .= '<tr itemscope itemtype="http://schema.org/Person">';
 	     $out .= "<td>";
 	     $out .=  $bildfullwidth;
 	     $out .= "</td>";
 	     $out .= "<td>";
-	     $out .= '<h3 class="about">';
-	    if ($profillink==1) $out .= '<a href="'.$person_link.'">';	   
+	     $out .= '<h3 class="about" itemprop="name">';
+	    if ($profillink==1) $out .= '<a itemprop="url" href="'.$person_link.'">';	   
 	    $out .= $fullname;
 	    if ($profillink==1) $out .= '</a>';
 	     $out .= '</h3>';
@@ -623,16 +625,18 @@ function piratenkleider_display_person ($post_id = 0, $format = 'full', $profill
 	     $out .= "</td>";
 	     $out .= "</tr>";
 	} else {
+            $out .= '<div itemscope itemtype="http://schema.org/Person">';
 	    $out .=  $bildsmallwidth;
 	    $out .= "<div class=\"textinfo\">\n";
-	    $out .= '<h3 class="about">';
-	    if ($profillink==1) $out .= '<a href="'.$person_link.'">';	   
+	    $out .= '<h3 class="about" itemprop="name">';
+	    if ($profillink==1) $out .= '<a itemprop="url" href="'.$person_link.'">';	   
 	    $out .= $fullname;
 	    if ($profillink==1) $out .= '</a>';
 	    $out .= '</h3>';
 	    $out .= $person_shortdesc."\n";
 	    $out .= $kontaktdata;
 	    $out .= "</div>\n";
+            $out .= "</div>\n";
 	}
 
     return $out;
