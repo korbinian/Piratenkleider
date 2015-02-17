@@ -501,6 +501,56 @@ add_action('wp_head', 'piratenkleider_addmetatags',1);
 
 
 
+/* Open Graph and Social Media Support */
+
+ 
+function piratenkleider_load_open_graph() {
+    global $post;
+    global $options;
+    
+    if ($options['open_graph-active']!=true) {
+        return;
+    }
+    // Standard-Grafik für Seiten ohne Beitragsbild
+    $default_site_logo = wp_make_link_relative(get_header_image());
+     
+    // Wenn Startseite
+    if ( is_front_page() ) { // Alternativ is_home
+        echo '<meta property="og:type" content="website" />';
+        echo '<meta property="og:url" content="' . get_bloginfo( 'url' ) . '" />';
+        echo '<meta property="og:title" content="' . esc_attr( get_bloginfo( 'name' ) ) . '" />';
+        echo '<meta property="og:image" content="' . $default_site_logo . '" />';
+        echo '<meta property="og:description" content="' . esc_attr( $options['meta-description'] ) . '" />';
+    }
+     
+    // Wenn Einzelansicht von Seite, Beitrag oder Custom Post Type
+    elseif ( is_singular() ) {
+        echo '<meta property="og:type" content="article" />'."\n";
+        echo '<meta property="og:url" content="' . get_permalink() . '" />'."\n";
+        echo '<meta property="og:title" content="' . esc_attr( get_the_title() ) . '" />'."\n";
+        $thumbnail ='';
+        if ( has_post_thumbnail( $post->ID ) ) {
+            $thumbnail = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'large' );
+            echo '<meta property="og:image" content="' . esc_attr( $thumbnail[0] ) . '" />'."\n";
+        } else
+            echo '<meta property="og:image" content="' . $default_site_logo . '" />'."\n";
+        }
+        echo '<meta property="og:description" content="' . esc_attr( strip_tags(get_piratenkleider_custom_excerpt($options['open_graph_excerptlength'], 0, 1, 2),'') ) . '" />';
+        echo '<meta property="article:published_time" content="' . esc_attr( get_post_time('c') ) . '" />';
+        echo '<meta property="article:modified_time" content="' . esc_attr( get_the_modified_time('c') ) . '" />';
+
+        if ( has_post_thumbnail( $post->ID ) ) {
+            $thumbnail = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'large' );
+            echo '<meta name="twitter:card" content="' . esc_attr( $thumbnail[0] ) . '" />'."\n";
+        } 
+        if ($options['open_graph-twitterhandle']) {
+            echo '<meta name="twitter:site" content="@'.$options['open_graph-twitterhandle'].'">'."\n";
+        }
+        echo '<meta name="twitter:title" content="' . esc_attr( get_the_title() ) . '" />'."\n";
+        echo '<meta name="twitter:description" content="' . esc_attr( strip_tags(get_piratenkleider_custom_excerpt(180, 0, 1, 2),'') ) . '" />'."\n";
+    }
+add_action( 'wp_head', 'piratenkleider_load_open_graph' );
+
 
 
 /* Anonymize IP */

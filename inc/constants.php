@@ -262,7 +262,9 @@ $defaultoptions = array(
     'sidebar-steckbrief-maxwidth'	    => 270,
     'sidebar-steckbrief-maxheight'	    => 360,
         
-    'optionpage-tab-default'                => 'kopfteil'
+    'optionpage-tab-default'                => 'kopfteil',
+    'open_graph-active'                   => true,
+    'open_graph_excerptlength'              => 400,
 );
 
 
@@ -2377,7 +2379,11 @@ $setoptions = array(
        'opengraph' => array(
            'tabtitle'   => __('OpenGraph / Schema', 'piratenkleider'),
            'fields' => array(
-                 'meta-itemtype-aboutpage' => array(
+                'meta'  => array(
+                  'type'    => 'section',
+                  'title'   => __('General Meta', 'piratenkleider'),                   
+              ),      
+              'meta-itemtype-aboutpage' => array(
                   'type'    => 'text',
                   'title'   => __( 'Itemtype AboutPage', 'piratenkleider' ),
                   'label'   => __( 'Enter ID or title to set the item type of this page to "AboutPage".', 'piratenkleider' ),
@@ -2425,7 +2431,25 @@ $setoptions = array(
                   'label'   => __( 'Enter a custom description of your organization. If left empty blog description will be used.', 'piratenkleider' ),
                   'parent'  => 'meta',
               ),
-
+               
+            'og'  => array(
+                  'type'    => 'section',
+                  'title'   => __('Open Graph', 'piratenkleider'),                   
+              ),          
+             'open_graph-active'   => array(
+                  'type'    => 'bool',
+                  'title'   => __( 'Active Open Graph', 'piratenkleider' ),
+                  'label'   => __( 'Actives Open Graph Meta Tags from Piratenkleider', 'piratenkleider' ),
+                  'default' => $defaultoptions['open_graph-active'],
+                  'parent'  => 'og',
+              ),    
+            'open_graph-twitterhandle'   => array(
+                  'type'    => 'text',
+                  'title'   => __( 'Twitter Handle', 'piratenkleider' ),
+                  'label'   => __( 'Twitter Nick without @ for Twitter Cards', 'piratenkleider' ),
+                  'parent'  => 'og',
+              ), 
+               
            )
        ),
        'crew'   => array(
