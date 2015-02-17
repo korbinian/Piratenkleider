@@ -538,8 +538,8 @@ function piratenkleider_load_open_graph() {
             echo '<meta property="og:image" content="' . $default_site_logo . '" />'."\n";
         }
         echo '<meta property="og:description" content="' . esc_attr( strip_tags(get_piratenkleider_custom_excerpt($options['open_graph_excerptlength'], 0, 1, 2),'') ) . '" />';
-        echo '<meta property="article:published_time" content="' . esc_attr( get_post_time('c') ) . '" />';
-        echo '<meta property="article:modified_time" content="' . esc_attr( get_the_modified_time('c') ) . '" />';
+        echo '<meta property="article:published_time" content="' . esc_attr( get_post_time('c') ) . '" />'."\n";
+        echo '<meta property="article:modified_time" content="' . esc_attr( get_the_modified_time('c') ) . '" />'."\n";
 
         if ( has_post_thumbnail( $post->ID ) ) {
             $thumbnail = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'large' );
