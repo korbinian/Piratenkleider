@@ -523,6 +523,18 @@ function piratenkleider_load_open_graph() {
         if ($options['meta-description']) {
             echo '<meta property="og:description" content="' . esc_attr( $options['meta-description'] ) . '" />'."\n";
         }
+        
+        echo '<meta name="twitter:card" content="summary" />'."\n";
+        echo '<meta name="twitter:url" content="' . get_permalink() . '" />'."\n";
+        echo '<meta name="twitter:title" content="' . esc_attr( get_the_title() ) . '" />'."\n";
+        if ($options['open_graph-twitterhandle']) {
+            echo '<meta name="twitter:site" content="@'.$options['open_graph-twitterhandle'].'">'."\n";
+        }
+        if ($options['meta-description']) {
+            echo '<meta name="twitter:description" content="' . esc_attr(  $options['meta-description']  ) . '" />'."\n";            
+        } else {
+            echo '<meta name="twitter:description" content="' . esc_attr( strip_tags(get_piratenkleider_custom_excerpt(180, 0, 1, 2),'') ) . '" />'."\n";
+        }
     }
      
     // Wenn Einzelansicht von Seite, Beitrag oder Custom Post Type
@@ -541,14 +553,17 @@ function piratenkleider_load_open_graph() {
         echo '<meta property="article:published_time" content="' . esc_attr( get_post_time('c') ) . '" />'."\n";
         echo '<meta property="article:modified_time" content="' . esc_attr( get_the_modified_time('c') ) . '" />'."\n";
 
+        echo '<meta name="twitter:card" content="summary_large_image" />'."\n";
+        echo '<meta name="twitter:url" content="' . get_permalink() . '" />'."\n";
+        echo '<meta name="twitter:title" content="' . esc_attr( get_the_title() ) . '" />'."\n";
+
         if ( has_post_thumbnail( $post->ID ) ) {
             $thumbnail = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'large' );
-            echo '<meta name="twitter:card" content="' . esc_attr( $thumbnail[0] ) . '" />'."\n";
+            echo '<meta name="twitter:image:src" content="' . esc_attr( $thumbnail[0] ) . '" />'."\n";
         } 
         if ($options['open_graph-twitterhandle']) {
             echo '<meta name="twitter:site" content="@'.$options['open_graph-twitterhandle'].'">'."\n";
         }
-        echo '<meta name="twitter:title" content="' . esc_attr( get_the_title() ) . '" />'."\n";
         echo '<meta name="twitter:description" content="' . esc_attr( strip_tags(get_piratenkleider_custom_excerpt(180, 0, 1, 2),'') ) . '" />'."\n";
     }
 }
