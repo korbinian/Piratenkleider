@@ -516,11 +516,13 @@ function piratenkleider_load_open_graph() {
      
     // Wenn Startseite
     if ( is_front_page() ) { // Alternativ is_home
-        echo '<meta property="og:type" content="website" />';
-        echo '<meta property="og:url" content="' . get_bloginfo( 'url' ) . '" />';
-        echo '<meta property="og:title" content="' . esc_attr( get_bloginfo( 'name' ) ) . '" />';
-        echo '<meta property="og:image" content="' . $default_site_logo . '" />';
-        echo '<meta property="og:description" content="' . esc_attr( $options['meta-description'] ) . '" />';
+        echo '<meta property="og:type" content="website" />'."\n";
+        echo '<meta property="og:url" content="' . get_bloginfo( 'url' ) . '" />'."\n";
+        echo '<meta property="og:title" content="' . esc_attr( get_bloginfo( 'name' ) ) . '" />'."\n";
+        echo '<meta property="og:image" content="' . $default_site_logo . '" />'."\n";
+        if ($options['meta-description']) {
+            echo '<meta property="og:description" content="' . esc_attr( $options['meta-description'] ) . '" />'."\n";
+        }
     }
      
     // Wenn Einzelansicht von Seite, Beitrag oder Custom Post Type
@@ -532,7 +534,7 @@ function piratenkleider_load_open_graph() {
         if ( has_post_thumbnail( $post->ID ) ) {
             $thumbnail = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'large' );
             echo '<meta property="og:image" content="' . esc_attr( $thumbnail[0] ) . '" />'."\n";
-        } else
+        } else {
             echo '<meta property="og:image" content="' . $default_site_logo . '" />'."\n";
         }
         echo '<meta property="og:description" content="' . esc_attr( strip_tags(get_piratenkleider_custom_excerpt($options['open_graph_excerptlength'], 0, 1, 2),'') ) . '" />';
@@ -549,6 +551,7 @@ function piratenkleider_load_open_graph() {
         echo '<meta name="twitter:title" content="' . esc_attr( get_the_title() ) . '" />'."\n";
         echo '<meta name="twitter:description" content="' . esc_attr( strip_tags(get_piratenkleider_custom_excerpt(180, 0, 1, 2),'') ) . '" />'."\n";
     }
+}
 add_action( 'wp_head', 'piratenkleider_load_open_graph' );
 
 
