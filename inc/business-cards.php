@@ -190,7 +190,20 @@ function piratenkleider_person_metabox_content( $post ) {
 			id="person_google" value="<?php echo esc_attr( get_post_meta( $post->ID, 'person_google', true ) ); ?>" size="30" />
 
 	</p>
-	
+	<p>
+		<label for="person_friendica"><?php _e( "Friendica (URL)", 'piratenkleider' ); ?>:</label>
+		<br />
+		<input  type="text" name="person_friendica"
+			id="person_google" value="<?php echo esc_attr( get_post_meta( $post->ID, 'person_friendica', true ) ); ?>" size="30" />
+
+	</p>
+	<p>
+		<label for="person_instagram"><?php _e( "Instagram (URL)", 'piratenkleider' ); ?>:</label>
+		<br />
+		<input  type="text" name="person_instagram"
+			id="person_google" value="<?php echo esc_attr( get_post_meta( $post->ID, 'person_instagram', true ) ); ?>" size="30" />
+
+	</p>
 	<p>
 		<label for="person_newsfeed"><?php _e( "Personal Newsfeed (URL)", 'piratenkleider' ); ?>:</label>
 		<br />
@@ -303,6 +316,37 @@ function piratenkleider_person_metabox_save( $post_id ) {
 		update_post_meta( $post_id, 'person_google', $newid );
 	elseif ( '' == $newid && $oldid )
 		delete_post_meta( $post_id, 'person_google', $oldid );
+  
+        $newid = ( isset( $_POST['person_friendica'] ) ?   $_POST['person_friendica']  : '' );
+        if ((isset($newid)) && (filter_var($newid, FILTER_VALIDATE_URL))) {
+           /* URL ok */ 
+        } else {
+            $newid = '';
+        }
+	$oldid = get_post_meta( $post_id, 'person_friendica', true );
+
+	if ( $newid && '' == $oldid )
+		add_post_meta( $post_id, 'person_friendica', $newid, true );
+	elseif ( $newid && $newid != $oldid )
+		update_post_meta( $post_id, 'person_friendica', $newid );
+	elseif ( '' == $newid && $oldid )
+		delete_post_meta( $post_id, 'person_friendica', $oldid );
+        
+
+        $newid = ( isset( $_POST['person_instagram'] ) ?   $_POST['person_instagram']  : '' );
+        if ((isset($newid)) && (filter_var($newid, FILTER_VALIDATE_URL))) {
+           /* URL ok */ 
+        } else {
+            $newid = '';
+        }
+	$oldid = get_post_meta( $post_id, 'person_instagram', true );
+
+	if ( $newid && '' == $oldid )
+		add_post_meta( $post_id, 'person_instagram', $newid, true );
+	elseif ( $newid && $newid != $oldid )
+		update_post_meta( $post_id, 'person_instagram', $newid );
+	elseif ( '' == $newid && $oldid )
+		delete_post_meta( $post_id, 'person_instagram', $oldid );
         
         
        
@@ -403,6 +447,9 @@ function piratenkleider_display_person ($post_id = 0, $format = 'full', $profill
     $person_twitter = get_post_meta( $post_id, 'person_twitter', true );
     $person_wiki = get_post_meta( $post_id, 'person_wiki', true );
     $person_google = get_post_meta( $post_id, 'person_google', true );
+    $person_friendica = get_post_meta( $post_id, 'person_friendica', true );
+    $person_instagram = get_post_meta( $post_id, 'person_instagram', true );
+    
     $person_newsfeed = get_post_meta( $post_id, 'person_newsfeed', true );
     
     
@@ -468,7 +515,7 @@ function piratenkleider_display_person ($post_id = 0, $format = 'full', $profill
                 $kontaktdata .= "</li>\n";
 	    }
             if (isset($person_pgp_fingerprint) && strlen($person_pgp_fingerprint)>1) {
-                $kontaktdata .= "<li class=\"pgp\"><span>Fingerprint: </span><code>".$person_pgp_fingerprint."</code></li>";
+                $kontaktdata .= "<li class=\"pgp\"><span>PGP Fingerprint: </span><code>".$person_pgp_fingerprint."</code></li>";
             }  
 	    if (isset($person_url) && strlen($person_url)>1) {
 		$kontaktdata .= "<li class=\"website\"><span>Web: </span><a class=\"extern\" itemprop=\"url\" href=\"".$person_url."\">".piratenkleider_display_url($person_url)."</a></li>\n";
@@ -487,6 +534,14 @@ function piratenkleider_display_person ($post_id = 0, $format = 'full', $profill
 	    if (isset($person_google) && strlen($person_google)>1) {
 		$kontaktdata .= "<li class=\"google\"><span>Google: </span><a href=\"".$person_google."\">".piratenkleider_display_url($person_google)."</a></li>\n";
 	    } 
+             if (isset($person_friendica) && strlen($person_friendica)>1) {
+		$kontaktdata .= "<li class=\"friendica\"><span>Friendica: </span><a href=\"".$person_friendica."\">".piratenkleider_display_url($person_friendica)."</a></li>\n";
+	    } 
+             if (isset($person_instagram) && strlen($person_instagram)>1) {
+		$kontaktdata .= "<li class=\"instagram\"><span>Instagram: </span><a href=\"".$person_instagram."\">".piratenkleider_display_url($person_instagram)."</a></li>\n";
+	    } 
+            
+            
 	    if (isset($person_wiki) && strlen($person_wiki)>1) {
 		if (filter_var($person_wiki, FILTER_VALIDATE_URL)) {
 		    $url = $person_wiki; 

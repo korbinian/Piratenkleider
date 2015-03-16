@@ -220,7 +220,7 @@ function piratenkleider_setup() {
             }
     
         }
-
+            
 }
 endif;
 add_action( 'after_setup_theme', 'piratenkleider_setup' );
@@ -2005,3 +2005,13 @@ function isHTML($text){
    if($processed == $text) return false;
    return true; 
 }
+
+function piratenkleider_admin_init() {
+	remove_post_type_support( 'page', 'comments' );
+        // Keine Kommentar/Dkussionsmetabox auf Seiten
+    $role = get_role('editor');
+    $role->add_cap('edit_dashboard');
+        // Statify zulassen für Redakteure
+}
+
+add_action('admin_init', 'piratenkleider_admin_init'); 

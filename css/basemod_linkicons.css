@@ -182,10 +182,11 @@
          background: url('../images/socialmedia.png') no-repeat -40px -328px;
         width: 18px;
     } 
-      .content-primary a[href *= "flickr.com"]:before {
+    .content-primary a[href *= "flickr.com"]:before {
          background: url('../images/socialmedia.png') no-repeat -40px -168px;
         width: 18px;
     }   
+   
      .content-primary a[href *= "youtube.com"]:before,
      .content-primary a[href *= "youtube-nocookie.com"]:before {
         background: url('../images/socialmedia.png') no-repeat -40px -360px;

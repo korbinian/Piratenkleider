@@ -2430,6 +2430,13 @@ img.wp-smiley {
 .content-aside #steckbrief ul.contact li.email a:before    { margin-top: -544px;}
 .content-aside #steckbrief ul.contact li.wiki a:before     { margin-top: -576px;}
 .content-aside #steckbrief ul.contact li.piratewiki a:before   {  margin-top: -608px;}
+.content-aside #steckbrief ul.contact li.friendica a:before    { margin-top: -640px;}
+.content-aside #steckbrief ul.contact li.instagram a:before    { margin-top: -672px;}
+
+.content-aside #steckbrief ul.contact li.pgp span    { 
+    position: relative; left: inherit; width: auto;
+    font-size: 0.9em;
+}
 
 
 .content-aside #steckbrief p {
@@ -2506,7 +2513,21 @@ img.wp-smiley {
    .content-primary .person ul.contact li {
        list-style-type: none;
    } 
-   
+   .content-primary .person ul.contact li.pgp:before {
+        content: 'PGP: ';
+        font-size: 9px;
+   }
+   .content-primary .person ul.contact li.instagram a:before {
+        background: url('../images/socialmedia.png');
+        background-position: -40px -672px;
+        width: 18px;
+	
+   }
+    .content-primary .person ul.contact li.friendica a:before {
+        background: url('../images/socialmedia.png');
+        background-position: -40px -640px;
+        width: 18px;
+   }
 /*
 * Footer -------------------------------------------------------------------
 */
@@ -2820,7 +2841,8 @@ ul.socialmedia {
 .socialmedia .icon_tumblr:before    { margin-top: -416px;}
 .socialmedia .icon_github:before    { margin-top: -448px;}
 .socialmedia .icon_appnet:before    { margin-top: -480px;}
-
+.socialmedia .icon_friendica:before    { margin-top: -640px;}
+.socialmedia .icon_instagram:before    { margin-top: -672px;}
 
 .socialmedia .icon_delicious:hover,.socialmedia  .icon_delicious:focus,
 .socialmedia .icon_diaspora:hover,.socialmedia .icon_diaspora:focus, 
@@ -2837,7 +2859,9 @@ ul.socialmedia {
 .socialmedia .icon_xing:hover,.socialmedia .icon_xing:focus, 
 .socialmedia .icon_tumblr:hover,.socialmedia .icon_tumblr:focus,
 .socialmedia .icon_github:hover,.socialmedia .icon_github:focus, 
-.socialmedia .icon_appnet:hover,.socialmedia .icon_appnet:focus {    
+.socialmedia .icon_appnet:hover,.socialmedia .icon_appnet:focus,
+.socialmedia .icon_friendica:hover,.socialmedia .icon_friendica:focus, 
+.socialmedia .icon_instagram:hover,.socialmedia .icon_instagram:focus{    
     background-color: #0066CC; 
 }
 
