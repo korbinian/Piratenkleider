@@ -152,8 +152,12 @@ function piratenkleider_setup() {
 
 	if ( function_exists( 'add_image_size' ) ) { 
 	    add_image_size( 'teaser-thumb', $options['teaser-thumbnail_width'], $options['teaser-thumbnail_height'], $options['teaser-thumbnail_crop'] ); 
-	    add_image_size( 'linktipp-thumb', $options['linktipp-thumbnail_width'], $options['linktipp-thumbnail_height'], $options['linktipp-thumbnail_crop'] ); 
-	    add_image_size( 'person-thumb', $options['person-thumbnail_width'], $options['person-thumbnail_height'], $options['person-thumbnail_crop'] ); 
+//	    add_image_size( 'linktipp-thumb', $options['linktipp-thumbnail_width'], $options['linktipp-thumbnail_height'], $options['linktipp-thumbnail_crop'] ); 
+
+            	    add_image_size( 'linktipp-thumb',320,320,false ); 
+
+                    
+            add_image_size( 'person-thumb', $options['person-thumbnail_width'], $options['person-thumbnail_height'], $options['person-thumbnail_crop'] ); 
 	    add_image_size( $options['sidebar-thumbnail_name'], $options['sidebar-thumbnail_width'], $options['sidebar-thumbnail_height'], $options['sidebar-thumbnail_crop'] );     
             add_image_size( $options['bannerlink_name'], $options['bannerlink-width'] );    
             if ($options['feed-addthumbnail']) {

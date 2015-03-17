@@ -52,6 +52,7 @@ function piratenkleider_linktipp_metabox() {
 }
 function linktipp_metabox_content( $post ) {
     global $defaultoptions;
+    global $options;
     global $post;
  
 	wp_nonce_field( plugin_basename( __FILE__ ), 'linktipp_metabox_content_nonce' );
@@ -74,10 +75,12 @@ function linktipp_metabox_content( $post ) {
   </p>
 	<p>
 	    <label for="linktipp_image"><?php _e( "Image for bookmark (either by media library or external URL)", 'piratenkleider' ); ?>:</label>
-	    <br />
-	     
 	    
+
 		<?php
+                echo "(".$options['linktipp-thumbnail_width']."px x ".$options['linktipp-thumbnail_height']."px)\n<br>";
+                
+                
 		 $linktipp_imgid = get_post_meta( $post->ID, 'linktipp_imgid', true );
 		 $linktipp_image = get_post_meta( $post->ID, 'linktipp_image', true );
 		
@@ -89,9 +92,9 @@ function linktipp_metabox_content( $post ) {
 		     }
 		     
 		 } elseif (filter_var($linktipp_image, FILTER_VALIDATE_URL)) {
-			echo '<img id="linktipp_image-show" src="'.$linktipp_image.'" alt="" style="width: '.$defaultoptions['linktipp-thumbnail_width'].'px; height: auto;">';
+			echo '<img id="linktipp_image-show" src="'.$linktipp_image.'" alt="" style="width: '.$options['linktipp-thumbnail_width'].'px; height: auto;">';
 		 } else {
-			echo '<img id="linktipp_image-show" src="'.$defaultoptions['src-linktipp-thumbnail_default'].'" alt="" style="width: '.$defaultoptions['linktipp-thumbnail_width'].'px; height: auto;">';			
+			echo '<img id="linktipp_image-show" src="'.$options['src-linktipp-thumbnail_default'].'" alt="" style="width: '.$options['linktipp-thumbnail_width'].'px; height: auto;">';			
 		 }
 		 echo '<br /><span class="custom_default_image" style="display:none">'.$defaultoptions['src-linktipp-thumbnail_default'].'</span>';  
 		?>

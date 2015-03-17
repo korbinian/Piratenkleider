@@ -139,9 +139,9 @@ $defaultoptions = array(
     'teaser-thumbnail_height'		    => 120,
     'teaser-thumbnail_crop'		    => 1,
     
-    'linktipp-thumbnail_width'		    => 310,
-    'linktipp-thumbnail_height'		    => 210,
-    'linktipp-thumbnail_crop'		    => 1,
+    'linktipp-thumbnail_width'		    => 320,
+    'linktipp-thumbnail_height'		    => 320,
+    'linktipp-thumbnail_crop'		    => 0,
     
     'person-thumbnail_width'		    => 200,
     'person-thumbnail_height'		    => 300,
@@ -2208,7 +2208,107 @@ $setoptions = array(
                   'label'   => __( 'Adds own HTML commands at the end of the page (after footer, just before &lt;/body&gt;&lt;/html&gt;).', 'piratenkleider' ),                  'default' => '',
 		  'parent' => 'miscdesign',
               ),
-	       
+	     
+              'dimensions'  => array(
+                  'type'    => 'section',
+                  'title'   => __( 'Image Dimensions', 'piratenkleider' ),
+              ), 
+               
+               
+               
+               'teaser-thumbnail_width' => array(
+                  'type'    => 'number',
+                  'title'   => __( 'Teaser Thumb Width', 'piratenkleider' ),
+                  'label'   => __( 'With in px for thumbnail in teasers.', 'piratenkleider' ),
+                  'default' => $defaultoptions['teaser-thumbnail_width'],
+                   'parent'  => 'dimensions',
+                ), 
+                'teaser-thumbnail_height' => array(
+                  'type'    => 'number',
+                  'title'   => __( 'Teaser Thumb Height', 'piratenkleider' ),
+                  'label'   => __( 'Height in px for thumbnail in teasers.', 'piratenkleider' ),
+                  'default' => $defaultoptions['teaser-thumbnail_height'],
+                   'parent'  => 'dimensions',
+                ),              
+                'teaser-thumbnail_crop'  => array(
+                  'type'    => 'bool',
+                  'title'   => __( 'Crop Images', 'piratenkleider' ),
+                  'label'   => __( 'If images should be croped to match the desired dimensions.', 'piratenkleider' ),
+                  'default' => $defaultoptions['teaser-thumbnail_crop'],
+		  'parent' => 'dimensions',
+                ),
+
+
+                'linktipp-thumbnail_width' => array(
+                  'type'    => 'number',
+                  'title'   => __( 'Linktipp Width', 'piratenkleider' ),
+                  'label'   => __( 'With in px for linktipps.', 'piratenkleider' ),
+                  'default' => $defaultoptions['linktipp-thumbnail_width'],
+                   'parent'  => 'dimensions',
+                ), 
+                'linktipp-thumbnail_height' => array(
+                  'type'    => 'number',
+                  'title'   => __( 'Linktipp Height', 'piratenkleider' ),
+                  'label'   => __( 'Height in px for linktipps.', 'piratenkleider' ),
+                  'default' => $defaultoptions['linktipp-thumbnail_height'],
+                   'parent'  => 'dimensions',
+                ),  
+               'linktipp-thumbnail_crop'  => array(
+                  'type'    => 'bool',
+                  'title'   => __( 'Crop Images', 'piratenkleider' ),
+                  'label'   => __( 'If images should be croped to match the desired dimensions.', 'piratenkleider' ),
+                  'default' => $defaultoptions['linktipp-thumbnail_crop'],
+		  'parent' => 'dimensions',
+              ),
+               
+
+                'person-thumbnail_width' => array(
+                  'type'    => 'number',
+                  'title'   => __( 'Person Thumb Width', 'piratenkleider' ),
+                  'label'   => __( 'With in px for personal cards.', 'piratenkleider' ),
+                  'default' => $defaultoptions['person-thumbnail_width'],
+                   'parent'  => 'dimensions',
+                ), 
+                'person-thumbnail_height' => array(
+                  'type'    => 'number',
+                  'title'   => __( 'Person Thumb Height', 'piratenkleider' ),
+                  'label'   => __( 'Height in px for thumbnail in personal cards.', 'piratenkleider' ),
+                  'default' => $defaultoptions['person-thumbnail_height'],
+                   'parent'  => 'dimensions',
+                ),  
+                'person-thumbnail_crop'  => array(
+                  'type'    => 'bool',
+                  'title'   => __( 'Crop Images', 'piratenkleider' ),
+                  'label'   => __( 'If images should be croped to match the desired dimensions.', 'piratenkleider' ),
+                  'default' => $defaultoptions['person-thumbnail_crop'],
+		  'parent' => 'dimensions',
+                ),
+ 
+                'sidebar-thumbnail_width' => array(
+                  'type'    => 'number',
+                  'title'   => __( 'Sidebar Thumb Width', 'piratenkleider' ),
+                  'label'   => __( 'With in px for sidebar thumbs.', 'piratenkleider' ),
+                  'default' => $defaultoptions['sidebar-thumbnail_width'],
+                   'parent'  => 'dimensions',
+                ), 
+                'sidebar-thumbnail_height' => array(
+                  'type'    => 'number',
+                  'title'   => __( 'Sidebar Thumb Height', 'piratenkleider' ),
+                  'label'   => __( 'Height in px for sidebar thumbs.', 'piratenkleider' ),
+                  'default' => $defaultoptions['sidebar-thumbnail_height'],
+                   'parent'  => 'dimensions',
+                ), 
+                'sidebar-thumbnail_crop'  => array(
+                  'type'    => 'bool',
+                  'title'   => __( 'Crop Images', 'piratenkleider' ),
+                  'label'   => __( 'If images should be croped to match the desired dimensions.', 'piratenkleider' ),
+                  'default' => $defaultoptions['sidebar-thumbnail_crop'],
+		  'parent' => 'dimensions',
+        ),
+               
+               
+               
+               
           )
        ),
        

@@ -268,7 +268,7 @@ function theme_options_do_page($tab = '') {
                                 } elseif ($type=='number') {
                                     echo "\t\t\t";
                                     echo "<input class=\"number\" size=\"5\" id=\"piratenkleider_theme_options[$name]\" 
-                                            type=\"text\" name=\"piratenkleider_theme_options[$name]\" 
+                                            type=\"number\" name=\"piratenkleider_theme_options[$name]\" 
                                             value=\"".esc_attr( $options[$name] )."\"><br>\n";
                                     echo "\t\t\t";
                                     echo "<label for=\"piratenkleider_theme_options[$name]\">$label</label>\n";  
