@@ -688,7 +688,7 @@ $default_alternativestyles = array(
         'title' => __('Pirate Party Country Association','piratenkleider').' Brandenburg',
         'url'  => 'http://www.piratenbrandenburg.de/',
         'sublist' => array(
-            __('<abbr title="Town Chapter">TC</abbr>','piratenkleider').' Potsdam' => 'https://potsdam.piratenbrandenburg.de/',
+            __('<abbr title="Town Chapter">TC</abbr>','piratenkleider').' Potsdam' => 'http://www.piraten-potsdam.de/',
             __('<abbr title="District Chapter">DC</abbr>','piratenkleider').' Brandenburg an der Havel' => 'https://brb.piratenbrandenburg.de/',
             __('<abbr title="District Chapter">DC</abbr>','piratenkleider').' Havelland' => 'https://hvl.piratenbrandenburg.de/',
             __('<abbr title="District Chapter">DC</abbr>','piratenkleider').' M&auml;rkisch-Oderland' => 'https://mol.piratenbrandenburg.de/',
