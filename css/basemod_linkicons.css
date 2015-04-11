@@ -210,12 +210,4 @@
             content: inherit;
     }
     
-    /* Support for shariff */
-     .content-primary .shariff a:before {
-        background: none;
-        width: 0;
-        display: inline-block;
-        content: '';
-        height: auto;
-        margin: 0;
-    } 
+   

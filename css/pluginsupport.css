@@ -274,3 +274,53 @@ background: none repeat scroll 0 0 #EEEEEE;
     margin: 0 auto;
 }
 
+ /* Support for shariff and diaspora */
+
+   .content-primary .wp-flattr-button a:before,
+   .content-primary #diaspora-button-container a:before,
+   .content-primary .shariff a:before {
+        background: none;
+        width: 0;
+        display: inline-block;
+        content: '';
+        height: auto;
+        margin: 0;
+    } 
+    
+    /* Support for disaspora */
+    #diaspora-button-container {
+        display: inline;
+        float: left;
+        margin: 0;
+        padding: 0;
+    }
+    #diaspora-button-box {
+        width: 120px;
+        height: 25px;
+        margin: 0 14px 0 0;
+        background-color: #777;
+        color: white;
+        padding: 5px 0 0;
+        border-radius: 0;
+        border: 0;
+        text-align: left;
+    }
+    #diaspora-button-box:hover {
+        background-color: #aaa; 
+        color: white;
+    }
+    #diaspora-button-box font {
+        font-family: Arial,Helvetica,sans-serif;
+        font-size: 12px;
+        vertical-align: middle;
+        padding-left: 10px;
+    }
+    #diaspora-button-inner {
+        float: left;
+    }
+    
+    
+    /* Flattr Button */
+    p.wp-flattr-button {
+        width: 120px;
+    }
