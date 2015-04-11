@@ -13,8 +13,13 @@
              $attribs = array(
                 "credits" => $options['img-meta-credits'],
             );
+            $sliderimage =  get_post_meta( get_the_ID(), 'piratenkleider_slider_image', true );
+            if ($sliderimage) {
+                    $image_url_data = wp_get_attachment_image_src( $sliderimage, 'highslider');  
+                    $image_url = $image_url_data[0];
+                    $attribs = piratenkleider_get_image_attributs($thumbid);
 
-	    if (has_post_thumbnail()) { 
+            } elseif (has_post_thumbnail()) { 
 		$thumbid = get_post_thumbnail_id(get_the_ID());
 		$image_url_data = wp_get_attachment_image_src( $thumbid, 'full');
 		$image_url = $image_url_data[0];
@@ -66,7 +71,14 @@
 		echo piratenkleider_post_datumsbox();  
                 ?>  
 	      <article class="post-entry" itemprop="articleBody">
-		<?php the_content(); ?>
+    
+		<?php 
+                 $subtitle =  get_post_meta( get_the_ID(), 'piratenkleider_subtitle', true );
+                if ($subtitle) {
+                    echo '<h2 class="subtitle">'.$subtitle."</h2>\n";
+                }
+                the_content();
+                ?>
 	      </article>
              <?php 
             if ( (isset($show_disclaimer))  && (isset($options['post_disclaimer'])) 

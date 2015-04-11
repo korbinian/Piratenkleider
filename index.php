@@ -8,21 +8,21 @@ global $options;
 
 	if ( have_posts() ) while ( have_posts() ) : the_post();         
 	    $custom_fields = get_post_custom();
-        ?>
-	<?php
+      
 	    $image_url = '';	  
 	     $attribs = array(
                  "credits" => $options['img-meta-credits'],
                 );
 	    if (($options['aktiv-platzhalterbilder-indexseiten']==1) && (isset($options['src-default-symbolbild']))) {  
-		    if (isset($options['src-default-symbolbild_id']) && ($options['src-default-symbolbild_id'] >0)) {
+                
+                if (isset($options['src-default-symbolbild_id']) && ($options['src-default-symbolbild_id'] >0)) {
 			$image_url_data = wp_get_attachment_image_src( $options['src-default-symbolbild_id'], 'full');
 			$image_url = $image_url_data[0];
 			$attribs = piratenkleider_get_image_attributs($options['src-default-symbolbild_id']);
-		    } else {
+                } else {
 			$image_url = $options['src-default-symbolbild'];
-		    }		    
-		}
+                }		    
+            }
    
 	    if (isset($image_url) && (strlen($image_url)>4)) { 
 		if ($options['indexseitenbild-size']==1) {
@@ -30,8 +30,15 @@ global $options;
 		} else {
 		    echo '<div class="content-header">';
 		}
+                echo "<header>";
+                $subtitle =  get_post_meta( $post_id, 'piratenkleider_subtitle', true );
+                if ($subtitle) {
+                    echo '<h3 class="subtitle">'.$subtitle."</h3>\n";
+                }
+                
 		?>    		    		    		        
 		   <h1 class="post-title"><span><?php the_title(); ?></span></h1>
+                    </header>
 		   <div class="symbolbild"><img src="<?php echo $image_url ?>" alt="">	
 			 <?php if (isset($attribs["credits"]) && (strlen($attribs["credits"])>1)) {
                            echo '<div class="caption">'.$attribs["credits"].'</div>';  
@@ -42,8 +49,15 @@ global $options;
 	
       <div class="skin">
 	  
-	  <?php if (!(isset($image_url) && (strlen($image_url)>4))) { ?>
+	  <?php if (!(isset($image_url) && (strlen($image_url)>4))) {
+           echo "<header>";
+                $subtitle =  get_post_meta( $post_id, 'piratenkleider_subtitle', true );
+                if ($subtitle) {
+                    echo '<h3 class="subtitle">'.$subtitle."</h3>\n";
+                }
+                ?>
 	    <h1 class="post-title"><span><?php the_title(); ?></span></h1>
+      </header>
 	<?php }  
 	
  

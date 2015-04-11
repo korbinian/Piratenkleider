@@ -1306,9 +1306,28 @@ body.nav-fixed .nav-main li a span {
 .post .post-title h1 {
     line-height: 24px; 
 }
+.archive .content-primary header h2,
 .post-title h2, .post-title h3 {
     margin-top: 0;
 }
+
+.content-primary h3.subtitle {
+    color: #24639b;
+    font-size: 1.2em;
+    margin: 0 0 3px 5px;
+    padding: 0;
+}
+
+.single .post h3.subtitle,
+.single .post h2.subtitle {
+    font-size: 1.4em;
+    margin: 0 0 10px 0;
+    padding-top: 5px;
+}
+
+
+
+
 
 .clear {
     clear: both; 

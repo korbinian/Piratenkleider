@@ -16,9 +16,15 @@ $defaultoptions = array(
     'background-header-color'	    => 'eeeeee',
     'smallslider-thumb-width'       => 220,
     'smallslider-thumb-height'      => 185,
+    
+    
     'bigslider-thumb-width'         => 705,
     'bigslider-thumb-height'        => 240,
-
+    'bigslider-thumb-crop'          => 1,
+    'highslider-width'              => 1024,
+    'highslider-height'             => 348,
+    'highslider-crop'               => 1,
+    
     'plakate-width'                 => 300,
     'plakate-height'                => 416,
     'plakate-title'		    => '',
@@ -39,9 +45,7 @@ $defaultoptions = array(
     'src-default-artikel-symbolbild' => get_template_directory_uri() .'/images/default-vorlage.jpg',  
     'src-default-symbolbild-person' => get_template_directory_uri() .'/images/default-vorlage.jpg',  
     'slider-defaultbildsrc'	    => get_template_directory_uri() .'/images/default-vorlage.jpg',  
-    'src-linkicons-css'		    => get_template_directory_uri() .'/css/basemod_linkicons.min.css',     
-    'src-basemod_sidebarbottom'	    => get_template_directory_uri().'/css/basemod_sidebarbottom.min.css',
-    
+    'src-linkicons-css'		    => get_template_directory_uri() .'/css/basemod_linkicons.min.css',        
     'src-hamburger-css'		    => get_template_directory_uri() .'/css/hamburger.min.css',     
     'src-hamburger-js'		    => get_template_directory_uri() .'/js/hamburger.min.js',    
     'src-adminjs'                   => get_template_directory_uri() .'/js/admin.min.js', 
@@ -77,7 +81,6 @@ $defaultoptions = array(
     'aktiv-startseite-kategorien'           => 0,
     'aktiv-startseite-tags'                 => 0,
     'aktiv-avatar'                          => 0,
-    'aktiv-dynamic-sidebar'                 => 0,
     'aktiv-autokeywords'		    => 0,
     'aktiv-hamburger'			    => 0,
     'src-default-avatar'                    => get_template_directory_uri(). '/images/avataricon.gif',
@@ -2323,21 +2326,7 @@ $setoptions = array(
                   'default' => 0,
 		  'mark_option' => 1,
               ),    
-               'aktiv-dynamic-sidebar' => array(
-                  'type'    => 'bool',
-                  'title'   => __( 'Sitebar switch', 'piratenkleider' ),
-                  'label'   => __( 'Allows users to hide the sidebar on screen resolutions above 600px.', 'piratenkleider' ),
-                  'default' => $defaultoptions['aktiv-dynamic-sidebar'],
-              ),         
-              'position_sidebarbottom' => array(
-                  'type'    => 'select',
-                  'title'   => __( 'Sidebar position', 'piratenkleider' ),
-                  'label'   => __( 'Chose where to show the sitebar', 'piratenkleider' ),
-                  'liste'   => array(
-                      0 => __( 'Right (Default)', 'piratenkleider' ),
-                      1 => __( 'Below of the content', 'piratenkleider' )),
-                  'default' => $defaultoptions['position_sidebarbottom'],
-              ),                                            
+                                                
               'login_errors' => array(
                   'type'    => 'select',
                   'title'   => __( 'Error message on login', 'piratenkleider' ),

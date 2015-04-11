@@ -77,7 +77,7 @@
                            comments_popup_link( __( 'Post a comment', 'piratenkleider' ), __( '1 Comment', 'piratenkleider' ), __( '% kommentare', 'piratenkleider' ) ); 
                            edit_post_link( __( 'Edit', 'piratenkleider' ), '|', '' ); 
                     
-                     } else {                                
+                     } else {         
                              echo piratenkleider_post_teaser($options['category-teaser-titleup'],$options['category-teaser-datebox'],$options['category-teaser-dateline'],$options['category-teaser-maxlength'],$options['teaser-thumbnail_fallback'],$options['category-teaser-floating']);
                     }
                 /* end of loop */
