@@ -3,6 +3,9 @@ Theme Piratenkleider
 Changelog 
 (since version 3.2; Former changes look at github.com/Piratenkleider/)
 
+Version 3.3.9:
+* made piratenkleider comptabile to wordpress shariff social media icons
+
 Version 3.3.8:
 * added images for elections in HB
 

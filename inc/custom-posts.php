@@ -237,9 +237,9 @@ function linktipp_display ($linktipp, $addclass = '') {
 	       if ($options['linktipps-linkpos']==1) {    
 		   $out .= '</a>';
 	       }
-	      if (isset($linktipp_text)) {
-		   $out .=  apply_filters('the_content', $linktipp_text);
-	      }
+	//      if (isset($linktipp_text)) {
+	//	   $out .=  apply_filters('the_content', $linktipp_text);
+	 //     }
 	   $out .= "</article>\n"; 
 
 	   if ($options['linktipps-titlepos']==1) { 

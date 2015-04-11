@@ -182,6 +182,9 @@
          background: url('../images/socialmedia.png') no-repeat -40px -328px;
         width: 18px;
     } 
+    
+    
+    
     .content-primary a[href *= "flickr.com"]:before {
          background: url('../images/socialmedia.png') no-repeat -40px -168px;
         width: 18px;
@@ -206,3 +209,13 @@
             width: 0;
             content: inherit;
     }
+    
+    /* Support for shariff */
+     .content-primary .shariff a:before {
+        background: none;
+        width: 0;
+        display: inline-block;
+        content: '';
+        height: auto;
+        margin: 0;
+    } 
