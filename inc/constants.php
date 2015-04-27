@@ -16,8 +16,6 @@ $defaultoptions = array(
     'background-header-color'	    => 'eeeeee',
     'smallslider-thumb-width'       => 220,
     'smallslider-thumb-height'      => 185,
-    
-    
     'bigslider-thumb-width'         => 705,
     'bigslider-thumb-height'        => 240,
     'bigslider-thumb-crop'          => 1,

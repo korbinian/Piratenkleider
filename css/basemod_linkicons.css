@@ -201,6 +201,10 @@
         background: url('../images/socialmedia.png') no-repeat -40px -102px;
         width: 18px;
     }  
+    .content-primary header a:before,
+    .content-primary h1 a:before,
+    .content-primary h2 a:before,
+    .content-primary h3 a:before,
     .content-primary #ai1ec-container a:before,
     .content-primary a.rsswidget:before,
     a.rsswidget:before,
