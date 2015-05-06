@@ -800,6 +800,7 @@ $default_alternativestyles = array(
         __('<abbr title="District Chapter">DC</abbr>','piratenkleider').' Krefeld' =>'http://www.seidenstadt-piraten.de/',
         __('<abbr title="District Chapter">DC</abbr>','piratenkleider').' Minden-L&uuml;bbecke' =>'http://piratenpartei-milk.de',
         __('<abbr title="District Chapter">DC</abbr>','piratenkleider').' M&uuml;nster' =>'http://www.piratenpartei-muenster.de/',
+        __('<abbr title="District Chapter">DC</abbr>','piratenkleider').' Neukirchen-Vluyn' =>'http://www.piraten-neukirchen-vluyn.de',
         __('<abbr title="District Chapter">DC</abbr>','piratenkleider').' Rhein-Erft' =>'https://piratenpartei-rhein-erft.de/',
         __('<abbr title="District Chapter">DC</abbr>','piratenkleider').' Rhein-Sieg-Kreis' =>'http://www.piratenpartei-rhein-sieg.de/',
         __('<abbr title="District Chapter">DC</abbr>','piratenkleider').' Soest' =>'http://www.piratenpartei-soest.de/',
