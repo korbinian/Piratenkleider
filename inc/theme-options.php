@@ -215,7 +215,7 @@ function theme_options_do_page($tab = '') {
 				           }				   	
 					  echo '/>';
 				    } else {
-					   _e('No Image selected', 'piratenkleider');
+					   _e('No image selected', 'piratenkleider');
 				     }				   
 				    ?>		
 				    </div>
@@ -248,7 +248,7 @@ function theme_options_do_page($tab = '') {
 					jQuery('.image_remove_<?php echo $name; ?>').click(function()   {
 						jQuery('#image_<?php echo $name; ?>').val('');
 						jQuery('#image_<?php echo $name; ?>_id').val('');
-						jQuery('.showimg_<?php echo $name; ?>').html('<?php _e('No Image selected', 'piratenkleider'); ?>');
+						jQuery('.showimg_<?php echo $name; ?>').html('<?php _e('No image selected', 'piratenkleider'); ?>');
 						return false;
 					});
 				    });

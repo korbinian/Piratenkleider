@@ -10,7 +10,7 @@ if ( ! function_exists( 'wphelper_form_textarea' ) ) :
     function wphelper_form_textarea($name= '', $prevalue = '', $labeltext = '', $cols=60, $rows=5, $howtotext = '') {
 	$name = wphelper_san( $name );
 	$labeltext = wphelper_san( $labeltext );
-	if (isset($name) &&  isset($labeltext))  {
+	if (!empty($name) && !empty($labeltext)) {
 	    echo "<p>\n";
 	    echo '	<label for="'.$name.'">';
 	    echo $labeltext;
@@ -23,7 +23,7 @@ if ( ! function_exists( 'wphelper_form_textarea' ) ) :
 		echo "</p>\n";
 	    }
 	} else {
-	    echo _('Ungültiger Aufruf von wphelper_form_textarea() - Name oder Label fehlt.', 'wphelper');
+	    echo __('Invalid call to wphelper_form_textarea() - name or label is missing.', 'wphelper');
 	}
     }
 endif;
@@ -31,7 +31,7 @@ if ( ! function_exists( 'wphelper_form_wpeditor' ) ) :
     function wphelper_form_wpeditor($name= '', $prevalue = '', $labeltext = '', $howtotext = '', $small = true) {
 	$name = wphelper_san( $name );
 	$labeltext = wphelper_san( $labeltext );
-	if (isset($name) &&  isset($labeltext))  {
+	if (!empty($name) && !empty($labeltext)) {
 	    echo "<p>\n";
 	    echo '	<label for="'.$name.'">';
 	    echo $labeltext;
@@ -47,7 +47,7 @@ if ( ! function_exists( 'wphelper_form_wpeditor' ) ) :
 		echo "</p>\n";
 	    }
 	} else {
-	    echo _('Ungültiger Aufruf von wphelper_form_wpeditor() - Name oder Label fehlt.', 'wphelper');
+	    echo __('Invalid call to wphelper_form_wpeditor() - name or label is missing.', 'wphelper');
 	}
     }
 endif;
@@ -55,7 +55,7 @@ if ( ! function_exists( 'wphelper_form_text' ) ) :
     function wphelper_form_text($name= '', $prevalue = '', $labeltext = '', $howtotext = '', $placeholder='', $size = 0) {
 	$name = wphelper_san( $name );
 	$labeltext = wphelper_san( $labeltext );
-	if (isset($name) &&  isset($labeltext))  {
+	if (!empty($name) && !empty($labeltext)) {
 	    echo "<p>\n";
 	    echo '	<label for="'.$name.'">';
 	    echo $labeltext;
@@ -80,7 +80,7 @@ if ( ! function_exists( 'wphelper_form_text' ) ) :
 		echo "</p>\n";
 	    }
 	} else {
-	    echo _('Ungültiger Aufruf von wphelper_form_text() - Name oder Label fehlt.', 'wphelper');
+	    echo __('Invalid call to wphelper_form_text() - name or label is missing.', 'wphelper');
 	}
     }
 endif;
@@ -88,7 +88,7 @@ if ( ! function_exists( 'wphelper_form_email' ) ) :
     function wphelper_form_email($name= '', $prevalue = '', $labeltext = '', $howtotext = '', $placeholder='', $size = 0) {
 	$name = wphelper_san( $name );
 	$labeltext = wphelper_san( $labeltext );
-	if (isset($name) &&  isset($labeltext))  {
+	if (!empty($name) && !empty($labeltext)) {
 	    echo "<p>\n";
 	    echo '	<label for="'.$name.'">';
 	    echo $labeltext;
@@ -113,7 +113,7 @@ if ( ! function_exists( 'wphelper_form_email' ) ) :
 		echo "</p>\n";
 	    }
 	} else {
-	    echo _('Ungültiger Aufruf von wphelper_form_email() - Name oder Label fehlt.', 'wphelper');
+	    echo __('Invalid call to wphelper_form_email() - name or label is missing.', 'wphelper');
 	}
     }
 endif;
@@ -121,7 +121,7 @@ if ( ! function_exists( 'wphelper_form_number' ) ) :
     function wphelper_form_number($name= '', $prevalue = '', $labeltext = '', $howtotext = '', $min = 0, $max = 0, $step=1) {
 	$name = wphelper_san( $name );
 	$labeltext = wphelper_san( $labeltext );
-	if (isset($name) &&  isset($labeltext))  {
+	if (!empty($name) && !empty($labeltext)) {
 	    echo "<p>\n";
 	    echo '	<label for="'.$name.'">';
 	    echo $labeltext;
@@ -148,7 +148,7 @@ if ( ! function_exists( 'wphelper_form_number' ) ) :
 		echo "</p>\n";
 	    }
 	} else {
-	    echo _('Ungültiger Aufruf von wphelper_form_number() - Name oder Label fehlt.', 'wphelper');
+	    echo __('Invalid call to wphelper_form_number() - name or label is missing.', 'wphelper');
 	}
     }
 endif;
@@ -157,7 +157,7 @@ if ( ! function_exists( 'wphelper_form_url' ) ) :
     function wphelper_form_url($name= '', $prevalue = '', $labeltext = '', $howtotext = '', $placeholder='http://', $size = 0) {
 	$name = wphelper_san( $name );
 	$labeltext = wphelper_san( $labeltext );
-	if (isset($name) &&  isset($labeltext))  {
+	if (!empty($name) && !empty($labeltext)) {
 	    echo "<p>\n";
 	    echo '	<label for="'.$name.'">';
 	    echo $labeltext;
@@ -177,7 +177,7 @@ if ( ! function_exists( 'wphelper_form_url' ) ) :
 		echo "</p>\n";
 	    }
 	} else {
-	    echo _('Ungültiger Aufruf von wphelper_form_url() - Name oder Label fehlt.', 'wphelper');
+	    echo __('Invalid call to wphelper_form_url() - name or label is missing.', 'wphelper');
 	}
     }
 endif;    
@@ -186,7 +186,7 @@ if ( ! function_exists( 'wphelper_form_onoff' ) ) :
     function wphelper_form_onoff($name= '', $prevalue = 0, $labeltext = '',  $howtotext = '' ) {
 	$name = wphelper_san( $name );
 	$labeltext = wphelper_san( $labeltext );
-	if (isset($name) &&  isset($labeltext))  { ?>
+	if (!empty($name) && !empty($labeltext)) { ?>
 	    <div class="schalter">
 		<select class="onoff" name="<?php echo $name; ?>" id="<?php echo $name; ?>">
 		    <option value="0" <?php selected(0,$prevalue);?>>Aus</option>
@@ -203,18 +203,18 @@ if ( ! function_exists( 'wphelper_form_onoff' ) ) :
 		echo "</p>\n";
 	    }
 	} else {
-	    echo _('Ungültiger Aufruf von wphelper_form_onoff() - Name oder Label fehlt.', 'wphelper');
+	    echo __('Invalid call to wphelper_form_onoff() - name or label is missing.', 'wphelper');
 	}
     }
 endif;    
     
 if ( ! function_exists( 'wphelper_form_select' ) ) :
-    function wphelper_form_select($name= '', $liste = array(), $prevalue, $labeltext = '',  $howtotext = '', $showempty=1, $emptytext = '' ) {
+    function wphelper_form_select($name= '', $liste = array(), $prevalue = '', $labeltext = '',  $howtotext = '', $showempty=1, $emptytext = '' ) {
 	$name = wphelper_san( $name );
 	$labeltext = wphelper_san( $labeltext );
 	$emptytext = wphelper_san( $emptytext );
 
-	if (is_array($liste) && isset($name) &&  isset($labeltext))  { ?>
+	if (is_array($liste) && !empty($name) && !empty($labeltext)) { ?>
 	    <div class="liste">
 		<p><label for="<?php echo $name; ?>">
 		    <?php echo $labeltext; ?>
@@ -226,7 +226,7 @@ if ( ! function_exists( 'wphelper_form_select' ) ) :
 		    if (!empty($emptytext)) {
 			echo $emptytext;
 		    } else {
-			_e('Keine Auswahl','wphelper');
+			_e('No selection','wphelper');
 		    }
 		    echo '</option>';
 		}
@@ -244,7 +244,7 @@ if ( ! function_exists( 'wphelper_form_select' ) ) :
 		echo "</p>\n";
 	    }
 	} else {
-	    echo _('Ungültiger Aufruf von wphelper_form_select() - Array, Name oder Label fehlt.', 'wphelper');
+	    echo __('Invalid call to wphelper_form_select() - array, name or label is missing.', 'wphelper');
 	}
     }
 endif;    
@@ -255,7 +255,7 @@ if ( ! function_exists( 'wphelper_form_multiselect' ) ) :
 	$labeltext = wphelper_san( $labeltext );
 	$emptytext = wphelper_san( $emptytext );
 
-	if (is_array($liste) && isset($name) &&  isset($labeltext))  { ?>
+	if (is_array($liste) && !empty($name) && !empty($labeltext)) { ?>
 	    <div class="liste">
 		<p><label for="<?php echo $name; ?>">
 		    <?php echo $labeltext; ?>
@@ -267,7 +267,7 @@ if ( ! function_exists( 'wphelper_form_multiselect' ) ) :
 		    if (!empty($emptytext)) {
 			echo $emptytext;
 		    } else {
-			_e('Keine Auswahl','wphelper');
+			_e('No selection','wphelper');
 		    }
 		    echo '</option>';
 		}
@@ -295,7 +295,7 @@ if ( ! function_exists( 'wphelper_form_multiselect' ) ) :
 		echo "</p>\n";
 	    }
 	} else {
-	    echo _('Ungültiger Aufruf von wphelper_form_multiselect() - Array, Name oder Label fehlt.', 'wphelper');
+	    echo __('Invalid call to wphelper_form_multiselect() - array, name or label is missing.', 'wphelper');
 	}
     }
 endif;    
@@ -306,7 +306,7 @@ if ( ! function_exists( 'wphelper_form_image' ) ) :
     function wphelper_form_image($name= '', $preimageid = 0, $labeltext = '',  $howtotext = '', $width=300, $height=200 ) {
 	$name = wphelper_san( $name );
 	$labeltext = wphelper_san( $labeltext );
-	if (isset($name) &&  isset($labeltext))  {
+	if (!empty($name) && !empty($labeltext)) {
 	    echo '<p><label for="'.$name.'">';
 	    echo $labeltext;
 	    echo "</label></p>\n";
@@ -331,8 +331,8 @@ if ( ! function_exists( 'wphelper_form_image' ) ) :
 	    <input type="hidden" name="<?php echo $name; ?>" id="<?php echo $name; ?>" value="<?php echo sanitize_key( $preimageid ) ; ?>" />
 	    
 
-	    <input class="button" name="image_button_<?php echo $name; ?>" id="image_button_<?php echo $name; ?>" value="<?php _e('Bild auswählen', 'wphelper'); ?>" />
-	    <small><a href="#" class="image_remove_<?php echo $name; ?>"><?php _e( "Entfernen", 'wphelper' );?></a></small>
+	    <input class="button" name="image_button_<?php echo $name; ?>" id="image_button_<?php echo $name; ?>" value="<?php _e('Select image', 'wphelper'); ?>" />
+	    <small><a href="#" class="image_remove_<?php echo $name; ?>"><?php _e( "Remove", 'wphelper' );?></a></small>
 	    <br><p class="howto"><?php echo $howtotext; ?>	      
 	    </p><script>
 	    jQuery(document).ready(function() {
@@ -350,7 +350,7 @@ if ( ! function_exists( 'wphelper_form_image' ) ) :
 	    jQuery(document).ready(function() {
 		jQuery('.image_remove_<?php echo $name; ?>').click(function()   {
 			jQuery('#<?php echo $name; ?>').val('');
-			jQuery('.showimg_<?php echo $name; ?>').html('<?php _e('Kein Bild ausgewählt.', 'wphelper'); ?>');
+			jQuery('.showimg_<?php echo $name; ?>').html('<?php _e('No image selected', 'wphelper'); ?>');
 			return false;
 		});
 	    });
@@ -359,7 +359,7 @@ if ( ! function_exists( 'wphelper_form_image' ) ) :
 	   <?php 
 	
 	} else {
-	    echo _('Ungültiger Aufruf von wphelper_form_image() - Name oder Label fehlt.', 'wphelper');
+	    echo __('Invalid call to wphelper_form_image() - name or label is missing.', 'wphelper');
 	}
     }
  endif;
@@ -370,7 +370,7 @@ if ( ! function_exists( 'wphelper_form_link' ) ) :
     function wphelper_form_link($name= '', $pretitle ='', $preurl ='' , $labeltext = '',  $howtotext = '', $types = '' ) {
 	$name = wphelper_san( $name );
 	$labeltext = wphelper_san( $labeltext );
-	if (isset($name) &&  isset($labeltext))  {	    
+	if (!empty($name) && !empty($labeltext)) {    
 	    wp_enqueue_script( 'wp-link' );
 	    echo '<div class="linkeingabe">';
 	    $rand = rand();
@@ -382,16 +382,16 @@ if ( ! function_exists( 'wphelper_form_link' ) ) :
 	    }
 	    echo '<div class="linkauswahl" id="container_'.$rand.'">';
 	    echo "<p>\n";
-	    echo '<label for="title_'.$rand.'_'.$name.'">'.__('Titel','wphelper');   
+	    echo '<label for="title_'.$rand.'_'.$name.'">'.__('Title','wphelper');   
 	    echo "</label><br />\n";
-	    echo '<input type="text" class="large-text" name="'.$name.'_title" id="title_'.$rand.'_'.$name.'" value="'.$pretitle.'" placeholder="'.__('Nutze Titel der verlinkten Seite','wphelper').'">';
+	    echo '<input type="text" class="large-text" name="'.$name.'_title" id="title_'.$rand.'_'.$name.'" value="'.$pretitle.'" placeholder="'.__('Use title of linked page','wphelper').'">';
 	    echo "</p>\n";	    
 	    echo "<p>\n";
 	    echo '<label for="url_'.$rand.'_'.$name.'">'.__('URL','wphelper');  
 	    echo "</label><br />\n";
 	    echo '<input type="url" class="large-text" name="'.$name.'_url" id="url_'.$rand.'_'.$name.'" value="'.$preurl.'" placeholder="https://">';
 	    echo "</p>";
-	    echo '<p><input class="button link_button_'.$name.'" name="link_button_'.$name.'" id="link_button_'.$name.'" type="button" value="'.__('Wähle Link','wphelper').'"></p>';
+	    echo '<p><input class="button link_button_'.$name.'" name="link_button_'.$name.'" id="link_button_'.$name.'" type="button" value="'.__('Select link','wphelper').'"></p>';
 	    echo "</div>\n";
 	   
 	    ?>
@@ -469,7 +469,7 @@ if ( ! function_exists( 'wphelper_form_link' ) ) :
 	add_action( 'admin_footer-post.php',     'wphelper_wpLinkUpdate_getAttr', 9999 );
 	 
 	} else {
-	    echo _('Ungültiger Aufruf von wphelper_form_link() - Name oder Label fehlt.', 'wphelper');
+	    echo __('Invalid call to wphelper_form_link() - name or label is missing.', 'wphelper');
 	}
     }
  endif;

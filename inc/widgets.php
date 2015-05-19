@@ -99,7 +99,7 @@ function piratenkleider_widgets_init() {
     register_sidebar( array(
             'name' => __( 'Start page: Optional content', 'piratenkleider' ),
             'id' => 'artikelstream-widget',
-            'description' => __( 'Optional widget for content area; positioned after article stream and can be used to add external feeds in content area.', 'piratenkleider' ),
+            'description' => __( 'Optional widget for content area; positioned after article stream and can be used to add external feeds in content area.', 'piratenkleider' ),
             'before_widget' => '<div id="%1$s" class="widget-stream">',
             'after_widget' => '</div>',
             'before_title' => '<h1>',
@@ -258,7 +258,8 @@ class ParteiLinkliste_Widget extends WP_Widget {
 		}                 
  
                 global $default_footerlink_liste;
-                echo "<select name=\"".$this->get_field_name( 'bereich' )."\">\n";
+                echo "<label for=\"".$this->get_field_id( 'bereich' )."\">".__( 'Section:', 'piratenkleider' )."</label>\n";
+                echo "<select name=\"".$this->get_field_name( 'bereich' )."\" id=\"".$this->get_field_id( 'bereich' )."\">\n";
 
                 foreach($default_footerlink_liste as $i => $value) {   
                     echo "\t\t\t\t";
@@ -277,7 +278,6 @@ class ParteiLinkliste_Widget extends WP_Widget {
                 }  
                 echo "</select><br>\n";                                   
                 echo "\t\t\t";
-                echo "<label for=\"".$this->get_field_name( 'bereich' )."\">".__( 'Chose section.', 'piratenkleider' )."</label>\n";   
 	}
 
 } // class Partei Linkliste Widget
@@ -335,7 +335,7 @@ class Bannerlink_Widget extends WP_Widget {
                         <input class="button upload_image_button" name="upload_image_button" id="<?php echo $this->get_field_id('image_url'); ?>_button"  value="<?php _e('Upload', 'piratenkleider'); ?>" />
 
 
-                    <br /><?php _e('Chose image from media library or enter an URL.', 'piratenkleider'); ?>
+                    <br /><?php _e('Select image from media library or enter an URL.', 'piratenkleider'); ?>
 
                 </label> 
             </p>
