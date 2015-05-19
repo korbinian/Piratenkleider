@@ -646,13 +646,6 @@ function theme_options_validate( $input ) {
 
             }
        }               
-
-      
-    if ((isset($input['position_sidebarbottom'])) 
-            && ($input['position_sidebarbottom']==1)
-            && ($input['aktiv-dynamic-sidebar']==1)) {   
-           $output['aktiv-dynamic-sidebar'] =0;        
-    }
     
     if (isset($input['anonymize-user'])) {   
         if ($input['anonymize-user']==1) {

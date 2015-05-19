@@ -502,8 +502,8 @@ function wphelper_wpLinkUpdate_getAttr() {
 endif;    
 
 if ( ! function_exists( 'wphelper_save_standard' ) ) :  
-    function wphelper_save_standard($name, $val, $post_id, $type='text') {
-	if (isset($name) && isset($post_id) ) {
+    function wphelper_save_standard($name, &$val, $post_id, $type='text') {
+	if (!empty($name) && !empty($post_id) ) {
 	    
 	    if ($type == 'url') {
 		 $newval = ( isset( $val ) ? esc_url( $val ) : 0 );		
