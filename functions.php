@@ -1412,8 +1412,7 @@ function get_piratenkleider_firstpicture($relative = true){
         $first_img = $matches[1];
         if (!empty($first_img)){
             if ($relative) {
-                $site_link =  home_url();  
-                $first_img = preg_replace("%$site_link%i",'', $first_img); 
+                $first_img = piratenkleider_make_link_relative($first_img);
             }
             $imagehtml = '<img src="'.$first_img.'" alt="" >';
             return $imagehtml;    
@@ -1601,59 +1600,36 @@ function piratenkleider_fetch_feed($url,$lifetime=0) {
 }
 endif;
 
-
-function wpi_linkexternclass($content){
-        return preg_replace_callback('/<a[^>]+/', 'wpi_linkexternclass_callback', $content);
+/*
+ Replace absolute URLs for links und images by relative URLs, also mark external links
+*/
+function piratenkleider_make_nice_links($content) {
+    // Suppress errors while parsing HTML content
+    libxml_use_internal_errors(true);
+    // Parse HTML content and look for A and IMG tags
+    $dom = new DOMDocument();
+    $dom->loadHTML($content);
+    foreach ($dom->getElementsByTagName('a') as $node) {
+        $url = trim($node->getAttribute('href'));
+        $url_scheme = parse_url($url, PHP_URL_SCHEME);
+        if ($url_scheme == 'http' || $url_scheme == 'https') {
+            $node->setAttribute('href', piratenkleider_make_link_relative($url));
+            if (!$node->hasAttribute('class') && !piratenkleider_is_internal_link($url)) {
+                $node->setAttribute('class', 'extern');
+            }
+        } 
     }
- 
-function wpi_linkexternclass_callback($matches) {
-        $link = $matches[0];
-        $site_link = home_url();  
-        if ((strpos($link, 'class') === false)
-		   && (strpos($link, 'mailto:') === false)
-                   && (strpos($link, 'http') >0)
-                   && (strpos($link, $site_link) === false)) {
-            $link = preg_replace("%(href=\S(?!($site_link|#)))%i", 'class="extern" $1', $link);
-        }       
-        return $link;
+    foreach ($dom->getElementsByTagName('img') as $node) {
+        $url = trim($node->getAttribute('src'));
+        $node->setAttribute('src', piratenkleider_make_link_relative($url));
     }
-add_filter('the_content', 'wpi_linkexternclass');
-
-
- function piratenkleider_relativeimgurl($content){
-        return preg_replace_callback('/<img[^>]+/', 'piratenkleider_relativeimgurl_callback', $content);
+    // Before returning new content we need to get rid of unneeded tags which were inserted automatically
+    $new_content = $dom->saveHTML();
+    $new_content = preg_replace('~<(?:!DOCTYPE|/?(?:html|body))[^>]*>\s*~i', '', $new_content);
+    return $new_content;
 }
-function piratenkleider_relativeimgurl_callback($matches) {
-        $link = $matches[0];
-        $site_link =  wp_make_link_relative(home_url());  
-        $link = preg_replace("%src=\"$site_link%i", 'src="', $link);                 
-        return $link;
-    }
- add_filter('the_content', 'piratenkleider_relativeimgurl');
+add_filter('the_content', 'piratenkleider_make_nice_links');
 
-
- function wpi_relativeurl($content){
-        return preg_replace_callback('/<a[^>]+/', 'wpi_relativeurl_callback', $content);
-    }
- 
-function wpi_relativeurl_callback($matches) {
-        $link = $matches[0];
-        $site_link =  wp_make_link_relative(home_url());  
-        $link = preg_replace("%href=\"$site_link%i", 'href="', $link);                 
-        return $link;
-    }
- add_filter('the_content', 'wpi_relativeurl');
-   
-
- /*
-  * Replaces esc_url, but also makes URL relative
-  */
- function piratenkleider_esc_url( $url) {
-     if (!isset($url)) {
-	 $url = home_url("/");
-     }
-     return wp_make_link_relative(esc_url($url));
- }
  
  function get_piratenkleider_template_uri () {
      return wp_make_link_relative(get_template_directory_uri());
@@ -1691,9 +1667,9 @@ function rw_relative_urls() {
     }
 }
 
-function piratenkleider_make_link_relative($url) {
+function piratenkleider_is_internal_link($url) {
     $current_site_url = get_site_url();   
-	if (!empty($GLOBALS['_wp_switched_stack'])) {
+    if (!empty($GLOBALS['_wp_switched_stack'])) {
         $switched_stack = $GLOBALS['_wp_switched_stack'];
         $blog_id = end($switched_stack);
         if ($GLOBALS['blog_id'] != $blog_id) {
@@ -1702,7 +1678,12 @@ function piratenkleider_make_link_relative($url) {
     }
     $current_host = parse_url($current_site_url, PHP_URL_HOST);
     $host = parse_url($url, PHP_URL_HOST);
-    if($current_host == $host) {
+
+    return ($current_host == $host); 
+}
+
+function piratenkleider_make_link_relative($url) {
+    if (piratenkleider_is_internal_link($url)) {
         $url = wp_make_link_relative($url);
     }
     return $url; 
