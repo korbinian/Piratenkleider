@@ -1791,7 +1791,7 @@ img.wp-smiley {
 }
 .content ul li {
       margin-bottom: 5px;
-      list-style:  cross-fade;
+      list-style: disc;
 }
 .content ul li ul li {
     list-style: circle;
