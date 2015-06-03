@@ -1607,6 +1607,10 @@ function piratenkleider_make_nice_links($content) {
     // Suppress errors while parsing HTML content
     libxml_use_internal_errors(true);
     // Parse HTML content and look for A and IMG tags
+    
+    if (empty($content)) {
+        return;
+    }
     $dom = new DOMDocument();
     $dom->loadHTML($content);
     foreach ($dom->getElementsByTagName('a') as $node) {
