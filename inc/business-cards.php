@@ -139,7 +139,7 @@ function piratenkleider_person_metabox_content( $post ) {
 		    value="<?php echo $person_bildid; ?>" />	    
 	     
 	     
-	     <input type="button" id="person_bild-button" class="button" value="<?php _e( "Upload and chose image", 'piratenkleider' ); ?>" />
+	     <input type="button" id="person_bild-button" class="button" value="<?php _e( "Select or upload image", 'piratenkleider' ); ?>" />
 	    <small> <a href="#" class="custom_clear_image_button"><?php _e("Remove image",'piratenkleider'); ?></a></small> 
 	</p>
 	
@@ -857,7 +857,7 @@ function piratenkleider_add_post_metabox_person() {
 
 	add_meta_box(
 		'piratenkleider-post-class-person',			// Unique ID
-		esc_html__( 'Personal card', 'piratenkleider' ),		// Title
+		esc_html__( 'Business card', 'piratenkleider' ),		// Title
 		'piratenkleider_post_class_metabox_person',		// Callback function
 		'post',					// Admin page (or post type)
 		'advanced',					// Context
@@ -871,10 +871,10 @@ function piratenkleider_post_class_metabox_person( $object, $box ) {
 	wp_nonce_field( basename( __FILE__ ), 'piratenkleider_post_class_nonce' ); 
 	?>
 	<p>
-		<label for="piratenkleider-personalcard-id"><?php _e( "Select someone you want to show with a personal card along the article.", 'piratenkleider' ); ?></label>
+		<label for="piratenkleider-personalcard-id"><?php _e( "Select someone you want to show with a business card along the article.", 'piratenkleider' ); ?></label>
 		<br />
 		<select name="piratenkleider-personalcard-id" id="piratenkleider-personalcard-id">
-		    <option value=""><?php _e( "Do not display any personal card", 'piratenkleider' ); ?></option>
+		    <option value=""><?php _e( "Do not display any business card", 'piratenkleider' ); ?></option>
 		    <?php
 		    
 			$notice = '';
@@ -957,7 +957,7 @@ function piratenkleider_post_class_metabox_person( $object, $box ) {
 				    }
 				}
 			    } else {
-				$notice = __('No person card defined yet.', 'piratenkleider');
+				$notice = __('No business cards defined yet.', 'piratenkleider');
 			    }
 			    wp_reset_query();
 			    if (isset($out)) {
@@ -1021,7 +1021,7 @@ function piratenkleider_post_class_metabox_person( $object, $box ) {
 		    value="<?php echo $person_bildid; ?>" />	    
 	     
 	     
-	     <input type="button" id="person_bild-button" class="button" value="<?php _e( "Chose or upload picture", 'piratenkleider' ); ?>" />
+	     <input type="button" id="person_bild-button" class="button" value="<?php _e( "Select or upload image", 'piratenkleider' ); ?>" />
 	    <small> &nbsp;  <a href="#" class="custom_clear_image_button"><?php _e( "Remove picture", 'piratenkleider' ); ?></a></small> 
 	</p>
 	</div>

@@ -84,17 +84,6 @@
     /* ]]> */
       </script> 
     <?php }  
-   
-        if ($options['aktiv-dynamic-sidebar']==1) { 
-	    $nosidebar = get_post_meta( get_the_ID(), 'piratenkleider_nosidebar', true );
-	    if( empty( $nosidebar ) || $nosidebar==0) {  ?>
-     <script type="text/javascript">
-        /* <![CDATA[ */
-         $htmlOnSwitch = '<div class="switchoff"><a href="#"><abbr title="<?php _e('Hide sidebar','piratenkleider'); ?>">&#9654;</abbr></a></div>';
-         $htmlOffSwitch = '<div class="switchon" ><a href="#"><abbr title="<?php _e('Show sidebar','piratenkleider'); ?>">&#9664;</abbr></a></div>';
-        /* ]]> */
-    </script> 
-	<?php } }  
     
    if (isset($options['html-eigene-anweisungen'])
         && strlen(trim($options['html-eigene-anweisungen'])) > 0) {
