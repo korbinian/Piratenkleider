@@ -3,6 +3,11 @@ Theme Piratenkleider
 Changelog 
 (since version 3.2; Former changes look at github.com/Piratenkleider/)
 
+Version 3.3.14:
+* Bugfix #206
+* Bugfix #207
+* Merges for relative links from JanRei
+* Merges for warnings from JanRei
 
 Version 3.3.13:
 * Bugfix on attributes of header images in single entries
