@@ -17,7 +17,7 @@
             if ($sliderimage) {
                     $image_url_data = wp_get_attachment_image_src( $sliderimage, 'highslider');  
                     $image_url = $image_url_data[0];
-                    $attribs = piratenkleider_get_image_attributs($thumbid);
+                    $attribs = piratenkleider_get_image_attributs($sliderimage);
 
             } elseif (has_post_thumbnail()) { 
 		$thumbid = get_post_thumbnail_id(get_the_ID());

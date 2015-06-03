@@ -3,6 +3,10 @@ Theme Piratenkleider
 Changelog 
 (since version 3.2; Former changes look at github.com/Piratenkleider/)
 
+
+Version 3.3.13:
+* Bugfix on attributes of header images in single entries
+
 Version 3.3.12:
 * Added KV Neukirchen-Vluyn 
 
