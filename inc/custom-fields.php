@@ -71,7 +71,7 @@ function piratenkleider_do_metabox_untertitel( $object, $box ) {
 	wphelper_form_text('piratenkleider_subtitle',$subtitle,
                 __('Subtitle','piratenkleider'), 
                 __('Optional subtitle for entry, which is displayed below of the main title.','piratenkleider'), 
-                '',  140);
+                '');
  }
 
 /* Save subtitles. */
