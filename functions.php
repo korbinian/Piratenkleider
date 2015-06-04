@@ -1604,15 +1604,15 @@ endif;
  Replace absolute URLs for links und images by relative URLs, also mark external links
 */
 function piratenkleider_make_nice_links($content) {
+    // Abort if content is empty or mb_convert_encoding function is not available
+    if (empty($content) || !function_exists('mb_convert_encoding')) {
+        return $content;
+    }
     // Suppress errors while parsing HTML content
     libxml_use_internal_errors(true);
     // Parse HTML content and look for A and IMG tags
-    
-    if (empty($content)) {
-        return;
-    }
     $dom = new DOMDocument();
-    $dom->loadHTML($content);
+    $dom->loadHTML(mb_convert_encoding($content, 'HTML-ENTITIES', get_bloginfo('charset')));
     foreach ($dom->getElementsByTagName('a') as $node) {
         $url = trim($node->getAttribute('href'));
         $url_scheme = parse_url($url, PHP_URL_SCHEME);
