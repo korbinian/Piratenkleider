@@ -444,6 +444,7 @@ $default_colorstyles = array(
     'colors_us.css' => __( 'USA (Violet)', 'piratenkleider' ),
     'colors_flaschenpost.css' => __( 'Flaschenpost (Light Blue)', 'piratenkleider' ),
     'colors_white.css' => __( 'White/Transparent', 'piratenkleider' ),
+    'colors_ch.css' => __( 'Switzerland', 'piratenkleider' ),
 
  );
           
@@ -538,6 +539,19 @@ $default_alternativestyles = array(
             __('Sachsen-Anhalt', 'piratenkleider' ) => 'https://www.piraten-lsa.de/',
             __('Schleswig-Holstein', 'piratenkleider' ) => 'https://landesportal.piratenpartei-sh.de/',
             __('Th&uuml;ringen', 'piratenkleider' ) => 'http://www.piraten-thueringen.de/'
+        )
+     ),
+     __( 'Schweiz', 'piratenkleider' )  => array(
+        'title' => __( 'Piratenpartei Schweiz', 'piratenkleider' ),
+        'url'   => 'https://piratenpartei.ch',
+        'sublist'   => array(
+            __('Z&uuml;rich', 'piratenkleider' ) => 'https://zh.piratenpartei.ch/',
+            __('Bern', 'piratenkleider' ) => 'https://be.piratenpartei.ch/',
+            __('Beide Basel', 'piratenkleider' ) => 'http://bs.piratenpartei.ch/',
+            __('Zentralschweiz', 'piratenkleider' ) => 'https://zg.piratenpartei.ch/',
+            __('St. Gallen und beide Appenzell', 'piratenkleider' ) => 'http://sg.piratenpartei.ch/',
+            __('Waadt', 'piratenkleider' ) => 'http://vd.partipirate.ch/',
+            __('Genf', 'piratenkleider' ) => 'https://ge.partipirate.ch/',
         )
      ),
      __('International', 'piratenkleider' ) => array(
