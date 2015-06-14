@@ -42,7 +42,7 @@
                     $image_url_data = wp_get_attachment_image_src( $sliderimage, 'highslider');
                      
                     $image_url = $image_url_data[0];
-                    $attribs = piratenkleider_get_image_attributs($thumbid);
+                    $attribs = piratenkleider_get_image_attributs($sliderimage);
                     if (isset($image_url) && strlen($image_url)>0){                        
                         echo '<img src="'.$image_url.'"  width="'.$options['highslider-width'].'" height="'.$options['highslider-height'].'" alt="">';
                     }     
