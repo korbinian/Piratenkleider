@@ -230,9 +230,11 @@
            color: white;
      }    
 
-
     .content .row {
-        background: rgba(76, 37, 130, 0.2); 
+        background: rgba(249, 178, 0, 0.2); 
+    }
+    .first_row {
+	width: 100%;
     }
     .content .symbolbild .caption {
       background: rgba(0, 0, 0, 0.5);
@@ -654,4 +656,4 @@ div.ics-calendar-holder .ics-calendar-event {
     background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #E58400), color-stop(1, #F9B200));
     background-image: linear-gradient(top, #E58400, #F9B200);
   }
- 
+
