@@ -233,7 +233,7 @@
     .content .row {
         background: rgba(249, 178, 0, 0.2); 
     }
-    .first_row {
+    .caldera-form-page .row {
 	width: 100%;
     }
     .content .symbolbild .caption {
