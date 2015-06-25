@@ -242,6 +242,10 @@
     .caldera-form-page .row {
 	width: 100%;
     }
+    .single {
+        width: 100%;
+    }
+
     .content .symbolbild .caption {
       background: rgba(0, 0, 0, 0.5);
       color: white;
