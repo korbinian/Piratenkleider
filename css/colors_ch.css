@@ -371,12 +371,12 @@
  }
  .content-aside .twitterwidget li a:hover { color:#FFF; }
  .content-aside a {
-  color: #D89700;
+  color: #505050;
   background: rgba(255,255,255, 0.2);
   padding:0.25em 0.4em;
 }
   .content-aside a:hover {
-    color: rgba(249, 178, 0, 0.8);
+    color: #202020;
     background: rgba(255,255,255, 0.8); 
   }
   .content-aside #steckbrief a {
