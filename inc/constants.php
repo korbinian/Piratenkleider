@@ -545,13 +545,17 @@ $default_alternativestyles = array(
         'title' => __( 'Piratenpartei Schweiz', 'piratenkleider' ),
         'url'   => 'https://piratenpartei.ch',
         'sublist'   => array(
-            __('Z&uuml;rich', 'piratenkleider' ) => 'https://zh.piratenpartei.ch/',
+            __('Aargau', 'piratenkleider' ) => 'https://www.piraten-aargau.ch/',
             __('Bern', 'piratenkleider' ) => 'https://be.piratenpartei.ch/',
-            __('Beide Basel', 'piratenkleider' ) => 'http://bs.piratenpartei.ch/',
-            __('Zentralschweiz', 'piratenkleider' ) => 'https://zg.piratenpartei.ch/',
-            __('St. Gallen und beide Appenzell', 'piratenkleider' ) => 'http://sg.piratenpartei.ch/',
-            __('Waadt', 'piratenkleider' ) => 'http://vd.partipirate.ch/',
+            __('Beider Basel', 'piratenkleider' ) => 'https://piraten-basel.ch/',
             __('Genf', 'piratenkleider' ) => 'https://ge.partipirate.ch/',
+            __('St. Gallen und beider Appenzell', 'piratenkleider' ) => 'https://sg.partipirate.ch/',
+            __('Tessin', 'piratenkleider' ) => 'https://www.partitopirata.ch/',
+            __('Thurgau-Schaffhausen', 'piratenkleider' ) => 'https://tg.partipirate.ch/',
+            __('Waadt', 'piratenkleider' ) => 'https://vd.partipirate.ch/',
+            __('Wallis', 'piratenkleider' ) => 'https://vs.piratenpartei.ch/',
+            __('Zentralschweiz', 'piratenkleider' ) => 'https://zs.piratenpartei.ch/',
+            __('Z&uuml;rich', 'piratenkleider' ) => 'https://zh.piratenpartei.ch/',
         )
      ),
      __('International', 'piratenkleider' ) => array(
