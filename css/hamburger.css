@@ -46,7 +46,7 @@
 .nav-main {
     clear: both;
     color: #999;
-    font-family: sans-serif !important;
+    font-family: FontPiratenkleiderDefault;
     line-height: 1.5;
     width: 100%;
     z-index: 9999;
@@ -64,7 +64,7 @@
     display: block;
     padding: 18px 30px;
     position: relative;
-     font-family: sans-serif !important;
+     font-family: FontPiratenkleiderDefault;
          text-transform: uppercase;
          letter-spacing: 1px;
           text-align: left;
@@ -199,7 +199,7 @@ text-transform: uppercase;
     -moz-box-shadow:none;
     -webkit-box-shadow: none;
     box-shadow:none;
-    background-color: #1a4862;
+    background-color: #222222;
     text-transform: uppercase;
     letter-spacing: 1px;
   }
