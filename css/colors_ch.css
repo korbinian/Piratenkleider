@@ -694,30 +694,30 @@
 }
 
 /* overwriting colors from hamburger.css */
-#header-menu-icon {
-	background-color: #ddd !important;
-	background-image: -moz-linear-gradient(top, #ddd, #bbb) !important;
-	background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #ddd), color-stop(1, #bbb)) !important;
-	background-image: linear-gradient(top, #ddd, #bbb) !important;
-}
+@media only screen and (max-width: 768px) {
+	#header-menu-icon {
+		background-color: #ddd !important;
+		background-image: -moz-linear-gradient(top, #ddd, #bbb) !important;
+		background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #ddd), color-stop(1, #bbb)) !important;
+		background-image: linear-gradient(top, #ddd, #bbb) !important;
+	}
 
-#header-menu-icon:hover::after,
-#header-menu-icon:active::after {
-	color: #555 !important;
-}
+	#header-menu-icon:hover::after,
+	#header-menu-icon:active::after {
+		color: #555 !important;
+	}
 
-.nav-main ul.menu li:hover ul li a,
-.nav-main ul.menu li.hover ul li a,
-.nav-main ul.menu li:hover ul li:hover a,
-.nav-main ul.menu li.hover ul li.hover a,
-.nav-main ul.menu li li a,
-.nav-main ul.menu li li li a,
-.nav-main ul.menu li li li li a  {
-	background-color: #222222 !important;
-}
+	.nav-main ul.menu li:hover ul li a,
+	.nav-main ul.menu li.hover ul li a,
+	.nav-main ul.menu li:hover ul li:hover a,
+	.nav-main ul.menu li.hover ul li.hover a,
+	.nav-main ul.menu li li a,
+	.nav-main ul.menu li li li a,
+	.nav-main ul.menu li li li li a  {
+		background-color: #222222 !important;
+	}
 
-/* overwriting fonts from hamburger.css */
-@media all {
+	/* overwriting fonts from hamburger.css */
 	.nav-main {
 		font-family: FontPiratenkleiderDefault !important;
 	}
