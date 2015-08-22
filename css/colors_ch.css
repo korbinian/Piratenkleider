@@ -21,7 +21,7 @@
 	font-family: FontPiratenkleiderDefault;
 	src: local(Aller),
 	url(../fonts/aller_rg.eot) format("embedded-opentype"),
-	url(../fonts/aller_rg.ttf) format("truetype");
+	url(../fonts/aller_rg.ttf) format("truetype"),
 	url(../fonts/aller_rg.woff) format("woff");
 }
 
@@ -29,7 +29,7 @@
 	font-family: FontPiratenkleiderHeadlines;
 	src: local(Aller),
 	url(../fonts/aller_rg.eot) format("embedded-opentype"),
-	url(../fonts/aller_rg.ttf) format("truetype");
+	url(../fonts/aller_rg.ttf) format("truetype"),
 	url(../fonts/aller_rg.woff) format("woff");
 }
 
@@ -37,7 +37,7 @@
 	font-family: FontPiratenkleiderMenuHeadlines;
 	src: local(Aller),
 	url(../fonts/aller_rg.eot) format("embedded-opentype"),
-	url(../fonts/aller_rg.ttf) format("truetype");
+	url(../fonts/aller_rg.ttf) format("truetype"),
 	url(../fonts/aller_rg.woff) format("woff");
 }
 
