@@ -1,4 +1,4 @@
-/* 
+/*
  * Document   : colors_ch
  * Created on : 07.06.2015, 00:55
  * Author     : xwolf
@@ -7,13 +7,13 @@
  * Each pirate party in several countries use their own set of colors;
  * Therefor all color-settings are outsourced in files in
  * the form colors_LANG.css.
- * 
+ *
  * Settings in the color files will override settings in the
  * current basemods, which defines the default style (german colors).
- * 
+ *
  * This is the Swiss color file.
- * 
- * Base color: #F9B200  , rgba(76,37,130, 0.2); 
+ *
+ * Base color: #F9B200  , rgba(76,37,130, 0.2);
  * Special text font: Aller
  */
 
@@ -43,13 +43,13 @@
 
 @media screen, projection {
 	body {
-		background-image: url("../images/int/bg-tags-ch.png"); 
+		background-image: url("../images/int/bg-tags-ch.png");
 		background-color: #F9B200;
 	}
 
-	a {     
+	a {
 		color: #E86800;
-		-webkit-tap-highlight-color: #E95E0F; 
+		-webkit-tap-highlight-color: #E95E0F;
 	}
 
 	a:visited {
@@ -71,16 +71,16 @@
 
 	input, select, textarea {
 		background: white;
-		background: rgba(255, 255, 255, 0.6); 
+		background: rgba(255, 255, 255, 0.6);
 	}
 
-	input:focus, input:active, 
-	select:focus, select:active, 
+	input:focus, input:active,
+	select:focus, select:active,
 	textarea:focus, textarea:active {
-		background: white; 
+		background: white;
 	}
 
-	button, input[type="submit"], 
+	button, input[type="submit"],
 	.post-edit-link {
 		background: #E95E0F;
 		color: white;
@@ -95,8 +95,8 @@
 		background-image: linear-gradient(top, #E95E0F, #E87E45);
 	}
 
-	button:hover, 
-	input[type="submit"]:hover, 
+	button:hover,
+	input[type="submit"]:hover,
 	.post-edit-link:hover {
 		background-color: #E95E0F;
 		background-image: -moz-linear-gradient(top, #E95E0F, #CC6804);
@@ -104,7 +104,7 @@
 		background-image: linear-gradient(top, #E95E0F, #CC6804);
 	}
 
-	.skiplinks li a:focus, 
+	.skiplinks li a:focus,
 	.skiplinks li a:active {
 		background: #E95E0F;
 		color: white;
@@ -112,48 +112,48 @@
 
 	.skiplinks li a:hover {
 		background: #F9B200;
-		color: black; 
+		color: black;
 	}
 
-	ul.socialmedia li a img {   
+	ul.socialmedia li a img {
 		border-color: #F28900;
 	}
 
 	ul.socialmedia li a:hover img {
-		border-color: white;      
+		border-color: white;
 	}
 
 	ul.socialmedia li a:focus img {
-		border-color: #F9B200;    
-	}    
+		border-color: #F9B200;
+	}
 
-	.sticker ul li {  
-		border-color: transparent;     
+	.sticker ul li {
+		border-color: transparent;
 	}
 
 	.sticker ul li a:hover,
 	.sticker ul li a:focus {
-		color: #CC6804; 
-	} 
+		color: #CC6804;
+	}
 
-	.sticker ul li a .cicolor {        
-		color: #F9B200;    
+	.sticker ul li a .cicolor {
+		color: #F9B200;
 	}
 
 	.sticker ul li a:hover .cicolor,
 	.sticker ul li a:focus .cicolor {
-		color: #E95E0F;  
+		color: #E95E0F;
 	}
 
-	.sticker ul li a .shadow {        
-		text-shadow: 1px 1px 1px #7F4102; 
+	.sticker ul li a .shadow {
+		text-shadow: 1px 1px 1px #7F4102;
 	}
 
 	.sticker li a img {
-		border-color: transparent;     
+		border-color: transparent;
 	}
 
-	.sticker li a:hover img, 
+	.sticker li a:hover img,
 	.sticker li a:focus img {
 		border-color: #F9B200;
 	}
@@ -165,7 +165,7 @@
 
 	.teaser .row {
 		background: #E59C00;
-		background: rgba(0, 0, 0, 0.2) -20% 0 fixed; 
+		background: rgba(0, 0, 0, 0.2) -20% 0 fixed;
 	}
 
 	.teaser .first-teaser-widget-area {
@@ -178,7 +178,7 @@
 	}
 
 	.first-teaser-widget-area .slide .caption a {
-		background: #E58400 none repeat scroll 0% 0%; 
+		background: #E58400 none repeat scroll 0% 0%;
 	}
 
 	.second-teaser-widget-area li {
@@ -186,8 +186,8 @@
 	}
 
 	.second-teaser-widget-area li a {
-		color: white;  
-		text-shadow: 0 0 0; 
+		color: white;
+		text-shadow: 0 0 0;
 	}
 
 	.second-teaser-widget-area li a div {
@@ -195,17 +195,17 @@
 		text-shadow: 0 -1px 1px #552554;
 	}
 
-	.second-teaser-widget-area li a:focus,  
-	.second-teaser-widget-area li a:hover {    
+	.second-teaser-widget-area li a:focus,
+	.second-teaser-widget-area li a:hover {
 		background: #E59C00;
-		background: rgba(0, 0, 0, 0.5);  
+		background: rgba(0, 0, 0, 0.5);
 		color: white;
 	}
 
-	.second-teaser-widget-area .textwidget {      
+	.second-teaser-widget-area .textwidget {
 		background: #F9B200;
-		color: white; 
-		text-shadow: 0 0 0; 
+		color: white;
+		text-shadow: 0 0 0;
 	}
 
 	.second-teaser-widget-area li.recentcomments {
@@ -220,8 +220,8 @@
 	}
 
 	.teaserlinks .symbol:before {
-		text-shadow: 0 -1px 1px rgba(0,0,0,0.2); 
-	} 
+		text-shadow: 0 -1px 1px rgba(0,0,0,0.2);
+	}
 
 	.teaserlinks ul li a {
 		color: #EEE;
@@ -235,17 +235,17 @@
 	}
 
 	.teaserlinks ul li a span {
-		text-shadow: 0 0 0; 
+		text-shadow: 0 0 0;
 		color: #EEE;
 	}
 
 	.teaserlinks ul li a:hover span,
-	.teaserlinks ul li a:focus span { 
+	.teaserlinks ul li a:focus span {
 		color: white;
-	}    
+	}
 
 	.content .row {
-		background: rgba(249, 178, 0, 0.2); 
+		background: rgba(249, 178, 0, 0.2);
 	}
 
 	.caldera-form-page .row {
@@ -270,11 +270,11 @@
 		background: url(../images/int/bg-tags-at.png);
 	}
 
-	.content-primary input[type="text"]:hover, 
+	.content-primary input[type="text"]:hover,
 	.content-primary textarea:hover,
-	.content-primary input[type="text"]:focus, 
+	.content-primary input[type="text"]:focus,
 	.content-primary textarea:focus {
-		border-color: black; 
+		border-color: black;
 		background-color: beige;
 	}
 
@@ -283,10 +283,10 @@
 		color: black;
 	}
 
-	.content-aside .newsletter {     
+	.content-aside .newsletter {
 		background-color: #ffa500;
 		box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
-	} 
+	}
 
 	.post .post-info .commentbubble a {
 		background: #F9B200;
@@ -297,7 +297,7 @@
 		background: #eeeeee;
 		-moz-box-shadow: 1px 1px 2px #444444;
 		-webkit-box-shadow: 1px 1px 2px #444444;
-		box-shadow: 1px 1px 2px #444444; 
+		box-shadow: 1px 1px 2px #444444;
 	}
 
 	.post .post-meta {
@@ -313,7 +313,7 @@
 		background-color: #E95E0F;
 		background-image: -moz-linear-gradient(top, #E95E0F, #E87E45);
 		background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #E95E0F), color-stop(1, #E87E45));
-		background-image: linear-gradient(top, #E95E0F, #E87E45); 
+		background-image: linear-gradient(top, #E95E0F, #E87E45);
 	}
 
 	.post-comments ol li .reply a:hover {
@@ -327,7 +327,7 @@
 		color: #F9B200;
 	}
 
-	.wp-caption  p.wp-caption-text { 
+	.wp-caption  p.wp-caption-text {
 		background: transparent;
 		background: rgba(0, 0, 0, 0.5);
 		color: white;
@@ -381,9 +381,9 @@
 
 	.content-aside .widget li:hover,
 	.content-aside .widget li:focus,
-	#ics-calendar-widget li:hover, 
-	#ics-calendar-widget li:focus, 
-	.content-aside .twitterwidget li:hover, 
+	#ics-calendar-widget li:hover,
+	#ics-calendar-widget li:focus,
+	.content-aside .twitterwidget li:hover,
 	.content-aside .twitterwidget li:focus {
 		background: #F2A900;
 	}
@@ -397,7 +397,7 @@
 
 	.content-aside a:hover {
 		color: #202020;
-		background: rgba(255,255,255, 0.8); 
+		background: rgba(255,255,255, 0.8);
 	}
 
 	.content-aside #steckbrief a {
@@ -410,18 +410,18 @@
 
 	.content-aside table td,
 	.content-aside table th {
-		border-top-color: #F9B200; 
+		border-top-color: #F9B200;
 	}
 
 	.content-aside blockquote {
 		border: 0 solid;
 		background: #E59C00;
-		background: rgba(255, 255, 255, 0.2); 
+		background: rgba(255, 255, 255, 0.2);
 	}
 
 	.content-aside ul.menu {
 		background: #E59C00;
-		background: rgba(255, 255, 255, 0.2); 
+		background: rgba(255, 255, 255, 0.2);
 	}
 
 	.content-aside ul.menu li a {
@@ -433,7 +433,7 @@
 	.content-aside ul.menu li a:hover,
 	.content-aside ul.menu li a:focus {
 		color: white;
-		background: #E95E0F; 
+		background: #E95E0F;
 	}
 
 	.content-aside ul.menu li.current_page_item > a,
@@ -463,7 +463,7 @@
 
 	.footer {
 		background: black url("../images/int/bg-tags_gray.jpg") -20% top fixed;
-		overflow: hidden; 
+		overflow: hidden;
 	}
 	.footer .row {
 		background: rgba(0, 0, 0, 0.2);
@@ -472,7 +472,7 @@
 
 	.footer a {
 		background: black;
-		color: #E95E0F; 
+		color: #E95E0F;
 	}
 
 	.footer a:hover {
@@ -491,7 +491,7 @@
 	}
 
 	.content-aside .widget li .rssSummary {
-		color:#333333;  
+		color:#333333;
 	}
 
 	#ics-calendar-widget li {
@@ -500,7 +500,7 @@
 		background: rgba(255, 255, 255, 0.2);
 	}
 
-	#ics-calendar-widget-next, 
+	#ics-calendar-widget-next,
 	#ics-calendar-widget-prev {
 		background: #E95E0F;
 		color: white;
@@ -516,7 +516,7 @@
 		background-image: linear-gradient(top, #E95E0F, #E87E45);
 	}
 
-	#ics-calendar-widget-next:hover, 
+	#ics-calendar-widget-next:hover,
 	#ics-calendar-widget-prev:hover {
 		background-color: #E95E0F;
 		background-image: -moz-linear-gradient(top, #E95E0F, #CC6804);
@@ -551,7 +551,7 @@
 	border-bottom-color: gray; }
 
 	div.ics-calendar-holder .ics-calendar-table td .date-holder {
-		background: white; 
+		background: white;
 	}
 
 	div.ics-calendar-holder .ics-calendar-table td .old-date-holder {
@@ -571,8 +571,8 @@
 
 	.nav-top div.menu-header ul.menu li a:hover,
 	.nav-top div.menu-header ul.menu li a:focus {
-		color: #E95E0F; 
-	}        
+		color: #E95E0F;
+	}
 }
 
 .nav-main ul.menu li a:hover,
@@ -606,14 +606,14 @@
 	background-image: linear-gradient(top, #A0A0A0, black);
 }
 
-@media only screen and (max-width: 800px) { 
+@media only screen and (max-width: 800px) {
 	.nav-main ul.menu li {
 		border-color: black;
 		border-top-color: black;
 		border-bottom-color: black;
 		background-color: white;
 		background-image: -moz-linear-gradient(top, #111111, #FFFFFF);
-	}   
+	}
 
 	.nav-main ul.menu li a {
 		background: #F9B200;
@@ -628,12 +628,12 @@
 	.nav-main ul.menu li a:focus,
 	.nav-main ul.menu li a:hover {
 		background: #E58400;
-		color: black; 
+		color: black;
 		background-color: #E58400;
 		background-image: -moz-linear-gradient(top, #E58400, #F9B200);
 		background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #E58400), color-stop(1, #F9B200));
 		background-image: linear-gradient(top, #E58400, #F9B200);
-	} 
+	}
 
 	.nav-main ul.menu li.current-menu-item > a:hover,
 	.nav-main ul.menu li.current-page-item > a:hover {
@@ -674,7 +674,7 @@
 	}
 
 	.post-comments ol li .comment-body {
-		background: white; 
+		background: white;
 	}
 
 	.skiplinks li a {
@@ -690,7 +690,7 @@
 	.skiplinks li a:focus,
 	.skiplinks li a:hover {
 		background: #E58400;
-		color: black; 
+		color: black;
 		background-color: #E58400;
 		background-image: -moz-linear-gradient(top, #E58400, #F9B200);
 		background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #E58400), color-stop(1, #F9B200));
