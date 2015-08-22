@@ -231,17 +231,12 @@
 	.teaserlinks ul li a:hover,
 	.teaserlinks ul li a:focus{
 		color: white;
-		background: none repeat scroll 0 0 #DC7204;
+		background: none repeat scroll 0 0 transparent;
 	}
 
 	.teaserlinks ul li a span {
 		text-shadow: 0 0 0;
-		color: #EEE;
-	}
-
-	.teaserlinks ul li a:hover span,
-	.teaserlinks ul li a:focus span {
-		color: white;
+		color: #000;
 	}
 
 	.content .row {
