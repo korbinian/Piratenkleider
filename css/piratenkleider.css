@@ -1005,7 +1005,6 @@ body.nav-fixed .nav-main li a span {
     display: none;
 }
 .logo {
-  display: inline-block;
   overflow: hidden; 
 }
 
