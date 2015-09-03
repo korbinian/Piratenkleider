@@ -43,7 +43,7 @@
 		}
 		?>    		    		    		        
 		   <h1 class="post-title"><span><?php the_title(); ?></span></h1>
-		   <div class="symbolbild"><img src="<?php echo piratenkleider_make_link_relative($image_url) ?>" alt="">
+		   <div class="symbolbild"><img src="<?php echo piratenkleider_make_link_relative($image_url); ?>" alt="">
 		    <?php if (isset($attribs["credits"]) && (strlen($attribs["credits"])>1)) {
                            echo '<div class="caption">'.$attribs["credits"].'</div>';  
                         }  ?>

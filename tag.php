@@ -30,7 +30,7 @@
 		}
 		?>    		    		    		        
 		   <h1 class="post-title"><span><?php printf( __( 'Tag %s', 'piratenkleider' ), '' . single_cat_title( '', false ) . '' ); ?></span></h1>
-		   <div class="symbolbild"><img src="<?php echo piratenkleider_make_link_relative($image_url) ?>" alt="" itemprop="image">	
+		   <div class="symbolbild"><img src="<?php echo piratenkleider_make_link_relative($image_url); ?>" alt="" itemprop="image">	
 		    <?php if (isset($attribs["credits"]) && (strlen($attribs["credits"])>1)) {
                            echo '<div class="caption">'.$attribs["credits"].'</div>';  
                         }  ?>		       
