@@ -444,6 +444,7 @@ $default_colorstyles = array(
     'colors_us.css' => __( 'USA (Violet)', 'piratenkleider' ),
     'colors_flaschenpost.css' => __( 'Flaschenpost (Light Blue)', 'piratenkleider' ),
     'colors_white.css' => __( 'White/Transparent', 'piratenkleider' ),
+    'colors_ch.css' => __( 'Switzerland', 'piratenkleider' ),
 
  );
           
@@ -538,6 +539,23 @@ $default_alternativestyles = array(
             __('Sachsen-Anhalt', 'piratenkleider' ) => 'https://www.piraten-lsa.de/',
             __('Schleswig-Holstein', 'piratenkleider' ) => 'https://landesportal.piratenpartei-sh.de/',
             __('Th&uuml;ringen', 'piratenkleider' ) => 'http://www.piraten-thueringen.de/'
+        )
+     ),
+     __( 'Schweiz', 'piratenkleider' )  => array(
+        'title' => __( 'Piratenpartei Schweiz', 'piratenkleider' ),
+        'url'   => 'https://piratenpartei.ch',
+        'sublist'   => array(
+            __('Aargau', 'piratenkleider' ) => 'https://www.piraten-aargau.ch/',
+            __('Bern', 'piratenkleider' ) => 'https://be.piratenpartei.ch/',
+            __('Beider Basel', 'piratenkleider' ) => 'https://piraten-basel.ch/',
+            __('Genf', 'piratenkleider' ) => 'https://ge.partipirate.ch/',
+            __('St. Gallen und beider Appenzell', 'piratenkleider' ) => 'https://sg.partipirate.ch/',
+            __('Tessin', 'piratenkleider' ) => 'https://www.partitopirata.ch/',
+            __('Thurgau-Schaffhausen', 'piratenkleider' ) => 'https://tg.partipirate.ch/',
+            __('Waadt', 'piratenkleider' ) => 'https://vd.partipirate.ch/',
+            __('Wallis', 'piratenkleider' ) => 'https://vs.piratenpartei.ch/',
+            __('Zentralschweiz', 'piratenkleider' ) => 'https://zs.piratenpartei.ch/',
+            __('Z&uuml;rich', 'piratenkleider' ) => 'https://zh.piratenpartei.ch/',
         )
      ),
      __('International', 'piratenkleider' ) => array(
