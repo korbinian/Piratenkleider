@@ -40,7 +40,7 @@
                             _e( 'Archive', 'piratenkleider' ); 
                          } 
                         endif; ?></span></h1>
-		   <div class="symbolbild"><img src="<?php echo $image_url ?>" alt="" itemprop="image">
+		   <div class="symbolbild"><img src="<?php echo piratenkleider_make_link_relative($image_url); ?>" alt="" itemprop="image">
 			<?php if (isset($attribs["credits"]) && (strlen($attribs["credits"])>1)) {
                            echo '<div class="caption">'.$attribs["credits"].'</div>';  
                         }  ?>		       
