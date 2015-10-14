@@ -1,8 +1,7 @@
 /*
  * Document   : colors_ch
  * Created on : 07.06.2015, 00:55
- * Author     : xwolf
- * Description:
+ * Author     : xwyellow* Description:
  * Define corporate design colors for the theme.
  * Each pirate party in several countries use their own set of colors;
  * Therefor all color-settings are outsourced in files in
@@ -558,126 +557,95 @@
 	.nav-top div.menu-header ul.menu li a:focus {
 		color: #E95E0F;
 	}
-}
 
-.nav-main ul.menu li a:hover,
-.nav-main ul.menu li a.hover {
-	color: #DC7204;
-}
-
-.nav-main ul.menu li ul.sub-menu li a:hover,
-.nav-main ul.menu li ul.sub-menu li a.focus {
-	background-color: #DC7204;
-}
-
-.nav-main ul.menu li.current-menu-item > a,
-.nav-main ul.menu li.current-page-item > a {
-	background: black;
-	color: white;
-	background-color: black;
-	background-image: -webkit-linear-gradient(top, #A0A0A0, black);
-	background-image: linear-gradient(to bottom, #A0A0A0, black);
-}
-
-.nav-main ul.menu li.current-menu-item  > a,
-.nav-main ul.menu li.current-page-ancestor  > a,
-.nav-main ul.menu li.current-menu-ancestor > a {
-	background: black;
-	color: white;
-	background-color: black;
-	background-image: -webkit-linear-gradient(top, #A0A0A0, black);
-	background-image: linear-gradient(to bottom, #A0A0A0, black);
-}
-
-@media only screen and (max-width: 800px) {
-	.nav-main ul.menu li {
-		border-color: black;
-		border-top-color: black;
-		border-bottom-color: black;
-		background-color: white;
-		background-image: -webkit-linear-gradient(top, #111111, #FFFFFF);
-		background-image: linear-gradient(to bottom, #111111, #FFFFFF);
+	.nav-main ul.menu li a:hover,
+	.nav-main ul.menu li.hover a {
+		color: #F80;
 	}
 
-	.nav-main ul.menu li a {
-		background: #F9B200;
-		color: white;
-		border: 1px solid black;
-		background-color: #F9B200;
-		background-image: -webkit-linear-gradient(top, #F9B200, #E58400);
-		background-image: linear-gradient(to bottom, #F9B200, #E58400);
+	.nav-main ul.menu li ul li a:hover,
+	.nav-main ul.menu li ul li.hover a,
+	.nav-main ul.menu li ul li a:active,
+	.nav-main ul.menu li ul li.active a,
+	.nav-main ul.menu li ul li ul li a:active,
+	.nav-main ul.menu li ul li ul li.active a {
+		background: #F80 none repeat scroll 0% 0%;
 	}
 
-	.nav-main ul.menu li a:focus,
-	.nav-main ul.menu li a:hover {
-		background: #E58400;
-		color: black;
-		background-color: #E58400;
-		background-image: -webkit-linear-gradient(top, #E58400, #F9B200);
-		background-image: linear-gradient(to bottom, #E58400, #F9B200);
+	.searchform .searchsubmit {
+		background: rgba(255, 136, 0, 0.7) url("../images/lupe.png") no-repeat scroll center center;
 	}
 
-	.nav-main ul.menu li.current-menu-item > a:hover,
-	.nav-main ul.menu li.current-page-item > a:hover {
-		background: #A0A0A0;
-		color: white;
-		background-color: #A0A0A0;
-		background-image: -webkit-linear-gradient(top, #A0A0A0, black);
-		background-image: linear-gradient(to bottom, #A0A0A0, black);
-	}
-
-	.nav-main ul.menu li.current-menu-item  > a:hover,
-	.nav-main ul.menu li.current-page-ancestor  > a:hover,
-	.nav-main ul.menu li.current-menu-ancestor > a:hover {
-		background: #A0A0A0;
-		color: white;
-		background-color: #A0A0A0;
-		background-image: -webkit-linear-gradient(top, #A0A0A0, black);
-		background-image: linear-gradient(to bottom, #A0A0A0, black);
-	}
-
-	.post-comments {
-		background: url("../images/int/bg-tags-ch.png") repeat fixed -20% top #F9B200;
-	}
-
-	.post-comments a {
-		color: black;
-	}
-
-	.post-comments ol li {
-		border-color: rgba(0, 0, 0, 0.2);
-	}
-
-	.post-comments ol li .comment-details {
-		color: #222222;
-		background: none repeat scroll 0 0 rgba(0, 0, 0, 0.2);
-	}
-
-	.post-comments ol li .comment-body {
-		background: white;
-	}
-
-	.skiplinks li a {
-		background: #F9B200;
-		color: white;
-		border: 1px solid black;
-		background-color: #F9B200;
-		background-image: -webkit-linear-gradient(top, #F9B200, #E58400);
-		background-image: linear-gradient(to bottom, #F9B200, #E58400);
-	}
-
-	.skiplinks li a:focus,
-	.skiplinks li a:hover {
-		background: #E58400;
-		color: black;
-		background-color: #E58400;
-		background-image: -webkit-linear-gradient(top, #E58400, #F9B200);
-		background-image: linear-gradient(to bottom, #E58400, #F9B200);
+	.searchform .searchsubmit:hover {
+		background: #F80 url("../images/lupe.png") no-repeat scroll center center;
 	}
 }
 
 /* overwriting colors from hamburger.css */
 @media only screen and (max-width: 768px) {
+
+	.nav-main ul {
+		box-shadow: none !important;
+	}
+
+	.nav-main a {
+		color: black !important;
+		background-color: #F9B200 !important;
+		background-image: none !important;
+		border-color: black !important;
+		border: 1px solid black !important;
+	}
+
+	.nav-main ul.menu li.current-menu-item > a,
+	.nav-main ul.menu li.current-page-item > a {
+		color: white !important;
+		background-color: black !important;
+		background-image: none !important;
+		border-color: #F9B200 !important;
+		border: 1px solid #F9B200 !important;
+	}
+
+	.post-comments {
+		background: url("../images/int/bg-tags-ch.png") repeat fixed -20% top #F9B200 !important;
+	}
+
+	.post-comments a {
+		color: black !important;
+	}
+
+	.post-comments ol li {
+		border-color: rgba(0, 0, 0, 0.2) !important;
+	}
+
+	.post-comments ol li .comment-details {
+		color: #222222 !important;
+		background: none repeat scroll 0 0 rgba(0, 0, 0, 0.2) !important;
+	}
+
+	.post-comments ol li .comment-body {
+		background: white !important;
+	}
+
+	.skiplinks li a {
+		background: #F9B200 !important;
+		color: white !important;
+		border: 1px solid black !important;
+		background-color: #F9B200 !important;
+		background-image: -webkit-linear-gradient(top, #F9B200, #E58400) !important;
+		background-image: linear-gradient(to bottom, #F9B200, #E58400) !important;
+	}
+
+	.skiplinks li a:focus,
+	.skiplinks li a:hover {
+		background: #E58400 !important;
+		color: black !important;
+		background-color: #E58400 !important;
+		background-image: -webkit-linear-gradient(top, #E58400, #F9B200) !important;
+		background-image: linear-gradient(to bottom, #E58400, #F9B200) !important;
+	}
+	
+	/* marker */
+
 	#header-menu-icon {
 		background-color: #ddd !important;
 		background-image: -webkit-linear-gradient(top, #ddd, #bbb) !important;
@@ -689,6 +657,7 @@
 		color: #555 !important;
 	}
 
+	/*
 	.nav-main ul.menu li:hover ul li a,
 	.nav-main ul.menu li.hover ul li a,
 	.nav-main ul.menu li:hover ul li:hover a,
@@ -698,6 +667,7 @@
 	.nav-main ul.menu li li li li a  {
 		background-color: #222222 !important;
 	}
+	*/
 
 	/* overwriting fonts from hamburger.css */
 	.nav-main {
