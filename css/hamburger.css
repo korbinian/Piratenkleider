@@ -26,7 +26,7 @@
 
 	#header-menu-icon::after {
 		color: white;
-		content: 'π';
+		content: '\2630';
 		font-weight: bold;
 		letter-spacing: 1px;
 		font-size: 1.5em;
