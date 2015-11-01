@@ -3,35 +3,40 @@
  */
 
 @font-face {
-	font-family: BebasNeue; local: BebasNeue;
-	src: url(../fonts/BebasNeue-webfont.eot) format("embedded-opentype"),
-	url(../fonts/BebasNeue-webfont.ttf) format("truetype"),
+	font-family: BebasNeue;
+	src: local(BebasNeue),
+	url(../fonts/BebasNeue-webfont.woff2) format("woff2"),
 	url(../fonts/BebasNeue-webfont.woff) format("woff"),
-	url(../fonts/BebasNeue-webfont.svg) format("svg");
+	url(../fonts/BebasNeue-webfont.ttf) format("truetype");
 }
 
 @font-face {
-	font-family: Awesome; local: Awesome;
-	src: url(../fonts/fontawesome-webfont.eot) format("embedded-opentype"),
-	url(../fonts/fontawesome-webfont.ttf) format("truetype"),
+	font-family: Awesome;
+	src: local(Awesome),
+	url(../fonts/fontawesome-webfont.woff2) format("woff2"),
 	url(../fonts/fontawesome-webfont.woff) format("woff"),
-	url(../fonts/fontawesome-webfont.svg) format("svg");
+	url(../fonts/fontawesome-webfont.ttf) format("truetype");
 }
 
 @font-face {
-	font-family: DroidSans; local: DroidSans;
-	src: url(../fonts/DroidSans.eot) format("embedded-opentype"),
+	font-family: DroidSans;
+	src: local(DroidSans),
+	url(../fonts/DroidSans.eot) format("embedded-opentype"),
+	url(../fonts/DroidSans.woff2) format("woff2"),
 	url(../fonts/DroidSans.ttf) format("truetype");
 }
 
 @font-face {
-	font-family: LinLibertine; local: LinLibertine;
-	src: url(../fonts/LinLibertine_R.woff) format("woff");
+	font-family: LinLibertine;
+	src: local(LinLibertine),
+	url(../fonts/LinLibertine_R.woff) format("woff");
 }
 
 @font-face {
-	font-family: PoliticsHead; local: PoliticsHead;
-	src: url(../fonts/PoliticsHeadv1_9.woff) format("woff"),
+	font-family: PoliticsHead;
+	src: local(PoliticsHead),
+	url(../fonts/PoliticsHeadv1_9.woff2) format("woff2"),
+	url(../fonts/PoliticsHeadv1_9.woff) format("woff"),
 	url(../fonts/PoliticsHeadv1_9.ttf) format("truetype");
 }
 
@@ -49,8 +54,6 @@
 label.description {
 	display: block;
 }
-
-
 p.submit {
 	margin-top: 10px;
 	padding-left: 20px;

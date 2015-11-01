@@ -41,23 +41,26 @@
 /*
 * Default Fonts  ------------------------------------------------------------
 */ 
-@font-face { 
-    font-family: FontPiratenkleiderDefault;     
-    src: local(DroidSans), 
-	url(../fonts/DroidSans.eot) format("embedded-opentype"), 
+@font-face {
+	font-family: FontPiratenkleiderDefault;     
+	src: local(DroidSans),
+	url(../fonts/DroidSans.eot) format("embedded-opentype"),
+	url(../fonts/DroidSans.woff2) format("woff2"),
 	url(../fonts/DroidSans.ttf) format("truetype");
 }
-@font-face { 
-    font-family: FontPiratenkleiderHeadlines; 
-    src: local(PoliticsHead),
-	url(../fonts/PoliticsHeadv1_9.ttf) format("truetype"), 
-	url(../fonts/PoliticsHeadv1_9.woff) format("woff");
+@font-face {
+	font-family: FontPiratenkleiderHeadlines; 
+	src: local(PoliticsHead),
+	url(../fonts/PoliticsHeadv1_9.woff2) format("woff2"),
+	url(../fonts/PoliticsHeadv1_9.woff) format("woff"),
+	url(../fonts/PoliticsHeadv1_9.ttf) format("truetype");
 }
-@font-face { 
-    font-family: FontPiratenkleiderMenuHeadlines; 
-    src: local(PoliticsHead),
-	url(../fonts/PoliticsHeadv1_9.ttf) format("truetype"), 
-	url(../fonts/PoliticsHeadv1_9.woff) format("woff");
+@font-face {
+	font-family: FontPiratenkleiderMenuHeadlines; 
+	src: local(PoliticsHead),
+	url(../fonts/PoliticsHeadv1_9.woff2) format("woff2"),
+	url(../fonts/PoliticsHeadv1_9.woff) format("woff"),
+	url(../fonts/PoliticsHeadv1_9.ttf) format("truetype");
 }
 /*-----------------------------------------------------------------------------------*/
 /* Reset
