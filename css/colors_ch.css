@@ -1,7 +1,8 @@
 /*
  * Document   : colors_ch
  * Created on : 07.06.2015, 00:55
- * Author     : xwyellow* Description:
+ * Author     : xwolf
+ * Description:
  * Define corporate design colors for the theme.
  * Each pirate party in several countries use their own set of colors;
  * Therefor all color-settings are outsourced in files in
@@ -20,24 +21,24 @@
 	font-family: FontPiratenkleiderDefault;
 	src: local(Aller),
 	url(../fonts/aller_rg.eot) format("embedded-opentype"),
-	url(../fonts/aller_rg.ttf) format("truetype"),
-	url(../fonts/aller_rg.woff) format("woff");
+	url(../fonts/aller_rg.woff) format("woff"),
+	url(../fonts/aller_rg.ttf) format("truetype");
 }
 
 @font-face {
 	font-family: FontPiratenkleiderHeadlines;
 	src: local(Aller),
 	url(../fonts/aller_rg.eot) format("embedded-opentype"),
-	url(../fonts/aller_rg.ttf) format("truetype"),
-	url(../fonts/aller_rg.woff) format("woff");
+	url(../fonts/aller_rg.woff) format("woff"),
+	url(../fonts/aller_rg.ttf) format("truetype");
 }
 
 @font-face {
 	font-family: FontPiratenkleiderMenuHeadlines;
 	src: local(Aller),
 	url(../fonts/aller_rg.eot) format("embedded-opentype"),
-	url(../fonts/aller_rg.ttf) format("truetype"),
-	url(../fonts/aller_rg.woff) format("woff");
+	url(../fonts/aller_rg.woff) format("woff"),
+	url(../fonts/aller_rg.ttf) format("truetype");
 }
 
 @media screen, projection {
@@ -453,6 +454,7 @@
 		background: black url("../images/int/bg-tags_gray.jpg") -20% top fixed;
 		overflow: hidden;
 	}
+
 	.footer .row {
 		background: rgba(0, 0, 0, 0.2);
 		color: #eeeeee;
@@ -573,17 +575,16 @@
 	}
 
 	.searchform .searchsubmit {
-		background: rgba(255, 136, 0, 0.7) url("../images/lupe.png") no-repeat scroll center center;
+		background: rgba(255, 136, 0, 0.7);
 	}
 
 	.searchform .searchsubmit:hover {
-		background: #F80 url("../images/lupe.png") no-repeat scroll center center;
+		background-color: #F80;
 	}
 }
 
 /* overwriting colors from hamburger.css */
 @media only screen and (max-width: 768px) {
-
 	.nav-main ul {
 		box-shadow: none !important;
 	}
@@ -606,7 +607,7 @@
 	}
 
 	.post-comments {
-		background: url("../images/int/bg-tags-ch.png") repeat fixed -20% top #F9B200 !important;
+		background-color: #F9B200 !important;
 	}
 
 	.post-comments a {
@@ -619,7 +620,7 @@
 
 	.post-comments ol li .comment-details {
 		color: #222222 !important;
-		background: none repeat scroll 0 0 rgba(0, 0, 0, 0.2) !important;
+		background-color: rgba(0, 0, 0, 0.2) !important;
 	}
 
 	.post-comments ol li .comment-body {
@@ -643,7 +644,7 @@
 		background-image: -webkit-linear-gradient(top, #E58400, #F9B200) !important;
 		background-image: linear-gradient(to bottom, #E58400, #F9B200) !important;
 	}
-	
+
 	/* marker */
 
 	#header-menu-icon {
