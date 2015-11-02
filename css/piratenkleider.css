@@ -113,6 +113,7 @@ h1,h2,h3,h4,h5,h6,.headlinefont,.tagcloud,
 
 
 /* Utility */
+.screen-reader-text,
 .skip {
 	position: absolute;
 	left: -999em;
@@ -653,22 +654,24 @@ input[type="submit"]:active,
 	float: right;
 	width: 319px;
 }
-
+.screen-reader-text,
 .skiplinks {
 	margin: 0;
 }
 
+.screen-reader-text li,
 .skiplinks li {
 	list-style: none;
 	width: 100%;
 }
-
+.screen-reader-text li a,
 .skiplinks li a {
 	position: absolute;
 	display: block;
 	top: -100px;
 }
-
+.screen-reader-text li a:focus,
+.screen-reader-text li a:active,
 .skiplinks li a:focus,
 .skiplinks li a:active {
 	position: static;

@@ -38,7 +38,7 @@ function theme_options_do_page($tab = '') {
 
 	<div class="wrap">            
             <div class="piratenkleider-optionen">  <!-- begin: .piratenkleider-optionen -->    
-            <?php screen_icon(); echo "<h2>" . wp_get_theme().': ' . __( 'Change theme options', 'piratenkleider' ) . "</h2>"; ?>
+            <?php echo "<h2>" . wp_get_theme().': ' . __( 'Change theme options', 'piratenkleider' ) . "</h2>"; ?>
 
             <?php if ( false !== $_REQUEST['settings-updated'] ) : ?>
             <div class="updated fade"><p><strong><?php _e( 'Options saved.', 'piratenkleider' ); ?></strong></p></div>

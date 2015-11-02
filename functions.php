@@ -60,6 +60,12 @@ function piratenkleider_setup() {
         // Add default posts and comments RSS feed links to head
         add_theme_support( 'automatic-feed-links' );
         /* Categories also for Pages to make the pageindex over categories work */
+        add_theme_support( 'title-tag' );
+        /* New Title handling since WP 4.1 */
+        add_theme_support( 'html5' );
+        /* New Title handling since WP 4.1 */   
+        
+        
         add_action( 'init', 'enable_category_taxonomy_for_pages', 500 );
 
         function enable_category_taxonomy_for_pages() {
@@ -458,7 +464,6 @@ function piratenkleider_addmetatags() {
 
     $output = "";
     $output .= '<meta http-equiv="Content-Type" content="text/html; charset='.get_bloginfo('charset').'" />'."\n";
-    $output .= '<!--[if IE]> <meta http-equiv="X-UA-Compatible" content="IE=9"> <![endif]-->'."\n";
     $output .= '<meta name="viewport" content="width=device-width, initial-scale=1.0">'."\n";    
     if ((isset( $options['meta-description'] )) && ( strlen(trim($options['meta-description']))>1 )) {
         $output .= '<meta name="description" content="'.$options['meta-description'].'">'."\n";
@@ -503,7 +508,6 @@ function piratenkleider_addmetatags() {
     }
     echo $output;
 }
-
 add_action('wp_head', 'piratenkleider_addmetatags',1);
 
 
@@ -524,7 +528,7 @@ function piratenkleider_load_open_graph() {
     // Wenn Startseite
     if ( is_front_page() ) { // Alternativ is_home
         echo '<meta property="og:type" content="website" />'."\n";
-        echo '<meta property="og:url" content="' . get_bloginfo( 'url' ) . '" />'."\n";
+        echo '<meta property="og:url" content="' .get_piratenkleider_home_url() . '" />'."\n";
         echo '<meta property="og:title" content="' . esc_attr( get_bloginfo( 'name' ) ) . '" />'."\n";
         echo '<meta property="og:image" content="' . $default_site_logo . '" />'."\n";
         if (!empty($options['meta-description'])) {
@@ -577,6 +581,12 @@ function piratenkleider_load_open_graph() {
 add_action( 'wp_head', 'piratenkleider_load_open_graph' );
 
 
+function get_piratenkleider_home_url() {
+     if (is_ssl()) {
+          return esc_url( home_url( '/', 'https' ) );
+     } 
+    return esc_url( home_url( '/' ) );
+}
 
 /* Anonymize IP */
 function getAnonymIp( $ip, $strongness = 2 ) {

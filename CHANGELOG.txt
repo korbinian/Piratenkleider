@@ -3,6 +3,25 @@ Theme Piratenkleider
 Changelog 
 (since version 3.2; Former changes look at github.com/Piratenkleider/)
 
+Version 3.3.17:
+* Update URL Pirate party turkey to https://korsanparti.org/
+* Removed wp_title() from templates
+* Added class .screen-reader-text as alias for .skip
+* Removed deprecated bloginfo()
+
+Version 3.3.16:
+* Several merge requests from JOWI:
+** Swiss theme updates, colors and improvements
+** Font updates 
+** The logo will not resize if it's rendered as inline-block.
+** convert linebreaks to unix style and other minor fixes
+** allow to overwrite hamburger.css, code style, syntax fixes
+** optimized images 
+** change hamburger icon
+** responsive login panel 
+* Merge Requests from JustThomas 
+** Use the piratenkleider_make_link_relative function also for article images.
+
 Version 3.3.15:
 * Bugfix header attributes an home
 

@@ -1,26 +1,25 @@
-<!DOCTYPE html>
-<!--[if IE 8 ]>    <html <?php language_attributes(); ?> class="ie8"> <![endif]-->
-<!--[if (gt IE 9)|!(IE)]><!--> <html <?php language_attributes(); ?>> <!--<![endif]-->
-<head>
 <?php          
   global $defaultoptions;
   global $options;
 ?>  
-<title><?php wp_title( '|', true, 'right' ); ?></title> 
-<link rel="profile" href="http://gmpg.org/xfn/11" />
-<link rel="pingback" href="<?php bloginfo( 'pingback_url' ) ?>">    
-    <?php  wp_head(); 
-   $cssadd = '';
-  
-    if (isset($options['css-eigene-anweisungen'])) {
-       $cssadd .= $options['css-eigene-anweisungen'];
-       $cssadd .= "\n";
-    }
-    if ((isset($cssadd)) && (strlen(trim($cssadd))>1)) {
-	echo "<style type=\"text/css\">\n";  
-	echo $cssadd;  
-	echo "</style>\n";  
-    } ?>
+<!DOCTYPE html>
+<!--[if IE 8 ]>  <html <?php language_attributes(); ?> class="ie8"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--> <html <?php echo piratenkleider_html_tag_schema(); ?> <?php language_attributes(); ?>> <!--<![endif]-->
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">    
+    <?php 
+        wp_head(); 
+        $cssadd = '';
+        if (isset($options['css-eigene-anweisungen'])) {
+           $cssadd .= $options['css-eigene-anweisungen'];
+           $cssadd .= "\n";
+        }
+        if ((isset($cssadd)) && (strlen(trim($cssadd))>1)) {
+            echo "<style type=\"text/css\">\n";  
+            echo $cssadd;  
+            echo "</style>\n";  
+        } 
+    ?>
 </head>                      
 <body <?php body_class(); ?>>
     <nav role="navigation">
