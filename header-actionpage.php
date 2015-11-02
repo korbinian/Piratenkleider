@@ -7,8 +7,7 @@
 <!--[if (gt IE 9)|!(IE)]><!--> <html <?php echo piratenkleider_html_tag_schema(); ?> <?php language_attributes(); ?>> <!--<![endif]-->
 <head>
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">    
-    <?php 
-        wp_head(); 
+    <?php wp_head(); 
         $cssadd = '';
         if (isset($options['css-eigene-anweisungen'])) {
            $cssadd .= $options['css-eigene-anweisungen'];

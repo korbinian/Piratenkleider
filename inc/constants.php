@@ -471,6 +471,17 @@ $default_fonts = array(
         'ttf'   => '/fonts/BebasNeue-webfont.ttf',
         'woff'   => '/fonts/BebasNeue-webfont.woff',
     ),
+
+    'Aller' => array(
+        'title' => __( 'Aller Regular', 'piratenkleider' ),
+        'comments'  => '',
+        'webfont'   => 1,
+        'ttf'   => '/fonts/aller_rg.ttf',
+        'woff'   => '/fonts/aller_rg.woff',
+        'eot'   => '/fonts/aller_rg.eot',
+        'woff2'   => '/fonts/aller_rg.woff2',
+    ),
+    
     'Awesome' => array(
         'title' => __( 'Awesome', 'piratenkleider' ),
         'comments'  => '',
@@ -660,7 +671,7 @@ $default_alternativestyles = array(
             '<span class="flagicon-sk"></span> '. __('Slovakia', 'piratenkleider' ) => 'http://www.piratskastrana.sk/',
             '<span class="flagicon-si"></span> '. __('Slovenia', 'piratenkleider' ) => 'http://www.piratskastranka.net/',
             '<span class="flagicon-es"></span> '. __('Spain', 'piratenkleider' ) => 'http://www.partidopirata.es/',
-            '<span class="flagicon-tr"></span> '. __('Turkey', 'piratenkleider' ) => 'http://www.korsanpartisi.org/',
+            '<span class="flagicon-tr"></span> '. __('Turkey', 'piratenkleider' ) => 'https://korsanparti.org/',
             '<span class="flagicon-ua"></span> '. __('Ukraine', 'piratenkleider' ) => 'http://pp-ua.org/',
     //        '<span class="flagicon-uy"></span> '. __('Uruguay', 'piratenkleider' ) => 'http://partidopirata.org.uy/',
             '<span class="flagicon-uk"></span> '. __('United Kingdom', 'piratenkleider') => 'https://pirateparty.org.uk/',

@@ -130,4 +130,5 @@
   <?php get_piratenkleider_socialmediaicons(2); ?>
 </div>
 
-<?php get_footer(); ?>
+<?php get_footer();
+

@@ -87,4 +87,4 @@
                              previous_posts_link( __( 'Newer entries &rarr;', 'piratenkleider' ) ); 
                 } 
         }
-?>
+

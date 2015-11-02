@@ -72,4 +72,3 @@ if ($options['anonymize-user']==1) {
      $comment_before =  $comment_before. $defaultoptions['default_comment_notes_before'];    
      comment_form( array( 'comment_notes_before' => $comment_before ) ); 
 }
-?> 

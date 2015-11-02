@@ -2,7 +2,7 @@ Piratenkleider
 - Wordpress-Theme for websites of the Pirate Party
 ====================================================
 
-Version 3.3.14 by Wolfgang Wiese (xwolf), 03.06.2015
+Version 3.4.0 by Wolfgang Wiese (xwolf), 03.11.2015
 
 
 
@@ -33,6 +33,7 @@ CREDITS & COPYRIGHT
      - Font Droid Sans by Ascender (http://www.droidfonts.com/), Apache License 2.0 http://www.apache.org/licenses/LICENSE-2.0
      - Font Awesome http://fontawesome.io by Dave Gandy (SIL Open Font License 1.1)
      - Font Politics Head by SG Gestaltung (WTFPL Lizenz, http://de.wikipedia.org/wiki/WTFPL) 
+     - Font Aller Regular by Dalton Maag Ltd (Aller Font License v1.00(http://www.fontsquirrel.com/license/Aller)
      - Other pictures: Wiki of the german pirate party, published 
          as public domain, GPL or creative commons 
 
