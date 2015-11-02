@@ -77,19 +77,22 @@ audio:not([controls]) {
 	font-family: FontPiratenkleiderDefault;
 	src: local(DroidSans),
 	url(../fonts/DroidSans.eot) format("embedded-opentype"),
+	url(../fonts/DroidSans.woff2) format("woff2"),
 	url(../fonts/DroidSans.ttf) format("truetype");
 }
 @font-face {
 	font-family: FontPiratenkleiderHeadlines;
-	src: local(BeBasNeue),
-	url(../fonts/BebasNeue-webfont.ttf) format("truetype"),
-	url(../fonts/BebasNeue-webfont.woff) format("woff");
+	src: local(BebasNeue),
+	url(../fonts/BebasNeue-webfont.woff2) format("woff2"),
+	url(../fonts/BebasNeue-webfont.woff) format("woff"),
+	url(../fonts/BebasNeue-webfont.ttf) format("truetype");
 }
 @font-face {
 	font-family: FontPiratenkleiderMenuHeadlines;
 	src: local(BeBasNeue),
-	url(../fonts/BebasNeue-webfont.ttf) format("truetype"),
-	url(../fonts/BebasNeue-webfont.woff) format("woff");
+	url(../fonts/BebasNeue-webfont.woff2) format("woff2"),
+	url(../fonts/BebasNeue-webfont.woff) format("woff"),
+	url(../fonts/BebasNeue-webfont.ttf) format("truetype");
 }
 body,.defaultfont,.teaserlinks ul li a span {
 	font-family: FontPiratenkleiderDefault;
