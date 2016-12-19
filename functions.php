@@ -1,351 +1,862 @@
 <?php
 /**
- * TwentyTen functions and definitions
+ * Piratenkleider 3 Theme Optionen
  *
- * Sets up the theme and provides some helper functions. Some helper functions
- * are used in the theme as custom template tags. Others are attached to action and
- * filter hooks in WordPress to change core functionality.
- *
- * The first function, twentyten_setup(), sets up the theme by registering support
- * for various features in WordPress, such as post thumbnails, navigation menus, and the like.
- *
- * When using a child theme (see http://codex.wordpress.org/Theme_Development and
- * http://codex.wordpress.org/Child_Themes), you can override certain functions
- * (those wrapped in a function_exists() call) by defining them first in your child theme's
- * functions.php file. The child theme's functions.php file is included before the parent
- * theme's file, so the child theme functions would be used.
- *
- * Functions that are not pluggable (not wrapped in function_exists()) are instead attached
- * to a filter or action hook. The hook can be removed by using remove_action() or
- * remove_filter() and you can attach your own function to the hook.
- *
- * We can remove the parent theme's hook only after it is attached, which means we need to
- * wait until setting up the child theme:
- *
- * <code>
- * add_action( 'after_setup_theme', 'my_child_theme_setup' );
- * function my_child_theme_setup() {
- *     // We are providing our own filter for excerpt_length (or using the unfiltered value)
- *     remove_filter( 'excerpt_length', 'twentyten_excerpt_length' );
- *     ...
- * }
- * </code>
- *
- * For more information on hooks, actions, and filters, see http://codex.wordpress.org/Plugin_API.
- *
- * @package WordPress
- * @subpackage Starkers
- * @since Starkers 3.0
+ * @source http://github.com/xwolfde/Piratenkleider
+ * @creator xwolf
+ * @version 3.3
+ * @licence GPL 2.0 
  */
 
-/**
- * Set the content width based on the theme's design and stylesheet.
- *
- * Used to set the width of images and content. Should be equal to the width the theme
- * is designed for, generally via the style.css stylesheet.
- */
-if ( ! isset( $content_width ) )
-        $content_width = 640;
+// Make theme available for translation
+// Translations can be filed in the /languages/ directory
+load_theme_textdomain('piratenkleider', get_template_directory() . '/languages');
+$locale = get_locale();
+$locale_file = get_template_directory() . "/languages/$locale.php";
+if ( is_readable( $locale_file ) )
+        require_once( $locale_file );
 
-/** Tell WordPress to run twentyten_setup() when the 'after_setup_theme' hook is run. */
-add_action( 'after_setup_theme', 'twentyten_setup' );
 
-if ( ! function_exists( 'twentyten_setup' ) ):
-/**
- * Sets up theme defaults and registers support for various WordPress features.
- *
- * Note that this function is hooked into the after_setup_theme hook, which runs
- * before the init hook. The init hook is too late for some features, such as indicating
- * support post thumbnails.
- *
- * To override twentyten_setup() in a child theme, add your own twentyten_setup to your child theme's
- * functions.php file.
- *
- * @uses add_theme_support() To add support for post thumbnails and automatic feed links.
- * @uses register_nav_menus() To add support for navigation menus.
- * @uses add_custom_background() To add support for a custom background.
- * @uses add_editor_style() To style the visual editor.
- * @uses load_theme_textdomain() For translation/localization support.
- * @uses add_custom_image_header() To add support for a custom header.
- * @uses register_default_headers() To register the default custom header images provided with the theme.
- * @uses set_post_thumbnail_size() To set a custom post thumbnail size.
- *
- * @since Twenty Ten 1.0
- */
-function twentyten_setup() {
+require( get_template_directory() . '/inc/constants.php' );
+$options = piratenkleider_initoptions();
+    // adjusts variables for downwards comptability
 
+if(isset($_SERVER['HTTP_X_FORWARDED_FOR'])) {
+  $xffaddrs = explode(',',$_SERVER['HTTP_X_FORWARDED_FOR']);
+  $_SERVER['REMOTE_ADDR'] = $xffaddrs[0];
+}    
+$_SERVER['REMOTE_ADDR'] = getAnonymIp($_SERVER['REMOTE_ADDR']);
+
+if ($options['anonymize-user']==1) {
+    /* IP-Adresse Ã¼berschreiben */
+    $_SERVER["REMOTE_ADDR"] = "0.0.0.0";
+    /* UA-String Ã¼berschreiben */
+    $_SERVER["HTTP_USER_AGENT"] = "";    
+    update_option('require_name_email',0);
+}
+
+require_once( get_template_directory() . '/inc/forms.php' );     
+require_once( get_template_directory() . '/inc/theme-options.php' );     
+require_once( get_template_directory() . '/inc/custom-posts.php' );
+require_once( get_template_directory() . '/inc/business-cards.php' );
+require_once( get_template_directory() . '/inc/custom-fields.php' );
+
+
+
+
+
+if ( ! function_exists( 'piratenkleider_setup' ) ):
+function piratenkleider_setup() {
+     global $defaultoptions;
+     global $options;
+
+
+	if ( ! isset( $content_width ) )   $content_width = $defaultoptions['content-width'];
+     
         // This theme styles the visual editor with editor-style.css to match the theme style.
         add_editor_style();
-
         // This theme uses post thumbnails
         add_theme_support( 'post-thumbnails' );
-
         // Add default posts and comments RSS feed links to head
         add_theme_support( 'automatic-feed-links' );
+        /* Categories also for Pages to make the pageindex over categories work */
+        add_theme_support( 'title-tag' );
+        /* New Title handling since WP 4.1 */
+        add_theme_support( 'html5' );
+        /* New Title handling since WP 4.1 */   
+        
+        
+        add_action( 'init', 'enable_category_taxonomy_for_pages', 500 );
 
-        // Make theme available for translation
-        // Translations can be filed in the /languages/ directory
-        load_theme_textdomain( 'twentyten', TEMPLATEPATH . '/languages' );
+        function enable_category_taxonomy_for_pages() {
+            register_taxonomy_for_object_type('category','page');
+        }
 
-        $locale = get_locale();
-        $locale_file = TEMPLATEPATH . "/languages/$locale.php";
-        if ( is_readable( $locale_file ) )
-                require_once( $locale_file );
+
+        $args = array(
+            'width'         => 0,
+            'height'        => 0,
+            'default-image' => $defaultoptions['logo'],
+            'uploads'       => true,
+            'random-default' => false,                      
+            'flex-height' => true,
+            'flex-width' => true,
+	    'header-text'   => false,
+            'suggested-height' => $defaultoptions['logo-height'],
+            'suggested-width' => $defaultoptions['logo-width'],
+            'max-width' => 350,           
+        );
+       add_theme_support( 'custom-header', $args );
+               
+       $args = array(
+	    'default-color'	    => $defaultoptions['background-header-color'],
+	    'default-image'	    => $defaultoptions['background-header-image'],
+	    'background_repeat'	    => 'repeat-x',
+	    'default-position-x'    => 'left',
+	    'wp-head-callback'       => 'piratenkleider_custom_background_cb',	
+	);
+       
+	/**
+	 * piratenkleider custom background callback.
+	 *
+	 */
+	function piratenkleider_custom_background_cb() {
+                 global $defaultoptions;
+                 global $options;
+	        // $background is the saved custom image, or the default image.
+	        $background = set_url_scheme( get_background_image() );
+	
+	        // $color is the saved custom color.
+	        // A default has to be specified in style.css. It will not be printed here.
+	        $color = get_theme_mod( 'background_color' );
+	
+	        if ( ! $background && ! $color )
+	                return;
+                       		
+	        $style = $color ? "background-color: #$color;" : '';
+	
+	        if ( $background ) {
+                        $image = " background-image: url('$background');";
+                       
+                       if ($background == $defaultoptions['background-header-image']) {
+			   $style .= $image;
+			} else {
+			    $repeat = get_theme_mod( 'background_repeat', 'repeat-x' );
+			    if ( ! in_array( $repeat, array( 'no-repeat', 'repeat-x', 'repeat-y', 'repeat' ) ) )
+				    $repeat = 'repeat-x';
+			    $repeat = " background-repeat: $repeat;";
+
+			    $positionx = get_theme_mod( 'background_position_x', 'left' );
+			    if ( ! in_array( $positionx, array( 'center', 'right', 'left' ) ) )
+				    $positionx = 'left';
+			    $positiony = get_theme_mod( 'background_position_y', 'top' );
+			    if ( ! in_array( $positiony, array( 'top', 'bottom' ) ) )
+				    $positiony = 'top';
+
+			    $position = " background-position: $positionx $positiony;";
+
+			    $attachment = get_theme_mod( 'background_attachment', 'scroll' );
+			    if ( ! in_array( $attachment, array( 'fixed', 'scroll' ) ) )
+				    $attachment = 'scroll';
+			    $attachment = " background-attachment: $attachment;";
+
+			    $style .= $image . $repeat . $position . $attachment;
+		      }
+	        } 
+	    
+	    echo '<style type="text/css" id="custom-background-css">';
+	    echo '.header { '.trim( $style ).' } ';
+	    echo '</style>';
+	}       
+       
+	add_theme_support( 'custom-background', $args );
+       
+	if ( function_exists( 'add_theme_support' ) ) {
+	    add_theme_support( 'post-thumbnails' );
+	    set_post_thumbnail_size( 150, 150 ); // default Post Thumbnail dimensions   
+	}
+
+	if ( function_exists( 'add_image_size' ) ) { 
+
+            add_image_size( 'bigslider', $options[ 'bigslider-thumb-width'], $options['bigslider-thumb-height'], $options['bigslider-thumb-crop'] ); 
+            add_image_size( 'highslider', $options[ 'highslider-width'], $options['highslider-height'], $options['highslider-crop'] ); 
+            
+            
+            add_image_size( 'teaser-thumb', $options['teaser-thumbnail_width'], $options['teaser-thumbnail_height'], $options['teaser-thumbnail_crop'] ); 
+	    add_image_size( 'linktipp-thumb', $options['linktipp-thumbnail_width'], $options['linktipp-thumbnail_height'], $options['linktipp-thumbnail_crop'] ); 
+
+                    
+            add_image_size( 'person-thumb', $options['person-thumbnail_width'], $options['person-thumbnail_height'], $options['person-thumbnail_crop'] ); 
+	    add_image_size( $options['sidebar-thumbnail_name'], $options['sidebar-thumbnail_width'], $options['sidebar-thumbnail_height'], $options['sidebar-thumbnail_crop'] );     
+            add_image_size( $options['bannerlink_name'], $options['bannerlink-width'] );    
+            if ($options['feed-addthumbnail']) {
+                add_image_size( $options['feed-thumb-sizename'], $options['feed-thumb-width'], $options['feed-thumb-height'], $options['feed-thumb-crop'] );    
+            }
+        }
+	
+       
 
         // This theme uses wp_nav_menu() in one location.
         register_nav_menus( array(
-                'primary' => __( 'Primary Navigation', 'twentyten' ),
-                'top' => __( 'Topnavigation', 'twentyten' ),
-                'sub' => __( 'Subnavigation', 'twentyten' ),
+                'primary' => __( 'Main navigation', 'piratenkleider' ),
+                'top' => __( 'Website Menu', 'piratenkleider' ),
+                'sub' => __( 'Tecnical navigation', 'piratenkleider' ),
         ) );
 
-        // This theme allows users to set a custom background
-        add_custom_background();
 
-        // Your changeable header business starts here
-        define( 'HEADER_TEXTCOLOR', '' );
-        // No CSS, just IMG call. The %s is a placeholder for the theme template directory URI.
-        define( 'HEADER_IMAGE', '%s/images/headers/path.jpg' );
+       if ($options['login_errors']==0) {
+	    /** Abschalten von Fehlermeldungen auf der Loginseite */      
+           add_filter('login_errors', create_function('$a', "return null;"));
+       }        
+        /** Entfernen der Wordpressversionsnr im Header */
+        remove_action('wp_head', 'wp_generator');
+	
+	/* Zulassen von Shortcodes in Widgets */
+	add_filter('widget_text', 'do_shortcode');
+        
+        if ($options['yt-alternativeembed']) {
+        /* Filter fuer YouTube Embed mit nocookie: */     
+            wp_embed_register_handler( 'ytnocookie', '#https?://www\.youtube\-nocookie\.com/embed/([a-z0-9\-_]+)#i', 'wp_embed_handler_ytnocookie' );
+            wp_embed_register_handler( 'ytnormal', '#https?://www\.youtube\.com/watch\?v=([a-z0-9\-_]+)#i', 'wp_embed_handler_ytnocookie' );
+            wp_embed_register_handler( 'ytnormal2', '#https?://www\.youtube\.com/watch\?feature=player_embedded&v=([a-z0-9\-_]+)#i', 'wp_embed_handler_ytnocookie' );
+        }
 
-        // The height and width of your custom header. You can hook into the theme's own filters to change these values.
-        // Add a filter to twentyten_header_image_width and twentyten_header_image_height to change these values.
-        define( 'HEADER_IMAGE_WIDTH', apply_filters( 'twentyten_header_image_width', 960 ) );
-        define( 'HEADER_IMAGE_HEIGHT', apply_filters( 'twentyten_header_image_height', 240 ) );
+	function wp_embed_handler_ytnocookie( $matches, $attr, $url, $rawattr ) {
+	    global $defaultoptions;    
+	    $relvideo = '';
+	    if ($defaultoptions['yt-norel']==1) {
+		$relvideo = '?rel=0';
+	    }
+		$embed = sprintf(                                
+				'<div class="embed-youtube" itemprop="video" itemscope itemtype="http://schema.org/VideoObject"><p>YouTube-Video: <a href="https://www.youtube.com/watch?v=%2$s">https://www.youtube.com/watch?v=%2$s</a></p><iframe itemprop="embedUrl" src="https://www.youtube-nocookie.com/embed/%2$s%5$s" width="%3$spx" height="%4$spx" frameborder="0" scrolling="no" marginwidth="0" marginheight="0"></iframe></div>',
+				get_template_directory_uri(),
+				esc_attr($matches[1]),
+				$defaultoptions['yt-content-width'],
+				$defaultoptions['yt-content-height'],
+				$relvideo
+				);
 
-        // We'll be using post thumbnails for custom header images on posts and pages.
-        // We want them to be 940 pixels wide by 198 pixels tall.
-        // Larger images will be auto-cropped to fit, smaller ones will be ignored. See header.php.
-        set_post_thumbnail_size( HEADER_IMAGE_WIDTH, HEADER_IMAGE_HEIGHT, true );
+		return apply_filters( 'embed_ytnocookie', $embed, $matches, $attr, $url, $rawattr );
 
-        // Don't support text inside the header image.
-        define( 'NO_HEADER_TEXT', true );
-define( 'HEADER_IMAGE_WIDTH', apply_filters( 'twentyten_header_image_width', 980 ) );
-        define( 'HEADER_IMAGE_HEIGHT', apply_filters( 'twentyten_header_image_height', 300 ) );
-        // Add a way for the custom header to be styled in the admin panel that controls
-        // custom headers. See twentyten_admin_header_style(), below.
-        add_custom_image_header( '', 'twentyten_admin_header_style' );
+	}
+	
+	
+        if (isset($options['feed-overwriteauthorstring']) && (strlen(trim($options['feed-overwriteauthorstring']))>1 )) {
+             add_filter( 'the_author', 'feed_author' );
+              function feed_author($name) {
+                global $options;  
+                if( is_feed() && !is_admin()) {
+                    return $options['feed-overwriteauthorstring'];  
+                } else {
+                    return $name;
+                }
+            }
+    
+        }
+            
+}
+endif;
+add_action( 'after_setup_theme', 'piratenkleider_setup' );
 
-        // ... and thus ends the changeable header business.
+require( get_template_directory() . '/inc/widgets.php' );
 
-        // Default custom headers packaged with the theme. %s is a placeholder for the theme template directory URI.
-        register_default_headers( array(
-                'berries' => array(
-                        'url' => '%s/images/headers/starkers.png',
-                        'thumbnail_url' => '%s/images/headers/starkers-thumbnail.png',
-                        /* translators: header image description */
-                        'description' => __( 'Starkers', 'twentyten' )
-                )
-        ) );
+function piratenkleider_scripts() {
+    global $options;
+    global $defaultoptions;
+
+
+     $userstyle = 0;
+     if ( !is_admin() ) {
+	$userstyle = 0;
+	if ((isset($options['aktiv-stylefile']) && ($options['aktiv-stylefile'] > 0) && (wp_get_attachment_url($options['aktiv-stylefile'])) )
+		&& (isset($options['stylefile-position'])) && ($options['stylefile-position']>0)) {
+	    $userstyle = 1;
+	}
+	 
+	if (($userstyle==1) && ($options['stylefile-position']==1)) {
+	    wp_enqueue_style( 'stylefile', wp_get_attachment_url($options['aktiv-stylefile']));	  
+	}
+	
+	if (($userstyle==0) || (($userstyle==1) && ($options['stylefile-position']<3))) {
+	    if ((isset($options['aktiv-alternativestyle'])) && ($options['aktiv-alternativestyle'] != 'style.css')) {
+		 wp_enqueue_style( 'alternativestyle', get_template_directory_uri().'/css/'.$options['aktiv-alternativestyle'] );	     
+	    } else {
+		$theme  = wp_get_theme();
+		wp_register_style( 'piratenkleider', get_bloginfo( 'stylesheet_url' ), false, $theme['Version'] );
+		wp_enqueue_style( 'piratenkleider' );
+	    }     		
+	}
+	if (($userstyle==1) && ($options['stylefile-position'] > 1)) {
+	    wp_enqueue_style( 'stylefile', wp_get_attachment_url($options['aktiv-stylefile']));	  
+	}
+	
+	if (($userstyle==0) || (($userstyle==1) && ($options['stylefile-position']!=4))) {
+	    if ((isset($options['css-colorfile'])) && (strlen(trim($options['css-colorfile']))>2)) { 
+		 wp_enqueue_style( 'color', get_template_directory_uri().'/css/'.$options['css-colorfile'] );	             
+	    }        	  
+
+
+	    if ((isset($options['aktiv-linkicons'])) && ($options['aktiv-linkicons']==1)) { 
+	       wp_enqueue_style( 'basemod_linkicons', $defaultoptions['src-linkicons-css'] );
+	    }   
+	
+	    if ( is_singular() ) {
+		$nosidebar = get_post_meta( get_the_ID(), 'piratenkleider_nosidebar', true );
+		$custom_fields = get_post_custom(); 
+		if ( ( !empty( $nosidebar ) && $nosidebar==1) 
+		    || ((isset($custom_fields['fullsize'])) && ($custom_fields['fullsize'][0] == true)))  {
+		   wp_enqueue_style( 'basemod_sidebarbottom', $defaultoptions['src-basemod_sidebarbottom'] ); 
+		}
+	    } 
+	   if ((isset($options['position_sidebarbottom'])) && ($options['position_sidebarbottom'] ==1)) {
+		   wp_enqueue_style( 'basemod_sidebarbottom', $defaultoptions['src-basemod_sidebarbottom'] ); 
+	   }
+
+	}
+	if ((isset($options['aktiv-hamburger'])) && ($options['aktiv-hamburger']==1)) { 
+	     wp_enqueue_style( 'hamburger', $defaultoptions['src-hamburger-css'] );
+	     wp_enqueue_script( 'hamburger', $defaultoptions['src-hamburger-js'], array('jquery', 'jquery-ui-core'), $defaultoptions['js-version'] );
+	}
+	
+	wp_enqueue_script( 'layoutjs', $defaultoptions['src-layoutjs'],  array('jquery'),  $defaultoptions['js-version'] );
+
+	if (is_singular() && ($options['aktiv-commentreplylink']==1) && get_option( 'thread_comments' )) {        
+		wp_enqueue_script(
+		    'comment-reply',
+		    $defaultoptions['src-comment-reply'],
+		    false,
+		    $defaultoptions['js-version']
+	    );  
+	 }        
+      
+     }
+}
+add_action('wp_enqueue_scripts', 'piratenkleider_scripts');
+function piratenkleider_dequeue_fonts() {
+         wp_dequeue_style( 'twentytwelve-fonts' );
+      }
+add_action( 'wp_enqueue_scripts', 'piratenkleider_dequeue_fonts', 11 );
+
+function piratenkleider_addfonts() {
+  global $options;
+  global $default_fonts;  
+  $output = "";
+  $setfont = "";
+
+  if ((isset($options['fonts-content'])) && ($options['fonts-content'] != 'none')) {
+      $setfont = $options['fonts-content'];
+            $seturl=0;
+
+      if (isset($default_fonts[$setfont]['webfont'])
+              && ($default_fonts[$setfont]['webfont']==1)) {
+        $output .= '@font-face { font-family: FontPiratenkleiderDefault; local: '.$setfont.'; src: ';
+          if (isset($default_fonts[$setfont]['eot'])) {
+              $output .= 'url('.get_template_directory_uri().$default_fonts[$setfont]['eot'].') format("embedded-opentype")';
+              $seturl = 1;
+          }
+          if (isset($default_fonts[$setfont]['ttf'])) {
+              if ($seturl==1) $output .= ", ";
+              $output .= 'url('.get_template_directory_uri().$default_fonts[$setfont]['ttf'].') format("truetype")';
+              $seturl = 1;
+          }
+          if (isset($default_fonts[$setfont]['woff'])) {
+              if ($seturl==1) $output .= ", ";
+              $output .= 'url('.get_template_directory_uri().$default_fonts[$setfont]['woff'].') format("woff")';
+              $seturl = 1;
+          }
+          if (isset($default_fonts[$setfont]['svg'])) {
+              if ($seturl==1) $output .= ", ";
+              $output .= 'url('.get_template_directory_uri().$default_fonts[$setfont]['svg'].') format("svg")';                                              
+          }          $output .= ";}\n";    
+          $output .= "body,.defaultfont,.teaserlinks ul li a span { font-family: FontPiratenkleiderDefault; }\n";
+  
+      } else {
+        $output .= 'body,.defaultfont,.teaserlinks ul li a span { font-family: '.$default_fonts[$setfont]['family'].'; }';
+        $output .= "\n";  
+      }
+  }  
+  if ((isset($options['fonts-headers'])) && ($options['fonts-headers'] != 'none')) {
+      $setfont = $options['fonts-headers'];
+            $seturl=0;
+
+      if (isset($default_fonts[$setfont]['webfont'])
+              && ($default_fonts[$setfont]['webfont']==1)) {
+        $output .= '@font-face { font-family: FontPiratenkleiderHeadlines; local: '.$setfont.'; src: ';
+          if (isset($default_fonts[$setfont]['eot'])) {
+              $output .= 'url('.get_template_directory_uri().$default_fonts[$setfont]['eot'].') format("embedded-opentype")';
+              $seturl = 1;
+          }
+          if (isset($default_fonts[$setfont]['ttf'])) {
+              if ($seturl==1) $output .= ", ";
+              $output .= 'url('.get_template_directory_uri().$default_fonts[$setfont]['ttf'].') format("truetype")';
+              $seturl = 1;
+          }
+          if (isset($default_fonts[$setfont]['woff'])) {
+              if ($seturl==1) $output .= ", ";
+              $output .= 'url('.get_template_directory_uri().$default_fonts[$setfont]['woff'].') format("woff")';
+              $seturl = 1;
+          }
+          if (isset($default_fonts[$setfont]['svg'])) {
+              if ($seturl==1) $output .= ", ";
+              $output .= 'url('.get_template_directory_uri().$default_fonts[$setfont]['svg'].') format("svg")';                                              
+          }          $output .= ";}\n";    
+          $output .= "h1,h2,h3,h4,h5,h6,.headlinefont,.tagcloud,.post-nav a,.first-startpage-widget-area li a { font-family: FontPiratenkleiderHeadlines; }\n";
+  
+      } else {
+        $output .= 'h1,h2,h3,h4,h5,h6,.headlinefont,.tagcloud,.post-nav a,.first-startpage-widget-area li a { font-family: '.$default_fonts[$setfont]['family'].'; }';
+        $output .= "\n";  
+      }
+      
+  }
+  if ((isset($options['fonts-menuheaders'])) && ($options['fonts-menuheaders'] != 'none')) {
+      $setfont = $options['fonts-menuheaders'];
+      $seturl=0;
+      if (isset($default_fonts[$setfont]['webfont'])
+              && ($default_fonts[$setfont]['webfont']==1)) {
+        $output .= '@font-face { font-family: FontPiratenkleiderMenuHeadlines; local: '.$setfont.'; src: ';
+          if (isset($default_fonts[$setfont]['eot'])) {
+              $output .= 'url('.get_template_directory_uri().$default_fonts[$setfont]['eot'].') format("embedded-opentype")';
+              $seturl = 1;
+          }
+          if (isset($default_fonts[$setfont]['ttf'])) {
+              if ($seturl==1) $output .= ", ";
+              $output .= 'url('.get_template_directory_uri().$default_fonts[$setfont]['ttf'].') format("truetype")';
+              $seturl = 1;
+          }
+          if (isset($default_fonts[$setfont]['woff'])) {
+              if ($seturl==1) $output .= ", ";
+              $output .= 'url('.get_template_directory_uri().$default_fonts[$setfont]['woff'].') format("woff")';
+              $seturl = 1;
+          }
+          if (isset($default_fonts[$setfont]['svg'])) {
+              if ($seturl==1) $output .= ", ";
+              $output .= 'url('.get_template_directory_uri().$default_fonts[$setfont]['svg'].') format("svg")';                                              
+          }
+          $output .= ";}\n";    
+          $output .= ".menufont, .nav-main ul.menu li a,.cifont,.sticker ul li,.teaserlinks ul li a { font-family: FontPiratenkleiderMenuHeadlines; }\n";  
+      } else {
+        $output .= '.menufont,.nav-main ul.menu li a,.cifont,.sticker ul li,.teaserlinks ul li a { font-family: '.$default_fonts[$setfont]['family'].'; }';
+        $output .= "\n";  
+      }
+  }
+  $out = '';
+  if ((isset($output)) && (strlen($output)>1)) {
+      $out = "<style>";
+      $out .= $output;
+      $out .= "</style>\n";
+  }
+  echo $out;
+}
+add_action('wp_head', 'piratenkleider_addfonts');
+
+
+function piratenkleider_addaltbodybackground() {
+  global $options;
+  if ((isset($options['alt-body-background'])) && (isset($options['alt-body-background_id'])) && $options['alt-body-background_id']>0) {
+      
+      if (isset($options['alt-body-background-orix'])) {
+          $orix = $options['alt-body-background-orix'];
+      }
+      if (isset($options['alt-body-background-oriy'])) {
+          $oriy = $options['alt-body-background-oriy'];
+      }
+       if (isset($options['alt-body-background-repeat'])) {
+          $repeat = $options['alt-body-background-repeat'];
+      }
+  
+      $out = "<style>";
+      $out .= 'body { background-image: url("'.$options['alt-body-background'].'");';
+      if (isset($repeat)) {
+          $out.= 'background-repeat:'.$repeat.';';
+      }
+      if ((isset($orix)) &&(isset($oriy))) {
+          $out.= 'background-position:'.$orix.' '.$oriy.';';
+      }
+      $out .= 'background-attachment:fixed; }';
+      $out .= "</style>\n";
+      echo $out;
+  }
+}
+add_action('wp_head', 'piratenkleider_addaltbodybackground');
+
+function piratenkleider_addmetatags() {
+    global $options;
+
+    $output = "";
+    $output .= '<meta http-equiv="Content-Type" content="text/html; charset='.get_bloginfo('charset').'" />'."\n";
+    $output .= '<meta name="viewport" content="width=device-width, initial-scale=1.0">'."\n";    
+    if ((isset( $options['meta-description'] )) && ( strlen(trim($options['meta-description']))>1 )) {
+        $output .= '<meta name="description" content="'.$options['meta-description'].'">'."\n";
+    }
+    if ((isset( $options['meta-author'] )) && ( strlen(trim($options['meta-author']))>1 )) {
+        $output .= '<meta name="author" content="'.$options['meta-author'].'">'."\n";
+    }
+    if ((isset( $options['meta-verify-v1'] )) && ( strlen(trim($options['meta-verify-v1']))>1 )) {
+        $output .= '<meta name="google-site-verification" content="'.$options['meta-verify-v1'].'">'."\n";
+    }
+		
+    $tags = '';
+    if ($options['aktiv-autokeywords']) {   
+        $posttags = get_the_tags();
+        $csv_tags = '';
+        if ($posttags) {
+            foreach($posttags as $tag) {
+                $csv_tags .= $tag->name . ',';
+            }	
+            $tags = substr( $csv_tags,0,-1);
+        }
+    } 
+    if ((isset($options['meta-keywords'])) && (strlen(trim($options['meta-keywords']))>1 )) {
+        if (strlen($tags) > 0) {
+            $tags = $options['meta-keywords'].','.$tags;
+        } else {
+            $tags = $options['meta-keywords'];
+        }
+    }
+    if ((strlen(trim($tags))>2 )) {
+        if (strlen(trim($tags))>$options['meta-maxlengthvalue']) {
+            $tags = substr($tags,0,strpos($tags,",",$options['meta-maxlengthvalue']));
+        }	
+        $output .= '<meta name="keywords" content="'.$tags.'">'."\n";
+    }
+    
+    if ((isset($options['favicon-file'])) && ($options['favicon-file_id']>0 )) {	 
+        $output .=  '<link rel="shortcut icon" href="'.$options['favicon-file'].'">'."\n";
+    } else {
+        $output .=  '<link rel="apple-touch-icon" href="'.get_piratenkleider_template_uri().'/apple-touch-icon.png">'."\n";
+        $output .=  '<link rel="shortcut icon" href="'.get_piratenkleider_template_uri().'/favicon.ico">'."\n";
+    }
+    echo $output;
+}
+add_action('wp_head', 'piratenkleider_addmetatags',1);
+
+
+
+/* Open Graph and Social Media Support */
+
+ 
+function piratenkleider_load_open_graph() {
+    global $post;
+    global $options;
+    
+    if ($options['open_graph-active']!=true) {
+        return;
+    }
+    // Standard-Grafik fÃ¼r Seiten ohne Beitragsbild
+    $default_site_logo = wp_make_link_relative(get_header_image());
+     
+    // Wenn Startseite
+    if ( is_front_page() ) { // Alternativ is_home
+        echo '<meta property="og:type" content="website" />'."\n";
+        echo '<meta property="og:url" content="' .get_piratenkleider_home_url() . '" />'."\n";
+        echo '<meta property="og:title" content="' . esc_attr( get_bloginfo( 'name' ) ) . '" />'."\n";
+        echo '<meta property="og:image" content="' . $default_site_logo . '" />'."\n";
+        if (!empty($options['meta-description'])) {
+            echo '<meta property="og:description" content="' . esc_attr( $options['meta-description'] ) . '" />'."\n";
+        }
+        
+        echo '<meta name="twitter:card" content="summary" />'."\n";
+        echo '<meta name="twitter:url" content="' . get_permalink() . '" />'."\n";
+        echo '<meta name="twitter:title" content="' . esc_attr( get_the_title() ) . '" />'."\n";
+        if (!empty($options['open_graph-twitterhandle'])) {
+            echo '<meta name="twitter:site" content="@'.$options['open_graph-twitterhandle'].'">'."\n";
+        }
+        if (!empty($options['meta-description'])) {
+            echo '<meta name="twitter:description" content="' . esc_attr(  $options['meta-description']  ) . '" />'."\n";            
+        } else {
+            echo '<meta name="twitter:description" content="' . esc_attr( strip_tags(get_piratenkleider_custom_excerpt(180, 0, 1, 2),'') ) . '" />'."\n";
+        }
+    }
+     
+    // Wenn Einzelansicht von Seite, Beitrag oder Custom Post Type
+    elseif ( is_singular() ) {
+        echo '<meta property="og:type" content="article" />'."\n";
+        echo '<meta property="og:url" content="' . get_permalink() . '" />'."\n";
+        echo '<meta property="og:title" content="' . esc_attr( get_the_title() ) . '" />'."\n";
+        $thumbnail ='';
+        if ( has_post_thumbnail( $post->ID ) ) {
+            $thumbnail = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'large' );
+            echo '<meta property="og:image" content="' . esc_attr( $thumbnail[0] ) . '" />'."\n";
+        } else {
+            echo '<meta property="og:image" content="' . $default_site_logo . '" />'."\n";
+        }
+        echo '<meta property="og:description" content="' . esc_attr( strip_tags(get_piratenkleider_custom_excerpt($options['open_graph_excerptlength'], 0, 1, 2),'') ) . '" />';
+        echo '<meta property="article:published_time" content="' . esc_attr( get_post_time('c') ) . '" />'."\n";
+        echo '<meta property="article:modified_time" content="' . esc_attr( get_the_modified_time('c') ) . '" />'."\n";
+
+        echo '<meta name="twitter:card" content="summary_large_image" />'."\n";
+        echo '<meta name="twitter:url" content="' . get_permalink() . '" />'."\n";
+        echo '<meta name="twitter:title" content="' . esc_attr( get_the_title() ) . '" />'."\n";
+
+        if ( has_post_thumbnail( $post->ID ) ) {
+            $thumbnail = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'large' );
+            echo '<meta name="twitter:image:src" content="' . esc_attr( $thumbnail[0] ) . '" />'."\n";
+        } 
+        if (!empty($options['open_graph-twitterhandle'])) {
+            echo '<meta name="twitter:site" content="@'.$options['open_graph-twitterhandle'].'">'."\n";
+        }
+        echo '<meta name="twitter:description" content="' . esc_attr( strip_tags(get_piratenkleider_custom_excerpt(180, 0, 1, 2),'') ) . '" />'."\n";
+    }
+}
+add_action( 'wp_head', 'piratenkleider_load_open_graph' );
+
+
+function get_piratenkleider_home_url() {
+     if (is_ssl()) {
+          return esc_url( home_url( '/', 'https' ) );
+     } 
+    return esc_url( home_url( '/' ) );
+}
+
+/* Anonymize IP */
+function getAnonymIp( $ip, $strongness = 2 ) {
+    if ($strongness==2) {
+        if( filter_var($ip, FILTER_VALIDATE_IP, FILTER_FLAG_IPV4) ){
+             /* IPv4 - Strong BSI Norm: last two oktetts to 0 */        
+            return preg_replace('/[0-9]+.[0-9]+\z/', '0.0', $ip);	
+        } else {
+            /* IPv6 */
+             return preg_replace('/[a-z0-9]*:[a-z0-9]*:[a-z0-9]*:[a-z0-9]*:[a-z0-9]*\z/', '0:0:0:0:0', $ip);	
+        }
+    } elseif ($strongness==1) {
+         if( filter_var($ip, FILTER_VALIDATE_IP, FILTER_FLAG_IPV4) ){
+	/* Weak BSI Norm: last two oktetts to 0 */
+            return preg_replace('/[0-9]+\z/', '0', $ip);	
+         } else {
+             /* IPv6 */
+             return preg_replace('/[a-z0-9]*:[a-z0-9]*:[a-z0-9]*:[a-z0-9]*\z/', '0:0:0:0', $ip); 
+         }
+    } elseif ($strongness==0) {
+	/* No anonymizing */
+	return $ip;		
+    } else {
+	if( filter_var($ip, FILTER_VALIDATE_IP, FILTER_FLAG_IPV4) ){
+             /* IPv4 - Strong BSI Norm: last two oktetts to 0 */        
+            return preg_replace('/[0-9]+.[0-9]+\z/', '0.0', $ip);	
+        } else {
+            /* IPv6 */
+             return preg_replace('/[a-z0-9]*:[a-z0-9]*:[a-z0-9]*:[a-z0-9]*:[a-z0-9]*\z/', '0:0:0:0:0', $ip);	
+        }
+    }
+    
+}     
+
+function feed_lifetime_cb( ) {
+            global $options;
+            return $options['feed_cache_lifetime'];
+}
+add_filter( 'wp_feed_cache_transient_lifetime' , 'feed_lifetime_cb' );
+        
+function piratenkleider_avatar ($avatar_defaults) {
+    global $defaultoptions;
+    $myavatar =  $defaultoptions['src-default-avatar']; 
+    $avatar_defaults[$myavatar] = "Piratenkleider";
+    return $avatar_defaults;
+}
+add_filter( 'avatar_defaults', 'piratenkleider_avatar' );
+
+/* Refuse spam-comments on media */
+function filter_media_comment_status( $open, $post_id ) {
+	$post = get_post( $post_id );
+	if( $post->post_type == 'attachment' ) {
+		return false;
+	}
+	return $open;
+}
+add_filter( 'comments_open', 'filter_media_comment_status', 10 , 2 );
+
+/* Format list for Tagclouds also in widgets */
+function edit_args_tag_cloud_widget($args) {
+    $args = array('format' => 'list');
+    return $args;
+}
+add_filter('widget_tag_cloud_args','edit_args_tag_cloud_widget');
+
+
+if ( ! function_exists( 'get_piratenkleider_options' ) ) :
+/*
+ * Erstes Bild aus einem Artikel auslesen, wenn dies vorhanden ist
+ */
+function get_piratenkleider_options( $field ){
+    global $defaultoptions;	    
+    if (!isset($field)) {
+	$field = 'piratenkleider_theme_options';
+    }
+    $orig = get_option($field);
+    if (!is_array($orig)) {
+        $orig=array();
+    }
+    $alloptions = array_merge( $defaultoptions, $orig  );	
+    return $alloptions;
 }
 endif;
 
-if ( ! function_exists( 'twentyten_admin_header_style' ) ) :
-/**
- * Styles the header image displayed on the Appearance > Header admin panel.
- *
- * Referenced via add_custom_image_header() in twentyten_setup().
- *
- * @since Twenty Ten 1.0
- */
-function twentyten_admin_header_style() {
-?>
-<style type="text/css">
-/* Shows the same border as on front end */
-#headimg {
-        border-bottom: 1px solid #000;
-        border-top: 4px solid #000;
+
+function piratenkleider_initoptions() {
+    global $defaultoptions;
+    global $default_toplink_liste;
+    // $doupdate = 0;
+    
+    $oldoptions = get_option('piratenkleider_theme_options');
+    if (isset($oldoptions) && (is_array($oldoptions))) {
+        $newoptions = array_merge($defaultoptions,$oldoptions);	  
+    } else {
+        $newoptions = $defaultoptions;
+	$newoptions['toplinkliste'] = $default_toplink_liste;
+    }    
+    // if ($doupdate==1) {
+	// update_option('piratenkleider_theme_options', $newoptions);
+    // }
+    return $newoptions;
 }
-/* If NO_HEADER_TEXT is false, you would style the text with these selectors:
-        #headimg #name { }
-        #headimg #desc { }
-*/
-</style>
-<?php
-}
+
+if ( ! function_exists( 'piratenkleider_get_image_attributs' ) ) :
+    function piratenkleider_get_image_attributs($id=0) {
+        $precopyright = __('Image:','piratenkleider').' ';
+        if ($id==0) return;
+        
+        $meta = get_post_meta( $id );
+        if (!isset($meta)) {
+         return;
+        }
+        $result = array();
+	if (isset($meta['_wp_attachment_image_alt'][0])) {
+	    $result['alt'] = trim(strip_tags($meta['_wp_attachment_image_alt'][0]));
+	} else {
+	    $result['alt'] = "";
+	}       
+        if (isset($meta['_wp_attachment_metadata']) && is_array($meta['_wp_attachment_metadata'])) {        
+         $data = unserialize($meta['_wp_attachment_metadata'][0]);
+         if (isset($data['image_meta']) && is_array($data['image_meta']) && isset($data['image_meta']['copyright'])) {
+                $result['copyright'] = trim(strip_tags($data['image_meta']['copyright']));
+         }
+        }
+        $attachment = get_post($id);
+        $result['beschriftung'] = $result['beschreibung'] = $result['title'] = '';
+        if (isset($attachment) ) {
+	    if (isset($attachment->post_excerpt)) {
+		$result['beschriftung'] = trim(strip_tags( $attachment->post_excerpt ));
+	    }
+	    if (isset($attachment->post_content)) {
+		$result['beschreibung'] = trim(strip_tags( $attachment->post_content ));
+	    }        
+	    if (isset($attachment->post_title)) {
+		 $result['title'] = trim(strip_tags( $attachment->post_title )); // Finally, use the title
+	    }   
+        }
+        
+        $displayinfo = $result['beschriftung'];
+        if (empty($displayinfo) && !empty($result['copyright'])) $displayinfo = $precopyright.$result['copyright'];
+        if (empty($displayinfo)) $displayinfo = $result['alt'];
+        $result['credits'] = $displayinfo;
+        return $result;
+                
+    }
 endif;
 
-/**
- * Makes some changes to the <title> tag, by filtering the output of wp_title().
- *
- * If we have a site description and we're viewing the home page or a blog posts
- * page (when using a static front page), then we will add the site description.
- *
- * If we're viewing a search result, then we're going to recreate the title entirely.
- * We're going to add page numbers to all titles as well, to the middle of a search
- * result title and the end of all other titles.
- *
- * The site title also gets added to all titles.
- *
- * @since Twenty Ten 1.0
- *
- * @param string $title Title generated by wp_title()
- * @param string $separator The separator passed to wp_title(). Twenty Ten uses a
- *         vertical bar, "|", as a separator in header.php.
- * @return string The new title, ready for the <title> tag.
- */
-function twentyten_filter_wp_title( $title, $separator ) {
+if ( ! function_exists( 'piratenkleider_filter_wp_title' ) ) :   
+/*
+ * Sets the title
+ */    
+function piratenkleider_filter_wp_title( $title, $separator ) {
         // Don't affect wp_title() calls in feeds.
         if ( is_feed() )
                 return $title;
-
-        // The $paged global variable contains the page number of a listing of posts.
-        // The $page global variable contains the page number of a single post that is paged.
-        // We'll display whichever one applies, if we're not looking at the first page.
         global $paged, $page;
 
         if ( is_search() ) {
-                // If we're a search, let's start over:
-                $title = sprintf( __( 'Suchergebnisse für %s', 'twentyten' ), '"' . get_search_query() . '"' );
-                // Add a page number if we're on page 2 or more:
+                $title = sprintf( __( 'Search results for %s', 'piratenkleider' ), '"' . get_search_query() . '"' );
                 if ( $paged >= 2 )
-                        $title .= " $separator " . sprintf( __( 'Page %s', 'twentyten' ), $paged );
-                // Add the site name to the end:
+                        $title .= " $separator " . sprintf( __( 'Page %s', 'piratenkleider' ), $paged );
                 $title .= " $separator " . get_bloginfo( 'name', 'display' );
-                // We're done. Let's send the new title back to wp_title():
                 return $title;
         }
 
-        // Otherwise, let's start by adding the site name to the end:
         $title .= get_bloginfo( 'name', 'display' );
 
-        // If we have a site description and we're on the home/front page, add the description:
         $site_description = get_bloginfo( 'description', 'display' );
         if ( $site_description && ( is_home() || is_front_page() ) )
                 $title .= " $separator " . $site_description;
 
-        // Add a page number if necessary:
         if ( $paged >= 2 || $page >= 2 )
-                $title .= " $separator " . sprintf( __( 'Page %s', 'twentyten' ), max( $paged, $page ) );
+                $title .= " $separator " . sprintf( __( 'Page %s', 'piratenkleider' ), max( $paged, $page ) );
 
-        // Return the new title to wp_title():
         return $title;
 }
-add_filter( 'wp_title', 'twentyten_filter_wp_title', 10, 2 );
+endif;
+add_filter( 'wp_title', 'piratenkleider_filter_wp_title', 10, 2 );
 
-/**
- * Get our wp_nav_menu() fallback, wp_page_menu(), to show a home link.
- *
- * To override this in a child theme, remove the filter and optionally add
- * your own function tied to the wp_page_menu_args filter hook.
- *
- * @since Twenty Ten 1.0
- */
-function twentyten_page_menu_args( $args ) {
-        $args['show_home'] = true;
-        return $args;
+
+function piratenkleider_excerpt_length( $length ) {
+	global $defaultoptions;
+        return $defaultoptions['teaser_maxlength'];
 }
-add_filter( 'wp_page_menu_args', 'twentyten_page_menu_args' );
+add_filter( 'excerpt_length', 'piratenkleider_excerpt_length' );
 
-/**
- * Sets the post excerpt length to 40 characters.
- *
- * To override this length in a child theme, remove the filter and add your own
- * function tied to the excerpt_length filter hook.
- *
- * @since Twenty Ten 1.0
- * @return int
- */
-function twentyten_excerpt_length( $length ) {
-        return 40;
-}
-add_filter( 'excerpt_length', 'twentyten_excerpt_length' );
-
-/**
- * Returns a "Continue Reading" link for excerpts
- *
- * @since Twenty Ten 1.0
- * @return string "Continue Reading" link
- */
-function twentyten_continue_reading_link() {
-        return ' <a href="'. get_permalink() . '">' . __( 'Weiterlesen <span class="meta-nav">&rarr;</span>', 'twentyten' ) . '</a>';
+function piratenkleider_continue_reading_link() {
+        return ' <a class="nobr" title="'.strip_tags(get_the_title()).'" href="'. get_permalink() . '">' . __( 'Continue reading <span class="meta-nav">&rarr;</span>', 'piratenkleider' ) . '</a>';
 }
 
-/**
- * Replaces "[...]" (appended to automatically generated excerpts) with an ellipsis and twentyten_continue_reading_link().
- *
- * To override this in a child theme, remove the filter and add your own
- * function tied to the excerpt_more filter hook.
- *
- * @since Twenty Ten 1.0
- * @return string An ellipsis
- */
-function twentyten_auto_excerpt_more( $more ) {
-        return ' &hellip;' . twentyten_continue_reading_link();
+function piratenkleider_auto_excerpt_more( $more ) {
+        return ' &hellip;' . piratenkleider_continue_reading_link();
 }
-add_filter( 'excerpt_more', 'twentyten_auto_excerpt_more' );
+add_filter( 'excerpt_more', 'piratenkleider_auto_excerpt_more' );
 
-/**
- * Adds a pretty "Continue Reading" link to custom post excerpts.
- *
- * To override this link in a child theme, remove the filter and add your own
- * function tied to the get_the_excerpt filter hook.
- *
- * @since Twenty Ten 1.0
- * @return string Excerpt with a pretty "Continue Reading" link
- */
-function twentyten_custom_excerpt_more( $output ) {
-        if ( has_excerpt() && ! is_attachment() ) {
-                $output .= twentyten_continue_reading_link();
+
+function piratenkleider_custom_excerpt_more( $output ) {
+       if ( has_excerpt() && ! is_attachment() ) {      
+                $output .= piratenkleider_continue_reading_link();
         }
         return $output;
 }
-add_filter( 'get_the_excerpt', 'twentyten_custom_excerpt_more' );
+add_filter( 'get_the_excerpt', 'piratenkleider_custom_excerpt_more' );
 
-/**
- * Remove inline styles printed when the gallery shortcode is used.
- *
- * Galleries are styled by the theme in Twenty Ten's style.css.
- *
- * @since Twenty Ten 1.0
- * @return string The gallery style filter, with the styles themselves removed.
- */
-function twentyten_remove_gallery_css( $css ) {
+
+
+function piratenkleider_remove_gallery_css( $css ) {
         return preg_replace( "#<style type='text/css'>(.*?)</style>#s", '', $css );
 }
-add_filter( 'gallery_style', 'twentyten_remove_gallery_css' );
+add_filter( 'gallery_style', 'piratenkleider_remove_gallery_css' );
 
-if ( ! function_exists( 'twentyten_comment' ) ) :
+
+function honor_ssl_for_attachments($url) {
+	$http = site_url(FALSE, 'http');
+	$https = site_url(FALSE, 'https');
+        return is_ssl() ? str_replace($http, $https, $url) : $url;
+}
+add_filter('wp_get_attachment_url', 'honor_ssl_for_attachments');
+
+if ( ! function_exists( 'piratenkleider_comment' ) ) :
 /**
  * Template for comments and pingbacks.
- *
- * To override this walker in a child theme without modifying the comments template
- * simply create your own twentyten_comment(), and that function will be used instead.
- *
- * Used as a callback by wp_list_comments() for displaying the comments.
- *
- * @since Twenty Ten 1.0
  */
-function twentyten_comment( $comment, $args, $depth ) {
+function piratenkleider_comment( $comment, $args, $depth ) {
         $GLOBALS['comment'] = $comment;
+        global $defaultoptions;
+        global $options;         
+        
         switch ( $comment->comment_type ) :
                 case '' :
         ?>
         <li <?php comment_class(); ?> id="li-comment-<?php comment_ID(); ?>">
-                <div id="comment-<?php comment_ID(); ?>">
+            <?php 
+            $addclass='';
+            if ( $comment->user_id > 0 && $user = get_userdata($comment->user_id) ) {
+                $addclass= 'class="byuser"';              
+            } ?>
+            <article <?php echo $addclass;?> itemprop="comment" itemscope itemtype="http://schema.org/UserComments">
+              <header>  
                 <div class="comment-details">
-                <div class="comment-author vcard">
-
-                        <?php printf( __( '%s <span class="says">meinte am</span>', 'twentyten' ), sprintf( '<cite class="fn">%s</cite>', get_comment_author_link() ) ); ?>
+                    
+                <div class="comment-author vcard" itemprop="creator" itemscope itemtype="http://schema.org/Person">
+                    <?php if ($options['aktiv-avatar']==1) {
+                        echo '<div class="avatar" itemprop="image">';
+                        echo get_avatar( $comment, 48, $defaultoptions['src-default-avatar']); 
+                        echo '</div>';   
+                    } 
+                    printf( __( '%s <span class="says">commented at</span>', 'piratenkleider' ), sprintf( '<cite class="fn" itemprop="name">%s</cite>', get_comment_author_link() ) ); 
+                    ?>
                 </div><!-- .comment-author .vcard -->
                 <?php if ( $comment->comment_approved == '0' ) : ?>
-                        <em><?php _e( 'Dein Kommentar wartet auf die Freischaltung.', 'twentyten' ); ?></em>
+                        <em><?php _e( 'Comment waits for approval.', 'piratenkleider' ); ?></em>
                         <br />
                 <?php endif; ?>
 
-                <div class="comment-meta commentmetadata"><a href="<?php echo esc_url( get_comment_link( $comment->comment_ID ) ); ?>">
-                        <?php
-                                /* translators: 1: date, 2: time */
-                                printf( __( '%1$s um %2$s', 'twentyten' ), get_comment_date(),  get_comment_time() ); ?></a> Folgendes:<?php edit_comment_link( __( '(Edit)', 'twentyten' ), ' ' );
-                        ?>
+                <div class="comment-meta commentmetadata"><a itemprop="url" href="<?php echo esc_url( get_comment_link( $comment->comment_ID ) ); ?>"><time itemprop="commentTime" datetime="<?php comment_time('c'); ?>">
+                    <?php
+                          /* translators: 1: date, 2: time */
+                       printf( __( '%1$s at %2$s', 'piratenkleider' ), get_comment_date(),  get_comment_time() ); ?></time></a> Folgendes:<?php edit_comment_link( __( '(Edit)', 'piratenkleider' ), ' ' );
+                    ?>
                 </div><!-- .comment-meta .commentmetadata -->
-                </div>
-
-                <div class="comment-body"><?php comment_text(); ?></div>
-
+                </div><!-- .comment-details -->
+              </header>
+                <div class="comment-body" itemprop="commentText"><?php comment_text(); ?></div>
+                <?php if ($options['aktiv-commentreplylink']) { ?>
                 <div class="reply">
-                        <?php comment_reply_link( array_merge( $args, array( 'depth' => $depth, 'max_depth' => $args['max_depth'] ) ) ); ?>
-                </div><!-- .reply -->
-        </div><!-- #comment-##  -->
+                        <?php comment_reply_link( array_merge( $args, array( 'depth' => $depth, 'max_depth' => $args['max_depth'] ) ) ); ?>                       
+                </div> <!-- .reply -->
+                <?php } ?>
+            </article>
 
         <?php
                         break;
@@ -353,209 +864,376 @@ function twentyten_comment( $comment, $args, $depth ) {
                 case 'trackback' :
         ?>
         <li class="post pingback">
-                <p><?php _e( 'Pingback:', 'twentyten' ); ?> <?php comment_author_link(); ?><?php edit_comment_link( __('(Edit)', 'twentyten'), ' ' ); ?></p>
+                <p><?php _e( 'Pingback:', 'piratenkleider' ); ?> <?php comment_author_link(); edit_comment_link( __('Edit', 'piratenkleider'), ' ' ); ?></p>
         <?php
                         break;
         endswitch;
 }
 endif;
 
-/**
- * Register widgetized areas, including two sidebars and four widget-ready columns in the footer.
- *
- * To override twentyten_widgets_init() in a child theme, remove the action hook and add your own
- * function tied to the init hook.
- *
- * @since Twenty Ten 1.0
- * @uses register_sidebar
- */
-function twentyten_widgets_init() {
 
-        // Area 1, located in the Header.
-        register_sidebar( array(
-                'name' => __( 'Sticker Widget Area', 'twentyten' ),
-                'id' => 'sticker-widget-area',
-                'description' => __( 'sticker widget area', 'twentyten' ),
-                'before_widget' => '<div class="widget">',
-                'after_widget' => '</div>',
-                'before_title' => '<h3 class="widget-title">',
-                'after_title' => '</h3>',
-        ) );
-
-
-        // Area 3, located in the Teaser.
-        register_sidebar( array(
-                'name' => __( 'First Teaser Widget Area', 'twentyten' ),
-                'id' => 'first-teaser-widget-area',
-                'description' => __( 'The first teaser widget area', 'twentyten' ),
-                'before_widget' => '<div class="widget">',
-                'after_widget' => '</div>',
-                'before_title' => '<h3 class="widget-title">',
-                'after_title' => '</h3>',
-        ) );
-
-        // Area 4, located in the Teaser.
-        register_sidebar( array(
-                'name' => __( 'Second Teaser Widget Area', 'twentyten' ),
-                'id' => 'second-teaser-widget-area',
-                'description' => __( 'The second teaser widget area', 'twentyten' ),
-                'before_widget' => '<div class="widget">',
-                'after_widget' => '</div>',
-                'before_title' => '<h3 class="widget-title">',
-                'after_title' => '</h3>',
-        ) );
-
-        // Area 5, located in the sidebar.
-        register_sidebar( array(
-                'name' => __( 'Sidebar Widget Area', 'twentyten' ),
-                'id' => 'sidebar-widget-area',
-                'description' => __( 'The sidebar widget area', 'twentyten' ),
-                'before_widget' => '<div class="widget">',
-                'after_widget' => '</div>',
-                'before_title' => '<h3 class="widget-title">',
-                'after_title' => '</h3>',
-        ) );
-
-                // Area 5, located in the Startpage.
-        register_sidebar( array(
-                'name' => __( 'First Startpage Widget Area', 'twentyten' ),
-                'id' => 'first-startpage-widget-area',
-                'description' => __( 'The first startpage widget area', 'twentyten' ),
-                'before_widget' => '<div class="widget">',
-                'after_widget' => '</div>',
-                'before_title' => '<h3 class="widget-title">',
-                'after_title' => '</h3>',
-        ) );
-
-                register_sidebar( array(
-                'name' => __( 'Second Startpage Widget Area', 'twentyten' ),
-                'id' => 'second-startpage-widget-area',
-                'description' => __( 'The second startpage widget area', 'twentyten' ),
-                'before_widget' => '<div class="widget">',
-                'after_widget' => '</div>',
-                'before_title' => '<h3 class="widget-title">',
-                'after_title' => '</h3>',
-        ) );
-
-
-
-
-        // Area 6, located in the Subcontent. Empty by default.
-        register_sidebar( array(
-                'name' => __( 'First Subcontent Widget Area', 'twentyten' ),
-                'id' => 'first-subcontent-widget-area',
-                'description' => __( 'The first subcontent widget area', 'twentyten' ),
-                'before_widget' => '<div class="widget">',
-                'after_widget' => '</div>',
-                'before_title' => '<h3 class="widget-title">',
-                'after_title' => '</h3>',
-        ) );
-
-        // Area 7, located in the Subcontent. Empty by default.
-        register_sidebar( array(
-                'name' => __( 'Second Subcontent Widget Area', 'twentyten' ),
-                'id' => 'second-subcontent-widget-area',
-                'description' => __( 'The second subcontent widget area', 'twentyten' ),
-                'before_widget' => '<div class="widget">',
-                'after_widget' => '</div>',
-                'before_title' => '<h3 class="widget-title">',
-                'after_title' => '</h3>',
-        ) );
-
-        // Area 8, located in the Subcontent. Empty by default.
-        register_sidebar( array(
-                'name' => __( 'Third Subcontent Widget Area', 'twentyten' ),
-                'id' => 'third-subcontent-widget-area',
-                'description' => __( 'The third subcontent widget area', 'twentyten' ),
-                'before_widget' => '<div class="widget">',
-                'after_widget' => '</div>',
-                'before_title' => '<h3 class="widget-title">',
-                'after_title' => '</h3>',
-        ) );
-
-        // Area 9, located in the footer. Empty by default.
-        register_sidebar( array(
-                'name' => __( 'First Footer Widget Area', 'twentyten' ),
-                'id' => 'first-footer-widget-area',
-                'description' => __( 'The first footer widget area', 'twentyten' ),
-                'before_widget' => '<div class="widget">',
-                'after_widget' => '</div>',
-                'before_title' => '<h3 class="widget-title">',
-                'after_title' => '</h3>',
-        ) );
-
-        // Area 9, located in the footer. Empty by default.
-        register_sidebar( array(
-                'name' => __( 'Second Footer Widget Area', 'twentyten' ),
-                'id' => 'second-footer-widget-area',
-                'description' => __( 'The second footer widget area', 'twentyten' ),
-                'before_widget' => '<div class="widget">',
-                'after_widget' => '</div>',
-                'before_title' => '<h3 class="widget-title">',
-                'after_title' => '</h3>',
-        ) );
-
-}
-/** Register sidebars by running twentyten_widgets_init() on the widgets_init hook. */
-add_action( 'widgets_init', 'twentyten_widgets_init' );
-
-/**
- * Removes the default styles that are packaged with the Recent Comments widget.
- *
- * To override this in a child theme, remove the filter and optionally add your own
- * function tied to the widgets_init action hook.
- *
- * @since Twenty Ten 1.0
- */
-function twentyten_remove_recent_comments_style() {
+function piratenkleider_remove_recent_comments_style() {
         global $wp_widget_factory;
         remove_action( 'wp_head', array( $wp_widget_factory->widgets['WP_Widget_Recent_Comments'], 'recent_comments_style' ) );
 }
-add_action( 'widgets_init', 'twentyten_remove_recent_comments_style' );
+add_action( 'widgets_init', 'piratenkleider_remove_recent_comments_style' );
 
-if ( ! function_exists( 'twentyten_posted_on' ) ) :
+if ( ! function_exists( 'piratenkleider_post_teaser' ) ) :
 /**
- * Prints HTML with meta information for the current post—date/time and author.
- *
- * @since Twenty Ten 1.0
+ * Erstellung eines Artikelteasers
  */
-function twentyten_posted_on() {
-        printf( __( '<span class="%1$s">Veröffentlicht am</span> %2$s <span class="meta-sep"></span>', 'twentyten' ),
-                'meta-prep meta-prep-author',
-                sprintf( '<a href="%1$s" title="%2$s" rel="bookmark"><span class="entry-date">%3$s</span></a>',
-                        get_permalink(),
-                        esc_attr( get_the_time() ),
-                        get_the_date()
-                ),
-                sprintf( '<span class="author vcard"><a class="url fn n" href="%1$s" title="%2$s">%3$s</a></span> ',
-                        get_author_posts_url( get_the_author_meta( 'ID' ) ),
-                        sprintf( esc_attr__( 'View all posts by %s', 'twentyten' ), get_the_author() ),
-                        get_the_author()
-                )
-        );
+function piratenkleider_post_teaser($titleup = 1, $showdatebox = 1, $showdateline = 0, $teaserlength = 200, $thumbfallback = 1, $usefloating = 0, $titlenum = 2) {
+  global $options;
+  global $post;
+  
+  $post_id = $post->ID;
+  $sizeclass='';
+  $out = '';
+  if ('linktipps'== get_post_type()  ) {
+      $out = linktipp_display($post);
+      return $out;
+  }
+ 
+  $leftbox = '';
+  $sizeclass = 'p3-column withthumb';   
+  if (($showdatebox>0)  && ($showdatebox<5)) {
+          
+       // Generate Thumb/Pic or Video first to find out which class we need
+
+	    $leftbox .=  '<div class="infoimage">';	    
+	    $sizeclass = 'p3-column withthumb'; 
+	    $thumbnailcode = '';	
+	    $firstpic = '';
+	    $firstvideo = '';
+	    if (has_post_thumbnail()) {
+		$thumbnailcode = get_the_post_thumbnail($post->ID, 'teaser-thumb');
+	    }
+		   
+            $firstpic = get_piratenkleider_firstpicture();
+            $firstvideo = get_piratenkleider_firstvideo();
+            $fallbackimg = '<img itemprop="image" src="'.$options['src-teaser-thumbnail_default'].'" alt="">';
+            if ($showdatebox==1) {
+                if (!isset($output)) { $output = $thumbnailcode;}
+                if (!isset($output)) { $output = $firstpic;}
+                if ((!isset($output)) && (isset($firstvideo))) { $output = $firstvideo; $sizeclass = 'p3-column withvideo'; }		    
+                if (!isset($output)) { $output = $fallbackimg;}		    
+                if ((isset($output)) && ( strlen(trim($output))<10 )) {$output = $fallbackimg;}		    
+            } elseif ($showdatebox==2) {
+                if (!isset($output)) { $output = $firstpic;}
+                if (!isset($output)) { $output = $thumbnailcode;}
+                if ((!isset($output)) && (isset($firstvideo))) { $output = $firstvideo; $sizeclass = 'p3-column withvideo'; }		    
+                if (!isset($output)) { $output = $fallbackimg;}		    
+                if ((isset($output)) && ( strlen(trim($output))<10 )) {$output = $fallbackimg;}			    		    
+            } elseif ($showdatebox==3) {
+                if ((!isset($output)) && (isset($firstvideo))) { $output = $firstvideo; $sizeclass = 'p3-column withvideo'; }		     		    
+                if (!isset($output)) { $output = $thumbnailcode;}
+                if (!isset($output)) { $output = $firstpic;}
+                if (!isset($output)) { $output = $fallbackimg;}
+                if ((isset($output)) && ( strlen(trim($output))<10 )) {$output = $fallbackimg;}		    		    
+            } elseif ($showdatebox==4) {
+                if ((!isset($output)) && (isset($firstvideo))) { $output = $firstvideo; $sizeclass = 'p3-column withvideo'; }		    
+                if (!isset($output)) { $output = $firstpic;}
+                if (!isset($output)) { $output = $thumbnailcode;}
+                if (!isset($output)) { $output = $fallbackimg;}
+                if ((isset($output)) && ( strlen(trim($output))<10 )) {$output = $fallbackimg;}
+            } else {
+                $output = $fallbackimg; 
+            }	
+	   
+    	    
+	    $leftbox .= $output;
+	    $leftbox .=  '</div>'; 
+  } else {
+       $sizeclass = 'p3-column';
+  }
+  if ($usefloating==1) {
+      $sizeclass .= " usefloating";
+  }
+
+  $out .= '<section itemscope itemtype="http://schema.org/Article" class="'. implode(' ',get_post_class($sizeclass)).'" id="post-'.$post->ID.'" >';
+  $titlenum = (int) $titlenum;
+  if (($titlenum<1) || ($titlenum>6)) {
+      $titlenum = 2;
+  }
+  $htmltitlestart = '<h'.$titlenum.'>';
+  $htmltitleend = '</h'.$titlenum.'>';
+   $subtitle =  get_post_meta( $post->ID, 'piratenkleider_subtitle', true );
+                
+                
+     if ($titleup==1) {
+        $out .= '<header itemprop="name" class="post-title p3-cbox">';
+        if ($subtitle) {
+           $out .=  '<h3 class="subtitle">'.$subtitle."</h3>\n";
+        }
+                
+        $out .= $htmltitlestart;
+	$out .= '<a itemprop="url" href="'.get_permalink().'" rel="bookmark">';
+	$out .= get_the_title();
+        $out .= '</a>'.$htmltitleend.'</header>';
+	$out .= "\n";
+	$out .= '<div class="p3-column">'; 
+      }	
+
+    if ($showdatebox<5) { 
+	$out .= '<div class="post-info p3-col1"><div class="p3-cbox">';
+	if ($showdatebox==0) {		 
+	      $num_comments = get_comments_number();           
+	      if (($num_comments>0) || ( $options['zeige_commentbubble_null'])) { 
+                    $out .= '<div class="commentbubble">'; 
+                    $link = get_comments_link();
+                    $out .= '<a href="'.$link.'">'.$num_comments.'<span class="skip"> ';
+                    if ($num_comments>0) {
+                        $out .= __('Comments', 'piratenkleider' ).'</span></a>';
+                    } else {
+                        $out .= __('Comment', 'piratenkleider' ).'</span></a>';
+                    }
+                    $out .= "</div>\n"; 
+	       }	
+		$out .= '<div class="cal-icon" itemprop="datePublished" content="'.get_the_date('Y-m-d').'">';
+		$out .= '<span class="day">'.get_the_time('j.').'</span>';
+		$out .= '<span class="month">'.get_the_time('m.').'</span>';
+		$out .= '<span class="year">'.get_the_time('Y').'</span>';
+		$out .= "</div>\n";
+
+            } else {	
+                $out .= $leftbox;
+            } 
+            $out .= "</div></div>\n";
+            $out .= '<article class="post-entry p3-col3">';
+            $out .= '<div class="p3-cbox';
+            if ($usefloating==0) { $out .= ' p3-clearfix'; }
+            $out .= '">';	
+    } else {
+         $out .= '<article class="post-entry p3-cbox">';
+    }
+	if ($titleup==0) {  
+	    $out .= '<header itemprop="name" class="post-title">';
+            
+            if ($subtitle) {
+                $out .=  '<h3 class="subtitle">'.$subtitle."</h3>\n";
+            }
+
+            $out .= $htmltitlestart;          
+	    $out .= '<a href="'.get_permalink().'" rel="bookmark">';
+	    $out .= get_the_title(); 
+            $out .= "</a>".$htmltitleend."</header>\n";
+	 }
+	   
+	 if (($showdatebox!=0) && ($showdateline==1)) {  
+	    $out .= '<p class="pubdateinfo" itemprop="datePublished" content="'.get_the_date('Y-m-d').'">';
+	    $out .=  piratenkleider_post_pubdateinfo(0); 
+	    $out .= "</p>\n";	  	  
+	 }
+	   
+	 $out .= get_piratenkleider_custom_excerpt($teaserlength,1,1,$options['continuelink']); 
+	 if ($showdatebox<5) {	 
+            $out .= "</div>\n";    	
+            $out .= '<div class="p3-ie-clearing">&nbsp;</div>';	
+	 } 
+	$out .= "</article>\n";
+        if ($titleup==1) { $out .= '</div>'; }       
+    $out .= "</section>\n"; 
+		
+    return $out;
 }
 endif;
 
-if ( ! function_exists( 'twentyten_posted_in' ) ) :
+if ( ! function_exists( 'piratenkleider_category_teaser' ) ) :
 /**
- * Prints HTML with meta information for the current post (category, tags and permalink).
- *
- * @since Twenty Ten 1.0
+ * Erstellung eines Artikelteasers
  */
-function twentyten_posted_in() {
-        // Retrieves tag list of current post, separated by commas.
-        $tag_list = get_the_tag_list( '', ', ' );
-        if ( $tag_list ) {
-                $posted_in = __( 'unter %1$s und eingeordnet unter %2$s. Hier der permanente <a href="%3$s" title="Permalink to %4$s" rel="bookmark">Link</a> zu diesem Artikel.', 'twentyten' );
-        } elseif ( is_object_in_taxonomy( get_post_type(), 'category' ) ) {
-                $posted_in = __( 'unter %1$s. Hier der permanente <a href="%3$s" title="Permalink to %4$s" rel="bookmark">Link</a> zu diesem Artikel.', 'twentyten' );
-        } else {
-                $posted_in = __( 'Hier der permanente <a href="%3$s" title="Permalink to %4$s" rel="bookmark">Link</a> zu diesem Artikel.', 'twentyten' );
-        }
+function piratenkleider_category_teaser() {
+  global $options;
+  global $post;
 
+    $out = $output = '';
+    $leftbox =  $thumbnailcode = $firstpic = $output = ''; 
+    $leftbox .=  '<div class="infoimage">';	    
+   
+
+    if (has_post_thumbnail()) {
+        $output = get_the_post_thumbnail($post->ID, 'teaser-thumb');
+        if (strlen($output)<1) {
+             $output = '<img itemprop="image" src="'.$options['src-teaser-thumbnail_default'].'" alt="">';
+        }
+    } else {
+        $output = '<img itemprop="image" src="'.$options['src-teaser-thumbnail_default'].'" alt="">';
+    }		   
+
+    $leftbox .= $output;
+    $leftbox .=  '</div>'; 
+
+    $out .= '<section itemtype="http://schema.org/Article">';
+    $out .= '<header><h3 itemprop="name">';
+    $out .= '<a itemprop="url" href="'.get_permalink().'" rel="bookmark">';
+    $out .= get_the_title();
+    $out .= '</a></h3></header>';
+    $out .= "\n";
+    $out .= '<div>'; 
+    $out .= $leftbox;          
+    $out .= '<article>';   
+    $out .= '<p class="pubdateinfo" itemprop="datePublished" content="'.get_the_date('Y-m-d').'">';
+    $out .=  piratenkleider_post_pubdateinfo(0); 
+    $out .= "</p>\n";	  	  	 
+    $out .= get_piratenkleider_custom_excerpt($options['categoryindex-teaserlength'],1,1,$options['continuelink']); 
+    $out .= '<div class="p3-ie-clearing">&nbsp;</div>';	
+    $out .= "</article>\n";
+    $out .= '</div>';     
+    $out .= "</section>\n"; 
+		
+    return $out;
+}
+endif;
+
+if ( ! function_exists( 'piratenkleider_search_teaser' ) ) :
+/**
+ * Suchausgabe
+ */
+function piratenkleider_search_teaser($teaserlength = 250, $withthumb = 1, $aslist = 1, $search = '') {
+  global $options;
+  global $post;
+
+    $out = $output = '';
+    $leftbox =  $thumbnailcode = $firstpic = $output = ''; 
+    
+    if ($withthumb==1) {
+        $leftbox .=  '<div class="infoimage">';	    
+        if (has_post_thumbnail()) {
+            $output = get_the_post_thumbnail($post->ID, 'teaser-thumb');
+            if (strlen($output)<1) {
+                 $output = '<img itemprop="image" src="'.$options['src-teaser-thumbnail_default'].'" alt="">';
+            }
+        } else {
+            $output = '<img itemprop="image" src="'.$options['src-teaser-thumbnail_default'].'" alt="">';
+        }		   
+        $leftbox .= $output;
+        $leftbox .=  '</div>'; 
+    }
+    if ($aslist==1) {
+        $out .= '<li>';
+    } else {
+        $out .= '<div class="searchresults">';
+    }
+    $out .= '<h3>';
+    $out .= '<a href="'.get_permalink().'">';
+    $out .= get_the_title();
+    $out .= '</a></h3>';    
+    $out .= "\n";
+    $out .= '<div>'; 
+    $out .= $leftbox;  
+    $excerpt = get_piratenkleider_custom_excerpt($teaserlength, 1, 1, 2);  
+    if (trim($search) !== '') {
+        $keys = array_diff(explode(" ", $search), array(''));
+	 	$excerpt = preg_replace('/('.implode('|', $keys) .')/iu',
+		'<strong class="search-hit">\0</strong>',
+		$excerpt);
+    }
+    $out .= $excerpt;     
+    $out .= '<p class="meta">';    
+    $out .= '<span class="date">'.__('Created at:','piratenkleider').' '.piratenkleider_post_pubdateinfo(0).'.</span> '; 
+    $typ =get_post_type();
+    if ($typ == 'post') {
+         $out .= '<span class="type">'.__('Type: Entry','piratenkleider').'.</span> '; 
+    } elseif ($typ=='page') {
+         $out .= '<span class="type">'.__('Type: Page','piratenkleider').'.</span> '; 
+    } 
+    $out .= "</p>\n";    
+    $out .= '</div>';     
+    if ($aslist==1) {
+        $out .= "</li>\n"; 
+    } else {
+         $out .= "</div>\n"; 
+    }          
+    
+    return $out;
+}
+endif;
+
+
+if ( ! function_exists( 'piratenkleider_post_datumsbox' ) ) :
+/**
+ * Erstellung der Datumsbox
+ */
+function piratenkleider_post_datumsbox() {
+    global $options;
+
+    
+    $out = '<div class="post-info">';
+    $num_comments = get_comments_number();           
+     if (($num_comments>0) || ( $options['zeige_commentbubble_null'])) { 
+        $out .= '<div class="commentbubble">'; 
+        $link = get_comments_link();
+        $out .= '<meta itemprop="interactionCount" content="UserComments:'.$num_comments.'"/><a itemprop="discussionUrl" href="'.$link.'">'.$num_comments.'<span class="skip">';
+        if ($num_comments==1) {
+            $out .= ' '.__('Comment', 'piratenkleider' ).'</span></a>';
+        } else {
+            $out .= ' '.__('Comments', 'piratenkleider' ).'</span></a>';
+        }
+        $out .= "</div>\n"; 
+     } 
+    $out .= '<div class="cal-icon">';
+    $out .= '<time datetime="'. esc_attr( get_the_date('c') ).'" itemprop="datePublished">';
+    $out .= '<span class="day">'.get_the_time('j.').'</span>';
+    $out .= '<span class="month">'.get_the_time('m.').'</span>';
+    $out .= '<span class="year">'.get_the_time('Y').'</span>';
+    $out .= '</time>';
+    $out .= "</div>\n";
+    $out .= '</div>';
+    return $out;
+
+}
+endif;
+
+
+if ( ! function_exists( 'piratenkleider_post_pubdateinfo' ) ) :
+/**
+ * Fusszeile unter Artikeln: Ver&ouml;ffentlichungsdatum
+ */
+function piratenkleider_post_pubdateinfo($withtext = 1) {
+    $out = '';
+    if ($withtext==1) {
+	$out .= '<span class="meta-prep">';
+        $out .= __('Publiced at', 'piratenkleider' );
+	$out .= '</span> ';
+    }
+    $out .= '<span class="entry-date">';
+    $out .= get_the_date();
+    $out .= "</span>\n";
+    return $out;
+}
+endif;
+
+if ( ! function_exists( 'piratenkleider_post_autorinfo' ) ) :
+/**
+ * Fusszeile unter Artikeln: Autorinfo
+ */
+function piratenkleider_post_autorinfo() {
+    $out = ' <span class="meta-prep-author">'.__('Author','piratenkleider').':</span> ';
+    $out .= '<span class="author vcard" itemprop="creator"><a rel="author" class="url fn n" href="';
+    $out .= get_author_posts_url( get_the_author_meta( 'ID' ) );
+    $out .= '">';
+    $out .= get_the_author_meta('display_name');
+    $out .= '</a></span>';            
+    echo $out;    
+}
+endif;
+
+if ( ! function_exists( 'piratenkleider_post_taxonominfo' ) ) :
+/**
+ * Fusszeile unter Artikeln: Taxonomie
+ */
+function piratenkleider_post_taxonominfo() {
+         $tag_list = get_the_tag_list( '', ', ' );
+        if ( $tag_list ) {
+                $posted_in = __( 'Category: <span itemprop="articleSection">%1$s</span>. Tags: <span itemprop="keywords">%2$s</span>. <br><a href="%3$s" title="%4$s" rel="bookmark" itemprop="url">Permalink</a> for this entry.', 'piratenkleider' );
+        } elseif ( is_object_in_taxonomy( get_post_type(), 'category' ) ) {
+                $posted_in = __( 'Category: <span itemprop="articleSection">%1$s</span>. <br><a href="%3$s" title="%4$s" rel="bookmark" itemprop="url">Permalink</a> for this entry.', 'piratenkleider' );
+        } else {
+                $posted_in = __( '<a href="%3$s" title="%4$s" rel="bookmark" itemprop="url">Permalink</a> for this entry.', 'piratenkleider' );
+        }
         // Prints the string, replacing the placeholders.
         printf(
-                $posted_in,
+                ' '.$posted_in,
                 get_the_category_list( ', ' ),
                 $tag_list,
                 get_permalink(),
@@ -564,176 +1242,791 @@ function twentyten_posted_in() {
 }
 endif;
 
-add_theme_support( 'post-thumbnails' );
-
-function wpse38241_setup_menu()
-{
-    register_nav_menu( 'main-menu', 'Main Menu' );
+// this function initializes the iframe elements 
+// maybe wont work on multisite installations. please use plugins instead.
+function piratenkleider_change_mce_options($initArray) {
+    $ext = 'iframe[align|longdesc|name|width|height|frameborder|scrolling|marginheight|marginwidth|src]';
+    if ( isset( $initArray['extended_valid_elements'] ) ) {
+        $initArray['extended_valid_elements'] .= ',' . $ext;
+    } else {
+        $initArray['extended_valid_elements'] = $ext;
+    }
+    // maybe; set tiny paramter verify_html
+    $initArray['verify_html'] = false;
+    return $initArray;
 }
-add_action( 'after_setup_theme', 'wpse38241_setup_menu' );
+add_filter('tiny_mce_before_init', 'piratenkleider_change_mce_options');
 
 
+
+class Piratenkleider_Menu_Walker extends Walker_Nav_Menu {
+      public function start_el(&$output, $item, $depth = 0, $args = array(), $id = 0)
+      {
+           if ( '-' === $item->title ) {
+                $item_output = '<li class="menu_separator"><hr>';
+           } else {     
+                global $wp_query;
+                $indent = ( $depth ) ? str_repeat( "\t", $depth ) : '';
+
+                $class_names = $value = '';
+
+                $classes = empty( $item->classes ) ? array() : (array) $item->classes;
+
+                $class_names = join( ' ', apply_filters( 'nav_menu_css_class', array_filter( $classes ), $item ) );
+                $class_names = ' class="'. esc_attr( $class_names ) . '"';
+
+                $output .= $indent . '<li id="menu-item-'. $item->ID . '"' . $value . $class_names .'>';
+                
+                
+                $attributes  = ! empty( $item->attr_title ) ? ' title="'  . esc_attr( $item->attr_title ) .'"' : '';
+                $attributes .= ! empty( $item->target )     ? ' target="' . esc_attr( $item->target     ) .'"' : '';
+                $attributes .= ! empty( $item->xfn )        ? ' rel="'    . esc_attr( $item->xfn        ) .'"' : '';
+                $attributes .= ! empty( $item->url )        ? ' href="'   . esc_attr( $item->url        ) .'"' : '';
+                $description  = ! empty( $item->description ) ? '<span>'.esc_attr( $item->description ).'</span>' : '';
+
+                if($depth != 0) {
+                          $description = "";
+                }
+
+                 $item_output = $args->before;
+                 $item_output .= '<a'. $attributes .'>';
+                 $item_output .= $args->link_before .apply_filters( 'the_title', $item->title, $item->ID );
+                 $item_output .= $description;
+                 $item_output .= $args->link_after;                
+                 $item_output .= '</a>';
+                 $item_output .= $args->after;
+           }
+           $output .= apply_filters( 'walker_nav_menu_start_el', $item_output, $item, $depth, $args );
+            
+       }
+        public function display_element($el, &$children, $max_depth, $depth = 0, $args = array(), &$output){
+        $id = $this->db_fields['id'];
+        if(isset($children[$el->$id]))
+            $el->classes[] = 'has_children';
+
+        parent::display_element($el, $children, $max_depth, $depth, $args, $output);
+    }
+}
+
+
+if ( ! function_exists( 'get_piratenkleider_socialmediaicons' ) ) :
 /**
- * Replaces items with '-' as title with li class="menu_separator"
- *
- * @author Thomas Scholz (toscho)
+ * Displays Social Media Icons
  */
-class My_Walker_Nav_Menu extends Walker_Nav_Menu
-{
-    /**
-     * Start the element output.
-     *
-     * @param  string $output Passed by reference. Used to append additional content.
-     * @param  object $item   Menu item data object.
-     * @param  int $depth     Depth of menu item. May be used for padding.
-     * @param  array $args    Additional strings.
-     * @return void
-     */
-    public function start_el( &$output, $item, $depth, $args )
-    {
-        if ( '-' === $item->title )
-        {
-            // you may remove the <hr> here and use plain CSS.
-            $output .= '<li class="menu_separator"><hr>';
-        }
-        else
-        {
-            parent::start_el( &$output, $item, $depth, $args );
+function get_piratenkleider_socialmediaicons( $darstellung = 1 ){
+    global $options;
+    global $default_socialmedia_liste;
+    $zeigeoption = $options['alle-socialmediabuttons'];
+    
+    if ($darstellung ==0) {
+        return; 
+    } 
+    if ($darstellung!=$zeigeoption) {
+        return;
+    }
+ 
+    if ($zeigeoption ==2) {    
+           /* Links an der Seite */
+            echo '<nav id="socialmedia_iconbar" aria-label="'.__('Social Media','piratenkleider').'">';
+    } else {
+	    echo '<nav id="socialmedia_top" aria-label="'.__('Social Media','piratenkleider').'">';
+    }
+   
+    echo '<ul class="socialmedia">';       
+    foreach ( $default_socialmedia_liste as $entry => $listdata ) {        
+        
+        $value = '';
+        $active = 0;
+        if (isset($options['sm-list'][$entry]['content'])) {
+                $value = $options['sm-list'][$entry]['content'];
+                if (isset($options['sm-list'][$entry]['active'])) {
+                    $active = $options['sm-list'][$entry]['active'];
+                } 
+        } else {
+                $value = $default_socialmedia_liste[$entry]['content'];
+                $active = $default_socialmedia_liste[$entry]['active'];
+         }
+             
+        if (($active ==1) && ($value)) {
+            echo '<li><a class="icon_'.$entry.'" href="'.$value.'">';
+            echo $listdata['name'].'</a></li>';
         }
     }
-    /* Klasse has_children einfuegen */
-    public function display_element($el, &$children, $max_depth, $depth = 0, $args, &$output){
-    $id = $this->db_fields['id'];
-
-    if(isset($children[$el->$id]))
-      $el->classes[] = 'has_children';
-
-    parent::display_element($el, $children, $max_depth, $depth, $args, $output);
-  }
+    echo '</ul>';
+    echo '</nav>';
+     
+  
 }
+endif;
 
-function get_custom_excerpt($string, $length){
-  $excerpt = $string;
-  $excerpt = strip_shortcodes($excerpt);
-  $excerpt = strip_tags($excerpt);
-  $the_str = substr($excerpt, 0, $length);
-return $the_str;
+
+if ( ! function_exists( 'get_piratenkleider_seitenmenu' ) ) :
+/*
+ * Anzeige des Sidebar-Menus
+ */
+function get_piratenkleider_seitenmenu( $zeige_sidebarpagemenu = 1 , $zeige_subpagesonly =1 , $seitenmenu_mode = 0 ){
+  global $post;
+  $sidelinks = '';
+    if ($zeige_sidebarpagemenu==1) {   
+            if (($seitenmenu_mode == 1) || (!has_nav_menu( 'primary' ))) {
+                    if ($zeige_subpagesonly==1) {
+                            //if the post has a parent
+
+                            if($post->post_parent){
+                               if($post->ancestors) {
+                                            $ancestors = end($post->ancestors);
+                                            $sidelinks = wp_list_pages("title_li=&child_of=".$ancestors."&echo=0");
+                                    } else {                
+                                            $sidelinks .= wp_list_pages("sort_column=menu_order&title_li=&echo=0&depth=5&child_of=".$post->post_parent);              
+                                    } 
+                            }else{
+                                    // display only main level and children
+                                    $sidelinks .= wp_list_pages("sort_column=menu_order&title_li=&echo=0&depth=5&child_of=".$post->ID);
+                            }
+
+                            if ($sidelinks) { 
+                                    echo '<ul class="menu">';                   
+                                    echo $sidelinks; 
+                                    echo '</ul>';         
+                            } 
+
+                    } else {
+                            echo '<ul class="menu">';   
+                                    wp_page_menu( ); 
+                            echo '</ul>';                        
+                    } 
+		} else {
+                    if ($zeige_subpagesonly==1) {
+                            wp_nav_menu( array('depth' => 0, 'container_class' => 'menu-header subpagesonly', 'theme_location' => 'primary', 'walker'  => new Piratenkleider_Menu_Walker()) );      
+                    } else { 
+                            wp_nav_menu( array('depth' => 0, 'container_class' => 'menu-header', 'theme_location' => 'primary', 'walker'  => new Piratenkleider_Menu_Walker()) );      
+                    }
+		}
+    }
+  
 }
+endif;
 
-function short_title($after = '', $length) {
-   $mytitle = explode(' ', get_the_title(), $length);
-   if (count($mytitle)>=$length) {
-       array_pop($mytitle);
-       $mytitle = implode(" ",$mytitle). $after;
-   } else {
-       $mytitle = implode(" ",$mytitle);
-   }
-       return $mytitle;
-}
-
-function dimox_breadcrumbs() {
- 
-  $delimiter = '/';
-  $home = 'Startseite'; // text for the 'Home' link
-  $before = '<span class="current">'; // tag before the current crumb
-  $after = '</span>'; // tag after the current crumb
- 
-  if ( !is_home() && !is_front_page() || is_paged() ) {
- 
-    echo '<div id="crumbs">';
- 
+if ( ! function_exists( 'get_piratenkleider_firstpicture' ) ) :
+/*
+ * Erstes Bild aus einem Artikel auslesen, wenn dies vorhanden ist
+ */
+function get_piratenkleider_firstpicture($relative = true){
     global $post;
-    $homeLink = get_bloginfo('url');
-    echo '<a href="' . $homeLink . '">' . $home . '</a> ' . $delimiter . ' ';
+    $first_img = '';
+    ob_start();
+    ob_end_clean();
+    $matches = array();
+    preg_match('/<img.+src=[\'"]([^\'"]+)[\'"].*>/i', $post->post_content, $matches);
+   if ((is_array($matches)) && (isset($matches[1]))) {
+        $first_img = $matches[1];
+        if (!empty($first_img)){
+            if ($relative) {
+                $first_img = piratenkleider_make_link_relative($first_img);
+            }
+            $imagehtml = '<img src="'.$first_img.'" alt="" >';
+            return $imagehtml;    
+        }
+    }
+}
+endif;
+
+
+if ( ! function_exists( 'get_piratenkleider_firstvideo' ) ) :
+/*
+ * Erstes Bild aus einem Artikel auslesen, wenn dies vorhanden ist
+ */
+function get_piratenkleider_firstvideo($width = 300, $height = 169, $nocookie =1, $searchplain =1){
+    global $post;
+    ob_start();
+    ob_end_clean();
+    $matches = array();
+    preg_match('/src="([^\'"]*www\.youtube[^\'"]+)/i', $post->post_content, $matches);
+    if ((is_array($matches)) && (isset($matches[1]))) {
+        $entry = $matches[1];	
+        if (!empty($entry)){
+	    if ($nocookie==1) {
+		$entry = preg_replace('/feature=player_embedded&amp;/','',$entry);
+		$entry = preg_replace('/feature=player_embedded&/','',$entry);
+		$entry = preg_replace('/youtube.com\/watch\?v=/','youtube-nocookie.com/embed/',$entry);
+	    }
+            $htmlout = '<iframe width="'.$width.'" height="'.$height.'" src="'.$entry.'" allowfullscreen="true"></iframe>';
+            return $htmlout;    
+        }
+    }
+
+    if ($searchplain==1) {
+       preg_match('/\s(https?:\/\/www\.youtube[\-a-z]*\.com\/(watch|embed)[\/a-z0-9\.\-&;\?_=]+)/i', $post->post_content, $matches);
+        if ((is_array($matches)) && (isset($matches[1]))) {
+            $entry = $matches[1];
+            if (!empty($entry)){
+                if ($nocookie==1) {
+                    $entry = preg_replace('/feature=player_embedded&amp;/','',$entry);
+		    $entry = preg_replace('/feature=player_embedded&/','',$entry);
+                    $entry = preg_replace('/youtube.com\/watch\?v=/','youtube-nocookie.com/embed/',$entry);
+                }
+                $htmlout = '<iframe width="'.$width.'" height="'.$height.'" src="'.$entry.'" allowfullscreen></iframe>';
+                return $htmlout;    
+            }
+         }  
+    }
+}
+endif;
+
+
+
+if ( ! function_exists( 'get_piratenkleider_custom_excerpt' ) ) :
+/*
+ * Erstellen des Extracts
+ */
+function get_piratenkleider_custom_excerpt($length = 0, $continuenextline = 1, $removeyoutube = 1, $alwayscontinuelink = 0){
+  global $options;
+  global $post;
+  global $defaultoptions;
+      
+  if (has_excerpt()) {
+      return  get_the_excerpt();
+      
+  } else {
+      $excerpt = get_the_content();
+       if (!isset($excerpt)) {
+          $excerpt = __( 'No content', 'piratenkleider' );
+        }
+  }
+  if ($length==0) {
+      $length = $options['teaser_maxlength'];
+      if ($length <=0) {
+	  $length = 100;
+      }
+  }
+  if ($removeyoutube==1) {
+    $excerpt = preg_replace('/\s+(https?:\/\/www\.youtube[\/a-z0-9\.\-\?&;=_]+)/i','',$excerpt);
+  }
+  
+  $excerpt = strip_shortcodes($excerpt);
+  $excerpt = strip_tags($excerpt, $defaultoptions['excerpt_allowtags']); 
+  
+  
+  if (mb_strlen($excerpt)<5) {
+      $excerpt = '<!-- '.__( 'No entry for this post', 'piratenkleider' ).' -->';
+  }
+
+  $needcontinue =0;
+  if (mb_strlen($excerpt) >  $length) {
+    $the_str = mb_substr($excerpt, 0, $length);
+    $the_str .= "...";
+    $needcontinue = 1;
+  }  else {
+      $the_str = $excerpt;
+  }
+  $the_str = '<p>'.$the_str;
+ 
+  if ($alwayscontinuelink < 2) {
+      if (($needcontinue==1) || ($alwayscontinuelink==1)) {
+	  if ($continuenextline==1) {
+	      $the_str .= '<br>';
+	  }
+	  $the_str .= piratenkleider_continue_reading_link();
+      }
+  }
+  $the_str .= '</p>';
+  return $the_str;
+}
+endif;
+
+if ( ! function_exists( 'short_title' ) ) :
+/*
+ * Erstellen des Kurztitels
+ */
+function short_title($after = '...', $length = 6, $textlen = 10) {
+   $thistitle =   get_the_title();  
+   $mytitle = explode(' ', get_the_title());
+   if ((count($mytitle)>$length) || (mb_strlen($thistitle)> $textlen)) {
+       while(((count($mytitle)>$length) || (mb_strlen($thistitle)> $textlen)) && (count($mytitle)>1)) {
+           array_pop($mytitle);
+           $thistitle = implode(" ",$mytitle);           
+       }       
+       $morewords = 1;
+   } else {              
+       $morewords = 0;
+   }
+   if (mb_strlen($thistitle)> $textlen) {
+      $thistitle = mb_substr($thistitle, 0, $textlen);
+      $morewords = 1;     
+   }
+   if ($morewords==1) {
+       $thistitle .= $after;
+   }   
+   return $thistitle;
+}
+endif;
+
+if ( ! function_exists( 'piratenkleider_fetch_feed' ) ) :
+/*
+ * Feet holen mit direkter Angabe der SimplePie-Parameter
+ */
+function piratenkleider_fetch_feed($url,$lifetime=0) {
+    global $defaultoptions;
+    global $options;
+
+
+    if ($lifetime==0){
+        $lifetime=  $options['feed_cache_lifetime'];
+    }
+    if ($lifetime < 600) $lifetime = 1800;
+    // Das holen von feeds sollte auf keinen Fall haeufiger als alle 10 Minuten erfolgen
+
+    require_once  (ABSPATH . WPINC . '/class-feed.php');
+
+    $feed = new SimplePie();
+    if ($defaultoptions['use_wp_feed_defaults']) {
+        $feed->set_cache_class('WP_Feed_Cache');
+        $feed->set_file_class('WP_SimplePie_File');
+    } else {
+        if ((isset($defaultoptions['dir_feed_cache'])) && (!empty($defaultoptions['dir_feed_cache']))) {
+            if (is_dir($defaultoptions['dir_feed_cache'])) { 
+                $feed->set_cache_location($defaultoptions['dir_feed_cache']);
+            } else {
+                mkdir($defaultoptions['dir_feed_cache']);
+                if (!is_dir($defaultoptions['dir_feed_cache'])) {
+                    echo "Wasnt able to create Feed-Cache directory";
+                } else {
+                    $feed->set_cache_location($defaultoptions['dir_feed_cache']);
+                }
+            }
+        }  
+    }
+    $feed->set_feed_url($url);
+    $feed->set_cache_duration($lifetime);
+    
+    do_action_ref_array( 'wp_feed_options', array( $feed, $url ) );
+    $feed->init();
+    $feed->handle_content_type();
+
+    if ( $feed->error() )
+        return new WP_Error('simplepie-error', $feed->error());
+
+    return $feed;
+}
+endif;
+
+/*
+ Replace absolute URLs for links und images by relative URLs, also mark external links
+*/
+function piratenkleider_make_nice_links($content) {
+    // Abort if content is empty or mb_convert_encoding function is not available
+    if (empty($content) || !function_exists('mb_convert_encoding')) {
+        return $content;
+    }
+    // Suppress errors while parsing HTML content
+    libxml_use_internal_errors(true);
+    // Parse HTML content and look for A and IMG tags
+    $dom = new DOMDocument();
+    $dom->loadHTML(mb_convert_encoding($content, 'HTML-ENTITIES', get_bloginfo('charset')));
+    foreach ($dom->getElementsByTagName('a') as $node) {
+        $url = trim($node->getAttribute('href'));
+        $url_scheme = parse_url($url, PHP_URL_SCHEME);
+        if ($url_scheme == 'http' || $url_scheme == 'https') {
+            $node->setAttribute('href', piratenkleider_make_link_relative($url));
+            if (!$node->hasAttribute('class') && !piratenkleider_is_internal_link($url)) {
+                $node->setAttribute('class', 'extern');
+            }
+        } 
+    }
+    foreach ($dom->getElementsByTagName('img') as $node) {
+        $url = trim($node->getAttribute('src'));
+        $node->setAttribute('src', piratenkleider_make_link_relative($url));
+    }
+    // Before returning new content we need to get rid of unneeded tags which were inserted automatically
+    $new_content = $dom->saveHTML();
+    $new_content = preg_replace('~<(?:!DOCTYPE|/?(?:html|body))[^>]*>\s*~i', '', $new_content);
+    return $new_content;
+}
+add_filter('the_content', 'piratenkleider_make_nice_links');
+
+ 
+ function get_piratenkleider_template_uri () {
+     return wp_make_link_relative(get_template_directory_uri());
+ }
+ 
+
+add_action('template_redirect', 'rw_relative_urls');
+function rw_relative_urls() {
+    // Don't do anything if:
+    // - In feed
+    // - In sitemap by WordPress SEO plugin
+    if (is_admin() || is_feed() || get_query_var('sitemap')) {
+        return;
+    }
+    $filters = array(
+   //     'post_link',
+        'post_type_link',
+        'page_link',
+        'author_link',
+        'attachment_link',
+        'get_shortlink',
+        'post_type_archive_link',
+        'get_pagenum_link',
+        'get_comments_pagenum_link',
+        'term_link',
+        'search_link',
+        'day_link',
+        'month_link',
+        'year_link',
+        'script_loader_src',
+        'style_loader_src',
+    );
+    foreach ($filters as $filter) {
+        add_filter($filter, 'piratenkleider_make_link_relative');
+    }
+}
+
+function piratenkleider_is_internal_link($url) {
+    $current_site_url = get_site_url();   
+    if (!empty($GLOBALS['_wp_switched_stack'])) {
+        $switched_stack = $GLOBALS['_wp_switched_stack'];
+        $blog_id = end($switched_stack);
+        if ($GLOBALS['blog_id'] != $blog_id) {
+            $current_site_url = get_site_url($blog_id);
+        }
+    }
+    $current_host = parse_url($current_site_url, PHP_URL_HOST);
+    $host = parse_url($url, PHP_URL_HOST);
+
+    return ($current_host == $host); 
+}
+
+function piratenkleider_make_link_relative($url) {
+    if (piratenkleider_is_internal_link($url)) {
+        $url = wp_make_link_relative($url);
+    }
+    return $url; 
+}
+
+ 
+ 
+ 
+function piratenkleider_breadcrumb() {
+  global $defaultoptions;
+  
+  $delimiter	= $defaultoptions['breadcrumb_delimiter']; // = ' / ';
+  $home		= $defaultoptions['breadcrumb_homelinktext']; // __( 'Startseite', 'piratenkleider' ); // text for the 'Home' link
+  $before	= $defaultoptions['breadcrumb_beforehtml']; // '<span class="current">'; // tag before the current crumb
+  $after	= $defaultoptions['breadcrumb_afterhtml']; // '</span>'; // tag after the current crumb
+  $pretitletextstart   = '<span>';
+  $pretitletextend     = '</span>';
+  
+  echo '<div id="crumbs">'; 
+  if ( !is_home() && !is_front_page() || is_paged() ) { 
+    
+    global $post;
+    
+    $homeLink = home_url('/');
+    echo '<a href="' . $homeLink . '">' . $home . '</a>' . $delimiter;
  
     if ( is_category() ) {
-      global $wp_query;
-      $cat_obj = $wp_query->get_queried_object();
-      $thisCat = $cat_obj->term_id;
-      $thisCat = get_category($thisCat);
-      $parentCat = get_category($thisCat->parent);
-      if ($thisCat->parent != 0) echo(get_category_parents($parentCat, TRUE, ' ' . $delimiter . ' '));
-      echo $before . 'Kategorie "' . single_cat_title('', false) . '"' . $after;
+	global $wp_query;
+	$cat_obj = $wp_query->get_queried_object();
+	$thisCat = $cat_obj->term_id;
+	$thisCat = get_category($thisCat);
+	$parentCat = get_category($thisCat->parent);
+	if ($thisCat->parent != 0) 
+	    echo(get_category_parents($parentCat, TRUE, $delimiter ));
+	echo $before . $pretitletextstart. __( 'Entry of category', 'piratenkleider' ).$pretitletextend. ' "' . single_cat_title('', false) . '"' . $after;
  
     } elseif ( is_day() ) {
-      echo '<a href="' . get_year_link(get_the_time('Y')) . '">' . get_the_time('Y') . '</a> ' . $delimiter . ' ';
-      echo '<a href="' . get_month_link(get_the_time('Y'),get_the_time('m')) . '">' . get_the_time('F') . '</a> ' . $delimiter . ' ';
-      echo $before . get_the_time('d') . $after;
- 
+	echo '<a href="' . get_year_link(get_the_time('Y')) . '">' . get_the_time('Y') . '</a>' .$delimiter;
+	echo '<a href="' . get_month_link(get_the_time('Y'),get_the_time('m')) . '">' . get_the_time('F') . '</a>' .$delimiter;
+	echo $before . get_the_time('d') . $after; 
     } elseif ( is_month() ) {
-      echo '<a href="' . get_year_link(get_the_time('Y')) . '">' . get_the_time('Y') . '</a> ' . $delimiter . ' ';
-      echo $before . get_the_time('F') . $after;
- 
+	echo '<a href="' . get_year_link(get_the_time('Y')) . '">' . get_the_time('Y') . '</a>' . $delimiter;
+	echo $before . get_the_time('F') . $after;
     } elseif ( is_year() ) {
-      echo $before . get_the_time('Y') . $after;
- 
+	echo $before . get_the_time('Y') . $after; 
     } elseif ( is_single() && !is_attachment() ) {
-      if ( get_post_type() != 'post' ) {
-        $post_type = get_post_type_object(get_post_type());
-        $slug = $post_type->rewrite;
-        echo '<a href="' . $homeLink . '/' . $slug['slug'] . '/">' . $post_type->labels->singular_name . '</a> ' . $delimiter . ' ';
-        echo $before . get_the_title() . $after;
-      } else {
-        $cat = get_the_category(); $cat = $cat[0];
-        echo get_category_parents($cat, TRUE, ' ' . $delimiter . ' ');
-        echo $before . get_the_title() . $after;
-      }
- 
-    } elseif ( !is_single() && !is_page() && get_post_type() != 'post' && !is_404() ) {
-      $post_type = get_post_type_object(get_post_type());
-      echo $before . $post_type->labels->singular_name . $after;
- 
+	if ( get_post_type() != 'post' ) {
+	  $post_type = get_post_type_object(get_post_type());
+	  $slug = $post_type->rewrite;
+	  echo '<a href="' . $homeLink . '/' . $slug['slug'] . '/">' . $post_type->labels->singular_name . '</a>' .$delimiter;
+	  echo $before . get_the_title() . $after;
+	} else {
+	  echo $before . get_the_title() . $after;
+	} 
+    } elseif ( !is_single() && !is_page() && !is_search() && get_post_type() != 'post' && !is_404() ) {
+	$post_type = get_post_type_object(get_post_type());
+	echo $before . $post_type->labels->singular_name . $after;
     } elseif ( is_attachment() ) {
-      $parent = get_post($post->post_parent);
-      $cat = get_the_category($parent->ID); $cat = $cat[0];
-      echo get_category_parents($cat, TRUE, ' ' . $delimiter . ' ');
-      echo '<a href="' . get_permalink($parent) . '">' . $parent->post_title . '</a> ' . $delimiter . ' ';
-      echo $before . get_the_title() . $after;
- 
+	$parent = get_post($post->post_parent);
+	echo '<a href="' . get_permalink($parent) . '">' . $parent->post_title . '</a>'. $delimiter;
+	echo $before . get_the_title() . $after;
     } elseif ( is_page() && !$post->post_parent ) {
-      echo $before . get_the_title() . $after;
+	echo $before . get_the_title() . $after;
  
     } elseif ( is_page() && $post->post_parent ) {
-      $parent_id  = $post->post_parent;
-      $breadcrumbs = array();
-      while ($parent_id) {
-        $page = get_page($parent_id);
-        $breadcrumbs[] = '<a href="' . get_permalink($page->ID) . '">' . get_the_title($page->ID) . '</a>';
-        $parent_id  = $page->post_parent;
-      }
-      $breadcrumbs = array_reverse($breadcrumbs);
-      foreach ($breadcrumbs as $crumb) echo $crumb . ' ' . $delimiter . ' ';
-      echo $before . get_the_title() . $after;
- 
+	$parent_id  = $post->post_parent;
+	$breadcrumbs = array();
+	while ($parent_id) {
+	    $page = get_page($parent_id);
+	    $breadcrumbs[] = '<a href="' . get_permalink($page->ID) . '">' . get_the_title($page->ID) . '</a>';
+	    $parent_id  = $page->post_parent;
+	}
+	$breadcrumbs = array_reverse($breadcrumbs);
+	foreach ($breadcrumbs as $crumb) echo $crumb . $delimiter;
+	echo $before . get_the_title() . $after; 
     } elseif ( is_search() ) {
-      echo $before . 'Suchergebnisse für "' . get_search_query() . '"' . $after;
- 
+	echo $before .$pretitletextstart. __( 'Search for', 'piratenkleider' ).$pretitletextend.' "' . get_search_query() . '"' . $after; 
     } elseif ( is_tag() ) {
-      echo $before . 'Artikel mit Schlagwort "' . single_tag_title('', false) . '"' . $after;
- 
+	echo $before .$pretitletextstart. __( 'Entries with tag', 'piratenkleider' ).$pretitletextend. ' "' . single_tag_title('', false) . '"' . $after; 
     } elseif ( is_author() ) {
-       global $author;
-      $userdata = get_userdata($author);
-      echo $before . 'Artikel von ' . $userdata->display_name . $after;
- 
+	global $author;
+	$userdata = get_userdata($author);
+	echo $before .$pretitletextstart. __( 'Entry by', 'piratenkleider' ).$pretitletextend.' '.$userdata->display_name . $after;
     } elseif ( is_404() ) {
-      echo $before . 'Fehler 404' . $after;
+	echo $before . '404' . $after;
     }
- 
+ /*
     if ( get_query_var('paged') ) {
       if ( is_category() || is_day() || is_month() || is_year() || is_search() || is_tag() || is_author() ) echo ' (';
-      echo __('Page') . ' ' . get_query_var('paged');
+      echo __('Page', 'piratenkleider') . ' ' . get_query_var('paged');
       if ( is_category() || is_day() || is_month() || is_year() || is_search() || is_tag() || is_author() ) echo ')';
     }
+ */
+   
+  } elseif (is_front_page() && $defaultoptions['zeige_breadcrump_frontpages']) {
+	echo $before . $home . $after;
+  } elseif (is_home() && $defaultoptions['zeige_breadcrump_frontpages']) {
+	echo $before . get_the_title(get_option('page_for_posts')) . $after;
+  }
+   echo '</div>'; 
+}
+
  
-    echo '</div>';
- 
+
+function piratenkleider_header_style() {} 
+
+function piratenkleider_admin_style() {
+    global $defaultoptions;
+    wp_register_style( 'themeadminstyle', $defaultoptions['src-admincss']);
+    wp_enqueue_style( 'themeadminstyle' );
+    wp_enqueue_media();
+    wp_register_script('themeadminscripts', $defaultoptions['src-adminjs'], array('jquery'));
+    wp_enqueue_script('themeadminscripts');
+}
+add_action( 'admin_enqueue_scripts', 'piratenkleider_admin_style' );
+
+
+function custom_login() { 
+    global $defaultoptions;
+    echo '<link rel="stylesheet" type="text/css" href="'.$defaultoptions['src-customlogincss'].'" />';
+}
+add_action('login_head', 'custom_login');
+
+add_filter('upload_mimes', 'custom_upload_mimes');
+function custom_upload_mimes ( $existing_mimes=array() ) {
+    $existing_mimes['css'] = 'text/plain';
+    $existing_mimes['ico'] = 'image/ico';
+    return $existing_mimes;
+}
+
+/* 
+ * Paging Function 
+ */
+function piratenkleider_paging_bar($total = 1, $perpage =1) {
+  /* Init */
+  $count = $total;
+  $page = (int)get_query_var('paged');
+  $maxpage = intval($total/$perpage);
+  /* Kein Paging? */
+  if ($count <= $perpage) {
+    return false;
+  }
+  
+  /* Erste Seite? */
+  if (!$page) {
+    $page = 1;
+  }
+  
+     $min = $page-2;
+     if ($min<=0) $min =1;
+     $max=  $page+2;
+     
+     if ($page==1) { $max = 4;}
+     
+     if ($max>$maxpage) {
+         $max = $maxpage;    
+     }    
+                
+  
+  /* Ausgabe der Links */ 
+  if (!empty($min) && !empty($max)) {
+    for($i = $min; $i <= $max; $i++){
+       echo sprintf(
+        '<a href="%s"%s>%d</a>',
+        get_pagenum_link($i),
+        ($i == $page ? ' class="active"' : ''),
+        $i
+      );
+     }
   }
 }
 
-if( !is_admin()){
-        wp_deregister_script('jquery');
-        wp_register_script('jquery', ("/wp-content/themes/piratenkleider/js/jquery.min.js"), false, '1.3.2');
-        wp_enqueue_script('jquery');
+// select the right item type for the page
+function piratenkleider_html_tag_schema() {
 
+    global $options;
+
+    $schema = 'http://schema.org/';        
+
+
+    if (is_single() || is_page()) {
+
+      isset($options['meta-itemtype-aboutpage']) && !empty($options['meta-itemtype-aboutpage']) 
+        ? $abtpage = trim($options['meta-itemtype-aboutpage']) : $abtpage = false;
+
+      isset($options['meta-itemtype-contactpage']) && !empty($options['meta-itemtype-contactpage']) 
+        ? $ctcpage = trim($options['meta-itemtype-contactpage']) : $ctcpage = false;
+
+      isset($options['meta-itemtype-ptype1']) && !empty($options['meta-itemtype-ptype1']) 
+        ? $cstptype1 = trim($options['meta-itemtype-ptype1']) : $cstptype1 = false;
+
+      isset($options['meta-itemtype-ptype2']) && !empty($options['meta-itemtype-ptype2']) 
+        ? $cstptype2 = trim($options['meta-itemtype-ptype2']) : $cstptype2 = false;  
+
+        // Is about page
+      if (is_page($abtpage) && $abtpage) {
+        $type = 'AboutPage';
+
+        // Is contact page
+      } elseif (is_page($ctcpage) && $ctcpage) {
+        $type = 'ContactPage';
+
+        // Is person
+      } elseif (is_singular('person')) {
+        $type = 'Person';
+        
+        // Is custom type 1
+      } elseif (is_singular($cstptype1) && $cstptype1){  
+        $type = ''. trim($options['meta-itemtype-cst1']) .'';
+
+        // Is custom type 2
+      } elseif (is_singular($cstptype2) && $cstptype2){  
+        $type = ''. trim($options['meta-itemtype-cst2']) .'';
+        
+        // Is some other page
+      } elseif (is_single()) {
+        $type = 'Article';
+
+      } else {
+        // Is single post
+       $type = "WebPage";
+
+     }
+
+    } else {
+
+        // Is search results page or other
+      is_search() ? $type = 'SearchResultsPage' : $type = 'WebPage';
+
+    }
+
+    $tag = 'itemscope itemtype="' . $schema . $type . '"';
+    
+    return $tag;
 }
+
+//set organization name: either custom value or blog settings
+function piratenkleider_tag_schema_org_name() {
+    global $options;
+    
+    isset($options['meta-itemtype-org-name']) && !empty($options['meta-itemtype-org-name']) 
+        ? $name = trim($options['meta-itemtype-org-name']) : $name = bloginfo('name');
+
+      return $name;
+}
+
+//set organization description: either custom value or blog settings
+function piratenkleider_tag_schema_org_desc() {
+    global $options;
+
+    isset($options['meta-itemtype-org-desc']) && !empty($options['meta-itemtype-org-desc']) 
+        ? $desc = trim($options['meta-itemtype-org-desc']) : $desc = bloginfo( 'description' );
+
+      return $desc;
+}
+
+/* Compatibility for old templates, former Version 3.2 */
+add_filter('page_template', 'piratenkleider_page_template');
+function piratenkleider_page_template($t) {
+    $compatlist = array(
+        'impressum.php' => 'templates/imprint.php',
+        'datenschutzerklaerung.php' => 'templates/privacy-policy.php',
+        'catindex.php'  => 'templates/category-index.php',
+        'pageindex.php' => 'templates/page-index.php',
+        'page-actionpage.php'   => 'templates/actionpage.php'
+    );
+    $page_id = get_queried_object_id();
+    $template = get_post_meta($page_id, '_wp_page_template', true);
+    
+    if($template && 'default'!= $template) {
+        foreach ( $compatlist as $key => $value ) { 
+            if ($key == $template) {
+                 if(file_exists(trailingslashit(STYLESHEETPATH) . $value)){
+                    $t = trailingslashit(STYLESHEETPATH) . $value;
+                } elseif(file_exists(trailingslashit(TEMPLATEPATH) . $value)) {
+                    $t = trailingslashit(TEMPLATEPATH) . $value;
+                }
+            }
+        } 
+    }
+    return $t;
+}
+
+
+//Funktion um Beitragsbilder im RSS-Feed anzuzeigen
+function featured_image_in_rss($content) {
+    global $post;
+    global $options;
+    // ÃœberprÃ¼fen, ob Artikel ein Beitragsbild hat
+    
+    if(is_feed() && $options['feed-addthumbnail']) {  
+        if (!isHTML($content)) {
+            $leftbox =  '<div class="rss_bild" style="float: left;">';	    
+
+            $firstpic = get_piratenkleider_firstpicture(false);
+
+                if (has_post_thumbnail($post->ID)) {
+                    $output = get_the_post_thumbnail($post->ID, 'feedthumb',array('style' => 'margin-bottom:10px;'));
+                } else {
+                    $output = '<img src="'.$options['src-teaser-thumbnail_default'].'" alt="">';
+                }
+           
+
+            $leftbox .= $output;
+            $leftbox .= '</div>'; 
+
+            $content = $leftbox . $content;
+        }
+    }
+    return $content;
+}
+
+//Filter fÃ¼r RSS-Content
+add_filter('the_content_feed', 'featured_image_in_rss'); 
+add_filter('the_excerpt_rss', 'featured_image_in_rss');
+
+function isHTML($text){
+    return false;
+   $processed = htmlentities($text);
+   if($processed == $text) return false;
+   return true; 
+}
+
+function piratenkleider_admin_init() {
+	remove_post_type_support( 'page', 'comments' );
+        // Keine Kommentar/Dkussionsmetabox auf Seiten
+    $role = get_role('editor');
+    $role->add_cap('edit_dashboard');
+        // Statify zulassen fÃ¼r Redakteure
+}
+
+add_action('admin_init', 'piratenkleider_admin_init'); 

@@ -1,0 +1,249 @@
+Theme Piratenkleider 
+
+Changelog 
+(since version 3.2; Former changes look at github.com/Piratenkleider/)
+
+Version 3.4.1:
+* Error 404 page: Removed default sidebar. In case of wrong links in widgets its
+  better not to show them in the 404 page, due to loops.
+
+Version 3.4.0:
+* Update URL Pirate party turkey to https://korsanparti.org/ also for iconless list
+* Removed wrong php ending on some files. Might cause trouble on plugins...
+* Made font Aller rg avaible for theme design settings
+
+Version 3.3.17:
+* Update URL Pirate party turkey to https://korsanparti.org/
+* Removed wp_title() from templates
+* Added class .screen-reader-text as alias for .skip
+* Removed deprecated bloginfo()
+
+Version 3.3.16:
+* Several merge requests from JOWI:
+** Swiss theme updates, colors and improvements
+** Font updates 
+** The logo will not resize if it's rendered as inline-block.
+** convert linebreaks to unix style and other minor fixes
+** allow to overwrite hamburger.css, code style, syntax fixes
+** optimized images 
+** change hamburger icon
+** responsive login panel 
+* Merge Requests from JustThomas 
+** Use the piratenkleider_make_link_relative function also for article images.
+
+Version 3.3.15:
+* Bugfix header attributes an home
+
+Version 3.3.14:
+* Bugfix #206
+* Bugfix #207
+* Merges for relative links from JanRei
+* Merges for warnings from JanRei
+
+Version 3.3.13:
+* Bugfix on attributes of header images in single entries
+
+Version 3.3.12:
+* Added KV Neukirchen-Vluyn 
+
+Version 3.3.11:
+* Updates in form link-function to match updates of WP4.2
+* Fixed margin in header links
+
+Version 3.3.10:
+* updated use of cmb with wphelper 
+* removed old remainings of dynamic sidebar
+* added slider images for entries
+* added subtitles for entries
+
+Version 3.3.9:
+* made piratenkleider comptabile to wordpress shariff social media icons
+* made Diaspora Icon by Plugin https://wordpress.org/plugins/share-on-diaspora/ 
+  look like Shariff Icons
+* changed URL for Potsdam
+
+Version 3.3.8:
+* added images for elections in HB
+
+Version 3.3.7:
+* allowed to change image dimensions of thumbnails in backend
+
+Version 3.3.6:
+* Editors now can see statify stats, if installed
+* Comment discussion removed from page edit
+* Added Social Media Icons for Friendica and Instagram
+* Updates Sections in NRW
+
+Version 3.3.5:
+* Added Open Graph tags
+* Improved Schema.org declarations
+
+Version 3.3.4:
+* Bugfixes/improvement for relative links.
+  post_link is now absolute again, due to plugins, that are using this filter for social media links..
+
+Version 3.3.3:
+* Added function for relative URLs for several parts of content
+* Added thumbnails in feed
+* Added padding to left/right of columns on startpage
+
+Version 3.3.2:
+* "Blue posts" for registered users in comments
+* Changed us-pirates url
+
+Version 3.3.1:
+* Miscellaneous fixes, mostly for translation
+* Fix css and js paths
+* Fixes for bookmarks and business cards
+* Fix errors when searching for an empty string or strings containing spaces
+
+Version 3.3:
+* Added japan pirate party
+* Typofix Luxemburg
+* Update: Google Site Verification
+* Update posters 
+* CSS/JS mimified now with new tool (netbeans plugin); added serveral min files.
+
+Version 3.2.20:
+* Enhancement: Optional Hamburger menu (#123) 
+* Enhancement: Sort business cards in categories once there are more as 7 elements and categories (#163)
+
+
+Version 3.2.19:
+* Bugfix: #178: enforce relative urls for images and make heigh relative; no cropping for images anymore.
+* Bugfix: #181 content in templates
+* Bugfix: #183 Delicious-Icon
+* Enhancement: more css validation; removed IE7 hacks
+* Enhancement: #172 - PoliticsHead Font as default in Scapegoat
+* Enhancement: Switch for setting three/two columns for startpage on big sized
+  screen on default stream
+
+Version 3.2.18:
+* Bugfix: invalid html5 tags/properties
+* Bugfix: invalid css properties in scapegoat css
+* Typofix in templates/imprint.php
+* Enhancement: added theme option under tab Social Media for the federated social network Friendica in inc/constants.php
+* Enhancement: added function piratenkleider_html_tag_schema to inc/functions.php
+* Enhancement: added following microdata item types in html tag: WebPage, Article, AboutPage, ContactPage, Person
+* Enhancement: added theme option under tab Misc to assign item types AboutPage and ContactPage to pages determined by the admin
+* Enhancement: added type Video for embedded videos, property: embedUrl
+* Enhancement: added microdata properties for item type Article: name, articleBody, articleSection, creator, keywords, url
+* Enhancement: added microdata properties for item type Person: name, description, email, url
+* Enhancement: added microdata properties for item type WebPage/AboutPage/ContactPage: mainContentOfPage, name, image, text
+* Enhancement: added microdata for comments meta: comment, interactionCount: content=Usercomments, discussionUrl
+* Enhancement: added microdata for comments: commentText, name, commentTime, url, image
+* Enhancement: added HTML5 article and header-tags to comments
+* Enhancement: added other microdata: breadcrumb, datePublished, image, SiteNavigationElement
+* Enhancement: added role="navigation" to main navigation in header.php
+
+
+Version 3.2.17:
+* Bugfix/Enhancement: New plakat sliders for brandenburg (#180)
+* Typofix: Corrected spelling of ppi (#179)
+* Scapegoat-Adaption: max-height instead of  height at thumbnail;
+  text-align right for date.
+
+Version 3.2.16:
+* Bugfix: Color of headers h2/h3 in footer at subdesign Scapegoat
+* Bugfix: Bannerlink Image as new thumbnail size defined with cropping
+* Bugfix: More space for stickers in header on scapegoat subdesign
+* Bugfix: fixed  missing id on 404-page, bug id #177
+
+Version 3.2.15:
+* Optical improvements of scapegoat subdesign
+
+Version 3.2.14:
+* Bugfix: ids corrected on widget on startpage option
+* Updated posters
+
+Version 3.2.13:
+* Bugfix: Input[type="email"] made by Contact Form 7 didnt show a nice CSS;
+* New posters for election in Thueringen
+* Enhancement. PGP Fingerprint in business cards
+* Enhancement: Widget on startpage
+
+Version 3.2.12:
+* Enhancement: Allow to change default placeholder image for entry thumbnails
+* Enhancement: Add <span></span> around pretitle of breadcrumb
+* Bugfix: Removed LV Wilhelmshaven
+
+Version 3.2.11:
+* Bugfix: Hovercolors for flaschenpost design, captian position on 
+  slider in 1350 media query
+
+Version 3.2.10:
+* Bugfix in german translation
+* Enhancement: CSS for bookmark shortcode
+* Enhancement:Added chapters of country party Sachsen
+
+Version 3.2.9:
+* Bugfix on default background color CSS
+
+Version 3.2.8:
+* New optional color combination: white/transparent 
+* Enhancement: CSS for start page and action page improved 
+* Feature: Allow optional widget as article stream for start page
+
+Version 3.2.7:
+* Bugfix: Translation of german district associations (Bug #152)
+* Feature: set header background position to top, like standard themes; Will
+  now match to body background.
+* Feature: Improved CSS and HTML orientation in header to make them relative
+  positioned; Changed color files and scapegoat to match this.
+* Removed Flaschenpost Design and moved it into color file.
+
+Version 3.2.6:
+* Bugfix: Allow special chars in wiki username (Bug #148)
+* Bugfix: Undefined index (Bug #147)
+* Bugfix: fixed header for page menu (Bug #146)
+
+Version 3.2.5:
+* Bugfix: Small Screen Layout on Scapegoat Adaption
+* Bugfix: Video Embeds only on free spaced content links, not on real links
+* Bugfix: Color codes for business cards
+* Enhancement: Business Cards now show also local entries which contain the
+  fullname of the person.
+* Enhancement: New login screen
+* Removed old unused images
+
+Version 3.2.4:
+* Enhancement: CSS for shortcode bookmarks improved
+* Enhancement: CSS for Flaschenpost design: position of submenus improved for
+  old browser support (chrome 35.*)
+
+
+Version 3.2.3:
+* Workaround for Safaris bug on floating excerpts
+* Improved fixed header on scrolled text
+* Feature: Search form for scrolled text fixed
+* Feature: Added wp_editor() for textinput on bookmarks and allowed HTML
+* Constants: Default value for displaying tags and categories on startpage set 
+  to 0
+
+
+Version 3.2.2:
+* Business cards can be printed out by a given order and by ids, like
+  this: [person listorder="4,7,2"]
+* Bugfix: German translation for show/hide
+* Bugfix: Sanitizing values on business cards
+* Feature: Symbol icon for wikis on url wiki.piratenbrandenburg.de
+* Feature: Body background changeable independend by current design; 
+  position and repeat configurable.
+
+Version 3.2.1:
+* Changed margins and sizes for headlines in content.
+* Changed sidebar background: Uses main background
+* Sticky-Class uses now standard class of Infoboxes
+
+Version 3.2.0:
+* Moved templates into a new directory templates.
+* Changed language in PHP files to english and added german language files;
+  Removed former american-english translation file.
+* Notice: Former called "linktipps" will be renamed in "bookmarks" for english
+  texts.
+* Bugfix: custom-fields.php: fixed entries with wrong language domain. 
+* Removed 'first-teaser-widget-area' (widget instead of slider on start page).
+* Removed Teaser widget (widget instead of teaserlinks on start page).
+* Removed Bulgarian language files, cause they dont match anymore to new
+  base language in theme.
+

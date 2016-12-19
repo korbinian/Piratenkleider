@@ -1,0 +1,50 @@
+/* 
+    Document   : zeitleiste
+    Created on : 07.01.2015, 21:45:27
+    Author     : Wiese
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+#zeitleiste #monate{display:block;width:45%}
+#zeitleiste #legende{min-width:45%;display:block;z-index:250}
+#zeitleiste #legende ul{list-style-type:none;margin:0;padding:5px;padding-left:15px}
+#zeitleiste #legende li{border:none;padding:5px;display:block}
+#zeitleiste #tlnav{max-width:60%;margin-left:120px}
+#zeitleiste .aktion{background-color:#F5AC00}
+#zeitleiste .demo{background-color:#E30E0D}
+#zeitleiste .ini{background-color:#4F9ED3}
+#zeitleiste .wahl{background-color:#E97213}
+#zeitleiste #timeline{list-style:none;margin:30px 0 30px 120px;padding-left:30px;border-left:8px solid #FFD016;max-width:60%;}
+#zeitleiste #timeline li{list-style:none;margin:40px 0;padding-left:10px;position:relative}
+#zeitleiste #timeline p{margin:0 0 15px}
+#zeitleiste .tldate{margin-top:-10px;top:50%;left:-150px;font-size:.8em;line-height:20px;position:absolute;color:#000}
+#zeitleiste .tlcircle{margin-top:-10px;top:50%;left:-44px;width:10px;height:10px;background:#9c0;border:5px solid #fff;border-radius:50%;display:block;position:absolute}
+#zeitleiste .tlcontent{max-height:20px;padding:20px 20px 0;border-color:transparent;border-width:2px;border-style:solid;position:relative}
+#zeitleiste .tlcontent:before,#zeitleiste .tlcontent:after{content:"";width:0;height:0;border:solid transparent;position:absolute;pointer-events:none;right:100%}
+#zeitleiste .tlcontent:before{border-right-color:inherit;border-width:20px;top:50%;margin-top:-20px}
+#zeitleiste .tlcontent:after{border-right-color:inherit;border-width:17px;top:50%;margin-top:-17px}
+#zeitleiste .tlcontent p{max-height:0;color:transparent;text-align:left;word-break:break-word;hyphens:auto;overflow:hidden}
+#zeitleiste .tlcontent a{max-height:0;color:transparent;text-align:left;word-break:break-word;hyphens:auto;overflow:hidden}
+#zeitleiste label{font-size:1em;position:absolute;z-index:1;cursor:pointer;top:20px;color:#fff;transition:transform .2s linear;-webkit-transition:transform .2s linear;-moz-transition: transform 0.2s linear; -o-transition: transform 0.2s linear;}
+#zeitleiste .radio{display:none}
+#zeitleiste .radio:checked + .relative label{cursor:auto;transform:translateX(22px);transition:transform .2s linear;-webkit-transition:transform .2s linear;-moz-transition: transform 0.2s linear;-o-transition: transform 0.2s linear;}
+#zeitleiste  .radio:checked + .relative .tlcircle{background:#fff;border-radius:50%;border-color:#9c0;transition:background .3s ease,border-color .3s ease;-webkit-transition:background .3s ease,border-color .3s ease;-moz-transition: background 0.3s ease, border-color 0.3s ease;-o-transition: background 0.3s ease, border-color 0.3s ease;}
+#zeitleiste .radio:checked ~ .tlcontent{max-height:230px;margin-right:20px;transform:translateX(20px);transition:max-height .4s linear,border-color .5s linear,transform .2s linear;-webkit-transition:max-height .4s linear,border-color .5s linear,transform .2s linear;-moz-transition: max-height 0.4s linear, border-color 0.5s linear, transform 0.2s linear;
+                          -o-transition: max-height 0.4s linear, border-color 0.5s linear, transform 0.2s linear;}
+#zeitleiste .radio:checked ~ .tlcontent p{max-height:250px;color:#fff;transition:color .2s linear .2s;-webkit-transition:color .2s linear .2s;-moz-transition: color 0.2s linear 0.2s;-o-transition: color 0.2s linear 0.2s;}
+#zeitleiste .radio:checked ~ .tlcontent a{max-height:220px;color:#272828;transition:color .2s linear .2s;-webkit-transition:color .2s linear .2s;-moz-transition: color 0.2s linear 0.2s;-o-transition: color 0.2s linear 0.2s;}
+
+
+@media screen and (max-width: 767px){
+#zeitleiste  #tlnav{min-width:100%;margin-left:0}
+#zeitleiste #timeline{margin-left:0;padding-left:0;border-left:none;max-width:none;}
+#zeitleiste #timeline li{margin:50px 0;padding:none}
+#zeitleiste #tlnav{max-width:none;}
+#zeitleiste label{width:85%;font-size:1.1em;white-space:nowrap;text-overflow:ellipsis;overflow:hidden;display:block;transform:translateX(18px)}
+#zeitleiste .tlcontent{padding-top:15px;margin-right:0;border:none}
+#zeitleiste .tlcontent:before,#zeitleiste .tlcontent:after{bottom:100%;border:none}
+#zeitleiste .tlcontent:before{top:-16px;left:50px;margin-left:-17px;border:none}
+#zeitleiste .tlcontent:after{top:-20px;left:50px;margin-left:-20px;border:none}
+#zeitleiste .tlcontent p{font-size:.8em;line-height:1.4}
+#zeitleiste .tlcircle,.tldate{display:none}}             

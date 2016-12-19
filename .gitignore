@@ -1,0 +1,16 @@
+# IDE & System Related Files #
+##############################
+/nbproject/private/
+/nbproject/
+Browse.plb
+Thumbs.db
+Desktop.ini
+.Spotlight-V100
+.Trashes
+.DS_Store
+.buildpath
+.project
+.settings
+.idea
+._*
+*~

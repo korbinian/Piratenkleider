@@ -1,36 +1,91 @@
-<?php get_header(); ?>
-
-<div class="section content">
+<?php get_header(); 
+global $options;  
+?>
+<div class="section content" id="main-content">
   <div class="row">
-    <div class="content-primary">
-      <div class="content-header">
-        <h1 id="page-title"><span><?php the_title(); ?></span></h1>
-        <?php if (has_post_thumbnail()) the_post_thumbnail(); ?>
-      </div>
+    <div class="content-primary">	
+	<?php 
+
+	if ( have_posts() ) while ( have_posts() ) : the_post();         
+	    $custom_fields = get_post_custom();
+      
+	    $image_url = '';	  
+	     $attribs = array(
+                 "credits" => $options['img-meta-credits'],
+                );
+	    if (($options['aktiv-platzhalterbilder-indexseiten']==1) && (isset($options['src-default-symbolbild']))) {  
+                
+                if (isset($options['src-default-symbolbild_id']) && ($options['src-default-symbolbild_id'] >0)) {
+			$image_url_data = wp_get_attachment_image_src( $options['src-default-symbolbild_id'], 'full');
+			$image_url = $image_url_data[0];
+			$attribs = piratenkleider_get_image_attributs($options['src-default-symbolbild_id']);
+                } else {
+			$image_url = $options['src-default-symbolbild'];
+                }		    
+            }
+   
+	    if (isset($image_url) && (strlen($image_url)>4)) { 
+		if ($options['indexseitenbild-size']==1) {
+		    echo '<div class="content-header-big">';
+		} else {
+		    echo '<div class="content-header">';
+		}
+                echo "<header>";
+                $subtitle =  get_post_meta( $post_id, 'piratenkleider_subtitle', true );
+                if ($subtitle) {
+                    echo '<h3 class="subtitle">'.$subtitle."</h3>\n";
+                }
+                
+		?>    		    		    		        
+		   <h1 class="post-title"><span><?php the_title(); ?></span></h1>
+                    </header>
+		   <div class="symbolbild"><img src="<?php echo piratenkleider_make_link_relative($image_url); ?>" alt="">	
+			 <?php if (isset($attribs["credits"]) && (strlen($attribs["credits"])>1)) {
+                           echo '<div class="caption">'.$attribs["credits"].'</div>';  
+                        }  ?>		       
+		   </div>
+		</div>  	
+	    <?php } ?>
+	
       <div class="skin">
-        <?php if ( have_posts() ) while ( have_posts() ) : the_post(); ?>
-        <?php the_content(); ?>
-        <?php wp_link_pages( array( 'before' => '' . __( 'Pages:', 'twentyten' ), 'after' => '' ) ); ?>
-        <?php edit_post_link( __( 'Bearbeiten', 'twentyten' ), '', '' ); ?>
+	  
+	  <?php if (!(isset($image_url) && (strlen($image_url)>4))) {
+           echo "<header>";
+                $subtitle =  get_post_meta( $post_id, 'piratenkleider_subtitle', true );
+                if ($subtitle) {
+                    echo '<h3 class="subtitle">'.$subtitle."</h3>\n";
+                }
+                ?>
+	    <h1 class="post-title"><span><?php the_title(); ?></span></h1>
+      </header>
+	<?php }  
+	
+ 
+         the_content(); ?>
+        <?php wp_link_pages( array( 'before' => '' . __( 'Pages:', 'piratenkleider' ), 'after' => '' ) ); ?>
+        <?php edit_post_link( __( 'Edit', 'piratenkleider' ), '', '' ); ?>
         <?php endwhile; ?>
-      </div>
+       </div>
     </div>
 
     <div class="content-aside">
-      <div class="skin">
-        
-        <?php wp_nav_menu( array( 'container_class' => 'menu-header', 'theme_location' => 'primary', 'walker'  => new My_Walker_Nav_Menu()) ); ?>
-
-        <?php
-        $custom_fields = get_post_custom();
-        if ($custom_fields['right_column'][0]<>'') { ?>
-        <? echo $custom_fields['right_column'][0]; 
-
-         } ?>
-
+      <div class="skin">       
+          <h1 class="skip"><?php _e( 'More information', 'piratenkleider' ); ?></h1>
+        <?php 
+       if ( has_nav_menu( 'primary' ) ) {
+            wp_nav_menu( array( 'container_class' => 'menu-header', 'theme_location' => 'primary', 'walker'  => new Piratenkleider_Menu_Walker()) );      
+        } else { 
+        ?>
+          <ul class="menu">
+              <?php  wp_page_menu( ); ?>
+          </ul>
+         <?php } ?>
+         <?php get_sidebar(); ?>
       </div>
     </div>
   </div>
+ <?php get_piratenkleider_socialmediaicons(2); ?>
+
 </div>
 
-<?php get_footer(); ?>
+<?php get_footer(); 

@@ -1,0 +1,213 @@
+/*
+ * Optional Hamburger Menu for small screen displays
+ */
+
+@media only screen and (max-width: 768px) {
+	.skiplinks li a {
+		position: absolute;
+		display: block;
+		top: -100px;
+	}
+
+	/* Header Navigation Menu Icon properties */
+	#header-menu-icon {
+		border-bottom: 1px solid #ddd;
+		border-top: 1px solid #ddd;
+		cursor: pointer;
+		display: block;
+		padding: 5px;
+		padding: 0.5rem;
+		text-align: center;
+		text-shadow: 0 -1px 0 #112e48;
+		background-color: #2d7dc5;
+		background-image: -webkit-gradient(top, #2d7dc5, #24639b);
+		background-image: linear-gradient(to bottom, #2d7dc5, #24639b);
+	}
+
+	#header-menu-icon::after {
+		color: white;
+		content: '\2630';
+		font-weight: bold;
+		letter-spacing: 1px;
+		font-size: 1.5em;
+		right: 10px;
+		position: absolute;
+	}
+
+	#header-menu-icon:hover::after,
+	#header-menu-icon:active::after {
+		color: #ccc;
+	}
+
+	/* Hide Header Navigation Menu until it's toggled via script */
+	.header {
+		display: none;
+	}
+
+	/* Header Navigation Menu misc properties */
+	.nav-main {
+		clear: both;
+		color: #999;
+		font-family: sans-serif;
+		line-height: 1.5;
+		width: 100%;
+		z-index: 9999;
+	}
+
+	.nav-main ul.menu li a,
+	.nav-main .menu-item {
+		display: block;
+		text-align: left;
+	}
+
+	.nav-main a {
+		background-color: #f0f0f0;
+		border-bottom: 1px solid #ccc;
+		color: #222;
+		display: block;
+		padding: 18px 30px;
+		position: relative;
+		font-family: sans-serif;
+		text-transform: uppercase;
+		letter-spacing: 1px;
+		text-align: left;
+	}
+
+	.nav-main ul.menu li a {
+		padding: 18px 30px;
+	}
+
+	.nav-main .sub-menu {
+		display: block;
+		top: inherit;
+		position: relative;
+	}
+
+	.nav-main a:hover,
+	.nav-main ul.menu a:hover,
+	.nav-main ul.menu li a:hover,
+	.nav-main ul.menu li ul li a:hover,
+	.nav-main .sub-menu li a:hover,
+	.nav-main .sub-menu li ul li a:hover,
+	.nav-main .sub-menu a:hover {
+		background-color: #ddd;
+		color: #222;
+		letter-spacing: 1px;
+	}
+
+	.nav-main .sub-menu .current-menu-item > a {
+		color: #999;
+	}
+
+	.nav-main > .menu-item > a {
+		text-transform: uppercase;
+	}
+
+	.nav-main .sub-menu {
+		left: 0px;
+		opacity: 1;
+		width: 100%;
+		z-index: 99;
+	}
+
+	.nav-main .sub-menu a {
+		background-color: #fff;
+		border-bottom: 1px solid #ccc;
+		font-size: 1em;
+		padding: 12px 45x;
+		position: relative;
+		width: 100%;
+	}
+
+	.nav-main .sub-menu a::before {
+		content: "- ";
+	}
+
+	.nav-main .sub-menu li a,
+	.nav-main ul.menu li a,
+	.nav-main ul.menu li ul li a,
+	.nav-main ul.menu li ul li ul li a {
+		font-size: 1em;
+		border: none;
+		margin: 0;
+	}
+
+	.nav-main li,
+	.nav-main ul.menu li {
+		float: none;
+		border: none;
+		margin: 0;
+	}
+
+	.nav-main ul li ul {
+		display: inline-block;
+	}
+
+	.nav-main .sub-menu .sub-menu {
+		margin: 0;
+	}
+
+	.nav-main ul.menu li ul {
+		position: relative;
+		top: inherit;
+		left: inherit;
+	}
+
+	.nav-main .menu-item:hover {
+		position: static;
+	}
+
+	.nav-main .menu-item:hover > .sub-menu {
+		left: 0;
+		opacity: 1;
+	}
+
+	.nav-main hr {
+		display: none;
+	}
+
+	.nav-main ul.menu li:hover ul li ul,
+	.nav-main ul.menu li.hover ul li ul {
+		top: inherit;
+	}
+
+	.nav-main ul.menu li:hover ul,
+	.nav-main ul.menu li.hover ul,
+	.nav-main ul.menu li:hover ul li:hover ul,
+	.nav-main ul.menu li.hover ul li.hover ul,
+	.nav-main ul.menu li:hover ul li:hover ul li>ul,
+	.nav-main ul.menu li.hover ul li.hover ul li>ul,
+	.nav-main ul.menu li:hover ul li:hover ul li:hover ul,
+	.nav-main ul.menu li.hover ul li.hover ul li.hover ul,
+	.nav-main ul.menu li:hover ul li:hover ul li:hover ul li>ul,
+	.nav-main ul.menu li.hover ul li.hover ul li.hover ul li>ul,
+	.nav-main ul.menu li:hover ul li:hover ul li:hover ul li:hover ul,
+	.nav-main ul.menu li.hover ul li.hover ul li.hover ul li.hover ul,
+	.nav-main ul.menu li:hover ul li:hover ul li:hover ul li:hover ul li>ul,
+	.nav-main ul.menu li.hover ul li.hover ul li.hover ul li.hover ul li>ul{
+		top: inherit;
+		left: inherit;
+		width: 100%;
+		margin: 0;
+		padding: 0;
+	}
+
+	.nav-main ul.menu li:hover ul li a,
+	.nav-main ul.menu li.hover ul li a,
+	.nav-main ul.menu li:hover ul li:hover a,
+	.nav-main ul.menu li.hover ul li.hover a,
+	.nav-main ul.menu li li a,
+	.nav-main ul.menu li li li a,
+	.nav-main ul.menu li li li li a {
+		width: 100%;
+		outline: 0px;
+		text-align: left;
+		font-size: 1em;
+		margin-bottom: 0px;
+		padding: 18px 30px;
+		box-shadow: none;
+		background-color: #1a4862;
+		text-transform: uppercase;
+		letter-spacing: 1px;
+	}
+}
